@@ -35,6 +35,7 @@ observed update frequency, source limits, and operational evidence.
 | Counties dominating remaining uncertainty late in the count | 30–60 seconds |
 | PDF reports | 3–5 minutes |
 | State results, for reconciliation | 5 minutes |
+| NYT Michigan Senate results, as a national cross-check | 5 minutes, if automated access is verified; otherwise timestamped manual checks |
 
 Run low-frequency preflight checks before polls close. Increase cadence around
 each jurisdiction's local closing time, then continue through the next day and
@@ -103,6 +104,24 @@ splits, or the completeness semantics of the reporting fields.
    explain Wayne's progress, but its votes overlap Wayne. Manual and automated
    observations need explicit precedence and replacement rules. Preserve the
    publication's unofficial/canvassed/certified status.
+
+## Newsroom and NYT backstops
+
+Use the [local news results survey](local-news-results.md) for regional
+redundancy and **The New York Times' real-time Michigan Senate results** as a
+national backstop. Pin the actual November page from the
+[NYT elections hub](https://www.nytimes.com/section/politics/elections) during
+preflight. NYT access was blocked by robots restrictions in the research
+browser on 2026-10-17; automated access, county detail, upstream credits and
+cadence need verification. The interval above is a proposed check frequency.
+
+Keep NYT statewide/county observations alongside official returns with their
+own timestamps and attribution. Surface mismatches and explicitly label any
+temporary replacement of a missing county observation; reconcile when the
+official source returns. Never add or average overlapping totals. Preserve
+NYT's race calls, estimated completion and any Needle probabilities as external
+assessments, separate from counted votes and our model. Verify shared upstream
+suppliers before treating agreement as independent corroboration.
 
 ## Coverage board and live estimate
 

@@ -124,6 +124,14 @@ election-night results, canvassed results, and certified results. Poll at a
 reasonable source-specific interval; respect stated limits and use backoff.
 Retain timestamped manual-entry fallbacks when feeds cannot be automated.
 
+For Michigan, supplement official channels with the
+[regional newsroom sources and NYT national backstop](senate/2026/michigan/local-news-results.md).
+Compare NYT's real-time statewide and available county Senate totals with our
+observations, preserving attribution, timestamps and any explicit source
+substitution. Verify November coverage and access before automation. Keep
+external race calls, completion estimates and Needle forecasts separate from
+reported votes; reconcile overlapping sources without adding or averaging them.
+
 Normalize county, jurisdiction, reporting unit, voting method, candidate,
 party, vote count, units reported/total, and estimated remaining votes with
 provenance and uncertainty. Missing is not zero. Preserve revision history,

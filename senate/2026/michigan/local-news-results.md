@@ -26,6 +26,32 @@ verified promise that its Senate widget exposes every county in that region.
 | [WKAR Public Media](https://www.wkar.org/election-2026/elect26-results) | Lansing / Mid-Michigan | Dedicated 2026 results page embeds an AP Elections interactive. Useful AP cross-check alongside local newsroom reporting; not evidence of an independent county collection feed. |
 | [Huron Daily Tribune / Michigan's Thumb](https://www.michigansthumb.com/projects/2026/primary-election-results-huron-michigan/) | Thumb / Huron County; statewide races | August 2026 live tracker links a separate Huron results page. Discloses AP for most federal/statewide results and Hearst collection from local election departments for other results. November tracker not verified. |
 
+## National backstop: The New York Times
+
+Add **NYT's real-time Michigan Senate results** as a national cross-check and
+fallback when a county or local newsroom channel is unavailable. Start from
+the [NYT elections hub](https://www.nytimes.com/section/politics/elections);
+verify and pin the actual November 2026 Michigan Senate page during preflight.
+Do not construct a November feed URL from an older election's URL pattern.
+
+Compare published statewide candidate totals and county totals where available
+against our accepted observations. Retain retrieval time, displayed update
+time, election, geography and publisher attribution. Flag discrepancies for
+review; do not average totals or add NYT numbers to county returns. If NYT
+temporarily supplies a missing county observation, label that substitution
+explicitly and reconcile it when the official channel returns.
+
+Keep NYT's estimated vote completion, race calls and any Needle forecast
+separate from reported candidate counts and our own remaining-vote model.
+Check the page's upstream data credits before counting NYT as an independent
+confirmation of an AP-backed local widget.
+
+**Access check, 2026-10-17:** the research browser could not inspect NYT results
+pages because of robots restrictions. November page availability, county
+coverage, upstream supplier, automated access and update cadence remain
+unverified. Provide a sourced manual observation lane until an automated
+adapter is tested. This adds NYT to the plan; no NYT collector is implemented.
+
 ## Directly observed embedded channels
 
 These URLs were extracted from the outlets' own pages and fetched directly.
