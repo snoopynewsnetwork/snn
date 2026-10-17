@@ -20,6 +20,10 @@ The [live polling strategy](live-polling-strategy.md) records proposed collectio
 intervals, vendor adapters, snapshot/replay storage, manual fallback, the
 coverage board, Cloudflare architecture, and a zero-vote Genesee 2026 feed probe.
 
+The [local news results survey](local-news-results.md) identifies regional
+newsroom scoreboards, directly observed embedded channels, shared AP feeds,
+test-mode pages, and priorities for checking November coverage.
+
 The top 15 counties account for **71.1603%** of 2024 Senate contest votes;
 23 counties reach **80.4162%**. At unchanged 2024 Senate major-party turnout
 weights, the Democrat can lose **0.175774 percentage points of two-party share**
