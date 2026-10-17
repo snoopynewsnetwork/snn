@@ -2,6 +2,43 @@
 
 [All 2026 Senate races](../README.md)
 
+## Election-night research
+
+Research snapshot: **2026-10-17**. The [repo-wide plan](../../../ELECTION_NIGHT_PLAN.md)
+defines the county break-even arithmetic, geographic live-result model, and
+calibration requirements. Four [Paseo assignments](research-dispatch.md) produced
+the supporting research below.
+
+| Question | Report | Data and assets |
+| --- | --- | --- |
+| Big turnout counties | [Turnout ranking](turnout.md) | [All 83 counties](data/county-turnout.csv), [inputs and rebuild script](data/turnout/) |
+| D/R counties and improvement needed | [Partisanship and targets](county-partisanship.md) | [Four historical county baselines](data/county-baselines.csv), [county target scenarios](data/baselines/county-target-scenarios.csv), [state checks](data/baselines/state-checks.csv) |
+| Official state/county publication channels | [Official results inventory](official-results.md) | [83 counties plus state and Detroit](data/official-results-sources.csv), [public JSON samples and checks](data/results-sources/) |
+| Precinct maps for high-volume counties | [Maps and geography notes](precinct-maps.md) | [Downloaded assets and provenance](maps/) |
+
+The top 15 counties account for **71.1603%** of 2024 Senate contest votes;
+23 counties reach **80.4162%**. At unchanged 2024 Senate major-party turnout
+weights, the Democrat can lose **0.175774 percentage points of two-party share**
+uniformly and still tie; a **+0.324226-point share gain** produces an illustrative
+**D+1 two-party margin**. These are alternative scenarios, not mandatory targets
+in each county or a calibrated 2026 forecast.
+
+The 2024 county baseline is an official-returns derivative reconciled to all
+candidate totals in the House Clerk's publication, not an independently
+downloaded state certificate for every county. County ballots-cast counts and
+the flagged 2020 reconciliation remain gaps. Most live feeds need further
+testing; the Genesee 2024 sample is a verified historical schema example.
+Research tables do not populate the manually maintained candidate/polling/news
+sections below or the app's live reporting log.
+
+The [map index](maps/index.html) provides 46 county/vintage previews and 46
+GeoJSONs. Source topology defects, a Genesee year-label anomaly, and unverified
+November 2026 approval are documented in the map report; no precinct-to-results
+crosswalk has been approved. Run `python3 senate/2026/michigan/data/validate_research.py`
+from the repository root to reconcile the research tables and retained asset
+checksums. See the [coordinator review](research-review.md) for validation and
+remaining implementation gates.
+
 ## Seat details
 
 | Field | Value |

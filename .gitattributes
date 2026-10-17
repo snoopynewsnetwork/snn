@@ -1,0 +1,13 @@
+# Retained public evidence is hashed byte for byte; preserve native line endings
+# and whitespace. Keep authored calculation scripts subject to normal checks.
+senate/2026/michigan/data/baselines/* -text -whitespace
+senate/2026/michigan/data/baselines/*.py text whitespace=blank-at-eol,blank-at-eof,space-before-tab
+senate/2026/michigan/data/turnout/* -text -whitespace
+senate/2026/michigan/data/turnout/*.py text whitespace=blank-at-eol,blank-at-eof,space-before-tab
+senate/2026/michigan/data/results-sources/* -text -whitespace
+senate/2026/michigan/data/results-sources/*.py text whitespace=blank-at-eol,blank-at-eof,space-before-tab
+senate/2026/michigan/maps/raw/** -text -whitespace
+
+# Generated CSVs use the CSV standard library's CRLF record separator.
+senate/2026/michigan/data/*.csv -text whitespace=cr-at-eol
+senate/2026/michigan/maps/manifest.csv -text whitespace=cr-at-eol

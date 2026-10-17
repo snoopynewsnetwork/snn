@@ -235,6 +235,21 @@ where relevant, rather than assuming all counties close simultaneously.
 
 ## Validation and delivery phases
 
+### Michigan research snapshot, 2026-10-17
+
+The [Michigan research index](senate/2026/michigan/README.md) links all four
+completed assignments and the [integration review](senate/2026/michigan/research-review.md).
+The 23-county priority set covers 80.4162% of 2024 Senate contest votes; map
+assets cover those counties in both selected vintages. County baselines and
+eight target scenarios reconcile. The 2024 Senate repeat-performance scenario
+already elects the Democrat; a uniform -0.175774 pp D-share shift ties it.
+Official live adapter testing, original county-export validation, outstanding
+vote estimates, precinct/board crosswalks, geometry review, and probability
+calibration remain implementation gates. Research collection is complete with
+those gaps documented; a live needle has not been implemented.
+
+### Implementation sequence
+
 1. **Research now:** collect the four Michigan reports, all-county baseline
    tables, official source inventory, and actual map assets. Review conflicts
    together, link everything from Michigan's README, and commit to main.
