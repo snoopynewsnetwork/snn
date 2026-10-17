@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f6f4ed" />
+    <meta
+      name="description"
+      content="Snoopy News Network's reporting desk for the 2026 U.S. Senate elections. Seat details, research sources, and dated reporting notes."
+    />
+    <title>Snoopy News Network · Senate 2026</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/style.css" />
+    <script type="module" src="/app.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="masthead">
+      <a class="brand" href="#" aria-label="Snoopy News Network home"
+        ><span class="brand-mark">SNN<span class="brand-dot">.</span></span
+        ><span>Snoopy News<br />Network</span></a
+      >
+      <div class="masthead-right">
+        <span class="edition">THE SENATE DESK / 2026</span
+        ><button id="editor-button" class="button quiet">Editor access</button>
+      </div>
+    </header>
+    <main id="main" tabindex="-1">
+      <div
+        id="status"
+        class="status"
+        role="status"
+        aria-live="polite"
+        hidden
+      ></div>
+      <section id="index-view">
+        <div class="hero">
+          <div>
+            <p class="eyebrow">ELECTION COVERAGE</p>
+            <h1>The 2026 Senate desk.</h1>
+            <p class="intro">
+              One place for the races, the sources, and the reporting.<br />Built
+              from the Snoopy News Network research files.
+            </p>
+          </div>
+          <div class="election-date">
+            <span>GENERAL ELECTION</span><strong>November 3</strong
+            ><span>2026</span>
+          </div>
+        </div>
+        <div class="summary" aria-label="Coverage summary">
+          <div>
+            <strong id="race-count">—</strong><span>races tracked</span>
+          </div>
+          <div>
+            <strong>33 + 2</strong><span>regular &amp; special elections</span>
+          </div>
+          <div>
+            <strong id="note-count">—</strong><span>reporting notes</span>
+          </div>
+          <div>
+            <strong>On the record</strong
+            ><span>dated notes, linked sources</span>
+          </div>
+        </div>
+        <div class="section-heading">
+          <h2>Race index</h2>
+          <span id="showing" class="muted" aria-live="polite"></span>
+        </div>
+        <div class="filters">
+          <label class="search-label"
+            ><span>Search races</span
+            ><input
+              id="search"
+              type="search"
+              placeholder="State, abbreviation, or seat holder…"
+              autocomplete="off" /></label
+          ><label
+            ><span>Seat holder’s party</span
+            ><select id="party">
+              <option value="">All parties</option>
+              <option>Democratic</option>
+              <option>Republican</option>
+            </select></label
+          ><label
+            ><span>Election type</span
+            ><select id="election">
+              <option value="">All elections</option>
+              <option>Regular</option>
+              <option>Special</option>
+            </select></label
+          >
+        </div>
+        <p class="coverage-note">
+          Seat details are the starting point. Campaign and ballot research is
+          pending. Current seat holders are not necessarily candidates.
+        </p>
+        <div class="table-wrap">
+          <table class="race-table">
+            <caption class="sr-only">
+              2026 U.S. Senate race index
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">State</th>
+                <th scope="col">Current seat holder</th>
+                <th scope="col">Election</th>
+                <th scope="col">Notes</th>
+                <th scope="col"><span class="sr-only">Open race</span></th>
+              </tr>
+            </thead>
+            <tbody id="races">
+              <tr>
+                <td colspan="5">Loading the race index…</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section id="race-view" hidden aria-label="Race details"></section>
+    </main>
+    <footer>
+      <span><strong>SNN.</strong> Follow the facts. Keep the sources.</span
+      ><a
+        href="https://github.com/snoopynewsnetwork/snn"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Project on GitHub ↗</a
+      >
+    </footer>
+    <dialog id="editor-dialog" aria-labelledby="editor-title">
+      <form id="editor-form">
+        <p class="eyebrow">NEWSROOM ACCESS</p>
+        <h2 id="editor-title">Open the editor desk</h2>
+        <p>
+          Enter the editor key to publish sourced reporting notes. Notes are
+          public once saved.
+        </p>
+        <label
+          >Editor key<input
+            id="editor-key"
+            type="password"
+            required
+            autocomplete="off"
+            minlength="32"
+        /></label>
+        <p id="editor-error" role="alert" class="error"></p>
+        <div class="form-actions">
+          <button type="button" id="cancel-editor" class="button quiet">
+            Cancel</button
+          ><button type="submit" class="button">Unlock editing</button>
+        </div>
+      </form>
+    </dialog>
+  </body>
+</html>

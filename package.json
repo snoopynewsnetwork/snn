@@ -1,0 +1,21 @@
+{
+  "name": "snoopy-news-network",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build-seed.mjs",
+    "dev": "npm run build && node scripts/cloudflare.mjs dev",
+    "check": "npm run build && tsc --noEmit && node --check public/app.js",
+    "deploy": "npm run check && node scripts/cloudflare.mjs deploy",
+    "cf": "node scripts/cloudflare.mjs",
+    "login": "node scripts/cloudflare.mjs login --browser=false --scopes account:read user:read workers_scripts:write workers_tail:read",
+    "test": "npm run build && node --test test/app.test.mjs",
+    "smoke": "node scripts/smoke.mjs"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "5.20261016.1",
+    "typescript": "7.0.2",
+    "wrangler": "4.151.1"
+  }
+}

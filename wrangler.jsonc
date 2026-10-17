@@ -1,0 +1,21 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "snoopy-news-network",
+  "account_id": "3a357a21f5adeca4d04f9465c90627b3",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-10-17",
+  "workers_dev": true,
+  "preview_urls": false,
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS",
+    "run_worker_first": true,
+  },
+  "durable_objects": {
+    "bindings": [{ "name": "NEWSROOM", "class_name": "Newsroom" }],
+  },
+  "exports": {
+    "Newsroom": { "type": "durable-object", "storage": "sqlite" },
+  },
+  "observability": { "enabled": true },
+}
