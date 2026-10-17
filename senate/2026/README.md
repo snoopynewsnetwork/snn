@@ -7,6 +7,10 @@
 Class III elections (Florida and Ohio) for the remainder of terms ending
 January 3, 2029. Scope and seat-holder information checked **2026-10-17**.
 
+## Assessments
+
+- [Democratic win likelihood, 2026-10-17](democratic-win-likelihood-2026-10-17.md): a sourced snapshot ranking the races using polling, CPVI, and forecaster assessments.
+
 ## Race index
 
 | State | Code | Election | Seat class |
