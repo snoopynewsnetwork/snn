@@ -16,6 +16,10 @@ the supporting research below.
 | Official state/county publication channels | [Official results inventory](official-results.md) | [83 counties plus state and Detroit](data/official-results-sources.csv), [public JSON samples and checks](data/results-sources/) |
 | Precinct maps for high-volume counties | [Maps and geography notes](precinct-maps.md) | [Downloaded assets and provenance](maps/) |
 
+The [live polling strategy](live-polling-strategy.md) records proposed collection
+intervals, vendor adapters, snapshot/replay storage, manual fallback, the
+coverage board, Cloudflare architecture, and a zero-vote Genesee 2026 feed probe.
+
 The top 15 counties account for **71.1603%** of 2024 Senate contest votes;
 23 counties reach **80.4162%**. At unchanged 2024 Senate major-party turnout
 weights, the Democrat can lose **0.175774 percentage points of two-party share**

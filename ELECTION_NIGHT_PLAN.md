@@ -250,6 +250,11 @@ those gaps documented; a live needle has not been implemented.
 
 ### Implementation sequence
 
+The [Michigan live polling strategy](senate/2026/michigan/live-polling-strategy.md)
+specifies starting collection intervals, vendor adapters, versioned snapshots,
+manual fallback, source health, and the first collector/replay milestone. It
+also records a 2026-10-17 zero-vote probe of Genesee's actual November 2026 feed.
+
 1. **Research now:** collect the four Michigan reports, all-county baseline
    tables, official source inventory, and actual map assets. Review conflicts
    together, link everything from Michigan's README, and commit to main.
