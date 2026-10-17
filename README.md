@@ -95,6 +95,7 @@ notes as separate workflows until a synchronization workflow is added.
 ## Coverage
 
 - [2026 U.S. Senate races](senate/2026/README.md): one directory per race, covering all 35 seats on the November 3 ballot.
+- [Election-night likelihood plan](ELECTION_NIGHT_PLAN.md): county break-even targets, official result ingestion, geographic modeling, and validation; Michigan is the first research pilot.
 
 ## Updating a race
 
