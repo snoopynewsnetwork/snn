@@ -23,10 +23,11 @@ must be handled explicitly. Current rules require official verification.
 
 ## Coordinator
 
-Launch pending. The initiating agent will record the actual Paseo ID here and
-in the queue. The coordinator will record each state's actual worker IDs in
-its `research-dispatch.md` and in the queue, and published commit IDs as state
-packages finish.
+Paseo batch coordinator **`d0fc3534-1613-4883-b48b-21a233fcfd9e`** launched with
+finish notifications enabled. It is assigned the entire 34-state queue,
+including question-agent dispatch, review, incremental commits and pushes.
+It will record each state's actual worker IDs in its `research-dispatch.md` and
+in the queue, and published commit IDs as packages finish.
 
 ## Progress
 
