@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "requested_date": "2026-10-17",
-  "updated_at_utc": "2026-10-18T15:39:08.399061+00:00",
+  "updated_at_utc": "2026-10-18T16:11:12.263021+00:00",
   "scope": "35 states in the repository 2026 U.S. Senate race index",
   "coordinator_agent_id": "d0fc3534-1613-4883-b48b-21a233fcfd9e",
   "workspace_id": "wks_b290f45007010740",
@@ -561,7 +561,7 @@
         },
         "partisanship": {
           "agent_id": "78f9c3c0-062f-41f7-87c0-f0a6443f8877",
-          "status": "complete-reviewing-final-assets",
+          "status": "complete-reviewed",
           "launched_at_utc": "2026-10-18T15:00:51.012027+00:00"
         },
         "official_results": {
@@ -577,20 +577,22 @@
       },
       "validation": {
         "status": "pass",
-        "scope": "County/native dispatch acceptance and final turnout review complete; baseline target review and second-wave research in progress.",
+        "scope": "County/native historical priority plus complete first-wave target/asset review passed; second-wave source/maps research pending.",
         "county_review": "kansas/data/coordinator-county-reconciliation.json",
         "native_review": "kansas/data/coordinator-native-contract-checks.json",
-        "coverage": "105counties/420independent2024candidatecounty cells/23stateprimarycontrols/22031nativeidentities/121053originalcandidate-totalcells/96footerpositions; unavailablecounts/residuals retained."
+        "coverage": "105counties/420independent2024candidatecounty cells/23stateprimarycontrols/22031nativeidentities/121053originalcandidate-totalcells/96footerpositions; unavailablecounts/residuals retained.",
+        "target_review": "kansas/data/coordinator-target-review.json"
       },
       "gaps": [
         "2022turnout workbook has source-inconsistent county ballot controls; not clean scenario weights.",
         "2024workbook and certification release ballots/registration differ by source vintage.",
         "Suppressed/blank detail values and positive residuals remain unallocated.",
-        "Current mail grace injunction conflicts with statutory calendar; primary orders/later docket to verify.",
+        "Last recovered signedorders preserve mail grace; complete subsequent docket access remains limited despite official Nov24merits setting.",
+        "County report vintages differ in Riley/Franklin/Butler; signedRileyabstract supports canonicalstatevector, residuals notallocated.",
         "No approved current geography/live feed/cadence/exactremaining or calibratedforecast."
       ],
       "published_commits": [],
-      "coordinator_preparation": "Both first-wave actual finishes received; all105/exact23/22031 accepted. Final targets under coordinator review. Official-results and maps are the only active research workers. Source recovered signed July16 injunction/Oct2 stay-denial and official Nov24 merits docket; later complete docket access remains limited. Turnout cosmetic diff-marker repair leaves source/native contract unchanged; all37 checks and70asset hashes pass.",
+      "coordinator_preparation": "First-wave review PASS:105counties/exact23/22031native/22state/2310county/44062native targets/15livecases,37turnoutchecks+70hashes,57baselinehashes. Source/maps active only. Signedcourtorders plus officialNov24meritsdocket recovered; complete laterdocket access gap explicit. Sherman local7pmMountain exception retained; no single statewide UTCclose. Sourceworker repaired Riley393named-vote summary discrepancy with actualsigned countyabstract corroboratingacceptedSOSvector; coordinatorvisualreview retained. Secondpair ongoing.",
       "priority_geography": {
         "basis": "2024president four reported named tickets; statewide unreported write-in/under/over categories unavailable, not zero",
         "count": 23,
@@ -620,7 +622,7 @@
       "validation": null,
       "gaps": [],
       "published_commits": [],
-      "coordinator_preparation": "52retainedresponses. Official newerapp/scripts/literalroute chain recovers4historicalall159county candidate/method breakdowns and117election roster; namedfour2024=5250047 matchesHouseClerk. SeparatequalifiedWI858 web-parser observation/original403/countygap retained; noacceptedpriority. ArchiveZIPs403. No actual agents launched."
+      "coordinator_preparation": "53retainedresponses. Official app/scripts/literalroute chain recovers4historicalall159county candidate/method breakdowns and117electionroster;namedfour5250047 matchesHouseClerk. SeparatequalifiedWI858web-observation/original403 and conditionalbounds keep exactfullcandidategeo unresolved;noacceptedpriority. Noagentslaunched."
     },
     {
       "state": "New Hampshire",
@@ -634,7 +636,7 @@
       "validation": null,
       "gaps": [],
       "published_commits": [],
-      "coordinator_preparation": "21 retained responses plus WMUR actual local widget (8 September primary items;2 Senate displayed sums exact;318/318 flags), Conway/Monadnock/blockedSeacoast routes. Town/ward/volunteer distinctions remain explicit. Preparation only; no question agents or accepted priority."
+      "coordinator_preparation": "40retainedresponses. ActualarchivedSOS2024BIFF320native rows/all7Clerkcontrols exact;actualNARA2page4slatecontrols withamended/dateprintdefect retained. Four2022BIFFvintages320nativeeach+finalPDF10countycontrols exact;candidateheader reversal andearliervintageconflicts retained. Actual2020SenatePDFstatecontrols exact. News/WMUR historicalwidget retained; noagents/acceptedpriority/currentcrosswalk."
     },
     {
       "state": "Minnesota",
@@ -648,7 +650,7 @@
       "validation": null,
       "gaps": [],
       "published_commits": [],
-      "coordinator_preparation": "15 captures plus tested MPR primary AP route; news/strategy drafts prepared; HTTP200 bot challenge, August config and November gaps retained. Stack remains queued."
+      "coordinator_preparation": "30retainedresponses;actualSOS2024/22/20XLSX+2020canvassPDF recovered. Preflightall87/4103native2024&22/4110native2020;2024Senate3189323/provisional24priority notaccepted. Source2024methodwarningsClearwaterSwiftWinona/2020duplicateTABMODEL retained. Botchallenge200s distinguished. Noagentsyet."
     },
     {
       "state": "South Carolina",
@@ -662,7 +664,7 @@
       "validation": null,
       "gaps": [],
       "published_commits": [],
-      "coordinator_preparation": "Dated newsroom captures and local-news/strategy drafts prepared; historical/test/primary configurations and November gaps explicit. Four-question stack remains queued."
+      "coordinator_preparation": "71retainednews/appcaptures plus17historicalAPIresponses/immutablequerybodies;actualofficiallinked historicalDB route/query/IDs recovered. Fourall46combined/method hierarchies/516586positions;combinedrollups exact;2020methodgaps26precinctcontexts/51rollupcells andpseudoballot differences retained. ActualsignedNARA7slates2548140 corroborateDB; actualClerkpage64omitsTerry5352 (sixsum2542788), visuallychecked/originalspinned. Provisional17county2024priority notaccepted;noactualworkersyet."
     },
     {
       "state": "Florida",
@@ -1034,13 +1036,13 @@
   "batch_status": "running",
   "coordinator_preparation_audit": {
     "status": "pass",
-    "checked_at_utc": "2026-10-18T15:07:33.999219+00:00",
+    "checked_at_utc": "2026-10-18T16:10:30.079890+00:00",
     "scope": "Still-queued states only; retained public news/preflight responses, not completed question packages or accepted feeds",
     "states": 27,
-    "response_captures": 354,
+    "response_captures": 442,
     "http_status_counts": {
-      "200": 259,
-      "403": 90,
+      "200": 342,
+      "403": 95,
       "429": 1,
       "402": 1,
       "503": 1,
