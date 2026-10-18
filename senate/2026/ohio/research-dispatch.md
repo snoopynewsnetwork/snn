@@ -6,8 +6,8 @@ Coordinator: `d0fc3534-1613-4883-b48b-21a233fcfd9e`. Shared main checkout; coord
 | --- | --- | --- | --- |
 | Turnout | `a1ac032c-caf9-4c81-bdd2-18ed4e83a720` | `turnout.md`, `data/county-turnout.csv`, `data/turnout/` | Complete; integration pending |
 | Partisanship/targets | `c6985d52-505a-4f74-ba3c-c6ee389f24cd` | `county-partisanship.md`, `data/county-baselines.csv`, `data/baselines/` | Complete; integration pending |
-| Official results | `557ad6d5-5ec1-400c-9659-6dd81a437522` | `official-results.md`, `data/official-results-sources.csv`, `data/results-sources/` | Running after exact priority reconciliation |
-| Precinct maps | `993b040f-7ca6-4604-8c35-8e0b4aaf5780` | `precinct-maps.md`, `maps/` | Running after exact priority reconciliation |
+| Official results | `557ad6d5-5ec1-400c-9659-6dd81a437522` | `official-results.md`, `data/official-results-sources.csv`, `data/results-sources/` | Complete; coordinator review active |
+| Precinct maps | `993b040f-7ca6-4604-8c35-8e0b4aaf5780` | `precinct-maps.md`, `maps/` | Complete; coordinator review active |
 
 Profiles were checked: none configured. The previously discovered `codex/gpt-6.1-sol`, `full-access`, `xhigh` configuration is used. These two assignments began after both remaining Alaska workers finished; Alaska is in coordinator integration review, preserving queue launch order and the two-worker cap.
 
@@ -16,3 +16,7 @@ Ohio has a 2026 Senate special election. Certified 2024 Senate all-candidate vot
 The completed partisanship question passed 60,881 worker checks. Official results launched in its freed slot after accepted reconciliation, while turnout completes final report/provenance QA. Maps will launch only when a research slot is free. Profiles were checked again (none); compact provider discovery verified the same Codex model/full-access configuration.
 
 Turnout then finished deterministic reconstruction, statewide/county/native-unit checks and provenance. Maps launched in its freed slot. Official results and maps are the only two active research workers. All four question-agent IDs above are actual Paseo children; no grandchildren.
+
+Official results finished its 89-authority inventory, current-rule/source inspection and historical checks. Its freed research slot launched Maine turnout. Ohio maps and Maine turnout are now the two active question workers.
+
+Maps completed all 88 inventories, 32 priority sections and retained downloads with explicit Richland/Tuscarawas/Geauga gaps. Maine partisanship launched in its freed slot; both active research workers are now Maine first-wave questions. All four Ohio assignments are in coordinator integration review.

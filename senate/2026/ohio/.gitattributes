@@ -1,0 +1,15 @@
+# Preserve exact primary captures and literal source text.
+data/turnout/raw/** -text -whitespace
+data/baselines/raw/** -text -whitespace
+data/baselines/house-*.txt -text -whitespace
+# CSVs retain standard record separators.
+data/**/*.csv -text whitespace=cr-at-eol
+data/*.csv -text whitespace=cr-at-eol
+maps/*.csv -text whitespace=cr-at-eol
+# Immutable HTTP headers, downloaded text and research-browser captures.
+data/results-sources/*.headers -text -whitespace
+data/results-sources/delaware-2024-key.txt -text -whitespace
+data/results-sources/live-ballots-csv.txt -text -whitespace
+maps/evidence/sos-directory-browser.txt -text -whitespace
+# Exact HTTP response bodies can be HTML, XML, images or ZIPs.
+maps/evidence/**/*.bin -text -diff -whitespace
