@@ -4,9 +4,9 @@ Coordinator: `d0fc3534-1613-4883-b48b-21a233fcfd9e`. Shared main checkout, works
 
 | Question | Actual Paseo agent ID | Owned paths | Status |
 | --- | --- | --- | --- |
-| Turnout | `9b1a22e8-9948-43b6-933d-bd9e99a27695` | `turnout.md`, `data/county-turnout.csv`, `data/turnout/` | Active |
+| Turnout | `9b1a22e8-9948-43b6-933d-bd9e99a27695` | `turnout.md`, `data/county-turnout.csv`, `data/turnout/` | Complete; coordinator integration |
 | Partisanship/targets | `2846254a-c87f-449c-ba54-5f6873adaebd` | `county-partisanship.md`, `data/county-baselines.csv`, `data/baselines/` | Active |
-| Official results | Not launched | `official-results.md`, `data/official-results-sources.csv`, `data/results-sources/` | Awaiting reconciled exact priority geography |
+| Official results | `28bf26bf-fbc1-4f13-8319-fddb49eafac0` | `official-results.md`, `data/official-results-sources.csv`, `data/results-sources/` | Active after final county recheck |
 | Precinct maps | Not launched | `precinct-maps.md`, `maps/` | Awaiting reconciled exact priority geography |
 
 Profiles were checked: none configured. Compact provider discovery reconfirmed `codex/gpt-6.1-sol`, `full-access`, `xhigh`. Turnout launched after Maine maps completed; Maine official results remains active, preserving the two-worker cap.
@@ -25,3 +25,12 @@ Finer source-native inventories/file conflicts remain qualified and unapproved
 as geography. Both first-wave workers continue final report/QA; second wave
 awaits a freed worker slot. Actual original county/state footer formats were
 visually checked and are preserved separately without chronology inference.
+
+Turnout completed and its asynchronous finish notification arrived. Profiles
+(none) and compact provider configuration were rechecked; actual official-results
+worker `28bf26bf-fbc1-4f13-8319-fddb49eafac0` launched in the freed slot with
+finish notification enabled. Final county CSV/primary controls and accepted34
+keys were independently rechecked first. Partisanship and official results are
+the only active research workers. Maps awaits the next slot. Harris's oversized
+gzip is retained in exact ordered byte parts, each below the cap; derivative
+source-unit agreement does not establish geographic or 2026 approval.

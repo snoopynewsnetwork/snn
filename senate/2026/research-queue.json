@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "requested_date": "2026-10-17",
-  "updated_at_utc": "2026-10-18T03:17:19.634011+00:00",
+  "updated_at_utc": "2026-10-18T03:25:05.723911+00:00",
   "scope": "35 states in the repository 2026 U.S. Senate race index",
   "coordinator_agent_id": "d0fc3534-1613-4883-b48b-21a233fcfd9e",
   "workspace_id": "wks_b290f45007010740",
@@ -412,21 +412,28 @@
       "election": "Regular",
       "seat_class": "II",
       "priority": 5,
-      "status": "turnout-and-partisanship-active",
+      "status": "partisanship-and-official-results-active",
       "workers": {
         "turnout": {
           "agent_id": "9b1a22e8-9948-43b6-933d-bd9e99a27695",
-          "status": "running"
+          "status": "complete-awaiting-integration"
         },
         "partisanship": {
           "agent_id": "2846254a-c87f-449c-ba54-5f6873adaebd",
+          "status": "running"
+        },
+        "official_results": {
+          "agent_id": "28bf26bf-fbc1-4f13-8319-fddb49eafac0",
           "status": "running"
         }
       },
       "validation": {
         "status": "pass",
         "scope": "county baseline/priority only; first-wave report/finer-layer/target completion continues",
-        "checks": "texas/data/coordinator-baseline-reconciliation.json"
+        "checks": "texas/data/coordinator-baseline-reconciliation.json",
+        "coordinator_targets": "Independent source-based recomputation passed 21 state scenarios, 5,334 county rows and 5,334 selected-county requirements across seven preference/volume mixes; all-candidate vs pair cushions distinct; no forecast inferred.",
+        "target_checks": "texas/data/coordinator-target-checks.json",
+        "turnout": "Complete: all254 counties, 6,604 primary cells/26 controls, 57,404 peer fields, 302,233 source-native derivative rows, 31,702 derivative identities, 4,276 original identities, 5,493 vendor rows, Harris1,584 candidate/ballot/method controls; 486 owned assets under strict cap with exact ordered Harris gzip parts. Final county coordinator reconciliation reran/pass."
       },
       "gaps": [
         "Finer OE files have explicit native-county/filename conflicts, duplicate candidate keys, method nonadditivity and partial coverage; originals/source rows preserved without reassignment/deduplication.",
@@ -435,7 +442,7 @@
         "No approved November reporting-unit crosswalk, production feed/cadence or calibrated forecast claimed."
       ],
       "published_commits": [],
-      "coordinator_preparation": "Archived original SOS county evidence replaces derivative-only allocation for all four baseline contests; exact34 county priority accepted by coordinator. Both actual first-wave workers continue final research/QA; no second-wave slot yet. Finer unit inventories retain raw identities/conflicts and are not a 2026 approved crosswalk. Primary finer Harris controls now cover all 1,584 Senate units/candidate and ballot/method balances; oversized gzip is retained in ordered lossless byte parts under the cap. This does not approve geography.",
+      "coordinator_preparation": "Turnout complete; actual official-results agent launched on independently rechecked county34 contract. Partisanship and official results are the two active workers; maps awaits partisanship completion. Full-state source-native/finer gaps preserved.",
       "priority_geography": {
         "basis": "2024 Senate all five valid reported candidates; archived original SOS county canvass reconciled to original statewide controls",
         "count": 34,
