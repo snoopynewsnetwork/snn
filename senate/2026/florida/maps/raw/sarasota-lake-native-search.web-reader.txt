@@ -1,0 +1,195 @@
+API & MCP — turnout.app (https://www.turnout.app/api-mcp)
+citeturn21search0 [wordlim: 200] Crawled: 6 days ago; The public MCP server returns a client-side resolution instruction; canvass clients run the model on-device. ... `targetLanguage``en|es|zh|ht|vi|ar|tl` ... DAD = Miami-Dade, BRO = Broward, ORA = Orange, DUV = Duval) and a known election ID.Returns contest-level summary with candidate vote totals, party labels, and precincts-reporting progress. ... Generic GIS adapter — fetches county-published ArcGIS FeatureServer layers for drop-boxes, polling places, or sample-ballot zones.
+
+For developers & AI assistants
+
+# A public MCP server,
+so AI can answer civic questions correctly.
+
+Connect Claude Desktop, ChatGPT, Cursor, or any other Model Context Protocol client to `mcp.turnout.app` and ask questions like “What’s on the ballot for 11211?” The model gets real, citation-bearing answers from US Census TIGER/Line, FEC, FVAP, Google Civic, Clarity Elections, and NCSL — 29 tools, no auth, no API key.
+
+Connect Claude Desktop in 30 seconds
+
+## Drop this into your config file.
+
+Edit `~/Library/Application Support/Claude/claude_desktop_config.json` (macOS) or `%APPDATA%\Claude\claude_desktop_config.json` (Windows). Restart Claude Desktop. Look for the “Search and tools” icon — turnout will appear with all 29 tools listed.
+
+[Button: Copy]
+    
+    {
+      "mcpServers": {
+        "turnout": {
+          "url": "https://mcp.turnout.app/mcp"
+        }
+      }
+    }
+
+Live tool surface · 29 tools
+
+## What the AI can call.
+
+Server-rendered from a build-time `tools/list` POST to `https://mcp.turnout.app/mcp`. Argument shapes are mirrored from the zod input schemas in `mcp-public/src/tools.ts`. Refreshed every 10 minutes — new tools appear without a redeploy.
+
+`elections.list_upcoming`1 T1 · official source of record
+
+List upcoming US elections. Optionally filter by state (two-letter code) or OCD-ID, and a date floor.
+
+Input
+
+`state?``string(2)`two-letter code
+
+`ocdId?``string`
+
+`afterDate?``ISO date`
+
+`limit?``int 1-100`default 20
+
+TRY IT WITH CURL
+    
+    curl -sS https://mcp.turnout.app/mcp \
+      -H "Content-Type: application/json" \
+      -d '{"jsonrpc":"2.0","id":1,"method":"tools/call","params":{"name":"elections.list_upcoming","arguments":{"state":"GA"}}}' \
+      | jq .result.structuredContent
+
+`geo.lookup_divisions`1 T1 · official source of record
+
+Given a longitude and latitude, return all political divisions (OCD-IDs) the point falls within: state, congressional district, state senate, state house, county, city, school district.
+
+`civic.live_results`2 T2 · official-republished
+
+Live election returns from Clarity Elections (Civix), the vendor that powers GA, CO, PA, AZ, OH, MO, MN, NV, IN, WV and ~25 other states' results portals. Pass state (and optional county) to get the most recent election's contest-level summary with reporting progress and candidate vote totals. Pass electionId to query a specific past election. The data is republished from the state / county SOS — always cite back to that authority of record for certified results.
+
+Input
+
+`state``string(2)`
+
+`county?``string`
+
+`electionId?``string`
+
+Clarity / Civix vendor — covers ~30 states.
+
+`civic.fl_results`2 T2 · official-republished
+
+Live Florida county election results from the Florida ENR (voterfocus) network. Pass a 3-letter FL county code (e.g. DAD = Miami-Dade, BRO = Broward, ORA = Orange, DUV = Duval) and a known election ID. Returns contest-level summary with candidate vote totals, party labels, and precincts-reporting progress. Includes a cite-able 'data as of' Unix timestamp. NOTE: voterfocus removed automatic election-ID discovery in 2026 — callers must know the EID, typically from the county Supervisor of Elections site.
+
+Input
+
+`county``string(2-8)`FL 3-letter code
+
+`electionId``string`
+
+Florida voterfocus dropped auto-discovery in 2026 — caller must know the EID.
+
+`civic.gis_layer`1 T1 · official source of record
+
+Generic GIS adapter — fetches county-published ArcGIS FeatureServer layers for drop-boxes, polling places, or sample-ballot zones. Pass a 5-digit county FIPS (e.g. 53033 = King County, WA; 42101 = Philadelphia, PA) and a task ('drop-box' default, 'polling-place', 'sample-ballot'). Returns GeoJSON-style features with point/polygon geometry + free-form attributes (name, address, hours, accessibility, ward/division). Wired for King County drop-boxes (84 features) and Philadelphia polling places (1,703 features). Fulton 13121 + Maricopa 04013 endpoints are TODO.
+
+Input
+
+`countyFips``string(2-8)`
+
+`task?``drop-box | polling-place | sample-ballot`default drop-box
+
+Try these in Claude
+
+--------------------------------------------------------------------------------
+Terry A. Slocum, Robert B. McMaster, Fritz C. Kessler, Hugh H. Howard - Thematic Cartography and Geovisualization - Pearson New International Edition-Pearson Education Limited (2013) | PDF | Cartography | Geographic Information System (https://www.scribd.com/document/729244357/Terry-a-Slocum-Robert-B-McMaster-Fritz-C-Kessler-Hugh-H-Howard-Thematic-Cartography-and-Geovisualization-Pearson-New-International-Edition-P)
+citeturn21search1 [wordlim: 200] Published: 13.8 years ago; Crawled: 2.5 years ago; One term that has MapViewer). ... and McCullagh 1978, 69–70), which is defined as the which involves the combination of voting precincts to ... 15 Hamilton 1.6 49 Sarasota 6.0
+center of gravity). It should be recognized, however, that
+the centroid derived by the preceding formula might not
+necessarily fall within a region if that region is highly con-
+voluted, such as Florida. As a result, it might be more
+appropriate to consider other measures for computing the
+center of region, such as the center of a rectangle sur-
+rounding a region—the so-called bounding rectangle
+(Carstensen 1987).
+FIGURE 17 Two regions having different shapes but similar CI
+Indexes for Measuring Shape values.
+Geographers have developed a wide variety of indexes
+for measuring the shape of geographic regions. One of
+the simplest is the compaction index (CI) (Hammond One application of shape indices is redistricting,
+and McCullagh 1978, 69–70), which is defined as the which involves the combination of voting precincts to
+ratio of the area of a shape to the area of a circum- form legislative or congressional districts. This process
+scribing circle (a circle that just touches the bounds must be done at each decennial census to account for
+## McMaster, Robert B., et al. Thematic Cartography and Geovisualization:
+
+16:02:07.
+Statistical and Graphical Foundation
+
+map complexity: a term used to indicate whether the set of range: the maximum minus the minimum of the data.
+elements composing a map pattern appears simple or intri- raw table: a form of tabular display in which the actual data
+cate (i.e., complex); for example, does the pattern of gray are listed from lowest to highest value.
+tones on a choropleth map appear simple or intricate?
+redistricting: the process of assigning voting precincts to leg-
+mean: the average of a data set; computed by adding all islative or congressional districts to equalize voter representa-
+values and dividing by the number of values. tion.
+mean center: a measure of central tendency for point data; reduced major-axis approach: the process of fitting a line to
+computed by independently averaging the x and y coordinate two attributes when we do not wish to specify a dependent
+values of all points. attribute.
+measures of central tendency: used to specify a value around sample: the portion of the population that is actually exam-
+## TABLE 1 Percentage of foreign-born population in Florida counties in 1990
+
+Observation County % Foreign-Born Observation County % Foreign-Born
+1 Madison 0.6 35 Leon 3.7
+2 Calhoun 0.8 36 Lafayette 4.1
+3 Dixie 0.8 37 Okaloosa 4.3
+4 Baker 0.8 38 Glades 4.5
+5 Taylor 0.9 39 Highlands 4.6
+6 Jefferson 1.0 40 Citrus 4.9
+7 Liberty 1.0 41 Lee 5.2
+8 Bradford 1.0 42 Brevard 5.3
+9 Wakulla 1.2 43 Manatee 5.4
+10 Gadsden 1.2 44 DeSoto 5.5
+11 Gilchrist 1.3 45 Hernando 5.5
+12 Gulf 1.3 46 Volusia 5.8
+13 Holmes 1.4 47 Pasco 5.9
+14 Suwannee 1.5 48 Alachua 5.9
+15 Hamilton 1.6 49 Sarasota 6.0
+16 Walton 1.6 50 Indian River 6.1
+17 Nassau 1.6 51 Okeechobee 6.3
+18 Columbia 1.7 52 Seminole 6.3
+19 Franklin 1.8 53 St. Lucie 6.3
+20 Sumter 1.9 54 Charlotte 6.3
+21 Jackson 2.2 55 Hardee 6.3
+22 Putnam 2.2 56 Martin 6.8
+23 Sana Rosa 2.2 57 Osceola 7.1
+24 Levy 2.3 58 Pinellas 7.1
+25 Union 2.4 59 Orange 7.5
+26 Washington 2.4 60 Hillsborough 7.6
+27 Escambia 2.7 61 Flagler 8.3
+28 Clay 3.1 62 Monroe 10.1
+29 Bay 3.4 63 Collier 10.5
+30 Duval 3.5 64 Palm Beach 12.2
+15 66.8288 58.0726 107,550.49 48 46.3700 40.2945 74,625.35
+16 66.5081 57.7939 107,034.39 49 45.4668 39.5096 73,171.79
+17 66.1672 57.4977 106,485.83 50 44.5497 38.7126 71,695.75
+18 65.8063 57.1841 105,904.98 51 43.6188 37.9037 70,197.68
+19 65.4254 56.8531 105,292.01 52 42.6745 37.0832 68,678.02
+20 65.0247 56.5049 104,647.09 53 41.7171 36.2512 67,137.23
+21 64.6042 56.1395 103,970.40 54 40.7469 35.4081 65,575.77
+22 64.1641 55.7571 103,262.15 55 39.7641 34.5541 63,994.13
+23 63.7046 55.3577 102,522.54 56 38.7691 33.6894 62,392.77
+24 63.2256 54.9416 101,751.77 57 37.7621 32.8144 60,772.19
+25 62.7275 54.5087 100,950.09 58 36.7435 31.9292 59,132.86
+26 62.2103 54.0592 100,117.71 59 35.7135 31.0342 57,475.30
+27 61.6741 53.5934 99,254.89 60 34.6725 30.1296 55,800.00
+28 61.1192 53.1112 98,361.87 61 33.6208 29.2157 54,107.48
+29 60.5457 52.6128 97,438.91 62 32.5588 28.2928 52,398.25
+30 59.9538 52.0984 96,486.28 63 31.4866 27.3611 50,672.82
+31 59.3436 51.5682 95,504.26 64 30.4048 26.4210 48,931.74
+32 58.7153 51.0222 94,493.14 65 29.3135 25.4727 47,175.53
+
+Continued
+
+--------------------------------------------------------------------------------
+API & MCP — turnout.app (https://turnout.app/api-mcp)
+citeturn21search2 [wordlim: 200] Crawled: last month; Server-side cached up to 24h. ... Sourced from FVAP eVAG XML feeds; federal authority tier; cached server-side via the fvap_* tables. ... Returns each measure's official ballot designation, official title (verbatim where the SOS has published it), turnout.app plain-language paraphrase clearly labeled as interpretation, measure type, source URL on the state SOS site, and verifiedAt date.
+Try these in Claude
+
+--------------------------------------------------------------------------------
+Thematic Cartography and Geovisualization: Pearson New International Edition [3 ed] 129204067X, 9781292040677 - DOKUMEN.PUB (https://dokumen.pub/thematic-cartography-and-geovisualization-pearson-new-international-edition-3-ed-129204067x-9781292040677.html)
+citeturn21search3 [wordlim: 200] Crawled: 3 months ago; In map B, the reverse is true: Determining class membership is more difficult because the classes are all blue shades, but the spatial pattern of voting is readily apparent because there is a logical progression of legend colors. ... redistricting: the process of assigning voting precincts to legislative or congressional districts to equalize voter representation. ... County Leon Lafayette Okaloosa Glades Highlands Citrus Lee Brevard Manatee DeSoto Hernando Volusia Pasco Alachua Sarasota Indian River Okeechobee Seminole St.
+FIGURE 17 Two regions having different shapes but similar CI values.
+One application of shape indices is redistricting, which involves the combination of voting precincts to form legislative or congressional districts. This process must be done at each decennial census to account for migration and natural increases and decreases in population. You might be familiar with the related term gerrymandering, in which districts are purposely structured for partisan benefit. Shape indexes can be used as objective measures of the degree of gerrymandering (Morrill 1981; Monmonier 2001). 4.2 Analyzing an Attribute in Association with Spatial Location This section considers various methods for analyzing spatial data in which an attribute is linked with its spatial location. Topics covered include (1) weighting attribute data to account for sizes of enumeration units, (2) central tendency and dispersion for point data, and (3) spatial autocorrelation and map complexity measures. Weighting Attribute Data to Account for Sizes of Enumeration Units Arthur Robinson and his colleagues (1995) argued that when data are associated with enumeration units, basic summary measures such as the mean and standard deviation should be weighted to account for the differing sizes of enumeration units. The formulas for a population are as follows: n
+

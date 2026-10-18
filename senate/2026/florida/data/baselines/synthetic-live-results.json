@@ -1,0 +1,603 @@
+[
+  {
+    "id": "unknown_pool",
+    "A": "Synthetic A",
+    "B": "Synthetic B",
+    "counted_fixed": {
+      "Synthetic A": 400,
+      "Synthetic B": 500,
+      "Named independent": 100
+    },
+    "arithmetic_only": true,
+    "status": "unknown_remaining_pool",
+    "final_denominator": null,
+    "required_A_pair_share": null
+  },
+  {
+    "id": "negative_pool",
+    "A": "Synthetic A",
+    "B": "Synthetic B",
+    "counted_fixed": {
+      "Synthetic A": 400,
+      "Synthetic B": 500,
+      "Named independent": 100
+    },
+    "arithmetic_only": true,
+    "status": "invalid_remaining_pool",
+    "final_denominator": null
+  },
+  {
+    "id": "no_pool_lost",
+    "A": "Synthetic A",
+    "B": "Synthetic B",
+    "counted_fixed": {
+      "Synthetic A": 400,
+      "Synthetic B": 500,
+      "Named independent": 100
+    },
+    "arithmetic_only": true,
+    "remaining_pools": [],
+    "remaining_contest_votes": 0.0,
+    "remaining_pair_votes": 0.0,
+    "final_denominator": 1000.0,
+    "final_pair_denominator": 900.0,
+    "target_denominator": "pair",
+    "target_margin_pp": 0.0,
+    "target_net_votes": 0.0,
+    "counted_A_minus_B": -100,
+    "required_A_pair_share": null,
+    "required_A_pair_share_clipped": null,
+    "threshold_status": "no_positive_pool",
+    "strict_pair_win_requires": "greater than tie threshold; target cushion meets specified net margin, not statutory threshold",
+    "status": "no_pool",
+    "projected_candidates": {
+      "Synthetic A": 400,
+      "Synthetic B": 500,
+      "Named independent": 100
+    },
+    "projected_A_minus_B": -100,
+    "projected_pair_margin_pp": -11.11111111111111,
+    "projected_all_candidate_margin_pp": -10.0,
+    "projected_A_all_candidate_share": 0.4,
+    "legal_plurality_outcome": "Synthetic B",
+    "target_met": false,
+    "final_candidate_sum_residual": 0.0
+  },
+  {
+    "id": "unknown_preference",
+    "A": "Synthetic A",
+    "B": "Synthetic B",
+    "counted_fixed": {
+      "Synthetic A": 400,
+      "Synthetic B": 500,
+      "Named independent": 100
+    },
+    "arithmetic_only": true,
+    "remaining_pools": [
+      {
+        "pool_id": "x",
+        "remaining_contest_votes": 200,
+        "pair_fraction": 1,
+        "pair_votes": 200,
+        "A_pair_share_input": null,
+        "A_pair_share_used": null,
+        "share_was_clipped": false,
+        "other_allocation": {}
+      }
+    ],
+    "remaining_contest_votes": 200.0,
+    "remaining_pair_votes": 200.0,
+    "final_denominator": 1200.0,
+    "final_pair_denominator": 1100.0,
+    "target_denominator": "pair",
+    "target_margin_pp": 0.0,
+    "target_net_votes": 0.0,
+    "counted_A_minus_B": -100,
+    "required_A_pair_share": 0.75,
+    "required_A_pair_share_clipped": 0.75,
+    "threshold_status": "feasible",
+    "strict_pair_win_requires": "greater than tie threshold; target cushion meets specified net margin, not statutory threshold",
+    "status": "unknown_remaining_preference",
+    "projected_candidates": null,
+    "legal_plurality_outcome": "unknown"
+  },
+  {
+    "id": "impossible",
+    "A": "Synthetic A",
+    "B": "Synthetic B",
+    "counted_fixed": {
+      "Synthetic A": 400,
+      "Synthetic B": 500,
+      "Named independent": 100
+    },
+    "arithmetic_only": true,
+    "remaining_pools": [
+      {
+        "pool_id": "x",
+        "remaining_contest_votes": 50,
+        "pair_fraction": 1,
+        "pair_votes": 50,
+        "A_pair_share_input": 1,
+        "A_pair_share_used": 1.0,
+        "share_was_clipped": false,
+        "other_allocation": {}
+      }
+    ],
+    "remaining_contest_votes": 50.0,
+    "remaining_pair_votes": 50.0,
+    "final_denominator": 1050.0,
+    "final_pair_denominator": 950.0,
+    "target_denominator": "pair",
+    "target_margin_pp": 0.0,
+    "target_net_votes": 0.0,
+    "counted_A_minus_B": -100,
+    "required_A_pair_share": 1.5,
+    "required_A_pair_share_clipped": 1.0,
+    "threshold_status": "impossible_under_fixed_others",
+    "strict_pair_win_requires": "greater than tie threshold; target cushion meets specified net margin, not statutory threshold",
+    "status": "calculated",
+    "projected_candidates": {
+      "Synthetic A": 450.0,
+      "Synthetic B": 500.0,
+      "Named independent": 100
+    },
+    "projected_A_minus_B": -50.0,
+    "projected_pair_margin_pp": -5.2631578947368425,
+    "projected_all_candidate_margin_pp": -4.761904761904762,
+    "projected_A_all_candidate_share": 0.42857142857142855,
+    "legal_plurality_outcome": "Synthetic B",
+    "target_met": false,
+    "final_candidate_sum_residual": 0.0
+  },
+  {
+    "id": "clipped_high",
+    "A": "Synthetic A",
+    "B": "Synthetic B",
+    "counted_fixed": {
+      "Synthetic A": 400,
+      "Synthetic B": 500,
+      "Named independent": 100
+    },
+    "arithmetic_only": true,
+    "remaining_pools": [
+      {
+        "pool_id": "x",
+        "remaining_contest_votes": 500,
+        "pair_fraction": 0.8,
+        "pair_votes": 400.0,
+        "A_pair_share_input": 1.2,
+        "A_pair_share_used": 1.0,
+        "share_was_clipped": true,
+        "other_allocation": {
+          "Named independent": 1
+        }
+      }
+    ],
+    "remaining_contest_votes": 500.0,
+    "remaining_pair_votes": 400.0,
+    "final_denominator": 1500.0,
+    "final_pair_denominator": 1300.0,
+    "target_denominator": "pair",
+    "target_margin_pp": 0.0,
+    "target_net_votes": 0.0,
+    "counted_A_minus_B": -100,
+    "required_A_pair_share": 0.625,
+    "required_A_pair_share_clipped": 0.625,
+    "threshold_status": "feasible",
+    "strict_pair_win_requires": "greater than tie threshold; target cushion meets specified net margin, not statutory threshold",
+    "status": "calculated",
+    "projected_candidates": {
+      "Synthetic A": 800.0,
+      "Synthetic B": 500.0,
+      "Named independent": 200.0
+    },
+    "projected_A_minus_B": 300.0,
+    "projected_pair_margin_pp": 23.076923076923077,
+    "projected_all_candidate_margin_pp": 20.0,
+    "projected_A_all_candidate_share": 0.5333333333333333,
+    "legal_plurality_outcome": "Synthetic A",
+    "target_met": true,
+    "final_candidate_sum_residual": 0.0
+  },
+  {
+    "id": "clipped_low",
+    "A": "Synthetic A",
+    "B": "Synthetic B",
+    "counted_fixed": {
+      "Synthetic A": 400,
+      "Synthetic B": 500,
+      "Named independent": 100
+    },
+    "arithmetic_only": true,
+    "remaining_pools": [
+      {
+        "pool_id": "x",
+        "remaining_contest_votes": 500,
+        "pair_fraction": 1,
+        "pair_votes": 500,
+        "A_pair_share_input": -0.2,
+        "A_pair_share_used": 0.0,
+        "share_was_clipped": true,
+        "other_allocation": {}
+      }
+    ],
+    "remaining_contest_votes": 500.0,
+    "remaining_pair_votes": 500.0,
+    "final_denominator": 1500.0,
+    "final_pair_denominator": 1400.0,
+    "target_denominator": "pair",
+    "target_margin_pp": 0.0,
+    "target_net_votes": 0.0,
+    "counted_A_minus_B": -100,
+    "required_A_pair_share": 0.6,
+    "required_A_pair_share_clipped": 0.6,
+    "threshold_status": "feasible",
+    "strict_pair_win_requires": "greater than tie threshold; target cushion meets specified net margin, not statutory threshold",
+    "status": "calculated",
+    "projected_candidates": {
+      "Synthetic A": 400.0,
+      "Synthetic B": 1000.0,
+      "Named independent": 100
+    },
+    "projected_A_minus_B": -600.0,
+    "projected_pair_margin_pp": -42.857142857142854,
+    "projected_all_candidate_margin_pp": -40.0,
+    "projected_A_all_candidate_share": 0.26666666666666666,
+    "legal_plurality_outcome": "Synthetic B",
+    "target_met": false,
+    "final_candidate_sum_residual": 0.0
+  },
+  {
+    "id": "no_positive_pair_pool",
+    "A": "Synthetic A",
+    "B": "Synthetic B",
+    "counted_fixed": {
+      "Synthetic A": 400,
+      "Synthetic B": 500,
+      "Named independent": 100
+    },
+    "arithmetic_only": true,
+    "remaining_pools": [
+      {
+        "pool_id": "x",
+        "remaining_contest_votes": 100,
+        "pair_fraction": 0,
+        "pair_votes": 0,
+        "A_pair_share_input": null,
+        "A_pair_share_used": 0.5,
+        "share_was_clipped": false,
+        "other_allocation": {
+          "Named independent": 1
+        }
+      }
+    ],
+    "remaining_contest_votes": 100.0,
+    "remaining_pair_votes": 0.0,
+    "final_denominator": 1100.0,
+    "final_pair_denominator": 900.0,
+    "target_denominator": "pair",
+    "target_margin_pp": 0.0,
+    "target_net_votes": 0.0,
+    "counted_A_minus_B": -100,
+    "required_A_pair_share": null,
+    "required_A_pair_share_clipped": null,
+    "threshold_status": "no_positive_pool",
+    "strict_pair_win_requires": "greater than tie threshold; target cushion meets specified net margin, not statutory threshold",
+    "status": "calculated",
+    "projected_candidates": {
+      "Synthetic A": 400.0,
+      "Synthetic B": 500.0,
+      "Named independent": 200
+    },
+    "projected_A_minus_B": -100.0,
+    "projected_pair_margin_pp": -11.11111111111111,
+    "projected_all_candidate_margin_pp": -9.090909090909092,
+    "projected_A_all_candidate_share": 0.36363636363636365,
+    "legal_plurality_outcome": "Synthetic B",
+    "target_met": false,
+    "final_candidate_sum_residual": 0.0
+  },
+  {
+    "id": "secured",
+    "A": "Synthetic A",
+    "B": "Synthetic B",
+    "counted_fixed": {
+      "Synthetic A": 700,
+      "Synthetic B": 500,
+      "Named independent": 100
+    },
+    "arithmetic_only": true,
+    "remaining_pools": [
+      {
+        "pool_id": "x",
+        "remaining_contest_votes": 50,
+        "pair_fraction": 1,
+        "pair_votes": 50,
+        "A_pair_share_input": 0,
+        "A_pair_share_used": 0.0,
+        "share_was_clipped": false,
+        "other_allocation": {}
+      }
+    ],
+    "remaining_contest_votes": 50.0,
+    "remaining_pair_votes": 50.0,
+    "final_denominator": 1350.0,
+    "final_pair_denominator": 1250.0,
+    "target_denominator": "pair",
+    "target_margin_pp": 0.0,
+    "target_net_votes": 0.0,
+    "counted_A_minus_B": 200,
+    "required_A_pair_share": -1.5,
+    "required_A_pair_share_clipped": 0.0,
+    "threshold_status": "already_secured_under_fixed_others",
+    "strict_pair_win_requires": "greater than tie threshold; target cushion meets specified net margin, not statutory threshold",
+    "status": "calculated",
+    "projected_candidates": {
+      "Synthetic A": 700.0,
+      "Synthetic B": 550.0,
+      "Named independent": 100
+    },
+    "projected_A_minus_B": 150.0,
+    "projected_pair_margin_pp": 12.0,
+    "projected_all_candidate_margin_pp": 11.11111111111111,
+    "projected_A_all_candidate_share": 0.5185185185185185,
+    "legal_plurality_outcome": "Synthetic A",
+    "target_met": true,
+    "final_candidate_sum_residual": 0.0
+  },
+  {
+    "id": "no_pool_tie",
+    "A": "Synthetic A",
+    "B": "Synthetic B",
+    "counted_fixed": {
+      "Synthetic A": 500,
+      "Synthetic B": 500,
+      "Named independent": 100
+    },
+    "arithmetic_only": true,
+    "remaining_pools": [],
+    "remaining_contest_votes": 0.0,
+    "remaining_pair_votes": 0.0,
+    "final_denominator": 1100.0,
+    "final_pair_denominator": 1000.0,
+    "target_denominator": "pair",
+    "target_margin_pp": 0.0,
+    "target_net_votes": 0.0,
+    "counted_A_minus_B": 0,
+    "required_A_pair_share": null,
+    "required_A_pair_share_clipped": null,
+    "threshold_status": "no_positive_pool",
+    "strict_pair_win_requires": "greater than tie threshold; target cushion meets specified net margin, not statutory threshold",
+    "status": "no_pool",
+    "projected_candidates": {
+      "Synthetic A": 500,
+      "Synthetic B": 500,
+      "Named independent": 100
+    },
+    "projected_A_minus_B": 0,
+    "projected_pair_margin_pp": 0.0,
+    "projected_all_candidate_margin_pp": 0.0,
+    "projected_A_all_candidate_share": 0.45454545454545453,
+    "legal_plurality_outcome": "tie_requires_legal_resolution",
+    "target_met": true,
+    "final_candidate_sum_residual": 0.0
+  },
+  {
+    "id": "all_zero",
+    "A": "Synthetic A",
+    "B": "Synthetic B",
+    "counted_fixed": {
+      "Synthetic A": 0,
+      "Synthetic B": 0
+    },
+    "arithmetic_only": true,
+    "remaining_pools": [],
+    "remaining_contest_votes": 0.0,
+    "remaining_pair_votes": 0.0,
+    "final_denominator": 0.0,
+    "final_pair_denominator": 0.0,
+    "target_denominator": "pair",
+    "target_margin_pp": 0.0,
+    "target_net_votes": 0.0,
+    "counted_A_minus_B": 0,
+    "required_A_pair_share": null,
+    "required_A_pair_share_clipped": null,
+    "threshold_status": "no_positive_pool",
+    "strict_pair_win_requires": "greater than tie threshold; target cushion meets specified net margin, not statutory threshold",
+    "status": "no_pool",
+    "projected_candidates": {
+      "Synthetic A": 0,
+      "Synthetic B": 0
+    },
+    "projected_A_minus_B": 0,
+    "projected_pair_margin_pp": null,
+    "projected_all_candidate_margin_pp": null,
+    "projected_A_all_candidate_share": null,
+    "legal_plurality_outcome": "no_votes",
+    "target_met": true,
+    "final_candidate_sum_residual": 0.0
+  },
+  {
+    "id": "other_wins",
+    "A": "Synthetic A",
+    "B": "Synthetic B",
+    "counted_fixed": {
+      "Synthetic A": 400,
+      "Synthetic B": 300,
+      "Named independent": 1000
+    },
+    "arithmetic_only": true,
+    "remaining_pools": [
+      {
+        "pool_id": "x",
+        "remaining_contest_votes": 100,
+        "pair_fraction": 1,
+        "pair_votes": 100,
+        "A_pair_share_input": 1,
+        "A_pair_share_used": 1.0,
+        "share_was_clipped": false,
+        "other_allocation": {}
+      }
+    ],
+    "remaining_contest_votes": 100.0,
+    "remaining_pair_votes": 100.0,
+    "final_denominator": 1800.0,
+    "final_pair_denominator": 800.0,
+    "target_denominator": "pair",
+    "target_margin_pp": 0.0,
+    "target_net_votes": 0.0,
+    "counted_A_minus_B": 100,
+    "required_A_pair_share": 0.0,
+    "required_A_pair_share_clipped": 0.0,
+    "threshold_status": "feasible",
+    "strict_pair_win_requires": "greater than tie threshold; target cushion meets specified net margin, not statutory threshold",
+    "selected_only": {
+      "status": "feasible",
+      "required_share_unbounded": 0.0,
+      "clipped_share": 0.0,
+      "minimum_change_net": -100.0,
+      "other_counted_and_remaining_net_fixed": 100.0,
+      "required_share_to_tie_each_other": {
+        "Named independent": 6.0
+      },
+      "plurality_required_share_unbounded": 6.0,
+      "plurality_threshold_is_strict_for_outright_win": true
+    },
+    "status": "calculated",
+    "projected_candidates": {
+      "Synthetic A": 500.0,
+      "Synthetic B": 300.0,
+      "Named independent": 1000
+    },
+    "projected_A_minus_B": 200.0,
+    "projected_pair_margin_pp": 25.0,
+    "projected_all_candidate_margin_pp": 11.11111111111111,
+    "projected_A_all_candidate_share": 0.2777777777777778,
+    "legal_plurality_outcome": "Named independent",
+    "target_met": true,
+    "final_candidate_sum_residual": 0.0
+  },
+  {
+    "id": "selected_pool_final_all_denominator",
+    "A": "Synthetic A",
+    "B": "Synthetic B",
+    "counted_fixed": {
+      "Synthetic A": 400,
+      "Synthetic B": 500,
+      "Named independent": 100
+    },
+    "arithmetic_only": true,
+    "remaining_pools": [
+      {
+        "pool_id": "county-C",
+        "remaining_contest_votes": 1000,
+        "pair_fraction": 0.8,
+        "pair_votes": 800.0,
+        "A_pair_share_input": 0.6,
+        "A_pair_share_used": 0.6,
+        "share_was_clipped": false,
+        "other_allocation": {
+          "Named independent": 1
+        }
+      },
+      {
+        "pool_id": "other66",
+        "remaining_contest_votes": 500,
+        "pair_fraction": 0.9,
+        "pair_votes": 450.0,
+        "A_pair_share_input": 0.4,
+        "A_pair_share_used": 0.4,
+        "share_was_clipped": false,
+        "other_allocation": {
+          "Named independent": 1
+        }
+      }
+    ],
+    "remaining_contest_votes": 1500.0,
+    "remaining_pair_votes": 1250.0,
+    "final_denominator": 2500.0,
+    "final_pair_denominator": 2150.0,
+    "target_denominator": "all",
+    "target_margin_pp": 1.0,
+    "target_net_votes": 25.0,
+    "counted_A_minus_B": -100,
+    "required_A_pair_share": 0.55,
+    "required_A_pair_share_clipped": 0.55,
+    "threshold_status": "feasible",
+    "strict_pair_win_requires": "greater than tie threshold; target cushion meets specified net margin, not statutory threshold",
+    "selected_only": {
+      "status": "feasible",
+      "required_share_unbounded": 0.634375,
+      "clipped_share": 0.634375,
+      "minimum_change_net": 215.0,
+      "other_counted_and_remaining_net_fixed": -190.0,
+      "required_share_to_tie_each_other": {
+        "Named independent": -0.2875
+      },
+      "plurality_required_share_unbounded": 0.634375,
+      "plurality_threshold_is_strict_for_outright_win": true
+    },
+    "status": "calculated",
+    "projected_candidates": {
+      "Synthetic A": 1060.0,
+      "Synthetic B": 1090.0,
+      "Named independent": 350.0
+    },
+    "projected_A_minus_B": -30.0,
+    "projected_pair_margin_pp": -1.3953488372093024,
+    "projected_all_candidate_margin_pp": -1.2,
+    "projected_A_all_candidate_share": 0.424,
+    "legal_plurality_outcome": "Synthetic B",
+    "target_met": false,
+    "final_candidate_sum_residual": 0.0
+  },
+  {
+    "id": "unknown_other_identity",
+    "A": "Synthetic A",
+    "B": "Synthetic B",
+    "counted_fixed": {
+      "Synthetic A": 400,
+      "Synthetic B": 500,
+      "Named independent": 100
+    },
+    "arithmetic_only": true,
+    "remaining_pools": [
+      {
+        "pool_id": "x",
+        "remaining_contest_votes": 100,
+        "pair_fraction": 0.8,
+        "pair_votes": 80.0,
+        "A_pair_share_input": 0.5,
+        "A_pair_share_used": 0.5,
+        "share_was_clipped": false,
+        "other_allocation": {}
+      }
+    ],
+    "remaining_contest_votes": 100.0,
+    "remaining_pair_votes": 80.0,
+    "final_denominator": 1100.0,
+    "final_pair_denominator": 980.0,
+    "target_denominator": "pair",
+    "target_margin_pp": 0.0,
+    "target_net_votes": 0.0,
+    "counted_A_minus_B": -100,
+    "required_A_pair_share": 1.125,
+    "required_A_pair_share_clipped": 1.0,
+    "threshold_status": "impossible_under_fixed_others",
+    "strict_pair_win_requires": "greater than tie threshold; target cushion meets specified net margin, not statutory threshold",
+    "status": "unknown_other_candidate_allocation",
+    "projected_candidates": null,
+    "legal_plurality_outcome": "unknown"
+  },
+  {
+    "id": "invalid_negative_counted",
+    "A": "Synthetic A",
+    "B": "Synthetic B",
+    "counted_fixed": {
+      "Synthetic A": -1,
+      "Synthetic B": 500
+    },
+    "arithmetic_only": true,
+    "status": "invalid_negative_or_nonfinite_counted"
+  }
+]

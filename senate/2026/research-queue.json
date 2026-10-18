@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "requested_date": "2026-10-17",
-  "updated_at_utc": "2026-10-18T22:07:35.559959+00:00",
+  "updated_at_utc": "2026-10-18T22:19:36.521490+00:00",
   "scope": "35 states in the repository 2026 U.S. Senate race index",
   "coordinator_agent_id": "d0fc3534-1613-4883-b48b-21a233fcfd9e",
   "workspace_id": "wks_b290f45007010740",
@@ -941,26 +941,26 @@
       "election": "Special",
       "seat_class": "III",
       "priority": 12,
-      "status": "maps-finishing-official-complete",
+      "status": "complete-reviewed-awaiting-publication",
       "workers": {
         "turnout": {
           "agent_id": "f67a9af9-f5bd-47d5-8ebf-ed23594aa3e0",
-          "status": "complete-awaiting-integration",
+          "status": "complete-reviewed",
           "launched_at_utc": "2026-10-18T21:10:49.168528+00:00"
         },
         "partisanship": {
           "agent_id": "1df5579b-5d40-46b9-a7af-17fdb1a2398d",
-          "status": "complete-awaiting-integration",
+          "status": "complete-reviewed",
           "launched_at_utc": "2026-10-18T21:12:12.185784+00:00"
         },
         "official_results": {
           "agent_id": "4e3c6b7e-e3b9-4415-a068-754b296d6b17",
-          "status": "complete-awaiting-integration",
+          "status": "complete-reviewed",
           "launched_at_utc": "2026-10-18T21:38:51.466065+00:00"
         },
         "precinct_maps": {
           "agent_id": "8b91d2c0-cffc-42ad-b1a0-8e874a9024fc",
-          "status": "active",
+          "status": "complete-reviewed",
           "launched_at_utc": "2026-10-18T21:39:59.548164+00:00",
           "recovery": {
             "event": "Selected model at capacity",
@@ -975,13 +975,36 @@
             },
             "discovery": "Fresh no-profiles/provider/model-list/inspect confirmed fallback; existing actual agent updated, no new researcher",
             "fallback_resumed_utc": "2026-10-18T22:04:54.479808+00:00"
-          }
+          },
+          "actual_provider": "codex/gpt-6-astra"
         }
       },
-      "validation": null,
-      "gaps": [],
+      "validation": {
+        "status": "pass",
+        "checks": "florida/data/coordinator-checks.json",
+        "review": "florida/research-review.md",
+        "exact_assignment_manifest_entries": 2263,
+        "original_candidate_field_comparisons": 4025606,
+        "whole_original_rows": 1707538,
+        "native_contexts": 23532,
+        "primary_candidate_cells": 2479,
+        "target_rows": 150840,
+        "native_map_features": 3523,
+        "original_PDF_pages": 89,
+        "local_MD_HTML_links": 335,
+        "repository_check": "npm run check passed"
+      },
+      "gaps": [
+        "No genuine November counts; state selects August and Lake4079 is zero setup. Current election/contest/choice universe and exact Senate remainder unapproved.",
+        "All current physical/reporting/method crosswalks unapproved; full23532 historical contexts remain unallocated. Duval official map is historical; current403s and separate Census fallback retained.",
+        "Eight compiled county/candidate differences and generic-versus-valid writein scope retained; original19 schema has no native method column.",
+        "Polk detailed HTML table is431 lower across five candidates; sameHTML chart and linked complete CSV match DOS. Cause and correction chronology unknown.",
+        "Pinellas1716 protected/null cells and vendor method dashes remain unavailable. Republishing clocks and client timers are not measured cadence.",
+        "PalmBeach812parent/813GIS, Lake92 duplicate pairs,31Volusia curves,22invalid/uninterpretable source geometries and PDF source defects retained without repair.",
+        "No live collector,2026turnout forecast, correction replay or calibrated Needle. Later legal orders/exhaustive docket coverage still require operational recheck."
+      ],
       "published_commits": [],
-      "coordinator_preparation": "First pair and official-results actually finished; maps resumed same ID on discovered codex/gpt-6-astra xhigh after two capacity errors. Coordinator recovered actual archived Duval primary PDF for integration. MS turnout launched in official actual finish slot; exactly two researchers active.",
+      "coordinator_preparation": "All four actual assignments complete; independent source/native/target/binary/full-manifest/link/repository reviews pass. Same actual maps worker recovered capacity through discoveredgpt-6-astra fallback; MSfirstpair active in released slots.",
       "priority_acceptance": {
         "path": "senate/2026/florida/data/coordinator-priority-acceptance.json",
         "contract_sha256": "0c056e0ebfdb393d4fcb59676805122d8442f444200b9edaf7f4c979c5e9a173",
@@ -996,7 +1019,11 @@
         "native_originals": "data/coordinator-native-original-review.json",
         "targets": "data/coordinator-target-review.json",
         "current_printed_ballot": "data/coordinator-ballot-review.json",
-        "poll_clock": "data/coordinator-poll-clock-review.json"
+        "poll_clock": "data/coordinator-poll-clock-review.json",
+        "current_sources": "data/coordinator-current-source-review.json",
+        "final_sources": "data/coordinator-results-final-review.json",
+        "native_maps": "data/coordinator-map-native-review.json",
+        "whole_package": "data/coordinator-checks.json"
       }
     },
     {
@@ -1006,19 +1033,24 @@
       "election": "Regular",
       "seat_class": "II",
       "priority": 13,
-      "status": "turnout-active-awaiting-peer-slot",
+      "status": "first-pair-active",
       "workers": {
         "turnout": {
           "agent_id": "5d6e201c-4b06-46e7-9976-ae38ebf52676",
           "status": "active",
           "launched_at_utc": "2026-10-18T22:07:35.559959+00:00"
+        },
+        "partisanship": {
+          "agent_id": "39cd2d0d-222c-4017-b21a-3b4f2cc54f67",
+          "status": "active",
+          "provider": "codex/gpt-6.1-sol"
         }
       },
       "validation": null,
       "gaps": [],
       "published_commits": [],
       "state_specific_notes": "Verify actual statewide comparisons; do not invent a 2022 Senate/statewide candidate contest. Recent 2024 Senate, 2020 same-seat Senate, 2024 president and actual midterm 2018 regular/special/runoff distinctions may require an explicit alternative comparison. Use 2022 turnout ballots separately where appropriate. Coordinator captured WDAM reporting of 2026 Independent Ty Pinkins; verify the final official ballot and preserve his identity separately from 2024 DEM. Do not assume a combined opposition coalition.",
-      "coordinator_preparation": "58 retained original observations; actual updated Pike original explains all2024Senate2718 and president2770 CSV/certificate differences with explicit candidate cells. All82/native independent extraction remains required; current primary list preserves Pinkins IND, no2022Senate/Gov. Other first-pair worker awaits actual FLmaps finish slot."
+      "coordinator_preparation": "Firstpair actual5d6e201c-4b06-46e7-9976-ae38ebf52676 and39cd2d0d-222c-4017-b21a-3b4f2cc54f67 independently extracting county/native originals. UpdatedPike explicitly repairs2024source differences; no accepted priority yet."
     },
     {
       "state": "Nebraska",
@@ -1358,7 +1390,7 @@
       ]
     }
   ],
-  "batch_status": "in-progress:11newstatespublished;FLfirstpairactive;22laterstatesqueued",
+  "batch_status": "in-progress:11newstatespublished;FLfourpackagescomplete_integration;MSfirstpairactive;21laterstatesqueued",
   "coordinator_preparation_audit": {
     "status": "pass",
     "checked_at_utc": "2026-10-18T20:46:57.269813+00:00",
@@ -1378,9 +1410,9 @@
     "additional_content_checks": "Independent primary preflight scripts for NH,MN,SC,FL,NE,SD,ID retain source-specific controls; MS visual originals preserve mismatches and separate special-election stages. No question package is inferred complete."
   },
   "coordinator_next_actions": [
-    "Reconcile completeFLfirstpair officialcounty/natives/sourcefields before external acceptance andsecondwave.",
-    "Dispatch FLofficial/maps onlyon actualfinish slots, atmost2activeworkers.",
-    "Continueallremaining22queuedstates inpriorityorder andpublishincrementally; retainMI."
+    "Independently review and publish Florida complete four-question package.",
+    "Independently reconcile Mississippi first pair before historical acceptance and second-wave dispatch.",
+    "Continue all21 later queued states in order with at most2actual research workers; preserve Michigan."
   ],
   "coordinator_prompt_preparation": {
     "scope": "Unlaunched future first-wave prompts only; no agent IDs or completed packages implied",

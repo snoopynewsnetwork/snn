@@ -1,0 +1,46 @@
+{
+  "offline": true,
+  "transformation_steps_passed": [
+    {
+      "script": "parse_sources.py",
+      "arguments": [],
+      "exit_code": 0
+    },
+    {
+      "script": "build.py",
+      "arguments": [],
+      "exit_code": 0
+    },
+    {
+      "script": "controls.py",
+      "arguments": [],
+      "exit_code": 0
+    },
+    {
+      "script": "calculate.py",
+      "arguments": [],
+      "exit_code": 0
+    },
+    {
+      "script": "live_remainder.py",
+      "arguments": [
+        "--examples"
+      ],
+      "exit_code": 0
+    },
+    {
+      "script": "compare_peer.py",
+      "arguments": [],
+      "exit_code": 0
+    },
+    {
+      "script": "render_report.py",
+      "arguments": [],
+      "exit_code": 0
+    }
+  ],
+  "frozen_data_pins_verified": true,
+  "frozen_pin_path": "deterministic-data-pins.json",
+  "validation_path": "validation.json",
+  "note": "Transformation proof; final validator independently checks all originals/outputs and writes its result. No hash cycle with external acceptance or manifests."
+}

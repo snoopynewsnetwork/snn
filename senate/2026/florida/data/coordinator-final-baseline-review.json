@@ -1,0 +1,108 @@
+{
+  "status": "pass",
+  "manifest_checks": [
+    {
+      "path": "data/turnout/asset-manifest.json",
+      "sha256": "c510f3321a7764815fee9745fa6f6ce294e6a312320b1f723c80dc6a44edffb7",
+      "files": 272,
+      "largest_bytes": 23823926
+    },
+    {
+      "path": "data/baselines/asset-manifest.json",
+      "sha256": "5517e4baeafaf57f2858839d8bd3f868355947e94d8e07ce15ff53bf579f2b65",
+      "files": 201,
+      "largest_bytes": 14958217
+    }
+  ],
+  "live_inputs": {
+    "path": "data/baselines/synthetic-live-inputs.json",
+    "sha256": "b166f4681a66e5b8bf9988e6696033bd9b6b263c4edc4ea42f89166c1043f9c1"
+  },
+  "live_outputs": {
+    "path": "data/baselines/synthetic-live-results.json",
+    "sha256": "7ae1666bfdf4e5d4513f470b6766f226a73c12fc9578aac1aa3c959694f5f505"
+  },
+  "independent_live_cases": [
+    {
+      "id": "unknown_pool",
+      "status": "unknown_remaining_pool"
+    },
+    {
+      "id": "negative_pool",
+      "status": "invalid_remaining_pool"
+    },
+    {
+      "id": "no_pool_lost",
+      "status": "no_pool",
+      "final_all_candidate_denominator": 1000.0,
+      "plurality_outcome": "Synthetic B"
+    },
+    {
+      "id": "unknown_preference",
+      "status": "unknown_remaining_preference"
+    },
+    {
+      "id": "impossible",
+      "status": "calculated",
+      "final_all_candidate_denominator": 1050.0,
+      "plurality_outcome": "Synthetic B"
+    },
+    {
+      "id": "clipped_high",
+      "status": "calculated",
+      "final_all_candidate_denominator": 1500.0,
+      "plurality_outcome": "Synthetic A"
+    },
+    {
+      "id": "clipped_low",
+      "status": "calculated",
+      "final_all_candidate_denominator": 1500.0,
+      "plurality_outcome": "Synthetic B"
+    },
+    {
+      "id": "no_positive_pair_pool",
+      "status": "calculated",
+      "final_all_candidate_denominator": 1100.0,
+      "plurality_outcome": "Synthetic B"
+    },
+    {
+      "id": "secured",
+      "status": "calculated",
+      "final_all_candidate_denominator": 1350.0,
+      "plurality_outcome": "Synthetic A"
+    },
+    {
+      "id": "no_pool_tie",
+      "status": "no_pool",
+      "final_all_candidate_denominator": 1100.0,
+      "plurality_outcome": "tie_requires_legal_resolution"
+    },
+    {
+      "id": "all_zero",
+      "status": "no_pool",
+      "final_all_candidate_denominator": 0.0,
+      "plurality_outcome": "no_votes"
+    },
+    {
+      "id": "other_wins",
+      "status": "calculated",
+      "final_all_candidate_denominator": 1800.0,
+      "plurality_outcome": "Named independent"
+    },
+    {
+      "id": "selected_pool_final_all_denominator",
+      "status": "calculated",
+      "final_all_candidate_denominator": 2500.0,
+      "plurality_outcome": "Synthetic B"
+    },
+    {
+      "id": "unknown_other_identity",
+      "status": "unknown_other_candidate_allocation"
+    },
+    {
+      "id": "invalid_negative_counted",
+      "status": "invalid_negative_or_nonfinite_counted"
+    }
+  ],
+  "scope": "Independent algebra and exact manifests only. Synthetic contest votes and assumed pools do not estimate actual outstanding votes or win probabilities."
+}

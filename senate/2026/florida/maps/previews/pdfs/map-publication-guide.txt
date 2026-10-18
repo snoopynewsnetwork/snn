@@ -1,0 +1,175 @@
+--- PAGE 1 ---
+    Florida Department of State 
+ 
+Page 1 of 3 
+ 
+ 
+GOVERNING LAW 
+• 
+Section 98.0981, F.S.  
+o The Supervisor of Elections must submit for each election, the geographical information system (GIS)1 map of 
+precinct boundaries created and maintained pursuant to s. 101.001 that applies to each applicable election 
+(presidential preference primary, special primary, special, primary and general).  
+o The map must be resubmitted for each election even if the information is unchanged from prior election.  
+o The file may be submitted in advance of the election but no later than 10 business days after the Election 
+Canvassing Commission certifies results. 
+• 
+Section 101.001, F.S.  
+o The Supervisor of Elections must maintain a geographical information system that clearly delineates all major 
+observable features such as roads, streams, railway lines, and with current geographical boundaries of each 
+precinct, representative district and senatorial district and other type of district.  
+o The Supervisor of Elections must report to the Secretary of State within 10 days of reorganization of any 
+precinct and to include a copy of the geographical information system compatible map showing the 
+geographical boundaries and designation of each new precinct.   
+ The precincts must consist of areas bounded on all sides only by census block boundaries from the recent 
+United States Census. (Precincts are altered and created in conjunction with the board of county 
+commissioners).  If  the boundaries split or conflict with a municipality or other political subdivision 
+boundary, then boundaries may still be defined based on one of 2 other existing criteria in law.  
+o Within 10 days after there is any change in the division, name, number, or boundaries of the precincts, or the 
+location of the polling places, the supervisor of elections shall make in writing an accurate description of any 
+new or altered precincts, setting forth the boundary lines and shall identify the location of each new or 
+altered polling place. A document describing such changes must be posted at the supervisor’s office. 
+o Any changes in the county precinct data shall be provided to the department within 10 days after a change. 
+SUBMISSION METHOD 
+Files must be submitted through the File Transfer Utility in the SOE Portal.
+ 
+1 GIS is a system for managing and mapping integrated location data (where and what). 
+ 
+Precinct Boundaries, Designations and Polling Place 
+Locations 
+DE Reference Guide 0021 (Updated 01/13/2025) 
+These guidelines are for reference only. They are not to be construed as legal advice or representation. For any particular set of 
+facts or circumstances, refer to the applicable state, federal law, and case law, and/or consult a private attorney before drawing 
+any legal conclusions or relying upon this information. 
+
+--- PAGE 2 ---
+    Florida Department of State 
+ 
+Page 2 of 3 
+ 
+TYPES AND FILE FORMATS 
+• 
+ 
+Polling Locations – PctPoll 
+o File is required 
+o Description: Listing of polling places 
+in the county 
+o File format: Tab-delimited ASCII file 
+or excel spreadsheet  
+o File Extensions: .txt; .xlsx.  
+o See layout table below for details 
+File naming convention:    
+o 
+CountyAbbrDateStamp _FileType.extension.  
+o 
+The CountyAbbr is the state assigned 3-character county code.  
+o 
+The DateStamp, formatted YYYYMMDD, is the date of the election 
+for which the data contained in the file applies.  
+o 
+The FileType isPctPoll.  
+ 
+Example depending on the underlying file:  
+ALA20241105_PctPoll.txt (in this case the date is the date of the 
+general election) 
+Field 
+Name 
+Format (max) 
+Value/Description 
+1 
+County 
+Code 
+Char(3) 
+Three-character county code 
+2 
+Precinct 
+Number 
+Char(6) 
+Must be a unique precinct identifier (i.e., alphanumeric code 
+representing the precinct name or number and containing no more than 
+the maximum characters as specified by rule).  Precinct number should 
+not contain splits. It should correspond to the precinct as reported in 
+election results and voting history 
+3 
+Polling 
+Location 
+Char(75) 
+Polling Place location name 
+4 
+Address1 
+Char(75) 
+ 
+5 
+Address2 
+Char(75) 
+ 
+6 
+City 
+Char(25) 
+ 
+7 
+Zip 
+Char(10) 
+ 
+• 
+ 
+• 
+ 
+Precinct GIS Map Files – PctMap 
+o File is required 
+o Description: A shapefile is a vector data storage format 
+for geographic information system software and geospatial 
+analysis. It stores the location, shape, and attributes of 
+geographic features. Storage consists of a set of related files 
+and contains one feature class. (Property appraisers and 
+emergency management offices use GIS data and 
+programs). 
+o File Format:  A shapefile consists of at least these 4 
+components:  .shp, .shx, .dbf, and .prj files.  Before 
+uploading, the file must be zipped to allow for viewing 
+through a web browser and published on a hosted feature 
+layer.  
+o File Extension: .zip 
+o  Examples on next page 
+ 
+File naming convention for file submitted per s. 
+98.0981 (due for every election):    
+o 
+CountyAbbrDateStamp _FileType.extension.  
+o 
+The CountyAbbr is the state assigned 3-
+character county code.  
+o 
+The DateStamp, formatted YYYYMMDD, is the 
+election date for the data contained in the 
+file applies.  
+o 
+The FileType PctMap. 
+o 
+Extension is .zip 
+ 
+Example: ALA20241105_PctMap.zip (in this case,  
+the date is the date of the general election) 
+ 
+File naming convention for file submitted per s. 
+101.001 (due whenever there is a change):    
+o 
+CountyAbbrDateStamp _FileType.extension.  
+o 
+The CountyAbbr is the state assigned 3-
+character county code.  
+o 
+The DateStamp, formatted YYYYMMDD, 
+should be the date in which the information 
+EXAMPLES 
+
+--- PAGE 3 ---
+    Florida Department of State 
+ 
+Page 3 of 3 
+ 
+ 
+ 
+ 
+ 
+ 

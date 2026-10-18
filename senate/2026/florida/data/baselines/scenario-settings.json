@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "A": "named DEM anchor candidate, not assumed 2026 effect",
+  "B": "named REP anchor candidate",
+  "county_volume_basis": "all valid candidate votes including named valid write-ins",
+  "volumes": {
+    "low": 7758014,
+    "base": 10757428,
+    "high": 11067456
+  },
+  "preference_anchors": [
+    "2024-senate",
+    "2022-senate",
+    "2024-president",
+    "2020-president"
+  ],
+  "mix_anchors": [
+    "2024-senate",
+    "2022-senate",
+    "2024-president",
+    "2020-president"
+  ],
+  "pair_participation": "each county preference-anchor (A+B)/all-valid votes; no single statewide substitution",
+  "other_candidates": "held outside pair, at same county preference-anchor participation; aggregate upper bound used to check no other can beat tied A/B",
+  "targets": [
+    "tie",
+    "Aplus1_pair_margin",
+    "Aplus1_all_candidate_margin"
+  ],
+  "native_no_crossyear_join": true,
+  "not_a_2026_projection": true
+}

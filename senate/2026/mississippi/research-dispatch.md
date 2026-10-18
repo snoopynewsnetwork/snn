@@ -5,11 +5,11 @@ Coordinator `d0fc3534-1613-4883-b48b-21a233fcfd9e`, workspace `wks_b290f45007010
 | Question | Actual Paseo ID | Status / exclusive ownership |
 | --- | --- | --- |
 | Turnout | `5d6e201c-4b06-46e7-9976-ae38ebf52676` | Active in actual Florida official-results finish slot. `turnout.md`, `data/county-turnout.csv`, `data/turnout/**`. |
-| Partisanship / targets | Not launched | Await actual Florida maps finish slot. `county-partisanship.md`, `data/county-baselines.csv`, `data/baselines/**`. |
+| Partisanship / targets | `39cd2d0d-222c-4017-b21a-3b4f2cc54f67` | Active in actual Florida maps finish slot. `county-partisanship.md`, `data/county-baselines.csv`, `data/baselines/**`. |
 | Official results | Not launched | Await independently reconciled exact priority and coordinator acceptance. `official-results.md`, `data/official-results-sources.csv`, `data/results-sources/**`. |
 | Maps | Not launched | Same exact-scope gate. `precinct-maps.md`, `maps/**`. |
 
-Fresh profile discovery found none; inspection confirmed authorized `codex/gpt-6.1-sol`, `full-access`, `xhigh`. Launch uses `notifyOnFinish:true`; asynchronous actual completions drive slots, with no status polling. Florida maps is the other active researcher. The four-question Mississippi package is in progress, not published or accepted.
+Fresh profile discovery found none; inspection confirmed authorized `codex/gpt-6.1-sol`, `full-access`, `xhigh`. Launch uses `notifyOnFinish:true`; asynchronous actual completions drive slots, with no status polling. Both Mississippi first-pair researchers are now the only active workers. Florida maps actually finished its frozen source/geometry/manifest QA. The four-question Mississippi package is in progress, not published or accepted.
 
 Read [primary preflight](data/coordinator-source-preflight.md), [Pike updated-source review](data/coordinator-pike-update-review.json), [regional backstops](local-news-results.md) and [strategy preparation](live-polling-strategy.md). Actual retained county index has84 PDF links for82 counties, including original/updated alternatives. Updated Pike's explicit primary counts explain the entire2024 Senate and presidential CSV/certificate differences; both versions survive. Independent full county/native/candidate/method checks still precede historical dispatch acceptance.
 

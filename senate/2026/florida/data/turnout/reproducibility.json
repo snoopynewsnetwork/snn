@@ -1,0 +1,103 @@
+{
+  "status": "pass",
+  "offline": true,
+  "steps": [
+    {
+      "script": "build_turnout.py",
+      "returncode": 0
+    },
+    {
+      "script": "verify_federal.py",
+      "returncode": 0
+    },
+    {
+      "script": "build_report.py",
+      "returncode": 0
+    },
+    {
+      "script": "compare_peer.py",
+      "returncode": 0
+    }
+  ],
+  "stable_generated_assets": {
+    "data/county-turnout.csv": {
+      "sha256": "8a8de3f4ff1d44caf3b309ed8f5490cc341295b7a376265c386d91a24ae0d6c2",
+      "bytes": 26031
+    },
+    "data/turnout/priority-set.json": {
+      "sha256": "0c056e0ebfdb393d4fcb59676805122d8442f444200b9edaf7f4c979c5e9a173",
+      "bytes": 23823926
+    },
+    "data/turnout/priority-freeze.json": {
+      "sha256": "e89b9a07bbac5d44f5d7aabdb9e799e753590d4dc5f5876b227924ead829a05d",
+      "bytes": 368
+    },
+    "data/turnout/calculation.json": {
+      "sha256": "e14422e0a9bccc03a3af7beea7773c127901397c4abf9249335a6e75fae7540d",
+      "bytes": 5910
+    },
+    "data/turnout/sensitivity.json": {
+      "sha256": "1cbbab6f95b982d511b97e5739100868c4a18c2d763d46b10121ca79b4a0762d",
+      "bytes": 14316
+    },
+    "data/turnout/source/shared-source-references.json": {
+      "sha256": "35822f40835c7661337800b5c0a9d79f4a03f394c28510406e5c15264d67b5de",
+      "bytes": 12459
+    },
+    "data/turnout/extracts/bookclosing-controls.jsonl.gz": {
+      "sha256": "bbdc7e888ed246cbadb4bd393adce4db76f41535f65058b5c3a4036e0e321bca",
+      "bytes": 20868
+    },
+    "data/turnout/extracts/eavs-controls.jsonl.gz": {
+      "sha256": "ffbdb32e05c047d98bdae6b07361e30c7d9f97ddcc447184269b9f676eb7e63e",
+      "bytes": 21879
+    },
+    "data/turnout/extracts/federal-candidate-reconciliation.json": {
+      "sha256": "5f8642587176d0558e1328333987a58f922a26b35d624a8a711eb6659cb1776e",
+      "bytes": 8694
+    },
+    "data/turnout/extracts/native-primary-candidate-controls.csv": {
+      "sha256": "79c27a580db4638107521e8951924018868b0629ca5af17fa1b7a4f54321db80",
+      "bytes": 2805
+    },
+    "data/turnout/extracts/native-source-rows-2020.jsonl.gz": {
+      "sha256": "e60371a1db60f86f1b4b5c23d36f3ba18422e77b4c13e0e73e093f921f802deb",
+      "bytes": 3910900
+    },
+    "data/turnout/extracts/native-source-rows-2022.jsonl.gz": {
+      "sha256": "b3b33436d9dd58b124bb7b270f2a50a4b6ec123c8e9a983d27a4ab0f096d6fe2",
+      "bytes": 3126883
+    },
+    "data/turnout/extracts/native-source-rows-2024.jsonl.gz": {
+      "sha256": "c7a505fd5a229567782df402821e0fde78583cbc2d47efb95de12319362afc7b",
+      "bytes": 6879847
+    },
+    "data/turnout/extracts/native-units.jsonl.gz": {
+      "sha256": "bfd41a05c84c45b50e4ed013a1c58aafa033fe2e5ca25951de8988386eb4c932",
+      "bytes": 1622496
+    },
+    "data/turnout/extracts/original-member-inventory.json": {
+      "sha256": "0a75bacb82ddadd511474722d6161bd8afc55e2ece57a52712594bde7a692993",
+      "bytes": 78695
+    },
+    "data/turnout/extracts/primary-county-candidates.csv": {
+      "sha256": "80b2f334d320542a128eea8607978c11fd96ae3098632dc3ce33f232a0aba903",
+      "bytes": 197966
+    },
+    "data/turnout/extracts/primary-county-tables.json": {
+      "sha256": "dcc48a6581d643b539122a416a9b434b574033678976e31bddb7a522d08961f0",
+      "bytes": 108740
+    },
+    "data/turnout/extracts/source-control-diagnostics.json": {
+      "sha256": "462d72c1dca9d348509459dcbc4d6ae387a5fb61b77a09f792752b68fb9a1a5b",
+      "bytes": 142279
+    },
+    "data/turnout/extracts/source-discrepancies.json": {
+      "sha256": "cb45d47c7c025b7a0615bdf1614e81003f79906f9172639fb22e711a967302d6",
+      "bytes": 1991
+    }
+  },
+  "frozen_drift_refused": true,
+  "coordinator_acceptance_path": "data/coordinator-priority-acceptance.json",
+  "scope": "Original-source extraction, calculations and report rebuilt; independent peer read-only; no network/Git"
+}

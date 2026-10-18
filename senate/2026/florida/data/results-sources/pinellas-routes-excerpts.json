@@ -1,0 +1,52 @@
+[
+  {
+    "needle": "getVersion()",
+    "position": -1,
+    "excerpt": null
+  },
+  {
+    "needle": "FileName.Version",
+    "position": 8408762,
+    "excerpt": ");\n      this.apiService = apiService;\n    }\n    getCountyVersion(state, county, electionId, overrideVersion) {\n      if (overrideVersion) {\n        return (0,rxjs__WEBPACK_IMPORTED_MODULE_7__.of)(overrideVersion);\n      } else {\n        const uriVersion = this.getBaseUri(state, county, electionId, FileName.Version);\n        return this.apiService.get(uriVersion, {\n          source: \"FILE\" /* CONFIG.FILE */\n        });\n      }\n    }\n    getDataInfo(state, county, electionId, version, template) {\n      let _version;\n      let _sum;\n      let _colors;\n      let _settings;\n      return new rxjs__WEBPACK_IMPORTED_MODULE_9__.Observable(observer => {\n        this.getCountyVersion(state, county, electionId, version).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.tap)(countyVersion => _version = countyVersion), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_5__.mergeMap)(() => {\n          const uriConfig = this.getUri(state, county, electionId, _version, FileName.Config);\n          return this.apiService.get(uriConfig, {\n            source: \"FILE\" /* CONFIG.FILE */\n          });\n        })).subscribe(config => {\n          // settings\n          const uriSettings = this.getUri(state, county, electionId, _version, FileName.ElectionSettings, config.lang);\n          const countySettings = this.apiService.get(uriSettings, {\n            source: \"FILE\" /* CONFIG.FILE */\n          }).pipe((0,r"
+  },
+  {
+    "needle": "getFileUrl",
+    "position": -1,
+    "excerpt": null
+  },
+  {
+    "needle": "jsonUri",
+    "position": 8125885,
+    "excerpt": "his.modalService.open(ENRPostOnYourWebsitePreviewComponent, {\n        size: 'lg'\n      });\n      preview.componentInstance.uri = this.getUri()[1];\n      preview.result.then(result => {});\n    }\n    getUri() {\n      const uri = `${this.webConfig.publicAppUri}?host=${encodeURIComponent(this.webConfig.jsonUri)}&widget=${encodeURIComponent(this.widgetSelected.id)}&state=${encodeURIComponent(this.webConfig.State)}&county=${encodeURIComponent(this.webConfig.County)}&eid=${encodeURIComponent(this.webConfig.EID)}&contest=${encodeURIComponent(this.data)}`;\n      return [uri, this.sanitizer.bypassSecurityTrustResourceUrl(uri)];\n    }\n    static #_ = this.\u0275fac = function ENRPostOnYourWebsiteEditorComponent_Factory(t) {\n      return new (t || ENRPostOnYourWebsiteEditorComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_5__[\"\u0275\u0275directiveInject\"](_ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_19__.NgbActiveModal), _angular_core__WEBPACK_IMPORTED_MODULE_5__[\"\u0275\u0275directiveInject\"](_angular_forms__WEBPACK_IMPORTED_MODULE_9__.UntypedFormBuilder), _angular_core__WEBPACK_IMPORTED_MODULE_5__[\"\u0275\u0275directiveInject\"](_ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_19__.NgbModal), _angular_core__WEBPACK_IMPORTED_MODULE_5__[\"\u0275\u0275directiveInject\"](_angular_platform_browser__WEBPACK_IMPORTED_MODULE_38__.DomSanitizer));\n    };\n    static #_2 = this.\u0275cmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE"
+  },
+  {
+    "needle": "getJsonUri",
+    "position": 8325760,
+    "excerpt": "his._jsonUri = config.jsonUri;\n      this._results = config.results;\n    }\n    getHost(config = {\n      source: \"API\" /* CONFIG.API */\n    }) {\n      if (config.source === \"API\" /* CONFIG.API */) {\n        return `${this._apiUri}`;\n      } else {\n        return `${this._jsonUri}`;\n      }\n    }\n    getJsonUri() {\n      return this._jsonUri;\n    }\n    get(url, config = {\n      source: \"API\" /* CONFIG.API */\n    }) {\n      let host = this.getHost(config);\n      if (host[host.length - 1] === '/') {\n        host = host.substring(0, host.length - 1);\n      }\n      return this.http.get(`${host}${url}`);\n    }\n    ping() {\n      return this.http.get(`${this.getHost({\n        source: \"API\" /* CONFIG.API */\n      })}/state`);\n    }\n    post(url, params, config = {\n      source: \"API\" /* CONFIG.API */\n    }) {\n      const body = params;\n      return this.http.post(`${this.getHost(config)}${url}`, body);\n    }\n    static #_ = this.\u0275fac = function ApiService_Factory(t) {\n      return new (t || ApiService)(_angular_core__WEBPACK_IMPORTED_MODULE_0__[\"\u0275\u0275inject\"](_angular_common_http__WEBPACK_IMPORTED_MODULE_1__.HttpClient));\n    };\n    static #_2 = this.\u0275prov = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_0__[\"\u0275\u0275defineInjectable\"]({\n      token: ApiService,\n      factory: ApiService.\u0275fac\n    });\n  }\n  return ApiService;\n})();\n(() => {\n  (typeof ngDevMode === \"undefined\" || ngDevMode) &"
+  },
+  {
+    "needle": "versionDir",
+    "position": -1,
+    "excerpt": null
+  },
+  {
+    "needle": "/json/",
+    "position": -1,
+    "excerpt": null
+  },
+  {
+    "needle": "json/en/",
+    "position": -1,
+    "excerpt": null
+  },
+  {
+    "needle": "getConfig()",
+    "position": -1,
+    "excerpt": null
+  },
+  {
+    "needle": "getSummary(",
+    "position": 8351363,
+    "excerpt": "js__WEBPACK_IMPORTED_MODULE_2__.BehaviorSubject({\n        voteFor: true,\n        areasReporting: true,\n        votes: true,\n        percentage: true,\n        bars: true,\n        animatedBars: true\n      });\n      this._filters = new rxjs__WEBPACK_IMPORTED_MODULE_2__.BehaviorSubject(null);\n    }\n    getSummary(state, county, electionId, version, lang, contestConfig) {\n      this._storeId = `enr.${state || 'none'}.${county || 'none'}.${electionId}`;\n      this._storeIdCountyFavorite = `enr.${state || 'none'}.${county || 'none'}.${electionId}.countyfavorites`;\n      const uri = this.getUri(state, county, electionId, version, FileName.Summary, lang);\n      return this.apiService.get(uri, {\n        source: \"FILE\" /* CONFIG.FILE */\n      }).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_3__.map)(contests => this.mapItemContestToContestModel(contests, contestConfig)), (0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.tap)(contests => this.summary = contests));\n    }\n    getNavigation(state, county, electionId, version, lang) {\n      const uri = this.getUri(state, county, electionId, version, FileName.Navigation, lang);\n      return this.apiService.get(uri, {\n        source: \"FILE\" /* CONFIG.FILE */\n      }).pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_4__.tap)(navigation => this.navigation = navigation));\n    }\n    getSum(state, county, electionId, version) {\n      const uri = this.g"
+  }
+]
