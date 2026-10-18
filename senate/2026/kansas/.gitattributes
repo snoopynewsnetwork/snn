@@ -1,0 +1,7 @@
+# Preserve exact retained source/derivative bytes and CSV native line endings.
+data/** -text -whitespace
+maps/raw/** -text -whitespace
+maps/extracts/** -text -whitespace
+# Authored scripts and documentation keep ordinary whitespace checks.
+data/**/*.py text whitespace=blank-at-eol,blank-at-eof,space-before-tab
+data/**/*.md text whitespace=blank-at-eol,blank-at-eof,space-before-tab
