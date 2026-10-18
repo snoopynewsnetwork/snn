@@ -1,0 +1,14 @@
+# Preserve byte-for-byte public evidence and native PDF text extraction.
+data/turnout/*.html -text -whitespace
+data/turnout/*.txt -text -whitespace
+data/turnout/dashboard-*-county.json -text -whitespace
+data/baselines/*.html -text -whitespace
+data/baselines/*.txt -text -whitespace
+maps/raw/** -text -whitespace
+data/results-sources/*.headers -text -whitespace
+data/results-sources/*.txt -text -whitespace
+data/results-sources/*.json -text -whitespace
+# Python CSV writers retain their standard CRLF record separator.
+data/**/*.csv -text whitespace=cr-at-eol
+data/*.csv -text whitespace=cr-at-eol
+maps/*.csv -text whitespace=cr-at-eol

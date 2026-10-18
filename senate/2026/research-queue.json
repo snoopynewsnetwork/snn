@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "requested_date": "2026-10-17",
-  "updated_at_utc": "2026-10-18T00:14:53.722796+00:00",
+  "updated_at_utc": "2026-10-18T00:42:29.022693+00:00",
   "scope": "35 states in the repository 2026 U.S. Senate race index",
   "coordinator_agent_id": "d0fc3534-1613-4883-b48b-21a233fcfd9e",
   "workspace_id": "wks_b290f45007010740",
@@ -19,11 +19,89 @@
       "election": "Regular",
       "seat_class": "II",
       "priority": 1,
-      "status": "queued",
-      "workers": {},
-      "validation": null,
-      "gaps": [],
-      "published_commits": []
+      "status": "reviewed-ready-to-publish",
+      "workers": {
+        "turnout": {
+          "agent_id": "5235deaf-29bb-427b-8bb6-f6e7a81b01cc",
+          "status": "complete-reviewed"
+        },
+        "partisanship": {
+          "agent_id": "ff131264-ecc9-4a49-b77c-e2bb651b532d",
+          "status": "complete-reviewed"
+        },
+        "official_results": {
+          "agent_id": "bf0b9c07-6ba8-4cf9-a880-cf545c59230a",
+          "status": "complete-reviewed"
+        },
+        "precinct_maps": {
+          "agent_id": "7010cc3c-990b-41a0-9df4-4a8aa4bbe687",
+          "status": "complete-reviewed"
+        }
+      },
+      "validation": {
+        "status": "pass",
+        "review": "north-carolina/research-review.md",
+        "coordinator_checks": "north-carolina/data/coordinator-checks.json",
+        "repository_check": "npm run check passed",
+        "scope": "100 counties; 800 baseline cells; 42 scenarios; 4200 county targets; 104 official inventory rows; 152 map assets; relative links and asset bounds"
+      },
+      "gaps": [
+        "2024 ordinary ZIP differs certified PDFs by four votes; chronology/cause unknown, certified baseline used.",
+        "November inspected returns are zero setup; genuine updates, correction timing and live cadence unmeasured.",
+        "November map approval and complete results crosswalk unverified; retained geometry/ID gaps.",
+        "Outstanding aggregate category documentation conflicts in 71 counties; candidate-vote remainder unknown; November provisional product untested.",
+        "NYT automated access blocked; several local newsroom products historical, empty or test-enabled.",
+        "No live collector, 2026 turnout forecast or calibrated Needle implemented."
+      ],
+      "published_commits": [],
+      "priority_geography": {
+        "basis": "2024 president certified all-candidate contest votes",
+        "count": 38,
+        "votes": 4576486,
+        "statewide_votes": 5699145,
+        "share": 0.8030127326116462,
+        "reconciliation": "Coordinator checked 800 exact county summary cells against partisanship",
+        "counties": [
+          "Wake",
+          "Mecklenburg",
+          "Guilford",
+          "Forsyth",
+          "Durham",
+          "Buncombe",
+          "Cumberland",
+          "Union",
+          "New Hanover",
+          "Johnston",
+          "Cabarrus",
+          "Gaston",
+          "Iredell",
+          "Brunswick",
+          "Davidson",
+          "Alamance",
+          "Orange",
+          "Pitt",
+          "Catawba",
+          "Onslow",
+          "Randolph",
+          "Rowan",
+          "Henderson",
+          "Harnett",
+          "Moore",
+          "Craven",
+          "Lincoln",
+          "Wayne",
+          "Nash",
+          "Chatham",
+          "Cleveland",
+          "Rockingham",
+          "Robeson",
+          "Burke",
+          "Carteret",
+          "Caldwell",
+          "Franklin",
+          "Wilson"
+        ]
+      }
     },
     {
       "state": "Alaska",
@@ -32,11 +110,21 @@
       "election": "Regular",
       "seat_class": "II",
       "priority": 2,
-      "status": "queued",
-      "workers": {},
+      "status": "researching-baselines",
+      "workers": {
+        "turnout": {
+          "agent_id": "e5f1a02a-c51f-47c4-a351-04785cbc0d28",
+          "status": "running"
+        },
+        "partisanship": {
+          "agent_id": "22d28558-5294-4ad2-b627-7aed3f5c46ce",
+          "status": "running"
+        }
+      },
       "validation": null,
       "gaps": [],
-      "published_commits": []
+      "published_commits": [],
+      "coordinator_preparation": "Newsroom source captures and draft local-news/results strategy prepared; research stack remains queued."
     },
     {
       "state": "Ohio",
@@ -49,7 +137,8 @@
       "workers": {},
       "validation": null,
       "gaps": [],
-      "published_commits": []
+      "published_commits": [],
+      "coordinator_preparation": "Newsroom and official mock-results source captures in progress; research stack remains queued."
     },
     {
       "state": "Maine",
@@ -62,7 +151,8 @@
       "workers": {},
       "validation": null,
       "gaps": [],
-      "published_commits": []
+      "published_commits": [],
+      "coordinator_preparation": "Newsroom captures and local-news draft prepared; municipal and RCV rules sources identified. Research stack remains queued."
     },
     {
       "state": "Texas",
@@ -75,7 +165,8 @@
       "workers": {},
       "validation": null,
       "gaps": [],
-      "published_commits": []
+      "published_commits": [],
+      "coordinator_preparation": "Regional source captures and local-news draft prepared; state research stack remains queued."
     },
     {
       "state": "Iowa",
@@ -88,7 +179,8 @@
       "workers": {},
       "validation": null,
       "gaps": [],
-      "published_commits": []
+      "published_commits": [],
+      "coordinator_preparation": "Regional source captures and local-news draft prepared; research stack remains queued."
     },
     {
       "state": "Kansas",

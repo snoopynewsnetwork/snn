@@ -14,7 +14,19 @@
 | Current seat holder | Thom Tillis |
 | Seat holder's party | Republican |
 | Seat details verified | 2026-10-17 |
-| Coverage status | Initialized; campaign and ballot research pending |
+| Coverage status | Election-night geography/source research reviewed; campaign and ballot research pending |
+
+## Election-night research
+
+Reviewed research snapshot: **2026-10-18 UTC / 2026-10-17 Central**. Four actual Paseo question agents and coordinator integration are recorded in the [dispatch](research-dispatch.md) and [review](research-review.md).
+
+- [Turnout and priority geography](turnout.md): all 100 counties; the top 15 cast 55.42461194% of certified 2024 presidential votes. The smallest 80% set is 38 counties, totaling 4,576,486 of 5,699,145 votes (80.30127326%). NC had no 2024 Senate contest.
+- [Historical partisanship and conditional win targets](county-partisanship.md): certified 2022 Senate, 2024 president and 2020 Senate baselines; 42 statewide scenarios and 4,200 county target rows. Holding 2022 preferences, a tie requires +1.649627 Democratic share points under 2022 turnout weights or +1.967094 under 2024 weights. These are scenarios, not forecasts.
+- [Official results channels](official-results.md): all-100-county inventory and exact 38-county deeper inspection, retained responses, schema/reconciliation checks and November zero-setup findings.
+- [Precinct maps](precinct-maps.md) and [download/preview index](maps/index.html): 76 GeoJSON files and 76 previews for the exact priority set across 2024 and current published snapshots.
+- [Local news and NYT checks](local-news-results.md) and [live collection strategy](live-polling-strategy.md): supplier overlap, historical/test products, proposed collection intervals, correction handling and remaining-vote uncertainty.
+
+Use the certified PDFs for historical baselines: the ordinary 2024 results ZIP is four votes below them, with the precise county/candidate differences retained. November sources inspected here contain zero setup votes. Map approval for November, complete results-to-map crosswalks, genuine update/correction timing and remaining candidate votes remain unverified. The outstanding-ballot snapshot has a documented category conflict in 71 counties. No live collector or calibrated Needle is claimed.
 
 ## Candidates
 

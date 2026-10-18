@@ -31,6 +31,10 @@ in the queue, and published commit IDs as packages finish.
 
 ## Progress
 
-Michigan complete at dispatch. All other states queued. Consult the queue for
-current state status. Completed packages will be linked from their state README
-files and pushed incrementally to main.
+Michigan remains complete. North Carolina's four question agents have finished;
+its all-100-county package and exact 38-county map/source priority set passed
+integration review and are ready for publication. Alaska's two baseline workers
+are running. The remaining 32 state stacks are queued, with coordinator newsroom
+preparation begun for several upcoming states. Consult the queue for actual IDs,
+checks, gaps and published commit hashes. Publication is incremental; the full
+batch remains in progress.
