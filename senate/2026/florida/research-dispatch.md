@@ -32,3 +32,5 @@ A same-model resumption also hit capacity. Fresh profile/provider/model discover
 Official-results actually finished its complete owned package and final manifest. Mississippi turnout `5d6e201c-4b06-46e7-9976-ae38ebf52676` launched in that released slot. Florida maps remains in final integration/QA after capacity recovery; this state is not yet published as complete.
 
 Maps actually finished after the recorded capacity fallback. All four owned packages are frozen for coordinator integration. Mississippi partisanship `39cd2d0d-222c-4017-b21a-3b4f2cc54f67` launched in that actual released slot; the Mississippi first pair are the only active researchers.
+
+Coordinator published the complete reviewed Florida package in `4b03078e4903207df91bded15cb962e33d740106` and verified origin/main exactly at that commit. The full34-state batch continues with the Mississippi first pair active and21 later states queued.
