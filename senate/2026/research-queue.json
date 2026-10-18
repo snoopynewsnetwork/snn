@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "requested_date": "2026-10-17",
-  "updated_at_utc": "2026-10-18T03:11:55.785086+00:00",
+  "updated_at_utc": "2026-10-18T03:17:19.634011+00:00",
   "scope": "35 states in the repository 2026 U.S. Senate race index",
   "coordinator_agent_id": "d0fc3534-1613-4883-b48b-21a233fcfd9e",
   "workspace_id": "wks_b290f45007010740",
@@ -423,10 +423,33 @@
           "status": "running"
         }
       },
-      "validation": null,
-      "gaps": [],
+      "validation": {
+        "status": "pass",
+        "scope": "county baseline/priority only; first-wave report/finer-layer/target completion continues",
+        "checks": "texas/data/coordinator-baseline-reconciliation.json"
+      },
+      "gaps": [
+        "Finer OE files have explicit native-county/filename conflicts, duplicate candidate keys, method nonadditivity and partial coverage; originals/source rows preserved without reassignment/deduplication.",
+        "Current TLC VTD counts differ primary county/state controls and remain a separate redistricting derivative.",
+        "County and state original2024 PDF footer formats differ; preserve exact literals, archive captures and retrieval clocks without inferring certification/release chronology.",
+        "No approved November reporting-unit crosswalk, production feed/cadence or calibrated forecast claimed."
+      ],
       "published_commits": [],
-      "coordinator_preparation": "Both actual first-wave workers active. Turnout recovered archived original SOS canvass supporting House Clerk statewide totals; original county/native-unit evidence and independent full-field/priority reconciliation still pending. No accepted priority or second-wave launch."
+      "coordinator_preparation": "Archived original SOS county evidence replaces derivative-only allocation for all four baseline contests; exact34 county priority accepted by coordinator. Both actual first-wave workers continue final research/QA; no second-wave slot yet. Finer unit inventories retain raw identities/conflicts and are not a 2026 approved crosswalk. Primary finer Harris controls now cover all 1,584 Senate units/candidate and ballot/method balances; oversized gzip is retained in ordered lossless byte parts under the cap. This does not approve geography.",
+      "priority_geography": {
+        "basis": "2024 Senate all five valid reported candidates; archived original SOS county canvass reconciled to original statewide controls",
+        "count": 34,
+        "votes": 9076868,
+        "statewide_votes": 11291854,
+        "share": 0.8038421325674243,
+        "top15_votes": 7369697,
+        "previous_votes": 9018686,
+        "crossing": "Midland / TX:48329 / 58,182",
+        "dispatch_keys": "texas/data/turnout/priority-set.json",
+        "ordered_keys": "texas/data/coordinator-priority-keys.txt",
+        "ordered_keys_sha256": "a5d39344328ab3c0f76809439c6af42c09a59d81f76b9b756e5b538a63ac5be5",
+        "reconciliation": "Coordinator passed 254 counties/1,016 baseline rows/6,604 candidate cells/26 state controls/4,064 summary cells/full order/exact34. Independent peer54,616-field pass. Acceptance limited to county counts/priority; finer source-native layers remain qualified."
+      }
     },
     {
       "state": "Iowa",

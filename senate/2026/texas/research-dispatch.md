@@ -14,3 +14,14 @@ Profiles were checked: none configured. Compact provider discovery reconfirmed `
 The [source preflight](data/coordinator-source-preflight.md) retains 51 public responses and discovered differences between redistricting VTD derivatives and primary statewide controls. These are not accepted certified/native precinct baselines. Turnout must investigate original returns, preserve source disagreements and reconcile all 254 counties before the exact 2024 Senate priority contract is accepted. County precincts, vote centers, central early/mail units and VTDs remain distinct. There was no 2022 Senate election; use actual 2022 governor context and distinguish 2020 same-seat Senate from 2024 other-seat Senate. No November feed, cadence, boundary approval, allocation or calibration is inferred.
 
 Maine official results completed; Texas partisanship launched in its freed slot after profiles (none) and compact provider discovery were rechecked. The two Texas workers have each other’s actual IDs for read-only source/schema/full-county reconciliation. Turnout recovered an original archived SOS statewide canvass matching House Clerk candidate controls; county allocation/native-unit evidence and exact priority approval remain pending.
+
+County priority accepted by independent coordinator checks: all 254 counties,
+1,016 baseline rows, 6,604 original candidate/county cells, 26 primary state
+controls and 4,064 county summary cells. Top 15 total 7,369,697; first 33 total
+9,018,686; exact 34 total 9,076,868 / 11,291,854. Midland's 58,182 crosses.
+Ordered keys at `data/coordinator-priority-keys.txt`, SHA-256
+`a5d39344328ab3c0f76809439c6af42c09a59d81f76b9b756e5b538a63ac5be5`.
+Finer source-native inventories/file conflicts remain qualified and unapproved
+as geography. Both first-wave workers continue final report/QA; second wave
+awaits a freed worker slot. Actual original county/state footer formats were
+visually checked and are preserved separately without chronology inference.
