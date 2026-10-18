@@ -1,0 +1,16 @@
+# Preserve primary response bytes and native extraction evidence.
+data/turnout/*.headers -text -whitespace
+data/turnout/*.txt -text -whitespace
+data/baselines/*.headers -text -whitespace
+data/baselines/*.txt -text -whitespace
+data/baselines/*.html -text -whitespace
+data/baselines/*.json -text -whitespace
+maps/raw/** -text -whitespace
+# CSV records retain standard CRLF separators.
+data/**/*.csv -text whitespace=cr-at-eol
+data/*.csv -text whitespace=cr-at-eol
+maps/*.csv -text whitespace=cr-at-eol
+# Preserve exact HTTP transcripts from the current-source and map audits.
+data/results-sources/*.headers -text -whitespace
+data/results-sources/*.txt -text -whitespace
+maps/originals/*.headers -text -whitespace

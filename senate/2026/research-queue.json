@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "requested_date": "2026-10-17",
-  "updated_at_utc": "2026-10-18T00:56:56.278601+00:00",
+  "updated_at_utc": "2026-10-18T01:09:53.336703+00:00",
   "scope": "35 states in the repository 2026 U.S. Senate race index",
   "coordinator_agent_id": "d0fc3534-1613-4883-b48b-21a233fcfd9e",
   "workspace_id": "wks_b290f45007010740",
@@ -113,7 +113,7 @@
       "election": "Regular",
       "seat_class": "II",
       "priority": 2,
-      "status": "researching-results-and-maps",
+      "status": "reviewed-ready-to-publish",
       "workers": {
         "turnout": {
           "agent_id": "e5f1a02a-c51f-47c4-a351-04785cbc0d28",
@@ -121,33 +121,38 @@
         },
         "partisanship": {
           "agent_id": "22d28558-5294-4ad2-b627-7aed3f5c46ce",
-          "status": "complete-reviewed-baselines"
+          "status": "complete-reviewed"
         },
         "official_results": {
           "agent_id": "d0a30e3b-9b6e-49d5-8c44-234917e2abb0",
-          "status": "running"
+          "status": "complete-reviewed"
         },
         "precinct_maps": {
           "agent_id": "12444a2f-271e-4e03-ac87-be0c7a772619",
-          "status": "running"
+          "status": "complete-reviewed"
         }
       },
       "validation": {
-        "scope": "baselines only; full integration pending results/maps",
+        "scope": "integrated research package",
         "status": "pass",
         "checks": "alaska/data/coordinator-checks.json",
-        "turnout": "Offline build passed697district comparisons,13statewide candidates,25candidate/method comparisons",
-        "partisanship": "7059calculation checks, raw/header/CVR hashes,533independent candidate/HD comparisons",
-        "coordinator": "533candidate cells,82same-electionHD totals,16pair scenarios,656unit targets,861RCVdistrict cells,3turnoutRCVscenarios/123contributions; visualsummary/RCVinspection"
+        "turnout": "697 district comparisons, 13 statewide candidates and 25 candidate/method checks; deterministic offline build",
+        "partisanship": "7,059 calculation checks, retained source/CVR hashes, 533 independent candidate/HD comparisons",
+        "official_results": "41 groups, 1,568 unit records, 29 statewide candidate checks, 263 dependency hashes and 123 archive links",
+        "precinct_maps": "7,038 checks; 28 official PDFs/256 priority physical precincts, two 402-feature GIS snapshots and 56 district/vintage extracts",
+        "coordinator": "533 candidate cells, 82 HD totals, 16 pair scenarios/656 unit targets, 861 RCV cells, three turnout scenarios/123 contributions, whole-state cross-assignment coverage, map hashes, relative links, bounds and representative visual inspection"
       },
       "gaps": [
-        "2022 published RCV scope omits250 ballots localized to five absent precincts pluspartialLevelock; cause andlater ranks unknown.",
-        "2020 finer-unit source text omitswrite-ins; complete601write-ins recovered onlyat41district level.",
-        "No validated cross-year orNovember2026reporting-boundarycrosswalk; currentmapapproval unverified.",
-        "Four2024EarlyVoting-labeled units contain actualElectionDaymethodcounts; labelcategories differmethodcolumns."
+        "2022 RCV scope omits 250 ballots, localized to five absent precincts plus partial Levelock; cause and later ranks unknown.",
+        "2020 text omits finer-unit write-ins; complete 601 write-ins recovered at 41-district level only.",
+        "No verified November feed/IDs, live cadence or cross-year/November geographic crosswalk; current map approval unestablished.",
+        "August primary CSV leaves 88 ballots unexplained across 47 units; reporting flags and source timestamp timezones remain unestablished.",
+        "Candidate affiliation differences, pending write-in filings, exact RCV start hour and accepted-unprocessed Senate ballot inventory need later verification.",
+        "Geometry self-intersections/overlaps and current-versus-baseline differences are retained; no votes allocated.",
+        "NYT and some combined statistics downloads inaccessible; manual fallback documented."
       ],
       "published_commits": [],
-      "coordinator_preparation": "Coordinator newsroom/strategy drafts prepared. Both actual baseline workers running; progress reports preserve native HD/admin units, distinct first-choice/RCV scopes and independent candidate identity. No priority set accepted before completed reconciliation.",
+      "coordinator_preparation": "All four workers and coordinator news/strategy integration reviewed. Publication checks in progress; Ohio first pair active.",
       "priority_geography": {
         "basis": "2024 president certified all eight candidates; native HD1\u201340 plus HD99 administrative",
         "count": 28,
@@ -185,7 +190,7 @@
           17
         ],
         "dispatch_keys": "alaska/data/turnout/priority-set.json",
-        "reconciliation": "Coordinator independently passed533 candidate/HD cells and82 same-electionHD totals; no cross-yeargeography join."
+        "reconciliation": "Independent reconciliation passed 533 candidate/HD cells and 82 same-election HD totals, exact ordered dispatch keys and minimal 80% crossing; no cross-year join."
       }
     },
     {
@@ -195,12 +200,31 @@
       "election": "Special",
       "seat_class": "III",
       "priority": 3,
-      "status": "queued",
-      "workers": {},
+      "status": "researching-baselines",
+      "workers": {
+        "turnout": {
+          "agent_id": "a1ac032c-caf9-4c81-bdd2-18ed4e83a720",
+          "status": "running"
+        },
+        "partisanship": {
+          "agent_id": "c6985d52-505a-4f74-ba3c-c6ee389f24cd",
+          "status": "running"
+        }
+      },
       "validation": null,
       "gaps": [],
       "published_commits": [],
-      "coordinator_preparation": "Newsroom and official mock-results source captures in progress; research stack remains queued."
+      "coordinator_preparation": "Dated newsroom captures and news/strategy drafts prepared; both actual baseline workers now active. Exact2024Senate priority set pending reconciliation.",
+      "provisional_worker_milestone": {
+        "status": "not reconciled; first wave still active",
+        "basis": "2024 Senate all seven candidates",
+        "statewide_votes": 5704620,
+        "top15_votes": 3525320,
+        "priority_count": 32,
+        "priority_votes": 4581738,
+        "first31_votes": 4542798,
+        "source": "Turnout worker recovered certified official summary and full precinct workbooks via Wayback; native-unit reconciliation pending."
+      }
     },
     {
       "state": "Maine",
@@ -339,7 +363,9 @@
       "workers": {},
       "validation": null,
       "gaps": [],
-      "published_commits": []
+      "published_commits": [],
+      "state_specific_notes": "Verify actual statewide comparisons; do not invent a 2022 Senate/statewide candidate contest. Recent 2024 Senate, 2020 same-seat Senate, 2024 president and actual midterm 2018 regular/special/runoff distinctions may require an explicit alternative comparison. Use 2022 turnout ballots separately where appropriate. Coordinator captured WDAM reporting of 2026 Independent Ty Pinkins; verify the final official ballot and preserve his identity separately from 2024 DEM. Do not assume a combined opposition coalition.",
+      "coordinator_preparation": "Dated newsroom/authority captures, verified evidence hashes and local-news/strategy drafts prepared; state-specific candidate/geography/setup caveats recorded. Four-question stack remains queued."
     },
     {
       "state": "Nebraska",
@@ -352,7 +378,9 @@
       "workers": {},
       "validation": null,
       "gaps": [],
-      "published_commits": []
+      "published_commits": [],
+      "state_specific_notes": "Keep 2024 Senate regular Fischer\u2013Osborn (independent) separate from the 2024 special Ricketts\u2013Love contest. Verify the actual 2026 ballot, independent challenger, withdrawals and party labels. Coordinator found November zero official setup while the county portal still selects May primary. Regional stations show Iowa/historical/test configurations. See data/news.",
+      "coordinator_preparation": "Dated newsroom/authority captures, verified evidence hashes and local-news/strategy drafts prepared; state-specific candidate/geography/setup caveats recorded. Four-question stack remains queued."
     },
     {
       "state": "South Dakota",
@@ -365,7 +393,9 @@
       "workers": {},
       "validation": null,
       "gaps": [],
-      "published_commits": []
+      "published_commits": [],
+      "state_specific_notes": "Coordinator tested the actual state-linked November setup CSV: Senate race 14412, Mike Rounds REP and Brian L Bengs IND, all zero; the page explicitly says Testing In Progress. Verify the final ballot and use named opposition targets. Do not carry Bengs's 2022 Democratic nomination into his current identity. The statewide 673-unit denominator differs from the Senate 656 denominator and needs inspection. See data/news.",
+      "coordinator_preparation": "Dated newsroom/authority captures, verified evidence hashes and local-news/strategy drafts prepared; state-specific candidate/geography/setup caveats recorded. Four-question stack remains queued."
     },
     {
       "state": "Idaho",
@@ -378,7 +408,8 @@
       "workers": {},
       "validation": null,
       "gaps": [],
-      "published_commits": []
+      "published_commits": [],
+      "coordinator_preparation": "Dated newsroom/authority captures, verified evidence hashes and local-news/strategy drafts prepared; state-specific candidate/geography/setup caveats recorded. Four-question stack remains queued."
     },
     {
       "state": "Colorado",
@@ -391,7 +422,8 @@
       "workers": {},
       "validation": null,
       "gaps": [],
-      "published_commits": []
+      "published_commits": [],
+      "coordinator_preparation": "Initial dated newsroom/authority captures in progress; no state workers launched."
     },
     {
       "state": "Delaware",
@@ -404,7 +436,8 @@
       "workers": {},
       "validation": null,
       "gaps": [],
-      "published_commits": []
+      "published_commits": [],
+      "coordinator_preparation": "Initial dated newsroom/authority captures in progress; no state workers launched."
     },
     {
       "state": "Illinois",
@@ -417,7 +450,9 @@
       "workers": {},
       "validation": null,
       "gaps": [],
-      "published_commits": []
+      "published_commits": [],
+      "coordinator_preparation": "Initial dated newsroom/authority captures in progress; no state workers launched.",
+      "state_specific_notes": "Preserve separate election authorities and overlap: Chicago versus suburban Cook and other municipal boards in the current official jurisdiction inventory. County totals must include nonoverlapping authorities; do not add full Cook totals to Chicago again. Verify the actual jurisdiction count from primary authority rather than assuming 102 county feeds."
     },
     {
       "state": "Massachusetts",
@@ -430,7 +465,9 @@
       "workers": {},
       "validation": null,
       "gaps": [],
-      "published_commits": []
+      "published_commits": [],
+      "coordinator_preparation": "Initial dated newsroom/authority captures in progress; no state workers launched.",
+      "state_specific_notes": "Use native towns/cities/wards/precincts, not only 14 county summaries. Reconcile all 351 municipalities and current native units to statewide totals; verify the current roster. Any county-derived table retains explicit nonoverlapping municipal aggregation."
     },
     {
       "state": "New Jersey",
