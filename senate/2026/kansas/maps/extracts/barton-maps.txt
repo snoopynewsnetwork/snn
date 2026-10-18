@@ -1,0 +1,1139 @@
+
+
+ 
+ Barton County - Maps 
+   
+    var socsSignedIn = 0; 
+    ;(function($) {
+      'use strict';
+      addToHomescreen({
+        skipFirstVisit: false,
+        maxDisplayCount: 1,
+        lifespan: 0
+      });
+    })(jQuery);
+     
+var display_private_sections = 0;
+var allowed_section_ids = ""
+    if (typeof($.cookie) != "function") document.write('<script src="/javascripts/jquery/plugins/jquery.cookie-1.4.1.min.js">\x3C/script>'); 
+ 
+  var _gaq = _gaq || [], tempOStype = "n/a";
+
+      var val = $.cookie('socsapp');
+    tempOStype = (val == undefined) ? 'no' : val;
+
+  _gaq.push(
+    ['_setCustomVar',1,'siteURL','https://www.bartoncounty.org'],
+    ['_setCustomVar',2,'template','L15'],
+    ['_setCustomVar',3,'protocol',document.location.protocol],
+    ['_setCustomVar',4,'socsApp',tempOStype],
+    ['_setAccount', 'UA-36782344-1'],
+    ['_trackPageview'],
+    ['_deleteCustomVar',1],
+    ['_deleteCustomVar',2],
+    ['_deleteCustomVar',3],
+    ['_deleteCustomVar',4]
+    );
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+ 
+ 
+
+ 
+
+ Quick Links Skip to main content Skip to navigation 
+ 
+;(function($) { 'use strict';
+  // Empty Adserver Banners result in an empty div tag being added to the HTML - if that's the case, remove it so the ":empty" CSS rule for banners works.
+  $('.socs-banner > div:empty').parent().html('');
+})(jQuery);
+ 
+
+ Search for: Barton County 
+ Current conditions as of 18 Oct 09:56 am CDT Fair and breezy Location: Great Bend Feels like: NA° Humidity: 52 Wind: S 21 mph 53° Today Sunny, with a high near 66. Breezy, with a south wind 18 to 22 mph, with gusts as high as 33 mph.  Tonight Mostly clear, with a low around 47. South wind 11 to 16 mph, with gusts as high as 28 mph.  Monday Mostly cloudy, then gradually becoming sunny, with a high near 66. South wind 11 to 16 mph, with gusts as high as 24 mph.  Weather forecast provided by weather.gov. 
+ 
+;(function($){
+  'use strict';
+  $(function() {
+
+          if ($('.weather > .weather-link').length == 0) {
+        // Create the HTML for the weather and setup the hover events
+        if ($('.weather > .ns2-menu-wrapper').length) {
+          $('.weather > .ns2-menu-wrapper').after('<a class="weather-link" href="http://forecast.weather.gov/MapClick.php?lat=38.3423212&lon=-98.8142264" rel="noopener" target="_blank">53&deg; <em class="fa fa-angle-down"><\/em><\/a>');
+        } else {
+          $('.weather').prepend('<a class="weather-link" href="http://forecast.weather.gov/MapClick.php?lat=38.3423212&lon=-98.8142264" rel="noopener" target="_blank">53&deg; <em class="fa fa-angle-down"><\/em><\/a>');
+        }
+      }
+
+      if ($('html').hasClass('no-touchevents')) {
+        $('.weather-link').hover(function(e) {
+          $(this).next().addClass('show-weather-forecast');
+        }, function(e) {
+          $(this).next().removeClass('show-weather-forecast');
+        });
+      }
+
+            $('.textforecast').each(function() {
+        if ($.trim($(this).text()).length === 0) $(this).css('display', 'none');
+      });
+
+    
+  });
+})(jQuery);
+ 
+ Search ;(function($){'use strict';var parent = '.masthead-style-2';$(parent + ' .icon-search').on('click', function(e) {e.preventDefault();var $sh = $('.search-header');if ($sh.hasClass('show-search')) {$('#Fkeywords').blur();$sh.removeClass('show-search');} else {$('#Fkeywords').focus();$sh.addClass('show-search');}});})(jQuery); 
+ 
+ Main Navigation Toggle navigation Current conditions as of 18 Oct 09:56 am CDT Fair and breezy Location: Great Bend Feels like: NA° Humidity: 52 Wind: S 21 mph 53° Today Sunny, with a high near 66. Breezy, with a south wind 18 to 22 mph, with gusts as high as 33 mph.  Tonight Mostly clear, with a low around 47. South wind 11 to 16 mph, with gusts as high as 28 mph.  Monday Mostly cloudy, then gradually becoming sunny, with a high near 66. South wind 11 to 16 mph, with gusts as high as 24 mph.  Weather forecast provided by weather.gov. 
+ 
+;(function($){
+  'use strict';
+  $(function() {
+
+          if ($('.weather > .weather-link').length == 0) {
+        // Create the HTML for the weather and setup the hover events
+        if ($('.weather > .ns2-menu-wrapper').length) {
+          $('.weather > .ns2-menu-wrapper').after('<a class="weather-link" href="http://forecast.weather.gov/MapClick.php?lat=38.3423212&lon=-98.8142264" rel="noopener" target="_blank">53&deg; <em class="fa fa-angle-down"><\/em><\/a>');
+        } else {
+          $('.weather').prepend('<a class="weather-link" href="http://forecast.weather.gov/MapClick.php?lat=38.3423212&lon=-98.8142264" rel="noopener" target="_blank">53&deg; <em class="fa fa-angle-down"><\/em><\/a>');
+        }
+      }
+
+      if ($('html').hasClass('no-touchevents')) {
+        $('.weather-link').hover(function(e) {
+          $(this).next().addClass('show-weather-forecast');
+        }, function(e) {
+          $(this).next().removeClass('show-weather-forecast');
+        });
+      }
+
+            $('.textforecast').each(function() {
+        if ($.trim($(this).text()).length === 0) $(this).css('display', 'none');
+      });
+
+    
+  });
+})(jQuery);
+ 
+ Search ;(function($){'use strict';var parent = '.navbar-header';$(parent + ' .icon-search').on('click', function(e) {e.preventDefault();var $sh = $('.search-header');if ($sh.hasClass('show-search')) {$('#Fkeywords').blur();$sh.removeClass('show-search');} else {$('#Fkeywords').focus();$sh.addClass('show-search');}});})(jQuery); 
+ Home 
+  if ($.cookie("device_uuid"))
+    document.write('<li><a href='+
+      '"/vnotifier/?page=setupnotifications'+
+      '&backUrl='+encodeURIComponent(window.location.href)+
+      '&device_uuid='+$.cookie("device_uuid")+'">'+
+      '<em class="fa fa-cog fa-lg fa-fw"></em><span class="hidden-sm hidden-md hidden-lg">Settings</span></a></li>'
+      );
+     COVID-19 COVID-19  
+
+ Go to COVID-19... COVID-19 -  Press Releases COVID-19 -  Links - Daily News Updates 
+   Front Page Front Page  
+
+ Go to Front Page... Front Page -  News 
+   Commissioners Commissioners  
+
+ Go to Commissioners... Commissioners -  Contact Info Commissioners -  Commission Agenda Commissioners -  Commission Meeting Minutes Commissioners -  Resolutions Commissioners -  Barton County Operating Budget Commissioners -  Fire District # 1 Commissioners -  Board of Health Commissioners -  Boards & Committees 
+   Departments Departments  
+
+ Dropdown Toggle Departments -  Administration Go to Administration... Departments - Administration -  Contact Info 
+ Dropdown Toggle Departments -  County Clerk Go to County Clerk... Departments - County Clerk -  Contact Info Departments - County Clerk -  Misc. Responsibilities Departments - County Clerk -  City Officials Departments - County Clerk -  Township Officials Departments - County Clerk -  Freedom of Information Request Departments - County Clerk -  Tax Levies 
+ Dropdown Toggle Departments -  Appraiser Go to Appraiser... Departments - Appraiser -  Contact Info Dropdown Toggle Departments - Appraiser -  General Info Appraiser -  Go to General Info... Departments - Appraiser - General Info -  Appraiser's Fee Schedule Departments - Appraiser -  Parcel Search Dropdown Toggle Departments - Appraiser -  Real Estate Appraiser -  Go to Real Estate... Departments - Appraiser - Real Estate -  Residential Departments - Appraiser - Real Estate -  Agricultural Departments - Appraiser - Real Estate -  How Taxes are Figured Departments - Appraiser - Real Estate -  Annual Market Trend Study Departments - Appraiser - Real Estate -  Appraisal Terms Departments - Appraiser -  Personal Property Departments - Appraiser -  Oil & Gas Departments - Appraiser -  Appeals Process Departments - Appraiser -  Property Tax Calendar Departments - Appraiser -  Neighborhood Revitalization Plan Departments - Appraiser -  Forms & Documents Departments - Appraiser -  Links Departments - Appraiser -  Contact Us & Staff Directory 
+ Dropdown Toggle Departments -  Treasurer Go to Treasurer... Departments - Treasurer -  Contact Info Departments - Treasurer -  Motor Vehicle Departments - Treasurer -  Property Tax 
+ Dropdown Toggle Departments -  Health Department Go to Health Department... Departments - Health Department -  Newsletter Dropdown Toggle Departments - Health Department -  Resources Health Department -  Go to Resources... Departments - Health Department - Resources -  Walking Trails Departments - Health Department -  Statistics & Reports Departments - Health Department -  Classes & Meetings Departments - Health Department -  Healthy Living Laboratory Services Departments - Health Department -  Child Care Licensing Departments - Health Department -  Child Health Departments - Health Department -  Communicable Diseases Departments - Health Department -  Emergency Preparedness Departments - Health Department -  Family Planning and Birth Control Departments - Health Department -  Immunizations Departments - Health Department -  Maternal & Infant Health Departments - Health Department -  WIC--Women, Infants, & Children 
+ Dropdown Toggle Departments -  Central Kansas Community Corrections Go to Central Kansas Community Corrections... Departments - Central Kansas Community Corrections -  About us Departments - Central Kansas Community Corrections -  Advisory Board Departments - Central Kansas Community Corrections -  Contact Info 
+ Dropdown Toggle Departments -  County Attorney Go to County Attorney... Departments - County Attorney -  Contact Info Departments - County Attorney -  Attorney Staff Departments - County Attorney -  Diversions Dropdown Toggle Departments - County Attorney -  Victim Services County Attorney -  Go to Victim Services... Departments - County Attorney - Victim Services -  Other Service Provider Contact Information Departments - County Attorney - Victim Services -  Victim Services FAQ Departments - County Attorney -  Worthless Check Departments - County Attorney -  PC Affidavit 
+ Dropdown Toggle Departments -  District Court Go to District Court... Departments - District Court -  20th Judicial District Departments - District Court -  Probation 
+ Dropdown Toggle Departments -  Elections Go to Elections... Departments - Elections -  Contact Info Departments - Elections -  Registration Departments - Elections -  Current Elections Departments - Elections -  Election Results Departments - Elections -  Advance Vote Departments - Elections -  Election Officials Departments - Elections -  Election Legislation Departments - Elections -  Volunteers 
+ Dropdown Toggle Departments -  Emergency Management Go to Emergency Management... Departments - Emergency Management -  Contact Info Departments - Emergency Management -  Be Prepared Departments - Emergency Management -  Emergency Planning Dropdown Toggle Departments - Emergency Management -  LEPC & SARA Title III Emergency Management -  Go to LEPC & SARA Title III... Departments - Emergency Management - LEPC & SARA Title III -  LEPC Meeting Notes Departments - Emergency Management - LEPC & SARA Title III -  LEPC Past Agendas & Meeting Summaries Departments - Emergency Management -  Disaster Information 
+ Dropdown Toggle Departments -  Engineering Go to Engineering... Departments - Engineering -  Contact Info Departments - Engineering -  Floodplain Info Departments - Engineering -  Utility Permit Departments - Engineering -  Entrance Permit Departments - Engineering -  County Map Departments - Engineering -  State Website Links 
+ Dropdown Toggle Departments -  Environmental Management/Zoning Go to Environmental Management/Zoning... Departments - Environmental Management/Zoning -  Contact Info Departments - Environmental Management/Zoning -  Environmental Code Departments - Environmental Management/Zoning -  Fireworks Departments - Environmental Management/Zoning -  Floodplain Regulations Departments - Environmental Management/Zoning -  Nuisance Code Departments - Environmental Management/Zoning -  Zoning Regulations 
+ Dropdown Toggle Departments -  Human Resources & Finance Go to Human Resources & Finance... Departments - Human Resources & Finance -  Contact Info 
+ Dropdown Toggle Departments -  Information Technology Go to Information Technology... Departments - Information Technology -  Contact Info 
+ Dropdown Toggle Departments -  Juvenile Services Go to Juvenile Services... Departments - Juvenile Services -  Contact Info Departments - Juvenile Services -  Juvenile Intake and Assessment Services (JIAS) Departments - Juvenile Services -  Immediate Intervention Program (IIP) Departments - Juvenile Services -  Juvenile Intensive Supervised Probation (JISP) Departments - Juvenile Services -  Community Case Management (CCMA) Dropdown Toggle Departments - Juvenile Services -  Journey To Change Juvenile Services -  Go to Journey To Change... Departments - Juvenile Services - Journey To Change -  All Stars Prevention Dropdown Toggle Departments - Juvenile Services -  Family Engagement Advocate Juvenile Services -  Go to Family Engagement Advocate... Departments - Juvenile Services - Family Engagement Advocate -  Parent Project Dropdown Toggle Departments - Juvenile Services -  JCAB Programming Juvenile Services -  Go to JCAB Programming... Departments - Juvenile Services - JCAB Programming -  Service Projects 
+ Dropdown Toggle Departments -  Mapping Go to Mapping... Departments - Mapping -  Contact Info Departments - Mapping -  Maps & GIS Departments - Mapping -  Parcel Search Departments - Mapping -  Links to Other Map Sites 
+ Dropdown Toggle Departments -  Memorial Parks Go to Memorial Parks... Departments - Memorial Parks -  Contact info Departments - Memorial Parks -  Interactive Map Departments - Memorial Parks -  Memorial Parks Rules and Regulations Departments - Memorial Parks -  Golden Belt Cemetery Departments - Memorial Parks -  Golden Belt Veterans' Memorial Departments - Memorial Parks -  Golden Belt Veterans' Memorial Directory Departments - Memorial Parks -  Hillcrest Cemetery Departments - Memorial Parks -  Hillcrest Cemetery North Departments - Memorial Parks -  Genealogy Search 
+ Dropdown Toggle Departments -  Noxious Weed Go to Noxious Weed... Departments - Noxious Weed -  Contact Info Departments - Noxious Weed -  Noxious Weeds Departments - Noxious Weed -  Quick Links 
+ Dropdown Toggle Departments -  Records Go to Records... Departments - Records -  Contact Info Departments - Records -  Birth Records Departments - Records -  Death Records Departments - Records -  Genealogy Requests Departments - Records -  Barton County History 
+ Dropdown Toggle Departments -  Register of Deeds Go to Register of Deeds... Departments - Register of Deeds -  Contact Info Departments - Register of Deeds -  Passports Departments - Register of Deeds -  Recording Process Departments - Register of Deeds -  Types of Documents Departments - Register of Deeds -  Records Notification System Departments - Register of Deeds -  Records eSearch - Remote Access Printing (RAP) Departments - Register of Deeds -  Document Checklist Departments - Register of Deeds -  Document Fee Calculation Departments - Register of Deeds -  Fee-Based Services Departments - Register of Deeds -  Additional Associations Departments - Register of Deeds -  Disclaimer 
+ Dropdown Toggle Departments -  Road & Bridge Go to Road & Bridge... Departments - Road & Bridge -  Contact Info Departments - Road & Bridge -  Bridges & Culverts Departments - Road & Bridge -  Road Closures & Projects Departments - Road & Bridge -  Road Paving & Maintenance Departments - Road & Bridge -  Sand & Gravel Departments - Road & Bridge -  Shop & Yards Departments - Road & Bridge -  Signs & Road Painting Departments - Road & Bridge -  Harvesting Hay 
+ Dropdown Toggle Departments -  Solid Waste Go to Solid Waste... Departments - Solid Waste -  Hours of Operation Departments - Solid Waste -  Disposal Departments - Solid Waste -  Construction & Demolition Departments - Solid Waste -  E-Waste Departments - Solid Waste -  Household Hazardous Waste Departments - Solid Waste -  Medication Disposal Departments - Solid Waste -  Disaster Debris Segregation Requirements Departments - Solid Waste -  Gallery Departments - Solid Waste -  Environmental Education Departments - Solid Waste -  Forms Departments - Solid Waste -  Contact Us 
+   Living In Barton County Living In Barton County  
+
+ Go to Living In Barton County... Departments - Living In Barton County -  Economic Development Departments - Living In Barton County -  Facade Improvement Grants Departments - Living In Barton County -  People Recruitment Incentives Departments - Living In Barton County -  Quality of Life Departments - Living In Barton County -  Data Departments - Living In Barton County -  Tourism 
+   How Do I? How Do I?  
+
+ Go to How Do I?... Departments - How Do I? -  Documents 
+ Document Center 
+ Jobs 
+ Contact Us 
+   Employees Employees  
+
+ Go to Employees... Departments - Employees -  Notes To Employees Departments - Employees -  Employee Assistance Program Departments - Employees -  Benefits At A Glance Departments - Employees -  Health Insurance Departments - Employees -  Health Savings Account Departments - Employees -  KPERS Departments - Employees -  Employee Engagement Committee (EEC) Departments - Employees -  County Officials & Employees Departments - Employees -  Employee Handbook Departments - Employees -  Forms Departments - Employees -  Compliments & Complaints 
+ Procurement 
+              
+;(function() { 'use strict';
+  const path = window.location.pathname, page = 'article', activeNav = document.querySelector('li.extra-nav.active');
+  let el = null;
+
+  if (activeNav) activeNav.classList.remove('active');
+
+  if (path.includes('/vparentteacher/')) {
+    el = document.querySelector('li.extra-nav > a[href="/vparentteacher/"]');
+  } else if (path.includes('/vcalendar/')) {
+    el = document.querySelector('li.extra-nav > a[href="/vcalendar/"]');
+  } else if (path.includes('/display.v/ContactUs')) {
+    el = document.querySelector('li.extra-nav > a[href="/vnews/display.v/ContactUs"]');
+  } else if (path.includes('/display.v/StaffDirectory')) {
+    el = document.querySelector('li.extra-nav > a[href="/vnews/display.v/StaffDirectory"]');
+  } else if (page === 'archive') {
+    el = document.querySelector('li.extra-nav > a[href="/vnews/display.v/ARC?submit=search"]');
+  } else if (path.includes('/display.v/RMS')) {
+    el = document.querySelector('li.extra-nav > a[href="/vnews/display.v/RMS"]');
+  }
+  if (el) el.parentElement.classList.add('active');
+})();
+ 
+ 
+
+ 
+(function($){ 'use strict';
+    var ids = '';
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  if (!allowed_section_ids || allowed_section_ids.indexOf('54904fd6b8514',0) == -1) ids += '#snav_54904fd6b8514,';
+                                                                                                      
+
+  if (ids) {
+    ids = ids.replace(/,$/g, '');
+    $(ids).addClass('hidden');
+  }
+
+  // Convert pixels to ems - https://raw.githubusercontent.com/arasbm/jQuery-Pixel-Em-Converter/master/pxem.jQuery.js
+  $.fn.toEm = function(settings){
+    settings = jQuery.extend({
+      scope: 'body'
+    }, settings);
+    var that = parseInt(this[0],10),
+      scopeTest = jQuery('<div style="display: none; font-size: 1em; margin: 0; padding:0; height: auto; line-height: 1; border:0;">&nbsp;</div>').appendTo(settings.scope),
+      scopeVal = scopeTest.height();
+    scopeTest.remove();
+    return (that / scopeVal).toFixed(8);
+  };
+
+  function moveMegaMenu($el, winWidth) {
+    var to = $el.offset(), bottom = to.top + $el.height(),
+      $menu = $el.find('> .dropdown-menu'), mo = $menu.offset(), diff = 0;
+
+    // If the menu has already been moved, leave
+    if (mo.top == bottom) return false;
+
+    // Reset the top margin before calculating because breakpoints may have changed menu positions
+    $menu.css('margin-top', '');
+    mo = $menu.offset();
+    diff = bottom - mo.top;
+
+    // Use the top margin of the dropdown menu to "move" it to just below the parent menu
+    $menu.css('margin-top', diff);
+
+  }
+
+  function adjustMegaMenuHeight($this) {
+
+    // A "data" attribute will exist if we've already made this adjustment - if so, leave
+    if ($this.attr('data-height')) return false;
+
+    // Should the "extra" content use the entire column or share it with the rest of the nav items?
+    var extraShareColumn = false;
+
+    // Min height for the mega menu in ems
+    var minHeight = 13;
+
+    // Cache some DOM finds that are used more than once...
+    var $megaMenuExtraContent = $this.find('.mega-menu-extra-content'),
+      $megaMenuExtra = $this.find('.mega-menu-extra'),
+      $megaMenu = $this.find('> .dropdown-menu');
+
+
+    // Will be changed to true if there is "extra" content in the mega menu
+    var extraColumn = false;
+
+    // Height of the extra column
+    var extraHeight = 0;
+
+    // How many <ul> tags are in the mega menu at the 2nd level?
+    // They have a bottom margin (.5em) so they need to be included in the height calculation
+    var ulCount = $this.find('> ul > .dropdown-submenu > ul:visible').length;
+
+    // How many VISIBLE sections are in the mega menu - all levels
+    var liCount = $this.find('li:visible').length;
+
+    // Loop through all of the <li> tags and build a total
+    var totalLiHeight = 0, liHeight = 0;
+    $this.find('li:visible').each(function() {
+      liHeight = $(this).find('> a:not(.hidden-sm)').outerHeight();
+
+      // IE sometimes returns the wrong height...so reset to a single line at the largest font
+      if (liHeight > 100) liHeight = 27;
+
+      totalLiHeight += liHeight;
+    });
+
+    // If the "extra" content <div> is NOT empty, there's an extra column
+    if ( ! $megaMenuExtraContent.is(':empty')) {
+      extraColumn = true;
+
+      var megaMenuExtraWidth = $megaMenuExtra.outerWidth(true);
+
+      // Clone the extra content and append it to the body - visible, but off screen so that we can get a RELIABLE height
+      $megaMenuExtra.clone().css({
+        'position': 'absolute',
+        'left': '-99999em',
+        'width': megaMenuExtraWidth
+      }).appendTo('body');
+      extraHeight = $('body > .mega-menu-extra').outerHeight(true);
+
+      // Firefox reporting height 20px shorter than Chrome or IE
+      extraHeight += 20;
+
+      // Once we have the height, remove the clone
+      $('body > .mega-menu-extra').remove();
+
+      // If the "extra" content is sharing the column, add it's height to the <li> total height
+      if (extraShareColumn) totalLiHeight += extraHeight;
+    }
+
+    // Convert the <li> total height from pixels to ems
+    var calcHeight = $(totalLiHeight).toEm();
+
+    // Add the bottom margins for the <ul> tags to the total
+    calcHeight = parseFloat(calcHeight) + (ulCount / 2);
+
+    if ( ! extraColumn) {
+      // If the "extra" content is empty, divide by the default 4.25 columns
+      calcHeight /= 4.25;
+    } else {
+      // The "extra" content is NOT empty...
+
+      // If it's NOT sharing the column, divide by one less column (5 column display - 4.25 "safe" number)
+      if ( ! extraShareColumn) {
+        calcHeight /= 3.25;
+      } else {
+        calcHeight /= 4.25;
+      }
+    }
+
+    // Convert the extra content height to ems
+    if (extraColumn) extraHeight = parseFloat($(extraHeight).toEm());
+
+    var megaMenuHeight = 0;
+    if (calcHeight > minHeight) {
+      megaMenuHeight = calcHeight;
+    } else {
+      megaMenuHeight = minHeight;
+    }
+
+    if (extraHeight > (megaMenuHeight - 1)) {
+      $megaMenu.css('height', (extraHeight + 1) + 'em');
+      $megaMenuExtra.css('height', extraHeight + 'em');
+
+      // Write the height as a "data" attribute, so we don't do this adjustment more than once
+      $this.attr('data-height', extraHeight);
+    } else {
+      $megaMenu.css('height', megaMenuHeight + 'em');
+      $this.attr('data-height', megaMenuHeight);
+      if (calcHeight < minHeight || ! extraShareColumn) {
+        $megaMenuExtra.css('height', (megaMenuHeight - 1) + 'em');
+      } else {
+        if (extraShareColumn) $megaMenuExtraContent.addClass('mega-menu-extra-share');
+      }
+    }
+
+  }
+
+  function addSeeMoreLinks($ul, seeMoreNumber) {
+
+    // Hide <li> tags beyond the "seeMoreNumber"
+    $ul.find('> li:nth-child(n+ ' + (seeMoreNumber + 1) + ')').addClass('hidden-lg');
+
+    // Add "See more..." links to those <ul> tags where the <li> count has exceeded the "seeMoreNumber".
+    //   Those <ul> tags will have <li> tags with the "hidden-lg" class as a result of the nth-child code above.
+    $ul.each(function() {
+      var $this = $(this);
+
+      if ($this.find('> li.hidden-lg').length) {
+        // Grab the href from the parent link and use that for the "See more..." link
+        var smhref = $this.prev('a').prop('href');
+
+        // Insert it before the first hidden <li> tag
+        $this.find('> li.hidden-lg:first').before('<li class="hidden-md hidden-sm hidden-xs"><a href="' + smhref + '">See more...</a></li>');
+      }
+    });
+
+  }
+
+  function getSeeMoreTotals($ul, liCount) {
+    var total = 0;
+
+    if ( ! liCount) return total;
+
+    if ($ul.length === 1) {
+      total = (liCount > seeMoreNumber) ? seeMoreNumber : liCount;
+    } else {
+      $ul.each(function() {
+        var cnt = $(this).find('> li:visible').length;
+        total += (cnt > seeMoreNumber) ? seeMoreNumber : cnt;
+      });
+    }
+
+    return total;
+  }
+
+  function fillMegaMenu($this) {
+
+    // Only want to do this if the config entry > 0
+    if (megaMenuMin <= 0) return false;
+
+    // Only want to do this work once per top-level menu, so if it has already been "filled", leave
+    if ($this.hasClass('socs-mm-filled')) return false;
+    $this.addClass('socs-mm-filled');
+
+    // Get the number of visible <li> and <ul> tags at each level within the mega menu
+    var liLevel1 = $this.find('> .dropdown-menu > li:visible').length,
+      liLevel2 = $this.find('> ul > .dropdown-submenu > ul > li:visible').length,
+      liLevel3 = $this.find('> ul ul ul li:visible').length,
+      $ulLevel2 = $this.find('> ul > .dropdown-submenu > ul:visible'),
+      $ulLevel3 = $this.find('> ul ul ul:visible');
+
+    // How many visible items are in the mega menu - all levels
+//    var liTotal = $this.find('li:visible').length;
+    var liTotal = liLevel1 + liLevel2 + liLevel3;
+
+/*
+console.log('-------------------------------');
+console.log('liLevel1 = ' + liLevel1);
+console.log('liLevel2 = ' + liLevel2);
+console.log('liLevel3 = ' + liLevel3);
+console.log('liTotal = ' + liTotal);
+console.log('ulLevel2 = ' + $ulLevel2.length);
+console.log('ulLevel3 = ' + $ulLevel3.length);
+*/
+
+    // Short-circuit if ALL of the items will fit or there aren't any 2nd level items
+    if (liTotal <= megaMenuMax || liLevel2 === 0) return false;
+
+    // 1st level items >= the min - hide 2nd and 3rd level items and leave
+    if (liLevel1 >= megaMenuMin) {
+      $this.find('> ul ul').addClass('socs-mm-hide');
+      return false;
+    }
+
+    // The "seeMoreNumber" may limit the number of <li> tags that are visible within each <ul> at the 2nd and 3rd levels
+    //   Total <li> tags at 2nd and 3rd level AFTER the "seeMoreNumber" limit has been applied on each <ul>
+    var liLevel2SeeMore = getSeeMoreTotals($ulLevel2, liLevel2);
+    var liLevel3SeeMore = getSeeMoreTotals($ulLevel3, liLevel3);
+
+/*
+console.log('liLevel2SeeMore = ' + liLevel2SeeMore);
+console.log('liLevel3SeeMore = ' + liLevel3SeeMore);
+console.log('fillMegaMenu - doing the work');
+*/
+
+    var showAllLevel2 = ((liLevel1 + liLevel2) <= megaMenuMax) ? true : false;
+    var showReducedLevel2 = ((liLevel1 + liLevel2SeeMore) <= megaMenuMax) ? true : false;
+
+    // If 2nd level won't fit under the max (all or reduced) - hide 2nd and 3rd level items and leave
+    if ( ! showReducedLevel2) {
+      $this.find('> ul ul').addClass('socs-mm-hide');
+      return false;
+    }
+
+    // If all 2nd level won't fit but the reduced 2nd level will...
+    if ( ! showAllLevel2 && showReducedLevel2) addSeeMoreLinks($ulLevel2, seeMoreNumber);
+
+    // Are there any 3rd level items?
+    if (liLevel3) {
+      // Which 2nd level number was used? Use it for 3rd level calculations
+      var liLevel2Used = liLevel2SeeMore;
+      if (showAllLevel2) liLevel2Used = liLevel2;
+
+      var showAllLevel3 = ((liLevel1 + liLevel2Used + liLevel3) <= megaMenuMax) ? true : false;
+      var showReducedLevel3 = ((liLevel1 + liLevel2Used + liLevel3SeeMore) <= megaMenuMax) ? true : false;
+
+      // If 3rd level won't fit under the max (all or reduced) - hide 3rd level items and leave
+      if ( ! showReducedLevel3) {
+        $ulLevel3.addClass('socs-mm-hide');
+        return false;
+      }
+
+      // If all 3rd level won't fit but the reduced 3rd level will...
+      if ( ! showAllLevel3 && showReducedLevel3) addSeeMoreLinks($ulLevel3, seeMoreNumber);
+    }
+
+  }
+
+  function clearMenus() {
+    // Remove the "open" class from all dropdowns and reset all aria attributes
+    $('#navbar .open, .sub-nav-wrap1 .open').removeClass('open keyboard-open');
+    $('#navbar [aria-expanded], .sub-nav-wrap1 [aria-expanded]').attr('aria-expanded', 'false');
+    $('#navbar [aria-hidden], .sub-nav-wrap1 [aria-hidden]').attr('aria-hidden', 'true');
+  }
+
+
+  
+    var megaMenuMin = parseInt($('#megaMenuMin').val() || 0),
+      megaMenuMax = parseInt($('#megaMenuMax').val() || 0),
+      seeMoreNumber = parseInt($('#seeMoreNumber').val() || 999);
+/*
+console.log('megaMenuMin = ' + megaMenuMin);
+console.log('megaMenuMax = ' + megaMenuMax);
+console.log('seeMoreNumber = ' + seeMoreNumber);
+*/
+
+    // Some mega menu work needs to be done each time it's displayed.
+    $('.socs-mm-fw').on('mouseenter', function (e) {
+      var $this = $(this), winWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+
+      // Only want to do the following in the "lg" breakpoint (min-width: 1200px);
+      if (winWidth < 1200) {
+        // If NOT in the "lg" breakpoint, reset the top margin and height, then leave
+        $this.find('> .dropdown-menu').css({
+          'margin-top': '',
+          'height': ''
+        });
+        return false;
+      }
+
+      // Hide the mega menu "extra column" if empty
+      if ($this.find('.mega-menu-extra-content').is(':empty')) $this.find('.mega-menu-extra').addClass('hidden');
+
+      // A navbar that spans multiple rows causes problems for the mega menu
+      moveMegaMenu($this, winWidth);
+
+      fillMegaMenu($this);
+
+      // Adjust the height of the mega menu based on the content to be displayed in it.
+      adjustMegaMenuHeight($this);
+
+    });
+
+  
+
+  $(function() {
+
+    // Keyboard activity ------------------------------------------------------
+
+    $('#navbar, .sub-nav-wrap1').on('keydown', '.dropdown-submenu > a[aria-haspopup], .dropdown > a[aria-haspopup]', function(e) {
+      // Watch for the ENTER key
+      var keyCode = e.keyCode || e.which;
+      if (keyCode == 13) {
+        var $liParent = $(this).parent();
+
+        // Toggle "open" class on "dropdown" elements
+        if ($liParent.hasClass('keyboard-open')) {
+          if ($liParent.closest('#navbar').length) {
+            $liParent.removeClass('keyboard-open open');
+          } else {
+            $liParent.removeClass('keyboard-open');
+          }
+
+          // Change aria attributes
+          $(this).attr('aria-expanded', 'false').next().attr('aria-expanded', 'false').attr('aria-hidden', 'true');
+        } else {
+          if ($liParent.closest('#navbar').length) {
+            $liParent.addClass('keyboard-open open');
+          } else {
+            $liParent.addClass('keyboard-open');
+          }
+
+          // Change aria attributes
+          $(this).attr('aria-expanded', 'true').next().attr('aria-expanded', 'true').attr('aria-hidden', 'false');
+        }
+
+        // Prevent browser from following link - this link will act as a toggle for displaying/hiding the dropdown
+        e.preventDefault();
+      }
+    });
+
+    // Close any previously opened dropdown menus as the user tabs to a new 1st-level navbar item
+    $('#navbar, .sub-nav-wrap1').on('focus', '.nav > li > a', function(e) {
+      if ( ! $(this).parent().hasClass('open')) clearMenus();
+    });
+    // Close any previous opened flyout menu as the user tabs to a new 2nd-level navbar item
+    $('#navbar').on('focus', '.dropdown-menu > li > a', function(e) {
+      if ( ! $(this).parent().hasClass('open')) {
+        $(this)
+          .parent().parent().find('> li').removeClass('open keyboard-open')
+          .children('a[aria-expanded]').attr('aria-expanded', 'false').next().attr('aria-expanded', 'false').attr('aria-hidden', 'true');
+      }
+    });
+
+    // Close open dropdowns when tabbing out of them (tabbing "forward")
+    $('.sub-nav-wrap1').on('blur', '.dropdown-menu > li:last-child > a', function(e) {
+      var x = e.relatedTarget ? e.relatedTarget : document.activeElement;
+      if ($(x).closest('.dropdown-submenu.open').length === 0) clearMenus();
+    });
+    // Shift-tabbing (tabbing "backward")
+    $('.sub-nav-wrap1').on('blur', '.dropdown-submenu.open > a', function(e) {
+      var x = e.relatedTarget ? e.relatedTarget : document.activeElement;
+      if ($(e.target).parent().hasClass('open')) {
+        if ($(x).closest('.dropdown-submenu.open').length === 0) clearMenus();
+      }
+    });
+
+    $('html').on('click keydown', function(e) {
+      if (e.type === 'click') {
+        // Close the menu when clicking "outside" the menu...
+        if ($(e.target).closest('.dropdown-submenu.open').length === 0) clearMenus();
+      } else {
+        // Close any open menus if the ESCAPE key is pressed
+        var keyCode = e.keyCode || e.which;
+        if (keyCode == 27) clearMenus();
+      }
+    });
+
+    // Hover activity ---------------------------------------------------------
+
+    // Close any keyboard "opened" menus when the mouse enters the navbar
+    $('#navbar, .sub-nav-wrap1').on('mouseenter', function(e) {
+      if ($('#navbar .keyboard-open').length || $('.sub-nav-wrap1 .dropdown-submenu.open').length) clearMenus();
+    });
+
+    // Change aria attribute values when mouse enters/leaves dropdown targets
+    $('#navbar, .sub-nav-wrap1').on('mouseenter', '.dropdown, .dropdown-submenu', function(e) {
+      $(this).children('a[aria-expanded]').attr('aria-expanded', 'true').next().attr('aria-expanded', 'true').attr('aria-hidden', 'false');
+    });
+    $('#navbar, .sub-nav-wrap1').on('mouseleave', '.dropdown, .dropdown-submenu', function(e) {
+      $(this).children('a[aria-expanded]').attr('aria-expanded', 'false').next().attr('aria-expanded', 'false').attr('aria-hidden', 'true');
+    });
+
+  });
+
+})(jQuery);
+ 
+
+ Barton County Logo Employment Opportunities How Do I/Forms Contact Us Announcements Calendar 
+;(function($) { 'use strict';
+
+  // CSS helpers...
+  var btnCount = $('.masthead-buttons .masthead-button').length;
+
+  // Even or odd number of buttons?
+  if (btnCount % 2 === 0) {
+    $('.masthead-buttons').addClass('count-even');
+  } else {
+    $('.masthead-buttons').addClass('count-odd');
+  }
+
+  // Add the number of buttons as a class
+  $('.masthead-buttons').addClass('button-count-' + btnCount);
+
+})(jQuery);
+ 
+
+ 
+ 
+;(function($){
+  'use strict';
+  $(function() {
+
+          var imgs = [
+                  "/pages/image_rotator_L15/Mapping/aerialviewCheyenneBottoms.png"
+          ,                  "/pages/image_rotator_L15/Mapping/aerialviewcourthouse.png"
+                        ];
+      var links = [
+              ];
+
+      $('#img-rotator').imageRotator({
+        images: imgs,
+        links: links,
+        containerID: 'img-rotator',
+        pauseTime: 5000,
+        animSpeed: 1000,
+        sortImages: 1,
+        linkTarget: '_blank'
+      });
+    
+  });
+})(jQuery);
+ 
+ 
+;(function($) { 'use strict';
+  // Empty Adserver Banners result in an empty div tag being added to the HTML - if that's the case, remove it so the ":empty" CSS rule for banners works.
+  $('.socs-banner > div:empty').parent().html('');
+})(jQuery);
+ 
+
+ Mapping Home breadcrumbs:  Mapping breadcrumbs:  Maps & GIS 
+   
+     
+       Headline: 
+       
+     
+     
+       Tagline: 
+       
+     
+     
+       Byline: 
+       
+     
+         
+        Display: 
+        Website Navigation 
+        As Staff Page Only 
+         Website Navigation  
+         As Staff Page Only
+     
+     
+       Template: 
+       
+         No Staff Template 
+         Default Staff Template: Notebook_Blue 
+       
+       Set as Default Template 
+        Set as Default Template
+         Help 
+     
+       
+ 
+(function($) { 'use strict';
+   $(function() {
+  $('#eipCSTipSP').html("<p>You may have a different template design for each article you add.<br>By checking this box all articles will use this template design.</p><strong class=\"close\" onclick='javascript:$(\".csTipSP\").toggle();return false;' style=\"cursor:pointer;float:right;\">Close</strong>");
+
+
+
+
+  if (socsSignedIn && (socsUserAccessFeatures || socsUserAccessNotifier)) {
+    var FeaturesShareLabel = '';
+    if (socsUserAccessFeatures) {
+      $('#featureArticleGroup').show();
+      FeaturesShareLabel += 'Feature';
+        if (socsUserAccessNotifier) FeaturesShareLabel += ' & ';
+    }
+    if (socsUserAccessNotifier) {
+      $('#shareNotifierGroup').show();
+      FeaturesShareLabel += 'Share';
+    }
+    FeaturesShareLabel += ' Now';
+    $('#FeaturesShareLabel').text(FeaturesShareLabel);
+    $('#FeaturesSharePanel').show();
+  }
+
+
+  });
+})(jQuery);
+ 
+     
+       
+       
+       
+     
+     
+       HTML Editor: 
+       HTML Editor: 
+       
+     
+     
+      Your session will expire in  0  minutes .
+       
+     
+     
+     
+       Editor: 
+       
+       
+       
+     
+     
+       
+         Feature & Share 
+       
+       
+         
+           
+             Feature on Homepage 
+           
+         
+         
+           
+             Share via Notifier 
+           
+         
+                     
+       
+       
+       
+     
+   
+
+     
+     TP Article 
+     
+     TP Template 
+     
+     TP Templates 
+     
+   
+
+     
+     
+       Working... 
+       
+     
+   
+   
+     
+         
+       
+         
+       
+     
+   
+
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+   
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+       
+  
+       
+  
+       
+     
+   
+   
+ 
+
+ Maps Disclaimer: 
+ 
+ The Mapping Office has developed several different maps specifically for use by the county departments. Some of these maps are also available to the public with the following qualifications. Property descriptions and other information as indicated on the maps are unofficial and are not intended for conveyances or to be used as the sole deciding factor for the various permits required by the county. These maps are not legal surveys. Maps are continuously being updated with new information and will be changed without notice as often as needed. Barton County will not assume responsibility for any use of the maps beyond the regulations or guidelines established for the county departments. 
+  
+
+ Maps that can be viewed online or downloaded as .pdf files and printed: 
+
+ Barton County Road Map 
+ Civil Townships 
+ Great Bend      Hoisington     Ellinwood     Claflin    Pawnee Rock     Albert     Beaver      Galatia     Heizer     Odin      Olmitz     Susank 
+ County Commission Districts 2023    Great Bend Commission Districts 2023 
+ School Districts 
+ 2022 Kansas House Districts in Barton County 
+     old -  Kansas House Districts in Barton County 
+ Barton County Voting Locations 
+ Great Bend Precincts & Wards & Voting Locations 
+ Hoisington Voting Wards 
+ Tax Units 
+ Fire District Response Areas 
+ Fire Districts 1 & 2 - February 2026 - Resolution 2026-5 
+ Wetlands & Wildlife National Scenic Byway 
+ Zoning Map 
+ Cemeteries 
+ Be Well Barton County Bike Map 
+ Wet & Dry Walnut Creeks Map 
+ Blood & Deception Creeks Map 
+ Historic Barton County 
+ Historic Civil Townships 
+
+   
+
+                          Maps & GIS data can be ordered for a processing fee: 
+  
+
+ Special use or specific area maps can be created from the county's GIS system. Various years and resolutions of digital aerial photography are also available. The fees are as follows: 
+                       
+
+ Printed Maps: 
+  
+
+ Page size - 8x11 & 11x17: line work only  $ 2.00    with aerial photo or color fill  $5.00 
+
+ Medium size - 24x36 (D): line work only    $10.00    with aerial photo or color fill  $15.00 
+
+ Large size - 36x42 (E): line work only       $15.00    with aerial photo or color fill  $20.00 
+
+ Extra-large size - 42x70: line work only     $25.00    with aerial photo or color fill  $30.00 
+ 
+ Digital Maps/GIS Data: 
+
+ Email map in pdf or jpeg format                    $  2.00 
+
+ Map only in .dwg format                              $ 50.00 
+
+ Map & database .dwg & .xls **                    $250.00 
+
+ Digital copy aerial photo 1 st -100mb              $ 50.00    $10.00/additional 100mb 
+
+ Conversion to different file formats (.dwg to .shp/etc)  $100.00 
+
+ Customized maps/queries (1hr min.)            $ 50.00/hr 
+
+   
+
+     ** The Open Records form needs to be signed when owner information is requested. 
+
+       Open Records Form 
+
+   
+
+ Prices approved by County Commissioners August 25, 2008 
+
+   
+
+ Barton County Landfill Thru the Years 
+
+   
+ × Author Bio Close 
+  ;(function($) {
+    $('#profile-bio-link').on('click', function(e) {
+      e.preventDefault();
+
+      var $md = $('#profile-bio-modal');
+      $md.find('.modal-body').load($(this).attr('href'));
+
+      $md.modal();
+    });
+  })(jQuery);
+   
+;(function($) { 'use strict';
+  $(function() {
+
+    // Wait until all of the images in the grid are done loading
+    $('.ig-thumbnails').imagesLoaded(function() {
+      $('.ig-thumbnails').each(function() {
+        var $this = $(this), height = 0;
+
+        // Get the height of the tallest image in the gallery
+        $this.find('img').each(function() {
+          if ($(this).height() > height) height = $(this).height();
+        });
+
+        // Use that to set the height and max-height of the image contaner and image, respectively.
+        $this.find('.thumbnail-inner').css('height', height).end().find('img').css('max-height', height);
+
+        // Get the combined height of credits and captions
+        height = 0;
+        $this.find('.ig-show-captions-content').each(function() {
+          var $this = $(this), x = 0;
+          x = $this.find('.ig-credit').outerHeight() + $this.find('.ig-caption').outerHeight();
+          if (x > height) height = x;
+        });
+
+        // Cap the height at 100px
+        if (height > 100) height = 100;
+
+        if (height == 0) {
+          // If there are no captions/credits - hide the checkbox
+          $this.find('> .checkbox').addClass('hide');
+        } else {
+          // Set the height when the checkbox is clicked (checkbox acts as a toggle on the height).
+          $this.find('.ig-show-captions').on('click', function() {
+            var $this = $(this);
+            if ($this.is(':checked')) {
+              $this.closest('.ig-thumbnails').find('.ig-show-captions-content').css('height', height + 4);
+            } else {
+              $this.closest('.ig-thumbnails').find('.ig-show-captions-content').css('height', 0);
+            }
+          });
+        }
+      });
+    });
+
+  });
+})(jQuery);
+ 
+ Mapping subnav -  Contact Info subnav -  Maps & GIS subnav -  Parcel Search subnav -  Links to Other Map Sites 
+ Quicklinks  Panel Banners  Panel 
+    ;(function($) {
+      // Loop through all the li tags looking for banner content
+      var $li = $('.socs-banner.rightBanner .nav > li');
+      if ($li.find('> div').length) {
+        $li.each(function() {
+          if ($(this).find('img').length === 0 && $(this).find('> div').text() === '') $(this).addClass('hidden');
+        });
+        // If all the li tags are hidden - hide the entire socs-banner div
+        if ($('.socs-banner.rightBanner .nav > li.hidden').length === $li.length) $li.closest('div').addClass('hidden');
+      } else {
+        $li.closest('div').addClass('hidden');
+      }
+    })(jQuery);
+     
+;(function($) { 'use strict';
+  // Empty Adserver Banners result in an empty div tag being added to the HTML - if that's the case, remove it so the ":empty" CSS rule for banners works.
+  $('.socs-banner > div:empty').parent().html('');
+})(jQuery);
+ 
+
+ Headlines  Panel Poll  Panel Calendar  Panel 
+;(function($) { 'use strict';
+  var $accordion = $('#accordion');
+
+  // UN-hide any panels that have content
+  $accordion.find('.panel-body').each(function() {
+    if ( ! $(this).is(':empty') && $.trim($(this).text()) !== '' && ! $(this).find('> div').hasClass('hidden')) $(this).closest('.panel').removeClass('hidden');
+  });
+
+  // If NO panels have content, hide the entire accordion
+  if ($accordion.find('.panel:visible').length === 0) $('#accordion').addClass('hidden');
+
+  $(function() {
+    // Open the 1st panel that has content
+    $accordion.find('.panel').filter(':visible:first').addClass('active').find('.panel-collapse').addClass('in');
+
+    // Panel open event handler
+    $accordion.on('shown.bs.collapse', function () {
+      $(this).find('.in').closest('.panel').addClass('active');
+    });
+
+    // Panel close event handler
+    $accordion.on('hidden.bs.collapse', function () {
+      $(this).find('> .active').removeClass('active');
+    });
+
+  });
+
+})(jQuery);
+ 
+ Barton County 1400 Main Street, Suite 108 Great Bend, KS  67530 PH: 620-793-1800 Questions/Contact 
+ Facebook Twitter 
+
+ © 2026 Barton County Accessibility Privacy Pledge This institution is an equal opportunity provider. 
+
+ function googleTranslateElementInit() {const defaultLanguages = "sq,ar,hy,bs,yue,zh-HK,zh-CN,zh-TW,hr,cs,da,nl,tl,fi,fr,fr-CA,de,el,haw,iw,hi,hu,id,ga,it,ja,ko,no,pl,pt,pt-PT,pa,pa-Arab,ro,sr,sk,sl,so,es,su,sv,th,tr,uk,vi,yi";new google.translate.TranslateElement({pageLanguage: 'en',includedLanguages: defaultLanguages,layout: google.translate.TranslateElement.InlineLayout.SIMPLE/*layout: google.translate.TranslateElement.InlineLayout.VERTICAL*/}, 'google_translate_element');googleAddMissingLabels();}function googleAddMissingLabels() {/**/if ($('#goog-gt-votingForm input').length && $('#goog-gt-votingForm label').length === 0) {const $googleForm = $('#goog-gt-votingForm');let html = '';$googleForm.find('input').each(function() {const id = $(this).prop('id');/**/if ($googleForm.find('label[for="' + id + '"]').length === 0) html += `<label for="${ id }">${ id }</label>`;/**/if ( ! $(this).attr('title')) $(this).attr('title', 'a non-empty title attribute for input ' + id);});if (html) $googleForm.append(html);}} 
+ 
+ 
+;(function($) { 'use strict';
+  // Empty Adserver Banners result in an empty div tag being added to the HTML - if that's the case, remove it so the ":empty" CSS rule for banners works.
+  $('.socs-banner > div:empty').parent().html('');
+})(jQuery);
+ 
+
+ 
+ bartoncounty.socs.net ;(function($) { 'use strict';var hostname = document.location.hostname, installFolder = $.trim($('#installFolder').text()), socsPage = 'article';
+  function commonChecks() {
+
+    // If something bad happened with the install folder session variable
+    if (installFolder.length === 0) return false;
+
+    // If the hostname ends with "socs.net" or "fes.org" - no updating needed
+    if (hostname.match(/socs\.net$/) !== null || hostname.match(/fes\.org$/) !== null) return false;
+
+    return true;
+  }
+
+  function updateStaffLinks() {
+
+    if ( ! commonChecks()) return false;
+
+    if (hostname != installFolder) {
+      $('a[href*="email-friend.v?TARGET=staff"]').each(function() {
+        $(this).attr('href', '//' + installFolder + $(this).attr('href'));
+      });
+    }
+  }
+
+  function updateURL() {
+    var updatedHref = '';
+
+    if ( ! commonChecks()) return false;
+
+    // If the hostname in the page's URL does not match the install folder - update the URL and reload the page
+    if (hostname != installFolder) {
+      updatedHref = location.href.replace(hostname, installFolder);
+      location.href = updatedHref;
+    }
+  }
+
+  $(function() {
+
+    // Is a formmail form in the page that includes Google's reCAPTCHA?  If so, reload the page with an updated URL if necessary
+    if ($('form[action$="/formmail/formmail.php"] .g-recaptcha').length) updateURL();
+
+    // If on the "Sign Up" page for public users, reload the page with an updated URL if necessary
+    if (socsPage === 'register_form' && $('form button.g-recaptcha').length) updateURL();
+
+    // Staff Page section page email links
+    if ($('a[href*="email-friend.v?TARGET=staff"]').length) updateStaffLinks();
+
+  });
+})(jQuery);
+ 
+
+
+ 
+
+   
+;(function($) { 'use strict';
+  let scrollToContent = false;
+  /**/
+  if ( ! window.location.hash) {
+      }
+  if (scrollToContent) {
+    /**/
+    $('.container-rotator').imagesLoaded(function() {
+      window.scrollTo(0, $('.container-body').offset().top);
+    });
+  }
+
+  /**/
+  $('.dropdown-submenu > a').submenupicker();
+
+  /**/
+  $('.navbar-nav > .dropdown > a:visible').on('click', function() {
+    const $this = $(this), href = $this.attr('href');
+    if ($this.attr('target') === '_blank') {
+      window.open(href, '_blank', 'noopener');
+    } else {
+      window.location = href;
+    }
+  });
+
+  /**/
+  if (socsSignedIn) {
+    $('<a href="/vcalendar/?FROMPAGE=Nav_Signout" title="Sign Out - signed in as ' + socsUserFullName + '"><em class="fa fa-sign-out fa-lg fa-fw"><\/em><em class="sr-only">Sign Out<\/em><\/a>').insertBefore('.icon-search');
+  } else {
+    $('<a href="/vcalendar/?FROMPAGE=Nav_Signin" title="Sign In"><em class="fa fa-sign-in fa-lg fa-fw"><\/em><em class="sr-only">Sign In Link<\/em><\/a>').insertBefore('.icon-search');
+  }
+
+  $('.lightGallery').lightGallery({
+    selector: 'a',
+    getCaptionFromTitleOrAlt: false,
+    autoplayFirstVideo: false
+  });
+
+  $(function() {
+    /**/
+    if ($('.staff-directory').length && $('#accordion').hasClass('hidden')) {
+      $('.staff-directory').parent().removeClass().addClass('col-sm-12 staff-directory-full-width');
+      $('#accordion').parent().addClass('hidden');
+    }
+  });
+})(jQuery);
+ 
+
+   
+ 

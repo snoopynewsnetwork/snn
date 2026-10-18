@@ -1,0 +1,2640 @@
+
+ 
+ 
+ 
+
+	 
+ 
+				 (function(w,d,s,l,i){w.GAMeasurementID='G-NCDL6GH97X';w[l]=w[l]||[];w[l].push({'gtm.start':
+				new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+				j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+				'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+				})(window,document,'script','cpDataLayerGA4','GTM-K73C5PS'); 
+				 
+				 
+					var enableTelemetry = 'false'
+					var aiConfig = {
+					instrumentationKey: '1cde048e-3185-4906-aa46-c92a7312b60f'						
+					}
+					var appInsights = window.appInsights || function (a) { function b(a) { c[a] = function () { var b = arguments; c.queue.push(function () { c[a].apply(c, b) }) } } var c = { config: a }, d = document, e = window; setTimeout(function () { var b = d.createElement('script'); b.src = a.url || 'https://js.monitor.azure.com/scripts/a/ai.0.js', d.getElementsByTagName('script')[0].parentNode.appendChild(b) }); try { c.cookie = d.cookie } catch (a) { } c.queue = []; for (var f = ['Event', 'Exception', 'Metric', 'PageView', 'Trace', 'Dependency']; f.length;)b('track' + f.pop()); if (b('setAuthenticatedUserContext'), b('clearAuthenticatedUserContext'), b('startTrackEvent'), b('stopTrackEvent'), b('startTrackPage'), b('stopTrackPage'), b('flush'), !a.disableExceptionTracking) { f = 'onerror', b('_' + f); var g = e[f]; e[f] = function (a, b, d, e, h) { var i = g && g(a, b, d, e, h); return !0 !== i && c['_' + f](a, b, d, e, h), i } } return c }(aiConfig);
+					window.appInsights = appInsights, appInsights.queue && 0 === appInsights.queue.length;
+					// Add telemetry initializer
+					appInsights.queue.push(function() {
+						appInsights.context.addTelemetryInitializer(function(envelope) {
+							var telemetryItem = envelope.data.baseData;
+							// To check the telemetry item’s type:
+							if (!false)
+							{
+								//If the telemetry is not enabled, we still want to capture Google map custom event, so only allow that
+								if (envelope.name.indexOf('.Event') == -1)
+									return false;
+							}
+						});
+					});						
+					appInsights.trackPageView();
+				 
+	 
+		function populateAntiForgery(token) {
+			var input = document.createElement("input");
+			input.name = "__RequestVerificationToken";
+			input.type = "hidden";
+			input.value = token;
+			var absPat = /^https?:\/\/|^\/\//i;
+			var forms = document.getElementsByTagName("form");
+			for (var i = 0; i < forms.length; i++) {
+				if (forms[i].method == "post" &&
+					!forms[i].querySelector('[name="__RequestVerificationToken"]') &&
+					!absPat.test(forms[i].getAttribute("action"))) {
+					forms[i].appendChild(input.cloneNode());
+				}
+			}
+		}
+
+		function getAntiForgeryToken(callback, error) {
+			var xhr = new XMLHttpRequest();
+			xhr.open("GET", "/antiforgery");
+			xhr.addEventListener("load", function() {
+				try {
+					if (this.status !== 200) {
+						throw Error("Invalid status. Could not retrieve antiforgery token.");
+					}
+					var obj = JSON.parse(this.responseText);
+					callback(obj.token);
+				} catch (e) {
+					typeof error === "function" && error(e);
+				}
+			});
+			xhr.send();
+		}
+
+		getAntiForgeryToken(function(token) {
+			if (document.readyState === "complete"
+				|| document.readyState === "loaded" 
+				|| document.readyState === "interactive") {
+				populateAntiForgery(token);
+				return;
+			}
+			document.addEventListener("DOMContentLoaded", function() {
+				populateAntiForgery(token);
+			}, false);
+		}, console.error);
+	 
+			
+
+	 
+		window.departmentHeader = {};
+		window.pageSectionTracker = {};
+		window.isResponsiveEnabled = true;
+		window.isRemoveSetHeights= false;
+		if (window.isRemoveSetHeights) {
+			document.documentElement.className += ' removeSetHeights';
+		}
+		window.mainMenuMediaQuery = 'screen and (max-width: 40em)';
+		window.isMobileBrowserIncludingTablets = false;
+		window.fixedResponsiveMenu = false;
+		window.fullWidthResponsiveMenu = true;
+		window.responsiveMenuHeight = '';
+		window.responsiveMenuFontSize = '';
+		window.isContentAdvisor = false;
+		(function () {
+			window.setSizeCookie = function () {
+				document.cookie = "dpi=" + window.devicePixelRatio + "; path=/";
+				document.cookie = "viewportWidth=" + window.innerWidth + "; path=/";
+				document.cookie = "viewportHeight=" + window.innerHeight + "; path=/";
+				if (screen && screen.width && screen.height) {
+					document.cookie = "screenWidth=" + screen.width + "; path=/";
+					document.cookie = "screenHeight=" + screen.height + "; path=/";
+				}
+				document.cookie = "responsiveGhost=1; path=/";
+			};
+
+			setSizeCookie();
+		}());
+	 
+		 
+
+	 
+	
+	 
+ 
+ 
+ 
+
+	
+	 
+	 
+	 
+		 Election Office | Lyon County, KS 
+
+		 
+			 
+	 
+	
+
+	 
+	 
+	 
+	 
+	 <!--
+	var intCountryCode = 840;
+	var order = '';
+//--> 
+	
+	 	 
+
+	 
+	 
+		window.Pages = window.Pages || {};
+		// FrontEnd RWD initialization
+		window.Pages.rwdReady = $.Deferred();
+		window.Pages.toolBarDeferred = $.Deferred();
+		window.Pages.rwdSetupComplete = $.Deferred();
+		window.Pages.megaMenuLoaded = $.Deferred();
+		window.Pages.angularToolbarComplete = $.Deferred();
+		window.Pages.frontEndToolbarComplete = $.Deferred();
+	 
+	 
+	 
+	
+	
+	
+	
+
+
+
+
+	 
+	 
+	 
+	 
+
+	 
+		setEditorVariables(false, 840);
+		function getPrintPreviewType() { return 0; } function printPreview() {pPreview(getPrintPreviewType()); }
+	 
+	 
+ 
+ 
+
+     jQuery(document).click(function (event) {
+	var target = jQuery(event.target);
+	if (target.attr('src') && target.parents('.image').length && target.parents('.widget').length) {
+		var text = target.attr('title');
+		
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Image',
+				eventAction: 'Image - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.is('button') || target.hasClass('button') || target.parents().hasClass('button')) {
+		var text = "";
+		if (target.parents('.button')[0]) {
+			text = target.parents('.button').first().text();
+		} else if (target.text().length) {
+			text = target.text();
+		} else if (target.attr('title').length) {
+			text = target.attr('title');
+		}
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Button',
+				eventAction: 'Button - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetCustomHtml').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Custom Html',
+				eventAction: 'Custom Html Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.editor').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Editor',
+				eventAction: 'Editor Link Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.GraphicLinks').length) {
+		var text = "";
+		var targetGraphicLink = target;
+		if (target.hasClass('widgetGraphicLinksLink')) {
+			targetGraphicLink = jQuery(target.children()[0]);
+		}
+		if (targetGraphicLink.hasClass('text')) {
+			text = targetGraphicLink.text();
+		} else if (targetGraphicLink.attr('src').length) {
+			if (targetGraphicLink.attr('alt').length) {
+				text = targetGraphicLink.attr('alt');
+			} else {
+				text = targetGraphicLink.attr('src');
+			}
+		} else {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Graphic Links',
+				eventAction: 'Graphic Link - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.InfoAdvanced').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Info Advanced',
+				eventAction: 'Info Advanced Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.list').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'List',
+				eventAction: 'List Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.megaMenuItem').length || target.parents('.topMenuItem').length) {
+		var megaMenuText = jQuery('.topMenuItem.mouseover').find('span').text();
+		var breadCrumbs = [];
+		jQuery('.breadCrumbs > li').each(function () {
+			 breadCrumbs.push(this.textContent);
+		});
+		var pageTitle = breadCrumbs.join('>');
+		var subTitleText = target.parents('.megaMenuItem').children('.widgetTitle').children().text();
+		var text = "";
+		if (pageTitle) {
+			text += pageTitle + " | ";
+		} else {
+			text += document.title + ' - ';
+		}
+		if (target.text() == "" && megaMenuText == "") {
+			text += "N/A";
+		} else if (target.text().length && megaMenuText.length) {
+			if (megaMenuText == target.text()) {
+				text += megaMenuText;
+			} else {
+				text += megaMenuText + " - " + subTitleText + " - " + target.text();
+			}
+		} else if (target.text() == "") {
+			text += megaMenuText;
+		} else {
+			text += target.text();
+		}
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Mega Menu',
+				eventAction: 'Mega Menu : ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetNewsFlash').length && target.parents('.widgetItem').length) {
+		var text = jQuery(target.parents('.widgetItem')[0]).find('.widgetTitle').children().text();
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'News Flash',
+				eventAction: 'News Flash - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.hasClass('widgetQuickLinksLink') || target.find('.widgetQuickLinksLink').length) {
+		var text = target.text();
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Quick Links',
+				eventAction: 'Quick Links - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.attr('src') && target.parents('.cpSlideshow').length) {
+		var text = target.attr('title');
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Slideshow',
+				eventAction: 'Slideshow - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetText').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Text',
+				eventAction: 'Text Link Clicked',
+				eventLabel: window.location.href
+			});
+	}
+}); 
+	 
+	 
+		 
+		 
+			 
+				 
+			 
+		 
+	 
+	 
+		 
+	 
+	 
+		 
+			 
+		 
+	 
+ 
+     
+ 
+ Skip to Main Content 
+ 
+     
+
+         
+
+
+
+     
+     
+     
+     
+     
+     
+     
+     
+
+             
+ 
+     
+         
+                 
+                    
+
+
+
+ 
+ 
+     
+         Create a Website Account   - Manage notification subscriptions, save form progress and more.    
+         
+	         Website Sign In 
+         
+     
+ 
+ 
+    $(document).ready(function () {
+        $('#signedOutToolbarCreateProfileButton').click(function (event) {
+            event.preventDefault();
+            window.location.href = '/MyAccount/ProfileCreate?from=url&url=/&dn=' + window.location.origin;
+        });
+
+			
+				$('#loggedOutToolbarSignInButton').click(function (event) {
+					event.preventDefault();
+					window.location.href = '/MyAccount/?from=url&url=' + encodeURIComponent(window.location.href.replace(window.location.origin, '')) + '&dn=' + window.location.host;
+				});
+			
+
+		if ('False' == 'True') {
+            $('#loggedOutToolbarSignInButton').hide();
+		}
+    })
+ 
+ 
+
+                 
+             
+                 
+                
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+				 
+ 
+ 
+      Government   			      Services   			      Business   			      Online Burn Procedures  			      How Do I...   			 
+ 
+
+
+	 
+		(function () {
+			function setupMenu() {
+				const menuID = 'mainNavMenu';
+				const menuType = MAIN_MENU;
+
+				//setup menu manager properties for main menu
+				if (!menuManager.mobileMainNav && true)
+					menuManager.adjustMainItemsWidth('#' + menuID);
+				menuManager.isMainMenuEditable = false;
+				menuManager.mainMenuMaxSubMenuLevels = 4;
+				menuManager.setMOMMode(2, menuType);
+
+				//Init main menu
+				const setupDraggable = menuManager.isMainMenuEditable;
+				const urlToGetHiddenMenus = '/Pages/MenuMain/HiddenMainSubMenus?pageID=1&moduleID=&themeID=1&menuContainerID=mainNav';
+
+				menuManager.setupMenu(menuID, 'mainNav', menuType, setupDraggable, urlToGetHiddenMenus);
+				menuManager.mainMenuInit = true;
+				menuManager.mainMenuTextResizer = false;
+				if (1.00 > 0)
+					menuManager.mainMenuTextResizerRatio = 1.00;
+				if (window.isResponsiveEnabled)
+					menuManager.mainMenuReady.resolve();
+
+			}
+
+			if (document.readyState === "complete"
+				|| document.readyState === "loaded"
+				|| document.readyState === "interactive") {
+				setupMenu();
+				return;
+			}
+
+			document.addEventListener("DOMContentLoaded", setupMenu);
+		})();
+	 
+
+
+ 	 
+				                
+
+
+
+	 
+ 	 
+				                
+
+
+
+	 
+ 	 
+				                
+
+
+
+	 
+ 	 
+				                
+
+
+
+	 
+ 
+ 
+ 
+ 
+ 
+ 
+ 	 
+				                
+
+		 				
+	 
+	
+	 	
+ 
+
+
+
+
+ 
+	 
+		 
+				 
+	 
+	 
+		 
+				 
+					 
+
+  
+ 
+
+  
+ 
+
+  
+ 
+				 
+			 
+		 
+	 
+			 
+ 
+ 
+
+	   
+
+	   
+
+			   
+
+
+	 
+ 
+ 
+ 	 
+				                
+
+		 				
+	 
+	
+	 	
+ 
+
+
+
+
+ 
+	 
+		 
+				 
+	 
+	 
+		 
+				 
+					 
+
+ 
+	 
+		 
+			 Employee Login 
+		 
+	 
+ 
+		 .fancyButton59.fancyButton:link,.fancyButton59.fancyButton:visited, .fancyButton59div.fancyButton{
+	background-color: rgb(28, 79, 76);
+	-webkit-border-top-left-radius: 6px;
+	-moz-border-top-left-radius: 6px;
+	-khtml-border-top-left-radius: 6px;
+	border-top-left-radius: 6px;
+	-webkit-border-top-right-radius: 6px;
+	-moz-border-top-right-radius: 6px;
+	-khtml-border-top-right-radius: 6px;
+	border-top-right-radius: 6px;
+	-webkit-border-bottom-left-radius: 6px;
+	-moz-border-bottom-left-radius: 6px;
+	-khtml-border-bottom-left-radius: 6px;
+	border-bottom-left-radius: 6px;
+	-webkit-border-bottom-right-radius: 6px;
+	-moz-border-bottom-right-radius: 6px;
+	-khtml-border-bottom-right-radius: 6px;
+	border-bottom-right-radius: 6px;
+	background-repeat: no-repeat;
+	background-position: left top;
+	border-top: 10px None rgb(255, 255, 255);
+	border-left: 10px None rgb(255, 255, 255);
+	border-right: 10px None rgb(255, 255, 255);
+	border-bottom: 10px None rgb(255, 255, 255);
+margin: .5em 2em;
+transition: all 0.3s ease-in-out;}
+.fancyButton59.fancyButton:hover,.fancyButton59.fancyButton:focus,.fancyButton59.fancyButton:active,.fancyButton59.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: left top;
+margin: .5em 1em;
+transition: all 0.3s ease-in-out;}
+.fancyButton59.fancyButton:link > span,.fancyButton59.fancyButton:visited > span, .fancyButton59div.fancyButton > span{
+}
+.fancyButton59.fancyButton:hover > span,.fancyButton59.fancyButton:focus > span,.fancyButton59.fancyButton:active > span,.fancyButton59.fancyButton.hover > span{
+}
+.fancyButton59.fancyButton .text{
+	color: rgb(255, 255, 255);
+	font-size: .95em;
+	font-family: "Open Sans";
+	padding-top: 1em;
+	padding-bottom: 1em;
+	font-weight: 600;
+	text-decoration: none;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+.fancyButton59.fancyButton:hover .text,.fancyButton59.fancyButton:focus .text,.fancyButton59.fancyButton:active .text,.fancyButton59.fancyButton.hover .text{
+	text-decoration: underline;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+ 
+
+  
+				 
+			 
+		 
+	 
+			 
+ 
+ 
+
+	   
+
+	   
+
+			 				
+	 
+	
+	 	
+ 
+	
+	 
+	 
+	 
+
+		$(document).ready(function () {
+			try {
+				// Minimum characters required before performing a search/autocomplete
+				var minPrefixLength = 3;
+				var autoCompleteDebounceDelay = 500;
+				var searchFieldSelector = "#searchField" + '7e1dde5d-5aea-4d12-a2ad-b1714152305f';
+				var checkboxSelector = "#ysnSearchOnlyDept" + '7e1dde5d-5aea-4d12-a2ad-b1714152305f';
+				var buttonSelector = ".widgetSearchButton" + '7e1dde5d-5aea-4d12-a2ad-b1714152305f';
+				var autoCompleteCache = {};
+				var autoCompleteCacheKeys = [];
+				var autoCompleteCacheLimit = 25;
+				var currentAutoCompleteRequest = null;
+				var currentAutoCompleteRequestKey = null;
+				var autoCompleteDebounceTimer = null;
+				var autoCompleteDebounceKey = null;
+				var pendingAutoCompleteResponses = [];
+
+				function normalizeAutoCompleteTerm(term) {
+					return $.trim((term || "") + "").replace(/\s+/g, " ");
+				}
+
+				function shouldSearch(term) {
+					return normalizeAutoCompleteTerm(term).length >= minPrefixLength;
+				}
+
+				function getAutoCompleteUrl() {
+					return '/Search/AutoComplete' + ($(checkboxSelector).is(':checked') || false? '?departmentId=0' : '');
+				}
+
+				function getAutoCompleteCacheKey(requestUrl, term) {
+					return requestUrl + "|" + term.toLowerCase();
+				}
+
+				function cacheAutoCompleteResult(cacheKey, data) {
+					if (!Object.prototype.hasOwnProperty.call(autoCompleteCache, cacheKey)) {
+						autoCompleteCacheKeys.push(cacheKey);
+						if (autoCompleteCacheKeys.length > autoCompleteCacheLimit) {
+							delete autoCompleteCache[autoCompleteCacheKeys.shift()];
+						}
+					}
+					autoCompleteCache[cacheKey] = data;
+				}
+
+				function respondToPendingAutoComplete(data) {
+					var responses = pendingAutoCompleteResponses;
+					pendingAutoCompleteResponses = [];
+					for (var i = 0; i < responses.length; i++) {
+						responses[i](data);
+					}
+				}
+
+				function cancelPendingAutoComplete() {
+					clearTimeout(autoCompleteDebounceTimer);
+					autoCompleteDebounceKey = null;
+					if (currentAutoCompleteRequest != null) {
+						currentAutoCompleteRequest.abort();
+						currentAutoCompleteRequest = null;
+					}
+					currentAutoCompleteRequestKey = null;
+					respondToPendingAutoComplete([]);
+				}
+
+				function createWidgetAutoCompleteSource(options) {
+					return function (request, response) {
+						var term = normalizeAutoCompleteTerm(request.term);
+						if (!options.shouldSearch(term)) {
+							response([]);
+							return;
+						}
+
+						var requestUrl = options.url();
+						var cacheKey = getAutoCompleteCacheKey(requestUrl, term);
+						if (Object.prototype.hasOwnProperty.call(autoCompleteCache, cacheKey)) {
+							response(autoCompleteCache[cacheKey]);
+							if (options.success) {
+								options.success(autoCompleteCache[cacheKey]);
+							}
+							return;
+						}
+
+						if (currentAutoCompleteRequestKey === cacheKey || autoCompleteDebounceKey === cacheKey) {
+							pendingAutoCompleteResponses.push(response);
+							return;
+						}
+
+						cancelPendingAutoComplete();
+						autoCompleteDebounceKey = cacheKey;
+						pendingAutoCompleteResponses.push(response);
+						autoCompleteDebounceTimer = setTimeout(function () {
+							autoCompleteDebounceKey = null;
+							currentAutoCompleteRequestKey = cacheKey;
+							currentAutoCompleteRequest = $.ajax({
+								url: requestUrl,
+								dataType: "json",
+								timeout: options.timeout,
+								data: {
+									term: term,
+								},
+								success: function (data) {
+									if (currentAutoCompleteRequestKey === cacheKey) {
+										cacheAutoCompleteResult(cacheKey, data);
+										respondToPendingAutoComplete(data);
+										if (options.success) {
+											options.success(data);
+										}
+									}
+								},
+								error: function (xmlhttprequest, textstatus, message) {
+									if (textstatus === "abort") {
+										return;
+									}
+
+									if (options.error) {
+										options.error(xmlhttprequest, textstatus, message);
+									}
+
+									respondToPendingAutoComplete([]);
+								},
+								complete: function (xmlhttprequest) {
+									if (currentAutoCompleteRequest === xmlhttprequest) {
+										currentAutoCompleteRequest = null;
+										currentAutoCompleteRequestKey = null;
+									}
+								}
+							});
+						}, options.delay);
+					};
+				}
+
+				// click handler for search buttons
+				$(buttonSelector).click(function (e) {
+					e.preventDefault();
+					var $btn = $(this);
+					var $field = $btn.siblings(".widgetSearchBox");
+					var term = $field.val() + "";
+					if (!shouldSearch(term)) {
+						// do nothing until user types enough characters
+						$field.focus();
+						return;
+					}
+
+					if ($(checkboxSelector).is(':checked') || false)
+					{
+						doWidgetSearch($.trim(term), Number(0));
+					}
+					else {
+						doWidgetSearch($.trim(term), 0);
+					}
+				});
+
+				// enter key handler for the search field
+				$(searchFieldSelector).keypress(function (e) {
+					var code = e.which || e.keyCode;
+					if (code === 13) {
+						e.preventDefault();
+						var $this = $(this);
+						var term = $this.val() + "";
+						if (!shouldSearch(term)) {
+							// do nothing until user types enough characters
+							$this.focus();
+							return false;
+						}
+
+						if ($(checkboxSelector).is(':checked') || false) {
+							doWidgetSearch($.trim(term), Number(0));
+						} else {
+							doWidgetSearch($.trim(term), 0);
+						}
+						return false;
+					}
+					return true;
+				});
+
+				// autocomplete: set minLength and guard source
+				if (true) {
+					var $searchField = $(searchFieldSelector).autocomplete({
+						minLength: minPrefixLength,
+						source: createWidgetAutoCompleteSource({
+							delay: autoCompleteDebounceDelay,
+							timeout: 10000,
+							shouldSearch: shouldSearch,
+							url: getAutoCompleteUrl,
+							success: function () {
+								$('.autoCompleteError').remove();
+							},
+							error: function (xmlhttprequest, textstatus, message) {
+								if (textstatus === "timeout") {
+									if ($(searchFieldSelector).siblings('.autoCompleteError').length == 0)
+										$('<span class="autoCompleteError"><p class="alert error">Search autocomplete is currently not responding. Please try again later.</p></span>').insertAfter($(searchFieldSelector));
+								}
+							}
+						}),
+						html: true,
+						delay: 0,
+						select: function (event, ui) {
+							$(this).val(ui.item.value);
+							$(this).next().click();
+						}
+					});
+
+					$searchField.data("ui-autocomplete")._renderItem = function (ul, item) {
+						return $("<li class=\"itemList\"></li>")
+							.data("ui-autocomplete-item", item)
+							.append("<a>" + item.label + "</a>")
+							.appendTo(ul);
+					};
+				}
+
+				// keep searchBtnApplyQuery consistent with prefix rule
+				window.searchBtnApplyQuery = function() {
+					var $field = $(searchFieldSelector);
+					var term = $field.val() + "";
+					if (shouldSearch(term)) {
+						// update href for the icon/button (if present)
+						var btn = document.getElementById("btnSearchIcon");
+						if (btn) btn.href = "/Search?searchPhrase=" + encodeURIComponent($.trim(term));
+					} else {
+						var btn = document.getElementById("btnSearchIcon");
+						if (btn) btn.href = "#";
+					}
+				};
+			}
+			catch(e) {} //we're going to eat this error. Autocomplete won't work but we dont wan't to break anything else on the page.
+		});
+	 
+
+	 
+				 
+		 
+			 
+						 
+
+			 Search 
+		 
+
+	 
+
+
+ 
+	  
+		.widgetSearch ::-webkit-input-placeholder {
+		color: #fff;
+	  }
+		.widgetSearch :-moz-placeholder { /* Firefox 18- */
+	   color: #fff;
+	}
+		.widgetSearch ::-moz-placeholder {  /* Firefox 19+ */
+	   color: #fff;
+	}
+	.widgetSearch :-ms-input-placeholder {
+	   color: #fff;
+	}
+	
+
+	.widgetSearch .widgetBody .widgetSearchBox7e1dde5d-5aea-4d12-a2ad-b1714152305f
+	{
+		color: #fff;
+		font-family: Open Sans;
+height: 65px;
+border-radius: .5em;
+border: 1px solid #1C4F4C ;
+background: linear-gradient(90deg, #1C4F4C 0%, #1B572A 100%);
+padding: 0 80px 0 20px;
+box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.21);
+	}
+	.widgetSearch .widgetBody .widgetSearchButton7e1dde5d-5aea-4d12-a2ad-b1714152305f
+	{
+		margin: 5px; padding-top: .50em; 
+padding-right: .75em;
+	}
+	.widgetSearch .widgetSearch-onlyDept7e1dde5d-5aea-4d12-a2ad-b1714152305f
+	{
+		display: inline-block;
+		color: #333;
+		
+		
+		 padding-top: 10px;
+	}
+	#ysnSearchOnlyDept7e1dde5d-5aea-4d12-a2ad-b1714152305f
+	{
+		position: relative;
+		top: .125em;
+	}
+
+ 
+
+ 
+ 
+
+
+
+ 
+	//Updates search icons href to have the correct queryString
+	function searchBtnApplyQuery() {
+		document.getElementById("btnSearchIcon").href = "/Search?searchPhrase=" + document.getElementById("searchField7e1dde5d-5aea-4d12-a2ad-b1714152305f").value;
+	}
+ 
+
+ 
+
+	   
+
+	   
+
+			   
+
+
+	 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+		 
+			 
+				$(window).on("load", function () {
+					$.when(window.Pages.rwdSetupComplete)
+						.done(function () {
+							renderBanner('banner1-2',
+								'banner1',
+								{"BannerOptionID":2,"ThemeID":1,"SlotName":"banner1","Name":"Default","IsDefault":true,"BannerMode":1,"SlideShowSlideTiming":null,"SlideshowTransition":0,"SlideShowTransitionTiming":null,"ImageScale":true,"ImageAlignment":1,"ImageScroll":true,"MuteSound":true,"VideoType":0,"Status":40,"SlideshowControlsPosition":0,"SlideshowControlsAlignment":0,"SlideshowBannerControlsColorScheme":0,"DisplayVideoPauseButton":false,"VideoPauseButtonAlignment":1,"VideoPauseButtonControlsAlignment":0,"VideoPauseButtonStyle":"#FFFFFF","VideoPauseButtonBackgroundStyle":"#000000","VideoPauseButtonAlignmentClass":"alignRight viewport","DisplaySlideshowPauseButton":true,"SlideshowControlsColor":"#FFFFFF","SlideshowControlsBackgroundColor":"#000000","SlideshowPauseButtonClass":"isHidden","BannerImages":[{"BannerImageID":57,"BannerOptionID":2,"FileName":"/ImageRepository/Document?documentID=69","Height":400,"Width":2200,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":1,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":null}],"BannerVideos":[],"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/"},
+								{"BannerImageID":57,"BannerOptionID":2,"FileName":"/ImageRepository/Document?documentID=69","Height":400,"Width":2200,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":1,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":null},
+								'/App_Themes/Interior/Images/',
+								'<img alt="" class="bannerObject" src="/ImageRepository/Document?documentID=69" />');
+						});
+				});
+			 
+
+ 
+ 
+ 
+ 
+ 
+ 		 
+			 Home Government Elected Officials Election Office 
+		 
+
+	   
+    
+ 
+	
+	 
+		
+
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+
+				 
+
+Election Office		 
+	
+		 
+			
+
+		 				
+	 
+	
+	 	
+
+
+
+ 
+	 
+
+		 
+			 The polling location for Precincts 1, 2, 7, and 8 has been moved from the National Guard Armory to the First United Methodist Church at 823 Merchant Street, Emporia, Kansas.  Voters are encouraged to park in the back parking lot and enter through the doors on the back side of this building on election day.   This change will be for this election only. 
+		 
+	 
+ 
+
+ 
+	.widget .textContent p:first-child {
+		padding-top: 0px;
+		margin-top: 0px;
+	}
+
+ 
+
+
+	   
+
+	   
+
+			   
+		 				
+	 
+	
+	 	
+
+
+
+	 
+			 
+				 Documents 
+		 
+			
+ 
+         
+                     Board of County Commissioner Districts 
+
+	 
+		 
+					 New BOCC Districts - City of Emporia (PDF) 
+					 
+					 New BOCC Districts - Rural (PDF) 
+					 
+
+		 
+	 
+                     
+         
+                     Precinct Maps 
+
+	 
+		 
+					 City of Emporia Polling Sites and Voting Precincts (PDF) - Updated 10/5/26 
+					 
+					 Rural Area Voting Precincts and Polling Sites (PDF) - Updated 4/26 
+					 
+
+		 
+	 
+                     
+         
+                     Updated Polling Information - October, 2026 
+
+	 
+		 
+					 2026 Polling Places - October 5, 2026 (PDF) 
+					 
+					 Precinct 24 - Notice of Change of Polling Place (PDF) 
+					 
+					 Precincts 1, 2, 7, and 8 - Notice of Change of Polling Place (PDF) 
+					 
+
+		 
+	 
+                     
+         
+                     School District Maps 
+
+	 
+		 
+					 All Districts Map (PDF) 
+					 
+					 USD 251 Map (PDF) 
+					 
+					 USD 252 Map (PDF) 
+					 
+					 USD 253 Map (PDF) 
+					 
+
+		 
+	 
+                     
+         
+                     Reading Fire 
+
+	 
+		 
+					 Reading Fire Map (PDF) 
+					 
+
+		 
+	 
+                     
+         
+                     Precinct Committee-People 
+
+	 
+		 
+					 2026 Republic Precinct Committeepeople - August 10, 2026 (PDF) 
+					 
+					 2026 Democrat Precinct Committeepeople - August 10, 2026 (PDF) 
+					 
+
+		 
+	 
+                     
+ 
+
+
+ 
+    $(document).ready(function () {
+        //Remove section heading when it is empty and live edit is off.
+        if ('false' === 'false') {
+            var jqh3Selector = $('#widgetRelDoc' + 'a90e9ba4-e48c-4932-9c67-1a47dc6f0698').find('div.widgetBody div.row div.relatedDocumentsSection h3.widgetTitle');
+    		if (jqh3Selector.val() == "") {
+    			jqh3Selector
+                    .filter(function () {
+                        return $.trim($(this).text()) === ''
+                    })
+                    .remove();
+            }
+        }
+    });
+ 
+		 
+
+ 
+
+	 
+
+
+ 
+    var documentsToInsert = [];
+    var foldersToInsert = [];
+
+    $(document).ready(function () {
+        var hasEditRights = false;        
+        if (window.File && window.FileList && window.FileReader && hasEditRights) {
+            var RelatedDocumentsWidget = 5;
+            makeWidgetAreaDroppable('a90e9ba4-e48c-4932-9c67-1a47dc6f0698', $('#widgetRelDoc' + 'a90e9ba4-e48c-4932-9c67-1a47dc6f0698'), RelatedDocumentsWidget, true, RelatedDocumentsCallback);
+        }
+
+		if(hasEditRights)
+    		browserVersionNotCompatibleWithDragDropTextUpdate($('#addFile' + 'a90e9ba4-e48c-4932-9c67-1a47dc6f0698'), 'Add a new file');
+    });
+
+    function RelatedDocumentsCallback(widgetID, response)
+    {
+        if (window.ContentCollectionInstance.IsWorkingCopy) {
+        	$('#widgetRelDoc' + widgetID).replaceWith(response);            
+            contentUpdated();
+            attachRelatedDocumentsHandlers();            
+        }
+        else {
+            ContentCollectionInstance.reloadContent();
+        }      
+    }
+ 
+
+	   
+
+	   
+
+			   
+
+
+		 
+
+	 
+
+	
+	 
+
+	 
+ 
+ 	 
+				                
+
+		 				
+	 
+	
+	 	
+
+
+
+
+
+
+
+
+ 
+	 
+			 
+					 Contact Us 
+							 
+						 
+			 
+
+					 
+
+				 
+					Amie Jackson Jones
+					
+				 
+				 County Clerk / Election Officer 
+						 Email Amie Jackson Jones  
+
+
+					 Phone:  620-341-3417 
+
+
+
+				 
+			 
+		 
+
+				 County Clerk & Elections 
+
+					 Email the County Clerk and Election Official 
+					 
+
+
+				 
+					 Physical Address 
+					 
+					 430 Commercial 
+					 Emporia ,  KS   66801 
+
+				 
+				 
+
+
+
+				 Phone:  620-341-3243 
+													 
+
+
+				 Directory 
+				 
+
+		 
+									 
+	 
+ 
+	   
+
+	   
+
+			   
+		 				
+	 
+	
+	 	
+	 
+
+
+
+
+
+
+
+
+	 
+			 
+		 
+					 Quick Links 
+						 
+	 
+	 
+         
+				 
+					 
+
+
+
+
+     
+         Check Your Voter Registration or Get Your Sample Ballot 
+         
+     
+
+
+
+
+     
+         Kansas Non-Profit Online Voter Registration Service 
+         
+     
+					 
+				 
+		 
+        
+	 
+	 
+	 
+	 
+		 /QuickLinks.aspx 
+	 
+
+	 
+ 
+
+	   
+
+	   
+
+			   
+
+
+	 
+ 
+ 
+ 	 
+				                
+
+
+
+	 
+ 
+
+
+
+
+
+	 
+	 
+		 
+			 2026 Candidate Filing Packets 
+		 
+			 
+	 
+		 
+			 Important Election Dates 
+		 
+			 
+	 
+		 
+			 2026 Primary Election 
+		 
+			 
+	 
+		 
+			 2026 Candidate Filings 
+		 
+			 
+	 
+		 
+			 2026 Primary Election Results 
+		 
+			 
+	 
+		 
+			 2026 General Election 
+		 
+			 
+	 
+		 
+			 2026 Election Handouts 
+		 
+			 
+	 
+		 
+			 2026 Publications 
+		 
+			 
+	 
+		 
+			 Maps 
+		 
+			 
+	 
+		 
+			 Election Forms 
+		 
+			 
+	 
+		 
+			 Archived Election Results 
+		 
+			 
+	 
+		 
+			 Archived Election Publications/Candidate Filings 
+		 
+			 
+
+	 
+
+
+	 
+		(function () {
+			function setupSecondaryMenuProperties() {
+				//setup menu manager properties for secondary menu
+				menuManager.isSideMenuEditable = false;
+				menuManager.sideMenuMaxSubMenuLevels = 4;
+				menuManager.sideMenuHasCustomLinks = false;
+			}
+
+			if (document.readyState === "loading") {
+				document.addEventListener("DOMContentLoaded", setupSecondaryMenuProperties, { once: true });
+				return;
+			}
+
+			setupSecondaryMenuProperties();
+		})();
+	 
+
+	 
+		(function () {
+			function setupAccordionSecondaryNav() {
+				var $menuContainer = $('#secondaryNav');
+
+				$menuContainer.find('*[id^="SideItem"]').each(function () {
+					var ids = $('[id="' + this.id + '"]');
+					if (ids.length > 1)
+						$.each(ids, function (index, value) {
+							value.id = value.id + '_' + index;
+						});
+				});
+
+				$menuContainer.find('.hasAccordionChildren .openAccordionNav').off('click.secondaryNav').on('click.secondaryNav', function (e) {
+					e.preventDefault();
+					showHideAccordionMenuForSecondaryNav($(this));
+				});
+
+				$menuContainer.find(".grippy").each(function () {
+					menuManager.setupDraggableElement($(this), SIDE_MENU, '#secondaryNav');
+				});
+
+				$menuContainer.find("li").each(function () {
+					menuManager.setupDroppableAccordionElement($(this), SIDE_MENU);
+				});
+			}
+
+			if (document.readyState === "loading") {
+				document.addEventListener("DOMContentLoaded", setupAccordionSecondaryNav, { once: true });
+				return;
+			}
+
+			setupAccordionSecondaryNav();
+		})();
+	 
+
+
+
+ 	 
+				                
+
+
+
+	 
+ 
+ 
+ 
+ 
+ 	 
+				                
+
+		 				
+	 
+	
+	 	
+ 
+
+
+
+
+ 
+	 
+		 
+				 
+	 
+	 
+		 
+				 
+					 
+
+ 
+	 
+		 
+			 Agendas & Minutes 
+		 
+	 
+ 
+		 .fancyButton53.fancyButton:link,.fancyButton53.fancyButton:visited, .fancyButton53div.fancyButton{
+	background-image: url('/ImageRepository/Document?documentID=78');
+	background-repeat: no-repeat;
+	background-position: center top;
+background-size: 170px;
+transition: all 0.3s ease-in-out;}
+.fancyButton53.fancyButton:hover,.fancyButton53.fancyButton:focus,.fancyButton53.fancyButton:active,.fancyButton53.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: center 10px ;
+background-size: 160px;
+transition: all 0.3s ease-in-out;}
+.fancyButton53.fancyButton:link > span,.fancyButton53.fancyButton:visited > span, .fancyButton53div.fancyButton > span{
+}
+.fancyButton53.fancyButton:hover > span,.fancyButton53.fancyButton:focus > span,.fancyButton53.fancyButton:active > span,.fancyButton53.fancyButton.hover > span{
+}
+.fancyButton53.fancyButton .text{
+	color: rgb(37, 37, 37);
+	font-family: "Open Sans";
+	padding-top: 11em;
+	font-weight: 600;
+	text-decoration: none;
+	padding-top: 11em;
+	background-image: url('/ImageRepository/Document?documentID=80');
+	background-repeat: no-repeat;
+	background-position: center 40px ;
+transition: all 0.3s ease-in-out;
+background-size: 90px;
+}
+.fancyButton53.fancyButton:hover .text,.fancyButton53.fancyButton:focus .text,.fancyButton53.fancyButton:active .text,.fancyButton53.fancyButton.hover .text{
+	text-decoration: underline;
+	background-repeat: no-repeat;
+	background-position: center 54px ;
+transition: all 0.3s ease-in-out;
+background-size: 80px;
+scale: 1.08;
+}
+ 
+
+  
+
+ 
+	 
+		 
+			 Careers 
+		 
+	 
+ 
+		 .fancyButton54.fancyButton:link,.fancyButton54.fancyButton:visited, .fancyButton54div.fancyButton{
+	background-image: url('/ImageRepository/Document?documentID=74');
+	background-repeat: no-repeat;
+	background-position: center top;
+background-size: 170px;
+transition: all 0.3s ease-in-out;}
+.fancyButton54.fancyButton:hover,.fancyButton54.fancyButton:focus,.fancyButton54.fancyButton:active,.fancyButton54.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: center 10px ;
+background-size: 160px;
+transition: all 0.3s ease-in-out;}
+.fancyButton54.fancyButton:link > span,.fancyButton54.fancyButton:visited > span, .fancyButton54div.fancyButton > span{
+}
+.fancyButton54.fancyButton:hover > span,.fancyButton54.fancyButton:focus > span,.fancyButton54.fancyButton:active > span,.fancyButton54.fancyButton.hover > span{
+}
+.fancyButton54.fancyButton .text{
+	color: rgb(37, 37, 37);
+	font-family: "Open Sans";
+	padding-top: 11em;
+	font-weight: 600;
+	text-decoration: none;
+	padding-top: 11em;
+	background-image: url('/ImageRepository/Document?documentID=82');
+	background-repeat: no-repeat;
+	background-position: center 40px ;
+transition: all 0.3s ease-in-out;
+background-size: 90px;
+}
+.fancyButton54.fancyButton:hover .text,.fancyButton54.fancyButton:focus .text,.fancyButton54.fancyButton:active .text,.fancyButton54.fancyButton.hover .text{
+	text-decoration: underline;
+	background-repeat: no-repeat;
+	background-position: center 54px ;
+transition: all 0.3s ease-in-out;
+background-size: 80px;
+scale: 1.08;
+}
+ 
+
+  
+				 
+			 
+		 
+	 
+			 
+ 
+ 
+
+	   
+
+	   
+
+			 				
+	 
+	
+	 	
+ 
+
+
+
+
+ 
+	 
+		 
+				 
+	 
+	 
+		 
+				 
+					 
+
+ 
+	 
+		 
+			 Transportation 
+		 
+	 
+ 
+		 .fancyButton55.fancyButton:link,.fancyButton55.fancyButton:visited, .fancyButton55div.fancyButton{
+	background-image: url('/ImageRepository/Document?documentID=76');
+	background-repeat: no-repeat;
+	background-position: center top;
+background-size: 170px;
+transition: all 0.3s ease-in-out;}
+.fancyButton55.fancyButton:hover,.fancyButton55.fancyButton:focus,.fancyButton55.fancyButton:active,.fancyButton55.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: center 10px ;
+background-size: 160px;
+transition: all 0.3s ease-in-out;}
+.fancyButton55.fancyButton:link > span,.fancyButton55.fancyButton:visited > span, .fancyButton55div.fancyButton > span{
+}
+.fancyButton55.fancyButton:hover > span,.fancyButton55.fancyButton:focus > span,.fancyButton55.fancyButton:active > span,.fancyButton55.fancyButton.hover > span{
+}
+.fancyButton55.fancyButton .text{
+	color: rgb(37, 37, 37);
+	font-family: "Open Sans";
+	padding-top: 11em;
+	font-weight: 600;
+	text-decoration: none;
+	padding-top: 11em;
+	background-image: url('/ImageRepository/Document?documentID=312');
+	background-repeat: no-repeat;
+	background-position: center 40px ;
+transition: all 0.3s ease-in-out;
+background-size: 90px;
+}
+.fancyButton55.fancyButton:hover .text,.fancyButton55.fancyButton:focus .text,.fancyButton55.fancyButton:active .text,.fancyButton55.fancyButton.hover .text{
+	text-decoration: underline;
+	background-repeat: no-repeat;
+	background-position: center 54px ;
+transition: all 0.3s ease-in-out;
+background-size: 80px;
+scale: 1.08;
+}
+ 
+
+  
+
+ 
+	 
+		 
+			 Parcel Search 
+		 
+	 
+ 
+		 .fancyButton56.fancyButton:link,.fancyButton56.fancyButton:visited, .fancyButton56div.fancyButton{
+	background-image: url('/ImageRepository/Document?documentID=79');
+	background-repeat: no-repeat;
+	background-position: center top;
+background-size: 170px;
+transition: all 0.3s ease-in-out;}
+.fancyButton56.fancyButton:hover,.fancyButton56.fancyButton:focus,.fancyButton56.fancyButton:active,.fancyButton56.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: center 10px ;
+background-size: 160px;
+transition: all 0.3s ease-in-out;}
+.fancyButton56.fancyButton:link > span,.fancyButton56.fancyButton:visited > span, .fancyButton56div.fancyButton > span{
+}
+.fancyButton56.fancyButton:hover > span,.fancyButton56.fancyButton:focus > span,.fancyButton56.fancyButton:active > span,.fancyButton56.fancyButton.hover > span{
+}
+.fancyButton56.fancyButton .text{
+	color: rgb(37, 37, 37);
+	font-family: "Open Sans";
+	padding-top: 11em;
+	font-weight: 600;
+	text-decoration: none;
+	padding-top: 11em;
+	background-image: url('/ImageRepository/Document?documentID=85');
+	background-repeat: no-repeat;
+	background-position: center 35px ;
+transition: all 0.3s ease-in-out;
+background-size: 90px;
+}
+.fancyButton56.fancyButton:hover .text,.fancyButton56.fancyButton:focus .text,.fancyButton56.fancyButton:active .text,.fancyButton56.fancyButton.hover .text{
+	text-decoration: underline;
+	background-repeat: no-repeat;
+	background-position: center 48px ;
+transition: all 0.3s ease-in-out;
+background-size: 80px;
+scale: 1.08;
+}
+ 
+
+  
+				 
+			 
+		 
+	 
+			 
+ 
+ 
+
+	   
+
+	   
+
+			 				
+	 
+	
+	 	
+ 
+
+
+
+
+ 
+	 
+		 
+				 
+	 
+	 
+		 
+				 
+					 
+
+ 
+	 
+		 
+			 Election Information 
+		 
+	 
+ 
+		 .fancyButton57.fancyButton:link,.fancyButton57.fancyButton:visited, .fancyButton57div.fancyButton{
+	background-image: url('/ImageRepository/Document?documentID=75');
+	background-repeat: no-repeat;
+	background-position: center top;
+background-size: 170px;
+transition: all 0.3s ease-in-out;}
+.fancyButton57.fancyButton:hover,.fancyButton57.fancyButton:focus,.fancyButton57.fancyButton:active,.fancyButton57.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: center 10px ;
+background-size: 160px;
+transition: all 0.3s ease-in-out;}
+.fancyButton57.fancyButton:link > span,.fancyButton57.fancyButton:visited > span, .fancyButton57div.fancyButton > span{
+}
+.fancyButton57.fancyButton:hover > span,.fancyButton57.fancyButton:focus > span,.fancyButton57.fancyButton:active > span,.fancyButton57.fancyButton.hover > span{
+}
+.fancyButton57.fancyButton .text{
+	color: rgb(37, 37, 37);
+	font-family: "Open Sans";
+	padding-top: 11em;
+	font-weight: 600;
+	text-decoration: none;
+	padding-top: 11em;
+	background-image: url('/ImageRepository/Document?documentID=83');
+	background-repeat: no-repeat;
+	background-position: center 35px ;
+transition: all 0.3s ease-in-out;
+background-size: 90px;
+}
+.fancyButton57.fancyButton:hover .text,.fancyButton57.fancyButton:focus .text,.fancyButton57.fancyButton:active .text,.fancyButton57.fancyButton.hover .text{
+	text-decoration: underline;
+	background-repeat: no-repeat;
+	background-position: center 48px ;
+transition: all 0.3s ease-in-out;
+background-size: 80px;
+scale: 1.08;
+}
+ 
+
+  
+
+ 
+	 
+		 
+			 Maps 
+		 
+	 
+ 
+		 .fancyButton58.fancyButton:link,.fancyButton58.fancyButton:visited, .fancyButton58div.fancyButton{
+	background-image: url('/ImageRepository/Document?documentID=77');
+	background-repeat: no-repeat;
+	background-position: center top;
+background-size: 170px;
+transition: all 0.3s ease-in-out;}
+.fancyButton58.fancyButton:hover,.fancyButton58.fancyButton:focus,.fancyButton58.fancyButton:active,.fancyButton58.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: center 10px ;
+background-size: 160px;
+transition: all 0.3s ease-in-out;}
+.fancyButton58.fancyButton:link > span,.fancyButton58.fancyButton:visited > span, .fancyButton58div.fancyButton > span{
+}
+.fancyButton58.fancyButton:hover > span,.fancyButton58.fancyButton:focus > span,.fancyButton58.fancyButton:active > span,.fancyButton58.fancyButton.hover > span{
+}
+.fancyButton58.fancyButton .text{
+	color: rgb(37, 37, 37);
+	font-family: "Open Sans";
+	padding-top: 11em;
+	font-weight: 600;
+	text-decoration: none;
+	padding-top: 11em;
+	background-image: url('/ImageRepository/Document?documentID=84');
+	background-repeat: no-repeat;
+	background-position: center 35px ;
+transition: all 0.3s ease-in-out;
+background-size: 90px;
+}
+.fancyButton58.fancyButton:hover .text,.fancyButton58.fancyButton:focus .text,.fancyButton58.fancyButton:active .text,.fancyButton58.fancyButton.hover .text{
+	text-decoration: underline;
+	background-repeat: no-repeat;
+	background-position: center 44px ;
+transition: all 0.3s ease-in-out;
+background-size: 80px;
+scale: 1.08;
+}
+ 
+
+  
+				 
+			 
+		 
+	 
+			 
+ 
+ 
+
+	   
+
+	   
+
+			   
+
+
+	 
+ 
+ 
+ 	 
+				                
+
+		 				
+	 
+	
+	 	
+     
+
+
+
+
+
+	 
+			 
+		 
+								 
+	 
+	 
+		 
+					 
+						 
+
+ 
+	 
+ 						 
+					 
+		 
+	 
+	 
+
+	 
+
+	 
+
+
+
+ 
+	//Render slideshow if info advacned items contain one.
+	$(document).ready(function (e) {
+		$('#divInfoAdv775a9c00-a44a-4f47-994d-3d462be5d4f7 .InfoAdvanced.widgetItem').each(function () {
+			renderSlideshowIfApplicable($(this));		
+		});
+	});
+ 
+	   
+
+	   
+
+			 				
+	 
+	
+	 	
+     
+
+
+
+
+
+	 
+			 
+		 
+					 Contact Us 
+								 
+	 
+	 
+		 
+					 
+						 
+
+ 
+	 430 Commercial Street Emporia, KS 66801 
+ 
+ 
+	 Phone: 620-342-4950 
+ 						 
+					 
+					 
+						 
+
+ 
+	 Monday to Friday 8:00 am to 5:00 pm Closed Saturday & Sunday Closed on Federal Holidays Motor Vehicle 8:00 am to 4:30 pm (No title work after 4:00 pm) Treasurer 8:00 am to 5:00 pm (No credit card payments after 4:00 pm) Register of Deeds 8:00 am to 5:00 pm Passport Hours 8:00 am to 3:30 pm 
+ 						 
+					 
+		 
+	 
+	 
+
+	 
+
+	 
+
+
+
+ 
+	//Render slideshow if info advacned items contain one.
+	$(document).ready(function (e) {
+		$('#divInfoAdv27fbba37-967a-482c-ba6b-47bd39380c35 .InfoAdvanced.widgetItem').each(function () {
+			renderSlideshowIfApplicable($(this));		
+		});
+	});
+ 
+	   
+
+	   
+
+			 				
+	 
+	
+	 	
+	 
+
+
+
+
+
+
+
+
+	 
+			 
+		 
+					 Quick Links 
+						 
+	 
+	 
+         
+				 
+					 
+
+
+
+
+     
+         Property Tax Search 
+         
+     
+
+
+
+
+     
+         Online Kansas Personal Property Tax Payments 
+         
+     
+
+
+
+
+     
+         Road Closure Map 
+         
+     
+
+
+
+
+     
+         Agendas & Minutes 
+         
+     
+					 
+				 
+		 
+        
+	 
+	 
+	 
+	 
+		 /QuickLinks.aspx 
+	 
+
+	 
+ 
+
+	   
+
+	   
+
+			 				
+	 
+	
+	 	
+ 
+
+
+
+
+ 
+	 
+		 
+			 Social Media 
+				 
+	 
+	 
+		 
+					 
+						 
+
+ 
+	 
+		 
+			 Facebook 
+		 
+	 
+ 
+		 .fancyButton50.fancyButton:link,.fancyButton50.fancyButton:visited, .fancyButton50div.fancyButton{
+	padding-left: 30px;
+	background-image: url('/ImageRepository/Document?documentID=48');
+	background-repeat: no-repeat;
+	background-position: left center;
+width: fit-content;  
+}
+
+.row.outer:not(.wide) .fancyButton50:link {
+margin: 0 auto;}
+.fancyButton50.fancyButton:hover,.fancyButton50.fancyButton:focus,.fancyButton50.fancyButton:active,.fancyButton50.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: left center;
+}
+.fancyButton50.fancyButton:link > span,.fancyButton50.fancyButton:visited > span, .fancyButton50div.fancyButton > span{
+}
+.fancyButton50.fancyButton:hover > span,.fancyButton50.fancyButton:focus > span,.fancyButton50.fancyButton:active > span,.fancyButton50.fancyButton.hover > span{
+}
+.fancyButton50.fancyButton .text{
+	color: rgb(255, 255, 255);
+	text-align: left;
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+.fancyButton50.fancyButton:hover .text,.fancyButton50.fancyButton:focus .text,.fancyButton50.fancyButton:active .text,.fancyButton50.fancyButton.hover .text{
+	text-decoration: underline;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+ 
+
+  
+
+ 
+	 
+		 
+			 X 
+		 
+	 
+ 
+		 .fancyButton51.fancyButton:link,.fancyButton51.fancyButton:visited, .fancyButton51div.fancyButton{
+	padding-left: 30px;
+	background-image: url('/ImageRepository/Document?documentID=65');
+	background-repeat: no-repeat;
+	background-position: left center;
+width: fit-content; 
+}
+
+.row.outer:not(.wide) .fancyButton51:link {
+margin: 0 auto;}
+.fancyButton51.fancyButton:hover,.fancyButton51.fancyButton:focus,.fancyButton51.fancyButton:active,.fancyButton51.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: left center;
+}
+.fancyButton51.fancyButton:link > span,.fancyButton51.fancyButton:visited > span, .fancyButton51div.fancyButton > span{
+}
+.fancyButton51.fancyButton:hover > span,.fancyButton51.fancyButton:focus > span,.fancyButton51.fancyButton:active > span,.fancyButton51.fancyButton.hover > span{
+}
+.fancyButton51.fancyButton .text{
+	color: rgb(255, 255, 255);
+	text-align: left;
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+.fancyButton51.fancyButton:hover .text,.fancyButton51.fancyButton:focus .text,.fancyButton51.fancyButton:active .text,.fancyButton51.fancyButton.hover .text{
+	text-decoration: underline;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+ 
+
+  
+
+ 
+	 
+		 
+			 Instagram 
+		 
+	 
+ 
+		 .fancyButton52.fancyButton:link,.fancyButton52.fancyButton:visited, .fancyButton52div.fancyButton{
+	padding-left: 30px;
+	background-image: url('/ImageRepository/Document?documentID=49');
+	background-repeat: no-repeat;
+	background-position: left center;
+width: fit-content; 
+}
+
+.row.outer:not(.wide) .fancyButton52:link {
+margin: 0 auto;}
+.fancyButton52.fancyButton:hover,.fancyButton52.fancyButton:focus,.fancyButton52.fancyButton:active,.fancyButton52.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: left center;
+}
+.fancyButton52.fancyButton:link > span,.fancyButton52.fancyButton:visited > span, .fancyButton52div.fancyButton > span{
+}
+.fancyButton52.fancyButton:hover > span,.fancyButton52.fancyButton:focus > span,.fancyButton52.fancyButton:active > span,.fancyButton52.fancyButton.hover > span{
+}
+.fancyButton52.fancyButton .text{
+	color: rgb(255, 255, 255);
+	text-align: left;
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+.fancyButton52.fancyButton:hover .text,.fancyButton52.fancyButton:focus .text,.fancyButton52.fancyButton:active .text,.fancyButton52.fancyButton.hover .text{
+	text-decoration: underline;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+ 
+
+  
+					 
+			 
+		 
+	 
+			 
+ 
+ 
+
+	   
+
+	   
+
+			   
+
+
+	 
+ 
+ 
+ 	 
+				                
+
+		 				
+	 
+	
+	 	
+	 
+
+
+
+
+
+
+
+
+	 
+			 
+		 
+						 
+	 
+	 
+         
+				 
+					 
+
+
+
+
+     
+         Home 
+         
+     
+					 
+				 
+				 
+					 
+
+
+
+
+     
+         Site Map 
+         
+     
+					 
+				 
+				 
+					 
+
+
+
+
+     
+         Contact Us 
+         
+     
+					 
+				 
+				 
+					 
+
+
+
+
+     
+         Accessibility 
+         
+     
+					 
+				 
+				 
+					 
+
+
+
+
+     
+         Copyright Notices 
+         
+     
+					 
+				 
+				 
+					 
+
+
+
+
+     
+         Privacy Policy 
+         
+     
+					 
+				 
+		 
+        
+	 
+	 
+	 
+	 
+		 /QuickLinks.aspx 
+	 
+
+	 
+ 
+
+	   
+
+	   
+
+			 				
+	 
+	
+	 	
+ 
+	 
+	 
+		 
+  /* CP icon */
+  .cpBylineIconTS {
+    color: #000;
+  }
+  /* CP Text */
+  .cpBylineTextTS,
+  .cpBylineTextTS a:link {
+    color: 000;
+  }
+
+  .cpBylineTS {
+    text-align: center;
+  }
+  
+  .cpBylineIconTS {
+    fill: currentColor;
+    width: 39px;
+    height: 26px;
+    display: inline;
+    vertical-align: middle;
+  }
+ 
+
+ 
+   
+     
+     
+   
+   Government Websites by  CivicPlus® 
+ 
+ 
+	 
+
+	 
+
+	   
+
+	   
+
+			   
+
+
+	 
+ 
+ 
+ 
+
+             
+         
+     
+
+ 
+
+ 
+	 
+		 
+			 Loading 
+			 
+				 
+					 
+				 
+			 
+		 
+		 
+			 
+				 
+				Loading
+			 
+		 
+		 
+			 Do Not Show Again 
+			 Close 
+		 
+	 
+ 
+
+ 
+ 
+ 
+ 
+
+		$(document).ready(function () {
+			var filter = {
+				targetId: '240',
+				targetType: 1
+			}
+
+			new SplashModalRender().triggerRender(filter);
+		});
+ 
+
+
+	
+	
+	
+	
+
+
+
+	
+
+
+
+
+
+
+     
+     
+
+ 
+  #google-translate-container {
+    float: right;
+    padding: 3px 5px 0px 0px;
+    position: fixed; 
+    bottom: 12px; 
+    right: 96px; 
+    z-index: 5;
+  }
+
+  .goog-te-combo, .goog-te-banner *, .goog-te-ftab *, .goog-te-menu *, .goog-te-menu2 *, .goog-te-balloon * {
+    font-family: arial;
+    font-size: 10pt;
+    background-image: url("https://www.gstatic.com/images/branding/product/2x/translate_24dp.png");
+    background-position: 5px 5px;
+    background-size: 18px;
+    background-repeat: no-repeat;
+    text-indent: 16px;
+    background-color: #fff;
+    color: #000 !important;
+  }
+
+  .goog-logo-link {
+    display: none !important;
+  }
+
+  .goog-te-gadget {
+    color: transparent !important;
+  }
+
+  .goog-te-gadget .goog-te-combo {
+    margin: 2px 0 !important;
+    border-radius: 15px !important;
+    }
+
+  .goog-te-combo{
+    border: 1px solid !important;
+    border-color: #bcc9d7 #96a3b1 #96a3b1 #bcc9d7 !important;
+    border-radius: 50px !important;
+    height:31px !important;
+    padding: 0 1px 0 .25rem !important;
+                width: 156px;
+  }
+
+  #launcher-wrapper {
+    bottom: 50px !important;
+  }
+  
+  .skiptranslate > span {
+position:absolute;
+left:-10000px;
+top:auto;
+width:1px;
+height:1px;
+overflow:hidden;
+}
+
+ 
+
+ 
+   
+   
+ 
+
+ 
+
+  function googleTranslateElementInit() {
+    var el = document.getElementById("google_translate_element");
+    if (el && el.innerHTML.trim() !== "") {
+        return;
+    }
+
+    new google.translate.TranslateElement({ pageLanguage: "en" }, "google_translate_element");
+    // begin accessibility compliance
+    $('img.goog-te-gadget-icon').attr('alt','Google Translate');
+    $('div#goog-gt-tt div.logo img').attr('alt','translate');
+    $('div#goog-gt-tt .original-text').css('text-align','left');
+    $('.goog-te-gadget-simple .goog-te-menu-value span').css('color','#000000');
+    $('.goog-te-combo').attr('aria-label','google translate languages');
+    $('svg.goog-te-spinner').attr('title','Google Translate Spinner');
+    $('.goog-te-gadget-simple .goog-te-menu-value span').css('color','#000000');
+  }
+
+  $(function() {
+    $.getScript("//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit");
+  });
+
+ 
+
+ 
+ !function(){var b=function(){window.__AudioEyeSiteHash = "534f2eac2c10681608ed61308dcb07e7"; var a=document.createElement("script");a.src="https://wsmcdn.audioeye.com/aem.js";a.type="text/javascript";a.setAttribute("async","");document.getElementsByTagName("body")[0].appendChild(a)};"complete"!==document.readyState?window.addEventListener?window.addEventListener("load",b):window.attachEvent&&window.attachEvent("onload",b):b()}(); 
+
+
+     
+        $(function () {
+            document.cookie = "responsiveGhost=0; path=/";
+        });
+        $(window).on("load", function () {
+            $('body').addClass('doneLoading').removeClass('hideContent');
+
+            if ($('#404Content').length > 0)
+                $('div#bodyWrapper').css('padding', '0px');
+        });
+     
+
+     
+         
+            body.hideContent {
+                opacity: 1 !important;
+            }
+         
+     
+
+        
+ 
+	 
+
+		 
+			 Arrow Left 
+			 
+		 
+
+		 
+			 Arrow Right 
+			 
+		 
+
+	 
+ 
+     loadCSS('//fonts.googleapis.com/css?family=Libre+Baskerville:700,italic,regular|Open+Sans:500,500italic,600,600italic,700,700italic,800,800italic,italic,regular|'); 
+    
+
+     [] 
+         
+             
+                 
+                     Slideshow Left Arrow 
+                     
+                         
+                     
+                 
+                 
+                     Slideshow Right Arrow 
+                     
+                         
+                     
+                 
+             
+         
+    
+	
+	
+
+     
+ 
+ 

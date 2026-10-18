@@ -1,0 +1,3490 @@
+
+ 
+ 
+ 
+
+	 
+ 
+				 (function(w,d,s,l,i){w.GAMeasurementID='G-PJR3FG3ZWF';w[l]=w[l]||[];w[l].push({'gtm.start':
+				new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+				j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+				'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+				})(window,document,'script','cpDataLayerGA4','GTM-K73C5PS'); 
+				 
+				 
+					var enableTelemetry = 'false'
+					var aiConfig = {
+					instrumentationKey: '1cde048e-3185-4906-aa46-c92a7312b60f'						
+					}
+					var appInsights = window.appInsights || function (a) { function b(a) { c[a] = function () { var b = arguments; c.queue.push(function () { c[a].apply(c, b) }) } } var c = { config: a }, d = document, e = window; setTimeout(function () { var b = d.createElement('script'); b.src = a.url || 'https://js.monitor.azure.com/scripts/a/ai.0.js', d.getElementsByTagName('script')[0].parentNode.appendChild(b) }); try { c.cookie = d.cookie } catch (a) { } c.queue = []; for (var f = ['Event', 'Exception', 'Metric', 'PageView', 'Trace', 'Dependency']; f.length;)b('track' + f.pop()); if (b('setAuthenticatedUserContext'), b('clearAuthenticatedUserContext'), b('startTrackEvent'), b('stopTrackEvent'), b('startTrackPage'), b('stopTrackPage'), b('flush'), !a.disableExceptionTracking) { f = 'onerror', b('_' + f); var g = e[f]; e[f] = function (a, b, d, e, h) { var i = g && g(a, b, d, e, h); return !0 !== i && c['_' + f](a, b, d, e, h), i } } return c }(aiConfig);
+					window.appInsights = appInsights, appInsights.queue && 0 === appInsights.queue.length;
+					// Add telemetry initializer
+					appInsights.queue.push(function() {
+						appInsights.context.addTelemetryInitializer(function(envelope) {
+							var telemetryItem = envelope.data.baseData;
+							// To check the telemetry item’s type:
+							if (!false)
+							{
+								//If the telemetry is not enabled, we still want to capture Google map custom event, so only allow that
+								if (envelope.name.indexOf('.Event') == -1)
+									return false;
+							}
+						});
+					});						
+					appInsights.trackPageView();
+				 
+	 
+		function populateAntiForgery(token) {
+			var input = document.createElement("input");
+			input.name = "__RequestVerificationToken";
+			input.type = "hidden";
+			input.value = token;
+			var absPat = /^https?:\/\/|^\/\//i;
+			var forms = document.getElementsByTagName("form");
+			for (var i = 0; i < forms.length; i++) {
+				if (forms[i].method == "post" &&
+					!forms[i].querySelector('[name="__RequestVerificationToken"]') &&
+					!absPat.test(forms[i].getAttribute("action"))) {
+					forms[i].appendChild(input.cloneNode());
+				}
+			}
+		}
+
+		function getAntiForgeryToken(callback, error) {
+			var xhr = new XMLHttpRequest();
+			xhr.open("GET", "/antiforgery");
+			xhr.addEventListener("load", function() {
+				try {
+					if (this.status !== 200) {
+						throw Error("Invalid status. Could not retrieve antiforgery token.");
+					}
+					var obj = JSON.parse(this.responseText);
+					callback(obj.token);
+				} catch (e) {
+					typeof error === "function" && error(e);
+				}
+			});
+			xhr.send();
+		}
+
+		getAntiForgeryToken(function(token) {
+			if (document.readyState === "complete"
+				|| document.readyState === "loaded" 
+				|| document.readyState === "interactive") {
+				populateAntiForgery(token);
+				return;
+			}
+			document.addEventListener("DOMContentLoaded", function() {
+				populateAntiForgery(token);
+			}, false);
+		}, console.error);
+	 
+			
+
+	 
+		window.departmentHeader = {};
+		window.pageSectionTracker = {};
+		window.isResponsiveEnabled = true;
+		window.isRemoveSetHeights= false;
+		if (window.isRemoveSetHeights) {
+			document.documentElement.className += ' removeSetHeights';
+		}
+		window.mainMenuMediaQuery = 'screen and (max-width: 40em)';
+		window.isMobileBrowserIncludingTablets = false;
+		window.fixedResponsiveMenu = false;
+		window.fullWidthResponsiveMenu = true;
+		window.responsiveMenuHeight = '';
+		window.responsiveMenuFontSize = '';
+		window.isContentAdvisor = false;
+		(function () {
+			window.setSizeCookie = function () {
+				document.cookie = "dpi=" + window.devicePixelRatio + "; path=/";
+				document.cookie = "viewportWidth=" + window.innerWidth + "; path=/";
+				document.cookie = "viewportHeight=" + window.innerHeight + "; path=/";
+				if (screen && screen.width && screen.height) {
+					document.cookie = "screenWidth=" + screen.width + "; path=/";
+					document.cookie = "screenHeight=" + screen.height + "; path=/";
+				}
+				document.cookie = "responsiveGhost=1; path=/";
+			};
+
+			setSizeCookie();
+		}());
+	 
+		 
+
+	 
+	
+	
+	
+	 
+	 
+	 
+		 Site Map • Cowley County, KS • CivicEngage 
+
+			 
+	 
+	
+
+	 
+	 
+	 
+	 
+	 <!--
+	var intCountryCode = 840;
+	var order = '';
+//--> 
+	
+	 	 
+
+	 
+	 
+		window.Pages = window.Pages || {};
+		// FrontEnd RWD initialization
+		window.Pages.rwdReady = $.Deferred();
+		window.Pages.toolBarDeferred = $.Deferred();
+		window.Pages.rwdSetupComplete = $.Deferred();
+		window.Pages.megaMenuLoaded = $.Deferred();
+		window.Pages.angularToolbarComplete = $.Deferred();
+		window.Pages.frontEndToolbarComplete = $.Deferred();
+	 
+	 
+	 
+	
+	
+	
+	 
+	 
+	 
+
+
+
+	 
+	 
+	 
+	 
+
+	 
+		setEditorVariables(false, 840);
+		function getPrintPreviewType() { return 0; } function printPreview() {pPreview(getPrintPreviewType()); }
+	 
+	 
+ 
+ 
+
+     jQuery(document).click(function (event) {
+	var target = jQuery(event.target);
+	if (target.attr('src') && target.parents('.image').length && target.parents('.widget').length) {
+		var text = target.attr('title');
+		
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Image',
+				eventAction: 'Image - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.is('button') || target.hasClass('button') || target.parents().hasClass('button')) {
+		var text = "";
+		if (target.parents('.button')[0]) {
+			text = target.parents('.button').first().text();
+		} else if (target.text().length) {
+			text = target.text();
+		} else if (target.attr('title').length) {
+			text = target.attr('title');
+		}
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Button',
+				eventAction: 'Button - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetCustomHtml').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Custom Html',
+				eventAction: 'Custom Html Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.editor').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Editor',
+				eventAction: 'Editor Link Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.GraphicLinks').length) {
+		var text = "";
+		var targetGraphicLink = target;
+		if (target.hasClass('widgetGraphicLinksLink')) {
+			targetGraphicLink = jQuery(target.children()[0]);
+		}
+		if (targetGraphicLink.hasClass('text')) {
+			text = targetGraphicLink.text();
+		} else if (targetGraphicLink.attr('src').length) {
+			if (targetGraphicLink.attr('alt').length) {
+				text = targetGraphicLink.attr('alt');
+			} else {
+				text = targetGraphicLink.attr('src');
+			}
+		} else {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Graphic Links',
+				eventAction: 'Graphic Link - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.InfoAdvanced').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Info Advanced',
+				eventAction: 'Info Advanced Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.list').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'List',
+				eventAction: 'List Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.megaMenuItem').length || target.parents('.topMenuItem').length) {
+		var megaMenuText = jQuery('.topMenuItem.mouseover').find('span').text();
+		var breadCrumbs = [];
+		jQuery('.breadCrumbs > li').each(function () {
+			 breadCrumbs.push(this.textContent);
+		});
+		var pageTitle = breadCrumbs.join('>');
+		var subTitleText = target.parents('.megaMenuItem').children('.widgetTitle').children().text();
+		var text = "";
+		if (pageTitle) {
+			text += pageTitle + " | ";
+		} else {
+			text += document.title + ' - ';
+		}
+		if (target.text() == "" && megaMenuText == "") {
+			text += "N/A";
+		} else if (target.text().length && megaMenuText.length) {
+			if (megaMenuText == target.text()) {
+				text += megaMenuText;
+			} else {
+				text += megaMenuText + " - " + subTitleText + " - " + target.text();
+			}
+		} else if (target.text() == "") {
+			text += megaMenuText;
+		} else {
+			text += target.text();
+		}
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Mega Menu',
+				eventAction: 'Mega Menu : ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetNewsFlash').length && target.parents('.widgetItem').length) {
+		var text = jQuery(target.parents('.widgetItem')[0]).find('.widgetTitle').children().text();
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'News Flash',
+				eventAction: 'News Flash - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.hasClass('widgetQuickLinksLink') || target.find('.widgetQuickLinksLink').length) {
+		var text = target.text();
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Quick Links',
+				eventAction: 'Quick Links - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.attr('src') && target.parents('.cpSlideshow').length) {
+		var text = target.attr('title');
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Slideshow',
+				eventAction: 'Slideshow - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetText').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Text',
+				eventAction: 'Text Link Clicked',
+				eventLabel: window.location.href
+			});
+	}
+}); 
+	 
+	 
+		 
+		 
+			 
+				 
+			 
+		 
+	 
+	 
+		 
+	 
+	 
+		 
+			 
+		 
+	 
+ 
+     
+ 
+ Skip to Main Content 
+ 
+     
+
+         
+
+
+
+     
+     
+     
+     
+     
+     
+     
+     
+
+         
+     
+     
+         
+                 
+                    
+ 
+@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700); 
+.alertText .customAlert {
+    color: #EAEAEA;
+    display: inline-block;
+    font-family: 'Open Sans Condensed', sans-serif; 
+    text-transform: uppercase;
+    font-weight: bold;
+    height: 27px;
+    left: 57px;
+    line-height: 27px;
+    overflow: hidden;
+    position: absolute;
+    top: 15px;
+    white-space: nowrap;
+    width: 268px;
+}
+ 
+   
+     
+         
+             
+             County Notices 
+         
+         
+	Road Closures
+	 Read On... 
+ 
+ 
+     
+   
+   
+  
+
+
+
+ 
+ 
+     
+         Create a Website Account   - Manage notification subscriptions, save form progress and more.    
+         
+	         Website Sign In 
+         
+     
+ 
+ 
+    $(document).ready(function () {
+        $('#signedOutToolbarCreateProfileButton').click(function (event) {
+            event.preventDefault();
+            window.location.href = '/MyAccount/ProfileCreate?from=url&url=/&dn=' + window.location.origin;
+        });
+
+			
+				$('#loggedOutToolbarSignInButton').click(function (event) {
+					event.preventDefault();
+					window.location.href = '/MyAccount/?from=url&url=' + encodeURIComponent(window.location.href.replace(window.location.origin, '')) + '&dn=' + window.location.host;
+				});
+			
+
+		if ('False' == 'True') {
+            $('#loggedOutToolbarSignInButton').hide();
+		}
+    })
+ 
+ 
+
+                 
+             
+                 
+                
+ 
+ 
+ 
+ 
+
+
+
+
+				 
+ 
+
+
+
+
+				 
+ 
+ 
+      Your Government   			      Departments   			      Visitors   			      Business  			      News   			      How Do I...   			 
+ 
+
+
+	 
+		(function () {
+			function setupMenu() {
+				const menuID = 'mainNavMenu';
+				const menuType = MAIN_MENU;
+
+				//setup menu manager properties for main menu
+				if (!menuManager.mobileMainNav && true)
+					menuManager.adjustMainItemsWidth('#' + menuID);
+				menuManager.isMainMenuEditable = false;
+				menuManager.mainMenuMaxSubMenuLevels = 4;
+				menuManager.setMOMMode(2, menuType);
+
+				//Init main menu
+				const setupDraggable = menuManager.isMainMenuEditable;
+				const urlToGetHiddenMenus = '/Pages/MenuMain/HiddenMainSubMenus?pageID=1&moduleID=23&themeID=16&menuContainerID=mainNav';
+
+				menuManager.setupMenu(menuID, 'mainNav', menuType, setupDraggable, urlToGetHiddenMenus);
+				menuManager.mainMenuInit = true;
+				menuManager.mainMenuTextResizer = true;
+				if (1.00 > 0)
+					menuManager.mainMenuTextResizerRatio = 1.00;
+				if (window.isResponsiveEnabled)
+					menuManager.mainMenuReady.resolve();
+
+			}
+
+			if (document.readyState === "complete"
+				|| document.readyState === "loaded"
+				|| document.readyState === "interactive") {
+				setupMenu();
+				return;
+			}
+
+			document.addEventListener("DOMContentLoaded", setupMenu);
+		})();
+	 
+
+
+ 	 
+				                
+
+
+
+	 
+ 	 
+				                
+
+
+
+	 
+ 	 
+				                
+
+
+
+	 
+ 	 
+				                
+
+
+
+	 
+ 	 
+				                
+
+
+
+	 
+ 	 
+				                
+
+
+
+	 
+ 
+ 
+ 
+ 
+ 	 
+				                
+
+		 				
+	 
+	
+	 	
+ 
+
+
+
+
+ 
+	 
+		 
+				 
+	 
+	 
+		 
+				 
+					 
+
+  
+ 
+
+  
+ 
+				 
+			 
+		 
+	 
+			 
+ 
+ 
+
+	   
+
+	   
+
+			 				
+	 
+	
+	 	
+ 
+	
+	 
+	 
+	 
+
+		$(document).ready(function () {
+			try {
+				// Minimum characters required before performing a search/autocomplete
+				var minPrefixLength = 3;
+				var autoCompleteDebounceDelay = 500;
+				var searchFieldSelector = "#searchField" + '886947d7-fc40-46df-839d-feaf533de92a';
+				var checkboxSelector = "#ysnSearchOnlyDept" + '886947d7-fc40-46df-839d-feaf533de92a';
+				var buttonSelector = ".widgetSearchButton" + '886947d7-fc40-46df-839d-feaf533de92a';
+				var autoCompleteCache = {};
+				var autoCompleteCacheKeys = [];
+				var autoCompleteCacheLimit = 25;
+				var currentAutoCompleteRequest = null;
+				var currentAutoCompleteRequestKey = null;
+				var autoCompleteDebounceTimer = null;
+				var autoCompleteDebounceKey = null;
+				var pendingAutoCompleteResponses = [];
+
+				function normalizeAutoCompleteTerm(term) {
+					return $.trim((term || "") + "").replace(/\s+/g, " ");
+				}
+
+				function shouldSearch(term) {
+					return normalizeAutoCompleteTerm(term).length >= minPrefixLength;
+				}
+
+				function getAutoCompleteUrl() {
+					return '/Search/AutoComplete' + ($(checkboxSelector).is(':checked') || false? '?departmentId=0' : '');
+				}
+
+				function getAutoCompleteCacheKey(requestUrl, term) {
+					return requestUrl + "|" + term.toLowerCase();
+				}
+
+				function cacheAutoCompleteResult(cacheKey, data) {
+					if (!Object.prototype.hasOwnProperty.call(autoCompleteCache, cacheKey)) {
+						autoCompleteCacheKeys.push(cacheKey);
+						if (autoCompleteCacheKeys.length > autoCompleteCacheLimit) {
+							delete autoCompleteCache[autoCompleteCacheKeys.shift()];
+						}
+					}
+					autoCompleteCache[cacheKey] = data;
+				}
+
+				function respondToPendingAutoComplete(data) {
+					var responses = pendingAutoCompleteResponses;
+					pendingAutoCompleteResponses = [];
+					for (var i = 0; i < responses.length; i++) {
+						responses[i](data);
+					}
+				}
+
+				function cancelPendingAutoComplete() {
+					clearTimeout(autoCompleteDebounceTimer);
+					autoCompleteDebounceKey = null;
+					if (currentAutoCompleteRequest != null) {
+						currentAutoCompleteRequest.abort();
+						currentAutoCompleteRequest = null;
+					}
+					currentAutoCompleteRequestKey = null;
+					respondToPendingAutoComplete([]);
+				}
+
+				function createWidgetAutoCompleteSource(options) {
+					return function (request, response) {
+						var term = normalizeAutoCompleteTerm(request.term);
+						if (!options.shouldSearch(term)) {
+							response([]);
+							return;
+						}
+
+						var requestUrl = options.url();
+						var cacheKey = getAutoCompleteCacheKey(requestUrl, term);
+						if (Object.prototype.hasOwnProperty.call(autoCompleteCache, cacheKey)) {
+							response(autoCompleteCache[cacheKey]);
+							if (options.success) {
+								options.success(autoCompleteCache[cacheKey]);
+							}
+							return;
+						}
+
+						if (currentAutoCompleteRequestKey === cacheKey || autoCompleteDebounceKey === cacheKey) {
+							pendingAutoCompleteResponses.push(response);
+							return;
+						}
+
+						cancelPendingAutoComplete();
+						autoCompleteDebounceKey = cacheKey;
+						pendingAutoCompleteResponses.push(response);
+						autoCompleteDebounceTimer = setTimeout(function () {
+							autoCompleteDebounceKey = null;
+							currentAutoCompleteRequestKey = cacheKey;
+							currentAutoCompleteRequest = $.ajax({
+								url: requestUrl,
+								dataType: "json",
+								timeout: options.timeout,
+								data: {
+									term: term,
+								},
+								success: function (data) {
+									if (currentAutoCompleteRequestKey === cacheKey) {
+										cacheAutoCompleteResult(cacheKey, data);
+										respondToPendingAutoComplete(data);
+										if (options.success) {
+											options.success(data);
+										}
+									}
+								},
+								error: function (xmlhttprequest, textstatus, message) {
+									if (textstatus === "abort") {
+										return;
+									}
+
+									if (options.error) {
+										options.error(xmlhttprequest, textstatus, message);
+									}
+
+									respondToPendingAutoComplete([]);
+								},
+								complete: function (xmlhttprequest) {
+									if (currentAutoCompleteRequest === xmlhttprequest) {
+										currentAutoCompleteRequest = null;
+										currentAutoCompleteRequestKey = null;
+									}
+								}
+							});
+						}, options.delay);
+					};
+				}
+
+				// click handler for search buttons
+				$(buttonSelector).click(function (e) {
+					e.preventDefault();
+					var $btn = $(this);
+					var $field = $btn.siblings(".widgetSearchBox");
+					var term = $field.val() + "";
+					if (!shouldSearch(term)) {
+						// do nothing until user types enough characters
+						$field.focus();
+						return;
+					}
+
+					if ($(checkboxSelector).is(':checked') || false)
+					{
+						doWidgetSearch($.trim(term), Number(0));
+					}
+					else {
+						doWidgetSearch($.trim(term), 0);
+					}
+				});
+
+				// enter key handler for the search field
+				$(searchFieldSelector).keypress(function (e) {
+					var code = e.which || e.keyCode;
+					if (code === 13) {
+						e.preventDefault();
+						var $this = $(this);
+						var term = $this.val() + "";
+						if (!shouldSearch(term)) {
+							// do nothing until user types enough characters
+							$this.focus();
+							return false;
+						}
+
+						if ($(checkboxSelector).is(':checked') || false) {
+							doWidgetSearch($.trim(term), Number(0));
+						} else {
+							doWidgetSearch($.trim(term), 0);
+						}
+						return false;
+					}
+					return true;
+				});
+
+				// autocomplete: set minLength and guard source
+				if (true) {
+					var $searchField = $(searchFieldSelector).autocomplete({
+						minLength: minPrefixLength,
+						source: createWidgetAutoCompleteSource({
+							delay: autoCompleteDebounceDelay,
+							timeout: 10000,
+							shouldSearch: shouldSearch,
+							url: getAutoCompleteUrl,
+							success: function () {
+								$('.autoCompleteError').remove();
+							},
+							error: function (xmlhttprequest, textstatus, message) {
+								if (textstatus === "timeout") {
+									if ($(searchFieldSelector).siblings('.autoCompleteError').length == 0)
+										$('<span class="autoCompleteError"><p class="alert error">Search autocomplete is currently not responding. Please try again later.</p></span>').insertAfter($(searchFieldSelector));
+								}
+							}
+						}),
+						html: true,
+						delay: 0,
+						select: function (event, ui) {
+							$(this).val(ui.item.value);
+							$(this).next().click();
+						}
+					});
+
+					$searchField.data("ui-autocomplete")._renderItem = function (ul, item) {
+						return $("<li class=\"itemList\"></li>")
+							.data("ui-autocomplete-item", item)
+							.append("<a>" + item.label + "</a>")
+							.appendTo(ul);
+					};
+				}
+
+				// keep searchBtnApplyQuery consistent with prefix rule
+				window.searchBtnApplyQuery = function() {
+					var $field = $(searchFieldSelector);
+					var term = $field.val() + "";
+					if (shouldSearch(term)) {
+						// update href for the icon/button (if present)
+						var btn = document.getElementById("btnSearchIcon");
+						if (btn) btn.href = "/Search?searchPhrase=" + encodeURIComponent($.trim(term));
+					} else {
+						var btn = document.getElementById("btnSearchIcon");
+						if (btn) btn.href = "#";
+					}
+				};
+			}
+			catch(e) {} //we're going to eat this error. Autocomplete won't work but we dont wan't to break anything else on the page.
+		});
+	 
+
+	 
+				 
+		 
+			 
+						 
+
+			 Search 
+		 
+
+	 
+
+
+ 
+	  
+		.widgetSearch ::-webkit-input-placeholder {
+		color: rgba(59, 82, 58, 1);
+	  }
+		.widgetSearch :-moz-placeholder { /* Firefox 18- */
+	   color: rgba(59, 82, 58, 1);
+	}
+		.widgetSearch ::-moz-placeholder {  /* Firefox 19+ */
+	   color: rgba(59, 82, 58, 1);
+	}
+	.widgetSearch :-ms-input-placeholder {
+	   color: rgba(59, 82, 58, 1);
+	}
+	
+
+	.widgetSearch .widgetBody .widgetSearchBox886947d7-fc40-46df-839d-feaf533de92a
+	{
+		color: rgba(59, 82, 58, 1);
+		background: #fff;
+border-radius: 5px;
+border: 1px solid #3B523A;
+height: 40px;
+font-family: Josefin Sans;
+font-size: 1.2em;
+font-weight: 600;
+padding: 5px 70px 0 20px;
+	}
+	.widgetSearch .widgetBody .widgetSearchButton886947d7-fc40-46df-839d-feaf533de92a
+	{
+		margin: 0;
+	}
+	.widgetSearch .widgetSearch-onlyDept886947d7-fc40-46df-839d-feaf533de92a
+	{
+		display: inline-block;
+		color: #333;
+		
+		
+		 padding-top: 10px;
+	}
+	#ysnSearchOnlyDept886947d7-fc40-46df-839d-feaf533de92a
+	{
+		position: relative;
+		top: .125em;
+	}
+
+ 
+
+ 
+ 
+
+
+
+ 
+	//Updates search icons href to have the correct queryString
+	function searchBtnApplyQuery() {
+		document.getElementById("btnSearchIcon").href = "/Search?searchPhrase=" + document.getElementById("searchField886947d7-fc40-46df-839d-feaf533de92a").value;
+	}
+ 
+
+ 
+
+	   
+
+	   
+
+			   
+
+
+	 
+ 	 
+				                
+
+
+
+	 
+ 
+ 
+ 
+
+
+
+
+		 
+		 
+			 
+			 
+		 
+			 
+				$(window).on("load", function () {
+					$.when(window.Pages.rwdSetupComplete)
+						.done(function () {
+							renderExternalBannerSlideshow('banner1',
+								{"BannerOptionID":53,"ThemeID":16,"SlotName":"banner1","Name":"Default","IsDefault":true,"BannerMode":2,"SlideShowSlideTiming":null,"SlideshowTransition":0,"SlideShowTransitionTiming":null,"ImageScale":true,"ImageAlignment":1,"ImageScroll":true,"MuteSound":true,"VideoType":0,"Status":40,"SlideshowControlsPosition":0,"SlideshowControlsAlignment":0,"SlideshowBannerControlsColorScheme":0,"DisplayVideoPauseButton":false,"VideoPauseButtonAlignment":1,"VideoPauseButtonControlsAlignment":0,"VideoPauseButtonStyle":"#FFFFFF","VideoPauseButtonBackgroundStyle":"#000000","VideoPauseButtonAlignmentClass":"alignRight viewport","DisplaySlideshowPauseButton":true,"SlideshowControlsColor":"#FFFFFF","SlideshowControlsBackgroundColor":"#000000","SlideshowPauseButtonClass":"isHidden","BannerImages":[{"BannerImageID":69,"BannerOptionID":53,"FileName":"/ImageRepository/Document?documentID=94","Height":600,"Width":2200,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":1,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":""},{"BannerImageID":71,"BannerOptionID":53,"FileName":"/ImageRepository/Document?documentID=92","Height":600,"Width":2200,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":3,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":""},{"BannerImageID":72,"BannerOptionID":53,"FileName":"/ImageRepository/Document?documentID=91","Height":600,"Width":2200,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":4,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":""},{"BannerImageID":200,"BannerOptionID":53,"FileName":"/ImageRepository/Document?documentID=1824","Height":600,"Width":2200,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":4,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":""}],"BannerVideos":[],"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/"},
+								'/App_Themes/Simple/Images/',
+								'Rotating');
+						});
+				});
+			 
+
+ 
+ 
+ 
+ 
+ 
+ 		 
+			 Home Site Map 
+		 
+
+	   
+    
+ 
+	
+
+	 
+		
+ Site Map 
+
+ 
+	 Jump to: 
+	 
+		 Home 
+			 Your Government 
+			 Departments 
+			 Visitors 
+			 Business 
+			 News 
+			 How Do I... 
+	 
+ 
+
+ 
+	
+	 
+		 
+			 Home 
+		 
+	 
+	
+		 
+			 
+				 Your Government 
+			 
+			
+         
+                 
+                     County Commissioners 
+
+                                        
+         
+                 
+                     Commission Map (JPG) 
+
+                                                         
+                 
+                     Resolutions 
+
+                                                         
+                     
+                 
+                 
+                     Attorney 
+
+                                        
+         
+                 
+                     Diversion Application (PDF) 
+
+                                                         
+                 
+                     Diversion Program Policy 
+
+                                                         
+                     
+                 
+                 
+                     Clerk / Elections 
+
+                                        
+         
+                 
+                     Election Services 
+
+                                                         
+                 
+                     Homestead 
+
+                                                         
+                 
+                     Licenses & Permits 
+
+                                                         
+                 
+                     Open Records 
+
+                                                         
+                 
+                     Taxes & Assessments 
+
+                                                         
+                     
+                 
+                 
+                     Meetings and Agendas Calendar 
+
+                                                         
+                 
+                     Register of Deeds 
+
+                                        
+         
+                 
+                     Meet the Register of Deeds 
+
+                                                         
+                 
+                     Parcel Search 
+
+                                                         
+                 
+                     Recording Fees 
+
+                                                         
+                 
+                     Resource Links 
+
+                                                         
+                 
+                     Property Alert Service Form 
+
+                                                         
+                     
+                 
+                 
+                     Sheriff's Office 
+
+                                        
+         
+                 
+                     Offender Search 
+
+                                                         
+                 
+                     Contact the Sheriff's Office 
+
+                                                         
+                 
+                     Cowley County Approved Bonding Companies (PDF) 
+
+                                                         
+                 
+                     Cowley County Jail & Inmate Information 
+
+                                                         
+                 
+                     Crime Stoppers 
+
+                                                         
+                 
+                     Current Inmate Roster  
+
+                                                         
+                 
+                     History of the Sheriff’s Office 
+
+                                                         
+                 
+                     Sheriff's Office Annual Reports 
+
+                                                         
+                 
+                     Inmate Mail Services (PDF) 
+
+                                                         
+                 
+                     Meet the County Sheriff 
+
+                                                         
+                 
+                     Sheriff's Office Activity Reports 
+
+                                                         
+                 
+                     Sheriff's Office FAQ 
+
+                                                         
+                     
+                 
+                 
+                     Treasurer 
+
+                                        
+         
+                 
+                     Commercial Licensing 
+
+                                                         
+                 
+                     Kansas Department of Revenue 
+
+                                                         
+                 
+                     Meet the County Treasurer 
+
+                                                         
+                 
+                     Property Tax Parcel Search 
+
+                                                         
+                 
+                     Vehicle Forms 
+
+                                                         
+                 
+                     Vehicle Tag Renewal 
+
+                                                         
+                 
+                     Vehicle Tax Check 
+
+                                                         
+                 
+                     Tax Sale 
+
+                                                         
+                     
+                 
+                 
+                     19th Judicial District Court 
+
+                                        
+         
+                 
+                     Court Costs, Filing Fees & Online Payment 
+
+                                                         
+                 
+                     Court Forms 
+
+                                                         
+                 
+                     Cowley County's New Court Room 
+
+                                                         
+                 
+                     Criminal / Traffic / Domestic Zoom Hearing & YouTube Information 
+
+                                                         
+                 
+                     Jury Information 
+
+                                                         
+                 
+                     Legal Forms 
+
+                                                         
+                 
+                     Limited Actions Case Information & Court Dockets 
+
+                                                         
+                 
+                     Marriage Licenses / Weddings 
+
+                                                         
+                 
+                     Resource Links 
+
+                                                         
+                     
+                 
+                     
+
+			 ▲ Back to Top 
+		 
+		 
+			 
+				 Departments 
+			 
+			
+         
+                 
+                     Meetings and Agendas 
+
+                                                         
+                 
+                     Meet the County Commissioners 
+
+                                                         
+                 
+                     Administration 
+
+                                        
+         
+                 
+                     Board of Commission Meeting Agendas/Minutes  
+
+                                                         
+                 
+                     Budget & Finance 
+
+                                                         
+                 
+                     Appropriated Agencies 
+
+                                                         
+                 
+                     Cemeteries 
+
+                                                         
+                 
+                     County Administrator  
+
+                                                         
+                 
+                     Coroner 
+
+                                                         
+                 
+                     Facilities & Safety 
+
+                                                         
+                 
+                     GIS Services 
+
+                                                         
+                 
+                     Human Resources 
+
+                                                         
+                 
+                     Helpful Links 
+
+                                                         
+                 
+                     IT Services 
+
+                                                         
+                 
+                     State Forms 
+
+                                                         
+                 
+                     Tax Foreclosure Sale 
+
+                                                         
+                     
+                 
+                 
+                     Appraiser 
+
+                                        
+         
+                 
+                     Appeals 
+
+                                                         
+                 
+                     Parcel Search 
+
+                                                         
+                 
+                     Personal Property 
+
+                                                         
+                 
+                     Property Tax Calendar 
+
+                                                         
+                 
+                     Real Estate 
+
+                                                         
+                 
+                     Learn about Property Taxes 
+
+                                                         
+                     
+                 
+                 
+                     Community Based Services 
+
+                                        
+         
+                 
+                     Client Exit Survey 
+
+                                                         
+                 
+                     Community Corrections Mission & Vision 
+
+                                                         
+                 
+                     Programs & Services 
+
+                                                         
+                     
+                 
+                 
+                     Community Developmental Disability Organization 
+
+                                        
+         
+                 
+                     The Eligibility Determination Process 
+
+                                                         
+                 
+                     Functional Assessment 
+
+                                                         
+                 
+                     Service Options & How to Affiliate 
+
+                                                         
+                 
+                     CDDO Forms & Policies 
+
+                                                         
+                 
+                     CDDO Advisory Board 
+
+                                                         
+                 
+                     Additional CDDO Resources 
+
+                                                         
+                     
+                 
+                 
+                     Economic Development 
+
+                                        
+         
+                 
+                     Site Selection 
+
+                                                         
+                 
+                     Start & Grow a Business 
+
+                                        
+         
+                 
+                     Business Resources 
+
+                                        
+         
+                 
+                     Buildings & Sites 
+
+                                                         
+                 
+                     Business Classes 
+
+                                                         
+                 
+                     Business Incentives & Programs 
+
+                                                         
+                 
+                     E-Community Loan Program 
+
+                                                         
+                 
+                     Regional Employment Statistics 
+
+                                        
+         
+                 
+                     Community Demographic Data 
+
+                                        
+         
+                 
+                     Age Makeup 
+
+                                                         
+                 
+                     Educational Attainment 
+
+                                                         
+                 
+                     Household Income 
+
+                                                         
+                 
+                     Housing Data 
+
+                                                         
+                 
+                     Industry Employment 
+
+                                                         
+                 
+                     Labor Force & Employment Chart 
+
+                                                         
+                 
+                     Selected Age Characteristics 
+
+                                                         
+                     
+                 
+                     
+                 
+                 
+                     Employment & Training 
+
+                                                         
+                 
+                     Business & Industrial Parks 
+
+                                                         
+                 
+                     Sales Tax & Distribution 
+
+                                                         
+                 
+                     Sites On Market 
+
+                                                         
+                     
+                 
+                 
+                     Business Spotlights 
+
+                                                         
+                     
+                 
+                 
+                     Workforce Solutions 
+
+                                        
+         
+                 
+                     Workforce Analysis Survey 
+
+                                                         
+                 
+                     Job Opportunities 
+
+                                        
+         
+                 
+                     Featured Job 
+
+                                                         
+                 
+                     Job Opportunities Request Form 
+
+                                                         
+                     
+                 
+                 
+                     Economic Development Projects 
+
+                                                         
+                     
+                 
+                 
+                     Talent & Quality of Life 
+
+                                        
+         
+                 
+                     Area Employers 
+
+                                        
+         
+                 
+                     Agriculture 
+
+                                                         
+                 
+                     Leading Employers 
+
+                                                         
+                     
+                 
+                 
+                     Life in Cowley County 
+
+                                        
+         
+                 
+                     Adult Educational Resources 
+
+                                                         
+                 
+                     Childcare 
+
+                                                         
+                 
+                     Communities & Resources 
+
+                                                         
+                 
+                     Donation & Sponsorship Request Form 
+
+                                                         
+                 
+                     Healthcare 
+
+                                                         
+                 
+                     Housing 
+
+                                                         
+                 
+                     Cost of Living Index 
+
+                                                         
+                     
+                 
+                 
+                     Rental Listings 
+
+                                        
+         
+                 
+                     Rental Listings 
+
+                                                         
+                 
+                     Rental Listing Request 
+
+                                                         
+                     
+                 
+                 
+                     Services for the Disability & Aging Population 
+
+                                                         
+                     
+                 
+                 
+                     About 
+
+                                                         
+                     
+                 
+                 
+                     Emergency Services 
+
+                                        
+         
+                 
+                     911 Addressing 
+
+                                                         
+                 
+                     Control Burning 
+
+                                                         
+                 
+                     Cowley Alerts 
+
+                                                         
+                 
+                     Register Your Shelter 
+
+                                                         
+                 
+                     Emergency Planning 
+
+                                                         
+                 
+                     Local Emergency Planning Committee 
+
+                                                         
+                     
+                 
+                 
+                     Public Health 
+
+                                        
+         
+                 
+                     Board of Health 
+
+                                                         
+                 
+                     Child Care Licensing 
+
+                                                         
+                 
+                     Community Health Needs Assessment 
+
+                                                         
+                 
+                     Covid-19 Response Information 
+
+                                        
+         
+             
+                 COVID Archives 
+
+             
+         
+                 
+                 
+                     Environmental Protection Program & Septic Inspections 
+
+                                                         
+                 
+                     Health in All Policies 
+
+                                                         
+                 
+                     Immunization Information 
+
+                                                         
+                 
+                     Lead Poisoning Prevention 
+
+                                                         
+                 
+                     Home Visiting Program 
+
+                                                         
+                 
+                     Public Health Emergency Planning 
+
+                                                         
+                 
+                     Public Health Updates 
+
+                                                         
+                 
+                     Reproductive Health Services 
+
+                                                         
+                 
+                     Women, Infants, & Children (WIC) 
+
+                                                         
+                     
+                 
+                 
+                     Public Works 
+
+                                        
+         
+                 
+                     Landfill 
+
+                                        
+         
+                 
+                     Landfill Email Change 
+
+                                                         
+                 
+                     Landfill Regulations 
+
+                                                         
+                     
+                 
+                 
+                     Noxious Weeds 
+
+                                                         
+                 
+                     Offices & Districts 
+
+                                                         
+                 
+                     Report Signage & Road Issues 
+
+                                                         
+                 
+                     SS4A Traffic Fatality to Zero Initiative 
+
+                                                         
+                 
+                     Utility Permit 
+
+                                                         
+                 
+                     Property Damage Claim 
+
+                                                         
+                     
+                 
+                     
+
+			 ▲ Back to Top 
+		 
+		 
+			 
+				 Visitors 
+			 
+			
+         
+                 
+                     Arkansas City Chamber of Commerce 
+
+                                                         
+                 
+                     Arkansas City Convention & Visitor's Bureau 
+
+                                                         
+                 
+                     Visit Cowley County 
+
+                                        
+         
+                 
+                     Arkansas City 
+
+                                        
+         
+                 
+                     Dining 
+
+                                                         
+                 
+                     Education 
+
+                                                         
+                 
+                     Lodging 
+
+                                                         
+                 
+                     Retirement 
+
+                                                         
+                 
+                     Shopping 
+
+                                                         
+                     
+                 
+                 
+                     Atlanta 
+
+                                                         
+                 
+                     Burden 
+
+                                                         
+                 
+                     Cambridge 
+
+                                                         
+                 
+                     Dexter 
+
+                                                         
+                 
+                     Events & Destinations 
+
+                                        
+         
+                 
+                     Arkalalah 
+
+                                                         
+                 
+                     Barn Quilt Trail 
+
+                                                         
+                 
+                     BAK 2026 
+
+                                                         
+                 
+                     Cowley County Fair 
+
+                                                         
+                 
+                     Cowley County Waterfall 
+
+                                                         
+                 
+                     Destinations 
+
+                                                         
+                 
+                     Museums in Cowley County 
+
+                                                         
+                 
+                     Stone Arch Bridges 
+
+                                                         
+                 
+                     Walnut Valley Festival 
+
+                                                         
+                     
+                 
+                 
+                     History of Cowley County 
+
+                                                         
+                 
+                     Parkerfield 
+
+                                                         
+                 
+                     The Cowley County Courthouse 
+
+                                                         
+                 
+                     Udall 
+
+                                                         
+                 
+                     Winfield 
+
+                                        
+         
+                 
+                     Dining 
+
+                                                         
+                 
+                     Education 
+
+                                                         
+                 
+                     Lodging 
+
+                                                         
+                 
+                     Retirement 
+
+                                                         
+                 
+                     Shopping 
+
+                                                         
+                     
+                 
+                 
+                     County Map 
+
+                                                         
+                 
+                     Cowley County: Scenes From Home 
+
+                                                         
+                 
+                     Community Events 
+
+                                                         
+                     
+                 
+                 
+                     Winfield Chamber of Commerce 
+
+                                                         
+                 
+                     Winfield Convention & Tourism 
+
+                                                         
+                     
+
+			 ▲ Back to Top 
+		 
+		 
+			 
+				 Business 
+			 
+			
+
+			 ▲ Back to Top 
+		 
+		 
+			 
+				 News 
+			 
+			
+         
+                 
+                     Your Community, Your Businesses 
+
+                                        
+         
+                 
+                     Business 
+
+                                                         
+                 
+                     Community Events 
+
+                                                         
+                 
+                     Community Support 
+
+                                                         
+                 
+                     Government  
+
+                                                         
+                 
+                     Health & Safety 
+
+                                                         
+                 
+                     Infrastructure 
+
+                                                         
+                     
+                 
+                 
+                     Stay Connected 
+
+                                                         
+                 
+                     Want More? 
+
+                                                         
+                     
+
+			 ▲ Back to Top 
+		 
+		 
+			 
+				 How Do I... 
+			 
+			
+         
+                 
+                     Contact 
+
+                                        
+         
+                 
+                     Alerts 
+
+                                                         
+                 
+                     Staff Directory 
+
+                                                         
+                 
+                     Township Officers (PDF) 
+
+                                                         
+                     
+                 
+                 
+                     Find 
+
+                                        
+         
+                 
+                     Cemeteries 
+
+                                                         
+                 
+                     Election Information 
+
+                                                         
+                 
+                     Extensions Office 
+
+                                                         
+                 
+                     Mapping Services 
+
+                                                         
+                 
+                     Parcel Search 
+
+                                                         
+                 
+                     Property Tax Search 
+
+                                                         
+                 
+                     Staff Information 
+
+                                                         
+                 
+                     Tax Sales 
+
+                                                         
+                 
+                     Web Accessibility 
+
+                                                         
+                 
+                     Commission Meeting Agenda & Materials 
+
+                                                         
+                 
+                     View Commission Meetings 
+
+                                                         
+                 
+                     Township Officers (PDF) 
+
+                                                         
+                 
+                     County Maps 
+
+                                                         
+                     
+                 
+                 
+                     Submit 
+
+                                        
+         
+                 
+                     Open Records Request 
+
+                                                         
+                 
+                     Online Payments 
+
+                                                         
+                 
+                     Property Damage Claim 
+
+                                                         
+                     
+                 
+                     
+
+			 ▲ Back to Top 
+		 
+	
+			 		
+				 CustomLinks_2 
+				
+         
+                 
+                     Election Results Archive 
+
+                                                         
+                 
+                     Registration 
+
+                                                         
+                 
+                     "I VOTED" Sticker Design Contest  
+
+                                                         
+                 
+                     Voter's Rights and Responsibilities  
+
+                                                         
+                 
+                     Election Workers 
+
+                                                         
+                 
+                     Elected Officials 
+
+                                                         
+                     
+
+				 ▲ Back to Top 
+			 
+	 
+
+	 
+
+	
+	 
+
+	 
+ 
+ 
+ 
+ 
+ 
+ 
+ 	 
+				                
+
+		 				
+	 
+	
+	 	
+ 
+
+
+
+
+ 
+	 
+		 
+				 
+	 
+	 
+		 
+				 
+					 
+
+ 
+	 
+		 
+			 Elections & Voting 
+		 
+	 
+ 
+		 .fancyButton61.fancyButton:link,.fancyButton61.fancyButton:visited, .fancyButton61div.fancyButton{
+	background-repeat: no-repeat;
+	background-position: left top;
+position: relative;
+z-index: 1;
+}
+
+.fancyButton1::before,
+.fancyButton1::after,
+.fancyButton61::before,
+.fancyButton61::after {
+content: "";
+position: absolute;
+left: 50%;
+transform: translateX(-50%);
+box-sizing: border-box;
+border-radius: 50%;
+transition: all .3s ease-in-out;
+z-index: -1;
+box-shadow: 0 0 4px rgba(0,0,0,.25);
+}
+
+.fancyButton1::before,
+.fancyButton61::before {
+top: 8px;
+width: 120px;
+height: 120px;
+border: 2px solid #8E8D73;
+}
+
+.fancyButton1::after,
+.fancyButton61::after {
+top: 18px;
+width: 100px;
+height: 100px;
+background: #fff;}
+.fancyButton61.fancyButton:hover,.fancyButton61.fancyButton:focus,.fancyButton61.fancyButton:active,.fancyButton61.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+
+.fancyButton1:is(:hover,:focus,:active)::before,
+.fancyButton61:is(:hover,:focus,:active)::before {
+border-width: 4px;
+top: 0;
+box-shadow: 0 0 4px rgba(0,0,0,.34);
+}
+
+.fancyButton1:is(:hover,:focus,:active)::after,
+.fancyButton61:is(:hover,:focus,:active)::after {
+top: 4px;
+width: 112px;
+height: 112px;
+box-shadow: 0 0 4px rgba(0,0,0,0);}
+.fancyButton61.fancyButton:link > span,.fancyButton61.fancyButton:visited > span, .fancyButton61div.fancyButton > span{
+}
+.fancyButton61.fancyButton:hover > span,.fancyButton61.fancyButton:focus > span,.fancyButton61.fancyButton:active > span,.fancyButton61.fancyButton.hover > span{
+}
+.fancyButton61.fancyButton .text{
+	color: rgb(59, 82, 58);
+	font-size: 1.2em;
+	font-family: "Josefin Sans";
+	padding-top: 145px;
+	padding-right: 5px;
+	padding-left: 5px;
+	font-weight: 600;
+	text-decoration: none;
+	padding-top: 145px;
+	padding-right: 5px;
+	padding-left: 5px;
+	background-image: url('/ImageRepository/Document?documentID=105');
+	background-repeat: no-repeat;
+	background-position: center 35px ;
+line-height: 1.2;
+transition: all .3s ease-in-out;
+}
+.fancyButton61.fancyButton:hover .text,.fancyButton61.fancyButton:focus .text,.fancyButton61.fancyButton:active .text,.fancyButton61.fancyButton.hover .text{
+	text-decoration: underline;
+	background-repeat: no-repeat;
+	background-position: center 27px ;
+
+
+}
+ 
+
+  
+
+ 
+	 
+		 
+			 Property Taxes 
+		 
+	 
+ 
+		 .fancyButton62.fancyButton:link,.fancyButton62.fancyButton:visited, .fancyButton62div.fancyButton{
+	background-repeat: no-repeat;
+	background-position: left top;
+position: relative;
+z-index: 1;
+}
+
+.fancyButton1::before,
+.fancyButton1::after,
+.fancyButton62::before,
+.fancyButton62::after {
+content: "";
+position: absolute;
+left: 50%;
+transform: translateX(-50%);
+box-sizing: border-box;
+border-radius: 50%;
+transition: all .3s ease-in-out;
+z-index: -1;
+box-shadow: 0 0 4px rgba(0,0,0,.25);
+}
+
+.fancyButton1::before,
+.fancyButton62::before {
+top: 8px;
+width: 120px;
+height: 120px;
+border: 2px solid #8E8D73;
+}
+
+.fancyButton1::after,
+.fancyButton62::after {
+top: 18px;
+width: 100px;
+height: 100px;
+background: #fff;}
+.fancyButton62.fancyButton:hover,.fancyButton62.fancyButton:focus,.fancyButton62.fancyButton:active,.fancyButton62.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+
+.fancyButton1:is(:hover,:focus,:active)::before,
+.fancyButton62:is(:hover,:focus,:active)::before {
+border-width: 4px;
+top: 0;
+box-shadow: 0 0 4px rgba(0,0,0,.34);
+}
+
+.fancyButton1:is(:hover,:focus,:active)::after,
+.fancyButton62:is(:hover,:focus,:active)::after {
+top: 4px;
+width: 112px;
+height: 112px;
+box-shadow: 0 0 4px rgba(0,0,0,0);}
+.fancyButton62.fancyButton:link > span,.fancyButton62.fancyButton:visited > span, .fancyButton62div.fancyButton > span{
+}
+.fancyButton62.fancyButton:hover > span,.fancyButton62.fancyButton:focus > span,.fancyButton62.fancyButton:active > span,.fancyButton62.fancyButton.hover > span{
+}
+.fancyButton62.fancyButton .text{
+	color: rgb(59, 82, 58);
+	font-size: 1.2em;
+	font-family: "Josefin Sans";
+	padding-top: 145px;
+	padding-right: 5px;
+	padding-left: 5px;
+	font-weight: 600;
+	text-decoration: none;
+	padding-top: 145px;
+	padding-right: 5px;
+	padding-left: 5px;
+	background-image: url('/ImageRepository/Document?documentID=110');
+	background-repeat: no-repeat;
+	background-position: center 35px ;
+line-height: 1.2;
+transition: all .3s ease-in-out;
+}
+.fancyButton62.fancyButton:hover .text,.fancyButton62.fancyButton:focus .text,.fancyButton62.fancyButton:active .text,.fancyButton62.fancyButton.hover .text{
+	text-decoration: underline;
+	background-repeat: no-repeat;
+	background-position: center 27px ;
+
+
+}
+ 
+
+  
+				 
+			 
+		 
+	 
+			 
+ 
+ 
+
+	   
+
+	   
+
+			 				
+	 
+	
+	 	
+ 
+
+
+
+
+ 
+	 
+		 
+				 
+	 
+	 
+		 
+				 
+					 
+
+ 
+	 
+		 
+			 Employment 
+		 
+	 
+ 
+		 .fancyButton63.fancyButton:link,.fancyButton63.fancyButton:visited, .fancyButton63div.fancyButton{
+	background-repeat: no-repeat;
+	background-position: left top;
+position: relative;
+z-index: 1;
+}
+
+.fancyButton1::before,
+.fancyButton1::after,
+.fancyButton63::before,
+.fancyButton63::after {
+content: "";
+position: absolute;
+left: 50%;
+transform: translateX(-50%);
+box-sizing: border-box;
+border-radius: 50%;
+transition: all .3s ease-in-out;
+z-index: -1;
+box-shadow: 0 0 4px rgba(0,0,0,.25);
+}
+
+.fancyButton1::before,
+.fancyButton63::before {
+top: 8px;
+width: 120px;
+height: 120px;
+border: 2px solid #8E8D73;
+}
+
+.fancyButton1::after,
+.fancyButton63::after {
+top: 18px;
+width: 100px;
+height: 100px;
+background: #fff;}
+.fancyButton63.fancyButton:hover,.fancyButton63.fancyButton:focus,.fancyButton63.fancyButton:active,.fancyButton63.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+
+.fancyButton1:is(:hover,:focus,:active)::before,
+.fancyButton63:is(:hover,:focus,:active)::before {
+border-width: 4px;
+top: 0;
+box-shadow: 0 0 4px rgba(0,0,0,.34);
+}
+
+.fancyButton1:is(:hover,:focus,:active)::after,
+.fancyButton63:is(:hover,:focus,:active)::after {
+top: 4px;
+width: 112px;
+height: 112px;
+box-shadow: 0 0 4px rgba(0,0,0,0);}
+.fancyButton63.fancyButton:link > span,.fancyButton63.fancyButton:visited > span, .fancyButton63div.fancyButton > span{
+}
+.fancyButton63.fancyButton:hover > span,.fancyButton63.fancyButton:focus > span,.fancyButton63.fancyButton:active > span,.fancyButton63.fancyButton.hover > span{
+}
+.fancyButton63.fancyButton .text{
+	color: rgb(59, 82, 58);
+	font-size: 1.2em;
+	font-family: "Josefin Sans";
+	padding-top: 145px;
+	padding-right: 5px;
+	padding-left: 5px;
+	font-weight: 600;
+	text-decoration: none;
+	padding-top: 145px;
+	padding-right: 5px;
+	padding-left: 5px;
+	background-image: url('/ImageRepository/Document?documentID=106');
+	background-repeat: no-repeat;
+	background-position: center 35px ;
+line-height: 1.2;
+transition: all .3s ease-in-out;
+}
+.fancyButton63.fancyButton:hover .text,.fancyButton63.fancyButton:focus .text,.fancyButton63.fancyButton:active .text,.fancyButton63.fancyButton.hover .text{
+	text-decoration: underline;
+	background-repeat: no-repeat;
+	background-position: center 27px ;
+
+
+}
+ 
+
+  
+
+ 
+	 
+		 
+			 Meetings & Agendas 
+		 
+	 
+ 
+		 .fancyButton64.fancyButton:link,.fancyButton64.fancyButton:visited, .fancyButton64div.fancyButton{
+	background-repeat: no-repeat;
+	background-position: left top;
+position: relative;
+z-index: 1;
+}
+
+.fancyButton1::before,
+.fancyButton1::after,
+.fancyButton64::before,
+.fancyButton64::after {
+content: "";
+position: absolute;
+left: 50%;
+transform: translateX(-50%);
+box-sizing: border-box;
+border-radius: 50%;
+transition: all .3s ease-in-out;
+z-index: -1;
+box-shadow: 0 0 4px rgba(0,0,0,.25);
+}
+
+.fancyButton1::before,
+.fancyButton64::before {
+top: 8px;
+width: 120px;
+height: 120px;
+border: 2px solid #8E8D73;
+}
+
+.fancyButton1::after,
+.fancyButton64::after {
+top: 18px;
+width: 100px;
+height: 100px;
+background: #fff;}
+.fancyButton64.fancyButton:hover,.fancyButton64.fancyButton:focus,.fancyButton64.fancyButton:active,.fancyButton64.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+
+.fancyButton1:is(:hover,:focus,:active)::before,
+.fancyButton64:is(:hover,:focus,:active)::before {
+border-width: 4px;
+top: 0;
+box-shadow: 0 0 4px rgba(0,0,0,.34);
+}
+
+.fancyButton1:is(:hover,:focus,:active)::after,
+.fancyButton64:is(:hover,:focus,:active)::after {
+top: 4px;
+width: 112px;
+height: 112px;
+box-shadow: 0 0 4px rgba(0,0,0,0);}
+.fancyButton64.fancyButton:link > span,.fancyButton64.fancyButton:visited > span, .fancyButton64div.fancyButton > span{
+}
+.fancyButton64.fancyButton:hover > span,.fancyButton64.fancyButton:focus > span,.fancyButton64.fancyButton:active > span,.fancyButton64.fancyButton.hover > span{
+}
+.fancyButton64.fancyButton .text{
+	color: rgb(59, 82, 58);
+	font-size: 1.2em;
+	font-family: "Josefin Sans";
+	padding-top: 145px;
+	padding-right: 5px;
+	padding-left: 5px;
+	font-weight: 600;
+	text-decoration: none;
+	padding-top: 145px;
+	padding-right: 5px;
+	padding-left: 5px;
+	background-image: url('/ImageRepository/Document?documentID=1894');
+	background-repeat: no-repeat;
+	background-position: center 41px ;
+line-height: 1.2;
+transition: all .3s ease-in-out;
+}
+.fancyButton64.fancyButton:hover .text,.fancyButton64.fancyButton:focus .text,.fancyButton64.fancyButton:active .text,.fancyButton64.fancyButton.hover .text{
+	text-decoration: underline;
+	background-repeat: no-repeat;
+	background-position: center 30px ;
+
+
+}
+ 
+
+  
+				 
+			 
+		 
+	 
+			 
+ 
+ 
+
+	   
+
+	   
+
+			 				
+	 
+	
+	 	
+ 
+
+
+
+
+ 
+	 
+		 
+				 
+	 
+	 
+		 
+				 
+					 
+
+ 
+	 
+		 
+			 Mapping Services 
+		 
+	 
+ 
+		 .fancyButton65.fancyButton:link,.fancyButton65.fancyButton:visited, .fancyButton65div.fancyButton{
+	background-repeat: no-repeat;
+	background-position: left top;
+position: relative;
+z-index: 1;
+}
+
+.fancyButton1::before,
+.fancyButton1::after,
+.fancyButton65::before,
+.fancyButton65::after {
+content: "";
+position: absolute;
+left: 50%;
+transform: translateX(-50%);
+box-sizing: border-box;
+border-radius: 50%;
+transition: all .3s ease-in-out;
+z-index: -1;
+box-shadow: 0 0 4px rgba(0,0,0,.25);
+}
+
+.fancyButton1::before,
+.fancyButton65::before {
+top: 8px;
+width: 120px;
+height: 120px;
+border: 2px solid #8E8D73;
+}
+
+.fancyButton1::after,
+.fancyButton65::after {
+top: 18px;
+width: 100px;
+height: 100px;
+background: #fff;
+
+}
+.fancyButton65.fancyButton:hover,.fancyButton65.fancyButton:focus,.fancyButton65.fancyButton:active,.fancyButton65.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+
+.fancyButton1:is(:hover,:focus,:active)::before,
+.fancyButton65:is(:hover,:focus,:active)::before {
+border-width: 4px;
+top: 0;
+box-shadow: 0 0 4px rgba(0,0,0,.34);
+}
+
+.fancyButton1:is(:hover,:focus,:active)::after,
+.fancyButton65:is(:hover,:focus,:active)::after {
+top: 4px;
+width: 112px;
+height: 112px;
+box-shadow: 0 0 4px rgba(0,0,0,0);}
+.fancyButton65.fancyButton:link > span,.fancyButton65.fancyButton:visited > span, .fancyButton65div.fancyButton > span{
+}
+.fancyButton65.fancyButton:hover > span,.fancyButton65.fancyButton:focus > span,.fancyButton65.fancyButton:active > span,.fancyButton65.fancyButton.hover > span{
+}
+.fancyButton65.fancyButton .text{
+	color: rgb(59, 82, 58);
+	font-size: 1.2em;
+	font-family: "Josefin Sans";
+	padding-top: 145px;
+	padding-right: 5px;
+	padding-left: 5px;
+	font-weight: 600;
+	text-decoration: none;
+	padding-top: 145px;
+	padding-right: 5px;
+	padding-left: 5px;
+	background-image: url('/ImageRepository/Document?documentID=108');
+	background-repeat: no-repeat;
+	background-position: center 35px ;
+line-height: 1.2;
+transition: all .3s ease-in-out;
+}
+.fancyButton65.fancyButton:hover .text,.fancyButton65.fancyButton:focus .text,.fancyButton65.fancyButton:active .text,.fancyButton65.fancyButton.hover .text{
+	text-decoration: underline;
+	background-repeat: no-repeat;
+	background-position: center 27px ;
+
+
+}
+ 
+
+  
+
+ 
+	 
+		 
+			 Open Records Request 
+		 
+	 
+ 
+		 .fancyButton66.fancyButton:link,.fancyButton66.fancyButton:visited, .fancyButton66div.fancyButton{
+	background-repeat: no-repeat;
+	background-position: left top;
+position: relative;
+z-index: 1;
+}
+
+.fancyButton1::before,
+.fancyButton1::after,
+.fancyButton66::before,
+.fancyButton66::after {
+content: "";
+position: absolute;
+left: 50%;
+transform: translateX(-50%);
+box-sizing: border-box;
+border-radius: 50%;
+transition: all .3s ease-in-out;
+z-index: -1;
+box-shadow: 0 0 4px rgba(0,0,0,.25);
+}
+
+.fancyButton1::before,
+.fancyButton66::before {
+top: 8px;
+width: 120px;
+height: 120px;
+border: 2px solid #8E8D73;
+}
+
+.fancyButton1::after,
+.fancyButton66::after {
+top: 18px;
+width: 100px;
+height: 100px;
+background: #fff;}
+.fancyButton66.fancyButton:hover,.fancyButton66.fancyButton:focus,.fancyButton66.fancyButton:active,.fancyButton66.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+
+.fancyButton1:is(:hover,:focus,:active)::before,
+.fancyButton66:is(:hover,:focus,:active)::before {
+border-width: 4px;
+top: 0;
+box-shadow: 0 0 4px rgba(0,0,0,.34);
+}
+
+.fancyButton1:is(:hover,:focus,:active)::after,
+.fancyButton66:is(:hover,:focus,:active)::after {
+top: 4px;
+width: 112px;
+height: 112px;
+box-shadow: 0 0 4px rgba(0,0,0,0);}
+.fancyButton66.fancyButton:link > span,.fancyButton66.fancyButton:visited > span, .fancyButton66div.fancyButton > span{
+}
+.fancyButton66.fancyButton:hover > span,.fancyButton66.fancyButton:focus > span,.fancyButton66.fancyButton:active > span,.fancyButton66.fancyButton.hover > span{
+}
+.fancyButton66.fancyButton .text{
+	color: rgb(59, 82, 58);
+	font-size: 1.2em;
+	font-family: "Josefin Sans";
+	padding-top: 145px;
+	padding-right: 5px;
+	padding-left: 5px;
+	font-weight: 600;
+	text-decoration: none;
+	padding-top: 145px;
+	padding-right: 5px;
+	padding-left: 5px;
+	background-image: url('/ImageRepository/Document?documentID=107');
+	background-repeat: no-repeat;
+	background-position: center 35px ;
+line-height: 1.2;
+transition: all .3s ease-in-out;
+}
+.fancyButton66.fancyButton:hover .text,.fancyButton66.fancyButton:focus .text,.fancyButton66.fancyButton:active .text,.fancyButton66.fancyButton.hover .text{
+	text-decoration: underline;
+	background-repeat: no-repeat;
+	background-position: center 27px ;
+
+
+}
+ 
+
+  
+				 
+			 
+		 
+	 
+			 
+ 
+ 
+
+	   
+
+	   
+
+			   
+
+
+	 
+ 
+ 
+ 	 
+				                
+
+		 				
+	 
+	
+	 	
+     
+
+
+
+
+
+	 
+			 
+		 
+								 
+	 
+	 
+		 
+					 
+						 
+
+ 
+	 
+ 						 
+					 
+		 
+	 
+	 
+
+	 
+
+	 
+
+
+
+ 
+	//Render slideshow if info advacned items contain one.
+	$(document).ready(function (e) {
+		$('#divInfoAdv6a3b17aa-c6db-4a2b-9f06-348e02bbb71e .InfoAdvanced.widgetItem').each(function () {
+			renderSlideshowIfApplicable($(this));		
+		});
+	});
+ 
+	   
+
+	   
+
+			 				
+	 
+	
+	 	
+
+ 
+	   
+
+	   
+
+			 				
+	 
+	
+	 	
+     
+
+
+
+
+
+	 
+			 
+		 
+					 Contact Us 
+								 
+	 
+	 
+		 
+					 
+						 
+
+ 
+	 Cowley County Courthouse 311 E. 9th Avenue  Winfield, KS 67156-2843  Phone:  620-221-5400 
+ 						 
+					 
+					 
+						 
+
+ 
+	 Monday through Friday  8 am to 5 pm Agency hours may vary.  See department site for specific hours. 
+ 						 
+					 
+		 
+	 
+	 
+
+	 
+
+	 
+
+
+
+ 
+	//Render slideshow if info advacned items contain one.
+	$(document).ready(function (e) {
+		$('#divInfoAdvb0fc4804-2cba-42e0-8e37-9d6f1bf8f890 .InfoAdvanced.widgetItem').each(function () {
+			renderSlideshowIfApplicable($(this));		
+		});
+	});
+ 
+	   
+
+	   
+
+			 				
+	 
+	
+	 	
+
+ 
+	   
+
+	   
+
+			 				
+	 
+	
+	 	
+	 
+
+
+
+
+
+
+
+
+	 
+			 
+		 
+					 Popular Pages 
+						 
+	 
+	 
+         
+				 
+					 
+
+
+
+
+     
+         Calendar 
+         
+     
+
+
+
+
+     
+         FAQs 
+         
+     
+
+
+
+
+     
+         News 
+         
+     
+
+
+
+
+     
+         Notifications 
+         
+     
+
+
+
+
+     
+         Government Facilities 
+         
+     
+
+
+
+
+     
+         County Map 
+         
+     
+					 
+				 
+		 
+        
+	 
+	 
+	 
+	 
+		 /QuickLinks.aspx 
+	 
+
+	 
+ 
+
+	   
+
+	   
+
+			 				
+	 
+	
+	 	
+
+ 
+	   
+
+	   
+
+			 				
+	 
+	
+	 	
+	 
+
+
+
+
+
+
+
+
+	 
+			 
+		 
+					 Site Links 
+						 
+	 
+	 
+         
+				 
+					 
+
+
+
+
+     
+         Home 
+         
+     
+
+
+
+
+     
+         Site Map 
+         
+     
+
+
+
+
+     
+         Contact Us 
+         
+     
+
+
+
+
+     
+         Accessibility 
+         
+     
+
+
+
+
+     
+         Copyright Notices 
+         
+     
+
+
+
+
+     
+         Privacy Policy 
+         
+     
+					 
+				 
+		 
+        
+	 
+	 
+	 
+	 
+		 /QuickLinks.aspx 
+	 
+
+	 
+ 
+
+	   
+
+	   
+
+			   
+		 				
+	 
+	
+	 	
+ 
+	 
+	 
+		 
+  .cpBylineIconTS {
+    fill: currentColor;
+    width: 39px;
+    height: 26px;
+    display: inline;
+    vertical-align: middle;
+  }
+ 
+
+ 
+   
+     
+     
+   
+   Government Websites by  CivicPlus® 
+ 
+	 
+
+	 
+
+	   
+
+	   
+
+			   
+
+
+	 
+ 
+ 
+ 
+ 
+
+             
+         
+     
+
+
+ 
+
+ 
+	 
+		 
+			 Loading 
+			 
+				 
+					 
+				 
+			 
+		 
+		 
+			 
+				 
+				Loading
+			 
+		 
+		 
+			 Do Not Show Again 
+			 Close 
+		 
+	 
+ 
+
+ 
+ 
+ 
+ 
+
+		$(document).ready(function () {
+			var filter = {
+				targetId: '',
+				targetType: 0
+			}
+
+			new SplashModalRender().triggerRender(filter);
+		});
+ 
+
+	
+	
+	
+
+
+	
+
+
+
+
+
+
+     
+     
+ 
+  function getValueTS(elem, attr) {
+    const val = elem.css(attr);
+    if (val === undefined) return undefined;
+    const num = parseInt(val, 10);
+    if (num === NaN) return undefined;
+    return num;
+  }
+
+  function clampTS(number, min, max) {
+    return Math.min(Math.max(number, min), max);
+  }
+
+  function isPageEditingTS() {
+    return (
+      $("#doneEditing").length > 0 || // In live edit
+      $(".cp-liveEditOn").length > 0 || // In live edit
+      typeof DesignCenter !== "undefined" // In theme manager
+    );
+  }
+
+  const bgColorRegexTS = /rgba\((\d+), (\d+), (\d+), (\d*\.?\d*)\)/;
+  function isTransparentTS(elem) {
+    const bg = elem.css('background-color');
+    if (typeof bg !== "string" || !bg.startsWith('rgba(')) return false;
+    const matchState = bg.match(bgColorRegexTS);
+    if (!matchState || matchState.length !== 5) return false;
+    const alpha = parseFloat(matchState[4], 10);
+    if (!(alpha >= 0 && alpha < 1)) return false;
+    return true;
+  }
+
+  function iterateLeftpads(cb) {
+    const containersTS = $("[class^='siteWrap'],[class*=' siteWrap']");
+    for (let i = 0; i < containersTS.length; i++) {
+      const containerTS = containersTS[i];
+      // Skip the body container and anything with data-skip-leftpad
+      if (
+        containerTS.id !== "bodyContainerTS" &&
+        containerTS.getAttribute('data-skip-leftpad') === null
+      ) {
+        cb(containerTS);
+      }
+    }
+  }
+
+  const anchor = $("#divToolbars");
+  //const anchor = $("#angularToolbarInLegacy");
+
+  // Outer banner padding (push banner down)
+  const outerSizingTS = $("#bannerContainerTS");
+  // Inner banner padding (push banner content down) - Transparent header OR on attaching headers
+  const innerSizingTS = $("#bannerSizingTS");
+  const bodyContainerTS = $("#bodyContainerTS");
+
+  const forceUnfixClassTS = "forceUnfixTS";
+
+  const fixedTopTS = $(".fixedTopTS");
+  const fixedBottomTS = $(".fixedBottomTS");
+  const fixedLeftTS = $(".fixedLeftTS");
+
+  var initialTopTS;
+  var topAttachTS;
+  if (fixedTopTS && fixedTopTS.length === 1) {
+    initialTopTS = getValueTS(fixedTopTS, 'top');
+    const attachment = fixedTopTS.attr('data-attach');
+    if (attachment) topAttachTS = $("#" + attachment);
+    if (!topAttachTS || topAttachTS.length !== 1) topAttachTS = undefined;
+  }
+
+  function resizeAdjustmentTS() {
+    const editing = isPageEditingTS();
+
+    // Fixed top script
+    (function () {
+      if (!fixedTopTS || fixedTopTS.length !== 1 || initialTopTS === undefined) return;
+
+      if (editing) {
+        fixedTopTS[0].classList.add(forceUnfixClassTS);
+      } else {
+        fixedTopTS[0].classList.remove(forceUnfixClassTS);
+      }
+
+      const topPosition = fixedTopTS.css('position');
+      if (topPosition === 'fixed') {
+        if (topAttachTS) {
+          scrollAdjustmentTS();
+        } else {
+          const anchorHeight = anchor.outerHeight() - 1;
+          fixedTopTS.css('top', anchorHeight + initialTopTS);
+        }
+      } else {
+        fixedTopTS.css('top', initialTopTS);
+      }
+
+      if (topPosition === 'fixed' || topPosition === 'absolute') {
+        // Bump the banner content down
+        if (isTransparentTS(fixedTopTS)) {
+          innerSizingTS.css('padding-top', initialTopTS + fixedTopTS.outerHeight() - 1);
+          outerSizingTS.css('padding-top', '');
+
+          try {
+            window.Pages.onResizeHandlersExecute();
+          } catch (e) { }
+        } else {
+          outerSizingTS.css('padding-top', fixedTopTS.outerHeight() - 1);
+          innerSizingTS.css('padding-top', '');
+        }
+      } else {
+        innerSizingTS.css('padding-top', '');
+        outerSizingTS.css('padding-top', '');
+      }
+    })();
+
+    // Fixed bottom script
+    (function () {
+      if (!fixedBottomTS || fixedBottomTS.length === 0) return;
+
+      // If the widget has gone narrow, force unfix
+      if (editing || fixedBottomTS.outerHeight() > 200) {
+        fixedBottomTS[0].classList.add(forceUnfixClassTS);
+      } else {
+        fixedBottomTS[0].classList.remove(forceUnfixClassTS);
+      }
+
+      if (fixedBottomTS.css('position') === 'fixed') {
+        bodyContainerTS.css('padding-bottom', fixedBottomTS.outerHeight());
+      } else {
+        bodyContainerTS.css('padding-bottom', '');
+      }
+    })();
+
+    // Fixed left script
+    (function () {
+      if (!fixedLeftTS || fixedLeftTS.length === 0) return;
+
+      if (editing) {
+        fixedLeftTS[0].classList.add(forceUnfixClassTS);
+      } else {
+        fixedLeftTS[0].classList.remove(forceUnfixClassTS);
+      }
+
+      if (fixedLeftTS.css('position') === 'fixed') {
+        const anchorHeight = anchor.outerHeight() - 1;
+        fixedLeftTS.css('top', anchorHeight);
+        const leftBoundingTS = fixedLeftTS[0].getBoundingClientRect();
+        iterateLeftpads(function (containerTS) {
+          const containerBoundingTS = containerTS.getBoundingClientRect();
+          if (containerBoundingTS.left <= leftBoundingTS.right) {
+            $(containerTS).css('padding-left', leftBoundingTS.width + 16);
+          }
+        });
+      } else {
+        fixedLeftTS.css('top', '');
+        iterateLeftpads(function (containerTS) {
+          $(containerTS).css('padding-left', '');
+        });
+      }
+    })();
+  }
+
+  function scrollAdjustmentTS() {
+    if (!fixedTopTS || fixedTopTS.length !== 1 || !topAttachTS || topAttachTS.length !== 1) return;
+    const topPosition = fixedTopTS.css('position');
+    if (topPosition === 'fixed' || topPosition === 'absolute') {
+      const anchorBounding = anchor[0].getBoundingClientRect();
+      const attachBounding = topAttachTS[0].getBoundingClientRect();
+      const scrollTop = $(window).scrollTop();
+
+      fixedTopTS.css('top', Math.max(anchorBounding.bottom - 1, attachBounding.bottom));
+    } else {
+      fixedTopTS.css('top', initialTopTS);
+    }
+  }
+
+  $(window).load(function () {
+    setTimeout(function () {
+      resizeAdjustmentTS();
+    }, 350);
+
+    $(window).scroll(function () {
+      scrollAdjustmentTS();
+    });
+
+    var adjustTimeoutTS;
+    $(window).resize(function () {
+      clearTimeout(adjustTimeoutTS);
+      adjustTimeoutTS = setTimeout(function () {
+        resizeAdjustmentTS();
+      }, 350);
+    });
+
+    $.when(window.Pages.angularToolbarComplete).done(function () {
+      resizeAdjustmentTS();
+    });
+  });
+ 
+ 
+
+  
+  
+function moveBannerToOuterWrap() { 
+    if ($(".fixedBannerTS").length) { 
+		if ($("#bannerDivbanner2").length) { 
+			$("#bannerDivbanner2").appendTo("#outer-wrap"); 
+		} else { 
+			setTimeout(function() { 
+				moveBannerToOuterWrap(); 
+			}, 500); 
+		} 
+	}
+} 
+moveBannerToOuterWrap(); 
+  
+ 
+
+ !function(){var b=function(){window.__AudioEyeSiteHash = "9a382af0569a7ea11961e85767bfafa9"; var a=document.createElement("script");a.src="https://wsmcdn.audioeye.com/aem.js";a.type="text/javascript";a.setAttribute("async","");document.getElementsByTagName("body")[0].appendChild(a)};"complete"!==document.readyState?window.addEventListener?window.addEventListener("load",b):window.attachEvent&&window.attachEvent("onload",b):b()}(); 
+
+
+     
+        $(function () {
+            document.cookie = "responsiveGhost=0; path=/";
+        });
+        $(window).on("load", function () {
+            $('body').addClass('doneLoading').removeClass('hideContent');
+
+            if ($('#404Content').length > 0)
+                $('div#bodyWrapper').css('padding', '0px');
+        });
+     
+
+     
+         
+            body.hideContent {
+                opacity: 1 !important;
+            }
+         
+     
+
+        
+ 
+	 
+
+		 
+			 Arrow Left 
+			 
+		 
+
+		 
+			 Arrow Right 
+			 
+		 
+
+	 
+ 
+     loadCSS('//fonts.googleapis.com/css?family=Josefin+Sans:500,500italic,600,600italic,700,700italic,italic,regular|'); 
+    
+
+     [] 
+         
+             
+                 
+                     Slideshow Left Arrow 
+                     
+                         
+                     
+                 
+                 
+                     Slideshow Right Arrow 
+                     
+                         
+                     
+                 
+             
+         
+    
+	
+	
+
+     
+ (function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a4c8a5886f151263',t:'MTc5MjMzODA4MA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})(); 
+ 

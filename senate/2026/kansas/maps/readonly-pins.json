@@ -1,0 +1,2798 @@
+{
+  "schema": "ks-maps-readonly-pins-v1",
+  "authoritative_acceptance_path": "../data/coordinator-priority-acceptance.json",
+  "acceptance_policy": "Read accepted flag and contract hash at validation; do not hash acceptance back into a worker contract",
+  "immutable_launch_pins": {
+    "data/turnout/priority-set.json": "dcdc1457a5b08851ef76b5372435d56788f647708da5ff9a6ef35435f92fa6a7",
+    "data/county-turnout.csv": "44ff0242c75a5c310a15ff705138cd93a86365bcc622301fc49c05c9133a8993",
+    "data/turnout/asset-manifest.json": "ffa25d2d8e1f9d7f8463cf60e007c580c51ac052b4653171d764be11aa679290",
+    "data/baselines/asset-manifest.json": "bcc5001940d883216e474af42044f1503dccf658cdd2ecdde1ef84bd725ef1e6",
+    "data/county-baselines.csv": "5f6c140c8f418b598eacd49576c2e6fa77f92dda186cc46bc941710b802f24ab",
+    "county-partisanship.md": "cfe5fb7ed21ff7238d8ac424e02106afc97506be41d5e8f4115412fd89ac1854"
+  },
+  "files": [
+    {
+      "path": "../county-partisanship.md",
+      "bytes": 33938,
+      "sha256": "cfe5fb7ed21ff7238d8ac424e02106afc97506be41d5e8f4115412fd89ac1854",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/baselines/acquire.py",
+      "bytes": 3371,
+      "sha256": "7dde7f6812daf8f2c7e557275b1cde55a9cb240c768fa5c2bbc6db5bd2326fd9",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/baselines/asset-manifest.json",
+      "bytes": 17151,
+      "sha256": "bcc5001940d883216e474af42044f1503dccf658cdd2ecdde1ef84bd725ef1e6",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/baselines/build-summary.json",
+      "bytes": 16052,
+      "sha256": "9f8f09033f042b242ee3417474074e4950ed1ee720c1dea0f3d664dbeb881f75",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/baselines/build.py",
+      "bytes": 20352,
+      "sha256": "81009362b5fa897d41c5d34137459e2daae5518d37ba24529e98a83e02383b18",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/baselines/calculate.py",
+      "bytes": 11846,
+      "sha256": "5d063c87c89d724d943990b092563087f332424aeeaf66d4cb3d27b9599b5855",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/baselines/candidate-controls.csv",
+      "bytes": 2923,
+      "sha256": "8497e5a590ddbc46aff5a22e62ab7913794bd8c57b9295229071a7da7021b81e",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/baselines/county-priority.csv",
+      "bytes": 8632,
+      "sha256": "1ff696f14c9a900252c8c307b45427fe79b8e543b9c0a28f4a3e1d63e3b3524b",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/baselines/county-targets.csv",
+      "bytes": 1222951,
+      "sha256": "3a9ccdcb9ba07cdc79a3b5b5cbed843a1e19c6638549d2e7c7ab9433117e384d",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/baselines/live_remainder.py",
+      "bytes": 7426,
+      "sha256": "3670d5a95bc77f65d33a494ac5bde67fee7d6b757849e63bbc38964a8660ae1b",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/baselines/native-candidates.csv.gz",
+      "bytes": 2112268,
+      "sha256": "d30f6d6a441101b20ea4eb230d43b65364452a1bcf346251949f469d47e8538b",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/baselines/native-county-reconciliation.csv",
+      "bytes": 215644,
+      "sha256": "5225250db05d9dd5f4a75cad1320e161924d70196c1a0d81b345ee2706053265",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/baselines/native-coverage.csv",
+      "bytes": 1514,
+      "sha256": "a613b49ecfa382ab69f3d061650855057f66fca2005cd71cb336f7e916d232e0",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/baselines/native-order.csv.gz",
+      "bytes": 1420992,
+      "sha256": "0b04c4e38d47771632021264d4e37447a33fb714cedd074fed5fb514855bcb6c",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/baselines/native-state-controls.csv",
+      "bytes": 4261,
+      "sha256": "5833ec7998ac7f1880053673028c2faa3aaa6ab2280bde5c81f7f63d3ef94d42",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/baselines/native-state-scenarios.json",
+      "bytes": 720,
+      "sha256": "89e75c5bf375d3ac7b46441cd19d0e7f718e873b3b6af879563e6fa79adb0a3d",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/baselines/native-targets.csv.gz",
+      "bytes": 2489831,
+      "sha256": "3193ae21256b31c8e9eec3393a99c170ab01ed56bae07cce86e84006e3f34c23",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/baselines/native-units.jsonl.gz",
+      "bytes": 1985010,
+      "sha256": "4984a51e81bb40e80a7b07a1fd35fb6032f45cee1888436a6f2eeaf64abd9585",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/baselines/peer-native-key-crosswalk.csv.gz",
+      "bytes": 1267182,
+      "sha256": "6c3f80066cdb8cad13d773303fd5e178d9d964c1059cfce3726bd7423ad045b1",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/baselines/peer-reconciliation.json",
+      "bytes": 2604,
+      "sha256": "d6c729bbb55fbcc69d0b43b299067e35bf91493a41441f57aaf88380671c552f",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/baselines/primary-vintage-comparison.csv",
+      "bytes": 1492,
+      "sha256": "9ed12ca9cace40cab13c9c1962e54e2ec3b67a8262a30e1575f2205d0dbbc42a",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/baselines/reconcile_peer.py",
+      "bytes": 9472,
+      "sha256": "be69d4ab958d5916ffd5024f7003e555f8639f9f8d9ec74be52a27373a1e76e5",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/baselines/recover_originals.py",
+      "bytes": 2740,
+      "sha256": "fe89a1bbc8c4ce27c52b6b4da7dfe10c5cd2bcaf7f67fd68c247c689bd3009b8",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/baselines/render_report.py",
+      "bytes": 23782,
+      "sha256": "b48409a2b154ae302db3eb8f6b8de0bb0b502a7e15d2cb474afc82866242a2ca",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/baselines/reproduce.py",
+      "bytes": 529,
+      "sha256": "5245e57d332447d595f6c12939d1612316c557310eabfdc9541d79978d3f65fd",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/baselines/scenario-settings.json",
+      "bytes": 1070,
+      "sha256": "56984f072c247838ebc955f9a5ce5f5c33154e841bba4122a9e9012e026d1789",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/baselines/source/SCHEMA.md",
+      "bytes": 17529,
+      "sha256": "4fe09f7f4368386f4799c58d6aa07fcf0f25039906f2b8f378b97e161d84e0eb",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/baselines/source/acquisition.json",
+      "bytes": 18263,
+      "sha256": "09d4b8fdf3a66c54ff7f82ab16ad760fcd2fef6f0fb8f938f8532a775044bfc9",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/baselines/source/auxiliary-controls.csv",
+      "bytes": 44593,
+      "sha256": "bcb15d28605e8fcd175dca85a9246246b6ce51574a4643364bcbc6989c1ef7ec",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/baselines/source/class-II.body.gz",
+      "bytes": 4826,
+      "sha256": "a9453056cd75de8a698886729ab5382e9de474dbbec9ebc17a2a6d5edf7319e1",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/baselines/source/class-III.body.gz",
+      "bytes": 4721,
+      "sha256": "f82705c5d138d71cb5828418e5a715bf4ca85118269397e4330d985eb0e9143a",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/baselines/source/current-candidates.body.gz",
+      "bytes": 597,
+      "sha256": "e122e8951ae3fac71325905585f1fa61eb2fa1a96dca7672261ed92a355fb1b7",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/baselines/source/current-dates.body.gz",
+      "bytes": 5945,
+      "sha256": "3a5dc4dad574b029c9980d033c706c506fd7e88b509e0e7f66f37d822d9af3f5",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/baselines/source/current-results.body.gz",
+      "bytes": 9114,
+      "sha256": "651bb76dbc1a975925a0009ab935fa4d2117fa2ae30ab2c004e49ffee36cceb1",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/baselines/source/raw-rows.jsonl.gz",
+      "bytes": 905786,
+      "sha256": "49227853c0c4736b71d5ced0b9aebcb34c2b51810ce466f82f4307759a3c531f",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/baselines/source/read_sources.py",
+      "bytes": 3156,
+      "sha256": "3445d290e66ecee6912c5a9372fd61695b6ed96bb63f6fdea139853c3ef2d8e2",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/baselines/source/references.json",
+      "bytes": 55974,
+      "sha256": "0d4483c9391d3e5cc20472d0eb46191aacd0df0926d31a3c834606c66349785a",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/baselines/source/sos-2020-general-canvass.txt",
+      "bytes": 51271,
+      "sha256": "9f5d3321a8fe821743bca83f25c2e30adf7f0e88733f1e48c11fa7c73aa64cea",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/baselines/source/sos-2022-general-canvass.txt",
+      "bytes": 41426,
+      "sha256": "85f8fc769f3282aa8ebd8e0c48f7aacf5a924f94e01dc96eb432f7930c33796a",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/baselines/source/sos-2024-general-canvass.txt",
+      "bytes": 55824,
+      "sha256": "ea2c995341a5e9457ec9ca4e07843da462736c892ee50883ca33e7e6b58b8792",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/baselines/source/sos-2026-primary-canvass.txt",
+      "bytes": 35667,
+      "sha256": "5563a30e4453db73881b75a5031d83b7eae7c6e0aa790560e31136aed3f7c521",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/baselines/source/statute-25-1132.body.gz",
+      "bytes": 14006,
+      "sha256": "2ff48ccb1fa7e6fb61fce7c715ce8887f9f77caeb8a68bb1eeb2dd733fdb1eec",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/baselines/source/statute-25-1136.body.gz",
+      "bytes": 14699,
+      "sha256": "6d59f155b14ece2a9f7b5ead2777cb541da43303b87e321f66942e743ce0e9ad",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/baselines/source/statute-25-1216.body.gz",
+      "bytes": 14075,
+      "sha256": "b7843863b8014d9d073db881f57f3cd4c4130c9f58911b2f7f991a87e5112578",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/baselines/source/statute-25-1221.body.gz",
+      "bytes": 13668,
+      "sha256": "4832e635bd34c8084e913b0276c1f693af4b9c2fce03f44480de657a1f7ea03c",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/baselines/source/statute-25-3002.body.gz",
+      "bytes": 14900,
+      "sha256": "9eb943e00ceb6865a3ec889a337ee9fcf16d7dae88b7f5e0722c25d5c81be558",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/baselines/source/statute-25-702.body.gz",
+      "bytes": 13963,
+      "sha256": "4795c4e048e582025c977f2c357f8baca45fd4a99ac6d5e02ca3efb22bd1e593",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/baselines/source/sumner-2022-method-controls.csv",
+      "bytes": 21703,
+      "sha256": "67fdf2e471c1562322f6ad07d9f7fe1299284c13c3f461cf9d27d57327b05662",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/baselines/source/sumner-2022-selected-pages.txt",
+      "bytes": 2899,
+      "sha256": "d844119f43c27a73170d87f2b6b0f60723156e79b80b180fcdba807abc42141d",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/baselines/state-scenarios.json",
+      "bytes": 22299,
+      "sha256": "b1c2644752274c6693d4eb2993684be49f7224436cde91e17014e3ade0bf094b",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/baselines/sumner-method-targets.csv",
+      "bytes": 2561,
+      "sha256": "248e88402bdc9df1b418a6a65b259f81a75a5be6dcd357be1ea6373d7130daec",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/baselines/sumner-source-check.json",
+      "bytes": 571,
+      "sha256": "b1814ce701b6f6a0622e3f20259b22ef383de01a7e648254acd125c831a81267",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/baselines/sumner_methods.py",
+      "bytes": 3881,
+      "sha256": "eda6d25fa12aa7b74be6dd71b69c29a4a5139ce20508a6b2c863a161be515b56",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/baselines/synthetic-live-scenarios.json",
+      "bytes": 27662,
+      "sha256": "c3ad87985c8a05eb19bc393896e26453fc04269e066ef8dc54507b4c4a5a9221",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/baselines/turnout-registration-controls.csv",
+      "bytes": 14074,
+      "sha256": "d427ea7914fb9b2ae0bd356c4f746312ed1c6fe8f3fe421c2195bbbd60e30b8e",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/baselines/validate.py",
+      "bytes": 17558,
+      "sha256": "049dcf043e3a7c1270cdf371ac612e6b6f10b9579c9971757bc8806d9027a850",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/baselines/validation.json",
+      "bytes": 2965,
+      "sha256": "b1c6296268e41ceca2ffe8d90f8fef451b0ac41981802e388cb2c266b0e118ce",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/coordinator-county-reconciliation.json",
+      "bytes": 1626,
+      "sha256": "b67e8a9b1433be59ec30febc6a8ba4ac13ef9da3a83fec32685d2cdb5f66adff",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/coordinator-first-wave-checks.json",
+      "bytes": 834,
+      "sha256": "e67ef4c7a8502c3943563fb552186d8da53b5836b71c676728d2cb7dcedf46f3",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/coordinator-native-contract-checks.json",
+      "bytes": 1378,
+      "sha256": "4232571ae54b94c3b4b41684f8dc778d3b46fb5da48ba8556f5d1c632ff4a5df",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/coordinator-priority-keys.txt",
+      "bytes": 276,
+      "sha256": "5c68ae370d9a3be8e0234f4fb615fd5c91379fcd1a6733cdff91dd28cbdbb8c3",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/coordinator-target-review.json",
+      "bytes": 669,
+      "sha256": "bef12428fcad94bf58f3b2ed99b2f4d95f59553b44ea4756f09734681e7c092d",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/county-baselines.csv",
+      "bytes": 59269,
+      "sha256": "5f6c140c8f418b598eacd49576c2e6fa77f92dda186cc46bc941710b802f24ab",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/county-turnout.csv",
+      "bytes": 36900,
+      "sha256": "44ff0242c75a5c310a15ff705138cd93a86365bcc622301fc49c05c9133a8993",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/results-sources/county-inventory.json",
+      "bytes": 676890,
+      "sha256": "4a9e86ee76f2f5a32d4036dd1a3ea350eb274992556a77f06cee77ff01849fce",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/results-sources/native-source-scopes.json",
+      "bytes": 7912,
+      "sha256": "20b6cb5b89543183634cdaef1f1c9dfd965edc230680b68af9ce712209c9a0be",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/results-sources/vendor-extracts.json",
+      "bytes": 131379,
+      "sha256": "a1bc47601c251946182b9221b45e708f5469fdb0b83a61cc58092cc4c7f0ee54",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/turnout/acquire.py",
+      "bytes": 7054,
+      "sha256": "c94b20220e7dd2c112868366ddd06b74601eaa66047b5c9a483d0c63c2bb8db8",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/turnout/administrative-controls.json",
+      "bytes": 1254,
+      "sha256": "cec37275a6066c340c743aa898f7d2f3cd2d347ea2b0da91404c5b5247864582",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/turnout/asset-manifest.json",
+      "bytes": 13049,
+      "sha256": "ffa25d2d8e1f9d7f8463cf60e007c580c51ac052b4653171d764be11aa679290",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/turnout/build_turnout.py",
+      "bytes": 31962,
+      "sha256": "3bce063e44adbf581445826951f6aad030da9751ff0827912676a941fed3655b",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/turnout/compare_peer.py",
+      "bytes": 10556,
+      "sha256": "48e770637fa1007da297b9d39ab4d401df04846b43be88f5d3958e837f5dc398",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/turnout/extracts/build-summary.json",
+      "bytes": 2933,
+      "sha256": "c2838040477d94b9b56d0a7d62aa53b77605e8ca88f59eb28f9c6b4a07b4efea",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/turnout/extracts/candidate-controls.csv",
+      "bytes": 2034,
+      "sha256": "da127fbe481da4d27d7e1afed9637271df33789b886169321bd12b473e677a0c",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/turnout/extracts/candidate-observations.jsonl.gz",
+      "bytes": 1815692,
+      "sha256": "98d09e375a05b5c1958556f54c9045f972cda64cc28b345d393553e3af2fe507",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/turnout/extracts/county-administration.jsonl.gz",
+      "bytes": 13439,
+      "sha256": "7551e398648815eb714fffdfac6d6034b5af5e56349ca367af21aeade9f12723",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/turnout/extracts/county-summary-observations.jsonl.gz",
+      "bytes": 3271,
+      "sha256": "dee268df11e4a05fd2daa149b8b6d5f343cb49ca4e157a79bc9bf090f8eb166d",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/turnout/extracts/inactive-2026-october-rows.jsonl.gz",
+      "bytes": 3595,
+      "sha256": "49bd7d15c8348c99b037ffbef9cfa17f638d8d2c1a8cced1d4906fb5b88146fb",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/turnout/extracts/native-county-reconciliation.csv",
+      "bytes": 319302,
+      "sha256": "41762fd43e3dfab286b76f78c7b529259c3bbaf68e15cbf0ec6b23c7631292cc",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/turnout/extracts/native-unit-order.csv.gz",
+      "bytes": 469889,
+      "sha256": "d4549c95d877ec16df64c98d510d191225cffd5f6d9e6ea70d778240cc7f7c4b",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/turnout/extracts/native-units.jsonl.gz",
+      "bytes": 1092748,
+      "sha256": "89de00221aaa874fb09cf9646792e3a906c6b0c1facd2889f10eefb6a3472c0d",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/turnout/extracts/pdf-presentation-checks.json",
+      "bytes": 1950,
+      "sha256": "d050fc70f0c0a1e4dbade840f5c011ec4113d8f13f756d0ae2eb7b3255d878f2",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/turnout/extracts/peer-native-key-crosswalk.csv.gz",
+      "bytes": 1525267,
+      "sha256": "3854f5067edab5f7b5f5df4a81e3e94e861f8e84f468b227bb980d3a88f726bc",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/turnout/extracts/registration-2024-november-rows.jsonl.gz",
+      "bytes": 3263,
+      "sha256": "0ab141ba01a7fffbe1a37cb958943da8efbb17a06ab168f6bcab6fd01fc5ae97",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/turnout/extracts/registration-2026-october-rows.jsonl.gz",
+      "bytes": 8177,
+      "sha256": "0f5fe3d0d1e629f3e3fc679ee27f48a84fd33748a84c9ca86ee0a11adc1e357f",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/turnout/extracts/sos-2020-general-canvass-page1.png",
+      "bytes": 199563,
+      "sha256": "407f3046c9ad2dacf7bbd88f300c39fb77831d75fb07daa9390a77c07a3aa9c6",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/turnout/extracts/sos-2020-general-canvass.txt",
+      "bytes": 51271,
+      "sha256": "9f5d3321a8fe821743bca83f25c2e30adf7f0e88733f1e48c11fa7c73aa64cea",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/turnout/extracts/sos-2020-senate-precinct-rows.jsonl.gz",
+      "bytes": 108938,
+      "sha256": "e22eae32bbe96105a609a144e293672f3571503d254248eb400dcbcf2c43e206",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/turnout/extracts/sos-2022-general-canvass-page1.png",
+      "bytes": 208251,
+      "sha256": "482e77f7da75c0400715f62e9c13e02dd0c17e438ed8d4dd3101b3ac0b00f313",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/turnout/extracts/sos-2022-general-canvass.txt",
+      "bytes": 41426,
+      "sha256": "85f8fc769f3282aa8ebd8e0c48f7aacf5a924f94e01dc96eb432f7930c33796a",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/turnout/extracts/sos-2022-senate-precinct-rows.jsonl.gz",
+      "bytes": 123540,
+      "sha256": "8081ab1bac054324e69874598eff09a9a45fb6cf7edfac551c2c4298351a1a34",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/turnout/extracts/sos-2024-general-canvass-page1.png",
+      "bytes": 194786,
+      "sha256": "e20417ba24d8097ca58f0db5d04d0f16351589137972ef872d32d4b4eb49a021",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/turnout/extracts/sos-2024-general-canvass.txt",
+      "bytes": 55824,
+      "sha256": "ea2c995341a5e9457ec9ca4e07843da462736c892ee50883ca33e7e6b58b8792",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/turnout/extracts/sos-2024-president-county-rows.jsonl.gz",
+      "bytes": 159901,
+      "sha256": "cb37a937a3836a1421c5303a657dd024489b16d131c2f9024361d1895ce23969",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/turnout/extracts/sos-2024-president-precinct-rows.jsonl.gz",
+      "bytes": 146109,
+      "sha256": "8e109cf318d26cd834bba8bb66a010aa637d4e11cdd3cf28b736fbf73791270b",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/turnout/extracts/sos-2026-primary-canvass-page1.png",
+      "bytes": 174223,
+      "sha256": "a51f177ff67ef6a6bfaf224c6edea8b81bf82381522880b593b38512bc2e9bbe",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/turnout/extracts/sos-2026-primary-canvass.txt",
+      "bytes": 35667,
+      "sha256": "5563a30e4453db73881b75a5031d83b7eae7c6e0aa790560e31136aed3f7c521",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/turnout/extracts/sos-2026-senate-primary-precinct-rows.jsonl.gz",
+      "bytes": 358342,
+      "sha256": "f2537428c6ebfb7e63e18d36ef07fd9726420b474f4d2840262853d5bd0f8dc8",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/turnout/extracts/sumner-2022-actual-linked-summary-page1.png",
+      "bytes": 65164,
+      "sha256": "0050c5201802141bb2836533db6c26b5596c47c42f7647e2fae1b5be4561eca9",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/turnout/extracts/sumner-2022-actual-linked-summary-page2.png",
+      "bytes": 148666,
+      "sha256": "f590ea78b1b3605095e258d9fe5e78de4afc4d03a18613c20d5285043fed6f51",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/turnout/extracts/turnout-2022-rows.jsonl.gz",
+      "bytes": 2285,
+      "sha256": "1697843a953d6869633b52dda2cd860e0891b7f694dcabeee5c7f27ecf03ff65",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/turnout/finalize_manifest.py",
+      "bytes": 4790,
+      "sha256": "acf6aabe1ce5b68bdd498ffe4a6e9220180e349454a8cbf0c163d7cb6c7f8f18",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/turnout/native-inventory.json",
+      "bytes": 1998,
+      "sha256": "cdd31521069871e181f24609ed0633deb21c803c4c9e73147af369b96e9a7690",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/turnout/native-ranking-2024.json",
+      "bytes": 265497,
+      "sha256": "43498a2dec4ea9f5667a424816db2d918038dbcf48fdd5591634dffe69ff4854",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/turnout/peer-agreement.json",
+      "bytes": 2246,
+      "sha256": "9249505c3121691fc107f25924d262053201181f109bc2233bb5763a669fc7c3",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/turnout/priority-set.json",
+      "bytes": 20297853,
+      "sha256": "dcdc1457a5b08851ef76b5372435d56788f647708da5ff9a6ef35435f92fa6a7",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/turnout/rankings.json",
+      "bytes": 341097,
+      "sha256": "d2f56ef47b1f3c3fa4851b8486e3b301ef3dc4fce18e5a1aafb2ec7db55b6277",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/turnout/render_evidence.py",
+      "bytes": 915,
+      "sha256": "cd77668e815818693a6eb01a08ecefd064530ed11e9e6f0384963508320ad78b",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/turnout/source/SCHEMA.md",
+      "bytes": 16354,
+      "sha256": "46035ad6f61d0a59ee85fca352542897d5ab31467a58738c3abc12cb1bfc2ac4",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/turnout/source/acquisition.json",
+      "bytes": 38406,
+      "sha256": "30ac5fec60e742308ab39b3fbc3fcf6a9e1369df717bf5432c63d46769a1bbd2",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/turnout/source/advance-info.body.gz",
+      "bytes": 6701,
+      "sha256": "a333364f0be9d3d133c685eb037d1472647f2656d3f6406ba32bbd22175b9ab8",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/turnout/source/certification-2024.body.gz",
+      "bytes": 6081,
+      "sha256": "61252756e80661ea3901a84786c31cf6edba12e34031a3c1725ee12cc8438c15",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/turnout/source/county-codes-2020.body.gz",
+      "bytes": 31361,
+      "sha256": "bcb240df1d84eb88c83b19f5b5c39b6905afaca0277821c206a047196a70cce8",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/turnout/source/current-results-index.body.gz",
+      "bytes": 9114,
+      "sha256": "651bb76dbc1a975925a0009ab935fa4d2117fa2ae30ab2c004e49ffee36cceb1",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/turnout/source/inactive-2026-october.body.gz",
+      "bytes": 24011,
+      "sha256": "19970ff86c4f5ed3566feee3680c27b3baa6606f48c4c5430a27e1044c86f928",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/turnout/source/johnson-results-2024.body.gz",
+      "bytes": 5882,
+      "sha256": "c1d1a3df2a2985b84c9d4b028bb30c9301e9fb6611270a321f2c1bffd6c561da",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/turnout/source/registration-2024-november.body.gz",
+      "bytes": 25882,
+      "sha256": "e1203e5d96dbfed6ede380facc70de671551b53b572fdf7ea2f60bc5b215fce1",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/turnout/source/registration-2026-october.body.gz",
+      "bytes": 41828,
+      "sha256": "38bfa2b77f54242d5c0886de398bf673f39ba189387a11d1d1ad15fafd5be4d6",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/turnout/source/registration-index.body.gz",
+      "bytes": 8121,
+      "sha256": "6d6fe56dd20314f035ea70891166d58162d130c7bdde8d67b43ece31fea3c96a",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/turnout/source/results-data-page.body.gz",
+      "bytes": 5357,
+      "sha256": "59bb5127065202ea1b4380764a7b3b5f10042b3af0b941fcc175af5628b2d30c",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/turnout/source/senate-class-ii.body.gz",
+      "bytes": 4826,
+      "sha256": "a9453056cd75de8a698886729ab5382e9de474dbbec9ebc17a2a6d5edf7319e1",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/turnout/source/senate-class-iii.body.gz",
+      "bytes": 4721,
+      "sha256": "f82705c5d138d71cb5828418e5a715bf4ca85118269397e4330d985eb0e9143a",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/turnout/source/shared-references.json",
+      "bytes": 36764,
+      "sha256": "f6f10936553bae88fdd5fa61e549a4c37f1eeb2bbc526da40269eda3ed219b3d",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/turnout/source/statistics-data.body.gz",
+      "bytes": 11279,
+      "sha256": "5598eac6d3989efbf7fbfac7989b547aafb4a38cac4fb31d7700592444fde3b1",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/turnout/source/statistics-index.body.gz",
+      "bytes": 9936,
+      "sha256": "e7ff47122455e27d23640c0f0b6d4d7ca6f1e214264c4e4a6398d651ce41b6ee",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/turnout/source/statute-25-1132.body.gz",
+      "bytes": 14009,
+      "sha256": "f46e6317fa700cd3b6cf7271ff43edde92142d4d5ca1c06088a3d85c252a4eb5",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/turnout/source/statute-25-1136.body.gz",
+      "bytes": 14702,
+      "sha256": "fb4823e03affbb5545482f73a22be3c7b8ad5ee91842c482d8050c6c12426bd8",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/turnout/source/statute-25-1216.body.gz",
+      "bytes": 14076,
+      "sha256": "5f4e7b664862f17f64f3ebbbeee899288f7afb48484f8c97e11bfc6ee922383a",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/turnout/source/statute-25-1221.body.gz",
+      "bytes": 13666,
+      "sha256": "7602bea6f265bd1ea6226cb05c092a7b5cb13b6a9abdb410cfdbc536fd461342",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/turnout/source/statute-25-3002.body.gz",
+      "bytes": 14902,
+      "sha256": "906d73dc4cbbb566deb61f987935ca349421ea1b02e3a89941318679a4fc5a8b",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/turnout/source/turnout-2022.body.gz",
+      "bytes": 11283,
+      "sha256": "9f69719810949552a62da893516f7d54fc81405c8ba6c4fbd98c96e9ec696bf4",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/turnout/source/uocava-info.body.gz",
+      "bytes": 6172,
+      "sha256": "628575534823c36a84ca1904fcabbae372fe5bbbc5f9cb29b5487b243097a654",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/turnout/sources.py",
+      "bytes": 3103,
+      "sha256": "b50090c11ee98457fdd326ee009083577f4a8f01576be0dfd8db00539c9d1d41",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/turnout/validate_turnout.py",
+      "bytes": 18531,
+      "sha256": "946e9f1fa2ad682c2936134295d2f4da54a493ad26397b26f0144af66e7f9078",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/turnout/validation.json",
+      "bytes": 6472,
+      "sha256": "ffb76c8392adfd60c0af49b149f1be733341a59f3f6d6a22ea890896750bcff6",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../data/turnout/write_report.py",
+      "bytes": 26231,
+      "sha256": "d9443989b6de3e0de1a71b8ae3c9789c4defba3db256124cbf4d193666485ded",
+      "use": "read-only exact shared input; not copied or edited"
+    },
+    {
+      "path": "../turnout.md",
+      "bytes": 34248,
+      "sha256": "9ba1a1c82ffbd76d78b141aba131cd89347f23349ffb5598a7b4b210113e26da",
+      "use": "read-only exact shared input; not copied or edited"
+    }
+  ],
+  "full_shared_source_metadata": [
+    {
+      "ledger": "../data/turnout/source/shared-references.json",
+      "source_object": {
+        "source_id": "sos-results",
+        "reuse": "read-only exact shared original; no duplicate",
+        "path": "../news/sos-results.html.gz",
+        "stored_bytes": 9114,
+        "stored_sha256": "651bb76dbc1a975925a0009ab935fa4d2117fa2ae30ab2c004e49ffee36cceb1",
+        "original_bytes": 99478,
+        "original_sha256": "3a18d9079d41e266d9eaa39d42b2b1b29376ce3e26108e6e919e08852733c1c4",
+        "compression": "gzip; gzip.decompress(stored) reproduces complete original",
+        "requested_url": "https://www.sos.ks.gov/elections/election-results.html",
+        "final_url": "https://www.sos.ks.gov/elections/election-results.html",
+        "retrieved_at_utc": "2026-10-18T00:44:26.003553+00:00",
+        "http_status": 200,
+        "http_headers": {
+          "Server": "CloudFront",
+          "Content-Type": "text/html",
+          "Transfer-Encoding": "chunked",
+          "Connection": "keep-alive",
+          "X-Content-Type-Options": "nosniff",
+          "X-Frame-Options": "SAMEORIGIN",
+          "X-Xss-Protection": "1; mode=block",
+          "Strict-Transport-Security": "max-age=6000; includeSubDomains",
+          "Date": "Sun, 18 Oct 2026 00:44:25 GMT",
+          "Content-Encoding": "gzip",
+          "Vary": "Accept-Encoding",
+          "X-Cache": "Miss from cloudfront",
+          "Via": "1.1 b2a720e38a1519c0300435cfbe6691c8.cloudfront.net (CloudFront)",
+          "X-Amz-Cf-Pop": "MCI50-P2",
+          "X-Amz-Cf-Id": "rPHLZpEumk8UZe1MQCCANpZzaCTwXQI07VkWeMFH_0oOeWdNanWXpw=="
+        },
+        "redirects": "capture recorded requested and final URL; intermediate redirects not recorded by coordinator acquisition",
+        "parent": "retained coordinator primary/news authority chain",
+        "source_clock": {
+          "Last-Modified": null,
+          "Date": "Sun, 18 Oct 2026 00:44:25 GMT"
+        },
+        "clock_limit": "HTTP response clocks are not independently established election certification or data-update times"
+      }
+    },
+    {
+      "ledger": "../data/turnout/source/shared-references.json",
+      "source_object": {
+        "source_id": "sos-dates",
+        "reuse": "read-only exact shared original; no duplicate",
+        "path": "../news/sos-dates.html.gz",
+        "stored_bytes": 5945,
+        "stored_sha256": "3a5dc4dad574b029c9980d033c706c506fd7e88b509e0e7f66f37d822d9af3f5",
+        "original_bytes": 34419,
+        "original_sha256": "93a9af07e197b5533d5aceb1f832f0faf669b04d14aaec83c8337828ade21d9a",
+        "compression": "gzip; gzip.decompress(stored) reproduces complete original",
+        "requested_url": "https://www.sos.ks.gov/elections/important-election-dates.html",
+        "final_url": "https://www.sos.ks.gov/elections/important-election-dates.html",
+        "retrieved_at_utc": "2026-10-18T00:44:25.683976+00:00",
+        "http_status": 200,
+        "http_headers": {
+          "Server": "CloudFront",
+          "Content-Type": "text/html",
+          "Transfer-Encoding": "chunked",
+          "Connection": "keep-alive",
+          "X-Content-Type-Options": "nosniff",
+          "X-Frame-Options": "SAMEORIGIN",
+          "X-Xss-Protection": "1; mode=block",
+          "Strict-Transport-Security": "max-age=6000; includeSubDomains",
+          "Date": "Sun, 18 Oct 2026 00:06:43 GMT",
+          "Content-Encoding": "gzip",
+          "Vary": "Accept-Encoding",
+          "X-Cache": "Hit from cloudfront",
+          "Via": "1.1 1c45ff94bf4404a61a2e0cc7793b4218.cloudfront.net (CloudFront)",
+          "X-Amz-Cf-Pop": "MCI50-P2",
+          "X-Amz-Cf-Id": "RXBzEEHQUJiNW7k1Ro1XrYgm0S5Dq8R1ymQr6lBGPkkfog8rW__mIQ==",
+          "Age": "2262"
+        },
+        "redirects": "capture recorded requested and final URL; intermediate redirects not recorded by coordinator acquisition",
+        "parent": "retained coordinator primary/news authority chain",
+        "source_clock": {
+          "Last-Modified": null,
+          "Date": "Sun, 18 Oct 2026 00:06:43 GMT"
+        },
+        "clock_limit": "HTTP response clocks are not independently established election certification or data-update times"
+      }
+    },
+    {
+      "ledger": "../data/turnout/source/shared-references.json",
+      "source_object": {
+        "source_id": "sos-calendar",
+        "reuse": "read-only exact shared original; no duplicate",
+        "path": "../news/sos-calendar.html.gz",
+        "stored_bytes": 4281524,
+        "stored_sha256": "1053776fd8194ca9866dc8cc87ca650aaf3c860be4cffea13bedc4adecbba6ed",
+        "original_bytes": 4667753,
+        "original_sha256": "82e801cf9b738480223afe31fab3fb67ea9733521e24acdaa96a4cfcadd64a4c",
+        "compression": "gzip; gzip.decompress(stored) reproduces complete original",
+        "requested_url": "https://www.sos.ks.gov/Pubs/Elections/Elections-201.pdf",
+        "final_url": "https://www.sos.ks.gov/Pubs/Elections/Elections-201.pdf",
+        "retrieved_at_utc": "2026-10-18T00:44:25.784993+00:00",
+        "http_status": 200,
+        "http_headers": {
+          "Server": "CloudFront",
+          "Content-Type": "application/pdf",
+          "Transfer-Encoding": "chunked",
+          "Connection": "keep-alive",
+          "Last-Modified": "Tue, 17 Mar 2026 21:02:25 GMT",
+          "Content-Encoding": "gzip",
+          "X-Content-Type-Options": "nosniff",
+          "X-Frame-Options": "SAMEORIGIN",
+          "X-Xss-Protection": "1; mode=block",
+          "Strict-Transport-Security": "max-age=6000; includeSubDomains",
+          "Date": "Sun, 18 Oct 2026 00:44:25 GMT",
+          "ETag": "W/\"8db97b5b51b6dc1:0\"",
+          "Vary": "Accept-Encoding",
+          "X-Cache": "Miss from cloudfront",
+          "Via": "1.1 0723cad4db45c70ca1c99b94320c170e.cloudfront.net (CloudFront)",
+          "X-Amz-Cf-Pop": "MCI50-P2",
+          "X-Amz-Cf-Id": "3ZJaU5ARQBNVaOujYMX4cpN-3Ms8sWY-3XWRmuxb9jFCj8xlw-SHhg=="
+        },
+        "redirects": "capture recorded requested and final URL; intermediate redirects not recorded by coordinator acquisition",
+        "parent": "retained coordinator primary/news authority chain",
+        "source_clock": {
+          "Last-Modified": "Tue, 17 Mar 2026 21:02:25 GMT",
+          "Date": "Sun, 18 Oct 2026 00:44:25 GMT"
+        },
+        "clock_limit": "HTTP response clocks are not independently established election certification or data-update times"
+      }
+    },
+    {
+      "ledger": "../data/turnout/source/shared-references.json",
+      "source_object": {
+        "source_id": "sos-2024-president-county",
+        "reuse": "read-only exact shared original; no duplicate",
+        "path": "../news/sos-2024-president-county.html.gz",
+        "stored_bytes": 685492,
+        "stored_sha256": "526e0045c4165852c1cd5ebb50d84ab567fba6ff17d0068faf49041b769786c5",
+        "original_bytes": 773382,
+        "original_sha256": "f83ad5a1db33e2bdc7c3139b85ed7973a186854cae3b675667c4fedb0f545239",
+        "compression": "gzip; gzip.decompress(stored) reproduces complete original",
+        "requested_url": "https://www.sos.ks.gov/elections/24elec/2024-Presidential-Results.xlsx",
+        "final_url": "https://www.sos.ks.gov/elections/24elec/2024-Presidential-Results.xlsx",
+        "retrieved_at_utc": "2026-10-18T04:14:13.888592+00:00",
+        "http_status": 200,
+        "http_headers": {
+          "Server": "CloudFront",
+          "Content-Type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "Content-Length": "773382",
+          "Connection": "keep-alive",
+          "Last-Modified": "Thu, 26 Mar 2026 19:25:54 GMT",
+          "Accept-Ranges": "bytes",
+          "X-Content-Type-Options": "nosniff",
+          "X-Frame-Options": "SAMEORIGIN",
+          "X-Xss-Protection": "1; mode=block",
+          "Strict-Transport-Security": "max-age=6000; includeSubDomains",
+          "Date": "Sun, 18 Oct 2026 04:14:14 GMT",
+          "ETag": "\"40de95d56bddc1:0\"",
+          "X-Cache": "Miss from cloudfront",
+          "Via": "1.1 d42baf2176175bbe44a0ffaa3781bc56.cloudfront.net (CloudFront)",
+          "X-Amz-Cf-Pop": "MCI50-P2",
+          "X-Amz-Cf-Id": "0NY1iuwzMJmXjTVffYUW5Q-10MykSHY7SSVLtA0ttegpjhGw9iIG4A=="
+        },
+        "redirects": "capture recorded requested and final URL; intermediate redirects not recorded by coordinator acquisition",
+        "parent": "SOS results index",
+        "source_clock": {
+          "Last-Modified": "Thu, 26 Mar 2026 19:25:54 GMT",
+          "Date": "Sun, 18 Oct 2026 04:14:14 GMT"
+        },
+        "clock_limit": "HTTP response clocks are not independently established election certification or data-update times"
+      }
+    },
+    {
+      "ledger": "../data/turnout/source/shared-references.json",
+      "source_object": {
+        "source_id": "sos-2024-general-canvass",
+        "reuse": "read-only exact shared original; no duplicate",
+        "path": "../news/sos-2024-general-canvass.html.gz",
+        "stored_bytes": 49010,
+        "stored_sha256": "2567cd00a8553fce36277643c2c86d4fe32d0621e79bbb1f39e71c043f4ab416",
+        "original_bytes": 58979,
+        "original_sha256": "0f0d5cdf0f6a03dbc2557cf2cb820fbd729cadc1ef484e85986fe41771cc2813",
+        "compression": "gzip; gzip.decompress(stored) reproduces complete original",
+        "requested_url": "https://www.sos.ks.gov/elections/24elec/2024-General-Election-Official-Vote-Totals.pdf",
+        "final_url": "https://www.sos.ks.gov/elections/24elec/2024-General-Election-Official-Vote-Totals.pdf",
+        "retrieved_at_utc": "2026-10-18T04:14:14.486741+00:00",
+        "http_status": 200,
+        "http_headers": {
+          "Server": "CloudFront",
+          "Content-Type": "application/pdf",
+          "Transfer-Encoding": "chunked",
+          "Connection": "keep-alive",
+          "Last-Modified": "Tue, 03 Dec 2024 16:38:31 GMT",
+          "Content-Encoding": "gzip",
+          "X-Content-Type-Options": "nosniff",
+          "X-Frame-Options": "SAMEORIGIN",
+          "X-Xss-Protection": "1; mode=block",
+          "Strict-Transport-Security": "max-age=6000; includeSubDomains",
+          "Date": "Sun, 18 Oct 2026 04:14:14 GMT",
+          "ETag": "W/\"1c6cf3c9a145db1:0\"",
+          "Vary": "Accept-Encoding",
+          "X-Cache": "Miss from cloudfront",
+          "Via": "1.1 f7f9f3d588a38a4cee083e9af044ddb0.cloudfront.net (CloudFront)",
+          "X-Amz-Cf-Pop": "MCI50-P2",
+          "X-Amz-Cf-Id": "C2ZMVqp3u_L5HTVfBkGa9qBFfiA-kFoKoFk1u18ocq2n7NoDCU3cIQ=="
+        },
+        "redirects": "capture recorded requested and final URL; intermediate redirects not recorded by coordinator acquisition",
+        "parent": "SOS results index",
+        "source_clock": {
+          "Last-Modified": "Tue, 03 Dec 2024 16:38:31 GMT",
+          "Date": "Sun, 18 Oct 2026 04:14:14 GMT"
+        },
+        "clock_limit": "HTTP response clocks are not independently established election certification or data-update times"
+      }
+    },
+    {
+      "ledger": "../data/turnout/source/shared-references.json",
+      "source_object": {
+        "source_id": "sos-2024-president-precinct",
+        "reuse": "read-only exact shared original; no duplicate",
+        "path": "../news/sos-2024-president-precinct.html.gz",
+        "stored_bytes": 454844,
+        "stored_sha256": "a5bf1756376857fe5586c9eb975ed1b8d8d4aa4d57b654d41f90acad3ccf7a07",
+        "original_bytes": 482700,
+        "original_sha256": "54bb06a9a34a3b1a672e9007b8884a18f1862b516cad13772c05c28dc361053e",
+        "compression": "gzip; gzip.decompress(stored) reproduces complete original",
+        "requested_url": "https://www.sos.ks.gov/elections/24elec/2024-General-Election-President-Precinct-Level-Results.xlsx",
+        "final_url": "https://www.sos.ks.gov/elections/24elec/2024-General-Election-President-Precinct-Level-Results.xlsx",
+        "retrieved_at_utc": "2026-10-18T04:14:14.686112+00:00",
+        "http_status": 200,
+        "http_headers": {
+          "Server": "CloudFront",
+          "Content-Type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "Content-Length": "482700",
+          "Connection": "keep-alive",
+          "Last-Modified": "Mon, 16 Dec 2024 18:53:58 GMT",
+          "Accept-Ranges": "bytes",
+          "X-Content-Type-Options": "nosniff",
+          "X-Frame-Options": "SAMEORIGIN",
+          "X-Xss-Protection": "1; mode=block",
+          "Strict-Transport-Security": "max-age=6000; includeSubDomains",
+          "Date": "Sun, 18 Oct 2026 04:14:14 GMT",
+          "ETag": "\"f11413ddeb4fdb1:0\"",
+          "X-Cache": "Miss from cloudfront",
+          "Via": "1.1 a07b09303eaab0fed64ae706529794fa.cloudfront.net (CloudFront)",
+          "X-Amz-Cf-Pop": "MCI50-P2",
+          "X-Amz-Cf-Id": "4gRPV-GCOzN2qNS0nB_l3cqk3n-QMARI8hp1Zzb5hP3FtaxWDTj3-A=="
+        },
+        "redirects": "capture recorded requested and final URL; intermediate redirects not recorded by coordinator acquisition",
+        "parent": "SOS results index",
+        "source_clock": {
+          "Last-Modified": "Mon, 16 Dec 2024 18:53:58 GMT",
+          "Date": "Sun, 18 Oct 2026 04:14:14 GMT"
+        },
+        "clock_limit": "HTTP response clocks are not independently established election certification or data-update times"
+      }
+    },
+    {
+      "ledger": "../data/turnout/source/shared-references.json",
+      "source_object": {
+        "source_id": "sos-2022-general-canvass",
+        "reuse": "read-only exact shared original; no duplicate",
+        "path": "../news/sos-2022-general-canvass.html.gz",
+        "stored_bytes": 35359,
+        "stored_sha256": "c3d85abc0b2d1b3353f35d0f18d7a3c16220f51da9da3ba9686887a9635180b6",
+        "original_bytes": 40508,
+        "original_sha256": "2853c70a08e19151133dec52d9fbb78e57a58d2f55323522ff91fbe7ab4b9fee",
+        "compression": "gzip; gzip.decompress(stored) reproduces complete original",
+        "requested_url": "https://www.sos.ks.gov/elections/22elec/2022-General-Official-Vote-Totals.pdf",
+        "final_url": "https://www.sos.ks.gov/elections/22elec/2022-General-Official-Vote-Totals.pdf",
+        "retrieved_at_utc": "2026-10-18T04:14:15.080588+00:00",
+        "http_status": 200,
+        "http_headers": {
+          "Server": "CloudFront",
+          "Content-Type": "application/pdf",
+          "Transfer-Encoding": "chunked",
+          "Connection": "keep-alive",
+          "Last-Modified": "Fri, 02 Dec 2022 22:46:00 GMT",
+          "Content-Encoding": "gzip",
+          "X-Content-Type-Options": "nosniff",
+          "X-Frame-Options": "SAMEORIGIN",
+          "X-Xss-Protection": "1; mode=block",
+          "Strict-Transport-Security": "max-age=6000; includeSubDomains",
+          "Date": "Sun, 18 Oct 2026 04:14:14 GMT",
+          "ETag": "W/\"0456d99f6d91:0\"",
+          "Vary": "Accept-Encoding",
+          "X-Cache": "Miss from cloudfront",
+          "Via": "1.1 9a111dbe61bee12be3ece6259502a5ba.cloudfront.net (CloudFront)",
+          "X-Amz-Cf-Pop": "MCI50-P2",
+          "X-Amz-Cf-Id": "WAjY2be_HlNTW5vQjOSe1LfJgT_AyMr-gqkmivakDope6EqRgMDAFg=="
+        },
+        "redirects": "capture recorded requested and final URL; intermediate redirects not recorded by coordinator acquisition",
+        "parent": "SOS results index",
+        "source_clock": {
+          "Last-Modified": "Fri, 02 Dec 2022 22:46:00 GMT",
+          "Date": "Sun, 18 Oct 2026 04:14:14 GMT"
+        },
+        "clock_limit": "HTTP response clocks are not independently established election certification or data-update times"
+      }
+    },
+    {
+      "ledger": "../data/turnout/source/shared-references.json",
+      "source_object": {
+        "source_id": "sos-2022-senate-precinct",
+        "reuse": "read-only exact shared original; no duplicate",
+        "path": "../news/sos-2022-senate-precinct.html.gz",
+        "stored_bytes": 390195,
+        "stored_sha256": "1a06ce03227eaa33e46efb323f3b5673300bb28203c1b3a4f28a63a16b7c22b4",
+        "original_bytes": 406221,
+        "original_sha256": "6925d00e370bd7a063e9cae4b13ab83784af8bc3fa37dd256ac1cfe516336885",
+        "compression": "gzip; gzip.decompress(stored) reproduces complete original",
+        "requested_url": "https://www.sos.ks.gov/elections/22elec/2022-General-Election-US-Senate-Results-By-Precinct.xlsx",
+        "final_url": "https://www.sos.ks.gov/elections/22elec/2022-General-Election-US-Senate-Results-By-Precinct.xlsx",
+        "retrieved_at_utc": "2026-10-18T04:14:15.245253+00:00",
+        "http_status": 200,
+        "http_headers": {
+          "Server": "CloudFront",
+          "Content-Type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "Content-Length": "406221",
+          "Connection": "keep-alive",
+          "Last-Modified": "Thu, 05 Jan 2023 17:10:02 GMT",
+          "Accept-Ranges": "bytes",
+          "X-Content-Type-Options": "nosniff",
+          "X-Frame-Options": "SAMEORIGIN",
+          "X-Xss-Protection": "1; mode=block",
+          "Strict-Transport-Security": "max-age=6000; includeSubDomains",
+          "Date": "Sun, 18 Oct 2026 04:14:15 GMT",
+          "ETag": "\"0d1468c2821d91:0\"",
+          "X-Cache": "Miss from cloudfront",
+          "Via": "1.1 fdf8975b299cad874488276b81d0ab82.cloudfront.net (CloudFront)",
+          "X-Amz-Cf-Pop": "MCI50-P2",
+          "X-Amz-Cf-Id": "JYjrHvXG7Nf73U-FqF86lAcO3CzTpv2qfMP-oumWnd8HU7lbzuZvsA=="
+        },
+        "redirects": "capture recorded requested and final URL; intermediate redirects not recorded by coordinator acquisition",
+        "parent": "SOS results index",
+        "source_clock": {
+          "Last-Modified": "Thu, 05 Jan 2023 17:10:02 GMT",
+          "Date": "Sun, 18 Oct 2026 04:14:15 GMT"
+        },
+        "clock_limit": "HTTP response clocks are not independently established election certification or data-update times"
+      }
+    },
+    {
+      "ledger": "../data/turnout/source/shared-references.json",
+      "source_object": {
+        "source_id": "sos-2020-general-canvass",
+        "reuse": "read-only exact shared original; no duplicate",
+        "path": "../news/sos-2020-general-canvass.html.gz",
+        "stored_bytes": 47406,
+        "stored_sha256": "2976f2e77ca073f5d7fefe23b6edccd7ab3bc680a5d22edc481be875a4efe4ee",
+        "original_bytes": 57765,
+        "original_sha256": "364ad6dceedcac19ec7894df581c3d2eb7af7993f906077c8b79aab4f69ee93e",
+        "compression": "gzip; gzip.decompress(stored) reproduces complete original",
+        "requested_url": "https://www.sos.ks.gov/elections/20elec/2020_General_Official_Vote_Totals.pdf",
+        "final_url": "https://www.sos.ks.gov/elections/20elec/2020_General_Official_Vote_Totals.pdf",
+        "retrieved_at_utc": "2026-10-18T04:14:15.552182+00:00",
+        "http_status": 200,
+        "http_headers": {
+          "Server": "CloudFront",
+          "Content-Type": "application/pdf",
+          "Transfer-Encoding": "chunked",
+          "Connection": "keep-alive",
+          "Last-Modified": "Tue, 01 Dec 2020 16:40:51 GMT",
+          "Content-Encoding": "gzip",
+          "X-Content-Type-Options": "nosniff",
+          "X-Frame-Options": "SAMEORIGIN",
+          "X-Xss-Protection": "1; mode=block",
+          "Strict-Transport-Security": "max-age=6000; includeSubDomains",
+          "Date": "Sun, 18 Oct 2026 04:14:15 GMT",
+          "ETag": "W/\"80ab96ba0c8d61:0\"",
+          "Vary": "Accept-Encoding",
+          "X-Cache": "Miss from cloudfront",
+          "Via": "1.1 509b1c04d9910d3a3a25bf8975610a84.cloudfront.net (CloudFront)",
+          "X-Amz-Cf-Pop": "MCI50-P2",
+          "X-Amz-Cf-Id": "DaxdTeVB-lJg5k3QIIlktRkuHz1G4Y4ovDU3zoMCIv5alPkI2BjHBQ=="
+        },
+        "redirects": "capture recorded requested and final URL; intermediate redirects not recorded by coordinator acquisition",
+        "parent": "SOS results index",
+        "source_clock": {
+          "Last-Modified": "Tue, 01 Dec 2020 16:40:51 GMT",
+          "Date": "Sun, 18 Oct 2026 04:14:15 GMT"
+        },
+        "clock_limit": "HTTP response clocks are not independently established election certification or data-update times"
+      }
+    },
+    {
+      "ledger": "../data/turnout/source/shared-references.json",
+      "source_object": {
+        "source_id": "sos-2020-senate-precinct",
+        "reuse": "read-only exact shared original; no duplicate",
+        "path": "../news/sos-2020-senate-precinct.html.gz",
+        "stored_bytes": 380182,
+        "stored_sha256": "cea520912c38fb2a950338ca51c7518ec1d53254ab5645fdd67c9f33c4cf7fca",
+        "original_bytes": 406600,
+        "original_sha256": "0498716f50453ff30b4efcf47a14ccf8e9041bf04ba54ec5f3e432c8678be8f8",
+        "compression": "gzip; gzip.decompress(stored) reproduces complete original",
+        "requested_url": "https://www.sos.ks.gov/elections/20elec/2020_General_Election_US_Senate_results_by_precinct.xlsx",
+        "final_url": "https://www.sos.ks.gov/elections/20elec/2020_General_Election_US_Senate_results_by_precinct.xlsx",
+        "retrieved_at_utc": "2026-10-18T04:14:15.752480+00:00",
+        "http_status": 200,
+        "http_headers": {
+          "Server": "CloudFront",
+          "Content-Type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "Content-Length": "406600",
+          "Connection": "keep-alive",
+          "Last-Modified": "Wed, 30 Dec 2020 14:58:55 GMT",
+          "Accept-Ranges": "bytes",
+          "X-Content-Type-Options": "nosniff",
+          "X-Frame-Options": "SAMEORIGIN",
+          "X-Xss-Protection": "1; mode=block",
+          "Strict-Transport-Security": "max-age=6000; includeSubDomains",
+          "Date": "Sun, 18 Oct 2026 04:14:15 GMT",
+          "ETag": "\"534b674bbcded61:0\"",
+          "X-Cache": "Miss from cloudfront",
+          "Via": "1.1 006c4c21b40c3e291898c78c08143890.cloudfront.net (CloudFront)",
+          "X-Amz-Cf-Pop": "MCI50-P2",
+          "X-Amz-Cf-Id": "JIet-Ep6lMDeF5i6Z14_KxEPmrzSRTb2DoNRsIYE42DoQR62TmcdmA=="
+        },
+        "redirects": "capture recorded requested and final URL; intermediate redirects not recorded by coordinator acquisition",
+        "parent": "SOS results index",
+        "source_clock": {
+          "Last-Modified": "Wed, 30 Dec 2020 14:58:55 GMT",
+          "Date": "Sun, 18 Oct 2026 04:14:15 GMT"
+        },
+        "clock_limit": "HTTP response clocks are not independently established election certification or data-update times"
+      }
+    },
+    {
+      "ledger": "../data/turnout/source/shared-references.json",
+      "source_object": {
+        "source_id": "sos-2026-primary-canvass",
+        "reuse": "read-only exact shared original; no duplicate",
+        "path": "../news/sos-2026-primary-canvass.html.gz",
+        "stored_bytes": 33104,
+        "stored_sha256": "5b617f677b66e87bf62ac8854c367066e50ff02173d88ca3b9c1327605873713",
+        "original_bytes": 40997,
+        "original_sha256": "4198e9acc9ce41aecb08a7e34e03c5aad4df2044315fae396c75be109d92c768",
+        "compression": "gzip; gzip.decompress(stored) reproduces complete original",
+        "requested_url": "https://www.sos.ks.gov/elections/26elec/2026-Primary-Election-Official-Vote-Totals.pdf",
+        "final_url": "https://www.sos.ks.gov/elections/26elec/2026-Primary-Election-Official-Vote-Totals.pdf",
+        "retrieved_at_utc": "2026-10-18T04:14:16.036417+00:00",
+        "http_status": 200,
+        "http_headers": {
+          "Server": "CloudFront",
+          "Content-Type": "application/pdf",
+          "Transfer-Encoding": "chunked",
+          "Connection": "keep-alive",
+          "Last-Modified": "Tue, 01 Sep 2026 18:53:50 GMT",
+          "Content-Encoding": "gzip",
+          "X-Content-Type-Options": "nosniff",
+          "X-Frame-Options": "SAMEORIGIN",
+          "X-Xss-Protection": "1; mode=block",
+          "Strict-Transport-Security": "max-age=6000; includeSubDomains",
+          "Date": "Sun, 18 Oct 2026 03:49:19 GMT",
+          "ETag": "W/\"aa92423a433add1:0\"",
+          "Vary": "Accept-Encoding",
+          "X-Cache": "Hit from cloudfront",
+          "Via": "1.1 fdf8975b299cad874488276b81d0ab82.cloudfront.net (CloudFront)",
+          "X-Amz-Cf-Pop": "MCI50-P2",
+          "X-Amz-Cf-Id": "3Orn7EmqoP44i6FI9XSpMkj0kmutNGfu_RkxECDtcPOxh70e52w-Kg==",
+          "Age": "1496"
+        },
+        "redirects": "capture recorded requested and final URL; intermediate redirects not recorded by coordinator acquisition",
+        "parent": "SOS results index",
+        "source_clock": {
+          "Last-Modified": "Tue, 01 Sep 2026 18:53:50 GMT",
+          "Date": "Sun, 18 Oct 2026 03:49:19 GMT"
+        },
+        "clock_limit": "HTTP response clocks are not independently established election certification or data-update times"
+      }
+    },
+    {
+      "ledger": "../data/turnout/source/shared-references.json",
+      "source_object": {
+        "source_id": "sos-2026-senate-primary-precinct",
+        "reuse": "read-only exact shared original; no duplicate",
+        "path": "../news/sos-2026-senate-primary-precinct.html.gz",
+        "stored_bytes": 1147556,
+        "stored_sha256": "fc828ace05999589bc9cba614e6ad7b0ad240ad4b6be7ad633b180ada0d3d3d5",
+        "original_bytes": 1314696,
+        "original_sha256": "cf17e7bfa7d7f7e4c823080dd01e84b2a97b5d696c92a871497ba8822ba5d2fc",
+        "compression": "gzip; gzip.decompress(stored) reproduces complete original",
+        "requested_url": "https://www.sos.ks.gov/elections/26elec/2026-Primary-Election-United-States-Senate-Precinct-Level-Results.xlsx",
+        "final_url": "https://www.sos.ks.gov/elections/26elec/2026-Primary-Election-United-States-Senate-Precinct-Level-Results.xlsx",
+        "retrieved_at_utc": "2026-10-18T04:14:16.155671+00:00",
+        "http_status": 200,
+        "http_headers": {
+          "Server": "CloudFront",
+          "Content-Type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "Content-Length": "1314696",
+          "Connection": "keep-alive",
+          "Last-Modified": "Tue, 29 Sep 2026 19:04:17 GMT",
+          "Accept-Ranges": "bytes",
+          "X-Content-Type-Options": "nosniff",
+          "X-Frame-Options": "SAMEORIGIN",
+          "X-Xss-Protection": "1; mode=block",
+          "Strict-Transport-Security": "max-age=6000; includeSubDomains",
+          "Date": "Sun, 18 Oct 2026 04:14:15 GMT",
+          "ETag": "\"87cc88534550dd1:0\"",
+          "X-Cache": "Miss from cloudfront",
+          "Via": "1.1 70e229d4eacd4f08ec9e3ff9e96d427e.cloudfront.net (CloudFront)",
+          "X-Amz-Cf-Pop": "MCI50-P2",
+          "X-Amz-Cf-Id": "ScVbSI2aXuwRGfGC4TfzJgiNsgqm708z4QMs7TZv_Lej83iPtbr7yw=="
+        },
+        "redirects": "capture recorded requested and final URL; intermediate redirects not recorded by coordinator acquisition",
+        "parent": "SOS results index",
+        "source_clock": {
+          "Last-Modified": "Tue, 29 Sep 2026 19:04:17 GMT",
+          "Date": "Sun, 18 Oct 2026 04:14:15 GMT"
+        },
+        "clock_limit": "HTTP response clocks are not independently established election certification or data-update times"
+      }
+    },
+    {
+      "ledger": "../data/turnout/source/shared-references.json",
+      "source_object": {
+        "source_id": "npr-senate-primary",
+        "reuse": "read-only exact shared original; no duplicate",
+        "path": "../news/npr-senate-primary.html.gz",
+        "stored_bytes": 728,
+        "stored_sha256": "2cf05218f74725065262018bbbf1ceec6341b9c201f167c7cb98552d86bf82e6",
+        "original_bytes": 4104,
+        "original_sha256": "1d19ab570a3c8512bffe53d3ab46710a0d7fa6c8159767569cf1d91da26115ab",
+        "compression": "gzip; gzip.decompress(stored) reproduces complete original",
+        "requested_url": "https://apps.npr.org/primary-election-results-2026/data/KS_S_8_4_2026.json",
+        "final_url": "https://apps.npr.org/primary-election-results-2026/data/KS_S_8_4_2026.json",
+        "retrieved_at_utc": "2026-10-18T03:38:03.433762+00:00",
+        "http_status": 200,
+        "http_headers": {
+          "Content-Type": "application/json",
+          "Content-Length": "751",
+          "Connection": "keep-alive",
+          "Server": "AmazonS3",
+          "Content-Encoding": "gzip",
+          "Last-Modified": "Sat, 08 Aug 2026 03:59:33 GMT",
+          "Date": "Sun, 18 Oct 2026 03:38:03 GMT",
+          "Cache-Control": "public, max-age=120",
+          "ETag": "\"d1331a12c77acf217f24f8c47a2f3ed8\"",
+          "X-Cache": "Hit from cloudfront",
+          "Via": "1.1 32a5e616547fb6341bfb36d9897867c4.cloudfront.net (CloudFront)",
+          "X-Amz-Cf-Pop": "ORD56-P17",
+          "X-Amz-Cf-Id": "BqdeXcFCkMUOGsPP_0cS-0xFFHp3rDxKCjkfzkLR8-k982ZoCaskRw==",
+          "Age": "44"
+        },
+        "redirects": "capture recorded requested and final URL; intermediate redirects not recorded by coordinator acquisition",
+        "parent": "retained coordinator primary/news authority chain",
+        "source_clock": {
+          "Last-Modified": "Sat, 08 Aug 2026 03:59:33 GMT",
+          "Date": "Sun, 18 Oct 2026 03:38:03 GMT"
+        },
+        "clock_limit": "HTTP response clocks are not independently established election certification or data-update times"
+      }
+    },
+    {
+      "ledger": "../data/turnout/source/shared-references.json",
+      "source_object": {
+        "source_id": "npr-senate-primary-counties",
+        "reuse": "read-only exact shared original; no duplicate",
+        "path": "../news/npr-senate-primary-counties.html.gz",
+        "stored_bytes": 16992,
+        "stored_sha256": "7940c6ec13c2eb8668df1f590588f9ce2dfba32b9ac232c4c6325376ded645c2",
+        "original_bytes": 381444,
+        "original_sha256": "550072390bed3160b172eaf0bb2b699f35f7b26460141f55d2b84321bdf90668",
+        "compression": "gzip; gzip.decompress(stored) reproduces complete original",
+        "requested_url": "https://apps.npr.org/primary-election-results-2026/data/KS_S_8_4_2026_counties.json",
+        "final_url": "https://apps.npr.org/primary-election-results-2026/data/KS_S_8_4_2026_counties.json",
+        "retrieved_at_utc": "2026-10-18T03:38:03.864426+00:00",
+        "http_status": 200,
+        "http_headers": {
+          "Content-Type": "application/json",
+          "Content-Length": "18837",
+          "Connection": "keep-alive",
+          "Server": "AmazonS3",
+          "Content-Encoding": "gzip",
+          "Last-Modified": "Sat, 08 Aug 2026 03:59:33 GMT",
+          "Date": "Sun, 18 Oct 2026 03:38:05 GMT",
+          "Cache-Control": "public, max-age=120",
+          "ETag": "\"3ad5821723468b40d56f97c573ad54cc\"",
+          "Vary": "Accept-Encoding",
+          "X-Cache": "RefreshHit from cloudfront",
+          "Via": "1.1 465cef450966675b27b4ad66793ef70c.cloudfront.net (CloudFront)",
+          "X-Amz-Cf-Pop": "ORD56-P17",
+          "X-Amz-Cf-Id": "Pt6yLODqyAhg0e0l0tp2krsqAEeEPieF3z2ENWFPFkXhfzoTLbMsNA=="
+        },
+        "redirects": "capture recorded requested and final URL; intermediate redirects not recorded by coordinator acquisition",
+        "parent": "retained coordinator primary/news authority chain",
+        "source_clock": {
+          "Last-Modified": "Sat, 08 Aug 2026 03:59:33 GMT",
+          "Date": "Sun, 18 Oct 2026 03:38:05 GMT"
+        },
+        "clock_limit": "HTTP response clocks are not independently established election certification or data-update times"
+      }
+    },
+    {
+      "ledger": "../data/turnout/source/shared-references.json",
+      "source_object": {
+        "source_id": "sumner-county-home",
+        "reuse": "read-only exact shared original; no duplicate",
+        "path": "../news/sumner-county-home.html.gz",
+        "stored_bytes": 10859,
+        "stored_sha256": "3baffeec02fecdff25ad34fdf0c118750559f20bc5ffbdbaadc2ba91c1e48976",
+        "original_bytes": 57655,
+        "original_sha256": "56cb3afad8578e25949b2170f9bd91a26e60a2cd3f7fe9fdd7be44b5506e07fd",
+        "compression": "gzip; gzip.decompress(stored) reproduces complete original",
+        "requested_url": "https://co.sumner.ks.us/",
+        "final_url": "https://co.sumner.ks.us/",
+        "retrieved_at_utc": "2026-10-18T15:18:01.411150+00:00",
+        "http_status": 200,
+        "http_headers": {
+          "Date": "Sun, 18 Oct 2026 15:18:01 GMT",
+          "Content-Type": "text/html; charset=UTF-8",
+          "Content-Length": "14122",
+          "Connection": "keep-alive",
+          "Content-Encoding": "gzip",
+          "Vary": "Accept-Encoding",
+          "Content-Security-Policy": "frame-ancestors 'self'",
+          "Referrer-Policy": "no-referrer-when-downgrade",
+          "X-Content-Type-Options": "nosniff",
+          "X-Frame-Options": "SAMEORIGIN",
+          "X-Permitted-Cross-Domain-Policies": "none",
+          "X-XSS-Protection": "1; mode=block"
+        },
+        "redirects": "capture recorded requested and final URL; intermediate redirects not recorded by coordinator acquisition",
+        "parent": "Sumner county home -> election office -> historical archive -> literal linked PDF; see data/news/sumner-2022-control.json",
+        "source_clock": {
+          "Last-Modified": null,
+          "Date": "Sun, 18 Oct 2026 15:18:01 GMT"
+        },
+        "clock_limit": "HTTP response clocks are not independently established election certification or data-update times"
+      }
+    },
+    {
+      "ledger": "../data/turnout/source/shared-references.json",
+      "source_object": {
+        "source_id": "sumner-election-office",
+        "reuse": "read-only exact shared original; no duplicate",
+        "path": "../news/sumner-election-office.html.gz",
+        "stored_bytes": 12206,
+        "stored_sha256": "a52d00ed498813b8ad383bde67c7889c80b5348854a187ba7077185c8fd00cab",
+        "original_bytes": 58987,
+        "original_sha256": "97e9bdb5cff49310493b92a5bbef1e499520e2af55a42a0abd5a19f80a5051a3",
+        "compression": "gzip; gzip.decompress(stored) reproduces complete original",
+        "requested_url": "https://co.sumner.ks.us/elected_officials/county_clerk_and_election_officer/election_office/index.php",
+        "final_url": "https://co.sumner.ks.us/elected_officials/county_clerk_and_election_officer/election_office/index.php",
+        "retrieved_at_utc": "2026-10-18T15:19:00.255243+00:00",
+        "http_status": 200,
+        "http_headers": {
+          "Date": "Sun, 18 Oct 2026 15:19:00 GMT",
+          "Content-Type": "text/html; charset=UTF-8",
+          "Content-Length": "14997",
+          "Connection": "keep-alive",
+          "Content-Encoding": "gzip",
+          "Vary": "Accept-Encoding",
+          "Content-Security-Policy": "frame-ancestors 'self'",
+          "Referrer-Policy": "no-referrer-when-downgrade",
+          "X-Content-Type-Options": "nosniff",
+          "X-Frame-Options": "SAMEORIGIN",
+          "X-Permitted-Cross-Domain-Policies": "none",
+          "X-XSS-Protection": "1; mode=block"
+        },
+        "redirects": "capture recorded requested and final URL; intermediate redirects not recorded by coordinator acquisition",
+        "parent": "Sumner county home -> election office -> historical archive -> literal linked PDF; see data/news/sumner-2022-control.json",
+        "source_clock": {
+          "Last-Modified": null,
+          "Date": "Sun, 18 Oct 2026 15:19:00 GMT"
+        },
+        "clock_limit": "HTTP response clocks are not independently established election certification or data-update times"
+      }
+    },
+    {
+      "ledger": "../data/turnout/source/shared-references.json",
+      "source_object": {
+        "source_id": "sumner-archive",
+        "reuse": "read-only exact shared original; no duplicate",
+        "path": "../news/sumner-archive.html.gz",
+        "stored_bytes": 17083,
+        "stored_sha256": "96e027f469c4c3773c18ee96ca633fccaa35e8e950518dcfce20f17f445d7b38",
+        "original_bytes": 203158,
+        "original_sha256": "0a6fbbb61df330a6ec8f656217c72882719b994503b268212dd952b60079e3fc",
+        "compression": "gzip; gzip.decompress(stored) reproduces complete original",
+        "requested_url": "https://co.sumner.ks.us/elected_officials/county_clerk_and_election_officer/election_results.php",
+        "final_url": "https://co.sumner.ks.us/elected_officials/county_clerk_and_election_officer/election_results.php",
+        "retrieved_at_utc": "2026-10-18T15:19:17.462282+00:00",
+        "http_status": 200,
+        "http_headers": {
+          "Date": "Sun, 18 Oct 2026 15:19:17 GMT",
+          "Content-Type": "text/html; charset=UTF-8",
+          "Content-Length": "33721",
+          "Connection": "keep-alive",
+          "Content-Encoding": "gzip",
+          "Vary": "Accept-Encoding",
+          "Content-Security-Policy": "frame-ancestors 'self'",
+          "Referrer-Policy": "no-referrer-when-downgrade",
+          "X-Content-Type-Options": "nosniff",
+          "X-Frame-Options": "SAMEORIGIN",
+          "X-Permitted-Cross-Domain-Policies": "none",
+          "X-XSS-Protection": "1; mode=block"
+        },
+        "redirects": "capture recorded requested and final URL; intermediate redirects not recorded by coordinator acquisition",
+        "parent": "Sumner county home -> election office -> historical archive -> literal linked PDF; see data/news/sumner-2022-control.json",
+        "source_clock": {
+          "Last-Modified": null,
+          "Date": "Sun, 18 Oct 2026 15:19:17 GMT"
+        },
+        "clock_limit": "HTTP response clocks are not independently established election certification or data-update times"
+      }
+    },
+    {
+      "ledger": "../data/turnout/source/shared-references.json",
+      "source_object": {
+        "source_id": "sumner-2022-actual-linked-summary",
+        "reuse": "read-only exact shared original; no duplicate",
+        "path": "../news/sumner-2022-actual-linked-summary.html.gz",
+        "stored_bytes": 83660,
+        "stored_sha256": "bd60a5f2c0f5a33cbc026480730e91dc7d8603375a7c8f9f33fd339a119e704a",
+        "original_bytes": 98052,
+        "original_sha256": "05018ae6d6a87e84778f0e34238fe6bca4c407a66dd99e4d5d2d418329b7be6e",
+        "compression": "gzip; gzip.decompress(stored) reproduces complete original",
+        "requested_url": "https://co.sumner.ks.us/Documents/Elected Officials/County Clerk and Election Officer/Election Results/official election summary w writeins.pdf?t=202309010533350",
+        "final_url": "https://webgen1files1.revize.com/sumnercountryks/Documents/Elected%20Officials/County%20Clerk%20and%20Election%20Officer/Election%20Results/official%20election%20summary%20w%20writeins.pdf?t=202309010533350",
+        "retrieved_at_utc": "2026-10-18T15:20:00.774468+00:00",
+        "http_status": 200,
+        "http_headers": {
+          "Date": "Sun, 18 Oct 2026 15:20:01 GMT",
+          "Content-Type": "application/pdf",
+          "Content-Length": "98052",
+          "Connection": "keep-alive",
+          "Last-Modified": "Wed, 05 Nov 2025 02:21:47 GMT",
+          "Accept-Ranges": "bytes",
+          "ETag": "\"85e7eceffa4ddc1:0\"",
+          "X-Request-Id": "df9e32baad521e8f84dd8a196d3a060d",
+          "cf-cache-status": "DYNAMIC",
+          "Server": "cloudflare",
+          "CF-RAY": "a4c8864eb80c10dd-ORD"
+        },
+        "redirects": "capture recorded requested and final URL; intermediate redirects not recorded by coordinator acquisition",
+        "parent": "Sumner county home -> election office -> historical archive -> literal linked PDF; see data/news/sumner-2022-control.json",
+        "source_clock": {
+          "Last-Modified": "Wed, 05 Nov 2025 02:21:47 GMT",
+          "Date": "Sun, 18 Oct 2026 15:20:01 GMT"
+        },
+        "clock_limit": "HTTP response clocks are not independently established election certification or data-update times"
+      }
+    },
+    {
+      "ledger": "../data/turnout/source/shared-references.json",
+      "source_object": {
+        "source_id": "coordinator-legal-alert",
+        "path": "../news/legal-web-observations.json",
+        "stored_bytes": 2659,
+        "stored_sha256": "3652b152cc2615fe34dca621f823a4f2bdc2c3451e8a41d92b34133292743c8f",
+        "source_type": "coordinator factual web observations; NOT original court order/HTTP body",
+        "scope": "operative deadline remains official-results review task"
+      }
+    },
+    {
+      "ledger": "../data/turnout/source/shared-references.json",
+      "source_object": {
+        "source_id": "coordinator-sumner-2022-spot-control",
+        "path": "../news/sumner-2022-control.json",
+        "stored_bytes": 2061,
+        "stored_sha256": "1157267f8dc3e1a6aee150cbd5b4b45fa6a39f63c09dd9e69ade72c229d15211",
+        "source_type": "coordinator supplemental primary-county control; independently read against original PDF by turnout worker",
+        "scope": "single county candidate/ballot/under/over/method control; no replacement of statewide files or expansion of accepted statewide native-family contract"
+      }
+    },
+    {
+      "ledger": "../data/turnout/source/shared-references.json",
+      "source_object": {
+        "source_id": "house-clerk-2024",
+        "path": "../../../michigan/data/turnout/house-statistics2024.pdf",
+        "stored_bytes": 608100,
+        "stored_sha256": "d4ba800fc17135b616ae556c92861080ab962d95916ace34b546c5aac824aec4",
+        "original_bytes": 608100,
+        "original_sha256": "d4ba800fc17135b616ae556c92861080ab962d95916ace34b546c5aac824aec4",
+        "requested_url": "https://clerk.house.gov/member_info/electionInfo/2024/statistics2024.pdf",
+        "reuse": "read-only Michigan retained original; current web inspection corroborates Kansas four-ticket table",
+        "scope": "corroboration only; Kansas SOS originals control county/candidate arithmetic",
+        "retrieval_metadata": "original Michigan PDF header companion retained alongside original; no invented UTC retrieval"
+      }
+    },
+    {
+      "ledger": "../data/baselines/source/references.json",
+      "source_object": {
+        "id": "certification-2024",
+        "requested_url": "https://sos.ks.gov/media/press-releases/2024/12-03-24-state-board-of-canvassers-certifies-kansas-general-election-results.html",
+        "final_url": "https://sos.ks.gov/media/press-releases/2024/12-03-24-state-board-of-canvassers-certifies-kansas-general-election-results.html",
+        "parent": "SOS 2024 certification announcement",
+        "retrieved_at_utc": "2026-10-18T14:58:03.756455+00:00",
+        "status": 200,
+        "headers": {
+          "Server": "CloudFront",
+          "Content-Type": "text/html",
+          "Content-Length": "33403",
+          "Connection": "close",
+          "X-Content-Type-Options": "nosniff",
+          "X-Frame-Options": "SAMEORIGIN",
+          "X-Xss-Protection": "1; mode=block",
+          "Strict-Transport-Security": "max-age=6000; includeSubDomains",
+          "Date": "Sun, 18 Oct 2026 14:58:03 GMT",
+          "X-Cache": "Miss from cloudfront",
+          "Via": "1.1 5e2c18481aee203964e7bfce3a71a06c.cloudfront.net (CloudFront)",
+          "X-Amz-Cf-Pop": "MCI50-P2",
+          "X-Amz-Cf-Id": "bGWvY-5AHcBQwzlSbSVb_Lxu1L3g4ng_Ti3E9boB2EpDLv_Z311oSA=="
+        },
+        "redirects": [],
+        "response_body_sha256": "5db3461dcdf017e15460c0a5612f2ebcfae6f3f18de9ddee2ca28584e0aa2462",
+        "response_body_bytes": 33403,
+        "content_decoding": "identity",
+        "raw_sha256": "5db3461dcdf017e15460c0a5612f2ebcfae6f3f18de9ddee2ca28584e0aa2462",
+        "raw_bytes": 33403,
+        "path": "source/certification-2024.body.gz",
+        "stored_sha256": "61252756e80661ea3901a84786c31cf6edba12e34031a3c1725ee12cc8438c15",
+        "stored_bytes": 6081,
+        "stored_path": "data/turnout/source/certification-2024.body.gz",
+        "original_bytes": 33403,
+        "original_sha256": "5db3461dcdf017e15460c0a5612f2ebcfae6f3f18de9ddee2ca28584e0aa2462"
+      }
+    },
+    {
+      "ledger": "../data/baselines/source/references.json",
+      "source_object": {
+        "id": "class-II",
+        "requested_url": "https://www.senate.gov/senators/Class_II.htm",
+        "parent": "US Senate class roster",
+        "retrieved_at_utc": "2026-10-18T15:02:54.666385+00:00",
+        "status": 200,
+        "final_url": "https://www.senate.gov/senators/Class_II.htm",
+        "headers": {
+          "Server": "Apache",
+          "Content-Type": "text/html; charset=UTF-8",
+          "Vary": "Accept-Encoding",
+          "Date": "Sun, 18 Oct 2026 15:02:54 GMT",
+          "Content-Length": "19562",
+          "Connection": "close",
+          "Strict-Transport-Security": "max-age=31536000"
+        },
+        "redirects": [],
+        "response_body_sha256": "2cec4a3935927dc250c4b964746aceca026ee49adf0f5a78397861b5ce31667d",
+        "response_body_bytes": 19562,
+        "path": "source/class-II.body.gz",
+        "raw_sha256": "2cec4a3935927dc250c4b964746aceca026ee49adf0f5a78397861b5ce31667d",
+        "raw_bytes": 19562,
+        "stored_sha256": "a9453056cd75de8a698886729ab5382e9de474dbbec9ebc17a2a6d5edf7319e1",
+        "stored_bytes": 4826,
+        "content_decoding": "identity",
+        "stored_path": "data/baselines/source/class-II.body.gz",
+        "original_bytes": 19562,
+        "original_sha256": "2cec4a3935927dc250c4b964746aceca026ee49adf0f5a78397861b5ce31667d"
+      }
+    },
+    {
+      "ledger": "../data/baselines/source/references.json",
+      "source_object": {
+        "id": "class-III",
+        "requested_url": "https://www.senate.gov/senators/Class_III.htm",
+        "parent": "US Senate class roster",
+        "retrieved_at_utc": "2026-10-18T15:02:54.818444+00:00",
+        "status": 200,
+        "final_url": "https://www.senate.gov/senators/Class_III.htm",
+        "headers": {
+          "Server": "Apache",
+          "Content-Type": "text/html; charset=UTF-8",
+          "Vary": "Accept-Encoding",
+          "Date": "Sun, 18 Oct 2026 15:02:55 GMT",
+          "Content-Length": "19547",
+          "Connection": "close",
+          "Strict-Transport-Security": "max-age=31536000"
+        },
+        "redirects": [],
+        "response_body_sha256": "87e5f9b2ce77dd070661555a93a06e7ffa349dc426fc2f5029180b51e14afcb3",
+        "response_body_bytes": 19547,
+        "path": "source/class-III.body.gz",
+        "raw_sha256": "87e5f9b2ce77dd070661555a93a06e7ffa349dc426fc2f5029180b51e14afcb3",
+        "raw_bytes": 19547,
+        "stored_sha256": "f82705c5d138d71cb5828418e5a715bf4ca85118269397e4330d985eb0e9143a",
+        "stored_bytes": 4721,
+        "content_decoding": "identity",
+        "stored_path": "data/baselines/source/class-III.body.gz",
+        "original_bytes": 19547,
+        "original_sha256": "87e5f9b2ce77dd070661555a93a06e7ffa349dc426fc2f5029180b51e14afcb3"
+      }
+    },
+    {
+      "ledger": "../data/baselines/source/references.json",
+      "source_object": {
+        "id": "county-codes-2020",
+        "requested_url": "https://www2.census.gov/geo/docs/reference/codes2020/national_county2020.txt",
+        "final_url": "https://www2.census.gov/geo/docs/reference/codes2020/national_county2020.txt",
+        "parent": "Census geographic codes reference",
+        "retrieved_at_utc": "2026-10-18T14:58:04.090714+00:00",
+        "status": 200,
+        "headers": {
+          "Date": "Sun, 18 Oct 2026 14:58:04 GMT",
+          "Content-Type": "text/plain",
+          "Content-Length": "126639",
+          "Connection": "close",
+          "Content-Security-Policy": "default-src 'self' 'unsafe-inline' 'unsafe-eval' census.gov *.census.gov http://www.census.gov assets.adobedtm.com www.googletagmanager.com https://dpm.demdex.net https://cm.everesttech.net https://uscensusbureau.demdex.net dap.digitalgov.gov www.google-analytics.com; frame-ancestors 'self';",
+          "X-Frame-Options": "SAMEORIGIN",
+          "X-Content-Type-Options": "nosniff",
+          "Cache-Control": "public, max-age=14400",
+          "Referrer-Policy": "strict-origin-when-cross-origin",
+          "Last-Modified": "Mon, 13 Feb 2023 20:11:55 GMT",
+          "Accept-Ranges": "bytes",
+          "Server-Timing": "cfEdge;dur=22,cfOrigin;dur=0",
+          "Vary": "Accept-Encoding",
+          "X-XSS-Protection": "1; mode=block",
+          "set-cookie": "__cf_bm=lxDW1lRd1A.77aKsNOydDlatlL6kHLZCUVRmig8h3Y8-1792335484.288231-1.0.1.1-AzhSlEp2RMa3oHCPfB7BO28usAMaqDvUg_1jJ7Um54DineO.S8cm1XFj6ECQGKx_7kA7iZrVm2ytCXx0Q3RxVYWDRcLQ0fSbFUgoBuZzD2W2mXYJiq5GhVWCUOGCGp7e; HttpOnly; SameSite=None; Secure; Path=/; Domain=www2.census.gov; Expires=Sun, 18 Oct 2026 15:28:04 GMT",
+          "Strict-Transport-Security": "max-age=31536000",
+          "Age": "356286",
+          "expires": "Sun, 18 Oct 2026 18:58:04 GMT",
+          "cf-cache-status": "HIT",
+          "Server": "cloudflare",
+          "CF-RAY": "a4c86628cde71910-ORD"
+        },
+        "redirects": [],
+        "response_body_sha256": "9f6e5f6eb6ac2f5e9a36d5fd01dec77991bddc75118f748a069441a4782970d6",
+        "response_body_bytes": 126639,
+        "content_decoding": "identity",
+        "raw_sha256": "9f6e5f6eb6ac2f5e9a36d5fd01dec77991bddc75118f748a069441a4782970d6",
+        "raw_bytes": 126639,
+        "path": "source/county-codes-2020.body.gz",
+        "stored_sha256": "bcb240df1d84eb88c83b19f5b5c39b6905afaca0277821c206a047196a70cce8",
+        "stored_bytes": 31361,
+        "stored_path": "data/turnout/source/county-codes-2020.body.gz",
+        "original_bytes": 126639,
+        "original_sha256": "9f6e5f6eb6ac2f5e9a36d5fd01dec77991bddc75118f748a069441a4782970d6"
+      }
+    },
+    {
+      "ledger": "../data/baselines/source/references.json",
+      "source_object": {
+        "id": "current-candidates",
+        "requested_url": "https://www.sos.ks.gov/elections/elections_upcoming_candidate.aspx",
+        "parent": "current-results: Candidate List",
+        "retrieved_at_utc": "2026-10-18T15:02:54.903368+00:00",
+        "status": 403,
+        "final_url": "https://www.sos.ks.gov/elections/elections_upcoming_candidate.aspx",
+        "headers": {
+          "Server": "CloudFront",
+          "Date": "Sun, 18 Oct 2026 15:02:55 GMT",
+          "Content-Type": "text/html",
+          "Content-Length": "919",
+          "Connection": "close",
+          "X-Cache": "Error from cloudfront",
+          "Via": "1.1 084aee51c27f761149c5fc97f2b483ca.cloudfront.net (CloudFront)",
+          "X-Amz-Cf-Pop": "MCI50-P2",
+          "X-Amz-Cf-Id": "mkIl7GfOZRVAmE19HHzh2doXERON0greUEq_HvwZuCsE7TiNuBBVCQ=="
+        },
+        "redirects": [],
+        "response_body_sha256": "c6bd21bac9e1fd64675898577b09658109fa7a405019345b707c290d594f9bed",
+        "response_body_bytes": 919,
+        "path": "source/current-candidates.body.gz",
+        "raw_sha256": "c6bd21bac9e1fd64675898577b09658109fa7a405019345b707c290d594f9bed",
+        "raw_bytes": 919,
+        "stored_sha256": "e122e8951ae3fac71325905585f1fa61eb2fa1a96dca7672261ed92a355fb1b7",
+        "stored_bytes": 597,
+        "content_decoding": "identity",
+        "stored_path": "data/baselines/source/current-candidates.body.gz",
+        "original_bytes": 919,
+        "original_sha256": "c6bd21bac9e1fd64675898577b09658109fa7a405019345b707c290d594f9bed"
+      }
+    },
+    {
+      "ledger": "../data/baselines/source/references.json",
+      "source_object": {
+        "id": "current-dates",
+        "requested_url": "https://www.sos.ks.gov/elections/important-election-dates.html",
+        "parent": "current-results: Important Election Dates",
+        "retrieved_at_utc": "2026-10-18T15:02:55.006581+00:00",
+        "status": 200,
+        "final_url": "https://www.sos.ks.gov/elections/important-election-dates.html",
+        "headers": {
+          "Server": "CloudFront",
+          "Content-Type": "text/html",
+          "Content-Length": "34419",
+          "Connection": "close",
+          "X-Content-Type-Options": "nosniff",
+          "X-Frame-Options": "SAMEORIGIN",
+          "X-Xss-Protection": "1; mode=block",
+          "Strict-Transport-Security": "max-age=6000; includeSubDomains",
+          "Date": "Sun, 18 Oct 2026 14:42:39 GMT",
+          "X-Cache": "Hit from cloudfront",
+          "Via": "1.1 0723cad4db45c70ca1c99b94320c170e.cloudfront.net (CloudFront)",
+          "X-Amz-Cf-Pop": "MCI50-P2",
+          "X-Amz-Cf-Id": "SMtBgJpCCNI7i_yULGc41ifX-2AVc7AOdFFGlTokNV9iCN7gxe3DEQ==",
+          "Age": "1216"
+        },
+        "redirects": [],
+        "response_body_sha256": "93a9af07e197b5533d5aceb1f832f0faf669b04d14aaec83c8337828ade21d9a",
+        "response_body_bytes": 34419,
+        "path": "source/current-dates.body.gz",
+        "raw_sha256": "93a9af07e197b5533d5aceb1f832f0faf669b04d14aaec83c8337828ade21d9a",
+        "raw_bytes": 34419,
+        "stored_sha256": "3a5dc4dad574b029c9980d033c706c506fd7e88b509e0e7f66f37d822d9af3f5",
+        "stored_bytes": 5945,
+        "content_decoding": "identity",
+        "stored_path": "data/baselines/source/current-dates.body.gz",
+        "original_bytes": 34419,
+        "original_sha256": "93a9af07e197b5533d5aceb1f832f0faf669b04d14aaec83c8337828ade21d9a"
+      }
+    },
+    {
+      "ledger": "../data/baselines/source/references.json",
+      "source_object": {
+        "id": "current-results",
+        "requested_url": "https://www.sos.ks.gov/elections/election-results.html",
+        "parent": "SOS election authority",
+        "retrieved_at_utc": "2026-10-18T15:02:54.396440+00:00",
+        "status": 200,
+        "final_url": "https://www.sos.ks.gov/elections/election-results.html",
+        "headers": {
+          "Server": "CloudFront",
+          "Content-Type": "text/html",
+          "Content-Length": "99478",
+          "Connection": "close",
+          "X-Content-Type-Options": "nosniff",
+          "X-Frame-Options": "SAMEORIGIN",
+          "X-Xss-Protection": "1; mode=block",
+          "Strict-Transport-Security": "max-age=6000; includeSubDomains",
+          "Date": "Sun, 18 Oct 2026 14:32:24 GMT",
+          "X-Cache": "Hit from cloudfront",
+          "Via": "1.1 b2a720e38a1519c0300435cfbe6691c8.cloudfront.net (CloudFront)",
+          "X-Amz-Cf-Pop": "MCI50-P2",
+          "X-Amz-Cf-Id": "-w4cVtpk5RHT_bNAxa-sGrM5_tIA9Fb7MOv0bxJJoZGSsTcybF2pjA==",
+          "Age": "1829"
+        },
+        "redirects": [],
+        "response_body_sha256": "3a18d9079d41e266d9eaa39d42b2b1b29376ce3e26108e6e919e08852733c1c4",
+        "response_body_bytes": 99478,
+        "path": "source/current-results.body.gz",
+        "raw_sha256": "3a18d9079d41e266d9eaa39d42b2b1b29376ce3e26108e6e919e08852733c1c4",
+        "raw_bytes": 99478,
+        "stored_sha256": "651bb76dbc1a975925a0009ab935fa4d2117fa2ae30ab2c004e49ffee36cceb1",
+        "stored_bytes": 9114,
+        "content_decoding": "identity",
+        "stored_path": "data/baselines/source/current-results.body.gz",
+        "original_bytes": 99478,
+        "original_sha256": "3a18d9079d41e266d9eaa39d42b2b1b29376ce3e26108e6e919e08852733c1c4"
+      }
+    },
+    {
+      "ledger": "../data/baselines/source/references.json",
+      "source_object": {
+        "id": "npr-primary",
+        "url": "https://apps.npr.org/primary-election-results-2026/states/KS.html",
+        "retrieved_at_utc": "2026-10-18T00:44:25.557932+00:00",
+        "status": 200,
+        "final_url": "https://apps.npr.org/primary-election-results-2026/states/KS.html",
+        "raw_sha256": "9d83a1eea9a62489bdb3552ac92ed3992a0abb74d7657428d0055581d1c88634",
+        "asset": "npr-primary.html.gz",
+        "stored_sha256": "51f5613769958ef294bbb27227120ad77d391a1d43b2670933ede9962957624f",
+        "bytes": 49242,
+        "headers": {
+          "Content-Type": "text/html",
+          "Content-Length": "14294",
+          "Connection": "keep-alive",
+          "Server": "AmazonS3",
+          "Content-Encoding": "gzip",
+          "Last-Modified": "Tue, 13 Oct 2026 06:40:27 GMT",
+          "Date": "Sun, 18 Oct 2026 00:44:26 GMT",
+          "Cache-Control": "public, max-age=120",
+          "ETag": "\"f579612ac6fa9aafc8a582b694bd40dd\"",
+          "Vary": "Accept-Encoding",
+          "X-Cache": "RefreshHit from cloudfront",
+          "Via": "1.1 2dbe17656afbc85859669098ea02de44.cloudfront.net (CloudFront)",
+          "X-Amz-Cf-Pop": "ORD56-P17",
+          "X-Amz-Cf-Id": "v-_rvNbAHCECoGXLgdFNgKllWPAAzkeaIxMAwZPsQsVtx5hy2K3OyQ=="
+        },
+        "stored_path": "data/news/npr-primary.html.gz",
+        "stored_bytes": 14202,
+        "original_bytes": 49242,
+        "original_sha256": "9d83a1eea9a62489bdb3552ac92ed3992a0abb74d7657428d0055581d1c88634",
+        "requested_url": "https://apps.npr.org/primary-election-results-2026/states/KS.html",
+        "parent": "NPR Kansas primary application; newsroom historical product"
+      }
+    },
+    {
+      "ledger": "../data/baselines/source/references.json",
+      "source_object": {
+        "id": "npr-senate-primary",
+        "url": "https://apps.npr.org/primary-election-results-2026/data/KS_S_8_4_2026.json",
+        "retrieved_at_utc": "2026-10-18T03:38:03.433762+00:00",
+        "status": 200,
+        "final_url": "https://apps.npr.org/primary-election-results-2026/data/KS_S_8_4_2026.json",
+        "raw_sha256": "1d19ab570a3c8512bffe53d3ab46710a0d7fa6c8159767569cf1d91da26115ab",
+        "asset": "npr-senate-primary.html.gz",
+        "stored_sha256": "2cf05218f74725065262018bbbf1ceec6341b9c201f167c7cb98552d86bf82e6",
+        "bytes": 4104,
+        "headers": {
+          "Content-Type": "application/json",
+          "Content-Length": "751",
+          "Connection": "keep-alive",
+          "Server": "AmazonS3",
+          "Content-Encoding": "gzip",
+          "Last-Modified": "Sat, 08 Aug 2026 03:59:33 GMT",
+          "Date": "Sun, 18 Oct 2026 03:38:03 GMT",
+          "Cache-Control": "public, max-age=120",
+          "ETag": "\"d1331a12c77acf217f24f8c47a2f3ed8\"",
+          "X-Cache": "Hit from cloudfront",
+          "Via": "1.1 32a5e616547fb6341bfb36d9897867c4.cloudfront.net (CloudFront)",
+          "X-Amz-Cf-Pop": "ORD56-P17",
+          "X-Amz-Cf-Id": "BqdeXcFCkMUOGsPP_0cS-0xFFHp3rDxKCjkfzkLR8-k982ZoCaskRw==",
+          "Age": "44"
+        },
+        "stored_path": "data/news/npr-senate-primary.html.gz",
+        "stored_bytes": 728,
+        "original_bytes": 4104,
+        "original_sha256": "1d19ab570a3c8512bffe53d3ab46710a0d7fa6c8159767569cf1d91da26115ab",
+        "requested_url": "https://apps.npr.org/primary-election-results-2026/data/KS_S_8_4_2026.json",
+        "parent": "npr-primary → supplied Senate JSON configuration"
+      }
+    },
+    {
+      "ledger": "../data/baselines/source/references.json",
+      "source_object": {
+        "id": "registration-2024-november",
+        "requested_url": "https://www.sos.ks.gov/elections/vr-statistics/2024/11-2024-Voter-Registration-Numbers-by-County.xlsx",
+        "final_url": "https://www.sos.ks.gov/elections/vr-statistics/2024/11-2024-Voter-Registration-Numbers-by-County.xlsx",
+        "parent": "registration-index: November 2024 county numbers",
+        "retrieved_at_utc": "2026-10-18T14:59:34.852983+00:00",
+        "status": 200,
+        "headers": {
+          "Server": "CloudFront",
+          "Content-Type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "Content-Length": "29628",
+          "Connection": "close",
+          "Last-Modified": "Thu, 22 May 2025 15:04:11 GMT",
+          "Accept-Ranges": "bytes",
+          "X-Content-Type-Options": "nosniff",
+          "X-Frame-Options": "SAMEORIGIN",
+          "X-Xss-Protection": "1; mode=block",
+          "Strict-Transport-Security": "max-age=6000; includeSubDomains",
+          "Date": "Sun, 18 Oct 2026 14:59:35 GMT",
+          "ETag": "\"80a716c62acbdb1:0\"",
+          "X-Cache": "Miss from cloudfront",
+          "Via": "1.1 a421adfca4858dbbb171882ec8d8dfd6.cloudfront.net (CloudFront)",
+          "X-Amz-Cf-Pop": "MCI50-P2",
+          "X-Amz-Cf-Id": "kfShVKg9CQx9QWbImQBvwRxZ2MPxJ6HjzCizlZLsyY1LVUKK7QWqfg=="
+        },
+        "redirects": [],
+        "response_body_sha256": "2fe63fd08371824338e06c5b3e858eebf9f3efdd28ac92e9dd3cf12ca300a078",
+        "response_body_bytes": 29628,
+        "content_decoding": "identity",
+        "raw_sha256": "2fe63fd08371824338e06c5b3e858eebf9f3efdd28ac92e9dd3cf12ca300a078",
+        "raw_bytes": 29628,
+        "path": "source/registration-2024-november.body.gz",
+        "stored_sha256": "e1203e5d96dbfed6ede380facc70de671551b53b572fdf7ea2f60bc5b215fce1",
+        "stored_bytes": 25882,
+        "stored_path": "data/turnout/source/registration-2024-november.body.gz",
+        "original_bytes": 29628,
+        "original_sha256": "2fe63fd08371824338e06c5b3e858eebf9f3efdd28ac92e9dd3cf12ca300a078"
+      }
+    },
+    {
+      "ledger": "../data/baselines/source/references.json",
+      "source_object": {
+        "id": "sos-2020-general-canvass",
+        "url": "https://www.sos.ks.gov/elections/20elec/2020_General_Official_Vote_Totals.pdf",
+        "retrieved_at_utc": "2026-10-18T04:14:15.552182+00:00",
+        "status": 200,
+        "final_url": "https://www.sos.ks.gov/elections/20elec/2020_General_Official_Vote_Totals.pdf",
+        "raw_sha256": "364ad6dceedcac19ec7894df581c3d2eb7af7993f906077c8b79aab4f69ee93e",
+        "asset": "sos-2020-general-canvass.html.gz",
+        "stored_sha256": "2976f2e77ca073f5d7fefe23b6edccd7ab3bc680a5d22edc481be875a4efe4ee",
+        "bytes": 57765,
+        "headers": {
+          "Server": "CloudFront",
+          "Content-Type": "application/pdf",
+          "Transfer-Encoding": "chunked",
+          "Connection": "keep-alive",
+          "Last-Modified": "Tue, 01 Dec 2020 16:40:51 GMT",
+          "Content-Encoding": "gzip",
+          "X-Content-Type-Options": "nosniff",
+          "X-Frame-Options": "SAMEORIGIN",
+          "X-Xss-Protection": "1; mode=block",
+          "Strict-Transport-Security": "max-age=6000; includeSubDomains",
+          "Date": "Sun, 18 Oct 2026 04:14:15 GMT",
+          "ETag": "W/\"80ab96ba0c8d61:0\"",
+          "Vary": "Accept-Encoding",
+          "X-Cache": "Miss from cloudfront",
+          "Via": "1.1 509b1c04d9910d3a3a25bf8975610a84.cloudfront.net (CloudFront)",
+          "X-Amz-Cf-Pop": "MCI50-P2",
+          "X-Amz-Cf-Id": "DaxdTeVB-lJg5k3QIIlktRkuHz1G4Y4ovDU3zoMCIv5alPkI2BjHBQ=="
+        },
+        "stored_path": "data/news/sos-2020-general-canvass.html.gz",
+        "stored_bytes": 47406,
+        "original_bytes": 57765,
+        "original_sha256": "364ad6dceedcac19ec7894df581c3d2eb7af7993f906077c8b79aab4f69ee93e",
+        "requested_url": "https://www.sos.ks.gov/elections/20elec/2020_General_Official_Vote_Totals.pdf",
+        "parent": "current-results → labeled election/year download; retained original coordinator capture"
+      }
+    },
+    {
+      "ledger": "../data/baselines/source/references.json",
+      "source_object": {
+        "id": "sos-2020-senate-precinct",
+        "url": "https://www.sos.ks.gov/elections/20elec/2020_General_Election_US_Senate_results_by_precinct.xlsx",
+        "retrieved_at_utc": "2026-10-18T04:14:15.752480+00:00",
+        "status": 200,
+        "final_url": "https://www.sos.ks.gov/elections/20elec/2020_General_Election_US_Senate_results_by_precinct.xlsx",
+        "raw_sha256": "0498716f50453ff30b4efcf47a14ccf8e9041bf04ba54ec5f3e432c8678be8f8",
+        "asset": "sos-2020-senate-precinct.html.gz",
+        "stored_sha256": "cea520912c38fb2a950338ca51c7518ec1d53254ab5645fdd67c9f33c4cf7fca",
+        "bytes": 406600,
+        "headers": {
+          "Server": "CloudFront",
+          "Content-Type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "Content-Length": "406600",
+          "Connection": "keep-alive",
+          "Last-Modified": "Wed, 30 Dec 2020 14:58:55 GMT",
+          "Accept-Ranges": "bytes",
+          "X-Content-Type-Options": "nosniff",
+          "X-Frame-Options": "SAMEORIGIN",
+          "X-Xss-Protection": "1; mode=block",
+          "Strict-Transport-Security": "max-age=6000; includeSubDomains",
+          "Date": "Sun, 18 Oct 2026 04:14:15 GMT",
+          "ETag": "\"534b674bbcded61:0\"",
+          "X-Cache": "Miss from cloudfront",
+          "Via": "1.1 006c4c21b40c3e291898c78c08143890.cloudfront.net (CloudFront)",
+          "X-Amz-Cf-Pop": "MCI50-P2",
+          "X-Amz-Cf-Id": "JIet-Ep6lMDeF5i6Z14_KxEPmrzSRTb2DoNRsIYE42DoQR62TmcdmA=="
+        },
+        "stored_path": "data/news/sos-2020-senate-precinct.html.gz",
+        "stored_bytes": 380182,
+        "original_bytes": 406600,
+        "original_sha256": "0498716f50453ff30b4efcf47a14ccf8e9041bf04ba54ec5f3e432c8678be8f8",
+        "requested_url": "https://www.sos.ks.gov/elections/20elec/2020_General_Election_US_Senate_results_by_precinct.xlsx",
+        "parent": "current-results → labeled election/year download; retained original coordinator capture"
+      }
+    },
+    {
+      "ledger": "../data/baselines/source/references.json",
+      "source_object": {
+        "id": "sos-2022-general-canvass",
+        "url": "https://www.sos.ks.gov/elections/22elec/2022-General-Official-Vote-Totals.pdf",
+        "retrieved_at_utc": "2026-10-18T04:14:15.080588+00:00",
+        "status": 200,
+        "final_url": "https://www.sos.ks.gov/elections/22elec/2022-General-Official-Vote-Totals.pdf",
+        "raw_sha256": "2853c70a08e19151133dec52d9fbb78e57a58d2f55323522ff91fbe7ab4b9fee",
+        "asset": "sos-2022-general-canvass.html.gz",
+        "stored_sha256": "c3d85abc0b2d1b3353f35d0f18d7a3c16220f51da9da3ba9686887a9635180b6",
+        "bytes": 40508,
+        "headers": {
+          "Server": "CloudFront",
+          "Content-Type": "application/pdf",
+          "Transfer-Encoding": "chunked",
+          "Connection": "keep-alive",
+          "Last-Modified": "Fri, 02 Dec 2022 22:46:00 GMT",
+          "Content-Encoding": "gzip",
+          "X-Content-Type-Options": "nosniff",
+          "X-Frame-Options": "SAMEORIGIN",
+          "X-Xss-Protection": "1; mode=block",
+          "Strict-Transport-Security": "max-age=6000; includeSubDomains",
+          "Date": "Sun, 18 Oct 2026 04:14:14 GMT",
+          "ETag": "W/\"0456d99f6d91:0\"",
+          "Vary": "Accept-Encoding",
+          "X-Cache": "Miss from cloudfront",
+          "Via": "1.1 9a111dbe61bee12be3ece6259502a5ba.cloudfront.net (CloudFront)",
+          "X-Amz-Cf-Pop": "MCI50-P2",
+          "X-Amz-Cf-Id": "WAjY2be_HlNTW5vQjOSe1LfJgT_AyMr-gqkmivakDope6EqRgMDAFg=="
+        },
+        "stored_path": "data/news/sos-2022-general-canvass.html.gz",
+        "stored_bytes": 35359,
+        "original_bytes": 40508,
+        "original_sha256": "2853c70a08e19151133dec52d9fbb78e57a58d2f55323522ff91fbe7ab4b9fee",
+        "requested_url": "https://www.sos.ks.gov/elections/22elec/2022-General-Official-Vote-Totals.pdf",
+        "parent": "current-results → labeled election/year download; retained original coordinator capture"
+      }
+    },
+    {
+      "ledger": "../data/baselines/source/references.json",
+      "source_object": {
+        "id": "sos-2022-senate-precinct",
+        "url": "https://www.sos.ks.gov/elections/22elec/2022-General-Election-US-Senate-Results-By-Precinct.xlsx",
+        "retrieved_at_utc": "2026-10-18T04:14:15.245253+00:00",
+        "status": 200,
+        "final_url": "https://www.sos.ks.gov/elections/22elec/2022-General-Election-US-Senate-Results-By-Precinct.xlsx",
+        "raw_sha256": "6925d00e370bd7a063e9cae4b13ab83784af8bc3fa37dd256ac1cfe516336885",
+        "asset": "sos-2022-senate-precinct.html.gz",
+        "stored_sha256": "1a06ce03227eaa33e46efb323f3b5673300bb28203c1b3a4f28a63a16b7c22b4",
+        "bytes": 406221,
+        "headers": {
+          "Server": "CloudFront",
+          "Content-Type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "Content-Length": "406221",
+          "Connection": "keep-alive",
+          "Last-Modified": "Thu, 05 Jan 2023 17:10:02 GMT",
+          "Accept-Ranges": "bytes",
+          "X-Content-Type-Options": "nosniff",
+          "X-Frame-Options": "SAMEORIGIN",
+          "X-Xss-Protection": "1; mode=block",
+          "Strict-Transport-Security": "max-age=6000; includeSubDomains",
+          "Date": "Sun, 18 Oct 2026 04:14:15 GMT",
+          "ETag": "\"0d1468c2821d91:0\"",
+          "X-Cache": "Miss from cloudfront",
+          "Via": "1.1 fdf8975b299cad874488276b81d0ab82.cloudfront.net (CloudFront)",
+          "X-Amz-Cf-Pop": "MCI50-P2",
+          "X-Amz-Cf-Id": "JYjrHvXG7Nf73U-FqF86lAcO3CzTpv2qfMP-oumWnd8HU7lbzuZvsA=="
+        },
+        "stored_path": "data/news/sos-2022-senate-precinct.html.gz",
+        "stored_bytes": 390195,
+        "original_bytes": 406221,
+        "original_sha256": "6925d00e370bd7a063e9cae4b13ab83784af8bc3fa37dd256ac1cfe516336885",
+        "requested_url": "https://www.sos.ks.gov/elections/22elec/2022-General-Election-US-Senate-Results-By-Precinct.xlsx",
+        "parent": "current-results → labeled election/year download; retained original coordinator capture"
+      }
+    },
+    {
+      "ledger": "../data/baselines/source/references.json",
+      "source_object": {
+        "id": "sos-2024-general-canvass",
+        "url": "https://www.sos.ks.gov/elections/24elec/2024-General-Election-Official-Vote-Totals.pdf",
+        "retrieved_at_utc": "2026-10-18T04:14:14.486741+00:00",
+        "status": 200,
+        "final_url": "https://www.sos.ks.gov/elections/24elec/2024-General-Election-Official-Vote-Totals.pdf",
+        "raw_sha256": "0f0d5cdf0f6a03dbc2557cf2cb820fbd729cadc1ef484e85986fe41771cc2813",
+        "asset": "sos-2024-general-canvass.html.gz",
+        "stored_sha256": "2567cd00a8553fce36277643c2c86d4fe32d0621e79bbb1f39e71c043f4ab416",
+        "bytes": 58979,
+        "headers": {
+          "Server": "CloudFront",
+          "Content-Type": "application/pdf",
+          "Transfer-Encoding": "chunked",
+          "Connection": "keep-alive",
+          "Last-Modified": "Tue, 03 Dec 2024 16:38:31 GMT",
+          "Content-Encoding": "gzip",
+          "X-Content-Type-Options": "nosniff",
+          "X-Frame-Options": "SAMEORIGIN",
+          "X-Xss-Protection": "1; mode=block",
+          "Strict-Transport-Security": "max-age=6000; includeSubDomains",
+          "Date": "Sun, 18 Oct 2026 04:14:14 GMT",
+          "ETag": "W/\"1c6cf3c9a145db1:0\"",
+          "Vary": "Accept-Encoding",
+          "X-Cache": "Miss from cloudfront",
+          "Via": "1.1 f7f9f3d588a38a4cee083e9af044ddb0.cloudfront.net (CloudFront)",
+          "X-Amz-Cf-Pop": "MCI50-P2",
+          "X-Amz-Cf-Id": "C2ZMVqp3u_L5HTVfBkGa9qBFfiA-kFoKoFk1u18ocq2n7NoDCU3cIQ=="
+        },
+        "stored_path": "data/news/sos-2024-general-canvass.html.gz",
+        "stored_bytes": 49010,
+        "original_bytes": 58979,
+        "original_sha256": "0f0d5cdf0f6a03dbc2557cf2cb820fbd729cadc1ef484e85986fe41771cc2813",
+        "requested_url": "https://www.sos.ks.gov/elections/24elec/2024-General-Election-Official-Vote-Totals.pdf",
+        "parent": "current-results → labeled election/year download; retained original coordinator capture"
+      }
+    },
+    {
+      "ledger": "../data/baselines/source/references.json",
+      "source_object": {
+        "id": "sos-2024-president-county",
+        "url": "https://www.sos.ks.gov/elections/24elec/2024-Presidential-Results.xlsx",
+        "retrieved_at_utc": "2026-10-18T04:14:13.888592+00:00",
+        "status": 200,
+        "final_url": "https://www.sos.ks.gov/elections/24elec/2024-Presidential-Results.xlsx",
+        "raw_sha256": "f83ad5a1db33e2bdc7c3139b85ed7973a186854cae3b675667c4fedb0f545239",
+        "asset": "sos-2024-president-county.html.gz",
+        "stored_sha256": "526e0045c4165852c1cd5ebb50d84ab567fba6ff17d0068faf49041b769786c5",
+        "bytes": 773382,
+        "headers": {
+          "Server": "CloudFront",
+          "Content-Type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "Content-Length": "773382",
+          "Connection": "keep-alive",
+          "Last-Modified": "Thu, 26 Mar 2026 19:25:54 GMT",
+          "Accept-Ranges": "bytes",
+          "X-Content-Type-Options": "nosniff",
+          "X-Frame-Options": "SAMEORIGIN",
+          "X-Xss-Protection": "1; mode=block",
+          "Strict-Transport-Security": "max-age=6000; includeSubDomains",
+          "Date": "Sun, 18 Oct 2026 04:14:14 GMT",
+          "ETag": "\"40de95d56bddc1:0\"",
+          "X-Cache": "Miss from cloudfront",
+          "Via": "1.1 d42baf2176175bbe44a0ffaa3781bc56.cloudfront.net (CloudFront)",
+          "X-Amz-Cf-Pop": "MCI50-P2",
+          "X-Amz-Cf-Id": "0NY1iuwzMJmXjTVffYUW5Q-10MykSHY7SSVLtA0ttegpjhGw9iIG4A=="
+        },
+        "stored_path": "data/news/sos-2024-president-county.html.gz",
+        "stored_bytes": 685492,
+        "original_bytes": 773382,
+        "original_sha256": "f83ad5a1db33e2bdc7c3139b85ed7973a186854cae3b675667c4fedb0f545239",
+        "requested_url": "https://www.sos.ks.gov/elections/24elec/2024-Presidential-Results.xlsx",
+        "parent": "current-results → labeled election/year download; retained original coordinator capture"
+      }
+    },
+    {
+      "ledger": "../data/baselines/source/references.json",
+      "source_object": {
+        "id": "sos-2024-president-precinct",
+        "url": "https://www.sos.ks.gov/elections/24elec/2024-General-Election-President-Precinct-Level-Results.xlsx",
+        "retrieved_at_utc": "2026-10-18T04:14:14.686112+00:00",
+        "status": 200,
+        "final_url": "https://www.sos.ks.gov/elections/24elec/2024-General-Election-President-Precinct-Level-Results.xlsx",
+        "raw_sha256": "54bb06a9a34a3b1a672e9007b8884a18f1862b516cad13772c05c28dc361053e",
+        "asset": "sos-2024-president-precinct.html.gz",
+        "stored_sha256": "a5bf1756376857fe5586c9eb975ed1b8d8d4aa4d57b654d41f90acad3ccf7a07",
+        "bytes": 482700,
+        "headers": {
+          "Server": "CloudFront",
+          "Content-Type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "Content-Length": "482700",
+          "Connection": "keep-alive",
+          "Last-Modified": "Mon, 16 Dec 2024 18:53:58 GMT",
+          "Accept-Ranges": "bytes",
+          "X-Content-Type-Options": "nosniff",
+          "X-Frame-Options": "SAMEORIGIN",
+          "X-Xss-Protection": "1; mode=block",
+          "Strict-Transport-Security": "max-age=6000; includeSubDomains",
+          "Date": "Sun, 18 Oct 2026 04:14:14 GMT",
+          "ETag": "\"f11413ddeb4fdb1:0\"",
+          "X-Cache": "Miss from cloudfront",
+          "Via": "1.1 a07b09303eaab0fed64ae706529794fa.cloudfront.net (CloudFront)",
+          "X-Amz-Cf-Pop": "MCI50-P2",
+          "X-Amz-Cf-Id": "4gRPV-GCOzN2qNS0nB_l3cqk3n-QMARI8hp1Zzb5hP3FtaxWDTj3-A=="
+        },
+        "stored_path": "data/news/sos-2024-president-precinct.html.gz",
+        "stored_bytes": 454844,
+        "original_bytes": 482700,
+        "original_sha256": "54bb06a9a34a3b1a672e9007b8884a18f1862b516cad13772c05c28dc361053e",
+        "requested_url": "https://www.sos.ks.gov/elections/24elec/2024-General-Election-President-Precinct-Level-Results.xlsx",
+        "parent": "current-results → labeled election/year download; retained original coordinator capture"
+      }
+    },
+    {
+      "ledger": "../data/baselines/source/references.json",
+      "source_object": {
+        "id": "sos-2026-primary-canvass",
+        "url": "https://www.sos.ks.gov/elections/26elec/2026-Primary-Election-Official-Vote-Totals.pdf",
+        "retrieved_at_utc": "2026-10-18T04:14:16.036417+00:00",
+        "status": 200,
+        "final_url": "https://www.sos.ks.gov/elections/26elec/2026-Primary-Election-Official-Vote-Totals.pdf",
+        "raw_sha256": "4198e9acc9ce41aecb08a7e34e03c5aad4df2044315fae396c75be109d92c768",
+        "asset": "sos-2026-primary-canvass.html.gz",
+        "stored_sha256": "5b617f677b66e87bf62ac8854c367066e50ff02173d88ca3b9c1327605873713",
+        "bytes": 40997,
+        "headers": {
+          "Server": "CloudFront",
+          "Content-Type": "application/pdf",
+          "Transfer-Encoding": "chunked",
+          "Connection": "keep-alive",
+          "Last-Modified": "Tue, 01 Sep 2026 18:53:50 GMT",
+          "Content-Encoding": "gzip",
+          "X-Content-Type-Options": "nosniff",
+          "X-Frame-Options": "SAMEORIGIN",
+          "X-Xss-Protection": "1; mode=block",
+          "Strict-Transport-Security": "max-age=6000; includeSubDomains",
+          "Date": "Sun, 18 Oct 2026 03:49:19 GMT",
+          "ETag": "W/\"aa92423a433add1:0\"",
+          "Vary": "Accept-Encoding",
+          "X-Cache": "Hit from cloudfront",
+          "Via": "1.1 fdf8975b299cad874488276b81d0ab82.cloudfront.net (CloudFront)",
+          "X-Amz-Cf-Pop": "MCI50-P2",
+          "X-Amz-Cf-Id": "3Orn7EmqoP44i6FI9XSpMkj0kmutNGfu_RkxECDtcPOxh70e52w-Kg==",
+          "Age": "1496"
+        },
+        "stored_path": "data/news/sos-2026-primary-canvass.html.gz",
+        "stored_bytes": 33104,
+        "original_bytes": 40997,
+        "original_sha256": "4198e9acc9ce41aecb08a7e34e03c5aad4df2044315fae396c75be109d92c768",
+        "requested_url": "https://www.sos.ks.gov/elections/26elec/2026-Primary-Election-Official-Vote-Totals.pdf",
+        "parent": "current-results → labeled election/year download; retained original coordinator capture"
+      }
+    },
+    {
+      "ledger": "../data/baselines/source/references.json",
+      "source_object": {
+        "id": "sos-2026-senate-primary-precinct",
+        "url": "https://www.sos.ks.gov/elections/26elec/2026-Primary-Election-United-States-Senate-Precinct-Level-Results.xlsx",
+        "retrieved_at_utc": "2026-10-18T04:14:16.155671+00:00",
+        "status": 200,
+        "final_url": "https://www.sos.ks.gov/elections/26elec/2026-Primary-Election-United-States-Senate-Precinct-Level-Results.xlsx",
+        "raw_sha256": "cf17e7bfa7d7f7e4c823080dd01e84b2a97b5d696c92a871497ba8822ba5d2fc",
+        "asset": "sos-2026-senate-primary-precinct.html.gz",
+        "stored_sha256": "fc828ace05999589bc9cba614e6ad7b0ad240ad4b6be7ad633b180ada0d3d3d5",
+        "bytes": 1314696,
+        "headers": {
+          "Server": "CloudFront",
+          "Content-Type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "Content-Length": "1314696",
+          "Connection": "keep-alive",
+          "Last-Modified": "Tue, 29 Sep 2026 19:04:17 GMT",
+          "Accept-Ranges": "bytes",
+          "X-Content-Type-Options": "nosniff",
+          "X-Frame-Options": "SAMEORIGIN",
+          "X-Xss-Protection": "1; mode=block",
+          "Strict-Transport-Security": "max-age=6000; includeSubDomains",
+          "Date": "Sun, 18 Oct 2026 04:14:15 GMT",
+          "ETag": "\"87cc88534550dd1:0\"",
+          "X-Cache": "Miss from cloudfront",
+          "Via": "1.1 70e229d4eacd4f08ec9e3ff9e96d427e.cloudfront.net (CloudFront)",
+          "X-Amz-Cf-Pop": "MCI50-P2",
+          "X-Amz-Cf-Id": "ScVbSI2aXuwRGfGC4TfzJgiNsgqm708z4QMs7TZv_Lej83iPtbr7yw=="
+        },
+        "stored_path": "data/news/sos-2026-senate-primary-precinct.html.gz",
+        "stored_bytes": 1147556,
+        "original_bytes": 1314696,
+        "original_sha256": "cf17e7bfa7d7f7e4c823080dd01e84b2a97b5d696c92a871497ba8822ba5d2fc",
+        "requested_url": "https://www.sos.ks.gov/elections/26elec/2026-Primary-Election-United-States-Senate-Precinct-Level-Results.xlsx",
+        "parent": "current-results → labeled election/year download; retained original coordinator capture"
+      }
+    },
+    {
+      "ledger": "../data/baselines/source/references.json",
+      "source_object": {
+        "id": "statute-25-1132",
+        "requested_url": "https://www.kslegislature.gov/b2025_26/laws/025_000_0000_chapter/025_011_0000_article/025_011_0032_section/025_011_0032_k/",
+        "parent": "operative advance receipt law",
+        "retrieved_at_utc": "2026-10-18T15:02:55.478688+00:00",
+        "status": 200,
+        "final_url": "https://www.kslegislature.gov/b2025_26/laws/025_000_0000_chapter/025_011_0000_article/025_011_0032_section/025_011_0032_k/",
+        "headers": {
+          "Date": "Sun, 18 Oct 2026 15:02:55 GMT",
+          "Content-Type": "text/html; charset=utf-8",
+          "Transfer-Encoding": "chunked",
+          "Connection": "close",
+          "Server": "cloudflare",
+          "Cache-Control": "public, s-maxage=3600, stale-while-revalidate=300",
+          "x-frame-options": "DENY",
+          "vary": "Cookie, Accept-Encoding",
+          "x-content-type-options": "nosniff",
+          "referrer-policy": "same-origin",
+          "cross-origin-opener-policy": "same-origin",
+          "set-cookie": "__cf_bm=TM4kh19GjdBp8kxEUsyV2qqTeRs08aQDyJsFX4GKFz0-1792335775.6282363-1.0.1.1-bWKB6HVeE0NYPEEYeEzzc7uuCv.eNVwljmNCTpsLvpnQ54JUZZzjV6Op.eAXcI6qJXCxXMWxnY4HaI6TbuL5jOUE7vaPLqoiLhFyLEO8KRaLbSnKWO78BA4PSgeEQClU; HttpOnly; SameSite=None; Secure; Path=/; Domain=kslegislature.gov; Expires=Sun, 18 Oct 2026 15:32:55 GMT",
+          "strict-transport-security": "max-age=31536000; includeSubDomains",
+          "cf-cache-status": "DYNAMIC",
+          "Server-Timing": "cfCacheStatus;desc=\"DYNAMIC\"",
+          "Speculation-Rules": "\"/cdn-cgi/speculation\"",
+          "CF-RAY": "a4c86d45ab1ef4a2-ORD"
+        },
+        "redirects": [],
+        "response_body_sha256": "1a7256cb43ef220cfde0252a9c96fde626dabdd1f9c3c489c2a11ddc77d705aa",
+        "response_body_bytes": 58151,
+        "path": "source/statute-25-1132.body.gz",
+        "raw_sha256": "1a7256cb43ef220cfde0252a9c96fde626dabdd1f9c3c489c2a11ddc77d705aa",
+        "raw_bytes": 58151,
+        "stored_sha256": "2ff48ccb1fa7e6fb61fce7c715ce8887f9f77caeb8a68bb1eeb2dd733fdb1eec",
+        "stored_bytes": 14006,
+        "content_decoding": "identity",
+        "stored_path": "data/baselines/source/statute-25-1132.body.gz",
+        "original_bytes": 58151,
+        "original_sha256": "1a7256cb43ef220cfde0252a9c96fde626dabdd1f9c3c489c2a11ddc77d705aa"
+      }
+    },
+    {
+      "ledger": "../data/baselines/source/references.json",
+      "source_object": {
+        "id": "statute-25-1136",
+        "requested_url": "https://www.kslegislature.gov/b2025_26/laws/025_000_0000_chapter/025_011_0000_article/025_011_0036_section/025_011_0036_k/",
+        "parent": "late/eligibility and provisional treatment",
+        "retrieved_at_utc": "2026-10-18T15:02:55.926156+00:00",
+        "status": 200,
+        "final_url": "https://www.kslegislature.gov/b2025_26/laws/025_000_0000_chapter/025_011_0000_article/025_011_0036_section/025_011_0036_k/",
+        "headers": {
+          "Date": "Sun, 18 Oct 2026 15:02:56 GMT",
+          "Content-Type": "text/html; charset=utf-8",
+          "Transfer-Encoding": "chunked",
+          "Connection": "close",
+          "Server": "cloudflare",
+          "Cache-Control": "public, s-maxage=3600, stale-while-revalidate=300",
+          "x-frame-options": "DENY",
+          "vary": "Cookie, Accept-Encoding",
+          "x-content-type-options": "nosniff",
+          "referrer-policy": "same-origin",
+          "cross-origin-opener-policy": "same-origin",
+          "set-cookie": "__cf_bm=RzbB4dj_6RbwNzcDETXEmCn4ZepLHN44upXqk2FP.GE-1792335776.0886579-1.0.1.1-KbfLiGY0DJxo8Y_m3h3re5js4OyeE7uDNA.ri8v1J1i2hMRt8whKKrV1DxXy6wAm8XY6LYhVEvbjdBLh.PNj1DFumpao3TXM6thx1KX0t1JCoPNbDGq.HCp.XAaS2dK7; HttpOnly; SameSite=None; Secure; Path=/; Domain=kslegislature.gov; Expires=Sun, 18 Oct 2026 15:32:56 GMT",
+          "strict-transport-security": "max-age=31536000; includeSubDomains",
+          "cf-cache-status": "DYNAMIC",
+          "Server-Timing": "cfCacheStatus;desc=\"DYNAMIC\"",
+          "Speculation-Rules": "\"/cdn-cgi/speculation\"",
+          "CF-RAY": "a4c86d4889e20f1d-ORD"
+        },
+        "redirects": [],
+        "response_body_sha256": "a134ac6647db42257255e10c1a2a8c501e6274b95d4539ce75e62d32993c0486",
+        "response_body_bytes": 60358,
+        "path": "source/statute-25-1136.body.gz",
+        "raw_sha256": "a134ac6647db42257255e10c1a2a8c501e6274b95d4539ce75e62d32993c0486",
+        "raw_bytes": 60358,
+        "stored_sha256": "6d59f155b14ece2a9f7b5ead2777cb541da43303b87e321f66942e743ce0e9ad",
+        "stored_bytes": 14699,
+        "content_decoding": "identity",
+        "stored_path": "data/baselines/source/statute-25-1136.body.gz",
+        "original_bytes": 60358,
+        "original_sha256": "a134ac6647db42257255e10c1a2a8c501e6274b95d4539ce75e62d32993c0486"
+      }
+    },
+    {
+      "ledger": "../data/baselines/source/references.json",
+      "source_object": {
+        "id": "statute-25-1216",
+        "requested_url": "https://www.kslegislature.gov/b2025_26/laws/025_000_0000_chapter/025_012_0000_article/025_012_0016_section/025_012_0016_k/",
+        "parent": "federal services electronic transmission",
+        "retrieved_at_utc": "2026-10-18T15:02:55.745992+00:00",
+        "status": 200,
+        "final_url": "https://www.kslegislature.gov/b2025_26/laws/025_000_0000_chapter/025_012_0000_article/025_012_0016_section/025_012_0016_k/",
+        "headers": {
+          "Date": "Sun, 18 Oct 2026 15:02:56 GMT",
+          "Content-Type": "text/html; charset=utf-8",
+          "Transfer-Encoding": "chunked",
+          "Connection": "close",
+          "Server": "cloudflare",
+          "Cache-Control": "public, s-maxage=3600, stale-while-revalidate=300",
+          "x-frame-options": "DENY",
+          "vary": "Cookie, Accept-Encoding",
+          "x-content-type-options": "nosniff",
+          "referrer-policy": "same-origin",
+          "cross-origin-opener-policy": "same-origin",
+          "set-cookie": "__cf_bm=zfpjE_qtlGJOKDKkdpn_f3GDER24Q_uypBrU9Zf7TUQ-1792335775.9005961-1.0.1.1-4qrWxEfZMUQpdIIP6Fh41H9OUSpwW3jlbwMN5mgCowlsTU6xi9.jXJOZuO7RmBlD51DCEuSw72Nk382GvOAuODX3Pr5WRlJq_i0K3g_vqpHNwtBd3jqUoXD9SDKakfOy; HttpOnly; SameSite=None; Secure; Path=/; Domain=kslegislature.gov; Expires=Sun, 18 Oct 2026 15:32:56 GMT",
+          "strict-transport-security": "max-age=31536000; includeSubDomains",
+          "cf-cache-status": "DYNAMIC",
+          "Server-Timing": "cfCacheStatus;desc=\"DYNAMIC\"",
+          "Speculation-Rules": "\"/cdn-cgi/speculation\"",
+          "CF-RAY": "a4c86d475aa0e21b-ORD"
+        },
+        "redirects": [],
+        "response_body_sha256": "c610277e196f1eac5ea0fbbb7adfc8eae97c9b532ea6b468c52b9599778326a3",
+        "response_body_bytes": 57908,
+        "path": "source/statute-25-1216.body.gz",
+        "raw_sha256": "c610277e196f1eac5ea0fbbb7adfc8eae97c9b532ea6b468c52b9599778326a3",
+        "raw_bytes": 57908,
+        "stored_sha256": "b7843863b8014d9d073db881f57f3cd4c4130c9f58911b2f7f991a87e5112578",
+        "stored_bytes": 14075,
+        "content_decoding": "identity",
+        "stored_path": "data/baselines/source/statute-25-1216.body.gz",
+        "original_bytes": 57908,
+        "original_sha256": "c610277e196f1eac5ea0fbbb7adfc8eae97c9b532ea6b468c52b9599778326a3"
+      }
+    },
+    {
+      "ledger": "../data/baselines/source/references.json",
+      "source_object": {
+        "id": "statute-25-1221",
+        "requested_url": "https://www.kslegislature.gov/b2025_26/laws/025_000_0000_chapter/025_012_0000_article/025_012_0021_section/025_012_0021_k/",
+        "parent": "federal services receipt exception",
+        "retrieved_at_utc": "2026-10-18T15:02:55.613758+00:00",
+        "status": 200,
+        "final_url": "https://www.kslegislature.gov/b2025_26/laws/025_000_0000_chapter/025_012_0000_article/025_012_0021_section/025_012_0021_k/",
+        "headers": {
+          "Date": "Sun, 18 Oct 2026 15:02:55 GMT",
+          "Content-Type": "text/html; charset=utf-8",
+          "Transfer-Encoding": "chunked",
+          "Connection": "close",
+          "Server": "cloudflare",
+          "Cache-Control": "public, s-maxage=3600, stale-while-revalidate=300",
+          "x-frame-options": "DENY",
+          "vary": "Cookie, Accept-Encoding",
+          "x-content-type-options": "nosniff",
+          "referrer-policy": "same-origin",
+          "cross-origin-opener-policy": "same-origin",
+          "set-cookie": "__cf_bm=A2D08B0a8Q_rSph9DowyYzpYwoPY7SR1u0JIxFppoCk-1792335775.7687037-1.0.1.1-lFjQd3tfHBhefeC5UmsbUUV.1sk9whiIbcG69qCj7D3DHWFUuihcs4NJ5oeHaR3YZmec1qVcGGpl3fc0.WWmQXvHC4_b8XpimXeeqw_DbW.jDZOk8Kk6jaFeQtbM_.GV; HttpOnly; SameSite=None; Secure; Path=/; Domain=kslegislature.gov; Expires=Sun, 18 Oct 2026 15:32:55 GMT",
+          "strict-transport-security": "max-age=31536000; includeSubDomains",
+          "cf-cache-status": "DYNAMIC",
+          "Server-Timing": "cfCacheStatus;desc=\"DYNAMIC\"",
+          "Speculation-Rules": "\"/cdn-cgi/speculation\"",
+          "CF-RAY": "a4c86d468b96b165-ORD"
+        },
+        "redirects": [],
+        "response_body_sha256": "6db141f502b68a9537a2d86475aba5924ce9a50e18008219ec578579271c9d4b",
+        "response_body_bytes": 56457,
+        "path": "source/statute-25-1221.body.gz",
+        "raw_sha256": "6db141f502b68a9537a2d86475aba5924ce9a50e18008219ec578579271c9d4b",
+        "raw_bytes": 56457,
+        "stored_sha256": "4832e635bd34c8084e913b0276c1f693af4b9c2fce03f44480de657a1f7ea03c",
+        "stored_bytes": 13668,
+        "content_decoding": "identity",
+        "stored_path": "data/baselines/source/statute-25-1221.body.gz",
+        "original_bytes": 56457,
+        "original_sha256": "6db141f502b68a9537a2d86475aba5924ce9a50e18008219ec578579271c9d4b"
+      }
+    },
+    {
+      "ledger": "../data/baselines/source/references.json",
+      "source_object": {
+        "id": "statute-25-3002",
+        "requested_url": "https://www.kslegislature.gov/b2025_26/laws/025_000_0000_chapter/025_030_0000_article/025_030_0002_section/025_030_0002_k/",
+        "parent": "canvass and write-in rule",
+        "retrieved_at_utc": "2026-10-18T15:02:56.145227+00:00",
+        "status": 200,
+        "final_url": "https://www.kslegislature.gov/b2025_26/laws/025_000_0000_chapter/025_030_0000_article/025_030_0002_section/025_030_0002_k/",
+        "headers": {
+          "Date": "Sun, 18 Oct 2026 15:02:56 GMT",
+          "Content-Type": "text/html; charset=utf-8",
+          "Transfer-Encoding": "chunked",
+          "Connection": "close",
+          "Server": "cloudflare",
+          "Cache-Control": "public, s-maxage=3600, stale-while-revalidate=300",
+          "x-frame-options": "DENY",
+          "vary": "Cookie, Accept-Encoding",
+          "x-content-type-options": "nosniff",
+          "referrer-policy": "same-origin",
+          "cross-origin-opener-policy": "same-origin",
+          "set-cookie": "__cf_bm=YztwYEp1LQ1h2ZtIo45HDlqt0G50_we.ozypczMZYd8-1792335776.3055701-1.0.1.1-8To7nvLZkI6gklzRvF1f36hvbimZnbh4t1VVRMkvGnGmuAGFyX.brA0B_W2khE.YlzM5baVwAmVq7QSHycQhuUPzhyeT2bOw_0aiuxvirreJdH.FY98zFwk8nmEqrS60; HttpOnly; SameSite=None; Secure; Path=/; Domain=kslegislature.gov; Expires=Sun, 18 Oct 2026 15:32:56 GMT",
+          "strict-transport-security": "max-age=31536000; includeSubDomains",
+          "cf-cache-status": "DYNAMIC",
+          "Server-Timing": "cfCacheStatus;desc=\"DYNAMIC\"",
+          "Speculation-Rules": "\"/cdn-cgi/speculation\"",
+          "CF-RAY": "a4c86d49ea3ce81a-ORD"
+        },
+        "redirects": [],
+        "response_body_sha256": "01daa8cf5f656f893dc50c4483de08bff5d9d5b7fd5b081049da4db73d6946d4",
+        "response_body_bytes": 61236,
+        "path": "source/statute-25-3002.body.gz",
+        "raw_sha256": "01daa8cf5f656f893dc50c4483de08bff5d9d5b7fd5b081049da4db73d6946d4",
+        "raw_bytes": 61236,
+        "stored_sha256": "9eb943e00ceb6865a3ec889a337ee9fcf16d7dae88b7f5e0722c25d5c81be558",
+        "stored_bytes": 14900,
+        "content_decoding": "identity",
+        "stored_path": "data/baselines/source/statute-25-3002.body.gz",
+        "original_bytes": 61236,
+        "original_sha256": "01daa8cf5f656f893dc50c4483de08bff5d9d5b7fd5b081049da4db73d6946d4"
+      }
+    },
+    {
+      "ledger": "../data/baselines/source/references.json",
+      "source_object": {
+        "id": "statute-25-702",
+        "requested_url": "https://www.kslegislature.gov/b2025_26/laws/025_000_0000_chapter/025_007_0000_article/025_007_0002_section/025_007_0002_k/",
+        "parent": "general election plurality law",
+        "retrieved_at_utc": "2026-10-18T15:02:55.122906+00:00",
+        "status": 200,
+        "final_url": "https://www.kslegislature.gov/b2025_26/laws/025_000_0000_chapter/025_007_0000_article/025_007_0002_section/025_007_0002_k/",
+        "headers": {
+          "Date": "Sun, 18 Oct 2026 15:02:55 GMT",
+          "Content-Type": "text/html; charset=utf-8",
+          "Transfer-Encoding": "chunked",
+          "Connection": "close",
+          "Server": "cloudflare",
+          "Cache-Control": "public, s-maxage=3600, stale-while-revalidate=300",
+          "x-frame-options": "DENY",
+          "vary": "Cookie, Accept-Encoding",
+          "x-content-type-options": "nosniff",
+          "referrer-policy": "same-origin",
+          "cross-origin-opener-policy": "same-origin",
+          "set-cookie": "__cf_bm=nk.n9sOZTX7QpUBuC7dXeTEiDB6utTk_BAIhusIUTfQ-1792335775.2886872-1.0.1.1-gM7REHmctjwklOVkIsBmvwyQZDHRoiaCzWdbmaOH5ryKbOshHiopA1tKfC4MZgZJQxtpN5s3_MkKucJBVyB6rEDRRThoUyTuM8ZNrEzaNtVnJtoDBVAFfIWNSlqGAgwm; HttpOnly; SameSite=None; Secure; Path=/; Domain=kslegislature.gov; Expires=Sun, 18 Oct 2026 15:32:55 GMT",
+          "strict-transport-security": "max-age=31536000; includeSubDomains",
+          "cf-cache-status": "DYNAMIC",
+          "Server-Timing": "cfCacheStatus;desc=\"DYNAMIC\"",
+          "Speculation-Rules": "\"/cdn-cgi/speculation\"",
+          "CF-RAY": "a4c86d438ebf617f-ORD"
+        },
+        "redirects": [],
+        "response_body_sha256": "6a5fabdb914fcbb6a2948a6c8805c85174b6cb0a63782eb38edef4ca9477a59d",
+        "response_body_bytes": 57380,
+        "path": "source/statute-25-702.body.gz",
+        "raw_sha256": "6a5fabdb914fcbb6a2948a6c8805c85174b6cb0a63782eb38edef4ca9477a59d",
+        "raw_bytes": 57380,
+        "stored_sha256": "4795c4e048e582025c977f2c357f8baca45fd4a99ac6d5e02ca3efb22bd1e593",
+        "stored_bytes": 13963,
+        "content_decoding": "identity",
+        "stored_path": "data/baselines/source/statute-25-702.body.gz",
+        "original_bytes": 57380,
+        "original_sha256": "6a5fabdb914fcbb6a2948a6c8805c85174b6cb0a63782eb38edef4ca9477a59d"
+      }
+    },
+    {
+      "ledger": "../data/baselines/source/references.json",
+      "source_object": {
+        "id": "sumner-2022-actual-linked-summary",
+        "url": "https://co.sumner.ks.us/Documents/Elected Officials/County Clerk and Election Officer/Election Results/official election summary w writeins.pdf?t=202309010533350",
+        "retrieved_at_utc": "2026-10-18T15:20:00.774468+00:00",
+        "status": 200,
+        "final_url": "https://webgen1files1.revize.com/sumnercountryks/Documents/Elected%20Officials/County%20Clerk%20and%20Election%20Officer/Election%20Results/official%20election%20summary%20w%20writeins.pdf?t=202309010533350",
+        "raw_sha256": "05018ae6d6a87e84778f0e34238fe6bca4c407a66dd99e4d5d2d418329b7be6e",
+        "asset": "sumner-2022-actual-linked-summary.html.gz",
+        "stored_sha256": "bd60a5f2c0f5a33cbc026480730e91dc7d8603375a7c8f9f33fd339a119e704a",
+        "bytes": 98052,
+        "headers": {
+          "Date": "Sun, 18 Oct 2026 15:20:01 GMT",
+          "Content-Type": "application/pdf",
+          "Content-Length": "98052",
+          "Connection": "keep-alive",
+          "Last-Modified": "Wed, 05 Nov 2025 02:21:47 GMT",
+          "Accept-Ranges": "bytes",
+          "ETag": "\"85e7eceffa4ddc1:0\"",
+          "X-Request-Id": "df9e32baad521e8f84dd8a196d3a060d",
+          "cf-cache-status": "DYNAMIC",
+          "Server": "cloudflare",
+          "CF-RAY": "a4c8864eb80c10dd-ORD"
+        },
+        "stored_path": "data/news/sumner-2022-actual-linked-summary.html.gz",
+        "stored_bytes": 83660,
+        "original_bytes": 98052,
+        "original_sha256": "05018ae6d6a87e84778f0e34238fe6bca4c407a66dd99e4d5d2d418329b7be6e",
+        "requested_url": "https://co.sumner.ks.us/Documents/Elected Officials/County Clerk and Election Officer/Election Results/official election summary w writeins.pdf?t=202309010533350",
+        "parent": "sumner-archive → literal 2022 PDF href with query; official redirect to linked Revize storage"
+      }
+    },
+    {
+      "ledger": "../data/baselines/source/references.json",
+      "source_object": {
+        "id": "sumner-2022-county-summary-candidate",
+        "url": "https://webgen1files1.revize.com/sumnercountryks/Documents/Elected%20Officials/County%20Clerk%20and%20Election%20Officer/Election%20Results/official%20election%20summary%20w%20writeins.pdf",
+        "retrieved_at_utc": "2026-10-18T15:18:01.198746+00:00",
+        "status": 200,
+        "final_url": "https://webgen1files1.revize.com/sumnercountryks/Documents/Elected%20Officials/County%20Clerk%20and%20Election%20Officer/Election%20Results/official%20election%20summary%20w%20writeins.pdf",
+        "raw_sha256": "05018ae6d6a87e84778f0e34238fe6bca4c407a66dd99e4d5d2d418329b7be6e",
+        "asset": "sumner-2022-county-summary-candidate.html.gz",
+        "stored_sha256": "bd60a5f2c0f5a33cbc026480730e91dc7d8603375a7c8f9f33fd339a119e704a",
+        "bytes": 98052,
+        "headers": {
+          "Date": "Sun, 18 Oct 2026 15:18:01 GMT",
+          "Content-Type": "application/pdf",
+          "Content-Length": "98052",
+          "Connection": "keep-alive",
+          "Last-Modified": "Wed, 05 Nov 2025 02:21:47 GMT",
+          "Accept-Ranges": "bytes",
+          "ETag": "\"85e7eceffa4ddc1:0\"",
+          "X-Request-Id": "8bb1d037b9f6b4bad39937d97437af34",
+          "cf-cache-status": "DYNAMIC",
+          "Server": "cloudflare",
+          "CF-RAY": "a4c8836279bd2986-ORD"
+        },
+        "stored_path": "data/news/sumner-2022-county-summary-candidate.html.gz",
+        "stored_bytes": 83660,
+        "original_bytes": 98052,
+        "original_sha256": "05018ae6d6a87e84778f0e34238fe6bca4c407a66dd99e4d5d2d418329b7be6e",
+        "requested_url": "https://webgen1files1.revize.com/sumnercountryks/Documents/Elected%20Officials/County%20Clerk%20and%20Election%20Officer/Election%20Results/official%20election%20summary%20w%20writeins.pdf",
+        "parent": "Alternative primary Revize route; exact original hash independently equals sumner-2022-actual-linked-summary"
+      }
+    },
+    {
+      "ledger": "../data/baselines/source/references.json",
+      "source_object": {
+        "id": "sumner-archive",
+        "url": "https://co.sumner.ks.us/elected_officials/county_clerk_and_election_officer/election_results.php",
+        "retrieved_at_utc": "2026-10-18T15:19:17.462282+00:00",
+        "status": 200,
+        "final_url": "https://co.sumner.ks.us/elected_officials/county_clerk_and_election_officer/election_results.php",
+        "raw_sha256": "0a6fbbb61df330a6ec8f656217c72882719b994503b268212dd952b60079e3fc",
+        "asset": "sumner-archive.html.gz",
+        "stored_sha256": "96e027f469c4c3773c18ee96ca633fccaa35e8e950518dcfce20f17f445d7b38",
+        "bytes": 203158,
+        "headers": {
+          "Date": "Sun, 18 Oct 2026 15:19:17 GMT",
+          "Content-Type": "text/html; charset=UTF-8",
+          "Content-Length": "33721",
+          "Connection": "keep-alive",
+          "Content-Encoding": "gzip",
+          "Vary": "Accept-Encoding",
+          "Content-Security-Policy": "frame-ancestors 'self'",
+          "Referrer-Policy": "no-referrer-when-downgrade",
+          "X-Content-Type-Options": "nosniff",
+          "X-Frame-Options": "SAMEORIGIN",
+          "X-Permitted-Cross-Domain-Policies": "none",
+          "X-XSS-Protection": "1; mode=block"
+        },
+        "stored_path": "data/news/sumner-archive.html.gz",
+        "stored_bytes": 17083,
+        "original_bytes": 203158,
+        "original_sha256": "0a6fbbb61df330a6ec8f656217c72882719b994503b268212dd952b60079e3fc",
+        "requested_url": "https://co.sumner.ks.us/elected_officials/county_clerk_and_election_officer/election_results.php",
+        "parent": "sumner-election-office → Election Results archive"
+      }
+    },
+    {
+      "ledger": "../data/baselines/source/references.json",
+      "source_object": {
+        "id": "sumner-county-home",
+        "url": "https://co.sumner.ks.us/",
+        "retrieved_at_utc": "2026-10-18T15:18:01.411150+00:00",
+        "status": 200,
+        "final_url": "https://co.sumner.ks.us/",
+        "raw_sha256": "56cb3afad8578e25949b2170f9bd91a26e60a2cd3f7fe9fdd7be44b5506e07fd",
+        "asset": "sumner-county-home.html.gz",
+        "stored_sha256": "3baffeec02fecdff25ad34fdf0c118750559f20bc5ffbdbaadc2ba91c1e48976",
+        "bytes": 57655,
+        "headers": {
+          "Date": "Sun, 18 Oct 2026 15:18:01 GMT",
+          "Content-Type": "text/html; charset=UTF-8",
+          "Content-Length": "14122",
+          "Connection": "keep-alive",
+          "Content-Encoding": "gzip",
+          "Vary": "Accept-Encoding",
+          "Content-Security-Policy": "frame-ancestors 'self'",
+          "Referrer-Policy": "no-referrer-when-downgrade",
+          "X-Content-Type-Options": "nosniff",
+          "X-Frame-Options": "SAMEORIGIN",
+          "X-Permitted-Cross-Domain-Policies": "none",
+          "X-XSS-Protection": "1; mode=block"
+        },
+        "stored_path": "data/news/sumner-county-home.html.gz",
+        "stored_bytes": 10859,
+        "original_bytes": 57655,
+        "original_sha256": "56cb3afad8578e25949b2170f9bd91a26e60a2cd3f7fe9fdd7be44b5506e07fd",
+        "requested_url": "https://co.sumner.ks.us/",
+        "parent": "Sumner County Kansas official authority root"
+      }
+    },
+    {
+      "ledger": "../data/baselines/source/references.json",
+      "source_object": {
+        "id": "sumner-election-office",
+        "url": "https://co.sumner.ks.us/elected_officials/county_clerk_and_election_officer/election_office/index.php",
+        "retrieved_at_utc": "2026-10-18T15:19:00.255243+00:00",
+        "status": 200,
+        "final_url": "https://co.sumner.ks.us/elected_officials/county_clerk_and_election_officer/election_office/index.php",
+        "raw_sha256": "97e9bdb5cff49310493b92a5bbef1e499520e2af55a42a0abd5a19f80a5051a3",
+        "asset": "sumner-election-office.html.gz",
+        "stored_sha256": "a52d00ed498813b8ad383bde67c7889c80b5348854a187ba7077185c8fd00cab",
+        "bytes": 58987,
+        "headers": {
+          "Date": "Sun, 18 Oct 2026 15:19:00 GMT",
+          "Content-Type": "text/html; charset=UTF-8",
+          "Content-Length": "14997",
+          "Connection": "keep-alive",
+          "Content-Encoding": "gzip",
+          "Vary": "Accept-Encoding",
+          "Content-Security-Policy": "frame-ancestors 'self'",
+          "Referrer-Policy": "no-referrer-when-downgrade",
+          "X-Content-Type-Options": "nosniff",
+          "X-Frame-Options": "SAMEORIGIN",
+          "X-Permitted-Cross-Domain-Policies": "none",
+          "X-XSS-Protection": "1; mode=block"
+        },
+        "stored_path": "data/news/sumner-election-office.html.gz",
+        "stored_bytes": 12206,
+        "original_bytes": 58987,
+        "original_sha256": "97e9bdb5cff49310493b92a5bbef1e499520e2af55a42a0abd5a19f80a5051a3",
+        "requested_url": "https://co.sumner.ks.us/elected_officials/county_clerk_and_election_officer/election_office/index.php",
+        "parent": "sumner-county-home → County Clerk and Election Officer / Election Office"
+      }
+    },
+    {
+      "ledger": "../data/baselines/source/references.json",
+      "source_object": {
+        "id": "turnout-2022",
+        "requested_url": "https://www.sos.ks.gov/elections/22elec/2022-General-Election-Turnout-Information.xlsx",
+        "final_url": "https://www.sos.ks.gov/elections/22elec/2022-General-Election-Turnout-Information.xlsx",
+        "parent": "current-results-index: 2022 General Election Turnout Information",
+        "retrieved_at_utc": "2026-10-18T14:58:03.585362+00:00",
+        "status": 200,
+        "headers": {
+          "Server": "CloudFront",
+          "Content-Type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+          "Content-Length": "13851",
+          "Connection": "close",
+          "Last-Modified": "Thu, 06 Jul 2023 15:46:40 GMT",
+          "Accept-Ranges": "bytes",
+          "X-Content-Type-Options": "nosniff",
+          "X-Frame-Options": "SAMEORIGIN",
+          "X-Xss-Protection": "1; mode=block",
+          "Strict-Transport-Security": "max-age=6000; includeSubDomains",
+          "Date": "Sun, 18 Oct 2026 14:58:03 GMT",
+          "ETag": "\"0b08e21b0d91:0\"",
+          "X-Cache": "Miss from cloudfront",
+          "Via": "1.1 b2a720e38a1519c0300435cfbe6691c8.cloudfront.net (CloudFront)",
+          "X-Amz-Cf-Pop": "MCI50-P2",
+          "X-Amz-Cf-Id": "9OSvwwW1Zssq3uCR_OUzG2zmaoC84I1XS5CFzta8MkJUU8smQLs4MQ=="
+        },
+        "redirects": [],
+        "response_body_sha256": "a41d62357b685607aac6af19aa5dd74bc86ffe5fe7d4eda15a59c341acb3a307",
+        "response_body_bytes": 13851,
+        "content_decoding": "identity",
+        "raw_sha256": "a41d62357b685607aac6af19aa5dd74bc86ffe5fe7d4eda15a59c341acb3a307",
+        "raw_bytes": 13851,
+        "path": "source/turnout-2022.body.gz",
+        "stored_sha256": "9f69719810949552a62da893516f7d54fc81405c8ba6c4fbd98c96e9ec696bf4",
+        "stored_bytes": 11283,
+        "stored_path": "data/turnout/source/turnout-2022.body.gz",
+        "original_bytes": 13851,
+        "original_sha256": "a41d62357b685607aac6af19aa5dd74bc86ffe5fe7d4eda15a59c341acb3a307"
+      }
+    }
+  ],
+  "no_current_geography_approval": true
+}

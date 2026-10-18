@@ -1,0 +1,34 @@
+{
+  "volume_bases": {
+    "low": {
+      "source": "senate_2022",
+      "named_votes": 1004956,
+      "pair_votes": 975190
+    },
+    "base": {
+      "source": "president_2024",
+      "named_votes": 1327591,
+      "pair_votes": 1303655
+    },
+    "high": {
+      "source": "senate_2020",
+      "named_votes": 1367755,
+      "pair_votes": 1299492
+    }
+  },
+  "definition": "low/base/high order is historical named contest volume; pair participation and county mix are source-specific, not a2026 projection",
+  "preference_anchors": [
+    "president_2024",
+    "senate_2022",
+    "senate_2020"
+  ],
+  "goals_pair_margin_pp": [
+    0,
+    1
+  ],
+  "scale": 1,
+  "others_share_shift_pp": 0,
+  "pair_weight_definition": "historical county pair votes in selected volume source divided by all105 county pair votes",
+  "other_candidate_handling": "retain nonpair historical candidate counts from volume source separately; no transfers or2026 ballot mapping",
+  "composition_only": "additional 2022/2020 pair mixes rescaled to2024 statewide pair total; every county retained"
+}

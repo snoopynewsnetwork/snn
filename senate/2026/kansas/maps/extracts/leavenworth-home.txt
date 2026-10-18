@@ -1,0 +1,809 @@
+
+
+ 
+ 
+ 
+
+	 
+
+ 
+ 
+ 
+
+
+
+
+
+ 
+	 Welcome to Leavenworth County, KS 
+	 
+	 
+	 
+	 
+	 
+
+
+
+
+
+
+
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+
+
+ 
+
+ 
+ 
+ 
+ 
+
+
+ 
+
+
+ 
+ 
+ 
+ 
+ 
+
+
+
+	 
+ 
+ 
+ 
+ 
+ 
+	var defaultCalendarColor = "#3788d8";
+	var ImportCals = [];
+	var calendarProps = {'1' : { 'color' : '#3787d8' , 'name' : 'Master' },
+'2' : { 'color' : '#3787d8' , 'name' : 'Meetings' },
+'4' : { 'color' : '#47b9c2' , 'name' : 'Events' },
+'5' : { 'color' : '#80b9f2' , 'name' : 'Planning Commission' },
+'11' : { 'color' : '#c6bf48' , 'name' : 'Council on Aging' },
+};
+	var RZCalendarTimezone = "";
+ 
+
+
+
+
+
+
+ 
+
+ 
+ 
+
+
+
+
+ 
+if (typeof(RZ) == 'undefined') RZ = {};
+if (!RZ.link) RZ.link = new Object();
+RZ.pagetype = 'template'
+RZ.baseurlprefix = ''
+RZ.baseurlpath = ''
+RZ.protocolRelativeRevizeBaseUrl='//cms5.revize.com'
+
+RZ.pagetemplatename = 'index'
+RZ.pagetemplateid = '23'
+RZ.pagemodule = ''
+RZ.pagemoduleid = ''
+RZ.pagerecordid = '';
+
+RZ.pageid = 'index';
+RZ.pageparentid = '';
+RZ.pagesectionid = '0';
+RZ.pagesectionname = 'Home Page';
+RZ.pagesectionlevel = '0';
+RZ.pagesectionfolder = '';
+RZ.pagesectionfilter = 'sectionid=0';
+RZ.pagelinkfilter = 'linklevel=0 and linksectionid=0';
+RZ.pagelinklevel = '0';
+RZ.pagelinkid = '-1';
+RZ.pageidfield = '';
+
+RZ.isnewrecord = false;
+RZ.editmodule = '';
+RZ.editrecordid = '';
+RZ.editrecordversion = '';
+RZ.editversion = '';
+RZ.editaction = '';
+
+RZ.page_roles = ''
+RZ.page_users = 'cf3dbf1d3b883b49a9d8defcedaae603e92eb19b28fe5754d6a7b0bc58facabd|797ff9f7981a699fdec1bd61c7baf7bef81e4456fc0e8f909efab65851ba0b53|e6fcc0fc923c5b533e5b741c9fe5efd34e3c5b3cad5b020bf037d8cd7686a1d6|fddb23a970ca1f7734f12460a0401ee0c68b926d64f0c5d585236c6486b94dae|bd3739c08b3534f801bb8faf76ead76af9725a7cdc8c2739a7bb7c4021a1eb11'
+RZ.page_key = 'index[]'
+RZ.parent_key = ''
+RZ.inherit_key = 'index[]'
+RZ.workflowname = ''
+RZ.permissions_options = 'warningsOFF'
+RZ.permissions_module = 'webspace_page_permissions'
+RZ.webspace = 'leavenworthcounty'
+RZ.webspacedesc = "";
+
+RZ.featurespattern = '(EZ)';
+null
+
+RZ.webspacelinksurl = ''
+RZ.webspacelinksurl = './webspace/links.html'
+RZ.workflowlist = 'New Workflow 1'
+RZ.revizeserverurl = 'https://cms5.revize.com/revize/leavenworthcounty';
+
+if (!RZ.nextseq) RZ.nextseq = {linknames:{},modules:{}};
+
+RZ.webspace_config = new Object();
+RZ.webspace_config.admin_email = "noreply@leavenworthcounty.gov";
+RZ.webspace_config.calendar_options = "max_events=6";
+RZ.webspace_config.form_captcha = "yes";
+RZ.webspace_config.form_server = "revizeserver";
+RZ.webspace_config.form_technology = "jsp";
+RZ.webspace_config.formwizard_ftp_password = "";
+RZ.webspace_config.formwizard_ftp_port = "";
+RZ.webspace_config.formwizard_ftp_server = "";
+RZ.webspace_config.formwizard_ftp_user = "";
+RZ.webspace_config.formwizard_setup = "yes";
+RZ.webspace_config.formwizard_smtp_password = "xxx";
+RZ.webspace_config.formwizard_smtp_server = "xxx";
+RZ.webspace_config.formwizard_smtp_user = "xxx";
+RZ.webspace_config.google_analytics = "";
+RZ.webspace_config.home_pageid = "0";
+RZ.webspace_config.home_sectionid = "0";
+RZ.webspace_config.home_template = "home,index,sitemap";
+RZ.webspace_config.icon_email = "<img src=https://www.leavenworthcounty.gov/\"/revize/images/email_icon_yellow.gif\" width=\"16\" border=\"0\" height=\"17\" title=\"Request email notification when page changes\" alt=\"Request email notification when page changes\" style=\"\" />";
+RZ.webspace_config.image_maxheight = "3000";
+RZ.webspace_config.image_maxwidth = "3000";
+RZ.webspace_config.image_setup = "yes";
+RZ.webspace_config.livesite_url = "";
+RZ.webspace_config.menu_links_module = "links";
+RZ.webspace_config.menu_newsection = "";
+RZ.webspace_config.menu_nexturl = "webspace_menu-editform.jsp";
+RZ.webspace_config.menu_sections_module = "sections";
+RZ.webspace_config.menu_system = "custom";
+RZ.webspace_config.menu_version = "1.00";
+RZ.webspace_config.new_menu_manager_enabled = "yes";
+RZ.webspace_config.notify_options = "hide_text=no";
+RZ.webspace_config.notify_return_url = "enotify/index.php";
+RZ.webspace_config.rte_setup = "yes";
+RZ.webspace_config.to_email = "webpageupdate_subscribers@leavenworthcounty.gov";
+RZ.webspace_config.use_folders = "1";
+
+RZ.isauthenticationactive = true
+RZ.warning = ""
+RZ.adminwinmsg = null
+
+RZ.channels = 'revize,production';
+RZ.jsversion = 1.2 
+ 
+
+
+
+
+
+
+
+
+
+
+ 
+
+	 Skip to main content 
+	 
+		
+		 
+			 
+				 
+					 
+				 
+				 
+					 
+					 
+				 
+				 
+					
+											 
+							 
+								RZ.module = 'revize_topnav';
+								RZ.nexturl = "/revize/plugins/menus/webspace_menu-editlist.jsp?pageid=header&"
+									+ "linksfilter=linkplacement=topnav and linkparentid=0&"
+									+ "numb	eroflevels=3&"
+									+ "linkoptions=url,template,file&"
+									+ "linknewsection=*all*";
+								RZ.img = '<span class="rzBtn ">Edit Top Nav</span>';
+								RZ.caption = '';
+								RZ.set="links.linkplacement=topnav";
+								RZ.options = '';
+								if (typeof RZaction != 'undefined') RZaction('editlist');
+							   	
+							 
+								RZ.module = 'global';
+								RZ.nexturl = 'editforms/social-editform.jsp?';
+								RZ.img = '<span class="rzBtn">Edit Social</span>';
+								RZ.set = 'pageid=social';
+								RZ.options = '';
+								if (typeof RZaction != 'undefined') RZaction('editform');
+							 				
+						 
+					 
+					
+
+
+
+
+
+
+
+ 
+ 
+	 Home 
+	 Government 
+		 
+			 County Commission 
+				 
+					 Commissioners 
+				 
+			 
+			 County Clerk's Office 
+				 
+					 Elections 
+				 
+			 
+			 County Attorney's Office 
+			 Register of Deeds Office 
+			 County Treasurer's Office 
+			 Sheriff's Office 
+		 
+	 
+	 Departments 
+		 
+			 Administration 
+			 Appraiser's Office 
+			 Buildings & Grounds 
+			 Community Corrections 
+			 Council on Aging 
+			 District Court 
+			 EMS 
+			 GIS 
+			 Health Department 
+			 Human Resources 
+			 Information Systems 
+			 Planning & Zoning 
+			 Public Works 
+				 
+					 Noxious Weed 
+					 Survey Office 
+				 
+			 
+			 Transfer Station 
+		 
+	 
+	 Information 
+		 
+			 Phone Directory 
+			 Citizen Request Center 
+			 Public Service Request 
+			 Job Openings 
+			 Bid Notices 
+			 Tax Sale 
+			 Project Status Updates 
+			 Live Webcam 
+			 Fire Districts & Stations Information 
+			 Americans with Disabilities Act Coordinator 
+		 
+	 
+	 How Do I? 
+		 
+			 Contact Us 
+			 Public Service Request 
+			 Citizen Request Center 
+			 Request Open Records 
+		 
+	 
+ 
+
+
+
+
+
+
+				 
+				 
+					 
+						 
+							 
+								
+								
+								 
+								
+								 
+								
+								 
+							 
+								 
+									 Search Leavenworth County Kansas 
+									 
+									 
+								 
+							 
+						 
+					 
+				 
+			 
+		 
+	 
+ 
+
+
+
+ 
+if (typeof RZlistbegin != 'undefined') RZlistbegin(1)
+ 
+
+	
+         
+			
+		
+	
+         
+			
+		
+	
+ 
+if (typeof RZlinktemplate != 'undefined') RZlinktemplate('slider','','')
+if (typeof RZ.nextseq != 'undefined') RZ.nextseq.modules['slider_1']={field:'seq_no',seq:'3.00'};
+ 
+
+
+ 
+	
+         
+         
+         
+        	 
+
+   		
+ 
+
+ 
+	 
+		RZ.module = 'slider';
+		RZ.nexturl = 'editforms/slider_images-editlist.jsp?width=1700&height=686&pageid=index';
+		RZ.img = '<span class="rzBtn">Edit Slides</span>';
+		RZ.set = '';
+		RZ.options = '';
+		if (typeof RZaction != 'undefined') RZaction('editform');
+	 
+
+		
+		 
+			RZ.module = 'slider';
+			RZ.recordid = '';
+			RZ.nexturl = "editforms/slider_video-editform.jsp";
+			RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = '';
+			RZ.img = '<span class="rzBtn" style="">Edit Video</span>';
+			RZ.set = "pageid=slidervideo";        
+			RZ.options = '';
+			if (typeof RZaction != 'undefined') RZaction('editform');
+		 	
+		 
+			RZ.module = 'freeform';
+			RZ.recordid = '';
+			RZ.nexturl = "editforms/metadata-editform.jsp";
+			RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = '';
+			RZ.img = '<span class="rzBtn" style="">Edit Metadata</span>';
+			RZ.set = "freeform.pageid=index";        
+			RZ.options = '';
+			if (typeof RZaction != 'undefined') RZaction('editform');
+		 
+		 
+			RZ.nexturl = '';
+			RZ.img = '<span class="rzAdmin"><img src="https://www.leavenworthcounty.gov/images/edit/permissions.jpg" alt="Permissions" border="0" class="rzBtn" /></span>';
+			RZ.options = '';
+			if (typeof RZaction != 'undefined') RZaction('permissions');
+		         		
+			
+ 
+
+ 
+	 Welcome to Leavenworth County Kansas 
+	 
+		 
+			 
+				 
+					RZ.module = 'global';
+					RZ.recordid = '';
+					RZ.nexturl = "editforms/text-editform.jsp";
+					RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = 'no';
+					RZ.img = '<span class="rzBtn" style="">Edit Header</span>';
+					RZ.set = 'pageid=qlinksheader';
+					RZ.options = '';
+					if (typeof RZaction != 'undefined') RZaction('editform');
+				 
+				 
+					RZ.module = 'quick_links';
+					RZ.nexturl = 'editforms/quick_links-editlist.jsp?pageid=index&width=27&height=30';
+					RZ.img = '<span class="rzBtn">Edit QuickLinks</span>';
+					RZ.set = '';
+					RZ.options = '';
+					if (typeof RZaction != 'undefined') RZaction('editform');
+				 
+			 	
+			 
+				
+				 How Can We Help? 
+				 
+					 
+						 
+						
+							 
+								  
+								 
+
+								 
+									 
+										 
+											 
+										 
+										 Events Calendar 
+									 
+								 
+							
+						
+							 
+								  
+								 
+
+								 
+									 
+										 
+											 
+										 
+										 Agendas & Minutes 
+									 
+								 
+							
+						
+						  
+					 
+				 
+			 
+		 
+	 
+	
+	 
+		 
+			 
+				 
+					 
+						 
+							RZ.module = 'global';
+							RZ.recordid = '';
+							RZ.nexturl = "editforms/header-editform.jsp";
+							RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = 'no';
+							RZ.img = '<span class="rzBtn" style="">Edit News Header</span>';
+							RZ.set = 'pageid=newsheader';
+							RZ.options = '';
+							if (typeof RZaction != 'undefined') RZaction('editform');
+						 
+						 
+							RZ.module = 'news';
+							RZ.nexturl = "editforms/news-editlist.jsp?width=406&height=250&pageid=main";
+							RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = '';
+							RZ.img = '<span class="rzBtn" style="">Edit News List</span>';
+							RZ.caption = '';
+							RZ.options = '';
+							if (typeof RZaction != 'undefined') RZaction('editlist');
+						 
+					 	
+					
+					 
+						 Latest News 
+						 View More Archive 
+					 
+				 
+				 
+					 
+						
+						
+							 
+								 
+								  
+								
+								 
+
+								 
+								  
+
+								 
+									 
+										 
+										 
+											 October 08 
+											 											 U.S. SMALL BUSINESS ADMINISTRATION FACT SHEET - DISASTER LOANS 
+											 
+
+											
+											  U.S. SMALL BUSINESS ADMINISTRATION FACT SHEET - DISASTER LOANS   
+											
+											
+											
+											 read more  
+											
+
+										 
+									 
+								 
+							      
+						
+							 
+								 
+								  
+								
+								 
+
+								 
+								  
+
+								 
+									 
+										 
+										 
+											 August 04 
+											 											 Leavenworth County Election Live Results 
+											 
+
+											
+											 Click here to view Live Voter Turnout 
+											
+											
+											
+
+										 
+									 
+								 
+							      
+						
+						
+					 
+				 
+			 
+		 
+	 		
+
+
+	  
+	 
+		 
+			 
+				 
+					 
+						 
+							 
+								RZ.module = 'global';
+								RZ.recordid = '';
+								RZ.nexturl = "editforms/header-editform.jsp?width=1728&height=895";
+								RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = 'no';
+								RZ.img = '<span class="rzBtn" style="">Edit Header</span>';
+								RZ.set = 'pageid=eventsheader';
+								RZ.options = '';
+								if (typeof RZaction != 'undefined') RZaction('editform');
+							 
+						 
+						
+						 Upcoming  Events 
+						 View Full Calendar 
+					 
+				 
+				 
+					 
+				 	
+			 
+		 
+	 
+
+	
+
+
+
+
+
+ 
+	 
+				 
+			 
+				RZ.module = 'global';
+				RZ.recordid = '';
+				RZ.nexturl = "editforms/newsletter-editform.jsp?width=1728&height=895";
+				RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = 'no';
+				RZ.img = '<span class="rzBtn" style="">Edit Header</span>';
+				RZ.set = 'pageid=newsletter';
+				RZ.options = '';
+				if (typeof RZaction != 'undefined') RZaction('editform');
+			 
+		 
+				 
+			
+			 SIGN-UP FOR ALERTS 
+			 
+
+			
+			 Subscribe Now 
+			
+		 
+	 
+ 
+	
+ 
+
+
+
+
+
+
+   
+    
+   
+    RZ.module = 'alert';
+    RZ.nexturl = "editforms/alert-editform.jsp";
+    RZ.img = '<span class="rzBtn">Edit Alert</span>';
+    RZ.set = 'alert.pageid=alert';
+    RZ.options = '';
+    if (typeof RZaction != 'undefined') RZaction('editform');
+   
+   
+
+ 
+
+
+
+
+
+
+
+
+		
+
+ 
+	 
+				 
+			 
+				RZ.module = 'global';
+				RZ.nexturl = 'editforms/contact-editform.jsp?';
+				RZ.img = '<span class="rzBtn noPush">Edit Contact</span>';
+				RZ.set = 'pageid=footercontact';
+				RZ.options = '';
+				if (typeof RZaction != 'undefined') RZaction('editform');
+			 						
+		 
+				
+		 
+			 
+				 
+					 
+						
+						 
+							 
+						 
+						 
+							 COUNTY HOURS 
+							 Mon-Fri: 8:00AM - 5:00PM 
+						 
+						
+					 
+				 
+				 
+					 
+						
+						 
+							 
+						 
+						 
+							 COUNTY ADDRESS 
+							 300 Walnut Street  Leavenworth, KS 66048 
+						 
+						
+					 
+				 
+				 
+					 
+						
+						 
+							 
+						 
+						 
+							 COUNTY DIRECTORY! 
+							 View County Directory! 
+						 
+						
+					 
+				 
+			 
+		 
+		 
+			 
+								 
+					 
+						RZ.module = 'global';
+						RZ.nexturl = 'editforms/text-editform.jsp?';
+						RZ.img = '<span class="rzBtn noPush">Edit Copyright</span>';
+						RZ.set = 'pageid=copyright';
+						RZ.options = '';
+						if (typeof RZaction != 'undefined') RZaction('editform');
+					 						
+				 
+								 
+					© Leavenworth County, KS. All Rights Reserved.
+				 
+				 
+				Powered by  revize.,  the Government Website Experts  Login 
+				 
+			 
+		 
+	 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+ 
+
+
+
+
+	 
+   
+     
+	   
+		   
+			 
+			 
+		   
+       
+	   
+		  
+		  
+		  
+		  
+	   
+       
+         Close 
+         Read More 
+       
+     
+   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+

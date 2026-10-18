@@ -1,0 +1,42 @@
+{
+  "status": "pass",
+  "peer_actual_id": "78f9c3c0-062f-41f7-87c0-f0a6443f8877",
+  "scope": "independent read-only comparison of all105 counties, all shared candidate/method scope, raw values, party headers, all22031 native contexts and full numeric native orders",
+  "county_fields_compared": 2415,
+  "county_count": 105,
+  "native_unit_count": 22031,
+  "shared_observations_compared": 120879,
+  "primary2026_county_candidate_values_compared": 1365,
+  "complete_raw_rows_compared": 94008,
+  "full_county_order_agrees": true,
+  "native_order_ties": "descending named integers, county FIPS, sheet, exact ordered source rows; unknowns unranked",
+  "method_scope": "Both extracts report combined/not separately published; no candidate-by-method counts exist in the shared statewide originals",
+  "additional_turnout_fields": "Sedgwick2020 reported contest Total Votes Cast269 native rows plus county footer are retained in turnout extracts; peer raw-rows preserves them but native-candidates excludes this noncandidate field",
+  "party_header_context": "All original raw row cells including party headers agree exactly. Peer source_party includes preceding header values NON, -, VOTE FOR 1; turnout retains header contexts separately from verified party identity and candidate-label prefixes.",
+  "mismatches": [],
+  "peer_assets": [
+    {
+      "path": "data/county-baselines.csv",
+      "sha256": "5f6c140c8f418b598eacd49576c2e6fa77f92dda186cc46bc941710b802f24ab",
+      "bytes": 59269
+    },
+    {
+      "path": "data/baselines/native-candidates.csv.gz",
+      "sha256": "d30f6d6a441101b20ea4eb230d43b65364452a1bcf346251949f469d47e8538b",
+      "bytes": 2112268
+    },
+    {
+      "path": "data/baselines/native-units.jsonl.gz",
+      "sha256": "4984a51e81bb40e80a7b07a1fd35fb6032f45cee1888436a6f2eeaf64abd9585",
+      "bytes": 1985010
+    },
+    {
+      "path": "data/baselines/native-coverage.csv",
+      "sha256": "a613b49ecfa382ab69f3d061650855057f66fca2005cd71cb336f7e916d232e0",
+      "bytes": 1514
+    }
+  ],
+  "turnout_csv_sha256": "44ff0242c75a5c310a15ff705138cd93a86365bcc622301fc49c05c9133a8993",
+  "coordinator_acceptance": false,
+  "geographic_approval": "This comparison does not approve current November2026 IDs or boundaries."
+}

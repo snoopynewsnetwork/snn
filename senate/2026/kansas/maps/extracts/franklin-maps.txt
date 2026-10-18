@@ -1,0 +1,2308 @@
+
+ 
+ 
+ 
+
+	 
+ 
+				 (function(w,d,s,l,i){w.GAMeasurementID='G-CC0SPV68ZJ';w[l]=w[l]||[];w[l].push({'gtm.start':
+				new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+				j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+				'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+				})(window,document,'script','cpDataLayerGA4','GTM-K73C5PS'); 
+				 
+				 
+					var enableTelemetry = 'false'
+					var aiConfig = {
+					instrumentationKey: '1cde048e-3185-4906-aa46-c92a7312b60f'						
+					}
+					var appInsights = window.appInsights || function (a) { function b(a) { c[a] = function () { var b = arguments; c.queue.push(function () { c[a].apply(c, b) }) } } var c = { config: a }, d = document, e = window; setTimeout(function () { var b = d.createElement('script'); b.src = a.url || 'https://js.monitor.azure.com/scripts/a/ai.0.js', d.getElementsByTagName('script')[0].parentNode.appendChild(b) }); try { c.cookie = d.cookie } catch (a) { } c.queue = []; for (var f = ['Event', 'Exception', 'Metric', 'PageView', 'Trace', 'Dependency']; f.length;)b('track' + f.pop()); if (b('setAuthenticatedUserContext'), b('clearAuthenticatedUserContext'), b('startTrackEvent'), b('stopTrackEvent'), b('startTrackPage'), b('stopTrackPage'), b('flush'), !a.disableExceptionTracking) { f = 'onerror', b('_' + f); var g = e[f]; e[f] = function (a, b, d, e, h) { var i = g && g(a, b, d, e, h); return !0 !== i && c['_' + f](a, b, d, e, h), i } } return c }(aiConfig);
+					window.appInsights = appInsights, appInsights.queue && 0 === appInsights.queue.length;
+					// Add telemetry initializer
+					appInsights.queue.push(function() {
+						appInsights.context.addTelemetryInitializer(function(envelope) {
+							var telemetryItem = envelope.data.baseData;
+							// To check the telemetry item’s type:
+							if (!false)
+							{
+								//If the telemetry is not enabled, we still want to capture Google map custom event, so only allow that
+								if (envelope.name.indexOf('.Event') == -1)
+									return false;
+							}
+						});
+					});						
+					appInsights.trackPageView();
+				 
+	 
+		function populateAntiForgery(token) {
+			var input = document.createElement("input");
+			input.name = "__RequestVerificationToken";
+			input.type = "hidden";
+			input.value = token;
+			var absPat = /^https?:\/\/|^\/\//i;
+			var forms = document.getElementsByTagName("form");
+			for (var i = 0; i < forms.length; i++) {
+				if (forms[i].method == "post" &&
+					!forms[i].querySelector('[name="__RequestVerificationToken"]') &&
+					!absPat.test(forms[i].getAttribute("action"))) {
+					forms[i].appendChild(input.cloneNode());
+				}
+			}
+		}
+
+		function getAntiForgeryToken(callback, error) {
+			var xhr = new XMLHttpRequest();
+			xhr.open("GET", "/antiforgery");
+			xhr.addEventListener("load", function() {
+				try {
+					if (this.status !== 200) {
+						throw Error("Invalid status. Could not retrieve antiforgery token.");
+					}
+					var obj = JSON.parse(this.responseText);
+					callback(obj.token);
+				} catch (e) {
+					typeof error === "function" && error(e);
+				}
+			});
+			xhr.send();
+		}
+
+		getAntiForgeryToken(function(token) {
+			if (document.readyState === "complete"
+				|| document.readyState === "loaded" 
+				|| document.readyState === "interactive") {
+				populateAntiForgery(token);
+				return;
+			}
+			document.addEventListener("DOMContentLoaded", function() {
+				populateAntiForgery(token);
+			}, false);
+		}, console.error);
+	 
+			
+
+	 
+		window.departmentHeader = {};
+		window.pageSectionTracker = {};
+		window.isResponsiveEnabled = true;
+		window.isRemoveSetHeights= false;
+		if (window.isRemoveSetHeights) {
+			document.documentElement.className += ' removeSetHeights';
+		}
+		window.mainMenuMediaQuery = 'screen and (max-width: 40em)';
+		window.isMobileBrowserIncludingTablets = false;
+		window.fixedResponsiveMenu = false;
+		window.fullWidthResponsiveMenu = false;
+		window.responsiveMenuHeight = '';
+		window.responsiveMenuFontSize = '';
+		window.isContentAdvisor = false;
+		(function () {
+			window.setSizeCookie = function () {
+				document.cookie = "dpi=" + window.devicePixelRatio + "; path=/";
+				document.cookie = "viewportWidth=" + window.innerWidth + "; path=/";
+				document.cookie = "viewportHeight=" + window.innerHeight + "; path=/";
+				if (screen && screen.width && screen.height) {
+					document.cookie = "screenWidth=" + screen.width + "; path=/";
+					document.cookie = "screenHeight=" + screen.height + "; path=/";
+				}
+				document.cookie = "responsiveGhost=1; path=/";
+			};
+
+			setSizeCookie();
+		}());
+	 
+		 
+
+	 
+	
+	 
+ 
+ 
+ 
+
+	
+	 
+	 
+	 
+		 FRANKLIN COUNTY GIS  | Franklin County, KS - Official Website 
+
+		 
+		 
+			 
+	 
+	
+
+	 
+	 
+	 
+	 
+	 <!--
+	var intCountryCode = 840;
+	var order = '';
+//--> 
+	
+	 	 
+
+	 
+	 
+		window.Pages = window.Pages || {};
+		// FrontEnd RWD initialization
+		window.Pages.rwdReady = $.Deferred();
+		window.Pages.toolBarDeferred = $.Deferred();
+		window.Pages.rwdSetupComplete = $.Deferred();
+		window.Pages.megaMenuLoaded = $.Deferred();
+		window.Pages.angularToolbarComplete = $.Deferred();
+		window.Pages.frontEndToolbarComplete = $.Deferred();
+	 
+	 
+	 
+	
+	
+	
+	
+
+
+
+
+	 
+	 
+	 
+	 
+
+	 
+		setEditorVariables(false, 840);
+		function getPrintPreviewType() { return 0; } function printPreview() {pPreview(getPrintPreviewType()); }
+	 
+	 
+ 
+ 
+
+     jQuery(document).click(function (event) {
+	var target = jQuery(event.target);
+	if (target.attr('src') && target.parents('.image').length && target.parents('.widget').length) {
+		var text = target.attr('title');
+		
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Image',
+				eventAction: 'Image - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.is('button') || target.hasClass('button') || target.parents().hasClass('button')) {
+		var text = "";
+		if (target.parents('.button')[0]) {
+			text = target.parents('.button').first().text();
+		} else if (target.text().length) {
+			text = target.text();
+		} else if (target.attr('title').length) {
+			text = target.attr('title');
+		}
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Button',
+				eventAction: 'Button - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetCustomHtml').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Custom Html',
+				eventAction: 'Custom Html Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.editor').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Editor',
+				eventAction: 'Editor Link Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.GraphicLinks').length) {
+		var text = "";
+		var targetGraphicLink = target;
+		if (target.hasClass('widgetGraphicLinksLink')) {
+			targetGraphicLink = jQuery(target.children()[0]);
+		}
+		if (targetGraphicLink.hasClass('text')) {
+			text = targetGraphicLink.text();
+		} else if (targetGraphicLink.attr('src').length) {
+			if (targetGraphicLink.attr('alt').length) {
+				text = targetGraphicLink.attr('alt');
+			} else {
+				text = targetGraphicLink.attr('src');
+			}
+		} else {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Graphic Links',
+				eventAction: 'Graphic Link - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.InfoAdvanced').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Info Advanced',
+				eventAction: 'Info Advanced Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.list').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'List',
+				eventAction: 'List Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.megaMenuItem').length || target.parents('.topMenuItem').length) {
+		var megaMenuText = jQuery('.topMenuItem.mouseover').find('span').text();
+		var breadCrumbs = [];
+		jQuery('.breadCrumbs > li').each(function () {
+			 breadCrumbs.push(this.textContent);
+		});
+		var pageTitle = breadCrumbs.join('>');
+		var subTitleText = target.parents('.megaMenuItem').children('.widgetTitle').children().text();
+		var text = "";
+		if (pageTitle) {
+			text += pageTitle + " | ";
+		} else {
+			text += document.title + ' - ';
+		}
+		if (target.text() == "" && megaMenuText == "") {
+			text += "N/A";
+		} else if (target.text().length && megaMenuText.length) {
+			if (megaMenuText == target.text()) {
+				text += megaMenuText;
+			} else {
+				text += megaMenuText + " - " + subTitleText + " - " + target.text();
+			}
+		} else if (target.text() == "") {
+			text += megaMenuText;
+		} else {
+			text += target.text();
+		}
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Mega Menu',
+				eventAction: 'Mega Menu : ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetNewsFlash').length && target.parents('.widgetItem').length) {
+		var text = jQuery(target.parents('.widgetItem')[0]).find('.widgetTitle').children().text();
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'News Flash',
+				eventAction: 'News Flash - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.hasClass('widgetQuickLinksLink') || target.find('.widgetQuickLinksLink').length) {
+		var text = target.text();
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Quick Links',
+				eventAction: 'Quick Links - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.attr('src') && target.parents('.cpSlideshow').length) {
+		var text = target.attr('title');
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Slideshow',
+				eventAction: 'Slideshow - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetText').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Text',
+				eventAction: 'Text Link Clicked',
+				eventLabel: window.location.href
+			});
+	}
+}); 
+	 
+	 
+		 
+		 
+			 
+				 
+			 
+		 
+	 
+	 
+		 
+	 
+	 
+		 
+			 
+		 
+	 
+ 
+     
+ 
+ Skip to Main Content 
+ 
+     
+
+         
+
+
+
+     
+     
+     
+     
+     
+     
+     
+     
+
+     
+     
+         
+                 
+                    
+
+
+
+ 
+ 
+     
+         Create a Website Account   - Manage notification subscriptions, save form progress and more.    
+         
+	         Website Sign In 
+         
+     
+ 
+ 
+    $(document).ready(function () {
+        $('#signedOutToolbarCreateProfileButton').click(function (event) {
+            event.preventDefault();
+            window.location.href = '/MyAccount/ProfileCreate?from=url&url=/&dn=' + window.location.origin;
+        });
+
+			
+				$('#loggedOutToolbarSignInButton').click(function (event) {
+					event.preventDefault();
+					window.location.href = '/MyAccount/?from=url&url=' + encodeURIComponent(window.location.href.replace(window.location.origin, '')) + '&dn=' + window.location.host;
+				});
+			
+
+		if ('False' == 'True') {
+            $('#loggedOutToolbarSignInButton').hide();
+		}
+    })
+ 
+ 
+
+                 
+             
+                 
+                
+ 
+ 
+ 	 
+				                
+
+		 				
+	 
+	
+	 	
+ 
+
+
+
+
+ 
+	 
+		 
+				 
+	 
+	 
+		 
+				 
+					 
+
+ 
+	 
+		 
+			 Home 
+		 
+	 
+ 
+		 .fancyButton327.fancyButton:link,.fancyButton327.fancyButton:visited, .fancyButton327div.fancyButton{
+	background-image: url('/ImageRepository/Document?documentID=14057');
+	background-repeat: no-repeat;
+	background-position: left center;
+background-size: 63px;
+transition: all .3s ease-in-out;
+margin: 0 auto;
+width: 135px;}
+.fancyButton327.fancyButton:hover,.fancyButton327.fancyButton:focus,.fancyButton327.fancyButton:active,.fancyButton327.fancyButton.hover{
+	background-image: url('/ImageRepository/Document?documentID=14056');
+	background-repeat: no-repeat;
+	background-position: left center;
+}
+.fancyButton327.fancyButton:link > span,.fancyButton327.fancyButton:visited > span, .fancyButton327div.fancyButton > span{
+}
+.fancyButton327.fancyButton:hover > span,.fancyButton327.fancyButton:focus > span,.fancyButton327.fancyButton:active > span,.fancyButton327.fancyButton.hover > span{
+}
+.fancyButton327.fancyButton .text{
+	color: #ffffff;
+	font-size: 1.2em;
+	font-family: "Montserrat";
+	text-align: left;
+	padding-top: .65em;
+	padding-left: 75px;
+	font-weight: 600;
+	text-decoration: none;
+	padding-top: .65em;
+	padding-left: 75px;
+	background-repeat: no-repeat;
+	background-position: left top;
+height: 75px;
+line-height: 1.2;
+}
+.fancyButton327.fancyButton:hover .text,.fancyButton327.fancyButton:focus .text,.fancyButton327.fancyButton:active .text,.fancyButton327.fancyButton.hover .text{
+	text-decoration: underline;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+ 
+
+  
+				 
+			 
+		 
+	 
+			 
+ 
+ 
+
+	   
+
+	   
+
+			   
+
+
+	 
+ 
+      Government   			      Departments   			      Residents   			      I Want To…  			 
+ 
+
+
+	 
+		(function () {
+			function setupMenu() {
+				const menuID = 'mainNavMenu';
+				const menuType = MAIN_MENU;
+
+				//setup menu manager properties for main menu
+				if (!menuManager.mobileMainNav && true)
+					menuManager.adjustMainItemsWidth('#' + menuID);
+				menuManager.isMainMenuEditable = false;
+				menuManager.mainMenuMaxSubMenuLevels = 4;
+				menuManager.setMOMMode(2, menuType);
+
+				//Init main menu
+				const setupDraggable = menuManager.isMainMenuEditable;
+				const urlToGetHiddenMenus = '/Pages/MenuMain/HiddenMainSubMenus?pageID=1&moduleID=&themeID=1&menuContainerID=mainNav';
+
+				menuManager.setupMenu(menuID, 'mainNav', menuType, setupDraggable, urlToGetHiddenMenus);
+				menuManager.mainMenuInit = true;
+				menuManager.mainMenuTextResizer = false;
+				if (1.00 > 0)
+					menuManager.mainMenuTextResizerRatio = 1.00;
+				if (window.isResponsiveEnabled)
+					menuManager.mainMenuReady.resolve();
+
+			}
+
+			if (document.readyState === "complete"
+				|| document.readyState === "loaded"
+				|| document.readyState === "interactive") {
+				setupMenu();
+				return;
+			}
+
+			document.addEventListener("DOMContentLoaded", setupMenu);
+		})();
+	 
+
+
+ 	 
+				                
+
+
+
+	 
+ 	 
+				                
+
+
+
+	 
+ 	 
+				                
+
+
+
+	 
+ 	 
+				                
+
+
+
+	 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+				 
+ 	 
+				                
+
+		 				
+	 
+	
+	 	
+ 
+	
+	 
+	 
+	 
+
+		$(document).ready(function () {
+			try {
+				// Minimum characters required before performing a search/autocomplete
+				var minPrefixLength = 3;
+				var autoCompleteDebounceDelay = 500;
+				var searchFieldSelector = "#searchField" + '51d4d9d1-9536-4c21-8be5-0bac93ce6659';
+				var checkboxSelector = "#ysnSearchOnlyDept" + '51d4d9d1-9536-4c21-8be5-0bac93ce6659';
+				var buttonSelector = ".widgetSearchButton" + '51d4d9d1-9536-4c21-8be5-0bac93ce6659';
+				var autoCompleteCache = {};
+				var autoCompleteCacheKeys = [];
+				var autoCompleteCacheLimit = 25;
+				var currentAutoCompleteRequest = null;
+				var currentAutoCompleteRequestKey = null;
+				var autoCompleteDebounceTimer = null;
+				var autoCompleteDebounceKey = null;
+				var pendingAutoCompleteResponses = [];
+
+				function normalizeAutoCompleteTerm(term) {
+					return $.trim((term || "") + "").replace(/\s+/g, " ");
+				}
+
+				function shouldSearch(term) {
+					return normalizeAutoCompleteTerm(term).length >= minPrefixLength;
+				}
+
+				function getAutoCompleteUrl() {
+					return '/Search/AutoComplete' + ($(checkboxSelector).is(':checked') || false? '?departmentId=0' : '');
+				}
+
+				function getAutoCompleteCacheKey(requestUrl, term) {
+					return requestUrl + "|" + term.toLowerCase();
+				}
+
+				function cacheAutoCompleteResult(cacheKey, data) {
+					if (!Object.prototype.hasOwnProperty.call(autoCompleteCache, cacheKey)) {
+						autoCompleteCacheKeys.push(cacheKey);
+						if (autoCompleteCacheKeys.length > autoCompleteCacheLimit) {
+							delete autoCompleteCache[autoCompleteCacheKeys.shift()];
+						}
+					}
+					autoCompleteCache[cacheKey] = data;
+				}
+
+				function respondToPendingAutoComplete(data) {
+					var responses = pendingAutoCompleteResponses;
+					pendingAutoCompleteResponses = [];
+					for (var i = 0; i < responses.length; i++) {
+						responses[i](data);
+					}
+				}
+
+				function cancelPendingAutoComplete() {
+					clearTimeout(autoCompleteDebounceTimer);
+					autoCompleteDebounceKey = null;
+					if (currentAutoCompleteRequest != null) {
+						currentAutoCompleteRequest.abort();
+						currentAutoCompleteRequest = null;
+					}
+					currentAutoCompleteRequestKey = null;
+					respondToPendingAutoComplete([]);
+				}
+
+				function createWidgetAutoCompleteSource(options) {
+					return function (request, response) {
+						var term = normalizeAutoCompleteTerm(request.term);
+						if (!options.shouldSearch(term)) {
+							response([]);
+							return;
+						}
+
+						var requestUrl = options.url();
+						var cacheKey = getAutoCompleteCacheKey(requestUrl, term);
+						if (Object.prototype.hasOwnProperty.call(autoCompleteCache, cacheKey)) {
+							response(autoCompleteCache[cacheKey]);
+							if (options.success) {
+								options.success(autoCompleteCache[cacheKey]);
+							}
+							return;
+						}
+
+						if (currentAutoCompleteRequestKey === cacheKey || autoCompleteDebounceKey === cacheKey) {
+							pendingAutoCompleteResponses.push(response);
+							return;
+						}
+
+						cancelPendingAutoComplete();
+						autoCompleteDebounceKey = cacheKey;
+						pendingAutoCompleteResponses.push(response);
+						autoCompleteDebounceTimer = setTimeout(function () {
+							autoCompleteDebounceKey = null;
+							currentAutoCompleteRequestKey = cacheKey;
+							currentAutoCompleteRequest = $.ajax({
+								url: requestUrl,
+								dataType: "json",
+								timeout: options.timeout,
+								data: {
+									term: term,
+								},
+								success: function (data) {
+									if (currentAutoCompleteRequestKey === cacheKey) {
+										cacheAutoCompleteResult(cacheKey, data);
+										respondToPendingAutoComplete(data);
+										if (options.success) {
+											options.success(data);
+										}
+									}
+								},
+								error: function (xmlhttprequest, textstatus, message) {
+									if (textstatus === "abort") {
+										return;
+									}
+
+									if (options.error) {
+										options.error(xmlhttprequest, textstatus, message);
+									}
+
+									respondToPendingAutoComplete([]);
+								},
+								complete: function (xmlhttprequest) {
+									if (currentAutoCompleteRequest === xmlhttprequest) {
+										currentAutoCompleteRequest = null;
+										currentAutoCompleteRequestKey = null;
+									}
+								}
+							});
+						}, options.delay);
+					};
+				}
+
+				// click handler for search buttons
+				$(buttonSelector).click(function (e) {
+					e.preventDefault();
+					var $btn = $(this);
+					var $field = $btn.siblings(".widgetSearchBox");
+					var term = $field.val() + "";
+					if (!shouldSearch(term)) {
+						// do nothing until user types enough characters
+						$field.focus();
+						return;
+					}
+
+					if ($(checkboxSelector).is(':checked') || false)
+					{
+						doWidgetSearch($.trim(term), Number(0));
+					}
+					else {
+						doWidgetSearch($.trim(term), 0);
+					}
+				});
+
+				// enter key handler for the search field
+				$(searchFieldSelector).keypress(function (e) {
+					var code = e.which || e.keyCode;
+					if (code === 13) {
+						e.preventDefault();
+						var $this = $(this);
+						var term = $this.val() + "";
+						if (!shouldSearch(term)) {
+							// do nothing until user types enough characters
+							$this.focus();
+							return false;
+						}
+
+						if ($(checkboxSelector).is(':checked') || false) {
+							doWidgetSearch($.trim(term), Number(0));
+						} else {
+							doWidgetSearch($.trim(term), 0);
+						}
+						return false;
+					}
+					return true;
+				});
+
+				// autocomplete: set minLength and guard source
+				if (true) {
+					var $searchField = $(searchFieldSelector).autocomplete({
+						minLength: minPrefixLength,
+						source: createWidgetAutoCompleteSource({
+							delay: autoCompleteDebounceDelay,
+							timeout: 10000,
+							shouldSearch: shouldSearch,
+							url: getAutoCompleteUrl,
+							success: function () {
+								$('.autoCompleteError').remove();
+							},
+							error: function (xmlhttprequest, textstatus, message) {
+								if (textstatus === "timeout") {
+									if ($(searchFieldSelector).siblings('.autoCompleteError').length == 0)
+										$('<span class="autoCompleteError"><p class="alert error">Search autocomplete is currently not responding. Please try again later.</p></span>').insertAfter($(searchFieldSelector));
+								}
+							}
+						}),
+						html: true,
+						delay: 0,
+						select: function (event, ui) {
+							$(this).val(ui.item.value);
+							$(this).next().click();
+						}
+					});
+
+					$searchField.data("ui-autocomplete")._renderItem = function (ul, item) {
+						return $("<li class=\"itemList\"></li>")
+							.data("ui-autocomplete-item", item)
+							.append("<a>" + item.label + "</a>")
+							.appendTo(ul);
+					};
+				}
+
+				// keep searchBtnApplyQuery consistent with prefix rule
+				window.searchBtnApplyQuery = function() {
+					var $field = $(searchFieldSelector);
+					var term = $field.val() + "";
+					if (shouldSearch(term)) {
+						// update href for the icon/button (if present)
+						var btn = document.getElementById("btnSearchIcon");
+						if (btn) btn.href = "/Search?searchPhrase=" + encodeURIComponent($.trim(term));
+					} else {
+						var btn = document.getElementById("btnSearchIcon");
+						if (btn) btn.href = "#";
+					}
+				};
+			}
+			catch(e) {} //we're going to eat this error. Autocomplete won't work but we dont wan't to break anything else on the page.
+		});
+	 
+
+	 
+				 
+		 
+			 
+						 
+
+			 Search 
+		 
+
+	 
+
+
+ 
+	  
+		.widgetSearch ::-webkit-input-placeholder {
+		color: #222223;
+	  }
+		.widgetSearch :-moz-placeholder { /* Firefox 18- */
+	   color: #222223;
+	}
+		.widgetSearch ::-moz-placeholder {  /* Firefox 19+ */
+	   color: #222223;
+	}
+	.widgetSearch :-ms-input-placeholder {
+	   color: #222223;
+	}
+	
+
+	.widgetSearch .widgetBody .widgetSearchBox51d4d9d1-9536-4c21-8be5-0bac93ce6659
+	{
+		color: #222223;
+		background: #fff; border: 0; box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.16); height: 72px;  padding: 0 95px 0 20px; font-family: Montserrat; font-size: 1.1em; 
+	}
+	.widgetSearch .widgetBody .widgetSearchButton51d4d9d1-9536-4c21-8be5-0bac93ce6659
+	{
+		margin: 5px 5px 0 0;
+	}
+	.widgetSearch .widgetSearch-onlyDept51d4d9d1-9536-4c21-8be5-0bac93ce6659
+	{
+		display: inline-block;
+		color: #333;
+		
+		
+		 padding-top: 10px;
+	}
+	#ysnSearchOnlyDept51d4d9d1-9536-4c21-8be5-0bac93ce6659
+	{
+		position: relative;
+		top: .125em;
+	}
+
+ 
+
+ 
+ 
+
+
+
+ 
+	//Updates search icons href to have the correct queryString
+	function searchBtnApplyQuery() {
+		document.getElementById("btnSearchIcon").href = "/Search?searchPhrase=" + document.getElementById("searchField51d4d9d1-9536-4c21-8be5-0bac93ce6659").value;
+	}
+ 
+
+ 
+
+	   
+
+	   
+
+			   
+
+
+	 
+ 
+ 
+ 
+
+
+
+
+		 
+		 
+			 
+			 
+		 
+			 
+				$(window).on("load", function () {
+					$.when(window.Pages.rwdSetupComplete)
+						.done(function () {
+							renderExternalBannerSlideshow('banner1',
+								{"BannerOptionID":1,"ThemeID":1,"SlotName":"banner1","Name":"Default","IsDefault":true,"BannerMode":2,"SlideShowSlideTiming":"5","SlideshowTransition":0,"SlideShowTransitionTiming":"1","ImageScale":true,"ImageAlignment":1,"ImageScroll":true,"MuteSound":true,"VideoType":0,"Status":40,"SlideshowControlsPosition":0,"SlideshowControlsAlignment":0,"SlideshowBannerControlsColorScheme":0,"DisplayVideoPauseButton":false,"VideoPauseButtonAlignment":1,"VideoPauseButtonControlsAlignment":0,"VideoPauseButtonStyle":"#FFFFFF","VideoPauseButtonBackgroundStyle":"#000000","VideoPauseButtonAlignmentClass":"alignRight viewport","DisplaySlideshowPauseButton":true,"SlideshowControlsColor":"#FFFFFF","SlideshowControlsBackgroundColor":"#000000","SlideshowPauseButtonClass":"isHidden","BannerImages":[{"BannerImageID":54,"BannerOptionID":1,"FileName":"/ImageRepository/Document?documentID=17150","Height":1057,"Width":2600,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":1,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":""}],"BannerVideos":[{"BannerVideoID":1,"BannerOptionID":1,"VideoFileName":"","ImageFileName":"EmptyBannerBkg202011301544569675.png","IsLink":false,"LinkAddress":null,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","VideoFileID":"00000000-0000-0000-0000-000000000000","ImageFileID":"00000000-0000-0000-0000-000000000000","VideoWidth":0,"VideoHeight":0,"ImageWidth":0,"ImageHeight":0,"LinkedVideoUrl":"","RecordStatus":0,"AltText":null}],"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/"},
+								'/App_Themes/Interior/Images/',
+								'Rotating');
+						});
+				});
+			 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 		 
+			 Home Departments Planning & Building Maps 
+		 
+	 
+					 
+				 A 			
+				 A 
+			 
+	 
+
+	   
+    
+ 
+	
+	 
+		
+
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+
+				 
+
+FRANKLIN COUNTY GIS 		 
+	
+		 
+			
+
+		 				
+	 
+	
+	 	
+ 
+	     
+
+
+         Online maps are available at no cost. Printed maps may be purchased at the Planning & Building Office, located in Suite 5 of the Franklin County Annex, 1428 S. Main St. View current sizes, paper options and pricing  here .  Interactive Maps County Parcel Map Franklin County Flood Zone Map Voting & Election Map  - Commissioner districts, voter precincts and polling locations Franklin County School Districts Rural Water District Map County Maps Road Map Ownership Map Zoning Map Future Development Map Township Map Eight County Road Map City Maps Lane Ottawa Pomona Princeton Rantoul Richmond Williamsburg Wellsville Wellsville Water & Sewer Lines Agricultural Maps Flood Plain Map USDA Soil Productivity State of Kansas Election & Legislative Maps Kansas House Districts Kansas Senate Districts District Maps School Districts Fire Districts Water Districts Cemetery Districts Postal Districts 
+     
+
+ 
+	$(document).ready(function (e) {		
+	    renderSlideshowIfApplicable($('#divEditor' + '816c290a-ccbc-4251-94d2-5acd2901d9b4'));
+	});
+ 
+ 
+
+	   
+
+	   
+
+			   
+
+
+		 
+
+	 
+
+	
+	 
+
+	 
+ 
+ 	 
+				                
+
+		 				
+	 
+	
+	 	
+
+
+
+
+
+
+
+
+ 
+	 
+			 
+					 Contact Us 
+							 
+						 
+		 
+
+				 Planning & Building 
+
+					 Email 
+					 
+
+
+				 
+					 Physical Address 
+					 
+					 1428 S. Main St. 
+						 Suite 5 
+					 Ottawa ,  KS   66067 
+
+				 
+				 
+
+
+
+				 Phone:  785.229.3570 
+							 Fax: 785.229.3504 
+										 
+
+				 
+
+					 Office Hours: Monday through Friday  8 am to 5 pm 
+				 
+				 
+
+
+		 
+			 
+
+
+				 
+					 
+					
+				 
+				 
+
+
+
+
+
+				 
+			 
+			 
+
+					 
+
+				 
+					William  Wallace
+					
+				 
+				 GIS Coordinator 
+						 Email William Wallace  
+
+
+
+
+
+				 
+			 
+									 
+	 
+ 
+	   
+
+	   
+
+			   
+
+
+	 
+ 
+ 
+ 	 
+				                
+
+
+
+	 
+ 
+
+
+
+
+
+	 
+	 
+		 
+			 Zoning Regulations 
+		 
+			 
+	 
+		 
+			 Planning Department Applications and Permits 
+		 
+			 
+	 
+		 
+			 Building Department Requirements and Permits 
+		 
+			 
+	 
+		 
+			 FAQs 
+		 
+			 
+	 
+		 
+			 Comprehensive Plan 
+		 
+			 
+	 
+		 
+			 Planning Commission 
+		 
+			 
+	 
+		 
+			 Maps 
+		 
+			 
+
+	 
+
+
+	 
+		(function () {
+			function setupSecondaryMenuProperties() {
+				//setup menu manager properties for secondary menu
+				menuManager.isSideMenuEditable = false;
+				menuManager.sideMenuMaxSubMenuLevels = 4;
+				menuManager.sideMenuHasCustomLinks = false;
+			}
+
+			if (document.readyState === "loading") {
+				document.addEventListener("DOMContentLoaded", setupSecondaryMenuProperties, { once: true });
+				return;
+			}
+
+			setupSecondaryMenuProperties();
+		})();
+	 
+
+	 
+		(function () {
+			function setupAccordionSecondaryNav() {
+				var $menuContainer = $('#secondaryNav');
+
+				$menuContainer.find('*[id^="SideItem"]').each(function () {
+					var ids = $('[id="' + this.id + '"]');
+					if (ids.length > 1)
+						$.each(ids, function (index, value) {
+							value.id = value.id + '_' + index;
+						});
+				});
+
+				$menuContainer.find('.hasAccordionChildren .openAccordionNav').off('click.secondaryNav').on('click.secondaryNav', function (e) {
+					e.preventDefault();
+					showHideAccordionMenuForSecondaryNav($(this));
+				});
+
+				$menuContainer.find(".grippy").each(function () {
+					menuManager.setupDraggableElement($(this), SIDE_MENU, '#secondaryNav');
+				});
+
+				$menuContainer.find("li").each(function () {
+					menuManager.setupDroppableAccordionElement($(this), SIDE_MENU);
+				});
+			}
+
+			if (document.readyState === "loading") {
+				document.addEventListener("DOMContentLoaded", setupAccordionSecondaryNav, { once: true });
+				return;
+			}
+
+			setupAccordionSecondaryNav();
+		})();
+	 
+
+
+
+ 	 
+				                
+
+
+
+	 
+ 
+ 
+ 
+ 
+ 	 
+				                
+
+		 				
+	 
+	
+	 	
+ 
+
+
+
+
+ 
+	 
+		 
+				 
+	 
+	 
+		 
+				 
+					 
+
+ 
+	 
+		 
+			 Notify Me 
+		 
+	 
+ 
+		 .fancyButton328.fancyButton:link,.fancyButton328.fancyButton:visited, .fancyButton328div.fancyButton{
+	background-image: url('/ImageRepository/Document?documentID=14058');
+	background-repeat: no-repeat;
+	background-position: center 98px ;
+}
+.fancyButton328.fancyButton:hover,.fancyButton328.fancyButton:focus,.fancyButton328.fancyButton:active,.fancyButton328.fancyButton.hover{
+}
+.fancyButton328.fancyButton:link > span,.fancyButton328.fancyButton:visited > span, .fancyButton328div.fancyButton > span{
+}
+.fancyButton328.fancyButton:hover > span,.fancyButton328.fancyButton:focus > span,.fancyButton328.fancyButton:active > span,.fancyButton328.fancyButton.hover > span{
+}
+.fancyButton328.fancyButton .text{
+	color: #222223;
+	font-family: "Montserrat";
+	padding-top: 130px;
+	font-weight: 600;
+	text-decoration: none;
+	padding-top: 130px;
+	background-image: url('/ImageRepository/Document?documentID=14063');
+	background-repeat: no-repeat;
+	background-position: center 10px ;
+transition: all .3s ease-in-out;
+}
+.fancyButton328.fancyButton:hover .text,.fancyButton328.fancyButton:focus .text,.fancyButton328.fancyButton:active .text,.fancyButton328.fancyButton.hover .text{
+	text-decoration: underline;
+	background-position: center 0px ;
+
+
+}
+ 
+
+  
+
+ 
+	 
+		 
+			 Employment 
+		 
+	 
+ 
+		 .fancyButton329.fancyButton:link,.fancyButton329.fancyButton:visited, .fancyButton329div.fancyButton{
+	background-image: url('/ImageRepository/Document?documentID=14058');
+	background-repeat: no-repeat;
+	background-position: center 98px ;
+}
+.fancyButton329.fancyButton:hover,.fancyButton329.fancyButton:focus,.fancyButton329.fancyButton:active,.fancyButton329.fancyButton.hover{
+}
+.fancyButton329.fancyButton:link > span,.fancyButton329.fancyButton:visited > span, .fancyButton329div.fancyButton > span{
+}
+.fancyButton329.fancyButton:hover > span,.fancyButton329.fancyButton:focus > span,.fancyButton329.fancyButton:active > span,.fancyButton329.fancyButton.hover > span{
+}
+.fancyButton329.fancyButton .text{
+	color: #222223;
+	font-family: "Montserrat";
+	padding-top: 130px;
+	font-weight: 600;
+	text-decoration: none;
+	padding-top: 130px;
+	background-image: url('/ImageRepository/Document?documentID=14061');
+	background-repeat: no-repeat;
+	background-position: center 10px ;
+transition: all .3s ease-in-out;
+}
+.fancyButton329.fancyButton:hover .text,.fancyButton329.fancyButton:focus .text,.fancyButton329.fancyButton:active .text,.fancyButton329.fancyButton.hover .text{
+	text-decoration: underline;
+	background-position: center 0px ;
+
+
+}
+ 
+
+  
+				 
+			 
+		 
+	 
+			 
+ 
+ 
+
+	   
+
+	   
+
+			 				
+	 
+	
+	 	
+ 
+
+
+
+
+ 
+	 
+		 
+				 
+	 
+	 
+		 
+				 
+					 
+
+ 
+	 
+		 
+			 Burn Permit 
+		 
+	 
+ 
+		 .fancyButton332.fancyButton:link,.fancyButton332.fancyButton:visited, .fancyButton332div.fancyButton{
+	background-image: url('/ImageRepository/Document?documentID=14058');
+	background-repeat: no-repeat;
+	background-position: center 98px ;
+}
+.fancyButton332.fancyButton:hover,.fancyButton332.fancyButton:focus,.fancyButton332.fancyButton:active,.fancyButton332.fancyButton.hover{
+}
+.fancyButton332.fancyButton:link > span,.fancyButton332.fancyButton:visited > span, .fancyButton332div.fancyButton > span{
+}
+.fancyButton332.fancyButton:hover > span,.fancyButton332.fancyButton:focus > span,.fancyButton332.fancyButton:active > span,.fancyButton332.fancyButton.hover > span{
+}
+.fancyButton332.fancyButton .text{
+	color: #222223;
+	font-family: "Montserrat";
+	padding-top: 130px;
+	font-weight: 600;
+	text-decoration: none;
+	padding-top: 130px;
+	background-image: url('/ImageRepository/Document?documentID=14129');
+	background-repeat: no-repeat;
+	background-position: center 10px ;
+transition: all .3s ease-in-out;
+}
+.fancyButton332.fancyButton:hover .text,.fancyButton332.fancyButton:focus .text,.fancyButton332.fancyButton:active .text,.fancyButton332.fancyButton.hover .text{
+	text-decoration: underline;
+	background-position: center 0px ;
+
+
+}
+ 
+
+  
+
+ 
+	 
+		 
+			 Agendas & Minutes 
+		 
+	 
+ 
+		 .fancyButton333.fancyButton:link,.fancyButton333.fancyButton:visited, .fancyButton333div.fancyButton{
+	background-image: url('/ImageRepository/Document?documentID=14058');
+	background-repeat: no-repeat;
+	background-position: center 98px ;
+}
+.fancyButton333.fancyButton:hover,.fancyButton333.fancyButton:focus,.fancyButton333.fancyButton:active,.fancyButton333.fancyButton.hover{
+}
+.fancyButton333.fancyButton:link > span,.fancyButton333.fancyButton:visited > span, .fancyButton333div.fancyButton > span{
+}
+.fancyButton333.fancyButton:hover > span,.fancyButton333.fancyButton:focus > span,.fancyButton333.fancyButton:active > span,.fancyButton333.fancyButton.hover > span{
+}
+.fancyButton333.fancyButton .text{
+	color: #222223;
+	font-family: "Montserrat";
+	padding-top: 130px;
+	font-weight: 600;
+	text-decoration: none;
+	padding-top: 130px;
+	background-image: url('/ImageRepository/Document?documentID=24016');
+	background-repeat: no-repeat;
+	background-position: center 10px ;
+transition: all .3s ease-in-out;
+}
+.fancyButton333.fancyButton:hover .text,.fancyButton333.fancyButton:focus .text,.fancyButton333.fancyButton:active .text,.fancyButton333.fancyButton.hover .text{
+	text-decoration: underline;
+	background-position: center 0px ;
+
+
+}
+ 
+
+  
+				 
+			 
+		 
+	 
+			 
+ 
+ 
+
+	   
+
+	   
+
+			 				
+	 
+	
+	 	
+ 
+
+
+
+
+ 
+	 
+		 
+				 
+	 
+	 
+		 
+				 
+					 
+
+ 
+	 
+		 
+			 Online Payments 
+		 
+	 
+ 
+		 .fancyButton330.fancyButton:link,.fancyButton330.fancyButton:visited, .fancyButton330div.fancyButton{
+	background-image: url('/ImageRepository/Document?documentID=14058');
+	background-repeat: no-repeat;
+	background-position: center 98px ;
+}
+.fancyButton330.fancyButton:hover,.fancyButton330.fancyButton:focus,.fancyButton330.fancyButton:active,.fancyButton330.fancyButton.hover{
+}
+.fancyButton330.fancyButton:link > span,.fancyButton330.fancyButton:visited > span, .fancyButton330div.fancyButton > span{
+}
+.fancyButton330.fancyButton:hover > span,.fancyButton330.fancyButton:focus > span,.fancyButton330.fancyButton:active > span,.fancyButton330.fancyButton.hover > span{
+}
+.fancyButton330.fancyButton .text{
+	color: #222223;
+	font-family: "Montserrat";
+	padding-top: 130px;
+	font-weight: 600;
+	text-decoration: none;
+	padding-top: 130px;
+	background-image: url('/ImageRepository/Document?documentID=14064');
+	background-repeat: no-repeat;
+	background-position: center 10px ;
+transition: all .3s ease-in-out;
+}
+.fancyButton330.fancyButton:hover .text,.fancyButton330.fancyButton:focus .text,.fancyButton330.fancyButton:active .text,.fancyButton330.fancyButton.hover .text{
+	text-decoration: underline;
+	background-position: center 0px ;
+
+
+}
+ 
+
+  
+
+ 
+	 
+		 
+			 GIS / Maps 
+		 
+	 
+ 
+		 .fancyButton331.fancyButton:link,.fancyButton331.fancyButton:visited, .fancyButton331div.fancyButton{
+	background-image: url('/ImageRepository/Document?documentID=14058');
+	background-repeat: no-repeat;
+	background-position: center 98px ;
+}
+.fancyButton331.fancyButton:hover,.fancyButton331.fancyButton:focus,.fancyButton331.fancyButton:active,.fancyButton331.fancyButton.hover{
+}
+.fancyButton331.fancyButton:link > span,.fancyButton331.fancyButton:visited > span, .fancyButton331div.fancyButton > span{
+}
+.fancyButton331.fancyButton:hover > span,.fancyButton331.fancyButton:focus > span,.fancyButton331.fancyButton:active > span,.fancyButton331.fancyButton.hover > span{
+}
+.fancyButton331.fancyButton .text{
+	color: #222223;
+	font-family: "Montserrat";
+	padding-top: 130px;
+	font-weight: 600;
+	text-decoration: none;
+	padding-top: 130px;
+	background-image: url('/ImageRepository/Document?documentID=14062');
+	background-repeat: no-repeat;
+	background-position: center 10px ;
+transition: all .3s ease-in-out;
+}
+.fancyButton331.fancyButton:hover .text,.fancyButton331.fancyButton:focus .text,.fancyButton331.fancyButton:active .text,.fancyButton331.fancyButton.hover .text{
+	text-decoration: underline;
+	background-position: center 0px ;
+
+
+}
+ 
+
+  
+				 
+			 
+		 
+	 
+			 
+ 
+ 
+
+	   
+
+	   
+
+			   
+
+
+	 
+ 
+ 
+ 	 
+				                
+
+		 				
+	 
+	
+	 	
+	 
+
+
+
+
+
+
+
+
+	 
+			 
+		 
+					 Popular Pages 
+						 
+	 
+	 
+         
+				 
+					 
+
+
+
+
+     
+         County Budgets & Audits 
+         
+     
+
+
+
+
+     
+         Tax Foreclosures 
+         
+     
+
+
+
+
+     
+         Electronic Open-Records Request 
+         
+     
+
+
+
+
+     
+         Open-Records Request Application 
+         
+     
+
+
+
+
+     
+         Open-Records Request Brochure 
+         
+     
+
+
+
+
+     
+         Bids/RFP 
+         
+     
+					 
+				 
+		 
+        
+	 
+	 
+	 
+	 
+		 /QuickLinks.aspx 
+	 
+
+	 
+ 
+
+	   
+
+	   
+
+			 				
+	 
+	
+	 	
+
+ 
+	   
+
+	   
+
+			 				
+	 
+	
+	 	
+	 
+
+
+
+
+
+
+
+
+	 
+			 
+		 
+					 Site Links 
+						 
+	 
+	 
+         
+				 
+					 
+
+
+
+
+     
+         Home 
+         
+     
+
+
+
+
+     
+         Contact Us 
+         
+     
+
+
+
+
+     
+         FAQs 
+         
+     
+
+
+
+
+     
+         Employment 
+         
+     
+					 
+				 
+		 
+        
+	 
+	 
+	 
+	 
+		 /QuickLinks.aspx 
+	 
+
+	 
+ 
+
+	   
+
+	   
+
+			 				
+	 
+	
+	 	
+
+ 
+	   
+
+	   
+
+			 				
+	 
+	
+	 	
+     
+
+
+
+
+
+	 
+			 
+		 
+					 Contact Us 
+								 
+	 
+	 
+		 
+					 
+						 
+
+ 
+	Franklin County 
+315 S. Main 
+Ottawa, KS 66067 
+ More contact info » 
+ 						 
+					 
+		 
+	 
+	 
+
+	 
+
+	 
+
+
+
+ 
+	//Render slideshow if info advacned items contain one.
+	$(document).ready(function (e) {
+		$('#divInfoAdv7f536a3d-f210-4d5d-a33d-da56496965d7 .InfoAdvanced.widgetItem').each(function () {
+			renderSlideshowIfApplicable($(this));		
+		});
+	});
+ 
+	   
+
+	   
+
+			 				
+	 
+	
+	 	
+
+ 
+	   
+
+	   
+
+			 				
+	 
+	
+	 	
+     
+
+
+
+
+
+	 
+			 
+		 
+								 
+	 
+	 
+		 
+					 
+						 
+
+ 
+	 
+ 						 
+					 
+		 
+	 
+	 
+
+	 
+
+	 
+
+
+
+ 
+	//Render slideshow if info advacned items contain one.
+	$(document).ready(function (e) {
+		$('#divInfoAdve27ea7c9-a6f6-47a1-bb8b-5e32c3a92190 .InfoAdvanced.widgetItem').each(function () {
+			renderSlideshowIfApplicable($(this));		
+		});
+	});
+ 
+	   
+
+	   
+	 
+	
+	 	
+ 
+
+
+
+
+ 
+	 
+		 
+				 
+	 
+	 
+		 
+				 
+					 
+
+  
+ 
+
+  
+ 
+				 
+			 
+		 
+	 
+			 
+ 
+ 
+
+	   
+
+	   
+
+			   
+
+
+	 
+ 
+ 
+ 	 
+				                
+
+		 				
+	 
+	
+	 	
+ 
+	 
+	 
+		 
+  /* CP icon */
+  .cpBylineIconTS {
+  }
+  /* CP Text */
+  .cpBylineTextTS,
+  .cpBylineTextTS a:link {
+  }
+
+  .cpBylineTS {
+    text-align: center;
+  }
+
+.row.outer.wide .cpBylineTS {
+text-align: left;
+}
+
+  .cpBylineIconTS {
+    fill: currentColor;
+    width: 39px;
+    height: 26px;
+    display: inline;
+    vertical-align: middle;
+  }
+ 
+
+ 
+   
+     
+     
+   
+   Government Websites by  CivicPlus® 
+ 
+ 
+	 
+
+	 
+
+	   
+
+	   
+
+			   
+
+
+	 
+ 
+ 
+ 
+ 
+
+             
+         
+     
+
+ 
+
+ 
+	 
+		 
+			 Loading 
+			 
+				 
+					 
+				 
+			 
+		 
+		 
+			 
+				 
+				Loading
+			 
+		 
+		 
+			 Do Not Show Again 
+			 Close 
+		 
+	 
+ 
+
+ 
+ 
+ 
+ 
+
+		$(document).ready(function () {
+			var filter = {
+				targetId: '555',
+				targetType: 1
+			}
+
+			new SplashModalRender().triggerRender(filter);
+		});
+ 
+
+
+	
+	
+	
+	
+
+
+
+	
+
+
+
+
+
+
+     
+     
+ 
+  function getValueTS(elem, attr) {
+    const val = elem.css(attr);
+    if (val === undefined) return undefined;
+    const num = parseInt(val, 10);
+    if (num === NaN) return undefined;
+    return num;
+  }
+
+  function clampTS(number, min, max) {
+    return Math.min(Math.max(number, min), max);
+  }
+
+  function isPageEditingTS() {
+    return (
+      $("#doneEditing").length > 0 || // In live edit
+      $(".cp-liveEditOn").length > 0 || // In live edit
+      typeof DesignCenter !== "undefined" // In theme manager
+    );
+  }
+
+  const bgColorRegexTS = /rgba\((\d+), (\d+), (\d+), (\d*\.?\d*)\)/;
+  function isTransparentTS(elem) {
+    const bg = elem.css('background-color');
+    if (typeof bg !== "string" || !bg.startsWith('rgba(')) return false;
+    const matchState = bg.match(bgColorRegexTS);
+    if (!matchState || matchState.length !== 5) return false;
+    const alpha = parseFloat(matchState[4], 10);
+    if (!(alpha >= 0 && alpha < 1)) return false;
+    return true;
+  }
+
+  function iterateLeftpads(cb) {
+    const containersTS = $("[class^='siteWrap'],[class*=' siteWrap']");
+    for (let i = 0; i < containersTS.length; i++) {
+      const containerTS = containersTS[i];
+      // Skip the body container and anything with data-skip-leftpad
+      if (
+        containerTS.id !== "bodyContainerTS" &&
+        containerTS.getAttribute('data-skip-leftpad') === null
+      ) {
+        cb(containerTS);
+      }
+    }
+  }
+
+  const anchor = $("#divToolbars");
+  //const anchor = $("#angularToolbarInLegacy");
+
+  // Outer banner padding (push banner down)
+  const outerSizingTS = $("#bannerContainerTS");
+  // Inner banner padding (push banner content down) - Transparent header OR on attaching headers
+  const innerSizingTS = $("#bannerSizingTS");
+  const bodyContainerTS = $("#bodyContainerTS");
+
+  const forceUnfixClassTS = "forceUnfixTS";
+
+  const fixedTopTS = $(".fixedTopTS");
+  const fixedBottomTS = $(".fixedBottomTS");
+  const fixedLeftTS = $(".fixedLeftTS");
+
+  var initialTopTS;
+  var topAttachTS;
+  if (fixedTopTS && fixedTopTS.length === 1) {
+    initialTopTS = getValueTS(fixedTopTS, 'top');
+    const attachment = fixedTopTS.attr('data-attach');
+    if (attachment) topAttachTS = $("#" + attachment);
+    if (!topAttachTS || topAttachTS.length !== 1) topAttachTS = undefined;
+  }
+
+  function resizeAdjustmentTS() {
+    const editing = isPageEditingTS();
+
+    // Fixed top script
+    (function () {
+      if (!fixedTopTS || fixedTopTS.length !== 1 || initialTopTS === undefined) return;
+
+      if (editing) {
+        fixedTopTS[0].classList.add(forceUnfixClassTS);
+      } else {
+        fixedTopTS[0].classList.remove(forceUnfixClassTS);
+      }
+
+      const topPosition = fixedTopTS.css('position');
+      if (topPosition === 'fixed') {
+        if (topAttachTS) {
+          scrollAdjustmentTS();
+        } else {
+          const anchorHeight = anchor.outerHeight() - 1;
+          fixedTopTS.css('top', anchorHeight + initialTopTS);
+        }
+      } else {
+        fixedTopTS.css('top', initialTopTS);
+      }
+
+      if (topPosition === 'fixed' || topPosition === 'absolute') {
+        // Bump the banner content down
+        if (isTransparentTS(fixedTopTS)) {
+          innerSizingTS.css('padding-top', initialTopTS + fixedTopTS.outerHeight() - 1);
+          outerSizingTS.css('padding-top', '');
+
+          try {
+            window.Pages.onResizeHandlersExecute();
+          } catch (e) { }
+        } else {
+          outerSizingTS.css('padding-top', fixedTopTS.outerHeight() - 1);
+          innerSizingTS.css('padding-top', '');
+        }
+      } else {
+        innerSizingTS.css('padding-top', '');
+        outerSizingTS.css('padding-top', '');
+      }
+    })();
+
+    // Fixed bottom script
+    (function () {
+      if (!fixedBottomTS || fixedBottomTS.length === 0) return;
+
+      // If the widget has gone narrow, force unfix
+      if (editing || fixedBottomTS.outerHeight() > 200) {
+        fixedBottomTS[0].classList.add(forceUnfixClassTS);
+      } else {
+        fixedBottomTS[0].classList.remove(forceUnfixClassTS);
+      }
+
+      if (fixedBottomTS.css('position') === 'fixed') {
+        bodyContainerTS.css('padding-bottom', fixedBottomTS.outerHeight());
+      } else {
+        bodyContainerTS.css('padding-bottom', '');
+      }
+    })();
+
+    // Fixed left script
+    (function () {
+      if (!fixedLeftTS || fixedLeftTS.length === 0) return;
+
+      if (editing) {
+        fixedLeftTS[0].classList.add(forceUnfixClassTS);
+      } else {
+        fixedLeftTS[0].classList.remove(forceUnfixClassTS);
+      }
+
+      if (fixedLeftTS.css('position') === 'fixed') {
+        const anchorHeight = anchor.outerHeight() - 1;
+        fixedLeftTS.css('top', anchorHeight);
+        const leftBoundingTS = fixedLeftTS[0].getBoundingClientRect();
+        iterateLeftpads(function (containerTS) {
+          const containerBoundingTS = containerTS.getBoundingClientRect();
+          if (containerBoundingTS.left <= leftBoundingTS.right) {
+            $(containerTS).css('padding-left', leftBoundingTS.width + 16);
+          }
+        });
+      } else {
+        fixedLeftTS.css('top', '');
+        iterateLeftpads(function (containerTS) {
+          $(containerTS).css('padding-left', '');
+        });
+      }
+    })();
+  }
+
+  function scrollAdjustmentTS() {
+    if (!fixedTopTS || fixedTopTS.length !== 1 || !topAttachTS || topAttachTS.length !== 1) return;
+    const topPosition = fixedTopTS.css('position');
+    if (topPosition === 'fixed' || topPosition === 'absolute') {
+      const anchorBounding = anchor[0].getBoundingClientRect();
+      const attachBounding = topAttachTS[0].getBoundingClientRect();
+      const scrollTop = $(window).scrollTop();
+
+      fixedTopTS.css('top', Math.max(anchorBounding.bottom - 1, attachBounding.bottom));
+    } else {
+      fixedTopTS.css('top', initialTopTS);
+    }
+  }
+
+  $(window).load(function () {
+    setTimeout(function () {
+      resizeAdjustmentTS();
+    }, 350);
+
+    $(window).scroll(function () {
+      scrollAdjustmentTS();
+    });
+
+    var adjustTimeoutTS;
+    $(window).resize(function () {
+      clearTimeout(adjustTimeoutTS);
+      adjustTimeoutTS = setTimeout(function () {
+        resizeAdjustmentTS();
+      }, 350);
+    });
+
+    $.when(window.Pages.angularToolbarComplete).done(function () {
+      resizeAdjustmentTS();
+    });
+  });
+ 
+ 
+
+  
+  
+function moveBannerToOuterWrap() { 
+    if ($(".fixedBannerTS").length) { 
+		if ($("#bannerDivbanner2").length) { 
+			$("#bannerDivbanner2").appendTo("#outer-wrap"); 
+		} else { 
+			setTimeout(function() { 
+				moveBannerToOuterWrap(); 
+			}, 500); 
+		} 
+	}
+} 
+moveBannerToOuterWrap(); 
+  
+ 
+
+
+     
+        $(function () {
+            document.cookie = "responsiveGhost=0; path=/";
+        });
+        $(window).on("load", function () {
+            $('body').addClass('doneLoading').removeClass('hideContent');
+
+            if ($('#404Content').length > 0)
+                $('div#bodyWrapper').css('padding', '0px');
+        });
+     
+
+     
+         
+            body.hideContent {
+                opacity: 1 !important;
+            }
+         
+     
+
+        
+ 
+	 
+
+		 
+			 Arrow Left 
+			 
+		 
+
+		 
+			 Arrow Right 
+			 
+		 
+
+	 
+ 
+     loadCSS('//fonts.googleapis.com/css?family=Montserrat:500,500italic,600,600italic,700,700italic,800,800italic,italic,regular|'); 
+    
+
+     [] 
+         
+             
+                 
+                     Slideshow Left Arrow 
+                     
+                         
+                     
+                 
+                 
+                     Slideshow Right Arrow 
+                     
+                         
+                     
+                 
+             
+         
+    
+	
+	
+
+     
+ 
+ 

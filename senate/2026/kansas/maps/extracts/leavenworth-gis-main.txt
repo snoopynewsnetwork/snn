@@ -1,0 +1,792 @@
+
+
+ 
+ 
+ 
+
+	 
+
+ 
+ 
+ 
+
+
+
+
+
+ 
+	 Welcome to Leavenworth County, KS 
+	 
+	 
+	 
+
+
+
+
+
+
+
+ 
+ 
+ 
+
+
+ 
+
+
+
+ 
+
+
+
+
+
+ 
+
+ 
+ 
+ 
+ 
+
+
+
+ 
+ 
+ 
+ 
+ 
+
+
+
+	 
+ 
+ 
+ 
+ 
+ 
+	var defaultCalendarColor = "#3788d8";
+	var ImportCals = [];
+	var calendarProps = {'1' : { 'color' : '#3787d8' , 'name' : 'Master' },
+'2' : { 'color' : '#3787d8' , 'name' : 'Meetings' },
+'4' : { 'color' : '#47b9c2' , 'name' : 'Events' },
+'5' : { 'color' : '#80b9f2' , 'name' : 'Planning Commission' },
+'11' : { 'color' : '#c6bf48' , 'name' : 'Council on Aging' },
+};
+	var RZCalendarTimezone = "";
+ 
+
+
+
+
+
+
+ 
+
+ 
+ 
+
+
+
+
+ 
+if (typeof(RZ) == 'undefined') RZ = {};
+if (!RZ.link) RZ.link = new Object();
+RZ.pagetype = 'template'
+RZ.baseurlprefix = '../../'
+RZ.baseurlpath = 'departments/gis/'
+RZ.protocolRelativeRevizeBaseUrl='//cms5.revize.com'
+
+RZ.pagetemplatename = 'department'
+RZ.pagetemplateid = '61'
+RZ.pagemodule = 'links'
+RZ.pagemoduleid = '1'
+RZ.pagerecordid = '206';
+
+RZ.pageid = 'links-206';
+RZ.pageparentid = '14';
+RZ.pagesectionid = '206';
+RZ.pagesectionname = 'gis';
+RZ.pagesectionlevel = '2';
+RZ.pagesectionfolder = 'departments/gis/';
+RZ.pagesectionfilter = 'sectionid=206';
+RZ.pagelinkfilter = 'linklevel=2 and linksectionid=206';
+RZ.pagelinklevel = '2';
+RZ.pagelinkid = '206';
+RZ.pageidfield = '';
+
+RZ.isnewrecord = false;
+RZ.editmodule = '';
+RZ.editrecordid = '206';
+RZ.editrecordversion = '';
+RZ.editversion = '';
+RZ.editaction = '';
+
+RZ.page_roles = ''
+RZ.page_users = '91ebb01e1bc191bbf9e1208945f9990fac228c00dc018c68fce0c9ad561891f1|1927140bfe965f2bbbe1b9c961c6e2e3d3d1a0174b477b35089212d3cf421cdb'
+RZ.page_key = 'department[206]'
+RZ.parent_key = 'freeform[14]'
+RZ.inherit_key = 'department[206]'
+RZ.workflowname = ''
+RZ.permissions_options = 'warningsOFF'
+RZ.permissions_module = 'webspace_page_permissions'
+RZ.webspace = 'leavenworthcounty'
+RZ.webspacedesc = "";
+
+RZ.featurespattern = '(EZ)';
+null
+
+RZ.webspacelinksurl = ''
+RZ.webspacelinksurl = './webspace/links.html'
+RZ.workflowlist = 'New Workflow 1'
+RZ.revizeserverurl = 'https://cms5.revize.com/revize/leavenworthcounty';
+
+if (!RZ.nextseq) RZ.nextseq = {linknames:{},modules:{}};
+
+RZ.webspace_config = new Object();
+RZ.webspace_config.admin_email = "noreply@leavenworthcounty.gov";
+RZ.webspace_config.calendar_options = "max_events=6";
+RZ.webspace_config.form_captcha = "yes";
+RZ.webspace_config.form_server = "revizeserver";
+RZ.webspace_config.form_technology = "jsp";
+RZ.webspace_config.formwizard_ftp_password = "";
+RZ.webspace_config.formwizard_ftp_port = "";
+RZ.webspace_config.formwizard_ftp_server = "";
+RZ.webspace_config.formwizard_ftp_user = "";
+RZ.webspace_config.formwizard_setup = "yes";
+RZ.webspace_config.formwizard_smtp_password = "xxx";
+RZ.webspace_config.formwizard_smtp_server = "xxx";
+RZ.webspace_config.formwizard_smtp_user = "xxx";
+RZ.webspace_config.google_analytics = "";
+RZ.webspace_config.home_pageid = "0";
+RZ.webspace_config.home_sectionid = "0";
+RZ.webspace_config.home_template = "home,index,sitemap";
+RZ.webspace_config.icon_email = "<img src=https://www.leavenworthcounty.gov/\"/revize/images/email_icon_yellow.gif\" width=\"16\" border=\"0\" height=\"17\" title=\"Request email notification when page changes\" alt=\"Request email notification when page changes\" style=\"\" />";
+RZ.webspace_config.image_maxheight = "3000";
+RZ.webspace_config.image_maxwidth = "3000";
+RZ.webspace_config.image_setup = "yes";
+RZ.webspace_config.livesite_url = "";
+RZ.webspace_config.menu_links_module = "links";
+RZ.webspace_config.menu_newsection = "";
+RZ.webspace_config.menu_nexturl = "webspace_menu-editform.jsp";
+RZ.webspace_config.menu_sections_module = "sections";
+RZ.webspace_config.menu_system = "custom";
+RZ.webspace_config.menu_version = "1.00";
+RZ.webspace_config.new_menu_manager_enabled = "yes";
+RZ.webspace_config.notify_options = "hide_text=no";
+RZ.webspace_config.notify_return_url = "enotify/index.php";
+RZ.webspace_config.rte_setup = "yes";
+RZ.webspace_config.to_email = "webpageupdate_subscribers@leavenworthcounty.gov";
+RZ.webspace_config.use_folders = "1";
+
+RZ.isauthenticationactive = true
+RZ.warning = ""
+RZ.adminwinmsg = null
+
+RZ.channels = 'revize,production';
+RZ.jsversion = 1.2 
+ 
+
+
+
+
+
+
+
+
+
+
+ 
+
+	 Skip to main content 
+	 
+		
+		 
+			 
+				 
+					 
+				 
+				 
+					 
+					 
+				 
+				 
+					
+					 
+					
+
+
+
+
+
+
+
+ 
+ 
+	 Home 
+	 Government 
+		 
+			 County Commission 
+				 
+					 Commissioners 
+				 
+			 
+			 County Clerk's Office 
+				 
+					 Elections 
+				 
+			 
+			 County Attorney's Office 
+			 Register of Deeds Office 
+			 County Treasurer's Office 
+			 Sheriff's Office 
+		 
+	 
+	 Departments 
+		 
+			 Administration 
+			 Appraiser's Office 
+			 Buildings & Grounds 
+			 Community Corrections 
+			 Council on Aging 
+			 District Court 
+			 EMS 
+			 GIS 
+			 Health Department 
+			 Human Resources 
+			 Information Systems 
+			 Planning & Zoning 
+			 Public Works 
+				 
+					 Noxious Weed 
+					 Survey Office 
+				 
+			 
+			 Transfer Station 
+		 
+	 
+	 Information 
+		 
+			 Phone Directory 
+			 Citizen Request Center 
+			 Public Service Request 
+			 Job Openings 
+			 Bid Notices 
+			 Tax Sale 
+			 Project Status Updates 
+			 Live Webcam 
+			 Fire Districts & Stations Information 
+			 Americans with Disabilities Act Coordinator 
+		 
+	 
+	 How Do I? 
+		 
+			 Contact Us 
+			 Public Service Request 
+			 Citizen Request Center 
+			 Request Open Records 
+		 
+	 
+ 
+
+
+
+
+
+
+				 
+				 
+					 
+						 
+							 
+								
+								
+								 
+								
+								 
+								
+								 
+							 
+								 
+									 Search Leavenworth County Kansas 
+									 
+									 
+								 
+							 
+						 
+					 
+				 
+			 
+		 
+	 
+ 
+
+
+
+ 
+if (typeof RZlistbegin != 'undefined') RZlistbegin(1)
+ 
+
+	
+         
+			
+		
+	
+ 
+if (typeof RZlinktemplate != 'undefined') RZlinktemplate('slider','','')
+if (typeof RZ.nextseq != 'undefined') RZ.nextseq.modules['slider_1']={field:'seq_no',seq:'2.00'};
+ 
+
+
+ 
+	
+         
+              
+			 
+			 
+			
+         
+    
+ 
+
+ 
+	 
+		RZ.module = 'slider';
+		RZ.nexturl = 'editforms/slider_images-editlist.jsp?width=1700&height=500&pageid=206';
+		RZ.img = '<span class="rzBtn">Edit Slides</span>';
+		RZ.set = '';
+		RZ.options = '';
+		if (typeof RZaction != 'undefined') RZaction('editform');
+	 
+
+			
+ 
+
+
+     
+         
+             
+             
+                RZ.module = 'global';
+                RZ.recordid = '';
+                RZ.nexturl = "editforms/text-editform.jsp";
+                RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = 'no';
+                RZ.img = '<span class="rzBtn" style="">Edit Header</span>';
+                RZ.set = 'pageid=qlinksheaderlinks-206';
+                RZ.options = '';
+                if (typeof RZaction != 'undefined') RZaction('editform');
+             
+             
+                RZ.module = 'quick_links';
+                RZ.nexturl = 'editforms/quick_links-editlist.jsp?width=27&height=30&pageid=qlinklinks-206';
+                RZ.img = '<span class="rzBtn">Edit QuickLinks</span>';
+                RZ.set = '';
+                RZ.options = '';
+                if (typeof RZaction != 'undefined') RZaction('editform');
+             
+             	
+             
+
+                
+                 How Can We Help? 
+                 
+                     
+                         
+                        
+                      
+                 
+                 
+             
+         
+     
+
+
+ 
+	 
+		
+		 
+			
+
+	 
+				
+		
+			 
+     
+        RZ.module = 'global';
+        RZ.nexturl = 'editforms/left-contact-editform.jsp?width=150&height=150';
+        RZ.img = '<span class="rzBtn">Edit Contact</span>';
+        RZ.set = 'pageid=leftcontactlinks-206';
+        RZ.options = '';
+        if (typeof RZaction != 'undefined') RZaction('editform');
+     
+ 
+
+
+
+
+			 
+				
+				
+
+
+				
+				 	
+					 
+					RZ.module = 'freeform';
+					RZ.nexturl = "editforms/leftnav_title-editform.jsp";
+					RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = '';
+					RZ.img = '<span class="rzBtn">Edit Title</span>';
+					RZ.set = 'pageid=leftnavlinks-206';
+					RZ.options = '';
+					if (typeof RZaction != 'undefined') RZaction('editform');
+					 
+					 
+					RZ.module = 'links';
+					RZ.nexturl = "/revize/plugins/menus/webspace_menu-editlist.jsp?pageid=links-206&"
+						+ "linksfilter=linkplacement=leftnav and linkparentid=206&"
+						+ "numberoflevels=3&"
+						+ "linkoptions=url,template,file&"
+						+ "linknewsection=*all*";
+					RZ.img = '<span class="rzBtn">Edit Left Nav</span>';
+					RZ.caption = '';
+					RZ.set = "links.linkplacement=leftnav"
+					RZ.options = '';
+					if (typeof RZaction != 'undefined') RZaction('editlist');
+					 
+				 
+				
+				 GIS 
+				
+  
+	 Document Center 
+	 Interactive Map 
+	 GIS Mapping Data 
+	 Featured Online Maps 
+ 
+
+			 
+
+			
+ 
+     
+        RZ.module = 'global';
+        RZ.recordid = '';
+        RZ.nexturl = "editforms/check-editform.jsp";
+        RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = 'no';
+        RZ.img = '<span class="rzBtn" style="">Edit Show Section</span>';
+        RZ.set = 'pageid=leftqlinkslinks-206';
+        RZ.options = '';
+        if (typeof RZaction != 'undefined') RZaction('editform');
+     
+     
+        RZ.module = 'links';
+        RZ.nexturl = "/revize/plugins/menus/webspace_menu-editlist.jsp?pageid=206&"
+                    + "linksfilter=linkplacement=bottomleftlinks206 and linkparentid=0&"
+                    + "linkoptions=url,template,file&"
+                    + "toplevel=0&"
+                    + "bottomlevel=0&"
+                    + "linknewsection=*all*&"
+        RZ.img = '<span class="rzBtn" style="">Edit Links</span>';
+        RZ.caption = '';
+        RZ.set = "links.linkplacement = bottomleftlinks206";
+        RZ.options = '';
+        if (typeof RZaction != 'undefined') RZaction('editlist');
+     
+ 
+
+
+
+		
+	 
+
+ 
+
+			 
+				
+				 
+     
+         Home   Departments   GIS 
+     
+     
+         
+            
+
+GIS
+         
+         
+             
+                 
+	
+         
+            RZ.module = 'freeform';
+            RZ.recordid = '';
+            RZ.nexturl = "editforms/freeform-editform.jsp";
+            RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = '';
+            RZ.img = '<span class="rzBtn" style="">Edit Center Area</span>';
+            RZ.set = 'freeform.pageid=links-206';
+            RZ.options = '';
+            if (typeof RZaction != 'undefined') RZaction('editform');
+         
+        
+        
+
+        
+    
+    
+     
+        RZ.module = 'freeform';
+        RZ.nexturl = 'editforms/metadata-editform.jsp?';
+        RZ.img = '<span class="rzBtn">Edit Metadata</span>';
+        RZ.set = 'pageid=links-206';
+        RZ.options = '';
+        if (typeof RZaction != 'undefined') RZaction('editform');
+     
+     
+        RZ.nexturl = '';
+        RZ.img = '<span class="rzAdmin"><img src="https://www.leavenworthcounty.gov/images/edit/permissions.jpg" alt="Permissions" border="0" class="rzBtn" /></span>';
+        RZ.options = '';
+        if (typeof RZaction != 'undefined') RZaction('permissions');
+     
+
+ 
+
+                
+ 300 Walnut Street Leavenworth, KS 66048 P: 913.758.6780 F: 913.684.0448 Email GIS Soma San, PhD, CPM, CFM, CSM, PMP, GISP GIS Supervisor Jalynn Bauman GIS Analyst  Tim Urban Engineering Technician 
+         Featured Online Webmaps       View Interactive Webmap (Integrity)      Download PDFs, Shapefiles & CAD GIS is located in the basement of the Courthouse. 
+ GIS handles a wide variety of mapping functions. We support the cartographic needs of other County and City Offices, as well as Police, Fire, EMS, Utilities, Private Companies, Surveyors, and the Public. 
+ GIS is a growing archive of many map 'layers.' Aerial photos (ranging from 1941 to current), property boundaries, land use, roads, hydrology, flood zones, elevation, municipal boundaries, water districts, school districts, tax districts, to name a few. They create and maintain new layers as projects develop. 
+ Our GIS technicians are busy building new map layers and constantly updating the old ones with the latest information to make our Interactive Map as useful as possible. If you need something other than that map viewer can provide, please contact us. We would be happy to help you. 
+ Other map services available from our department include: 
+ 
+ Providing Geo-Referenced map layers like shapefiles and geodatabases. 
+ Mapping legal descriptions. 
+ Producing a list of property owners within a given radius of a parcel for Special Use Permits, Rezoning, etc. 
+ Scanning and/or printing large format documents and maps. (up to 3' wide and 12' long) 
+ Custom maps built upon request of any combination of map layers we have. 
+ Custom databases and reports built from your unique criteria. 
+ Time tracking aerial photos from 1941 to the present day. 
+ Historical map archive including layers such as old wagon trails, cemeteries, circa 1870 school houses, abandoned railroads, etc. 
+ Specific wall maps such as landowners, school districts, flood maps, land use, etc. 
+ 
+ We can provide an aerial photo of any property that shows right-of-ways, property lines, creeks and ponds, buildings, flood zones, elevation, soil types, land use, etc. Since this office was created, the information is all kept up-to-date. If we don't have the type of map you need, we can direct you to who does. 
+ You may also get electronic maps on CD or e-mailed to you.  
+ If you have any questions, please contact us!  
+
+
+                
+         
+     
+ 
+ 
+				
+			
+			 
+		 
+			
+	 
+
+	
+		
+	 
+		 
+			RZ.module = 'global';
+			RZ.recordid = '';
+			RZ.nexturl = "editforms/check-editform.jsp";
+			RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = 'no';
+			RZ.img = '<span class="rzBtn" style="">Edit Show Calendar</span>';
+			RZ.set = 'pageid=deptcalendarlinks-206';
+			RZ.options = '';
+			if (typeof RZaction != 'undefined') RZaction('editform');
+		 
+	 
+	
+	
+	
+
+	
+
+
+
+
+
+ 
+	 
+				 
+			
+			 SIGN-UP FOR ALERTS 
+			 
+
+			
+			 Subscribe Now 
+			
+		 
+	 
+ 
+	
+	
+
+ 
+		 
+		 
+		 Share  this page 
+	 
+
+	 
+		 
+			 
+				 
+					 Share this page 
+					 × 
+				 
+				 
+					 
+						 Copy and paste this code into your website. 
+						 <a href="http://www.leavenworthcounty.gov/departments/gis/index.php">Your Link Name</a> 
+					 
+					 
+						 Share this page on your favorite Social network 
+						 
+							 
+								 
+									  Facebook
+								 
+							 
+							 
+								 
+									  Twitter
+								 
+							 
+							 
+								 
+									  Reddit
+								 
+							 
+						 
+					 
+					 Close 
+				 
+			 
+		 
+	 
+ 
+
+ 
+
+
+ 
+
+
+
+
+
+
+
+		
+
+ 
+	 
+				
+		 
+			 
+				 
+					 
+						
+						 
+							 
+						 
+						 
+							 COUNTY HOURS 
+							 Mon-Fri: 8:00AM - 5:00PM 
+						 
+						
+					 
+				 
+				 
+					 
+						
+						 
+							 
+						 
+						 
+							 COUNTY ADDRESS 
+							 300 Walnut Street  Leavenworth, KS 66048 
+						 
+						
+					 
+				 
+				 
+					 
+						
+						 
+							 
+						 
+						 
+							 COUNTY DIRECTORY! 
+							 View County Directory! 
+						 
+						
+					 
+				 
+			 
+		 
+		 
+			 
+								 
+					© Leavenworth County, KS. All Rights Reserved.
+				 
+				 
+				Powered by  revize.,  the Government Website Experts  Login 
+				 
+			 
+		 
+	 
+ 
+
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+
+	 
+   
+     
+	   
+		   
+			 
+			 
+		   
+       
+	   
+		  
+		  
+		  
+		  
+	   
+       
+         Close 
+         Read More 
+       
+     
+   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+

@@ -1,0 +1,4110 @@
+
+ 
+ 
+ 
+
+	 
+ 
+				 (function(w,d,s,l,i){w.GAMeasurementID='G-V6WK1EJR4Z';w[l]=w[l]||[];w[l].push({'gtm.start':
+				new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+				j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+				'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+				})(window,document,'script','cpDataLayerGA4','GTM-K73C5PS'); 
+				 
+				 
+					var enableTelemetry = 'false'
+					var aiConfig = {
+					instrumentationKey: '1cde048e-3185-4906-aa46-c92a7312b60f'						
+					}
+					var appInsights = window.appInsights || function (a) { function b(a) { c[a] = function () { var b = arguments; c.queue.push(function () { c[a].apply(c, b) }) } } var c = { config: a }, d = document, e = window; setTimeout(function () { var b = d.createElement('script'); b.src = a.url || 'https://js.monitor.azure.com/scripts/a/ai.0.js', d.getElementsByTagName('script')[0].parentNode.appendChild(b) }); try { c.cookie = d.cookie } catch (a) { } c.queue = []; for (var f = ['Event', 'Exception', 'Metric', 'PageView', 'Trace', 'Dependency']; f.length;)b('track' + f.pop()); if (b('setAuthenticatedUserContext'), b('clearAuthenticatedUserContext'), b('startTrackEvent'), b('stopTrackEvent'), b('startTrackPage'), b('stopTrackPage'), b('flush'), !a.disableExceptionTracking) { f = 'onerror', b('_' + f); var g = e[f]; e[f] = function (a, b, d, e, h) { var i = g && g(a, b, d, e, h); return !0 !== i && c['_' + f](a, b, d, e, h), i } } return c }(aiConfig);
+					window.appInsights = appInsights, appInsights.queue && 0 === appInsights.queue.length;
+					// Add telemetry initializer
+					appInsights.queue.push(function() {
+						appInsights.context.addTelemetryInitializer(function(envelope) {
+							var telemetryItem = envelope.data.baseData;
+							// To check the telemetry item’s type:
+							if (!false)
+							{
+								//If the telemetry is not enabled, we still want to capture Google map custom event, so only allow that
+								if (envelope.name.indexOf('.Event') == -1)
+									return false;
+							}
+						});
+					});						
+					appInsights.trackPageView();
+				 
+	 
+		function populateAntiForgery(token) {
+			var input = document.createElement("input");
+			input.name = "__RequestVerificationToken";
+			input.type = "hidden";
+			input.value = token;
+			var absPat = /^https?:\/\/|^\/\//i;
+			var forms = document.getElementsByTagName("form");
+			for (var i = 0; i < forms.length; i++) {
+				if (forms[i].method == "post" &&
+					!forms[i].querySelector('[name="__RequestVerificationToken"]') &&
+					!absPat.test(forms[i].getAttribute("action"))) {
+					forms[i].appendChild(input.cloneNode());
+				}
+			}
+		}
+
+		function getAntiForgeryToken(callback, error) {
+			var xhr = new XMLHttpRequest();
+			xhr.open("GET", "/antiforgery");
+			xhr.addEventListener("load", function() {
+				try {
+					if (this.status !== 200) {
+						throw Error("Invalid status. Could not retrieve antiforgery token.");
+					}
+					var obj = JSON.parse(this.responseText);
+					callback(obj.token);
+				} catch (e) {
+					typeof error === "function" && error(e);
+				}
+			});
+			xhr.send();
+		}
+
+		getAntiForgeryToken(function(token) {
+			if (document.readyState === "complete"
+				|| document.readyState === "loaded" 
+				|| document.readyState === "interactive") {
+				populateAntiForgery(token);
+				return;
+			}
+			document.addEventListener("DOMContentLoaded", function() {
+				populateAntiForgery(token);
+			}, false);
+		}, console.error);
+	 
+			
+
+	 
+		window.departmentHeader = {};
+		window.pageSectionTracker = {};
+		window.isResponsiveEnabled = true;
+		window.isRemoveSetHeights= false;
+		if (window.isRemoveSetHeights) {
+			document.documentElement.className += ' removeSetHeights';
+		}
+		window.mainMenuMediaQuery = 'screen and (max-width: 40em)';
+		window.isMobileBrowserIncludingTablets = false;
+		window.fixedResponsiveMenu = false;
+		window.fullWidthResponsiveMenu = false;
+		window.responsiveMenuHeight = '';
+		window.responsiveMenuFontSize = '';
+		window.isContentAdvisor = false;
+		(function () {
+			window.setSizeCookie = function () {
+				document.cookie = "dpi=" + window.devicePixelRatio + "; path=/";
+				document.cookie = "viewportWidth=" + window.innerWidth + "; path=/";
+				document.cookie = "viewportHeight=" + window.innerHeight + "; path=/";
+				if (screen && screen.width && screen.height) {
+					document.cookie = "screenWidth=" + screen.width + "; path=/";
+					document.cookie = "screenHeight=" + screen.height + "; path=/";
+				}
+				document.cookie = "responsiveGhost=1; path=/";
+			};
+
+			setSizeCookie();
+		}());
+	 
+		 
+
+	 
+	
+	
+	
+	 
+	 
+	 
+		 Site Map • McPherson • CivicEngage 
+
+			 
+	 
+	
+
+	 
+	 
+	 
+	 
+	 <!--
+	var intCountryCode = 840;
+	var order = '';
+//--> 
+	
+	 	 
+
+	 
+	 
+		window.Pages = window.Pages || {};
+		// FrontEnd RWD initialization
+		window.Pages.rwdReady = $.Deferred();
+		window.Pages.toolBarDeferred = $.Deferred();
+		window.Pages.rwdSetupComplete = $.Deferred();
+		window.Pages.megaMenuLoaded = $.Deferred();
+		window.Pages.angularToolbarComplete = $.Deferred();
+		window.Pages.frontEndToolbarComplete = $.Deferred();
+	 
+	 
+	 
+	
+	
+	
+	 
+	 
+	 
+
+
+
+	 
+	 
+	 
+	 
+
+	 
+		setEditorVariables(false, 840);
+		function getPrintPreviewType() { return 0; } function printPreview() {pPreview(getPrintPreviewType()); }
+	 
+	 
+ 
+ 
+
+     jQuery(document).click(function (event) {
+	var target = jQuery(event.target);
+	if (target.attr('src') && target.parents('.image').length && target.parents('.widget').length) {
+		var text = target.attr('title');
+		
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Image',
+				eventAction: 'Image - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.is('button') || target.hasClass('button') || target.parents().hasClass('button')) {
+		var text = "";
+		if (target.parents('.button')[0]) {
+			text = target.parents('.button').first().text();
+		} else if (target.text().length) {
+			text = target.text();
+		} else if (target.attr('title').length) {
+			text = target.attr('title');
+		}
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Button',
+				eventAction: 'Button - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetCustomHtml').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Custom Html',
+				eventAction: 'Custom Html Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.editor').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Editor',
+				eventAction: 'Editor Link Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.GraphicLinks').length) {
+		var text = "";
+		var targetGraphicLink = target;
+		if (target.hasClass('widgetGraphicLinksLink')) {
+			targetGraphicLink = jQuery(target.children()[0]);
+		}
+		if (targetGraphicLink.hasClass('text')) {
+			text = targetGraphicLink.text();
+		} else if (targetGraphicLink.attr('src').length) {
+			if (targetGraphicLink.attr('alt').length) {
+				text = targetGraphicLink.attr('alt');
+			} else {
+				text = targetGraphicLink.attr('src');
+			}
+		} else {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Graphic Links',
+				eventAction: 'Graphic Link - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.InfoAdvanced').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Info Advanced',
+				eventAction: 'Info Advanced Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.list').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'List',
+				eventAction: 'List Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.megaMenuItem').length || target.parents('.topMenuItem').length) {
+		var megaMenuText = jQuery('.topMenuItem.mouseover').find('span').text();
+		var breadCrumbs = [];
+		jQuery('.breadCrumbs > li').each(function () {
+			 breadCrumbs.push(this.textContent);
+		});
+		var pageTitle = breadCrumbs.join('>');
+		var subTitleText = target.parents('.megaMenuItem').children('.widgetTitle').children().text();
+		var text = "";
+		if (pageTitle) {
+			text += pageTitle + " | ";
+		} else {
+			text += document.title + ' - ';
+		}
+		if (target.text() == "" && megaMenuText == "") {
+			text += "N/A";
+		} else if (target.text().length && megaMenuText.length) {
+			if (megaMenuText == target.text()) {
+				text += megaMenuText;
+			} else {
+				text += megaMenuText + " - " + subTitleText + " - " + target.text();
+			}
+		} else if (target.text() == "") {
+			text += megaMenuText;
+		} else {
+			text += target.text();
+		}
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Mega Menu',
+				eventAction: 'Mega Menu : ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetNewsFlash').length && target.parents('.widgetItem').length) {
+		var text = jQuery(target.parents('.widgetItem')[0]).find('.widgetTitle').children().text();
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'News Flash',
+				eventAction: 'News Flash - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.hasClass('widgetQuickLinksLink') || target.find('.widgetQuickLinksLink').length) {
+		var text = target.text();
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Quick Links',
+				eventAction: 'Quick Links - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.attr('src') && target.parents('.cpSlideshow').length) {
+		var text = target.attr('title');
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Slideshow',
+				eventAction: 'Slideshow - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetText').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Text',
+				eventAction: 'Text Link Clicked',
+				eventLabel: window.location.href
+			});
+	}
+}); 
+	 
+	 
+		 
+		 
+			 
+				 
+			 
+		 
+	 
+	 
+		 
+	 
+	 
+		 
+			 
+		 
+	 
+ 
+     
+ 
+ Skip to Main Content 
+ 
+     
+
+         
+
+
+
+     
+     
+     
+     
+     
+     
+     
+     
+
+         
+     
+     
+         
+                 
+                    
+
+
+
+                 
+             
+                 
+                
+ 
+ 
+ 
+
+
+
+
+				 
+ 
+      How Do I...   			      Government   			      Departments   			      County Directory  			      Visitor Information   			 
+ 
+
+
+	 
+		(function () {
+			function setupMenu() {
+				const menuID = 'mainNavMenu';
+				const menuType = MAIN_MENU;
+
+				//setup menu manager properties for main menu
+				if (!menuManager.mobileMainNav && true)
+					menuManager.adjustMainItemsWidth('#' + menuID);
+				menuManager.isMainMenuEditable = false;
+				menuManager.mainMenuMaxSubMenuLevels = 4;
+				menuManager.setMOMMode(2, menuType);
+
+				//Init main menu
+				const setupDraggable = menuManager.isMainMenuEditable;
+				const urlToGetHiddenMenus = '/Pages/MenuMain/HiddenMainSubMenus?pageID=1&moduleID=23&themeID=7&menuContainerID=mainNav';
+
+				menuManager.setupMenu(menuID, 'mainNav', menuType, setupDraggable, urlToGetHiddenMenus);
+				menuManager.mainMenuInit = true;
+				menuManager.mainMenuTextResizer = true;
+				if (1.00 > 0)
+					menuManager.mainMenuTextResizerRatio = 1.00;
+				if (window.isResponsiveEnabled)
+					menuManager.mainMenuReady.resolve();
+
+			}
+
+			if (document.readyState === "complete"
+				|| document.readyState === "loaded"
+				|| document.readyState === "interactive") {
+				setupMenu();
+				return;
+			}
+
+			document.addEventListener("DOMContentLoaded", setupMenu);
+		})();
+	 
+
+
+ 
+ 
+ 
+ 
+ 	 
+				                
+
+		 				
+	 
+	
+	 	
+ 
+
+
+
+
+ 
+	 
+		 
+				 
+	 
+	 
+		 
+				 
+					 
+
+  
+ 
+
+  
+ 
+
+  
+ 
+
+  
+ 
+				 
+			 
+		 
+	 
+			 
+ 
+ 
+
+	   
+
+	   
+
+			 				
+	 
+	
+	 	
+ 
+	
+	 
+	 
+	 
+
+		$(document).ready(function () {
+			try {
+				// Minimum characters required before performing a search/autocomplete
+				var minPrefixLength = 3;
+				var autoCompleteDebounceDelay = 500;
+				var searchFieldSelector = "#searchField" + 'ad735951-eafb-4ec4-953f-252ccb9afa2f';
+				var checkboxSelector = "#ysnSearchOnlyDept" + 'ad735951-eafb-4ec4-953f-252ccb9afa2f';
+				var buttonSelector = ".widgetSearchButton" + 'ad735951-eafb-4ec4-953f-252ccb9afa2f';
+				var autoCompleteCache = {};
+				var autoCompleteCacheKeys = [];
+				var autoCompleteCacheLimit = 25;
+				var currentAutoCompleteRequest = null;
+				var currentAutoCompleteRequestKey = null;
+				var autoCompleteDebounceTimer = null;
+				var autoCompleteDebounceKey = null;
+				var pendingAutoCompleteResponses = [];
+
+				function normalizeAutoCompleteTerm(term) {
+					return $.trim((term || "") + "").replace(/\s+/g, " ");
+				}
+
+				function shouldSearch(term) {
+					return normalizeAutoCompleteTerm(term).length >= minPrefixLength;
+				}
+
+				function getAutoCompleteUrl() {
+					return '/Search/AutoComplete' + ($(checkboxSelector).is(':checked') || false? '?departmentId=0' : '');
+				}
+
+				function getAutoCompleteCacheKey(requestUrl, term) {
+					return requestUrl + "|" + term.toLowerCase();
+				}
+
+				function cacheAutoCompleteResult(cacheKey, data) {
+					if (!Object.prototype.hasOwnProperty.call(autoCompleteCache, cacheKey)) {
+						autoCompleteCacheKeys.push(cacheKey);
+						if (autoCompleteCacheKeys.length > autoCompleteCacheLimit) {
+							delete autoCompleteCache[autoCompleteCacheKeys.shift()];
+						}
+					}
+					autoCompleteCache[cacheKey] = data;
+				}
+
+				function respondToPendingAutoComplete(data) {
+					var responses = pendingAutoCompleteResponses;
+					pendingAutoCompleteResponses = [];
+					for (var i = 0; i < responses.length; i++) {
+						responses[i](data);
+					}
+				}
+
+				function cancelPendingAutoComplete() {
+					clearTimeout(autoCompleteDebounceTimer);
+					autoCompleteDebounceKey = null;
+					if (currentAutoCompleteRequest != null) {
+						currentAutoCompleteRequest.abort();
+						currentAutoCompleteRequest = null;
+					}
+					currentAutoCompleteRequestKey = null;
+					respondToPendingAutoComplete([]);
+				}
+
+				function createWidgetAutoCompleteSource(options) {
+					return function (request, response) {
+						var term = normalizeAutoCompleteTerm(request.term);
+						if (!options.shouldSearch(term)) {
+							response([]);
+							return;
+						}
+
+						var requestUrl = options.url();
+						var cacheKey = getAutoCompleteCacheKey(requestUrl, term);
+						if (Object.prototype.hasOwnProperty.call(autoCompleteCache, cacheKey)) {
+							response(autoCompleteCache[cacheKey]);
+							if (options.success) {
+								options.success(autoCompleteCache[cacheKey]);
+							}
+							return;
+						}
+
+						if (currentAutoCompleteRequestKey === cacheKey || autoCompleteDebounceKey === cacheKey) {
+							pendingAutoCompleteResponses.push(response);
+							return;
+						}
+
+						cancelPendingAutoComplete();
+						autoCompleteDebounceKey = cacheKey;
+						pendingAutoCompleteResponses.push(response);
+						autoCompleteDebounceTimer = setTimeout(function () {
+							autoCompleteDebounceKey = null;
+							currentAutoCompleteRequestKey = cacheKey;
+							currentAutoCompleteRequest = $.ajax({
+								url: requestUrl,
+								dataType: "json",
+								timeout: options.timeout,
+								data: {
+									term: term,
+								},
+								success: function (data) {
+									if (currentAutoCompleteRequestKey === cacheKey) {
+										cacheAutoCompleteResult(cacheKey, data);
+										respondToPendingAutoComplete(data);
+										if (options.success) {
+											options.success(data);
+										}
+									}
+								},
+								error: function (xmlhttprequest, textstatus, message) {
+									if (textstatus === "abort") {
+										return;
+									}
+
+									if (options.error) {
+										options.error(xmlhttprequest, textstatus, message);
+									}
+
+									respondToPendingAutoComplete([]);
+								},
+								complete: function (xmlhttprequest) {
+									if (currentAutoCompleteRequest === xmlhttprequest) {
+										currentAutoCompleteRequest = null;
+										currentAutoCompleteRequestKey = null;
+									}
+								}
+							});
+						}, options.delay);
+					};
+				}
+
+				// click handler for search buttons
+				$(buttonSelector).click(function (e) {
+					e.preventDefault();
+					var $btn = $(this);
+					var $field = $btn.siblings(".widgetSearchBox");
+					var term = $field.val() + "";
+					if (!shouldSearch(term)) {
+						// do nothing until user types enough characters
+						$field.focus();
+						return;
+					}
+
+					if ($(checkboxSelector).is(':checked') || false)
+					{
+						doWidgetSearch($.trim(term), Number(0));
+					}
+					else {
+						doWidgetSearch($.trim(term), 0);
+					}
+				});
+
+				// enter key handler for the search field
+				$(searchFieldSelector).keypress(function (e) {
+					var code = e.which || e.keyCode;
+					if (code === 13) {
+						e.preventDefault();
+						var $this = $(this);
+						var term = $this.val() + "";
+						if (!shouldSearch(term)) {
+							// do nothing until user types enough characters
+							$this.focus();
+							return false;
+						}
+
+						if ($(checkboxSelector).is(':checked') || false) {
+							doWidgetSearch($.trim(term), Number(0));
+						} else {
+							doWidgetSearch($.trim(term), 0);
+						}
+						return false;
+					}
+					return true;
+				});
+
+				// autocomplete: set minLength and guard source
+				if (true) {
+					var $searchField = $(searchFieldSelector).autocomplete({
+						minLength: minPrefixLength,
+						source: createWidgetAutoCompleteSource({
+							delay: autoCompleteDebounceDelay,
+							timeout: 10000,
+							shouldSearch: shouldSearch,
+							url: getAutoCompleteUrl,
+							success: function () {
+								$('.autoCompleteError').remove();
+							},
+							error: function (xmlhttprequest, textstatus, message) {
+								if (textstatus === "timeout") {
+									if ($(searchFieldSelector).siblings('.autoCompleteError').length == 0)
+										$('<span class="autoCompleteError"><p class="alert error">Search autocomplete is currently not responding. Please try again later.</p></span>').insertAfter($(searchFieldSelector));
+								}
+							}
+						}),
+						html: true,
+						delay: 0,
+						select: function (event, ui) {
+							$(this).val(ui.item.value);
+							$(this).next().click();
+						}
+					});
+
+					$searchField.data("ui-autocomplete")._renderItem = function (ul, item) {
+						return $("<li class=\"itemList\"></li>")
+							.data("ui-autocomplete-item", item)
+							.append("<a>" + item.label + "</a>")
+							.appendTo(ul);
+					};
+				}
+
+				// keep searchBtnApplyQuery consistent with prefix rule
+				window.searchBtnApplyQuery = function() {
+					var $field = $(searchFieldSelector);
+					var term = $field.val() + "";
+					if (shouldSearch(term)) {
+						// update href for the icon/button (if present)
+						var btn = document.getElementById("btnSearchIcon");
+						if (btn) btn.href = "/Search?searchPhrase=" + encodeURIComponent($.trim(term));
+					} else {
+						var btn = document.getElementById("btnSearchIcon");
+						if (btn) btn.href = "#";
+					}
+				};
+			}
+			catch(e) {} //we're going to eat this error. Autocomplete won't work but we dont wan't to break anything else on the page.
+		});
+	 
+
+	 
+				 
+		 
+			 
+						 
+
+			 Search 
+		 
+
+	 
+
+
+ 
+	  
+		.widgetSearch ::-webkit-input-placeholder {
+		color: #4A4A4A;
+	  }
+		.widgetSearch :-moz-placeholder { /* Firefox 18- */
+	   color: #4A4A4A;
+	}
+		.widgetSearch ::-moz-placeholder {  /* Firefox 19+ */
+	   color: #4A4A4A;
+	}
+	.widgetSearch :-ms-input-placeholder {
+	   color: #4A4A4A;
+	}
+	
+
+	.widgetSearch .widgetBody .widgetSearchBoxad735951-eafb-4ec4-953f-252ccb9afa2f
+	{
+		color: #4A4A4A;
+		background-color: transparent;
+border: none;
+border-left: solid 5px #F7C440;
+height: 53px;
+font-family: Open Sans;
+font-weight: bold;
+padding: 0 59px 0 11px;
+	}
+	.widgetSearch .widgetBody .widgetSearchButtonad735951-eafb-4ec4-953f-252ccb9afa2f
+	{
+		
+	}
+	.widgetSearch .widgetSearch-onlyDeptad735951-eafb-4ec4-953f-252ccb9afa2f
+	{
+		display: inline-block;
+		color: #333;
+		
+		
+		 padding-top: 10px;
+	}
+	#ysnSearchOnlyDeptad735951-eafb-4ec4-953f-252ccb9afa2f
+	{
+		position: relative;
+		top: .125em;
+	}
+
+ 
+
+ 
+ 
+
+
+
+ 
+	//Updates search icons href to have the correct queryString
+	function searchBtnApplyQuery() {
+		document.getElementById("btnSearchIcon").href = "/Search?searchPhrase=" + document.getElementById("searchFieldad735951-eafb-4ec4-953f-252ccb9afa2f").value;
+	}
+ 
+
+ 
+
+	   
+
+	   
+
+			   
+
+
+	 
+ 
+ 
+ 
+
+
+
+
+		 
+		 
+			 
+			 
+		 
+			 
+				$(window).on("load", function () {
+					$.when(window.Pages.rwdSetupComplete)
+						.done(function () {
+							renderExternalBannerSlideshow('banner1',
+								{"BannerOptionID":13,"ThemeID":7,"SlotName":"banner1","Name":"Default","IsDefault":true,"BannerMode":2,"SlideShowSlideTiming":"5","SlideshowTransition":0,"SlideShowTransitionTiming":"1","ImageScale":true,"ImageAlignment":1,"ImageScroll":true,"MuteSound":true,"VideoType":0,"Status":40,"SlideshowControlsPosition":0,"SlideshowControlsAlignment":0,"SlideshowBannerControlsColorScheme":0,"DisplayVideoPauseButton":false,"VideoPauseButtonAlignment":1,"VideoPauseButtonControlsAlignment":0,"VideoPauseButtonStyle":"#FFFFFF","VideoPauseButtonBackgroundStyle":"#000000","VideoPauseButtonAlignmentClass":"alignRight viewport","DisplaySlideshowPauseButton":true,"SlideshowControlsColor":"#FFFFFF","SlideshowControlsBackgroundColor":"#000000","SlideshowPauseButtonClass":"isHidden","BannerImages":[{"BannerImageID":34,"BannerOptionID":13,"FileName":"/ImageRepository/Document?documentID=7526","Height":400,"Width":2200,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":1,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":""},{"BannerImageID":35,"BannerOptionID":13,"FileName":"/ImageRepository/Document?documentID=7525","Height":400,"Width":2200,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":2,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":""},{"BannerImageID":36,"BannerOptionID":13,"FileName":"/ImageRepository/Document?documentID=7524","Height":400,"Width":2200,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":3,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":""}],"BannerVideos":[{"BannerVideoID":9,"BannerOptionID":13,"VideoFileName":"","ImageFileName":"EmptyBannerBkg202303240914541693.png","IsLink":false,"LinkAddress":null,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","VideoFileID":"00000000-0000-0000-0000-000000000000","ImageFileID":"00000000-0000-0000-0000-000000000000","VideoWidth":0,"VideoHeight":0,"ImageWidth":0,"ImageHeight":0,"LinkedVideoUrl":"","RecordStatus":0,"AltText":null}],"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/"},
+								'/App_Themes/2023 - Interior/Images/',
+								'Rotating');
+						});
+				});
+			 
+
+ 
+ 
+ 
+ 
+ 
+ 		 
+			 Home Site Map 
+		 
+
+	   
+    
+ 
+	
+
+	 
+		
+ Site Map 
+
+ 
+	 Jump to: 
+	 
+		 Home 
+			 How Do I... 
+			 Government 
+			 Departments 
+			 County Directory 
+			 Visitor Information 
+	 
+ 
+
+ 
+	
+	 
+		 
+			 Home 
+		 
+	 
+	
+		 
+			 
+				 How Do I... 
+			 
+			
+         
+                 
+                     ACCESS 
+
+                                        
+         
+                 
+                     Current Year Budget 
+
+                                                         
+                 
+                     Real Estate Portal 
+
+                                                         
+                 
+                     Tax History Portal 
+
+                                                         
+                 
+                     Commission Meeting Video 
+
+                                                         
+                 
+                     Recent Agendas 
+
+                                                         
+                 
+                     Meeting Agendas Archive 
+
+                                                         
+                 
+                     Recent Minutes 
+
+                                                         
+                 
+                     Meeting Minutes Archive 
+
+                                                         
+                 
+                     Zoning Board Agendas, Minutes, and Cases 
+
+                                                         
+                 
+                     Resolutions 
+
+                                                         
+                 
+                     Tax Information 
+
+                                                         
+                 
+                     Property Search 
+
+                                                         
+                 
+                     Vehicle Property Tax Estimator 
+
+                                                         
+                 
+                     Child Support Information 
+
+                                                         
+                 
+                     Tourism Info 
+
+                                        
+         
+                 
+                     McPherson Convention and Visitor Bureau 
+
+                                                         
+                 
+                     McPherson Community Guide 
+
+                                                         
+                 
+                     Lindsborg Convention and Visitor Bureau 
+
+                                                         
+                     
+                 
+                 
+                     Employee Manual 
+
+                                                         
+                 
+                     Employee Payroll Portal 
+
+                                                         
+                 
+                     Employee Intranet 
+
+                                                         
+                     
+                 
+                 
+                     APPLY 
+
+                                        
+         
+                 
+                     Apply for Employment 
+
+                                                         
+                 
+                     Apply for Marriage License 
+
+                                                         
+                 
+                     Entrance Permit 
+
+                                                         
+                 
+                     Passport 
+
+                                                         
+                 
+                     Payment Under Protest 
+
+                                                         
+                 
+                     Utility Permit 
+
+                                                         
+                 
+                     Voter Registration Form 
+
+                                                         
+                     
+                 
+                 
+                     CONTACT 
+
+                                        
+         
+                 
+                     Board of Commissioners 
+
+                                                         
+                 
+                     County Administrator 
+
+                                                         
+                 
+                     County Appraiser 
+
+                                                         
+                 
+                     County Attorney's Office 
+
+                                                         
+                 
+                     County Treasurer 
+
+                                                         
+                 
+                     Elections 
+
+                                                         
+                 
+                     Emergency Management 
+
+                                                         
+                 
+                     Department Directory 
+
+                                                         
+                     
+                 
+                 
+                     PAY 
+
+                                        
+         
+                 
+                     Child Support Payments 
+
+                                                         
+                 
+                     Court Fines and Fees 
+
+                                                         
+                 
+                     Taxes Online 
+
+                                                         
+                     
+                 
+                 
+                     VIEW 
+
+                                        
+         
+                 
+                     Current Year Budget 
+
+                                                         
+                 
+                     2026 Adopted Budget 
+
+                                                         
+                 
+                     Commission Meeting Video 
+
+                                                         
+                 
+                     Recent Agendas 
+
+                                                         
+                 
+                     Meeting Agendas Archive 
+
+                                                         
+                 
+                     Recent Minutes 
+
+                                                         
+                 
+                     Meeting Minutes Archive 
+
+                                                         
+                 
+                     Jail Inmate Roster 
+
+                                                         
+                 
+                     Geneology 
+
+                                                         
+                 
+                     Document Center 
+
+                                                         
+                 
+                     Archive Center 
+
+                                                         
+                 
+                     My Portal 
+
+                                                         
+                     
+                 
+                     
+
+			 ▲ Back to Top 
+		 
+		 
+			 
+				 Government 
+			 
+			
+         
+                 
+                     BOCC Recent Agendas, Minutes, and Video 
+
+                                                         
+                 
+                     Clerk 
+
+                                                         
+                 
+                     Elections 
+
+                                                         
+                 
+                     Commissioners 
+
+                                                         
+                 
+                     Recent County Zoning Board Agendas, Minutes, and Video 
+
+                                                         
+                 
+                     County Zoning Board Agendas/Cases/Minutes Archive 
+
+                                                         
+                 
+                     County Attorney 
+
+                                                         
+                 
+                     Register of Deeds 
+
+                                                         
+                 
+                     Sheriff 
+
+                                                         
+                 
+                     Treasurer 
+
+                                                         
+                     
+
+			 ▲ Back to Top 
+		 
+		 
+			 
+				 Departments 
+			 
+			
+         
+                 
+                     A - D 
+
+                                        
+         
+                 
+                     Administrator 
+
+                                        
+         
+                 
+                     Current Year Budget 
+
+                                                         
+                 
+                     2026 Adopted Budget 
+
+                                                         
+                 
+                     Fair Housing Policy 
+
+                                                         
+                     
+                 
+                 
+                     Appraiser 
+
+                                        
+         
+                 
+                     Online Real Estate Portal 
+
+                                                         
+                 
+                     The Appraisal Process 
+
+                                                         
+                 
+                     Property Tax Appeal Process 
+
+                                                         
+                 
+                     Property Valuation Appeal Preparation 
+
+                                                         
+                 
+                     Classifications and Assessment Percentages 
+
+                                                         
+                 
+                     Personal Property 
+
+                                                         
+                 
+                     Appraiser Documents 
+
+                                                         
+                 
+                     Payment Under Protest 
+
+                                                         
+                 
+                     Personal Property Rendition 
+
+                                                         
+                 
+                     Schedule For Commercial Property 
+
+                                                         
+                 
+                     Watercraft Information Sheet 
+
+                                                         
+                 
+                     Declaration Of Representative Form 
+
+                                                         
+                 
+                     Equalization Appeal Form 
+
+                                                         
+                 
+                     Kansas Board of Tax Appeals 
+
+                                                         
+                 
+                     Kansas County Appraiser's Association 
+
+                                                         
+                 
+                     Kansas Real Estate Appraisal Board 
+
+                                                         
+                 
+                     International Association Assessing Officers 
+
+                                                         
+                 
+                     Appraisal Foundation 
+
+                                                         
+                 
+                     Kansas Dept. of Revenue 
+
+                                                         
+                 
+                     Division of Property Valuation 
+
+                                                         
+                 
+                     Real Estate Combination Form 
+
+                                                         
+                     
+                 
+                 
+                     CDDO 
+
+                                                         
+                 
+                     Clerk 
+
+                                        
+         
+                 
+                     Elections 
+
+                                        
+         
+                 
+                     Elected and Appointed Officials 
+
+                                                         
+                 
+                     Voter Registration Notice from the SoS 
+
+                                                         
+                 
+                     Voting Information 
+
+                                                         
+                 
+                     Precinct Committee Forms 
+
+                                                         
+                 
+                     Candidate Filing Forms 
+
+                                                         
+                 
+                     Voters Rights, Responsibilities and Instructions 
+
+                                                         
+                 
+                     Election Archives 
+
+                                                         
+                 
+                     Clerks 
+
+                                                         
+                     
+                 
+                 
+                     What is a Mill Levy 
+
+                                                         
+                 
+                     Tax District Map 
+
+                                                         
+                 
+                     Resolutions 
+
+                                                         
+                 
+                     Landfill and Special Assessments 
+
+                                                         
+                 
+                     Cemetery and Burial Permits 
+
+                                                         
+                 
+                     Genealogy Resources 
+
+                                                         
+                 
+                     Birth Death Marriage Records 
+
+                                                         
+                 
+                     What is Intangible Tax 
+
+                                                         
+                 
+                     Hunting and Fishing License Prices 
+
+                                                         
+                 
+                     2025 Final Levy 
+
+                                                         
+                 
+                     Homestead or Property Tax Refund for Homeowners 
+
+                                                         
+                 
+                     Revenue Neutral Rate FAQS 
+
+                                                         
+                 
+                     2025 Final Valuation 
+
+                                                         
+                     
+                 
+                 
+                     Commissioners 
+
+                                        
+         
+                 
+                     Commission Meeting Video, Agendas, and Minutes 
+
+                                                         
+                 
+                     Commissioners District Map 
+
+                                                         
+                 
+                     Most Recent Minutes 
+
+                                                         
+                 
+                     Most Recent Agenda 
+
+                                                         
+                 
+                     Commissioners Calendar 
+
+                                                         
+                 
+                     Current Year Budget 
+
+                                                         
+                 
+                     2025 Adopted Budget 
+
+                                                         
+                 
+                     Previous Agendas 
+
+                                                         
+                 
+                     Previous Minutes 
+
+                                                         
+                     
+                 
+                 
+                     Community Corrections 
+
+                                                         
+                 
+                     County Attorney 
+
+                                        
+         
+                 
+                     Kansas Department of Corrections 
+
+                                                         
+                 
+                     Crime Compensation Board 
+
+                                                         
+                 
+                     Kansas Attorney General 
+
+                                                         
+                     
+                 
+                 
+                     Court Services 
+
+                                                         
+                 
+                     Court Trustee 
+
+                                                         
+                 
+                     District Court 
+
+                                        
+         
+                 
+                     Jury Information 
+
+                                        
+         
+                 
+                     COVID-19 Jury Protocol 
+
+                                                         
+                 
+                     Safe Jurors in Kansas Courts 
+
+                                                         
+                     
+                 
+                 
+                     ADA Information 
+
+                                                         
+                 
+                     Marriage Licenses 
+
+                                                         
+                 
+                     Resource Links 
+
+                                                         
+                     
+                 
+                     
+                 
+                 
+                     E - M 
+
+                                        
+         
+                 
+                     E-911 Communications 
+
+                                        
+         
+                 
+                     911 Home 
+
+                                                         
+                 
+                     When To Call 911 
+
+                                                         
+                 
+                     Cellular Phones &  911 
+
+                                                         
+                 
+                     Non-Emergency Numbers 
+
+                                                         
+                     
+                 
+                 
+                     Elections 
+
+                                        
+         
+                 
+                     Elected and Appointed Officials 
+
+                                        
+         
+                 
+                     United States and Kansas Elected Officials 
+
+                                                         
+                 
+                     County Officials 
+
+                                                         
+                 
+                     City Officials 
+
+                                                         
+                 
+                     Planning and Zoning Officials 
+
+                                                         
+                 
+                     School Board Members 
+
+                                                         
+                 
+                     Township Officers 
+
+                                                         
+                 
+                     Rural Water District 
+
+                                                         
+                 
+                     Fire District/Misc County Officials 
+
+                                                         
+                 
+                     Democratic Precinct Committee 
+
+                                                         
+                 
+                     Republican Precinct Committee 
+
+                                                         
+                 
+                     County Commissioner Districts 
+
+                                                         
+                     
+                 
+                 
+                     Voter Registration Notice from the SoS 
+
+                                                         
+                 
+                     Voting Information 
+
+                                        
+         
+                 
+                     Voter Registration Information 
+
+                                                         
+                 
+                     Sample Ballots 
+
+                                                         
+                 
+                     Voter Registration 
+
+                                                         
+                 
+                     Advance Voting 
+
+                                        
+         
+                 
+                     Single Advance Voting Form 
+
+                                                         
+                 
+                     Permanent Advance Voting Form 
+
+                                                         
+                 
+                     Advance Ballot Information and Instructions 
+
+                                                         
+                     
+                 
+                 
+                     McPherson County Voting Sites 
+
+                                                         
+                 
+                     McPherson City Voting Sites Map 
+
+                                                         
+                 
+                     Commissioners District Map 
+
+                                                         
+                 
+                     School District Map 
+
+                                                         
+                 
+                     Voting Day Information 
+
+                                                         
+                 
+                     Election Crimes 
+
+                                                         
+                 
+                     Voter Search Map 
+
+                                                         
+                     
+                 
+                 
+                     Precinct Committee Forms 
+
+                                                         
+                 
+                     Candidate Filing Forms 
+
+                                        
+         
+                 
+                     McPherson City 
+
+                                                         
+                 
+                     School Board 
+
+                                                         
+                 
+                     3rd Class City 
+
+                                                         
+                 
+                     Township Office Candidate Form 
+
+                                                         
+                 
+                     Precinct Committee Man/Woman Forms 
+
+                                                         
+                 
+                     McPherson County Candidate Filing Forms 
+
+                                                         
+                     
+                 
+                 
+                     Voters Rights, Responsibilities and Instructions 
+
+                                                         
+                 
+                     Election Archives 
+
+                                                         
+                 
+                     Clerks 
+
+                                        
+         
+                 
+                     Elections 
+
+                                                         
+                 
+                     What is a Mill Levy 
+
+                                                         
+                 
+                     Tax District Map 
+
+                                                         
+                 
+                     Resolutions 
+
+                                                         
+                 
+                     Landfill and Special Assessments 
+
+                                                         
+                 
+                     Cemetery and Burial Permits 
+
+                                                         
+                 
+                     Genealogy Resources 
+
+                                                         
+                 
+                     Birth Death Marriage Records 
+
+                                                         
+                 
+                     What is Intangible Tax 
+
+                                                         
+                 
+                     Hunting and Fishing License Prices 
+
+                                                         
+                 
+                     2025 Final Levy 
+
+                                                         
+                 
+                     Homestead or Property Tax Refund for Homeowners 
+
+                                                         
+                 
+                     Revenue Neutral Rate FAQS 
+
+                                                         
+                 
+                     2025 Final Valuation 
+
+                                                         
+                     
+                 
+                     
+                 
+                 
+                     Emergency Management 
+
+                                        
+         
+                 
+                     What Is Emergency Management 
+
+                                                         
+                 
+                     Preparedness Tips 
+
+                                                         
+                 
+                     Public Education and Resources 
+
+                                                         
+                 
+                     Kansas Burning Regulations 
+
+                                                         
+                 
+                     Region G Hazard Mitigation Plan 
+
+                                                         
+                 
+                     Local Emergency Operations Plan 
+
+                                                         
+                 
+                     American Red Cross 
+
+                                                         
+                 
+                     Department of Homeland Security 
+
+                                                         
+                 
+                     Federal Emergency Management (FEMA) 
+
+                                                         
+                 
+                     KS Division of Emergency Management (KDEM) 
+
+                                                         
+                 
+                     National Weather Service (NWS) 
+
+                                                         
+                 
+                     EPCRA Link 
+
+                                                         
+                 
+                     Local Emergency Planning Committee (LEPC) 
+
+                                        
+         
+             
+                 Minutes and Documents 
+
+             
+         
+                 
+                     
+                 
+                 
+                     Employment 
+
+                                        
+         
+                 
+                     Online Job Application Form 
+
+                                                         
+                 
+                     Downloadable Job Application Form 
+
+                                                         
+                 
+                     Internal Job Application (County Employees Only) 
+
+                                                         
+                 
+                     Employee Manual 
+
+                                                         
+                 
+                     Information Technology Policy 
+
+                                                         
+                 
+                     Dress and Appearance Policy 
+
+                                                         
+                 
+                     Food and Drink Policy 
+
+                                                         
+                 
+                     Social Media Policy 
+
+                                                         
+                 
+                     Mobile Device Policy 
+
+                                                         
+                 
+                     Conference Room Use Policy 
+
+                                                         
+                     
+                 
+                 
+                     Extension Office 
+
+                                                         
+                 
+                     Freedom of Info Act 
+
+                                        
+         
+                 
+                     Records Available & Exceptions 
+
+                                                         
+                 
+                     Request a Record & Fees 
+
+                                                         
+                 
+                     Reasons for Denial & Agencies Represented 
+
+                                                         
+                 
+                     Contact Freedom of Information 
+
+                                                         
+                 
+                     Kansas Open Records Act 
+
+                                                         
+                     
+                 
+                 
+                     Health Department 
+
+                                        
+         
+                 
+                     About Us 
+
+                                        
+         
+                 
+                     Notice of Privacy Practices 
+
+                                                         
+                 
+                     Prior Authorization Form 
+
+                                                         
+                 
+                     Record Request 
+
+                                                         
+                 
+                     School Immunization Requirements 
+
+                                                         
+                 
+                     WIC Income Eligibility 
+
+                                                         
+                 
+                     Annual Reports 
+
+                                                         
+                     
+                 
+                 
+                     Services 
+
+                                        
+         
+                 
+                     Family Planning & Reproductive Health 
+
+                                                         
+                 
+                     General Services 
+
+                                                         
+                 
+                     Healthy Living Labs 
+
+                                                         
+                 
+                     Immunizations 
+
+                                                         
+                 
+                     Infectious Disease 
+
+                                        
+         
+             
+                 Measles (Rubeola) 
+
+             
+         
+                 
+                 
+                     WIC 
+
+                                                         
+                     
+                 
+                 
+                     Community Resources 
+
+                                        
+         
+                 
+                     WELL Core 
+
+                                        
+         
+                 
+                     Organizational Chart 
+
+                                                         
+                 
+                     Social Determinants of Health 
+
+                                                         
+                 
+                     Meetings 
+
+                                                         
+                     
+                 
+                 
+                     McPherson County Resources 
+
+                                                         
+                 
+                     Emergency Preparedness 
+
+                                                         
+                 
+                     Center for Disease Control and Prevention 
+
+                                                         
+                 
+                     Kansas Department of Health & Environment 
+
+                                                         
+                 
+                     McPherson Healthcare Foundation, Inc 
+
+                                                         
+                     
+                 
+                     
+                 
+                 
+                     Human Resources 
+
+                                                         
+                 
+                     Information Technology 
+
+                                                         
+                 
+                     Landfill/Solid Waste 
+
+                                                         
+                 
+                     Maintenance 
+
+                                                         
+                 
+                     Mapping 
+
+                                                         
+                 
+                     Motor Vehicles 
+
+                                        
+         
+                 
+                     Tag Information 
+
+                                                         
+                 
+                     License Plates 
+
+                                                         
+                 
+                     Licensing Your Vehicle 
+
+                                                         
+                 
+                     Buying/Selling a Vehicle 
+
+                                                         
+                 
+                     Refunding a License Plate 
+
+                                                         
+                 
+                     Vehicle Property Tax Estimator 
+
+                                                         
+                 
+                     Kansas Department of Revenue Forms 
+
+                                                         
+                     
+                 
+                     
+                 
+                 
+                     N - Z 
+
+                                        
+         
+                 
+                     Noxious Weeds 
+
+                                        
+         
+                 
+                     Activities & Services 
+
+                                                         
+                 
+                     Types of Weeds 
+
+                                        
+         
+                 
+                     Bur Ragweed 
+
+                                                         
+                 
+                     Field Bindweed 
+
+                                                         
+                 
+                     Johnsongrass 
+
+                                                         
+                 
+                     Musk Thistle 
+
+                                                         
+                 
+                     Sericea Lespedeza 
+
+                                                         
+                     
+                 
+                     
+                 
+                 
+                     Old Mill Museum 
+
+                                                         
+                 
+                     Passport 
+
+                                        
+         
+             
+                 Driving Directions Map 
+
+             
+         
+                 
+                 
+                     Planning, Zoning & Environment 
+
+                                        
+         
+                 
+                     About the Department 
+
+                                                         
+                 
+                     Online Permit and Licensing Portal 
+
+                                                         
+                     
+                 
+                 
+                     Public Works 
+
+                                        
+         
+                 
+                     Public Works Home Page 
+
+                                                         
+                 
+                     Road Work and Road Closure Updates 
+
+                                                         
+                 
+                     2026 Road and Bridge Program 
+
+                                                         
+                 
+                     Use of Right of Way Permit Application 
+
+                                                         
+                 
+                     R/W Use Construction Requirements 
+
+                                                         
+                 
+                     Entrance Permit 
+
+                                                         
+                 
+                     Resetting or Locating Survey Monuments 
+
+                                                         
+                 
+                     McPherson County Mapping Site 
+
+                                                         
+                 
+                     K.S.L.S. Website 
+
+                                                         
+                 
+                     K.H.S. Website 
+
+                                                         
+                 
+                     Resource Links 
+
+                                                         
+                 
+                     TEAP Study Signing Changes 
+
+                                                         
+                     
+                 
+                 
+                     Register of Deeds 
+
+                                        
+         
+                 
+                     Passport Information 
+
+                                        
+         
+                 
+                     Passport Information 
+
+                                        
+         
+             
+                 Driving Directions Map 
+
+             
+         
+                 
+                 
+                     Basic Requirements 
+
+                                                         
+                 
+                     Reasons Document Returned 
+
+                                                         
+                 
+                     Office Fee Schedule 
+
+                                                         
+                 
+                     Geneology 
+
+                                                         
+                 
+                     Subdivision Plats 
+
+                                                         
+                     
+                 
+                 
+                     Basic Requirements 
+
+                                                         
+                 
+                     Reasons Document Returned 
+
+                                                         
+                 
+                     Office Fee Schedule 
+
+                                        
+         
+                 
+                     Office Fee Schedule 
+
+                                                         
+                 
+                     Uniform Commercial Code (UCC) 
+
+                                                         
+                     
+                 
+                 
+                     Genealogy Resources 
+
+                                                         
+                 
+                     Subdivision Plats 
+
+                                                         
+                     
+                 
+                 
+                     Safety Coordinator 
+
+                                        
+         
+                 
+                     Safety Coordinator Home 
+
+                                                         
+                 
+                     Department Safety Coordinators 
+
+                                                         
+                 
+                     Safety Meeting Minutes 
+
+                                                         
+                 
+                     Safety Tips 
+
+                                                         
+                     
+                 
+                 
+                     Sheriff 
+
+                                        
+         
+                 
+                     About Us 
+
+                                        
+         
+                 
+                     Meet The Sheriff 
+
+                                                         
+                 
+                     Staff 
+
+                                                         
+                     
+                 
+                 
+                     Services 
+
+                                        
+         
+             
+                 D.A.R.E. 
+
+             
+         
+                 
+                 
+                     Jail 
+
+                                        
+         
+                 
+                     Jail Inmate Roster 
+
+                                                         
+                 
+                     Inmate Visitation & Phone 
+
+                                                         
+                 
+                     Inmate Mail 
+
+                                                         
+                 
+                     Commissary 
+
+                                                         
+                 
+                     Other Resources 
+
+                                                         
+                     
+                 
+                 
+                     Resources 
+
+                                        
+         
+             
+                 Links 
+
+             
+         
+                 
+                     
+                 
+                 
+                     Treasurer 
+
+                                        
+         
+                 
+                     Online Tax Search Portal 
+
+                                                         
+                 
+                     Tax Information 
+
+                                                         
+                 
+                     Online Payments 
+
+                                                         
+                 
+                     Delinquent Real Estate Tax 
+
+                                                         
+                 
+                     Delinquent Real Estate Archive 
+
+                                                         
+                 
+                     Delinquent Personal Property List 
+
+                                                         
+                 
+                     Delinquent Personal Property Archive 
+
+                                                         
+                 
+                     Tax Foreclosure Sale 
+
+                                                         
+                 
+                     Tag Information 
+
+                                                         
+                 
+                     Vehicle Property Tax Estimator 
+
+                                                         
+                 
+                     Payment Under Protest 
+
+                                                         
+                 
+                     Links 
+
+                                                         
+                 
+                     Refund Worksheet 
+
+                                                         
+                     
+                 
+                 
+                     Victim Witness 
+
+                                        
+         
+                 
+                     Kansas Attorney General 
+
+                                                         
+                 
+                     Kansas Department of Corrections 
+
+                                                         
+                     
+                 
+                     
+                 
+                     
+
+			 ▲ Back to Top 
+		 
+		 
+			 
+				 County Directory 
+			 
+			
+
+			 ▲ Back to Top 
+		 
+		 
+			 
+				 Visitor Information 
+			 
+			
+         
+                 
+                     McPherson Community Guide 
+
+                                                         
+                 
+                     McPherson Convention and Visitors Bureau  
+
+                                                         
+                 
+                     Lindsborg Convention and Visitors Bureau 
+
+                                                         
+                 
+                     Links 
+
+                                                         
+                     
+
+			 ▲ Back to Top 
+		 
+	
+			 		
+				 Feature Links 
+				
+         
+                 
+                     9th Judicial Court YouTube Channel 
+
+                                                         
+                 
+                     Mapping 
+
+                                        
+         
+                 
+                     Parcel Search 
+
+                                                         
+                 
+                     Subdivision Plats 
+
+                                                         
+                 
+                     Surveys 
+
+                                                         
+                 
+                     Real Estate Combination Form 
+
+                                                         
+                 
+                     Kansas Association of Mappers 
+
+                                                         
+                 
+                     Kansas Geological Society 
+
+                                                         
+                 
+                     County Road Map 
+
+                                                         
+                 
+                     County Road Map w/ Hydrology 
+
+                                                         
+                 
+                     Fire District Map 
+
+                                                         
+                 
+                     E.M.S. District Map 
+
+                                                         
+                 
+                     School District Map  
+
+                                                         
+                 
+                     Tax District Map 
+
+                                                         
+                     
+                 
+                 
+                     Most Recent Agenda 
+
+                                                         
+                 
+                     Meeting Agendas Archive 
+
+                                                         
+                 
+                     Most Recent Minutes 
+
+                                                         
+                 
+                     Zoning Board Agendas, Minutes, and Cases 
+
+                                                         
+                 
+                     Appraisers 
+
+                                                         
+                 
+                     Genealogy 
+
+                                                         
+                 
+                     Document Center 
+
+                                                         
+                 
+                     Online Tax Payments 
+
+                                                         
+                 
+                     Archive Center 
+
+                                                         
+                 
+                     Employee Intranet 
+
+                                                         
+                     
+
+				 ▲ Back to Top 
+			 
+			 		
+				 Employee Intranet 
+				
+         
+                 
+                     Employee Intranet 
+
+                                                         
+                 
+                     Department Heads 
+
+                                                         
+                     
+
+				 ▲ Back to Top 
+			 
+			 		
+				 CustomLinks_3 
+				
+         
+             
+                 Resources and Links 
+
+             
+         
+
+				 ▲ Back to Top 
+			 
+			 		
+				 CustomLinks_4 
+				
+         
+             
+                 Resources and Links 
+
+             
+         
+
+				 ▲ Back to Top 
+			 
+			 		
+				 CustomLinks_5 
+				
+         
+             
+                 CDDO Home 
+
+             
+         
+
+				 ▲ Back to Top 
+			 
+	 
+
+	 
+
+	
+	 
+
+	 
+ 
+ 	 
+				                
+
+
+
+	 
+ 
+ 
+ 	 
+				                
+
+
+
+	 
+ 
+
+
+
+
+
+	 
+	 
+		 
+			 9th Judicial Court YouTube Channel 
+		 
+			 
+	 
+		 
+			 Mapping 
+				 
+		 
+					 
+						 
+			 
+				 Parcel Search 
+			 
+					 
+		 
+			 
+				 Subdivision Plats 
+			 
+					 
+		 
+			 
+				 Surveys 
+			 
+					 
+		 
+			 
+				 Real Estate Combination Form 
+			 
+					 
+		 
+			 
+				 Kansas Association of Mappers 
+			 
+					 
+		 
+			 
+				 Kansas Geological Society 
+			 
+					 
+		 
+			 
+				 County Road Map 
+			 
+					 
+		 
+			 
+				 County Road Map w/ Hydrology 
+			 
+					 
+		 
+			 
+				 Fire District Map 
+			 
+					 
+		 
+			 
+				 E.M.S. District Map 
+			 
+					 
+		 
+			 
+				 School District Map  
+			 
+					 
+		 
+			 
+				 Tax District Map 
+			 
+					 
+
+			 
+	 
+	 
+		 
+			 Most Recent Agenda 
+		 
+			 
+	 
+		 
+			 Meeting Agendas Archive 
+		 
+			 
+	 
+		 
+			 Most Recent Minutes 
+		 
+			 
+	 
+		 
+			 Zoning Board Agendas, Minutes, and Cases 
+		 
+			 
+	 
+		 
+			 Appraisers 
+		 
+			 
+	 
+		 
+			 Genealogy 
+		 
+			 
+	 
+		 
+			 Document Center 
+		 
+			 
+	 
+		 
+			 Online Tax Payments 
+		 
+			 
+	 
+		 
+			 Archive Center 
+		 
+			 
+	 
+		 
+			 Employee Intranet 
+		 
+			 
+
+	 
+
+
+	 
+		(function () {
+			function setupSecondaryMenuProperties() {
+				//setup menu manager properties for secondary menu
+				menuManager.isSideMenuEditable = false;
+				menuManager.sideMenuMaxSubMenuLevels = 4;
+				menuManager.sideMenuHasCustomLinks = true;
+			}
+
+			if (document.readyState === "loading") {
+				document.addEventListener("DOMContentLoaded", setupSecondaryMenuProperties, { once: true });
+				return;
+			}
+
+			setupSecondaryMenuProperties();
+		})();
+	 
+
+	 
+		(function () {
+			function setupAccordionSecondaryNav() {
+				var $menuContainer = $('#secondaryNav');
+
+				$menuContainer.find('*[id^="SideItem"]').each(function () {
+					var ids = $('[id="' + this.id + '"]');
+					if (ids.length > 1)
+						$.each(ids, function (index, value) {
+							value.id = value.id + '_' + index;
+						});
+				});
+
+				$menuContainer.find('.hasAccordionChildren .openAccordionNav').off('click.secondaryNav').on('click.secondaryNav', function (e) {
+					e.preventDefault();
+					showHideAccordionMenuForSecondaryNav($(this));
+				});
+
+				$menuContainer.find(".grippy").each(function () {
+					menuManager.setupDraggableElement($(this), SIDE_MENU, '#secondaryNav');
+				});
+
+				$menuContainer.find("li").each(function () {
+					menuManager.setupDroppableAccordionElement($(this), SIDE_MENU);
+				});
+			}
+
+			if (document.readyState === "loading") {
+				document.addEventListener("DOMContentLoaded", setupAccordionSecondaryNav, { once: true });
+				return;
+			}
+
+			setupAccordionSecondaryNav();
+		})();
+	 
+
+
+
+ 	 
+				                
+
+
+
+	 
+ 
+ 
+ 
+ 
+ 	 
+				                
+
+		 				
+	 
+	
+	 	
+ 
+
+
+
+
+ 
+	 
+		 
+				 
+	 
+	 
+		 
+				 
+					 
+
+ 
+	 
+		 
+			 Agendas & Minutes Follow county meetings 
+		 
+	 
+ 
+		 .fancyButton80.fancyButton:link,.fancyButton80.fancyButton:visited, .fancyButton80div.fancyButton{
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-right: 10px;
+	padding-left: 25px;
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+.fancyButton80.fancyButton:hover,.fancyButton80.fancyButton:focus,.fancyButton80.fancyButton:active,.fancyButton80.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+.fancyButton80.fancyButton:link > span,.fancyButton80.fancyButton:visited > span, .fancyButton80div.fancyButton > span{
+}
+.fancyButton80.fancyButton:hover > span,.fancyButton80.fancyButton:focus > span,.fancyButton80.fancyButton:active > span,.fancyButton80.fancyButton.hover > span{
+}
+.fancyButton80.fancyButton .text{
+	text-align: left;
+	padding-bottom: 15px;
+	padding-left: 95px;
+	text-decoration: none;
+	padding-bottom: 15px;
+	padding-left: 95px;
+	background-image: url('/ImageRepository/Document?documentID=7539');
+	background-repeat: no-repeat;
+	background-position: left top;
+transition: all .3s ease-in-out;
+
+}
+.fancyButton80.fancyButton:hover .text,.fancyButton80.fancyButton:focus .text,.fancyButton80.fancyButton:active .text,.fancyButton80.fancyButton.hover .text{
+	text-decoration: none;
+	background-image: url('/ImageRepository/Document?documentID=7544');
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+.fancyButton80.fancyButton .textStyle1{
+	color: #3d5c70;
+	font-size: 1.1em;
+	font-family: Open Sans;
+	font-weight: 800;
+	text-decoration: none;
+text-transform: uppercase;
+line-height: 1.3;
+display: block;
+position: relative;
+padding-bottom: 0.6em;
+margin-bottom: 0.35em;
+}
+
+.fancyButton80 .textStyle1:after {
+content: "";
+position: absolute;
+background-color: #F7C440;
+height: 5px;
+width: 75px;
+border-radius: 3px;
+left: 0;
+bottom: 0;
+transition: all .3s ease-in-out;}
+.fancyButton80.fancyButton:hover .textStyle1, .fancyButton80.fancyButton.hover .textStyle1{
+	text-decoration: underline;
+}
+
+.fancyButton80:hover .textStyle1:after,
+.fancyButton80:focus .textStyle1:after,
+.fancyButton80:active .textStyle1:after {
+width: 100px;}
+.fancyButton80.fancyButton .textStyle2{
+	color: #4a4a4a;
+	font-family: Open Sans;
+	font-weight: 600;
+	text-decoration: none;
+display: block;
+line-height: 1.3;}
+.fancyButton80.fancyButton:hover .textStyle2, .fancyButton80.fancyButton.hover .textStyle2{
+	text-decoration: none;
+
+}
+ 
+
+  
+
+ 
+	 
+		 
+			 Employment View current openings 
+		 
+	 
+ 
+		 .fancyButton82.fancyButton:link,.fancyButton82.fancyButton:visited, .fancyButton82div.fancyButton{
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-right: 10px;
+	padding-left: 25px;
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+.fancyButton82.fancyButton:hover,.fancyButton82.fancyButton:focus,.fancyButton82.fancyButton:active,.fancyButton82.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+.fancyButton82.fancyButton:link > span,.fancyButton82.fancyButton:visited > span, .fancyButton82div.fancyButton > span{
+}
+.fancyButton82.fancyButton:hover > span,.fancyButton82.fancyButton:focus > span,.fancyButton82.fancyButton:active > span,.fancyButton82.fancyButton.hover > span{
+}
+.fancyButton82.fancyButton .text{
+	text-align: left;
+	padding-bottom: 15px;
+	padding-left: 95px;
+	text-decoration: none;
+	padding-bottom: 15px;
+	padding-left: 95px;
+	background-image: url('/ImageRepository/Document?documentID=7540');
+	background-repeat: no-repeat;
+	background-position: left top;
+transition: all .3s ease-in-out;
+
+}
+.fancyButton82.fancyButton:hover .text,.fancyButton82.fancyButton:focus .text,.fancyButton82.fancyButton:active .text,.fancyButton82.fancyButton.hover .text{
+	text-decoration: none;
+	background-image: url('/ImageRepository/Document?documentID=7545');
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+.fancyButton82.fancyButton .textStyle1{
+	color: #3d5c70;
+	font-size: 1.1em;
+	font-family: Open Sans;
+	font-weight: 800;
+	text-decoration: none;
+text-transform: uppercase;
+line-height: 1.3;
+display: block;
+position: relative;
+padding-bottom: 0.6em;
+margin-bottom: 0.35em;
+}
+
+.fancyButton82 .textStyle1:after {
+content: "";
+position: absolute;
+background-color: #F7C440;
+height: 5px;
+width: 75px;
+border-radius: 3px;
+left: 0;
+bottom: 0;
+transition: all .3s ease-in-out;}
+.fancyButton82.fancyButton:hover .textStyle1, .fancyButton82.fancyButton.hover .textStyle1{
+	text-decoration: underline;
+}
+
+.fancyButton82:hover .textStyle1:after,
+.fancyButton82:focus .textStyle1:after,
+.fancyButton82:active .textStyle1:after {
+width: 100px;}
+.fancyButton82.fancyButton .textStyle2{
+	color: #4a4a4a;
+	font-family: Open Sans;
+	font-weight: 600;
+	text-decoration: none;
+display: block;
+line-height: 1.3;}
+.fancyButton82.fancyButton:hover .textStyle2, .fancyButton82.fancyButton.hover .textStyle2{
+	text-decoration: none;
+
+}
+ 
+
+  
+
+ 
+	 
+		 
+			 Online Payments Pay utility bills 
+		 
+	 
+ 
+		 .fancyButton81.fancyButton:link,.fancyButton81.fancyButton:visited, .fancyButton81div.fancyButton{
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-right: 10px;
+	padding-left: 25px;
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+.fancyButton81.fancyButton:hover,.fancyButton81.fancyButton:focus,.fancyButton81.fancyButton:active,.fancyButton81.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+.fancyButton81.fancyButton:link > span,.fancyButton81.fancyButton:visited > span, .fancyButton81div.fancyButton > span{
+}
+.fancyButton81.fancyButton:hover > span,.fancyButton81.fancyButton:focus > span,.fancyButton81.fancyButton:active > span,.fancyButton81.fancyButton.hover > span{
+}
+.fancyButton81.fancyButton .text{
+	text-align: left;
+	padding-bottom: 15px;
+	padding-left: 95px;
+	text-decoration: none;
+	padding-bottom: 15px;
+	padding-left: 95px;
+	background-image: url('/ImageRepository/Document?documentID=7542');
+	background-repeat: no-repeat;
+	background-position: left top;
+transition: all .3s ease-in-out;
+
+}
+.fancyButton81.fancyButton:hover .text,.fancyButton81.fancyButton:focus .text,.fancyButton81.fancyButton:active .text,.fancyButton81.fancyButton.hover .text{
+	text-decoration: none;
+	background-image: url('/ImageRepository/Document?documentID=7547');
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+.fancyButton81.fancyButton .textStyle1{
+	color: #3d5c70;
+	font-size: 1.1em;
+	font-family: Open Sans;
+	font-weight: 800;
+	text-decoration: none;
+text-transform: uppercase;
+line-height: 1.3;
+display: block;
+position: relative;
+padding-bottom: 0.6em;
+margin-bottom: 0.35em;
+}
+
+.fancyButton81 .textStyle1:after {
+content: "";
+position: absolute;
+background-color: #F7C440;
+height: 5px;
+width: 75px;
+border-radius: 3px;
+left: 0;
+bottom: 0;
+transition: all .3s ease-in-out;}
+.fancyButton81.fancyButton:hover .textStyle1, .fancyButton81.fancyButton.hover .textStyle1{
+	text-decoration: underline;
+}
+
+.fancyButton81:hover .textStyle1:after,
+.fancyButton81:focus .textStyle1:after,
+.fancyButton81:active .textStyle1:after {
+width: 100px;}
+.fancyButton81.fancyButton .textStyle2{
+	color: #4a4a4a;
+	font-family: Open Sans;
+	font-weight: 600;
+	text-decoration: none;
+display: block;
+line-height: 1.3;}
+.fancyButton81.fancyButton:hover .textStyle2, .fancyButton81.fancyButton.hover .textStyle2{
+	text-decoration: none;
+
+}
+ 
+
+  
+
+ 
+	 
+		 
+			 Report a Concern Tell us how we're doing 
+		 
+	 
+ 
+		 .fancyButton108.fancyButton:link,.fancyButton108.fancyButton:visited, .fancyButton108div.fancyButton{
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-right: 10px;
+	padding-left: 25px;
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+.fancyButton108.fancyButton:hover,.fancyButton108.fancyButton:focus,.fancyButton108.fancyButton:active,.fancyButton108.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+.fancyButton108.fancyButton:link > span,.fancyButton108.fancyButton:visited > span, .fancyButton108div.fancyButton > span{
+}
+.fancyButton108.fancyButton:hover > span,.fancyButton108.fancyButton:focus > span,.fancyButton108.fancyButton:active > span,.fancyButton108.fancyButton.hover > span{
+}
+.fancyButton108.fancyButton .text{
+	text-align: left;
+	padding-bottom: 15px;
+	padding-left: 95px;
+	text-decoration: none;
+	padding-bottom: 15px;
+	padding-left: 95px;
+	background-image: url('/ImageRepository/Document?documentID=7543');
+	background-repeat: no-repeat;
+	background-position: left top;
+transition: all .3s ease-in-out;
+
+}
+.fancyButton108.fancyButton:hover .text,.fancyButton108.fancyButton:focus .text,.fancyButton108.fancyButton:active .text,.fancyButton108.fancyButton.hover .text{
+	text-decoration: none;
+	background-image: url('/ImageRepository/Document?documentID=7548');
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+.fancyButton108.fancyButton .textStyle1{
+	color: #3d5c70;
+	font-size: 1.1em;
+	font-family: Open Sans;
+	font-weight: 800;
+	text-decoration: none;
+text-transform: uppercase;
+line-height: 1.3;
+display: block;
+position: relative;
+padding-bottom: 0.6em;
+margin-bottom: 0.35em;
+}
+
+.fancyButton108 .textStyle1:after {
+content: "";
+position: absolute;
+background-color: #F7C440;
+height: 5px;
+width: 75px;
+border-radius: 3px;
+left: 0;
+bottom: 0;
+transition: all .3s ease-in-out;}
+.fancyButton108.fancyButton:hover .textStyle1, .fancyButton108.fancyButton.hover .textStyle1{
+	text-decoration: underline;
+}
+
+.fancyButton108:hover .textStyle1:after,
+.fancyButton108:focus .textStyle1:after,
+.fancyButton108:active .textStyle1:after {
+width: 100px;}
+.fancyButton108.fancyButton .textStyle2{
+	color: #4a4a4a;
+	font-family: Open Sans;
+	font-weight: 600;
+	text-decoration: none;
+display: block;
+line-height: 1.3;}
+.fancyButton108.fancyButton:hover .textStyle2, .fancyButton108.fancyButton.hover .textStyle2{
+	text-decoration: none;
+
+}
+ 
+
+  
+
+ 
+	 
+		 
+			 Notify me® Connect with the County 
+		 
+	 
+ 
+		 .fancyButton109.fancyButton:link,.fancyButton109.fancyButton:visited, .fancyButton109div.fancyButton{
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-right: 10px;
+	padding-left: 25px;
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+.fancyButton109.fancyButton:hover,.fancyButton109.fancyButton:focus,.fancyButton109.fancyButton:active,.fancyButton109.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+.fancyButton109.fancyButton:link > span,.fancyButton109.fancyButton:visited > span, .fancyButton109div.fancyButton > span{
+}
+.fancyButton109.fancyButton:hover > span,.fancyButton109.fancyButton:focus > span,.fancyButton109.fancyButton:active > span,.fancyButton109.fancyButton.hover > span{
+}
+.fancyButton109.fancyButton .text{
+	text-align: left;
+	padding-bottom: 15px;
+	padding-left: 95px;
+	text-decoration: none;
+	padding-bottom: 15px;
+	padding-left: 95px;
+	background-image: url('/ImageRepository/Document?documentID=7541');
+	background-repeat: no-repeat;
+	background-position: left top;
+transition: all .3s ease-in-out;
+
+}
+.fancyButton109.fancyButton:hover .text,.fancyButton109.fancyButton:focus .text,.fancyButton109.fancyButton:active .text,.fancyButton109.fancyButton.hover .text{
+	text-decoration: none;
+	background-image: url('/ImageRepository/Document?documentID=7546');
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+.fancyButton109.fancyButton .textStyle1{
+	color: #3d5c70;
+	font-size: 1.1em;
+	font-family: Open Sans;
+	font-weight: 800;
+	text-decoration: none;
+text-transform: uppercase;
+line-height: 1.3;
+display: block;
+position: relative;
+padding-bottom: 0.6em;
+margin-bottom: 0.35em;
+}
+
+.fancyButton109 .textStyle1:after {
+content: "";
+position: absolute;
+background-color: #F7C440;
+height: 5px;
+width: 75px;
+border-radius: 3px;
+left: 0;
+bottom: 0;
+transition: all .3s ease-in-out;}
+.fancyButton109.fancyButton:hover .textStyle1, .fancyButton109.fancyButton.hover .textStyle1{
+	text-decoration: underline;
+}
+
+.fancyButton109:hover .textStyle1:after,
+.fancyButton109:focus .textStyle1:after,
+.fancyButton109:active .textStyle1:after {
+width: 100px;}
+.fancyButton109.fancyButton .textStyle2{
+	color: #4a4a4a;
+	font-family: Open Sans;
+	font-weight: 600;
+	text-decoration: none;
+display: block;
+line-height: 1.3;}
+.fancyButton109.fancyButton:hover .textStyle2, .fancyButton109.fancyButton.hover .textStyle2{
+	text-decoration: none;
+
+}
+ 
+
+  
+				 
+			 
+		 
+	 
+			 
+ 
+ 
+
+	   
+
+	   
+
+			   
+
+
+	 
+ 
+ 
+ 	 
+				                
+
+		 				
+	 
+	
+	 	
+     
+
+
+
+
+
+	 
+			 
+		 
+					 Contact Us 
+								 
+	 
+	 
+		 
+					 
+						 
+
+ 
+	 200 N. Maple Street  
+ 
+ 
+	 McPherson, KS 67460 
+ 
+ 
+	 Phone:  620-241-8149 
+ 
+ 
+	 More contact info > 
+ 						 
+					 
+		 
+	 
+	 
+
+	 
+
+	 
+
+
+
+ 
+	//Render slideshow if info advacned items contain one.
+	$(document).ready(function (e) {
+		$('#divInfoAdv2bd82667-19a5-4826-95e0-f6ee1246de34 .InfoAdvanced.widgetItem').each(function () {
+			renderSlideshowIfApplicable($(this));		
+		});
+	});
+ 
+	   
+
+	   
+
+			 				
+	 
+	
+	 	
+
+ 
+	   
+
+	   
+
+			 				
+	 
+	
+	 	
+	 
+
+
+
+
+
+
+
+
+	 
+			 
+		 
+					 Quick Links 
+						 
+	 
+	 
+         
+				 
+					 
+
+
+
+
+     
+         County Commission 
+         
+     
+
+
+
+
+     
+         Elections 
+         
+     
+
+
+
+
+     
+         Employment Opportunities 
+         
+     
+
+
+
+
+     
+         Appraiser 
+         
+     
+
+
+
+
+     
+         Employee Portal 
+         
+     
+
+
+
+
+     
+         Fair Housing Policy 
+         
+     
+					 
+				 
+		 
+        
+	 
+	 
+	 
+	 
+		 /QuickLinks.aspx 
+	 
+
+	 
+ 
+
+	   
+
+	   
+
+			 				
+	 
+	
+	 	
+
+ 
+	   
+
+	   
+
+			 				
+	 
+	
+	 	
+     
+
+
+
+
+
+	 
+			 
+		 
+					 Helpful Numbers 
+								 
+	 
+	 
+		 
+					 
+						 
+
+ 
+	 Emergency : Dial 911 
+ 
+ 
+	 Clerk & Elections:  620-241-3656 
+ 
+ 
+	 County Office:  620-241-8149 
+ 
+ 
+	 District Court:  620-241-3422 
+ 
+ 
+	 Health Department:  620-241-1753 
+ 
+ 
+	 Motor Vehicle:  620-241-0512 
+ 
+ 
+	 Sheriff:  620-241-1225 
+ 						 
+					 
+		 
+	 
+	 
+
+	 
+
+	 
+
+
+
+ 
+	//Render slideshow if info advacned items contain one.
+	$(document).ready(function (e) {
+		$('#divInfoAdv17a98cf9-2f32-4aa6-a6ec-050ce3fa544e .InfoAdvanced.widgetItem').each(function () {
+			renderSlideshowIfApplicable($(this));		
+		});
+	});
+ 
+	   
+
+	   
+
+			 				
+	 
+	
+	 	
+
+ 
+	   
+
+	   
+
+			 				
+	 
+	
+	 	
+	 
+
+
+
+
+
+
+
+
+	 
+			 
+		 
+					 Site Links 
+						 
+	 
+	 
+         
+				 
+					 
+
+
+
+
+     
+         Home 
+         
+     
+
+
+
+
+     
+         Site Map 
+         
+     
+
+
+
+
+     
+         Accessibility 
+         
+     
+
+
+
+
+     
+         Copyright Notices 
+         
+     
+
+
+
+
+     
+         Privacy Policy 
+         
+     
+					 
+				 
+		 
+        
+	 
+	 
+	 
+	 
+		 /QuickLinks.aspx 
+	 
+
+	 
+ 
+
+	   
+
+	   
+
+			   
+
+
+	 
+ 
+ 
+ 	 
+				                
+
+		 				
+	 
+	
+	 	
+ 
+	 
+	 
+		 
+  /* CP icon */
+  .cpBylineIconTS {
+    color: #4A4A4A;
+  }
+  .p {
+    color: #AF282E;
+  }
+  /* CP Text */
+  .cpBylineTextTS,
+  .cpBylineTextTS a:link {
+    color: #4A4A4A;
+  }
+
+  .cpBylineTS {
+    text-align: center;
+  }
+  
+  .cpBylineIconTS {
+    fill: currentColor;
+    width: 39px;
+    height: 26px;
+    display: inline;
+    vertical-align: middle;
+  }
+ 
+
+ 
+   
+     
+     
+   
+   Government Websites by  CivicPlus® 
+ 
+ 
+	 
+
+	 
+
+	   
+
+	   
+
+			   
+
+
+	 
+ 
+ 
+ 
+
+             
+         
+     
+
+
+ 
+
+ 
+	 
+		 
+			 Loading 
+			 
+				 
+					 
+				 
+			 
+		 
+		 
+			 
+				 
+				Loading
+			 
+		 
+		 
+			 Do Not Show Again 
+			 Close 
+		 
+	 
+ 
+
+ 
+ 
+ 
+ 
+
+		$(document).ready(function () {
+			var filter = {
+				targetId: '',
+				targetType: 0
+			}
+
+			new SplashModalRender().triggerRender(filter);
+		});
+ 
+
+	
+	
+	
+
+
+	
+
+
+
+
+
+
+     
+     
+ 
+  function getValueTS(elem, attr) {
+    const val = elem.css(attr);
+    if (val === undefined) return undefined;
+    const num = parseInt(val, 10);
+    if (num === NaN) return undefined;
+    return num;
+  }
+
+  function clampTS(number, min, max) {
+    return Math.min(Math.max(number, min), max);
+  }
+
+  function isPageEditingTS() {
+    return (
+      $("#doneEditing").length > 0 || // In live edit
+      typeof DesignCenter !== "undefined" // In theme manager
+    );
+  }
+
+  const bgColorRegexTS = /rgba\((\d+), (\d+), (\d+), (\d*\.?\d*)\)/;
+  function isTransparentTS(elem) {
+    const bg = elem.css('background-color');
+    if (typeof bg !== "string" || !bg.startsWith('rgba(')) return false;
+    const matchState = bg.match(bgColorRegexTS);
+    if (!matchState || matchState.length !== 5) return false;
+    const alpha = parseFloat(matchState[4], 10);
+    if (!(alpha >= 0 && alpha < 1)) return false;
+    return true;
+  }
+
+  function iterateLeftpads(cb) {
+    const containersTS = $("[class^='siteWrap'],[class*=' siteWrap']");
+    for (let i = 0; i < containersTS.length; i++) {
+      const containerTS = containersTS[i];
+      // Skip the body container and anything with data-skip-leftpad
+      if (
+        containerTS.id !== "bodyContainerTS" &&
+        containerTS.getAttribute('data-skip-leftpad') === null
+      ) {
+        cb(containerTS);
+      }
+    }
+  }
+
+  const anchor = $("#divToolbars");
+  const anchor2 = $("#headerContainerTS")
+
+  // Outer banner padding (push banner down)
+  const outerSizingTS = $("#bannerContainerTS");
+  // Inner banner padding (push banner content down) - Transparent header OR on attaching headers
+  const innerSizingTS = $("#bannerSizingTS");
+  const bodyContainerTS = $("#bodyContainerTS");
+
+  const forceUnfixClassTS = "forceUnfixTS";
+
+  const fixedTopTS = $(".fixedTopTS");
+  const fixedBottomTS = $(".fixedBottomTS");
+  const fixedLeftTS = $(".fixedLeftTS");
+
+  var initialTopTS;
+  var topAttachTS;
+  if (fixedTopTS && fixedTopTS.length === 1) {
+    initialTopTS = getValueTS(fixedTopTS, 'top');
+    const attachment = fixedTopTS.attr('data-attach');
+    if (attachment) topAttachTS = $("#" + attachment);
+    if (!topAttachTS || topAttachTS.length !== 1) topAttachTS = undefined;
+  }
+
+  function resizeAdjustmentTS() {
+    const editing = isPageEditingTS();
+
+    // Fixed top script
+    (function () {
+      if (!fixedTopTS || fixedTopTS.length !== 1 || initialTopTS === undefined) return;
+
+      if (editing) {
+        fixedTopTS[0].classList.add(forceUnfixClassTS);
+      } else {
+        fixedTopTS[0].classList.remove(forceUnfixClassTS);
+      }
+
+      const topPosition = fixedTopTS.css('position');
+      if (topPosition === 'fixed') {
+        if (topAttachTS) {
+          scrollAdjustmentTS();
+        } else {
+          const anchorHeight = anchor.outerHeight() - 1;
+          fixedTopTS.css('top', anchorHeight + initialTopTS);
+        }
+      } else {
+        fixedTopTS.css('top', initialTopTS);
+      }
+
+      if (topPosition === 'fixed' || topPosition === 'absolute') {
+        // Bump the banner content down
+        if (isTransparentTS(fixedTopTS)) {
+          innerSizingTS.css('padding-top', initialTopTS + fixedTopTS.outerHeight() - 1);
+          outerSizingTS.css('padding-top', '');
+
+          try {
+            window.Pages.onResizeHandlersExecute();
+          } catch (e) { }
+        } else {
+          outerSizingTS.css('padding-top', fixedTopTS.outerHeight() - 1);
+          innerSizingTS.css('padding-top', '');
+        }
+      } else {
+        innerSizingTS.css('padding-top', '');
+        outerSizingTS.css('padding-top', '');
+      }
+    })();
+
+    // Fixed bottom script
+    (function () {
+      if (!fixedBottomTS || fixedBottomTS.length === 0) return;
+
+      // If the widget has gone narrow, force unfix
+      if (editing || fixedBottomTS.outerHeight() > 200) {
+        fixedBottomTS[0].classList.add(forceUnfixClassTS);
+      } else {
+        fixedBottomTS[0].classList.remove(forceUnfixClassTS);
+      }
+
+      if (fixedBottomTS.css('position') === 'fixed') {
+        bodyContainerTS.css('padding-bottom', fixedBottomTS.outerHeight());
+      } else {
+        bodyContainerTS.css('padding-bottom', '');
+      }
+    })();
+
+    // Fixed left script
+    (function () {
+      if (!fixedLeftTS || fixedLeftTS.length === 0) return;
+
+      if (editing) {
+        fixedLeftTS[0].classList.add(forceUnfixClassTS);
+      } else {
+        fixedLeftTS[0].classList.remove(forceUnfixClassTS);
+      }
+
+      if (fixedLeftTS.css('position') === 'fixed') {
+        const anchorHeight = anchor.outerHeight() - 1;
+        fixedLeftTS.css('top', anchorHeight);
+        const leftBoundingTS = fixedLeftTS[0].getBoundingClientRect();
+        iterateLeftpads(function (containerTS) {
+          const containerBoundingTS = containerTS.getBoundingClientRect();
+          if (containerBoundingTS.left <= leftBoundingTS.right) {
+            $(containerTS).css('padding-left', leftBoundingTS.width + 16);
+          }
+        });
+      } else {
+        fixedLeftTS.css('top', '');
+        iterateLeftpads(function (containerTS) {
+          $(containerTS).css('padding-left', '');
+        });
+      }
+    })();
+  }
+
+  function scrollAdjustmentTS() {
+    if (!fixedTopTS || fixedTopTS.length !== 1 || !topAttachTS || topAttachTS.length !== 1) return;
+    const topPosition = fixedTopTS.css('position');
+    if (topPosition === 'fixed' || topPosition === 'absolute') {
+      const anchorBounding = anchor[0].getBoundingClientRect();
+      const attachBounding = topAttachTS[0].getBoundingClientRect();
+      const scrollTop = $(window).scrollTop();
+
+      fixedTopTS.css('top', Math.max(anchorBounding.bottom - 1, attachBounding.bottom));
+    } else {
+      fixedTopTS.css('top', initialTopTS);
+    }
+  }
+
+  $(window).load(function () {
+    setTimeout(function () {
+      resizeAdjustmentTS();
+    }, 350);
+
+    $(window).scroll(function () {
+      scrollAdjustmentTS();
+    });
+
+    var adjustTimeoutTS;
+    $(window).resize(function () {
+      clearTimeout(adjustTimeoutTS);
+      adjustTimeoutTS = setTimeout(function () {
+        resizeAdjustmentTS();
+      }, 350);
+    });
+
+    $.when(window.Pages.angularToolbarComplete).done(function () {
+      resizeAdjustmentTS();
+    });
+  });
+ 
+ 
+
+
+     
+        $(function () {
+            document.cookie = "responsiveGhost=0; path=/";
+        });
+        $(window).on("load", function () {
+            $('body').addClass('doneLoading').removeClass('hideContent');
+
+            if ($('#404Content').length > 0)
+                $('div#bodyWrapper').css('padding', '0px');
+        });
+     
+
+     
+         
+            body.hideContent {
+                opacity: 1 !important;
+            }
+         
+     
+
+        
+ 
+	 
+
+		 
+			 Arrow Left 
+			 
+		 
+
+		 
+			 Arrow Right 
+			 
+		 
+
+	 
+ 
+     loadCSS('//fonts.googleapis.com/css?family=Open+Sans:300,300italic,500,500italic,600,600italic,700,700italic,800,800italic,italic,regular|Source+Sans+Pro:600,700,regular|'); 
+    
+
+     [] 
+         
+             
+                 
+                     Slideshow Left Arrow 
+                     
+                         
+                     
+                 
+                 
+                     Slideshow Right Arrow 
+                     
+                         
+                     
+                 
+             
+         
+    
+	
+	
+
+     
+ 
+ 

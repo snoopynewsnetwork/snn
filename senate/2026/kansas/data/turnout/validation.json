@@ -1,0 +1,232 @@
+{
+  "status": "pass",
+  "validation_scope": "offline preservation and arithmetic; known source inconsistencies remain qualified",
+  "county_count": 105,
+  "native_identities": 22031,
+  "detail_observations": 121053,
+  "footer_observations": 96,
+  "checks": [
+    {
+      "check": "county identity uniqueness and exact105 coverage",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "all105 FIPS/name/key joins match primary Census code list",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "all23 named-candidate county sums equal independent primary statewide PDF controls",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "primary2026 exact13 candidate party controls",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "all10 county measure orders, weights, integer minimum80 and remainders",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "primary order and exact crossing",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "priority/top15/remainder membership conserved",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "unreported write-in under over blank fields remain unavailable",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "native keys unique and exact22031 coverage",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "native all105 county coverage in each source family",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "native blank redacted counts preserved by family",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "all native candidate identities, zeros, missingness, integer sums and contest totals",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "all94008 source worksheet rows including headers raw blanks and unrelated fields agree original OOXML",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "every detail and footer value matches exact original source position",
+      "pass": true,
+      "detail": {
+        "detail": 121053,
+        "footer": 96
+      }
+    },
+    {
+      "check": "comma-formatted Wyandotte2020 footer retained",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "generic write-in scope separately conserved",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "contract preserves all525 county-family groups and exact native constituents",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "all constituent native objects unchanged relative to full source extraction",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "full4567-context native order minimum80 and remainder",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "known residuals retained without native allocation",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "all administrative families retain105 county records",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "2024 source vintages remain distinct",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "2024 certification release original controls and method sum",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "2020 statewide turnout and method controls remain source scoped",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "2026 active inactive total exact bounds",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "source inconsistent2022 ballot bounds explicitly retained",
+      "pass": true,
+      "detail": {
+        "candidate_votes_exceed_ballots": [
+          "Phillips",
+          "Rice",
+          "Sumner",
+          "Washington",
+          "Wilson"
+        ],
+        "ballots_exceed_registration": [
+          "Stevens"
+        ],
+        "treatment": "retained as source inconsistency; excluded from clean weights"
+      }
+    },
+    {
+      "check": "2024 candidate votes bounded by source ballots",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "four N/A mail cells remain unknown not zero",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "supplemental Sumner2022 original county method and ballot distinction independently verified",
+      "pass": true,
+      "detail": {
+        "scope": "single external supplemental county control; statewide CSV and native families unchanged"
+      }
+    },
+    {
+      "check": "actual peer agreement and pinned assets",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "shared original stored and decompressed hashes sizes",
+      "pass": true,
+      "detail": {
+        "referenced_assets": 21
+      }
+    },
+    {
+      "check": "new acquisition complete gzip bytes hashes status metadata redirects retained",
+      "pass": true,
+      "detail": {
+        "captures": 22,
+        "failed_or_unavailable": [
+          "johnson-results-2024",
+          "sumner-results-index"
+        ]
+      }
+    },
+    {
+      "check": "all relative report and schema links resolve",
+      "pass": true,
+      "detail": {
+        "relative_links": 23
+      }
+    },
+    {
+      "check": "strict individual artifact size limit and no dependency cache directories",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "asset manifest includes all owned deliverables",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "owned asset hashes and sizes verified",
+      "pass": true,
+      "detail": {
+        "mode": "validation output self hash verified by final check-only pass"
+      }
+    },
+    {
+      "check": "external coordinator accepted research scope path only no reverse hash",
+      "pass": true,
+      "detail": null
+    }
+  ],
+  "material_gaps": [
+    "No statewide generic/valid named write-in, under/over or blank controls in the priority source universe.",
+    "2024 broad versus release ballot/registration vintages differ; no county allocation imposed.",
+    "2022 turnout ballot table violates named-vote/registration bounds in specified counties.",
+    "Blank/redacted native cells and positive residuals remain unallocated.",
+    "Current court receipt rule and approved November2026 geometry require official-results/maps review."
+  ],
+  "coordinator_acceptance": "external path-only record; no current geographic or live forecast approval"
+}

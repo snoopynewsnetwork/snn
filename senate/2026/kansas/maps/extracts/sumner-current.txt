@@ -1,0 +1,809 @@
+
+
+
+
+
+
+ 
+ 
+ 
+		  	
+
+
+ 
+ 
+ 
+
+//----- Check href of all <a...> tags, if it matchs page url and immediate parent is <LI>,
+//		append "active" to className of all ancestor <LI> tags until the parent of the <LI>
+//		tag is not <UL> or the parent of the <UL> is not another <LI> tag.
+var functionRef = function setClassActive()
+{
+	var e;
+	try
+	{
+		var pattern = new RegExp("http[s]?://.*?/(.*)[?#]?","");
+		var tags = document.getElementsByTagName("A");
+		if (tags)
+		{
+			for (var i=0;i<tags.length;i++)
+			{
+				var el = tags[i];
+				var resultsTag = el.href.match(pattern);
+				var resultsPage = location.href.match(pattern);
+				if (!resultsTag || !resultsPage) continue;
+				if (resultsTag[1] != resultsPage[1]) continue;
+	
+				// go up li tree marking this and all parent class=active
+				var li = el.parentNode;
+				while (li && li.tagName == 'LI')
+				{
+					if (li.className != '') 
+						li.className += ' ';
+					li.className += 'active';
+					var ul = li.parentNode;
+					if (!ul || ul.tagName != 'UL') break;
+					li = ul.parentNode;
+				}
+				//let's catch all links e.g. topnav, leftnav, quick links, etc
+				//break;	//found url match, quit checking tags
+			}
+		}
+	}
+	catch (e) {}
+}
+//----- Activate topnavActive once page loads
+if (typeof addEventListener != 'undefined') addEventListener('load', functionRef, false);	//standards browser
+else if (typeof attachEvent != 'undefined') attachEvent("onload", functionRef);				//IE early versions
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+
+	
+	
+	
+	 
+	 
+	 
+
+	 
+	 
+	 
+	 
+	
+	 
+
+	 
+
+
+
+
+
+	 Sumner County, KS 
+	 
+
+
+
+	 
+
+
+
+	 
+	 
+
+
+
+
+	 
+
+ 
+
+
+
+	 
+
+
+
+ 
+
+ 
+ 
+ 
+ 
+
+	
+
+	 
+ 
+ 
+ 
+ 
+ 
+	var defaultCalendarColor = "#3788d8";
+	var ImportCals = [];
+	var calendarProps = {'6' : { 'color' : '' , 'name' : 'calendar-list-options' },
+};
+	var RZCalendarTimezone = "";
+ 
+
+
+	 
+	 
+
+	 
+	 
+
+ 
+ 
+
+
+
+
+ 
+if (typeof(RZ) == 'undefined') RZ = {};
+if (!RZ.link) RZ.link = new Object();
+RZ.pagetype = 'template'
+RZ.baseurlprefix = '../../../'
+RZ.baseurlpath = 'elected_officials/county_clerk_and_election_officer/election_office/'
+RZ.protocolRelativeRevizeBaseUrl='//webgen1.revize.com'
+
+RZ.pagetemplatename = 'freeform'
+RZ.pagetemplateid = '32'
+RZ.pagemodule = 'links'
+RZ.pagemoduleid = '5'
+RZ.pagerecordid = '899';
+
+RZ.pageid = 'links-899';
+RZ.pageparentid = '882';
+RZ.pagesectionid = '882';
+RZ.pagesectionname = 'election_office';
+RZ.pagesectionlevel = '3';
+RZ.pagesectionfolder = 'elected_officials/county_clerk_and_election_officer/election_office/';
+RZ.pagesectionfilter = 'sectionid=882';
+RZ.pagelinkfilter = 'linklevel=3 and linksectionid=882';
+RZ.pagelinklevel = '3';
+RZ.pagelinkid = '899';
+RZ.pageidfield = '';
+
+RZ.isnewrecord = false;
+RZ.editmodule = '';
+RZ.editrecordid = '899';
+RZ.editrecordversion = '';
+RZ.editversion = '';
+RZ.editaction = '';
+
+RZ.page_roles = ''
+RZ.page_users = 'f4c1fb7225492df0a8c2f551bace0f469e9c90550de1f19bc3c061730bfa0097'
+RZ.page_key = 'freeform[899]'
+RZ.parent_key = 'freeform[882]'
+RZ.inherit_key = 'index[]'
+RZ.workflowname = ''
+RZ.permissions_options = ''
+RZ.permissions_module = 'webspace_page_permissions'
+RZ.webspace = 'sumnerCountryks'
+RZ.webspacedesc = "Colorville";
+
+RZ.featurespattern = '(EZ)';
+null
+
+RZ.webspacelinksurl = ''
+RZ.webspacelinksurl = './webspace/links.html'
+RZ.workflowlist = ''
+RZ.revizeserverurl = 'https://webgen1.revize.com/revize/sumnercountryks';
+
+if (!RZ.nextseq) RZ.nextseq = {linknames:{},modules:{}};
+
+RZ.webspace_config = new Object();
+RZ.webspace_config.admin_email = "noreply@co.walla-walla.wa.us";
+RZ.webspace_config.calendar_options = "max_events=4";
+RZ.webspace_config.form_captcha = "yes";
+RZ.webspace_config.form_server = "revizeserver";
+RZ.webspace_config.form_technology = "jsp";
+RZ.webspace_config.formwizard_ftp_password = "";
+RZ.webspace_config.formwizard_ftp_port = "";
+RZ.webspace_config.formwizard_ftp_server = "";
+RZ.webspace_config.formwizard_ftp_user = "";
+RZ.webspace_config.formwizard_setup = "yes";
+RZ.webspace_config.formwizard_smtp_password = "xxx";
+RZ.webspace_config.formwizard_smtp_server = "xxx";
+RZ.webspace_config.formwizard_smtp_user = "xxx";
+RZ.webspace_config.google_analytics = "";
+RZ.webspace_config.home_pageid = "0";
+RZ.webspace_config.home_sectionid = "0";
+RZ.webspace_config.home_template = "home,index,sitemap";
+RZ.webspace_config.icon_email = "<img src=\"/revize/images/email_icon_yellow.gif\" width=\"16\" border=\"0\" height=\"17\" title=\"Request email notification when page changes\" alt=\"Request email notification when page changes\" style=\"\" />";
+RZ.webspace_config.image_maxheight = "3000";
+RZ.webspace_config.image_maxwidth = "3000";
+RZ.webspace_config.image_setup = "yes";
+RZ.webspace_config.livesite_url = "";
+RZ.webspace_config.menu_links_module = "links";
+RZ.webspace_config.menu_newsection = "";
+RZ.webspace_config.menu_nexturl = "webspace_menu-editform.jsp";
+RZ.webspace_config.menu_sections_module = "sections";
+RZ.webspace_config.menu_system = "custom";
+RZ.webspace_config.menu_version = "1.00";
+RZ.webspace_config.new_menu_manager_enabled = "yes";
+RZ.webspace_config.notify_return_url = "enotify/index.php";
+RZ.webspace_config.rte_setup = "yes";
+RZ.webspace_config.to_email = "";
+RZ.webspace_config.use_folders = "1";
+RZ.webspace_config.use_new_buttons = "yes";
+
+RZ.isauthenticationactive = true
+RZ.warning = ""
+RZ.adminwinmsg = null
+
+RZ.channels = 'revize,fileschannel';
+RZ.jsversion = 1.2 
+ 
+
+
+
+ 
+
+	 Skip to main content 
+
+	
+
+
+
+
+
+	 
+		 
+			 
+			 
+		 
+
+		 
+		 
+			 
+				
+
+
+
+ 
+	 
+	
+ 
+			 
+			
+			 
+			
+				
+
+
+ 
+ 
+	 Home 
+	 About 
+		 
+			 County History 
+				 
+					 Archeology 
+					 Chisholm Trail 
+					 Cities of Past 
+					 Cities Today 
+					 Cyclones and Tornadoes 
+					 Early County Maps 
+					 Early Sumner County 
+					 Farming in Sumner 
+					 History Tidbits 
+					 Other History Links 
+					 Railroad History 
+					 The County Today 
+					 The Wild West 
+				 
+			 
+			 Casino Information 
+		 
+	 
+	 Elected Officials 
+		 
+			 Commissioners 
+				 
+					 Agendas & Minutes 
+					 Commission Districts 
+					 Audits and Budget Info 
+				 
+			 
+			 County Attorney 
+			 County Clerk and Election Officer 
+				 
+					 Sumner County Employee Benefits 
+					 Election Office 
+				 
+			 
+			 Register of Deeds 
+				 
+					 FAQ 
+					 FEES 
+					 KS Real Estate SVQ 
+				 
+			 
+			 Sheriff 
+			 Treasurer 
+				 
+					 Current Projects 
+					 Disclosure 
+					 General Information 
+					 Tax Search 
+					 License a Vehicle 
+					 License Plate Transfer 
+					 Payment 
+					 Refunds 
+					 Tag Renewal Dates 
+					 Contact Information 
+					 Favorite Links 
+					 Plates 
+					 Out of State/Salvage Titles 
+					 Vehicle Registration Information 
+					 Motor Vehicle Forms 
+					 Commercial Page 
+					 What to bring for Commercial Tags 
+					 Commercial Fees 
+					 Drivers License 
+				 
+			 
+		 
+	 
+	 Departments 
+		 
+			 Appraiser 
+				 
+					 Mapping Information 
+					 Parcel Search 
+					 Personal Property FAQ 
+					 Real Estate 
+					 Tax Calendar 
+					 Why Appraisal 
+				 
+			 
+			 Community Corrections 
+			 District Court 
+			 Emergency Management 
+			 Extension Office 
+			 Information Technology 
+			 Noxious Weed 
+				 
+					 Control Noxious Weeds 
+					 Noxious Weeds of Kansas 
+				 
+			 
+			 Counselor 
+			 Economic Development 
+			 Emergency Communications 
+			 Health Department 
+			 Maintenance 
+			 Planning & Zoning Environmental Health 
+				 
+					 Regulations 
+					 Sumner County Planning Commission 
+					 Comprehensive Plan 
+					 Environmental Codes 
+				 
+			 
+			 Road & Bridge 
+				 
+					 Road - Bridge Information 
+					 Divisions 
+				 
+			 
+		 
+	 
+	 Information 
+		 
+			 Calendar 
+			 Contacts 
+			 Documents 
+			 Employment Opportunities 
+		 
+	 
+	 Parcel Search 
+	 Tax Search 
+ 
+
+
+
+
+
+
+
+			
+			 
+			 
+				 
+					 
+						 Search 
+						 
+						 
+					 
+				 
+				 
+					 
+						function googleTranslateElementInit() {
+							new google.translate.TranslateElement({pagelanguage: 'en',
+								layout: google.translate.TranslateElement.InlineLayout.SIMPLE},
+								'google-translate');
+						}
+					 
+				 
+				 
+					 Translate 
+						 
+							 English 
+							 Afrikaans 
+							 Albanian 
+							 Arabic 
+							 Armenian 
+							 Azerbaijani 
+							 Basque 
+							 Belarusian 
+							 Bengali 
+							 Bosnian 
+							 Bulgarian 
+							 Catalan 
+							 Cebuano 
+							 Chinese (Simplified) 
+							 Chinese (Traditional) 
+							 Croatian 
+							 Czech 
+							 Danish 
+							 Dutch 
+							 Esperanto 
+							 Estonian 
+							 Filipino 
+							 Finnish 
+							 French 
+							 Galician 
+							 Georgian 
+							 German 
+							 Greek 
+							 Gujarati 
+							 Haitian Creole 
+							 Hausa 
+							 Hebrew 
+							 Hindi 
+							 Hmong 
+							 Hungarian 
+							 Icelandic 
+							 Igbo 
+							 Indonesian 
+							 Irish 
+							 Italian 
+							 Japanese 
+							 Javanese 
+							 Kannada 
+							 Khmer 
+							 Korean 
+							 Lao 
+							 Latin 
+							 Latvian 
+							 Lithuanian 
+							 Macedonian 
+							 Malay 
+							 Maltese 
+							 Maori 
+							 Marathi 
+							 Mongolian 
+							 Nepali 
+							 Norwegian 
+							 Persian 
+							 Polish 
+							 Portuguese 
+							 Punjabi 
+							 Romanian 
+							 Russian 
+							 Serbian 
+							 Slovak 
+							 Slovenian 
+							 Somali 
+							 Spanish 
+							 Swahili 
+							 Swedish 
+							 Tamil 
+							 Telugu 
+							 Thai 
+							 Turkish 
+							 Ukrainian 
+							 Urdu 
+							 Vietnamese 
+							 Welsh 
+							 Yiddish 
+							 Yoruba 
+							 Zulu 
+						 
+					 
+				
+
+
+
+
+
+
+
+			 
+				
+			 
+			 
+		 
+	 
+	 
+ 
+ 
+	 
+		 
+			 
+				RZ.module = 'slider';
+				RZ.nexturl = "/revize/webgen_includes/colorville/editforms/slider-editlist.jsp?pageid=882";
+				RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = '';
+				RZ.img = '<span class="rzBtn">Edit Slider</span>';
+				RZ.caption = '';
+				RZ.options = '';
+				if (typeof RZaction != 'undefined') RZaction('editlist');
+			 
+
+		 
+ 
+if (typeof RZlistbegin != 'undefined') RZlistbegin(1)
+ 
+ 
+if (typeof RZlinktemplate != 'undefined') RZlinktemplate('slider','','')
+if (typeof RZ.nextseq != 'undefined') RZ.nextseq.modules['slider_1']={field:'seq_no',seq:'1.00'};
+ 
+
+		 
+			 
+		 
+	 
+
+	 Current Election 
+
+ 
+ 
+	 		 
+			 
+				 
+					 Related Links 
+					 
+
+
+
+						 
+							RZ.module = 'links';
+							RZ.nexturl = "/revize/plugins/menus/webspace_menu-editlist.jsp?pageid=links-899&"
+									 + "linksfilter=linkplacement=leftnav and linkparentid=882 and linkparentid=899&"
+									 + "numberoflevels=2&"
+									 + "linkoptions=url,template,file&"
+									 + "linknewsection=*all*";
+							RZ.img = '<span class="rzBtn">Edit Links</span>';
+							RZ.caption = '';
+							RZ.set = "links.linkplacement=leftnav"
+							RZ.options = '';
+							if (typeof RZaction != 'undefined') RZaction('editlist');
+						 
+						 
+							RZ.module = 'freeform';
+							RZ.recordid = '';
+							RZ.nexturl = "/revize/webgen_includes/colorville/editforms/leftnav-title-editform.jsp";
+							RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = '';
+							RZ.img = '<span class="rzBtn">Edit Links Title</span>';
+							RZ.set = 'pageid=links-899';
+							RZ.options = '';
+							if (typeof RZaction != 'undefined') RZaction('editform');
+						 
+					 
+					
+  
+	 Current Election 
+	 Election Publications 
+	 Voter Registration Information 
+	 Election Results 
+	 Forms 
+	 Election FAQ 
+	 Candidate Filing Paperwork 
+	 Election Workers 
+ 
+
+				 
+			 			 
+				 
+					  
+	 
+	
+		 Home 
+							   Elected Officials   
+							   County Clerk and Election Officer   
+							   Election Office   
+							  Current Election 
+	 
+ 
+
+					 Current Election 
+					 
+							 
+		 
+			RZ.module = 'freeform';
+			RZ.recordid = '';
+			RZ.nexturl = "/revize/webgen_includes/colorville/editforms/freeform-editform.jsp";
+			RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = '';
+			RZ.img = '<span class="rzBtn">Edit Page Content</span>';
+			RZ.set = 'freeform.pageid=links-899';
+			RZ.options = '';
+			if (typeof RZaction != 'undefined') RZaction('editform');
+		 
+	
+	 
+		RZ.module = 'freeform';
+		RZ.recordid = '';
+		RZ.nexturl = "/revize/webgen_includes/colorville/editforms/metadata-editform.jsp";
+		RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = '';
+		RZ.img = '<span class="rzBtn">Edit Metadata</span>';
+		RZ.set = 'freeform.pageid=links-899';
+		RZ.options = '';
+		if (typeof RZaction != 'undefined') RZaction('editform');
+	 
+	 
+		RZ.nexturl = '';
+		RZ.img = '<img src="images/edit/permissions.jpg" alt="Permissions" border="0" />';
+		RZ.options = '';
+		if (typeof RZaction != 'undefined') RZaction('permissions');
+	 
+ 
+
+							
+ 
+	 2026 General Election - November 3, 2026 Voting: 
+ 
+ Polling sites will be open on 11/3/2026 from 7:00 a.m. to 7:00 p.m.
+ 
+ 
+ Argonia Community Building - 114 W Walnut, Argonia 
+ Belle Plaine Community Building - 528 N. Merchant, Belle Plaine 
+ Caldwell Community Building - 119 E. First Ave., Caldwell 
+ Community Activity Building - 206 S. 2nd, Geuda Springs 
+ Mayfield Community Center - 310 N Hutchinson St., Mayfield 
+ Oxford Lions Club Building - 116 N. Sumner, Oxford 
+ Peck Community Building - 706 E. 119th St., Peck 
+ Pix Center - Mulvane - 101 E Main St, Mulvane 
+ Raymond Frye Complex - 320 N. Jefferson, Wellington 
+ South Haven Community Bldg - 207 Main St., South Haven 
+ Conway Springs United Methodist Fellowship Hall - 411 S 8th, Conway Springs 
+ Wellington Knights of Columbus Hall - 201 E. Harvey, Wellington 
+ 
+ 
+ 
+ Voters can find their sample ballots and polling location at  https://myvoteinfo.voteks.org/VoterView .  
+ 
+ Close of Registration: 
+ 
+ Voter registration for the 2026 General Election will close on 10/13/2026. 
+ 
+ Advance Voting Information: 
+ 
+ Advance in-person voting begins on 10/14/2026 and ends on 11/2/26 at noon. All Advance in-person voting is at the Sumner County Courthouse, 501 N Washington Ave., Ste. 101, Wellington, KS 67152 during regular business hours.   
+ Advance by mail voting begins on 10/14/2026 and ends on 10/27/2026. 
+ 
+ Indoor Dropbox - 501 N Washington Ave. Ste. 101 Wellington KS 67152 - Open during regular business hours Monday-Friday starting 10/14/2026 through 11/3/2026 at 5 PM 
+ Ballot can be returned to any polling location until 7 PM on Election Day. 
+ 
+ 
+ Under Kansas statute, the deadline to return your ballot is the close of the polls on Election Day. A district court in Douglas County entered a statewide injunction requiring ballots postmarked by election day to be counted if a ballot arrives by the last postal delivery on Friday after the election. The Kansas Court of Appeals rejected the Secretary of State’s appeal to stay the injunction. Regardless of the decision, voters are urged to return their ballots by the close of polls on Election Day. Doing so will ensure that their ballots will be counted. 
+ 
+ Candidates: 
+ 
+ Filing Deadline is NOON June 1, 2026 
+ 
+ 
+
+					 				 
+			 
+			 
+	 
+ 
+ 
+	 
+		 
+		 
+		 Share  this page 
+	 
+
+	 
+		 
+			 
+				 
+					 Share this page 
+					 × 
+				 
+				 
+					 
+						 Copy and paste this code into your website. 
+						 <a href="http://www.co.sumner.ks.us/elected_officials/county_clerk_and_election_officer/election_office/current_election.php">Your Link Name</a> 
+					 
+					 
+						 Share this page on your favorite Social network 
+						 
+							 
+								 
+									  Facebook
+								 
+							 
+							 
+								 
+									  Twitter
+								 
+							 
+							 
+								 
+									  Reddit
+								 
+							 
+						 
+					 
+					 Close 
+				 
+			 
+		 
+	 
+ 	
+
+
+
+
+	 
+		 
+			 
+				 
+					 
+						 
+							
+						 
+					 
+				 
+				 
+					 
+						 
+							
+						 
+					 
+				 
+				 					 
+						Sumner County Courthouse 501 N. Washington Wellington, Ks. 67152
+					 
+				 
+				 		      
+				 
+			 
+		 
+	 
+	 
+		 
+			© 2026 Sumner County, KS Powered by  revize.  Government website experts |  Login 
+		 
+	 
+ 
+
+ 
+ 
+ 
+
+
+ 
+ 
+
+
+
+
+
+ 
+ 
+

@@ -1,0 +1,2630 @@
+
+ 
+ 
+ 
+
+	 
+ 
+				 (function(w,d,s,l,i){w.GAMeasurementID='G-9CPQTPW5VE';w[l]=w[l]||[];w[l].push({'gtm.start':
+				new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+				j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+				'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+				})(window,document,'script','cpDataLayerGA4','GTM-K73C5PS'); 
+				 
+				 
+					var enableTelemetry = 'false'
+					var aiConfig = {
+					instrumentationKey: '1cde048e-3185-4906-aa46-c92a7312b60f'						
+					}
+					var appInsights = window.appInsights || function (a) { function b(a) { c[a] = function () { var b = arguments; c.queue.push(function () { c[a].apply(c, b) }) } } var c = { config: a }, d = document, e = window; setTimeout(function () { var b = d.createElement('script'); b.src = a.url || 'https://js.monitor.azure.com/scripts/a/ai.0.js', d.getElementsByTagName('script')[0].parentNode.appendChild(b) }); try { c.cookie = d.cookie } catch (a) { } c.queue = []; for (var f = ['Event', 'Exception', 'Metric', 'PageView', 'Trace', 'Dependency']; f.length;)b('track' + f.pop()); if (b('setAuthenticatedUserContext'), b('clearAuthenticatedUserContext'), b('startTrackEvent'), b('stopTrackEvent'), b('startTrackPage'), b('stopTrackPage'), b('flush'), !a.disableExceptionTracking) { f = 'onerror', b('_' + f); var g = e[f]; e[f] = function (a, b, d, e, h) { var i = g && g(a, b, d, e, h); return !0 !== i && c['_' + f](a, b, d, e, h), i } } return c }(aiConfig);
+					window.appInsights = appInsights, appInsights.queue && 0 === appInsights.queue.length;
+					// Add telemetry initializer
+					appInsights.queue.push(function() {
+						appInsights.context.addTelemetryInitializer(function(envelope) {
+							var telemetryItem = envelope.data.baseData;
+							// To check the telemetry item’s type:
+							if (!false)
+							{
+								//If the telemetry is not enabled, we still want to capture Google map custom event, so only allow that
+								if (envelope.name.indexOf('.Event') == -1)
+									return false;
+							}
+						});
+					});						
+					appInsights.trackPageView();
+				 
+	 
+		function populateAntiForgery(token) {
+			var input = document.createElement("input");
+			input.name = "__RequestVerificationToken";
+			input.type = "hidden";
+			input.value = token;
+			var absPat = /^https?:\/\/|^\/\//i;
+			var forms = document.getElementsByTagName("form");
+			for (var i = 0; i < forms.length; i++) {
+				if (forms[i].method == "post" &&
+					!forms[i].querySelector('[name="__RequestVerificationToken"]') &&
+					!absPat.test(forms[i].getAttribute("action"))) {
+					forms[i].appendChild(input.cloneNode());
+				}
+			}
+		}
+
+		function getAntiForgeryToken(callback, error) {
+			var xhr = new XMLHttpRequest();
+			xhr.open("GET", "/antiforgery");
+			xhr.addEventListener("load", function() {
+				try {
+					if (this.status !== 200) {
+						throw Error("Invalid status. Could not retrieve antiforgery token.");
+					}
+					var obj = JSON.parse(this.responseText);
+					callback(obj.token);
+				} catch (e) {
+					typeof error === "function" && error(e);
+				}
+			});
+			xhr.send();
+		}
+
+		getAntiForgeryToken(function(token) {
+			if (document.readyState === "complete"
+				|| document.readyState === "loaded" 
+				|| document.readyState === "interactive") {
+				populateAntiForgery(token);
+				return;
+			}
+			document.addEventListener("DOMContentLoaded", function() {
+				populateAntiForgery(token);
+			}, false);
+		}, console.error);
+	 
+			
+
+	 
+		window.departmentHeader = {};
+		window.pageSectionTracker = {};
+		window.isResponsiveEnabled = true;
+		window.isRemoveSetHeights= true;
+		if (window.isRemoveSetHeights) {
+			document.documentElement.className += ' removeSetHeights';
+		}
+		window.mainMenuMediaQuery = 'screen and (max-width: 40em)';
+		window.isMobileBrowserIncludingTablets = false;
+		window.fixedResponsiveMenu = false;
+		window.fullWidthResponsiveMenu = false;
+		window.responsiveMenuHeight = '';
+		window.responsiveMenuFontSize = '';
+		window.isContentAdvisor = false;
+		(function () {
+			window.setSizeCookie = function () {
+				document.cookie = "dpi=" + window.devicePixelRatio + "; path=/";
+				document.cookie = "viewportWidth=" + window.innerWidth + "; path=/";
+				document.cookie = "viewportHeight=" + window.innerHeight + "; path=/";
+				if (screen && screen.width && screen.height) {
+					document.cookie = "screenWidth=" + screen.width + "; path=/";
+					document.cookie = "screenHeight=" + screen.height + "; path=/";
+				}
+				document.cookie = "responsiveGhost=1; path=/";
+			};
+
+			setSizeCookie();
+		}());
+	 
+		 
+
+	 
+	 
+
+ 
+
+!function(f,b,e,v,n,t,s)
+
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+
+n.queue=[];t=b.createElement(e);t.async=!0;
+
+t.src=v;s=b.getElementsByTagName(e)[0];
+
+s.parentNode.insertBefore(t,s)}(window,document,'script',
+
+'https://connect.facebook.net/en_US/fbevents.js');
+
+fbq('init', '347529063048059');
+
+fbq('track', 'PageView');
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+	 
+ 
+ 
+ 
+
+	
+	 
+	 
+	 
+		 Elections | Miami County, KS - Official Website 
+
+		 
+		 
+			 
+	 
+	
+
+	 
+	 
+	 
+	 
+	 <!--
+	var intCountryCode = 840;
+	var order = '';
+//--> 
+	
+ 	 	 
+
+	 
+	 
+		window.Pages = window.Pages || {};
+		// FrontEnd RWD initialization
+		window.Pages.rwdReady = $.Deferred();
+		window.Pages.toolBarDeferred = $.Deferred();
+		window.Pages.rwdSetupComplete = $.Deferred();
+		window.Pages.megaMenuLoaded = $.Deferred();
+		window.Pages.angularToolbarComplete = $.Deferred();
+		window.Pages.frontEndToolbarComplete = $.Deferred();
+	 
+	 
+	 
+	
+	
+	
+	
+
+
+
+
+	 
+	 
+	 
+	 
+
+	 
+		setEditorVariables(false, 840);
+		function getPrintPreviewType() { return 0; } function printPreview() {pPreview(getPrintPreviewType()); }
+	 
+	 
+ 
+ 
+
+     jQuery(document).click(function (event) {
+	var target = jQuery(event.target);
+	if (target.attr('src') && target.parents('.image').length && target.parents('.widget').length) {
+		var text = target.attr('title');
+		
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Image',
+				eventAction: 'Image - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.is('button') || target.hasClass('button') || target.parents().hasClass('button')) {
+		var text = "";
+		if (target.parents('.button')[0]) {
+			text = target.parents('.button').first().text();
+		} else if (target.text().length) {
+			text = target.text();
+		} else if (target.attr('title').length) {
+			text = target.attr('title');
+		}
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Button',
+				eventAction: 'Button - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetCustomHtml').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Custom Html',
+				eventAction: 'Custom Html Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.editor').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Editor',
+				eventAction: 'Editor Link Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.GraphicLinks').length) {
+		var text = "";
+		var targetGraphicLink = target;
+		if (target.hasClass('widgetGraphicLinksLink')) {
+			targetGraphicLink = jQuery(target.children()[0]);
+		}
+		if (targetGraphicLink.hasClass('text')) {
+			text = targetGraphicLink.text();
+		} else if (targetGraphicLink.attr('src').length) {
+			if (targetGraphicLink.attr('alt').length) {
+				text = targetGraphicLink.attr('alt');
+			} else {
+				text = targetGraphicLink.attr('src');
+			}
+		} else {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Graphic Links',
+				eventAction: 'Graphic Link - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.InfoAdvanced').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Info Advanced',
+				eventAction: 'Info Advanced Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.list').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'List',
+				eventAction: 'List Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.megaMenuItem').length || target.parents('.topMenuItem').length) {
+		var megaMenuText = jQuery('.topMenuItem.mouseover').find('span').text();
+		var breadCrumbs = [];
+		jQuery('.breadCrumbs > li').each(function () {
+			 breadCrumbs.push(this.textContent);
+		});
+		var pageTitle = breadCrumbs.join('>');
+		var subTitleText = target.parents('.megaMenuItem').children('.widgetTitle').children().text();
+		var text = "";
+		if (pageTitle) {
+			text += pageTitle + " | ";
+		} else {
+			text += document.title + ' - ';
+		}
+		if (target.text() == "" && megaMenuText == "") {
+			text += "N/A";
+		} else if (target.text().length && megaMenuText.length) {
+			if (megaMenuText == target.text()) {
+				text += megaMenuText;
+			} else {
+				text += megaMenuText + " - " + subTitleText + " - " + target.text();
+			}
+		} else if (target.text() == "") {
+			text += megaMenuText;
+		} else {
+			text += target.text();
+		}
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Mega Menu',
+				eventAction: 'Mega Menu : ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetNewsFlash').length && target.parents('.widgetItem').length) {
+		var text = jQuery(target.parents('.widgetItem')[0]).find('.widgetTitle').children().text();
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'News Flash',
+				eventAction: 'News Flash - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.hasClass('widgetQuickLinksLink') || target.find('.widgetQuickLinksLink').length) {
+		var text = target.text();
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Quick Links',
+				eventAction: 'Quick Links - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.attr('src') && target.parents('.cpSlideshow').length) {
+		var text = target.attr('title');
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Slideshow',
+				eventAction: 'Slideshow - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetText').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Text',
+				eventAction: 'Text Link Clicked',
+				eventLabel: window.location.href
+			});
+	}
+}); 
+	 
+	 
+		 
+		 
+			 
+				 
+			 
+		 
+	 
+	 
+		 
+	 
+	 
+		 
+			 
+		 
+	 
+ 
+     
+ 
+ Skip to Main Content 
+ 
+     
+
+         
+
+
+
+     
+     
+     
+     
+     
+     
+     
+     
+
+     
+     
+         
+                 
+                    
+
+
+
+ 
+ 
+     
+         Create a Website Account   - Manage notification subscriptions, save form progress and more.    
+         
+	         Website Sign In 
+         
+     
+ 
+ 
+    $(document).ready(function () {
+        $('#signedOutToolbarCreateProfileButton').click(function (event) {
+            event.preventDefault();
+            window.location.href = '/MyAccount/ProfileCreate?from=url&url=/&dn=' + window.location.origin;
+        });
+
+			
+				$('#loggedOutToolbarSignInButton').click(function (event) {
+					event.preventDefault();
+					window.location.href = '/MyAccount/?from=url&url=' + encodeURIComponent(window.location.href.replace(window.location.origin, '')) + '&dn=' + window.location.host;
+				});
+			
+
+		if ('False' == 'True') {
+            $('#loggedOutToolbarSignInButton').hide();
+		}
+    })
+ 
+ 
+
+                 
+             
+                 
+                
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+				 
+ 
+ 
+      Government   			      Departments   			      Residents   			      Visitors   			      How Do I   			 
+ 
+
+
+	 
+		(function () {
+			function setupMenu() {
+				const menuID = 'mainNavMenu';
+				const menuType = MAIN_MENU;
+
+				//setup menu manager properties for main menu
+				if (!menuManager.mobileMainNav && true)
+					menuManager.adjustMainItemsWidth('#' + menuID);
+				menuManager.isMainMenuEditable = false;
+				menuManager.mainMenuMaxSubMenuLevels = 4;
+				menuManager.setMOMMode(2, menuType);
+
+				//Init main menu
+				const setupDraggable = menuManager.isMainMenuEditable;
+				const urlToGetHiddenMenus = '/Pages/MenuMain/HiddenMainSubMenus?pageID=1&moduleID=&themeID=19&menuContainerID=mainNav';
+
+				menuManager.setupMenu(menuID, 'mainNav', menuType, setupDraggable, urlToGetHiddenMenus);
+				menuManager.mainMenuInit = true;
+				menuManager.mainMenuTextResizer = true;
+				if (1.00 > 0)
+					menuManager.mainMenuTextResizerRatio = 1.00;
+				if (window.isResponsiveEnabled)
+					menuManager.mainMenuReady.resolve();
+
+			}
+
+			if (document.readyState === "complete"
+				|| document.readyState === "loaded"
+				|| document.readyState === "interactive") {
+				setupMenu();
+				return;
+			}
+
+			document.addEventListener("DOMContentLoaded", setupMenu);
+		})();
+	 
+
+
+ 	 
+				                
+
+
+
+	 
+ 	 
+				                
+
+
+
+	 
+ 	 
+				                
+
+
+
+	 
+ 	 
+				                
+
+
+
+	 
+ 	 
+				                
+
+
+
+	 
+ 	 
+				                
+
+		 				
+	 
+	
+	 	
+ 
+	
+	 
+	 
+	 
+
+		$(document).ready(function () {
+			try {
+				// Minimum characters required before performing a search/autocomplete
+				var minPrefixLength = 3;
+				var autoCompleteDebounceDelay = 500;
+				var searchFieldSelector = "#searchField" + '519cffa2-8427-4580-a5ed-6253f1063926';
+				var checkboxSelector = "#ysnSearchOnlyDept" + '519cffa2-8427-4580-a5ed-6253f1063926';
+				var buttonSelector = ".widgetSearchButton" + '519cffa2-8427-4580-a5ed-6253f1063926';
+				var autoCompleteCache = {};
+				var autoCompleteCacheKeys = [];
+				var autoCompleteCacheLimit = 25;
+				var currentAutoCompleteRequest = null;
+				var currentAutoCompleteRequestKey = null;
+				var autoCompleteDebounceTimer = null;
+				var autoCompleteDebounceKey = null;
+				var pendingAutoCompleteResponses = [];
+
+				function normalizeAutoCompleteTerm(term) {
+					return $.trim((term || "") + "").replace(/\s+/g, " ");
+				}
+
+				function shouldSearch(term) {
+					return normalizeAutoCompleteTerm(term).length >= minPrefixLength;
+				}
+
+				function getAutoCompleteUrl() {
+					return '/Search/AutoComplete' + ($(checkboxSelector).is(':checked') || false? '?departmentId=0' : '');
+				}
+
+				function getAutoCompleteCacheKey(requestUrl, term) {
+					return requestUrl + "|" + term.toLowerCase();
+				}
+
+				function cacheAutoCompleteResult(cacheKey, data) {
+					if (!Object.prototype.hasOwnProperty.call(autoCompleteCache, cacheKey)) {
+						autoCompleteCacheKeys.push(cacheKey);
+						if (autoCompleteCacheKeys.length > autoCompleteCacheLimit) {
+							delete autoCompleteCache[autoCompleteCacheKeys.shift()];
+						}
+					}
+					autoCompleteCache[cacheKey] = data;
+				}
+
+				function respondToPendingAutoComplete(data) {
+					var responses = pendingAutoCompleteResponses;
+					pendingAutoCompleteResponses = [];
+					for (var i = 0; i < responses.length; i++) {
+						responses[i](data);
+					}
+				}
+
+				function cancelPendingAutoComplete() {
+					clearTimeout(autoCompleteDebounceTimer);
+					autoCompleteDebounceKey = null;
+					if (currentAutoCompleteRequest != null) {
+						currentAutoCompleteRequest.abort();
+						currentAutoCompleteRequest = null;
+					}
+					currentAutoCompleteRequestKey = null;
+					respondToPendingAutoComplete([]);
+				}
+
+				function createWidgetAutoCompleteSource(options) {
+					return function (request, response) {
+						var term = normalizeAutoCompleteTerm(request.term);
+						if (!options.shouldSearch(term)) {
+							response([]);
+							return;
+						}
+
+						var requestUrl = options.url();
+						var cacheKey = getAutoCompleteCacheKey(requestUrl, term);
+						if (Object.prototype.hasOwnProperty.call(autoCompleteCache, cacheKey)) {
+							response(autoCompleteCache[cacheKey]);
+							if (options.success) {
+								options.success(autoCompleteCache[cacheKey]);
+							}
+							return;
+						}
+
+						if (currentAutoCompleteRequestKey === cacheKey || autoCompleteDebounceKey === cacheKey) {
+							pendingAutoCompleteResponses.push(response);
+							return;
+						}
+
+						cancelPendingAutoComplete();
+						autoCompleteDebounceKey = cacheKey;
+						pendingAutoCompleteResponses.push(response);
+						autoCompleteDebounceTimer = setTimeout(function () {
+							autoCompleteDebounceKey = null;
+							currentAutoCompleteRequestKey = cacheKey;
+							currentAutoCompleteRequest = $.ajax({
+								url: requestUrl,
+								dataType: "json",
+								timeout: options.timeout,
+								data: {
+									term: term,
+								},
+								success: function (data) {
+									if (currentAutoCompleteRequestKey === cacheKey) {
+										cacheAutoCompleteResult(cacheKey, data);
+										respondToPendingAutoComplete(data);
+										if (options.success) {
+											options.success(data);
+										}
+									}
+								},
+								error: function (xmlhttprequest, textstatus, message) {
+									if (textstatus === "abort") {
+										return;
+									}
+
+									if (options.error) {
+										options.error(xmlhttprequest, textstatus, message);
+									}
+
+									respondToPendingAutoComplete([]);
+								},
+								complete: function (xmlhttprequest) {
+									if (currentAutoCompleteRequest === xmlhttprequest) {
+										currentAutoCompleteRequest = null;
+										currentAutoCompleteRequestKey = null;
+									}
+								}
+							});
+						}, options.delay);
+					};
+				}
+
+				// click handler for search buttons
+				$(buttonSelector).click(function (e) {
+					e.preventDefault();
+					var $btn = $(this);
+					var $field = $btn.siblings(".widgetSearchBox");
+					var term = $field.val() + "";
+					if (!shouldSearch(term)) {
+						// do nothing until user types enough characters
+						$field.focus();
+						return;
+					}
+
+					if ($(checkboxSelector).is(':checked') || false)
+					{
+						doWidgetSearch($.trim(term), Number(0));
+					}
+					else {
+						doWidgetSearch($.trim(term), 0);
+					}
+				});
+
+				// enter key handler for the search field
+				$(searchFieldSelector).keypress(function (e) {
+					var code = e.which || e.keyCode;
+					if (code === 13) {
+						e.preventDefault();
+						var $this = $(this);
+						var term = $this.val() + "";
+						if (!shouldSearch(term)) {
+							// do nothing until user types enough characters
+							$this.focus();
+							return false;
+						}
+
+						if ($(checkboxSelector).is(':checked') || false) {
+							doWidgetSearch($.trim(term), Number(0));
+						} else {
+							doWidgetSearch($.trim(term), 0);
+						}
+						return false;
+					}
+					return true;
+				});
+
+				// autocomplete: set minLength and guard source
+				if (true) {
+					var $searchField = $(searchFieldSelector).autocomplete({
+						minLength: minPrefixLength,
+						source: createWidgetAutoCompleteSource({
+							delay: autoCompleteDebounceDelay,
+							timeout: 10000,
+							shouldSearch: shouldSearch,
+							url: getAutoCompleteUrl,
+							success: function () {
+								$('.autoCompleteError').remove();
+							},
+							error: function (xmlhttprequest, textstatus, message) {
+								if (textstatus === "timeout") {
+									if ($(searchFieldSelector).siblings('.autoCompleteError').length == 0)
+										$('<span class="autoCompleteError"><p class="alert error">Search autocomplete is currently not responding. Please try again later.</p></span>').insertAfter($(searchFieldSelector));
+								}
+							}
+						}),
+						html: true,
+						delay: 0,
+						select: function (event, ui) {
+							$(this).val(ui.item.value);
+							$(this).next().click();
+						}
+					});
+
+					$searchField.data("ui-autocomplete")._renderItem = function (ul, item) {
+						return $("<li class=\"itemList\"></li>")
+							.data("ui-autocomplete-item", item)
+							.append("<a>" + item.label + "</a>")
+							.appendTo(ul);
+					};
+				}
+
+				// keep searchBtnApplyQuery consistent with prefix rule
+				window.searchBtnApplyQuery = function() {
+					var $field = $(searchFieldSelector);
+					var term = $field.val() + "";
+					if (shouldSearch(term)) {
+						// update href for the icon/button (if present)
+						var btn = document.getElementById("btnSearchIcon");
+						if (btn) btn.href = "/Search?searchPhrase=" + encodeURIComponent($.trim(term));
+					} else {
+						var btn = document.getElementById("btnSearchIcon");
+						if (btn) btn.href = "#";
+					}
+				};
+			}
+			catch(e) {} //we're going to eat this error. Autocomplete won't work but we dont wan't to break anything else on the page.
+		});
+	 
+
+	 
+				 
+		 
+			 
+						 
+
+			 Search 
+		 
+
+	 
+
+
+ 
+	  
+		.widgetSearch ::-webkit-input-placeholder {
+		color: #222223;
+	  }
+		.widgetSearch :-moz-placeholder { /* Firefox 18- */
+	   color: #222223;
+	}
+		.widgetSearch ::-moz-placeholder {  /* Firefox 19+ */
+	   color: #222223;
+	}
+	.widgetSearch :-ms-input-placeholder {
+	   color: #222223;
+	}
+	
+
+	.widgetSearch .widgetBody .widgetSearchBox519cffa2-8427-4580-a5ed-6253f1063926
+	{
+		color: #000000;
+		background-color: #F5F8FA;
+height: 60px;
+border-radius: 30px;
+font: normal normal 600 14px/22px Raleway;
+border: 1px solid #B1BCC3;
+padding: 0 64px 0 24px;
+	}
+	.widgetSearch .widgetBody .widgetSearchButton519cffa2-8427-4580-a5ed-6253f1063926
+	{
+		
+	}
+	.widgetSearch .widgetSearch-onlyDept519cffa2-8427-4580-a5ed-6253f1063926
+	{
+		display: inline-block;
+		color: #333;
+		
+		
+		 padding-top: 10px;
+	}
+	#ysnSearchOnlyDept519cffa2-8427-4580-a5ed-6253f1063926
+	{
+		position: relative;
+		top: .125em;
+	}
+
+ 
+
+ 
+ 
+
+
+
+ 
+	//Updates search icons href to have the correct queryString
+	function searchBtnApplyQuery() {
+		document.getElementById("btnSearchIcon").href = "/Search?searchPhrase=" + document.getElementById("searchField519cffa2-8427-4580-a5ed-6253f1063926").value;
+	}
+ 
+
+ 
+
+	   
+
+	   
+
+			   
+
+
+	 
+ 
+ 
+ 
+ 
+ 
+ 	 
+				                
+
+
+
+	 
+ 
+ 
+ 
+
+
+
+
+		 
+		 
+			 
+			 
+		 
+			 
+				$(window).on("load", function () {
+					$.when(window.Pages.rwdSetupComplete)
+						.done(function () {
+							renderExternalBannerSlideshow('banner1',
+								{"BannerOptionID":58,"ThemeID":19,"SlotName":"banner1","Name":"Default","IsDefault":true,"BannerMode":2,"SlideShowSlideTiming":"5","SlideshowTransition":0,"SlideShowTransitionTiming":"1","ImageScale":true,"ImageAlignment":1,"ImageScroll":true,"MuteSound":true,"VideoType":0,"Status":40,"SlideshowControlsPosition":0,"SlideshowControlsAlignment":0,"SlideshowBannerControlsColorScheme":0,"DisplayVideoPauseButton":false,"VideoPauseButtonAlignment":1,"VideoPauseButtonControlsAlignment":0,"VideoPauseButtonStyle":"#FFFFFF","VideoPauseButtonBackgroundStyle":"#000000","VideoPauseButtonAlignmentClass":"alignRight viewport","DisplaySlideshowPauseButton":true,"SlideshowControlsColor":"#FFFFFF","SlideshowControlsBackgroundColor":"#000000","SlideshowPauseButtonClass":"isHidden","BannerImages":[{"BannerImageID":74,"BannerOptionID":58,"FileName":"/ImageRepository/Document?documentID=11389","Height":350,"Width":2200,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":1,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":""},{"BannerImageID":75,"BannerOptionID":58,"FileName":"/ImageRepository/Document?documentID=11390","Height":350,"Width":2200,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":2,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":""}],"BannerVideos":[{"BannerVideoID":2,"BannerOptionID":58,"VideoFileName":"","ImageFileName":"EmptyBannerBkg202309171502367442.png","IsLink":false,"LinkAddress":null,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","VideoFileID":"00000000-0000-0000-0000-000000000000","ImageFileID":"00000000-0000-0000-0000-000000000000","VideoWidth":0,"VideoHeight":0,"ImageWidth":0,"ImageHeight":0,"LinkedVideoUrl":"","RecordStatus":0,"AltText":null}],"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/"},
+								'/App_Themes/2023 - Interior/Images/',
+								'Rotating');
+						});
+				});
+			 
+
+ 
+ 
+ 
+ 
+ 	 
+				                
+
+
+
+	 
+ 
+
+
+
+
+
+	 
+	 
+		 
+			 Advance Voting 
+		 
+			 
+	 
+		 
+			 Election Results 
+		 
+			 
+	 
+		 
+			 Archived Election Results 
+		 
+			 
+	 
+		 
+			 Polling Locations 
+		 
+			 
+	 
+		 
+			 Candidate Information 
+		 
+			 
+	 
+		 
+			 Special Elections 
+		 
+			 
+	 
+		 
+			 General Election (Even Years) 
+		 
+			 
+	 
+		 
+			 Official "I Voted" Sticker Contest 
+		 
+			 
+
+	 
+
+
+	 
+		(function () {
+			function setupSecondaryMenuProperties() {
+				//setup menu manager properties for secondary menu
+				menuManager.isSideMenuEditable = false;
+				menuManager.sideMenuMaxSubMenuLevels = 4;
+				menuManager.sideMenuHasCustomLinks = false;
+			}
+
+			if (document.readyState === "loading") {
+				document.addEventListener("DOMContentLoaded", setupSecondaryMenuProperties, { once: true });
+				return;
+			}
+
+			setupSecondaryMenuProperties();
+		})();
+	 
+
+	 
+		(function () {
+			function setupAccordionSecondaryNav() {
+				var $menuContainer = $('#secondaryNav');
+
+				$menuContainer.find('*[id^="SideItem"]').each(function () {
+					var ids = $('[id="' + this.id + '"]');
+					if (ids.length > 1)
+						$.each(ids, function (index, value) {
+							value.id = value.id + '_' + index;
+						});
+				});
+
+				$menuContainer.find('.hasAccordionChildren .openAccordionNav').off('click.secondaryNav').on('click.secondaryNav', function (e) {
+					e.preventDefault();
+					showHideAccordionMenuForSecondaryNav($(this));
+				});
+
+				$menuContainer.find(".grippy").each(function () {
+					menuManager.setupDraggableElement($(this), SIDE_MENU, '#secondaryNav');
+				});
+
+				$menuContainer.find("li").each(function () {
+					menuManager.setupDroppableAccordionElement($(this), SIDE_MENU);
+				});
+			}
+
+			if (document.readyState === "loading") {
+				document.addEventListener("DOMContentLoaded", setupAccordionSecondaryNav, { once: true });
+				return;
+			}
+
+			setupAccordionSecondaryNav();
+		})();
+	 
+
+
+
+ 	 
+				                
+
+
+
+	 
+ 
+ 
+ 
+ 		 
+			 Home Departments County Clerk / Elections Elections 
+		 
+
+	   
+    
+ 
+	
+	 
+		
+
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+
+				 
+
+Elections		 
+	
+		 
+			
+
+		 				
+	 
+	
+	 	
+ 
+	     
+
+
+         Election Results Election results can be found in the blue box to the left. Select the type of election you are interested in (Special Election, Primary Election, or General Election). Once you choose the election type, you will be taken to the page where the results are posted.  Write-In and Provisional results are available within each specific Election Results page.  You may also view  Archived Election Results , which include both current and past election years. This section allows you to customize your search by specific race or browse all previous elections. 
+     
+
+ 
+	$(document).ready(function (e) {		
+	    renderSlideshowIfApplicable($('#divEditor' + 'd1b8ef9e-63e4-4927-bb25-d8f46a64b05d'));
+	});
+ 
+ 
+
+	   
+
+	   
+
+			   
+		 				
+	 
+	
+	 	
+ 
+	     
+
+
+         General Information Voter registration books close 21 days prior to the election Polling locations are open from 7:00 A.M. to 7:00 P.M. on Election Day Follow us on our Facebook page.  Click here      General Information P   Primary Election will be held on Tuesday August 4th, 2026 General Election will be held on Tuesday November 3rd, 2026 ral Information    General Information    General Information 
+     
+
+ 
+	$(document).ready(function (e) {		
+	    renderSlideshowIfApplicable($('#divEditor' + '6a62f581-aa1a-452f-94c1-984ef908f4fe'));
+	});
+ 
+ 
+
+	   
+
+	   
+	 
+	
+	 	
+ 
+	     
+
+
+         Poll Workers Election workers needed.  Join our team today! Interested in earning money? Earn for yourself, your church, charity, or organization! Be a poll worker!    Click here for application Requirements Registered to vote in Miami County  Available to work long hours. Election school is paid and is a minimum of two hours and election day is a minimum of 12 hours. Willing to travel to polling places located within the county, and sometimes on short notice. Wages Election day wages at the polls are: Judges/Clerks - $225 Supervising Judges - $300 Students We would love to have students who reside in Miami County join our team. Must be at least 16 years of age and be able to attend a day of training and work on election day. Contact our office for additional information  at 913-294-3976 
+     
+
+ 
+	$(document).ready(function (e) {		
+	    renderSlideshowIfApplicable($('#divEditor' + '7ceac3da-9616-4e6e-9461-9f3f8f6e5f22'));
+	});
+ 
+ 
+
+	   
+
+	   
+
+			   
+		 				
+	 
+	
+	 	
+ 
+	     
+
+
+         Helpful Resources Election Calendar Open Positions Candidate Listing Register to Vote  Voter Photo ID Voter Rights / Responsibilities / Instructions Election Archives My Voter Information Listing of Federal / State / Local Representatives Voter Registration List Application 
+     
+
+ 
+	$(document).ready(function (e) {		
+	    renderSlideshowIfApplicable($('#divEditor' + '88e32ddc-6391-461d-928d-b7591f505867'));
+	});
+ 
+ 
+
+	   
+
+	   
+
+			   
+		 				
+	 
+	
+	 	
+
+
+
+	 
+			 
+				 Miami County District Maps 
+		 
+			
+ 
+         
+        
+	 
+		 
+					 Commission Districts 
+					 
+					 Fire District Map 2026 
+					 
+					 House of Representatives District 2025 Map PDF 
+					 
+					 Miami County Political Township Map 2025 PDF 
+					 
+
+		 
+	 
+	 
+		 
+					 Miami County Precinct Map 2026 PDF 
+					 
+					 Miami County School District Map 2025 PDF 
+					 
+					 Miami County Senate District Map 2025 PDF 
+					 
+
+		 
+	 
+                     
+ 
+
+
+ 
+    $(document).ready(function () {
+        //Remove section heading when it is empty and live edit is off.
+        if ('false' === 'false') {
+            var jqh3Selector = $('#widgetRelDoc' + 'aa744f71-6c22-4dbd-8d24-e01ecc04e2b8').find('div.widgetBody div.row div.relatedDocumentsSection h3.widgetTitle');
+    		if (jqh3Selector.val() == "") {
+    			jqh3Selector
+                    .filter(function () {
+                        return $.trim($(this).text()) === ''
+                    })
+                    .remove();
+            }
+        }
+    });
+ 
+		 
+
+ 
+
+	 
+
+
+ 
+    var documentsToInsert = [];
+    var foldersToInsert = [];
+
+    $(document).ready(function () {
+        var hasEditRights = false;        
+        if (window.File && window.FileList && window.FileReader && hasEditRights) {
+            var RelatedDocumentsWidget = 5;
+            makeWidgetAreaDroppable('aa744f71-6c22-4dbd-8d24-e01ecc04e2b8', $('#widgetRelDoc' + 'aa744f71-6c22-4dbd-8d24-e01ecc04e2b8'), RelatedDocumentsWidget, true, RelatedDocumentsCallback);
+        }
+
+		if(hasEditRights)
+    		browserVersionNotCompatibleWithDragDropTextUpdate($('#addFile' + 'aa744f71-6c22-4dbd-8d24-e01ecc04e2b8'), 'Add a new file');
+    });
+
+    function RelatedDocumentsCallback(widgetID, response)
+    {
+        if (window.ContentCollectionInstance.IsWorkingCopy) {
+        	$('#widgetRelDoc' + widgetID).replaceWith(response);            
+            contentUpdated();
+            attachRelatedDocumentsHandlers();            
+        }
+        else {
+            ContentCollectionInstance.reloadContent();
+        }      
+    }
+ 
+
+	   
+
+	   
+
+			   
+
+
+		 
+
+	 
+
+	
+	 
+
+	 
+ 
+ 	 
+				                
+
+		 				
+	 
+	
+	 	
+     
+
+
+
+
+
+	 
+			 
+		 
+								 
+	 
+	 
+		 
+					 
+						 
+
+ 
+	   Laura Epp  County Clerk Contact At Administration Building 201 S. Pearl, Suite 102 Paola, KS 66071 P: (913) 294-3976 F: (913) 294-9544 Email Hours Monday - Friday 8 a.m. - 4:30 p.m. Staff Directory 
+ 						 
+					 
+		 
+	 
+	 
+
+	 
+
+	 
+
+
+
+ 
+	//Render slideshow if info advacned items contain one.
+	$(document).ready(function (e) {
+		$('#divInfoAdv9d500963-deb8-4737-9eed-58352368996e .InfoAdvanced.widgetItem').each(function () {
+			renderSlideshowIfApplicable($(this));		
+		});
+	});
+ 
+	   
+
+	   
+
+			   
+
+
+	 
+ 
+ 
+ 
+ 
+ 
+ 	 
+				                
+
+		 				
+	 
+	
+	 	
+ 
+
+
+
+
+ 
+	 
+		 
+				 
+	 
+	 
+		 
+				 
+					 
+
+ 
+	 
+		 
+			 Careers 
+		 
+	 
+ 
+		 .fancyButton230.fancyButton:link,.fancyButton230.fancyButton:visited, .fancyButton230div.fancyButton{
+	background-image: url('/ImageRepository/Document?documentID=11404');
+	background-repeat: no-repeat;
+	background-position: center 6.875em ;
+transition: all .3s ease-in-out;}
+.fancyButton230.fancyButton:hover,.fancyButton230.fancyButton:focus,.fancyButton230.fancyButton:active,.fancyButton230.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: center 6.875em ;
+}
+.fancyButton230.fancyButton:link > span,.fancyButton230.fancyButton:visited > span, .fancyButton230div.fancyButton > span{
+}
+.fancyButton230.fancyButton:hover > span,.fancyButton230.fancyButton:focus > span,.fancyButton230.fancyButton:active > span,.fancyButton230.fancyButton.hover > span{
+}
+.fancyButton230.fancyButton .text{
+	color: rgb(59, 59, 60);
+	font-size: 1em;
+	font-family: "Raleway";
+	padding-top: 8em;
+	font-weight: 600;
+	text-decoration: none;
+	padding-top: 8em;
+	background-image: url('/ImageRepository/Document?documentID=11400');
+	background-repeat: no-repeat;
+	background-position: center .125em ;
+transition: all .3s ease-in-out;
+}
+.fancyButton230.fancyButton:hover .text,.fancyButton230.fancyButton:focus .text,.fancyButton230.fancyButton:active .text,.fancyButton230.fancyButton.hover .text{
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: center top;
+
+
+}
+.fancyButton230.fancyButton .textStyle1{
+	color: rgb(59, 59, 60);
+	font-size: 1.06em;
+	font-style: normal;
+	text-decoration: none;
+position: relative;
+display: block;
+}
+
+.fancyButton230 .textStyle1::after {
+z-index: 2;
+content: "";
+display: block;
+margin: .5em auto;
+border-radius: 2px;
+width: 100%;
+max-width: 50px;
+height: 4px;
+background: #B1BCC3;
+transition: all .3s ease-in-out;}
+.fancyButton230.fancyButton:hover .textStyle1, .fancyButton230.fancyButton.hover .textStyle1{
+	text-decoration: underline;
+}
+
+.fancyButton230:where(:hover, :focus, :active) .textStyle1::after {
+max-width: 100px;}
+ 
+
+  
+
+ 
+	 
+		 
+			 Agendas & Minutes 
+		 
+	 
+ 
+		 .fancyButton231.fancyButton:link,.fancyButton231.fancyButton:visited, .fancyButton231div.fancyButton{
+	background-image: url('/ImageRepository/Document?documentID=11404');
+	background-repeat: no-repeat;
+	background-position: center 6.875em ;
+transition: all .3s ease-in-out;}
+.fancyButton231.fancyButton:hover,.fancyButton231.fancyButton:focus,.fancyButton231.fancyButton:active,.fancyButton231.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: center 6.875em ;
+}
+.fancyButton231.fancyButton:link > span,.fancyButton231.fancyButton:visited > span, .fancyButton231div.fancyButton > span{
+}
+.fancyButton231.fancyButton:hover > span,.fancyButton231.fancyButton:focus > span,.fancyButton231.fancyButton:active > span,.fancyButton231.fancyButton.hover > span{
+}
+.fancyButton231.fancyButton .text{
+	color: rgb(59, 59, 60);
+	font-size: 1em;
+	font-family: "Raleway";
+	padding-top: 8em;
+	font-weight: 600;
+	text-decoration: none;
+	padding-top: 8em;
+	background-image: url('/ImageRepository/Document?documentID=11398');
+	background-repeat: no-repeat;
+	background-position: center .125em ;
+transition: all .3s ease-in-out;
+}
+.fancyButton231.fancyButton:hover .text,.fancyButton231.fancyButton:focus .text,.fancyButton231.fancyButton:active .text,.fancyButton231.fancyButton.hover .text{
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: center top;
+
+
+}
+.fancyButton231.fancyButton .textStyle1{
+	color: rgb(59, 59, 60);
+	font-size: 1.06em;
+	font-style: normal;
+	text-decoration: none;
+position: relative;
+display: block;
+}
+
+.fancyButton231 .textStyle1::after {
+z-index: 2;
+content: "";
+display: block;
+margin: .5em auto;
+border-radius: 2px;
+width: 100%;
+max-width: 50px;
+height: 4px;
+background: #B1BCC3;
+transition: all .3s ease-in-out;}
+.fancyButton231.fancyButton:hover .textStyle1, .fancyButton231.fancyButton.hover .textStyle1{
+	text-decoration: underline;
+}
+
+.fancyButton231:where(:hover, :focus, :active) .textStyle1::after {
+max-width: 100px;}
+ 
+
+  
+				 
+			 
+		 
+	 
+			 
+ 
+ 
+
+	   
+
+	   
+
+			 				
+	 
+	
+	 	
+ 
+
+
+
+
+ 
+	 
+		 
+				 
+	 
+	 
+		 
+				 
+					 
+
+ 
+	 
+		 
+			 Notify Me® 
+		 
+	 
+ 
+		 .fancyButton232.fancyButton:link,.fancyButton232.fancyButton:visited, .fancyButton232div.fancyButton{
+	background-image: url('/ImageRepository/Document?documentID=11404');
+	background-repeat: no-repeat;
+	background-position: center 6.875em ;
+transition: all .3s ease-in-out;}
+.fancyButton232.fancyButton:hover,.fancyButton232.fancyButton:focus,.fancyButton232.fancyButton:active,.fancyButton232.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: center 6.875em ;
+}
+.fancyButton232.fancyButton:link > span,.fancyButton232.fancyButton:visited > span, .fancyButton232div.fancyButton > span{
+}
+.fancyButton232.fancyButton:hover > span,.fancyButton232.fancyButton:focus > span,.fancyButton232.fancyButton:active > span,.fancyButton232.fancyButton.hover > span{
+}
+.fancyButton232.fancyButton .text{
+	color: rgb(59, 59, 60);
+	font-size: 1em;
+	font-family: "Raleway";
+	padding-top: 8em;
+	font-weight: 600;
+	text-decoration: none;
+	padding-top: 8em;
+	background-image: url('/ImageRepository/Document?documentID=11403');
+	background-repeat: no-repeat;
+	background-position: center .125em ;
+transition: all .3s ease-in-out;
+}
+.fancyButton232.fancyButton:hover .text,.fancyButton232.fancyButton:focus .text,.fancyButton232.fancyButton:active .text,.fancyButton232.fancyButton.hover .text{
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: center top;
+
+
+}
+.fancyButton232.fancyButton .textStyle1{
+	color: rgb(59, 59, 60);
+	font-size: 1.06em;
+	font-style: normal;
+	text-decoration: none;
+position: relative;
+display: block;
+}
+
+.fancyButton232 .textStyle1::after {
+z-index: 2;
+content: "";
+display: block;
+margin: .5em auto;
+border-radius: 2px;
+width: 100%;
+max-width: 50px;
+height: 4px;
+background: #B1BCC3;
+transition: all .3s ease-in-out;}
+.fancyButton232.fancyButton:hover .textStyle1, .fancyButton232.fancyButton.hover .textStyle1{
+	text-decoration: underline;
+}
+
+.fancyButton232:where(:hover, :focus, :active) .textStyle1::after {
+max-width: 100px;}
+ 
+
+  
+
+ 
+	 
+		 
+			 Report a Concern 
+		 
+	 
+ 
+		 .fancyButton233.fancyButton:link,.fancyButton233.fancyButton:visited, .fancyButton233div.fancyButton{
+	background-image: url('/ImageRepository/Document?documentID=11404');
+	background-repeat: no-repeat;
+	background-position: center 6.875em ;
+transition: all .3s ease-in-out;}
+.fancyButton233.fancyButton:hover,.fancyButton233.fancyButton:focus,.fancyButton233.fancyButton:active,.fancyButton233.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: center 6.875em ;
+}
+.fancyButton233.fancyButton:link > span,.fancyButton233.fancyButton:visited > span, .fancyButton233div.fancyButton > span{
+}
+.fancyButton233.fancyButton:hover > span,.fancyButton233.fancyButton:focus > span,.fancyButton233.fancyButton:active > span,.fancyButton233.fancyButton.hover > span{
+}
+.fancyButton233.fancyButton .text{
+	color: rgb(59, 59, 60);
+	font-size: 1em;
+	font-family: "Raleway";
+	padding-top: 8em;
+	font-weight: 600;
+	text-decoration: none;
+	padding-top: 8em;
+	background-image: url('/ImageRepository/Document?documentID=11399');
+	background-repeat: no-repeat;
+	background-position: center .125em ;
+transition: all .3s ease-in-out;
+}
+.fancyButton233.fancyButton:hover .text,.fancyButton233.fancyButton:focus .text,.fancyButton233.fancyButton:active .text,.fancyButton233.fancyButton.hover .text{
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: center top;
+
+
+}
+.fancyButton233.fancyButton .textStyle1{
+	color: rgb(59, 59, 60);
+	font-size: 1.06em;
+	font-style: normal;
+	text-decoration: none;
+position: relative;
+display: block;
+}
+
+.fancyButton233 .textStyle1::after {
+z-index: 2;
+content: "";
+display: block;
+margin: .5em auto;
+border-radius: 2px;
+width: 100%;
+max-width: 50px;
+height: 4px;
+background: #B1BCC3;
+transition: all .3s ease-in-out;}
+.fancyButton233.fancyButton:hover .textStyle1, .fancyButton233.fancyButton.hover .textStyle1{
+	text-decoration: underline;
+}
+
+.fancyButton233:where(:hover, :focus, :active) .textStyle1::after {
+max-width: 100px;}
+ 
+
+  
+				 
+			 
+		 
+	 
+			 
+ 
+ 
+
+	   
+
+	   
+
+			 				
+	 
+	
+	 	
+ 
+
+
+
+
+ 
+	 
+		 
+				 
+	 
+	 
+		 
+				 
+					 
+
+ 
+	 
+		 
+			 Burn Permits 
+		 
+	 
+ 
+		 .fancyButton234.fancyButton:link,.fancyButton234.fancyButton:visited, .fancyButton234div.fancyButton{
+	background-image: url('/ImageRepository/Document?documentID=11404');
+	background-repeat: no-repeat;
+	background-position: center 6.875em ;
+transition: all .3s ease-in-out;}
+.fancyButton234.fancyButton:hover,.fancyButton234.fancyButton:focus,.fancyButton234.fancyButton:active,.fancyButton234.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: center 6.875em ;
+}
+.fancyButton234.fancyButton:link > span,.fancyButton234.fancyButton:visited > span, .fancyButton234div.fancyButton > span{
+}
+.fancyButton234.fancyButton:hover > span,.fancyButton234.fancyButton:focus > span,.fancyButton234.fancyButton:active > span,.fancyButton234.fancyButton.hover > span{
+}
+.fancyButton234.fancyButton .text{
+	color: rgb(59, 59, 60);
+	font-size: 1em;
+	font-family: "Raleway";
+	padding-top: 8em;
+	font-weight: 600;
+	text-decoration: none;
+	padding-top: 8em;
+	background-image: url('/ImageRepository/Document?documentID=11402');
+	background-repeat: no-repeat;
+	background-position: center .125em ;
+transition: all .3s ease-in-out;
+}
+.fancyButton234.fancyButton:hover .text,.fancyButton234.fancyButton:focus .text,.fancyButton234.fancyButton:active .text,.fancyButton234.fancyButton.hover .text{
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: center top;
+
+
+}
+.fancyButton234.fancyButton .textStyle1{
+	color: rgb(59, 59, 60);
+	font-size: 1.06em;
+	font-style: normal;
+	text-decoration: none;
+position: relative;
+display: block;
+}
+
+.fancyButton234 .textStyle1::after {
+z-index: 2;
+content: "";
+display: block;
+margin: .5em auto;
+border-radius: 2px;
+width: 100%;
+max-width: 50px;
+height: 4px;
+background: #B1BCC3;
+transition: all .3s ease-in-out;}
+.fancyButton234.fancyButton:hover .textStyle1, .fancyButton234.fancyButton.hover .textStyle1{
+	text-decoration: underline;
+}
+
+.fancyButton234:where(:hover, :focus, :active) .textStyle1::after {
+max-width: 100px;}
+ 
+
+  
+
+ 
+	 
+		 
+			 I Want To … 
+		 
+	 
+ 
+		 .fancyButton235.fancyButton:link,.fancyButton235.fancyButton:visited, .fancyButton235div.fancyButton{
+	background-image: url('/ImageRepository/Document?documentID=11404');
+	background-repeat: no-repeat;
+	background-position: center 6.875em ;
+transition: all .3s ease-in-out;}
+.fancyButton235.fancyButton:hover,.fancyButton235.fancyButton:focus,.fancyButton235.fancyButton:active,.fancyButton235.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: center 6.875em ;
+}
+.fancyButton235.fancyButton:link > span,.fancyButton235.fancyButton:visited > span, .fancyButton235div.fancyButton > span{
+}
+.fancyButton235.fancyButton:hover > span,.fancyButton235.fancyButton:focus > span,.fancyButton235.fancyButton:active > span,.fancyButton235.fancyButton.hover > span{
+}
+.fancyButton235.fancyButton .text{
+	color: rgb(59, 59, 60);
+	font-size: 1em;
+	font-family: "Raleway";
+	padding-top: 8em;
+	font-weight: 600;
+	text-decoration: none;
+	padding-top: 8em;
+	background-image: url('/ImageRepository/Document?documentID=11401');
+	background-repeat: no-repeat;
+	background-position: center .125em ;
+transition: all .3s ease-in-out;
+}
+.fancyButton235.fancyButton:hover .text,.fancyButton235.fancyButton:focus .text,.fancyButton235.fancyButton:active .text,.fancyButton235.fancyButton.hover .text{
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: center top;
+
+
+}
+.fancyButton235.fancyButton .textStyle1{
+	color: rgb(59, 59, 60);
+	font-size: 1.06em;
+	font-style: normal;
+	text-decoration: none;
+position: relative;
+display: block;
+}
+
+.fancyButton235 .textStyle1::after {
+z-index: 2;
+content: "";
+display: block;
+margin: .5em auto;
+border-radius: 2px;
+width: 100%;
+max-width: 50px;
+height: 4px;
+background: #B1BCC3;
+transition: all .3s ease-in-out;}
+.fancyButton235.fancyButton:hover .textStyle1, .fancyButton235.fancyButton.hover .textStyle1{
+	text-decoration: underline;
+}
+
+.fancyButton235:where(:hover, :focus, :active) .textStyle1::after {
+max-width: 100px;}
+ 
+
+  
+				 
+			 
+		 
+	 
+			 
+ 
+ 
+
+	   
+
+	   
+
+			   
+
+
+	 
+ 
+ 
+ 
+ 	 
+				                
+
+		 				
+	 
+	
+	 	
+     
+
+
+
+
+
+	 
+			 
+		 
+								 
+	 
+	 
+		 
+					 
+						 
+
+ 
+	 
+ 						 
+					 
+		 
+	 
+	 
+
+	 
+
+	 
+
+
+
+ 
+	//Render slideshow if info advacned items contain one.
+	$(document).ready(function (e) {
+		$('#divInfoAdv7281ba81-9496-464b-8cee-9d41b8818a02 .InfoAdvanced.widgetItem').each(function () {
+			renderSlideshowIfApplicable($(this));		
+		});
+	});
+ 
+	   
+
+	   
+
+			 				
+	 
+	
+	 	
+
+ 
+	   
+
+	   
+
+			 				
+	 
+	
+	 	
+     
+
+
+
+
+
+	 
+			 
+		 
+					 Contact Us 
+								 
+	 
+	 
+		 
+					 
+						 
+
+ 
+	 Administration Building 201 South Pearl, Suite 200 Paola, KS 66071 Contact us > 
+ 						 
+					 
+		 
+	 
+	 
+
+	 
+
+	 
+
+
+
+ 
+	//Render slideshow if info advacned items contain one.
+	$(document).ready(function (e) {
+		$('#divInfoAdv7162932f-62b7-4a61-931d-d40b4b54b8fa .InfoAdvanced.widgetItem').each(function () {
+			renderSlideshowIfApplicable($(this));		
+		});
+	});
+ 
+	   
+
+	   
+
+			 				
+	 
+	
+	 	
+
+ 
+	   
+
+	   
+
+			 				
+	 
+	
+	 	
+	 
+
+
+
+
+
+
+
+
+	 
+			 
+		 
+					 Quick Links 
+						 
+	 
+	 
+         
+				 
+					 
+
+
+
+
+     
+         Agendas & Minutes 
+         
+     
+
+
+
+
+     
+         County Code 
+         
+     
+
+
+
+
+     
+         Current Projects 
+         
+     
+					 
+				 
+				 
+					 
+
+
+
+
+     
+         Emergency Notifications 
+         
+     
+
+
+
+
+     
+         Employment Opportunities 
+         
+     
+
+
+
+
+     
+         Forms & Applications 
+         
+     
+					 
+				 
+		 
+        
+	 
+	 
+	 
+	 
+		 /QuickLinks.aspx 
+	 
+
+	 
+ 
+
+	   
+
+	   
+
+			 				
+	 
+	
+	 	
+
+ 
+	   
+
+	   
+
+			 				
+	 
+	
+	 	
+	 
+
+
+
+
+
+
+
+
+	 
+			 
+		 
+					 Site Links 
+						 
+	 
+	 
+         
+				 
+					 
+
+
+
+
+     
+         Home 
+         
+     
+
+
+
+
+     
+         Contact Us 
+         
+     
+
+
+
+
+     
+         Accessibility 
+         
+     
+
+
+
+
+     
+         Social Media Terms of Use 
+         
+     
+
+
+
+
+     
+         Copyright Notices 
+         
+     
+					 
+				 
+		 
+        
+	 
+	 
+	 
+	 
+		 /QuickLinks.aspx 
+	 
+
+	 
+ 
+
+	   
+
+	   
+
+			   
+
+
+	 
+ 
+ 
+ 	 
+				                
+
+		 				
+	 
+	
+	 	
+ 
+	 
+	 
+		 
+  /* CP icon */
+  .cpBylineIconTS {
+    color: #4A4A4A;
+  }
+  /* CP Text */
+  .cpBylineTextTS,
+  .cpBylineTextTS a:link {
+    color: #4A4A4A;
+  }
+
+  .cpBylineTS {
+    text-align: center;
+  }
+  
+  .cpBylineIconTS {
+    fill: currentColor;
+    width: 39px;
+    height: 26px;
+    display: inline;
+    vertical-align: middle;
+  }
+ 
+
+ 
+   
+     
+     
+   
+   Government Websites by  CivicPlus® 
+ 
+ 
+	 
+
+	 
+
+	   
+
+	   
+
+			   
+
+
+	 
+ 
+ 
+
+
+
+
+		 
+		 
+			 
+			 
+		 
+			 
+				$(window).on("load", function () {
+					$.when(window.Pages.rwdSetupComplete)
+						.done(function () {
+							renderExternalBannerSlideshow('banner2',
+								{"BannerOptionID":59,"ThemeID":19,"SlotName":"banner2","Name":"Default","IsDefault":true,"BannerMode":2,"SlideShowSlideTiming":"5","SlideshowTransition":0,"SlideShowTransitionTiming":"1","ImageScale":true,"ImageAlignment":1,"ImageScroll":false,"MuteSound":true,"VideoType":0,"Status":40,"SlideshowControlsPosition":0,"SlideshowControlsAlignment":0,"SlideshowBannerControlsColorScheme":0,"DisplayVideoPauseButton":false,"VideoPauseButtonAlignment":1,"VideoPauseButtonControlsAlignment":0,"VideoPauseButtonStyle":"#FFFFFF","VideoPauseButtonBackgroundStyle":"#000000","VideoPauseButtonAlignmentClass":"alignRight viewport","DisplaySlideshowPauseButton":true,"SlideshowControlsColor":"#FFFFFF","SlideshowControlsBackgroundColor":"#000000","SlideshowPauseButtonClass":"isHidden","BannerImages":[{"BannerImageID":76,"BannerOptionID":59,"FileName":"/ImageRepository/Document?documentID=11388","Height":1200,"Width":2200,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":1,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":""}],"BannerVideos":[{"BannerVideoID":3,"BannerOptionID":59,"VideoFileName":"","ImageFileName":"EmptyBannerBkg202309171502367472.png","IsLink":false,"LinkAddress":null,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","VideoFileID":"00000000-0000-0000-0000-000000000000","ImageFileID":"00000000-0000-0000-0000-000000000000","VideoWidth":0,"VideoHeight":0,"ImageWidth":0,"ImageHeight":0,"LinkedVideoUrl":"","RecordStatus":0,"AltText":null}],"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/"},
+								'/App_Themes/2023 - Interior/Images/',
+								'Rotating');
+						});
+				});
+			 
+
+ 
+ 
+
+             
+         
+     
+
+ 
+
+ 
+	 
+		 
+			 Loading 
+			 
+				 
+					 
+				 
+			 
+		 
+		 
+			 
+				 
+				Loading
+			 
+		 
+		 
+			 Do Not Show Again 
+			 Close 
+		 
+	 
+ 
+
+ 
+ 
+ 
+ 
+
+		$(document).ready(function () {
+			var filter = {
+				targetId: '254',
+				targetType: 1
+			}
+
+			new SplashModalRender().triggerRender(filter);
+		});
+ 
+
+
+	
+	
+	
+	
+
+
+
+	
+
+
+
+
+
+
+     
+     
+function googleTranslateElementInit() {
+  var el = document.getElementById("google_translate_element");
+  if (el && el.innerHTML.trim() !== "") {
+      return;
+  }
+
+  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+}
+ 
+
+
+ 
+ 
+  function getValueTS(elem, attr) {
+    const val = elem.css(attr);
+    if (val === undefined) return undefined;
+    const num = parseInt(val, 10);
+    if (num === NaN) return undefined;
+    return num;
+  }
+
+  function clampTS(number, min, max) {
+    return Math.min(Math.max(number, min), max);
+  }
+
+  function isPageEditingTS() {
+    return (
+      $("#doneEditing").length > 0 || // In live edit
+      typeof DesignCenter !== "undefined" // In theme manager
+    );
+  }
+
+  const bgColorRegexTS = /rgba\((\d+), (\d+), (\d+), (\d*\.?\d*)\)/;
+  function isTransparentTS(elem) {
+    const bg = elem.css('background-color');
+    if (typeof bg !== "string" || !bg.startsWith('rgba(')) return false;
+    const matchState = bg.match(bgColorRegexTS);
+    if (!matchState || matchState.length !== 5) return false;
+    const alpha = parseFloat(matchState[4], 10);
+    if (!(alpha >= 0 && alpha < 1)) return false;
+    return true;
+  }
+
+  function iterateLeftpads(cb) {
+    const containersTS = $("[class^='siteWrap'],[class*=' siteWrap']");
+    for (let i = 0; i < containersTS.length; i++) {
+      const containerTS = containersTS[i];
+      // Skip the body container and anything with data-skip-leftpad
+      if (
+        containerTS.id !== "bodyContainerTS" &&
+        containerTS.getAttribute('data-skip-leftpad') === null
+      ) {
+        cb(containerTS);
+      }
+    }
+  }
+
+  function iterateRightpads(cb) {
+      const containersTS = $("[class^='siteWrap'],[class*=' siteWrap']");
+      for (let i = 0; i < containersTS.length; i++) {
+        const containerTS = containersTS[i];
+        // Skip the body container and anything with data-skip-leftpad
+        if (
+          containerTS.id !== "bodyContainerTS" &&
+          containerTS.getAttribute('data-skip-rightpad') === null
+        ) {
+          cb(containerTS);
+        }
+      }
+    }
+
+  const anchor = $("#divToolbars");
+
+  // Outer banner padding (push banner down)
+  const outerSizingTS = $("#bannerContainerTS");
+  // Inner banner padding (push banner content down) - Transparent header OR on attaching headers
+  const innerSizingTS = $("#bannerSizingTS");
+  const bodyContainerTS = $("#bodyContainerTS");
+  const headerContainerTS = $("#headerContainerTS");
+  const forceUnfixClassTS = "forceUnfixTS";
+
+  const fixedTopTS = $(".fixedTopTS");
+  const fixedBottomTS = $(".fixedBottomTS");
+  const fixedLeftTS = $(".fixedLeftTS");
+  const fixedRightTS = $(".fixedRightTS");
+
+  var initialTopTS;
+  var topAttachTS;
+  if (fixedTopTS && fixedTopTS.length === 1) {
+    initialTopTS = getValueTS(fixedTopTS, 'top');
+    const attachment = fixedTopTS.attr('data-attach');
+    if (attachment) topAttachTS = $("#" + attachment);
+    if (!topAttachTS || topAttachTS.length !== 1) topAttachTS = undefined;
+  }
+
+  function resizeAdjustmentTS() {
+    const editing = isPageEditingTS();
+
+    // Fixed top script
+    (function () {
+      if (!fixedTopTS || fixedTopTS.length !== 1 || initialTopTS === undefined) return;
+
+      if (editing) {
+        fixedTopTS[0].classList.add(forceUnfixClassTS);
+      } else {
+        fixedTopTS[0].classList.remove(forceUnfixClassTS);
+      }
+
+      const topPosition = fixedTopTS.css('position');
+      if (topPosition === 'fixed') {
+        if (topAttachTS) {
+          scrollAdjustmentTS();
+        } else {
+          const anchorHeight = anchor.outerHeight() - 1;
+          fixedTopTS.css('top', anchorHeight + initialTopTS);
+        }
+      } else {
+        fixedTopTS.css('top', initialTopTS);
+      }
+
+      if (topPosition === 'fixed' || topPosition === 'absolute') {
+        // Bump the banner content down
+        if (isTransparentTS(fixedTopTS)) {
+          innerSizingTS.css('padding-top', initialTopTS + fixedTopTS.outerHeight() - 1);
+          outerSizingTS.css('padding-top', '');
+
+          try {
+            window.Pages.onResizeHandlersExecute();
+          } catch (e) { }
+        } else {
+          outerSizingTS.css('padding-top', fixedTopTS.outerHeight() - 1);
+          innerSizingTS.css('padding-top', '');
+        }
+      } else {
+        innerSizingTS.css('padding-top', '');
+        outerSizingTS.css('padding-top', '');
+      }
+    })();
+
+    // Fixed bottom script
+    (function () {
+      if (!fixedBottomTS || fixedBottomTS.length === 0) return;
+
+      // If the widget has gone narrow, force unfix
+      if (editing || fixedBottomTS.outerHeight() > 200) {
+        fixedBottomTS[0].classList.add(forceUnfixClassTS);
+      } else {
+        fixedBottomTS[0].classList.remove(forceUnfixClassTS);
+      }
+
+      if (fixedBottomTS.css('position') === 'fixed') {
+        bodyContainerTS.css('padding-bottom', fixedBottomTS.outerHeight());
+      } else {
+        bodyContainerTS.css('padding-bottom', '');
+      }
+    })();
+
+    // Fixed left script
+    (function () {
+      if (!fixedLeftTS || fixedLeftTS.length === 0) return;
+
+      if (editing) {
+        fixedLeftTS[0].classList.add(forceUnfixClassTS);
+      } else {
+        fixedLeftTS[0].classList.remove(forceUnfixClassTS);
+      }
+
+      if (fixedLeftTS.css('position') === 'fixed') {
+        const anchorHeight = anchor.outerHeight() - 1;
+        const headerHeight = headerContainerTS.outerHeight() - 1;
+        fixedLeftTS.css('top', anchorHeight + headerHeight + 100);
+        const leftBoundingTS = fixedLeftTS[0].getBoundingClientRect();
+        iterateLeftpads(function (containerTS) {
+          const containerBoundingTS = containerTS.getBoundingClientRect();
+          if (containerBoundingTS.left <= leftBoundingTS.right) {
+            $(containerTS).css('padding-left', leftBoundingTS.width + 16);
+          }
+        });
+      } else {
+        fixedLeftTS.css('top', '');
+        iterateLeftpads(function (containerTS) {
+          $(containerTS).css('padding-left', '');
+        });
+      }
+    })();
+
+    // Fixed right script
+    (function () {
+        if (!fixedRightTS || fixedRightTS.length === 0) return;
+  
+        if (editing) {
+          fixedRightTS[0].classList.add(forceUnfixClassTS);
+        } else {
+          fixedRightTS[0].classList.remove(forceUnfixClassTS);
+        }
+  
+        if (fixedRightTS.css('position') === 'fixed') {
+          const anchorHeight = anchor.outerHeight() - 1;
+          const headerHeight = headerContainerTS.outerHeight() - 1;
+          fixedRightTS.css('top', anchorHeight + headerHeight + 100);
+          const rightBoundingTS = fixedRightTS[0].getBoundingClientRect();
+          iterateRightpads(function (containerTS) {
+            const containerBoundingTS = containerTS.getBoundingClientRect();
+            if (containerBoundingTS.left <= rightBoundingTS.right) {
+              $(containerTS).css('padding-right', rightBoundingTS.width + 16);
+            }
+          });
+        } else {
+          fixedRightTS.css('top', '');
+          iterateRightpads(function (containerTS) {
+            $(containerTS).css('padding-right', '');
+          });
+        }
+      })();
+  }
+
+  function scrollAdjustmentTS() {
+    if (!fixedTopTS || fixedTopTS.length !== 1 || !topAttachTS || topAttachTS.length !== 1) return;
+    const topPosition = fixedTopTS.css('position');
+    if (topPosition === 'fixed' || topPosition === 'absolute') {
+      const anchorBounding = anchor[0].getBoundingClientRect();
+      const attachBounding = topAttachTS[0].getBoundingClientRect();
+      const scrollTop = $(window).scrollTop();
+
+      fixedTopTS.css('top', Math.max(anchorBounding.bottom - 1, attachBounding.bottom));
+    } else {
+      fixedTopTS.css('top', initialTopTS);
+    }
+  }
+
+  $(window).load(function () {
+    setTimeout(function () {
+      resizeAdjustmentTS();
+    }, 350);
+
+    $(window).scroll(function () {
+      scrollAdjustmentTS();
+    });
+
+    var adjustTimeoutTS;
+    $(window).resize(function () {
+      clearTimeout(adjustTimeoutTS);
+      adjustTimeoutTS = setTimeout(function () {
+        resizeAdjustmentTS();
+      }, 350);
+    });
+
+    $.when(window.Pages.angularToolbarComplete).done(function () {
+      resizeAdjustmentTS();
+    });
+  });
+ 
+ 
+
+
+ 
+
+ 
+
+ 
+  function moveBannerToOuterWrap() {
+    if ($(".fixedBannerTS #bannerDivbanner2").length) {
+      $(".fixedBannerTS #bannerDivbanner2").appendTo("#outer-wrap");
+    } else {
+      setTimeout(function () {
+        moveBannerToOuterWrap();
+      }, 500);
+    }
+  }
+
+  moveBannerToOuterWrap();
+ 
+
+      window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-SH5S166WP0');  
+
+ !function(){var b=function(){window.__AudioEyeSiteHash = "af4fe04bee9b554574f07c38285ab43f"; var a=document.createElement("script");a.src="https://wsmcdn.audioeye.com/aem.js";a.type="text/javascript";a.setAttribute("async","");document.getElementsByTagName("body")[0].appendChild(a)};"complete"!==document.readyState?window.addEventListener?window.addEventListener("load",b):window.attachEvent&&window.attachEvent("onload",b):b()}(); 
+
+
+     
+        $(function () {
+            document.cookie = "responsiveGhost=0; path=/";
+        });
+        $(window).on("load", function () {
+            $('body').addClass('doneLoading').removeClass('hideContent');
+
+            if ($('#404Content').length > 0)
+                $('div#bodyWrapper').css('padding', '0px');
+        });
+     
+
+     
+         
+            body.hideContent {
+                opacity: 1 !important;
+            }
+         
+     
+
+        
+ 
+	 
+
+		 
+			 Arrow Left 
+			 
+		 
+
+		 
+			 Arrow Right 
+			 
+		 
+
+	 
+ 
+     loadCSS('//fonts.googleapis.com/css?family=Lato:700,regular|Montserrat:700,regular|Raleway:500,600,700,800,900,italic,regular|'); 
+    
+
+     [] 
+         
+             
+                 
+                     Slideshow Left Arrow 
+                     
+                         
+                     
+                 
+                 
+                     Slideshow Right Arrow 
+                     
+                         
+                     
+                 
+             
+         
+    
+	
+	
+
+     
+ 
+ 

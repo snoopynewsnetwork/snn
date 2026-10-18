@@ -1,0 +1,2798 @@
+
+ 
+ 
+ 
+
+	 
+ 
+				 (function(w,d,s,l,i){w.GAMeasurementID='G-46WY9N63HY';w[l]=w[l]||[];w[l].push({'gtm.start':
+				new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+				j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+				'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+				})(window,document,'script','cpDataLayerGA4','GTM-K73C5PS'); 
+				 
+				 
+					var enableTelemetry = 'false'
+					var aiConfig = {
+					instrumentationKey: '1cde048e-3185-4906-aa46-c92a7312b60f'						
+					}
+					var appInsights = window.appInsights || function (a) { function b(a) { c[a] = function () { var b = arguments; c.queue.push(function () { c[a].apply(c, b) }) } } var c = { config: a }, d = document, e = window; setTimeout(function () { var b = d.createElement('script'); b.src = a.url || 'https://js.monitor.azure.com/scripts/a/ai.0.js', d.getElementsByTagName('script')[0].parentNode.appendChild(b) }); try { c.cookie = d.cookie } catch (a) { } c.queue = []; for (var f = ['Event', 'Exception', 'Metric', 'PageView', 'Trace', 'Dependency']; f.length;)b('track' + f.pop()); if (b('setAuthenticatedUserContext'), b('clearAuthenticatedUserContext'), b('startTrackEvent'), b('stopTrackEvent'), b('startTrackPage'), b('stopTrackPage'), b('flush'), !a.disableExceptionTracking) { f = 'onerror', b('_' + f); var g = e[f]; e[f] = function (a, b, d, e, h) { var i = g && g(a, b, d, e, h); return !0 !== i && c['_' + f](a, b, d, e, h), i } } return c }(aiConfig);
+					window.appInsights = appInsights, appInsights.queue && 0 === appInsights.queue.length;
+					// Add telemetry initializer
+					appInsights.queue.push(function() {
+						appInsights.context.addTelemetryInitializer(function(envelope) {
+							var telemetryItem = envelope.data.baseData;
+							// To check the telemetry item’s type:
+							if (!false)
+							{
+								//If the telemetry is not enabled, we still want to capture Google map custom event, so only allow that
+								if (envelope.name.indexOf('.Event') == -1)
+									return false;
+							}
+						});
+					});						
+					appInsights.trackPageView();
+				 
+	 
+		function populateAntiForgery(token) {
+			var input = document.createElement("input");
+			input.name = "__RequestVerificationToken";
+			input.type = "hidden";
+			input.value = token;
+			var absPat = /^https?:\/\/|^\/\//i;
+			var forms = document.getElementsByTagName("form");
+			for (var i = 0; i < forms.length; i++) {
+				if (forms[i].method == "post" &&
+					!forms[i].querySelector('[name="__RequestVerificationToken"]') &&
+					!absPat.test(forms[i].getAttribute("action"))) {
+					forms[i].appendChild(input.cloneNode());
+				}
+			}
+		}
+
+		function getAntiForgeryToken(callback, error) {
+			var xhr = new XMLHttpRequest();
+			xhr.open("GET", "/antiforgery");
+			xhr.addEventListener("load", function() {
+				try {
+					if (this.status !== 200) {
+						throw Error("Invalid status. Could not retrieve antiforgery token.");
+					}
+					var obj = JSON.parse(this.responseText);
+					callback(obj.token);
+				} catch (e) {
+					typeof error === "function" && error(e);
+				}
+			});
+			xhr.send();
+		}
+
+		getAntiForgeryToken(function(token) {
+			if (document.readyState === "complete"
+				|| document.readyState === "loaded" 
+				|| document.readyState === "interactive") {
+				populateAntiForgery(token);
+				return;
+			}
+			document.addEventListener("DOMContentLoaded", function() {
+				populateAntiForgery(token);
+			}, false);
+		}, console.error);
+	 
+			
+
+	 
+		window.departmentHeader = {};
+		window.pageSectionTracker = {};
+		window.isResponsiveEnabled = true;
+		window.isRemoveSetHeights= false;
+		if (window.isRemoveSetHeights) {
+			document.documentElement.className += ' removeSetHeights';
+		}
+		window.mainMenuMediaQuery = 'screen and (max-width: 40em)';
+		window.isMobileBrowserIncludingTablets = false;
+		window.fixedResponsiveMenu = false;
+		window.fullWidthResponsiveMenu = false;
+		window.responsiveMenuHeight = '';
+		window.responsiveMenuFontSize = '';
+		window.isContentAdvisor = false;
+		(function () {
+			window.setSizeCookie = function () {
+				document.cookie = "dpi=" + window.devicePixelRatio + "; path=/";
+				document.cookie = "viewportWidth=" + window.innerWidth + "; path=/";
+				document.cookie = "viewportHeight=" + window.innerHeight + "; path=/";
+				if (screen && screen.width && screen.height) {
+					document.cookie = "screenWidth=" + screen.width + "; path=/";
+					document.cookie = "screenHeight=" + screen.height + "; path=/";
+				}
+				document.cookie = "responsiveGhost=1; path=/";
+			};
+
+			setSizeCookie();
+		}());
+	 
+		 
+
+	 
+	 
+
+ 
+
+	 
+ 
+ 
+ 
+ 
+ 
+
+	
+	 
+	 
+	 
+		 Various Maps For Riley County Districts | Riley County Official Website 
+
+		 
+		 
+			 
+	 
+	
+
+	 
+	 
+	 
+	 
+	 <!--
+	var intCountryCode = 840;
+	var order = '';
+//--> 
+	
+	 	 
+
+	 
+	 
+		window.Pages = window.Pages || {};
+		// FrontEnd RWD initialization
+		window.Pages.rwdReady = $.Deferred();
+		window.Pages.toolBarDeferred = $.Deferred();
+		window.Pages.rwdSetupComplete = $.Deferred();
+		window.Pages.megaMenuLoaded = $.Deferred();
+		window.Pages.angularToolbarComplete = $.Deferred();
+		window.Pages.frontEndToolbarComplete = $.Deferred();
+	 
+	 
+	 
+	
+	
+	
+	
+
+
+
+
+	 
+	 
+	 
+	 
+
+	 
+		setEditorVariables(false, 840);
+		function getPrintPreviewType() { return 0; } function printPreview() {pPreview(getPrintPreviewType()); }
+	 
+	 
+ 
+ 
+
+     jQuery(document).click(function (event) {
+	var target = jQuery(event.target);
+	if (target.attr('src') && target.parents('.image').length && target.parents('.widget').length) {
+		var text = target.attr('title');
+		
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Image',
+				eventAction: 'Image - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.is('button') || target.hasClass('button') || target.parents().hasClass('button')) {
+		var text = "";
+		if (target.parents('.button')[0]) {
+			text = target.parents('.button').first().text();
+		} else if (target.text().length) {
+			text = target.text();
+		} else if (target.attr('title').length) {
+			text = target.attr('title');
+		}
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Button',
+				eventAction: 'Button - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetCustomHtml').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Custom Html',
+				eventAction: 'Custom Html Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.editor').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Editor',
+				eventAction: 'Editor Link Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.GraphicLinks').length) {
+		var text = "";
+		var targetGraphicLink = target;
+		if (target.hasClass('widgetGraphicLinksLink')) {
+			targetGraphicLink = jQuery(target.children()[0]);
+		}
+		if (targetGraphicLink.hasClass('text')) {
+			text = targetGraphicLink.text();
+		} else if (targetGraphicLink.attr('src').length) {
+			if (targetGraphicLink.attr('alt').length) {
+				text = targetGraphicLink.attr('alt');
+			} else {
+				text = targetGraphicLink.attr('src');
+			}
+		} else {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Graphic Links',
+				eventAction: 'Graphic Link - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.InfoAdvanced').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Info Advanced',
+				eventAction: 'Info Advanced Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.list').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'List',
+				eventAction: 'List Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.megaMenuItem').length || target.parents('.topMenuItem').length) {
+		var megaMenuText = jQuery('.topMenuItem.mouseover').find('span').text();
+		var breadCrumbs = [];
+		jQuery('.breadCrumbs > li').each(function () {
+			 breadCrumbs.push(this.textContent);
+		});
+		var pageTitle = breadCrumbs.join('>');
+		var subTitleText = target.parents('.megaMenuItem').children('.widgetTitle').children().text();
+		var text = "";
+		if (pageTitle) {
+			text += pageTitle + " | ";
+		} else {
+			text += document.title + ' - ';
+		}
+		if (target.text() == "" && megaMenuText == "") {
+			text += "N/A";
+		} else if (target.text().length && megaMenuText.length) {
+			if (megaMenuText == target.text()) {
+				text += megaMenuText;
+			} else {
+				text += megaMenuText + " - " + subTitleText + " - " + target.text();
+			}
+		} else if (target.text() == "") {
+			text += megaMenuText;
+		} else {
+			text += target.text();
+		}
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Mega Menu',
+				eventAction: 'Mega Menu : ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetNewsFlash').length && target.parents('.widgetItem').length) {
+		var text = jQuery(target.parents('.widgetItem')[0]).find('.widgetTitle').children().text();
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'News Flash',
+				eventAction: 'News Flash - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.hasClass('widgetQuickLinksLink') || target.find('.widgetQuickLinksLink').length) {
+		var text = target.text();
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Quick Links',
+				eventAction: 'Quick Links - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.attr('src') && target.parents('.cpSlideshow').length) {
+		var text = target.attr('title');
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Slideshow',
+				eventAction: 'Slideshow - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetText').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Text',
+				eventAction: 'Text Link Clicked',
+				eventLabel: window.location.href
+			});
+	}
+}); 
+	 
+	 
+		 
+		 
+			 
+				 
+			 
+		 
+	 
+	 
+		 
+	 
+	 
+		 
+			 
+		 
+	 
+ 
+     
+ 
+ Skip to Main Content 
+ 
+     
+
+         
+
+
+
+     
+     
+     
+     
+     
+     
+     
+     
+
+     
+     
+         
+                 
+                    
+
+
+
+                 
+             
+                 
+                
+ 
+ 
+ 
+ 
+
+
+
+
+				 
+ 
+      Home  			      Our County   			      Government   			      Services   			      How Do I?   			      Contact Us   			 
+ 
+
+
+	 
+		(function () {
+			function setupMenu() {
+				const menuID = 'mainNavMenu';
+				const menuType = MAIN_MENU;
+
+				//setup menu manager properties for main menu
+				if (!menuManager.mobileMainNav && true)
+					menuManager.adjustMainItemsWidth('#' + menuID);
+				menuManager.isMainMenuEditable = false;
+				menuManager.mainMenuMaxSubMenuLevels = 4;
+				menuManager.setMOMMode(2, menuType);
+
+				//Init main menu
+				const setupDraggable = menuManager.isMainMenuEditable;
+				const urlToGetHiddenMenus = '/Pages/MenuMain/HiddenMainSubMenus?pageID=1&moduleID=&themeID=17&menuContainerID=mainNav';
+
+				menuManager.setupMenu(menuID, 'mainNav', menuType, setupDraggable, urlToGetHiddenMenus);
+				menuManager.mainMenuInit = true;
+				menuManager.mainMenuTextResizer = true;
+				if (1.00 > 0)
+					menuManager.mainMenuTextResizerRatio = 1.00;
+				if (window.isResponsiveEnabled)
+					menuManager.mainMenuReady.resolve();
+
+			}
+
+			if (document.readyState === "complete"
+				|| document.readyState === "loaded"
+				|| document.readyState === "interactive") {
+				setupMenu();
+				return;
+			}
+
+			document.addEventListener("DOMContentLoaded", setupMenu);
+		})();
+	 
+
+
+ 	 
+				                
+
+
+
+	 
+ 	 
+				                
+
+
+
+	 
+ 	 
+				                
+
+
+
+	 
+ 	 
+				                
+
+
+
+	 
+ 	 
+				                
+
+
+
+	 
+ 
+ 
+ 
+ 
+ 
+ 	 
+				                
+
+		 				
+	 
+	
+	 	
+ 
+	
+	 
+	 
+	 
+
+		$(document).ready(function () {
+			try {
+				// Minimum characters required before performing a search/autocomplete
+				var minPrefixLength = 3;
+				var autoCompleteDebounceDelay = 500;
+				var searchFieldSelector = "#searchField" + '2ead1deb-e290-406f-85fc-438234cc9523';
+				var checkboxSelector = "#ysnSearchOnlyDept" + '2ead1deb-e290-406f-85fc-438234cc9523';
+				var buttonSelector = ".widgetSearchButton" + '2ead1deb-e290-406f-85fc-438234cc9523';
+				var autoCompleteCache = {};
+				var autoCompleteCacheKeys = [];
+				var autoCompleteCacheLimit = 25;
+				var currentAutoCompleteRequest = null;
+				var currentAutoCompleteRequestKey = null;
+				var autoCompleteDebounceTimer = null;
+				var autoCompleteDebounceKey = null;
+				var pendingAutoCompleteResponses = [];
+
+				function normalizeAutoCompleteTerm(term) {
+					return $.trim((term || "") + "").replace(/\s+/g, " ");
+				}
+
+				function shouldSearch(term) {
+					return normalizeAutoCompleteTerm(term).length >= minPrefixLength;
+				}
+
+				function getAutoCompleteUrl() {
+					return '/Search/AutoComplete' + ($(checkboxSelector).is(':checked') || false? '?departmentId=0' : '');
+				}
+
+				function getAutoCompleteCacheKey(requestUrl, term) {
+					return requestUrl + "|" + term.toLowerCase();
+				}
+
+				function cacheAutoCompleteResult(cacheKey, data) {
+					if (!Object.prototype.hasOwnProperty.call(autoCompleteCache, cacheKey)) {
+						autoCompleteCacheKeys.push(cacheKey);
+						if (autoCompleteCacheKeys.length > autoCompleteCacheLimit) {
+							delete autoCompleteCache[autoCompleteCacheKeys.shift()];
+						}
+					}
+					autoCompleteCache[cacheKey] = data;
+				}
+
+				function respondToPendingAutoComplete(data) {
+					var responses = pendingAutoCompleteResponses;
+					pendingAutoCompleteResponses = [];
+					for (var i = 0; i < responses.length; i++) {
+						responses[i](data);
+					}
+				}
+
+				function cancelPendingAutoComplete() {
+					clearTimeout(autoCompleteDebounceTimer);
+					autoCompleteDebounceKey = null;
+					if (currentAutoCompleteRequest != null) {
+						currentAutoCompleteRequest.abort();
+						currentAutoCompleteRequest = null;
+					}
+					currentAutoCompleteRequestKey = null;
+					respondToPendingAutoComplete([]);
+				}
+
+				function createWidgetAutoCompleteSource(options) {
+					return function (request, response) {
+						var term = normalizeAutoCompleteTerm(request.term);
+						if (!options.shouldSearch(term)) {
+							response([]);
+							return;
+						}
+
+						var requestUrl = options.url();
+						var cacheKey = getAutoCompleteCacheKey(requestUrl, term);
+						if (Object.prototype.hasOwnProperty.call(autoCompleteCache, cacheKey)) {
+							response(autoCompleteCache[cacheKey]);
+							if (options.success) {
+								options.success(autoCompleteCache[cacheKey]);
+							}
+							return;
+						}
+
+						if (currentAutoCompleteRequestKey === cacheKey || autoCompleteDebounceKey === cacheKey) {
+							pendingAutoCompleteResponses.push(response);
+							return;
+						}
+
+						cancelPendingAutoComplete();
+						autoCompleteDebounceKey = cacheKey;
+						pendingAutoCompleteResponses.push(response);
+						autoCompleteDebounceTimer = setTimeout(function () {
+							autoCompleteDebounceKey = null;
+							currentAutoCompleteRequestKey = cacheKey;
+							currentAutoCompleteRequest = $.ajax({
+								url: requestUrl,
+								dataType: "json",
+								timeout: options.timeout,
+								data: {
+									term: term,
+								},
+								success: function (data) {
+									if (currentAutoCompleteRequestKey === cacheKey) {
+										cacheAutoCompleteResult(cacheKey, data);
+										respondToPendingAutoComplete(data);
+										if (options.success) {
+											options.success(data);
+										}
+									}
+								},
+								error: function (xmlhttprequest, textstatus, message) {
+									if (textstatus === "abort") {
+										return;
+									}
+
+									if (options.error) {
+										options.error(xmlhttprequest, textstatus, message);
+									}
+
+									respondToPendingAutoComplete([]);
+								},
+								complete: function (xmlhttprequest) {
+									if (currentAutoCompleteRequest === xmlhttprequest) {
+										currentAutoCompleteRequest = null;
+										currentAutoCompleteRequestKey = null;
+									}
+								}
+							});
+						}, options.delay);
+					};
+				}
+
+				// click handler for search buttons
+				$(buttonSelector).click(function (e) {
+					e.preventDefault();
+					var $btn = $(this);
+					var $field = $btn.siblings(".widgetSearchBox");
+					var term = $field.val() + "";
+					if (!shouldSearch(term)) {
+						// do nothing until user types enough characters
+						$field.focus();
+						return;
+					}
+
+					if ($(checkboxSelector).is(':checked') || false)
+					{
+						doWidgetSearch($.trim(term), Number(0));
+					}
+					else {
+						doWidgetSearch($.trim(term), 0);
+					}
+				});
+
+				// enter key handler for the search field
+				$(searchFieldSelector).keypress(function (e) {
+					var code = e.which || e.keyCode;
+					if (code === 13) {
+						e.preventDefault();
+						var $this = $(this);
+						var term = $this.val() + "";
+						if (!shouldSearch(term)) {
+							// do nothing until user types enough characters
+							$this.focus();
+							return false;
+						}
+
+						if ($(checkboxSelector).is(':checked') || false) {
+							doWidgetSearch($.trim(term), Number(0));
+						} else {
+							doWidgetSearch($.trim(term), 0);
+						}
+						return false;
+					}
+					return true;
+				});
+
+				// autocomplete: set minLength and guard source
+				if (true) {
+					var $searchField = $(searchFieldSelector).autocomplete({
+						minLength: minPrefixLength,
+						source: createWidgetAutoCompleteSource({
+							delay: autoCompleteDebounceDelay,
+							timeout: 10000,
+							shouldSearch: shouldSearch,
+							url: getAutoCompleteUrl,
+							success: function () {
+								$('.autoCompleteError').remove();
+							},
+							error: function (xmlhttprequest, textstatus, message) {
+								if (textstatus === "timeout") {
+									if ($(searchFieldSelector).siblings('.autoCompleteError').length == 0)
+										$('<span class="autoCompleteError"><p class="alert error">Search autocomplete is currently not responding. Please try again later.</p></span>').insertAfter($(searchFieldSelector));
+								}
+							}
+						}),
+						html: true,
+						delay: 0,
+						select: function (event, ui) {
+							$(this).val(ui.item.value);
+							$(this).next().click();
+						}
+					});
+
+					$searchField.data("ui-autocomplete")._renderItem = function (ul, item) {
+						return $("<li class=\"itemList\"></li>")
+							.data("ui-autocomplete-item", item)
+							.append("<a>" + item.label + "</a>")
+							.appendTo(ul);
+					};
+				}
+
+				// keep searchBtnApplyQuery consistent with prefix rule
+				window.searchBtnApplyQuery = function() {
+					var $field = $(searchFieldSelector);
+					var term = $field.val() + "";
+					if (shouldSearch(term)) {
+						// update href for the icon/button (if present)
+						var btn = document.getElementById("btnSearchIcon");
+						if (btn) btn.href = "/Search?searchPhrase=" + encodeURIComponent($.trim(term));
+					} else {
+						var btn = document.getElementById("btnSearchIcon");
+						if (btn) btn.href = "#";
+					}
+				};
+			}
+			catch(e) {} //we're going to eat this error. Autocomplete won't work but we dont wan't to break anything else on the page.
+		});
+	 
+
+	 
+				 
+		 
+			 
+						 
+
+			 Search 
+		 
+
+	 
+
+
+ 
+	  
+		.widgetSearch ::-webkit-input-placeholder {
+		color: #333333;
+	  }
+		.widgetSearch :-moz-placeholder { /* Firefox 18- */
+	   color: #333333;
+	}
+		.widgetSearch ::-moz-placeholder {  /* Firefox 19+ */
+	   color: #333333;
+	}
+	.widgetSearch :-ms-input-placeholder {
+	   color: #333333;
+	}
+	
+
+	.widgetSearch .widgetBody .widgetSearchBox2ead1deb-e290-406f-85fc-438234cc9523
+	{
+		color: #333333;
+		border-radius: 5px;
+background: #FFF;
+box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
+height:60px;
+padding:0 65px 0 20px;
+border:none;
+font-weight: 400;
+font-family: alegreya sans;
+font-size: 18px;
+	}
+	.widgetSearch .widgetBody .widgetSearchButton2ead1deb-e290-406f-85fc-438234cc9523
+	{
+		margin: 10px 11px 10px 0;
+	}
+	.widgetSearch .widgetSearch-onlyDept2ead1deb-e290-406f-85fc-438234cc9523
+	{
+		display: inline-block;
+		color: #333;
+		
+		
+		 padding-top: 10px;
+	}
+	#ysnSearchOnlyDept2ead1deb-e290-406f-85fc-438234cc9523
+	{
+		position: relative;
+		top: .125em;
+	}
+
+ 
+
+ 
+ 
+
+
+
+ 
+	//Updates search icons href to have the correct queryString
+	function searchBtnApplyQuery() {
+		document.getElementById("btnSearchIcon").href = "/Search?searchPhrase=" + document.getElementById("searchField2ead1deb-e290-406f-85fc-438234cc9523").value;
+	}
+ 
+
+ 
+
+	   
+
+	   
+
+			   
+
+
+	 
+ 
+ 
+ 
+
+
+
+
+		 
+		 
+			 
+			 
+		 
+			 
+				$(window).on("load", function () {
+					$.when(window.Pages.rwdSetupComplete)
+						.done(function () {
+							renderExternalBannerSlideshow('banner1',
+								{"BannerOptionID":38,"ThemeID":17,"SlotName":"banner1","Name":"Default","IsDefault":true,"BannerMode":2,"SlideShowSlideTiming":"5","SlideshowTransition":0,"SlideShowTransitionTiming":"1","ImageScale":true,"ImageAlignment":1,"ImageScroll":true,"MuteSound":true,"VideoType":0,"Status":40,"SlideshowControlsPosition":0,"SlideshowControlsAlignment":0,"SlideshowBannerControlsColorScheme":0,"DisplayVideoPauseButton":false,"VideoPauseButtonAlignment":1,"VideoPauseButtonControlsAlignment":0,"VideoPauseButtonStyle":"#FFFFFF","VideoPauseButtonBackgroundStyle":"#000000","VideoPauseButtonAlignmentClass":"alignRight viewport","DisplaySlideshowPauseButton":false,"SlideshowControlsColor":"#FFFFFF","SlideshowControlsBackgroundColor":"#000000","SlideshowPauseButtonClass":"isHidden","BannerImages":[{"BannerImageID":121,"BannerOptionID":38,"FileName":"/ImageRepository/Document?documentID=26268","Height":400,"Width":2200,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":1,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":""},{"BannerImageID":122,"BannerOptionID":38,"FileName":"/ImageRepository/Document?documentID=26267","Height":400,"Width":2200,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":2,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":""},{"BannerImageID":123,"BannerOptionID":38,"FileName":"/ImageRepository/Document?documentID=26266","Height":400,"Width":2200,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":3,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":""}],"BannerVideos":[{"BannerVideoID":12,"BannerOptionID":38,"VideoFileName":"","ImageFileName":"EmptyBannerBkg202512201101090327.png","IsLink":false,"LinkAddress":null,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","VideoFileID":"00000000-0000-0000-0000-000000000000","ImageFileID":"00000000-0000-0000-0000-000000000000","VideoWidth":0,"VideoHeight":0,"ImageWidth":0,"ImageHeight":0,"LinkedVideoUrl":"","RecordStatus":0,"AltText":null}],"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/"},
+								'/App_Themes/2025 - Interior/Images/',
+								'Rotating');
+						});
+				});
+			 
+
+ 
+ 
+ 
+ 
+ 	 
+				                
+
+
+
+	 
+ 
+
+
+
+
+
+	 
+	 
+		 
+			 Elections Home 
+		 
+			 
+	 
+		 
+			 Register to Vote 
+		 
+			 
+	 
+		 
+			 2026 Candidate Lists 
+		 
+			 
+	 
+		 
+			 2026 Public Notices 
+		 
+			 
+	 
+		 
+			 2026 Election Results 
+		 
+			 
+	 
+		 
+			 Advance Voting 
+		 
+			 
+	 
+		 
+			 Become an Election Worker 
+		 
+			 
+	 
+		 
+			 Campaign Finance Reports  
+		 
+			 
+	 
+		 
+			 Campaigning and Sign Regulations 
+		 
+			 
+	 
+		 
+			 Elected Officials 
+		 
+			 
+	 
+		 
+			 Military and Overseas Citizens 
+		 
+			 
+	 
+		 
+			 Past Election Statistics 
+		 
+			 
+	 
+		 
+			 Photo ID Requirements to Vote at the Polls 
+		 
+			 
+	 
+		 
+			 Provisional Ballots 
+		 
+			 
+	 
+		 
+			 Review Your Voter Information 
+		 
+			 
+	 
+		 
+			 Riley County Voting District Maps 
+		 
+			 
+	 
+		 
+			 Voter's Right and Responsibilities 
+		 
+			 
+
+	 
+
+
+	 
+		(function () {
+			function setupSecondaryMenuProperties() {
+				//setup menu manager properties for secondary menu
+				menuManager.isSideMenuEditable = false;
+				menuManager.sideMenuMaxSubMenuLevels = 4;
+				menuManager.sideMenuHasCustomLinks = false;
+			}
+
+			if (document.readyState === "loading") {
+				document.addEventListener("DOMContentLoaded", setupSecondaryMenuProperties, { once: true });
+				return;
+			}
+
+			setupSecondaryMenuProperties();
+		})();
+	 
+
+	 
+		(function () {
+			function setupAccordionSecondaryNav() {
+				var $menuContainer = $('#secondaryNav');
+
+				$menuContainer.find('*[id^="SideItem"]').each(function () {
+					var ids = $('[id="' + this.id + '"]');
+					if (ids.length > 1)
+						$.each(ids, function (index, value) {
+							value.id = value.id + '_' + index;
+						});
+				});
+
+				$menuContainer.find('.hasAccordionChildren .openAccordionNav').off('click.secondaryNav').on('click.secondaryNav', function (e) {
+					e.preventDefault();
+					showHideAccordionMenuForSecondaryNav($(this));
+				});
+
+				$menuContainer.find(".grippy").each(function () {
+					menuManager.setupDraggableElement($(this), SIDE_MENU, '#secondaryNav');
+				});
+
+				$menuContainer.find("li").each(function () {
+					menuManager.setupDroppableAccordionElement($(this), SIDE_MENU);
+				});
+			}
+
+			if (document.readyState === "loading") {
+				document.addEventListener("DOMContentLoaded", setupAccordionSecondaryNav, { once: true });
+				return;
+			}
+
+			setupAccordionSecondaryNav();
+		})();
+	 
+
+
+
+ 	 
+				                
+
+
+
+	 
+ 
+ 
+ 
+ 		 
+			 Home Government Departments County Clerk & Elections Elections Riley County Voting District Maps 
+		 
+
+	   
+    
+ 
+	
+	 
+		
+
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+
+				 
+
+Various Maps For Riley County Districts		 
+	
+		 
+			
+
+		 				
+	 
+	
+	 	
+
+
+
+	 
+				 
+				 Riley County Commissioner Districts 
+		 
+		 Printed Commissioner district maps are available for purchase in the  Riley County Clerk's Elections Division Office . 
+	 
+		 
+					 
+							 
+									 Commissioner District Precinct List (pdf) 
+									 Riley County Commission District 1 Map (pdf) 
+									 Riley County Commission District 2 Map (pdf) 
+									 Riley County Commission District 3 Map (pdf) 
+									 Riley County Commissioner Districts (Interactive Map) 
+									 Riley County Commissioner Districts (pdf) 
+							 
+					 
+
+		 
+	 
+
+	 
+
+
+	   
+
+	   
+
+			   
+		 				
+	 
+	
+	 	
+
+
+
+	 
+				 
+				 Riley County State District Maps 
+		 
+		 Printed State Representative district maps are available for purchase in the  Riley County Clerk's Elections Division Office . 
+	 
+		 
+					 
+							 
+									 Riley County State Representative District 51 (pdf) 
+									 Riley County State Representative District 61  (pdf) 
+									 Riley County State Representative District 64 (pdf) 
+									 Riley County State Representative District 66 (pdf) 
+									 Riley County State Representative District 67 (pdf) 
+									 Riley County State Representative District 68  (pdf) 
+									 Riley County State Representative District Map (Six Districts) (pdf) 
+									 State Representative Districts Precinct List (pdf) 
+							 
+					 
+
+		 
+	 
+
+	 
+
+
+	   
+
+	   
+	 
+	
+	 	
+
+
+
+	 
+				 
+				 Riley County National District Maps 
+		 
+	 
+		 
+					 
+							 
+									 Riley County Congressional Map (pdf) 
+									 Riley County Kansas Senate Map (pdf) 
+							 
+					 
+
+		 
+	 
+
+	 
+
+
+	   
+
+	   
+	 
+	
+	 	
+
+
+
+	 
+				 
+				 City of Manhattan Precinct Map 
+		 
+		 Printed Precinct maps are available for purchase in the  Riley County Clerk's Elections Division Office . 
+	 
+		 
+					 
+							 
+									 Manhattan City Street Index Map with Voting Precincts (pdf)  (prints on 36" width x 24" height paper) 
+							 
+					 
+
+		 
+	 
+
+	 
+
+
+	   
+
+	   
+	 
+	
+	 	
+
+
+
+	 
+				 
+				 Township Maps 
+		 
+	 
+		 
+					 
+							 
+									 Riley County Township and Voting Precincts Map (pdf) 
+							 
+					 
+
+		 
+	 
+
+	 
+
+
+	   
+
+	   
+	 
+	
+	 	
+
+
+
+	 
+				 
+				 School District Maps 
+		 
+	 
+		 
+					 
+							 
+									 All Schools (pdf) 
+									 USD 378 District and Positions (pdf) 
+									 USD 384 Districts (pdf) 
+							 
+					 
+
+		 
+	 
+
+	 
+
+
+	   
+
+	   
+
+			   
+		 				
+	 
+	
+	 	
+ 
+	     
+
+
+         
+ 
+ 
+     
+
+ 
+	$(document).ready(function (e) {		
+	    renderSlideshowIfApplicable($('#divEditor' + '522bef80-43a1-4994-bede-cd3bf4e69c85'));
+	});
+ 
+ 
+
+	   
+
+	   
+
+			   
+
+
+		 
+
+	 
+
+	
+	 
+
+	 
+ 
+ 	 
+				                
+
+
+
+	 
+ 
+ 
+ 
+ 
+ 	 
+				                
+
+		 				
+	 
+	
+	 	
+ 
+
+
+
+
+ 
+	 
+		 
+				 
+	 
+	 
+		 
+				 
+					 
+
+ 
+	 
+		 
+			 Commission Meetings 
+		 
+	 
+ 
+		 .fancyButton543.fancyButton:link,.fancyButton543.fancyButton:visited, .fancyButton543div.fancyButton{
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+.fancyButton543.fancyButton:hover,.fancyButton543.fancyButton:focus,.fancyButton543.fancyButton:active,.fancyButton543.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+.fancyButton543.fancyButton:link > span,.fancyButton543.fancyButton:visited > span, .fancyButton543div.fancyButton > span{
+}
+.fancyButton543.fancyButton:hover > span,.fancyButton543.fancyButton:focus > span,.fancyButton543.fancyButton:active > span,.fancyButton543.fancyButton.hover > span{
+}
+.fancyButton543.fancyButton .text{
+	color: rgb(51, 51, 51);
+	font-size: 1.15em;
+	font-family: "Alegreya Sans";
+	text-align: center;
+	padding-top: 85px;
+	font-weight: 500;
+	text-decoration: none;
+	padding-top: 85px;
+	background-image: url(/ImageRepository/Document?documentID=26281);
+	background-repeat: no-repeat;
+	background-position: center top;
+position:relative;
+transition:all .3s ease-in-out;
+}
+.fancyButton543 .text::after{
+position:absolute;
+content:"";
+left:50%;
+transform:translateX(-50%);
+top:78px;
+height:3px;
+width:80px;
+background:#FCE576;
+transition:all .3s ease-in-out;
+}
+.fancyButton543.fancyButton:hover .text,.fancyButton543.fancyButton:focus .text,.fancyButton543.fancyButton:active .text,.fancyButton543.fancyButton.hover .text{
+	text-decoration: underline;
+	background-image: url(/ImageRepository/Document?documentID=26282);
+	background-repeat: no-repeat;
+	background-position: center 3px ;
+}
+.fancyButton543:is(:hover, :focus, :active) .text::after{
+width:50px;
+}
+ 
+
+  
+
+ 
+	 
+		 
+			 Motor Vehicles 
+		 
+	 
+ 
+		 .fancyButton547.fancyButton:link,.fancyButton547.fancyButton:visited, .fancyButton547div.fancyButton{
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+.fancyButton547.fancyButton:hover,.fancyButton547.fancyButton:focus,.fancyButton547.fancyButton:active,.fancyButton547.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+.fancyButton547.fancyButton:link > span,.fancyButton547.fancyButton:visited > span, .fancyButton547div.fancyButton > span{
+}
+.fancyButton547.fancyButton:hover > span,.fancyButton547.fancyButton:focus > span,.fancyButton547.fancyButton:active > span,.fancyButton547.fancyButton.hover > span{
+}
+.fancyButton547.fancyButton .text{
+	color: rgb(51, 51, 51);
+	font-size: 1.15em;
+	font-family: "Alegreya Sans";
+	text-align: center;
+	padding-top: 85px;
+	font-weight: 500;
+	text-decoration: none;
+	padding-top: 85px;
+	background-image: url(/ImageRepository/Document?documentID=26273);
+	background-repeat: no-repeat;
+	background-position: center top;
+position:relative;
+transition:all .3s ease-in-out;
+}
+.fancyButton547 .text::after{
+position:absolute;
+content:"";
+left:50%;
+transform:translateX(-50%);
+top:78px;
+height:3px;
+width:80px;
+background:#FCE576;
+transition:all .3s ease-in-out;
+}
+.fancyButton547.fancyButton:hover .text,.fancyButton547.fancyButton:focus .text,.fancyButton547.fancyButton:active .text,.fancyButton547.fancyButton.hover .text{
+	text-decoration: underline;
+	background-image: url(/ImageRepository/Document?documentID=26274);
+	background-repeat: no-repeat;
+	background-position: center 3px ;
+}
+.fancyButton547:is(:hover, :focus, :active) .text::after{
+width:50px;
+}
+ 
+
+  
+				 
+			 
+		 
+	 
+			 
+ 
+ 
+
+	   
+
+	   
+
+			 				
+	 
+	
+	 	
+ 
+
+
+
+
+ 
+	 
+		 
+				 
+	 
+	 
+		 
+				 
+					 
+
+ 
+	 
+		 
+			 District Court 
+		 
+	 
+ 
+		 .fancyButton545.fancyButton:link,.fancyButton545.fancyButton:visited, .fancyButton545div.fancyButton{
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+.fancyButton545.fancyButton:hover,.fancyButton545.fancyButton:focus,.fancyButton545.fancyButton:active,.fancyButton545.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+.fancyButton545.fancyButton:link > span,.fancyButton545.fancyButton:visited > span, .fancyButton545div.fancyButton > span{
+}
+.fancyButton545.fancyButton:hover > span,.fancyButton545.fancyButton:focus > span,.fancyButton545.fancyButton:active > span,.fancyButton545.fancyButton.hover > span{
+}
+.fancyButton545.fancyButton .text{
+	color: rgb(51, 51, 51);
+	font-size: 1.15em;
+	font-family: "Alegreya Sans";
+	text-align: center;
+	padding-top: 85px;
+	font-weight: 500;
+	text-decoration: none;
+	padding-top: 85px;
+	background-image: url(/ImageRepository/Document?documentID=26279);
+	background-repeat: no-repeat;
+	background-position: center top;
+position:relative;
+transition:all .3s ease-in-out;
+}
+.fancyButton545 .text::after{
+position:absolute;
+content:"";
+left:50%;
+transform:translateX(-50%);
+top:78px;
+height:3px;
+width:80px;
+background:#FCE576;
+transition:all .3s ease-in-out;
+}
+.fancyButton545.fancyButton:hover .text,.fancyButton545.fancyButton:focus .text,.fancyButton545.fancyButton:active .text,.fancyButton545.fancyButton.hover .text{
+	text-decoration: underline;
+	background-image: url(/ImageRepository/Document?documentID=26280);
+	background-repeat: no-repeat;
+	background-position: center 3px ;
+}
+.fancyButton545:is(:hover, :focus, :active) .text::after{
+width:50px;
+}
+ 
+
+  
+
+ 
+	 
+		 
+			 Employment 
+		 
+	 
+ 
+		 .fancyButton540.fancyButton:link,.fancyButton540.fancyButton:visited, .fancyButton540div.fancyButton{
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+.fancyButton540.fancyButton:hover,.fancyButton540.fancyButton:focus,.fancyButton540.fancyButton:active,.fancyButton540.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+.fancyButton540.fancyButton:link > span,.fancyButton540.fancyButton:visited > span, .fancyButton540div.fancyButton > span{
+}
+.fancyButton540.fancyButton:hover > span,.fancyButton540.fancyButton:focus > span,.fancyButton540.fancyButton:active > span,.fancyButton540.fancyButton.hover > span{
+}
+.fancyButton540.fancyButton .text{
+	color: rgb(51, 51, 51);
+	font-size: 1.15em;
+	font-family: "Alegreya Sans";
+	text-align: center;
+	padding-top: 85px;
+	font-weight: 500;
+	text-decoration: none;
+	padding-top: 85px;
+	background-image: url(/ImageRepository/Document?documentID=26275);
+	background-repeat: no-repeat;
+	background-position: center top;
+position:relative;
+transition:all .3s ease-in-out;
+}
+.fancyButton540 .text::after{
+position:absolute;
+content:"";
+left:50%;
+transform:translateX(-50%);
+top:78px;
+height:3px;
+width:80px;
+background:#FCE576;
+transition:all .3s ease-in-out;
+}
+.fancyButton540.fancyButton:hover .text,.fancyButton540.fancyButton:focus .text,.fancyButton540.fancyButton:active .text,.fancyButton540.fancyButton.hover .text{
+	text-decoration: underline;
+	background-image: url(/ImageRepository/Document?documentID=26276);
+	background-repeat: no-repeat;
+	background-position: center 3px ;
+}
+.fancyButton540:is(:hover, :focus, :active) .text::after{
+width:50px;
+}
+ 
+
+  
+				 
+			 
+		 
+	 
+			 
+ 
+ 
+
+	   
+
+	   
+
+			 				
+	 
+	
+	 	
+ 
+
+
+
+
+ 
+	 
+		 
+				 
+	 
+	 
+		 
+				 
+					 
+
+ 
+	 
+		 
+			 Election Information 
+		 
+	 
+ 
+		 .fancyButton544.fancyButton:link,.fancyButton544.fancyButton:visited, .fancyButton544div.fancyButton{
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+.fancyButton544.fancyButton:hover,.fancyButton544.fancyButton:focus,.fancyButton544.fancyButton:active,.fancyButton544.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+.fancyButton544.fancyButton:link > span,.fancyButton544.fancyButton:visited > span, .fancyButton544div.fancyButton > span{
+}
+.fancyButton544.fancyButton:hover > span,.fancyButton544.fancyButton:focus > span,.fancyButton544.fancyButton:active > span,.fancyButton544.fancyButton.hover > span{
+}
+.fancyButton544.fancyButton .text{
+	color: rgb(51, 51, 51);
+	font-size: 1.15em;
+	font-family: "Alegreya Sans";
+	text-align: center;
+	padding-top: 85px;
+	font-weight: 500;
+	text-decoration: none;
+	padding-top: 85px;
+	background-image: url(/ImageRepository/Document?documentID=26277);
+	background-repeat: no-repeat;
+	background-position: center top;
+position:relative;
+transition:all .3s ease-in-out;
+}
+.fancyButton544 .text::after{
+position:absolute;
+content:"";
+left:50%;
+transform:translateX(-50%);
+top:78px;
+height:3px;
+width:80px;
+background:#FCE576;
+transition:all .3s ease-in-out;
+}
+.fancyButton544.fancyButton:hover .text,.fancyButton544.fancyButton:focus .text,.fancyButton544.fancyButton:active .text,.fancyButton544.fancyButton.hover .text{
+	text-decoration: underline;
+	background-image: url(/ImageRepository/Document?documentID=26278);
+	background-repeat: no-repeat;
+	background-position: center 3px ;
+}
+.fancyButton544:is(:hover, :focus, :active) .text::after{
+width:50px;
+}
+ 
+
+  
+
+ 
+	 
+		 
+			 Online Payment 
+		 
+	 
+ 
+		 .fancyButton541.fancyButton:link,.fancyButton541.fancyButton:visited, .fancyButton541div.fancyButton{
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+.fancyButton541.fancyButton:hover,.fancyButton541.fancyButton:focus,.fancyButton541.fancyButton:active,.fancyButton541.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+.fancyButton541.fancyButton:link > span,.fancyButton541.fancyButton:visited > span, .fancyButton541div.fancyButton > span{
+}
+.fancyButton541.fancyButton:hover > span,.fancyButton541.fancyButton:focus > span,.fancyButton541.fancyButton:active > span,.fancyButton541.fancyButton.hover > span{
+}
+.fancyButton541.fancyButton .text{
+	color: rgb(51, 51, 51);
+	font-size: 1.15em;
+	font-family: "Alegreya Sans";
+	text-align: center;
+	padding-top: 85px;
+	font-weight: 500;
+	text-decoration: none;
+	padding-top: 85px;
+	background-image: url(/ImageRepository/Document?documentID=26271);
+	background-repeat: no-repeat;
+	background-position: center top;
+position:relative;
+transition:all .3s ease-in-out;
+}
+.fancyButton541 .text::after{
+position:absolute;
+content:"";
+left:50%;
+transform:translateX(-50%);
+top:78px;
+height:3px;
+width:80px;
+background:#FCE576;
+transition:all .3s ease-in-out;
+}
+.fancyButton541.fancyButton:hover .text,.fancyButton541.fancyButton:focus .text,.fancyButton541.fancyButton:active .text,.fancyButton541.fancyButton.hover .text{
+	text-decoration: underline;
+	background-image: url(/ImageRepository/Document?documentID=26272);
+	background-repeat: no-repeat;
+	background-position: center 3px ;
+}
+.fancyButton541:is(:hover, :focus, :active) .text::after{
+width:50px;
+}
+ 
+
+  
+				 
+			 
+		 
+	 
+			 
+ 
+ 
+
+	   
+
+	   
+
+			   
+
+
+	 
+ 
+ 
+ 	 
+				                
+
+		 				
+	 
+	
+	 	
+     
+
+
+
+
+
+	 
+			 
+		 
+								 
+	 
+	 
+		 
+					 
+						 
+
+ 
+	 
+ 						 
+					 
+		 
+	 
+	 
+
+	 
+
+	 
+
+
+
+ 
+	//Render slideshow if info advacned items contain one.
+	$(document).ready(function (e) {
+		$('#divInfoAdv93111816-3ed1-4a57-bcd6-6478d35e8cab .InfoAdvanced.widgetItem').each(function () {
+			renderSlideshowIfApplicable($(this));		
+		});
+	});
+ 
+	   
+
+	   
+
+			 				
+	 
+	
+	 	
+
+ 
+	   
+
+	   
+
+			 				
+	 
+	
+	 	
+     
+
+
+
+
+
+	 
+			 
+		 
+					 Contact Us 
+								 
+	 
+	 
+		 
+					 
+						 
+
+ 
+	 Riley County Offices 
+ 
+ 
+	 110 Courthouse Plaza 
+ 
+ 
+	 Manhattan, KS 66502 
+ 
+ 
+	 Phone:  785-565-6200 
+ 
+ 
+	 Fax:  785-537-6394 
+ 						 
+					 
+		 
+	 
+	 
+
+	 
+
+	 
+
+
+
+ 
+	//Render slideshow if info advacned items contain one.
+	$(document).ready(function (e) {
+		$('#divInfoAdv12f2a637-21b7-4c09-8b4d-ec02c602ecc0 .InfoAdvanced.widgetItem').each(function () {
+			renderSlideshowIfApplicable($(this));		
+		});
+	});
+ 
+	   
+
+	   
+
+			 				
+	 
+	
+	 	
+
+ 
+	   
+
+	   
+
+			 				
+	 
+	
+	 	
+ 
+
+
+
+
+ 
+	 
+		 
+			 Social Media 
+				 
+	 
+	 
+		 
+					 
+						 
+
+ 
+	 
+		 
+			 Facebook 
+		 
+	 
+ 
+		 .fancyButton529.fancyButton:link,.fancyButton529.fancyButton:visited, .fancyButton529div.fancyButton{
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+.fancyButton529.fancyButton:hover,.fancyButton529.fancyButton:focus,.fancyButton529.fancyButton:active,.fancyButton529.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+.fancyButton529.fancyButton:link > span,.fancyButton529.fancyButton:visited > span, .fancyButton529div.fancyButton > span{
+}
+.fancyButton529.fancyButton:hover > span,.fancyButton529.fancyButton:focus > span,.fancyButton529.fancyButton:active > span,.fancyButton529.fancyButton.hover > span{
+}
+.fancyButton529.fancyButton .text{
+	color: rgb(51, 51, 51);
+	font-size: 1em;
+	font-family: "Poppins";
+	text-align: left;
+	padding-left: 31px;
+	font-style: normal;
+	text-decoration: none;
+	padding-left: 31px;
+	background-image: url('/ImageRepository/Document?documentID=26283');
+	background-repeat: no-repeat;
+	background-position: left center;
+background-size:20px;
+}
+.fancyButton529.fancyButton:hover .text,.fancyButton529.fancyButton:focus .text,.fancyButton529.fancyButton:active .text,.fancyButton529.fancyButton.hover .text{
+	text-decoration: underline;
+	background-repeat: no-repeat;
+	background-position: left center;
+
+
+}
+ 
+
+  
+
+ 
+	 
+		 
+			 Youtube 
+		 
+	 
+ 
+		 .fancyButton530.fancyButton:link,.fancyButton530.fancyButton:visited, .fancyButton530div.fancyButton{
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+.fancyButton530.fancyButton:hover,.fancyButton530.fancyButton:focus,.fancyButton530.fancyButton:active,.fancyButton530.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+.fancyButton530.fancyButton:link > span,.fancyButton530.fancyButton:visited > span, .fancyButton530div.fancyButton > span{
+}
+.fancyButton530.fancyButton:hover > span,.fancyButton530.fancyButton:focus > span,.fancyButton530.fancyButton:active > span,.fancyButton530.fancyButton.hover > span{
+}
+.fancyButton530.fancyButton .text{
+	color: rgb(51, 51, 51);
+	font-size: 1em;
+	font-family: "Poppins";
+	text-align: left;
+	padding-left: 31px;
+	font-style: normal;
+	text-decoration: none;
+	padding-left: 31px;
+	background-image: url('/ImageRepository/Document?documentID=26285');
+	background-repeat: no-repeat;
+	background-position: left center;
+background-size:20px;
+}
+.fancyButton530.fancyButton:hover .text,.fancyButton530.fancyButton:focus .text,.fancyButton530.fancyButton:active .text,.fancyButton530.fancyButton.hover .text{
+	text-decoration: underline;
+	background-repeat: no-repeat;
+	background-position: left center;
+
+
+}
+ 
+
+  
+
+ 
+	 
+		 
+			 Instagram 
+		 
+	 
+ 
+		 .fancyButton531.fancyButton:link,.fancyButton531.fancyButton:visited, .fancyButton531div.fancyButton{
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+.fancyButton531.fancyButton:hover,.fancyButton531.fancyButton:focus,.fancyButton531.fancyButton:active,.fancyButton531.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+.fancyButton531.fancyButton:link > span,.fancyButton531.fancyButton:visited > span, .fancyButton531div.fancyButton > span{
+}
+.fancyButton531.fancyButton:hover > span,.fancyButton531.fancyButton:focus > span,.fancyButton531.fancyButton:active > span,.fancyButton531.fancyButton.hover > span{
+}
+.fancyButton531.fancyButton .text{
+	color: rgb(51, 51, 51);
+	font-size: 1em;
+	font-family: "Poppins";
+	text-align: left;
+	padding-left: 31px;
+	font-style: normal;
+	text-decoration: none;
+	padding-left: 31px;
+	background-image: url('/ImageRepository/Document?documentID=26284');
+	background-repeat: no-repeat;
+	background-position: left center;
+background-size:20px;
+}
+.fancyButton531.fancyButton:hover .text,.fancyButton531.fancyButton:focus .text,.fancyButton531.fancyButton:active .text,.fancyButton531.fancyButton.hover .text{
+	text-decoration: underline;
+	background-repeat: no-repeat;
+	background-position: left center;
+
+
+}
+ 
+
+  
+					 
+			 
+		 
+	 
+			 
+ 
+ 
+
+	   
+
+	   
+
+			 				
+	 
+	
+	 	
+
+ 
+	   
+
+	   
+
+			 				
+	 
+	
+	 	
+	 
+
+
+
+
+
+
+
+
+	 
+			 
+		 
+					 Helpful Links 
+						 
+	 
+	 
+         
+				 
+					 
+
+
+
+
+     
+         ATA Bus 
+         
+     
+
+
+
+
+     
+         Burn Permits 
+         
+     
+
+
+
+
+     
+         Commission Meetings 
+         
+     
+
+
+
+
+     
+         District Court 
+         
+     
+
+
+
+
+     
+         Driver's Licenses 
+         
+     
+					 
+				 
+		 
+        
+	 
+	 
+	 
+	 
+		 /QuickLinks.aspx 
+	 
+
+	 
+ 
+
+	   
+
+	   
+
+			 				
+	 
+	
+	 	
+
+ 
+	   
+
+	   
+
+			 				
+	 
+	
+	 	
+	 
+
+
+
+
+
+
+
+
+	 
+			 
+		 
+					 Helpful Links 
+						 
+	 
+	 
+         
+				 
+					 
+
+
+
+
+     
+         Home 
+         
+     
+
+
+
+
+     
+         Staff Directory 
+         
+     
+
+
+
+
+     
+         Translate 
+         
+     
+
+
+
+
+     
+         Site Map 
+         
+     
+					 
+				 
+		 
+        
+	 
+	 
+	 
+	 
+		 /QuickLinks.aspx 
+	 
+
+	 
+ 
+
+	   
+
+	   
+
+			   
+
+
+	 
+ 
+ 
+ 	 
+				                
+
+		 				
+	 
+	
+	 	
+ 
+	 
+	 
+		 
+  /* CP icon */
+  .cpBylineIconTS {
+    color: #fff;
+  }
+  /* CP Text */
+  .cpBylineTextTS,
+  .cpBylineTextTS a:link {
+    color: #fff;
+  }
+
+  .cpBylineTS {
+    text-align: center;
+  }
+
+  .cpBylineIconTS {
+    fill: currentColor;
+    width: 39px;
+    height: 26px;
+    display: inline;
+    vertical-align: middle;
+  }
+ 
+
+ 
+   
+     
+     
+   
+   Government Websites by  CivicPlus® 
+ 
+ 
+	 
+
+	 
+
+	   
+
+	   
+
+			   
+
+
+	 
+ 
+ 
+ 
+
+             
+         
+     
+
+ 
+
+ 
+	 
+		 
+			 Loading 
+			 
+				 
+					 
+				 
+			 
+		 
+		 
+			 
+				 
+				Loading
+			 
+		 
+		 
+			 Do Not Show Again 
+			 Close 
+		 
+	 
+ 
+
+ 
+ 
+ 
+ 
+
+		$(document).ready(function () {
+			var filter = {
+				targetId: '145',
+				targetType: 1
+			}
+
+			new SplashModalRender().triggerRender(filter);
+		});
+ 
+
+
+	
+	
+	
+	
+
+
+
+	
+
+
+
+
+
+
+     
+     
+ 
+  function getValueTS(elem, attr) {
+    const val = elem.css(attr);
+    if (val === undefined) return undefined;
+    const num = parseInt(val, 10);
+    if (num === NaN) return undefined;
+    return num;
+  }
+
+  function clampTS(number, min, max) {
+    return Math.min(Math.max(number, min), max);
+  }
+
+  function isPageEditingTS() {
+    return (
+      $("#doneEditing").length > 0 || // In live edit
+      typeof DesignCenter !== "undefined" // In theme manager
+    );
+  }
+
+  const bgColorRegexTS = /rgba\((\d+), (\d+), (\d+), (\d*\.?\d*)\)/;
+  function isTransparentTS(elem) {
+    const bg = elem.css('background-color');
+    if (typeof bg !== "string" || !bg.startsWith('rgba(')) return false;
+    const matchState = bg.match(bgColorRegexTS);
+    if (!matchState || matchState.length !== 5) return false;
+    const alpha = parseFloat(matchState[4], 10);
+    if (!(alpha >= 0 && alpha < 1)) return false;
+    return true;
+  }
+
+  function iterateLeftpads(cb) {
+    const containersTS = $("[class^='siteWrap'],[class*=' siteWrap']");
+    for (let i = 0; i < containersTS.length; i++) {
+      const containerTS = containersTS[i];
+      // Skip the body container and anything with data-skip-leftpad
+      if (
+        containerTS.id !== "bodyContainerTS" &&
+        containerTS.getAttribute('data-skip-leftpad') === null
+      ) {
+        cb(containerTS);
+      }
+    }
+  }
+
+  const anchor = $("#divToolbars");
+
+  // Outer banner padding (push banner down)
+  const outerSizingTS = $("#bannerContainerTS");
+  // Inner banner padding (push banner content down) - Transparent header OR on attaching headers
+  const innerSizingTS = $("#bannerSizingTS");
+  const bodyContainerTS = $("#bodyContainerTS");
+
+  const forceUnfixClassTS = "forceUnfixTS";
+
+  const fixedTopTS = $(".fixedTopTS");
+  const fixedBottomTS = $(".fixedBottomTS");
+  const fixedLeftTS = $(".fixedLeftTS");
+
+  var initialTopTS;
+  var topAttachTS;
+  if (fixedTopTS && fixedTopTS.length === 1) {
+    initialTopTS = getValueTS(fixedTopTS, 'top');
+    const attachment = fixedTopTS.attr('data-attach');
+    if (attachment) topAttachTS = $("#" + attachment);
+    if (!topAttachTS || topAttachTS.length !== 1) topAttachTS = undefined;
+  }
+
+  function resizeAdjustmentTS() {
+    const editing = isPageEditingTS();
+
+    // Fixed top script
+    (function () {
+      if (!fixedTopTS || fixedTopTS.length !== 1 || initialTopTS === undefined) return;
+
+      if (editing) {
+        fixedTopTS[0].classList.add(forceUnfixClassTS);
+      } else {
+        fixedTopTS[0].classList.remove(forceUnfixClassTS);
+      }
+
+      const topPosition = fixedTopTS.css('position');
+      if (topPosition === 'fixed') {
+        if (topAttachTS) {
+          scrollAdjustmentTS();
+        } else {
+          const anchorHeight = anchor.outerHeight() - 1;
+          fixedTopTS.css('top', anchorHeight + initialTopTS);
+        }
+      } else {
+        fixedTopTS.css('top', initialTopTS);
+      }
+
+      if (topPosition === 'fixed' || topPosition === 'absolute') {
+        // Bump the banner content down
+        if (isTransparentTS(fixedTopTS)) {
+          innerSizingTS.css('padding-top', initialTopTS + fixedTopTS.outerHeight() - 1);
+          outerSizingTS.css('padding-top', '');
+
+          try {
+            window.Pages.onResizeHandlersExecute();
+          } catch (e) { }
+        } else {
+          outerSizingTS.css('padding-top', fixedTopTS.outerHeight() - 1);
+          innerSizingTS.css('padding-top', '');
+        }
+      } else {
+        innerSizingTS.css('padding-top', '');
+        outerSizingTS.css('padding-top', '');
+      }
+    })();
+
+    // Fixed bottom script
+    (function () {
+      if (!fixedBottomTS || fixedBottomTS.length === 0) return;
+
+      // If the widget has gone narrow, force unfix
+      if (editing || fixedBottomTS.outerHeight() > 200) {
+        fixedBottomTS[0].classList.add(forceUnfixClassTS);
+      } else {
+        fixedBottomTS[0].classList.remove(forceUnfixClassTS);
+      }
+
+      if (fixedBottomTS.css('position') === 'fixed') {
+        bodyContainerTS.css('padding-bottom', fixedBottomTS.outerHeight());
+      } else {
+        bodyContainerTS.css('padding-bottom', '');
+      }
+    })();
+
+    // Fixed left script
+    (function () {
+      if (!fixedLeftTS || fixedLeftTS.length === 0) return;
+
+      if (editing) {
+        fixedLeftTS[0].classList.add(forceUnfixClassTS);
+      } else {
+        fixedLeftTS[0].classList.remove(forceUnfixClassTS);
+      }
+
+      if (fixedLeftTS.css('position') === 'fixed') {
+        const anchorHeight = anchor.outerHeight() - 1;
+        fixedLeftTS.css('top', anchorHeight);
+        const leftBoundingTS = fixedLeftTS[0].getBoundingClientRect();
+        iterateLeftpads(function (containerTS) {
+          const containerBoundingTS = containerTS.getBoundingClientRect();
+          if (containerBoundingTS.left <= leftBoundingTS.right) {
+            $(containerTS).css('padding-left', leftBoundingTS.width + 16);
+          }
+        });
+      } else {
+        fixedLeftTS.css('top', '');
+        iterateLeftpads(function (containerTS) {
+          $(containerTS).css('padding-left', '');
+        });
+      }
+    })();
+  }
+
+  function scrollAdjustmentTS() {
+    if (!fixedTopTS || fixedTopTS.length !== 1 || !topAttachTS || topAttachTS.length !== 1) return;
+    const topPosition = fixedTopTS.css('position');
+    if (topPosition === 'fixed' || topPosition === 'absolute') {
+      const anchorBounding = anchor[0].getBoundingClientRect();
+      const attachBounding = topAttachTS[0].getBoundingClientRect();
+      const scrollTop = $(window).scrollTop();
+
+      fixedTopTS.css('top', Math.max(anchorBounding.bottom - 1, attachBounding.bottom));
+    } else {
+      fixedTopTS.css('top', initialTopTS);
+    }
+  }
+
+  $(window).load(function () {
+    setTimeout(function () {
+      resizeAdjustmentTS();
+    }, 350);
+
+    $(window).scroll(function () {
+      scrollAdjustmentTS();
+    });
+
+    var adjustTimeoutTS;
+    $(window).resize(function () {
+      clearTimeout(adjustTimeoutTS);
+      adjustTimeoutTS = setTimeout(function () {
+        resizeAdjustmentTS();
+      }, 350);
+    });
+
+    $.when(window.Pages.angularToolbarComplete).done(function () {
+      resizeAdjustmentTS();
+    });
+  });
+ 
+ 
+
+ !function(){var b=function(){window.__AudioEyeSiteHash = "6e68876471796768c78a9e3b49e6e31c"; var a=document.createElement("script");a.src="https://wsmcdn.audioeye.com/aem.js";a.type="text/javascript";a.setAttribute("async","");document.getElementsByTagName("body")[0].appendChild(a)};"complete"!==document.readyState?window.addEventListener?window.addEventListener("load",b):window.attachEvent&&window.attachEvent("onload",b):b()}(); 
+
+
+
+ 
+ 
+  function getValueTS(elem, attr) {
+    const val = elem.css(attr);
+    if (val === undefined) return undefined;
+    const num = parseInt(val, 10);
+    if (num === NaN) return undefined;
+    return num;
+  }
+
+  function clampTS(number, min, max) {
+    return Math.min(Math.max(number, min), max);
+  }
+
+  function isPageEditingTS() {
+    return (
+      $("#doneEditing").length > 0 || // In live edit
+      typeof DesignCenter !== "undefined" // In theme manager
+    );
+  }
+
+  const bgColorRegexTS = /rgba((d+), (d+), (d+), (d*.?d*))/;
+  function isTransparentTS(elem) {
+    const bg = elem.css('background-color');
+    if (typeof bg !== "string" || !bg.startsWith('rgba(')) return false;
+    const matchState = bg.match(bgColorRegexTS);
+    if (!matchState || matchState.length !== 5) return false;
+    const alpha = parseFloat(matchState[4], 10);
+    if (!(alpha >= 0 && alpha < 1)) return false;
+    return true;
+  }
+
+  function iterateRightpads(cb) {
+    const containersTS = $("[class^='siteWrap'],[class*=' siteWrap']");
+    for (let i = 0; i < containersTS.length; i++) {
+      const containerTS = containersTS[i];
+      // Skip the body container and anything with data-skip-leftpad
+      if (
+        containerTS.id !== "bodyContainerTS" &&
+        containerTS.getAttribute('data-skip-rightpad') === null
+      ) {
+        cb(containerTS);
+      }
+    }
+  }
+
+  const anchor = $("#divToolbars");
+  const anchor2 = $("#headerContainerTS")
+
+  // Outer banner padding (push banner down)
+  const outerSizingTS = $("#bannerContainerTS");
+  // Inner banner padding (push banner content down) - Transparent header OR on attaching headers
+  const innerSizingTS = $("#bannerSizingTS");
+  const bodyContainerTS = $("#bodyContainerTS");
+
+  const forceUnfixClassTS = "forceUnfixTS";
+
+  const fixedTopTS = $(".fixedTopTS");
+  const fixedBottomTS = $(".fixedBottomTS");
+  const fixedRightTS = $(".fixedRightTS");
+
+  var initialTopTS;
+  var topAttachTS;
+  if (fixedTopTS && fixedTopTS.length === 1) {
+    initialTopTS = getValueTS(fixedTopTS, 'top');
+    const attachment = fixedTopTS.attr('data-attach');
+    if (attachment) topAttachTS = $("#" + attachment);
+    if (!topAttachTS || topAttachTS.length !== 1) topAttachTS = undefined;
+  }
+
+  function resizeAdjustmentTS() {
+    const editing = isPageEditingTS();
+
+    // Fixed top script
+    (function () {
+      if (!fixedTopTS || fixedTopTS.length !== 1 || initialTopTS === undefined) return;
+
+      if (editing) {
+        fixedTopTS[0].classList.add(forceUnfixClassTS);
+      } else {
+        fixedTopTS[0].classList.remove(forceUnfixClassTS);
+      }
+
+      const topPosition = fixedTopTS.css('position');
+      if (topPosition === 'fixed') {
+        if (topAttachTS) {
+          scrollAdjustmentTS();
+        } else {
+          const anchorHeight = anchor.outerHeight() - 1;
+          fixedTopTS.css('top', anchorHeight + initialTopTS);
+        }
+      } else {
+        fixedTopTS.css('top', initialTopTS);
+      }
+
+      if (topPosition === 'fixed' || topPosition === 'absolute') {
+        // Bump the banner content down
+        if (isTransparentTS(fixedTopTS)) {
+          innerSizingTS.css('padding-top', initialTopTS + fixedTopTS.outerHeight() - 1);
+          outerSizingTS.css('padding-top', '');
+
+          try {
+            window.Pages.onResizeHandlersExecute();
+          } catch (e) { }
+        } else {
+          outerSizingTS.css('padding-top', fixedTopTS.outerHeight() - 1);
+          innerSizingTS.css('padding-top', '');
+        }
+      } else {
+        innerSizingTS.css('padding-top', '');
+        outerSizingTS.css('padding-top', '');
+      }
+    })();
+
+    // Fixed bottom script
+    (function () {
+      if (!fixedBottomTS || fixedBottomTS.length === 0) return;
+
+      // If the widget has gone narrow, force unfix
+      if (editing || fixedBottomTS.outerHeight() > 200) {
+        fixedBottomTS[0].classList.add(forceUnfixClassTS);
+      } else {
+        fixedBottomTS[0].classList.remove(forceUnfixClassTS);
+      }
+
+      if (fixedBottomTS.css('position') === 'fixed') {
+        bodyContainerTS.css('padding-bottom', fixedBottomTS.outerHeight());
+      } else {
+        bodyContainerTS.css('padding-bottom', '');
+      }
+    })();
+
+    // Fixed Right script
+    (function () {
+      if (!fixedRightTS || fixedRightTS.length === 0) return;
+
+      if (editing) {
+        fixedRightTS[0].classList.add(forceUnfixClassTS);
+      } else {
+        fixedRightTS[0].classList.remove(forceUnfixClassTS);
+      }
+
+      if (fixedRightTS.css('position') === 'fixed') {
+        const anchorHeight = anchor.outerHeight() - 1;
+        fixedRightTS.css('top', anchorHeight);
+        const RightBoundingTS = fixedRightTS[0].getBoundingClientRect();
+        iterateRightpads(function (containerTS) {
+          const containerBoundingTS = containerTS.getBoundingClientRect();
+          if (containerBoundingTS.right <= rightBoundingTS.right) {
+            $(containerTS).css('padding-right', rightBoundingTS.width + 16);
+          }
+        });
+      } else {
+        fixedRightTS.css('top', '');
+        iterateRightpads(function (containerTS) {
+          $(containerTS).css('padding-right', '');
+        });
+      }
+    })();
+  }
+
+  function scrollAdjustmentTS() {
+    if (!fixedTopTS || fixedTopTS.length !== 1 || !topAttachTS || topAttachTS.length !== 1) return;
+    const topPosition = fixedTopTS.css('position');
+    if (topPosition === 'fixed' || topPosition === 'absolute') {
+      const anchorBounding = anchor[0].getBoundingClientRect();
+      const attachBounding = topAttachTS[0].getBoundingClientRect();
+      const scrollTop = $(window).scrollTop();
+
+      fixedTopTS.css('top', Math.max(anchorBounding.bottom - 1, attachBounding.bottom));
+    } else {
+      fixedTopTS.css('top', initialTopTS);
+    }
+  }
+
+  $(window).load(function () {
+    setTimeout(function () {
+      resizeAdjustmentTS();
+    }, 350);
+
+    $(window).scroll(function () {
+      scrollAdjustmentTS();
+    });
+
+    var adjustTimeoutTS;
+    $(window).resize(function () {
+      clearTimeout(adjustTimeoutTS);
+      adjustTimeoutTS = setTimeout(function () {
+        resizeAdjustmentTS();
+      }, 350);
+    });
+
+    $.when(window.Pages.angularToolbarComplete).done(function () {
+      resizeAdjustmentTS();
+    });
+  });
+ 
+ 
+
+
+
+ 
+ 
+  function moveBannerToOuterWrap() {
+    if ($(".fixedBannerTS #bannerDivbanner2").length) {
+      $(".fixedBannerTS #bannerDivbanner2").appendTo("#outer-wrap");
+    } else {
+      setTimeout(function () {
+        moveBannerToOuterWrap();
+      }, 500);
+    }
+  }
+
+  moveBannerToOuterWrap();
+ 
+
+
+     
+        $(function () {
+            document.cookie = "responsiveGhost=0; path=/";
+        });
+        $(window).on("load", function () {
+            $('body').addClass('doneLoading').removeClass('hideContent');
+
+            if ($('#404Content').length > 0)
+                $('div#bodyWrapper').css('padding', '0px');
+        });
+     
+
+     
+         
+            body.hideContent {
+                opacity: 1 !important;
+            }
+         
+     
+
+        
+ 
+	 
+
+		 
+			 Arrow Left 
+			 
+		 
+
+		 
+			 Arrow Right 
+			 
+		 
+
+	 
+ 
+     loadCSS('//fonts.googleapis.com/css?family=Alegreya+Sans:100,100italic,300,300italic,500,500italic,700,700italic,800,800italic,900,900italic,italic,regular|Bitter:700|Fira+Sans:500,600,600italic,regular|Open+Sans:600,700,regular|Oswald:200,300,500,600,700,regular|Poppins:100,100italic,200,200italic,300,300italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic,italic,regular|Rubik:500,700,regular|Source+Sans+Pro:regular|'); 
+    
+
+     [] 
+         
+             
+                 
+                     Slideshow Left Arrow 
+                     
+                         
+                     
+                 
+                 
+                     Slideshow Right Arrow 
+                     
+                         
+                     
+                 
+             
+         
+    
+	
+	
+
+     
+ 
+ 

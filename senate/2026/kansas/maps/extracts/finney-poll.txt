@@ -1,0 +1,2526 @@
+
+ 
+ 
+ 
+
+	 
+ 
+				 (function(w,d,s,l,i){w.GAMeasurementID='G-D2T9R7VY55';w[l]=w[l]||[];w[l].push({'gtm.start':
+				new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+				j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+				'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+				})(window,document,'script','cpDataLayerGA4','GTM-K73C5PS'); 
+				 
+				 
+					var enableTelemetry = 'false'
+					var aiConfig = {
+					instrumentationKey: '1cde048e-3185-4906-aa46-c92a7312b60f'						
+					}
+					var appInsights = window.appInsights || function (a) { function b(a) { c[a] = function () { var b = arguments; c.queue.push(function () { c[a].apply(c, b) }) } } var c = { config: a }, d = document, e = window; setTimeout(function () { var b = d.createElement('script'); b.src = a.url || 'https://js.monitor.azure.com/scripts/a/ai.0.js', d.getElementsByTagName('script')[0].parentNode.appendChild(b) }); try { c.cookie = d.cookie } catch (a) { } c.queue = []; for (var f = ['Event', 'Exception', 'Metric', 'PageView', 'Trace', 'Dependency']; f.length;)b('track' + f.pop()); if (b('setAuthenticatedUserContext'), b('clearAuthenticatedUserContext'), b('startTrackEvent'), b('stopTrackEvent'), b('startTrackPage'), b('stopTrackPage'), b('flush'), !a.disableExceptionTracking) { f = 'onerror', b('_' + f); var g = e[f]; e[f] = function (a, b, d, e, h) { var i = g && g(a, b, d, e, h); return !0 !== i && c['_' + f](a, b, d, e, h), i } } return c }(aiConfig);
+					window.appInsights = appInsights, appInsights.queue && 0 === appInsights.queue.length;
+					// Add telemetry initializer
+					appInsights.queue.push(function() {
+						appInsights.context.addTelemetryInitializer(function(envelope) {
+							var telemetryItem = envelope.data.baseData;
+							// To check the telemetry item’s type:
+							if (!false)
+							{
+								//If the telemetry is not enabled, we still want to capture Google map custom event, so only allow that
+								if (envelope.name.indexOf('.Event') == -1)
+									return false;
+							}
+						});
+					});						
+					appInsights.trackPageView();
+				 
+	 
+		function populateAntiForgery(token) {
+			var input = document.createElement("input");
+			input.name = "__RequestVerificationToken";
+			input.type = "hidden";
+			input.value = token;
+			var absPat = /^https?:\/\/|^\/\//i;
+			var forms = document.getElementsByTagName("form");
+			for (var i = 0; i < forms.length; i++) {
+				if (forms[i].method == "post" &&
+					!forms[i].querySelector('[name="__RequestVerificationToken"]') &&
+					!absPat.test(forms[i].getAttribute("action"))) {
+					forms[i].appendChild(input.cloneNode());
+				}
+			}
+		}
+
+		function getAntiForgeryToken(callback, error) {
+			var xhr = new XMLHttpRequest();
+			xhr.open("GET", "/antiforgery");
+			xhr.addEventListener("load", function() {
+				try {
+					if (this.status !== 200) {
+						throw Error("Invalid status. Could not retrieve antiforgery token.");
+					}
+					var obj = JSON.parse(this.responseText);
+					callback(obj.token);
+				} catch (e) {
+					typeof error === "function" && error(e);
+				}
+			});
+			xhr.send();
+		}
+
+		getAntiForgeryToken(function(token) {
+			if (document.readyState === "complete"
+				|| document.readyState === "loaded" 
+				|| document.readyState === "interactive") {
+				populateAntiForgery(token);
+				return;
+			}
+			document.addEventListener("DOMContentLoaded", function() {
+				populateAntiForgery(token);
+			}, false);
+		}, console.error);
+	 
+			
+
+	 
+		window.departmentHeader = {};
+		window.pageSectionTracker = {};
+		window.isResponsiveEnabled = true;
+		window.isRemoveSetHeights= false;
+		if (window.isRemoveSetHeights) {
+			document.documentElement.className += ' removeSetHeights';
+		}
+		window.mainMenuMediaQuery = 'screen and (max-width: 40em)';
+		window.isMobileBrowserIncludingTablets = false;
+		window.fixedResponsiveMenu = false;
+		window.fullWidthResponsiveMenu = false;
+		window.responsiveMenuHeight = '';
+		window.responsiveMenuFontSize = '';
+		window.isContentAdvisor = false;
+		(function () {
+			window.setSizeCookie = function () {
+				document.cookie = "dpi=" + window.devicePixelRatio + "; path=/";
+				document.cookie = "viewportWidth=" + window.innerWidth + "; path=/";
+				document.cookie = "viewportHeight=" + window.innerHeight + "; path=/";
+				if (screen && screen.width && screen.height) {
+					document.cookie = "screenWidth=" + screen.width + "; path=/";
+					document.cookie = "screenHeight=" + screen.height + "; path=/";
+				}
+				document.cookie = "responsiveGhost=1; path=/";
+			};
+
+			setSizeCookie();
+		}());
+	 
+		 
+
+	 
+	
+	 
+ 
+ 
+ 
+ 
+ 
+
+	
+	 
+	 
+	 
+		 Polling Locations & Voting Districts | Finney County, KS - Official Website 
+
+		 
+		 
+			 
+	 
+	
+
+	 
+	 
+	 
+	 
+	 <!--
+	var intCountryCode = 840;
+	var order = '';
+//--> 
+	
+	 	 
+
+	 
+	 
+		window.Pages = window.Pages || {};
+		// FrontEnd RWD initialization
+		window.Pages.rwdReady = $.Deferred();
+		window.Pages.toolBarDeferred = $.Deferred();
+		window.Pages.rwdSetupComplete = $.Deferred();
+		window.Pages.megaMenuLoaded = $.Deferred();
+		window.Pages.angularToolbarComplete = $.Deferred();
+		window.Pages.frontEndToolbarComplete = $.Deferred();
+	 
+	 
+	 
+	
+	
+	
+	
+
+
+
+
+	 
+	 
+	 
+	 
+
+	 
+		setEditorVariables(true, 840);
+		function getPrintPreviewType() { return 0; } function printPreview() {pPreview(getPrintPreviewType()); }
+	 
+	 
+ 
+ 
+
+     jQuery(document).click(function (event) {
+	var target = jQuery(event.target);
+	if (target.attr('src') && target.parents('.image').length && target.parents('.widget').length) {
+		var text = target.attr('title');
+		
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Image',
+				eventAction: 'Image - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.is('button') || target.hasClass('button') || target.parents().hasClass('button')) {
+		var text = "";
+		if (target.parents('.button')[0]) {
+			text = target.parents('.button').first().text();
+		} else if (target.text().length) {
+			text = target.text();
+		} else if (target.attr('title').length) {
+			text = target.attr('title');
+		}
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Button',
+				eventAction: 'Button - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetCustomHtml').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Custom Html',
+				eventAction: 'Custom Html Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.editor').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Editor',
+				eventAction: 'Editor Link Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.GraphicLinks').length) {
+		var text = "";
+		var targetGraphicLink = target;
+		if (target.hasClass('widgetGraphicLinksLink')) {
+			targetGraphicLink = jQuery(target.children()[0]);
+		}
+		if (targetGraphicLink.hasClass('text')) {
+			text = targetGraphicLink.text();
+		} else if (targetGraphicLink.attr('src').length) {
+			if (targetGraphicLink.attr('alt').length) {
+				text = targetGraphicLink.attr('alt');
+			} else {
+				text = targetGraphicLink.attr('src');
+			}
+		} else {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Graphic Links',
+				eventAction: 'Graphic Link - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.InfoAdvanced').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Info Advanced',
+				eventAction: 'Info Advanced Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.list').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'List',
+				eventAction: 'List Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.megaMenuItem').length || target.parents('.topMenuItem').length) {
+		var megaMenuText = jQuery('.topMenuItem.mouseover').find('span').text();
+		var breadCrumbs = [];
+		jQuery('.breadCrumbs > li').each(function () {
+			 breadCrumbs.push(this.textContent);
+		});
+		var pageTitle = breadCrumbs.join('>');
+		var subTitleText = target.parents('.megaMenuItem').children('.widgetTitle').children().text();
+		var text = "";
+		if (pageTitle) {
+			text += pageTitle + " | ";
+		} else {
+			text += document.title + ' - ';
+		}
+		if (target.text() == "" && megaMenuText == "") {
+			text += "N/A";
+		} else if (target.text().length && megaMenuText.length) {
+			if (megaMenuText == target.text()) {
+				text += megaMenuText;
+			} else {
+				text += megaMenuText + " - " + subTitleText + " - " + target.text();
+			}
+		} else if (target.text() == "") {
+			text += megaMenuText;
+		} else {
+			text += target.text();
+		}
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Mega Menu',
+				eventAction: 'Mega Menu : ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetNewsFlash').length && target.parents('.widgetItem').length) {
+		var text = jQuery(target.parents('.widgetItem')[0]).find('.widgetTitle').children().text();
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'News Flash',
+				eventAction: 'News Flash - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.hasClass('widgetQuickLinksLink') || target.find('.widgetQuickLinksLink').length) {
+		var text = target.text();
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Quick Links',
+				eventAction: 'Quick Links - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.attr('src') && target.parents('.cpSlideshow').length) {
+		var text = target.attr('title');
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Slideshow',
+				eventAction: 'Slideshow - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetText').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Text',
+				eventAction: 'Text Link Clicked',
+				eventLabel: window.location.href
+			});
+	}
+}); 
+	 
+	 
+		 
+		 
+			 
+				 
+			 
+		 
+	 
+	 
+		 
+	 
+	 
+		 
+			 
+		 
+	 
+ 
+     
+ 
+ Skip to Main Content 
+ 
+     
+
+         
+
+
+
+     
+     
+     
+     
+     
+     
+     
+     
+
+     
+     
+         
+                 
+                    
+
+
+
+                 
+             
+                 
+                
+ 
+ 
+ 
+ 
+
+
+
+
+				 
+ 
+      Government   			      Meet Your...   			      How Do I...   			      Services   			      Stay Connected   			 
+ 
+
+
+	 
+		(function () {
+			function setupMenu() {
+				const menuID = 'mainNavMenu';
+				const menuType = MAIN_MENU;
+
+				//setup menu manager properties for main menu
+				if (!menuManager.mobileMainNav && true)
+					menuManager.adjustMainItemsWidth('#' + menuID);
+				menuManager.isMainMenuEditable = false;
+				menuManager.mainMenuMaxSubMenuLevels = 4;
+				menuManager.setMOMMode(2, menuType);
+
+				//Init main menu
+				const setupDraggable = menuManager.isMainMenuEditable;
+				const urlToGetHiddenMenus = '/Pages/MenuMain/HiddenMainSubMenus?pageID=1&moduleID=&themeID=10&menuContainerID=mainNav';
+
+				menuManager.setupMenu(menuID, 'mainNav', menuType, setupDraggable, urlToGetHiddenMenus);
+				menuManager.mainMenuInit = true;
+				menuManager.mainMenuTextResizer = false;
+				if (1.00 > 0)
+					menuManager.mainMenuTextResizerRatio = 1.00;
+				if (window.isResponsiveEnabled)
+					menuManager.mainMenuReady.resolve();
+
+			}
+
+			if (document.readyState === "complete"
+				|| document.readyState === "loaded"
+				|| document.readyState === "interactive") {
+				setupMenu();
+				return;
+			}
+
+			document.addEventListener("DOMContentLoaded", setupMenu);
+		})();
+	 
+
+
+ 	 
+				                
+
+
+
+	 
+ 	 
+				                
+
+
+
+	 
+ 	 
+				                
+
+
+
+	 
+ 	 
+				                
+
+
+
+	 
+ 	 
+				                
+
+
+
+	 
+ 
+ 
+ 
+ 
+ 
+ 	 
+				                
+
+		 				
+	 
+	
+	 	
+ 
+	
+	 
+	 
+	 
+
+		$(document).ready(function () {
+			try {
+				// Minimum characters required before performing a search/autocomplete
+				var minPrefixLength = 3;
+				var autoCompleteDebounceDelay = 500;
+				var searchFieldSelector = "#searchField" + '074196b0-7531-467e-8f71-a1da1a9c4f6a';
+				var checkboxSelector = "#ysnSearchOnlyDept" + '074196b0-7531-467e-8f71-a1da1a9c4f6a';
+				var buttonSelector = ".widgetSearchButton" + '074196b0-7531-467e-8f71-a1da1a9c4f6a';
+				var autoCompleteCache = {};
+				var autoCompleteCacheKeys = [];
+				var autoCompleteCacheLimit = 25;
+				var currentAutoCompleteRequest = null;
+				var currentAutoCompleteRequestKey = null;
+				var autoCompleteDebounceTimer = null;
+				var autoCompleteDebounceKey = null;
+				var pendingAutoCompleteResponses = [];
+
+				function normalizeAutoCompleteTerm(term) {
+					return $.trim((term || "") + "").replace(/\s+/g, " ");
+				}
+
+				function shouldSearch(term) {
+					return normalizeAutoCompleteTerm(term).length >= minPrefixLength;
+				}
+
+				function getAutoCompleteUrl() {
+					return '/Search/AutoComplete' + ($(checkboxSelector).is(':checked') || false? '?departmentId=0' : '');
+				}
+
+				function getAutoCompleteCacheKey(requestUrl, term) {
+					return requestUrl + "|" + term.toLowerCase();
+				}
+
+				function cacheAutoCompleteResult(cacheKey, data) {
+					if (!Object.prototype.hasOwnProperty.call(autoCompleteCache, cacheKey)) {
+						autoCompleteCacheKeys.push(cacheKey);
+						if (autoCompleteCacheKeys.length > autoCompleteCacheLimit) {
+							delete autoCompleteCache[autoCompleteCacheKeys.shift()];
+						}
+					}
+					autoCompleteCache[cacheKey] = data;
+				}
+
+				function respondToPendingAutoComplete(data) {
+					var responses = pendingAutoCompleteResponses;
+					pendingAutoCompleteResponses = [];
+					for (var i = 0; i < responses.length; i++) {
+						responses[i](data);
+					}
+				}
+
+				function cancelPendingAutoComplete() {
+					clearTimeout(autoCompleteDebounceTimer);
+					autoCompleteDebounceKey = null;
+					if (currentAutoCompleteRequest != null) {
+						currentAutoCompleteRequest.abort();
+						currentAutoCompleteRequest = null;
+					}
+					currentAutoCompleteRequestKey = null;
+					respondToPendingAutoComplete([]);
+				}
+
+				function createWidgetAutoCompleteSource(options) {
+					return function (request, response) {
+						var term = normalizeAutoCompleteTerm(request.term);
+						if (!options.shouldSearch(term)) {
+							response([]);
+							return;
+						}
+
+						var requestUrl = options.url();
+						var cacheKey = getAutoCompleteCacheKey(requestUrl, term);
+						if (Object.prototype.hasOwnProperty.call(autoCompleteCache, cacheKey)) {
+							response(autoCompleteCache[cacheKey]);
+							if (options.success) {
+								options.success(autoCompleteCache[cacheKey]);
+							}
+							return;
+						}
+
+						if (currentAutoCompleteRequestKey === cacheKey || autoCompleteDebounceKey === cacheKey) {
+							pendingAutoCompleteResponses.push(response);
+							return;
+						}
+
+						cancelPendingAutoComplete();
+						autoCompleteDebounceKey = cacheKey;
+						pendingAutoCompleteResponses.push(response);
+						autoCompleteDebounceTimer = setTimeout(function () {
+							autoCompleteDebounceKey = null;
+							currentAutoCompleteRequestKey = cacheKey;
+							currentAutoCompleteRequest = $.ajax({
+								url: requestUrl,
+								dataType: "json",
+								timeout: options.timeout,
+								data: {
+									term: term,
+								},
+								success: function (data) {
+									if (currentAutoCompleteRequestKey === cacheKey) {
+										cacheAutoCompleteResult(cacheKey, data);
+										respondToPendingAutoComplete(data);
+										if (options.success) {
+											options.success(data);
+										}
+									}
+								},
+								error: function (xmlhttprequest, textstatus, message) {
+									if (textstatus === "abort") {
+										return;
+									}
+
+									if (options.error) {
+										options.error(xmlhttprequest, textstatus, message);
+									}
+
+									respondToPendingAutoComplete([]);
+								},
+								complete: function (xmlhttprequest) {
+									if (currentAutoCompleteRequest === xmlhttprequest) {
+										currentAutoCompleteRequest = null;
+										currentAutoCompleteRequestKey = null;
+									}
+								}
+							});
+						}, options.delay);
+					};
+				}
+
+				// click handler for search buttons
+				$(buttonSelector).click(function (e) {
+					e.preventDefault();
+					var $btn = $(this);
+					var $field = $btn.siblings(".widgetSearchBox");
+					var term = $field.val() + "";
+					if (!shouldSearch(term)) {
+						// do nothing until user types enough characters
+						$field.focus();
+						return;
+					}
+
+					if ($(checkboxSelector).is(':checked') || false)
+					{
+						doWidgetSearch($.trim(term), Number(0));
+					}
+					else {
+						doWidgetSearch($.trim(term), 0);
+					}
+				});
+
+				// enter key handler for the search field
+				$(searchFieldSelector).keypress(function (e) {
+					var code = e.which || e.keyCode;
+					if (code === 13) {
+						e.preventDefault();
+						var $this = $(this);
+						var term = $this.val() + "";
+						if (!shouldSearch(term)) {
+							// do nothing until user types enough characters
+							$this.focus();
+							return false;
+						}
+
+						if ($(checkboxSelector).is(':checked') || false) {
+							doWidgetSearch($.trim(term), Number(0));
+						} else {
+							doWidgetSearch($.trim(term), 0);
+						}
+						return false;
+					}
+					return true;
+				});
+
+				// autocomplete: set minLength and guard source
+				if (true) {
+					var $searchField = $(searchFieldSelector).autocomplete({
+						minLength: minPrefixLength,
+						source: createWidgetAutoCompleteSource({
+							delay: autoCompleteDebounceDelay,
+							timeout: 10000,
+							shouldSearch: shouldSearch,
+							url: getAutoCompleteUrl,
+							success: function () {
+								$('.autoCompleteError').remove();
+							},
+							error: function (xmlhttprequest, textstatus, message) {
+								if (textstatus === "timeout") {
+									if ($(searchFieldSelector).siblings('.autoCompleteError').length == 0)
+										$('<span class="autoCompleteError"><p class="alert error">Search autocomplete is currently not responding. Please try again later.</p></span>').insertAfter($(searchFieldSelector));
+								}
+							}
+						}),
+						html: true,
+						delay: 0,
+						select: function (event, ui) {
+							$(this).val(ui.item.value);
+							$(this).next().click();
+						}
+					});
+
+					$searchField.data("ui-autocomplete")._renderItem = function (ul, item) {
+						return $("<li class=\"itemList\"></li>")
+							.data("ui-autocomplete-item", item)
+							.append("<a>" + item.label + "</a>")
+							.appendTo(ul);
+					};
+				}
+
+				// keep searchBtnApplyQuery consistent with prefix rule
+				window.searchBtnApplyQuery = function() {
+					var $field = $(searchFieldSelector);
+					var term = $field.val() + "";
+					if (shouldSearch(term)) {
+						// update href for the icon/button (if present)
+						var btn = document.getElementById("btnSearchIcon");
+						if (btn) btn.href = "/Search?searchPhrase=" + encodeURIComponent($.trim(term));
+					} else {
+						var btn = document.getElementById("btnSearchIcon");
+						if (btn) btn.href = "#";
+					}
+				};
+			}
+			catch(e) {} //we're going to eat this error. Autocomplete won't work but we dont wan't to break anything else on the page.
+		});
+	 
+
+	 
+				 
+		 
+			 
+						 
+
+			 Search 
+		 
+
+	 
+
+
+ 
+	  
+		.widgetSearch ::-webkit-input-placeholder {
+		color: #fff;
+	  }
+		.widgetSearch :-moz-placeholder { /* Firefox 18- */
+	   color: #fff;
+	}
+		.widgetSearch ::-moz-placeholder {  /* Firefox 19+ */
+	   color: #fff;
+	}
+	.widgetSearch :-ms-input-placeholder {
+	   color: #fff;
+	}
+	
+
+	.widgetSearch .widgetBody .widgetSearchBox074196b0-7531-467e-8f71-a1da1a9c4f6a
+	{
+		color: #fff;
+		background: linear-gradient(135deg, #002C5C, #007985);
+border: none;
+border-radius: 100px;
+height: 66px;
+font-family: Roboto;
+font-size: 15px;
+padding: 0 60px 0 24px;
+box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 48px;
+	}
+	.widgetSearch .widgetBody .widgetSearchButton074196b0-7531-467e-8f71-a1da1a9c4f6a
+	{
+		margin: 12px 12px 0 0;
+	}
+	.widgetSearch .widgetSearch-onlyDept074196b0-7531-467e-8f71-a1da1a9c4f6a
+	{
+		display: inline-block;
+		color: #333;
+		
+		
+		 padding-top: 10px;
+	}
+	#ysnSearchOnlyDept074196b0-7531-467e-8f71-a1da1a9c4f6a
+	{
+		position: relative;
+		top: .125em;
+	}
+
+ 
+
+ 
+ 
+
+
+
+ 
+	//Updates search icons href to have the correct queryString
+	function searchBtnApplyQuery() {
+		document.getElementById("btnSearchIcon").href = "/Search?searchPhrase=" + document.getElementById("searchField074196b0-7531-467e-8f71-a1da1a9c4f6a").value;
+	}
+ 
+
+ 
+
+	   
+
+	   
+
+			   
+
+
+	 
+ 
+ 
+ 
+
+
+
+
+		 
+		 
+			 
+			 
+		 
+			 
+				$(window).on("load", function () {
+					$.when(window.Pages.rwdSetupComplete)
+						.done(function () {
+							renderExternalBannerSlideshow('banner1',
+								{"BannerOptionID":17,"ThemeID":10,"SlotName":"banner1","Name":"Default","IsDefault":true,"BannerMode":2,"SlideShowSlideTiming":"5","SlideshowTransition":0,"SlideShowTransitionTiming":"1","ImageScale":true,"ImageAlignment":1,"ImageScroll":true,"MuteSound":true,"VideoType":0,"Status":40,"SlideshowControlsPosition":0,"SlideshowControlsAlignment":0,"SlideshowBannerControlsColorScheme":0,"DisplayVideoPauseButton":false,"VideoPauseButtonAlignment":1,"VideoPauseButtonControlsAlignment":0,"VideoPauseButtonStyle":"#FFFFFF","VideoPauseButtonBackgroundStyle":"#000000","VideoPauseButtonAlignmentClass":"alignRight viewport","DisplaySlideshowPauseButton":false,"SlideshowControlsColor":"#FFFFFF","SlideshowControlsBackgroundColor":"#000000","SlideshowPauseButtonClass":"isHidden","BannerImages":[{"BannerImageID":53,"BannerOptionID":17,"FileName":"/ImageRepository/Document?documentID=7896","Height":450,"Width":2200,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":1,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":""},{"BannerImageID":54,"BannerOptionID":17,"FileName":"/ImageRepository/Document?documentID=7895","Height":450,"Width":2200,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":2,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":""},{"BannerImageID":55,"BannerOptionID":17,"FileName":"/ImageRepository/Document?documentID=7894","Height":450,"Width":2200,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":3,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":""}],"BannerVideos":[{"BannerVideoID":9,"BannerOptionID":17,"VideoFileName":"","ImageFileName":"EmptyBannerBkg202602011346145772.png","IsLink":false,"LinkAddress":null,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","VideoFileID":"00000000-0000-0000-0000-000000000000","ImageFileID":"00000000-0000-0000-0000-000000000000","VideoWidth":0,"VideoHeight":0,"ImageWidth":0,"ImageHeight":0,"LinkedVideoUrl":"","RecordStatus":0,"AltText":null}],"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/"},
+								'/App_Themes/2026 - Interior/Images/',
+								'Rotating');
+						});
+				});
+			 
+
+ 
+ 
+ 
+ 
+ 
+ 	 
+				                
+
+
+
+	 
+ 
+
+
+
+
+
+	 
+	 
+		 
+			 2026 Election 
+		 
+			 
+	 
+		 
+			 Election Notices & Publications 
+		 
+			 
+	 
+		 
+			 Election Results 
+		 
+			 
+	 
+		 
+			 Register to Vote 
+		 
+			 
+	 
+		 
+			 Advance Voting 
+		 
+			 
+	 
+		 
+			 Polling Locations & Voting Districts 
+		 
+			 
+	 
+		 
+			 Your Representatives 
+		 
+			 
+	 
+		 
+			 Political Party Information 
+		 
+			 
+	 
+		 
+			 2025 Election 
+		 
+			 
+	 
+		 
+			 2024 Election 
+		 
+			 
+	 
+		 
+			 2024 Presidential Preference Primary 
+		 
+			 
+	 
+		 
+			 2023 Election 
+		 
+			 
+	 
+		 
+			 2022 Election 
+		 
+			 
+	 
+		 
+			 2021 Election [Archive] 
+		 
+			 
+
+	 
+
+
+	 
+		(function () {
+			function setupSecondaryMenuProperties() {
+				//setup menu manager properties for secondary menu
+				menuManager.isSideMenuEditable = false;
+				menuManager.sideMenuMaxSubMenuLevels = 4;
+				menuManager.sideMenuHasCustomLinks = false;
+			}
+
+			if (document.readyState === "loading") {
+				document.addEventListener("DOMContentLoaded", setupSecondaryMenuProperties, { once: true });
+				return;
+			}
+
+			setupSecondaryMenuProperties();
+		})();
+	 
+
+	 
+		(function () {
+			function setupAccordionSecondaryNav() {
+				var $menuContainer = $('#secondaryNav');
+
+				$menuContainer.find('*[id^="SideItem"]').each(function () {
+					var ids = $('[id="' + this.id + '"]');
+					if (ids.length > 1)
+						$.each(ids, function (index, value) {
+							value.id = value.id + '_' + index;
+						});
+				});
+
+				$menuContainer.find('.hasAccordionChildren .openAccordionNav').off('click.secondaryNav').on('click.secondaryNav', function (e) {
+					e.preventDefault();
+					showHideAccordionMenuForSecondaryNav($(this));
+				});
+
+				$menuContainer.find(".grippy").each(function () {
+					menuManager.setupDraggableElement($(this), SIDE_MENU, '#secondaryNav');
+				});
+
+				$menuContainer.find("li").each(function () {
+					menuManager.setupDroppableAccordionElement($(this), SIDE_MENU);
+				});
+			}
+
+			if (document.readyState === "loading") {
+				document.addEventListener("DOMContentLoaded", setupAccordionSecondaryNav, { once: true });
+				return;
+			}
+
+			setupAccordionSecondaryNav();
+		})();
+	 
+
+
+
+ 	 
+				                
+
+
+
+	 
+ 
+ 
+ 
+ 		 
+			 Home Government Departments Clerk Elections Polling Locations & Voting Districts 
+		 
+
+	   
+    
+ 
+	
+	 
+		
+
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+
+				 
+
+Polling Locations & Voting Districts		 
+	
+		 
+			
+
+		 				
+	 
+	
+	 	
+ 
+	     
+
+
+         Visit the Finney County Voting Hub The Finney County Voting Hub provides election information based on your address.  Use the interactive map to locate your Election Day polling place, view your voting districts and elected officials, identify your County Commissioner district, and see the no campaign zone around polling locations.  It's a convenient way to access information specific to YOU before heading to the polls. Check it out:   Finney County Voting Hub Click the maps below to download the corresponding PDF map. 
+     
+
+ 
+	$(document).ready(function (e) {		
+	    renderSlideshowIfApplicable($('#divEditor' + '5f57a328-d8a3-4a5a-80cd-52b5ae676cff'));
+	});
+ 
+ 
+
+	   
+
+	   
+
+			   
+		 				
+	 
+	
+	 	
+
+ 
+             City Voting Districts        
+    
+	 				 
+	  
+
+	   
+	 	
+
+ 
+             County Voting Districts        
+    
+	 				 
+	  
+
+	   
+
+	   
+	 
+	
+	 	
+
+ 
+	
+
+	 
+			 
+			 
+									 
+						 
+								 Ward / Precinct 
+								 Location 
+						 
+					 
+									 
+							 
+										 Ward 1 
+										 4-H Building -  Finney County Fairgrounds 
+							 
+							 
+										 Ward 2 
+										 4-H Building-  Finney County Fairgrounds 
+							 
+							 
+										 Ward 3 
+										 Finney County Library -  605 E Walnut 
+							 
+							 
+										 Ward 4 
+										 Finney County Library -  605 E Walnut 
+							 
+							 
+										 Ward 5 
+										 First Assembly of God Church -  702 Campus Drive 
+							 
+							 
+										 Ward 6 
+										 First Assembly of God Church -  702 Campus Drive 
+							 
+							 
+										 Ward 7 
+										 Garden Valley Church-  312 E Campbell 
+							 
+							 
+										 Ward 8 
+										 Garden Valley Church-  312 E Campbell 
+							 
+							 
+										 Ward 9 
+										 4-H Building-  Finney County Fairgrounds 
+							 
+							 
+										 Ward 10 
+										 Garden Valley Church-  312 E Campbell 
+							 
+							 
+										 Ward 11 
+										 Garden Valley Church -  312 E Campbell 
+							 
+							 
+										 Ward 12 
+										 Garden Valley Church -  312 E Campbell 
+							 
+							 
+										 Ward 13 
+										 Garden Valley Church -  312 E Campbell 
+							 
+							 
+										 Ward 14 
+										 Presbyterian Church -  1719 Texas Street 
+							 
+							 
+										 Ward 15 
+										 Presbyterian Church -  1719 Texas Street 
+							 
+							 
+										 Ward 16 
+										 1st Southern Baptist Church -  2708 N 3rd 
+							 
+							 
+										 Ward 17 
+										 1st Southern Baptist Church - 2708 N 3rd 
+							 
+							 
+										 Ward 18 
+										 1st Southern Baptist Church - 2708 N 3rd 
+							 
+							 
+										 Ward 19 
+										 1st Southern Baptist Church - 2708 N 3rd 
+							 
+							 
+										 Friend 
+										 4-H Building -  Finney County Fairgrounds 
+							 
+							 
+										 Holcomb 
+										 Holcomb Recreation Center -  106 Wiley Street 
+							 
+							 
+										 Huffman 
+										 4-H Building -  Finney County Fairgrounds 
+							 
+							 
+										 Jennie Barker 
+										 4-H Building -  Finney County Fairgrounds 
+							 
+							 
+										 Kalvesta 
+										 4-H Building -  Finney County Fairgrounds 
+							 
+							 
+										 Mack 
+										 4-H Building -  Finney County Fairgrounds 
+							 
+							 
+										 Pierceville 
+										 4-H Building -  Finney County Fairgrounds 
+							 
+							 
+										 Pleasant Valley 
+										 4-H Building -  Finney County Fairgrounds 
+							 
+							 
+										 Plymell 
+										 4-H Building -  Finney County Fairgrounds 
+							 
+							 
+										 Riverside 
+										 4-H Building -  Finney County Fairgrounds 
+							 
+							 
+										 Theoni 
+										 4-H Building -  Finney County Fairgrounds 
+							 
+					 
+			 
+	 
+
+	 
+
+
+ 
+	   
+
+	   
+
+			   
+
+
+		 
+
+	 
+
+	
+	 
+
+	 
+ 
+ 	 
+				                
+
+
+
+	 
+ 
+ 
+ 
+ 
+ 	 
+				                
+
+		 				
+	 
+	
+	 	
+ 
+
+
+
+
+ 
+	 
+		 
+				 
+	 
+	 
+		 
+				 
+					 
+
+ 
+	 
+		 
+			 Agenda & Minutes 
+		 
+	 
+ 
+		 .fancyButton329.fancyButton:link,.fancyButton329.fancyButton:visited, .fancyButton329div.fancyButton{
+	background-repeat: no-repeat;
+	background-position: left top;
+position: relative;
+}
+
+.fancyButton329:before {
+content: "";
+position: absolute;
+background: conic-gradient(#0054A6 0% 33.3%, #A0CCED 33.3% 66.6%, #002C5C 66.6% 100%);
+height: 136px;
+width: 136px;
+border-radius: 50%;
+top: 0;
+left: 50%;
+transform: translateX(-50%);
+transition: all .3s ease-in-out;
+box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+}
+
+.fancyButton329:after {
+content: "";
+position: absolute;
+background: #fff;
+height: 120px;
+width: 120px;
+border-radius: 50%;
+top: 8px;
+left: 50%;
+transform: translateX(-50%);
+box-shadow: inset rgba(17, 17, 26, 0.1) 0px 0px 16px;
+transition: all .3s ease-in-out;}
+.fancyButton329.fancyButton:hover,.fancyButton329.fancyButton:focus,.fancyButton329.fancyButton:active,.fancyButton329.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+
+.fancyButton329:is(:hover,:focus,:active):before {
+transform: translateX(-50%) rotate(240deg);}
+.fancyButton329.fancyButton:link > span,.fancyButton329.fancyButton:visited > span, .fancyButton329div.fancyButton > span{
+}
+.fancyButton329.fancyButton:hover > span,.fancyButton329.fancyButton:focus > span,.fancyButton329.fancyButton:active > span,.fancyButton329.fancyButton.hover > span{
+}
+.fancyButton329.fancyButton .text{
+	color: rgb(34, 34, 34);
+	font-size: 1.1em;
+	font-family: "Montserrat";
+	padding-top: 155px;
+	font-weight: 600;
+	text-decoration: none;
+	padding-top: 155px;
+	background-image: url('/ImageRepository/Document?documentID=7897');
+	background-repeat: no-repeat;
+	background-position: center 35px ;
+position: relative;
+z-index: 2;
+line-height: 1.2;
+transition: all .3s ease-in-out;
+}
+.fancyButton329.fancyButton:hover .text,.fancyButton329.fancyButton:focus .text,.fancyButton329.fancyButton:active .text,.fancyButton329.fancyButton.hover .text{
+	text-decoration: underline;
+	background-image: url('/ImageRepository/Document?documentID=7898');
+	background-repeat: no-repeat;
+	background-position: center 35px ;
+
+
+}
+ 
+
+  
+
+ 
+	 
+		 
+			 Payments 
+		 
+	 
+ 
+		 .fancyButton331.fancyButton:link,.fancyButton331.fancyButton:visited, .fancyButton331div.fancyButton{
+	background-repeat: no-repeat;
+	background-position: left top;
+position: relative;
+}
+
+.fancyButton331:before {
+content: "";
+position: absolute;
+background: conic-gradient(#0054A6 0% 33.3%, #A0CCED 33.3% 66.6%, #002C5C 66.6% 100%);
+height: 136px;
+width: 136px;
+border-radius: 50%;
+top: 0;
+left: 50%;
+transform: translateX(-50%);
+transition: all .3s ease-in-out;
+box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+}
+
+.fancyButton331:after {
+content: "";
+position: absolute;
+background: #fff;
+height: 120px;
+width: 120px;
+border-radius: 50%;
+top: 8px;
+left: 50%;
+transform: translateX(-50%);
+box-shadow: inset rgba(17, 17, 26, 0.1) 0px 0px 16px;}
+.fancyButton331.fancyButton:hover,.fancyButton331.fancyButton:focus,.fancyButton331.fancyButton:active,.fancyButton331.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+
+.fancyButton331:is(:hover,:focus,:active):before {
+transform: translateX(-50%) rotate(240deg);}
+.fancyButton331.fancyButton:link > span,.fancyButton331.fancyButton:visited > span, .fancyButton331div.fancyButton > span{
+}
+.fancyButton331.fancyButton:hover > span,.fancyButton331.fancyButton:focus > span,.fancyButton331.fancyButton:active > span,.fancyButton331.fancyButton.hover > span{
+}
+.fancyButton331.fancyButton .text{
+	color: rgb(34, 34, 34);
+	font-size: 1.1em;
+	font-family: "Montserrat";
+	padding-top: 155px;
+	font-weight: 600;
+	text-decoration: none;
+	padding-top: 155px;
+	background-image: url('/ImageRepository/Document?documentID=7938');
+	background-repeat: no-repeat;
+	background-position: center 35px ;
+position: relative;
+z-index: 2;
+line-height: 1.2;
+transition: all .3s ease-in-out;
+}
+.fancyButton331.fancyButton:hover .text,.fancyButton331.fancyButton:focus .text,.fancyButton331.fancyButton:active .text,.fancyButton331.fancyButton.hover .text{
+	text-decoration: underline;
+	background-image: url('/ImageRepository/Document?documentID=7939');
+	background-repeat: no-repeat;
+	background-position: center 35px ;
+
+
+}
+ 
+
+  
+				 
+			 
+		 
+	 
+			 
+ 
+ 
+
+	   
+
+	   
+
+			 				
+	 
+	
+	 	
+ 
+
+
+
+
+ 
+	 
+		 
+				 
+	 
+	 
+		 
+				 
+					 
+
+ 
+	 
+		 
+			 Employment 
+		 
+	 
+ 
+		 .fancyButton343.fancyButton:link,.fancyButton343.fancyButton:visited, .fancyButton343div.fancyButton{
+	background-repeat: no-repeat;
+	background-position: left top;
+position: relative;
+}
+
+.fancyButton343:before {
+content: "";
+position: absolute;
+background: conic-gradient(#0054A6 0% 33.3%, #A0CCED 33.3% 66.6%, #002C5C 66.6% 100%);
+height: 136px;
+width: 136px;
+border-radius: 50%;
+top: 0;
+left: 50%;
+transform: translateX(-50%);
+transition: all .3s ease-in-out;
+box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+}
+
+.fancyButton343:after {
+content: "";
+position: absolute;
+background: #fff;
+height: 120px;
+width: 120px;
+border-radius: 50%;
+top: 8px;
+left: 50%;
+transform: translateX(-50%);
+box-shadow: inset rgba(17, 17, 26, 0.1) 0px 0px 16px;}
+.fancyButton343.fancyButton:hover,.fancyButton343.fancyButton:focus,.fancyButton343.fancyButton:active,.fancyButton343.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+
+.fancyButton343:is(:hover,:focus,:active):before {
+transform: translateX(-50%) rotate(240deg);}
+.fancyButton343.fancyButton:link > span,.fancyButton343.fancyButton:visited > span, .fancyButton343div.fancyButton > span{
+}
+.fancyButton343.fancyButton:hover > span,.fancyButton343.fancyButton:focus > span,.fancyButton343.fancyButton:active > span,.fancyButton343.fancyButton.hover > span{
+}
+.fancyButton343.fancyButton .text{
+	color: rgb(34, 34, 34);
+	font-size: 1.1em;
+	font-family: "Montserrat";
+	padding-top: 155px;
+	font-weight: 600;
+	text-decoration: none;
+	padding-top: 155px;
+	background-image: url('/ImageRepository/Document?documentID=7934');
+	background-repeat: no-repeat;
+	background-position: center 35px ;
+position: relative;
+z-index: 2;
+line-height: 1.2;
+transition: all .3s ease-in-out;
+}
+.fancyButton343.fancyButton:hover .text,.fancyButton343.fancyButton:focus .text,.fancyButton343.fancyButton:active .text,.fancyButton343.fancyButton.hover .text{
+	text-decoration: underline;
+	background-image: url('/ImageRepository/Document?documentID=7935');
+	background-repeat: no-repeat;
+	background-position: center 35px ;
+
+
+}
+ 
+
+  
+
+ 
+	 
+		 
+			 Maps 
+		 
+	 
+ 
+		 .fancyButton344.fancyButton:link,.fancyButton344.fancyButton:visited, .fancyButton344div.fancyButton{
+	background-repeat: no-repeat;
+	background-position: left top;
+position: relative;
+}
+
+.fancyButton344:before {
+content: "";
+position: absolute;
+background: conic-gradient(#0054A6 0% 33.3%, #A0CCED 33.3% 66.6%, #002C5C 66.6% 100%);
+height: 136px;
+width: 136px;
+border-radius: 50%;
+top: 0;
+left: 50%;
+transform: translateX(-50%);
+transition: all .3s ease-in-out;
+box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+}
+
+.fancyButton344:after {
+content: "";
+position: absolute;
+background: #fff;
+height: 120px;
+width: 120px;
+border-radius: 50%;
+top: 8px;
+left: 50%;
+transform: translateX(-50%);
+box-shadow: inset rgba(17, 17, 26, 0.1) 0px 0px 16px;}
+.fancyButton344.fancyButton:hover,.fancyButton344.fancyButton:focus,.fancyButton344.fancyButton:active,.fancyButton344.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+
+.fancyButton344:is(:hover,:focus,:active):before {
+transform: translateX(-50%) rotate(240deg);}
+.fancyButton344.fancyButton:link > span,.fancyButton344.fancyButton:visited > span, .fancyButton344div.fancyButton > span{
+}
+.fancyButton344.fancyButton:hover > span,.fancyButton344.fancyButton:focus > span,.fancyButton344.fancyButton:active > span,.fancyButton344.fancyButton.hover > span{
+}
+.fancyButton344.fancyButton .text{
+	color: rgb(34, 34, 34);
+	font-size: 1.1em;
+	font-family: "Montserrat";
+	padding-top: 155px;
+	font-weight: 600;
+	text-decoration: none;
+	padding-top: 155px;
+	background-image: url('/ImageRepository/Document?documentID=7936');
+	background-repeat: no-repeat;
+	background-position: center 35px ;
+position: relative;
+z-index: 2;
+line-height: 1.2;
+transition: all .3s ease-in-out;
+}
+.fancyButton344.fancyButton:hover .text,.fancyButton344.fancyButton:focus .text,.fancyButton344.fancyButton:active .text,.fancyButton344.fancyButton.hover .text{
+	text-decoration: underline;
+	background-image: url('/ImageRepository/Document?documentID=7937');
+	background-repeat: no-repeat;
+	background-position: center 35px ;
+
+
+}
+ 
+
+  
+				 
+			 
+		 
+	 
+			 
+ 
+ 
+
+	   
+
+	   
+
+			 				
+	 
+	
+	 	
+ 
+
+
+
+
+ 
+	 
+		 
+				 
+	 
+	 
+		 
+				 
+					 
+
+ 
+	 
+		 
+			 Elections 
+		 
+	 
+ 
+		 .fancyButton345.fancyButton:link,.fancyButton345.fancyButton:visited, .fancyButton345div.fancyButton{
+	background-repeat: no-repeat;
+	background-position: left top;
+position: relative;
+}
+
+.fancyButton345:before {
+content: "";
+position: absolute;
+background: conic-gradient(#0054A6 0% 33.3%, #A0CCED 33.3% 66.6%, #002C5C 66.6% 100%);
+height: 136px;
+width: 136px;
+border-radius: 50%;
+top: 0;
+left: 50%;
+transform: translateX(-50%);
+transition: all .3s ease-in-out;
+box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+}
+
+.fancyButton345:after {
+content: "";
+position: absolute;
+background: #fff;
+height: 120px;
+width: 120px;
+border-radius: 50%;
+top: 8px;
+left: 50%;
+transform: translateX(-50%);
+box-shadow: inset rgba(17, 17, 26, 0.1) 0px 0px 16px;}
+.fancyButton345.fancyButton:hover,.fancyButton345.fancyButton:focus,.fancyButton345.fancyButton:active,.fancyButton345.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+
+.fancyButton345:is(:hover,:focus,:active):before {
+transform: translateX(-50%) rotate(240deg);}
+.fancyButton345.fancyButton:link > span,.fancyButton345.fancyButton:visited > span, .fancyButton345div.fancyButton > span{
+}
+.fancyButton345.fancyButton:hover > span,.fancyButton345.fancyButton:focus > span,.fancyButton345.fancyButton:active > span,.fancyButton345.fancyButton.hover > span{
+}
+.fancyButton345.fancyButton .text{
+	color: rgb(34, 34, 34);
+	font-size: 1.1em;
+	font-family: "Montserrat";
+	padding-top: 155px;
+	font-weight: 600;
+	text-decoration: none;
+	padding-top: 155px;
+	background-image: url('/ImageRepository/Document?documentID=7932');
+	background-repeat: no-repeat;
+	background-position: center 35px ;
+position: relative;
+z-index: 2;
+line-height: 1.2;
+transition: all .3s ease-in-out;
+}
+.fancyButton345.fancyButton:hover .text,.fancyButton345.fancyButton:focus .text,.fancyButton345.fancyButton:active .text,.fancyButton345.fancyButton.hover .text{
+	text-decoration: underline;
+	background-image: url('/ImageRepository/Document?documentID=7933');
+	background-repeat: no-repeat;
+	background-position: center 35px ;
+
+
+}
+ 
+
+  
+
+ 
+	 
+		 
+			 Report a Concern 
+		 
+	 
+ 
+		 .fancyButton346.fancyButton:link,.fancyButton346.fancyButton:visited, .fancyButton346div.fancyButton{
+	background-repeat: no-repeat;
+	background-position: left top;
+position: relative;
+}
+
+.fancyButton346:before {
+content: "";
+position: absolute;
+background: conic-gradient(#0054A6 0% 33.3%, #A0CCED 33.3% 66.6%, #002C5C 66.6% 100%);
+height: 136px;
+width: 136px;
+border-radius: 50%;
+top: 0;
+left: 50%;
+transform: translateX(-50%);
+transition: all .3s ease-in-out;
+box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+}
+
+.fancyButton346:after {
+content: "";
+position: absolute;
+background: #fff;
+height: 120px;
+width: 120px;
+border-radius: 50%;
+top: 8px;
+left: 50%;
+transform: translateX(-50%);
+box-shadow: inset rgba(17, 17, 26, 0.1) 0px 0px 16px;}
+.fancyButton346.fancyButton:hover,.fancyButton346.fancyButton:focus,.fancyButton346.fancyButton:active,.fancyButton346.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+
+.fancyButton346:is(:hover,:focus,:active):before {
+transform: translateX(-50%) rotate(240deg);}
+.fancyButton346.fancyButton:link > span,.fancyButton346.fancyButton:visited > span, .fancyButton346div.fancyButton > span{
+}
+.fancyButton346.fancyButton:hover > span,.fancyButton346.fancyButton:focus > span,.fancyButton346.fancyButton:active > span,.fancyButton346.fancyButton.hover > span{
+}
+.fancyButton346.fancyButton .text{
+	color: rgb(34, 34, 34);
+	font-size: 1.1em;
+	font-family: "Montserrat";
+	padding-top: 155px;
+	font-weight: 600;
+	text-decoration: none;
+	padding-top: 155px;
+	background-image: url('/ImageRepository/Document?documentID=7940');
+	background-repeat: no-repeat;
+	background-position: center 35px ;
+position: relative;
+z-index: 2;
+line-height: 1.2;
+transition: all .3s ease-in-out;
+}
+.fancyButton346.fancyButton:hover .text,.fancyButton346.fancyButton:focus .text,.fancyButton346.fancyButton:active .text,.fancyButton346.fancyButton.hover .text{
+	text-decoration: underline;
+	background-image: url('/ImageRepository/Document?documentID=7941');
+	background-repeat: no-repeat;
+	background-position: center 35px ;
+
+
+}
+ 
+
+  
+				 
+			 
+		 
+	 
+			 
+ 
+ 
+
+	   
+
+	   
+
+			   
+
+
+	 
+ 
+ 
+ 
+ 
+ 	 
+				                
+
+		 				
+	 
+	
+	 	
+     
+
+
+
+
+
+	 
+			 
+		 
+								 
+	 
+	 
+		 
+					 
+						 
+
+ 
+	 
+ 						 
+					 
+		 
+	 
+	 
+
+	 
+
+	 
+
+
+
+ 
+	//Render slideshow if info advacned items contain one.
+	$(document).ready(function (e) {
+		$('#divInfoAdvb2481a14-bbfd-44c6-b462-c29ea72caf69 .InfoAdvanced.widgetItem').each(function () {
+			renderSlideshowIfApplicable($(this));		
+		});
+	});
+ 
+	   
+
+	   
+	 
+	
+	 	
+ 
+
+
+
+
+ 
+	 
+		 
+				 
+	 
+	 
+		 
+				 
+					 
+
+  
+ 
+
+  
+ 
+				 
+			 
+		 
+	 
+			 
+ 
+ 
+
+	   
+
+	   
+
+			 				
+	 
+	
+	 	
+
+ 
+	   
+
+	   
+
+			 				
+	 
+	
+	 	
+     
+
+
+
+
+
+	 
+			 
+		 
+					 Contact Us 
+								 
+	 
+	 
+		 
+					 
+						 
+
+ 
+	 311 N. Ninth Street 
+ 
+ 
+	 Garden City, Kansas 67846 
+ 
+ 
+	 Phone:  620-272-3500 
+ 						 
+					 
+		 
+	 
+	 
+
+	 
+
+	 
+
+
+
+ 
+	//Render slideshow if info advacned items contain one.
+	$(document).ready(function (e) {
+		$('#divInfoAdvaf382a40-3b24-440f-8e0c-4b83a261b432 .InfoAdvanced.widgetItem').each(function () {
+			renderSlideshowIfApplicable($(this));		
+		});
+	});
+ 
+	   
+
+	   
+
+			 				
+	 
+	
+	 	
+
+ 
+	   
+
+	   
+
+			 				
+	 
+	
+	 	
+	 
+
+
+
+
+
+
+
+
+	 
+			 
+		 
+					 Popular Pages 
+						 
+	 
+	 
+         
+				 
+					 
+
+
+
+
+     
+         County Commission 
+         
+     
+
+
+
+
+     
+         Employment Opportunities 
+         
+     
+
+
+
+
+     
+         Property Tax Payments 
+         
+     
+
+
+
+
+     
+         Agendas & Minutes 
+         
+     
+
+
+
+
+     
+         SARA Title III 
+         
+     
+
+
+
+
+     
+         GIS Maps 
+         
+     
+					 
+				 
+		 
+        
+	 
+	 
+	 
+	 
+		 /QuickLinks.aspx 
+	 
+
+	 
+ 
+
+	   
+
+	   
+
+			 				
+	 
+	
+	 	
+
+ 
+	   
+
+	   
+
+			 				
+	 
+	
+	 	
+	 
+
+
+
+
+
+
+
+
+	 
+			 
+		 
+					 Site Links 
+						 
+	 
+	 
+         
+				 
+					 
+
+
+
+
+     
+         Home 
+         
+     
+
+
+
+
+     
+         Contact Us 
+         
+     
+
+
+
+
+     
+         Accessibility 
+         
+     
+					 
+				 
+		 
+        
+	 
+	 
+	 
+	 
+		 /QuickLinks.aspx 
+	 
+
+	 
+ 
+
+	   
+
+	   
+
+			   
+
+
+	 
+ 
+ 
+ 	 
+				                
+
+		 				
+	 
+	
+	 	
+ 
+	 
+	 
+		 
+  /* CP icon */
+  .cpBylineIconTS {
+    color: #fff;
+  }
+  /* CP Text */
+  .cpBylineTextTS,
+  .cpBylineTextTS a:link {
+    color: #fff;
+  }
+
+  .cpBylineTextTS a:visited {
+    color: #fff;
+  }
+
+  .cpBylineTextTS a {
+    text-decoration: underline!important;
+  }
+
+  .cpBylineTS {
+    text-align: center;
+  }
+  
+  .cpBylineIconTS {
+    fill: currentColor;
+    width: 39px;
+    height: 26px;
+    display: inline;
+    vertical-align: middle;
+  }
+ 
+
+ 
+   
+     
+     
+   
+   Government Websites by  CivicPlus® 
+ 
+	 
+
+	 
+
+	   
+
+	   
+
+			   
+
+
+	 
+ 
+ 
+ 
+ 
+
+             
+         
+     
+
+ 
+
+ 
+	 
+		 
+			 Loading 
+			 
+				 
+					 
+				 
+			 
+		 
+		 
+			 
+				 
+				Loading
+			 
+		 
+		 
+			 Do Not Show Again 
+			 Close 
+		 
+	 
+ 
+
+ 
+ 
+ 
+ 
+
+		$(document).ready(function () {
+			var filter = {
+				targetId: '447',
+				targetType: 1
+			}
+
+			new SplashModalRender().triggerRender(filter);
+		});
+ 
+
+
+	
+	
+	
+	
+
+
+
+	
+
+
+
+
+
+
+     
+     
+ 
+  function getValueTS(elem, attr) {
+    const val = elem.css(attr);
+    if (val === undefined) return undefined;
+    const num = parseInt(val, 10);
+    if (num === NaN) return undefined;
+    return num;
+  }
+
+  function clampTS(number, min, max) {
+    return Math.min(Math.max(number, min), max);
+  }
+
+  function isPageEditingTS() {
+    return (
+      $("#doneEditing").length > 0 || // In live edit
+      typeof DesignCenter !== "undefined" // In theme manager
+    );
+  }
+
+  const bgColorRegexTS = /rgba\((\d+), (\d+), (\d+), (\d*\.?\d*)\)/;
+  function isTransparentTS(elem) {
+    const bg = elem.css('background-color');
+    if (typeof bg !== "string" || !bg.startsWith('rgba(')) return false;
+    const matchState = bg.match(bgColorRegexTS);
+    if (!matchState || matchState.length !== 5) return false;
+    const alpha = parseFloat(matchState[4], 10);
+    if (!(alpha >= 0 && alpha < 1)) return false;
+    return true;
+  }
+
+  function iterateLeftpads(cb) {
+    const containersTS = $("[class^='siteWrap'],[class*=' siteWrap']");
+    for (let i = 0; i < containersTS.length; i++) {
+      const containerTS = containersTS[i];
+      // Skip the body container and anything with data-skip-leftpad
+      if (
+        containerTS.id !== "bodyContainerTS" &&
+        containerTS.getAttribute('data-skip-leftpad') === null
+      ) {
+        cb(containerTS);
+      }
+    }
+  }
+
+  const anchor = $("#divToolbars");
+  const anchor2 = $("#headerContainerTS")
+
+  // Outer banner padding (push banner down)
+  const outerSizingTS = $("#bannerContainerTS");
+  // Inner banner padding (push banner content down) - Transparent header OR on attaching headers
+  const innerSizingTS = $("#bannerSizingTS");
+  const bodyContainerTS = $("#bodyContainerTS");
+
+  const forceUnfixClassTS = "forceUnfixTS";
+
+  const fixedTopTS = $(".fixedTopTS");
+  const fixedBottomTS = $(".fixedBottomTS");
+  const fixedLeftTS = $(".fixedLeftTS");
+
+  var initialTopTS;
+  var topAttachTS;
+  if (fixedTopTS && fixedTopTS.length === 1) {
+    initialTopTS = getValueTS(fixedTopTS, 'top');
+    const attachment = fixedTopTS.attr('data-attach');
+    if (attachment) topAttachTS = $("#" + attachment);
+    if (!topAttachTS || topAttachTS.length !== 1) topAttachTS = undefined;
+  }
+
+  function resizeAdjustmentTS() {
+    const editing = isPageEditingTS();
+
+    // Fixed top script
+    (function () {
+      if (!fixedTopTS || fixedTopTS.length !== 1 || initialTopTS === undefined) return;
+
+      if (editing) {
+        fixedTopTS[0].classList.add(forceUnfixClassTS);
+      } else {
+        fixedTopTS[0].classList.remove(forceUnfixClassTS);
+      }
+
+      const topPosition = fixedTopTS.css('position');
+      if (topPosition === 'fixed') {
+        if (topAttachTS) {
+          scrollAdjustmentTS();
+        } else {
+          const anchorHeight = anchor.outerHeight() - 1;
+          fixedTopTS.css('top', anchorHeight + initialTopTS);
+        }
+      } else {
+        fixedTopTS.css('top', initialTopTS);
+      }
+
+      if (topPosition === 'fixed' || topPosition === 'absolute') {
+        // Bump the banner content down
+        if (isTransparentTS(fixedTopTS)) {
+          innerSizingTS.css('padding-top', initialTopTS + fixedTopTS.outerHeight() - 1);
+          outerSizingTS.css('padding-top', '');
+
+          try {
+            window.Pages.onResizeHandlersExecute();
+          } catch (e) { }
+        } else {
+          outerSizingTS.css('padding-top', fixedTopTS.outerHeight() - 1);
+          innerSizingTS.css('padding-top', '');
+        }
+      } else {
+        innerSizingTS.css('padding-top', '');
+        outerSizingTS.css('padding-top', '');
+      }
+    })();
+
+    // Fixed bottom script
+    (function () {
+      if (!fixedBottomTS || fixedBottomTS.length === 0) return;
+
+      // If the widget has gone narrow, force unfix
+      if (editing || fixedBottomTS.outerHeight() > 200) {
+        fixedBottomTS[0].classList.add(forceUnfixClassTS);
+      } else {
+        fixedBottomTS[0].classList.remove(forceUnfixClassTS);
+      }
+
+      if (fixedBottomTS.css('position') === 'fixed') {
+        bodyContainerTS.css('padding-bottom', fixedBottomTS.outerHeight());
+      } else {
+        bodyContainerTS.css('padding-bottom', '');
+      }
+    })();
+
+    // Fixed left script
+    (function () {
+      if (!fixedLeftTS || fixedLeftTS.length === 0) return;
+
+      if (editing) {
+        fixedLeftTS[0].classList.add(forceUnfixClassTS);
+      } else {
+        fixedLeftTS[0].classList.remove(forceUnfixClassTS);
+      }
+
+      if (fixedLeftTS.css('position') === 'fixed') {
+        const anchorHeight = anchor.outerHeight() - 1;
+        fixedLeftTS.css('top', anchorHeight);
+        const leftBoundingTS = fixedLeftTS[0].getBoundingClientRect();
+        iterateLeftpads(function (containerTS) {
+          const containerBoundingTS = containerTS.getBoundingClientRect();
+          if (containerBoundingTS.left <= leftBoundingTS.right) {
+            $(containerTS).css('padding-left', leftBoundingTS.width + 16);
+          }
+        });
+      } else {
+        fixedLeftTS.css('top', '');
+        iterateLeftpads(function (containerTS) {
+          $(containerTS).css('padding-left', '');
+        });
+      }
+    })();
+  }
+
+  function scrollAdjustmentTS() {
+    if (!fixedTopTS || fixedTopTS.length !== 1 || !topAttachTS || topAttachTS.length !== 1) return;
+    const topPosition = fixedTopTS.css('position');
+    if (topPosition === 'fixed' || topPosition === 'absolute') {
+      const anchorBounding = anchor[0].getBoundingClientRect();
+      const attachBounding = topAttachTS[0].getBoundingClientRect();
+      const scrollTop = $(window).scrollTop();
+
+      fixedTopTS.css('top', Math.max(anchorBounding.bottom - 1, attachBounding.bottom));
+    } else {
+      fixedTopTS.css('top', initialTopTS);
+    }
+  }
+
+  $(window).load(function () {
+    setTimeout(function () {
+      resizeAdjustmentTS();
+    }, 350);
+
+    $(window).scroll(function () {
+      scrollAdjustmentTS();
+    });
+
+    var adjustTimeoutTS;
+    $(window).resize(function () {
+      clearTimeout(adjustTimeoutTS);
+      adjustTimeoutTS = setTimeout(function () {
+        resizeAdjustmentTS();
+      }, 350);
+    });
+
+    $.when(window.Pages.angularToolbarComplete).done(function () {
+      resizeAdjustmentTS();
+    });
+  });
+ 
+ 
+
+
+     
+        $(function () {
+            document.cookie = "responsiveGhost=0; path=/";
+        });
+        $(window).on("load", function () {
+            $('body').addClass('doneLoading').removeClass('hideContent');
+
+            if ($('#404Content').length > 0)
+                $('div#bodyWrapper').css('padding', '0px');
+        });
+     
+
+     
+         
+            body.hideContent {
+                opacity: 1 !important;
+            }
+         
+     
+
+        
+ 
+	 
+
+		 
+			 Arrow Left 
+			 
+		 
+
+		 
+			 Arrow Right 
+			 
+		 
+
+	 
+ 
+     loadCSS('//fonts.googleapis.com/css?family=Lato:100,100italic,300,300italic,700,700italic,900,900italic,italic,regular|Montserrat:500,600,700,800,900,regular|Roboto:500,600,italic,regular|'); 
+    
+
+     [] 
+         
+             
+                 
+                     Slideshow Left Arrow 
+                     
+                         
+                     
+                 
+                 
+                     Slideshow Right Arrow 
+                     
+                         
+                     
+                 
+             
+         
+    
+	
+	
+
+     
+ 
+ 

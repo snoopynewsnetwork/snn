@@ -1,0 +1,1220 @@
+
+
+
+
+
+
+ 
+ 
+ 
+		  	
+
+
+ 
+ 
+ 
+
+//----- Check href of all <a...> tags, if it matchs page url and immediate parent is <LI>,
+//		append "active" to className of all ancestor <LI> tags until the parent of the <LI>
+//		tag is not <UL> or the parent of the <UL> is not another <LI> tag.
+var functionRef = function setClassActive()
+{
+	var e;
+	try
+	{
+		var pattern = new RegExp("http[s]?://.*?/(.*)[?#]?","");
+		var tags = document.getElementsByTagName("A");
+		if (tags)
+		{
+			for (var i=0;i<tags.length;i++)
+			{
+				var el = tags[i];
+				var resultsTag = el.href.match(pattern);
+				var resultsPage = location.href.match(pattern);
+				if (!resultsTag || !resultsPage) continue;
+				if (resultsTag[1] != resultsPage[1]) continue;
+	
+				// go up li tree marking this and all parent class=active
+				var li = el.parentNode;
+				while (li && li.tagName == 'LI')
+				{
+					if (li.className != '') 
+						li.className += ' ';
+					li.className += 'active';
+					var ul = li.parentNode;
+					if (!ul || ul.tagName != 'UL') break;
+					li = ul.parentNode;
+				}
+				//let's catch all links e.g. topnav, leftnav, quick links, etc
+				//break;	//found url match, quit checking tags
+			}
+		}
+	}
+	catch (e) {}
+}
+//----- Activate topnavActive once page loads
+if (typeof addEventListener != 'undefined') addEventListener('load', functionRef, false);	//standards browser
+else if (typeof attachEvent != 'undefined') attachEvent("onload", functionRef);				//IE early versions
+ 
+
+
+
+ 
+
+
+
+ 
+
+
+
+
+	
+	
+	
+	 
+	 
+	 
+
+	 
+	 
+	 
+	 
+	
+	 
+	 
+
+	 
+
+
+
+
+
+	 Sumner County, KS 
+	 
+
+
+
+	 
+
+
+
+	 
+	 
+
+
+
+
+	 
+
+ 
+
+
+
+	 
+
+
+
+ 
+
+ 
+ 
+ 
+ 
+
+	
+
+	 
+ 
+ 
+ 
+ 
+ 
+	var defaultCalendarColor = "#3788d8";
+	var ImportCals = [];
+	var calendarProps = {'6' : { 'color' : '' , 'name' : 'calendar-list-options' },
+};
+	var RZCalendarTimezone = "";
+ 
+
+
+	 
+	 
+
+	 
+	 
+
+ 
+ 
+
+
+
+
+ 
+if (typeof(RZ) == 'undefined') RZ = {};
+if (!RZ.link) RZ.link = new Object();
+RZ.pagetype = 'template'
+RZ.baseurlprefix = '../../../'
+RZ.baseurlpath = 'elected_officials/county_clerk_and_election_officer/election_office/'
+RZ.protocolRelativeRevizeBaseUrl='//webgen1.revize.com'
+
+RZ.pagetemplatename = 'freeform'
+RZ.pagetemplateid = '32'
+RZ.pagemodule = 'links'
+RZ.pagemoduleid = '5'
+RZ.pagerecordid = '903';
+
+RZ.pageid = 'links-903';
+RZ.pageparentid = '882';
+RZ.pagesectionid = '882';
+RZ.pagesectionname = 'election_office';
+RZ.pagesectionlevel = '3';
+RZ.pagesectionfolder = 'elected_officials/county_clerk_and_election_officer/election_office/';
+RZ.pagesectionfilter = 'sectionid=882';
+RZ.pagelinkfilter = 'linklevel=3 and linksectionid=882';
+RZ.pagelinklevel = '3';
+RZ.pagelinkid = '903';
+RZ.pageidfield = '';
+
+RZ.isnewrecord = false;
+RZ.editmodule = '';
+RZ.editrecordid = '903';
+RZ.editrecordversion = '';
+RZ.editversion = '';
+RZ.editaction = '';
+
+RZ.page_roles = ''
+RZ.page_users = 'f4c1fb7225492df0a8c2f551bace0f469e9c90550de1f19bc3c061730bfa0097'
+RZ.page_key = 'freeform[903]'
+RZ.parent_key = 'freeform[882]'
+RZ.inherit_key = 'index[]'
+RZ.workflowname = ''
+RZ.permissions_options = ''
+RZ.permissions_module = 'webspace_page_permissions'
+RZ.webspace = 'sumnerCountryks'
+RZ.webspacedesc = "Colorville";
+
+RZ.featurespattern = '(EZ)';
+null
+
+RZ.webspacelinksurl = ''
+RZ.webspacelinksurl = './webspace/links.html'
+RZ.workflowlist = ''
+RZ.revizeserverurl = 'https://webgen1.revize.com/revize/sumnercountryks';
+
+if (!RZ.nextseq) RZ.nextseq = {linknames:{},modules:{}};
+
+RZ.webspace_config = new Object();
+RZ.webspace_config.admin_email = "noreply@co.walla-walla.wa.us";
+RZ.webspace_config.calendar_options = "max_events=4";
+RZ.webspace_config.form_captcha = "yes";
+RZ.webspace_config.form_server = "revizeserver";
+RZ.webspace_config.form_technology = "jsp";
+RZ.webspace_config.formwizard_ftp_password = "";
+RZ.webspace_config.formwizard_ftp_port = "";
+RZ.webspace_config.formwizard_ftp_server = "";
+RZ.webspace_config.formwizard_ftp_user = "";
+RZ.webspace_config.formwizard_setup = "yes";
+RZ.webspace_config.formwizard_smtp_password = "xxx";
+RZ.webspace_config.formwizard_smtp_server = "xxx";
+RZ.webspace_config.formwizard_smtp_user = "xxx";
+RZ.webspace_config.google_analytics = "";
+RZ.webspace_config.home_pageid = "0";
+RZ.webspace_config.home_sectionid = "0";
+RZ.webspace_config.home_template = "home,index,sitemap";
+RZ.webspace_config.icon_email = "<img src=\"/revize/images/email_icon_yellow.gif\" width=\"16\" border=\"0\" height=\"17\" title=\"Request email notification when page changes\" alt=\"Request email notification when page changes\" style=\"\" />";
+RZ.webspace_config.image_maxheight = "3000";
+RZ.webspace_config.image_maxwidth = "3000";
+RZ.webspace_config.image_setup = "yes";
+RZ.webspace_config.livesite_url = "";
+RZ.webspace_config.menu_links_module = "links";
+RZ.webspace_config.menu_newsection = "";
+RZ.webspace_config.menu_nexturl = "webspace_menu-editform.jsp";
+RZ.webspace_config.menu_sections_module = "sections";
+RZ.webspace_config.menu_system = "custom";
+RZ.webspace_config.menu_version = "1.00";
+RZ.webspace_config.new_menu_manager_enabled = "yes";
+RZ.webspace_config.notify_return_url = "enotify/index.php";
+RZ.webspace_config.rte_setup = "yes";
+RZ.webspace_config.to_email = "";
+RZ.webspace_config.use_folders = "1";
+RZ.webspace_config.use_new_buttons = "yes";
+
+RZ.isauthenticationactive = true
+RZ.warning = ""
+RZ.adminwinmsg = null
+
+RZ.channels = 'revize,fileschannel';
+RZ.jsversion = 1.2 
+ 
+
+
+
+ 
+
+	 Skip to main content 
+
+	
+
+
+
+
+
+	 
+		 
+			 
+			 
+		 
+
+		 
+		 
+			 
+				
+
+
+
+ 
+	 
+	
+ 
+			 
+			
+			 
+			
+				
+
+
+ 
+ 
+	 Home 
+	 About 
+		 
+			 County History 
+				 
+					 Archeology 
+					 Chisholm Trail 
+					 Cities of Past 
+					 Cities Today 
+					 Cyclones and Tornadoes 
+					 Early County Maps 
+					 Early Sumner County 
+					 Farming in Sumner 
+					 History Tidbits 
+					 Other History Links 
+					 Railroad History 
+					 The County Today 
+					 The Wild West 
+				 
+			 
+			 Casino Information 
+		 
+	 
+	 Elected Officials 
+		 
+			 Commissioners 
+				 
+					 Agendas & Minutes 
+					 Commission Districts 
+					 Audits and Budget Info 
+				 
+			 
+			 County Attorney 
+			 County Clerk and Election Officer 
+				 
+					 Sumner County Employee Benefits 
+					 Election Office 
+				 
+			 
+			 Register of Deeds 
+				 
+					 FAQ 
+					 FEES 
+					 KS Real Estate SVQ 
+				 
+			 
+			 Sheriff 
+			 Treasurer 
+				 
+					 Current Projects 
+					 Disclosure 
+					 General Information 
+					 Tax Search 
+					 License a Vehicle 
+					 License Plate Transfer 
+					 Payment 
+					 Refunds 
+					 Tag Renewal Dates 
+					 Contact Information 
+					 Favorite Links 
+					 Plates 
+					 Out of State/Salvage Titles 
+					 Vehicle Registration Information 
+					 Motor Vehicle Forms 
+					 Commercial Page 
+					 What to bring for Commercial Tags 
+					 Commercial Fees 
+					 Drivers License 
+				 
+			 
+		 
+	 
+	 Departments 
+		 
+			 Appraiser 
+				 
+					 Mapping Information 
+					 Parcel Search 
+					 Personal Property FAQ 
+					 Real Estate 
+					 Tax Calendar 
+					 Why Appraisal 
+				 
+			 
+			 Community Corrections 
+			 District Court 
+			 Emergency Management 
+			 Extension Office 
+			 Information Technology 
+			 Noxious Weed 
+				 
+					 Control Noxious Weeds 
+					 Noxious Weeds of Kansas 
+				 
+			 
+			 Counselor 
+			 Economic Development 
+			 Emergency Communications 
+			 Health Department 
+			 Maintenance 
+			 Planning & Zoning Environmental Health 
+				 
+					 Regulations 
+					 Sumner County Planning Commission 
+					 Comprehensive Plan 
+					 Environmental Codes 
+				 
+			 
+			 Road & Bridge 
+				 
+					 Road - Bridge Information 
+					 Divisions 
+				 
+			 
+		 
+	 
+	 Information 
+		 
+			 Calendar 
+			 Contacts 
+			 Documents 
+			 Employment Opportunities 
+		 
+	 
+	 Parcel Search 
+	 Tax Search 
+ 
+
+
+
+
+
+
+
+			
+			 
+			 
+				 
+					 
+						 Search 
+						 
+						 
+					 
+				 
+				 
+					 
+						function googleTranslateElementInit() {
+							new google.translate.TranslateElement({pagelanguage: 'en',
+								layout: google.translate.TranslateElement.InlineLayout.SIMPLE},
+								'google-translate');
+						}
+					 
+				 
+				 
+					 Translate 
+						 
+							 English 
+							 Afrikaans 
+							 Albanian 
+							 Arabic 
+							 Armenian 
+							 Azerbaijani 
+							 Basque 
+							 Belarusian 
+							 Bengali 
+							 Bosnian 
+							 Bulgarian 
+							 Catalan 
+							 Cebuano 
+							 Chinese (Simplified) 
+							 Chinese (Traditional) 
+							 Croatian 
+							 Czech 
+							 Danish 
+							 Dutch 
+							 Esperanto 
+							 Estonian 
+							 Filipino 
+							 Finnish 
+							 French 
+							 Galician 
+							 Georgian 
+							 German 
+							 Greek 
+							 Gujarati 
+							 Haitian Creole 
+							 Hausa 
+							 Hebrew 
+							 Hindi 
+							 Hmong 
+							 Hungarian 
+							 Icelandic 
+							 Igbo 
+							 Indonesian 
+							 Irish 
+							 Italian 
+							 Japanese 
+							 Javanese 
+							 Kannada 
+							 Khmer 
+							 Korean 
+							 Lao 
+							 Latin 
+							 Latvian 
+							 Lithuanian 
+							 Macedonian 
+							 Malay 
+							 Maltese 
+							 Maori 
+							 Marathi 
+							 Mongolian 
+							 Nepali 
+							 Norwegian 
+							 Persian 
+							 Polish 
+							 Portuguese 
+							 Punjabi 
+							 Romanian 
+							 Russian 
+							 Serbian 
+							 Slovak 
+							 Slovenian 
+							 Somali 
+							 Spanish 
+							 Swahili 
+							 Swedish 
+							 Tamil 
+							 Telugu 
+							 Thai 
+							 Turkish 
+							 Ukrainian 
+							 Urdu 
+							 Vietnamese 
+							 Welsh 
+							 Yiddish 
+							 Yoruba 
+							 Zulu 
+						 
+					 
+				
+
+
+
+
+
+
+
+			 
+				
+			 
+			 
+		 
+	 
+	 
+ 
+ 
+	 
+		 
+			 
+				RZ.module = 'slider';
+				RZ.nexturl = "/revize/webgen_includes/colorville/editforms/slider-editlist.jsp?pageid=882";
+				RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = '';
+				RZ.img = '<span class="rzBtn">Edit Slider</span>';
+				RZ.caption = '';
+				RZ.options = '';
+				if (typeof RZaction != 'undefined') RZaction('editlist');
+			 
+
+		 
+ 
+if (typeof RZlistbegin != 'undefined') RZlistbegin(1)
+ 
+ 
+if (typeof RZlinktemplate != 'undefined') RZlinktemplate('slider','','')
+if (typeof RZ.nextseq != 'undefined') RZ.nextseq.modules['slider_1']={field:'seq_no',seq:'1.00'};
+ 
+
+		 
+			 
+		 
+	 
+
+	 Election Publications 
+
+ 
+ 
+	 		 
+			 
+				 
+					 Related Links 
+					 
+
+
+
+						 
+							RZ.module = 'links';
+							RZ.nexturl = "/revize/plugins/menus/webspace_menu-editlist.jsp?pageid=links-903&"
+									 + "linksfilter=linkplacement=leftnav and linkparentid=882 and linkparentid=903&"
+									 + "numberoflevels=2&"
+									 + "linkoptions=url,template,file&"
+									 + "linknewsection=*all*";
+							RZ.img = '<span class="rzBtn">Edit Links</span>';
+							RZ.caption = '';
+							RZ.set = "links.linkplacement=leftnav"
+							RZ.options = '';
+							if (typeof RZaction != 'undefined') RZaction('editlist');
+						 
+						 
+							RZ.module = 'freeform';
+							RZ.recordid = '';
+							RZ.nexturl = "/revize/webgen_includes/colorville/editforms/leftnav-title-editform.jsp";
+							RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = '';
+							RZ.img = '<span class="rzBtn">Edit Links Title</span>';
+							RZ.set = 'pageid=links-903';
+							RZ.options = '';
+							if (typeof RZaction != 'undefined') RZaction('editform');
+						 
+					 
+					
+  
+	 Current Election 
+	 Election Publications 
+	 Voter Registration Information 
+	 Election Results 
+	 Forms 
+	 Election FAQ 
+	 Candidate Filing Paperwork 
+	 Election Workers 
+ 
+
+				 
+			 			 
+				 
+					  
+	 
+	
+		 Home 
+							   Elected Officials   
+							   County Clerk and Election Officer   
+							   Election Office   
+							  Election Publications 
+	 
+ 
+
+					 Election Publications 
+					 
+							 
+		 
+			RZ.module = 'freeform';
+			RZ.recordid = '';
+			RZ.nexturl = "/revize/webgen_includes/colorville/editforms/freeform-editform.jsp";
+			RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = '';
+			RZ.img = '<span class="rzBtn">Edit Page Content</span>';
+			RZ.set = 'freeform.pageid=links-903';
+			RZ.options = '';
+			if (typeof RZaction != 'undefined') RZaction('editform');
+		 
+	
+	 
+		RZ.module = 'freeform';
+		RZ.recordid = '';
+		RZ.nexturl = "/revize/webgen_includes/colorville/editforms/metadata-editform.jsp";
+		RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = '';
+		RZ.img = '<span class="rzBtn">Edit Metadata</span>';
+		RZ.set = 'freeform.pageid=links-903';
+		RZ.options = '';
+		if (typeof RZaction != 'undefined') RZaction('editform');
+	 
+	 
+		RZ.nexturl = '';
+		RZ.img = '<img src="images/edit/permissions.jpg" alt="Permissions" border="0" />';
+		RZ.options = '';
+		if (typeof RZaction != 'undefined') RZaction('permissions');
+	 
+ 
+
+							
+ 
+	Some items are required by statute to be publicized in the legal county newspaper. The Board of County Commissioners designates the legal county newspaper for each year. The publications may deal with a variety of areas. Examples are: Notice of public hearings for zoning cases, Budget public hearings, Information dealing with elections, etc... The Belle Plaine News is designated the official publication for Sumner County for the years of 2025 and 2026. As an additional method of providing notice to the citizens of Sumner County, county departments have been asked to make the attempt to post legal publications on this site. Publications are listed by a Title/Description Name. The legal publication will be removed from this site after the involved date has past. Not all legal publications may be posted to this site. The designated legal county newspaper should still be referred to as it is the legally required method.
+ 
+	 
+	/** New FAQ Styles **/
+	input#faq-filter {height: 34px;border-color: #193441;border-radius: 3px;font-size: 12px;width: 40%;color: #193441;padding: 0 15px 0 15px;margin-bottom: 5px;}
+	.faq-header {margin: 10px 0;font-size: 24px;font-weight: 700;padding: 10px;display:block;text-decoration:none!important;color:#000!important}
+	.faq-answer{margin:0 15px;}
+	.faq-search{text-align:right}
+	.faq-item {margin-bottom: 15px;}
+	.faq-questions{padding-top:15px}
+	.faq-question, .faq-header {border-bottom: 1px solid rgba(25, 52, 65, 0.4);}
+	.faq-question .faq-question-header{text-decoration: none;font-size: 16px;font-weight: bold;color: #193441;cursor: pointer}
+	.faq-header:not(.collapsed)::before, .faq-question .faq-question-header.active-question:before{content: '\f107';}
+	.faq-header::before, .faq-question .faq-question-header:before{content: '\f105';font-family: 'FontAwesome';margin-right:8px;display:inline-block;color:#000;font-weight: 700;}
+	.faq-container .categorybtn {margin-bottom: 5px;/* display: none; */display: inline-block;}
+	#example a[href*="tel"],#example a[href*="mailto"] {white-space: nowrap;}
+	.faq-editbtns{float:right;line-height:0}
+	.rzFaqBtn>i{width:25px;height:25px;background:#fff;text-align:center;border-radius:5px;border:1px solid #99F;padding-top:4%}
+	.rzFaqBtn>i.fa-trash{color:#bb2727;border-color:#bb2727}
+	.seq-no{width:60px;display:inline-block;text-align:right}
+
+ 
+
+
+         
+        	 
+            	
+				
+				
+				 
+				RZ.module = 'revizefaqouter';
+				RZ.recordid = '';
+				RZ.nexturl = "editforms/faq_settings-editform.jsp";
+				RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = '';
+				RZ.img = '<span class="rzBtn">Edit Faq Settings</btn>';
+				RZ.set = 'revizefaqouter.pageid=links-903';
+				RZ.options = '';
+				if (typeof RZaction != 'undefined') RZaction('editform');
+				 
+             
+             
+                 
+                 
+             
+		   
+           
+            
+            
+            
+             
+            RZ.module = 'revizefaqouter'; RZ.linkname = '';
+            RZ.template = '*none*'; RZ.recordid = 'new';
+            RZ.nexturl = "editforms/faq-category-editform.jsp";
+            RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = '';
+            RZ.img = '<span class="rzBtn">New Category</span>';
+            RZ.set = 'revizefaqouter.pageid=903';
+            RZ.options = '';
+            if (typeof RZaction != 'undefined') RZaction('newitem');
+             
+            
+           
+           
+if (typeof RZlistbegin != 'undefined') RZlistbegin(4)
+ 
+
+          
+           
+           
+           
+           
+			 
+				 
+				 
+					RZ.module = 'revizefaqouter'; RZ.linkname = '';
+					RZ.template = '*none*'; RZ.recordid = '17';
+					RZ.nexturl = "editforms/faq-category-editform.jsp";
+					RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = '';
+					RZ.img = '<span class="rzFaqBtn"><i class="fa fa-pencil"></i><span class="sr-only">Edit</span></span>';
+					RZ.set = '';
+					RZ.options = '';
+					if (typeof RZaction != 'undefined') RZaction('edititem');
+				 
+				 
+					RZ.module = 'revizefaqouter';
+					RZ.recordid = '17';
+					RZ.name = 'RZdelete' + RZ.recordid;
+					RZ.img = '<span class="rzFaqBtn"><i class="fa fa-trash"></i><span class="sr-only">Delete</span></span>';
+					RZ.options = '';
+					if (typeof RZaction != 'undefined') RZaction('delete');
+				 
+				 
+if (typeof RZlogin != 'undefined') RZlogin('0.00', 'revizefaqouter', 'u'); 
+ 
+			 
+             November 3, 2026 - General Election 
+             
+                 
+                  
+                  
+                  
+                   
+                  RZ.module = 'revizefaq'; RZ.linkname = '';
+                  RZ.template = '*none*'; RZ.recordid = 'new';
+                  RZ.nexturl = "editforms/revizefaq-editform.jsp";
+                  RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = '';
+                  RZ.img = '<span class="rzBtn">New Question</span>';
+                  RZ.set = 'revizefaq.pageid=17';
+                  RZ.options = '';
+                  if (typeof RZaction != 'undefined') RZaction('newitem');
+                   
+                  
+                 
+                 
+if (typeof RZlistbegin != 'undefined') RZlistbegin(5)
+ 
+
+                
+                
+                 
+                
+                 
+                   
+                     Notice of Election 
+                     
+                       
+                       
+						  RZ.module = 'revizefaq'; RZ.linkname = '';
+						  RZ.template = '*none*'; RZ.recordid = '59';
+						  RZ.nexturl = "editforms/revizefaq-editform.jsp";
+						  RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = '';
+						  RZ.img = '<span class="rzFaqBtn"><i class="fa fa-pencil"></i><span class="sr-only">Edit</span></span>';
+						  RZ.set = '';
+						  RZ.options = '';
+						  if (typeof RZaction != 'undefined') RZaction('edititem');
+                       
+                       
+						  RZ.module = 'revizefaq';
+						  RZ.recordid = '59';
+						  RZ.name = 'RZdelete' + RZ.recordid;
+						  RZ.img = '<span class="rzFaqBtn"><i class="fa fa-trash"></i><span class="sr-only">Delete</span></span>';
+						  RZ.options = '';
+						  if (typeof RZaction != 'undefined') RZaction('delete');
+                       
+
+                       
+if (typeof RZlogin != 'undefined') RZlogin('1.00', 'revizefaq', 'u'); 
+ 
+                     
+                   
+
+                   
+                     Notice of General Election - With Candidates Listed Notice of Election - City of Caldwell Sales Tax Question Notice of Election - City of Belle Plaine Sales Tax Question 
+                   
+                 
+                
+    			
+                
+                 
+                
+                 
+                   
+                     Notice of Registration Closing 
+                     
+                       
+                       
+						  RZ.module = 'revizefaq'; RZ.linkname = '';
+						  RZ.template = '*none*'; RZ.recordid = '70';
+						  RZ.nexturl = "editforms/revizefaq-editform.jsp";
+						  RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = '';
+						  RZ.img = '<span class="rzFaqBtn"><i class="fa fa-pencil"></i><span class="sr-only">Edit</span></span>';
+						  RZ.set = '';
+						  RZ.options = '';
+						  if (typeof RZaction != 'undefined') RZaction('edititem');
+                       
+                       
+						  RZ.module = 'revizefaq';
+						  RZ.recordid = '70';
+						  RZ.name = 'RZdelete' + RZ.recordid;
+						  RZ.img = '<span class="rzFaqBtn"><i class="fa fa-trash"></i><span class="sr-only">Delete</span></span>';
+						  RZ.options = '';
+						  if (typeof RZaction != 'undefined') RZaction('delete');
+                       
+
+                       
+if (typeof RZlogin != 'undefined') RZlogin('4.00', 'revizefaq', 'u'); 
+ 
+                     
+                   
+
+                   
+                     Notice of Registration Closing 
+                   
+                 
+                
+    			
+                
+                 
+                
+                 
+                   
+                     Notice of Public Machine Test 
+                     
+                       
+                       
+						  RZ.module = 'revizefaq'; RZ.linkname = '';
+						  RZ.template = '*none*'; RZ.recordid = '73';
+						  RZ.nexturl = "editforms/revizefaq-editform.jsp";
+						  RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = '';
+						  RZ.img = '<span class="rzFaqBtn"><i class="fa fa-pencil"></i><span class="sr-only">Edit</span></span>';
+						  RZ.set = '';
+						  RZ.options = '';
+						  if (typeof RZaction != 'undefined') RZaction('edititem');
+                       
+                       
+						  RZ.module = 'revizefaq';
+						  RZ.recordid = '73';
+						  RZ.name = 'RZdelete' + RZ.recordid;
+						  RZ.img = '<span class="rzFaqBtn"><i class="fa fa-trash"></i><span class="sr-only">Delete</span></span>';
+						  RZ.options = '';
+						  if (typeof RZaction != 'undefined') RZaction('delete');
+                       
+
+                       
+if (typeof RZlogin != 'undefined') RZlogin('5.00', 'revizefaq', 'u'); 
+ 
+                     
+                   
+
+                   
+                    
+                   
+                 
+                
+    			
+                
+                 
+                
+                 
+                   
+                     Notice of Canvass 
+                     
+                       
+                       
+						  RZ.module = 'revizefaq'; RZ.linkname = '';
+						  RZ.template = '*none*'; RZ.recordid = '74';
+						  RZ.nexturl = "editforms/revizefaq-editform.jsp";
+						  RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = '';
+						  RZ.img = '<span class="rzFaqBtn"><i class="fa fa-pencil"></i><span class="sr-only">Edit</span></span>';
+						  RZ.set = '';
+						  RZ.options = '';
+						  if (typeof RZaction != 'undefined') RZaction('edititem');
+                       
+                       
+						  RZ.module = 'revizefaq';
+						  RZ.recordid = '74';
+						  RZ.name = 'RZdelete' + RZ.recordid;
+						  RZ.img = '<span class="rzFaqBtn"><i class="fa fa-trash"></i><span class="sr-only">Delete</span></span>';
+						  RZ.options = '';
+						  if (typeof RZaction != 'undefined') RZaction('delete');
+                       
+
+                       
+if (typeof RZlogin != 'undefined') RZlogin('6.00', 'revizefaq', 'u'); 
+ 
+                     
+                   
+
+                   
+                    
+                   
+                 
+                
+    			
+                
+                 
+                
+                 
+                   
+                     Notice of Post Election Machine Test 
+                     
+                       
+                       
+						  RZ.module = 'revizefaq'; RZ.linkname = '';
+						  RZ.template = '*none*'; RZ.recordid = '75';
+						  RZ.nexturl = "editforms/revizefaq-editform.jsp";
+						  RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = '';
+						  RZ.img = '<span class="rzFaqBtn"><i class="fa fa-pencil"></i><span class="sr-only">Edit</span></span>';
+						  RZ.set = '';
+						  RZ.options = '';
+						  if (typeof RZaction != 'undefined') RZaction('edititem');
+                       
+                       
+						  RZ.module = 'revizefaq';
+						  RZ.recordid = '75';
+						  RZ.name = 'RZdelete' + RZ.recordid;
+						  RZ.img = '<span class="rzFaqBtn"><i class="fa fa-trash"></i><span class="sr-only">Delete</span></span>';
+						  RZ.options = '';
+						  if (typeof RZaction != 'undefined') RZaction('delete');
+                       
+
+                       
+if (typeof RZlogin != 'undefined') RZlogin('7.00', 'revizefaq', 'u'); 
+ 
+                     
+                   
+
+                   
+                    
+                   
+                 
+                
+    			
+                
+                 
+                
+                 
+                   
+                     Notice of Audit of General Election 
+                     
+                       
+                       
+						  RZ.module = 'revizefaq'; RZ.linkname = '';
+						  RZ.template = '*none*'; RZ.recordid = '76';
+						  RZ.nexturl = "editforms/revizefaq-editform.jsp";
+						  RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = '';
+						  RZ.img = '<span class="rzFaqBtn"><i class="fa fa-pencil"></i><span class="sr-only">Edit</span></span>';
+						  RZ.set = '';
+						  RZ.options = '';
+						  if (typeof RZaction != 'undefined') RZaction('edititem');
+                       
+                       
+						  RZ.module = 'revizefaq';
+						  RZ.recordid = '76';
+						  RZ.name = 'RZdelete' + RZ.recordid;
+						  RZ.img = '<span class="rzFaqBtn"><i class="fa fa-trash"></i><span class="sr-only">Delete</span></span>';
+						  RZ.options = '';
+						  if (typeof RZaction != 'undefined') RZaction('delete');
+                       
+
+                       
+if (typeof RZlogin != 'undefined') RZlogin('8.00', 'revizefaq', 'u'); 
+ 
+                     
+                   
+
+                   
+                    
+                   
+                 
+                
+    			
+                 
+if (typeof RZlinktemplate != 'undefined') RZlinktemplate('revizefaq','','')
+if (typeof RZ.nextseq != 'undefined') RZ.nextseq.modules['revizefaq_5']={field:'seq_no',seq:'9.00'};
+ 
+
+             
+           
+          
+          
+            
+if (typeof RZlinktemplate != 'undefined') RZlinktemplate('revizefaqouter','','')
+if (typeof RZ.nextseq != 'undefined') RZ.nextseq.modules['revizefaqouter_4']={field:'seq_no',seq:'1.00'};
+ 
+ 
+ 
+
+
+
+
+					 				 
+			 
+			 
+	 
+ 
+ 
+	 
+		 
+		 
+		 Share  this page 
+	 
+
+	 
+		 
+			 
+				 
+					 Share this page 
+					 × 
+				 
+				 
+					 
+						 Copy and paste this code into your website. 
+						 <a href="http://www.co.sumner.ks.us/elected_officials/county_clerk_and_election_officer/election_office/election_publications.php">Your Link Name</a> 
+					 
+					 
+						 Share this page on your favorite Social network 
+						 
+							 
+								 
+									  Facebook
+								 
+							 
+							 
+								 
+									  Twitter
+								 
+							 
+							 
+								 
+									  Reddit
+								 
+							 
+						 
+					 
+					 Close 
+				 
+			 
+		 
+	 
+ 	
+
+
+
+
+	 
+		 
+			 
+				 
+					 
+						 
+							
+						 
+					 
+				 
+				 
+					 
+						 
+							
+						 
+					 
+				 
+				 					 
+						Sumner County Courthouse 501 N. Washington Wellington, Ks. 67152
+					 
+				 
+				 		      
+				 
+			 
+		 
+	 
+	 
+		 
+			© 2026 Sumner County, KS Powered by  revize.  Government website experts |  Login 
+		 
+	 
+ 
+
+ 
+ 
+ 
+
+	
+	 
+	$(document).ready(function(){
+	    var $category = $('.faq-category'),
+	        $questionsAndAnswers = $('.faq-questions,.faq-answer'),
+	        $filterCount = $(".faq-filter-count"),
+	        $faqItem = $(".faq-item");
+
+	    // remove inline scripts on load so not caught in filter
+	    $(".faq-container script").remove();
+
+	    var $filter = $("#faq-filter").keyup(function(){
+	        $category.removeClass("has-search-result");
+
+	        // Retrieve the input field text and reset the count to zero
+	        var filter = $(this).val(),
+	            count = 0;
+
+	        // Loop through the questions list
+	        $faqItem.each(function(){
+	            var $this = $(this);
+	            // If the questions item does not contain the text phrase fade it out
+	            if ($this.text().search(new RegExp(filter, "i")) < 0) {
+	                $this.fadeOut();
+						 $this.find('.faq-question>a').attr('style','');
+						 $('.active-question').removeClass('active-question');
+	            // Show the questions item if the phrase matches and increase the count by 1
+	            } else {
+	                $this.fadeIn().closest(".faq-category").addClass("has-search-result");
+						 $this.find('.faq-question>a').addClass('active-question').css('pointer-events','none');
+	                count++;
+	            }
+	        });
+
+	        if( filter !== '' ) {
+	            $(".faq-category:not(.has-search-result)").fadeOut();
+	            $(".faq-category.has-search-result").fadeIn();
+
+	            // search should auto expand categories and answers when searching
+	            $questionsAndAnswers.css({"display":"block", "visibility": "visible", "height": "auto"});
+	            $filterCount.text(count + " items found. Please see below for details.");
+
+	        } else {
+	            // remove inline styles to revert classes back
+	            $category.fadeIn();
+	            $questionsAndAnswers.removeAttr("style");
+	            $filterCount.text(" ");
+					$('.active-question').removeClass('active-question');
+					$('.faq-item .faq-question>a').attr('style','');
+	        }
+	    });
+
+	    $filter.submit(function(e){
+	        return false;
+	    });
+
+	    // disable toggling when searching
+	    function ifSearchingDoNothing() {
+	        if( $filter.val() !== '' ) {
+	            return false;
+	        }
+	    }
+	    $questionsAndAnswers.on("hide.bs.collapse show.bs.collapse", ifSearchingDoNothing);
+		 $questionsAndAnswers.on("hide.bs.collapse",function(event){
+			$(event.target).siblings('.faq-question').find('a[data-toggle]').removeClass('active-question');
+		 });
+
+		 $questionsAndAnswers.on("show.bs.collapse",function(event){
+			$(event.target).siblings('.faq-question').find('a[data-toggle]').addClass('active-question');
+		 });
+
+		//  $('.faq-question>a').on('click',function(){
+		// 	 setTimeout(function(){
+		// 		 if($(this).parent().siblings('.faq-answer').hasClass('in')){
+   	// 			 $(this).addClass('active-question');
+   	// 		 } else {
+		// 			 $(this).removeClass('active-question');
+		// 		 }
+		// 	 },300);
+		//
+		// });
+	});
+	 
+
+ 
+ 
+
+
+
+
+
+ 
+ 
+

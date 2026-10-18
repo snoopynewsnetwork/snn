@@ -1,0 +1,2054 @@
+
+ 
+ 
+ 
+
+	 
+ 
+				 (function(w,d,s,l,i){w.GAMeasurementID='G-5FSQJL14WL';w[l]=w[l]||[];w[l].push({'gtm.start':
+				new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+				j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+				'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+				})(window,document,'script','cpDataLayerGA4','GTM-K73C5PS'); 
+				 
+				 
+					var enableTelemetry = 'false'
+					var aiConfig = {
+					instrumentationKey: '1cde048e-3185-4906-aa46-c92a7312b60f'						
+					}
+					var appInsights = window.appInsights || function (a) { function b(a) { c[a] = function () { var b = arguments; c.queue.push(function () { c[a].apply(c, b) }) } } var c = { config: a }, d = document, e = window; setTimeout(function () { var b = d.createElement('script'); b.src = a.url || 'https://js.monitor.azure.com/scripts/a/ai.0.js', d.getElementsByTagName('script')[0].parentNode.appendChild(b) }); try { c.cookie = d.cookie } catch (a) { } c.queue = []; for (var f = ['Event', 'Exception', 'Metric', 'PageView', 'Trace', 'Dependency']; f.length;)b('track' + f.pop()); if (b('setAuthenticatedUserContext'), b('clearAuthenticatedUserContext'), b('startTrackEvent'), b('stopTrackEvent'), b('startTrackPage'), b('stopTrackPage'), b('flush'), !a.disableExceptionTracking) { f = 'onerror', b('_' + f); var g = e[f]; e[f] = function (a, b, d, e, h) { var i = g && g(a, b, d, e, h); return !0 !== i && c['_' + f](a, b, d, e, h), i } } return c }(aiConfig);
+					window.appInsights = appInsights, appInsights.queue && 0 === appInsights.queue.length;
+					// Add telemetry initializer
+					appInsights.queue.push(function() {
+						appInsights.context.addTelemetryInitializer(function(envelope) {
+							var telemetryItem = envelope.data.baseData;
+							// To check the telemetry item’s type:
+							if (!false)
+							{
+								//If the telemetry is not enabled, we still want to capture Google map custom event, so only allow that
+								if (envelope.name.indexOf('.Event') == -1)
+									return false;
+							}
+						});
+					});						
+					appInsights.trackPageView();
+				 
+	 
+		function populateAntiForgery(token) {
+			var input = document.createElement("input");
+			input.name = "__RequestVerificationToken";
+			input.type = "hidden";
+			input.value = token;
+			var absPat = /^https?:\/\/|^\/\//i;
+			var forms = document.getElementsByTagName("form");
+			for (var i = 0; i < forms.length; i++) {
+				if (forms[i].method == "post" &&
+					!forms[i].querySelector('[name="__RequestVerificationToken"]') &&
+					!absPat.test(forms[i].getAttribute("action"))) {
+					forms[i].appendChild(input.cloneNode());
+				}
+			}
+		}
+
+		function getAntiForgeryToken(callback, error) {
+			var xhr = new XMLHttpRequest();
+			xhr.open("GET", "/antiforgery");
+			xhr.addEventListener("load", function() {
+				try {
+					if (this.status !== 200) {
+						throw Error("Invalid status. Could not retrieve antiforgery token.");
+					}
+					var obj = JSON.parse(this.responseText);
+					callback(obj.token);
+				} catch (e) {
+					typeof error === "function" && error(e);
+				}
+			});
+			xhr.send();
+		}
+
+		getAntiForgeryToken(function(token) {
+			if (document.readyState === "complete"
+				|| document.readyState === "loaded" 
+				|| document.readyState === "interactive") {
+				populateAntiForgery(token);
+				return;
+			}
+			document.addEventListener("DOMContentLoaded", function() {
+				populateAntiForgery(token);
+			}, false);
+		}, console.error);
+	 
+			
+
+	 
+		window.departmentHeader = {};
+		window.pageSectionTracker = {};
+		window.isResponsiveEnabled = true;
+		window.isRemoveSetHeights= false;
+		if (window.isRemoveSetHeights) {
+			document.documentElement.className += ' removeSetHeights';
+		}
+		window.mainMenuMediaQuery = 'screen and (max-width: 40em)';
+		window.isMobileBrowserIncludingTablets = false;
+		window.fixedResponsiveMenu = false;
+		window.fullWidthResponsiveMenu = false;
+		window.responsiveMenuHeight = '';
+		window.responsiveMenuFontSize = '';
+		window.isContentAdvisor = false;
+		(function () {
+			window.setSizeCookie = function () {
+				document.cookie = "dpi=" + window.devicePixelRatio + "; path=/";
+				document.cookie = "viewportWidth=" + window.innerWidth + "; path=/";
+				document.cookie = "viewportHeight=" + window.innerHeight + "; path=/";
+				if (screen && screen.width && screen.height) {
+					document.cookie = "screenWidth=" + screen.width + "; path=/";
+					document.cookie = "screenHeight=" + screen.height + "; path=/";
+				}
+				document.cookie = "responsiveGhost=1; path=/";
+			};
+
+			setSizeCookie();
+		}());
+	 
+		 
+
+	 
+	
+	 
+ 
+ 
+ 
+ 
+
+	
+	 
+	 
+	 
+		 Maps | Ellis County, KS - Official Website 
+
+		 
+			 
+	 
+	
+
+	 
+	 
+	 
+	 
+	 <!--
+	var intCountryCode = 840;
+	var order = '';
+//--> 
+	
+	 	 
+
+	 
+	 
+		window.Pages = window.Pages || {};
+		// FrontEnd RWD initialization
+		window.Pages.rwdReady = $.Deferred();
+		window.Pages.toolBarDeferred = $.Deferred();
+		window.Pages.rwdSetupComplete = $.Deferred();
+		window.Pages.megaMenuLoaded = $.Deferred();
+		window.Pages.angularToolbarComplete = $.Deferred();
+		window.Pages.frontEndToolbarComplete = $.Deferred();
+	 
+	 
+	 
+	
+	
+	
+	
+
+
+
+
+	 
+	 
+	 
+	 
+
+	 
+		setEditorVariables(false, 840);
+		function getPrintPreviewType() { return 0; } function printPreview() {pPreview(getPrintPreviewType()); }
+	 
+	 
+ 
+ 
+
+     jQuery(document).click(function (event) {
+	var target = jQuery(event.target);
+	if (target.attr('src') && target.parents('.image').length && target.parents('.widget').length) {
+		var text = target.attr('title');
+		
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Image',
+				eventAction: 'Image - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.is('button') || target.hasClass('button') || target.parents().hasClass('button')) {
+		var text = "";
+		if (target.parents('.button')[0]) {
+			text = target.parents('.button').first().text();
+		} else if (target.text().length) {
+			text = target.text();
+		} else if (target.attr('title').length) {
+			text = target.attr('title');
+		}
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Button',
+				eventAction: 'Button - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetCustomHtml').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Custom Html',
+				eventAction: 'Custom Html Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.editor').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Editor',
+				eventAction: 'Editor Link Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.GraphicLinks').length) {
+		var text = "";
+		var targetGraphicLink = target;
+		if (target.hasClass('widgetGraphicLinksLink')) {
+			targetGraphicLink = jQuery(target.children()[0]);
+		}
+		if (targetGraphicLink.hasClass('text')) {
+			text = targetGraphicLink.text();
+		} else if (targetGraphicLink.attr('src').length) {
+			if (targetGraphicLink.attr('alt').length) {
+				text = targetGraphicLink.attr('alt');
+			} else {
+				text = targetGraphicLink.attr('src');
+			}
+		} else {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Graphic Links',
+				eventAction: 'Graphic Link - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.InfoAdvanced').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Info Advanced',
+				eventAction: 'Info Advanced Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.list').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'List',
+				eventAction: 'List Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.megaMenuItem').length || target.parents('.topMenuItem').length) {
+		var megaMenuText = jQuery('.topMenuItem.mouseover').find('span').text();
+		var breadCrumbs = [];
+		jQuery('.breadCrumbs > li').each(function () {
+			 breadCrumbs.push(this.textContent);
+		});
+		var pageTitle = breadCrumbs.join('>');
+		var subTitleText = target.parents('.megaMenuItem').children('.widgetTitle').children().text();
+		var text = "";
+		if (pageTitle) {
+			text += pageTitle + " | ";
+		} else {
+			text += document.title + ' - ';
+		}
+		if (target.text() == "" && megaMenuText == "") {
+			text += "N/A";
+		} else if (target.text().length && megaMenuText.length) {
+			if (megaMenuText == target.text()) {
+				text += megaMenuText;
+			} else {
+				text += megaMenuText + " - " + subTitleText + " - " + target.text();
+			}
+		} else if (target.text() == "") {
+			text += megaMenuText;
+		} else {
+			text += target.text();
+		}
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Mega Menu',
+				eventAction: 'Mega Menu : ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetNewsFlash').length && target.parents('.widgetItem').length) {
+		var text = jQuery(target.parents('.widgetItem')[0]).find('.widgetTitle').children().text();
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'News Flash',
+				eventAction: 'News Flash - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.hasClass('widgetQuickLinksLink') || target.find('.widgetQuickLinksLink').length) {
+		var text = target.text();
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Quick Links',
+				eventAction: 'Quick Links - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.attr('src') && target.parents('.cpSlideshow').length) {
+		var text = target.attr('title');
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Slideshow',
+				eventAction: 'Slideshow - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetText').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Text',
+				eventAction: 'Text Link Clicked',
+				eventLabel: window.location.href
+			});
+	}
+}); 
+	 
+	 
+		 
+		 
+			 
+				 
+			 
+		 
+	 
+	 
+		 
+	 
+	 
+		 
+			 
+		 
+	 
+ 
+     
+ 
+ Skip to Main Content 
+ 
+     
+
+         
+
+
+
+     
+     
+     
+     
+     
+     
+     
+     
+
+     
+     
+         
+                 
+                    
+
+
+
+ 
+ 
+     
+         Create a Website Account   - Manage notification subscriptions, save form progress and more.    
+         
+	         Website Sign In 
+         
+     
+ 
+ 
+    $(document).ready(function () {
+        $('#signedOutToolbarCreateProfileButton').click(function (event) {
+            event.preventDefault();
+            window.location.href = '/MyAccount/ProfileCreate?from=url&url=/&dn=' + window.location.origin;
+        });
+
+			
+				$('#loggedOutToolbarSignInButton').click(function (event) {
+					event.preventDefault();
+					window.location.href = '/MyAccount/?from=url&url=' + encodeURIComponent(window.location.href.replace(window.location.origin, '')) + '&dn=' + window.location.host;
+				});
+			
+
+		if ('False' == 'True') {
+            $('#loggedOutToolbarSignInButton').hide();
+		}
+    })
+ 
+ 
+
+                 
+             
+                 
+                
+ 
+ 
+ 
+
+
+
+
+				 
+ 	 
+				                
+
+		 				
+	 
+	
+	 	
+ 
+	
+	 
+	 
+	 
+
+		$(document).ready(function () {
+			try {
+				// Minimum characters required before performing a search/autocomplete
+				var minPrefixLength = 3;
+				var autoCompleteDebounceDelay = 500;
+				var searchFieldSelector = "#searchField" + '3ce52aa8-a347-479b-ac3b-dd26e4d6c006';
+				var checkboxSelector = "#ysnSearchOnlyDept" + '3ce52aa8-a347-479b-ac3b-dd26e4d6c006';
+				var buttonSelector = ".widgetSearchButton" + '3ce52aa8-a347-479b-ac3b-dd26e4d6c006';
+				var autoCompleteCache = {};
+				var autoCompleteCacheKeys = [];
+				var autoCompleteCacheLimit = 25;
+				var currentAutoCompleteRequest = null;
+				var currentAutoCompleteRequestKey = null;
+				var autoCompleteDebounceTimer = null;
+				var autoCompleteDebounceKey = null;
+				var pendingAutoCompleteResponses = [];
+
+				function normalizeAutoCompleteTerm(term) {
+					return $.trim((term || "") + "").replace(/\s+/g, " ");
+				}
+
+				function shouldSearch(term) {
+					return normalizeAutoCompleteTerm(term).length >= minPrefixLength;
+				}
+
+				function getAutoCompleteUrl() {
+					return '/Search/AutoComplete' + ($(checkboxSelector).is(':checked') || false? '?departmentId=0' : '');
+				}
+
+				function getAutoCompleteCacheKey(requestUrl, term) {
+					return requestUrl + "|" + term.toLowerCase();
+				}
+
+				function cacheAutoCompleteResult(cacheKey, data) {
+					if (!Object.prototype.hasOwnProperty.call(autoCompleteCache, cacheKey)) {
+						autoCompleteCacheKeys.push(cacheKey);
+						if (autoCompleteCacheKeys.length > autoCompleteCacheLimit) {
+							delete autoCompleteCache[autoCompleteCacheKeys.shift()];
+						}
+					}
+					autoCompleteCache[cacheKey] = data;
+				}
+
+				function respondToPendingAutoComplete(data) {
+					var responses = pendingAutoCompleteResponses;
+					pendingAutoCompleteResponses = [];
+					for (var i = 0; i < responses.length; i++) {
+						responses[i](data);
+					}
+				}
+
+				function cancelPendingAutoComplete() {
+					clearTimeout(autoCompleteDebounceTimer);
+					autoCompleteDebounceKey = null;
+					if (currentAutoCompleteRequest != null) {
+						currentAutoCompleteRequest.abort();
+						currentAutoCompleteRequest = null;
+					}
+					currentAutoCompleteRequestKey = null;
+					respondToPendingAutoComplete([]);
+				}
+
+				function createWidgetAutoCompleteSource(options) {
+					return function (request, response) {
+						var term = normalizeAutoCompleteTerm(request.term);
+						if (!options.shouldSearch(term)) {
+							response([]);
+							return;
+						}
+
+						var requestUrl = options.url();
+						var cacheKey = getAutoCompleteCacheKey(requestUrl, term);
+						if (Object.prototype.hasOwnProperty.call(autoCompleteCache, cacheKey)) {
+							response(autoCompleteCache[cacheKey]);
+							if (options.success) {
+								options.success(autoCompleteCache[cacheKey]);
+							}
+							return;
+						}
+
+						if (currentAutoCompleteRequestKey === cacheKey || autoCompleteDebounceKey === cacheKey) {
+							pendingAutoCompleteResponses.push(response);
+							return;
+						}
+
+						cancelPendingAutoComplete();
+						autoCompleteDebounceKey = cacheKey;
+						pendingAutoCompleteResponses.push(response);
+						autoCompleteDebounceTimer = setTimeout(function () {
+							autoCompleteDebounceKey = null;
+							currentAutoCompleteRequestKey = cacheKey;
+							currentAutoCompleteRequest = $.ajax({
+								url: requestUrl,
+								dataType: "json",
+								timeout: options.timeout,
+								data: {
+									term: term,
+								},
+								success: function (data) {
+									if (currentAutoCompleteRequestKey === cacheKey) {
+										cacheAutoCompleteResult(cacheKey, data);
+										respondToPendingAutoComplete(data);
+										if (options.success) {
+											options.success(data);
+										}
+									}
+								},
+								error: function (xmlhttprequest, textstatus, message) {
+									if (textstatus === "abort") {
+										return;
+									}
+
+									if (options.error) {
+										options.error(xmlhttprequest, textstatus, message);
+									}
+
+									respondToPendingAutoComplete([]);
+								},
+								complete: function (xmlhttprequest) {
+									if (currentAutoCompleteRequest === xmlhttprequest) {
+										currentAutoCompleteRequest = null;
+										currentAutoCompleteRequestKey = null;
+									}
+								}
+							});
+						}, options.delay);
+					};
+				}
+
+				// click handler for search buttons
+				$(buttonSelector).click(function (e) {
+					e.preventDefault();
+					var $btn = $(this);
+					var $field = $btn.siblings(".widgetSearchBox");
+					var term = $field.val() + "";
+					if (!shouldSearch(term)) {
+						// do nothing until user types enough characters
+						$field.focus();
+						return;
+					}
+
+					if ($(checkboxSelector).is(':checked') || false)
+					{
+						doWidgetSearch($.trim(term), Number(0));
+					}
+					else {
+						doWidgetSearch($.trim(term), 0);
+					}
+				});
+
+				// enter key handler for the search field
+				$(searchFieldSelector).keypress(function (e) {
+					var code = e.which || e.keyCode;
+					if (code === 13) {
+						e.preventDefault();
+						var $this = $(this);
+						var term = $this.val() + "";
+						if (!shouldSearch(term)) {
+							// do nothing until user types enough characters
+							$this.focus();
+							return false;
+						}
+
+						if ($(checkboxSelector).is(':checked') || false) {
+							doWidgetSearch($.trim(term), Number(0));
+						} else {
+							doWidgetSearch($.trim(term), 0);
+						}
+						return false;
+					}
+					return true;
+				});
+
+				// autocomplete: set minLength and guard source
+				if (true) {
+					var $searchField = $(searchFieldSelector).autocomplete({
+						minLength: minPrefixLength,
+						source: createWidgetAutoCompleteSource({
+							delay: autoCompleteDebounceDelay,
+							timeout: 10000,
+							shouldSearch: shouldSearch,
+							url: getAutoCompleteUrl,
+							success: function () {
+								$('.autoCompleteError').remove();
+							},
+							error: function (xmlhttprequest, textstatus, message) {
+								if (textstatus === "timeout") {
+									if ($(searchFieldSelector).siblings('.autoCompleteError').length == 0)
+										$('<span class="autoCompleteError"><p class="alert error">Search autocomplete is currently not responding. Please try again later.</p></span>').insertAfter($(searchFieldSelector));
+								}
+							}
+						}),
+						html: true,
+						delay: 0,
+						select: function (event, ui) {
+							$(this).val(ui.item.value);
+							$(this).next().click();
+						}
+					});
+
+					$searchField.data("ui-autocomplete")._renderItem = function (ul, item) {
+						return $("<li class=\"itemList\"></li>")
+							.data("ui-autocomplete-item", item)
+							.append("<a>" + item.label + "</a>")
+							.appendTo(ul);
+					};
+				}
+
+				// keep searchBtnApplyQuery consistent with prefix rule
+				window.searchBtnApplyQuery = function() {
+					var $field = $(searchFieldSelector);
+					var term = $field.val() + "";
+					if (shouldSearch(term)) {
+						// update href for the icon/button (if present)
+						var btn = document.getElementById("btnSearchIcon");
+						if (btn) btn.href = "/Search?searchPhrase=" + encodeURIComponent($.trim(term));
+					} else {
+						var btn = document.getElementById("btnSearchIcon");
+						if (btn) btn.href = "#";
+					}
+				};
+			}
+			catch(e) {} //we're going to eat this error. Autocomplete won't work but we dont wan't to break anything else on the page.
+		});
+	 
+
+	 
+				 
+		 
+			 
+						 
+
+			 Search 
+		 
+
+	 
+
+
+ 
+	  
+		.widgetSearch ::-webkit-input-placeholder {
+		color: #fff;
+	  }
+		.widgetSearch :-moz-placeholder { /* Firefox 18- */
+	   color: #fff;
+	}
+		.widgetSearch ::-moz-placeholder {  /* Firefox 19+ */
+	   color: #fff;
+	}
+	.widgetSearch :-ms-input-placeholder {
+	   color: #fff;
+	}
+	
+
+	.widgetSearch .widgetBody .widgetSearchBox3ce52aa8-a347-479b-ac3b-dd26e4d6c006
+	{
+		color: #fff;
+		background: url(/ImageRepository/Document?documentID=1965) no-repeat left bottom #003d75; padding: 50px 50px 50px 20px; border: 0; font-family: Libre Franklin; font-weight: 600; font-size: 1.1em;
+	}
+	.widgetSearch .widgetBody .widgetSearchButton3ce52aa8-a347-479b-ac3b-dd26e4d6c006
+	{
+		margin: 50px 20px 0 0;
+	}
+	.widgetSearch .widgetSearch-onlyDept3ce52aa8-a347-479b-ac3b-dd26e4d6c006
+	{
+		display: inline-block;
+		color: #333;
+		
+		
+		 padding-top: 10px;
+	}
+	#ysnSearchOnlyDept3ce52aa8-a347-479b-ac3b-dd26e4d6c006
+	{
+		position: relative;
+		top: .125em;
+	}
+
+ 
+
+ 
+ 
+
+
+
+ 
+	//Updates search icons href to have the correct queryString
+	function searchBtnApplyQuery() {
+		document.getElementById("btnSearchIcon").href = "/Search?searchPhrase=" + document.getElementById("searchField3ce52aa8-a347-479b-ac3b-dd26e4d6c006").value;
+	}
+ 
+
+ 
+
+	   
+
+	   
+
+			   
+
+
+	 
+ 
+      Government  			      About Us  			      Services  			      I Want To...  			 
+ 
+
+
+	 
+		(function () {
+			function setupMenu() {
+				const menuID = 'mainNavMenu';
+				const menuType = MAIN_MENU;
+
+				//setup menu manager properties for main menu
+				if (!menuManager.mobileMainNav && true)
+					menuManager.adjustMainItemsWidth('#' + menuID);
+				menuManager.isMainMenuEditable = false;
+				menuManager.mainMenuMaxSubMenuLevels = 4;
+				menuManager.setMOMMode(2, menuType);
+
+				//Init main menu
+				const setupDraggable = menuManager.isMainMenuEditable;
+				const urlToGetHiddenMenus = '/Pages/MenuMain/HiddenMainSubMenus?pageID=1&moduleID=&themeID=1&menuContainerID=mainNav';
+
+				menuManager.setupMenu(menuID, 'mainNav', menuType, setupDraggable, urlToGetHiddenMenus);
+				menuManager.mainMenuInit = true;
+				menuManager.mainMenuTextResizer = true;
+				if (1.00 > 0)
+					menuManager.mainMenuTextResizerRatio = 1.00;
+				if (window.isResponsiveEnabled)
+					menuManager.mainMenuReady.resolve();
+
+			}
+
+			if (document.readyState === "complete"
+				|| document.readyState === "loaded"
+				|| document.readyState === "interactive") {
+				setupMenu();
+				return;
+			}
+
+			document.addEventListener("DOMContentLoaded", setupMenu);
+		})();
+	 
+
+
+ 	 
+				                
+
+
+
+	 
+ 	 
+				                
+
+
+
+	 
+ 	 
+				                
+
+
+
+	 
+ 	 
+				                
+
+
+
+	 
+ 
+ 
+ 
+ 	 
+				                
+
+
+
+	 
+ 
+ 
+
+
+
+
+		 
+		 
+			 
+			 
+		 
+			 
+				$(window).on("load", function () {
+					$.when(window.Pages.rwdSetupComplete)
+						.done(function () {
+							renderExternalBannerSlideshow('banner1',
+								{"BannerOptionID":1,"ThemeID":1,"SlotName":"banner1","Name":"Default","IsDefault":true,"BannerMode":2,"SlideShowSlideTiming":"5","SlideshowTransition":0,"SlideShowTransitionTiming":"1","ImageScale":true,"ImageAlignment":1,"ImageScroll":true,"MuteSound":true,"VideoType":0,"Status":40,"SlideshowControlsPosition":0,"SlideshowControlsAlignment":0,"SlideshowBannerControlsColorScheme":0,"DisplayVideoPauseButton":false,"VideoPauseButtonAlignment":1,"VideoPauseButtonControlsAlignment":0,"VideoPauseButtonStyle":"#FFFFFF","VideoPauseButtonBackgroundStyle":"#000000","VideoPauseButtonAlignmentClass":"alignRight viewport","DisplaySlideshowPauseButton":true,"SlideshowControlsColor":"#FFFFFF","SlideshowControlsBackgroundColor":"#000000","SlideshowPauseButtonClass":"isHidden","BannerImages":[{"BannerImageID":115,"BannerOptionID":1,"FileName":"/ImageRepository/Document?documentID=3056","Height":243,"Width":1800,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":1,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":""}],"BannerVideos":[{"BannerVideoID":1,"BannerOptionID":1,"VideoFileName":"","ImageFileName":"EmptyBannerBkg201707060843569061.png","IsLink":false,"LinkAddress":null,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","VideoFileID":"00000000-0000-0000-0000-000000000000","ImageFileID":"00000000-0000-0000-0000-000000000000","VideoWidth":0,"VideoHeight":0,"ImageWidth":0,"ImageHeight":0,"LinkedVideoUrl":"","RecordStatus":0,"AltText":null}],"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/"},
+								'/App_Themes/Interior/Images/',
+								'Rotating');
+						});
+				});
+			 
+
+ 
+ 
+ 
+ 
+ 
+ 		 
+			 Home Government Departments Election Maps 
+		 
+
+	   
+    
+ 
+	
+	 
+		
+
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+
+				 
+
+Maps		 
+	
+		 
+			
+
+		 				
+	 
+	
+	 	
+ 
+	     
+
+
+         County Commissioner Districts County School Districts County Voting Districts Ellis City County Commissioner Districts/Hays City Map Polling Locations/Hays City Victoria City Improvement Districts Map Tax District Representative Districts Township Map 
+     
+
+ 
+	$(document).ready(function (e) {		
+	    renderSlideshowIfApplicable($('#divEditor' + 'b996d58e-a2e8-4967-adb3-7d41ec735fb4'));
+	});
+ 
+ 
+
+	   
+
+	   
+
+			   
+
+
+		 
+
+	 
+
+	
+	 
+
+	 
+ 
+ 	 
+				                
+
+
+
+	 
+ 
+ 
+ 	 
+				                
+
+
+
+	 
+ 
+
+
+
+
+
+	 
+	 
+					 Polling Site Locations 
+			 
+	 
+					 Election Results 
+			 
+	 
+					 Filing Packets 
+			 
+	 
+					 Maps 
+			 
+	 
+					 Voter Registration Locations 
+			 
+	 
+					 Candidate Filings 
+			 
+	 
+					 Sales Tax Election 
+			 
+	 
+					 Forms 
+			 
+	 
+					 Election Worker Application 
+			 
+	 
+					 Express Vote Demonstration Video 
+			 
+	 
+					 Political Signs 
+			 
+	 
+					 Required Website Information 
+			 
+	 
+					 Election Security Grant 
+			 
+	 
+					 2026 General Election 
+			 
+
+	 
+
+
+	 
+		(function () {
+			function setupSecondaryMenuProperties() {
+				//setup menu manager properties for secondary menu
+				menuManager.isSideMenuEditable = false;
+				menuManager.sideMenuMaxSubMenuLevels = 4;
+				menuManager.sideMenuHasCustomLinks = false;
+			}
+
+			if (document.readyState === "loading") {
+				document.addEventListener("DOMContentLoaded", setupSecondaryMenuProperties, { once: true });
+				return;
+			}
+
+			setupSecondaryMenuProperties();
+		})();
+	 
+	 
+		(function () {
+			function setupLazyLoadSecondaryNav() {
+				//Init secondary menu
+				var setupDraggable = menuManager.isSideMenuEditable;
+				var urlToGetHiddenMenus = '/Pages/MenuSecondary/HiddenSecondarySubMenus?pageID=427&moduleID=&themeID=1&menuContainerID=secondaryNav';
+				var menuID = 'secondaryMenusecondaryNav';
+				menuManager.setMOMMode(2, SIDE_MENU);
+				menuManager.setupMenu(menuID, 'secondaryNav', SIDE_MENU, setupDraggable, urlToGetHiddenMenus);
+			}
+
+			if (document.readyState === "loading") {
+				document.addEventListener("DOMContentLoaded", setupLazyLoadSecondaryNav, { once: true });
+				return;
+			}
+
+			setupLazyLoadSecondaryNav();
+		})();
+	 
+
+
+
+
+ 	 
+				                
+
+
+
+	 
+ 
+ 
+ 
+ 
+ 	 
+				                
+
+		 				
+	 
+	
+	 	
+ 
+
+
+
+
+ 
+	 
+		 
+				 
+	 
+	 
+		 
+				 
+					 
+
+ 
+	 
+		 
+			 Notifications 
+		 
+	 
+ 
+		 .fancyButton8.fancyButton:link,.fancyButton8.fancyButton:visited, .fancyButton8div.fancyButton{
+	padding-top: 40px;
+	background-image: url('/ImageRepository/Document?documentID=1985');
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+.fancyButton8.fancyButton:hover,.fancyButton8.fancyButton:focus,.fancyButton8.fancyButton:active,.fancyButton8.fancyButton.hover{
+	background-image: url('/ImageRepository/Document?documentID=1986');
+}
+.fancyButton8.fancyButton:link > span,.fancyButton8.fancyButton:visited > span, .fancyButton8div.fancyButton > span{
+}
+.fancyButton8.fancyButton:hover > span,.fancyButton8.fancyButton:focus > span,.fancyButton8.fancyButton:active > span,.fancyButton8.fancyButton.hover > span{
+}
+.fancyButton8.fancyButton .text{
+	color: #032b4f;
+	font-size: 1em;
+	font-family: "Libre Franklin";
+	text-align: center;
+	font-style: normal;
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+.fancyButton8.fancyButton:hover .text,.fancyButton8.fancyButton:focus .text,.fancyButton8.fancyButton:active .text,.fancyButton8.fancyButton.hover .text{
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+ 
+
+  
+
+ 
+	 
+		 
+			 Agendas & Minutes 
+		 
+	 
+ 
+		 .fancyButton142.fancyButton:link,.fancyButton142.fancyButton:visited, .fancyButton142div.fancyButton{
+	padding-top: 40px;
+	background-image: url('/ImageRepository/Document?documentID=1979');
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+.fancyButton142.fancyButton:hover,.fancyButton142.fancyButton:focus,.fancyButton142.fancyButton:active,.fancyButton142.fancyButton.hover{
+	background-image: url('/ImageRepository/Document?documentID=1980');
+}
+.fancyButton142.fancyButton:link > span,.fancyButton142.fancyButton:visited > span, .fancyButton142div.fancyButton > span{
+}
+.fancyButton142.fancyButton:hover > span,.fancyButton142.fancyButton:focus > span,.fancyButton142.fancyButton:active > span,.fancyButton142.fancyButton.hover > span{
+}
+.fancyButton142.fancyButton .text{
+	color: #032b4f;
+	font-size: 1em;
+	font-family: "Libre Franklin";
+	text-align: center;
+	font-style: normal;
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+.fancyButton142.fancyButton:hover .text,.fancyButton142.fancyButton:focus .text,.fancyButton142.fancyButton:active .text,.fancyButton142.fancyButton.hover .text{
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+ 
+
+  
+
+ 
+	 
+		 
+			 Report a Concern 
+		 
+	 
+ 
+		 .fancyButton143.fancyButton:link,.fancyButton143.fancyButton:visited, .fancyButton143div.fancyButton{
+	padding-top: 40px;
+	background-image: url('/ImageRepository/Document?documentID=1989');
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+.fancyButton143.fancyButton:hover,.fancyButton143.fancyButton:focus,.fancyButton143.fancyButton:active,.fancyButton143.fancyButton.hover{
+	background-image: url('/ImageRepository/Document?documentID=1990');
+}
+.fancyButton143.fancyButton:link > span,.fancyButton143.fancyButton:visited > span, .fancyButton143div.fancyButton > span{
+}
+.fancyButton143.fancyButton:hover > span,.fancyButton143.fancyButton:focus > span,.fancyButton143.fancyButton:active > span,.fancyButton143.fancyButton.hover > span{
+}
+.fancyButton143.fancyButton .text{
+	color: #032b4f;
+	font-size: 1em;
+	font-family: "Libre Franklin";
+	text-align: center;
+	font-style: normal;
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+.fancyButton143.fancyButton:hover .text,.fancyButton143.fancyButton:focus .text,.fancyButton143.fancyButton:active .text,.fancyButton143.fancyButton.hover .text{
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+ 
+
+  
+
+ 
+	 
+		 
+			 County Maps 
+		 
+	 
+ 
+		 .fancyButton144.fancyButton:link,.fancyButton144.fancyButton:visited, .fancyButton144div.fancyButton{
+	padding-top: 40px;
+	background-image: url('/ImageRepository/Document?documentID=1983');
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+.fancyButton144.fancyButton:hover,.fancyButton144.fancyButton:focus,.fancyButton144.fancyButton:active,.fancyButton144.fancyButton.hover{
+	background-image: url('/ImageRepository/Document?documentID=1984');
+}
+.fancyButton144.fancyButton:link > span,.fancyButton144.fancyButton:visited > span, .fancyButton144div.fancyButton > span{
+}
+.fancyButton144.fancyButton:hover > span,.fancyButton144.fancyButton:focus > span,.fancyButton144.fancyButton:active > span,.fancyButton144.fancyButton.hover > span{
+}
+.fancyButton144.fancyButton .text{
+	color: #032b4f;
+	font-size: 1em;
+	font-family: "Libre Franklin";
+	text-align: center;
+	font-style: normal;
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+.fancyButton144.fancyButton:hover .text,.fancyButton144.fancyButton:focus .text,.fancyButton144.fancyButton:active .text,.fancyButton144.fancyButton.hover .text{
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+ 
+
+  
+
+ 
+	 
+		 
+			 Real Property Search Options 
+		 
+	 
+ 
+		 .fancyButton231.fancyButton:link,.fancyButton231.fancyButton:visited, .fancyButton231div.fancyButton{
+	padding-top: 40px;
+	background-image: url('/ImageRepository/Document?documentID=1987');
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+.fancyButton231.fancyButton:hover,.fancyButton231.fancyButton:focus,.fancyButton231.fancyButton:active,.fancyButton231.fancyButton.hover{
+	background-image: url('/ImageRepository/Document?documentID=1988');
+}
+.fancyButton231.fancyButton:link > span,.fancyButton231.fancyButton:visited > span, .fancyButton231div.fancyButton > span{
+}
+.fancyButton231.fancyButton:hover > span,.fancyButton231.fancyButton:focus > span,.fancyButton231.fancyButton:active > span,.fancyButton231.fancyButton.hover > span{
+}
+.fancyButton231.fancyButton .text{
+	color: #032b4f;
+	font-size: 1em;
+	font-family: "Libre Franklin";
+	text-align: center;
+	font-style: normal;
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+.fancyButton231.fancyButton:hover .text,.fancyButton231.fancyButton:focus .text,.fancyButton231.fancyButton:active .text,.fancyButton231.fancyButton.hover .text{
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+ 
+
+  
+
+ 
+	 
+		 
+			 Tax Search 
+		 
+	 
+ 
+		 .fancyButton145.fancyButton:link,.fancyButton145.fancyButton:visited, .fancyButton145div.fancyButton{
+	padding-top: 40px;
+	background-image: url('/ImageRepository/Document?documentID=1991');
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+.fancyButton145.fancyButton:hover,.fancyButton145.fancyButton:focus,.fancyButton145.fancyButton:active,.fancyButton145.fancyButton.hover{
+	background-image: url('/ImageRepository/Document?documentID=1992');
+}
+.fancyButton145.fancyButton:link > span,.fancyButton145.fancyButton:visited > span, .fancyButton145div.fancyButton > span{
+}
+.fancyButton145.fancyButton:hover > span,.fancyButton145.fancyButton:focus > span,.fancyButton145.fancyButton:active > span,.fancyButton145.fancyButton.hover > span{
+}
+.fancyButton145.fancyButton .text{
+	color: #032b4f;
+	font-size: 1em;
+	font-family: "Libre Franklin";
+	text-align: center;
+	font-style: normal;
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+.fancyButton145.fancyButton:hover .text,.fancyButton145.fancyButton:focus .text,.fancyButton145.fancyButton:active .text,.fancyButton145.fancyButton.hover .text{
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+ 
+
+  
+
+ 
+	 
+		 
+			 Careers 
+		 
+	 
+ 
+		 .fancyButton244.fancyButton:link,.fancyButton244.fancyButton:visited, .fancyButton244div.fancyButton{
+	padding-top: 40px;
+	background-image: url('/ImageRepository/Document?documentID=5151');
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+.fancyButton244.fancyButton:hover,.fancyButton244.fancyButton:focus,.fancyButton244.fancyButton:active,.fancyButton244.fancyButton.hover{
+	background-image: url('/ImageRepository/Document?documentID=5151');
+}
+.fancyButton244.fancyButton:link > span,.fancyButton244.fancyButton:visited > span, .fancyButton244div.fancyButton > span{
+}
+.fancyButton244.fancyButton:hover > span,.fancyButton244.fancyButton:focus > span,.fancyButton244.fancyButton:active > span,.fancyButton244.fancyButton.hover > span{
+}
+.fancyButton244.fancyButton .text{
+	color: #032b4f;
+	font-size: 1em;
+	font-family: "Libre Franklin";
+	text-align: center;
+	font-style: normal;
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+.fancyButton244.fancyButton:hover .text,.fancyButton244.fancyButton:focus .text,.fancyButton244.fancyButton:active .text,.fancyButton244.fancyButton.hover .text{
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+ 
+
+  
+				 
+			 
+		 
+	 
+			 
+ 
+ 
+
+	   
+
+	   
+
+			   
+
+
+	 
+ 
+ 
+ 
+ 	 
+				                
+
+		 				
+	 
+	
+	 	
+
+ 
+	   
+
+	   
+	 
+	
+	 	
+
+ 
+	   
+
+	   
+	 
+	
+	 	
+     
+
+
+
+
+
+	 
+			 
+		 
+								 
+	 
+	 
+		 
+					 
+						 
+
+ 
+	 
+ 						 
+					 
+					 
+						 
+
+ 
+	Ellis County, KS 
+Administrative Center 
+718 Main Street 
+Hays, KS 67601 
+Phone:  785-628-9410 
+ 						 
+					 
+		 
+	 
+	 
+
+	 
+
+	 
+
+
+
+ 
+	//Render slideshow if info advacned items contain one.
+	$(document).ready(function (e) {
+		$('#divInfoAdv1f4c942f-6d85-411c-860a-a79c3edb7f05 .InfoAdvanced.widgetItem').each(function () {
+			renderSlideshowIfApplicable($(this));		
+		});
+	});
+ 
+	   
+
+	   
+	 
+	
+	 	
+
+ 
+	   
+	 	
+ 
+
+		 
+			$(document).ready(function () {
+				setWidgetServiceClicking($("#widgetShareHeaderb7fae8f0-549e-4fa0-b9d6-7018b41568e8"), true, function () {
+					var $widgetBody = $('#widgetShareBodyb7fae8f0-549e-4fa0-b9d6-7018b41568e8');
+
+					if ($widgetBody.is(':visible')) {
+						var menuItems = $('.widgetItem a', $widgetBody);
+
+						$(menuItems[0]).focus();
+
+						$('.widgetItem', $widgetBody).unbind("keydown").bind("keydown", function (e) {
+
+							if (e.which === 9) {
+								var index = menuItems.index(e.target);
+
+								if ((index === 0 && e.shiftKey) || (index === (menuItems.length - 1) && !e.shiftKey)) {
+									$("#widgetShareHeaderb7fae8f0-549e-4fa0-b9d6-7018b41568e8").trigger('click').focus();
+								}
+							}
+			});
+					} else {
+						$('.widgetItem', $widgetBody).unbind("keydown");
+					}
+				});
+			});
+		 
+
+	 
+			 
+				 
+	 
+     
+         
+	 
+		 
+                 Facebook 
+                 Twitter 
+                 Pinterest 
+                 Delicious 
+                 Blogger 
+                 LinkedIn 
+		 
+	 
+
+         
+     
+
+	 
+
+ 
+
+	   
+	 	
+ 
+
+		 
+			$(document).ready(function () {
+				setWidgetServiceClicking($("#widgetSiteToolsHeader1b234279-fa74-4134-a666-cc5844c7f516"), true, function () {
+					var $widgetBody = $('#widgetSiteToolsBody1b234279-fa74-4134-a666-cc5844c7f516');
+
+					if ($widgetBody.is(':visible')) {
+						var menuItems = $('.widgetItem a', $widgetBody);
+
+						$(menuItems[0]).focus();
+
+						$('.widgetItem', $widgetBody).unbind("keydown").bind("keydown", function (e) {
+
+							if (e.which === 9) {
+								var index = menuItems.index(e.target);
+
+								if ((index === 0 && e.shiftKey) || (index === (menuItems.length - 1) && !e.shiftKey)) {
+									$("#widgetSiteToolsHeader1b234279-fa74-4134-a666-cc5844c7f516").trigger('click').focus();
+								}
+							}
+						});
+					} else {
+						$('.widgetItem', $widgetBody).unbind("keydown");
+					}
+				});
+			});
+		 
+
+	 
+				 
+			 
+		 
+	 
+          
+	 
+		 
+					 Home 
+					 My Account 
+					 Printer Friendly 
+					 Email Page 
+					 Contact Us 
+					 RSS 
+					 Site Map 
+					 Translate Page 
+					 Notifications 
+					 Documents 
+		 
+	 
+
+		  
+	 
+
+	 
+
+
+
+ 
+
+	   
+
+	   
+
+			 				
+	 
+	
+	 	
+
+ 
+	   
+
+	   
+
+			 				
+	 
+	
+	 	
+	 
+
+
+
+
+
+
+
+
+	 
+			 
+		 
+					 Quick Links 
+						 
+	 
+	 
+         
+				 
+					 
+
+
+
+
+     
+         Community Resources 
+         
+     
+
+
+
+
+     
+         Employee Access 
+         
+     
+
+
+
+
+     
+         Agenda & Minutes 
+         
+     
+
+
+
+
+     
+         Careers 
+         
+     
+					 
+				 
+		 
+        
+	 
+	 
+	 
+	 
+		 /QuickLinks.aspx 
+	 
+
+	 
+ 
+
+	   
+
+	   
+
+			 				
+	 
+	
+	 	
+
+ 
+	   
+
+	   
+
+			 				
+	 
+	
+	 	
+	 
+
+
+
+
+
+
+
+
+	 
+			 
+		 
+					 Helpful Links 
+						 
+	 
+	 
+         
+				 
+					 
+
+
+
+
+     
+         Home 
+         
+     
+
+
+
+
+     
+         Contact Us 
+         
+     
+
+
+
+
+     
+         Accessibility 
+         
+     
+
+
+
+
+     
+         Copyright Notices 
+         
+     
+
+
+
+
+     
+         Government Websites by CivicPlus® 
+         
+     
+					 
+				 
+		 
+        
+	 
+	 
+	 
+	 
+		 /QuickLinks.aspx 
+	 
+
+	 
+ 
+
+	   
+
+	   
+
+			 				
+	 
+	
+	 	
+
+ 
+	   
+
+	   
+
+			 				
+	 
+	
+	 	
+ 
+
+
+
+
+ 
+	 
+		 
+			 Connect With Us 
+				 
+	 
+	 
+		 
+					 
+						 
+
+ 
+	 
+		 
+			 Facebook 
+		 
+	 
+ 
+		 .fancyButton138.fancyButton:link,.fancyButton138.fancyButton:visited, .fancyButton138div.fancyButton{
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 35px;
+	background-image: url('/ImageRepository/Document?documentID=1971');
+	background-repeat: no-repeat;
+	background-position: left center;
+}
+.fancyButton138.fancyButton:hover,.fancyButton138.fancyButton:focus,.fancyButton138.fancyButton:active,.fancyButton138.fancyButton.hover{
+	background-image: url('/ImageRepository/Document?documentID=1972');
+}
+.fancyButton138.fancyButton:link > span,.fancyButton138.fancyButton:visited > span, .fancyButton138div.fancyButton > span{
+}
+.fancyButton138.fancyButton:hover > span,.fancyButton138.fancyButton:focus > span,.fancyButton138.fancyButton:active > span,.fancyButton138.fancyButton.hover > span{
+}
+.fancyButton138.fancyButton .text{
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+.fancyButton138.fancyButton:hover .text,.fancyButton138.fancyButton:focus .text,.fancyButton138.fancyButton:active .text,.fancyButton138.fancyButton.hover .text{
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+ 
+
+  
+
+ 
+	 
+		 
+			 Twitter 
+		 
+	 
+ 
+		 .fancyButton139.fancyButton:link,.fancyButton139.fancyButton:visited, .fancyButton139div.fancyButton{
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 35px;
+	background-image: url('/ImageRepository/Document?documentID=1975');
+	background-repeat: no-repeat;
+	background-position: left center;
+}
+.fancyButton139.fancyButton:hover,.fancyButton139.fancyButton:focus,.fancyButton139.fancyButton:active,.fancyButton139.fancyButton.hover{
+	background-image: url('/ImageRepository/Document?documentID=1976');
+}
+.fancyButton139.fancyButton:link > span,.fancyButton139.fancyButton:visited > span, .fancyButton139div.fancyButton > span{
+}
+.fancyButton139.fancyButton:hover > span,.fancyButton139.fancyButton:focus > span,.fancyButton139.fancyButton:active > span,.fancyButton139.fancyButton.hover > span{
+}
+.fancyButton139.fancyButton .text{
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+.fancyButton139.fancyButton:hover .text,.fancyButton139.fancyButton:focus .text,.fancyButton139.fancyButton:active .text,.fancyButton139.fancyButton.hover .text{
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+ 
+
+  
+					 
+			 
+		 
+	 
+			 
+ 
+ 
+
+	   
+
+	   
+
+			   
+		 				
+	 
+	
+	 	
+ 
+	 
+	 
+		 Let us serve you. 
+	 
+
+	 
+
+	   
+
+	   
+
+			   
+
+
+	 
+ 
+ 
+
+
+
+
+		 
+			 
+				$(window).on("load", function () {
+					$.when(window.Pages.rwdSetupComplete)
+						.done(function () {
+							renderBanner('banner3-8',
+								'banner3',
+								{"BannerOptionID":8,"ThemeID":1,"SlotName":"banner3","Name":"Default","IsDefault":true,"BannerMode":1,"SlideShowSlideTiming":"5","SlideshowTransition":0,"SlideShowTransitionTiming":"1","ImageScale":true,"ImageAlignment":1,"ImageScroll":true,"MuteSound":true,"VideoType":0,"Status":40,"SlideshowControlsPosition":0,"SlideshowControlsAlignment":0,"SlideshowBannerControlsColorScheme":0,"DisplayVideoPauseButton":false,"VideoPauseButtonAlignment":1,"VideoPauseButtonControlsAlignment":0,"VideoPauseButtonStyle":"#FFFFFF","VideoPauseButtonBackgroundStyle":"#000000","VideoPauseButtonAlignmentClass":"alignRight viewport","DisplaySlideshowPauseButton":true,"SlideshowControlsColor":"#FFFFFF","SlideshowControlsBackgroundColor":"#000000","SlideshowPauseButtonClass":"isHidden","BannerImages":[{"BannerImageID":14,"BannerOptionID":8,"FileName":"/ImageRepository/Document?documentID=1961","Height":537,"Width":1800,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":1,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":null}],"BannerVideos":[{"BannerVideoID":8,"BannerOptionID":8,"VideoFileName":"","ImageFileName":"EmptyBannerBkg201707121208083972.png","IsLink":false,"LinkAddress":null,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","VideoFileID":"00000000-0000-0000-0000-000000000000","ImageFileID":"00000000-0000-0000-0000-000000000000","VideoWidth":0,"VideoHeight":0,"ImageWidth":0,"ImageHeight":0,"LinkedVideoUrl":"","RecordStatus":0,"AltText":null}],"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/"},
+								{"BannerImageID":14,"BannerOptionID":8,"FileName":"/ImageRepository/Document?documentID=1961","Height":537,"Width":1800,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":1,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":null},
+								'/App_Themes/Interior/Images/',
+								'<img alt="" class="bannerObject" src="/ImageRepository/Document?documentID=1961" />');
+						});
+				});
+			 
+
+ 
+ 
+ 
+
+             
+         
+     
+
+ 
+
+ 
+	 
+		 
+			 Loading 
+			 
+				 
+					 
+				 
+			 
+		 
+		 
+			 
+				 
+				Loading
+			 
+		 
+		 
+			 Do Not Show Again 
+			 Close 
+		 
+	 
+ 
+
+ 
+ 
+ 
+ 
+
+		$(document).ready(function () {
+			var filter = {
+				targetId: '427',
+				targetType: 1
+			}
+
+			new SplashModalRender().triggerRender(filter);
+		});
+ 
+
+
+	
+	
+	
+	
+
+
+
+	 function dynamicStretchContainers () {Core.Layout.stretchContainers('#featureColumn, #structuralContainer3');} 
+
+
+
+
+
+
+     
+     !function(){var b=function(){window.__AudioEyeSiteHash = "5c9a637d0fb44de5544445b42acc4634"; var a=document.createElement("script");a.src="https://wsmcdn.audioeye.com/aem.js";a.type="text/javascript";a.setAttribute("async","");document.getElementsByTagName("body")[0].appendChild(a)};"complete"!==document.readyState?window.addEventListener?window.addEventListener("load",b):window.attachEvent&&window.attachEvent("onload",b):b()}(); 
+
+
+     
+        $(function () {
+            document.cookie = "responsiveGhost=0; path=/";
+        });
+        $(window).on("load", function () {
+            $('body').addClass('doneLoading').removeClass('hideContent');
+
+            if ($('#404Content').length > 0)
+                $('div#bodyWrapper').css('padding', '0px');
+        });
+     
+
+     
+         
+            body.hideContent {
+                opacity: 1 !important;
+            }
+         
+     
+
+        
+ 
+	 
+
+		 
+			 Arrow Left 
+			 
+		 
+
+		 
+			 Arrow Right 
+			 
+		 
+
+	 
+ 
+     loadCSS('//fonts.googleapis.com/css?family=Cormorant+Garamond:500,600,700,regular|Libre+Franklin:500,600,700,regular|'); 
+    
+
+     [] 
+         
+             
+                 
+                     Slideshow Left Arrow 
+                     
+                         
+                     
+                 
+                 
+                     Slideshow Right Arrow 
+                     
+                         
+                     
+                 
+             
+         
+    
+	
+	
+
+     
+ 
+ 

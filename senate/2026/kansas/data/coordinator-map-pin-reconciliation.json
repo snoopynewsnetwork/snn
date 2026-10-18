@@ -1,0 +1,47 @@
+{
+  "status": "pass",
+  "checked_utc": "2026-10-18T17:00:49.040328+00:00",
+  "scope": "Coordinator reconciles one external peer metadata pin after both actual workers finished. No raw map/geometry/native constituent/report change.",
+  "map_worker_original_freeze": {
+    "frozen_utc": "2026-10-18T16:15:16.677725+00:00",
+    "pins": [
+      {
+        "path": "asset-manifest.json",
+        "sha256": "2f71d031b9b7684e518307cbe2dd815e48f4d19c91de6e0f59113500d89938c7",
+        "bytes": 113998
+      },
+      {
+        "path": "readonly-pins.json",
+        "sha256": "a6250608904c76e7a6d48f9fa8c59b2c7eb500bc09d3894e4255e7021b4fc9ec",
+        "bytes": 139592
+      },
+      {
+        "path": "../precinct-maps.md",
+        "sha256": "596f6b7a8312bfd721f7640bec7a7b5fd6c5bf333832874ad96ed39697eb5ee6",
+        "bytes": 18460
+      }
+    ],
+    "scope": "Research package frozen for coordinator review; no November/current physical crosswalk approval",
+    "next_step": "Run validate.py without modifying originals"
+  },
+  "official_final_artifact_manifest_sha256": "bee337445e3b27d2458b329003a140e9faf806fd0df5e6988d53e7fc529461bb",
+  "external_metadata_changes": [
+    {
+      "path": "../data/results-sources/county-inventory.json",
+      "map_worker_freeze_pin": {
+        "bytes": 676652,
+        "sha256": "1826bb09561a1703f4f48a1783b85b33e8bb919c7d93e4e32760fec244d2bcd8"
+      },
+      "final_official_worker_pin": {
+        "bytes": 676890,
+        "sha256": "4a9e86ee76f2f5a32d4036dd1a3ea350eb274992556a77f06cee77ff01849fce"
+      }
+    }
+  ],
+  "checks": [
+    "Final official worker check-only:46 PASS/422requests/1607assets; current county inventory hash matches its final manifest.",
+    "All105 exact county order and23 priority keys unchanged; native-source-scopes and vendor-extracts hashes unchanged from map freeze.",
+    "Every original map body/geometry/attribute/native object/report hash passed independent review before repin.",
+    "No current results-to-map join, geographic approval or result allocation introduced."
+  ]
+}

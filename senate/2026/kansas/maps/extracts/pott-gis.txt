@@ -1,0 +1,2884 @@
+
+ 
+ 
+ 
+
+	 
+ 
+				 (function(w,d,s,l,i){w.GAMeasurementID='G-J4MRPR3DM6';w[l]=w[l]||[];w[l].push({'gtm.start':
+				new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+				j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+				'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+				})(window,document,'script','cpDataLayerGA4','GTM-K73C5PS'); 
+				 
+				 
+					var enableTelemetry = 'false'
+					var aiConfig = {
+					instrumentationKey: '1cde048e-3185-4906-aa46-c92a7312b60f'						
+					}
+					var appInsights = window.appInsights || function (a) { function b(a) { c[a] = function () { var b = arguments; c.queue.push(function () { c[a].apply(c, b) }) } } var c = { config: a }, d = document, e = window; setTimeout(function () { var b = d.createElement('script'); b.src = a.url || 'https://js.monitor.azure.com/scripts/a/ai.0.js', d.getElementsByTagName('script')[0].parentNode.appendChild(b) }); try { c.cookie = d.cookie } catch (a) { } c.queue = []; for (var f = ['Event', 'Exception', 'Metric', 'PageView', 'Trace', 'Dependency']; f.length;)b('track' + f.pop()); if (b('setAuthenticatedUserContext'), b('clearAuthenticatedUserContext'), b('startTrackEvent'), b('stopTrackEvent'), b('startTrackPage'), b('stopTrackPage'), b('flush'), !a.disableExceptionTracking) { f = 'onerror', b('_' + f); var g = e[f]; e[f] = function (a, b, d, e, h) { var i = g && g(a, b, d, e, h); return !0 !== i && c['_' + f](a, b, d, e, h), i } } return c }(aiConfig);
+					window.appInsights = appInsights, appInsights.queue && 0 === appInsights.queue.length;
+					// Add telemetry initializer
+					appInsights.queue.push(function() {
+						appInsights.context.addTelemetryInitializer(function(envelope) {
+							var telemetryItem = envelope.data.baseData;
+							// To check the telemetry item’s type:
+							if (!false)
+							{
+								//If the telemetry is not enabled, we still want to capture Google map custom event, so only allow that
+								if (envelope.name.indexOf('.Event') == -1)
+									return false;
+							}
+						});
+					});						
+					appInsights.trackPageView();
+				 
+	 
+		function populateAntiForgery(token) {
+			var input = document.createElement("input");
+			input.name = "__RequestVerificationToken";
+			input.type = "hidden";
+			input.value = token;
+			var absPat = /^https?:\/\/|^\/\//i;
+			var forms = document.getElementsByTagName("form");
+			for (var i = 0; i < forms.length; i++) {
+				if (forms[i].method == "post" &&
+					!forms[i].querySelector('[name="__RequestVerificationToken"]') &&
+					!absPat.test(forms[i].getAttribute("action"))) {
+					forms[i].appendChild(input.cloneNode());
+				}
+			}
+		}
+
+		function getAntiForgeryToken(callback, error) {
+			var xhr = new XMLHttpRequest();
+			xhr.open("GET", "/antiforgery");
+			xhr.addEventListener("load", function() {
+				try {
+					if (this.status !== 200) {
+						throw Error("Invalid status. Could not retrieve antiforgery token.");
+					}
+					var obj = JSON.parse(this.responseText);
+					callback(obj.token);
+				} catch (e) {
+					typeof error === "function" && error(e);
+				}
+			});
+			xhr.send();
+		}
+
+		getAntiForgeryToken(function(token) {
+			if (document.readyState === "complete"
+				|| document.readyState === "loaded" 
+				|| document.readyState === "interactive") {
+				populateAntiForgery(token);
+				return;
+			}
+			document.addEventListener("DOMContentLoaded", function() {
+				populateAntiForgery(token);
+			}, false);
+		}, console.error);
+	 
+			
+
+	 
+		window.departmentHeader = {};
+		window.pageSectionTracker = {};
+		window.isResponsiveEnabled = true;
+		window.isRemoveSetHeights= true;
+		if (window.isRemoveSetHeights) {
+			document.documentElement.className += ' removeSetHeights';
+		}
+		window.mainMenuMediaQuery = 'screen and (max-width: 40em)';
+		window.isMobileBrowserIncludingTablets = false;
+		window.fixedResponsiveMenu = false;
+		window.fullWidthResponsiveMenu = false;
+		window.responsiveMenuHeight = '';
+		window.responsiveMenuFontSize = '';
+		window.isContentAdvisor = false;
+		(function () {
+			window.setSizeCookie = function () {
+				document.cookie = "dpi=" + window.devicePixelRatio + "; path=/";
+				document.cookie = "viewportWidth=" + window.innerWidth + "; path=/";
+				document.cookie = "viewportHeight=" + window.innerHeight + "; path=/";
+				if (screen && screen.width && screen.height) {
+					document.cookie = "screenWidth=" + screen.width + "; path=/";
+					document.cookie = "screenHeight=" + screen.height + "; path=/";
+				}
+				document.cookie = "responsiveGhost=1; path=/";
+			};
+
+			setSizeCookie();
+		}());
+	 
+		 
+
+	 
+	
+	 
+ 
+ 
+ 
+
+	
+	 
+	 
+	 
+		 Geographic Information Systems (GIS) | Pottawatomie County, KS - Official Website 
+
+		 
+		 
+			 
+	 
+	
+
+	 
+	 
+	 
+	 
+	 <!--
+	var intCountryCode = 840;
+	var order = '';
+//--> 
+	
+ 	 	 
+
+	 
+	 
+		window.Pages = window.Pages || {};
+		// FrontEnd RWD initialization
+		window.Pages.rwdReady = $.Deferred();
+		window.Pages.toolBarDeferred = $.Deferred();
+		window.Pages.rwdSetupComplete = $.Deferred();
+		window.Pages.megaMenuLoaded = $.Deferred();
+		window.Pages.angularToolbarComplete = $.Deferred();
+		window.Pages.frontEndToolbarComplete = $.Deferred();
+	 
+	 
+	 
+	
+	
+	
+	
+
+
+
+
+	 
+	 
+	 
+	 
+
+	 
+		setEditorVariables(false, 840);
+		function getPrintPreviewType() { return 0; } function printPreview() {pPreview(getPrintPreviewType()); }
+	 
+	 
+ 
+ 
+
+     jQuery(document).click(function (event) {
+	var target = jQuery(event.target);
+	if (target.attr('src') && target.parents('.image').length && target.parents('.widget').length) {
+		var text = target.attr('title');
+		
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Image',
+				eventAction: 'Image - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.is('button') || target.hasClass('button') || target.parents().hasClass('button')) {
+		var text = "";
+		if (target.parents('.button')[0]) {
+			text = target.parents('.button').first().text();
+		} else if (target.text().length) {
+			text = target.text();
+		} else if (target.attr('title').length) {
+			text = target.attr('title');
+		}
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Button',
+				eventAction: 'Button - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetCustomHtml').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Custom Html',
+				eventAction: 'Custom Html Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.editor').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Editor',
+				eventAction: 'Editor Link Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.GraphicLinks').length) {
+		var text = "";
+		var targetGraphicLink = target;
+		if (target.hasClass('widgetGraphicLinksLink')) {
+			targetGraphicLink = jQuery(target.children()[0]);
+		}
+		if (targetGraphicLink.hasClass('text')) {
+			text = targetGraphicLink.text();
+		} else if (targetGraphicLink.attr('src').length) {
+			if (targetGraphicLink.attr('alt').length) {
+				text = targetGraphicLink.attr('alt');
+			} else {
+				text = targetGraphicLink.attr('src');
+			}
+		} else {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Graphic Links',
+				eventAction: 'Graphic Link - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.InfoAdvanced').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Info Advanced',
+				eventAction: 'Info Advanced Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.list').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'List',
+				eventAction: 'List Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.megaMenuItem').length || target.parents('.topMenuItem').length) {
+		var megaMenuText = jQuery('.topMenuItem.mouseover').find('span').text();
+		var breadCrumbs = [];
+		jQuery('.breadCrumbs > li').each(function () {
+			 breadCrumbs.push(this.textContent);
+		});
+		var pageTitle = breadCrumbs.join('>');
+		var subTitleText = target.parents('.megaMenuItem').children('.widgetTitle').children().text();
+		var text = "";
+		if (pageTitle) {
+			text += pageTitle + " | ";
+		} else {
+			text += document.title + ' - ';
+		}
+		if (target.text() == "" && megaMenuText == "") {
+			text += "N/A";
+		} else if (target.text().length && megaMenuText.length) {
+			if (megaMenuText == target.text()) {
+				text += megaMenuText;
+			} else {
+				text += megaMenuText + " - " + subTitleText + " - " + target.text();
+			}
+		} else if (target.text() == "") {
+			text += megaMenuText;
+		} else {
+			text += target.text();
+		}
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Mega Menu',
+				eventAction: 'Mega Menu : ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetNewsFlash').length && target.parents('.widgetItem').length) {
+		var text = jQuery(target.parents('.widgetItem')[0]).find('.widgetTitle').children().text();
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'News Flash',
+				eventAction: 'News Flash - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.hasClass('widgetQuickLinksLink') || target.find('.widgetQuickLinksLink').length) {
+		var text = target.text();
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Quick Links',
+				eventAction: 'Quick Links - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.attr('src') && target.parents('.cpSlideshow').length) {
+		var text = target.attr('title');
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Slideshow',
+				eventAction: 'Slideshow - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetText').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Text',
+				eventAction: 'Text Link Clicked',
+				eventLabel: window.location.href
+			});
+	}
+}); 
+	 
+	 
+		 
+		 
+			 
+				 
+			 
+		 
+	 
+	 
+		 
+	 
+	 
+		 
+			 
+		 
+	 
+ 
+     
+ 
+ Skip to Main Content 
+ 
+     
+
+         
+
+
+
+     
+     
+     
+     
+     
+     
+     
+     
+
+     
+     
+         
+                 
+                    
+
+
+
+ 
+ 
+     
+         Create a Website Account   - Manage notification subscriptions, save form progress and more.    
+         
+	         Website Sign In 
+         
+     
+ 
+ 
+    $(document).ready(function () {
+        $('#signedOutToolbarCreateProfileButton').click(function (event) {
+            event.preventDefault();
+            window.location.href = '/MyAccount/ProfileCreate?from=url&url=/&dn=' + window.location.origin;
+        });
+
+			
+				$('#loggedOutToolbarSignInButton').click(function (event) {
+					event.preventDefault();
+					window.location.href = '/MyAccount/?from=url&url=' + encodeURIComponent(window.location.href.replace(window.location.origin, '')) + '&dn=' + window.location.host;
+				});
+			
+
+		if ('False' == 'True') {
+            $('#loggedOutToolbarSignInButton').hide();
+		}
+    })
+ 
+ 
+
+                 
+             
+                 
+                
+ 
+ 
+ 
+
+
+
+
+				 
+ 
+      County Offices   			      Services   			      I Want To...   			      Residents   			      Home  			 
+ 
+
+
+	 
+		(function () {
+			function setupMenu() {
+				const menuID = 'mainNavMenu';
+				const menuType = MAIN_MENU;
+
+				//setup menu manager properties for main menu
+				if (!menuManager.mobileMainNav && true)
+					menuManager.adjustMainItemsWidth('#' + menuID);
+				menuManager.isMainMenuEditable = false;
+				menuManager.mainMenuMaxSubMenuLevels = 4;
+				menuManager.setMOMMode(2, menuType);
+
+				//Init main menu
+				const setupDraggable = menuManager.isMainMenuEditable;
+				const urlToGetHiddenMenus = '/Pages/MenuMain/HiddenMainSubMenus?pageID=1&moduleID=&themeID=23&menuContainerID=mainNav';
+
+				menuManager.setupMenu(menuID, 'mainNav', menuType, setupDraggable, urlToGetHiddenMenus);
+				menuManager.mainMenuInit = true;
+				menuManager.mainMenuTextResizer = false;
+				if (1.00 > 0)
+					menuManager.mainMenuTextResizerRatio = 1.00;
+				if (window.isResponsiveEnabled)
+					menuManager.mainMenuReady.resolve();
+
+			}
+
+			if (document.readyState === "complete"
+				|| document.readyState === "loaded"
+				|| document.readyState === "interactive") {
+				setupMenu();
+				return;
+			}
+
+			document.addEventListener("DOMContentLoaded", setupMenu);
+		})();
+	 
+
+
+ 	 
+				                
+
+
+
+	 
+ 	 
+				                
+
+
+
+	 
+ 	 
+				                
+
+
+
+	 
+ 	 
+				                
+
+
+
+	 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+		 
+		 
+			 
+			 
+		 
+			 
+				$(window).on("load", function () {
+					$.when(window.Pages.rwdSetupComplete)
+						.done(function () {
+							renderExternalBannerSlideshow('banner1',
+								{"BannerOptionID":66,"ThemeID":23,"SlotName":"banner1","Name":"Default","IsDefault":true,"BannerMode":2,"SlideShowSlideTiming":"5","SlideshowTransition":0,"SlideShowTransitionTiming":"1","ImageScale":true,"ImageAlignment":1,"ImageScroll":true,"MuteSound":true,"VideoType":0,"Status":40,"SlideshowControlsPosition":0,"SlideshowControlsAlignment":0,"SlideshowBannerControlsColorScheme":0,"DisplayVideoPauseButton":false,"VideoPauseButtonAlignment":1,"VideoPauseButtonControlsAlignment":0,"VideoPauseButtonStyle":"#FFFFFF","VideoPauseButtonBackgroundStyle":"#000000","VideoPauseButtonAlignmentClass":"alignRight viewport","DisplaySlideshowPauseButton":true,"SlideshowControlsColor":"#FFFFFF","SlideshowControlsBackgroundColor":"#000000","SlideshowPauseButtonClass":"isHidden","BannerImages":[{"BannerImageID":144,"BannerOptionID":66,"FileName":"/ImageRepository/Document?documentID=8572","Height":290,"Width":2200,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":1,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":""},{"BannerImageID":145,"BannerOptionID":66,"FileName":"/ImageRepository/Document?documentID=8573","Height":290,"Width":2200,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":2,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":""},{"BannerImageID":146,"BannerOptionID":66,"FileName":"/ImageRepository/Document?documentID=8574","Height":290,"Width":2200,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":3,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":""},{"BannerImageID":148,"BannerOptionID":66,"FileName":"/ImageRepository/Document?documentID=8576","Height":290,"Width":2200,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":5,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":""}],"BannerVideos":[{"BannerVideoID":7,"BannerOptionID":66,"VideoFileName":"","ImageFileName":"EmptyBannerBkg202402171541501875.png","IsLink":false,"LinkAddress":null,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","VideoFileID":"00000000-0000-0000-0000-000000000000","ImageFileID":"00000000-0000-0000-0000-000000000000","VideoWidth":0,"VideoHeight":0,"ImageWidth":0,"ImageHeight":0,"LinkedVideoUrl":"","RecordStatus":0,"AltText":null}],"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/"},
+								'/App_Themes/2024 - Interior/Images/',
+								'Rotating');
+						});
+				});
+			 
+
+ 
+ 
+ 	 
+				                
+
+		 				
+	 
+	
+	 	
+     
+
+
+
+
+
+	 
+			 
+		 
+								 
+	 
+	 
+		 
+					 
+						 
+
+ 
+	 Stay Connected Have news and updates sent right to your phone or inbox. Sign up for notifications! 
+ 						 
+					 
+		 
+	 
+	 
+
+	 
+
+	 
+
+
+
+ 
+	//Render slideshow if info advacned items contain one.
+	$(document).ready(function (e) {
+		$('#divInfoAdv86d4bf0c-cde6-400d-8972-26c308964c75 .InfoAdvanced.widgetItem').each(function () {
+			renderSlideshowIfApplicable($(this));		
+		});
+	});
+ 
+	   
+
+	   
+
+			 				
+	 
+	
+	 	
+
+ 
+	   
+
+	   
+
+			 				
+	 
+	
+	 	
+ 
+
+
+
+
+ 
+	 
+		 
+				 
+	 
+	 
+		 
+				 
+					 
+
+ 
+	 
+		 
+			 Notification Sign Up 
+		 
+	 
+ 
+		 .fancyButton283.fancyButton:link,.fancyButton283.fancyButton:visited, .fancyButton283div.fancyButton{
+	background-color: rgb(19, 65, 102);
+	padding-top: 17px;
+	padding-bottom: 17px;
+	padding-right: 10px;
+	padding-left: 10px;
+	-webkit-border-top-left-radius: 8px;
+	-moz-border-top-left-radius: 8px;
+	-khtml-border-top-left-radius: 8px;
+	border-top-left-radius: 8px;
+	-webkit-border-top-right-radius: 8px;
+	-moz-border-top-right-radius: 8px;
+	-khtml-border-top-right-radius: 8px;
+	border-top-right-radius: 8px;
+	-webkit-border-bottom-left-radius: 8px;
+	-moz-border-bottom-left-radius: 8px;
+	-khtml-border-bottom-left-radius: 8px;
+	border-bottom-left-radius: 8px;
+	-webkit-border-bottom-right-radius: 8px;
+	-moz-border-bottom-right-radius: 8px;
+	-khtml-border-bottom-right-radius: 8px;
+	border-bottom-right-radius: 8px;
+	background-repeat: no-repeat;
+	background-position: left top;
+	border-top: 2px solid rgb(224, 196, 59);
+	border-left: 2px solid rgb(224, 196, 59);
+	border-right: 2px solid rgb(224, 196, 59);
+	border-bottom: 2px solid rgb(224, 196, 59);
+transition: all .3s ease-in-out;
+max-width: 275px;
+margin: 0 auto;
+border: solid 2px rgb(224, 196, 59)!important;}
+.fancyButton283.fancyButton:hover,.fancyButton283.fancyButton:focus,.fancyButton283.fancyButton:active,.fancyButton283.fancyButton.hover{
+	background-color: rgb(224, 196, 59);
+	background-repeat: no-repeat;
+	background-position: left top;
+border: solid 2px rgb(224, 196, 59)!important;}
+.fancyButton283.fancyButton:link > span,.fancyButton283.fancyButton:visited > span, .fancyButton283div.fancyButton > span{
+}
+.fancyButton283.fancyButton:hover > span,.fancyButton283.fancyButton:focus > span,.fancyButton283.fancyButton:active > span,.fancyButton283.fancyButton.hover > span{
+}
+.fancyButton283.fancyButton .text{
+	color: rgb(255, 255, 255);
+	font-size: 1.15em;
+	font-family: "Figtree";
+	font-weight: 700;
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+transition: all .3s ease-in-out;text-transform: uppercase;
+line-height: 1.2;}
+.fancyButton283.fancyButton:hover .text,.fancyButton283.fancyButton:focus .text,.fancyButton283.fancyButton:active .text,.fancyButton283.fancyButton.hover .text{
+	color: rgb(19, 65, 102);
+	text-decoration: underline;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+ 
+
+  
+				 
+			 
+		 
+	 
+			 
+ 
+ 
+
+	   
+
+	   
+
+			 				
+	 
+	
+	 	
+
+ 
+	   
+
+	   
+
+			 				
+	 
+	
+	 	
+ 
+	
+	 
+	 
+	 
+
+		$(document).ready(function () {
+			try {
+				// Minimum characters required before performing a search/autocomplete
+				var minPrefixLength = 3;
+				var autoCompleteDebounceDelay = 500;
+				var searchFieldSelector = "#searchField" + 'fd74ce1b-4e0e-4011-8655-d3e3a5e51dc6';
+				var checkboxSelector = "#ysnSearchOnlyDept" + 'fd74ce1b-4e0e-4011-8655-d3e3a5e51dc6';
+				var buttonSelector = ".widgetSearchButton" + 'fd74ce1b-4e0e-4011-8655-d3e3a5e51dc6';
+				var autoCompleteCache = {};
+				var autoCompleteCacheKeys = [];
+				var autoCompleteCacheLimit = 25;
+				var currentAutoCompleteRequest = null;
+				var currentAutoCompleteRequestKey = null;
+				var autoCompleteDebounceTimer = null;
+				var autoCompleteDebounceKey = null;
+				var pendingAutoCompleteResponses = [];
+
+				function normalizeAutoCompleteTerm(term) {
+					return $.trim((term || "") + "").replace(/\s+/g, " ");
+				}
+
+				function shouldSearch(term) {
+					return normalizeAutoCompleteTerm(term).length >= minPrefixLength;
+				}
+
+				function getAutoCompleteUrl() {
+					return '/Search/AutoComplete' + ($(checkboxSelector).is(':checked') || false? '?departmentId=0' : '');
+				}
+
+				function getAutoCompleteCacheKey(requestUrl, term) {
+					return requestUrl + "|" + term.toLowerCase();
+				}
+
+				function cacheAutoCompleteResult(cacheKey, data) {
+					if (!Object.prototype.hasOwnProperty.call(autoCompleteCache, cacheKey)) {
+						autoCompleteCacheKeys.push(cacheKey);
+						if (autoCompleteCacheKeys.length > autoCompleteCacheLimit) {
+							delete autoCompleteCache[autoCompleteCacheKeys.shift()];
+						}
+					}
+					autoCompleteCache[cacheKey] = data;
+				}
+
+				function respondToPendingAutoComplete(data) {
+					var responses = pendingAutoCompleteResponses;
+					pendingAutoCompleteResponses = [];
+					for (var i = 0; i < responses.length; i++) {
+						responses[i](data);
+					}
+				}
+
+				function cancelPendingAutoComplete() {
+					clearTimeout(autoCompleteDebounceTimer);
+					autoCompleteDebounceKey = null;
+					if (currentAutoCompleteRequest != null) {
+						currentAutoCompleteRequest.abort();
+						currentAutoCompleteRequest = null;
+					}
+					currentAutoCompleteRequestKey = null;
+					respondToPendingAutoComplete([]);
+				}
+
+				function createWidgetAutoCompleteSource(options) {
+					return function (request, response) {
+						var term = normalizeAutoCompleteTerm(request.term);
+						if (!options.shouldSearch(term)) {
+							response([]);
+							return;
+						}
+
+						var requestUrl = options.url();
+						var cacheKey = getAutoCompleteCacheKey(requestUrl, term);
+						if (Object.prototype.hasOwnProperty.call(autoCompleteCache, cacheKey)) {
+							response(autoCompleteCache[cacheKey]);
+							if (options.success) {
+								options.success(autoCompleteCache[cacheKey]);
+							}
+							return;
+						}
+
+						if (currentAutoCompleteRequestKey === cacheKey || autoCompleteDebounceKey === cacheKey) {
+							pendingAutoCompleteResponses.push(response);
+							return;
+						}
+
+						cancelPendingAutoComplete();
+						autoCompleteDebounceKey = cacheKey;
+						pendingAutoCompleteResponses.push(response);
+						autoCompleteDebounceTimer = setTimeout(function () {
+							autoCompleteDebounceKey = null;
+							currentAutoCompleteRequestKey = cacheKey;
+							currentAutoCompleteRequest = $.ajax({
+								url: requestUrl,
+								dataType: "json",
+								timeout: options.timeout,
+								data: {
+									term: term,
+								},
+								success: function (data) {
+									if (currentAutoCompleteRequestKey === cacheKey) {
+										cacheAutoCompleteResult(cacheKey, data);
+										respondToPendingAutoComplete(data);
+										if (options.success) {
+											options.success(data);
+										}
+									}
+								},
+								error: function (xmlhttprequest, textstatus, message) {
+									if (textstatus === "abort") {
+										return;
+									}
+
+									if (options.error) {
+										options.error(xmlhttprequest, textstatus, message);
+									}
+
+									respondToPendingAutoComplete([]);
+								},
+								complete: function (xmlhttprequest) {
+									if (currentAutoCompleteRequest === xmlhttprequest) {
+										currentAutoCompleteRequest = null;
+										currentAutoCompleteRequestKey = null;
+									}
+								}
+							});
+						}, options.delay);
+					};
+				}
+
+				// click handler for search buttons
+				$(buttonSelector).click(function (e) {
+					e.preventDefault();
+					var $btn = $(this);
+					var $field = $btn.siblings(".widgetSearchBox");
+					var term = $field.val() + "";
+					if (!shouldSearch(term)) {
+						// do nothing until user types enough characters
+						$field.focus();
+						return;
+					}
+
+					if ($(checkboxSelector).is(':checked') || false)
+					{
+						doWidgetSearch($.trim(term), Number(0));
+					}
+					else {
+						doWidgetSearch($.trim(term), 0);
+					}
+				});
+
+				// enter key handler for the search field
+				$(searchFieldSelector).keypress(function (e) {
+					var code = e.which || e.keyCode;
+					if (code === 13) {
+						e.preventDefault();
+						var $this = $(this);
+						var term = $this.val() + "";
+						if (!shouldSearch(term)) {
+							// do nothing until user types enough characters
+							$this.focus();
+							return false;
+						}
+
+						if ($(checkboxSelector).is(':checked') || false) {
+							doWidgetSearch($.trim(term), Number(0));
+						} else {
+							doWidgetSearch($.trim(term), 0);
+						}
+						return false;
+					}
+					return true;
+				});
+
+				// autocomplete: set minLength and guard source
+				if (true) {
+					var $searchField = $(searchFieldSelector).autocomplete({
+						minLength: minPrefixLength,
+						source: createWidgetAutoCompleteSource({
+							delay: autoCompleteDebounceDelay,
+							timeout: 10000,
+							shouldSearch: shouldSearch,
+							url: getAutoCompleteUrl,
+							success: function () {
+								$('.autoCompleteError').remove();
+							},
+							error: function (xmlhttprequest, textstatus, message) {
+								if (textstatus === "timeout") {
+									if ($(searchFieldSelector).siblings('.autoCompleteError').length == 0)
+										$('<span class="autoCompleteError"><p class="alert error">Search autocomplete is currently not responding. Please try again later.</p></span>').insertAfter($(searchFieldSelector));
+								}
+							}
+						}),
+						html: true,
+						delay: 0,
+						select: function (event, ui) {
+							$(this).val(ui.item.value);
+							$(this).next().click();
+						}
+					});
+
+					$searchField.data("ui-autocomplete")._renderItem = function (ul, item) {
+						return $("<li class=\"itemList\"></li>")
+							.data("ui-autocomplete-item", item)
+							.append("<a>" + item.label + "</a>")
+							.appendTo(ul);
+					};
+				}
+
+				// keep searchBtnApplyQuery consistent with prefix rule
+				window.searchBtnApplyQuery = function() {
+					var $field = $(searchFieldSelector);
+					var term = $field.val() + "";
+					if (shouldSearch(term)) {
+						// update href for the icon/button (if present)
+						var btn = document.getElementById("btnSearchIcon");
+						if (btn) btn.href = "/Search?searchPhrase=" + encodeURIComponent($.trim(term));
+					} else {
+						var btn = document.getElementById("btnSearchIcon");
+						if (btn) btn.href = "#";
+					}
+				};
+			}
+			catch(e) {} //we're going to eat this error. Autocomplete won't work but we dont wan't to break anything else on the page.
+		});
+	 
+
+	 
+				 
+		 
+			 
+						 
+
+			 Search 
+		 
+
+	 
+
+
+ 
+	  
+		.widgetSearch ::-webkit-input-placeholder {
+		color: #383838;
+	  }
+		.widgetSearch :-moz-placeholder { /* Firefox 18- */
+	   color: #383838;
+	}
+		.widgetSearch ::-moz-placeholder {  /* Firefox 19+ */
+	   color: #383838;
+	}
+	.widgetSearch :-ms-input-placeholder {
+	   color: #383838;
+	}
+	
+
+	.widgetSearch .widgetBody .widgetSearchBoxfd74ce1b-4e0e-4011-8655-d3e3a5e51dc6
+	{
+		color: #383838;
+		background-color: #FFFFFF;
+border: none;
+border-radius: 8px;
+height: 60px;
+font-family: Figtree;
+font-weight: 500;
+font-size: 18px;
+padding: 0 60px 0 20px;
+	}
+	.widgetSearch .widgetBody .widgetSearchButtonfd74ce1b-4e0e-4011-8655-d3e3a5e51dc6
+	{
+		margin: 6px 3px 0 0;
+	}
+	.widgetSearch .widgetSearch-onlyDeptfd74ce1b-4e0e-4011-8655-d3e3a5e51dc6
+	{
+		display: inline-block;
+		color: #333;
+		
+		
+		 padding-top: 10px;
+	}
+	#ysnSearchOnlyDeptfd74ce1b-4e0e-4011-8655-d3e3a5e51dc6
+	{
+		position: relative;
+		top: .125em;
+	}
+
+ 
+
+ 
+ 
+
+
+
+ 
+	//Updates search icons href to have the correct queryString
+	function searchBtnApplyQuery() {
+		document.getElementById("btnSearchIcon").href = "/Search?searchPhrase=" + document.getElementById("searchFieldfd74ce1b-4e0e-4011-8655-d3e3a5e51dc6").value;
+	}
+ 
+
+ 
+
+	   
+
+	   
+
+			   
+
+
+	 
+ 
+ 
+ 
+ 
+ 
+ 		 
+			 Home County Offices Departments Geographic Information Systems (GIS) 
+		 
+
+	   
+    
+ 
+	
+	 
+		
+
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+
+				 
+
+Geographic Information Systems (GIS)		 
+	
+		 
+			
+
+		 				
+	 
+	
+	 	
+ 
+	     
+
+
+         Overview The Pottawatomie County Geographic Information Systems (GIS) Office is the county’s mapping provider. The office creates and updates digital geographic based data.  Examples of data layers GIS maintains include: Address Points Ag Use Creeks Emergency Districts (fire, rescue, police, ambulance) Historic (trails, schools, cemeteries) Parcel Boundaries Road Centerlines School Districts Subdivisions Taxing Districts Zoning The GIS data supports the Appraiser, Clerk, Finance, Noxious Weed, Public Works, Sheriff, and Zoning Offices by providing digital data and paper maps. Services GIS data also supports the public by providing: District Maps  - Formatted for 8.5" x 11" printing, these pdf files illustrate county districts.         Interactive Web Maps  - Search, Zoom, and Identify many features of the County. Parcel Maps  - View ownership lines on an aerial photo base.         Additional Services  - Custom maps, digital data, property owner and tract description support   
+     
+
+ 
+	$(document).ready(function (e) {		
+	    renderSlideshowIfApplicable($('#divEditor' + '3827b19e-0fac-4c51-8f1c-9ff558aad00c'));
+	});
+ 
+ 
+
+	   
+
+	   
+
+			   
+
+
+		 
+
+	 
+
+	
+	 
+
+	 
+ 
+ 	 
+				                
+
+		 				
+	 
+	
+	 	
+     
+
+
+
+
+
+	 
+			 
+		 
+					 Contact Us 
+								 
+	 
+	 
+		 
+					 
+						 
+
+ 
+	 Susan Snapp GIS Director  Email Administration Building 207 N. 1st St. P.O. Box 261 Westmoreland, KS 66549 Ph: 785-457-3337 Hours Monday - Friday 8 a.m. - 4:00 p.m. Staff Directory 
+ 						 
+					 
+		 
+	 
+	 
+
+	 
+
+	 
+
+
+
+ 
+	//Render slideshow if info advacned items contain one.
+	$(document).ready(function (e) {
+		$('#divInfoAdvd55f1a3a-2c8c-4f6c-b563-1f8196c24134 .InfoAdvanced.widgetItem').each(function () {
+			renderSlideshowIfApplicable($(this));		
+		});
+	});
+ 
+	   
+
+	   
+
+			   
+
+
+	 
+ 
+ 
+ 	 
+				                
+
+
+
+	 
+ 
+
+
+
+
+
+	 
+	 
+		 
+			 District Maps 
+		 
+			 
+	 
+		 
+			 Interactive Web Maps 
+		 
+			 
+	 
+		 
+			 Parcel Maps 
+		 
+			 
+
+	 
+
+
+	 
+		(function () {
+			function setupSecondaryMenuProperties() {
+				//setup menu manager properties for secondary menu
+				menuManager.isSideMenuEditable = false;
+				menuManager.sideMenuMaxSubMenuLevels = 4;
+				menuManager.sideMenuHasCustomLinks = false;
+			}
+
+			if (document.readyState === "loading") {
+				document.addEventListener("DOMContentLoaded", setupSecondaryMenuProperties, { once: true });
+				return;
+			}
+
+			setupSecondaryMenuProperties();
+		})();
+	 
+
+	 
+		(function () {
+			function setupAccordionSecondaryNav() {
+				var $menuContainer = $('#secondaryNav');
+
+				$menuContainer.find('*[id^="SideItem"]').each(function () {
+					var ids = $('[id="' + this.id + '"]');
+					if (ids.length > 1)
+						$.each(ids, function (index, value) {
+							value.id = value.id + '_' + index;
+						});
+				});
+
+				$menuContainer.find('.hasAccordionChildren .openAccordionNav').off('click.secondaryNav').on('click.secondaryNav', function (e) {
+					e.preventDefault();
+					showHideAccordionMenuForSecondaryNav($(this));
+				});
+
+				$menuContainer.find(".grippy").each(function () {
+					menuManager.setupDraggableElement($(this), SIDE_MENU, '#secondaryNav');
+				});
+
+				$menuContainer.find("li").each(function () {
+					menuManager.setupDroppableAccordionElement($(this), SIDE_MENU);
+				});
+			}
+
+			if (document.readyState === "loading") {
+				document.addEventListener("DOMContentLoaded", setupAccordionSecondaryNav, { once: true });
+				return;
+			}
+
+			setupAccordionSecondaryNav();
+		})();
+	 
+
+
+
+ 	 
+				                
+
+
+
+	 
+ 
+ 
+ 
+ 
+ 	 
+				                
+
+		 				
+	 
+	
+	 	
+ 
+
+
+
+
+ 
+	 
+		 
+				 
+	 
+	 
+		 
+				 
+					 
+
+ 
+	 
+		 
+			 Burn Permits 
+		 
+	 
+ 
+		 .fancyButton297.fancyButton:link,.fancyButton297.fancyButton:visited, .fancyButton297div.fancyButton{
+	background-color: rgb(19, 65, 102);
+	padding-top: 22px;
+	padding-bottom: 22px;
+	padding-right: 95px;
+	padding-left: 24px;
+	-webkit-border-top-left-radius: 10px;
+	-moz-border-top-left-radius: 10px;
+	-khtml-border-top-left-radius: 10px;
+	border-top-left-radius: 10px;
+	-webkit-border-top-right-radius: 10px;
+	-moz-border-top-right-radius: 10px;
+	-khtml-border-top-right-radius: 10px;
+	border-top-right-radius: 10px;
+	-webkit-border-bottom-left-radius: 10px;
+	-moz-border-bottom-left-radius: 10px;
+	-khtml-border-bottom-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+	-webkit-border-bottom-right-radius: 10px;
+	-moz-border-bottom-right-radius: 10px;
+	-khtml-border-bottom-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	background-repeat: no-repeat;
+	background-position: right top;
+	border-top: 3px solid rgb(224, 196, 59);
+	border-left: 3px solid rgb(224, 196, 59);
+	border-right: 3px solid rgb(224, 196, 59);
+	border-bottom: 3px solid rgb(224, 196, 59);
+min-height: 50px;
+transition: all .3s ease-in-out;}
+.fancyButton297.fancyButton:hover,.fancyButton297.fancyButton:focus,.fancyButton297.fancyButton:active,.fancyButton297.fancyButton.hover{
+	background-color: rgb(224, 196, 59);
+	background-repeat: no-repeat;
+	background-position: right top;
+}
+.fancyButton297.fancyButton:link > span,.fancyButton297.fancyButton:visited > span, .fancyButton297div.fancyButton > span{
+}
+.fancyButton297.fancyButton:hover > span,.fancyButton297.fancyButton:focus > span,.fancyButton297.fancyButton:active > span,.fancyButton297.fancyButton.hover > span{
+}
+.fancyButton297.fancyButton .text{
+	color: rgb(255, 255, 255);
+	font-size: 1.5em;
+	font-family: "Figtree";
+	text-align: left;
+	font-weight: 700;
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+line-height: 1.2;}
+.fancyButton297.fancyButton:hover .text,.fancyButton297.fancyButton:focus .text,.fancyButton297.fancyButton:active .text,.fancyButton297.fancyButton.hover .text{
+	color: rgb(19, 65, 102);
+	text-decoration: underline;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+ 
+
+  
+
+ 
+	 
+		 
+			 Online Tag Renewals 
+		 
+	 
+ 
+		 .fancyButton298.fancyButton:link,.fancyButton298.fancyButton:visited, .fancyButton298div.fancyButton{
+	background-color: rgb(19, 65, 102);
+	padding-top: 22px;
+	padding-bottom: 22px;
+	padding-right: 95px;
+	padding-left: 24px;
+	-webkit-border-top-left-radius: 10px;
+	-moz-border-top-left-radius: 10px;
+	-khtml-border-top-left-radius: 10px;
+	border-top-left-radius: 10px;
+	-webkit-border-top-right-radius: 10px;
+	-moz-border-top-right-radius: 10px;
+	-khtml-border-top-right-radius: 10px;
+	border-top-right-radius: 10px;
+	-webkit-border-bottom-left-radius: 10px;
+	-moz-border-bottom-left-radius: 10px;
+	-khtml-border-bottom-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+	-webkit-border-bottom-right-radius: 10px;
+	-moz-border-bottom-right-radius: 10px;
+	-khtml-border-bottom-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	background-repeat: no-repeat;
+	background-position: right top;
+	border-top: 3px solid rgb(224, 196, 59);
+	border-left: 3px solid rgb(224, 196, 59);
+	border-right: 3px solid rgb(224, 196, 59);
+	border-bottom: 3px solid rgb(224, 196, 59);
+min-height: 50px;
+transition: all .3s ease-in-out;}
+.fancyButton298.fancyButton:hover,.fancyButton298.fancyButton:focus,.fancyButton298.fancyButton:active,.fancyButton298.fancyButton.hover{
+	background-color: rgb(224, 196, 59);
+	background-repeat: no-repeat;
+	background-position: right top;
+}
+.fancyButton298.fancyButton:link > span,.fancyButton298.fancyButton:visited > span, .fancyButton298div.fancyButton > span{
+}
+.fancyButton298.fancyButton:hover > span,.fancyButton298.fancyButton:focus > span,.fancyButton298.fancyButton:active > span,.fancyButton298.fancyButton.hover > span{
+}
+.fancyButton298.fancyButton .text{
+	color: rgb(255, 255, 255);
+	font-size: 1.5em;
+	font-family: "Figtree";
+	text-align: left;
+	font-weight: 700;
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+line-height: 1.2;}
+.fancyButton298.fancyButton:hover .text,.fancyButton298.fancyButton:focus .text,.fancyButton298.fancyButton:active .text,.fancyButton298.fancyButton.hover .text{
+	color: rgb(19, 65, 102);
+	text-decoration: underline;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+ 
+
+  
+				 
+			 
+		 
+	 
+			 
+ 
+ 
+
+	   
+
+	   
+
+			 				
+	 
+	
+	 	
+ 
+
+
+
+
+ 
+	 
+		 
+				 
+	 
+	 
+		 
+				 
+					 
+
+ 
+	 
+		 
+			 District Court 
+		 
+	 
+ 
+		 .fancyButton299.fancyButton:link,.fancyButton299.fancyButton:visited, .fancyButton299div.fancyButton{
+	background-color: rgb(19, 65, 102);
+	padding-top: 22px;
+	padding-bottom: 22px;
+	padding-right: 95px;
+	padding-left: 24px;
+	-webkit-border-top-left-radius: 10px;
+	-moz-border-top-left-radius: 10px;
+	-khtml-border-top-left-radius: 10px;
+	border-top-left-radius: 10px;
+	-webkit-border-top-right-radius: 10px;
+	-moz-border-top-right-radius: 10px;
+	-khtml-border-top-right-radius: 10px;
+	border-top-right-radius: 10px;
+	-webkit-border-bottom-left-radius: 10px;
+	-moz-border-bottom-left-radius: 10px;
+	-khtml-border-bottom-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+	-webkit-border-bottom-right-radius: 10px;
+	-moz-border-bottom-right-radius: 10px;
+	-khtml-border-bottom-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	background-repeat: no-repeat;
+	background-position: right top;
+	border-top: 3px solid rgb(224, 196, 59);
+	border-left: 3px solid rgb(224, 196, 59);
+	border-right: 3px solid rgb(224, 196, 59);
+	border-bottom: 3px solid rgb(224, 196, 59);
+min-height: 50px;
+transition: all .3s ease-in-out;}
+.fancyButton299.fancyButton:hover,.fancyButton299.fancyButton:focus,.fancyButton299.fancyButton:active,.fancyButton299.fancyButton.hover{
+	background-color: rgb(224, 196, 59);
+	background-repeat: no-repeat;
+	background-position: right top;
+}
+.fancyButton299.fancyButton:link > span,.fancyButton299.fancyButton:visited > span, .fancyButton299div.fancyButton > span{
+}
+.fancyButton299.fancyButton:hover > span,.fancyButton299.fancyButton:focus > span,.fancyButton299.fancyButton:active > span,.fancyButton299.fancyButton.hover > span{
+}
+.fancyButton299.fancyButton .text{
+	color: rgb(255, 255, 255);
+	font-size: 1.5em;
+	font-family: "Figtree";
+	text-align: left;
+	font-weight: 700;
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+line-height: 1.2;}
+.fancyButton299.fancyButton:hover .text,.fancyButton299.fancyButton:focus .text,.fancyButton299.fancyButton:active .text,.fancyButton299.fancyButton.hover .text{
+	color: rgb(19, 65, 102);
+	text-decoration: underline;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+ 
+
+  
+
+ 
+	 
+		 
+			 Parcel & Tax Search 
+		 
+	 
+ 
+		 .fancyButton300.fancyButton:link,.fancyButton300.fancyButton:visited, .fancyButton300div.fancyButton{
+	background-color: rgb(19, 65, 102);
+	padding-top: 22px;
+	padding-bottom: 22px;
+	padding-right: 95px;
+	padding-left: 24px;
+	-webkit-border-top-left-radius: 10px;
+	-moz-border-top-left-radius: 10px;
+	-khtml-border-top-left-radius: 10px;
+	border-top-left-radius: 10px;
+	-webkit-border-top-right-radius: 10px;
+	-moz-border-top-right-radius: 10px;
+	-khtml-border-top-right-radius: 10px;
+	border-top-right-radius: 10px;
+	-webkit-border-bottom-left-radius: 10px;
+	-moz-border-bottom-left-radius: 10px;
+	-khtml-border-bottom-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+	-webkit-border-bottom-right-radius: 10px;
+	-moz-border-bottom-right-radius: 10px;
+	-khtml-border-bottom-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	background-repeat: no-repeat;
+	background-position: right top;
+	border-top: 3px solid rgb(224, 196, 59);
+	border-left: 3px solid rgb(224, 196, 59);
+	border-right: 3px solid rgb(224, 196, 59);
+	border-bottom: 3px solid rgb(224, 196, 59);
+min-height: 50px;
+transition: all .3s ease-in-out;}
+.fancyButton300.fancyButton:hover,.fancyButton300.fancyButton:focus,.fancyButton300.fancyButton:active,.fancyButton300.fancyButton.hover{
+	background-color: rgb(224, 196, 59);
+	background-repeat: no-repeat;
+	background-position: right top;
+}
+.fancyButton300.fancyButton:link > span,.fancyButton300.fancyButton:visited > span, .fancyButton300div.fancyButton > span{
+}
+.fancyButton300.fancyButton:hover > span,.fancyButton300.fancyButton:focus > span,.fancyButton300.fancyButton:active > span,.fancyButton300.fancyButton.hover > span{
+}
+.fancyButton300.fancyButton .text{
+	color: rgb(255, 255, 255);
+	font-size: 1.5em;
+	font-family: "Figtree";
+	text-align: left;
+	font-weight: 700;
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+line-height: 1.2;}
+.fancyButton300.fancyButton:hover .text,.fancyButton300.fancyButton:focus .text,.fancyButton300.fancyButton:active .text,.fancyButton300.fancyButton.hover .text{
+	color: rgb(19, 65, 102);
+	text-decoration: underline;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+ 
+
+  
+				 
+			 
+		 
+	 
+			 
+ 
+ 
+
+	   
+
+	   
+
+			 				
+	 
+	
+	 	
+ 
+
+
+
+
+ 
+	 
+		 
+				 
+	 
+	 
+		 
+				 
+					 
+
+ 
+	 
+		 
+			 Elections 
+		 
+	 
+ 
+		 .fancyButton301.fancyButton:link,.fancyButton301.fancyButton:visited, .fancyButton301div.fancyButton{
+	background-color: rgb(19, 65, 102);
+	padding-top: 22px;
+	padding-bottom: 22px;
+	padding-right: 95px;
+	padding-left: 24px;
+	-webkit-border-top-left-radius: 10px;
+	-moz-border-top-left-radius: 10px;
+	-khtml-border-top-left-radius: 10px;
+	border-top-left-radius: 10px;
+	-webkit-border-top-right-radius: 10px;
+	-moz-border-top-right-radius: 10px;
+	-khtml-border-top-right-radius: 10px;
+	border-top-right-radius: 10px;
+	-webkit-border-bottom-left-radius: 10px;
+	-moz-border-bottom-left-radius: 10px;
+	-khtml-border-bottom-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+	-webkit-border-bottom-right-radius: 10px;
+	-moz-border-bottom-right-radius: 10px;
+	-khtml-border-bottom-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	background-repeat: no-repeat;
+	background-position: right top;
+	border-top: 3px solid rgb(224, 196, 59);
+	border-left: 3px solid rgb(224, 196, 59);
+	border-right: 3px solid rgb(224, 196, 59);
+	border-bottom: 3px solid rgb(224, 196, 59);
+min-height: 50px;
+transition: all .3s ease-in-out;}
+.fancyButton301.fancyButton:hover,.fancyButton301.fancyButton:focus,.fancyButton301.fancyButton:active,.fancyButton301.fancyButton.hover{
+	background-color: rgb(224, 196, 59);
+	background-repeat: no-repeat;
+	background-position: right top;
+}
+.fancyButton301.fancyButton:link > span,.fancyButton301.fancyButton:visited > span, .fancyButton301div.fancyButton > span{
+}
+.fancyButton301.fancyButton:hover > span,.fancyButton301.fancyButton:focus > span,.fancyButton301.fancyButton:active > span,.fancyButton301.fancyButton.hover > span{
+}
+.fancyButton301.fancyButton .text{
+	color: rgb(255, 255, 255);
+	font-size: 1.5em;
+	font-family: "Figtree";
+	text-align: left;
+	font-weight: 700;
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+line-height: 1.2;}
+.fancyButton301.fancyButton:hover .text,.fancyButton301.fancyButton:focus .text,.fancyButton301.fancyButton:active .text,.fancyButton301.fancyButton.hover .text{
+	color: rgb(19, 65, 102);
+	text-decoration: underline;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+ 
+
+  
+
+ 
+	 
+		 
+			 Sewer Billing 
+		 
+	 
+ 
+		 .fancyButton302.fancyButton:link,.fancyButton302.fancyButton:visited, .fancyButton302div.fancyButton{
+	background-color: rgb(19, 65, 102);
+	padding-top: 22px;
+	padding-bottom: 22px;
+	padding-right: 95px;
+	padding-left: 24px;
+	-webkit-border-top-left-radius: 10px;
+	-moz-border-top-left-radius: 10px;
+	-khtml-border-top-left-radius: 10px;
+	border-top-left-radius: 10px;
+	-webkit-border-top-right-radius: 10px;
+	-moz-border-top-right-radius: 10px;
+	-khtml-border-top-right-radius: 10px;
+	border-top-right-radius: 10px;
+	-webkit-border-bottom-left-radius: 10px;
+	-moz-border-bottom-left-radius: 10px;
+	-khtml-border-bottom-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+	-webkit-border-bottom-right-radius: 10px;
+	-moz-border-bottom-right-radius: 10px;
+	-khtml-border-bottom-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	background-repeat: no-repeat;
+	background-position: right top;
+	border-top: 3px solid rgb(224, 196, 59);
+	border-left: 3px solid rgb(224, 196, 59);
+	border-right: 3px solid rgb(224, 196, 59);
+	border-bottom: 3px solid rgb(224, 196, 59);
+min-height: 50px;
+transition: all .3s ease-in-out;}
+.fancyButton302.fancyButton:hover,.fancyButton302.fancyButton:focus,.fancyButton302.fancyButton:active,.fancyButton302.fancyButton.hover{
+	background-color: rgb(224, 196, 59);
+	background-repeat: no-repeat;
+	background-position: right top;
+}
+.fancyButton302.fancyButton:link > span,.fancyButton302.fancyButton:visited > span, .fancyButton302div.fancyButton > span{
+}
+.fancyButton302.fancyButton:hover > span,.fancyButton302.fancyButton:focus > span,.fancyButton302.fancyButton:active > span,.fancyButton302.fancyButton.hover > span{
+}
+.fancyButton302.fancyButton .text{
+	color: rgb(255, 255, 255);
+	font-size: 1.5em;
+	font-family: "Figtree";
+	text-align: left;
+	font-weight: 700;
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+line-height: 1.2;}
+.fancyButton302.fancyButton:hover .text,.fancyButton302.fancyButton:focus .text,.fancyButton302.fancyButton:active .text,.fancyButton302.fancyButton.hover .text{
+	color: rgb(19, 65, 102);
+	text-decoration: underline;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+ 
+
+  
+				 
+			 
+		 
+	 
+			 
+ 
+ 
+
+	   
+
+	   
+
+			   
+
+
+	 
+ 
+ 
+ 	 
+				                
+
+		 				
+	 
+	
+	 	
+ 
+
+
+
+
+ 
+	 
+		 
+				 
+	 
+	 
+		 
+				 
+					 
+
+ 
+	 
+		 
+			 Web Maps 
+		 
+	 
+ 
+		 .fancyButton278.fancyButton:link,.fancyButton278.fancyButton:visited, .fancyButton278div.fancyButton{
+	background-image: url('/ImageRepository/Document?documentID=8591');
+	background-repeat: no-repeat;
+	background-position: center top;
+max-width: 100px;
+margin: 0 auto;
+transition: all .3s ease-in-out;}
+.fancyButton278.fancyButton:hover,.fancyButton278.fancyButton:focus,.fancyButton278.fancyButton:active,.fancyButton278.fancyButton.hover{
+	background-image: url('/ImageRepository/Document?documentID=8592');
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+.fancyButton278.fancyButton:link > span,.fancyButton278.fancyButton:visited > span, .fancyButton278div.fancyButton > span{
+}
+.fancyButton278.fancyButton:hover > span,.fancyButton278.fancyButton:focus > span,.fancyButton278.fancyButton:active > span,.fancyButton278.fancyButton.hover > span{
+}
+.fancyButton278.fancyButton .text{
+	color: rgb(56, 56, 56);
+	font-size: 0.9em;
+	font-family: "Figtree";
+	padding-top: 64px;
+	font-weight: 500;
+	text-decoration: none;
+	padding-top: 64px;
+	background-image: url('/ImageRepository/Document?documentID=8599');
+	background-repeat: no-repeat;
+	background-position: center 10px ;
+transition: all .3s ease-in-out;line-height: 1.2;}
+.fancyButton278.fancyButton:hover .text,.fancyButton278.fancyButton:focus .text,.fancyButton278.fancyButton:active .text,.fancyButton278.fancyButton.hover .text{
+	text-decoration: none;
+	background-image: url('/ImageRepository/Document?documentID=8600');
+	background-repeat: no-repeat;
+	background-position: center 10px ;
+
+
+}
+ 
+
+  
+
+ 
+	 
+		 
+			 County Commission 
+		 
+	 
+ 
+		 .fancyButton279.fancyButton:link,.fancyButton279.fancyButton:visited, .fancyButton279div.fancyButton{
+	background-image: url('/ImageRepository/Document?documentID=8591');
+	background-repeat: no-repeat;
+	background-position: center top;
+max-width: 100px;
+margin: 0 auto;
+transition: all .3s ease-in-out;}
+.fancyButton279.fancyButton:hover,.fancyButton279.fancyButton:focus,.fancyButton279.fancyButton:active,.fancyButton279.fancyButton.hover{
+	background-image: url('/ImageRepository/Document?documentID=8592');
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+.fancyButton279.fancyButton:link > span,.fancyButton279.fancyButton:visited > span, .fancyButton279div.fancyButton > span{
+}
+.fancyButton279.fancyButton:hover > span,.fancyButton279.fancyButton:focus > span,.fancyButton279.fancyButton:active > span,.fancyButton279.fancyButton.hover > span{
+}
+.fancyButton279.fancyButton .text{
+	color: rgb(56, 56, 56);
+	font-size: 0.9em;
+	font-family: "Figtree";
+	padding-top: 64px;
+	font-weight: 500;
+	text-decoration: none;
+	padding-top: 64px;
+	background-image: url('/ImageRepository/Document?documentID=8589');
+	background-repeat: no-repeat;
+	background-position: center 10px ;
+transition: all .3s ease-in-out;line-height: 1.2;}
+.fancyButton279.fancyButton:hover .text,.fancyButton279.fancyButton:focus .text,.fancyButton279.fancyButton:active .text,.fancyButton279.fancyButton.hover .text{
+	text-decoration: none;
+	background-image: url('/ImageRepository/Document?documentID=8590');
+	background-repeat: no-repeat;
+	background-position: center 10px ;
+
+
+}
+ 
+
+  
+
+ 
+	 
+		 
+			 Online Services 
+		 
+	 
+ 
+		 .fancyButton281.fancyButton:link,.fancyButton281.fancyButton:visited, .fancyButton281div.fancyButton{
+	background-image: url('/ImageRepository/Document?documentID=8591');
+	background-repeat: no-repeat;
+	background-position: center top;
+max-width: 100px;
+margin: 0 auto;
+transition: all .3s ease-in-out;}
+.fancyButton281.fancyButton:hover,.fancyButton281.fancyButton:focus,.fancyButton281.fancyButton:active,.fancyButton281.fancyButton.hover{
+	background-image: url('/ImageRepository/Document?documentID=8592');
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+.fancyButton281.fancyButton:link > span,.fancyButton281.fancyButton:visited > span, .fancyButton281div.fancyButton > span{
+}
+.fancyButton281.fancyButton:hover > span,.fancyButton281.fancyButton:focus > span,.fancyButton281.fancyButton:active > span,.fancyButton281.fancyButton.hover > span{
+}
+.fancyButton281.fancyButton .text{
+	color: rgb(56, 56, 56);
+	font-size: 0.9em;
+	font-family: "Figtree";
+	padding-top: 64px;
+	font-weight: 500;
+	text-decoration: none;
+	padding-top: 64px;
+	background-image: url('/ImageRepository/Document?documentID=8595');
+	background-repeat: no-repeat;
+	background-position: center 10px ;
+transition: all .3s ease-in-out;line-height: 1.2;}
+.fancyButton281.fancyButton:hover .text,.fancyButton281.fancyButton:focus .text,.fancyButton281.fancyButton:active .text,.fancyButton281.fancyButton.hover .text{
+	text-decoration: none;
+	background-image: url('/ImageRepository/Document?documentID=8596');
+	background-repeat: no-repeat;
+	background-position: center 10px ;
+
+
+}
+ 
+
+  
+
+ 
+	 
+		 
+			 Report It 
+		 
+	 
+ 
+		 .fancyButton280.fancyButton:link,.fancyButton280.fancyButton:visited, .fancyButton280div.fancyButton{
+	background-image: url('/ImageRepository/Document?documentID=8591');
+	background-repeat: no-repeat;
+	background-position: center top;
+max-width: 100px;
+margin: 0 auto;
+transition: all .3s ease-in-out;}
+.fancyButton280.fancyButton:hover,.fancyButton280.fancyButton:focus,.fancyButton280.fancyButton:active,.fancyButton280.fancyButton.hover{
+	background-image: url('/ImageRepository/Document?documentID=8592');
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+.fancyButton280.fancyButton:link > span,.fancyButton280.fancyButton:visited > span, .fancyButton280div.fancyButton > span{
+}
+.fancyButton280.fancyButton:hover > span,.fancyButton280.fancyButton:focus > span,.fancyButton280.fancyButton:active > span,.fancyButton280.fancyButton.hover > span{
+}
+.fancyButton280.fancyButton .text{
+	color: rgb(56, 56, 56);
+	font-size: 0.9em;
+	font-family: "Figtree";
+	padding-top: 64px;
+	font-weight: 500;
+	text-decoration: none;
+	padding-top: 64px;
+	background-image: url('/ImageRepository/Document?documentID=8597');
+	background-repeat: no-repeat;
+	background-position: center 10px ;
+transition: all .3s ease-in-out;line-height: 1.2;}
+.fancyButton280.fancyButton:hover .text,.fancyButton280.fancyButton:focus .text,.fancyButton280.fancyButton:active .text,.fancyButton280.fancyButton.hover .text{
+	text-decoration: none;
+	background-image: url('/ImageRepository/Document?documentID=8598');
+	background-repeat: no-repeat;
+	background-position: center 10px ;
+
+
+}
+ 
+
+  
+
+ 
+	 
+		 
+			 Employment 
+		 
+	 
+ 
+		 .fancyButton277.fancyButton:link,.fancyButton277.fancyButton:visited, .fancyButton277div.fancyButton{
+	background-image: url('/ImageRepository/Document?documentID=8591');
+	background-repeat: no-repeat;
+	background-position: center top;
+max-width: 100px;
+margin: 0 auto;
+transition: all .3s ease-in-out;}
+.fancyButton277.fancyButton:hover,.fancyButton277.fancyButton:focus,.fancyButton277.fancyButton:active,.fancyButton277.fancyButton.hover{
+	background-image: url('/ImageRepository/Document?documentID=8592');
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+.fancyButton277.fancyButton:link > span,.fancyButton277.fancyButton:visited > span, .fancyButton277div.fancyButton > span{
+}
+.fancyButton277.fancyButton:hover > span,.fancyButton277.fancyButton:focus > span,.fancyButton277.fancyButton:active > span,.fancyButton277.fancyButton.hover > span{
+}
+.fancyButton277.fancyButton .text{
+	color: rgb(56, 56, 56);
+	font-size: 0.9em;
+	font-family: "Figtree";
+	padding-top: 64px;
+	font-weight: 500;
+	text-decoration: none;
+	padding-top: 64px;
+	background-image: url('/ImageRepository/Document?documentID=8593');
+	background-repeat: no-repeat;
+	background-position: center 10px ;
+transition: all .3s ease-in-out;line-height: 1.2;}
+.fancyButton277.fancyButton:hover .text,.fancyButton277.fancyButton:focus .text,.fancyButton277.fancyButton:active .text,.fancyButton277.fancyButton.hover .text{
+	text-decoration: none;
+	background-image: url('/ImageRepository/Document?documentID=8594');
+	background-repeat: no-repeat;
+	background-position: center 10px ;
+
+
+}
+ 
+
+  
+				 
+			 
+		 
+	 
+			 
+ 
+ 
+
+	   
+
+	   
+
+			   
+
+
+	 
+ 
+ 
+ 	 
+				                
+
+		 				
+	 
+	
+	 	
+     
+
+
+
+
+
+	 
+			 
+		 
+								 
+	 
+	 
+		 
+					 
+						 
+
+ 
+	 
+ 						 
+					 
+		 
+	 
+	 
+
+	 
+
+	 
+
+
+
+ 
+	//Render slideshow if info advacned items contain one.
+	$(document).ready(function (e) {
+		$('#divInfoAdv2b61956c-e874-48ce-8f9a-30bbc66fc5a8 .InfoAdvanced.widgetItem').each(function () {
+			renderSlideshowIfApplicable($(this));		
+		});
+	});
+ 
+	   
+
+	   
+	 
+	
+	 	
+ 
+
+
+
+
+ 
+	 
+		 
+				 
+	 
+	 
+		 
+				 
+					 
+
+ 
+	 
+		 
+			 Facebook 
+		 
+	 
+ 
+		 .fancyButton282.fancyButton:link,.fancyButton282.fancyButton:visited, .fancyButton282div.fancyButton{
+	padding-top: 3px;
+	padding-bottom: 3px;
+	padding-left: 38px;
+	background-image: url('/ImageRepository/Document?documentID=8601');
+	background-repeat: no-repeat;
+	background-position: left center;
+background-size: 30px;
+width: fit-content;
+margin: 0 auto;}
+.fancyButton282.fancyButton:hover,.fancyButton282.fancyButton:focus,.fancyButton282.fancyButton:active,.fancyButton282.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: left center;
+}
+.fancyButton282.fancyButton:link > span,.fancyButton282.fancyButton:visited > span, .fancyButton282div.fancyButton > span{
+}
+.fancyButton282.fancyButton:hover > span,.fancyButton282.fancyButton:focus > span,.fancyButton282.fancyButton:active > span,.fancyButton282.fancyButton.hover > span{
+}
+.fancyButton282.fancyButton .text{
+	color: rgb(255, 255, 255);
+	font-family: "Figtree";
+	text-align: left;
+	font-style: normal;
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+.fancyButton282.fancyButton:hover .text,.fancyButton282.fancyButton:focus .text,.fancyButton282.fancyButton:active .text,.fancyButton282.fancyButton.hover .text{
+	text-decoration: underline;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+ 
+
+  
+				 
+			 
+		 
+	 
+			 
+ 
+ 
+
+	   
+
+	   
+
+			 				
+	 
+	
+	 	
+
+ 
+	   
+
+	   
+
+			 				
+	 
+	
+	 	
+     
+
+
+
+
+
+	 
+			 
+		 
+					 Contact Us 
+								 
+	 
+	 
+		 
+					 
+						 
+
+ 
+	 Pottawatomie County 
+ 
+ 
+	 207 North 1st Street 
+ 
+ 
+	 Westmoreland, KS 66549 
+ 
+ 
+	 Staff Directory 
+ 						 
+					 
+		 
+	 
+	 
+
+	 
+
+	 
+
+
+
+ 
+	//Render slideshow if info advacned items contain one.
+	$(document).ready(function (e) {
+		$('#divInfoAdv5f5ca703-c00e-4850-aae3-4de11cf19f1c .InfoAdvanced.widgetItem').each(function () {
+			renderSlideshowIfApplicable($(this));		
+		});
+	});
+ 
+	   
+
+	   
+
+			 				
+	 
+	
+	 	
+
+ 
+	   
+
+	   
+
+			 				
+	 
+	
+	 	
+	 
+
+
+
+
+
+
+
+
+	 
+			 
+		 
+					 Quick Links 
+						 
+	 
+	 
+         
+				 
+					 
+
+
+
+
+     
+         Manhattan City 
+         
+     
+
+
+
+
+     
+         Onaga City 
+         
+     
+
+
+
+
+     
+         Pottawatomie County Economic Development 
+         
+     
+
+
+
+
+     
+         St. George City 
+         
+     
+
+
+
+
+     
+         St. Marys City 
+         
+     
+
+
+
+
+     
+         Wamego City 
+         
+     
+
+
+
+
+     
+         Westmoreland City 
+         
+     
+					 
+				 
+		 
+        
+	 
+	 
+	 
+	 
+		 /QuickLinks.aspx 
+	 
+
+	 
+ 
+
+	   
+
+	   
+
+			 				
+	 
+	
+	 	
+
+ 
+	   
+
+	   
+
+			 				
+	 
+	
+	 	
+	 
+
+
+
+
+
+
+
+
+	 
+			 
+		 
+					 Site Links 
+						 
+	 
+	 
+         
+				 
+					 
+
+
+
+
+     
+         Home 
+         
+     
+
+
+
+
+     
+         FAQs 
+         
+     
+
+
+
+
+     
+         Site Map 
+         
+     
+
+
+
+
+     
+         Accessibility 
+         
+     
+
+
+
+
+     
+         Disclaimer 
+         
+     
+
+
+
+
+     
+         Copyright 
+         
+     
+					 
+				 
+		 
+        
+	 
+	 
+	 
+	 
+		 /QuickLinks.aspx 
+	 
+
+	 
+ 
+
+	   
+
+	   
+
+			   
+
+
+	 
+ 
+ 
+ 	 
+				                
+
+		 				
+	 
+	
+	 	
+ 
+	 
+	 
+		 
+  /* CP icon */
+  .cpBylineIconTS {
+    color: #fff;
+  }
+  /* CP Text */
+  .cpBylineTextTS,
+  .cpBylineTextTS a:link {
+    color: #fff;
+  }
+
+  .cpBylineTS {
+    text-align: center;
+  }
+  
+  .cpBylineIconTS {
+    fill: currentColor;
+    width: 39px;
+    height: 26px;
+    display: inline;
+    vertical-align: middle;
+  }
+ 
+
+ 
+   
+     
+     
+   
+   Government Websites by  CivicPlus® 
+ 
+ 
+	 
+
+	 
+
+	   
+
+	   
+
+			   
+
+
+	 
+ 
+ 
+ 
+
+             
+         
+     
+
+ 
+
+ 
+	 
+		 
+			 Loading 
+			 
+				 
+					 
+				 
+			 
+		 
+		 
+			 
+				 
+				Loading
+			 
+		 
+		 
+			 Do Not Show Again 
+			 Close 
+		 
+	 
+ 
+
+ 
+ 
+ 
+ 
+
+		$(document).ready(function () {
+			var filter = {
+				targetId: '153',
+				targetType: 1
+			}
+
+			new SplashModalRender().triggerRender(filter);
+		});
+ 
+
+
+	
+	
+	
+	
+
+
+
+	
+
+
+
+
+
+
+     
+     
+ 
+  function getValueTS(elem, attr) {
+    const val = elem.css(attr);
+    if (val === undefined) return undefined;
+    const num = parseInt(val, 10);
+    if (num === NaN) return undefined;
+    return num;
+  }
+
+  function clampTS(number, min, max) {
+    return Math.min(Math.max(number, min), max);
+  }
+
+  function isPageEditingTS() {
+    return (
+      $("#doneEditing").length > 0 || // In live edit
+      typeof DesignCenter !== "undefined" // In theme manager
+    );
+  }
+
+  const bgColorRegexTS = /rgba\((\d+), (\d+), (\d+), (\d*\.?\d*)\)/;
+  function isTransparentTS(elem) {
+    const bg = elem.css('background-color');
+    if (typeof bg !== "string" || !bg.startsWith('rgba(')) return false;
+    const matchState = bg.match(bgColorRegexTS);
+    if (!matchState || matchState.length !== 5) return false;
+    const alpha = parseFloat(matchState[4], 10);
+    if (!(alpha >= 0 && alpha < 1)) return false;
+    return true;
+  }
+
+  function iterateLeftpads(cb) {
+    const containersTS = $("[class^='siteWrap'],[class*=' siteWrap']");
+    for (let i = 0; i < containersTS.length; i++) {
+      const containerTS = containersTS[i];
+      // Skip the body container and anything with data-skip-leftpad
+      if (
+        containerTS.id !== "bodyContainerTS" &&
+        containerTS.getAttribute('data-skip-leftpad') === null
+      ) {
+        cb(containerTS);
+      }
+    }
+  }
+
+  function iterateRightpads(cb) {
+      const containersTS = $("[class^='siteWrap'],[class*=' siteWrap']");
+      for (let i = 0; i < containersTS.length; i++) {
+        const containerTS = containersTS[i];
+        // Skip the body container and anything with data-skip-leftpad
+        if (
+          containerTS.id !== "bodyContainerTS" &&
+          containerTS.getAttribute('data-skip-rightpad') === null
+        ) {
+          cb(containerTS);
+        }
+      }
+    }
+
+  const anchor = $("#divToolbars");
+
+  // Outer banner padding (push banner down)
+  const outerSizingTS = $("#bannerContainerTS");
+  // Inner banner padding (push banner content down) - Transparent header OR on attaching headers
+  const innerSizingTS = $("#bannerSizingTS");
+  const bodyContainerTS = $("#bodyContainerTS");
+  const headerContainerTS = $("#headerContainerTS");
+  const forceUnfixClassTS = "forceUnfixTS";
+
+  const fixedTopTS = $(".fixedTopTS");
+  const fixedBottomTS = $(".fixedBottomTS");
+  const fixedLeftTS = $(".fixedLeftTS");
+  const fixedRightTS = $(".fixedRightTS");
+
+  var initialTopTS;
+  var topAttachTS;
+  if (fixedTopTS && fixedTopTS.length === 1) {
+    initialTopTS = getValueTS(fixedTopTS, 'top');
+    const attachment = fixedTopTS.attr('data-attach');
+    if (attachment) topAttachTS = $("#" + attachment);
+    if (!topAttachTS || topAttachTS.length !== 1) topAttachTS = undefined;
+  }
+
+  function resizeAdjustmentTS() {
+    const editing = isPageEditingTS();
+
+    // Fixed top script
+    (function () {
+      if (!fixedTopTS || fixedTopTS.length !== 1 || initialTopTS === undefined) return;
+
+      if (editing) {
+        fixedTopTS[0].classList.add(forceUnfixClassTS);
+      } else {
+        fixedTopTS[0].classList.remove(forceUnfixClassTS);
+      }
+
+      const topPosition = fixedTopTS.css('position');
+      if (topPosition === 'fixed') {
+        if (topAttachTS) {
+          scrollAdjustmentTS();
+        } else {
+          const anchorHeight = anchor.outerHeight() - 1;
+          fixedTopTS.css('top', anchorHeight + initialTopTS);
+        }
+      } else {
+        fixedTopTS.css('top', initialTopTS);
+      }
+
+      if (topPosition === 'fixed' || topPosition === 'absolute') {
+        // Bump the banner content down
+        if (isTransparentTS(fixedTopTS)) {
+          innerSizingTS.css('padding-top', initialTopTS + fixedTopTS.outerHeight() - 1);
+          outerSizingTS.css('padding-top', '');
+
+          try {
+            window.Pages.onResizeHandlersExecute();
+          } catch (e) { }
+        } else {
+          outerSizingTS.css('padding-top', fixedTopTS.outerHeight() - 1);
+          innerSizingTS.css('padding-top', '');
+        }
+      } else {
+        innerSizingTS.css('padding-top', '');
+        outerSizingTS.css('padding-top', '');
+      }
+    })();
+
+    // Fixed bottom script
+    (function () {
+      if (!fixedBottomTS || fixedBottomTS.length === 0) return;
+
+      // If the widget has gone narrow, force unfix
+      if (editing || fixedBottomTS.outerHeight() > 200) {
+        fixedBottomTS[0].classList.add(forceUnfixClassTS);
+      } else {
+        fixedBottomTS[0].classList.remove(forceUnfixClassTS);
+      }
+
+      if (fixedBottomTS.css('position') === 'fixed') {
+        bodyContainerTS.css('padding-bottom', fixedBottomTS.outerHeight());
+      } else {
+        bodyContainerTS.css('padding-bottom', '');
+      }
+    })();
+
+    // Fixed left script
+    (function () {
+      if (!fixedLeftTS || fixedLeftTS.length === 0) return;
+
+      if (editing) {
+        fixedLeftTS[0].classList.add(forceUnfixClassTS);
+      } else {
+        fixedLeftTS[0].classList.remove(forceUnfixClassTS);
+      }
+
+      if (fixedLeftTS.css('position') === 'fixed') {
+        const anchorHeight = anchor.outerHeight() - 1;
+        const headerHeight = headerContainerTS.outerHeight() - 1;
+        fixedLeftTS.css('top', anchorHeight + headerHeight + 100);
+        const leftBoundingTS = fixedLeftTS[0].getBoundingClientRect();
+        iterateLeftpads(function (containerTS) {
+          const containerBoundingTS = containerTS.getBoundingClientRect();
+          if (containerBoundingTS.left <= leftBoundingTS.right) {
+            $(containerTS).css('padding-left', leftBoundingTS.width + 16);
+          }
+        });
+      } else {
+        fixedLeftTS.css('top', '');
+        iterateLeftpads(function (containerTS) {
+          $(containerTS).css('padding-left', '');
+        });
+      }
+    })();
+
+    // Fixed right script
+    (function () {
+        if (!fixedRightTS || fixedRightTS.length === 0) return;
+  
+        if (editing) {
+          fixedRightTS[0].classList.add(forceUnfixClassTS);
+        } else {
+          fixedRightTS[0].classList.remove(forceUnfixClassTS);
+        }
+  
+        if (fixedRightTS.css('position') === 'fixed') {
+          const anchorHeight = anchor.outerHeight() - 1;
+          const headerHeight = headerContainerTS.outerHeight() - 1;
+          fixedRightTS.css('top', anchorHeight + headerHeight + 100);
+          const rightBoundingTS = fixedRightTS[0].getBoundingClientRect();
+          iterateRightpads(function (containerTS) {
+            const containerBoundingTS = containerTS.getBoundingClientRect();
+            if (containerBoundingTS.left <= rightBoundingTS.right) {
+              $(containerTS).css('padding-right', rightBoundingTS.width + 16);
+            }
+          });
+        } else {
+          fixedRightTS.css('top', '');
+          iterateRightpads(function (containerTS) {
+            $(containerTS).css('padding-right', '');
+          });
+        }
+      })();
+  }
+
+  function scrollAdjustmentTS() {
+    if (!fixedTopTS || fixedTopTS.length !== 1 || !topAttachTS || topAttachTS.length !== 1) return;
+    const topPosition = fixedTopTS.css('position');
+    if (topPosition === 'fixed' || topPosition === 'absolute') {
+      const anchorBounding = anchor[0].getBoundingClientRect();
+      const attachBounding = topAttachTS[0].getBoundingClientRect();
+      const scrollTop = $(window).scrollTop();
+
+      fixedTopTS.css('top', Math.max(anchorBounding.bottom - 1, attachBounding.bottom));
+    } else {
+      fixedTopTS.css('top', initialTopTS);
+    }
+  }
+
+  $(window).load(function () {
+    setTimeout(function () {
+      resizeAdjustmentTS();
+    }, 350);
+
+    $(window).scroll(function () {
+      scrollAdjustmentTS();
+    });
+
+    var adjustTimeoutTS;
+    $(window).resize(function () {
+      clearTimeout(adjustTimeoutTS);
+      adjustTimeoutTS = setTimeout(function () {
+        resizeAdjustmentTS();
+      }, 350);
+    });
+
+    $.when(window.Pages.angularToolbarComplete).done(function () {
+      resizeAdjustmentTS();
+    });
+  });
+ 
+ 
+
+
+
+
+
+
+
+
+
+ 
+ 
+    window.ResidentAgentWidget.load({
+        agentId: 'e16629de-3fc7-42f0-8d78-841673ac1e09',
+        apiUrl: 'https://residentagent-api-production.azurewebsites.net'
+    });
+ 
+
+
+     
+        $(function () {
+            document.cookie = "responsiveGhost=0; path=/";
+        });
+        $(window).on("load", function () {
+            $('body').addClass('doneLoading').removeClass('hideContent');
+
+            if ($('#404Content').length > 0)
+                $('div#bodyWrapper').css('padding', '0px');
+        });
+     
+
+     
+         
+            body.hideContent {
+                opacity: 1 !important;
+            }
+         
+     
+
+        
+ 
+	 
+
+		 
+			 Arrow Left 
+			 
+		 
+
+		 
+			 Arrow Right 
+			 
+		 
+
+	 
+ 
+     loadCSS('//fonts.googleapis.com/css?family=Figtree:500,500italic,600,600italic,700,700italic,800,800italic,900,900italic,italic,regular|Lato:100,100italic,300,300italic,700,700italic,900,900italic,italic,regular|Montserrat:200italic,500,600,600italic,700,700italic,800,800italic,900,italic,regular|'); 
+    
+
+     [] 
+         
+             
+                 
+                     Slideshow Left Arrow 
+                     
+                         
+                     
+                 
+                 
+                     Slideshow Right Arrow 
+                     
+                         
+                     
+                 
+             
+         
+    
+	
+	
+
+     
+ 
+ 

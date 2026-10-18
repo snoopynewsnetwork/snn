@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "requested_date": "2026-10-17",
-  "updated_at_utc": "2026-10-18T17:01:55.914235+00:00",
+  "updated_at_utc": "2026-10-18T17:06:40.573176+00:00",
   "scope": "35 states in the repository 2026 U.S. Senate race index",
   "coordinator_agent_id": "d0fc3534-1613-4883-b48b-21a233fcfd9e",
   "workspace_id": "wks_b290f45007010740",
@@ -552,7 +552,7 @@
       "election": "Regular",
       "seat_class": "II",
       "priority": 7,
-      "status": "integration-review",
+      "status": "reviewed-awaiting-publication",
       "workers": {
         "turnout": {
           "agent_id": "158cc3fa-5119-4e25-a958-b042f0e0f340",
@@ -577,12 +577,17 @@
         }
       },
       "validation": {
-        "status": "pass",
-        "scope": "County/native historical priority plus complete first-wave target/asset review passed; second-wave source/maps research pending.",
+        "status": "pass_with_documented_source_gaps",
+        "scope": "Complete4question package and coordinator independent integration reviewed; publication pending.",
+        "complete_review": "kansas/data/coordinator-validation.json",
         "county_review": "kansas/data/coordinator-county-reconciliation.json",
         "native_review": "kansas/data/coordinator-native-contract-checks.json",
-        "coverage": "105counties/420independent2024candidatecounty cells/23stateprimarycontrols/22031nativeidentities/121053originalcandidate-totalcells/96footerpositions; unavailablecounts/residuals retained.",
-        "target_review": "kansas/data/coordinator-target-review.json"
+        "target_review": "kansas/data/coordinator-target-review.json",
+        "map_review": "kansas/data/coordinator-map-review.json",
+        "source_review": "kansas/data/coordinator-results-review.json",
+        "worker_asset_hashes": 2433,
+        "local_links": 771,
+        "repository_check": "npm run check passed2026-10-18"
       },
       "gaps": [
         "2022turnout workbook has source-inconsistent county ballot controls; not clean scenario weights.",
@@ -590,10 +595,12 @@
         "Suppressed/blank detail values and positive residuals remain unallocated.",
         "Last recovered signedorders preserve mail grace; complete subsequent docket access remains limited despite official Nov24merits setting.",
         "County report vintages differ in Riley/Franklin/Butler; signedRileyabstract supports canonicalstatevector, residuals notallocated.",
-        "No approved current geography/live feed/cadence/exactremaining or calibratedforecast."
+        "No approved current geography/live feed/cadence/exactremaining or calibratedforecast.",
+        "Current validwritein affidavit roster/subsequent withdrawals unavailable; printed3candidate names corroborated by actual county notices.",
+        "County map/authority gaps Cowley,Pottawatomie,Barton,Ellis,Harvey and agencyoutbound links remain explicit; all23 have actual historical2022 references."
       ],
       "published_commits": [],
-      "coordinator_preparation": "All4actualworkers finished. Firstwave independent county/native/target review and map raw/binary audit pass. Official46checks/422requests/1607assets pass; one mutable external map metadata pin coherently reconciled to final source freeze. Complete integration/publication in progress.",
+      "coordinator_preparation": "All4actualworkers finished and reviewed. Complete2433workerhashes/771links/105counties/exact23/22031native PASS. Independent allsource/binarygeometry/targets and repository checks pass. Current geography/feed/cadence/validwriteinroster/latercourtdocket gaps explicit; no collector/calibration. Scoped publication in progress.",
       "priority_geography": {
         "basis": "2024president four reported named tickets; statewide unreported write-in/under/over categories unavailable, not zero",
         "count": 23,

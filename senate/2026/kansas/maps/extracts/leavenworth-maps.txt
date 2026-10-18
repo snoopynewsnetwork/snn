@@ -1,0 +1,760 @@
+
+
+
+ 
+ 
+ 
+
+	 
+
+ 
+ 
+ 
+
+
+
+
+
+ 
+	 Welcome to Leavenworth County, KS 
+	 
+	 
+	 
+
+
+
+
+
+
+
+ 
+ 
+ 
+
+
+ 
+
+
+
+ 
+
+
+
+
+
+ 
+
+ 
+ 
+ 
+ 
+
+
+
+ 
+ 
+ 
+ 
+ 
+
+
+
+	 
+ 
+ 
+ 
+ 
+ 
+	var defaultCalendarColor = "#3788d8";
+	var ImportCals = [];
+	var calendarProps = {'1' : { 'color' : '#3787d8' , 'name' : 'Master' },
+'2' : { 'color' : '#3787d8' , 'name' : 'Meetings' },
+'4' : { 'color' : '#47b9c2' , 'name' : 'Events' },
+'5' : { 'color' : '#80b9f2' , 'name' : 'Planning Commission' },
+'11' : { 'color' : '#c6bf48' , 'name' : 'Council on Aging' },
+};
+	var RZCalendarTimezone = "";
+ 
+
+
+
+
+
+
+ 
+
+ 
+ 
+
+
+
+
+ 
+if (typeof(RZ) == 'undefined') RZ = {};
+if (!RZ.link) RZ.link = new Object();
+RZ.pagetype = 'template'
+RZ.baseurlprefix = '../../../'
+RZ.baseurlpath = 'government/county_clerk_s_office/elections/'
+RZ.protocolRelativeRevizeBaseUrl='//cms5.revize.com'
+
+RZ.pagetemplatename = 'freeform'
+RZ.pagetemplateid = '31'
+RZ.pagemodule = 'links'
+RZ.pagemoduleid = '1'
+RZ.pagerecordid = '486';
+
+RZ.pageid = 'links-486';
+RZ.pageparentid = '442';
+RZ.pagesectionid = '442';
+RZ.pagesectionname = 'elections';
+RZ.pagesectionlevel = '3';
+RZ.pagesectionfolder = 'government/county_clerk_s_office/elections/';
+RZ.pagesectionfilter = 'sectionid=442';
+RZ.pagelinkfilter = 'linklevel=3 and linksectionid=442';
+RZ.pagelinklevel = '3';
+RZ.pagelinkid = '486';
+RZ.pageidfield = '';
+
+RZ.isnewrecord = false;
+RZ.editmodule = '';
+RZ.editrecordid = '486';
+RZ.editrecordversion = '';
+RZ.editversion = '';
+RZ.editaction = '';
+
+RZ.page_roles = ''
+RZ.page_users = '70c0a253539703a32fb65d4128be5c0870f03d7343b6e1770ecb3a5ccc7263ed|797ff9f7981a699fdec1bd61c7baf7bef81e4456fc0e8f909efab65851ba0b53|e6fcc0fc923c5b533e5b741c9fe5efd34e3c5b3cad5b020bf037d8cd7686a1d6|1927140bfe965f2bbbe1b9c961c6e2e3d3d1a0174b477b35089212d3cf421cdb'
+RZ.page_key = 'freeform[486]'
+RZ.parent_key = 'freeform[442]'
+RZ.inherit_key = 'freeform[486]'
+RZ.workflowname = ''
+RZ.permissions_options = 'warningsOFF'
+RZ.permissions_module = 'webspace_page_permissions'
+RZ.webspace = 'leavenworthcounty'
+RZ.webspacedesc = "";
+
+RZ.featurespattern = '(EZ)';
+null
+
+RZ.webspacelinksurl = ''
+RZ.webspacelinksurl = './webspace/links.html'
+RZ.workflowlist = 'New Workflow 1'
+RZ.revizeserverurl = 'https://cms5.revize.com/revize/leavenworthcounty';
+
+if (!RZ.nextseq) RZ.nextseq = {linknames:{},modules:{}};
+
+RZ.webspace_config = new Object();
+RZ.webspace_config.admin_email = "noreply@leavenworthcounty.gov";
+RZ.webspace_config.calendar_options = "max_events=6";
+RZ.webspace_config.form_captcha = "yes";
+RZ.webspace_config.form_server = "revizeserver";
+RZ.webspace_config.form_technology = "jsp";
+RZ.webspace_config.formwizard_ftp_password = "";
+RZ.webspace_config.formwizard_ftp_port = "";
+RZ.webspace_config.formwizard_ftp_server = "";
+RZ.webspace_config.formwizard_ftp_user = "";
+RZ.webspace_config.formwizard_setup = "yes";
+RZ.webspace_config.formwizard_smtp_password = "xxx";
+RZ.webspace_config.formwizard_smtp_server = "xxx";
+RZ.webspace_config.formwizard_smtp_user = "xxx";
+RZ.webspace_config.google_analytics = "";
+RZ.webspace_config.home_pageid = "0";
+RZ.webspace_config.home_sectionid = "0";
+RZ.webspace_config.home_template = "home,index,sitemap";
+RZ.webspace_config.icon_email = "<img src=https://www.leavenworthcounty.gov/\"/revize/images/email_icon_yellow.gif\" width=\"16\" border=\"0\" height=\"17\" title=\"Request email notification when page changes\" alt=\"Request email notification when page changes\" style=\"\" />";
+RZ.webspace_config.image_maxheight = "3000";
+RZ.webspace_config.image_maxwidth = "3000";
+RZ.webspace_config.image_setup = "yes";
+RZ.webspace_config.livesite_url = "";
+RZ.webspace_config.menu_links_module = "links";
+RZ.webspace_config.menu_newsection = "";
+RZ.webspace_config.menu_nexturl = "webspace_menu-editform.jsp";
+RZ.webspace_config.menu_sections_module = "sections";
+RZ.webspace_config.menu_system = "custom";
+RZ.webspace_config.menu_version = "1.00";
+RZ.webspace_config.new_menu_manager_enabled = "yes";
+RZ.webspace_config.notify_options = "hide_text=no";
+RZ.webspace_config.notify_return_url = "enotify/index.php";
+RZ.webspace_config.rte_setup = "yes";
+RZ.webspace_config.to_email = "webpageupdate_subscribers@leavenworthcounty.gov";
+RZ.webspace_config.use_folders = "1";
+
+RZ.isauthenticationactive = true
+RZ.warning = ""
+RZ.adminwinmsg = null
+
+RZ.channels = 'revize,production';
+RZ.jsversion = 1.2 
+ 
+
+
+
+
+
+
+
+
+
+
+ 
+
+	 Skip to main content 
+	 
+		
+		 
+			 
+				 
+					 
+				 
+				 
+					 
+					 
+				 
+				 
+					
+					 
+					
+
+
+
+
+
+
+
+ 
+ 
+	 Home 
+	 Government 
+		 
+			 County Commission 
+				 
+					 Commissioners 
+				 
+			 
+			 County Clerk's Office 
+				 
+					 Elections 
+				 
+			 
+			 County Attorney's Office 
+			 Register of Deeds Office 
+			 County Treasurer's Office 
+			 Sheriff's Office 
+		 
+	 
+	 Departments 
+		 
+			 Administration 
+			 Appraiser's Office 
+			 Buildings & Grounds 
+			 Community Corrections 
+			 Council on Aging 
+			 District Court 
+			 EMS 
+			 GIS 
+			 Health Department 
+			 Human Resources 
+			 Information Systems 
+			 Planning & Zoning 
+			 Public Works 
+				 
+					 Noxious Weed 
+					 Survey Office 
+				 
+			 
+			 Transfer Station 
+		 
+	 
+	 Information 
+		 
+			 Phone Directory 
+			 Citizen Request Center 
+			 Public Service Request 
+			 Job Openings 
+			 Bid Notices 
+			 Tax Sale 
+			 Project Status Updates 
+			 Live Webcam 
+			 Fire Districts & Stations Information 
+			 Americans with Disabilities Act Coordinator 
+		 
+	 
+	 How Do I? 
+		 
+			 Contact Us 
+			 Public Service Request 
+			 Citizen Request Center 
+			 Request Open Records 
+		 
+	 
+ 
+
+
+
+
+
+
+				 
+				 
+					 
+						 
+							 
+								
+								
+								 
+								
+								 
+								
+								 
+							 
+								 
+									 Search Leavenworth County Kansas 
+									 
+									 
+								 
+							 
+						 
+					 
+				 
+			 
+		 
+	 
+ 
+
+
+
+ 
+if (typeof RZlistbegin != 'undefined') RZlistbegin(1)
+ 
+
+	
+         
+			
+		
+	
+ 
+if (typeof RZlinktemplate != 'undefined') RZlinktemplate('slider','','')
+if (typeof RZ.nextseq != 'undefined') RZ.nextseq.modules['slider_1']={field:'seq_no',seq:'2.00'};
+ 
+
+
+ 
+	
+         
+              
+			 
+			 
+			
+         
+    
+ 
+
+ 
+	 
+		RZ.module = 'slider';
+		RZ.nexturl = 'editforms/slider_images-editlist.jsp?width=1700&height=500&pageid=442';
+		RZ.img = '<span class="rzBtn">Edit Slides</span>';
+		RZ.set = '';
+		RZ.options = '';
+		if (typeof RZaction != 'undefined') RZaction('editform');
+	 
+
+			
+ 
+
+
+
+ 
+	 
+		
+		 
+			
+
+	 
+				
+		
+			 
+     
+        RZ.module = 'global';
+        RZ.nexturl = 'editforms/left-contact-editform.jsp?width=150&height=150';
+        RZ.img = '<span class="rzBtn">Edit Contact</span>';
+        RZ.set = 'pageid=leftcontactlinks-486';
+        RZ.options = '';
+        if (typeof RZaction != 'undefined') RZaction('editform');
+     
+ 
+
+
+
+
+			 
+				
+				
+
+
+				
+				 	
+					 
+					RZ.module = 'freeform';
+					RZ.nexturl = "editforms/leftnav_title-editform.jsp";
+					RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = '';
+					RZ.img = '<span class="rzBtn">Edit Title</span>';
+					RZ.set = 'pageid=leftnavlinks-486';
+					RZ.options = '';
+					if (typeof RZaction != 'undefined') RZaction('editform');
+					 
+					 
+					RZ.module = 'links';
+					RZ.nexturl = "/revize/plugins/menus/webspace_menu-editlist.jsp?pageid=links-486&"
+						+ "linksfilter=linkplacement=leftnav and linkparentid=442&"
+						+ "numberoflevels=3&"
+						+ "linkoptions=url,template,file&"
+						+ "linknewsection=*all*";
+					RZ.img = '<span class="rzBtn">Edit Left Nav</span>';
+					RZ.caption = '';
+					RZ.set = "links.linkplacement=leftnav"
+					RZ.options = '';
+					if (typeof RZaction != 'undefined') RZaction('editlist');
+					 
+				 
+				
+				 Voting District Maps 
+				
+  
+	 November General 2026 Election 
+	 Sample Ballots November General Election 2026 
+	 Voter Rights 
+	 Ballot Drop Boxes 
+	 Register to Vote! 
+	 Advance Voting 
+	 Become an Election Worker 
+	 Campaign Finance Reports 
+		 
+			 New Page 
+		 
+	 
+	 Candidate Filing Packets 
+	 Elected Officials 
+	 Federal Service Absentee Ballot Request (FPCA) 
+	 Photo ID Requirements to Vote 
+	 Provisional Ballots 
+	 Review Your Voter Information 
+	 Voting District Maps 
+	 Document Center 
+	 MAPS 
+ 
+
+			 
+
+			
+ 
+     
+        RZ.module = 'global';
+        RZ.recordid = '';
+        RZ.nexturl = "editforms/check-editform.jsp";
+        RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = 'no';
+        RZ.img = '<span class="rzBtn" style="">Edit Show Section</span>';
+        RZ.set = 'pageid=leftqlinkslinks-486';
+        RZ.options = '';
+        if (typeof RZaction != 'undefined') RZaction('editform');
+     
+     
+        RZ.module = 'links';
+        RZ.nexturl = "/revize/plugins/menus/webspace_menu-editlist.jsp?pageid=486&"
+                    + "linksfilter=linkplacement=bottomleftlinks442 and linkparentid=0&"
+                    + "linkoptions=url,template,file&"
+                    + "toplevel=0&"
+                    + "bottomlevel=0&"
+                    + "linknewsection=*all*&"
+        RZ.img = '<span class="rzBtn" style="">Edit Links</span>';
+        RZ.caption = '';
+        RZ.set = "links.linkplacement = bottomleftlinks442";
+        RZ.options = '';
+        if (typeof RZaction != 'undefined') RZaction('editlist');
+     
+ 
+
+
+
+		
+	 
+
+ 
+
+			 
+				
+				 
+     
+         Home   Government   County Clerk's Office   Elections   Voting District Maps 
+     
+     
+         
+            
+
+Voting District Maps
+         
+         
+             
+                 
+	
+         
+            RZ.module = 'freeform';
+            RZ.recordid = '';
+            RZ.nexturl = "editforms/freeform-editform.jsp";
+            RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = '';
+            RZ.img = '<span class="rzBtn" style="">Edit Center Area</span>';
+            RZ.set = 'freeform.pageid=links-486';
+            RZ.options = '';
+            if (typeof RZaction != 'undefined') RZaction('editform');
+         
+        
+        
+
+        
+    
+    
+     
+        RZ.module = 'freeform';
+        RZ.nexturl = 'editforms/metadata-editform.jsp?';
+        RZ.img = '<span class="rzBtn">Edit Metadata</span>';
+        RZ.set = 'pageid=links-486';
+        RZ.options = '';
+        if (typeof RZaction != 'undefined') RZaction('editform');
+     
+     
+        RZ.nexturl = '';
+        RZ.img = '<span class="rzAdmin"><img src="https://www.leavenworthcounty.gov/images/edit/permissions.jpg" alt="Permissions" border="0" class="rzBtn" /></span>';
+        RZ.options = '';
+        if (typeof RZaction != 'undefined') RZaction('permissions');
+     
+
+ 
+
+                
+ From the Leavenworth County GIS Interactive Site: 
+ 
+  Commission Districts 
+  State Representative Districts 
+  State Senate Districts 
+  County Voting Districts 
+  City of Leavenworth Voting Districts 
+  Lansing Wards 
+ 
+ Map Files (PDF): 
+ 
+ Commission Districts 
+ Current Polling Places 
+ School Board Member Districts 
+ School Districts 
+ State Representative Districts 
+ Kansas Senate Districts 
+ Tax Districts 
+ Voting Districts 
+ Voting Districts in City of Lansing 
+ Voting District in City of Leavenworth  
+  
+
+
+                
+         
+     
+ 
+ 
+				
+			
+			 
+		 
+			
+	 
+
+	
+
+	
+
+
+
+
+
+ 
+	 
+				 
+			
+			 SIGN-UP FOR ALERTS 
+			 
+
+			
+			 Subscribe Now 
+			
+		 
+	 
+ 
+	
+	
+
+ 
+		 
+		 
+		 Share  this page 
+	 
+
+	 
+		 
+			 
+				 
+					 Share this page 
+					 × 
+				 
+				 
+					 
+						 Copy and paste this code into your website. 
+						 <a href="http://www.leavenworthcounty.gov/government/county_clerk_s_office/elections/voting_district_maps.php">Your Link Name</a> 
+					 
+					 
+						 Share this page on your favorite Social network 
+						 
+							 
+								 
+									  Facebook
+								 
+							 
+							 
+								 
+									  Twitter
+								 
+							 
+							 
+								 
+									  Reddit
+								 
+							 
+						 
+					 
+					 Close 
+				 
+			 
+		 
+	 
+ 
+
+ 
+
+
+ 
+
+
+
+
+
+
+
+		
+
+ 
+	 
+				
+		 
+			 
+				 
+					 
+						
+						 
+							 
+						 
+						 
+							 COUNTY HOURS 
+							 Mon-Fri: 8:00AM - 5:00PM 
+						 
+						
+					 
+				 
+				 
+					 
+						
+						 
+							 
+						 
+						 
+							 COUNTY ADDRESS 
+							 300 Walnut Street  Leavenworth, KS 66048 
+						 
+						
+					 
+				 
+				 
+					 
+						
+						 
+							 
+						 
+						 
+							 COUNTY DIRECTORY! 
+							 View County Directory! 
+						 
+						
+					 
+				 
+			 
+		 
+		 
+			 
+								 
+					© Leavenworth County, KS. All Rights Reserved.
+				 
+				 
+				Powered by  revize.,  the Government Website Experts  Login 
+				 
+			 
+		 
+	 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+
+	 
+   
+     
+	   
+		   
+			 
+			 
+		   
+       
+	   
+		  
+		  
+		  
+		  
+	   
+       
+         Close 
+         Read More 
+       
+     
+   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
