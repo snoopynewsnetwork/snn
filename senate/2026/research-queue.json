@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "requested_date": "2026-10-17",
-  "updated_at_utc": "2026-10-18T02:27:12.804860+00:00",
+  "updated_at_utc": "2026-10-18T02:35:20.048494+00:00",
   "scope": "35 states in the repository 2026 U.S. Senate race index",
   "coordinator_agent_id": "d0fc3534-1613-4883-b48b-21a233fcfd9e",
   "workspace_id": "wks_b290f45007010740",
@@ -337,7 +337,7 @@
       "election": "Regular",
       "seat_class": "II",
       "priority": 4,
-      "status": "official-results-and-partisanship-active",
+      "status": "official-results-and-maps-active",
       "workers": {
         "turnout": {
           "agent_id": "0db47a24-54d9-4fb9-a9fa-077a96a15d55",
@@ -345,10 +345,14 @@
         },
         "partisanship": {
           "agent_id": "da869011-f027-4734-ac67-3a5568f5dab1",
-          "status": "running"
+          "status": "complete-awaiting-integration"
         },
         "official_results": {
           "agent_id": "470aff5d-5ec7-400d-a0cc-e26e9ebb1b58",
+          "status": "running"
+        },
+        "precinct_maps": {
+          "agent_id": "5612acc6-8c57-418f-88cb-d91b85b0f676",
           "status": "running"
         }
       },
@@ -357,7 +361,9 @@
         "status": "pass",
         "checks": "maine/data/coordinator-baseline-reconciliation.json",
         "coordinator": "2,052 native rows, 9,241 candidate cells, 26 statewide controls; 3,584 shared Senate numeric comparisons, exact 512 keys/names/source rows and 164 priority key bytes/hash. No geographic allocation. Independent coordinator cached-cell comparison also localized all archived/current 2024 disjoint changes to Alfred with unchanged ballots; other changed rows are York/state footers.",
-        "turnout": "Complete: 512 units/exact164, all candidate/blank/ballot and 16 section controls, independent 510-row governor PDF reconciliation, local Union and four registration/PDF checks, 39 raw source hashes and 84 asset hashes."
+        "turnout": "Complete: 512 units/exact164, all candidate/blank/ballot and 16 section controls, independent 510-row governor PDF reconciliation, local Union and four registration/PDF checks, 39 raw source hashes and 84 asset hashes.",
+        "partisanship": "Complete: 25 source capture hashes, 2,052 native rows/9,241 candidate cells/26 state controls/416 section cells, 72 scenarios/36,948 native target rows, 28 conditional transfer rows/12 explicitly unreachable examples, exact 164 priority, 88 asset hashes and final replay passed.",
+        "coordinator_targets": "Independent checks passed 72 state scenarios, 36,948 unit rows, 27 preference scenarios, 28 transfer rows/12 conditional examples; declared native-base settings match source totals. Native/section weights recomputed; lexical weights arithmetically checked with unvalidated matching/residual assumptions explicit."
       },
       "gaps": [
         "Current corrected SOS and Legislature-archived 2024 workbooks differ only at Alfred among disjoint native units; archive matches House Clerk totals. Exact differences localized; cause/publication chronology unresolved. NARA supports current named presidential totals.",
@@ -367,7 +373,7 @@
         "No live collector, calibrated forecast or approved November geographic crosswalk claimed."
       ],
       "published_commits": [],
-      "coordinator_preparation": "Accepted exact 164 native priority contract; official-results agent launched after turnout completed. Partisanship remains active; maps awaits free slot. Coordinator integrates final turnout and prepares source/map review.",
+      "coordinator_preparation": "Both baseline workers completed and independently reviewed. Official-results and maps are now the only two active researchers. Exact 164 native priority contract supplied; all 512 historical units retained.",
       "priority_geography": {
         "basis": "Corrected official 2024 Senate initial all-candidate tally; native municipal/composite units plus separate STATE UOCAVA",
         "count": 164,
@@ -395,7 +401,7 @@
       "validation": null,
       "gaps": [],
       "published_commits": [],
-      "coordinator_preparation": "Regional source captures, local-news and collection drafts prepared; tested Tarrant November placeholder ZIP/vendor denials. State stack remains queued."
+      "coordinator_preparation": "Expanded regional newsroom evidence to East Texas, Panhandle, Coastal Bend and Austin; 30 bounded snapshots, actual KLTV 64-row inactive November local setup and linked AP403 samples, KFDA empty local results, KRIS explicit test/vendor403/historical mail-count reporting and KXAN access gap. Four question agents remain queued; no exact geography yet."
     },
     {
       "state": "Iowa",
@@ -409,7 +415,7 @@
       "validation": null,
       "gaps": [],
       "published_commits": [],
-      "coordinator_preparation": "Regional source captures and local-news draft prepared; research stack remains queued."
+      "coordinator_preparation": "Expanded KCRG linked Iowa AP panel and KCCI post-primary reporting; 16 exact captured responses with hashes. Current local Gray displays test/empty configurations; AP/NYT access gaps retained. Four question agents remain queued and exact geography unestablished."
     },
     {
       "state": "Kansas",
