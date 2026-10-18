@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "requested_date": "2026-10-17",
-  "updated_at_utc": "2026-10-18T04:25:40.724444+00:00",
+  "updated_at_utc": "2026-10-18T15:03:33.055718+00:00",
   "scope": "35 states in the repository 2026 U.S. Senate race index",
   "coordinator_agent_id": "d0fc3534-1613-4883-b48b-21a233fcfd9e",
   "workspace_id": "wks_b290f45007010740",
@@ -477,7 +477,7 @@
       "election": "Regular",
       "seat_class": "II",
       "priority": 6,
-      "status": "second-wave-active",
+      "status": "reviewed-awaiting-publication",
       "workers": {
         "turnout": {
           "agent_id": "b5a3a82f-3a5c-4e9f-a266-e454c448c846",
@@ -491,34 +491,38 @@
         },
         "official_results": {
           "agent_id": "a100d306-3574-4231-b534-4f9d69605645",
-          "status": "running",
+          "status": "complete-reviewed",
           "launched_at_utc": "2026-10-18T04:22:45.102021+00:00"
         },
         "precinct_maps": {
           "agent_id": "23869917-a710-48f6-b185-60f45b27888b",
-          "status": "running",
+          "status": "complete-reviewed",
           "launched_at_utc": "2026-10-18T04:23:46.271689+00:00"
         }
       },
       "validation": {
         "status": "pass",
-        "scope": "Independent coordinator first-wave counts/priority/targets/historicalXML/native contract only; worker final metadata/assets QA and second wave remain pending",
-        "checks": "iowa/data/coordinator-baseline-reconciliation.json",
-        "targets": "iowa/data/coordinator-target-checks.json",
-        "historical_XML": "iowa/data/coordinator-historical-clarity-checks.json",
-        "native_contract": "iowa/data/coordinator-native-contract-checks.json",
-        "coverage": "99counties/297primarycontests/2475Totalcells/7484fullcandidate-methodcells; exact41 priority; all13558constituentobjects/99rosters conserved.36state/3564county/3564selected/3960separate-otherrows checked.",
-        "first_wave_assets": "Metadata-only circular acceptance hashes removed; all sourceobjects unchanged. Final native/count/peer/534source/17freshPDF checks rerun;625turnout/275baselineassets. Final peer metadata hash supplied to both active secondwave workers."
+        "scope": "Complete four-question research package; retained source defects and unapproved current crosswalks explicit.",
+        "checks": "iowa/data/coordinator-integration-checks.json",
+        "worker_asset_hashes": 5446,
+        "relative_links": 297,
+        "native_objects": 13558,
+        "binary_map_layers": 253,
+        "binary_map_vertices": 803565,
+        "repository_check": "npm run check: pass"
       },
       "gaps": [
-        "Generic Write-in marks have no established named-valid allocation.",
-        "2024 canvass vs turnout report ED/absentee differ +7/-7, sameTotal; Des Moines scope retained.",
-        "Lucas2024 XML turnout omits two trailing-space Chariton labels; candidate/status7 vs turnout5, ballots2733 vs4676; no allocation.",
-        "2020 statistical age bins exceed printed statewide registered total by2; source disagreement retained.",
-        "No current November source/cadence/outstanding votes/geographic approval/collector/calibrated forecast inferred from historical evidence."
+        "No November counted feed, machine candidate IDs, upload specification, demonstrated cadence or exact outstanding Senate votes established.",
+        "Generic historical write-in marks have no established named-valid allocation.",
+        "Lucas2024 candidate/status7 vs root-turnout5; 1943ballot context gap unallocated; blank root-turnout contest IDs preserved.",
+        "2024 turnout vs canvass ED/Absentee -7/+7 localized to Des Moines; 2020 registered age bins +2 and source party/registration differences preserved.",
+        "Current recount statute/dayfollowing versus linkedguide Nov13/third-day and Cedar Nov12 holiday handling conflict; stale SOS FWAB9pm versus current8pm retained.",
+        "No approved geographic crosswalk: all13558objects retained;297admin/1834ambiguous/11427unknown.",
+        "Wrong-scope Polk5district/Jackson3supervisor SOS ZIPs rejected; actual county PDF replacements retain partial/current-vintage gaps; Kossuth/Lyon fullcounty geometry missing.",
+        "14invalid geometries/100positive overlap pairs retained unchanged; no vote allocation or calibrated forecast."
       ],
       "published_commits": [],
-      "coordinator_preparation": "Only official-results and maps active. Final repaired prioritySHA579b22b8d4f35f12d085ef8402a1bcab14e135a1577daf3ddc4f7d3f66460822 supplied; all13558objects unchanged. Coordinator finalfirstwaveassetintegration continues while secondwave researches.",
+      "coordinator_preparation": "All four actual workers finished; complete integration PASS5446workerhashes/whole-state controls/native/targets/current source and map audit; npm run check passes. Scoped commit/push and remote verification next.",
       "priority_geography": {
         "basis": "2024 president seven named-ticket columns plus generic Write-in marks; under/over excluded, named-valid write-in classification unavailable",
         "count": 41,
@@ -543,12 +547,23 @@
       "election": "Regular",
       "seat_class": "II",
       "priority": 7,
-      "status": "queued",
-      "workers": {},
+      "status": "first-wave-active",
+      "workers": {
+        "turnout": {
+          "agent_id": "158cc3fa-5119-4e25-a958-b042f0e0f340",
+          "status": "running",
+          "launched_at_utc": "2026-10-18T12:56:41.599121+00:00"
+        },
+        "partisanship": {
+          "agent_id": "78f9c3c0-062f-41f7-87c0-f0a6443f8877",
+          "status": "running",
+          "launched_at_utc": "2026-10-18T15:00:51.012027+00:00"
+        }
+      },
       "validation": null,
       "gaps": [],
       "published_commits": [],
-      "coordinator_preparation": "19 retained responses including actual NPR/AP AugustSenate state/countyJSON; all105 displayed candidate/county sums exact, Democratic reporting4137vsstate4149 and Republican4149withCrawford56/57 retained. Historical/noncertified/nonNovember scope plus regional/ballotdeadline caveats. No question agents or accepted priority."
+      "coordinator_preparation": "Both actual first-wave workers active; actual peer IDs shared. Primary county/native/candidate/write-in/sourcevintage reconciliation underway; no second-wave priority accepted."
     },
     {
       "state": "Georgia",
@@ -562,7 +577,7 @@
       "validation": null,
       "gaps": [],
       "published_commits": [],
-      "coordinator_preparation": "27 retained regional/authority responses; added Columbus/Albany/Macon routes, WTVM inactive Alabama election, WALB empty test display and shared AP layouts verified offline. News/strategy preparation only; no question agents or accepted priority."
+      "coordinator_preparation": "52retainedresponses. Official newerapp/scripts/literalroute chain recovers4historicalall159county candidate/method breakdowns and117election roster; namedfour2024=5250047 matchesHouseClerk. SeparatequalifiedWI858 web-parser observation/original403/countygap retained; noacceptedpriority. ArchiveZIPs403. No actual agents launched."
     },
     {
       "state": "New Hampshire",
@@ -976,13 +991,13 @@
   "batch_status": "running",
   "coordinator_preparation_audit": {
     "status": "pass",
-    "checked_at_utc": "2026-10-18T04:19:56.442776+00:00",
+    "checked_at_utc": "2026-10-18T04:57:41.891448+00:00",
     "scope": "Still-queued states only; retained public news/preflight responses, not completed question packages or accepted feeds",
     "states": 28,
-    "response_captures": 352,
+    "response_captures": 377,
     "http_status_counts": {
-      "200": 267,
-      "403": 81,
+      "200": 284,
+      "403": 89,
       "429": 1,
       "402": 1,
       "500": 1,

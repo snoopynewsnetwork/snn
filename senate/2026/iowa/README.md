@@ -14,7 +14,7 @@
 | Current seat holder | Joni Ernst |
 | Seat holder's party | Republican |
 | Seat details verified | 2026-10-17 |
-| Coverage status | Initialized; campaign and ballot research pending |
+| Coverage status | Four-question research reviewed; campaign tracking pending |
 
 ## Candidates
 
@@ -57,3 +57,15 @@ No results entered yet.
 - [FEC 2026 election calendar](https://www.fec.gov/documents/5910/2026pdates.pdf): election scope and general election date.
 - [Iowa election office](https://sos.iowa.gov/): ballot access, election schedule, and official results.
 - [FEC Iowa Senate election data](https://www.fec.gov/data/elections/senate/IA/2026/): candidate filings and campaign finance.
+
+
+## Election-night research
+
+The reviewed package covers all 99 counties. Its exact 41-county research priority contributes 1,332,107 of 1,663,506 historical presidential candidate/generic-write-in marks (80.0783%). All other counties remain in statewide calculations. Generic marks are not established named-valid write-ins.
+
+- [Turnout and exact coverage](turnout.md), [historical preferences and conditional win targets](county-partisanship.md).
+- [Official results channels and counting rules](official-results.md), [downloaded precinct-map research](precinct-maps.md), [offline map index](maps/index.html).
+- [Regional/NYT backstops](local-news-results.md), [proposed collection strategy](live-polling-strategy.md).
+- [Integration review and reproduction](research-review.md), [actual question-agent dispatch](research-dispatch.md).
+
+Current official sample ballots corroborate Hinson, Turek and Laehn plus a separate write-in line. November machine feeds, current geographic crosswalks and exact outstanding Senate votes remain unverified. Source discrepancies and calendar conflicts are preserved. This research package contains conditional arithmetic and reference assets; no collector or calibrated forecast is implemented.

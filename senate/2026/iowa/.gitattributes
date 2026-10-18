@@ -1,0 +1,8 @@
+# Public evidence and extracted layout text retain exact bytes and spacing.
+data/turnout/raw/** -text -whitespace
+data/turnout/text/** -text -whitespace
+data/results-sources/originals/** -text -whitespace
+data/results-sources/extracts/*.txt -text -whitespace
+maps/raw/** -text -whitespace
+# Generated CSV records use the Python CSV writer's CRLF separator.
+**/*.csv -text whitespace=cr-at-eol

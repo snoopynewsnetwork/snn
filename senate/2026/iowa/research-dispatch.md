@@ -6,8 +6,8 @@ Coordinator actual Paseo ID `d0fc3534-1613-4883-b48b-21a233fcfd9e`, shared main 
 | --- | --- | --- | --- |
 | Turnout | `b5a3a82f-3a5c-4e9f-a266-e454c448c846` | `turnout.md`, `data/county-turnout.csv`, `data/turnout/` | Complete; reviewed |
 | Partisanship/targets | `4bcbf52f-1952-4e27-b0e5-9e5bf55c67cb` | `county-partisanship.md`, `data/county-baselines.csv`, `data/baselines/` | Complete; reviewed |
-| Official results | `a100d306-3574-4231-b534-4f9d69605645` | `official-results.md`, `data/official-results-sources.csv`, `data/results-sources/` | Active |
-| Precinct maps | `23869917-a710-48f6-b185-60f45b27888b` | `precinct-maps.md`, `maps/` | Active |
+| Official results | `a100d306-3574-4231-b534-4f9d69605645` | `official-results.md`, `data/official-results-sources.csv`, `data/results-sources/` | Complete; reviewed |
+| Precinct maps | `23869917-a710-48f6-b185-60f45b27888b` | `precinct-maps.md`, `maps/` | Complete; reviewed |
 
 The [coordinator source preflight](data/coordinator-source-preflight.md) retains original SOS2024/2022/2020 canvasses and independent all99-county totals. Its provisional41-county candidate-volume priority is not accepted dispatch geography. Actual first-wave workers must independently reconcile full county/candidate/method/native-unit scope and current candidate/write-in definitions. There was no2024 Senate contest: priority uses actual2024president, with2022other-seat Senate midterm and2020same-seat Senate distinct. All99 counties remain in every state calculation. Native precinct, split ballot-style, central absentee and polling-place units remain distinct and unapproved as2026 crosswalks.
 
@@ -24,3 +24,9 @@ Turnout’s actual finish notification arrived. Profiles (none) and compact prov
 Partisanship’s actual finish notification arrived. Profiles (none) and compact provider discovery were rechecked, then maps agent `23869917-a710-48f6-b185-60f45b27888b` launched with finish notifications. Only official results and maps are active research workers. Both first-wave reports and full numerical/native checks are complete; coordinator refreshes metadata-only acceptance pins/validation before final immutable peer hashes. No source object or county priority changes.
 
 The coordinator removed circular acceptance-report hash references, leaving path/scope references while audit reports pin the final contract. All county/native objects are unchanged. Final priority contract:9,106,895 bytes; SHA-256 `579b22b8d4f35f12d085ef8402a1bcab14e135a1577daf3ddc4f7d3f66460822`. Full native/count/peer/target and first-wave worker checks were rerun; final hashes supplied to both second-wave workers. Turnout retains625ownedassets; baselines275. Turnout’s completed-with-retained-discrepancies status preserves actual source gaps rather than declaring every source reconciled.
+
+Official-results actual completion arrived. Its slot now runs Kansas turnout `158cc3fa-5119-4e25-a958-b042f0e0f340`. Maps has supplied a frozen substantive handoff; its actual finish notification is still awaited. Coordinator reviews both packages without launching an extra worker.
+
+Maps actual completion arrived. Its slot now runs Kansas partisanship `78f9c3c0-062f-41f7-87c0-f0a6443f8877`; only the Kansas first pair is active. Both Iowa second-wave worker validators and independent coordinator raw-byte/native checks pass. Final integration and publication are underway.
+
+Complete integration passes all 5,446 worker-owned hashes, source/native/target/map checks and repository `npm run check`. All four reports are reviewed with retained gaps. Coordinator stages only Iowa plus queue/dispatch records, then commits and pushes main with remote verification.
