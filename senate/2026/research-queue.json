@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "requested_date": "2026-10-17",
-  "updated_at_utc": "2026-10-18T18:48:49.586249+00:00",
+  "updated_at_utc": "2026-10-18T19:04:34.245339+00:00",
   "scope": "35 states in the repository 2026 U.S. Senate race index",
   "coordinator_agent_id": "d0fc3534-1613-4883-b48b-21a233fcfd9e",
   "workspace_id": "wks_b290f45007010740",
@@ -720,7 +720,8 @@
         },
         "precinct_maps": {
           "agent_id": "69ff6f43-df0d-4192-9b34-cffcede484be",
-          "status": "active"
+          "status": "complete-awaiting-review",
+          "finished_at_utc": "2026-10-18T19:04:34.245339+00:00"
         }
       },
       "validation": {
@@ -732,7 +733,7 @@
       },
       "gaps": [],
       "published_commits": [],
-      "coordinator_preparation": "Both firstpairworkers actuallyfinished. Independent23roster7360record34880field source review,16state5120native160county20synthetic target review and335asset hashes pass. Actualsecondwave cbbfbe8d/69ff6f43 active.",
+      "coordinator_preparation": "Both firstwave assignments reviewed; maps actuallyfinished and finalfreeze1252assets pending independent map review. Official-results cbbfbe8d remains active. MNturnout fills freed slot; maximumtwo workers.",
       "priority_geography": {
         "basis": "2024 official linked president_3 original; reported four printed tickets plus generic Write-Ins numeric subtotals, with all original blanks preserved.",
         "count": 143,
@@ -755,12 +756,18 @@
       "election": "Regular",
       "seat_class": "II",
       "priority": 10,
-      "status": "queued",
-      "workers": {},
+      "status": "first-wave-active",
+      "workers": {
+        "turnout": {
+          "agent_id": "a2143988-db08-4b96-a032-b31b5401db97",
+          "status": "active",
+          "launched_at_utc": "2026-10-18T19:04:34.245339+00:00"
+        }
+      },
       "validation": null,
       "gaps": [],
       "published_commits": [],
-      "coordinator_preparation": "30retainedresponses;actualSOS2024/22/20XLSX+2020canvassPDF recovered. Preflightall87/4103native2024&22/4110native2020;2024Senate3189323/provisional24priority notaccepted. Source2024methodwarningsClearwaterSwiftWinona/2020duplicateTABMODEL retained. Botchallenge200s distinguished. Noagentsyet."
+      "coordinator_preparation": "Actual Minnesota turnout worker launched after NHmaps actualfinish; independent partisanship awaits next actual free slot. Retained original preflight is preparation only; no accepted geography."
     },
     {
       "state": "South Carolina",
@@ -1146,13 +1153,13 @@
   "batch_status": "in_progress",
   "coordinator_preparation_audit": {
     "status": "pass",
-    "checked_at_utc": "2026-10-18T18:48:49.586072+00:00",
+    "checked_at_utc": "2026-10-18T18:59:41.523314+00:00",
     "scope": "Still-queued states only; retained public news/preflight responses, not completed question packages or accepted feeds",
     "states": 25,
-    "response_captures": 490,
+    "response_captures": 513,
     "http_status_counts": {
-      "200": 406,
-      "403": 78,
+      "200": 427,
+      "403": 80,
       "transport_failure": 1,
       "500": 1,
       "404": 3,
