@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "requested_date": "2026-10-17",
-  "updated_at_utc": "2026-10-18T02:35:20.048494+00:00",
+  "updated_at_utc": "2026-10-18T03:09:29.197294+00:00",
   "scope": "35 states in the repository 2026 U.S. Senate race index",
   "coordinator_agent_id": "d0fc3534-1613-4883-b48b-21a233fcfd9e",
   "workspace_id": "wks_b290f45007010740",
@@ -337,43 +337,55 @@
       "election": "Regular",
       "seat_class": "II",
       "priority": 4,
-      "status": "official-results-and-maps-active",
+      "status": "reviewed-ready-for-publication",
       "workers": {
         "turnout": {
           "agent_id": "0db47a24-54d9-4fb9-a9fa-077a96a15d55",
-          "status": "complete-awaiting-integration"
+          "status": "complete-reviewed"
         },
         "partisanship": {
           "agent_id": "da869011-f027-4734-ac67-3a5568f5dab1",
-          "status": "complete-awaiting-integration"
+          "status": "complete-reviewed"
         },
         "official_results": {
           "agent_id": "470aff5d-5ec7-400d-a0cc-e26e9ebb1b58",
-          "status": "running"
+          "status": "complete-reviewed"
         },
         "precinct_maps": {
           "agent_id": "5612acc6-8c57-418f-88cb-d91b85b0f676",
-          "status": "running"
+          "status": "complete-reviewed"
         }
       },
       "validation": {
-        "scope": "baseline geography and priority accepted; first-wave final work ongoing",
+        "scope": "integrated four-question research package",
         "status": "pass",
-        "checks": "maine/data/coordinator-baseline-reconciliation.json",
-        "coordinator": "2,052 native rows, 9,241 candidate cells, 26 statewide controls; 3,584 shared Senate numeric comparisons, exact 512 keys/names/source rows and 164 priority key bytes/hash. No geographic allocation. Independent coordinator cached-cell comparison also localized all archived/current 2024 disjoint changes to Alfred with unchanged ballots; other changed rows are York/state footers.",
+        "checks": "maine/data/coordinator-checks.json",
+        "coordinator": "Exact512 identities/all164 priority order/admin exception, 2,052 baseline rows/9,241 candidate cells/26 controls, 72 state scenarios/36,948 native targets, 6,354 assignment artifact hashes, 1,168 Markdown links and strict object bounds passed.",
         "turnout": "Complete: 512 units/exact164, all candidate/blank/ballot and 16 section controls, independent 510-row governor PDF reconciliation, local Union and four registration/PDF checks, 39 raw source hashes and 84 asset hashes.",
         "partisanship": "Complete: 25 source capture hashes, 2,052 native rows/9,241 candidate cells/26 state controls/416 section cells, 72 scenarios/36,948 native target rows, 28 conditional transfer rows/12 explicitly unreachable examples, exact 164 priority, 88 asset hashes and final replay passed.",
-        "coordinator_targets": "Independent checks passed 72 state scenarios, 36,948 unit rows, 27 preference scenarios, 28 transfer rows/12 conditional examples; declared native-base settings match source totals. Native/section weights recomputed; lexical weights arithmetically checked with unvalidated matching/residual assumptions explicit."
+        "coordinator_targets": "Independent checks passed 72 state scenarios, 36,948 unit rows, 27 preference scenarios, 28 transfer rows/12 conditional examples; declared native-base settings match source totals. Native/section weights recomputed; lexical weights arithmetically checked with unvalidated matching/residual assumptions explicit.",
+        "coordinator_local_sources": "14 original municipal PDF hashes and 56 source-aware transcribed candidate cells checked against selected SOS native rows; 12 match, Gorham/Falmouth differences preserved. Coordinator visually reviewed Gorham/Falmouth/Rockport; no independent extraction claim for all PDFs.",
+        "precinct_maps": "Coordinator rerun passed 203 acquisitions, 8,421 native state features/full vertices/106 batches, 3 Orono features, 20 original PDFs/95 unique previews, 199 Census VTDs, 893 artifact hashes, all512/exact164 and 1,590 index links. Representative previews visually checked.",
+        "official_results": "Repaired full-name/explicit-component authority matching. Network-free audit passed 29,456 assertions; 5,289 asset hashes, 1,357 original request records, 155 successful priority direct routes and nine byte gaps retained.",
+        "review": "maine/research-review.md",
+        "repository": "npm run check passed; scoped staging/whitespace/object checks and remote verification pending publication."
       },
       "gaps": [
         "Current corrected SOS and Legislature-archived 2024 workbooks differ only at Alfred among disjoint native units; archive matches House Clerk totals. Exact differences localized; cause/publication chronology unresolved. NARA supports current named presidential totals.",
         "2022 Governor raw T3 ND Twp county code PEN occurs in HAN section; native code and printed-section sums preserved separately; two unlabeled Cranberry Isles rows retained.",
         "Distinct 2024 Senate512/president513, 2022 governor510 and 2020 Senate517 raw reporting rows; name matching is not a cross-year or November boundary crosswalk.",
         "Current 2025-amended RCV first-choice denominator includes blank/overvote/excluded-candidate ballots; later continuing/exhausted counts must remain distinct.",
-        "No live collector, calibrated forecast or approved November geographic crosswalk claimed."
+        "No live collector, calibrated forecast or approved November geographic crosswalk claimed.",
+        "Gorham local 2024 Senate PDF is 400 King/30 Kouzounas/4 blank below corrected SOS; Falmouth is one lower for each candidate and lacks blank/ballot totals. These are distinct from the Alfred statewide-vintage comparison; cause/order unresolved.",
+        "Bounded June Democratic CD2 format test has initial vs round-1 candidate/blank differences and repeated UOCAVA CVR IDs; preserve stages/source rows without deduplication or inferred transfers. No November production schema or full replay established.",
+        "BDN primary JSON has a topline/county residual of 813, null/reused native IDs and placeholder method fields. Historical/test/blocked newsroom products and NYT require November verification.",
+        "Nine priority official direct-byte gaps; current clerk CSV560/HTML505/voting539 rows differ in scope, including duplicate Saint Agatha tuple. T22 MD current host remains unknown; no legal-authority count inferred.",
+        "Municipal polygons and finer references do not establish November approval/frozen2024 geometry/crosswalks. Historical combined extents, Louds Island township, Gorham/Ellsworth finer byte gaps, nine other finer-map gaps and seven nonpriority geometry names remain unresolved.",
+        "Eight invalid state polygons, one state overlap and two Orono overlap pairs retained without repair; no vote allocation.",
+        "Current candidate documents support Collins/Jackson plus six Senate write-ins; exhaustive negative late-exclusion certificate and November central RCV schedule unestablished. Absentee206 is only a range sample, not a statewide outstanding census."
       ],
       "published_commits": [],
-      "coordinator_preparation": "Both baseline workers completed and independently reviewed. Official-results and maps are now the only two active researchers. Exact 164 native priority contract supplied; all 512 historical units retained.",
+      "coordinator_preparation": "All assignments and coordinator integration reviewed. Publishing the Maine package; the actual Texas first pair are active. No live collector or calibrated forecast claimed.",
       "priority_geography": {
         "basis": "Corrected official 2024 Senate initial all-candidate tally; native municipal/composite units plus separate STATE UOCAVA",
         "count": 164,
@@ -386,7 +398,7 @@
         "ordered_keys": "maine/data/turnout/priority-keys.txt",
         "ordered_keys_sha256": "086b400b77792d763e93a5083c9ec8c92c71e44016743fc4e7f54bb2008db407",
         "administrative_priority": "STATE UOCAVA rank 22, 6,434 votes; no county or polygon invented",
-        "reconciliation": "Independent worker OOXML extraction and coordinator cross-assignment checks passed; exact minimum threshold and crossing Pownal 1,251 verified. Second wave waits for a research slot."
+        "reconciliation": "Independent worker OOXML extraction and coordinator cross-assignment checks passed; exact minimum threshold, crossing Pownal 1,251 and key bytes/hash verified. Both second-wave agents launched on this accepted contract."
       }
     },
     {
@@ -396,12 +408,21 @@
       "election": "Regular",
       "seat_class": "II",
       "priority": 5,
-      "status": "queued",
-      "workers": {},
+      "status": "turnout-and-partisanship-active",
+      "workers": {
+        "turnout": {
+          "agent_id": "9b1a22e8-9948-43b6-933d-bd9e99a27695",
+          "status": "running"
+        },
+        "partisanship": {
+          "agent_id": "2846254a-c87f-449c-ba54-5f6873adaebd",
+          "status": "running"
+        }
+      },
       "validation": null,
       "gaps": [],
       "published_commits": [],
-      "coordinator_preparation": "Expanded regional newsroom evidence to East Texas, Panhandle, Coastal Bend and Austin; 30 bounded snapshots, actual KLTV 64-row inactive November local setup and linked AP403 samples, KFDA empty local results, KRIS explicit test/vendor403/historical mail-count reporting and KXAN access gap. Four question agents remain queued; no exact geography yet."
+      "coordinator_preparation": "Both actual first-wave workers active. Turnout recovered archived original SOS canvass supporting House Clerk statewide totals; original county/native-unit evidence and independent full-field/priority reconciliation still pending. No accepted priority or second-wave launch."
     },
     {
       "state": "Iowa",
@@ -415,7 +436,7 @@
       "validation": null,
       "gaps": [],
       "published_commits": [],
-      "coordinator_preparation": "Expanded KCRG linked Iowa AP panel and KCCI post-primary reporting; 16 exact captured responses with hashes. Current local Gray displays test/empty configurations; AP/NYT access gaps retained. Four question agents remain queued and exact geography unestablished."
+      "coordinator_preparation": "18 retained responses including actual NPR/AP June Senate state/county JSON; reproducible 99-county candidate reconciliation and 1,659-state vs 1,658-county reporting discrepancy retained. Primary display omits sub-1% candidates and is not certified all-candidate or November data. No question agent or accepted priority set."
     },
     {
       "state": "Kansas",
@@ -854,5 +875,20 @@
       ]
     }
   ],
-  "batch_status": "running"
+  "batch_status": "running",
+  "coordinator_preparation_audit": {
+    "status": "pass",
+    "checked_at_utc": "2026-10-18T03:00:38.677904+00:00",
+    "scope": "Still-queued states only; retained public news/preflight responses, not completed question packages or accepted feeds",
+    "states": 30,
+    "response_captures": 388,
+    "http_status_counts": {
+      "200": 294,
+      "403": 92,
+      "500": 1,
+      "404": 1
+    },
+    "checks": "Unique IDs, original/stored SHA-256, raw byte counts, UTC/headers, strict per-asset bounds and no orphan response assets.",
+    "additional_content_checks": "Texas and Iowa retained actual newsroom JSON passed their separate offline count/coverage inspectors; these are historical products, not November approval."
+  }
 }

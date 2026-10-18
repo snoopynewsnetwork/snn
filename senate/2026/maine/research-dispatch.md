@@ -6,8 +6,12 @@ Coordinator: `d0fc3534-1613-4883-b48b-21a233fcfd9e`. Shared main checkout; coord
 | --- | --- | --- | --- |
 | Turnout | `0db47a24-54d9-4fb9-a9fa-077a96a15d55` | `turnout.md`, `data/county-turnout.csv`, `data/turnout/` | Complete; coordinator integration |
 | Partisanship/targets | `da869011-f027-4734-ac67-3a5568f5dab1` | `county-partisanship.md`, `data/county-baselines.csv`, `data/baselines/` | Complete; coordinator integration |
-| Official results | `470aff5d-5ec7-400d-a0cc-e26e9ebb1b58` | `official-results.md`, `data/official-results-sources.csv`, `data/results-sources/` | Active after accepted priority reconciliation |
-| Precinct maps | `5612acc6-8c57-418f-88cb-d91b85b0f676` | `precinct-maps.md`, `maps/` | Active after accepted priority reconciliation |
+| Official results | `470aff5d-5ec7-400d-a0cc-e26e9ebb1b58` | `official-results.md`, `data/official-results-sources.csv`, `data/results-sources/` | Complete; coordinator integration |
+| Precinct maps | `5612acc6-8c57-418f-88cb-d91b85b0f676` | `precinct-maps.md`, `maps/` | Complete; coordinator integration |
+
+## Dispatch history
+
+The table above records current assignment status. The following entries preserve the launch/reconciliation sequence and the worker slots available at each step.
 
 Profiles were checked: none configured. Compact provider discovery verified `codex/gpt-6.1-sol`, `full-access`, `xhigh`. Turnout started after Ohio official-results finished; Ohio maps remains active. The two-worker cap is preserved.
 
@@ -22,3 +26,7 @@ Exact priority geography accepted after independent worker extraction and coordi
 Turnout finished its final report, independent 510-row governor PDF check, signed Union samples, registration controls and hashes. Official results launched in its freed slot as actual Paseo agent `470aff5d-5ec7-400d-a0cc-e26e9ebb1b58`; profiles (none) and compact provider configuration rechecked. Exact 164 keys and all 512 historical native records are supplied. Official results and partisanship are the only two active research workers; maps awaits a slot.
 
 Partisanship completed its final report, source/candidate controls, 72 state scenarios and 36,948 native target rows, with aligned native-base settings. Maps launched in its freed slot as actual Paseo agent `5612acc6-8c57-418f-88cb-d91b85b0f676`; profiles (none) and provider configuration rechecked. Official results and maps are now the only active research workers. STATE UOCAVA requires an administrative no-polygon entry, not a fabricated county/geometry.
+
+Maps completed its owned report/assets and offline audit. Actual Texas turnout worker `9b1a22e8-9948-43b6-933d-bd9e99a27695` launched in the freed slot; Maine official results and Texas turnout are the only two active research workers.
+
+Official results completed its owned source inventory/report and offline audit. All four Maine assignments are complete, with coordinator integration still pending publication. Texas partisanship `2846254a-c87f-449c-ba54-5f6873adaebd` launched in the freed slot; the Texas first pair are the only active researchers.

@@ -1,0 +1,17 @@
+# Immutable downloaded sources and PDF text observations.
+data/turnout/raw/** -text -whitespace
+data/baselines/raw/** -text -whitespace
+data/turnout/extracted/** -text -whitespace
+data/baselines/extracted/** -text -whitespace
+# Preserve standard CSV record separators.
+data/**/*.csv -text whitespace=cr-at-eol
+data/*.csv -text whitespace=cr-at-eol
+maps/*.csv -text whitespace=cr-at-eol
+# Exact downloaded/parsed/OCR observations keep their source spacing.
+data/results-sources/requests/*.txt -text -whitespace
+data/results-sources/extracted/*.txt -text -whitespace
+data/results-sources/ocr/*.txt -text -whitespace
+data/results-sources/blocked-browser-*.txt -text -whitespace
+data/results-sources/web-repair-*.txt -text -whitespace
+data/results-sources/web-time-check.txt -text -whitespace
+maps/previews/*.txt -text -whitespace

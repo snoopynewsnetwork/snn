@@ -38,7 +38,10 @@ four-question package passed integration review, including its 41 native groups,
 28-district priority set and downloaded precinct maps, and was published in
 `9672f51` (remote verified). Ohio's all-88-county package and exact 32-county priority set were published in
 `f5cc934` (remote verified), including reviewed official sources, downloaded
-maps and explicit remaining access/geographic gaps. Maine turnout and partisanship are complete; official results and
-maps are active on its independently reconciled 164-unit priority set. Thirty subsequent stacks remain queued. Coordinator newsroom preparation is underway
-for upcoming states. Consult the queue for actual IDs, checks, gaps and published
-commit hashes. Publication is incremental; the full batch remains in progress.
+maps and explicit remaining access/geographic gaps. Maine's four-question package passed integration review, including all 512 native
+identities and the exact 164-unit priority set; publication is being verified.
+Texas turnout and partisanship are active as actual state-specific workers.
+Twenty-nine subsequent stacks remain queued. Coordinator newsroom preparation
+is retained for upcoming states. Consult the queue for actual IDs, checks, gaps
+and published commit hashes. Publication is incremental; the full batch remains
+in progress.
