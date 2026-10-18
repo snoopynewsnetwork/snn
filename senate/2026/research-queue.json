@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "requested_date": "2026-10-17",
-  "updated_at_utc": "2026-10-18T19:16:23.146624+00:00",
+  "updated_at_utc": "2026-10-18T19:21:21.517140+00:00",
   "scope": "35 states in the repository 2026 U.S. Senate race index",
   "coordinator_agent_id": "d0fc3534-1613-4883-b48b-21a233fcfd9e",
   "workspace_id": "wks_b290f45007010740",
@@ -789,10 +789,33 @@
           "launched_at_utc": "2026-10-18T19:07:41.007571+00:00"
         }
       },
-      "validation": null,
+      "validation": {
+        "status": "historical-priority-pass-first-pair-QA-active",
+        "review": "minnesota/data/coordinator-native-contract-review.json",
+        "scope": "Standalone originalOOXML/CountyFIPS/full406741sharedfield/order/12316constituent review plus exact reciprocal witnesses; reports/assets/targets still completing."
+      },
       "gaps": [],
       "published_commits": [],
-      "coordinator_preparation": "Actual firstpair turnout a2143988 and independent partisanship21fc8593 active. Retained original preflight and preliminary extraction are not accepted geography; full-field/order reconciliation pending."
+      "coordinator_preparation": "Actual firstpair turnout a2143988 and independent partisanship21fc8593 active. Retained original preflight and preliminary extraction are not accepted geography; full-field/order reconciliation pending.",
+      "priority_geography": {
+        "basis": "2024 Senate five source candidate/generic-WI columns from original SOS workbook; DFL remains source affiliation, with analytical D grouping explicit. Generic WI is not demonstrated complete valid named allocation.",
+        "count": 24,
+        "votes": 2567977,
+        "statewide_votes": 3189323,
+        "share": 0.8051793437039773,
+        "county_count": 87,
+        "native_constituents": 12316,
+        "source_native_rows": {
+          "2024": 4103,
+          "2022": 4103,
+          "2020": 4110
+        },
+        "priority_native_2024": 2067,
+        "contract_sha256": "b60b0bc4fed0c0b8618b6f851cc8f25d3c963bbd3ea12debecc5995dff54ceb1",
+        "contract_bytes": 9885383,
+        "acceptance": "minnesota/data/coordinator-priority-acceptance.json",
+        "dispatch_keys": "minnesota/data/coordinator-priority-keys.txt"
+      }
     },
     {
       "state": "South Carolina",
@@ -1178,16 +1201,16 @@
   "batch_status": "in_progress",
   "coordinator_preparation_audit": {
     "status": "pass",
-    "checked_at_utc": "2026-10-18T18:59:41.523314+00:00",
+    "checked_at_utc": "2026-10-18T19:21:21.516908+00:00",
     "scope": "Still-queued states only; retained public news/preflight responses, not completed question packages or accepted feeds",
-    "states": 25,
-    "response_captures": 513,
+    "states": 24,
+    "response_captures": 490,
     "http_status_counts": {
-      "200": 427,
-      "403": 80,
+      "200": 398,
+      "403": 84,
       "transport_failure": 1,
       "500": 1,
-      "404": 3,
+      "404": 5,
       "401": 1
     },
     "checks": "Unique IDs; original/stored SHA-256; exact ordered-part reconstruction where needed; raw byte counts; UTC/headers or retained transport failures; strict per-stored-object bounds and no orphan response assets.",
