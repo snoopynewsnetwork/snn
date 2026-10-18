@@ -41,9 +41,4 @@ four-question package passed integration review, including its 41 native groups,
 maps and explicit remaining access/geographic gaps. Maine's four-question package, including all 512 native identities, the exact
 164-unit priority set and downloaded maps, was published in `e0fe91e` (remote
 verified) after integration and repository checks.
-Texas turnout, partisanship and official results are complete; maps is finishing
-its audit on the accepted all254/exact34 county contract. Iowa turnout launched
-in the freed official-results slot; twenty-eight subsequent stacks remain queued. Coordinator newsroom preparation
-is retained for upcoming states. Consult the queue for actual IDs, checks, gaps
-and published commit hashes. Publication is incremental; the full batch remains
-in progress.
+All four Texas question agents have completed and passed coordinator integration review, including all 254 counties, the exact 34-county priority and downloaded maps. Direct main publication is underway. Iowa’s actual turnout and partisanship workers are active; the remaining twenty-eight stacks are queued. Coordinator newsroom preparation is retained for upcoming states. Consult the queue for actual IDs, checks, gaps and published commit hashes. Publication is incremental; the full batch remains in progress.

@@ -1,0 +1,9 @@
+# Preserve exact downloaded evidence, including non-text response bodies.
+maps/originals/** -text -diff -whitespace
+data/turnout/raw/** -text -whitespace
+data/baselines/raw/** -text -whitespace
+# Preserve standard CSV record separators without changing hashed artifacts.
+data/**/*.csv -text whitespace=cr-at-eol
+data/*.csv -text whitespace=cr-at-eol
+maps/**/*.csv -text whitespace=cr-at-eol
+maps/*.csv -text whitespace=cr-at-eol

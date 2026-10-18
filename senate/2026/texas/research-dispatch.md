@@ -4,10 +4,10 @@ Coordinator: `d0fc3534-1613-4883-b48b-21a233fcfd9e`. Shared main checkout, works
 
 | Question | Actual Paseo agent ID | Owned paths | Status |
 | --- | --- | --- | --- |
-| Turnout | `9b1a22e8-9948-43b6-933d-bd9e99a27695` | `turnout.md`, `data/county-turnout.csv`, `data/turnout/` | Complete; coordinator integration |
+| Turnout | `9b1a22e8-9948-43b6-933d-bd9e99a27695` | `turnout.md`, `data/county-turnout.csv`, `data/turnout/` | Complete; reviewed |
 | Partisanship/targets | `2846254a-c87f-449c-ba54-5f6873adaebd` | `county-partisanship.md`, `data/county-baselines.csv`, `data/baselines/` | Complete; independently reviewed |
-| Official results | `28bf26bf-fbc1-4f13-8319-fddb49eafac0` | `official-results.md`, `data/official-results-sources.csv`, `data/results-sources/` | Complete; final coordinator audit |
-| Precinct maps | `62ee3df8-b73a-43fd-92c9-e7f42297686d` | `precinct-maps.md`, `maps/` | Active with accepted all254/exact34 contract |
+| Official results | `28bf26bf-fbc1-4f13-8319-fddb49eafac0` | `official-results.md`, `data/official-results-sources.csv`, `data/results-sources/` | Complete; reviewed |
+| Precinct maps | `62ee3df8-b73a-43fd-92c9-e7f42297686d` | `precinct-maps.md`, `maps/` | Complete; reviewed |
 
 Profiles were checked: none configured. Compact provider discovery reconfirmed `codex/gpt-6.1-sol`, `full-access`, `xhigh`. Turnout launched after Maine maps completed; Maine official results remains active, preserving the two-worker cap.
 
@@ -42,3 +42,7 @@ Only maps and official results are active. Both final first-wave outputs remain
 read-only to workers; coordinator reviews and publishes the completed package.
 
 Official results completed and actual finish notification arrived. Iowa turnout `b5a3a82f-3a5c-4e9f-a266-e454c448c846` launched in its freed slot after profile/provider discovery. Texas maps remains the only active Texas worker. Final source native inventory has12,701 identities/170,013 positions; the added42 are Grayson PDF labels, not Bell units. Map compatibility must pin final hashes. Texas package is not yet published.
+
+Maps completed and actual finish notification arrived. All four Texas assignments are complete; final integration/repository/publication checks are underway. Iowa partisanship `4bcbf52f-1952-4e27-b0e5-9e5bf55c67cb` launched in the freed slot. Only Iowa first-wave research workers remain active.
+
+All four final question packages passed coordinator review. Independent integration verifies original county/count/target arithmetic, current zero/test identities and primary certifications, full source/native object conservation, four original map ZIPs and136 exact binary county subsets,2048 worker asset hashes, local links and strict object limits. `npm run check` passed. Publication is a scoped direct main commit/push with remote verification; exact published hashes are retained in the queue. Current status supersedes chronological launch notes above. Iowa’s two first-wave workers alone occupy research slots.

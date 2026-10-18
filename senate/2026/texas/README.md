@@ -14,7 +14,15 @@
 | Current seat holder | John Cornyn |
 | Seat holder's party | Republican |
 | Seat details verified | 2026-10-17 |
-| Coverage status | Initialized; campaign and ballot research pending |
+| Coverage status | Election-night research reviewed; campaign tracking pending |
+
+## Election-night research
+
+The four-question research package has passed coordinator integration review: [turnout](turnout.md), [partisanship and conditional targets](county-partisanship.md), [official results](official-results.md), and [downloaded maps](precinct-maps.md) with an [offline index](maps/index.html). The [actual Paseo dispatch](research-dispatch.md) records all four completed agents; [review and reproduction](research-review.md) records checks and remaining gaps.
+
+All 254 counties remain in statewide arithmetic. The minimal historical-volume priority is 34 counties: 9,076,868 / 11,291,854 reported 2024 Senate candidate votes (80.384213%). Original SOS county canvasses reconcile all candidates; differing finer sources remain separate. Current November zero setup and seven certified candidate identities were inspected, with hidden test products excluded. Reporting/geography discrepancies and current crosswalk gaps remain explicit.
+
+[Newsroom/NYT research](local-news-results.md) and the [collection strategy](live-polling-strategy.md) retain dated observations and proposed operation. No populated November returns, measured vote-arrival cadence, exact remaining Senate votes, approved reporting-unit crosswalk, live collector or calibrated probability model is established.
 
 ## Candidates
 
