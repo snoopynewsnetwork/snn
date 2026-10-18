@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "requested_date": "2026-10-17",
-  "updated_at_utc": "2026-10-18T19:21:21.517140+00:00",
+  "updated_at_utc": "2026-10-18T19:25:54.001028+00:00",
   "scope": "35 states in the repository 2026 U.S. Senate race index",
   "coordinator_agent_id": "d0fc3534-1613-4883-b48b-21a233fcfd9e",
   "workspace_id": "wks_b290f45007010740",
@@ -776,17 +776,23 @@
       "election": "Regular",
       "seat_class": "II",
       "priority": 10,
-      "status": "first-wave-active",
+      "status": "second-wave-started-first-pair-QA",
       "workers": {
         "turnout": {
           "agent_id": "a2143988-db08-4b96-a032-b31b5401db97",
-          "status": "active",
-          "launched_at_utc": "2026-10-18T19:04:34.245339+00:00"
+          "status": "complete-reviewed",
+          "launched_at_utc": "2026-10-18T19:04:34.245339+00:00",
+          "finished_at_utc": "2026-10-18T19:25:54.001028+00:00"
         },
         "partisanship": {
           "agent_id": "21fc8593-07df-4386-9edf-ac5edb32c57b",
           "status": "active",
           "launched_at_utc": "2026-10-18T19:07:41.007571+00:00"
+        },
+        "official_results": {
+          "agent_id": "017977ee-efd0-4536-8811-65b27829793f",
+          "status": "active",
+          "launched_at_utc": "2026-10-18T19:25:54.001028+00:00"
         }
       },
       "validation": {
@@ -796,7 +802,7 @@
       },
       "gaps": [],
       "published_commits": [],
-      "coordinator_preparation": "Actual firstpair turnout a2143988 and independent partisanship21fc8593 active. Retained original preflight and preliminary extraction are not accepted geography; full-field/order reconciliation pending.",
+      "coordinator_preparation": "Turnout actuallyfinished; frozencontract24priority accepted. Official017977ee launched in freedslot; partisanship21fc8593 still finalQA. Maps awaits actualfree slot. Independent64state59112targetrows pass pending finalfreeze.",
       "priority_geography": {
         "basis": "2024 Senate five source candidate/generic-WI columns from original SOS workbook; DFL remains source affiliation, with analytical D grouping explicit. Generic WI is not demonstrated complete valid named allocation.",
         "count": 24,
