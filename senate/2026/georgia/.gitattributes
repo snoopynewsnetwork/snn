@@ -1,0 +1,6 @@
+# Preserve exact retained evidence bytes and generated source transcripts.
+data/** -text -whitespace
+maps/** -text -whitespace
+# Python uses spaces; retain trailing-space and mixed-indentation checks.
+data/**/*.py text whitespace=blank-at-eol,blank-at-eof,space-before-tab
+maps/**/*.py text whitespace=blank-at-eol,blank-at-eof,space-before-tab

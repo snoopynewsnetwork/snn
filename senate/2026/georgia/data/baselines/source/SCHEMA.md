@@ -1,0 +1,92 @@
+# Georgia baseline schema and reproduction contract
+
+Version 1; checked 2026-10-18 UTC. Files are UTF-8; CSV uses header/CRLF, gzip has mtime=0. Historical counts are source integers (ballot/registration fields may retain source float text); scenario values are unrounded continuous arithmetic. CSV blank means unavailable/null, never an inferred zero. JSON `null` is explicit. Original HTTP entity bytes and JSON types are preserved in pinned lossless gzip originals.
+
+## Identity and source contract
+
+County key is election_key + county_fips. Native key adds native_GUID under that county/election, and method cells add group_GUID. Names alone are not geography joins. Source GUID, nativeId, ordinal and display name are separate fields. Every candidate/group source position is retained; duplicate source candidate keys are never combined or dropped. English display names identify the historical A/B pair and cross-source candidate correspondence; localized arrays, party IDs/names, flags and every unrelated original field remain in source bytes. Peer reconciliation checks localized fields and complete source positions. A source nativeId can change between views; eighteen such/native party differences are explicitly retained.
+
+`source/shared-inputs.json` references 801 retained originals: 795 county requests + five state-selected payloads + Census county identities. Paths resolve from the Georgia state directory. Its `acquisition` carries exact requested/final URL, HTTP status/headers, UTC, redirects when available, raw/stored hashes and sizes. `evidence-inputs.json` pins app discovery scripts, blocked ZIP/write-in attempts, FEC, court, county canvasses and parent chains. `acquisitions.json` describes owned current authority downloads; successful entities and error responses are distinguished. HTTP entity bytes are not claimed to be transport-compressed wire bytes. gzip.decompress reconstructs the exact hashed entity. No truncation/simplification/splitting is used. All stored files must be strictly <40,000,000 bytes.
+
+`source/source-controls.json` preserves complete election controls, current source clocks, state candidate/method summaries, registration/turnout/statistics and county roster. `source/county-controls.jsonl.gz` preserves every county's election object, reporting status, native inventory/turnout, polling places and redaction flags (within election), including unrelated source fields without an extra demographic extract. Original payloads preserve everything outside these extracts too.
+
+County/native candidate and method rows are distinct observations: state/state_county/county/native_precinct levels must never be added together. TOTAL group rows are candidate totals; method rows are components, not extra candidate votes. CSV `source_pointer` is a JSON pointer into the exact original entity; option/group ordinal is zero-based. `native_position` is the breakdown position. Native inventory order and `precinctOrder` are independently preserved in county-controls. No current precinct approval or cross-year/2026 identity equivalence follows from these keys.
+
+## Election and denominator contract
+
+`2020NovGen` = 2020-11-03 regular Class II Senate (Perdue/Ossoff/Hazel).
+`2021JanFedRun` = 2021-01-05 Class II runoff (Perdue/Ossoff), a fresh election.
+`2022NovGen` = 2022-11-08 Class III Senate (Walker/Warnock/Oliver), actual midterm.
+`2022DecGenRun` = 2022-12-06 Class III runoff (Walker/Warnock), fresh election.
+`2024NovGen` = 2024-11-05 president (Trump/Harris/Oliver/Stein in state app), no 2024 Senate.
+
+A/B are the named historical Democrat/Republican; `(I)` in a displayed name is incumbent. Others retain identities. `pair_votes=A+B`; `A_pair_share=A/(A+B)`; `pair_margin_pp=100*(A-B)/(A+B)`; `A_minus_B_net=A-B`. Named all-vote margins use `named_valid_option_votes`. Full statewide 2024 valid votes=5,250,905 from FEC; named four=5,250,047; separately qualified nine write-ins=858, incomplete county allocations. `additional_qualified_writeins` blank in county/native CSV means full county amount unknown, even where separate partial evidence is available. Never label a named-four county share as full-candidate share. FEC scattered61 is part of858, not an added pool. `source_alloption_votes` is a numeric sum only if every source option is numeric; `source_voteTotal` is the source's own total even when options are redacted. Dawson's extra19 void-option votes remain source rows, excluded only from valid named weights. Liberty/Habersham older raw scopes stay separate and are not merged with app counts.
+
+Ballots cast, contest votes and registration are distinct. 2024 county/native ballot and registration values are available; status/date of registration are unspecified. Source active/inactive zeros do not establish those categories. Older raw zero ballot/registration placeholders become unavailable in usable fields, not zero turnout. Null under/over/blank values cannot explain a ballot/contest residual by inference. Methods retain published group GUID/name/ordinal; names are not a cross-year method crosswalk.
+
+## Calculation contract
+
+County scenario matrix: five historical preference anchors × five actual volume/mix anchors × tie/A+1 =50 state scenarios and7,950 county rows. Low=Dec2022 runoff pair volume/mix; base=Nov2022 midterm; high=Nov2024 president; additional mixes=Nov2020 andJan2021 same-seat elections. Every one of159 counties remains in each. These historical amounts are not2026 projections. T_i is actual A+B in the mix year, preference s_i is A pair share in the chosen preference year. Other named mix votes remain fixed; high2024 also retains858 only at state level. County pair participation is T_i/(T_i+named_other_i), which excludes unknown county qualified-write-in allocation.
+
+Uniform unbounded delta=(g*sum(T)-sum(T*(2s-1)))/(2*sum(T)); share points=100*delta, margin points=200*delta. A+1 g=.01 adds.5 share points when no share clips. `bounded_uniform` solves sum T*(2*clip(s+delta)-1)=g*sum(T) by bisection, preserving raw unbounded shift, bounded shift, clipping count and already-meets-target. Targets outside[-100,100]margin pp are impossible; nonpositive total yields no_positive_pool; negative volume invalid. Positive improvement is zero for already-winning cases but negative signed break-even shifts remain. +1share pp gain explicitly clips, with the linear .02*T comparison separate. Majority cushion=(target_pair_net-fixed_other)/2; ties have exactly zero cushion rather than floating rounding artifacts. Strict majority is >0; integer required A=floor(F/2)+1.
+
+Selected-unit q=(T_i+gP-outside_fixed_net)/(2T_i), all other shares fixed at clip(s_j+others_shift_pp/100). Saved county tables use others_shift_pp=0. q<0=already_secured; q>1=impossible; q within[0,1]=feasible; zero pool explicit. `selected_raw_required_share` stays unbounded, `selected_required_share` is clipped. Every other unit's contribution is included, regardless of priority.
+
+Native precinct and native-method scenarios are separate from county uniform scenarios because clipping occurs at a different unit scale. All observed identities appear. Suppressed native allocations remain unknown. The whole-state native solve holds the explained unallocated Fulton aggregate (A11/B7,18pair votes) fixed, rather than assigning it to identities. Native-method solves similarly hold each redacted source aggregate fixed. State scenario ledgers include these fixed residual contributions. Known weights do not sum to1 when redacted volume is withheld; known weight plus explicitly withheld weight does. Unknown rows are never zero-filled. Native-method rows with one known candidate and one redacted candidate preserve that partial information but have unknown pair share/targets.
+
+Live JSON input: `units` list with unique `id`, nonnegative `counted_A/B/other`, `remaining_total` valid contest-vote pool, `remaining_pair_fraction` in[0,1], `remaining_A_pair_share` (clipped explicitly). Missing assumptions=null; negative counts/pools invalid. Optional `target_pair_margin_pp` and `selected_unit`. Counted votes remain fixed; remaining pair U=remaining_total*pair_fraction; remaining other V=remaining_total-U. Final pair P=counted_A+counted_B+U; final all-candidate F=P+counted_other+V. Target remaining q=(U+gP-counted_lead)/(2U). Majority q must strictly exceed(F/2-counted_A)/U. Individual other candidates are needed for full legal outcome/top-two logic; aggregated other only supports A's strict majority calculation. Output is conditional arithmetic with no probability. December uses a new input with fresh counted totals.
+
+## Ranking / bounds / agreement
+
+`rankings.json` retains five complete descending159orders (votes descending, FIPS deterministic tie-break), exact integer ceil(4*total/5), first k−1 and k crossing, top15 and per-row weights. 2024 named-four order is a declared universe. FEC corroborates full state5250905; independent Liberty ballot cap plus858 proves same44andtop15 membership without exact allocations/order/shares. `source/priority-bounds.json` retains proof; coordinator acceptance and current geographic approval are separate.
+
+`peer-reconciliation.json` pins actual read-only turnout peer tables and checks all76,400source-position TOTAL/method rows (including localized names/raw party/IDs/flags/types),795county controls,2701native inventories/turnout,3190residual controls and all5complete orders/exact80crossings. Source jurisdiction UUID hexadecimal case and source totals alongside redacted candidate sums are explicit representation qualifications, not silently repaired counts.
+
+## Reproduce and audit
+
+From repository root: `PYTHONDONTWRITEBYTECODE=1 python3 -S senate/2026/georgia/data/baselines/scripts/reproduce.py`. Standard-library Python is sufficient for extraction/calculation/reconciliation/report/validation; retained PDF text/PNG QA was generated with Poppler (`pdftotext -layout`, `pdftoppm`) and is not required to compute results. `acquire.py --ids ID...` optionally captures fresh authorities under content-addressed paths, appending metadata rather than replacing originals. `--from-shared-pins` reacquires the pinned original URLs into owned fresh captures without changing shared inputs. Offline calculations continue using pinned evidence until reviewed replacement. The owned manifest excludes its own hash (self-reference) and otherwise enumerates report, compatibility CSV, scripts, data, QA and source metadata with SHA/bytes. Validation checks that manifest, all referenced entity hashes, bounds, full coverage, candidate/method controls, arithmetic, finite/bounded outputs and relative Markdown links. There are no dependency/cache directories.
+
+## CSV columns
+
+The following lists are generated from the actual output headers. Counts/votes/net are votes; `*_share`, `*_weight`, `*_fraction`, participation are fractions; `*_pp` are percentage points; GUID/nativeId/ordinal/pointer/name/source fields are identifiers, never votes. Clipping and missing statuses have the meanings above. All raw candidate identities remain in the long source-position table and originals.
+
+
+### ../county-baselines.csv (795 rows)
+
+`election_key`, `county_fips`, `county_name`, `unit_level`, `native_GUID`, `native_name`, `source_id`, `source_pointer`, `A_name`, `A_party`, `A`, `B_name`, `B_party`, `B`, `pair_votes`, `source_alloption_votes`, `source_voteTotal`, `named_valid_option_votes`, `other_named_valid_votes`, `void_option_votes`, `additional_qualified_writeins`, `all_valid_candidate_denominator_status`, `A_pair_share`, `A_minus_B_net`, `pair_margin_pp`, `named_allvote_margin_pp`, `historical_winner`, `closeness_band`, `ballots_cast`, `registered_voters`, `ballot_registration_scope`, `underVoteCount`, `overVoteCount`.
+
+### native-baselines.csv.gz (2,701 rows)
+
+`election_key`, `county_fips`, `county_name`, `unit_level`, `native_GUID`, `native_name`, `source_id`, `source_pointer`, `A_name`, `A_party`, `A`, `B_name`, `B_party`, `B`, `pair_votes`, `source_alloption_votes`, `source_voteTotal`, `named_valid_option_votes`, `other_named_valid_votes`, `void_option_votes`, `additional_qualified_writeins`, `all_valid_candidate_denominator_status`, `A_pair_share`, `A_minus_B_net`, `pair_margin_pp`, `named_allvote_margin_pp`, `historical_winner`, `closeness_band`, `ballots_cast`, `registered_voters`, `ballot_registration_scope`, `underVoteCount`, `overVoteCount`.
+
+### candidate-methods.csv.gz (76,400 rows)
+
+`election_key`, `county_fips`, `county_name`, `source_id`, `source_pointer`, `unit_level`, `native_GUID`, `native_name`, `native_position`, `candidate_GUID`, `nativeId`, `candidate_ordinal`, `candidate_name`, `party`, `isWriteIn`, `isQualifiedWriteIn`, `group_GUID`, `group_name`, `group_ordinal`, `votes`.
+
+### native-coverage.csv (795 rows)
+
+`election_key`, `county_fips`, `county_name`, `source_id`, `native_count`, `native_breakdown_count`, `turnout_count`, `polling_place_count`, `isVirtual_true`, `native_coverage`, `raw_ballots`, `raw_registered`, `ballots_cast`, `registered_voters`, `source_underVoteCount`, `source_overVoteCount`.
+
+### state-candidate-controls.csv (14 rows)
+
+`election_key`, `nativeId`, `candidate_name`, `party`, `state_votes`, `state_county_votes`, `difference`.
+
+### state-scenarios.csv (50 rows)
+
+`scenario`, `preference_anchor`, `mix_volume_anchor`, `volume_label`, `pair_votes`, `named_other_fixed`, `separate_state_qualified_writeins`, `final_allcandidate_denominator`, `target_pair_margin_pp`, `baseline_net`, `pair_total`, `target_net`, `unbounded_shift_pp`, `already_meets_target`, `minimum_positive_improvement_pp`, `status`, `bounded_shift_pp`, `clipped_unit_count`, `actual_net`, `majority_cushion_votes`, `A_strict_majority`.
+
+### county-targets.csv.gz (7,950 rows)
+
+`scenario`, `county_fips`, `county_name`, `preference_anchor`, `mix_volume_anchor`, `A_name`, `B_name`, `historical_A`, `historical_B`, `baseline_A_pair_share`, `expected_pair_votes`, `county_pair_participation_in_named_mix`, `named_other_fixed`, `full_county_denominator_status`, `pair_weight`, `baseline_net`, `target_A_pair_share`, `target_pair_margin_pp`, `target_net`, `actual_shift_share_pp`, `unbounded_shift_pp`, `bounded_shift_pp`, `gain_for_plus1_share_pp_net`, `linear_gain_for_plus1_share_pp_net`, `others_fixed_share_shift_pp`, `selected_status`, `selected_required_share`, `selected_raw_required_share`, `outside_fixed_net`.
+
+### native-targets.csv.gz (5,402 rows)
+
+`target_pair_margin_pp`, `county_fips`, `native_GUID`, `native_name`, `source_id`, `source_pointer`, `pair_votes`, `pair_weight_in_complete_county_state`, `baseline_share`, `target_share`, `uniform_shift_share_pp`, `unbounded_shift_share_pp`, `actual_shift_share_pp`, `target_net`, `gain_plus1_share_pp_net`, `status`, `selected_unbounded_share`, `selected_status`, `outside_fixed_net`.
+
+### method-baselines.csv.gz (13,984 rows)
+
+`election_key`, `county_fips`, `county_name`, `unit_level`, `native_GUID`, `native_name`, `group_GUID`, `group_name`, `group_ordinal`, `source_id`, `A_pointer`, `B_pointer`, `A_name`, `A`, `B_name`, `B`, `pair_votes`, `named_option_votes`, `named_other`, `A_pair_share`, `pair_net`, `pair_weight_complete_state`, `status`.
+
+### method-targets.csv.gz (27,968 rows)
+
+`unit_level`, `election_key`, `county_fips`, `native_GUID`, `native_name`, `group_GUID`, `group_name`, `target_pair_margin_pp`, `pair_votes`, `pair_weight_complete_state`, `baseline_A_pair_share`, `target_A_pair_share`, `target_net`, `uniform_bounded_shift_pp`, `unbounded_shift_pp`, `actual_shift_pp`, `gain_plus1_share_pp_net`, `selected_raw_required_share`, `selected_status`, `others_fixed_at_historical`, `status`.

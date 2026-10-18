@@ -1,0 +1,66 @@
+[
+  {
+    "case": "clipping_changes_solve",
+    "result": {
+      "baseline_net": 78.4,
+      "pair_total": 100,
+      "target_net": 90.0,
+      "unbounded_shift_pp": 5.799999999999997,
+      "already_meets_target": false,
+      "minimum_positive_improvement_pp": 5.799999999999997,
+      "status": "feasible_clipped",
+      "bounded_shift_pp": 48.999999999999964,
+      "target_shares": [
+        1,
+        0.49999999999999967
+      ],
+      "clipped_unit_count": 1,
+      "actual_net": 90.0
+    }
+  },
+  {
+    "case": "already_winning",
+    "result": {
+      "baseline_net": 19.999999999999996,
+      "pair_total": 100,
+      "target_net": 0.0,
+      "unbounded_shift_pp": -9.999999999999998,
+      "already_meets_target": true,
+      "minimum_positive_improvement_pp": 0,
+      "status": "feasible",
+      "bounded_shift_pp": -10.0,
+      "target_shares": [
+        0.5
+      ],
+      "clipped_unit_count": 0,
+      "actual_net": 0.0
+    }
+  },
+  {
+    "case": "impossible_margin",
+    "result": {
+      "baseline_net": -19.999999999999996,
+      "pair_total": 100,
+      "target_net": 101.0,
+      "unbounded_shift_pp": 60.5,
+      "already_meets_target": false,
+      "minimum_positive_improvement_pp": 60.5,
+      "status": "impossible",
+      "bounded_shift_pp": null
+    }
+  },
+  {
+    "case": "no_positive_pool",
+    "result": {
+      "status": "no_positive_pool",
+      "unbounded_shift_pp": null,
+      "bounded_shift_pp": null
+    }
+  },
+  {
+    "case": "negative_volume",
+    "result": {
+      "status": "invalid_negative_volume"
+    }
+  }
+]

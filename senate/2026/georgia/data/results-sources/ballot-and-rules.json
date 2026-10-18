@@ -1,0 +1,36 @@
+{
+  "observed_utc_date": "2026-10-18",
+  "election_date": "2026-11-03",
+  "stage": "regular ClassII United States Senate general election",
+  "printed_candidates": [
+    {"source_order": 1, "name": "Mike Collins", "printed_party": "Republican", "source": "data/baselines/source/fulton-ballot-final-sample.body.gz", "page": 1, "current_results_id": null},
+    {"source_order": 2, "name": "Jon Ossoff", "printed_party": "Democrat", "incumbent_label": true, "source": "data/baselines/source/fulton-ballot-final-sample.body.gz", "page": 1, "current_results_id": null}
+  ],
+  "qualified_writeins": ["Elbert Arthur Bartell", "Christina Clement", "Cassandra Easton"],
+  "qualified_writein_primary_sources": [
+    {"url": "https://sos.ga.gov/sites/default/files/forms/2026%20Certified%20Write-In%20Candidates_2.pdf", "direct_status": 403, "shared_capture": "data/baselines/source/sos-2026-certified-writeins.body.gz", "type": "SOS original request failure"},
+    {"url": "https://www.claytoncountyga.gov/wp-content/uploads/2026/10/2026-Certified-Write-In-Candidates-w-County-corrected.pdf", "shared_capture": "data/baselines/source/clayton-certified-writeins.2bb9734e419cf0967a0b83c24be167acc28b58aba2069fad3451444a45dda284.body.gz", "status": 200, "stated_publication_date": "2026-09-15", "county_copy_date": "2026-10-08", "page": 1, "senate_names": 3},
+    {"url": "https://www.waltoncountyga.gov/DocumentCenter/View/9512", "receipt": "raw/follow-local-13297-2-38.http.json", "parent_receipt": "raw/local-13297-2.http.json", "parent_link_position": 38, "status": 200, "authorship": "Georgia SOS Elections Division; FINAL LIST OF CERTIFIED WRITE-IN CANDIDATES", "page": 1, "senate_names": 3, "publication_date_on_this_copy": null}
+  ],
+  "withdrawal_review": {"status": "No Senate withdrawal/disqualification notice observed in examined October county sample-ballot contexts or SOS candidate search. Complete statewide withdrawal register not acquired; no universal absence claim.", "attempts": ["raw/mvp-candidate-information.http.json", "raw/sos-candidate-authority.http.json"], "current_result_candidate_ids": null},
+  "runoff": {"scheduled_date": "2026-12-01", "trigger": "No candidate receives a majority of valid votes cast for Senate; top two under OCGA21-2-501; strictly greater than half, not two-party margin alone", "legal_label": "Statute calls runoff a continuation for office/eligibility; counting/research must keep separate election-stage identity and fresh totals", "november_votes_carried_to_december": false, "runoff_current_feed_ids": null, "tie": "November tie gives no majority; do not declare a winner. If election fails and cannot be cured by runoff, OCGA21-2-504 requires a special election; no coin toss/date invented."},
+  "rules": {
+    "poll_hours": "November3 general:7am-7pm Eastern Standard Time (UTC-5), with anyone in line at close entitled to vote; nominal close2026-11-04T00:00:00Z. Statutory8pm exception for certain city general elections is not automatic for this statewide Senate race. Court-extended hours must be separately observed and provisional ballots segregated.",
+    "ordinary_absentee_receipt": "Received by election officials by close of polls November3, not merely postmarked; verify actual court order for any exception.",
+    "uocava": "Eligible federal military/overseas ballots postmarked by election date and received by November6 under OCGA21-2-386(a)(1)(G); rule183-1-14-.10 also recognizes otherwise proper eligible mailed/courier ballots without a postmark received within stated three-day period. Do not apply ordinary mail deadline to this pool or assume all late mail qualifies.",
+    "cure_provisional": "Detailed SOS2026 calendar:November6 5pm documentation/cure deadline; only timely, eligible and validated ballots count. Rule183-1-12-.18 keeps provisional ballots separate; out-of-precinct voting after5pm has specific sworn-statement conditions, and extended-hour ballots are a distinct category.",
+    "county_certification": "Detailed SOS2026 calendar:November9 5pm; OCGA21-2-493(k) Monday following election, promptly transmitted to SOS.",
+    "state_certification": "Detailed SOS2026 calendar:November20 for federal/statewide returns; OCGA21-2-499/497. Source official flag and asOf are not certification dates.",
+    "runoff_deadlines": "December1 scheduled runoff;December4 documentation/cure/UOCAVA;December7 5pm county certification;December18 state certification in detailed calendar. Court postponement could alter stage schedule.",
+    "senate_recount": "OCGA21-2-495(c):written losing-candidate request within two business days after certification if difference is <=0.5% of total office votes, also applies runoff qualification; statewide request to SOS. Error/discrepancy recount/recanvass authority is separate. SignedSB3EX2026 section2 mandatory manual recount covers its enumerated state executive offices, NOT United States Senate.",
+    "reporting": "Current2026 rule183-1-12-.12(d) specifies transmission checkpoints at1/3,2/3,all precincts for state-office results and requires unofficial federal/state contested totals before concluding night tabulation absent notice/consultation. This is a transmission rule, not measured public API cadence. Provisional/UOCAVA exceptions remain.",
+    "writein_validity": "Current rule183-1-12-.12(b)(8) excludes unqualified write-ins from certified consolidated returns; generic Write-in and Unresolved Write-In are categories, not named valid candidates. Source categories are not silently distributed.",
+    "court_and_vintage": "Court S25A0362/S25A0490 June10,2025 invalidated four challenged2024 rules and remanded other standing/rule issues. Current compiled rules explicitly note2024 repeals/reversion, then July21,2026 filing/August10 amendment. Do not activate void2024 hand-count/examination authority from an old guide or treat a current posted PDF as authority to withhold mandatory statutory certification.",
+    "calendar_conflict": "County-hosted detailed SOS calendar contains reconciliation dates Dec3/Dec31, while rule says within30days following actual certification; these are not equivalent to Nov9/Dec7 plus30days. Retain calendar text; use actual certification plus operative rule for deadline arithmetic. PDF source clocks often omit timezone; do not invent it.",
+    "current_local_poll_orders": "Bounded current primary-source search on October18 found no November3 county/precinct extension order; future orders cannot be pre-cleared. Historical extensions are not operative2026 exceptions."
+  },
+  "primary_law_receipts": ["raw/sb202-enacted.http.json", "raw/sb3ex-signed.http.json", "raw/legal-115.http.json", "raw/legal-26.http.json", "raw/legal-36.http.json", "raw/court-2025-eternal.http.json"],
+  "secondary_code_comparison": "SEB official rules-laws links Justia Title21; retained web-parser observations explicitly are not original HTTP bytes. Lexis official code portal request retained separately; primary enacted laws/current rules/calendar control.",
+  "no_exact_outstanding_count": true,
+  "no_current_feed_admission": true
+}

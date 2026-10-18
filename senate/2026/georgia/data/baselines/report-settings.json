@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "A_identity": "named historical Democrat",
+  "B_identity": "named historical Republican",
+  "preference_anchors": [
+    "2020NovGen",
+    "2021JanFedRun",
+    "2022DecGenRun",
+    "2022NovGen",
+    "2024NovGen"
+  ],
+  "mixes": [
+    {
+      "label": "low_historical_Dec2022",
+      "election_key": "2022DecGenRun",
+      "volume_basis": "actual county A+B count; no scaling",
+      "named_other_basis": "actual county mix named_other count",
+      "additional_state_other": 0
+    },
+    {
+      "label": "base_historical_Nov2022",
+      "election_key": "2022NovGen",
+      "volume_basis": "actual county A+B count; no scaling",
+      "named_other_basis": "actual county mix named_other count",
+      "additional_state_other": 0
+    },
+    {
+      "label": "high_historical_Nov2024",
+      "election_key": "2024NovGen",
+      "volume_basis": "actual county A+B count; no scaling",
+      "named_other_basis": "actual county mix named_other count",
+      "additional_state_other": 858
+    },
+    {
+      "label": "same_seat_Nov2020",
+      "election_key": "2020NovGen",
+      "volume_basis": "actual county A+B count; no scaling",
+      "named_other_basis": "actual county mix named_other count",
+      "additional_state_other": 0
+    },
+    {
+      "label": "same_seat_Jan2021",
+      "election_key": "2021JanFedRun",
+      "volume_basis": "actual county A+B count; no scaling",
+      "named_other_basis": "actual county mix named_other count",
+      "additional_state_other": 0
+    }
+  ],
+  "targets_pair_margin_pp": [
+    0,
+    1
+  ],
+  "others_fixed_share_shift_pp": 0,
+  "bounded_share_domain": [
+    0,
+    1
+  ],
+  "county_pair_participation_basis": "pair/(pair+named_other), excludes unallocated county writeins",
+  "historical_not_2026_projection": true
+}

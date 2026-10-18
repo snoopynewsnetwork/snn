@@ -1,0 +1,41 @@
+{
+  "scope": "Messages received from official-results peer via task steering; preserve source distinctions, not replacements or approved geographic joins.",
+  "observed_utc_date": "2026-10-18",
+  "peer_agent_id": "4595f414-1cdb-4b0e-9d3f-2b046ee81867",
+  "findings": [
+    "All2701 app2024 identities remain source scoped; isVirtual:false does not establish a polygon. Fulton precinctResultsProtected:true and40 candidate nulls remain;130 counties have22416 native method nulls. No allocation of residuals.",
+    "County source election and ballot GUIDs differ from parent/request IDs;18 candidate nativeId/party disagreements remain source scoped.",
+    "Current Walton election page says Broken Arrow merged into Walnut Grove. Jackson2026 final order concerns polling places, not an approved map/reporting crosswalk.",
+    "Recovered historical app XLSX is a distinct publication scope. Fulton export has466 labels and numeric counts;1824 mutually known cells agree with JSON while its separate40 formerly-redacted positions total18. Export Last-Modified2025-01-30 differs JSON source clocks. Frozen JSON nulls remain null. Label/count agreement is not geographic equivalence.",
+    "State historical XLSX contains four presidential candidates and county rows; it does not allocate858 qualified write-ins. No source tables, nulls or geometry joins are replaced here."
+  ],
+  "peer_artifact_pinning": "Only final immutable peer artifacts may be pinned. These are communication observations; peer work paths remain read-only.",
+  "read_only_alternative_reference": {
+    "body_path": "data/results-sources/raw/observed-export-fulton2024-0-0.body.gz",
+    "http_receipt_path": "data/results-sources/raw/observed-export-fulton2024-0-0.http.json",
+    "forty_position_ledger_path": "data/results-sources/extracts/fulton-alternative-native-nulls.json",
+    "published_download_route": "/cdn/results/{jurisdiction.id}/{literal blobName}",
+    "authority_template_evidence": "app-chunk-20: imageCdn + jurisdiction.id + / + literal blobName; main imageCdn=/cdn/results/",
+    "requested_url": "https://results.sos.ga.gov/cdn/results/ea1814cb-4423-439e-b273-131e9a8356a6/Total%20Votes%20Results_d93a21a4-dcfb-4e1b-807a-0c2abf1680cf.xlsx",
+    "http_status_observed": 200,
+    "entity_bytes_observed": 762229,
+    "original_zip_crc_observed": "pass",
+    "last_modified_transport": "Thu, 30 Jan 2025 14:00:22 GMT",
+    "app_clocks": {
+      "asOf": "2025-01-02T19:04:20.416202Z",
+      "lastUpdated": "2024-11-13T14:01:20.0063939Z"
+    },
+    "unique_same2024_labels_reported_by_peer": 466,
+    "json_known_cells_reported_matching_by_peer": 1824,
+    "null_positions_independently_checked_against_frozen_json": 40,
+    "separate_export_counts_in_those_positions": {
+      "Donald J. Trump (Rep)": 7,
+      "Kamala D. Harris (Dem)": 11,
+      "Chase Oliver (Lib)": 0,
+      "Jill Stein (Grn)": 0
+    },
+    "match_scope": "466 unique exact precinct labels+English option names within same2024 county; no current/geographic crosswalk",
+    "frozen_build_dependency": false,
+    "disposition": "Observed read-only source reference; no peer final freeze inferred. Frozen JSON40 nulls,22416 method nulls, contract and geometry exclusions unchanged. No GUID/current/physical crosswalk follows from worksheet labels."
+  }
+}

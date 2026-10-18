@@ -1,0 +1,115 @@
+#!/usr/bin/env python3
+"""Generate the scope-qualified report from independently reconciled integers."""
+from pathlib import Path
+from fractions import Fraction
+import csv,json
+R=Path(__file__).resolve().parents[1];GA=R.parent.parent
+rank=json.loads((R/'rankings.json').read_text());m=rank['2024NovGen'];controls=json.loads((R/'state-controls.json').read_text());sens=json.loads((R/'sensitivity.json').read_text());bounds=json.loads((R/'writein-bounds.json').read_text());peer=json.loads((R/'peer-agreement.json').read_text());rows=list(csv.DictReader((GA/'data/county-turnout.csv').open()));wi=json.loads((R/'qualified-writeins-observation.json').read_text())
+urls={d['election_key']:next((r['url']for r in json.loads((R/'source/shared-references.json').read_text())if r['election_key']==d['election_key']), 'https://results.sos.ga.gov/results/public/api/elections/Georgia/2020NovGen/data/ballot-item/01000000-f6f4-3a08-98c6-08dd13aea910')for d in controls}
+short=lambda name:name.replace(' County','')
+fmt=lambda n:f'{int(n):,}'
+names=lambda rs:', '.join(short(r['county_name'])for r in rs)
+req=json.loads((R/'source/requests-counties.json').read_text());daw=next(r['url']for r in req if r['id']=='2024NovGen--dawson-county-ga')
+acceptance_path=GA/'data/coordinator-priority-acceptance.json'
+formal_acceptance_text=('Authoritative coordinator acceptance is recorded in the [external acceptance](data/coordinator-priority-acceptance.json); the frozen worker contract retains its non-authoritative false flag and path-only reference.'if acceptance_path.exists()else'Coordinator formal acceptance is pending; [independent coordinator membership proof](data/coordinator-priority-membership-review.json) is evidence, not acceptance.')
+priority_native_count=sum(int(r['native_units_2024'])for r in rows if int(r['rank'])<=44)
+D=5250905
+p15low=100*m['top15_votes']/D;p15hi=100*(m['top15_votes']+858)/D;p44low=100*m['priority_votes']/D;p44hi=100*(m['priority_votes']+858)/D
+out=f'''# Georgia turnout geography and reporting-volume evidence
+
+Research: **2026-10-18 UTC**. The priority contest is **November 5, 2024 president**, because Georgia held no U.S. Senate election in 2024. All **159 counties** remain in statewide arithmetic. The official source's native 2024 inventory contains **2,701 reporting precinct identities**, retained under their county parents. Candidate votes, ballots cast and registration are separate measures. The [official results index](https://sos.ga.gov/page/georgia-election-results) links the historical app and separate write-in certifications; the [app's returned contest table]({urls['2024NovGen']}) supplies the county hierarchy and named-candidate counts.
+
+**Result:** the top-15 county membership and the unique minimum **44-county** set are proven using the complete **5,250,905** statewide candidate/write-in control and a compatible Liberty County ballot ceiling. **Exact full-candidate county order and shares remain unavailable**, because most of the 858 qualified write-ins have no acquired county allocation. The complete published ranking below uses the explicitly narrower four-candidate state table. The [dispatch contract](data/turnout/priority-set.json) retains that stable named-four order, the proven membership, all native constituents, and unknown full-candidate order separately. {formal_acceptance_text}
+
+## Exact reported ranking and the unresolved share
+
+The four named statewide options total **{fmt(m['denominator'])}**. Their top 15 supply **{fmt(m['top15_votes'])} / {fmt(m['denominator'])} = {m['top15_percent']:.8f}%**. In descending named-four order they are **{names(m['all_order'][:15])}**. This is an exact **named-four** share; the full-candidate top-15 share is bounded by **{p15low:.8f}%–{p15hi:.8f}%**. The numerator is between {fmt(m['top15_votes'])} and {fmt(m['top15_votes']+858)} under the conservative statewide allocation bound. The top-15 membership is unchanged because Houston's 81,514 named votes exceed Muscogee's 80,491 by **1,023**, more than the entire 858 pool. Internal order can change, including Columbia versus Coweta's four-vote separation. Sources: [state county table]({urls['2024NovGen']}), [FEC full-state control](https://www.fec.gov/documents/5644/2024presgeresults.pdf).
+
+The exact minimum descending **named-four** set is **44 counties**, supplying **{fmt(m['priority_votes'])} / {fmt(m['denominator'])} = {m['priority_percent']:.8f}%**. The first **43** supply **{fmt(m['preceding_votes'])} = {100*m['preceding_votes']/m['denominator']:.8f}%**; **Habersham**, with **23,280**, crosses. The **115-county remainder** supplies **{fmt(m['remainder_votes'])}** named votes. Every remainder county appears below and in the CSV. The [full order and exact integer crossing](data/turnout/rankings.json) use `5*cumulative >= 4*denominator`; no cutoff tie occurs.
+
+**The 44 counties, in the stable named-four dispatch order:** {names(m['all_order'][:44])}.
+
+For the **full 5,250,905-vote universe**, reaching 80% requires **4,200,724** votes. Any 43-county set supplies at most **4,199,292 + 858 = 4,200,150**, below the threshold. The named 44 already supply **4,222,572** before assigning any write-ins. Liberty's primary official-complete report has **23,258 ballots** and **23,028 named-four votes**, matching the current app; in a vote-for-one contest its total valid candidate votes cannot exceed **23,258**, below Habersham's named-only lower bound **23,280**. Every other outsider is bounded by Harris's **22,353 + 858 = 23,211**, also below Habersham. Thus the unique minimum **membership is the same 44**, without distributing write-ins. Its full-candidate share is bounded by **{p44low:.8f}%–{p44hi:.8f}%**; exact crossing geography within its unknown full-candidate descending order is not established. Sources: [Liberty archived report](https://libertycountyga.gov/m/newsflash/Archive/Item/359?arcId=712), [original page 1](https://www.libertycountyga.gov/ImageRepository/Document?documentId=2269), [FEC full totals](https://www.fec.gov/documents/5644/2024presgeresults.pdf). See [bound observation](data/turnout/source/liberty-bound-observation.json), [reproducible bounds](data/turnout/writein-bounds.json), and the separate [coordinator proof](data/coordinator-priority-membership-review.json). No top-45 substitute set is used.
+
+## Candidate universe and source controls
+
+The complete statewide candidate/write-in universe is **four named candidates plus nine qualified write-ins**. The four state-app counts reconcile individually across all 159 counties and all their county voting-method totals:
+
+| State option / source label | All-county votes | Difference from state control |
+| --- | ---: | ---: |
+'''
+for n,v in controls[0]['state_candidates'].items():out+=f'| {n} | {fmt(v)} | 0 |\n'
+out+=f'''| **Four named options** | **5,250,047** | **0** |
+
+Source: [official statewide selected contest]({urls['2024NovGen']}); these four counts also match the [House Clerk 2024 statistics](https://clerk.house.gov/member_info/electionInfo/2024/statistics2024.pdf). That four-option presentation does not establish absence of write-ins.
+
+The separate [SOS certification](https://sos.ga.gov/sites/default/files/forms/Write%20In%20Certification%20File%2011222024.pdf) reports: Brian Kienitz 13; Nomusa Venita Smith 3; Peter Sonski 730; Jay J Bowman 30; President R Boddie 14; Shiva Ayyadurai 37; Susan Maude Buscher 3; Emily Mathews 19; André Ramon McNeil Sr 9. These sum to **858**. Its [final qualified list](https://sos.ga.gov/list-qualified-write-candidates-2024), published September 13, 2024, identifies those nine names. Direct original downloads of the certification/list returned challenges; the retained transcription is explicitly a web-parser observation, not fabricated original bytes.
+
+The independently acquired [FEC official presidential results](https://www.fec.gov/documents/5644/2024presgeresults.pdf), sourced to state election offices, corroborate Ayyadurai **37**, Bowman **30**, Sonski **730**, and scattered write-ins **61**, as well as all four named counts and Georgia's **5,250,905** total (PDF pages 2–6). The other six SOS write-in names sum to **61**. This resolves the statewide pool while leaving county/method allocation incomplete. [FEC extraction and page references](data/turnout/source/fec-georgia-observation.json) and the original hashed shared asset are retained. Neither the four-slate [NARA certificate](https://www.archives.gov/files/electoral-college/2024/ascertainment-georgia.pdf) nor the Clerk's four-row presentation overrides the complete FEC/SOS universe.
+
+**Local raw option discrepancy:** the Dawson county app retains Claudia De la Cruz **13** and Cornel West **6**, so all county-source options sum to **5,250,066**, 19 above the state's named-four table. They are preserved as separate rows and fields, with exact source pointers. The [Georgia Supreme Court's September 25 decision](https://www.gasupreme.us/wp-content/uploads/2024/09/s25a0177.pdf), PDF page 5 (printed page 4), affirms disqualification and the remedy that those candidate choices are void. These 19 are not silently removed from the source or added to valid-candidate totals. [Dawson's source]({daw}) is the exact returned route in [requests](data/turnout/source/requests-counties.json).
+
+The [Habersham complete canvass](https://www.habershamga.com/document-center?fid=941) was acquired using its published POST download form (`lngFileID=10312`). Its page 1 reports 23,280 named-four votes, 26 disqualified-option marks and 64 **unresolved** write-ins; those generic marks are not certified named write-ins. [Liberty's report](https://www.libertycountyga.gov/ImageRepository/Document?documentId=2269) shows eight named write-in rows: Sonski **1** and **seven zeros**; André is absent and stays unknown. Its `Total Votes` **23,150** equals named-four 23,028 + void-option 121 + Sonski 1. The **108** ballot-minus-reported-vote difference is unclassified; it is not labeled blank/under/over. These original canvasses have their own clocks and scopes and are not wholesale substitutions for the state table.
+
+## Disjoint native geography, methods and missing cells
+
+Each of the five elections has exactly **159 county records**, matched to the complete [Census county FIPS reference](https://www2.census.gov/geo/docs/reference/codes2020/national_county2020.txt). County keys are `GA:county:13xxx`; source GUIDs are retained in separate fields. Consolidated city/counties contribute once through their county parent. Municipal names, polling sites and administrative rows are not added as extra counties.
+
+The 2024 county-selected routes return **2,701 precinct rows**: **{priority_native_count:,}** within the proved 44 counties and **{2701-priority_native_count:,}** in the remainder, with the same IDs in the inventory, contest breakdown and native turnout table. Native total votes, ballots and registration reconcile to each county. All source precinct `isVirtual` flags are false; there are **zero returned polling-place rows**. That is source coverage, not proof that each row is one physical precinct/polygon. Names alone do not identify combined units, split ballot styles or central absentee groups. Every native source GUID/name/order/status, localized name and available method identity is retained; [native units](data/turnout/native-units.csv) and a separate [source-total native order](data/turnout/native-source-total-order.csv) are complete identity inventories. No current 2026 boundaries or historical crosswalk is approved by these records. Primary examples: [Appling county selected data](https://results.sos.ga.gov/results/public/api/elections/appling-county-ga/2024NovGen/data/ballot-item/01000000-d884-2e72-ab5a-08dcda4b86b0), and every returned route in the [source request inventory](data/turnout/source/requests-counties.json).
+
+**Identity coverage exceeds numeric detail:** 40 of 10,812 native candidate cells are null, all in Fulton; their known sums are **5,250,048** across the county all-option scope, leaving **18** unallocated relative to 5,250,066. Of 43,248 native method cells, **22,416** are null across **130 counties**; known method sums total **2,307,296**, leaving **2,942,770** unallocated. Every null and source position/type remains in the extracts. Exact native candidate/method reconciliation is asserted only for fully numeric slices; partial slices are checked as known lower bounds against county controls. Nulls are not zeros, even when their parent residual is zero. See [candidate controls](data/turnout/native-candidate-controls.csv), [method controls](data/turnout/native-method-controls.csv), and [county redaction flags](data/turnout/source-clocks.csv).
+
+By contrast, every shared **county-level** named candidate/method cell reconciles to the statewide source in all five elections. Preserve source method labels and GUIDs: 2024 has `Advanced Voting`, `Election Day`, `Absentee by Mail`, `Provisional`; older labels include `Advanced Voting Votes` or `Advance Voting Votes`. They are components of each candidate's vote, not additional geographic units. The [candidate crosswalk](data/turnout/candidate-crosswalk.csv) retains **18 state/local nativeId or party differences** instead of normalizing them away. It matches exact English display names only after checking counts and methods; source-specific option IDs/ordinals remain unique.
+
+For the four older election payloads, every county-selected response has **no actual precinct or native-turnout rows**, and ballot/registration fields are zero placeholders. These remain unavailable in usable output fields. Original archive ZIP requests and public download-query retries returned 403; [receipts](data/turnout/source/SCHEMA.md) retain these failures. This does not establish that historical precincts or ballots did not exist.
+
+## Separate elections and volume sensitivity
+
+Georgia's same-seat Class II general election was **November 3, 2020**, with Perdue, Ossoff and Hazel; its **January 5, 2021** Perdue–Ossoff runoff is a separate election. The simultaneous Warnock–Loeffler special runoff concerns the other seat. The actual recent midterm comparator is **November 8, 2022 Senate**, Warnock–Walker–Oliver, followed separately by the **December 6, 2022** Warnock–Walker runoff. The following controls are the selected official app's reported candidate universes, not ballots or a fabricated 2024 Senate/governor contest:
+
+| Election / seat / source | Reported candidate counts | Contest votes |
+| --- | --- | ---: |
+'''
+labels={'2024NovGen':'2024-11-05 president, named-four scope','2020NovGen':'2020-11-03 Class II regular Senate','2021JanFedRun':'2021-01-05 Class II Senate runoff','2022NovGen':'2022-11-08 other-seat Senate, midterm','2022DecGenRun':'2022-12-06 other-seat Senate runoff'}
+for d in controls:
+ c='; '.join(f'{name}: {fmt(v)}'for name,v in d['state_candidates'].items())
+ out+=f"| [{labels[d['election_key']]}]({urls[d['election_key']]}) | {c} | {fmt(d['state_candidate_total'])} |\n"
+out+='''
+November and runoff electorates/volumes are never added, and no November vote is carried into December or January. For the 2022 certification's separately published write-in table, the [SOS primary publication](https://sos.ga.gov/sites/default/files/2022-11/Certification%20of%20Write-In%20Candidates_November%208%20General%20Election.pdf) lists other offices, not an additional Senate tally. The earlier native/ballot/registration gaps remain explicit; county candidate-method comparisons are still complete.
+
+| Denominator, independently sorted | State total | Top15 votes / share | Minimum80 count | Preceding votes | Crossing county | Priority votes / share |
+| --- | ---: | ---: | ---: | ---: | --- | ---: |
+'''
+for k,label in [('county_source_all_option_votes','2024 county raw options (includes Dawson void19)'),('ballots_cast_usable','2024 ballots'),('registration_total_usable','2024 app registration stock'),('2020NovGen','2020 regular Senate'),('2021JanFedRun','2021 Senate runoff'),('2022NovGen','2022 midterm Senate'),('2022DecGenRun','2022 Senate runoff')]:
+ s=sens[k];out+=f"| {label} | {fmt(s['denominator'])} | {fmt(s['top15_votes'])} / {s['top15_percent']:.8f}% | {s['minimum_count']} | {fmt(s['preceding_votes'])} | {short(s['crossing_name'])} | {fmt(s['priority_votes'])} / {s['priority_percent']:.8f}% |\n"
+out+=f'''
+These independent orders and remainders are retained in [sensitivity.json](data/turnout/sensitivity.json), sourced to the county election/turnout fields and contest tables above. A registration ranking describes a stock, not cast votes. Sensitivities do not predict 2026 turnout or isolate candidate effects from participation changes.
+
+The all-159 2024 county/native ballot sum is **5,297,264**, versus **5,250,905** valid statewide candidate/write-in votes: a **46,359** difference, not an identified blank/under/over count. Relative to the named-four scope the difference is **47,217**. Native registration sums to **7,219,868**. The app does not specify whether its total registration is active-only or another status/date; raw active/inactive zero fields do not resolve that definition. Consequently no eligible-voter or population turnout rate is inferred. Exact available county/native ballots and registration remain separate, and historic unavailable cells remain blank. Source: [official 2024 state/county payload]({urls['2024NovGen']}) and all linked county requests.
+
+## Current Senate majority/runoff configuration
+
+Georgia's [current official runoff guidance](https://georgia.gov/vote-runoff-elections) says the top two advance when no candidate reaches the required majority; the [official December 2026 event](https://georgia.gov/events/2026-12-01/election-day-general-election-runoff) confirms **December 1**. For Senate, qualification requires **more than half of all valid candidate votes** (`2*candidate_votes > all_candidate_votes`); a D–R pair tie or a lead among two major candidates is not majority qualification when other candidates receive votes. Historical presidential volume is a separate contest, not a Senate majority calculation.
+
+The [current SOS calendar summary](https://sos.ga.gov/sites/default/files/forms/2026%20Short%20Calendar%20.pdf) gives the November general **November 3**, registration deadline **October 5**, and advance voting **October 13–30**; a federal December runoff has a distinct registration deadline **November 2** and advance voting beginning as soon as possible, no later than **November 23**, through **November 25**. The acquired [detailed calendar](https://sos.ga.gov/sites/default/files/forms/2026%20Elections%20Calendar_0.pdf) gives absentee-request deadlines **October 23 / November 20**, county certification **November 9 / December 7**, and state certification **November 20 / December 18**. General/runoff polls are scheduled **7 a.m.–7 p.m. local time**. These schedules are kept separate from election-night snapshots and later corrections; neither stage carries votes into the next.
+
+## Provenance, independent agreement and offline checks
+
+The coordinator's originals were reused read-only by exact raw/stored hashes. County originals were independently acquired **2026-10-18 16:57:01–16:58:05 UTC**: all **795** selected routes returned 200. [HTTP receipts](data/turnout/source/SCHEMA.md) retain exact requested/final URLs, redirect headers, clocks, bytes, and hashes; no object is 40,000,000 bytes or larger. Every original includes unrelated source fields without a second flattened derivative. `asOf`, `lastUpdated`, election date, document print clock and retrieval UTC are distinct. For example the statewide 2024 app has `lastUpdated=2025-01-07T16:55:00.6358836Z` and `asOf=2025-01-30T13:59:22.4956582Z`; these are not identified certification/correction events.
+
+The actual partisanship peer **9081a355-f2cc-4c66-8b2e-dbdf11066aa7** independently extracted the retained originals. [Read-only comparison](data/turnout/peer-agreement.json) agrees on **{fmt(peer['source_position_candidate_method_rows_compared'])}** candidate/method source-position rows, all **795** county controls, **2,701** native controls, all five complete 159-county orders/minimum80 crossings, and every native known-sum/null/residual control, with **zero differences**. It compares raw option/group GUIDs, ordinals, names, parties, write-in flags and missing cells, not just headline ranks. Agreement on the same primary originals is independent extraction, not a second independent results publisher or coordinator acceptance. The peer’s [separate reconciliation](data/baselines/peer-reconciliation.json) also compares all county source clocks/redaction flags and native inventory positions: **1,464,145 checks**, zero disagreements, with pins limited to nine stable data tables.
+
+Run the offline scripts in `data/turnout/scripts/`: `build.py`, `compare_peer.py`, `report.py`, `validate.py`. [Schema/reproduction](data/turnout/source/SCHEMA.md), [validation](data/turnout/validation.json), [asset manifest](data/turnout/asset-manifest.json), [all-county CSV](data/county-turnout.csv), [candidate counts](data/turnout/candidate-votes.csv.gz), [method counts](data/turnout/candidate-method-votes.csv.gz), and [native/parent reconciliation](data/turnout/reconciliation.csv) retain the evidence and calculations.
+
+Remaining material limits: exact full-candidate county order and top15/44 shares require remaining qualified-write-in allocations; old-election native/ballot/registration controls remain unavailable in the recovered app; many 2024 native candidate/method values are redacted; current precinct/polling-site/combined-unit geometry and November 2026 equivalence are unapproved. This is historical research with explicit bounds. It makes no claim of an implemented collector, known live release cadence, calibrated Needle or real 2026 turnout forecast.
+
+## Complete county order, including every remainder county
+
+The following **159** rows are in exact descending **2024 named-four** order; cumulative percentages use **5,250,047**, not ballots or the full write-in-inclusive denominator. Rows **1–44** are the proven minimum membership, displayed in stable named-four order. Full-candidate internal/all-county order is unknown. All primary values are from the [state county table]({urls['2024NovGen']}) and [2022 midterm table]({urls['2022NovGen']}); source-scoped ballots/registration/native identities come from each exact county request. FIPS is retained as a string.
+
+| Rank | County | FIPS | Named-four votes | Cumulative % | 2024 ballots | 2022 Senate November votes | 2024 native rows |
+| ---: | --- | --- | ---: | ---: | ---: | ---: | ---: |
+'''
+for r in rows:out+=f"| {r['rank']} | {short(r['county_name'])} | {r['county_fips']} | {fmt(r['votes'])} | {100*int(r['cumulative_votes'])/m['denominator']:.6f} | {fmt(r['ballots_cast_2024'])} | {fmt(r['senate_otherseat_2022_november'])} | {r['native_units_2024']} |\n"
+(GA/'turnout.md').write_text(out)
+print('Generated turnout.md',len(out.encode()),'bytes;159rows')

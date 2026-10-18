@@ -1,0 +1,132 @@
+{
+  "tables": [
+    {
+      "path": "data/turnout/county-controls.csv",
+      "rows": 795,
+      "sha256": "200d4d7fd27ce1ddedc13d68e76af7e8bbbaca5f42bfe7783eef415a64544ea4",
+      "bytes": 432592
+    },
+    {
+      "path": "data/turnout/candidate-votes.csv.gz",
+      "rows": 15280,
+      "sha256": "3a14a2147d77862391f9fd3d2a9d8c5429adf7dafe5126acb3090cc51645b556",
+      "bytes": 258213
+    },
+    {
+      "path": "data/turnout/candidate-method-votes.csv.gz",
+      "rows": 61120,
+      "sha256": "7449dcb5c772e943bdc5b028b8ab8a323690e0622539a75d8eab9419f4627dee",
+      "bytes": 839739
+    },
+    {
+      "path": "data/turnout/native-units.csv",
+      "rows": 2701,
+      "sha256": "bf8b6fbacce96a5f1e8b03f0e7e4dfc02a4b38c748a349fbe4603f5b13471888",
+      "bytes": 1108862
+    },
+    {
+      "path": "data/turnout/source-clocks.csv",
+      "rows": 795,
+      "sha256": "0929df87ed0e703ba1e1fccfceb5b61db04fd5066fdc4bc4748730d590f2685a",
+      "bytes": 214961
+    },
+    {
+      "path": "data/turnout/reconciliation.csv",
+      "rows": 795,
+      "sha256": "15bf2b13d7f0f10d44abd89ea08a7d4b30fe4c70bcca94e5082a97cbfc30663b",
+      "bytes": 82976
+    },
+    {
+      "path": "data/turnout/native-method-controls.csv",
+      "rows": 2552,
+      "sha256": "d48dc7eeeb182292863b2cc4bf545895bea7e95be0c82b6829282c001b3e283e",
+      "bytes": 369161
+    },
+    {
+      "path": "data/turnout/candidate-crosswalk.csv",
+      "rows": 2226,
+      "sha256": "888048507c57b4c9aec6ce497d17d3fc8ce5f6e1fb0e9990cb51083f0765e513",
+      "bytes": 554864
+    },
+    {
+      "path": "data/turnout/native-candidate-controls.csv",
+      "rows": 638,
+      "sha256": "063968ff360ba7b38b48c8c636110a54a91af8e724e29a0a75d882abf5264d73",
+      "bytes": 71017
+    },
+    {
+      "path": "data/turnout/method-definitions.csv",
+      "rows": 3200,
+      "sha256": "de86f729373ffd3c1e18b1d8cbedfb74a943abd3e470ca18dff097a5c814a491",
+      "bytes": 435748
+    },
+    {
+      "path": "data/turnout/native-source-total-order.csv",
+      "rows": 2701,
+      "sha256": "1945b1123746ede842463106188a50a7b0728ab0772b7425cbf6de4778c77aa1",
+      "bytes": 1142734
+    }
+  ],
+  "checks": [
+    {
+      "election_key": "2024NovGen",
+      "all159_fips": true,
+      "state_candidate_balance": true,
+      "state_candidate_method_balance": true,
+      "county_app_shared_candidates_and_methods_balance": true,
+      "native_rows": 2701,
+      "native_balance": "total votes exact; candidate/method null cells unallocated",
+      "extra_options_preserved": {
+        "Claudia De la Cruz (Ind)": 13,
+        "Cornel West (Ind)": 6
+      }
+    },
+    {
+      "election_key": "2020NovGen",
+      "all159_fips": true,
+      "state_candidate_balance": true,
+      "state_candidate_method_balance": true,
+      "county_app_shared_candidates_and_methods_balance": true,
+      "native_rows": 0,
+      "native_balance": "unavailable",
+      "extra_options_preserved": {}
+    },
+    {
+      "election_key": "2021JanFedRun",
+      "all159_fips": true,
+      "state_candidate_balance": true,
+      "state_candidate_method_balance": true,
+      "county_app_shared_candidates_and_methods_balance": true,
+      "native_rows": 0,
+      "native_balance": "unavailable",
+      "extra_options_preserved": {}
+    },
+    {
+      "election_key": "2022NovGen",
+      "all159_fips": true,
+      "state_candidate_balance": true,
+      "state_candidate_method_balance": true,
+      "county_app_shared_candidates_and_methods_balance": true,
+      "native_rows": 0,
+      "native_balance": "unavailable",
+      "extra_options_preserved": {}
+    },
+    {
+      "election_key": "2022DecGenRun",
+      "all159_fips": true,
+      "state_candidate_balance": true,
+      "state_candidate_method_balance": true,
+      "county_app_shared_candidates_and_methods_balance": true,
+      "native_rows": 0,
+      "native_balance": "unavailable",
+      "extra_options_preserved": {}
+    }
+  ],
+  "verified_owned_originals": 827,
+  "verified_shared_state_originals": 4,
+  "county_requests": 795,
+  "candidate_rows": 15280,
+  "candidate_method_rows": 61120,
+  "native_rows": 2701,
+  "complete_candidate_geographic_rank": "unresolved; see writein-bounds.json"
+}
