@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "requested_date": "2026-10-17",
-  "updated_at_utc": "2026-10-18T15:26:06.098682+00:00",
+  "updated_at_utc": "2026-10-18T15:39:08.399061+00:00",
   "scope": "35 states in the repository 2026 U.S. Senate race index",
   "coordinator_agent_id": "d0fc3534-1613-4883-b48b-21a233fcfd9e",
   "workspace_id": "wks_b290f45007010740",
@@ -552,27 +552,32 @@
       "election": "Regular",
       "seat_class": "II",
       "priority": 7,
-      "status": "second-wave-dispatching",
+      "status": "second-wave-active",
       "workers": {
         "turnout": {
           "agent_id": "158cc3fa-5119-4e25-a958-b042f0e0f340",
-          "status": "complete-reviewing-final-assets",
+          "status": "complete-reviewed",
           "launched_at_utc": "2026-10-18T12:56:41.599121+00:00"
         },
         "partisanship": {
           "agent_id": "78f9c3c0-062f-41f7-87c0-f0a6443f8877",
-          "status": "running",
+          "status": "complete-reviewing-final-assets",
           "launched_at_utc": "2026-10-18T15:00:51.012027+00:00"
         },
         "official_results": {
           "agent_id": "a40b6baa-36fd-429d-8539-a1f1673c7332",
           "status": "running",
           "launched_at_utc": "2026-10-18T15:26:06.098682+00:00"
+        },
+        "precinct_maps": {
+          "agent_id": "dd92ed17-fb3d-42da-8289-a65e2a16690a",
+          "status": "running",
+          "launched_at_utc": "2026-10-18T15:39:08.399061+00:00"
         }
       },
       "validation": {
         "status": "pass",
-        "scope": "County/native dispatch acceptance only; first-wave reports/scenarios/final metadata and second-wave research pending.",
+        "scope": "County/native dispatch acceptance and final turnout review complete; baseline target review and second-wave research in progress.",
         "county_review": "kansas/data/coordinator-county-reconciliation.json",
         "native_review": "kansas/data/coordinator-native-contract-checks.json",
         "coverage": "105counties/420independent2024candidatecounty cells/23stateprimarycontrols/22031nativeidentities/121053originalcandidate-totalcells/96footerpositions; unavailablecounts/residuals retained."
@@ -585,7 +590,7 @@
         "No approved current geography/live feed/cadence/exactremaining or calibratedforecast."
       ],
       "published_commits": [],
-      "coordinator_preparation": "Turnout actual finish received; final native contract metadata-only hash refreshed and audit rerun. Official-results a40b6baa-36fd-429d-8539-a1f1673c7332 launched in freed slot; partisanship remains active finalQA. Maps awaits actual free slot. Sourceworker final peer manifest pins pending coordinator firstwave integration.",
+      "coordinator_preparation": "Both first-wave actual finishes received; all105/exact23/22031 accepted. Final targets under coordinator review. Official-results and maps are the only active research workers. Source recovered signed July16 injunction/Oct2 stay-denial and official Nov24 merits docket; later complete docket access remains limited. Turnout cosmetic diff-marker repair leaves source/native contract unchanged; all37 checks and70asset hashes pass.",
       "priority_geography": {
         "basis": "2024president four reported named tickets; statewide unreported write-in/under/over categories unavailable, not zero",
         "count": 23,
