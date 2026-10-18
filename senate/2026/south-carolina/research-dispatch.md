@@ -4,10 +4,10 @@ Coordinator **`d0fc3534-1613-4883-b48b-21a233fcfd9e`**, workspace `wks_b290f4500
 
 | Question | Actual Paseo ID | Status and exclusive paths |
 | --- | --- | --- |
-| Turnout | `46dcb766-b312-4aaf-ac85-921179115c95` | Final contract frozen; report/manifest seal finishing. `turnout.md`, `data/county-turnout.csv`, `data/turnout/**`. |
+| Turnout | `46dcb766-b312-4aaf-ac85-921179115c95` | Actually finished; report and manifest sealed. `turnout.md`, `data/county-turnout.csv`, `data/turnout/**`. |
 | Partisanship | `2a77ed30-c478-46c3-8980-817b50d4e679` | Actually finished; 1,111 owned assets and 156,368 target rows pass. `county-partisanship.md`, `data/county-baselines.csv`, `data/baselines/**`. |
 | Official results | `5706e865-3e96-4b3d-856d-8e213f5af3e1` | Launched after actual partisanship finish. All 46 authorities, 17 individual investigations. `official-results.md`, `data/official-results-sources.csv`, `data/results-sources/**`. |
-| Maps | Not yet launched | Must await actual turnout finish. `precinct-maps.md`, `maps/**`. |
+| Maps | `200516a7-31bf-4393-8e62-90c19e6f5f63` | Launched after actual turnout finish. All 46 inventory and actual maps for 17 priorities. `precinct-maps.md`, `maps/**`. |
 
 Historical dispatch is **formally accepted** in [the external authority record](data/coordinator-priority-acceptance.json), pinning the frozen 33,917,555-byte contract (`a4dc8e50ce09889e5873d1f54c887dbef50a42a0b7bf600b4ab6663afab4ccef`). Three immutable peer witnesses and independent original-source reviews pass. All 46 counties remain; the exact 17-county priority totals 2,061,601 of 2,548,140 votes (80.90611191%). The first 16 supply 2,019,337; Oconee adds 42,264. This is historical research priority, with no current physical/reporting crosswalk approval.
 
@@ -16,3 +16,5 @@ The [database review](data/coordinator-native-review.json) checks 516,586 raw po
 Read the [primary preflight](data/coordinator-source-preflight.md), [newsroom checks](local-news-results.md) and [strategy](live-polling-strategy.md). There is no 2024 Senate contest: president is the primary volume basis, 2020 Graham–Harrison is same Class II, and 2022 Scott–Matthews and governor are separate midterm contexts. NARA/FEC retain seven presidential slates, including Terry's 5,352 omitted from the retained Clerk display. Original and database method values, party labels and registration scopes remain distinct. VHM requested-county history labels have unresolved physical membership and are not polygon assignments.
 
 Fresh profile discovery before each launch returned no configured profiles; provider inspection confirmed the authorized `codex/gpt-6.1-sol`, `full-access`, `xhigh` setup. Actual launches have `notifyOnFinish:true`; no status polling. The coordinator alone reviews and stages the completed state plus queue/dispatch changes, commits on main, pushes and verifies the remote. This state package remains in progress.
+
+Both first-pair workers have actually finished. Turnout manifest `70ae7c258291328257baa9061c8d3854ccb371c40f80298803d8b06197583f95` and baseline manifest `41c90cccc7767494146ec76bbbf1ccf1f68ccb01419fa0dbf1e1e1be79e43994` are sealed. Official-results and maps now occupy the only two research slots. The coordinator sent final metadata pins to the official worker; the map launch includes them.
