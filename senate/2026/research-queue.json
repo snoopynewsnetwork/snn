@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "requested_date": "2026-10-17",
-  "updated_at_utc": "2026-10-18T20:44:48.480255+00:00",
+  "updated_at_utc": "2026-10-18T20:47:24.502772+00:00",
   "scope": "35 states in the repository 2026 U.S. Senate race index",
   "coordinator_agent_id": "d0fc3534-1613-4883-b48b-21a233fcfd9e",
   "workspace_id": "wks_b290f45007010740",
@@ -859,12 +859,15 @@
       "election": "Regular",
       "seat_class": "II",
       "priority": 11,
-      "status": "official-active-turnout-sealing",
+      "status": "official-and-maps-active",
       "workers": {
         "turnout": {
           "agent_id": "46dcb766-b312-4aaf-ac85-921179115c95",
-          "status": "active",
-          "launched_at_utc": "2026-10-18T19:53:14.553482+00:00"
+          "status": "completed",
+          "launched_at_utc": "2026-10-18T19:53:14.553482+00:00",
+          "completed_at_utc": "2026-10-18T20:47:24.502772+00:00",
+          "report_sha256": "053087a84e260ecb87cf496d4c708c23103d665a36743ab77fd0e4eafc17429d",
+          "manifest_sha256": "70ae7c258291328257baa9061c8d3854ccb371c40f80298803d8b06197583f95"
         },
         "partisanship": {
           "agent_id": "2a77ed30-c478-46c3-8980-817b50d4e679",
@@ -874,16 +877,21 @@
           "report_sha256": "69c0e0e897cdbde46787701a76ce1e6a529afc7320c058a0289d45a39cd19469",
           "manifest_sha256": "41c90cccc7767494146ec76bbbf1ccf1f68ccb01419fa0dbf1e1e1be79e43994"
         },
-        "official-results": {
+        "official_results": {
           "agent_id": "5706e865-3e96-4b3d-856d-8e213f5af3e1",
           "status": "active",
           "launched_at_utc": "2026-10-18T20:44:48.480255+00:00"
+        },
+        "precinct_maps": {
+          "agent_id": "200516a7-31bf-4393-8e62-90c19e6f5f63",
+          "status": "active",
+          "launched_at_utc": "2026-10-18T20:47:24.502772+00:00"
         }
       },
       "validation": null,
       "gaps": [],
       "published_commits": [],
-      "coordinator_preparation": "Partisanship actually finished. Official-results5706e865 launched after fresh profile/provider discovery, on the frozen accepted17-of46 contract. Turnout is sealing outputs and remains the other active researcher. Maps is not launched; waiting actual turnout finish. Independent original/database/ENR/native and156,368 target-row review passed; source discrepancies remain separate.",
+      "coordinator_preparation": "Both first-pair workers actually finished, sealed and accepted. Official-results5706e865 and maps200516a7 are the only active researchers, each on all46/exact17/frozen complete native contract. Actual maps launch followed fresh profiles/provider discovery and turnout finish. Coordinator first-pair original/target reviews pass; final integration continues while second pair researches.",
       "coordinator_reviews": {
         "historical_native": "data/coordinator-native-review.json",
         "targets": "data/coordinator-target-review.json",
@@ -1271,13 +1279,13 @@
   "batch_status": "in_progress",
   "coordinator_preparation_audit": {
     "status": "pass",
-    "checked_at_utc": "2026-10-18T20:29:19.073835+00:00",
+    "checked_at_utc": "2026-10-18T20:46:57.269813+00:00",
     "scope": "Still-queued states only; retained public news/preflight responses, not completed question packages or accepted feeds",
     "states": 23,
-    "response_captures": 456,
+    "response_captures": 480,
     "http_status_counts": {
-      "200": 359,
-      "403": 88,
+      "200": 376,
+      "403": 95,
       "transport_failure": 1,
       "500": 1,
       "404": 5,
