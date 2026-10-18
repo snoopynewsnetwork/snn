@@ -10,22 +10,54 @@
     />
     <title>Snoopy News Network · Senate 2026</title>
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <script src="/theme.js"></script>
     <link rel="stylesheet" href="/style.css" />
     <script type="module" src="/app.js"></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
+    <div class="halloween-ribbon spooky-only" aria-hidden="true">
+      <span>✦ THE HALLOWEEN EDITION ✦</span>
+      <span>ALL TREATS. NO TRICKS. JUST FACTS.</span>
+      <span>EST. IN THE LAND OF THE LIVING</span>
+    </div>
     <header class="masthead">
-      <a class="brand" href="#" aria-label="Snoopy News Network home"
+      <a class="brand" href="#" aria-labelledby="brand-name"
         ><span class="brand-mark">SNN<span class="brand-dot">.</span></span
-        ><span>Snoopy News<br />Network</span></a
+        ><span id="brand-name"><span class="everyday-only">Snoopy News<br />Network</span><span class="spooky-only">Spoopy News<br />Network</span><span class="sr-only"> home</span></span></a
       >
       <div class="masthead-right">
-        <span class="edition">THE SENATE DESK / 2026</span
-        ><button id="editor-button" class="button quiet">Editor access</button>
+        <span class="edition"><span class="everyday-only">THE SENATE DESK / 2026</span><span class="spooky-only">THE GRAVEYARD SHIFT / 2026</span></span>
+        <div class="appearance">
+          <div class="theme-options" role="group" aria-label="Color theme">
+            <button type="button" data-theme-choice="light" aria-pressed="false">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg>
+              Light
+            </button>
+            <button type="button" data-theme-choice="dark" aria-pressed="false">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14A9 9 0 0 1 10 3.5 9 9 0 1 0 20.5 14Z"/></svg>
+              Dark
+            </button>
+            <button type="button" data-theme-choice="spooky" aria-pressed="false">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6c-8-4-13 13-3 13h6c10 0 5-17-3-13Zm0 0c0-3 2-4 4-4"/><path d="m7 11 2 2H6Zm10 0-2 2h3Zm-9 5 2 1 2-1 2 1 2-1"/></svg>
+              Spooky
+            </button>
+          </div>
+          <label class="theme-auto" title="Follow your device’s light/dark setting, with spooky mode on October 31. Choosing a theme overrides this.">
+            <input id="theme-system" type="checkbox" checked aria-describedby="theme-help" /> Follow system
+          </label>
+          <span id="theme-help" class="sr-only">Uses your device’s light or dark setting and turns spooky on every October 31. Select any theme to override.</span>
+        </div>
+        <button id="editor-button" class="button quiet">Editor access</button>
       </div>
     </header>
+    <p id="theme-announcement" class="sr-only" role="status" aria-live="polite"></p>
     <main id="main" tabindex="-1">
+      <div class="haunting-note spooky-only">
+        <span class="haunting-spark" aria-hidden="true">✧</span>
+        <span><strong>Something wicked this way votes.</strong> The newsroom is haunted. The reporting is still on the record.</span>
+        <span class="haunting-seal" aria-hidden="true">100% BOO-REAU VERIFIED</span>
+      </div>
       <div
         id="status"
         class="status"
@@ -35,19 +67,27 @@
       ></div>
       <section id="index-view">
         <div class="hero">
-          <div>
-            <p class="eyebrow">ELECTION COVERAGE</p>
-            <h1>The 2026 Senate desk.</h1>
-            <p class="intro">
+          <div class="hero-copy">
+            <p class="eyebrow"><span class="everyday-only">ELECTION COVERAGE</span><span class="spooky-only">SPOOPY NEWS NETWORK PRESENTS</span></p>
+            <h1><span class="everyday-only">The 2026 Senate desk.</span><span class="spooky-only">Democracy<br />after <em>dark.</em></span></h1>
+            <p class="intro everyday-only">
               One place for the races, the sources, and the reporting.<br />Built
               from the Snoopy News Network research files.
             </p>
+            <p class="intro spooky-only">35 races. A few restless spirits. Absolutely no ghost sources.<br /> Your Senate desk, reporting live from the other side.</p>
+            <p class="spooky-only spooky-byline"><span aria-hidden="true">✦</span> Fear the rumors. Follow the facts.</p>
+          </div>
+          <div class="haunted-scene spooky-only" aria-hidden="true">
+            <img src="/haunted-newsroom.svg" width="640" height="400" alt="" />
+            <svg class="floating-ghost" viewBox="0 0 100 120"><path d="M14 103V48a36 36 0 0 1 72 0v55L74 93l-12 12-12-11-12 11-12-12Z" fill="#f4e5d2"/><ellipse cx="38" cy="49" rx="5" ry="8" fill="#25152f"/><ellipse cx="63" cy="49" rx="5" ry="8" fill="#25152f"/><ellipse cx="50" cy="70" rx="5" ry="7" fill="#25152f"/><ellipse cx="27" cy="64" rx="7" ry="3" fill="#eeb9a4"/><ellipse cx="74" cy="64" rx="7" ry="3" fill="#eeb9a4"/></svg>
+            <span class="ghost-caption">our newest<br />ghostwriter</span>
           </div>
           <div class="election-date">
             <span>GENERAL ELECTION</span><strong>November 3</strong
             ><span>2026</span>
           </div>
         </div>
+        <div class="spooky-marquee spooky-only" aria-hidden="true"><span>NO GHOST SOURCES</span><i>✦</i><span>DEAD SERIOUS REPORTING</span><i>✦</i><span>SCARILY WELL SOURCED</span><i>✦</i><span>TRICK OR TRUTH</span></div>
         <div class="summary" aria-label="Coverage summary">
           <div>
             <strong id="race-count">—</strong><span>races tracked</span>
@@ -64,7 +104,7 @@
           </div>
         </div>
         <div class="section-heading">
-          <h2>Race index</h2>
+          <h2><span class="everyday-only">Race index</span><span class="spooky-only">The race crypt <span aria-hidden="true">↴</span></span></h2>
           <span id="showing" class="muted" aria-live="polite"></span>
         </div>
         <div class="filters">
@@ -120,7 +160,7 @@
       <section id="race-view" hidden aria-label="Race details"></section>
     </main>
     <footer>
-      <span><strong>SNN.</strong> Follow the facts. Keep the sources.</span
+      <span><strong>SNN.</strong> <span class="everyday-only">Follow the facts. Keep the sources.</span><span class="spooky-only">Stay curious. Stay spooky. Keep the sources.</span></span
       ><a
         href="https://github.com/snoopynewsnetwork/snn"
         target="_blank"
