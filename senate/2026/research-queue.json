@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "requested_date": "2026-10-17",
-  "updated_at_utc": "2026-10-18T20:47:24.502772+00:00",
+  "updated_at_utc": "2026-10-18T21:10:49.168528+00:00",
   "scope": "35 states in the repository 2026 U.S. Senate race index",
   "coordinator_agent_id": "d0fc3534-1613-4883-b48b-21a233fcfd9e",
   "workspace_id": "wks_b290f45007010740",
@@ -859,7 +859,7 @@
       "election": "Regular",
       "seat_class": "II",
       "priority": 11,
-      "status": "official-and-maps-active",
+      "status": "official-active-maps-review",
       "workers": {
         "turnout": {
           "agent_id": "46dcb766-b312-4aaf-ac85-921179115c95",
@@ -884,20 +884,26 @@
         },
         "precinct_maps": {
           "agent_id": "200516a7-31bf-4393-8e62-90c19e6f5f63",
-          "status": "active",
-          "launched_at_utc": "2026-10-18T20:47:24.502772+00:00"
+          "status": "completed",
+          "launched_at_utc": "2026-10-18T20:47:24.502772+00:00",
+          "completed_at_utc": "2026-10-18T21:10:49.168528+00:00",
+          "report_sha256": "ba9b40a0cb7260d3b68d86be6018a3ff982971cd2e42be79889b54755fa13afc",
+          "manifest_sha256": "211448510c96f031c20e93c8ad35ff81cb7401da65e7ac72a4fe859ebd5bc9bf"
         }
       },
       "validation": null,
       "gaps": [],
       "published_commits": [],
-      "coordinator_preparation": "Both first-pair workers actually finished, sealed and accepted. Official-results5706e865 and maps200516a7 are the only active researchers, each on all46/exact17/frozen complete native contract. Actual maps launch followed fresh profiles/provider discovery and turnout finish. Coordinator first-pair original/target reviews pass; final integration continues while second pair researches.",
+      "coordinator_preparation": "Both first-pair workers and maps actually finished. Official5706e865 remains active. Native map original/subset byte review passes2315features/1277142coordinates/17subsets1639features, plus320county-alternative features. Whole-package integration pending official final seal. Freed maps slot launched actualFLturnout f67a9af9.",
       "coordinator_reviews": {
         "historical_native": "data/coordinator-native-review.json",
         "targets": "data/coordinator-target-review.json",
         "news": "data/news/inspection.json",
         "original_ENR": "data/coordinator-legacy-review.json",
-        "original_targets": "data/coordinator-original-target-review.json"
+        "original_targets": "data/coordinator-original-target-review.json",
+        "first_pair_seal": "data/coordinator-first-pair-final-review.json",
+        "map_native_bytes": "data/coordinator-map-native-review.json",
+        "current_candidates_code": "data/coordinator-current-source-review.json"
       },
       "priority_acceptance": {
         "path": "senate/2026/south-carolina/data/coordinator-priority-acceptance.json",
@@ -916,12 +922,18 @@
       "election": "Special",
       "seat_class": "III",
       "priority": 12,
-      "status": "queued",
-      "workers": {},
+      "status": "turnout-active",
+      "workers": {
+        "turnout": {
+          "agent_id": "f67a9af9-f5bd-47d5-8ebf-ed23594aa3e0",
+          "status": "active",
+          "launched_at_utc": "2026-10-18T21:10:49.168528+00:00"
+        }
+      },
       "validation": null,
       "gaps": [],
       "published_commits": [],
-      "coordinator_preparation": "Original67-county2024/2022/2020nativeZIPs and19-field schema acquired; all1707538rawpositions checked; +1/-1 certified candidate conflicts and generic-vs-valid writeins preserved. NARA certificate independently corroborates presidential controls; exact priority remains unaccepted."
+      "coordinator_preparation": "Original67-county2024/2022/2020nativeZIPs and19-field schema acquired; all1707538rawpositions checked; +1/-1 certified candidate conflicts and generic-vs-valid writeins preserved. NARA certificate independently corroborates presidential controls; exact priority remains unaccepted. Actual archived2024president county HTML recovered; no accepted Senate priority. Fresh profile discovery0/provider confirmed codex-gpt6.1-sol full-access xhigh; notifyOnFinish enabled."
     },
     {
       "state": "Mississippi",
@@ -1276,7 +1288,7 @@
       ]
     }
   ],
-  "batch_status": "in_progress",
+  "batch_status": "in-progress:10newstatespublished;SCofficialactive/mapsreview;FLturnoutactive;22laterstatesqueued",
   "coordinator_preparation_audit": {
     "status": "pass",
     "checked_at_utc": "2026-10-18T20:46:57.269813+00:00",
@@ -1296,9 +1308,10 @@
     "additional_content_checks": "Independent primary preflight scripts for NH,MN,SC,FL,NE,SD,ID retain source-specific controls; MS visual originals preserve mismatches and separate special-election stages. No question package is inferred complete."
   },
   "coordinator_next_actions": [
-    "Complete independent Georgia map/source review and publish full package after actual source finish.",
-    "Launch New Hampshire partisanship after next actual worker finish; keep at most two research workers.",
-    "Reconcile New Hampshire full native hierarchy/priority before its official/maps dispatch, then continue all25 later states in order."
+    "Review/publish complete SouthCarolina after actual official finish; maps and firstpair sealed.",
+    "Actual SC official finish frees FL partisanship slot; fresh profile/provider discovery required.",
+    "Reconcile complete FL firstpair before official/maps dispatch, at most2active workers.",
+    "Continue all remaining queued states in priority order; no completion claim until all34 published."
   ],
   "coordinator_prompt_preparation": {
     "scope": "Unlaunched future first-wave prompts only; no agent IDs or completed packages implied",
