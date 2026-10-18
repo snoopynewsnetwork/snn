@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "requested_date": "2026-10-17",
-  "updated_at_utc": "2026-10-18T15:07:34.160208+00:00",
+  "updated_at_utc": "2026-10-18T15:26:06.098682+00:00",
   "scope": "35 states in the repository 2026 U.S. Senate race index",
   "coordinator_agent_id": "d0fc3534-1613-4883-b48b-21a233fcfd9e",
   "workspace_id": "wks_b290f45007010740",
@@ -552,23 +552,56 @@
       "election": "Regular",
       "seat_class": "II",
       "priority": 7,
-      "status": "first-wave-active",
+      "status": "second-wave-dispatching",
       "workers": {
         "turnout": {
           "agent_id": "158cc3fa-5119-4e25-a958-b042f0e0f340",
-          "status": "running",
+          "status": "complete-reviewing-final-assets",
           "launched_at_utc": "2026-10-18T12:56:41.599121+00:00"
         },
         "partisanship": {
           "agent_id": "78f9c3c0-062f-41f7-87c0-f0a6443f8877",
           "status": "running",
           "launched_at_utc": "2026-10-18T15:00:51.012027+00:00"
+        },
+        "official_results": {
+          "agent_id": "a40b6baa-36fd-429d-8539-a1f1673c7332",
+          "status": "running",
+          "launched_at_utc": "2026-10-18T15:26:06.098682+00:00"
         }
       },
-      "validation": null,
-      "gaps": [],
+      "validation": {
+        "status": "pass",
+        "scope": "County/native dispatch acceptance only; first-wave reports/scenarios/final metadata and second-wave research pending.",
+        "county_review": "kansas/data/coordinator-county-reconciliation.json",
+        "native_review": "kansas/data/coordinator-native-contract-checks.json",
+        "coverage": "105counties/420independent2024candidatecounty cells/23stateprimarycontrols/22031nativeidentities/121053originalcandidate-totalcells/96footerpositions; unavailablecounts/residuals retained."
+      },
+      "gaps": [
+        "2022turnout workbook has source-inconsistent county ballot controls; not clean scenario weights.",
+        "2024workbook and certification release ballots/registration differ by source vintage.",
+        "Suppressed/blank detail values and positive residuals remain unallocated.",
+        "Current mail grace injunction conflicts with statutory calendar; primary orders/later docket to verify.",
+        "No approved current geography/live feed/cadence/exactremaining or calibratedforecast."
+      ],
       "published_commits": [],
-      "coordinator_preparation": "Both actual first-wave workers active; actual peer IDs shared. Primary county/native/candidate/write-in/sourcevintage reconciliation underway; no second-wave priority accepted."
+      "coordinator_preparation": "Turnout actual finish received; final native contract metadata-only hash refreshed and audit rerun. Official-results a40b6baa-36fd-429d-8539-a1f1673c7332 launched in freed slot; partisanship remains active finalQA. Maps awaits actual free slot. Sourceworker final peer manifest pins pending coordinator firstwave integration.",
+      "priority_geography": {
+        "basis": "2024president four reported named tickets; statewide unreported write-in/under/over categories unavailable, not zero",
+        "count": 23,
+        "votes": 1067659,
+        "statewide_votes": 1327591,
+        "share": 0.8042077718212913,
+        "top15_votes": 970376,
+        "previous_votes": 1057110,
+        "crossing": "Sumner / US-KS-20191 /10549",
+        "ordered_keys": "kansas/data/coordinator-priority-keys.txt",
+        "ordered_keys_sha256": "5c68ae370d9a3be8e0234f4fb615fd5c91379fcd1a6733cdff91dd28cbdbb8c3",
+        "contract_sha256": "dcdc1457a5b08851ef76b5372435d56788f647708da5ff9a6ef35435f92fa6a7",
+        "contract_bytes": 20297853,
+        "acceptance": "kansas/data/coordinator-priority-acceptance.json",
+        "acceptance_scope": "Exact all105county arithmetic/23county research priority and all22031 historical source-scoped constituent identities. No physical/current geographic equivalence, live source or forecast approval."
+      }
     },
     {
       "state": "Georgia",
@@ -1013,9 +1046,9 @@
     "additional_content_checks": "Texas and Iowa retained actual newsroom JSON passed their separate offline count/coverage inspectors; these are historical products, not November approval."
   },
   "coordinator_next_actions": [
-    "Only Kansas turnout158cc3fa-5119-4e25-a958-b042f0e0f340 and partisanship78f9c3c0-062f-41f7-87c0-f0a6443f8877 are active. Await async finish notifications; do not poll.",
-    "Independently review all105Kansas county/native/candidate/sourcevintage reconciliation and exact priority before dispatching official-results/maps in freed slots.",
-    "Continue remaining27queued state stacks in priority order with four actual question agents each, scoped reviewed commits/pushes and remote verification."
+    "Only Kansas partisanship78f9c3c0-062f-41f7-87c0-f0a6443f8877 and official-results a40b6baa-36fd-429d-8539-a1f1673c7332 are active; no status polling.",
+    "Review final turnout70assets/37checks and complete county/native/target/peer metadata QA. Finalcontractdcdc1457... unchanged22031objects and exact23; externalacceptance refreshed.",
+    "Launch Kansas maps after actual partisanship finish/profile discovery, then continue next Georgia firstpair in real freed slots. Continue all27laterqueuedstates and publish reviewedpackages incrementally."
   ],
   "coordinator_prompt_preparation": {
     "scope": "Unlaunched future first-wave prompts only; no agent IDs or completed packages implied",
