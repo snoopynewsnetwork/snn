@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "requested_date": "2026-10-17",
-  "updated_at_utc": "2026-10-18T17:08:34.428919+00:00",
+  "updated_at_utc": "2026-10-18T17:36:35.586663+00:00",
   "scope": "35 states in the repository 2026 U.S. Senate race index",
   "coordinator_agent_id": "d0fc3534-1613-4883-b48b-21a233fcfd9e",
   "workspace_id": "wks_b290f45007010740",
@@ -157,7 +157,7 @@
       ],
       "coordinator_preparation": "All four question assignments and coordinator news/strategy integration reviewed and published; Ohio first pair active.",
       "priority_geography": {
-        "basis": "2024 president certified all eight candidates; native HD1–40 plus HD99 administrative",
+        "basis": "2024 president certified all eight candidates; native HD1\u201340 plus HD99 administrative",
         "count": 28,
         "votes": 271492,
         "statewide_votes": 338177,
@@ -629,23 +629,45 @@
       "election": "Regular",
       "seat_class": "II",
       "priority": 8,
-      "status": "first-wave-active",
+      "status": "second-wave-active",
       "workers": {
         "turnout": {
           "agent_id": "80927f11-a268-4c0c-9f08-57fe524ef20a",
-          "status": "running",
-          "launched_at_utc": "2026-10-18T16:55:39.928460+00:00"
+          "status": "finished",
+          "launched_at_utc": "2026-10-18T16:55:39.928460+00:00",
+          "finished_at_utc": "2026-10-18T17:36:35.586663+00:00"
         },
         "partisanship": {
           "agent_id": "9081a355-f2cc-4c66-8b2e-dbdf11066aa7",
+          "status": "finished",
+          "launched_at_utc": "2026-10-18T17:01:55.914235+00:00",
+          "finished_at_utc": "2026-10-18T17:35:41.663728+00:00"
+        },
+        "official_results": {
+          "agent_id": "4595f414-1cdb-4b0e-9d3f-2b046ee81867",
           "status": "running",
-          "launched_at_utc": "2026-10-18T17:01:55.914235+00:00"
+          "launched_at_utc": "2026-10-18T17:35:41.663728+00:00"
+        },
+        "precinct_maps": {
+          "agent_id": "ff101187-bfee-43d2-ab6c-99c5c9e5edad",
+          "status": "running",
+          "launched_at_utc": "2026-10-18T17:36:35.586663+00:00"
         }
       },
       "validation": null,
       "gaps": [],
       "published_commits": [],
-      "coordinator_preparation": "Both actual firstwaveworkers active after Kansas actualfinishes; independent159county/allnative/candidate/method reconciliation underway. Turnout recovered795countyselectedroutes;2024all2701native and19extra source-option votes retained. Complete qualified-writein scope/exact priority remains unaccepted."
+      "coordinator_preparation": "Both first-wave workers actually finished. Frozen historical contract formally accepted after independent original/native review. Actual official-results and maps workers now active; no extra worker/coordinator. Full-candidate top44 membership proven; named-four dispatch order and source gaps preserved.",
+      "accepted_contract": {
+        "path": "senate/2026/georgia/data/turnout/priority-set.json",
+        "sha256": "1f589d2785d985af2eb33de50adad5a398924ab55f9343deaf79ac5c7378d97a",
+        "bytes": 2293339,
+        "acceptance": "senate/2026/georgia/data/coordinator-priority-acceptance.json",
+        "all_counties": 159,
+        "native_identities": 2701,
+        "priority_count": 44,
+        "scope": "Proven full-candidate top44 membership and minimum prefix cardinality; named-four dispatch order, no imputed write-in allocations or approved current geography."
+      }
     },
     {
       "state": "New Hampshire",
@@ -730,7 +752,7 @@
       "validation": null,
       "gaps": [],
       "published_commits": [],
-      "state_specific_notes": "Keep 2024 Senate regular Fischer–Osborn (independent) separate from the 2024 special Ricketts–Love contest. Verify the actual 2026 ballot, independent challenger, withdrawals and party labels. Coordinator found November zero official setup while the county portal still selects May primary. Regional stations show Iowa/historical/test configurations. See data/news.",
+      "state_specific_notes": "Keep 2024 Senate regular Fischer\u2013Osborn (independent) separate from the 2024 special Ricketts\u2013Love contest. Verify the actual 2026 ballot, independent challenger, withdrawals and party labels. Coordinator found November zero official setup while the county portal still selects May primary. Regional stations show Iowa/historical/test configurations. See data/news.",
       "coordinator_preparation": "Dated newsroom/authority captures, verified evidence hashes and local-news/strategy drafts prepared; state-specific candidate/geography/setup caveats recorded. Four-question stack remains queued."
     },
     {
@@ -1059,13 +1081,13 @@
   "batch_status": "in_progress",
   "coordinator_preparation_audit": {
     "status": "pass",
-    "checked_at_utc": "2026-10-18T16:10:30.079890+00:00",
+    "checked_at_utc": "2026-10-18T17:19:52.444193+00:00",
     "scope": "Still-queued states only; retained public news/preflight responses, not completed question packages or accepted feeds",
-    "states": 27,
-    "response_captures": 442,
+    "states": 26,
+    "response_captures": 429,
     "http_status_counts": {
-      "200": 342,
-      "403": 95,
+      "200": 340,
+      "403": 84,
       "429": 1,
       "402": 1,
       "503": 1,
@@ -1076,9 +1098,9 @@
     "additional_content_checks": "Texas and Iowa retained actual newsroom JSON passed their separate offline count/coverage inspectors; these are historical products, not November approval."
   },
   "coordinator_next_actions": [
-    "Continue Georgia firstwave independent candidate/native/method/priority reconciliation; no exactfullcandidatepriority accepted yet.",
-    "Dispatch Georgia official/maps after accepted historical scope and actual worker slot availability; max2researchworkers.",
-    "Continue26laterqueuedstates in priority order, reviewed incremental directmain publication; retain Michigan."
+    "Review Georgia targets and current official/map evidence; launch maps only after actual turnout finish, keeping at most two research workers.",
+    "Publish reviewed Georgia package incrementally, then continue all26 later queued state stacks.",
+    "Retain Michigan and all seven newly published states; report completion only after all34 queue states published."
   ],
   "coordinator_prompt_preparation": {
     "scope": "Unlaunched future first-wave prompts only; no agent IDs or completed packages implied",
