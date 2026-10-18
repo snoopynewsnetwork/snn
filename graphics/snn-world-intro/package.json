@@ -1,0 +1,19 @@
+{
+  "name": "snn-world-intro",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "test": "node --test test/*.test.js",
+    "check": "node --check src/main.js && node --check src/snoopy.js && node --check src/snoopy-3d.js && node --check src/orbit-view.js && npm test && vite build"
+  },
+  "dependencies": {
+    "three": "0.186.1"
+  },
+  "devDependencies": {
+    "vite": "8.3.4"
+  }
+}
