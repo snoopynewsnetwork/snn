@@ -1,6 +1,6 @@
 # Minnesota integration review
 
-Observed 2026-10-18 UTC. All four question workers actually finished and their frozen packages passed final coordinator review. Whole-package and repository checks are recorded below; direct publication and remote verification follow scoped staging. This is not a completed live feed, forecast or election call.
+Observed 2026-10-18 UTC. All four question workers actually finished and their frozen packages passed final coordinator review. Whole-package and repository checks are recorded below; published directly on main in `4e4cfc922780f8be5e3f8601f0bab68a80bb63cb`; origin/main matched exactly after push. This is not a completed live feed, forecast or election call.
 
 The four actual question IDs are recorded in [dispatch](research-dispatch.md). The coordinator alone writes Git; no worker delegates or publishes. Official source research independently verifies the captured state/county channels and current rules. Both SouthCarolina first-pair workers now occupy the freed slots, keeping two actual researchers active across the batch.
 
@@ -30,7 +30,7 @@ The default official200app is August primary. Newly observed [general201](https:
 
 The [narrow legal review](data/coordinator-legal-review.json) independently reads retained originalhashes/HTML/PDFtext. Current204C.33 says county canvass days3–8/state16thday(Nov19), correcting an old thirdTuesday carryover.203B.08 distinguishes5pm in-person return and8pm late receipt. The primary districtSeptember4/FirstCircuitSeptember10/SupremeCourtSeptember14 USPS envelope/portal-rule chain remains preliminary; it does not extend stateballot-receipt deadlines. MinnesotaAugust12witness opinion is court-authored via a disclosedJustia mirror, with primaryhostaccess gap. Current instructions/exceptions, complete future docket state and exact remaining eligibleSenate ballots still require scope-specific verification.
 
-Whole-package final source review, all local links/artifact bounds, repository checks, scoped staging, commit/push and remote verification will be recorded when complete. NoNovemberproductioncounts, measured sourcecadence, exact outstandingSenate inventory, implementedcollector or calibratedNeedle is claimed.
+Whole-package final source review, local links/artifact bounds, repository checks and scoped staged-byte review passed. Commit/push and exact remote verification completed at `4e4cfc922780f8be5e3f8601f0bab68a80bb63cb`. NoNovemberproductioncounts, measured sourcecadence, exact outstandingSenate inventory, implementedcollector or calibratedNeedle is claimed.
 
 ## Final source review and publication checks
 
@@ -41,3 +41,5 @@ Whole-package final source review, all local links/artifact bounds, repository c
 Whole-package link review caught24root-relative links in the nested generated source appendix. The coordinator corrected only the generator/output paths, added nested-Markdown checks and resealed the source validation/manifest. The main report and319original source entities are unchanged. [Repair record](data/coordinator-source-link-repair.json) retains before/after hashes; final default source validation passes64checks. The original worker freeze remains a recorded prior version, not the final publication manifest.
 
 Scoped authored-text whitespace checks pass with CRLF treated as a valid line ending and harmless final blank lines accepted. Raw PDF-position text, captured provider text and CSV formatting remain exact evidence; their trailing spaces/CRLF are preserved rather than normalized. The staged blob audit verifies the reviewed Minnesota directory plus queue/root/SouthCarolina dispatch metadata only, every blob byte-identical to disk and strictly below40million bytes.
+
+Publication: `4e4cfc922780f8be5e3f8601f0bab68a80bb63cb`, remoteexactverified2026-10-18T20:09:01.267897+00:00. Reviewed stage contained1,975blobs/516,963,327bytes, largest30,009,072; Minnesota plus coordinator queue/root/SouthCarolina dispatchmetadata only. This follow-up publication record changes coordinator prose/queue only; frozen question manifests remain unchanged.
