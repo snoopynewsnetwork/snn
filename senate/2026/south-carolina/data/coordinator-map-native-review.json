@@ -1,0 +1,43 @@
+{
+  "status": "pass_native_original_bytes_and_exact_subsets",
+  "original_pages": 29,
+  "statewide_features": 2315,
+  "all46_partition_features": 2315,
+  "priority_counties": 17,
+  "priority_features": 1639,
+  "coordinate_positions": 1277142,
+  "checks": [
+    "Every original decoded-entity hash",
+    "Pre/post complete original ID sets",
+    "All original attributes and coordinate values",
+    "Independent JSON lexeme start/end/full SHA and raw pointer",
+    "Every selected subset feature lexeme byte-identical",
+    "Native CRS including precision metadata conserved",
+    "All46 original CodeMapNum reference partitions unique/complete"
+  ],
+  "scope": "Reference-map partition only. No approved reporting-unit/current-November/crossyear join or topology repair inferred.",
+  "county_alternative_originals": [
+    {
+      "source_id": "horry-local",
+      "native_id_field": "OBJECTID",
+      "features": 125,
+      "coordinate_positions": 50732,
+      "scope": "Independent local schema/CRS; no historical or current reporting join."
+    },
+    {
+      "source_id": "beaufort-local",
+      "native_id_field": "OBJECTID",
+      "features": 134,
+      "coordinate_positions": 55341,
+      "scope": "Independent local schema/CRS; no historical or current reporting join."
+    },
+    {
+      "source_id": "pickens-local",
+      "native_id_field": "FID",
+      "features": 61,
+      "coordinate_positions": 33867,
+      "scope": "Independent local schema/CRS; no historical or current reporting join."
+    }
+  ],
+  "topology": "Worker GEOS defects remain disclosed separately; this validator preserves their original bytes."
+}

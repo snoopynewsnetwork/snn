@@ -1,0 +1,122 @@
+{
+  "status": "pass_with_explicit_source_gaps",
+  "checks": {
+    "original_response_request_hashes": true,
+    "all516586_original_positions_and_raw_flags": true,
+    "all_candidate_party_method_csv_fields": true,
+    "all46county_candidate_control_vectors": true,
+    "all_native_coverage_and_constituents": true,
+    "whole_state_combined_balances": true,
+    "full_county_and_native_descending_orders": true,
+    "exact_integer_minimum80_and_remainder": true,
+    "county_weights_sum_one": true,
+    "primary_source_controls_and_omissions_scoped": true,
+    "all7500registration_positions_and_native_rollups": true,
+    "unnamed2024admin_retained": true,
+    "relative_links": 27,
+    "individual_assets_strictly_below40000000": true
+  },
+  "original_legacy_checks": {
+    "original_source_entities": 417,
+    "XML_positions": 290542,
+    "XML_native_method_cells": 259722,
+    "combined_JSON_objects": 368,
+    "combined_JSON_candidate_cells": 43483,
+    "combined_JSON_native_constituents": 9635,
+    "Clarendon_TXT_rows": 58,
+    "Clarendon_TXT_cells_including_county_summary": 1218,
+    "all_original_locators_resolve": true,
+    "all_original_method_rollups_exact": true,
+    "native_ballot_controls_rollup_exact": true,
+    "native_registration_controls_not_assumed_additive": true,
+    "state_county_registration_deltas": {
+      "2024": 0,
+      "2022": 40,
+      "2020": 0
+    }
+  },
+  "canonical_source_hashes": {
+    "2024-pres": {
+      "combined": "2f7899580fcf4878c00a630b7707c93a4a3210ca8da2d7c037146c19dc2b08bf",
+      "methods": "932368e76894fdc7925b793a0381f744f1c268baed6a65db62ba5ba39af2be64"
+    },
+    "2020-senate": {
+      "combined": "2180f4d44b34b4932ab51051890cadb980298d75212ed5ffb555166c147ea509",
+      "methods": "c5e770fb3897d2c0d1b9614f0e651a49061fc45425a63369851e2ecdbd7e12aa"
+    },
+    "2022-senate": {
+      "combined": "ad9e3a74318a5e776890e89fc7eb6909fc31a76f7ae03b97be3e630218f57642",
+      "methods": "5c61708820f13a6c0a4f7c8ffded5e9c2e937f6db605bb15449de4df87abd0b4"
+    },
+    "2022-governor": {
+      "combined": "d2d83d7198c6950d628ca293bea6146449c40c963a1a7c80c1689cfd978d3795",
+      "methods": "653992bc79b861f75e58882abe79b8d27fbcb38adb7f3a60a634532cae0dccd3"
+    }
+  },
+  "source_successful_captures": 219,
+  "source_negative_captures": [
+    "legacy2020-electionsettings",
+    "legacy2020-en-details",
+    "legacy2020-summary",
+    "legacy2022-electionsettings",
+    "legacy2022-en-details",
+    "legacy2022-summary",
+    "legacy2024-electionsettings",
+    "legacy2024-en-details",
+    "legacy2024-summary",
+    "spartanburg-2020",
+    "spartanburg-bare-2020",
+    "spartanburg-bare-org-2020",
+    "spartanburg-index",
+    "spartanburg-org-2020",
+    "spartanburg-org-index"
+  ],
+  "contests": {
+    "2024-pres": {
+      "votes": 2548140,
+      "native_precincts": 2446,
+      "candidate_method_residual_cells": 0,
+      "method_hierarchy_residual_cells": 0
+    },
+    "2020-senate": {
+      "votes": 2515104,
+      "native_precincts": 2399,
+      "candidate_method_residual_cells": 95,
+      "method_hierarchy_residual_cells": 51
+    },
+    "2022-senate": {
+      "votes": 1695702,
+      "native_precincts": 2395,
+      "candidate_method_residual_cells": 0,
+      "method_hierarchy_residual_cells": 0
+    },
+    "2022-governor": {
+      "votes": 1703192,
+      "native_precincts": 2395,
+      "candidate_method_residual_cells": 0,
+      "method_hierarchy_residual_cells": 0
+    }
+  },
+  "priority_summary": {
+    "total": 2548140,
+    "top15_votes": 1974167,
+    "minimum80_count": 17,
+    "minimum80_votes": 2061601,
+    "preceding_votes": 2019337,
+    "crossing_key": "SC:45073",
+    "remainder_votes": 486539
+  },
+  "known_gaps": [
+    "2020 DB method allocation absent in26sourceprecinct contexts;95candidate cells and51hierarchy residuals preserved; complete original finer methods separately verified",
+    "Method ballot/under-over pseudo-controls disagree with combined views",
+    "2022 historical mail-channel candidate votes exceed separately published absentee ballot statistic; source scopes unresolved",
+    "2020 Senate ballot control differs electionwide original/BCM summary by181",
+    "Clerk2024 omitsTerry5352; Clerk2020Senate omitsgeneric2294",
+    "Original native registration sums differ county controls in151of182XMLcontexts; all ballot rollups exact",
+    "2022 original state registered3379089 vs all46countyattributes3379129; difference40 retained without allocation",
+    "VHM requested-county historic labels do not establish election-day physical membership",
+    "No named/valid write-in subset beyond generic source",
+    "No current2026 precinct/geometry equivalence or live source approval"
+  ],
+  "peer_status": "pass_independent_shared_fields"
+}

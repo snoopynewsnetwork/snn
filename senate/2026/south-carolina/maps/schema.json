@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "sc-map-package-v1",
+  "title": "South Carolina offline precinct-map package",
+  "type": "object",
+  "required": [
+    "schema",
+    "frozen_contract",
+    "county_diagnostics",
+    "join_policy"
+  ],
+  "properties": {
+    "schema": {
+      "const": "sc-map-compatibility-v1"
+    },
+    "frozen_contract": {
+      "type": "object",
+      "description": "Complete exact parsed pinned source object, additionalProperties required to survive unchanged",
+      "required": [
+        "counties",
+        "source_observations",
+        "legacy_source_observations",
+        "original_combined_json_observations",
+        "unavailable_cases",
+        "vhm_administrative_rows"
+      ],
+      "properties": {
+        "counties": {
+          "type": "array",
+          "minItems": 46,
+          "maxItems": 46,
+          "items": {
+            "type": "object",
+            "required": [
+              "rank",
+              "geography_key",
+              "historical_constituents",
+              "original_enr_constituents",
+              "original_enr_combined_json_constituents",
+              "voter_history_constituents",
+              "current_2026_constituents"
+            ],
+            "additionalProperties": true
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "county_diagnostics": {
+      "type": "array",
+      "minItems": 46,
+      "maxItems": 46
+    },
+    "join_policy": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": true,
+  "$defs": {
+    "original_locator": {
+      "type": "object",
+      "required": [
+        "capture",
+        "json_pointer",
+        "byte_start_inclusive",
+        "byte_end_exclusive",
+        "feature_sha256"
+      ]
+    },
+    "capture": {
+      "type": "object",
+      "required": [
+        "id",
+        "requested_url",
+        "retrieved_at_utc",
+        "status",
+        "original_bytes",
+        "original_sha256"
+      ],
+      "additionalProperties": true
+    },
+    "county_native": {
+      "type": "object",
+      "required": [
+        "geography_key",
+        "county_fips",
+        "native_count",
+        "native_OBJECTID_set",
+        "native_PCode_values",
+        "native_PName_values"
+      ]
+    }
+  }
+}

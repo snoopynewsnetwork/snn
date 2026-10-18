@@ -1,0 +1,39 @@
+{
+  "schema_version": "sc-results-package-1",
+  "county_records": {
+    "file": "county-records.json.gz",
+    "encoding": "gzip UTF-8 JSON",
+    "counties": "46 complete records, frozen descending rank;17 priority+29remainder",
+    "frozen_county": "exact semantic original county object from pinned contract; every field and source-scoped constituent retained",
+    "authority": "original SEC directory fragment + exact source-substring + derived text and literal outbound links",
+    "historical_source_pins": "complete observations; body/metadata paths remain relative to data/turnout",
+    "historical_publication_metadata": "literal XML clocks/status/contest/choice/vote-type attributes; never current2026IDs",
+    "current_november": "null means unavailable/unverified; empty original units list preserved inside frozen object and not interpreted as zero expected units"
+  },
+  "source_index": {
+    "new_observations": "complete request/final URL/redirect/method/form/UTC/status/headers/body/ref/encoding/hash/byte metadata; errors preserved",
+    "original_bytes": "raw HTTP response entity as obtained; entity encoding retained (requests form results explicitly content-decoded)",
+    "original_sha256": "hash of those preserved entity bytes before lossless storage gzip",
+    "stored_sha256": "hash of stored gzip wrapper bytes",
+    "complete": "true only for complete bounded acquired entity; oversized partial entities not admitted",
+    "http200": "does not establish parse success; error/challenge/maintenance bodies remain",
+    "shared_body": "identical entity may have independent observation metadata and shared original body"
+  },
+  "raw_position_pointers": {
+    "DB_JSON": "RFC6901-style pointers; raw granular rows include all flags and pseudocontrols",
+    "XML": "zero-based ALL-child position indices, not XPath same-tag occurrence; unique unindexed paths allowed only where original has single named child",
+    "ENR_JSON": "complete source object at pointer plus exact native label and candidate vector ordinal; no stable numericunit ID inferred from ordinals",
+    "TXT": "original line_ordinal plus field column_ordinal; no rounding or gap fill"
+  },
+  "CSV": {
+    "file": "../official-results-sources.csv",
+    "rows": "one SEC +46county boards",
+    "blank_current_fields": "unverified/unavailable, never zero",
+    "original_objects": "complete county-records file+frozen-context source refs"
+  },
+  "identity_namespaces": "FIPS/native DB IDs/ENRkeys+ordinals/VHMrequestedcounty+codes/candidate trackingIDs are distinct; no cross-year/current join approved",
+  "validation": "deterministic offline output; no fetch or collector",
+  "asset_manifest": "complete owned artifacts plus report/CSV, self-exclusion only; contains validation hash; validation does not embed manifest hash to avoid circularity",
+  "file_cap_bytes_exclusive": 40000000,
+  "raw_source_preservation": "all complete originalbytes and raw position files reused by pinned hash; derivatives never replace originals"
+}

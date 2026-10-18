@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "requested_date": "2026-10-17",
-  "updated_at_utc": "2026-10-18T21:10:49.168528+00:00",
+  "updated_at_utc": "2026-10-18T21:16:39.614829+00:00",
   "scope": "35 states in the repository 2026 U.S. Senate race index",
   "coordinator_agent_id": "d0fc3534-1613-4883-b48b-21a233fcfd9e",
   "workspace_id": "wks_b290f45007010740",
@@ -859,7 +859,7 @@
       "election": "Regular",
       "seat_class": "II",
       "priority": 11,
-      "status": "official-active-maps-review",
+      "status": "reviewed-ready-to-publish",
       "workers": {
         "turnout": {
           "agent_id": "46dcb766-b312-4aaf-ac85-921179115c95",
@@ -879,8 +879,11 @@
         },
         "official_results": {
           "agent_id": "5706e865-3e96-4b3d-856d-8e213f5af3e1",
-          "status": "active",
-          "launched_at_utc": "2026-10-18T20:44:48.480255+00:00"
+          "status": "completed",
+          "launched_at_utc": "2026-10-18T20:44:48.480255+00:00",
+          "completed_at_utc": "2026-10-18T21:12:12.185784+00:00",
+          "report_sha256": "45f018dfd3913c9c327207b13baa7666b57d86388e81275a0865d6902b7dcc21",
+          "manifest_sha256": "8421dbc4c30802f122d56a1d1723414dc2401b04a1e3c95cf6a68516568b2e49"
         },
         "precinct_maps": {
           "agent_id": "200516a7-31bf-4393-8e62-90c19e6f5f63",
@@ -891,10 +894,22 @@
           "manifest_sha256": "211448510c96f031c20e93c8ad35ff81cb7401da65e7ac72a4fe859ebd5bc9bf"
         }
       },
-      "validation": null,
-      "gaps": [],
+      "validation": {
+        "status": "pass",
+        "review": "south-carolina/research-review.md",
+        "coordinator_checks": "south-carolina/data/coordinator-checks.json",
+        "scope": "all46/exact17/fullDB-XML-JSON-TXT-VHMscopes;156368targets;2334ownedassets;2315statefeatures/18RFAmaps;currentballot/codequalification;307local links",
+        "repository_check": "npm run check passed:35races,TypeScript,publicappsyntax"
+      },
+      "gaps": [
+        "No genuine NovemberENR IDs/feed,cadence or exact Senate remainder.",
+        "Current reporting/physical crosswalk and immutable electionday2024 geometry unapproved.",
+        "Namedwritein universe and later operative Grant remedy/mandate/stay unverified.",
+        "Source-specific methods/registration/vintages/partyandClerk omissions retained.",
+        "Two invalid geometries/791overlappairs/18invalidpairskips preserved; localaccessgaps qualified."
+      ],
       "published_commits": [],
-      "coordinator_preparation": "Both first-pair workers and maps actually finished. Official5706e865 remains active. Native map original/subset byte review passes2315features/1277142coordinates/17subsets1639features, plus320county-alternative features. Whole-package integration pending official final seal. Freed maps slot launched actualFLturnout f67a9af9.",
+      "coordinator_preparation": "Allfour actualworkersfinished; final source/map manifest, fulloriginal, links and repository integration underway. FLfirstpair occupyingonly2researchslots.",
       "coordinator_reviews": {
         "historical_native": "data/coordinator-native-review.json",
         "targets": "data/coordinator-target-review.json",
@@ -922,18 +937,23 @@
       "election": "Special",
       "seat_class": "III",
       "priority": 12,
-      "status": "turnout-active",
+      "status": "first-wave-active",
       "workers": {
         "turnout": {
           "agent_id": "f67a9af9-f5bd-47d5-8ebf-ed23594aa3e0",
           "status": "active",
           "launched_at_utc": "2026-10-18T21:10:49.168528+00:00"
+        },
+        "partisanship": {
+          "agent_id": "1df5579b-5d40-46b9-a7af-17fdb1a2398d",
+          "status": "active",
+          "launched_at_utc": "2026-10-18T21:12:12.185784+00:00"
         }
       },
       "validation": null,
       "gaps": [],
       "published_commits": [],
-      "coordinator_preparation": "Original67-county2024/2022/2020nativeZIPs and19-field schema acquired; all1707538rawpositions checked; +1/-1 certified candidate conflicts and generic-vs-valid writeins preserved. NARA certificate independently corroborates presidential controls; exact priority remains unaccepted. Actual archived2024president county HTML recovered; no accepted Senate priority. Fresh profile discovery0/provider confirmed codex-gpt6.1-sol full-access xhigh; notifyOnFinish enabled."
+      "coordinator_preparation": "Original67-county2024/2022/2020nativeZIPs and19-field schema acquired; all1707538rawpositions checked; +1/-1 certified candidate conflicts and generic-vs-valid writeins preserved. NARA certificate independently corroborates presidential controls; exact priority remains unaccepted. Actual archived2024president county HTML recovered; no accepted Senate priority. Fresh profile discovery0/provider confirmed codex-gpt6.1-sol full-access xhigh; notifyOnFinish enabled. Turnout recovered actual2024/2022countySenateHTML200 usingliteralunencodedslashdates; independentpeer extracts before reconciliation, no priorityaccepted."
     },
     {
       "state": "Mississippi",
@@ -1288,7 +1308,7 @@
       ]
     }
   ],
-  "batch_status": "in-progress:10newstatespublished;SCofficialactive/mapsreview;FLturnoutactive;22laterstatesqueued",
+  "batch_status": "in-progress:10newstatespublished;SCintegration-review;FLfirstpairactive;22laterstatesqueued",
   "coordinator_preparation_audit": {
     "status": "pass",
     "checked_at_utc": "2026-10-18T20:46:57.269813+00:00",
@@ -1308,10 +1328,9 @@
     "additional_content_checks": "Independent primary preflight scripts for NH,MN,SC,FL,NE,SD,ID retain source-specific controls; MS visual originals preserve mismatches and separate special-election stages. No question package is inferred complete."
   },
   "coordinator_next_actions": [
-    "Review/publish complete SouthCarolina after actual official finish; maps and firstpair sealed.",
-    "Actual SC official finish frees FL partisanship slot; fresh profile/provider discovery required.",
-    "Reconcile complete FL firstpair before official/maps dispatch, at most2active workers.",
-    "Continue all remaining queued states in priority order; no completion claim until all34 published."
+    "FinishSCwholepackage review,stageonlySC+queue/dispatch,commit/pushmainandverify.",
+    "ReconcileFLfirstpair actualprimarycounty/native candidate/method fields and exact80before secondwave; atmost2activeworkers.",
+    "Continueall34 queuedstatepackages incrementally."
   ],
   "coordinator_prompt_preparation": {
     "scope": "Unlaunched future first-wave prompts only; no agent IDs or completed packages implied",

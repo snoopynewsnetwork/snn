@@ -1,0 +1,254 @@
+{
+  "status": "pass_independent_shared_fields",
+  "peer_agent_id": "2a77ed30-c478-46c3-8980-817b50d4e679",
+  "comparison": "independent turnout code reads original-source/peer extracts only; no peer writes",
+  "evidence": {
+    "own:extracts/candidate-method-controls.csv.gz": {
+      "path": "extracts/candidate-method-controls.csv.gz",
+      "bytes": 6462547,
+      "sha256": "c57ed99cc736dc0c535d478530ba2c6ac2ad1ab3ce7004975bc5020f40ba50e1"
+    },
+    "peer:candidate-method-controls.csv.gz": {
+      "path": "../baselines/candidate-method-controls.csv.gz",
+      "bytes": 6470840,
+      "sha256": "00bbff3537832b42b24a14329b83e44acd3fb79e54ecffa6b7aa3484746407fb"
+    },
+    "own:extracts/native-units.csv.gz": {
+      "path": "extracts/native-units.csv.gz",
+      "bytes": 600540,
+      "sha256": "8748a76c094e5b0f409814e48f1a29a4c4df2c042b7ddaf38d5ec5f1d76572e5"
+    },
+    "peer:native-units.csv.gz": {
+      "path": "../baselines/native-units.csv.gz",
+      "bytes": 1423097,
+      "sha256": "59e60ffe35835202e77ff4152fb9976123961060148d37ce014634dcc915c0bb"
+    },
+    "own:extracts/registration-participation.csv.gz": {
+      "path": "extracts/registration-participation.csv.gz",
+      "bytes": 220998,
+      "sha256": "8e49436ae155c0756e240cd82c4129f89502b6149048dfeffcc5b36c143cb6a9"
+    },
+    "peer:registration-participation.csv.gz": {
+      "path": "../baselines/registration-participation.csv.gz",
+      "bytes": 259606,
+      "sha256": "2baafc722a893bbc391be0e23e6e777ffa95f518611bc7367e0808d327e1dc41"
+    },
+    "own:../county-turnout.csv": {
+      "path": "../county-turnout.csv",
+      "bytes": 20809,
+      "sha256": "c44f964af5b7e43845a99e19a7177375e7685651726ede44f47a47a2e37aa65a"
+    },
+    "peer:../county-baselines.csv": {
+      "path": "../county-baselines.csv",
+      "bytes": 50870,
+      "sha256": "d9bb5070b6c5e05152c74679a819eccbba52b78e5d86f7f13a5fcebb377d0c87"
+    },
+    "own:candidate-universe.json": {
+      "path": "candidate-universe.json",
+      "bytes": 75884,
+      "sha256": "41958b29c7a11f7241039099e8c337b741630dafbd5ee7262184c3c20ad4dca2"
+    },
+    "peer:candidate-universe.json": {
+      "path": "../baselines/candidate-universe.json",
+      "bytes": 154397,
+      "sha256": "bfa7af838e0eeb472c9d7b561b8e390edb03acc2f1dbd6d659a776f4459ffab4"
+    },
+    "own:extracts/legacy-candidate-methods.csv.gz": {
+      "path": "extracts/legacy-candidate-methods.csv.gz",
+      "bytes": 2904473,
+      "sha256": "ae0425f295f58a086b7f1a52c8809ef7b9b3c49071ae534598c6fd730eaabcec"
+    },
+    "peer:legacy-candidate-methods.csv.gz": {
+      "path": "../baselines/legacy-candidate-methods.csv.gz",
+      "bytes": 2900589,
+      "sha256": "9d781e7873074015acec0055bc04cac89fa89858ac5e4acfb3035a9387d4d407"
+    },
+    "own:extracts/legacy-json-native-units.csv.gz": {
+      "path": "extracts/legacy-json-native-units.csv.gz",
+      "bytes": 261807,
+      "sha256": "e15d42d17061e13b77160be7fc44a7025651f6f81bc7452b4bee683c3cc04244"
+    },
+    "peer:legacy-native-baselines.csv.gz": {
+      "path": "../baselines/legacy-native-baselines.csv.gz",
+      "bytes": 695509,
+      "sha256": "a0b2f48bb502bced406104eaaa3c144556d8a0a30c0adef834ab604681890b5d"
+    }
+  },
+  "checks": {
+    "candidate_method_controls": {
+      "rows": 516586,
+      "fields": [
+        "candidate_id",
+        "candidate_name",
+        "contest_label",
+        "division_id",
+        "division_name",
+        "division_path",
+        "division_type",
+        "method_id",
+        "observation_scope",
+        "party_id",
+        "party_name",
+        "raw_ordinal",
+        "raw_row_json",
+        "scope",
+        "source_pointer",
+        "votes"
+      ],
+      "compared_cells": 8265376
+    },
+    "native_hierarchy": {
+      "rows": 9823,
+      "fields": [
+        "ballots_control",
+        "blank",
+        "candidate_votes",
+        "combined_under_over",
+        "contest_label",
+        "county",
+        "county_fips",
+        "generic_write_in",
+        "geography_key",
+        "method_ids",
+        "name",
+        "native_division_id",
+        "native_division_path",
+        "native_type",
+        "overvotes_separate",
+        "parent_key",
+        "raw_candidate_cells",
+        "raw_division",
+        "registered_voters",
+        "source_pointer",
+        "total_votes_control",
+        "undervotes_separate"
+      ],
+      "compared_cells": 216106
+    },
+    "registration": {
+      "rows": 7500,
+      "fields": [
+        "county",
+        "data_type",
+        "is_summary",
+        "level",
+        "precinct",
+        "precinct_code",
+        "raw_total_voting",
+        "source_id",
+        "source_ordinal",
+        "source_percent_voting",
+        "source_pointer",
+        "total_participating",
+        "total_registered",
+        "year"
+      ],
+      "compared_cells": 105000
+    },
+    "counties": {
+      "rows": 46,
+      "fields": [
+        "2020_senate_ballots_control",
+        "2020_senate_blank",
+        "2020_senate_c10_pNone",
+        "2020_senate_c1_pNone",
+        "2020_senate_c2268_p274",
+        "2020_senate_c3254_p2",
+        "2020_senate_c3255_p1",
+        "2020_senate_c4_pNone",
+        "2020_senate_c6_pNone",
+        "2020_senate_candidate_votes",
+        "2020_senate_combined_under_over",
+        "2020_senate_generic_write_in",
+        "2020_senate_overvotes_separate",
+        "2020_senate_undervotes_separate",
+        "2022_governor_ballots_control",
+        "2022_governor_blank",
+        "2022_governor_c10_pNone",
+        "2022_governor_c1_pNone",
+        "2022_governor_c3471_p2",
+        "2022_governor_c3472_p4",
+        "2022_governor_c3473_p1",
+        "2022_governor_c4_pNone",
+        "2022_governor_c6_pNone",
+        "2022_governor_candidate_votes",
+        "2022_governor_combined_under_over",
+        "2022_governor_generic_write_in",
+        "2022_governor_overvotes_separate",
+        "2022_governor_undervotes_separate",
+        "2022_senate_ballots_control",
+        "2022_senate_blank",
+        "2022_senate_c10_pNone",
+        "2022_senate_c1_pNone",
+        "2022_senate_c3536_p2",
+        "2022_senate_c4_pNone",
+        "2022_senate_c6_pNone",
+        "2022_senate_c870_p1",
+        "2022_senate_candidate_votes",
+        "2022_senate_combined_under_over",
+        "2022_senate_generic_write_in",
+        "2022_senate_overvotes_separate",
+        "2022_senate_undervotes_separate",
+        "2024_pres_ballots_control",
+        "2024_pres_blank",
+        "2024_pres_c10_pNone",
+        "2024_pres_c1_pNone",
+        "2024_pres_c27_p2",
+        "2024_pres_c4_pNone",
+        "2024_pres_c6882_p3",
+        "2024_pres_c7553_p1",
+        "2024_pres_c8258_p4",
+        "2024_pres_c8259_p282",
+        "2024_pres_c8260_p278",
+        "2024_pres_c8261_p275",
+        "2024_pres_candidate_votes",
+        "2024_pres_combined_under_over",
+        "2024_pres_generic_write_in",
+        "2024_pres_overvotes_separate",
+        "2024_pres_undervotes_separate",
+        "county",
+        "county_fips",
+        "cumulative_2024_pres",
+        "geography_key",
+        "native_county_id",
+        "priority",
+        "rank_2024_pres",
+        "share_2024_pres",
+        "vhm_2020_percentVoting",
+        "vhm_2020_totalRegistered",
+        "vhm_2020_totalVoting",
+        "vhm_2022_percentVoting",
+        "vhm_2022_totalRegistered",
+        "vhm_2022_totalVoting",
+        "vhm_2024_percentVoting",
+        "vhm_2024_totalRegistered",
+        "vhm_2024_totalVoting",
+        "votes_2024_pres"
+      ],
+      "compared_cells": 3496
+    },
+    "complete_candidate_party_method_contest_metadata": true,
+    "original_XML_native_candidate_methods": {
+      "rows": 259722,
+      "all_raw_attributes_keys_labels_and_pointers_equal": true
+    },
+    "Clarendon_TXT_native_candidate_methods": {
+      "rows": 1176,
+      "all_counts_raw_names_candidates_methods_parties_equal": true
+    },
+    "original_JSON_native_rows": {
+      "rows": 9635,
+      "all_counts_source_ids_names_and_pointers_equal": true
+    },
+    "full_county_and_original_native_orders_thresholds": true
+  },
+  "explicit_schema_differences": [
+    "VHM derived geography_key formats differ; exact original source_id/pointer and all other common fields compared; summary/native level labels mapped explicitly",
+    "Candidate scope labels map generic_write_in to included candidate and control:pseudotype to overlapping_control; original pseudotypes/flags compared unchanged",
+    "Native identity_status prose differs; raw identities, candidate/method vectors, source pointers and every other common field compared",
+    "Original combined JSON native keys differ; same-source names/pointers/counts/vectors and entire order compared",
+    "Clarendon TXT locators use line/column fields here; every original text/field locator separately validated",
+    "Candidate interpretation uses explicit original/DB IDs; raw Bledsoe party disagreement remains"
+  ],
+  "coordinator_acceptance": "external authority path only in priority contract; this comparison does not accept current geography"
+}

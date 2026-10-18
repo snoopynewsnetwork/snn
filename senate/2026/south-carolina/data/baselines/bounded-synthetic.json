@@ -1,0 +1,103 @@
+[
+  {
+    "name": "clipping_requires_resolve",
+    "weights": [
+      1,
+      9
+    ],
+    "shares": [
+      0.99,
+      0.1
+    ],
+    "target": 0,
+    "result": {
+      "status": "bounded_clipping_solved",
+      "pair_pool": 10,
+      "baseline_net": -6.220000000000001,
+      "target_net": 0,
+      "unbounded_shift_pp": 31.100000000000005,
+      "bounded_shift_pp": 34.44444444444444,
+      "already_at_or_above_target": false,
+      "achieved_net": -4.440892098500626e-16,
+      "clipped_units": 1
+    }
+  },
+  {
+    "name": "already_winning",
+    "weights": [
+      3,
+      2
+    ],
+    "shares": [
+      0.8,
+      0.6
+    ],
+    "target": 0,
+    "result": {
+      "status": "unbounded_feasible",
+      "pair_pool": 5,
+      "baseline_net": 2.2,
+      "target_net": 0,
+      "unbounded_shift_pp": -22.000000000000004,
+      "bounded_shift_pp": -22.000000000000004,
+      "already_at_or_above_target": true,
+      "achieved_net": 2.220446049250313e-16,
+      "clipped_units": 0
+    }
+  },
+  {
+    "name": "zero_pool",
+    "weights": [
+      0
+    ],
+    "shares": [
+      null
+    ],
+    "target": 0,
+    "result": {
+      "status": "no_positive_pool",
+      "pair_pool": 0
+    }
+  },
+  {
+    "name": "negative_pool",
+    "weights": [
+      -1
+    ],
+    "shares": [
+      0.5
+    ],
+    "target": 0,
+    "result": {
+      "status": "negative_pool_invalid"
+    }
+  },
+  {
+    "name": "unknown",
+    "weights": [
+      1
+    ],
+    "shares": [
+      null
+    ],
+    "target": 0,
+    "result": {
+      "status": "unknown_preference",
+      "pair_pool": 1
+    }
+  },
+  {
+    "name": "impossible_target",
+    "weights": [
+      1
+    ],
+    "shares": [
+      0.5
+    ],
+    "target": 1.1,
+    "result": {
+      "status": "impossible_target_margin",
+      "pair_pool": 1
+    }
+  }
+]

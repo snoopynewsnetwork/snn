@@ -1,0 +1,112 @@
+{
+  "status": "pass_with_documented_source_disagreements",
+  "checks": {
+    "all_owned_capture_entities_hashed": 519,
+    "every_history_source_position_and_flag": 516586,
+    "full_county_and_native_integer80_order": "all four contours pass; top15 and all nonpriority rows retained",
+    "all_geography_candidate_balances": "all46 counties/all9635 leaves/all four candidate vectors exact",
+    "every_original_source_locator": {
+      "XML_TXT_positions": 280747,
+      "candidate_method_cells": 260898,
+      "convention": "zero-based ALL-child XML ordinals; exact TXTbyte offsets"
+    },
+    "all_original_combined_JSON_locators": 9635,
+    "original_statewide_candidate_and_method_balances": {
+      "complete_candidates": 18,
+      "method_cells": 108,
+      "election_controls": [
+        {
+          "year": 2024,
+          "totalVoters": "3343423",
+          "ballotsCast": "2566404",
+          "county_registration_sum": 3343423,
+          "county_ballots_sum": 2566404,
+          "state_minus_county_registration": 0,
+          "state_minus_county_ballots": 0
+        },
+        {
+          "year": 2020,
+          "totalVoters": "3513225",
+          "ballotsCast": "2533010",
+          "county_registration_sum": 3513225,
+          "county_ballots_sum": 2533010,
+          "state_minus_county_registration": 0,
+          "state_minus_county_ballots": 0
+        },
+        {
+          "year": 2022,
+          "totalVoters": "3379089",
+          "ballotsCast": "1718626",
+          "county_registration_sum": 3379129,
+          "county_ballots_sum": 1718626,
+          "state_minus_county_registration": -40,
+          "state_minus_county_ballots": 0
+        }
+      ]
+    },
+    "all184_original_database_candidate_vector_multisets": "equal; not geographic joins",
+    "retained_method_disagreements": {
+      "cells": 180,
+      "contexts": 19
+    },
+    "original_registration_and_ballot_scopes": {
+      "contexts": 182,
+      "registration_disagreements_preserved": 151,
+      "ballot_rollup_disagreements": 0
+    },
+    "target_tables": {
+      "county-targets.csv.gz": {
+        "rows": 2208,
+        "groups": 48,
+        "max_target_net_error": 1.405169314239174e-10,
+        "selected_statuses": {
+          "impossible": 2197,
+          "feasible_threshold": 11
+        },
+        "independent_solver": "event slope sweep agrees with bounded shares"
+      },
+      "native-targets.csv.gz": {
+        "rows": 19270,
+        "groups": 8,
+        "max_target_net_error": 1.127773430198431e-10,
+        "selected_statuses": {
+          "impossible": 18938,
+          "no_positive_pool": 332
+        },
+        "independent_solver": "event slope sweep agrees with bounded shares"
+      },
+      "legacy-native-targets.csv.gz": {
+        "rows": 19270,
+        "groups": 8,
+        "max_target_net_error": 8.858336286721169e-11,
+        "selected_statuses": {
+          "impossible": 18938,
+          "no_positive_pool": 332
+        },
+        "independent_solver": "event slope sweep agrees with bounded shares"
+      },
+      "legacy-method-targets.csv.gz": {
+        "rows": 115620,
+        "groups": 8,
+        "max_target_net_error": 6.155165266363838e-11,
+        "selected_statuses": {
+          "impossible": 55066,
+          "no_positive_pool": 60554
+        },
+        "independent_solver": "event slope sweep agrees with bounded shares"
+      }
+    },
+    "bounded_synthetic_cases": 6,
+    "live_synthetic_scenarios": 13,
+    "independent_peer_history_and_order": "full-field pass",
+    "independent_peer_originals": "full-field pass",
+    "relative_links": 36,
+    "asset_size_limit": "all owned files strictly below40000000bytes"
+  },
+  "limitations": [
+    "Unmatched native spellings/physical/current geography not approved",
+    "DB2020 incomplete method allocation preserved; actual original method cells separately complete",
+    "Registration/ballot/method source scopes and release differences retained",
+    "Final certification PDF and November result IDs/configuration, live cadence/remaining pools/probability calibration not verified"
+  ]
+}

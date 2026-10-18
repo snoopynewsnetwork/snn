@@ -1,0 +1,121 @@
+{
+  "status": "pass",
+  "peer_agent_id": "46dcb766-b312-4aaf-ac85-921179115c95",
+  "comparisons": [
+    {
+      "scope": "every original XML native method cell and repaired all-child locator",
+      "ours": 259722,
+      "peer": 259722,
+      "fields": [
+        "contest_label",
+        "source_id",
+        "county",
+        "county_fips",
+        "contest_key",
+        "choice_key",
+        "choice_text",
+        "party",
+        "history_candidate_id",
+        "method",
+        "native_name",
+        "native_ordinal",
+        "votes",
+        "source_pointer",
+        "raw_attributes"
+      ],
+      "keys_only_ours": 0,
+      "keys_only_peer": 0,
+      "mismatches": {},
+      "examples": [],
+      "status": "pass"
+    },
+    {
+      "scope": "every original combinedJSON native identity/count/source field",
+      "ours": 9635,
+      "peer": 9635,
+      "fields": [
+        "contest_label",
+        "county",
+        "county_fips",
+        "native_name",
+        "source_native_id",
+        "native_ordinal",
+        "raw_identity",
+        "raw_Eid",
+        "raw_Cid",
+        "candidate_votes",
+        "source_id",
+        "source_pointer",
+        "native_name_pointer",
+        "candidate_vector_pointer",
+        "summary_source_id",
+        "summary_source_pointer"
+      ],
+      "keys_only_ours": 0,
+      "keys_only_peer": 0,
+      "mismatches": {},
+      "examples": [],
+      "status": "pass"
+    },
+    {
+      "scope": "every original combinedJSON candidate-native field",
+      "ours": 43483,
+      "peer": 43483,
+      "fields": [
+        "contest_label",
+        "county",
+        "county_fips",
+        "source_id",
+        "summary_source_id",
+        "contest_key",
+        "candidate_ordinal",
+        "candidate_label",
+        "party",
+        "history_candidate_id",
+        "native_ordinal",
+        "native_name",
+        "votes",
+        "source_pointer",
+        "native_pointer",
+        "choice_label_pointer"
+      ],
+      "keys_only_ours": 0,
+      "keys_only_peer": 0,
+      "mismatches": {},
+      "examples": [],
+      "status": "pass"
+    },
+    {
+      "scope": "all1176 Clarendon enabledTXT native cells",
+      "ours": 1176,
+      "peer": 1176,
+      "fields": [
+        "contest_label",
+        "source_id",
+        "county",
+        "county_fips",
+        "native_name",
+        "level",
+        "candidate_ordinal",
+        "candidate_label",
+        "party",
+        "method",
+        "votes",
+        "line_ordinal",
+        "column_ordinal"
+      ],
+      "keys_only_ours": 0,
+      "keys_only_peer": 0,
+      "mismatches": {},
+      "examples": [],
+      "status": "pass"
+    }
+  ],
+  "scope_note": "Different source-position inventories and geography-key conventions are explicit; numerical/raw source fields and actual locators are compared. No current/physical join.",
+  "peer_hashes": {
+    "turnout/extracts/legacy-candidate-methods.csv.gz": "ae0425f295f58a086b7f1a52c8809ef7b9b3c49071ae534598c6fd730eaabcec",
+    "turnout/extracts/legacy-json-native-units.csv.gz": "e15d42d17061e13b77160be7fc44a7025651f6f81bc7452b4bee683c3cc04244",
+    "turnout/extracts/legacy-json-candidate-native.csv.gz": "8ed8f4971139b9509d5fe7cfe21530116187411a3e578d79ee7bfad09848f1c8",
+    "turnout/extracts/clarendon-2022-txt-candidate-methods.csv": "43cc5496a9aaf0d641fd4208ce9cbfd4837f2be0e675cd6a55fa1dd209b675df"
+  }
+}

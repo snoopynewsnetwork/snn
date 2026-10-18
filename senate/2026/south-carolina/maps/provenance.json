@@ -1,0 +1,65 @@
+{
+  "schema": "sc-map-provenance-v1",
+  "main_authority_chain": [
+    {
+      "from": "../data/map-preflight/rfa-jurisdictional.html.gz",
+      "observed_link": "https://www.rfa.sc.gov/resources/mapping/jurisdictional-maps/sc-voting-precincts",
+      "target": "../data/map-preflight/rfa-precincts.html.gz",
+      "relation": "actual anchor;47 county-media references,46 counties"
+    },
+    {
+      "from": "../data/map-preflight/rfa-district-app-parent.html.gz",
+      "observed_link": "https://rfa.maps.arcgis.com/apps/instant/lookup/index.html?appid=689fd82b343045988251f0cbad8f1620",
+      "target": "raw/rfa-app-data.body.gz",
+      "relation": "actual embedded public app; standard ArcGIS public item/data read"
+    },
+    {
+      "from": "raw/rfa-app-data.body.gz",
+      "locator": "/values/webmap",
+      "value": "3e091943d6414f5fa5c5a1ddb759cbd9",
+      "target": "raw/rfa-webmap-data.body.gz",
+      "relation": "actual returned webmap ID"
+    },
+    {
+      "from": "raw/rfa-webmap-data.body.gz",
+      "locator": "operationalLayers title Voter Precincts",
+      "observed_link": "https://gis.state.sc.us/arcgis/rest/services/Boundaries_Districts/Voter_Precincts/FeatureServer/0",
+      "target": "raw/rfa-precinct-layer.body.gz",
+      "relation": "actual operational layer URL, stronger than attribution alone"
+    }
+  ],
+  "county_alternatives": [
+    {
+      "county": "Horry",
+      "chain": [
+        "raw/county-horry.request.json",
+        "raw/horry-follow-10.request.json",
+        "raw/horry-app-data.request.json",
+        "raw/horry-webmap-data.request.json",
+        "raw/horry-precinct-service.request.json",
+        "raw/horry-local-layer.request.json"
+      ]
+    },
+    {
+      "county": "Beaufort",
+      "chain": [
+        "raw/county-beaufort.request.json",
+        "raw/beaufort-follow-13.request.json",
+        "raw/beaufort-legislative-app.request.json",
+        "raw/beaufort-webmap-data.request.json",
+        "raw/beaufort-local-layer.request.json"
+      ]
+    },
+    {
+      "county": "Pickens",
+      "chain": [
+        "raw/county-pickens.request.json",
+        "raw/pickens-follow-12.request.json",
+        "raw/pickens-app-data.request.json",
+        "raw/pickens-webmap-data.request.json",
+        "raw/pickens-local-layer.request.json"
+      ]
+    }
+  ],
+  "scope": "Actual anchors/iframe/returned configuration and public GIS routes. Item owner/copyright corroborate but are not substituted for linked provenance. No private API/credentials or inferred client IDs."
+}
