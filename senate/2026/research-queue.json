@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "requested_date": "2026-10-17",
-  "updated_at_utc": "2026-10-18T21:32:53.217409+00:00",
+  "updated_at_utc": "2026-10-18T21:38:51.466065+00:00",
   "scope": "35 states in the repository 2026 U.S. Senate race index",
   "coordinator_agent_id": "d0fc3534-1613-4883-b48b-21a233fcfd9e",
   "workspace_id": "wks_b290f45007010740",
@@ -941,23 +941,28 @@
       "election": "Special",
       "seat_class": "III",
       "priority": 12,
-      "status": "historical-priority-accepted-first-pair-finishing",
+      "status": "official-results-active-partisanship-finishing",
       "workers": {
         "turnout": {
           "agent_id": "f67a9af9-f5bd-47d5-8ebf-ed23594aa3e0",
-          "status": "active",
+          "status": "complete-awaiting-integration",
           "launched_at_utc": "2026-10-18T21:10:49.168528+00:00"
         },
         "partisanship": {
           "agent_id": "1df5579b-5d40-46b9-a7af-17fdb1a2398d",
           "status": "active",
           "launched_at_utc": "2026-10-18T21:12:12.185784+00:00"
+        },
+        "official_results": {
+          "agent_id": "4e3c6b7e-e3b9-4415-a068-754b296d6b17",
+          "status": "active",
+          "launched_at_utc": "2026-10-18T21:38:51.466065+00:00"
         }
       },
       "validation": null,
       "gaps": [],
       "published_commits": [],
-      "coordinator_preparation": "Bothfirstpairactivefinishingreport/QA. Formal22countyhistoricalscopeacceptedafterexactrawprimary/native/fullpeer/Census/targetchecks. Gulfunsupportedclocknullrepairverified,0c056e0contract. Official/mapsawaitactualfinishslots.",
+      "coordinator_preparation": "Turnout actually finished. Official-results launched in released slot after exact historical acceptance; partisanship finishes owned QA; maps awaits actual finish. Separate primary clock review verifies county-seat/Gulf simultaneous schedule without changing frozen null operational fields.",
       "priority_acceptance": {
         "path": "senate/2026/florida/data/coordinator-priority-acceptance.json",
         "contract_sha256": "0c056e0ebfdb393d4fcb59676805122d8442f444200b9edaf7f4c979c5e9a173",
@@ -971,7 +976,8 @@
         "primary": "data/coordinator-primary-table-review.json",
         "native_originals": "data/coordinator-native-original-review.json",
         "targets": "data/coordinator-target-review.json",
-        "current_printed_ballot": "data/coordinator-ballot-review.json"
+        "current_printed_ballot": "data/coordinator-ballot-review.json",
+        "poll_clock": "data/coordinator-poll-clock-review.json"
       }
     },
     {
