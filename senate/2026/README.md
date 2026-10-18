@@ -13,6 +13,11 @@ January 3, 2029. Scope and seat-holder information checked **2026-10-17**.
 
 ## Race index
 
+The [state research dispatch](../../STATE_RESEARCH_DISPATCH.md) expands the
+[Michigan research](michigan/README.md) to the other 34 Senate states. Each stack
+follows the [common brief](RESEARCH_BRIEF.md); the
+[research queue](research-queue.json) records assignments and publication status.
+
 | State | Code | Election | Seat class |
 | --- | --- | --- | --- |
 | [Alabama](alabama/README.md) | AL | Regular | II |
