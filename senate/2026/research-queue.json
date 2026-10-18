@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "requested_date": "2026-10-17",
-  "updated_at_utc": "2026-10-18T00:42:55.682753+00:00",
+  "updated_at_utc": "2026-10-18T00:56:56.278601+00:00",
   "scope": "35 states in the repository 2026 U.S. Senate race index",
   "coordinator_agent_id": "d0fc3534-1613-4883-b48b-21a233fcfd9e",
   "workspace_id": "wks_b290f45007010740",
@@ -113,21 +113,80 @@
       "election": "Regular",
       "seat_class": "II",
       "priority": 2,
-      "status": "researching-baselines",
+      "status": "researching-results-and-maps",
       "workers": {
         "turnout": {
           "agent_id": "e5f1a02a-c51f-47c4-a351-04785cbc0d28",
-          "status": "running"
+          "status": "complete-reviewed"
         },
         "partisanship": {
           "agent_id": "22d28558-5294-4ad2-b627-7aed3f5c46ce",
+          "status": "complete-reviewed-baselines"
+        },
+        "official_results": {
+          "agent_id": "d0a30e3b-9b6e-49d5-8c44-234917e2abb0",
+          "status": "running"
+        },
+        "precinct_maps": {
+          "agent_id": "12444a2f-271e-4e03-ac87-be0c7a772619",
           "status": "running"
         }
       },
-      "validation": null,
-      "gaps": [],
+      "validation": {
+        "scope": "baselines only; full integration pending results/maps",
+        "status": "pass",
+        "checks": "alaska/data/coordinator-checks.json",
+        "turnout": "Offline build passed697district comparisons,13statewide candidates,25candidate/method comparisons",
+        "partisanship": "7059calculation checks, raw/header/CVR hashes,533independent candidate/HD comparisons",
+        "coordinator": "533candidate cells,82same-electionHD totals,16pair scenarios,656unit targets,861RCVdistrict cells,3turnoutRCVscenarios/123contributions; visualsummary/RCVinspection"
+      },
+      "gaps": [
+        "2022 published RCV scope omits250 ballots localized to five absent precincts pluspartialLevelock; cause andlater ranks unknown.",
+        "2020 finer-unit source text omitswrite-ins; complete601write-ins recovered onlyat41district level.",
+        "No validated cross-year orNovember2026reporting-boundarycrosswalk; currentmapapproval unverified.",
+        "Four2024EarlyVoting-labeled units contain actualElectionDaymethodcounts; labelcategories differmethodcolumns."
+      ],
       "published_commits": [],
-      "coordinator_preparation": "Newsroom source captures and draft local-news/results strategy prepared; research stack remains queued."
+      "coordinator_preparation": "Coordinator newsroom/strategy drafts prepared. Both actual baseline workers running; progress reports preserve native HD/admin units, distinct first-choice/RCV scopes and independent candidate identity. No priority set accepted before completed reconciliation.",
+      "priority_geography": {
+        "basis": "2024 president certified all eight candidates; native HD1\u201340 plus HD99 administrative",
+        "count": 28,
+        "votes": 271492,
+        "statewide_votes": 338177,
+        "share": 0.8028103626207578,
+        "native_house_districts": [
+          6,
+          9,
+          3,
+          8,
+          23,
+          29,
+          25,
+          30,
+          24,
+          34,
+          11,
+          35,
+          16,
+          7,
+          36,
+          2,
+          26,
+          15,
+          28,
+          4,
+          21,
+          27,
+          33,
+          10,
+          1,
+          12,
+          5,
+          17
+        ],
+        "dispatch_keys": "alaska/data/turnout/priority-set.json",
+        "reconciliation": "Coordinator independently passed533 candidate/HD cells and82 same-electionHD totals; no cross-yeargeography join."
+      }
     },
     {
       "state": "Ohio",
@@ -169,7 +228,7 @@
       "validation": null,
       "gaps": [],
       "published_commits": [],
-      "coordinator_preparation": "Regional source captures and local-news draft prepared; state research stack remains queued."
+      "coordinator_preparation": "Regional source captures, local-news and collection drafts prepared; tested Tarrant November placeholder ZIP/vendor denials. State stack remains queued."
     },
     {
       "state": "Iowa",
@@ -196,7 +255,8 @@
       "workers": {},
       "validation": null,
       "gaps": [],
-      "published_commits": []
+      "published_commits": [],
+      "coordinator_preparation": "Regional source captures, local-news and strategy drafts prepared; historical widget and current official ballot-deadline conflict checks. State stack remains queued."
     },
     {
       "state": "Georgia",
@@ -209,7 +269,8 @@
       "workers": {},
       "validation": null,
       "gaps": [],
-      "published_commits": []
+      "published_commits": [],
+      "coordinator_preparation": "Regional source captures, local-news and strategy drafts prepared; historical primary/runoff, AP overlap and access gaps retained. State stack remains queued."
     },
     {
       "state": "New Hampshire",
@@ -222,7 +283,8 @@
       "workers": {},
       "validation": null,
       "gaps": [],
-      "published_commits": []
+      "published_commits": [],
+      "coordinator_preparation": "13 newsroom/authority captures and news/strategy drafts prepared; town/ward, historical database and unofficial volunteer source distinctions retained. Stack remains queued."
     },
     {
       "state": "Minnesota",
@@ -235,7 +297,8 @@
       "workers": {},
       "validation": null,
       "gaps": [],
-      "published_commits": []
+      "published_commits": [],
+      "coordinator_preparation": "15 captures plus tested MPR primary AP route; news/strategy drafts prepared; HTTP200 bot challenge, August config and November gaps retained. Stack remains queued."
     },
     {
       "state": "South Carolina",
@@ -248,7 +311,8 @@
       "workers": {},
       "validation": null,
       "gaps": [],
-      "published_commits": []
+      "published_commits": [],
+      "coordinator_preparation": "Dated newsroom captures and local-news/strategy drafts prepared; historical/test/primary configurations and November gaps explicit. Four-question stack remains queued."
     },
     {
       "state": "Florida",
@@ -261,7 +325,8 @@
       "workers": {},
       "validation": null,
       "gaps": [],
-      "published_commits": []
+      "published_commits": [],
+      "coordinator_preparation": "Dated newsroom captures and local-news/strategy drafts prepared; historical/test/primary configurations and November gaps explicit. Four-question stack remains queued."
     },
     {
       "state": "Mississippi",
