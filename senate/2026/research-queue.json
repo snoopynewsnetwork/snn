@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "requested_date": "2026-10-17",
-  "updated_at_utc": "2026-10-18T20:09:01.267897+00:00",
+  "updated_at_utc": "2026-10-18T20:44:48.480255+00:00",
   "scope": "35 states in the repository 2026 U.S. Senate race index",
   "coordinator_agent_id": "d0fc3534-1613-4883-b48b-21a233fcfd9e",
   "workspace_id": "wks_b290f45007010740",
@@ -859,7 +859,7 @@
       "election": "Regular",
       "seat_class": "II",
       "priority": 11,
-      "status": "first-wave-active",
+      "status": "official-active-turnout-sealing",
       "workers": {
         "turnout": {
           "agent_id": "46dcb766-b312-4aaf-ac85-921179115c95",
@@ -868,14 +868,38 @@
         },
         "partisanship": {
           "agent_id": "2a77ed30-c478-46c3-8980-817b50d4e679",
+          "status": "completed",
+          "launched_at_utc": "2026-10-18T19:59:14.587016+00:00",
+          "completed_at_utc": "2026-10-18T20:44:48.480255+00:00",
+          "report_sha256": "69c0e0e897cdbde46787701a76ce1e6a529afc7320c058a0289d45a39cd19469",
+          "manifest_sha256": "41c90cccc7767494146ec76bbbf1ccf1f68ccb01419fa0dbf1e1e1be79e43994"
+        },
+        "official-results": {
+          "agent_id": "5706e865-3e96-4b3d-856d-8e213f5af3e1",
           "status": "active",
-          "launched_at_utc": "2026-10-18T19:59:14.587016+00:00"
+          "launched_at_utc": "2026-10-18T20:44:48.480255+00:00"
         }
       },
       "validation": null,
       "gaps": [],
       "published_commits": [],
-      "coordinator_preparation": "ActualSCfirstpair46dcb766turnout+2a77ed30partisanshipactiveafterMNsecondpairactualfinishes. Historicalall46/native/candidate/method+VREMSsource-scopedregistration/exact80 independentreconciliation underway; no priorityaccepted."
+      "coordinator_preparation": "Partisanship actually finished. Official-results5706e865 launched after fresh profile/provider discovery, on the frozen accepted17-of46 contract. Turnout is sealing outputs and remains the other active researcher. Maps is not launched; waiting actual turnout finish. Independent original/database/ENR/native and156,368 target-row review passed; source discrepancies remain separate.",
+      "coordinator_reviews": {
+        "historical_native": "data/coordinator-native-review.json",
+        "targets": "data/coordinator-target-review.json",
+        "news": "data/news/inspection.json",
+        "original_ENR": "data/coordinator-legacy-review.json",
+        "original_targets": "data/coordinator-original-target-review.json"
+      },
+      "priority_acceptance": {
+        "path": "senate/2026/south-carolina/data/coordinator-priority-acceptance.json",
+        "contract_sha256": "a4dc8e50ce09889e5873d1f54c887dbef50a42a0b7bf600b4ab6663afab4ccef",
+        "contract_bytes": 33917555,
+        "count": 17,
+        "candidate_votes": 2061601,
+        "state_total": 2548140,
+        "scope": "Historical dispatch only; all46 retained, no current physical/reporting crosswalk approval."
+      }
     },
     {
       "state": "Florida",
@@ -1247,17 +1271,18 @@
   "batch_status": "in_progress",
   "coordinator_preparation_audit": {
     "status": "pass",
-    "checked_at_utc": "2026-10-18T19:58:20.645605+00:00",
+    "checked_at_utc": "2026-10-18T20:29:19.073835+00:00",
     "scope": "Still-queued states only; retained public news/preflight responses, not completed question packages or accepted feeds",
     "states": 23,
-    "response_captures": 446,
+    "response_captures": 456,
     "http_status_counts": {
-      "200": 353,
-      "403": 85,
+      "200": 359,
+      "403": 88,
       "transport_failure": 1,
       "500": 1,
       "404": 5,
-      "401": 1
+      "401": 1,
+      "503": 1
     },
     "checks": "Unique IDs; original/stored SHA-256; exact ordered-part reconstruction where needed; raw byte counts; UTC/headers or retained transport failures; strict per-stored-object bounds and no orphan response assets.",
     "additional_content_checks": "Independent primary preflight scripts for NH,MN,SC,FL,NE,SD,ID retain source-specific controls; MS visual originals preserve mismatches and separate special-election stages. No question package is inferred complete."
