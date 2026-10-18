@@ -46,3 +46,5 @@ Official results completed and actual finish notification arrived. Iowa turnout 
 Maps completed and actual finish notification arrived. All four Texas assignments are complete; final integration/repository/publication checks are underway. Iowa partisanship `4bcbf52f-1952-4e27-b0e5-9e5bf55c67cb` launched in the freed slot. Only Iowa first-wave research workers remain active.
 
 All four final question packages passed coordinator review. Independent integration verifies original county/count/target arithmetic, current zero/test identities and primary certifications, full source/native object conservation, four original map ZIPs and136 exact binary county subsets,2048 worker asset hashes, local links and strict object limits. `npm run check` passed. Publication is a scoped direct main commit/push with remote verification; exact published hashes are retained in the queue. Current status supersedes chronological launch notes above. Iowa’s two first-wave workers alone occupy research slots.
+
+Published package: `1ffe97dec3bdf4aa8ca4fb173c00a9a93ae9b98f`, pushed directly to main and independently matched to origin/main. Queue checkpoint records the actual hash.

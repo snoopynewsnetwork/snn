@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "requested_date": "2026-10-17",
-  "updated_at_utc": "2026-10-18T04:06:11.612730+00:00",
+  "updated_at_utc": "2026-10-18T04:08:58.234949+00:00",
   "scope": "35 states in the repository 2026 U.S. Senate race index",
   "coordinator_agent_id": "d0fc3534-1613-4883-b48b-21a233fcfd9e",
   "workspace_id": "wks_b290f45007010740",
@@ -412,7 +412,7 @@
       "election": "Regular",
       "seat_class": "II",
       "priority": 5,
-      "status": "integration-review",
+      "status": "published",
       "workers": {
         "turnout": {
           "agent_id": "9b1a22e8-9948-43b6-933d-bd9e99a27695",
@@ -434,7 +434,7 @@
       },
       "validation": {
         "status": "pass",
-        "scope": "Integrated four-question research package; publication gates reviewed, main commit/push next",
+        "scope": "Integrated four-question package; npm check, scoped staged-path/blob/whitespace checks and remote verification passed",
         "checks": "texas/data/coordinator-checks.json",
         "historical": "254 counties,1016 baseline rows,6604 primary candidate/county cells,26 state controls,full254 order and exact34 priority; original archived SOS evidence reconciled.",
         "targets": "Independent21 state/5334 county/5334 selected targets plus17 synthetic fixed-counted remainder cases; final denominators and edge statuses checked.",
@@ -451,8 +451,10 @@
         "SB2753 final implementation report/applicability unresolved; literal domestic-mail statute/calendar wording difference retained.",
         "No populated November returns, measured vote-arrival cadence, exact outstanding Senate votes, approved geographic crosswalk, implemented collector or calibrated forecast."
       ],
-      "published_commits": [],
-      "coordinator_preparation": "All four actual question workers complete and reviewed; full offline integration and repository checks passed. Coordinator publishing reviewed state package directly to main; only Iowa first pair active.",
+      "published_commits": [
+        "1ffe97dec3bdf4aa8ca4fb173c00a9a93ae9b98f"
+      ],
+      "coordinator_preparation": "Published direct to main in1ffe97dec3bdf4aa8ca4fb173c00a9a93ae9b98f; origin/main independently verified.2134 scoped paths,2131 Texas blobs, largest32464776 bytes; all4actual workers reviewed. Only Iowa first pair active.",
       "priority_geography": {
         "basis": "2024 Senate all five valid reported candidates; archived original SOS county canvass reconciled to original statewide controls",
         "count": 34,
@@ -949,9 +951,9 @@
     "additional_content_checks": "Texas and Iowa retained actual newsroom JSON passed their separate offline count/coverage inspectors; these are historical products, not November approval."
   },
   "coordinator_next_actions": [
-    "Publish reviewed Texas package with scoped main commit/push and verify remote; then record actual package hash in durable queue.",
-    "Only Iowa first pair is active: turnout b5a3a82f-3a5c-4e9f-a266-e454c448c846 and partisanship 4bcbf52f-1952-4e27-b0e5-9e5bf55c67cb. Do not poll running agents.",
-    "Reconcile Iowa full county/candidate/method/native fields and exact priority before second-wave dispatch in actual freed slots.",
+    "Texas package1ffe97dec3bdf4aa8ca4fb173c00a9a93ae9b98f is published and remote verified; record this durable checkpoint.",
+    "Only Iowa first pair is active: turnout b5a3a82f-3a5c-4e9f-a266-e454c448c846 and partisanship4bcbf52f-1952-4e27-b0e5-9e5bf55c67cb. Do not poll running agents.",
+    "County controls agree; retain newly accessible2024 historical Clarity exploration before freezing native contract. Reconcile final source-native artifacts and exact41 priority before second-wave dispatch in freed slots.",
     "Continue all28 later states in priority order."
   ],
   "coordinator_prompt_preparation": {
