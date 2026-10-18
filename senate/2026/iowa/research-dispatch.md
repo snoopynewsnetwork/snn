@@ -30,3 +30,5 @@ Official-results actual completion arrived. Its slot now runs Kansas turnout `15
 Maps actual completion arrived. Its slot now runs Kansas partisanship `78f9c3c0-062f-41f7-87c0-f0a6443f8877`; only the Kansas first pair is active. Both Iowa second-wave worker validators and independent coordinator raw-byte/native checks pass. Final integration and publication are underway.
 
 Complete integration passes all 5,446 worker-owned hashes, source/native/target/map checks and repository `npm run check`. All four reports are reviewed with retained gaps. Coordinator stages only Iowa plus queue/dispatch records, then commits and pushes main with remote verification.
+
+Reviewed package published and remote-verified in `47e6a682d4c456f1c79ddf1b49c7d018156411ad`. No worker performed Git operations. Both Kansas first-wave question agents continue; the batch is still in progress.
