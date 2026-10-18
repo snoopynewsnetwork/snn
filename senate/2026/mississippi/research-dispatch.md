@@ -16,3 +16,10 @@ Read [primary preflight](data/coordinator-source-preflight.md), [Pike updated-so
 This2026 ClassII regular race is distinct from2024 ClassI Senate. Same-seat2020 and the two separate2018 special stages remain labeled; no2022 Senate/governor is invented. Current primary qualifying publication lists Colom Democratic, Pinkins Independent and Hyde-Smith Republican; full final ballot/result identifiers remain separate checks. All82 counties and all available native/administrative/unavailable source contexts stay in arithmetic and inventory.
 
 Only the coordinator reviews, stages this completed state plus queue/dispatch changes, commits main, pushes and verifies remote. No permission/publishing clarification is needed within the authorized scope.
+
+
+## First-pair original review milestone
+
+All 82 final 2024 named county controls independently agree after the explicit Pike updated-source replacement. Statewide native and peer acceptance remain open. The turnout worker reports 11 reviewed 2024 source views with 205 constituents, 14 summary and 12 statistics panels with 358 reciprocal checks, and all 82 independently read 2018 runoff county TOTALs matching 907,588. Other original/native source views remain explicitly pending.
+
+Coordinator bounded checks independently read complete Coahoma updated pages 2–3: 198 constituent candidate cells, 11 TOTAL cells and 33 unused blanks. Five additional complete summary/statistics pages preserve Lauderdale, Quitman and original Pike scope differences. Current SOS sample, ordinary-Senate plurality chart, September 21 in-person absentee announcement and official HB859 history/current documents are retained separately. HB859's actual CURRENT HTML/PDF printed labels differ; the daily aggregate ballot-report provision does not establish a public endpoint or candidate allocation. No second-wave worker has been launched, and county-only agreement does not waive the native gate.
