@@ -1,0 +1,73 @@
+{
+  "schema_version": "nh-baselines-validation-1.0",
+  "status": "pass_with_explicit_primary_source_disagreements_and_operational_gaps",
+  "checks": {
+    "shared_original_hashes_verified": 79,
+    "source_rosters_320_each": 23,
+    "source_scoped_native_records": 7360,
+    "decoded_source_hashes_compared_to_peer": 23,
+    "all_candidate_source_county_state_balances": 9,
+    "baseline_csv_rows": 960,
+    "disjoint_hierarchy_contests": 3,
+    "priority": {
+      "all_native": 320,
+      "denominator": 826189,
+      "top15_votes": 185659,
+      "minimum80_count": 143,
+      "minimum80_votes": 662624,
+      "preceding_votes": 660378,
+      "crossing": "Tilton",
+      "remainder_votes": 163565,
+      "formal_acceptance_reference": "data/coordinator-priority-acceptance.json",
+      "current_geography_approval": false
+    },
+    "peer": {
+      "rosters": 23,
+      "parsed_fields": 34880,
+      "raw_values": 34880,
+      "BIFF_types": 20480,
+      "disagreements": 0
+    },
+    "preserved_source_defects": {
+      "ballots2024_native_minus_state": 1,
+      "ballots2024_state_component_minus_total": 1,
+      "Coos_absentee_and_total_residual": 1,
+      "Somersworth_Ward3_component_minus_total": 1,
+      "Hopkinton_new_reg_component_minus_total": 293,
+      "Senate2022_Clerk_vs_selected_Hassan": -297,
+      "Senate2022_Clerk_vs_selected_Bolduc": 297
+    },
+    "scenario_arithmetic": {
+      "state_rows": 16,
+      "native_rows": 5120,
+      "county_rows": 160,
+      "all_state_native_leaves": 320,
+      "tolerance_net_votes": 1e-07,
+      "max_target_residual_votes": 4.027356226288248e-11,
+      "weights_sum_tolerance": 1e-12,
+      "unbounded_A_plus1_minus_tie_share_pp": 0.5
+    },
+    "bounded_solver_edge_cases": 6,
+    "duplicate_remaining_unit_rejected": true,
+    "synthetic_scenarios": {
+      "executed": 20,
+      "counted_votes_fixed": true,
+      "final_denominators_verified": true,
+      "plurality_distinct_from_pair": true,
+      "calibrated_probabilities": false
+    },
+    "raw_source_rows_verified": 22698,
+    "relative_links_checked": 26,
+    "asset_bounds": "Every owned asset strictly below40000000 bytes; no cache/dependency directories; complete original-byte references hash-verified."
+  },
+  "gaps": [
+    "Final valid/named historical write-in allocation and generic-vote validity scope unavailable; generic fields retained separately.",
+    "Historical legal certification/amendment issuance sequence not independently resolved for every vintage; Clerk2022 vs SOS2022 297-vote shift preserved.",
+    "Current Farmington official general sample ballot verified; statewide current result-feed candidate IDs/ballot-style mapping and subsequent amendments unverified.",
+    "Historical native labels/identifiers do not approve2026 boundaries or establish cross-year ward equivalence/clerk authority.",
+    "2024ballots and checklist source discrepancies preserved; exact administrative registration as-of instant and active/inactive scope unknown.",
+    "No2026 turnout projection, remaining-vote estimate, candidate/method/lower-preference inference, live collector, measured cadence or calibrated probability."
+  ],
+  "asset_manifest_protocol": "Written after this file; includes this file hash; no reverse hash or manifest self-hash.",
+  "provenance": "Executed offline against retained original bytes and independently regenerated calculations."
+}

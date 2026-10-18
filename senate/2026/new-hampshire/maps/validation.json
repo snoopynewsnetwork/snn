@@ -1,0 +1,148 @@
+{
+  "schema_version": "nh-maps-offline-validation-1",
+  "status": "pass",
+  "scope": "Research asset/integrity validation; current legal precinct/November result crosswalk unapproved",
+  "checks": [
+    "frozen acceptance, ordered143/full320/177remainder and exact source_unit objects",
+    "23x320 exact native roster bytes and objects, fresh34880 primary fields and original controls,960baseline CSV/320turnout CSV",
+    "whole-state candidate/administrative balances preserved, no rescale/null imputation",
+    "all original/stored/split streams hashes/sizes/redirect metadata and all read-only pins",
+    "ZIP16memberCRC/SHP259+773/SHX/DBF/fullpoints/parts/nativeattributes",
+    "7services allIDs/prepost counts/bounded100/transferflags/allattributes/nativeprecision/Z/M/truecurves",
+    "468wholemunicipalityfullcoordinateGeoJSONdownloads finite NHbounds",
+    "44PDFcapture/124actualpagecounts/previews/visualhashreview",
+    "local HTML ordered143cards/full320rows, no external rendering dependencies, all local relative links",
+    "strictlybelow40000000bytes; no cache/dependency trees; no peer/Git writes"
+  ],
+  "counts": {
+    "priority": 143,
+    "all_source_leaves": 320,
+    "remainder": 177,
+    "explicit_priority_parents": 98,
+    "priority_whole_municipality_rows": 89,
+    "priority_ward_rows": 54,
+    "all_city_wards": 73,
+    "explicit_ward_parents": 12,
+    "administrative_no_polygon": 25,
+    "native_source_rosters": 23,
+    "native_source_objects": 7360,
+    "native_source_fields": 34880,
+    "stable_baseline_CSV_rows": 960,
+    "baseline_fields_checked": 4800,
+    "primary_response_captures": 145,
+    "unique_original_objects": 119,
+    "municipal_GeoJSONs": 468,
+    "PDF_captures": 44,
+    "PDF_page_previews": 124,
+    "local_links_checked": 2238
+  },
+  "services": [
+    {
+      "dataset": "granit-live",
+      "features": 259,
+      "native_vertices": 91780,
+      "hasZ": false,
+      "hasM": false,
+      "curve_features": 0,
+      "native_crs": {
+        "falseM": -100000,
+        "xyTolerance": 0.003280833333333333,
+        "mUnits": 10000,
+        "zUnits": 10000,
+        "latestWkid": 3437,
+        "zTolerance": 0.001,
+        "wkid": 102710,
+        "xyUnits": 3048.0060960121928,
+        "mTolerance": 0.001,
+        "falseX": -17463700,
+        "falseY": -48257000,
+        "falseZ": -100000
+      }
+    },
+    {
+      "dataset": "hudson-locations",
+      "features": 2,
+      "native_vertices": 0,
+      "hasZ": false,
+      "hasM": false,
+      "curve_features": 0,
+      "native_crs": {
+        "wkid": 102710,
+        "latestWkid": 3437
+      }
+    },
+    {
+      "dataset": "hudson-wards",
+      "features": 2,
+      "native_vertices": 2993,
+      "hasZ": false,
+      "hasM": false,
+      "curve_features": 0,
+      "native_crs": {
+        "wkid": 102710,
+        "latestWkid": 3437
+      }
+    },
+    {
+      "dataset": "keene-polling",
+      "features": 5,
+      "native_vertices": 0,
+      "hasZ": false,
+      "hasM": false,
+      "curve_features": 0,
+      "native_crs": {
+        "wkid": 102100,
+        "latestWkid": 3857
+      }
+    },
+    {
+      "dataset": "keene-wards",
+      "features": 5,
+      "native_vertices": 1778,
+      "hasZ": false,
+      "hasM": false,
+      "curve_features": 0,
+      "native_crs": {
+        "wkid": 103104,
+        "latestWkid": 6525
+      }
+    },
+    {
+      "dataset": "merrimack-polling",
+      "features": 2,
+      "native_vertices": 0,
+      "hasZ": false,
+      "hasM": false,
+      "curve_features": 0,
+      "native_crs": {
+        "wkid": 102710,
+        "latestWkid": 3437
+      }
+    },
+    {
+      "dataset": "merrimack-wards",
+      "features": 2,
+      "native_vertices": 1701,
+      "hasZ": false,
+      "hasM": false,
+      "curve_features": 0,
+      "native_crs": {
+        "wkid": 102710,
+        "latestWkid": 3437
+      }
+    }
+  ],
+  "preserved_known_defects": [
+    "2022summaryheaderreversal/opposing297candidatevintages",
+    "2024Coosdetail17511/summary17510;SomersworthWard3parts1222/reported1221",
+    "ChecklistHopkintonparts296/literal3; source blanks/dashes/asterisks remain"
+  ],
+  "material_gaps": [
+    "No November2026 source-key/ward/precinct/method approval or crosswalk",
+    "49priorityward identities have actualPDF reference but no downloaded native wardvector;Dover6 currentvector backend500 with2012fallback",
+    "Berlin current1/3 precinct polygons unknown; historicalBerlin1row preserved",
+    "NashuaWard1andHudsonWard1polling-location conflicts; metadata clocks not effective dates",
+    "25administrativeleaves nopolygon/unknownscope;19remainderwardsonlyparentreference",
+    "Externallegalenvelope gap tests and cross-source geometry comparisons unverified; no repair"
+  ]
+}

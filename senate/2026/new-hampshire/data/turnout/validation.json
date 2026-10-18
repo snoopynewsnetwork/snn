@@ -1,0 +1,58 @@
+{
+  "schema_version": "nh-turnout-offline-validation-1",
+  "status": "pass",
+  "checks": [
+    "320 unique complete native rows; candidate universe; all-unit order; rational weights; CSV null preservation; top15; integer minimal80; complete remainder",
+    "Disjoint city-parent hierarchy, no county/summary overlap, explicit 18 unavailable GEOIDs and all unpopulated administrative cases",
+    "All retained source-native rosters/fields/positions, raw null/type scope, full selected primary county/state controls and independent 2022 PDF count vectors",
+    "Independent source-scoped sensitivities and exact known administrative defects, with no residual repair",
+    "Primary House Clerk seven-field and FEC candidate-universe controls; older 2022 Clerk split retained",
+    "Candidate/header identity universe, exact official-index link selection and complete fixed-priority administrative/2022 label comparisons",
+    "All retained original/stored/HTTP-decoded hashes, byte sizes, exact reconstruction, request metadata and source-reference bounds",
+    "All relative report/schema links and strict below-40,000,000-byte bounds; complete manifest hashes when present",
+    "Formal external historical acceptance verified against frozen contract, exact priority/remainder/order, pinned reciprocal evidence and independent coordinator review; no reverse acceptance hash"
+  ],
+  "counts": {
+    "priority_native_rows": 320,
+    "retained_source_rosters": 23,
+    "source_native_records": 7360,
+    "source_native_fields": 34880,
+    "source_positions_checked": 7360,
+    "original_captures_verified": 59,
+    "relative_links_verified": 29
+  },
+  "priority": {
+    "denominator": 826189,
+    "top15_votes": 185659,
+    "minimum80_count": 143,
+    "preceding_votes": 660378,
+    "crossing": "Tilton",
+    "crossing_votes": 2246,
+    "cumulative": 662624,
+    "remainder_count": 177,
+    "remainder_votes": 163565
+  },
+  "limitations": [
+    "Known administrative source discrepancies preserved; see administrative-audit.json.",
+    "Candidate generic write-ins do not establish named/valid write-in allocations.",
+    "Historical native labels/Census references do not approve current boundaries or clerk authority."
+  ],
+  "independent_peer_status": "agreed_after_independent_full_comparison",
+  "peer_evidence_vintage_updates": [
+    {
+      "path": "data/baselines/peer-reconciliation.json",
+      "accepted_observation_sha256": "bdaf0dbf94273737e89c5347498e051f0a994fe3c2f6d8a79f96642d0afbfa63",
+      "current_sha256": "c2487e01aa5ad29c44fce351ebce971f30b3781fd0cd7083d475bc467b198f02",
+      "scope": "Peer expanded metadata/counters and references frozen contract; no native/count/order disagreement. Accepted reciprocal witness itself remains unchanged."
+    }
+  ],
+  "coordinator_acceptance": {
+    "path": "data/coordinator-priority-acceptance.json",
+    "accepted": true,
+    "accepted_at_utc": "2026-10-18T18:25:45.184946+00:00",
+    "scope": "Historical research dispatch only, not current legal geography, clerk authority, source-ID or live-model approval.",
+    "contract_preserved": true,
+    "current_geometry_approval": false
+  },
+  "manifest_policy": "Manifest includes this deterministic validation; regenerate manifest after changing any owned artifact, then rerun validation."
+}

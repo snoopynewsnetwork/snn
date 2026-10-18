@@ -1,0 +1,82 @@
+{
+  "scenarios": [
+    {
+      "id": "2024-own-native-repeat",
+      "preference_source": "sos-2024-president-archived-original",
+      "volume_source": "sos-2024-president-archived-original",
+      "mix_source": "sos-2024-president-archived-original",
+      "hybrid": false
+    },
+    {
+      "id": "2022-own-native-repeat",
+      "preference_source": "sos-archived-2022-ge-us-senator-5-xls",
+      "volume_source": "sos-archived-2022-ge-us-senator-5-xls",
+      "mix_source": "sos-archived-2022-ge-us-senator-5-xls",
+      "hybrid": false
+    },
+    {
+      "id": "2020-own-native-repeat",
+      "preference_source": "sos-2020-senate-archived-original",
+      "volume_source": "sos-2020-senate-archived-original",
+      "mix_source": "sos-2020-senate-archived-original",
+      "hybrid": false
+    },
+    {
+      "id": "2024-preference-2022-county-mix-low-historical-volume",
+      "preference_source": "sos-2024-president-archived-original",
+      "volume_source": "sos-archived-2022-ge-us-senator-5-xls",
+      "mix_source": "sos-archived-2022-ge-us-senator-5-xls",
+      "hybrid": true
+    },
+    {
+      "id": "2024-preference-2020-county-mix-middle-historical-volume",
+      "preference_source": "sos-2024-president-archived-original",
+      "volume_source": "sos-2020-senate-archived-original",
+      "mix_source": "sos-2020-senate-archived-original",
+      "hybrid": true
+    },
+    {
+      "id": "2024-preference-2024-county-mix-high-historical-volume",
+      "preference_source": "sos-2024-president-archived-original",
+      "volume_source": "sos-2024-president-archived-original",
+      "mix_source": "sos-2024-president-archived-original",
+      "hybrid": true
+    },
+    {
+      "id": "2022-county-preference-2024-native-volume",
+      "preference_source": "sos-archived-2022-ge-us-senator-5-xls",
+      "volume_source": "sos-2024-president-archived-original",
+      "mix_source": "sos-2024-president-archived-original",
+      "hybrid": false,
+      "county_preference": true
+    },
+    {
+      "id": "2020-county-preference-2024-native-volume",
+      "preference_source": "sos-2020-senate-archived-original",
+      "volume_source": "sos-2024-president-archived-original",
+      "mix_source": "sos-2024-president-archived-original",
+      "hybrid": false,
+      "county_preference": true
+    }
+  ],
+  "targets": {
+    "tie": 0,
+    "A_plus_1_pair_margin": 0.01
+  },
+  "historical_pair_volume_anchors": {
+    "2024": 814011,
+    "2022": 608121,
+    "2020": 777007
+  },
+  "historical_volume_order": "low2022; base/middle2020; high2024. Historical envelope, not2026 projection. Primary recent comparison remains2024.",
+  "historical_volume_labels": {
+    "low": 608121,
+    "base_middle": 777007,
+    "high": 814011
+  },
+  "hybrid_method": "Historical source county pair totals; 2024 within-county native pair weights and native preferences. No cross-year native identity join.",
+  "other_candidate_method": "Pair-only scenarios preserve candidate identities outside pair; own-repeat all-candidate denominator observed. Hybrids preserve 2024 native pair participation; county preference cases keep 2024 candidate volume.",
+  "zero_and_missing": "Null raw candidates stay null. Numerical reported subtotal may be zero; an unknown/no-positive pair pool has no defined preference/target share. No unobserved counts are inferred.",
+  "state_includes_all_native_leaves": true,
+  "clipping": "Explicit [0,1] share clipping; bisection solves bounded statewide target, retain unbounded delta and clipped-unit count."
+}
