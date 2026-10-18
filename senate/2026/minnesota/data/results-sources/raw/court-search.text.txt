@@ -1,0 +1,1467 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+        Search Page / Minnesota State Law Library
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+
+
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+		
+		
+
+
+
+
+
+    
+    
+	
+
+	
+
+
+
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-104360073-1', 'auto');
+  ga('send', 'pageview');
+
+
+
+
+
+
+	
+var __uzdbm_1 = "660f0b46-9a7f-46c0-b4cc-068a44ef7b4e";var __uzdbm_2 = "OTg5ODViNjgtYmY1Ni00ZWJjLTllOGEtMWE1YzVlZjE3MWM5JDEwNC41NS4yMDkuNw==";var __uzdbm_3 = "";var __uzdbm_4 = "false";var __uzdbm_5 = "";var __uzdbm_6 = "";var __uzdbm_7 = "";    (function (w, d, e, u, c, g, a, b) {     w["SSJSConnectorObj"] = w["SSJSConnectorObj"] || {       ss_cid: c,       domain_info: "auto",     };     w[g] = function (i, j) {       w["SSJSConnectorObj"][i] = j;     };     a = d.createElement(e);     a.async = true;     if (       navigator.userAgent.indexOf('MSIE') !== -1 ||       navigator.appVersion.indexOf('Trident/') > -1     ) {       u = u.replace("/advanced/", "/advanced/ie/");     }     a.src = u;     b = d.getElementsByTagName(e)[0];     b.parentNode.insertBefore(a, b);   })(     window, document, "script", "https://mn.gov/18f5227b-e27b-445a-a53f-f845fbe69b40/stormcaster.js", "8d80", "ssConf"   );   ssConf("c1", "https://mn.gov");   ssConf("c3", "c99a4269-161c-4242-a3f0-28d44fa6ce24");   ssConf("au", "mn.gov");   ssConf("cu", "validate.perfdrive.com, ssc"); 
+
+
+    skip to content
+
+
+	  #alert-banner {
+}
+	
+	
+		
+			 close
+		
+		
+
+			Looking for legal information? Check out our legal topics pages.
+		
+	
+	
+	
+		$(document).ready(function(event) {
+
+			var seed = "independence";  
+			var expirationTime = 6;
+			var mobileNavOffsetValue = Number(0);
+			var desktopNavOffsetValue = Number(0);
+			var mobileBodyOffsetValue = Number(0);
+			var desktopBodyOffsetValue = Number(0);
+			var mobileSearchOffsetValue = Number(0);
+			var desktopSearchOffsetValue = Number(0);
+			var bannerClosed = false;
+
+			function adjustLayout(bannerClosed) {
+				if (bannerClosed == false) {
+					$('#alert-banner').show();
+					var alertHeight = $('#alert-banner').outerHeight();
+					var iconHeight = $('#alert-banner-close').outerHeight();
+					if ( $(document).width() < 900 ) {
+						var navTopHeight = $('nav.top').outerHeight();
+						$('nav.top').css('top', (alertHeight + mobileNavOffsetValue) + 'px');
+						$('#headerSearch').css('top', (alertHeight + mobileSearchOffsetValue + 5) + 'px');
+						$('body').css('padding-top', (alertHeight + mobileBodyOffsetValue) + 'px');
+					} else {
+						var navTopHeight = $('nav.top').outerHeight();
+						$('nav.top').css('top',  desktopNavOffsetValue + 'px');
+						$('#headerSearch').css('top', ( desktopSearchOffsetValue ) + 'px');
+						$('body').css('padding-top', (alertHeight + desktopBodyOffsetValue) + 'px');
+					}
+					$('#alert-banner-close').css('top', ( (alertHeight/2) - (iconHeight/2) ) + 'px' );
+				}
+			}
+
+			if ( Cookies.get(seed) == undefined) { Cookies.set(seed, 1, {expires: expirationTime}) }
+			if ( Cookies.get(seed) == 1 ) {
+				adjustLayout(bannerClosed);
+				$(window).resize(function(event){
+					console.log(closed)
+					adjustLayout(bannerClosed);
+				});
+			}
+			$('#alert-banner-close').on('click', function(event) {
+				bannerClosed = true;
+				$('#alert-banner').hide();
+				Cookies.set(seed, 0);
+				if ( $(document).width() < 900 ) {
+					var navTopHeight = $('nav.top').outerHeight();
+					$('nav.top').css('top', ( mobileNavOffsetValue ) + 'px');
+					$('#headerSearch').css('top', ( mobileSearchOffsetValue + 5) + 'px');
+					$('body').css('padding-top', ( mobileBodyOffsetValue ) + 'px');
+				} else {
+					var navTopHeight = $('nav.top').outerHeight();
+					$('nav.top').css('top', ( desktopNavOffsetValue ) + 'px');
+					$('#headerSearch').css('top',  ( desktopSearchOffsetValue ) + 'px');
+					$('body').css('padding-top',  ( desktopBodyOffsetValue ) + 'px');
+				}
+				event.preventDefault();
+			})
+
+		});
+	
+
+    
+        
+            
+            
+                    
+                        
+                            
+                            Minnesota State Law Library
+                        
+                    
+                    
+            
+            
+            
+                
+
+                
+                
+                
+                
+                    
+                    
+                    				
+                        Search:
+                        
+                            
+                            
+                                submit
+                            
+                        
+                    
+                    
+                	
+            
+            
+            
+                
+                    How do I find?
+                
+                
+                    
+Attorney General Opinions
+Briefs and Oral Arguments
+Case Reports by Citation
+Cases that Interpret a Statute
+Case Reports by Party Name
+Case Reports, Free Online Sources
+Complaints and Other Pleadings
+Court Records
+Divorce Decree
+Information on Changing the Law
+Judges' Reversal Rates
+Jury Awards
+Jury Instructions
+Legislative History Research
+Minnesota Agency Regulations
+Older Agency Regulations
+Older Court Rules
+Ordinances
+Paternity Documents
+Subpoenas
+Unpublished Decisions
+Vital Records
+
+                
+            
+            
+            
+        
+    
+
+
+
+
+    
+                Legal Topics
+                
+        Abandoned Property
+        Administrative Courts
+        Affordable Care Act
+        Alternative Dispute Resolution and Mediation
+        Apostilles
+        Attorneys
+        Background Checks
+        Capital Punishment in Minnesota
+        Civil Rights
+        Constitutions: United States and Minnesota
+        Contests and Charitable Gambling
+        Court Rules
+        Court System
+        Credit River Case
+        Credit River Case
+        Diversity
+        Enacting Clause
+        Entertainment Law
+        Flag Laws
+        Genealogy
+        Habeas Corpus
+        Interpreter Resources
+        Judges
+        Judges' Reversal Rates
+        Law in Popular Culture
+        Law on the Edge
+        Law Sources
+        Legal Newspapers
+        LGBT Rights
+        Loony Laws
+        Minnesota State Court System - Opinions and Orders
+        Notaries Public
+        Oath of Office
+        Ordinances
+        Pardons
+        Private Investigators
+        Sex Offender Statutes Minnesota
+        Unemployment Cases
+        Unpublished Decisions
+        Whistleblower Laws
+                
+        
+        Research Links
+                
+        Legal Referrals
+                
+        Legal Referrals by County
+        Legal Referrals by Subject
+        Legal Referrals by Subject
+        Aitkin County Legal Referrals
+        Anoka County Legal Referrals
+        Becker County Legal Referrals
+        Beltrami County Legal Referrals
+        Benton County Legal Referrals
+        Big Stone County Legal Referrals
+        Blue Earth County Legal Referrals
+        Brown County Legal Referrals
+        Carlton County Legal Referrals
+        Carver County Legal Referrals
+        Cass County Legal Referrals
+        Chippewa County Legal Referrals
+        Chisago County Legal Referrals
+        Clay County Legal Referrals
+        Clearwater County Legal Referrals
+        Cook County Legal Referrals
+        Cottonwood County Legal Referrals
+        Crow Wing County Legal Referrals
+        Dakota County Legal Referrals
+        Dodge County Legal Referrals
+        Douglas County Legal Referrals
+        Faribault County Legal Referrals
+        Fillmore County Legal Referrals
+        Freeborn County Legal Referrals
+        Goodhue County Legal Referrals
+        Grant County Legal Referrals
+        Hennepin County Legal Referrals
+        Houston County Legal Referrals
+        Hubbard County Legal Referrals
+        Isanti County Legal Referrals
+        Itasca County Legal Referrals
+        Jackson County Legal Referrals
+        Kanabec County Legal Referrals
+        Kandiyohi County Legal Referrals
+        Kittson County Legal Referrals
+        Koochiching County Legal Referrals
+        Lac Qui Parle County Legal Referrals
+        Lake County Legal Referrals
+        Lake of the Woods County Legal Referrals
+        Le Sueur County Legal Referrals
+        Lincoln County Legal Referrals
+        Lyon County Legal Referrals
+        Mahnomen County Legal Referrals
+        Marshall County Legal Referrals
+        Martin County Legal Referrals
+        McLeod County Legal Referrals
+        Meeker County Legal Referrals
+        Mille Lacs County Legal Referrals
+        Morrison County Legal Referrals
+        Mower County Legal Referrals
+        Murray County Legal Referrals
+        Nicollet County Legal Referrals
+        Nobles County Legal Referrals
+        Norman County Legal Referrals
+        Olmsted County Legal Referrals
+        Otter Tail County Legal Referrals
+        Pennington County Legal Referrals
+        Pine County Legal Referrals
+        Pipestone County Legal Referrals
+        Polk County Legal Referrals
+        Pope County Legal Referrals
+        Ramsey County Legal Referrals
+        Red Lake County Legal Referrals
+        Redwood County Legal Referrals
+        Renville County Legal Referrals
+        Rice County Legal Referrals
+        Rock County Legal Referrals
+        Roseau County Legal Referrals
+        Scott County Legal Referrals
+        Sherburne County Legal Referrals
+        Sibley County Legal Referrals
+        St. Louis County Legal Referrals
+        Stearns County Legal Referrals
+        Steele County Legal Referrals
+        Stevens County Legal Referrals
+        Swift County Legal Referrals
+        Todd County Legal Referrals
+        Traverse County Legal Referrals
+        Wabasha County Legal Referrals
+        Wadena County Legal Referrals
+        Waseca County Legal Referrals
+        Washington County Legal Referrals
+        Watonwan County Legal Referrals
+        Wilkin County Legal Referrals
+        Winona County Legal Referrals
+        Wright County Legal Referrals
+        Yellow Medicine County Legal Referrals
+                
+        
+        Biographies of Minnesota Supreme Court Justices
+                
+        Roger L. Dell
+        John E. Simonett
+        Glenn E. Kelley
+        M. Jeanne Coyne
+        Peter S. Popovich
+        Alexander M. Keith
+        Alan C. Page
+        Paul H. Anderson
+        Edward C. Stringer
+        James H. Gilbert
+        G. Barry Anderson
+        Lorie Skjerven Gildea
+        David R. Stras
+        David L. Lillehaug
+        Natalie E. Hudson
+        Margaret H. Chutich
+        Anne K. McKeig
+        Paul C. Thissen
+                
+        
+        Court of Appeals Judges Biographies
+                
+        Peter S. Popovich
+        Thomas G. Forsberg
+        David R Leslie
+        Fred C. Norton
+        Thomas J. Kalitowski
+        Robert H. Schumacher
+        Marianne D. Short
+        Roger M. Klaphake
+        Jack Davies
+        Randolph W. Peterson
+        Paul H. Anderson
+        G. Barry Anderson
+        Natalie E. Hudson
+        Wilhelmina M. Wright
+        Larry B. Stauber, Jr.
+        Louise Dovre Bjorkman
+        Margaret H. Chutich
+        Michael L. Kirk
+        John P. Smith
+        Denise D. Reilly
+        Peter M. Reyes, Jr.
+        Lucinda E. Jesson
+        Tracy M. Smith
+        Diane B. Bratvold
+        James B. Florey
+        Jeanne M. Cochran
+        Randall J. Slieter
+        Jeffrey M. Bryan
+        Susan Segal
+        Jennifer L. Frisch
+                
+        
+        Electronic Resources
+        Forms Finder
+        Internet Legal Research
+        Legal Treatise Finder
+        Minnesota Legal History
+        Ordinances
+        Historical Court Rules
+        County Law Libraries
+        State Law Libraries
+        Helpful Websites
+        History of the Minnesota Supreme Court by Russel O. Gunderson
+        Legal Referrals by County
+        Legal Referrals by Subject
+        Minnesota Justices Series
+        Minnesota Legal Periodical Index
+        Minnesota Legal Periodical Index - Publications Indexed
+        Minnesota Supreme Court History
+        Resources for Library Visitors
+                
+        
+        Visit/Services
+                
+        Clinics
+                
+        Appeals Clinic Waiver
+        Appeals Clinic Registration
+        Appeals Clinic
+        Probate Clinic
+        Probate Clinic Waiting List
+        Probate Clinic 2
+        Unemployment Appeal Clinic
+                
+        
+        Continuing Legal Education (CLEs)
+                
+        Current CLE Schedule
+        On Demand CLE Videos
+        Past CLE Programs
+                
+        
+        County Law Library Resources and Information
+                
+        County Law Library Program Annual Subscription Rates
+        County Law Library Program Cataloging Services
+                
+        
+        Visiting the Library
+                
+        Circulation of Library Materials
+        Code of Conduct
+        Directions and Parking
+        Internet Access and Public Computers
+        Library Hours and Book Drop
+        Printing, Copying, & Document Delivery
+        Reference Assistance
+        Tours and Orientation
+                
+        
+        175th Anniversary of the Minnesota Supreme Court and State Law Library
+        Minnesota State Law Library 2013 CLE Archive
+        Minnesota State Law Library 2014 CLE Archive
+        Minnesota State Law Library 2015 CLE Archive
+        Minnesota State Law Library 2016 CLE Archive
+        Minnesota State Law Library 2017 CLE Archive
+        Minnesota State Law Library 2018 CLE Archive
+        Minnesota State Law Library 2019 CLE Archive
+        Minnesota State Law Library 2020 CLE Archive
+        Minnesota State Law Library 2020 CLE Archive
+        Minnesota State Law Library 2022 CLE Archive
+        Minnesota State Law Library 2023 CLE Archive
+        Minnesota State Law Library 2024 CLE Archive
+        Minnesota State Law Library 2025 CLE Archive
+        Minnesota State Law Library 2026 CLE Archive
+        calendar
+        Letter to Otter Tail County Attorney, August 2, 1994
+        
+        Self-Help Clinics
+        Services for Inmates
+                
+        
+        About Us
+                
+        Annual Reports
+        A Brief History of the Minnesota State Law Library
+        Clinic Reports
+        Collection Development Policy
+        Inter Alia Newsletter Archive
+        Library Hours and Book Drop
+        Marvin Anderson
+        Mission, Vision, and Strategic Plan
+        Special Collections
+        State Law Librarians Since 1849
+        Testing
+                
+        
+        Ask A Librarian
+                
+        Ask a Question
+        Thank you
+        Thank you
+                
+        
+        999CodeConductRedirect
+        
+        How Do I Find
+                
+        Attorney General Opinions
+        Birth Certificates
+        Briefs and Oral Arguments
+        Case Reports by Citation
+        Case Reports by Party Name
+        Case Reports, Free Online Sources
+        Cases that Interpret a Statute
+        Complaints and Other Pleadings
+        Court Records
+        Death Certificates
+        Divorce Decree
+        Information on Changing the Law
+        Judges' Reversal Rates
+        Jury Awards
+        Jury Instructions
+        Legislative History Research
+        Marriage Certificate
+        Military Dischange Certificate
+        Minnesota Agency Regulations
+        Older Agency Regulations
+        Older Court Rules
+        Ordinances
+        Paternity Documents
+        Regulations
+        Subpoenas
+        Unpublished and Nonprecedential Opinions
+                
+        
+        Opinions Redirect
+        
+        Redirect to Archive
+        
+        Redirect to Search Briefs
+        
+        Search
+                
+        JSON Search
+        Search Page
+        Search Page
+        XML Search
+        Search Page
+                
+        
+        SearchOpinions Redirect
+        
+        ZBriefs Redirect
+        
+        ZRedirectAppealsClinic
+        
+
+    
+
+
+	
+	
+		
+	
+
+
+    
+
+
+
+  		
+  			  		
+  				
+  				
+		
+					
+  		
+  		
+	
+																	
+					
+					
+						
+						
+							
+								Search Website
+							
+							
+							
+								Search Opinions
+							
+
+							
+								Browse Opinions by Date
+							
+
+							
+								Search COA Orders
+							
+							
+							
+								Search Briefs
+							
+
+							
+								Search Articles
+							
+							
+							
+								Help
+							
+						
+						
+						
+						
+						
+							
+							
+								Search Site
+
+	
+	
+	
+		
+			
+		   	Search:
+		    	
+		  			
+		
+		
+
+		   	Sort By:
+		   				
+				
+				  
+				    
+				    Relevance
+				  
+				
+				
+				  
+				    
+				    Date
+				  
+				
+				
+					
+	
+
+	
+		
+		
+		
+		
+			
+				Search
+				
+			
+		
+	
+
+							
+							
+							
+
+							
+							
+							Search Opinions
+
+	 
+	
+        
+	
+		
+			
+		   	Keyword Search:
+		    	
+		  			
+		
+		
+
+		   	Sort By:
+		   				
+				
+				  
+				    
+				    Relevance
+				  
+				
+				
+				  
+				    
+				    Date
+				  
+				
+				
+					
+	
+	
+		Hide advanced options
+			
+			 
+
+					
+				   	Docket #: Example A14-0123 or ADM14-8123
+				    	
+				  	
+					
+				   	Party Names:
+				    	
+				  	
+					
+					Citation:
+				    	
+				    	
+				    		Reporter
+				    		N.W.
+				    		N.W.2d
+				    		N.W.3d
+				    		Minn.
+				    	
+				    	
+				    	Select reporter from the drop-down menu and enter volume and page numbers in the spaces provided. Example: 123 N.W.2d 345. Citation search is available for opinions beginning with 547 N.W.2d (circa 1996).
+				  	
+			
+			
+			
+				
+					
+						From Date:
+			    		
+			    	
+					
+						To Date:
+			    		
+			    	
+			  	
+			  	
+			  		Type of Opinion:
+					
+					  
+					    
+					    Supreme Court
+					   
+					
+					
+					  
+					    
+					    Court of Appeals - precedential
+					  
+					
+					
+					  
+					    
+					    Court of Appeals - nonprecedential
+					  
+					
+ 					
+					  
+					    
+					    Court of Appeals - order opinions
+					  
+					
+                                		  		
+			  	
+			
+		
+	
+	
+		
+			About Content
+		
+		
+			
+				Search
+				
+			
+		
+	
+	
+		
+			
+				The opinion archive database includes the following content:
+                                
+				Supreme Court opinions and orders (May 2, 1996 - present)
+				Court of Appeals precedential (published) opinions (May 7, 1996 - present)
+				Court of Appeals nonprecedential (unpublished) opinions (May 7, 1996 - present)
+				Court of Appeals - Order opinions (Jan. 2, 2025 - present)
+						Precedential Opinions
+							Under Minn. Rule of Civil Appellate Procedure 136.01, the Court of Appeals issues a precedential opinion (formerly called "published opinions") only to clarify or develop the law.  In deciding whether to issue a precedential opinion, the court considers multiple factors listed in Minn. R. Civ. App. P. 136.01, subd. (1)(b), including whether the case establishes a new principle or rule of law, clarifies existing case law, decides a novel issue involving a constitutional provision, statute, administrative rule or rule of court, or resolves a significant or recurring legal issue.  Precedential opinions will be considered and used by courts faced with similar issues in the future, and they are published in books of caselaw found in most law libraries.  Under Minn. R. Civ. App. P. 128.02, subd. 1(f), parties may advise the court whether a precedential opinion would be helpful.
+                        
+						Nonprecedential Opinions
+							Nonprecedential opinions (formerly called "unpublished opinions") are typically issued in cases that do not contain issues of first impression or involve the application of established law to the particular set of facts and circumstances in that case.  See Minn. R. Civ. App. 136.01.  Nonprecedential opinions "are not binding authority except as law of the case, res judicata or collateral estoppel, but nonprecedential opinions may be cited as persuasive authority." Minn. R. Civ. App. 136.01.
+                        
+						Order Opinions
+							Order opinions are a simplified format for non-precedential opinions. Cases that involve a few simple issues may be decided by order opinions, which include little discussion of the facts of the case and a brief analysis of the laws that are involved. Order opinions “are not binding authority except as law of the case, res judicata or collateral estoppel.” Minn. R. Civ. App. 136.01.
+                        
+                                
+				The slip opinions published on this website are subject to modification or correction by the court. The official opinions of the Minnesota appellate courts are those published by Thomson West in the North Western Reporter or Minnesota Reporter. Unpublished opinions of the court of appeals are not precedential and may not be cited except as provided by Minn. Stat. 480A.08, subd.3.
+
+			
+		
+	
+
+							
+
+							
+								Browse Opinions by Date
+							
+
+							
+								Special-Term Orders
+
+	 
+	
+
+	
+		
+			
+		   	Keyword Search:
+		    	
+		    	
+ 		  	
+
+		
+		
+
+		   	Sort By:
+		   				
+				
+				  
+				    
+				    Relevance
+				  
+				
+				
+				  
+				    
+				    Date
+				  
+				
+				
+					
+	
+
+	
+		
+		
+		
+		
+			
+				Search
+				
+			
+		
+	
+
+
+
+About Content
+
+This archive includes orders decided by the Court of Appeals at its Special-Term Session, the weekly calendar where a panel of three Court of Appeals judges considers jurisdictional and procedural matters.  This archive does not include orders before January 1, 2023 or orders that were not decided at Special Term. Orders not included in this archive may be accessed via the Minnesota Appellate Courts’ public access system, PMACS.
+
+
+							
+
+							
+							
+								Search Briefs
+
+	 
+	
+        
+	
+		
+			
+		   	Keyword Search:
+		    	
+                        If you are searching for a brief by docket number, please enter 4 digits after the dash (Example A16-0123 or ADM14-8123).
+		  	
+			
+			Citation:
+		    	
+		    	
+		    		Reporter
+		    		N.W.
+		    		N.W.2d
+		    		N.W.3d
+		    		Minn.
+		    	
+		    	
+		    	Select reporter from the drop-down menu and enter volume and page numbers in the spaces provided. Example: 300 N.W.2d 173.
+		  			
+		
+		
+
+		
+	
+	
+	
+		
+			About Content
+		
+	
+	
+		
+			
+
+This database includes:
+
+Appellate briefs filed with the Minnesota Supreme Court in civil and criminal cases that resulted in an opinion.
+Appellate briefs filed with the Minnesota Court of Appeals in civil and criminal cases that resulted in a published opinion. 
+Coverage:
+651 NW2d - present.
+Briefs from older cases are being added beginning with 300 NW2d. 
+As of February 2023, we have made it through 340 NW2d.
+
+
+Upon request, the Minnesota State Law Library will add briefs not currently available in our archive, unless we are prevented from doing so by applicable court rules or the brief is not available to us.  For information about how to obtain briefs not available through this database, please see our How do I Find Briefs and Oral Arguments page.
+ 
+			
+		
+		
+
+	
+		
+		
+		
+		
+			
+				Search
+				
+			
+		
+	
+
+							
+							
+							
+							Search Articles
+
+	
+	 
+	
+        
+	
+		
+			
+		   	Keyword Search:
+		    	
+		  			
+		
+		
+
+		   	Sort By:
+		   				
+				
+				  
+				    
+				    Relevance
+				  
+				
+				
+				  
+				    
+				    Date
+				  
+				
+				
+					
+	
+	
+		Hide advanced options
+			
+			 
+					
+				   	Author: (lastname or lastname, firstname)
+				    	
+				  	
+				  	
+					
+						Subject: (enter keyword or select from list)
+						
+						
+
+
+						
+									  	
+				  	 
+
+			
+			
+			function getYears(year) {
+				const currentyear = (new Date()).getFullYear();
+				let start = 1983;
+				if (year) start = year;
+				let html = "<option value=\"\"></option>";
+				for (i = currentyear; i > start; i--) {
+					html += "<option value=\"" + i + "\">" + i + "</option>";
+				}
+				return html;
+			}
+			$( document ).ready(function() {
+				$('#year-from').html(getYears());
+				$('#year-to').html(getYears());
+
+			    $('#year-to').focus(function() {
+			    	if ($('#year-from').val()) {
+			    		$(this).html(getYears($('#year-from').val() - 1));
+			    	}
+			    });
+			    $('#year-from').change(function() {
+			    	$('#year-to').prop("disabled", false);
+			    });
+			    $('#year-from').blur(function() {
+			    	if (!$(this).val()) {
+			    		$('#year-to').val('');
+			    		$('#year-to').prop("disabled", true);
+			    	}
+			    });
+
+				var urls = ['/law-library-stat/search/articles/mn-lawlib-subject.xml'];
+				if (window.location.href.includes("stage.")) urls = ['/lawlib/search/articles/mn-lawlib-subject.xml'];
+				var pattern = /([a-z]+)\.xml/; 
+				function ajaxRequest (urls) {
+					if (urls.length > 0) {
+						var url = urls.pop();
+						$.ajax({
+							type: "GET",
+							dataType: "xml",
+							url: url,
+							cache: true,
+							success: function(xml){
+								var match = url.match(pattern);
+								var params = getQueryParams();
+								var param = "";
+								var search = "query";
+		
+								$(xml).find('result').each(function(){
+									if ($(this).text() && $(this).text() != 'null') { 
+										var selected = "";
+										if (param === $(this).text()) selected = " selected";
+										$('<option value="' + $(this).text() + '" data-search="' + search + '"' + selected + '>' + $(this).text() + '</option>').appendTo("#" +  match[1]);
+									}
+								});
+							}
+						});
+						ajaxRequest(urls);
+					}
+					
+				}
+				ajaxRequest(urls);
+
+			});
+			
+			
+			
+				
+
+					
+						Year (from):
+						
+						
+					
+					
+						Year (to):
+						
+						
+					
+
+			  	
+				
+					
+					Copies of articles can be obtained through the State Law Library. Contact us at askalibrarian@courts.state.mn.us.
+				
+
+			
+		
+	
+	
+		
+			About Content
+		
+		
+			
+				Search
+				
+			
+		
+	
+
+	
+		
+			
+				 • https://mn.gov/law-library/research-links/mlpi.jsp
+                
+                 • https://mn.gov/law-library/research-links/mlpipublications.jsp
+			
+		
+	
+
+							
+							
+							
+							
+								Help with searching
+								
+                                
+                                
+                                
+                                        
+                                            
+                                            
+                                        		
+													
+													
+													Is search case-sensitive?
+													
+												
+
+	
+	    
+	        No, the search engine is not case-sensitive. For example, a search on "REPORT" will also return pages containing "Report" or report. A search on "deed" will also return pages containing "DEED".
+	    
+	                                            
+                                            
+                                        		
+													
+													
+													Does search check my spelling?
+													
+												
+
+	
+	    
+	        Yes, the search engine checks your search words against all of the words collected from the web site. When a word appears to be misspelled, the search engine looks at all the words it knows and offers you a word that could replace it.
+	    
+	                                            
+                                            
+                                        		
+													
+													
+													Can I search for a phrase?
+													
+												
+
+	
+	    
+	        To search for a phrase, type the phrase in quotation marks. For example, type "voter registration" in quotes in the search box.
+	    
+	                                            
+                                            
+                                        		
+													
+													
+													Are Boolean searching and wildcards allowed?
+													
+												
+
+	
+	    
+	        
+Boolean operators must be typed in UPPER CASE or they will not be recognized as operators.
+The Boolean operators 'OR', 'NOT', '-', and '+' may be used in your query. 
+Using 'AND' is not necessary since all words are searched by default.
+The asterisk '*' can be used as a wildcard character.
+
+
+
+
+Boolean Operator
+Description
+
+
+OR
+Use 'OR' when you require only one of the search words to appear in the results.  Example: "city OR county"
+
+
+NOT or -
+Use 'NOT' or '-' when you do not want to exclude results that contain a particular term. Examples: "economic development NOT support" or " economic development -support "
+
+
+*
+Use '*' as a wildcard to search on all words that contain the letters you enter.  You must enter a minimum of three letters plus the '*' character.  Example: "employ*" would find "employ" or "employer" or "employee"
+
+
++
+Use '+' when you require the exact word to appear in all of the results. For multiple words, you must use put a + sign in front of each word that must be exact. Example: search on "+lipitor cholesterol" if you only want to retrieve results with the brand name "Lipitor" and the word "cholesterol", and no results with the generic synonym "Atorvastatin"
+
+
+
+	    
+	                                            
+                                            
+                                        		
+													
+													
+													What do I do if I get a message saying, "No results were found for your query"?
+													
+												
+
+	
+	    
+	        There are a few reasons why you could have received this message:
+
+
+Your word may be misspelled and the search engine can't find a substitute for it.  For example, if you had typed in "metakare" when you meant "medicare", the search engine won't be able to recognize it.
+
+The information you are looking for may not be available on this website.
+
+	    
+	                                            
+                                            
+                                        		
+													
+													
+													What types of files are searched?
+													
+												
+
+	
+	    
+	        
+Web pages (.html, .htm, .jsp)
+Adobe Acrobat PDF (.pdf)
+Microsoft Excel (.xls)
+Microsoft PowerPoint (.ppt)
+Microsoft Word (.doc)
+Plain text (.txt)
+
+	    
+	                                            
+                                        
+
+                                    
+                                
+                                
+                                
+                                
+							
+						
+						
+					
+	
+
+
+		
+//UPDATE SEARCH SOURCE TO STAGE
+
+	$(function() {
+      	var params = buildArray('v:project->mn-lawlib%%render.function->xml-feed-display%%content-type->text/xml%%v:sources->mn-law-library-opinions%%','%%','->');
+		var url = window.location.href;
+/*
+		if (url.indexOf("stage.wcm.mnit.") > -1) {
+		  var source = $("#sources").val();
+		  if (source) {
+		  	source = source.substring( 0, source.indexOf( "live" ) ) + "stage";
+		  	$("#sources").val(source);
+		  }
+	  }
+*/
+		var tabSet = 0; 
+		$("ul.nav-tabs li").each(function(){
+			var target = $(this).children("a").attr("href");
+			var source = target.substring(target.indexOf("-") + 1);
+			
+			if (params["v:sources"] && params["v:sources"].indexOf(source) > -1) {
+				setTab(this, "active");
+				tabSet = 1;
+			}
+			else {
+				$(this).removeClass("active");
+				$(target).removeClass("active");			
+			}
+		});
+		if (!tabSet) setTab($("ul.nav-tabs li").first(), "active");
+		
+      if (params['query'] && !params['qt']) $('#qt').val(params['query']);
+      if (params["focus"] && $("#start-date")) $("#start-date").focus();
+      if (!params["yt"] && $("#year-to")) $("#year-to").prop("disabled", true);
+      
+      $("input:text").focus(function(){
+      $(this).val('');
+      });
+
+      $("input:text").each(function() {
+      var value = decodeURIComponent(params[$(this).attr('name')]);
+      if (value != 'undefined' && value.indexOf($(this).attr('value')) > -1) {
+      value = value.replace(/&/g, "");
+      value = value.replace(/amp;/g, "");
+      value = value.replace(/ OR .*/, "");
+      //$(this).prop("disabled", false);
+      $(this).attr('value', value);
+      }
+      });
+      
+      $("input:radio").each(function() {
+      var value = decodeURIComponent(params[$(this).attr('name')]);
+      if (value.indexOf($(this).attr('value')) > -1) {
+      $(this).attr('checked', 'checked');
+      }
+      });
+		$("input:checkbox").each(function() {
+			var docType = ($(this).val().split("/").pop());
+			if (params['query']  && params['query'].indexOf(docType) > -1) {
+				$(this).attr('checked', true);
+			}
+		});
+      $('select option').each(function() {
+      var value = decodeURIComponent(params[$(this).parent().attr('name')]);
+      if (value == $(this).attr('value')) {
+      $(this).attr('selected', 'selected');
+      }
+      });
+
+	$(".citation").click(function(){
+		var id = $(this).closest("form").attr('id');
+		var reporter = $("#"+id+" select[name='r']").val();
+		if (!reporter) reporter = "";
+		var citation = $("#"+id+" input[name='v']").val() + ' ' + reporter + ' ' + $("#"+id+" input[name='p']").val();
+		$("#"+id+" input[name='citation']").val(citation.trim());
+	});
+
+	$('form[name="opinions"]').submit(function(){
+   		var docket = $('input[name="docket"]').val();
+   		if (docket) {
+	  		var da = docket.split("-");
+	  		if (da.length = 2) {
+	  			docket2 = da[1].replace(/^[0]*/i, "");
+	  			docketString = da[0] + "-" + docket2;
+	  			for (let i = 1; i < 5 - docket2.length; i++) {
+	  				docketString += " OR " + da[0] + "-" + "0".repeat(i) + docket2;
+	  			}
+	  			$('input[name="docket"]').val(docketString);
+			}
+		}
+	});
+
+     });
+    
+  		
+                
+                
+
+  			
+  			
+
+  		
+  		
+
+    
+
+    
+
+    
+        
+                            
+        
+    
+        
+
+            
+            
+                    
+                        Minnesota State Law Library
+ G25 Minnesota Judicial Center
+
+25 Rev. Dr. Martin Luther King Jr. Blvd.
+
+St. Paul, MN 55155
+
+Phone: 651-297-7651
+
+Hours | Court Holidays
+ 		
+                    
+            
+        
+            
+            
+            
+            
+            
+                    	  						
+                        Subscribe to our newsletter, Inter Alia
+
+
+				
+Subscribe
+
+
+
+subscribe 
+
+
+
+
+
+
+                    
+                    
+                        Library Catalog
+
+Email: Ask a Librarian
+
+Fax: 651-296-6740		  				
+                    
+            
+        
+
+        
+            
+                
+                
+            
+        
+    
+
+    Back to Top 
+
+
+
+
+
+   
+
+    
+            
+
+
+

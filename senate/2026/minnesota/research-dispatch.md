@@ -6,8 +6,8 @@ Coordinator: `d0fc3534-1613-4883-b48b-21a233fcfd9e`. Workspace: `wks_b290f450070
 | --- | --- | --- |
 | Turnout | `a2143988-db08-4b96-a032-b31b5401db97` | Actually finished and reviewed; `turnout.md`, `data/county-turnout.csv`, `data/turnout/**`. |
 | Partisanship and targets | `21fc8593-07df-4386-9edf-ac5edb32c57b` | Actually finished and reviewed; `county-partisanship.md`, `data/county-baselines.csv`, `data/baselines/**`. |
-| Official results | `017977ee-efd0-4536-8811-65b27829793f` | Active after actual turnout finish; `official-results.md`, `data/official-results-sources.csv`, `data/results-sources/**`. |
-| Precinct maps | `b19f1635-2d24-4044-aa73-69e2ea5862b4` | Actually finished; final review underway; `precinct-maps.md`, `maps/**`. |
+| Official results | `017977ee-efd0-4536-8811-65b27829793f` | Actually finished and reviewed; `official-results.md`, `data/official-results-sources.csv`, `data/results-sources/**`. |
+| Precinct maps | `b19f1635-2d24-4044-aa73-69e2ea5862b4` | Actually finished and reviewed; `precinct-maps.md`, `maps/**`. |
 
 No configured profiles exist; fresh provider discovery verified `codex/gpt-6.1-sol`, `full-access`, `xhigh`, matching the user-authorized launch settings. Finish notifications are enabled; no status polling. At most two research workers run across the batch. Workers cannot change Git or delegate. The coordinator reviews and incrementally commits/pushes each completed package directly to main.
 
@@ -22,3 +22,9 @@ Turnout actually finished with61 manifest assets and13 offline checks; frozen co
 Final first-pair review passes:61 turnout and73 baseline owned asset hashes,15 baseline read-only originals,64 statewide scenarios and59,112 target rows. Independent original candidate/aggregate comparisons155,499; six bounded solver cases include actual clipping, and11 remainder cases preserve counted votes/final denominators. [Target review](data/coordinator-target-review.json). Source and map assignments remain active; no full-package completion is claimed.
 
 Maps actually finished and froze451 owned assets plus manifest,2068 actual PDF pages and72 complete county/vintage GeoPackage subsets. Independent binary/full-coordinate/subset and PDF archive/page review passes; final manifest/whole-package integration remains pending. SouthCarolina turnout launched in that actual freed slot; Minnesota official-results remains active.
+
+Final maps review passes451owned assets,124 original request observations,all72county subsets,1,974,218 native coordinates,2,068 fresh PDF pagecounts and51complete service batches/701,667 native-versus-service attribute cells. Source-specific3,444 geometry measure precision differences remain retained; nativeWaconia106circular arcs remain unflattened. Official-results remains active; full publication is pending.
+
+Official-results actually finished with1,299owned assets,319bounded GET observations and24deep/all87inventory coverage; all12,316native objects remain. Worker finalread-only63checks pass. Coordinator finalsource/whole-package/repository/publication review continues; no completedpublication claimed yet. Both SouthCarolina first-pair workers now occupy the two research slots.
+
+Allfourassignments nowcomplete-reviewed. Wholepackage1,884assignment hashes/512local links/strictobject bound and repository`npm run check`pass. Coordinator repaired24nestedappendixrelative links and generator/validator,resealed official-sourceMF`2c135609fda7b4c84e7c56b9d11a08844f1c749bbf4969c4c0bf7c0a126a2768`; original319sourceentities/mainreport/contractunchanged. Stagedpublication/remoteverification follows; liveimplementation remains unapproved.

@@ -1,0 +1,961 @@
+
+
+
+
+
+	
+	
+	
+
+
+	
+
+ 
+
+	
+	
+
+	Welcome to the Official Web Site of Wabasha County, Minnesota
+
+
+
+	
+
+
+
+	
+	
+    
+	
+	
+
+
+
+
+
+
+
+
+
+<!-- // BEG of /plugins/general/general.revize_login.js \\ -->
+function revizelogin()
+{
+	var loginSpan = document.getElementById('revize-login');
+	//var loginSpan = document.getElementById('powered-by-revize-link');
+	if (!loginSpan) return;
+
+	var color,styleElement;
+	var selector1 = "#revize-login a";
+	var rule1 = "text-decoration:none !important;color:";
+	var selector2 = "#revize-login a:hover";
+	var rule2 = "text-decoration:underline !important";
+	if (document.all)
+	{
+		color = loginSpan.currentStyle.color;
+		styleElement = document.createStyleSheet();
+		styleElement.addRule(selector1 , rule1+color+' !important')
+		styleElement.addRule(selector2 , rule2)
+	}
+	else
+	{
+		color =  document.defaultView.getComputedStyle(loginSpan,'').getPropertyValue('color');
+		styleElement = document.createElement("style");
+		document.getElementsByTagName("head")[0].appendChild(styleElement);
+		styleElement = document.styleSheets[document.styleSheets.length-1];
+		styleElement.insertRule(selector1 + ' {' + rule1+color + ' !important}',0);
+		styleElement.insertRule(selector2 + ' {' + rule2 + '}',0);
+	}
+}
+if (typeof window.addEventListener != "undefined")
+	window.addEventListener("load", revizelogin, false);
+else if (typeof window.attachEvent != "undefined")
+	window.attachEvent("onload", revizelogin);
+<!-- \\ END of /plugins/general/general.revize_login.js // -->
+
+
+
+
+
+
+
+
+
+	
+	
+	
+
+
+
+
+
+
+
+	var defaultCalendarColor = "#3788d8";
+	var ImportCals = [];
+	var calendarProps = {'1' : { 'color' : '#3787d8' , 'name' : 'Main' },
+};
+	var RZCalendarTimezone = "";
+
+
+
+	
+	
+	
+	
+	
+
+	
+	
+	
+	addToHomescreen();
+	
+
+	
+	
+
+
+
+
+
+
+
+
+if (typeof(RZ) == 'undefined') RZ = {};
+if (!RZ.link) RZ.link = new Object();
+RZ.pagetype = 'template'
+RZ.baseurlprefix = ''
+RZ.baseurlpath = ''
+RZ.protocolRelativeRevizeBaseUrl='//cms9.revize.com'
+
+RZ.pagetemplatename = 'index'
+RZ.pagetemplateid = '51'
+RZ.pagemodule = ''
+RZ.pagemoduleid = ''
+RZ.pagerecordid = '';
+
+RZ.pageid = 'index';
+RZ.pageparentid = '';
+RZ.pagesectionid = '0';
+RZ.pagesectionname = 'Home Page';
+RZ.pagesectionlevel = '0';
+RZ.pagesectionfolder = '';
+RZ.pagesectionfilter = 'sectionid=0';
+RZ.pagelinkfilter = 'linklevel=0 and linksectionid=0';
+RZ.pagelinklevel = '0';
+RZ.pagelinkid = '-1';
+RZ.pageidfield = '';
+
+RZ.isnewrecord = false;
+RZ.editmodule = '';
+RZ.editrecordid = '';
+RZ.editrecordversion = '';
+RZ.editversion = '';
+RZ.editaction = '';
+
+RZ.page_roles = ''
+RZ.page_users = '64c39d98eee2f36b7d1d15f91f254007348ddaa5b7f8bb73bbe0fe7579c8cf9e|bcd36956beab2ce7fc1e2db9471a5bab964773e04e3e58c7f8b7a595fb79506a|896f82dfabf094b145179cf2c0baa0f05340b7d05f67a267f4d4ed8f85e2f6df|4e1cf0ededeec1106aa272032b336e0275942f4de8f2af17b11a16724b1a2c8c|dd88bcade6db50a3bd7c639393b54a59c844657f27f16ac13deccfae676203ee|821dd03019953bc3e878826666db2cba42f7d912fb98473e6184fa2e64fc43f3|79f35d28f1138948bcccdcbef08c7eeb0c87830a26305496019d3084a43a36f2'
+RZ.page_key = 'index[]'
+RZ.parent_key = ''
+RZ.inherit_key = 'index[]'
+RZ.workflowname = ''
+RZ.permissions_options = 'warningsOFF'
+RZ.permissions_module = 'webspace_page_permissions'
+RZ.webspace = 'wabasha'
+RZ.webspacedesc = "";
+
+RZ.featurespattern = '(EZ)';
+null
+
+RZ.webspacelinksurl = ''
+RZ.webspacelinksurl = './webspace/links.html'
+RZ.workflowlist = ''
+RZ.revizeserverurl = 'https://cms9.revize.com/revize/wabasha';
+
+if (!RZ.nextseq) RZ.nextseq = {linknames:{},modules:{}};
+
+RZ.webspace_config = new Object();
+RZ.webspace_config.admin_email = "noreply@revize.com";
+RZ.webspace_config.form_captcha = "yes";
+RZ.webspace_config.form_server = "revizeserver";
+RZ.webspace_config.form_technology = "jsp";
+RZ.webspace_config.formwizard_ftp_password = "";
+RZ.webspace_config.formwizard_ftp_port = "";
+RZ.webspace_config.formwizard_ftp_server = "";
+RZ.webspace_config.formwizard_ftp_user = "";
+RZ.webspace_config.formwizard_setup = "yes";
+RZ.webspace_config.formwizard_smtp_password = "xxx";
+RZ.webspace_config.formwizard_smtp_server = "xxx";
+RZ.webspace_config.formwizard_smtp_user = "xxx";
+RZ.webspace_config.google_analytics = "UA-141776226-1";
+RZ.webspace_config.home_pageid = "0";
+RZ.webspace_config.home_sectionid = "0";
+RZ.webspace_config.home_template = "home,index,sitemap";
+RZ.webspace_config.icon_email = "<img src=\"/revize/images/email_icon_yellow.gif\" width=\"16\" border=\"0\" height=\"17\" title=\"Request email notification when page changes\" alt=\"Request email notification when page changes\" style=\"\" />";
+RZ.webspace_config.image_maxheight = "3000";
+RZ.webspace_config.image_maxwidth = "3000";
+RZ.webspace_config.image_setup = "yes";
+RZ.webspace_config.livesite_url = "";
+RZ.webspace_config.menu_links_module = "links";
+RZ.webspace_config.menu_newsection = "";
+RZ.webspace_config.menu_nexturl = "webspace_menu-editform.jsp";
+RZ.webspace_config.menu_sections_module = "sections";
+RZ.webspace_config.menu_system = "custom";
+RZ.webspace_config.menu_version = "1.00";
+RZ.webspace_config.new_menu_manager_enabled = "yes";
+RZ.webspace_config.notify_option = "hide_text=yes";
+RZ.webspace_config.notify_return_url = "enotify/index.php";
+RZ.webspace_config.rte_setup = "yes";
+RZ.webspace_config.to_email = "webpageupdate_subscribers@revize.com";
+RZ.webspace_config.use_folders = "1";
+
+RZ.isauthenticationactive = true
+RZ.warning = ""
+RZ.adminwinmsg = null
+
+RZ.channels = 'revize';
+RZ.jsversion = 1.2
+
+
+
+ 
+
+Skip to content
+
+	
+		
+	
+	
+    
+        
+
+        
+        
+
+
+ 
+
+	Home
+	Government
+		
+			Board of Commissioners
+			Career Opportunities
+			Committees & Commissions
+			Meetings
+			Ordinances
+		
+	
+	Departments
+		
+			Administration
+			Assessor
+			Auditor/Treasurer
+			County Attorney
+			County Recorder
+			District Court
+			Driver's License
+			Finance
+			GIS Department
+			Highway Department
+			Human Resources
+			IT Department
+			Planning and Zoning
+			Probation Office
+			Public Health
+			Sheriff's Office
+			Social Services
+			Veterans Services
+		
+	
+	Community
+		
+			Public Safety
+			Services
+			Local Governments
+			Printable Directory
+			Scenery Photos
+			History
+		
+	
+	How Do I
+		
+			Apply For/Obtain
+			Contact
+			Find/Learn About
+			Pay
+			View/Download
+		
+	
+
+
+
+
+
+
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){window.dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-WQKYJDTRQ9');
+
+
+
+
+
+
+        
+        
+        
+        
+        
+        RZ.module = 'revize_topnav';
+        RZ.nexturl = "/revize/plugins/menus/webspace_menu-editlist.jsp?pageid=index&"
+               + "linksfilter=linkplacement=topnav and linkparentid=0&"
+               + "numberoflevels=3&"
+               + "linkoptions=url,template,file&"
+               + "linknewsection=*all*";
+        RZ.img = '<img src="images/edit/edit_top_nav.jpg" alt="Edit Top Navigation" border="0" />';
+        RZ.caption = '';
+        RZ.set="links.linkplacement=topnav";
+        RZ.options = '';
+        if (typeof RZaction != 'undefined') RZaction('editlist');
+        
+        
+        
+        
+        
+    
+	    
+
+
+	
+	
+		
+        	
+        	
+            RZ.module = 'slider';
+            RZ.nexturl = "editforms/home-slider-editlist.jsp?pageid=index";
+            RZ.img = '<img src="images/edit/edit_this_list.jpg" alt="Edit This List" border="0" />';
+            RZ.caption = '';
+            RZ.options = '';
+            if (typeof RZaction != 'undefined') RZaction('editlist');
+        	
+        	
+            
+
+
+
+
+	RZ.module = 'freeform';
+	RZ.recordid = '';
+	RZ.nexturl = "editforms/metadata-editform.jsp";
+	RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = '';
+	RZ.img = '<img src="./images/edit/edit_metadata.jpg" alt="Edit Metadata" border="0" />';
+	RZ.set = "freeform.pageid=index";
+	RZ.options = '';
+	if (typeof RZaction != 'undefined') RZaction('editform');
+
+
+
+
+
+
+	RZ.nexturl = '';
+	RZ.img = '<img src="images/edit/permissions.jpg" alt="Permissions" border="0" />';
+	RZ.options = '';
+	if (typeof RZaction != 'undefined') RZaction('permissions');
+
+
+      	
+                              
+        
+if (typeof RZlistbegin != 'undefined') RZlistbegin(3)
+
+
+        
+          
+        	
+        
+        
+if (typeof RZlinktemplate != 'undefined') RZlinktemplate('slider','','')
+if (typeof RZ.nextseq != 'undefined') RZ.nextseq.modules['slider_3']={field:'seq_no',seq:'1.00'};
+
+
+      	
+            
+      	
+
+	        
+		
+	
+			
+				
+					
+					
+                        
+                        
+                        
+                        
+                        RZ.module = 'slider';
+                        RZ.recordid = '';
+                        RZ.nexturl = "editforms/slider-caption-editform.jsp";
+                        RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = 'no';
+                        RZ.img = '<img src="images/edit/edit_small.jpg" alt="Edit Small" border="0" />';
+                        RZ.set = 'slider.pageid=slidercaption';
+                        RZ.options = '';
+                        if (typeof RZaction != 'undefined') RZaction('editform');
+                        
+                  	
+                     
+                    
+						Wabasha County
+					
+				
+			
+
+
+		            
+			
+
+
+ 
+
+    
+        
+            
+            search
+        
+    
+
+		                        
+		
+	
+    
+		                
+	
+		
+        	
+            
+            
+            
+            RZ.module = 'global';
+            RZ.recordid = '';
+            RZ.nexturl = "editforms/title-editform.jsp";
+            RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = 'no';
+            RZ.img = '<img src="images/edit/edit_small.jpg" alt="Edit Small" border="0" />';
+            RZ.set = 'global.pageid=events';
+            RZ.options = '';
+            if (typeof RZaction != 'undefined') RZaction('editform');
+            
+      	
+      	 
+        Events
+		
+
+
+
+		
+		
+			
+		
+	
+ 	                    
+
+
+
+	
+		
+			
+              
+              
+                RZ.module = 'imagelink';
+                RZ.nexturl = "editforms/quick-links-editlist.jsp";
+                RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = '';
+                RZ.img = '<img src="images/edit/edit_this_list.jpg" alt="Edit This List" border="0" />';
+                RZ.caption = '';
+                RZ.options = '';
+                if (typeof RZaction != 'undefined') RZaction('editlist');
+              
+            
+            
+            
+if (typeof RZlistbegin != 'undefined') RZlistbegin(4)
+
+ 
+                    
+            
+                
+                    
+            
+                
+                    
+            
+                
+                    
+            
+                
+                    
+            
+                
+                    
+            
+                
+            
+if (typeof RZlinktemplate != 'undefined') RZlinktemplate('imagelink','','')
+if (typeof RZ.nextseq != 'undefined') RZ.nextseq.modules['imagelink_4']={field:'seq_no',seq:'7.00'};
+
+
+
+				
+			
+			
+			
+			agendas minutes
+					
+			
+			
+			
+			
+			Jail Roster
+					
+			
+			
+			
+			
+			job listing
+					
+			
+			
+			
+			
+			bids rfps
+					
+			
+			
+			
+			
+			property info
+					
+			
+			
+			
+			
+			contact us
+					
+			
+			
+		
+	
+   
+
+
+                                                                        
+
+	
+		
+			
+				
+                					                
+					 
+                    	
+                            
+                            
+                            
+                            
+                            RZ.module = 'global';
+                            RZ.recordid = '';
+                            RZ.nexturl = "editforms/notice-editform.jsp";
+                            RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = 'no';
+                            RZ.img = '<img src="images/edit/edit_small.jpg" alt="Edit Small" border="0" />';
+                            RZ.set = 'global.pageid=notice';
+                            RZ.options = '';
+                            if (typeof RZaction != 'undefined') RZaction('editform');
+                            
+                        
+					
+                    
+
+
+
+ 
+
+
+ 
+   
+  
+  Notice Of Wabasha County
+  
+    By using the Wabasha County website, you accept the terms of the Wabasha County Website Disclaimer. 
+    
+  
+  
+
+
+
+ 
+
+
+    
+        
+        
+    
+
+
+                					                                    
+				
+				
+					 
+                    	
+                            
+                            
+                            
+                            
+                            RZ.module = 'global';
+                            RZ.recordid = '';
+                            RZ.nexturl = "editforms/title-editform.jsp";
+                            RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = 'no';
+                            RZ.img = '<img src="images/edit/edit_small.jpg" alt="Edit Small" border="0" />';
+                            RZ.set = 'global.pageid=interestheader';
+                            RZ.options = '';
+                            if (typeof RZaction != 'undefined') RZaction('editform');
+                            
+                        
+                        
+                            
+                            
+                            
+                            
+                            RZ.module = 'links';
+                            RZ.nexturl = "/revize/plugins/menus/webspace_menu-editlist.jsp?pageid=&"
+                                     + "linksfilter=linkplacement=interestlinks and linkparentid=0&"
+                                     + "linkoptions=url,template,file&"
+                                     + "toplevel=0&"
+                                     + "bottomlevel=0&"
+                                     + "linknewsection=*all*&"
+                            RZ.img = '<img src="images/edit/edit_this_list.jpg" alt="Edit This List" border="0" />';
+                            RZ.caption = '';
+                            RZ.set = "links.linkplacement = interestlinks";
+                            RZ.options = '';
+                            if (typeof RZaction != 'undefined') RZaction('editlist');
+                            
+                            
+                        
+                    
+                					
+                    
+ 
+
+
+     
+    
+        Stay Connected with Wabasha County
+    
+
+                					
+    
+        
+            
+                 
+                	
+                    
+                        Click here to signup for E-Notify
+                  	
+                
+            
+                 
+                	
+                    
+                        Click here to subscribe to our YouTube Channel
+                  	
+                
+            
+                 
+                	
+                    
+                        Click here to view County Road Construction & Closures (Opens in Google Maps)
+                  	
+                
+            
+        
+
+    
+                					                        
+
+                					                        
+				
+				
+                
+					 
+                        
+                            
+                            
+                            
+                            
+                            RZ.module = 'global';
+                            RZ.recordid = '';
+                            RZ.nexturl = "editforms/title-editform.jsp";
+                            RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = 'no';
+                            RZ.img = '<img src="images/edit/edit_small.jpg" alt="Edit Small" border="0" />';
+                            RZ.set = 'global.pageid=newsheader';
+                            RZ.options = '';
+                            if (typeof RZaction != 'undefined') RZaction('editform');
+                            
+                        
+                        
+                            
+                            
+                            
+                            
+                            RZ.module = 'news'; RZ.linkname = '';
+                            RZ.template = '*none*'; RZ.recordid = 'new';
+                            RZ.nexturl = "editforms/news-editform.jsp";
+                            RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = '';
+                            RZ.img = '<img src="images/edit/new_small.jpg" alt="New Item" border="0" />';
+                            RZ.set = '';
+                            RZ.options = '';
+                            if (typeof RZaction != 'undefined') RZaction('newitem');
+                            
+                            
+                        
+                    
+                      
+                    
+                        News & Notices
+                    
+                    
+                        
+if (typeof RZlistbegin != 'undefined') RZlistbegin(5)
+
+
+                        
+                          
+                            
+                         
+                        
+                          
+                                
+                                
+                                
+                                
+                                RZ.module = 'news'; RZ.linkname = '';
+                                RZ.template = '*none*'; RZ.recordid = '72';
+                                RZ.nexturl = "editforms/news-editform.jsp";
+                                RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = '';
+                                RZ.img = '<img src="images/edit/edit_small.jpg" alt="Edit Item" border="0"/>';
+                                RZ.set = '';
+                                RZ.options = '';
+                                if (typeof RZaction != 'undefined') RZaction('edititem');
+                                
+                                
+                          
+                                
+                                
+                                
+                                
+                                RZ.module = 'news';
+                                RZ.recordid = '72';
+                                RZ.name = 'RZdelete' + RZ.recordid;
+                                RZ.img = '<img src="images/edit/delete_small.jpg" alt="Delete Item" border="0" />';
+                                RZ.options = '';
+                                if (typeof RZaction != 'undefined') RZaction('delete');
+                                
+                                
+                        
+                        
+                        Alleged Zoning Violations
+                         
+                        
+                        
+                        
+if (typeof RZlinktemplate != 'undefined') RZlinktemplate('news','news_detail','')
+if (typeof RZ.nextseq != 'undefined') RZ.nextseq.modules['news_5']={field:'seq_no',seq:'6.00'};
+
+
+                    
+                
+                
+				
+			
+		
+	
+	
+		
+			
+
+				
+					 
+                    
+                        
+                        
+                        
+                        
+                        RZ.module = 'global';
+                        RZ.recordid = '';
+                        RZ.nexturl = "editforms/copyright-editform.jsp";
+                        RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = 'no';
+                        RZ.img = '<img src="images/edit/edit_small.jpg" alt="Edit Small" border="0" />';
+                        RZ.set = 'global.pageid=copyright';
+                        RZ.options = '';
+                        if (typeof RZaction != 'undefined') RZaction('editform');
+                        
+                  	
+                    
+                    
+Copyright 2026 Wabasha County.  All Rights Reserved.
+				
+
+
+                
+				
+    Powered by , The Government Website Experts 
+Powered By
+Revize
+Login
+
+
+                                
+			
+		
+	
+
+  
+
+                                                                        
+
+
+
+ 
+
+    
+  
+  
+  
+    RZ.module = 'alert';
+    RZ.nexturl = "editforms/alert-editform.jsp";
+    RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = '';
+    RZ.img = '<img src="images/edit/edit_small.jpg" alt="Edit Small" border="0" />';
+    RZ.set = 'alert.pageid=alert';
+    RZ.options = '';
+    if (typeof RZaction != 'undefined') RZaction('editform');
+  
+  
+
+                                                                        
+
+
+
+		
+		
+		Share this page
+	
+
+	
+		
+			
+				
+					Share this page
+					×
+				
+				
+					
+						Copy and paste this code into your website.
+						<a href="http://www.co.wabasha.mn.us/">Your Link Name</a>
+					
+					
+						Share this page on your favorite Social network
+						
+							
+								
+									 Facebook
+								
+							
+							
+								
+									 Twitter
+								
+							
+							
+								
+									 Reddit
+								
+							
+						
+					
+					Close
+				
+			
+		
+	
+
+
+
+
+
+
+
+
+
+
+var _userway_config = {
+account: '4xD3fe5IVu'
+};
+
+
+
+
+  
+    
+	  
+		  
+			
+			
+		  
+      
+	  
+		 
+		 
+		 
+		 
+	  
+      
+        Close
+        Read More
+      
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-141776226-1']);
+_gaq.push(['_trackPageview']);
+(function() { var ga = document.createElement('script'); ga.type = 'text/javascript';
+ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl'
+:'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0];
+s.parentNode.insertBefore(ga, s);
+})();
+
+
+
+
+
+

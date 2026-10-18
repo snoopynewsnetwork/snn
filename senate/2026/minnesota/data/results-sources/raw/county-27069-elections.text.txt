@@ -1,0 +1,2182 @@
+
+
+
+
+
+
+
+		 	
+
+
+
+
+
+
+//----- Check href of all <a...> tags, if it matchs page url and immediate parent is <LI>,
+//		append "active" to className of all ancestor <LI> tags until the parent of the <LI>
+//		tag is not <UL> or the parent of the <UL> is not another <LI> tag.
+var functionRef = function setClassActive()
+{
+	var e;
+	try
+	{
+		var pattern = new RegExp("http[s]?://.*?/(.*)[?#]?","");
+		var tags = document.getElementsByTagName("A");
+		if (tags)
+		{
+			for (var i=0;i<tags.length;i++)
+			{
+				var el = tags[i];
+				var resultsTag = el.href.match(pattern);
+				var resultsPage = location.href.match(pattern);
+				if (!resultsTag || !resultsPage) continue;
+				if (resultsTag[1] != resultsPage[1]) continue;
+	
+				// go up li tree marking this and all parent class=active
+				var li = el.parentNode;
+				while (li && li.tagName == 'LI')
+				{
+					if (li.className != '') 
+						li.className += ' ';
+					li.className += 'active';
+					var ul = li.parentNode;
+					if (!ul || ul.tagName != 'UL') break;
+					li = ul.parentNode;
+				}
+				//let's catch all links e.g. topnav, leftnav, quick links, etc
+				//break;	//found url match, quit checking tags
+			}
+		}
+	}
+	catch (e) {}
+}
+//----- Activate topnavActive once page loads
+if (typeof addEventListener != 'undefined') addEventListener('load', functionRef, false);	//standards browser
+else if (typeof attachEvent != 'undefined') attachEvent("onload", functionRef);				//IE early versions
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+
+	
+
+
+
+
+
+	   
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+
+
+	 
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+	
+
+	
+
+
+
+
+
+	var defaultCalendarColor = "#3788d8";
+	var ImportCals = ["7",];
+	var calendarProps = {'6' : { 'color' : '' , 'name' : 'calendar-list-options' },
+'7' : { 'color' : '#3787d8' , 'name' : 'Master' },
+};
+	var RZCalendarTimezone = "";
+
+
+
+	
+	
+
+	
+	
+
+
+
+
+
+
+
+
+if (typeof(RZ) == 'undefined') RZ = {};
+if (!RZ.link) RZ.link = new Object();
+RZ.pagetype = 'template'
+RZ.baseurlprefix = '../../'
+RZ.baseurlpath = 'government/departments/'
+RZ.protocolRelativeRevizeBaseUrl='//webgen1.revize.com'
+
+RZ.pagetemplatename = 'freeform'
+RZ.pagetemplateid = '32'
+RZ.pagemodule = 'links'
+RZ.pagemoduleid = '5'
+RZ.pagerecordid = '103';
+
+RZ.pageid = 'links-103';
+RZ.pageparentid = '98';
+RZ.pagesectionid = '98';
+RZ.pagesectionname = 'departments';
+RZ.pagesectionlevel = '2';
+RZ.pagesectionfolder = 'government/departments/';
+RZ.pagesectionfilter = 'sectionid=98';
+RZ.pagelinkfilter = 'linklevel=2 and linksectionid=98';
+RZ.pagelinklevel = '2';
+RZ.pagelinkid = '103';
+RZ.pageidfield = '';
+
+RZ.isnewrecord = false;
+RZ.editmodule = '';
+RZ.editrecordid = '103';
+RZ.editrecordversion = '';
+RZ.editversion = '';
+RZ.editaction = '';
+
+RZ.page_roles = ''
+RZ.page_users = '1f5f7520bf39aaff03ff74a4bd83e0b25f591bb7cbd6fe9c1fd8e731b98ade5d|c45b474120348aa1799ddce0c0cd9e4b6730bc1f84fef16ed9b227dd99866652|aec11bf5181b230c8e613155470850552b32427bd71e4c45213515cd1ee32c57|b5b35031cebd9264b06a709043f833b52ef34e4bec619ec63971435907511fe9|80f5693b5727802ff0848d61b01847769b4ba25269b52b3f95a5974dfbca7afa|6c63ab23ee68f04d5e2617bc5e10c19ebb6207751c3f2ee9c23dfcd07e659ea9|47f78e5b77f90ec9f66021492d3909fa00b7c11a80371835672052c378a89384'
+RZ.page_key = 'freeform[103]'
+RZ.parent_key = 'freeform[98]'
+RZ.inherit_key = 'index[]'
+RZ.workflowname = ''
+RZ.permissions_options = ''
+RZ.permissions_module = 'webspace_page_permissions'
+RZ.webspace = 'kittsoncntymn'
+RZ.webspacedesc = "Adventure";
+
+RZ.featurespattern = '(EZ)';
+null
+
+RZ.webspacelinksurl = ''
+RZ.webspacelinksurl = './webspace/links.html'
+RZ.workflowlist = ''
+RZ.revizeserverurl = 'https://webgen1.revize.com/revize/kittsoncntymn';
+
+if (!RZ.nextseq) RZ.nextseq = {linknames:{},modules:{}};
+
+RZ.webspace_config = new Object();
+RZ.webspace_config.admin_email = "noreply@co.walla-walla.wa.us";
+RZ.webspace_config.calendar_options = "max_events=4";
+RZ.webspace_config.form_captcha = "yes";
+RZ.webspace_config.form_server = "revizeserver";
+RZ.webspace_config.form_technology = "jsp";
+RZ.webspace_config.formwizard_ftp_password = "";
+RZ.webspace_config.formwizard_ftp_port = "";
+RZ.webspace_config.formwizard_ftp_server = "";
+RZ.webspace_config.formwizard_ftp_user = "";
+RZ.webspace_config.formwizard_setup = "yes";
+RZ.webspace_config.formwizard_smtp_password = "xxx";
+RZ.webspace_config.formwizard_smtp_server = "xxx";
+RZ.webspace_config.formwizard_smtp_user = "xxx";
+RZ.webspace_config.google_analytics = "";
+RZ.webspace_config.home_pageid = "0";
+RZ.webspace_config.home_sectionid = "0";
+RZ.webspace_config.home_template = "home,index,sitemap";
+RZ.webspace_config.icon_email = "<img src=\"/revize/images/email_icon_yellow.gif\" width=\"16\" border=\"0\" height=\"17\" title=\"Request email notification when page changes\" alt=\"Request email notification when page changes\" style=\"\" />";
+RZ.webspace_config.image_maxheight = "3000";
+RZ.webspace_config.image_maxwidth = "3000";
+RZ.webspace_config.image_setup = "yes";
+RZ.webspace_config.livesite_url = "";
+RZ.webspace_config.menu_links_module = "links";
+RZ.webspace_config.menu_newsection = "";
+RZ.webspace_config.menu_nexturl = "webspace_menu-editform.jsp";
+RZ.webspace_config.menu_sections_module = "sections";
+RZ.webspace_config.menu_system = "custom";
+RZ.webspace_config.menu_version = "1.00";
+RZ.webspace_config.new_menu_manager_enabled = "yes";
+RZ.webspace_config.notify_return_url = "enotify/index.php";
+RZ.webspace_config.rte_setup = "yes";
+RZ.webspace_config.to_email = "";
+RZ.webspace_config.use_folders = "1";
+RZ.webspace_config.use_new_buttons = "yes";
+
+RZ.isauthenticationactive = true
+RZ.warning = ""
+RZ.adminwinmsg = null
+
+RZ.channels = 'revize,fileschannel';
+RZ.jsversion = 1.2
+
+
+
+
+
+
+	Skip to main content
+	
+	
+
+
+
+
+	
+	
+		
+			
+				
+
+
+
+
+	
+	
+	   
+	 
+
+			
+			
+                
+                    
+                    
+                
+			
+			
+			
+				
+
+
+ 
+
+	Home
+	Government
+		
+			Boards & Committees
+				
+					County Board
+					Kittson County Extension Committee
+					Kittson County Township / City Officers
+				
+			
+			Agendas & Minutes
+			County Finances
+				
+					Budgets
+					Financial Statements
+					Truth in Taxation
+				
+			
+			Ordinances
+			Important Documents
+		
+	
+	Departments
+		
+			Assessors
+			County Administrator
+			Court Administration
+			Driver's License & Motor Vehicle
+			Elections
+			Emergency Management
+			Environmental Services
+			Financial Service
+			Highway Department
+			Information Technology
+			Recorder
+			Sheriff
+			Social Services
+			Taxpayer Services
+			Veteran Services
+			Zoning
+		
+	
+	Community
+		
+			University of Minnesota Extension
+			Kittson County SWCD
+			Two Rivers Watershed District
+			Kittson County Trailblazers
+			Kittson County Veterans Memorial
+				
+					Memorial Pics
+				
+			
+			GIS
+			Community Events
+		
+	
+	How Do I?
+		
+			Apply For
+				
+					Passports
+					Adult Services
+					Child Support Services
+					Childcare Assistance Program
+					Children's Services
+					Driver's License & Motor Vehicle
+					Employment Opportunities
+					Financial Assistance / Food Support
+					Homestead Credit
+					Medical Programs
+					Veteran Services
+				
+			
+			Contact
+				
+					Department Personnel
+				
+			
+			Submit
+				
+					A Concern
+					Assessment Valuation / Classification Appeal
+					Property Tax Payment
+				
+			
+		
+	
+
+
+
+
+
+
+
+
+			
+			
+			
+			    
+			
+		
+	
+
+
+	
+		
+			RZ.module = 'slider';
+			RZ.nexturl = "/revize/webgen_includes/adventure/editforms/slider-editlist.jsp?pageid=98";
+			RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = '';
+			RZ.img = '<span class="rzBtn">Edit Slider</span>';
+			RZ.caption = '';
+			RZ.options = '';
+			if (typeof RZaction != 'undefined') RZaction('editlist');
+		 
+		
+	
+
+    
+        
+            Search
+            
+            Go
+        
+    
+
+if (typeof RZlistbegin != 'undefined') RZlistbegin(1)
+
+
+if (typeof RZlinktemplate != 'undefined') RZlinktemplate('slider','','')
+if (typeof RZ.nextseq != 'undefined') RZ.nextseq.modules['slider_1']={field:'seq_no',seq:'2.00'};
+
+
+	
+		
+	
+
+	Elections
+
+
+
+    
+                    
+                
+                    
+                        Related Links
+                        
+
+
+
+							
+								RZ.module = 'links';
+								RZ.nexturl = "/revize/plugins/menus/webspace_menu-editlist.jsp?pageid=links-103&"
+										 + "linksfilter=linkplacement=leftnav and linkparentid=98::linkplacement=leftnav and linkparentid=103 and linkparentid=103&"
+										 + "numberoflevels=2&"
+										 + "linkoptions=url,template,file&"
+										 + "linknewsection=*all*";
+								RZ.img = '<span class="rzBtn">Edit Links</span>';
+								RZ.caption = '';
+								RZ.set = "links.linkplacement=leftnav"
+								RZ.options = '';
+								if (typeof RZaction != 'undefined') RZaction('editlist');
+							
+							
+								RZ.module = 'freeform';
+								RZ.recordid = '';
+								RZ.nexturl = "/revize/webgen_includes/adventure/editforms/leftnav-title-editform.jsp";
+								RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = '';
+								RZ.img = '<span class="rzBtn">Edit Links Title</span>';
+								RZ.set = 'pageid=links-103';
+								RZ.options = '';
+								if (typeof RZaction != 'undefined') RZaction('editform');
+							
+						
+						
+ 
+	Directory
+
+
+                    
+                                
+                
+                    
+                        
+	
+	
+		Home
+							 Government 
+							 Departments  
+							 Elections
+	
+
+
+                        Elections
+                        
+                            
+		
+			RZ.module = 'freeform';
+			RZ.recordid = '';
+			RZ.nexturl = "/revize/webgen_includes/adventure/editforms/freeform-editform.jsp";
+			RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = '';
+			RZ.img = '<span class="rzBtn">Edit Page Content</span>';
+			RZ.set = 'freeform.pageid=links-103';
+			RZ.options = '';
+			if (typeof RZaction != 'undefined') RZaction('editform');
+		
+	
+	
+		RZ.module = 'freeform';
+		RZ.recordid = '';
+		RZ.nexturl = "/revize/webgen_includes/adventure/editforms/metadata-editform.jsp";
+		RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = '';
+		RZ.img = '<span class="rzBtn">Edit Metadata</span>';
+		RZ.set = 'freeform.pageid=links-103';
+		RZ.options = '';
+		if (typeof RZaction != 'undefined') RZaction('editform');
+	
+	
+		RZ.nexturl = '';
+		RZ.img = '<img src="images/edit/permissions.jpg" alt="Permissions" border="0" />';
+		RZ.options = '';
+		if (typeof RZaction != 'undefined') RZaction('permissions');
+	
+
+
+					
+
+	Welcome to the Kittson County Election Information page! Find information on upcoming Primary and General Elections as well as information on how to register and vote.2026  General Election Extended Voting HoursTuesday, October 27                      8:00am-7:00 pmSaturday, October 31                    9:00 am-3:00 pm
+Sunday, November 1                       9:00 am-3:00 pm                                                                    Monday November 2                       8:30 am-5:00 pmTuesday, November 3                   7:00 am-8:00 pmWe will be holding our Public Accuracy test on TBD.Filing Dates State and County Offices Tuesday May 19-Tuesday June 2 Please file with Shirley Swenson-CFO.  Proof of residency is a new requirement for filing so please bring a proof from the list below along with payment. Proof of ResidencyCall 218.843.3499 with any questions.Please refer to the following links at the Minnesota Secretary of State’s website for more information:Quick LinksVoter RegistrationImportant Election DatesAbsentee VotingFind My BallotFind My Polling PlaceElection Results
+
+	
+
+
+
+.file-group a i, .file-group a span{margin-right: 5px;font-size: 16px;}
+.file-edit i, .file-edit span {border: none;margin-left: 1px;}
+#doc-search-form label {margin: 0;background: transparent;}
+.outer-cat .cat-edit>a>i, .outer-cat .cat-edit>a>span {display: inline-block;font-size: 16px;line-height: 36px;width: 36px;text-align: center;}
+i.fa-pencil, span.fa-pencil{color:#3875c7;border-right: 1px solid #a0a0a0;}
+i.fa-trash, span.fa-trash{color:#e74c3c;margin-left: -5px;}
+.inner-cat .cat-edit>a>i, .inner-cat .cat-edit>a>span {line-height: 32px;border-left: 1px solid #a0a0a0;font-size: 17px;width: 35px;border-right: none!important;}
+.file-edit i, .file-edit span {border: none;margin-left: 1px;}
+#doc-search-form form {
+		border-radius: 0;
+    overflow: hidden;
+		border: 0;
+    position: relative;
+    background: transparent;
+}
+#doc-search-form input, #doc-search-form select {
+    height: 44px;
+    border-radius: 4px;
+}
+#file-search {
+    width: 100%;
+    padding-right: 129px;
+    border: 0;
+    border: 1px solid #22497d;
+}
+
+
+
+
+
+	
+		
+		Document Center
+		The Document Center provides easy access to public documents. Click on one of the categories below to see related documents or use the search function.
+	
+	
+		
+			
+				Search for file name:
+			
+			
+		
+
+
+  
+  
+  
+  
+	 RZ.module 			= 'revize_document_center'; RZ.linkname = '';
+	 RZ.template 		= '*none*'; RZ.recordid = 'new';
+	 RZ.nexturl 		= "/revize/plugins/document_center/document_center_category-editform.jsp";
+	 RZ.popupwidth 	= '820'; RZ.popupheight = '400'; RZ.popupscroll = 'yes';
+	 RZ.img 				= '<span class="rz-edit-btn"><span class="fa fa-plus" aria-hidden="true"></span> Add A New Category</span>';
+	 RZ.set 				= 'revize_document_center.placement=header-103';
+	 RZ.options 		= '@@nolink@@';
+	 if (typeof RZaction != 'undefined') RZaction('edititem');
+  
+  
+
+  
+  
+  
+  
+	RZ.module 		= 'revize_document_center';
+	RZ.nexturl 	= "/revize/plugins/document_center/document_center_options-editform.jsp";
+	RZ.popupwidth = '820'; RZ.popupheight = '400'; RZ.popupscroll = 'yes';
+	RZ.img 				= '<span class="rz-edit-btn"><span class="fa fa-sort-amount-asc" aria-hidden="true"></span> Change Sort</span>';
+	RZ.set 			= 'revize_document_center.placement=options-103';
+	RZ.options 	= '';
+	if (typeof RZaction != 'undefined') RZaction('editform');
+  
+  
+
+  
+    Categories always sorted by seq (sub-categories sorted within each category)
+    Documents sorted by  in Descending Order within category
+  
+
+	RESET
+	
+	
+
+	
+		
+		 
+       
+       
+       
+         RZ.module = 'revize_document_center'; RZ.linkname = '';
+         RZ.template = '*none*'; RZ.recordid = '59';
+         RZ.nexturl = "/revize/plugins/document_center/document_center_category-editform.jsp";
+         RZ.popupwidth = '820'; RZ.popupheight = '400'; RZ.popupscroll = 'no';
+         RZ.img = '<span class="fa fa-pencil" aria-hidden="true"></span>';
+         RZ.set = '';
+         RZ.options = '@@nolink@@';
+         if (typeof RZaction != 'undefined') RZaction('edititem');
+       
+       
+       
+       
+       
+       
+       
+         RZ.module = 'revize_document_center';
+         RZ.recordid = '59';
+         RZ.name = 'RZdelete' + RZ.recordid;
+         RZ.img = '<span class="fa fa-trash" aria-hidden="true"></span>';
+         RZ.options = '<br>';
+         if (typeof RZaction != 'undefined') RZaction('delete');
+	       
+	 
+		
+		Campaign Finance Reports - 2016 Election8 documents
+
+		
+
+
+				
+				
+				
+				
+					RZ.module 		= 'revize_document_center'; RZ.linkname = '';
+					RZ.template 	= '*none*'; RZ.recordid = 'new';
+					RZ.nexturl 		= "/revize/plugins/document_center/document_center_detail_subcat-editform.jsp";
+					RZ.popupwidth 	= '820'; RZ.popupheight = '600'; RZ.popupscroll = 'yes';
+					RZ.img 				= '<span class="rz-edit-btn inner-edit"><span class="fa fa-file" aria-hidden="true"></span> New Document</span>';
+					RZ.set 			= 'revize_document_center.placement=upload59,'
+										//+ 'revize_document_center.header=Campaign+Finance+Reports+-+2016+Election,'
+										+ 'revize_document_center.folder=government/departments/,'
+										+ 'revize_document_center.parent_key=freeform[103]';
+					RZ.options 		= '';
+					if (typeof RZaction != 'undefined') RZaction('newitem');
+				
+				
+
+			
+
+
+			
+			
+			
+			
+				RZ.module 		= 'revize_document_center'; RZ.linkname = '';
+				RZ.template 	= '*none*'; RZ.recordid = 'new';
+				RZ.nexturl 		= "/revize/plugins/document_center/document_center_sub_category-editform.jsp"
+							  		+ "?pagerecordid=103";
+				RZ.popupwidth 	= '820'; RZ.popupheight = '500'; RZ.popupscroll = 'yes';
+				RZ.img 				= '<span class="rz-edit-btn inner-edit"><span class="fa fa-folder" aria-hidden="true"></span> New Sub-category</span>';
+				RZ.set 			= 'revize_document_center.placement=subcat-103,'
+									+ 'revize_document_center.parent_key=59';
+				RZ.options 		= '';
+				if (typeof RZaction != 'undefined') RZaction('newitem');
+			
+			
+
+			
+if (typeof RZlistbegin != 'undefined') RZlistbegin(8)
+
+
+				
+						
+					
+					
+if (typeof RZlistbegin != 'undefined') RZlistbegin(9)
+
+
+					
+						
+							Commissioner District 1 - Wikstrom
+							
+							
+							
+								
+								
+								
+								
+								
+									RZ.module		= 'revize_document_center'; RZ.linkname = '';
+									RZ.template 	= '*none*'; RZ.recordid = '60';
+									RZ.nexturl 		= "/revize/plugins/document_center/document_center_detail_subcat-editform.jsp";
+									RZ.popupwidth	= '820'; RZ.popupheight = '600'; RZ.popupscroll = 'no';
+									RZ.img 			= '<span class="fa fa-pencil rz-file-edit" aria-hidden="true"></span>';
+									RZ.set 			= '';
+									RZ.options 		= '@@nolink@@';
+									if (typeof RZaction != 'undefined') RZaction('edititem');
+								
+								
+								
+								
+								
+								
+								
+									RZ.module 	= 'revize_document_center';
+									RZ.recordid = '60';
+									RZ.name 		= 'RZdelete' + RZ.recordid;
+									RZ.img 		= '<span class="fa fa-trash rz-file-edit" aria-hidden="true"></span>';
+									RZ.options 	= '';
+									if (typeof RZaction != 'undefined') RZaction('delete');
+								
+								
+							
+						
+					
+					
+					
+						
+							Commissioner District 2 - Cooney
+							
+							
+							
+								
+								
+								
+								
+								
+									RZ.module		= 'revize_document_center'; RZ.linkname = '';
+									RZ.template 	= '*none*'; RZ.recordid = '61';
+									RZ.nexturl 		= "/revize/plugins/document_center/document_center_detail_subcat-editform.jsp";
+									RZ.popupwidth	= '820'; RZ.popupheight = '600'; RZ.popupscroll = 'no';
+									RZ.img 			= '<span class="fa fa-pencil rz-file-edit" aria-hidden="true"></span>';
+									RZ.set 			= '';
+									RZ.options 		= '@@nolink@@';
+									if (typeof RZaction != 'undefined') RZaction('edititem');
+								
+								
+								
+								
+								
+								
+								
+									RZ.module 	= 'revize_document_center';
+									RZ.recordid = '61';
+									RZ.name 		= 'RZdelete' + RZ.recordid;
+									RZ.img 		= '<span class="fa fa-trash rz-file-edit" aria-hidden="true"></span>';
+									RZ.options 	= '';
+									if (typeof RZaction != 'undefined') RZaction('delete');
+								
+								
+							
+						
+					
+					
+					
+						
+							Commissioner District 2 - Gillie
+							
+							
+							
+								
+								
+								
+								
+								
+									RZ.module		= 'revize_document_center'; RZ.linkname = '';
+									RZ.template 	= '*none*'; RZ.recordid = '62';
+									RZ.nexturl 		= "/revize/plugins/document_center/document_center_detail_subcat-editform.jsp";
+									RZ.popupwidth	= '820'; RZ.popupheight = '600'; RZ.popupscroll = 'no';
+									RZ.img 			= '<span class="fa fa-pencil rz-file-edit" aria-hidden="true"></span>';
+									RZ.set 			= '';
+									RZ.options 		= '@@nolink@@';
+									if (typeof RZaction != 'undefined') RZaction('edititem');
+								
+								
+								
+								
+								
+								
+								
+									RZ.module 	= 'revize_document_center';
+									RZ.recordid = '62';
+									RZ.name 		= 'RZdelete' + RZ.recordid;
+									RZ.img 		= '<span class="fa fa-trash rz-file-edit" aria-hidden="true"></span>';
+									RZ.options 	= '';
+									if (typeof RZaction != 'undefined') RZaction('delete');
+								
+								
+							
+						
+					
+					
+					
+						
+							Commissioner District 2 - Larter
+							
+							
+							
+								
+								
+								
+								
+								
+									RZ.module		= 'revize_document_center'; RZ.linkname = '';
+									RZ.template 	= '*none*'; RZ.recordid = '63';
+									RZ.nexturl 		= "/revize/plugins/document_center/document_center_detail_subcat-editform.jsp";
+									RZ.popupwidth	= '820'; RZ.popupheight = '600'; RZ.popupscroll = 'no';
+									RZ.img 			= '<span class="fa fa-pencil rz-file-edit" aria-hidden="true"></span>';
+									RZ.set 			= '';
+									RZ.options 		= '@@nolink@@';
+									if (typeof RZaction != 'undefined') RZaction('edititem');
+								
+								
+								
+								
+								
+								
+								
+									RZ.module 	= 'revize_document_center';
+									RZ.recordid = '63';
+									RZ.name 		= 'RZdelete' + RZ.recordid;
+									RZ.img 		= '<span class="fa fa-trash rz-file-edit" aria-hidden="true"></span>';
+									RZ.options 	= '';
+									if (typeof RZaction != 'undefined') RZaction('delete');
+								
+								
+							
+						
+					
+					
+					
+						
+							Commissioner District 4 - Olson
+							
+							
+							
+								
+								
+								
+								
+								
+									RZ.module		= 'revize_document_center'; RZ.linkname = '';
+									RZ.template 	= '*none*'; RZ.recordid = '64';
+									RZ.nexturl 		= "/revize/plugins/document_center/document_center_detail_subcat-editform.jsp";
+									RZ.popupwidth	= '820'; RZ.popupheight = '600'; RZ.popupscroll = 'no';
+									RZ.img 			= '<span class="fa fa-pencil rz-file-edit" aria-hidden="true"></span>';
+									RZ.set 			= '';
+									RZ.options 		= '@@nolink@@';
+									if (typeof RZaction != 'undefined') RZaction('edititem');
+								
+								
+								
+								
+								
+								
+								
+									RZ.module 	= 'revize_document_center';
+									RZ.recordid = '64';
+									RZ.name 		= 'RZdelete' + RZ.recordid;
+									RZ.img 		= '<span class="fa fa-trash rz-file-edit" aria-hidden="true"></span>';
+									RZ.options 	= '';
+									if (typeof RZaction != 'undefined') RZaction('delete');
+								
+								
+							
+						
+					
+					
+					
+						
+							SWCD - C.J. Peterson
+							
+							
+							
+								
+								
+								
+								
+								
+									RZ.module		= 'revize_document_center'; RZ.linkname = '';
+									RZ.template 	= '*none*'; RZ.recordid = '65';
+									RZ.nexturl 		= "/revize/plugins/document_center/document_center_detail_subcat-editform.jsp";
+									RZ.popupwidth	= '820'; RZ.popupheight = '600'; RZ.popupscroll = 'no';
+									RZ.img 			= '<span class="fa fa-pencil rz-file-edit" aria-hidden="true"></span>';
+									RZ.set 			= '';
+									RZ.options 		= '@@nolink@@';
+									if (typeof RZaction != 'undefined') RZaction('edititem');
+								
+								
+								
+								
+								
+								
+								
+									RZ.module 	= 'revize_document_center';
+									RZ.recordid = '65';
+									RZ.name 		= 'RZdelete' + RZ.recordid;
+									RZ.img 		= '<span class="fa fa-trash rz-file-edit" aria-hidden="true"></span>';
+									RZ.options 	= '';
+									if (typeof RZaction != 'undefined') RZaction('delete');
+								
+								
+							
+						
+					
+					
+					
+						
+							SWCD - H. Peterson
+							
+							
+							
+								
+								
+								
+								
+								
+									RZ.module		= 'revize_document_center'; RZ.linkname = '';
+									RZ.template 	= '*none*'; RZ.recordid = '66';
+									RZ.nexturl 		= "/revize/plugins/document_center/document_center_detail_subcat-editform.jsp";
+									RZ.popupwidth	= '820'; RZ.popupheight = '600'; RZ.popupscroll = 'no';
+									RZ.img 			= '<span class="fa fa-pencil rz-file-edit" aria-hidden="true"></span>';
+									RZ.set 			= '';
+									RZ.options 		= '@@nolink@@';
+									if (typeof RZaction != 'undefined') RZaction('edititem');
+								
+								
+								
+								
+								
+								
+								
+									RZ.module 	= 'revize_document_center';
+									RZ.recordid = '66';
+									RZ.name 		= 'RZdelete' + RZ.recordid;
+									RZ.img 		= '<span class="fa fa-trash rz-file-edit" aria-hidden="true"></span>';
+									RZ.options 	= '';
+									if (typeof RZaction != 'undefined') RZaction('delete');
+								
+								
+							
+						
+					
+					
+					
+						
+							SWCD - Wilebski
+							
+							
+							
+								
+								
+								
+								
+								
+									RZ.module		= 'revize_document_center'; RZ.linkname = '';
+									RZ.template 	= '*none*'; RZ.recordid = '67';
+									RZ.nexturl 		= "/revize/plugins/document_center/document_center_detail_subcat-editform.jsp";
+									RZ.popupwidth	= '820'; RZ.popupheight = '600'; RZ.popupscroll = 'no';
+									RZ.img 			= '<span class="fa fa-pencil rz-file-edit" aria-hidden="true"></span>';
+									RZ.set 			= '';
+									RZ.options 		= '@@nolink@@';
+									if (typeof RZaction != 'undefined') RZaction('edititem');
+								
+								
+								
+								
+								
+								
+								
+									RZ.module 	= 'revize_document_center';
+									RZ.recordid = '67';
+									RZ.name 		= 'RZdelete' + RZ.recordid;
+									RZ.img 		= '<span class="fa fa-trash rz-file-edit" aria-hidden="true"></span>';
+									RZ.options 	= '';
+									if (typeof RZaction != 'undefined') RZaction('delete');
+								
+								
+							
+						
+					
+					
+				
+if (typeof RZlinktemplate != 'undefined') RZlinktemplate('revize_document_center','','')
+if (typeof RZ.nextseq != 'undefined') RZ.nextseq.modules['revize_document_center_9']={field:'',seq:'-1.00'};
+
+
+						
+					
+				
+			
+if (typeof RZlinktemplate != 'undefined') RZlinktemplate('revize_document_center','','')
+if (typeof RZ.nextseq != 'undefined') RZ.nextseq.modules['revize_document_center_8']={field:'',seq:'-1.00'};
+
+
+		
+	
+	
+
+	
+		
+		 
+       
+       
+       
+         RZ.module = 'revize_document_center'; RZ.linkname = '';
+         RZ.template = '*none*'; RZ.recordid = '68';
+         RZ.nexturl = "/revize/plugins/document_center/document_center_category-editform.jsp";
+         RZ.popupwidth = '820'; RZ.popupheight = '400'; RZ.popupscroll = 'no';
+         RZ.img = '<span class="fa fa-pencil" aria-hidden="true"></span>';
+         RZ.set = '';
+         RZ.options = '@@nolink@@';
+         if (typeof RZaction != 'undefined') RZaction('edititem');
+       
+       
+       
+       
+       
+       
+       
+         RZ.module = 'revize_document_center';
+         RZ.recordid = '68';
+         RZ.name = 'RZdelete' + RZ.recordid;
+         RZ.img = '<span class="fa fa-trash" aria-hidden="true"></span>';
+         RZ.options = '<br>';
+         if (typeof RZaction != 'undefined') RZaction('delete');
+	       
+	 
+		
+		Campaign Finance Reports - 2018 Election19 documents
+
+		
+
+
+				
+				
+				
+				
+					RZ.module 		= 'revize_document_center'; RZ.linkname = '';
+					RZ.template 	= '*none*'; RZ.recordid = 'new';
+					RZ.nexturl 		= "/revize/plugins/document_center/document_center_detail_subcat-editform.jsp";
+					RZ.popupwidth 	= '820'; RZ.popupheight = '600'; RZ.popupscroll = 'yes';
+					RZ.img 				= '<span class="rz-edit-btn inner-edit"><span class="fa fa-file" aria-hidden="true"></span> New Document</span>';
+					RZ.set 			= 'revize_document_center.placement=upload68,'
+										//+ 'revize_document_center.header=Campaign+Finance+Reports+-+2018+Election,'
+										+ 'revize_document_center.folder=government/departments/,'
+										+ 'revize_document_center.parent_key=freeform[103]';
+					RZ.options 		= '';
+					if (typeof RZaction != 'undefined') RZaction('newitem');
+				
+				
+
+			
+
+
+			
+			
+			
+			
+				RZ.module 		= 'revize_document_center'; RZ.linkname = '';
+				RZ.template 	= '*none*'; RZ.recordid = 'new';
+				RZ.nexturl 		= "/revize/plugins/document_center/document_center_sub_category-editform.jsp"
+							  		+ "?pagerecordid=103";
+				RZ.popupwidth 	= '820'; RZ.popupheight = '500'; RZ.popupscroll = 'yes';
+				RZ.img 				= '<span class="rz-edit-btn inner-edit"><span class="fa fa-folder" aria-hidden="true"></span> New Sub-category</span>';
+				RZ.set 			= 'revize_document_center.placement=subcat-103,'
+									+ 'revize_document_center.parent_key=68';
+				RZ.options 		= '';
+				if (typeof RZaction != 'undefined') RZaction('newitem');
+			
+			
+
+			
+if (typeof RZlistbegin != 'undefined') RZlistbegin(11)
+
+
+				
+						
+					
+					
+if (typeof RZlistbegin != 'undefined') RZlistbegin(12)
+
+
+					
+						
+							Commissioner District 3 - Johnson Initial
+							
+							
+							
+								
+								
+								
+								
+								
+									RZ.module		= 'revize_document_center'; RZ.linkname = '';
+									RZ.template 	= '*none*'; RZ.recordid = '69';
+									RZ.nexturl 		= "/revize/plugins/document_center/document_center_detail_subcat-editform.jsp";
+									RZ.popupwidth	= '820'; RZ.popupheight = '600'; RZ.popupscroll = 'no';
+									RZ.img 			= '<span class="fa fa-pencil rz-file-edit" aria-hidden="true"></span>';
+									RZ.set 			= '';
+									RZ.options 		= '@@nolink@@';
+									if (typeof RZaction != 'undefined') RZaction('edititem');
+								
+								
+								
+								
+								
+								
+								
+									RZ.module 	= 'revize_document_center';
+									RZ.recordid = '69';
+									RZ.name 		= 'RZdelete' + RZ.recordid;
+									RZ.img 		= '<span class="fa fa-trash rz-file-edit" aria-hidden="true"></span>';
+									RZ.options 	= '';
+									if (typeof RZaction != 'undefined') RZaction('delete');
+								
+								
+							
+						
+					
+					
+					
+						
+							Sheriff - Porter Intial
+							
+							
+							
+								
+								
+								
+								
+								
+									RZ.module		= 'revize_document_center'; RZ.linkname = '';
+									RZ.template 	= '*none*'; RZ.recordid = '70';
+									RZ.nexturl 		= "/revize/plugins/document_center/document_center_detail_subcat-editform.jsp";
+									RZ.popupwidth	= '820'; RZ.popupheight = '600'; RZ.popupscroll = 'no';
+									RZ.img 			= '<span class="fa fa-pencil rz-file-edit" aria-hidden="true"></span>';
+									RZ.set 			= '';
+									RZ.options 		= '@@nolink@@';
+									if (typeof RZaction != 'undefined') RZaction('edititem');
+								
+								
+								
+								
+								
+								
+								
+									RZ.module 	= 'revize_document_center';
+									RZ.recordid = '70';
+									RZ.name 		= 'RZdelete' + RZ.recordid;
+									RZ.img 		= '<span class="fa fa-trash rz-file-edit" aria-hidden="true"></span>';
+									RZ.options 	= '';
+									if (typeof RZaction != 'undefined') RZaction('delete');
+								
+								
+							
+						
+					
+					
+					
+						
+							Sheriff - Wilwant Initial
+							
+							
+							
+								
+								
+								
+								
+								
+									RZ.module		= 'revize_document_center'; RZ.linkname = '';
+									RZ.template 	= '*none*'; RZ.recordid = '71';
+									RZ.nexturl 		= "/revize/plugins/document_center/document_center_detail_subcat-editform.jsp";
+									RZ.popupwidth	= '820'; RZ.popupheight = '600'; RZ.popupscroll = 'no';
+									RZ.img 			= '<span class="fa fa-pencil rz-file-edit" aria-hidden="true"></span>';
+									RZ.set 			= '';
+									RZ.options 		= '@@nolink@@';
+									if (typeof RZaction != 'undefined') RZaction('edititem');
+								
+								
+								
+								
+								
+								
+								
+									RZ.module 	= 'revize_document_center';
+									RZ.recordid = '71';
+									RZ.name 		= 'RZdelete' + RZ.recordid;
+									RZ.img 		= '<span class="fa fa-trash rz-file-edit" aria-hidden="true"></span>';
+									RZ.options 	= '';
+									if (typeof RZaction != 'undefined') RZaction('delete');
+								
+								
+							
+						
+					
+					
+					
+						
+							Sheriff - Wilwant #2
+							
+							
+							
+								
+								
+								
+								
+								
+									RZ.module		= 'revize_document_center'; RZ.linkname = '';
+									RZ.template 	= '*none*'; RZ.recordid = '72';
+									RZ.nexturl 		= "/revize/plugins/document_center/document_center_detail_subcat-editform.jsp";
+									RZ.popupwidth	= '820'; RZ.popupheight = '600'; RZ.popupscroll = 'no';
+									RZ.img 			= '<span class="fa fa-pencil rz-file-edit" aria-hidden="true"></span>';
+									RZ.set 			= '';
+									RZ.options 		= '@@nolink@@';
+									if (typeof RZaction != 'undefined') RZaction('edititem');
+								
+								
+								
+								
+								
+								
+								
+									RZ.module 	= 'revize_document_center';
+									RZ.recordid = '72';
+									RZ.name 		= 'RZdelete' + RZ.recordid;
+									RZ.img 		= '<span class="fa fa-trash rz-file-edit" aria-hidden="true"></span>';
+									RZ.options 	= '';
+									if (typeof RZaction != 'undefined') RZaction('delete');
+								
+								
+							
+						
+					
+					
+					
+						
+							Sheriff - Porter #2
+							
+							
+							
+								
+								
+								
+								
+								
+									RZ.module		= 'revize_document_center'; RZ.linkname = '';
+									RZ.template 	= '*none*'; RZ.recordid = '73';
+									RZ.nexturl 		= "/revize/plugins/document_center/document_center_detail_subcat-editform.jsp";
+									RZ.popupwidth	= '820'; RZ.popupheight = '600'; RZ.popupscroll = 'no';
+									RZ.img 			= '<span class="fa fa-pencil rz-file-edit" aria-hidden="true"></span>';
+									RZ.set 			= '';
+									RZ.options 		= '@@nolink@@';
+									if (typeof RZaction != 'undefined') RZaction('edititem');
+								
+								
+								
+								
+								
+								
+								
+									RZ.module 	= 'revize_document_center';
+									RZ.recordid = '73';
+									RZ.name 		= 'RZdelete' + RZ.recordid;
+									RZ.img 		= '<span class="fa fa-trash rz-file-edit" aria-hidden="true"></span>';
+									RZ.options 	= '';
+									if (typeof RZaction != 'undefined') RZaction('delete');
+								
+								
+							
+						
+					
+					
+					
+						
+							Commissioner District 3 - Johnson #2
+							
+							
+							
+								
+								
+								
+								
+								
+									RZ.module		= 'revize_document_center'; RZ.linkname = '';
+									RZ.template 	= '*none*'; RZ.recordid = '74';
+									RZ.nexturl 		= "/revize/plugins/document_center/document_center_detail_subcat-editform.jsp";
+									RZ.popupwidth	= '820'; RZ.popupheight = '600'; RZ.popupscroll = 'no';
+									RZ.img 			= '<span class="fa fa-pencil rz-file-edit" aria-hidden="true"></span>';
+									RZ.set 			= '';
+									RZ.options 		= '@@nolink@@';
+									if (typeof RZaction != 'undefined') RZaction('edititem');
+								
+								
+								
+								
+								
+								
+								
+									RZ.module 	= 'revize_document_center';
+									RZ.recordid = '74';
+									RZ.name 		= 'RZdelete' + RZ.recordid;
+									RZ.img 		= '<span class="fa fa-trash rz-file-edit" aria-hidden="true"></span>';
+									RZ.options 	= '';
+									if (typeof RZaction != 'undefined') RZaction('delete');
+								
+								
+							
+						
+					
+					
+					
+						
+							Sheriff - Wilwant #3
+							
+							
+							
+								
+								
+								
+								
+								
+									RZ.module		= 'revize_document_center'; RZ.linkname = '';
+									RZ.template 	= '*none*'; RZ.recordid = '75';
+									RZ.nexturl 		= "/revize/plugins/document_center/document_center_detail_subcat-editform.jsp";
+									RZ.popupwidth	= '820'; RZ.popupheight = '600'; RZ.popupscroll = 'no';
+									RZ.img 			= '<span class="fa fa-pencil rz-file-edit" aria-hidden="true"></span>';
+									RZ.set 			= '';
+									RZ.options 		= '@@nolink@@';
+									if (typeof RZaction != 'undefined') RZaction('edititem');
+								
+								
+								
+								
+								
+								
+								
+									RZ.module 	= 'revize_document_center';
+									RZ.recordid = '75';
+									RZ.name 		= 'RZdelete' + RZ.recordid;
+									RZ.img 		= '<span class="fa fa-trash rz-file-edit" aria-hidden="true"></span>';
+									RZ.options 	= '';
+									if (typeof RZaction != 'undefined') RZaction('delete');
+								
+								
+							
+						
+					
+					
+					
+						
+							Sheriff - Porter #3
+							
+							
+							
+								
+								
+								
+								
+								
+									RZ.module		= 'revize_document_center'; RZ.linkname = '';
+									RZ.template 	= '*none*'; RZ.recordid = '76';
+									RZ.nexturl 		= "/revize/plugins/document_center/document_center_detail_subcat-editform.jsp";
+									RZ.popupwidth	= '820'; RZ.popupheight = '600'; RZ.popupscroll = 'no';
+									RZ.img 			= '<span class="fa fa-pencil rz-file-edit" aria-hidden="true"></span>';
+									RZ.set 			= '';
+									RZ.options 		= '@@nolink@@';
+									if (typeof RZaction != 'undefined') RZaction('edititem');
+								
+								
+								
+								
+								
+								
+								
+									RZ.module 	= 'revize_document_center';
+									RZ.recordid = '76';
+									RZ.name 		= 'RZdelete' + RZ.recordid;
+									RZ.img 		= '<span class="fa fa-trash rz-file-edit" aria-hidden="true"></span>';
+									RZ.options 	= '';
+									if (typeof RZaction != 'undefined') RZaction('delete');
+								
+								
+							
+						
+					
+					
+					
+						
+							Sheriff - Wilwant Final
+							
+							
+							
+								
+								
+								
+								
+								
+									RZ.module		= 'revize_document_center'; RZ.linkname = '';
+									RZ.template 	= '*none*'; RZ.recordid = '77';
+									RZ.nexturl 		= "/revize/plugins/document_center/document_center_detail_subcat-editform.jsp";
+									RZ.popupwidth	= '820'; RZ.popupheight = '600'; RZ.popupscroll = 'no';
+									RZ.img 			= '<span class="fa fa-pencil rz-file-edit" aria-hidden="true"></span>';
+									RZ.set 			= '';
+									RZ.options 		= '@@nolink@@';
+									if (typeof RZaction != 'undefined') RZaction('edititem');
+								
+								
+								
+								
+								
+								
+								
+									RZ.module 	= 'revize_document_center';
+									RZ.recordid = '77';
+									RZ.name 		= 'RZdelete' + RZ.recordid;
+									RZ.img 		= '<span class="fa fa-trash rz-file-edit" aria-hidden="true"></span>';
+									RZ.options 	= '';
+									if (typeof RZaction != 'undefined') RZaction('delete');
+								
+								
+							
+						
+					
+					
+					
+						
+							Commissioner District 5 - Johnson
+							
+							
+							
+								
+								
+								
+								
+								
+									RZ.module		= 'revize_document_center'; RZ.linkname = '';
+									RZ.template 	= '*none*'; RZ.recordid = '78';
+									RZ.nexturl 		= "/revize/plugins/document_center/document_center_detail_subcat-editform.jsp";
+									RZ.popupwidth	= '820'; RZ.popupheight = '600'; RZ.popupscroll = 'no';
+									RZ.img 			= '<span class="fa fa-pencil rz-file-edit" aria-hidden="true"></span>';
+									RZ.set 			= '';
+									RZ.options 		= '@@nolink@@';
+									if (typeof RZaction != 'undefined') RZaction('edititem');
+								
+								
+								
+								
+								
+								
+								
+									RZ.module 	= 'revize_document_center';
+									RZ.recordid = '78';
+									RZ.name 		= 'RZdelete' + RZ.recordid;
+									RZ.img 		= '<span class="fa fa-trash rz-file-edit" aria-hidden="true"></span>';
+									RZ.options 	= '';
+									if (typeof RZaction != 'undefined') RZaction('delete');
+								
+								
+							
+						
+					
+					
+					
+						
+							Commissioner District 3 - Younggren
+							
+							
+							
+								
+								
+								
+								
+								
+									RZ.module		= 'revize_document_center'; RZ.linkname = '';
+									RZ.template 	= '*none*'; RZ.recordid = '79';
+									RZ.nexturl 		= "/revize/plugins/document_center/document_center_detail_subcat-editform.jsp";
+									RZ.popupwidth	= '820'; RZ.popupheight = '600'; RZ.popupscroll = 'no';
+									RZ.img 			= '<span class="fa fa-pencil rz-file-edit" aria-hidden="true"></span>';
+									RZ.set 			= '';
+									RZ.options 		= '@@nolink@@';
+									if (typeof RZaction != 'undefined') RZaction('edititem');
+								
+								
+								
+								
+								
+								
+								
+									RZ.module 	= 'revize_document_center';
+									RZ.recordid = '79';
+									RZ.name 		= 'RZdelete' + RZ.recordid;
+									RZ.img 		= '<span class="fa fa-trash rz-file-edit" aria-hidden="true"></span>';
+									RZ.options 	= '';
+									if (typeof RZaction != 'undefined') RZaction('delete');
+								
+								
+							
+						
+					
+					
+					
+						
+							SWCD - Anderson
+							
+							
+							
+								
+								
+								
+								
+								
+									RZ.module		= 'revize_document_center'; RZ.linkname = '';
+									RZ.template 	= '*none*'; RZ.recordid = '80';
+									RZ.nexturl 		= "/revize/plugins/document_center/document_center_detail_subcat-editform.jsp";
+									RZ.popupwidth	= '820'; RZ.popupheight = '600'; RZ.popupscroll = 'no';
+									RZ.img 			= '<span class="fa fa-pencil rz-file-edit" aria-hidden="true"></span>';
+									RZ.set 			= '';
+									RZ.options 		= '@@nolink@@';
+									if (typeof RZaction != 'undefined') RZaction('edititem');
+								
+								
+								
+								
+								
+								
+								
+									RZ.module 	= 'revize_document_center';
+									RZ.recordid = '80';
+									RZ.name 		= 'RZdelete' + RZ.recordid;
+									RZ.img 		= '<span class="fa fa-trash rz-file-edit" aria-hidden="true"></span>';
+									RZ.options 	= '';
+									if (typeof RZaction != 'undefined') RZaction('delete');
+								
+								
+							
+						
+					
+					
+					
+						
+							SWCD - Muir
+							
+							
+							
+								
+								
+								
+								
+								
+									RZ.module		= 'revize_document_center'; RZ.linkname = '';
+									RZ.template 	= '*none*'; RZ.recordid = '81';
+									RZ.nexturl 		= "/revize/plugins/document_center/document_center_detail_subcat-editform.jsp";
+									RZ.popupwidth	= '820'; RZ.popupheight = '600'; RZ.popupscroll = 'no';
+									RZ.img 			= '<span class="fa fa-pencil rz-file-edit" aria-hidden="true"></span>';
+									RZ.set 			= '';
+									RZ.options 		= '@@nolink@@';
+									if (typeof RZaction != 'undefined') RZaction('edititem');
+								
+								
+								
+								
+								
+								
+								
+									RZ.module 	= 'revize_document_center';
+									RZ.recordid = '81';
+									RZ.name 		= 'RZdelete' + RZ.recordid;
+									RZ.img 		= '<span class="fa fa-trash rz-file-edit" aria-hidden="true"></span>';
+									RZ.options 	= '';
+									if (typeof RZaction != 'undefined') RZaction('delete');
+								
+								
+							
+						
+					
+					
+					
+						
+							Commissioner District 5 - Hanson
+							
+							
+							
+								
+								
+								
+								
+								
+									RZ.module		= 'revize_document_center'; RZ.linkname = '';
+									RZ.template 	= '*none*'; RZ.recordid = '82';
+									RZ.nexturl 		= "/revize/plugins/document_center/document_center_detail_subcat-editform.jsp";
+									RZ.popupwidth	= '820'; RZ.popupheight = '600'; RZ.popupscroll = 'no';
+									RZ.img 			= '<span class="fa fa-pencil rz-file-edit" aria-hidden="true"></span>';
+									RZ.set 			= '';
+									RZ.options 		= '@@nolink@@';
+									if (typeof RZaction != 'undefined') RZaction('edititem');
+								
+								
+								
+								
+								
+								
+								
+									RZ.module 	= 'revize_document_center';
+									RZ.recordid = '82';
+									RZ.name 		= 'RZdelete' + RZ.recordid;
+									RZ.img 		= '<span class="fa fa-trash rz-file-edit" aria-hidden="true"></span>';
+									RZ.options 	= '';
+									if (typeof RZaction != 'undefined') RZaction('delete');
+								
+								
+							
+						
+					
+					
+					
+						
+							Sheriff - Porter Final
+							
+							
+							
+								
+								
+								
+								
+								
+									RZ.module		= 'revize_document_center'; RZ.linkname = '';
+									RZ.template 	= '*none*'; RZ.recordid = '83';
+									RZ.nexturl 		= "/revize/plugins/document_center/document_center_detail_subcat-editform.jsp";
+									RZ.popupwidth	= '820'; RZ.popupheight = '600'; RZ.popupscroll = 'no';
+									RZ.img 			= '<span class="fa fa-pencil rz-file-edit" aria-hidden="true"></span>';
+									RZ.set 			= '';
+									RZ.options 		= '@@nolink@@';
+									if (typeof RZaction != 'undefined') RZaction('edititem');
+								
+								
+								
+								
+								
+								
+								
+									RZ.module 	= 'revize_document_center';
+									RZ.recordid = '83';
+									RZ.name 		= 'RZdelete' + RZ.recordid;
+									RZ.img 		= '<span class="fa fa-trash rz-file-edit" aria-hidden="true"></span>';
+									RZ.options 	= '';
+									if (typeof RZaction != 'undefined') RZaction('delete');
+								
+								
+							
+						
+					
+					
+					
+						
+							Commissioner District 3 - Johnson Final
+							
+							
+							
+								
+								
+								
+								
+								
+									RZ.module		= 'revize_document_center'; RZ.linkname = '';
+									RZ.template 	= '*none*'; RZ.recordid = '84';
+									RZ.nexturl 		= "/revize/plugins/document_center/document_center_detail_subcat-editform.jsp";
+									RZ.popupwidth	= '820'; RZ.popupheight = '600'; RZ.popupscroll = 'no';
+									RZ.img 			= '<span class="fa fa-pencil rz-file-edit" aria-hidden="true"></span>';
+									RZ.set 			= '';
+									RZ.options 		= '@@nolink@@';
+									if (typeof RZaction != 'undefined') RZaction('edititem');
+								
+								
+								
+								
+								
+								
+								
+									RZ.module 	= 'revize_document_center';
+									RZ.recordid = '84';
+									RZ.name 		= 'RZdelete' + RZ.recordid;
+									RZ.img 		= '<span class="fa fa-trash rz-file-edit" aria-hidden="true"></span>';
+									RZ.options 	= '';
+									if (typeof RZaction != 'undefined') RZaction('delete');
+								
+								
+							
+						
+					
+					
+					
+						
+							County Attorney - Albrecht
+							
+							
+							
+								
+								
+								
+								
+								
+									RZ.module		= 'revize_document_center'; RZ.linkname = '';
+									RZ.template 	= '*none*'; RZ.recordid = '85';
+									RZ.nexturl 		= "/revize/plugins/document_center/document_center_detail_subcat-editform.jsp";
+									RZ.popupwidth	= '820'; RZ.popupheight = '600'; RZ.popupscroll = 'no';
+									RZ.img 			= '<span class="fa fa-pencil rz-file-edit" aria-hidden="true"></span>';
+									RZ.set 			= '';
+									RZ.options 		= '@@nolink@@';
+									if (typeof RZaction != 'undefined') RZaction('edititem');
+								
+								
+								
+								
+								
+								
+								
+									RZ.module 	= 'revize_document_center';
+									RZ.recordid = '85';
+									RZ.name 		= 'RZdelete' + RZ.recordid;
+									RZ.img 		= '<span class="fa fa-trash rz-file-edit" aria-hidden="true"></span>';
+									RZ.options 	= '';
+									if (typeof RZaction != 'undefined') RZaction('delete');
+								
+								
+							
+						
+					
+					
+					
+						
+							Commissioner - olson
+							
+							
+							
+								
+								
+								
+								
+								
+									RZ.module		= 'revize_document_center'; RZ.linkname = '';
+									RZ.template 	= '*none*'; RZ.recordid = '326';
+									RZ.nexturl 		= "/revize/plugins/document_center/document_center_detail_subcat-editform.jsp";
+									RZ.popupwidth	= '820'; RZ.popupheight = '600'; RZ.popupscroll = 'no';
+									RZ.img 			= '<span class="fa fa-pencil rz-file-edit" aria-hidden="true"></span>';
+									RZ.set 			= '';
+									RZ.options 		= '@@nolink@@';
+									if (typeof RZaction != 'undefined') RZaction('edititem');
+								
+								
+								
+								
+								
+								
+								
+									RZ.module 	= 'revize_document_center';
+									RZ.recordid = '326';
+									RZ.name 		= 'RZdelete' + RZ.recordid;
+									RZ.img 		= '<span class="fa fa-trash rz-file-edit" aria-hidden="true"></span>';
+									RZ.options 	= '';
+									if (typeof RZaction != 'undefined') RZaction('delete');
+								
+								
+							
+						
+					
+					
+					
+						
+							Commissioner - Swenson
+							
+							
+							
+								
+								
+								
+								
+								
+									RZ.module		= 'revize_document_center'; RZ.linkname = '';
+									RZ.template 	= '*none*'; RZ.recordid = '327';
+									RZ.nexturl 		= "/revize/plugins/document_center/document_center_detail_subcat-editform.jsp";
+									RZ.popupwidth	= '820'; RZ.popupheight = '600'; RZ.popupscroll = 'no';
+									RZ.img 			= '<span class="fa fa-pencil rz-file-edit" aria-hidden="true"></span>';
+									RZ.set 			= '';
+									RZ.options 		= '@@nolink@@';
+									if (typeof RZaction != 'undefined') RZaction('edititem');
+								
+								
+								
+								
+								
+								
+								
+									RZ.module 	= 'revize_document_center';
+									RZ.recordid = '327';
+									RZ.name 		= 'RZdelete' + RZ.recordid;
+									RZ.img 		= '<span class="fa fa-trash rz-file-edit" aria-hidden="true"></span>';
+									RZ.options 	= '';
+									if (typeof RZaction != 'undefined') RZaction('delete');
+								
+								
+							
+						
+					
+					
+				
+if (typeof RZlinktemplate != 'undefined') RZlinktemplate('revize_document_center','','')
+if (typeof RZ.nextseq != 'undefined') RZ.nextseq.modules['revize_document_center_12']={field:'',seq:'-1.00'};
+
+
+						
+					
+				
+			
+if (typeof RZlinktemplate != 'undefined') RZlinktemplate('revize_document_center','','')
+if (typeof RZ.nextseq != 'undefined') RZ.nextseq.modules['revize_document_center_11']={field:'',seq:'-1.00'};
+
+
+		
+	
+	
+
+	
+		
+		 
+       
+       
+       
+         RZ.module = 'revize_document_center'; RZ.linkname = '';
+         RZ.template = '*none*'; RZ.recordid = '499';
+         RZ.nexturl = "/revize/plugins/document_center/document_center_category-editform.jsp";
+         RZ.popupwidth = '820'; RZ.popupheight = '400'; RZ.popupscroll = 'no';
+         RZ.img = '<span class="fa fa-pencil" aria-hidden="true"></span>';
+         RZ.set = '';
+         RZ.options = '@@nolink@@';
+         if (typeof RZaction != 'undefined') RZaction('edititem');
+       
+       
+       
+       
+       
+       
+       
+         RZ.module = 'revize_document_center';
+         RZ.recordid = '499';
+         RZ.name = 'RZdelete' + RZ.recordid;
+         RZ.img = '<span class="fa fa-trash" aria-hidden="true"></span>';
+         RZ.options = '<br>';
+         if (typeof RZaction != 'undefined') RZaction('delete');
+	       
+	 
+		
+		Filing Information1 document
+
+		
+
+
+				
+				
+				
+				
+					RZ.module 		= 'revize_document_center'; RZ.linkname = '';
+					RZ.template 	= '*none*'; RZ.recordid = 'new';
+					RZ.nexturl 		= "/revize/plugins/document_center/document_center_detail_subcat-editform.jsp";
+					RZ.popupwidth 	= '820'; RZ.popupheight = '600'; RZ.popupscroll = 'yes';
+					RZ.img 				= '<span class="rz-edit-btn inner-edit"><span class="fa fa-file" aria-hidden="true"></span> New Document</span>';
+					RZ.set 			= 'revize_document_center.placement=upload499,'
+										//+ 'revize_document_center.header=Filing+Information,'
+										+ 'revize_document_center.folder=government/departments/,'
+										+ 'revize_document_center.parent_key=freeform[103]';
+					RZ.options 		= '';
+					if (typeof RZaction != 'undefined') RZaction('newitem');
+				
+				
+
+			
+
+
+			
+			
+			
+			
+				RZ.module 		= 'revize_document_center'; RZ.linkname = '';
+				RZ.template 	= '*none*'; RZ.recordid = 'new';
+				RZ.nexturl 		= "/revize/plugins/document_center/document_center_sub_category-editform.jsp"
+							  		+ "?pagerecordid=103";
+				RZ.popupwidth 	= '820'; RZ.popupheight = '500'; RZ.popupscroll = 'yes';
+				RZ.img 				= '<span class="rz-edit-btn inner-edit"><span class="fa fa-folder" aria-hidden="true"></span> New Sub-category</span>';
+				RZ.set 			= 'revize_document_center.placement=subcat-103,'
+									+ 'revize_document_center.parent_key=499';
+				RZ.options 		= '';
+				if (typeof RZaction != 'undefined') RZaction('newitem');
+			
+			
+
+			
+if (typeof RZlistbegin != 'undefined') RZlistbegin(14)
+
+
+				
+						
+					
+					
+if (typeof RZlistbegin != 'undefined') RZlistbegin(15)
+
+
+					
+						
+							Notice of State/County Offices
+							
+							
+							
+								
+								
+								
+								
+								
+									RZ.module		= 'revize_document_center'; RZ.linkname = '';
+									RZ.template 	= '*none*'; RZ.recordid = '500';
+									RZ.nexturl 		= "/revize/plugins/document_center/document_center_detail_subcat-editform.jsp";
+									RZ.popupwidth	= '820'; RZ.popupheight = '600'; RZ.popupscroll = 'no';
+									RZ.img 			= '<span class="fa fa-pencil rz-file-edit" aria-hidden="true"></span>';
+									RZ.set 			= '';
+									RZ.options 		= '@@nolink@@';
+									if (typeof RZaction != 'undefined') RZaction('edititem');
+								
+								
+								
+								
+								
+								
+								
+									RZ.module 	= 'revize_document_center';
+									RZ.recordid = '500';
+									RZ.name 		= 'RZdelete' + RZ.recordid;
+									RZ.img 		= '<span class="fa fa-trash rz-file-edit" aria-hidden="true"></span>';
+									RZ.options 	= '';
+									if (typeof RZaction != 'undefined') RZaction('delete');
+								
+								
+							
+						
+					
+					
+				
+if (typeof RZlinktemplate != 'undefined') RZlinktemplate('revize_document_center','','')
+if (typeof RZ.nextseq != 'undefined') RZ.nextseq.modules['revize_document_center_15']={field:'',seq:'-1.00'};
+
+
+						
+					
+				
+			
+if (typeof RZlinktemplate != 'undefined') RZlinktemplate('revize_document_center','','')
+if (typeof RZ.nextseq != 'undefined') RZ.nextseq.modules['revize_document_center_14']={field:'',seq:'-1.00'};
+
+
+		
+	
+	
+	
+	
+
+
+
+
+
+
+                                            
+                
+			
+		
+	
+	
+
+
+
+
+    		
+    
+
+
+	
+    
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pagelanguage: 'en',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE},
+                'google-translate');
+        }
+    
+
+
+    
+        
+            Afrikaans
+            Albanian
+            Arabic
+            Armenian
+            Azerbaijani
+            Basque
+            Belarusian
+            Bengali
+            Bosnian
+            Bulgarian
+            Catalan
+            Cebuano
+            Chinese (Simplified)
+            Chinese (Traditional)
+            Croatian
+            Czech
+            Danish
+            Dutch
+            English
+            Esperanto
+            Estonian
+            Filipino
+            Finnish
+            French
+            Galician
+            Georgian
+            German
+            Greek
+            Gujarati
+            Haitian Creole
+            Hausa
+            Hebrew
+            Hindi
+            Hmong
+            Hungarian
+            Icelandic
+            Igbo
+            Indonesian
+            Irish
+            Italian
+            Japanese
+            Javanese
+            Kannada
+            Khmer
+            Korean
+            Lao
+            Latin
+            Latvian
+            Lithuanian
+            Macedonian
+            Malay
+            Maltese
+            Maori
+            Marathi
+            Mongolian
+            Nepali
+            Norwegian
+            Persian
+            Polish
+            Portuguese
+            Punjabi
+            Romanian
+            Russian
+            Serbian
+            Slovak
+            Slovenian
+            Somali
+            Spanish
+            Swahili
+            Swedish
+            Tamil
+            Telugu
+            Thai
+            Turkish
+            Ukrainian
+            Urdu
+            Vietnamese
+            Welsh
+            Yiddish
+            Yoruba
+            Zulu
+        
+    
+
+
+		
+
+	
+		
+			
+				
+					Share this page
+					×
+				
+				
+					
+						Copy and paste this code into your website.
+						<a href="http://www.co.kittson.mn.us/government/departments/elections.php">Your Link Name</a>
+					
+					
+						Share this page on your favorite Social network
+						
+							
+								
+									 Facebook
+								
+							
+							
+								
+									 Twitter
+								
+							
+							
+								
+									 Reddit
+								
+							
+						
+					
+					Close
+				
+			
+		
+	
+	
+
+    
+        
+            
+                
+                    
+			
+						Social Services
+					
+						Highway Department
+					
+						Community
+					
+                    
+                
+                
+                    
+			
+						
+					                  
+					
+					Our Location
+                    410 5th St. S.Hallock, MN 56728 218-843-2670
+                
+            
+        
+    
+    
+        
+            
+                © 2026    
+            
+            
+                Powered by revize., the Government Website Experts | Login
+            
+        
+    
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+

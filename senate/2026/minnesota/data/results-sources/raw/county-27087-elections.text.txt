@@ -1,0 +1,776 @@
+
+
+
+
+
+
+		 	
+
+
+
+
+
+
+//----- Check href of all <a...> tags, if it matchs page url and immediate parent is <LI>,
+//		append "active" to className of all ancestor <LI> tags until the parent of the <LI>
+//		tag is not <UL> or the parent of the <UL> is not another <LI> tag.
+var functionRef = function setClassActive()
+{
+	var e;
+	try
+	{
+		var pattern = new RegExp("http[s]?://.*?/(.*)[?#]?","");
+		var tags = document.getElementsByTagName("A");
+		if (tags)
+		{
+			for (var i=0;i<tags.length;i++)
+			{
+				var el = tags[i];
+				var resultsTag = el.href.match(pattern);
+				var resultsPage = location.href.match(pattern);
+				if (!resultsTag || !resultsPage) continue;
+				if (resultsTag[1] != resultsPage[1]) continue;
+	
+				// go up li tree marking this and all parent class=active
+				var li = el.parentNode;
+				while (li && li.tagName == 'LI')
+				{
+					if (li.className != '') 
+						li.className += ' ';
+					li.className += 'active';
+					var ul = li.parentNode;
+					if (!ul || ul.tagName != 'UL') break;
+					li = ul.parentNode;
+				}
+				//let's catch all links e.g. topnav, leftnav, quick links, etc
+				//break;	//found url match, quit checking tags
+			}
+		}
+	}
+	catch (e) {}
+}
+//----- Activate topnavActive once page loads
+if (typeof addEventListener != 'undefined') addEventListener('load', functionRef, false);	//standards browser
+else if (typeof attachEvent != 'undefined') attachEvent("onload", functionRef);				//IE early versions
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+	
+	
+
+	
+	
+	
+	
+	
+
+	
+
+
+
+
+
+	Mahnomen County, Minnesota
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+
+
+	 
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+	var defaultCalendarColor = "#3788d8";
+	var ImportCals = [];
+	var calendarProps = {'1' : { 'color' : '#ab4545' , 'name' : 'Master' },
+'4' : { 'color' : '' , 'name' : 'calendar-list-options' },
+};
+	var RZCalendarTimezone = "";
+
+
+
+	
+	
+
+	
+	
+
+
+
+
+
+
+
+
+if (typeof(RZ) == 'undefined') RZ = {};
+if (!RZ.link) RZ.link = new Object();
+RZ.pagetype = 'template'
+RZ.baseurlprefix = '../../../'
+RZ.baseurlpath = 'department/departments_a_h/auditor/'
+RZ.protocolRelativeRevizeBaseUrl='//webgen1.revize.com'
+
+RZ.pagetemplatename = 'freeform'
+RZ.pagetemplateid = '32'
+RZ.pagemodule = 'links'
+RZ.pagemoduleid = '5'
+RZ.pagerecordid = '170';
+
+RZ.pageid = 'links-170';
+RZ.pageparentid = '86';
+RZ.pagesectionid = '86';
+RZ.pagesectionname = 'auditor';
+RZ.pagesectionlevel = '3';
+RZ.pagesectionfolder = 'department/departments_a_h/auditor/';
+RZ.pagesectionfilter = 'sectionid=86';
+RZ.pagelinkfilter = 'linklevel=3 and linksectionid=86';
+RZ.pagelinklevel = '3';
+RZ.pagelinkid = '170';
+RZ.pageidfield = '';
+
+RZ.isnewrecord = false;
+RZ.editmodule = '';
+RZ.editrecordid = '170';
+RZ.editrecordversion = '';
+RZ.editversion = '';
+RZ.editaction = '';
+
+RZ.page_roles = ''
+RZ.page_users = 'bb0f63d3101dc121ca042dfb14e9e0bf4f46cf9a71eeffb5f29c82b27792864a'
+RZ.page_key = 'freeform[170]'
+RZ.parent_key = 'freeform[86]'
+RZ.inherit_key = 'index[]'
+RZ.workflowname = ''
+RZ.permissions_options = ''
+RZ.permissions_module = 'webspace_page_permissions'
+RZ.webspace = 'mahnomencntymn'
+RZ.webspacedesc = "Homesome";
+
+RZ.featurespattern = '(EZ)';
+null
+
+RZ.webspacelinksurl = ''
+RZ.webspacelinksurl = './webspace/links.html'
+RZ.workflowlist = ''
+RZ.revizeserverurl = 'https://webgen1.revize.com/revize/mahnomencntymn';
+
+if (!RZ.nextseq) RZ.nextseq = {linknames:{},modules:{}};
+
+RZ.webspace_config = new Object();
+RZ.webspace_config.admin_email = "noreply@co.walla-walla.wa.us";
+RZ.webspace_config.calendar_options = "max_events=4";
+RZ.webspace_config.form_captcha = "yes";
+RZ.webspace_config.form_server = "revizeserver";
+RZ.webspace_config.form_technology = "jsp";
+RZ.webspace_config.formwizard_ftp_password = "";
+RZ.webspace_config.formwizard_ftp_port = "";
+RZ.webspace_config.formwizard_ftp_server = "";
+RZ.webspace_config.formwizard_ftp_user = "";
+RZ.webspace_config.formwizard_setup = "yes";
+RZ.webspace_config.formwizard_smtp_password = "xxx";
+RZ.webspace_config.formwizard_smtp_server = "xxx";
+RZ.webspace_config.formwizard_smtp_user = "xxx";
+RZ.webspace_config.google_analytics = "";
+RZ.webspace_config.home_pageid = "0";
+RZ.webspace_config.home_sectionid = "0";
+RZ.webspace_config.home_template = "home,index,sitemap";
+RZ.webspace_config.icon_email = "<img src=\"/revize/images/email_icon_yellow.gif\" width=\"16\" border=\"0\" height=\"17\" title=\"Request email notification when page changes\" alt=\"Request email notification when page changes\" style=\"\" />";
+RZ.webspace_config.image_maxheight = "3000";
+RZ.webspace_config.image_maxwidth = "3000";
+RZ.webspace_config.image_setup = "yes";
+RZ.webspace_config.isNewMenuManagerEnabled = "yes";
+RZ.webspace_config.livesite_url = "";
+RZ.webspace_config.menu_links_module = "links";
+RZ.webspace_config.menu_newsection = "";
+RZ.webspace_config.menu_nexturl = "webspace_menu-editform.jsp";
+RZ.webspace_config.menu_sections_module = "sections";
+RZ.webspace_config.menu_system = "custom";
+RZ.webspace_config.menu_version = "1.00";
+RZ.webspace_config.new_menu_manager_enabled = "yes";
+RZ.webspace_config.notify_return_url = "enotify/index.php";
+RZ.webspace_config.rte_setup = "yes";
+RZ.webspace_config.to_email = "";
+RZ.webspace_config.use_folders = "1";
+RZ.webspace_config.use_new_buttons = "yes";
+
+RZ.isauthenticationactive = true
+RZ.warning = ""
+RZ.adminwinmsg = null
+
+RZ.channels = 'revize,fileschannel';
+RZ.jsversion = 1.2
+
+
+
+
+	
+
+
+
+	Skip to main content
+	
+		
+			
+				close menu
+			
+			
+					This website uses cookies to store your accessibility preferences. No personal / identifying information is stored.
+			
+			
+				Dismiss
+			
+		
+	
+	
+		
+			
+		
+		
+			
+				
+					High Contrast
+				
+				
+					Yellow Links
+				
+				
+					Grey Scale
+				
+				
+					Underline Links
+				
+			
+		
+	
+		
+		
+			
+		
+	
+	
+
+
+
+
+
+
+	
+		
+			
+				We Have A New Website!
+				Our new website is powered by Revize, LLC.
+			
+			
+		
+	
+
+
+
+	
+		
+		
+			
+				
+					
+						
+
+
+
+
+
+	
+	
+	
+
+					
+					
+						
+							
+
+
+            Facebook
+						
+						
+						
+							function googleTranslateElementInit() {
+								new google.translate.TranslateElement({pagelanguage: 'en',
+									layout: google.translate.TranslateElement.InlineLayout.SIMPLE},
+									'google-translate');
+							}
+						
+						
+						
+						
+							Translate WebsiteEN 
+							
+								English
+								Afrikaans
+								Albanian
+								Arabic
+								Armenian
+								Azerbaijani
+								Basque
+								Belarusian
+								Bengali
+								Bosnian
+								Bulgarian
+								Catalan
+								Cebuano
+								Chinese (Simplified)
+								Chinese (Traditional)
+								Croatian
+								Czech
+								Danish
+								Dutch
+								Esperanto
+								Estonian
+								Filipino
+								Finnish
+								French
+								Galician
+								Georgian
+								German
+								Greek
+								Gujarati
+								Haitian Creole
+								Hausa
+								Hebrew
+								Hindi
+								Hmong
+								Hungarian
+								Icelandic
+								Igbo
+								Indonesian
+								Irish
+								Italian
+								Japanese
+								Javanese
+								Kannada
+								Khmer
+								Korean
+								Lao
+								Latin
+								Latvian
+								Lithuanian
+								Macedonian
+								Malay
+								Maltese
+								Maori
+								Marathi
+								Mongolian
+								Nepali
+								Norwegian
+								Persian
+								Polish
+								Portuguese
+								Punjabi
+								Romanian
+								Russian
+								Serbian
+								Slovak
+								Slovenian
+								Somali
+								Spanish
+								Swahili
+								Swedish
+								Tamil
+								Telugu
+								Thai
+								Turkish
+								Ukrainian
+								Urdu
+								Vietnamese
+								Welsh
+								Yiddish
+								Yoruba
+								Zulu
+							
+						
+						
+							
+								Search
+								
+								
+							
+						
+					
+				
+			
+		
+		
+			
+			
+		
+		
+		
+			
+				
+				
+				
+
+
+ 
+
+	Home
+	Government
+		
+			About Us
+			Agenda / Minutes
+			Contact
+			County Commissioners
+			Employment
+			Other Governmental Units
+			Related Agencies
+				
+					Court Administration
+					Mahnomen County Historical Museum
+					Mahnomen/Norman Public Health
+					Soil & Water Conservation District
+					University Of Minnesota Extension
+				
+			
+		
+	
+	Department
+		
+			County Directory
+			Departments A-H
+				
+					Administration
+					Assessor
+					Attorney
+					Highway
+					Auditor - Treasurer
+				
+			
+			Departments I-Z
+				
+					License Bureau
+					Maintenance
+					Mahnomen County Service Center
+					Recorder
+					Sheriff
+					Social Services
+					Veterans Services
+					Zoning & Sanitation
+				
+			
+		
+	
+	Resident
+		
+			Calendar
+			News
+			Taxpayer Services
+		
+	
+
+
+
+
+
+
+
+
+				
+				
+			
+		
+		
+	
+
+
+
+	
+		
+			RZ.module = 'slider';
+			RZ.nexturl = "/revize/webgen_includes/homesome/editforms/slider-editlist.jsp?pageid=86";
+			RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = '';
+			RZ.img = '<span class="rzBtn">Edit Slider</span>';
+			RZ.caption = '';
+			RZ.options = '';
+			if (typeof RZaction != 'undefined') RZaction('editlist');
+		 
+		
+	
+
+if (typeof RZlistbegin != 'undefined') RZlistbegin(1)
+
+
+if (typeof RZlinktemplate != 'undefined') RZlinktemplate('slider','','')
+if (typeof RZ.nextseq != 'undefined') RZ.nextseq.modules['slider_1']={field:'seq_no',seq:'1.00'};
+
+	
+		A default banner image
+	
+
+
+
+
+
+
+	
+		
+			
+				
+				
+				
+
+
+				
+					
+					RZ.module = 'links';
+					RZ.nexturl = "/revize/plugins/menus/webspace_menu-editlist.jsp?pageid=links-170&"
+					+ "linksfilter=linkplacement=leftnav and linkparentid=86&"
+					+ "numberoflevels=2&"
+					+ "linkoptions=url,template,file&"
+					+ "linknewsection=*all*";
+					RZ.img = '<span class="rzBtn">Edit Links</span>';
+					RZ.caption = '';
+					RZ.set = "links.linkplacement=leftnav"
+					RZ.options = '';
+					if (typeof RZaction != 'undefined') RZaction('editlist');
+					
+				
+				
+ 
+	Department Contacts
+	Election Administration
+	Passport Services
+
+
+				
+			
+		
+	
+		
+			
+				
+	
+	
+	
+		Home
+							 Department 
+							 Departments A-H 
+							 Auditor  
+							 Election Administration
+	
+	
+
+
+				
+					Font Size
+					Increase font size
+					Decrease font size
+				
+			
+			
+				Election Administration
+				
+				
+					
+		
+			RZ.module = 'freeform';
+			RZ.recordid = '';
+			RZ.nexturl = "/revize/webgen_includes/homesome/editforms/freeform-editform.jsp";
+			RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = '';
+			RZ.img = '<span class="rzBtn">Edit Page Content</span>';
+			RZ.set = 'freeform.pageid=links-170';
+			RZ.options = '';
+			if (typeof RZaction != 'undefined') RZaction('editform');
+		
+	
+	
+		RZ.module = 'freeform';
+		RZ.recordid = '';
+		RZ.nexturl = "/revize/webgen_includes/homesome/editforms/metadata-editform.jsp";
+		RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = '';
+		RZ.img = '<span class="rzBtn">Edit Metadata</span>';
+		RZ.set = 'freeform.pageid=links-170';
+		RZ.options = '';
+		if (typeof RZaction != 'undefined') RZaction('editform');
+	
+	
+		RZ.nexturl = '';
+		RZ.img = '<img src="images/edit/permissions.jpg" alt="Permissions" border="0" />';
+		RZ.options = '';
+		if (typeof RZaction != 'undefined') RZaction('permissions');
+	
+
+
+					
+
+	In order to vote in the Primary, General or both elections you must be a registered voter. Register to vote here!Information on "Becoming a Candidate" and "Filing for Candidacy"August 11th, 2026 Local Primary ResultsAugust 11th, 2026 State Wide Primary ResultsView who has filed for Office Campaign Financial Reports2026 Election DatesSpecial General Election- February 10th, 2026March Township Election-March 10th, 2026Primary Election-August 11th, 2026General Election-November 3rd, 2026Early Voting (EV)Primary Election (Basement Meeting Room-Courthouse)July 24th, 2026-August 10th, 2026 8:00 a.m-4:30 p.m.Primary Election EV additional hoursAugust 8th, 2026 9:00 a.m-3:00 p.m.August 10th, 2026 8:00 a.m-5:00 p.m.General Election (Basement Meeting Room-Courthouse)October 16th, 2026-November 2nd, 2026 8:00-4:30 p.m.General Election EV additional hoursOctober 24th, 2026 9:00 a.m-3:00 p.m.October 27th, 2026 8:00 a.m-7:00 p.m.October 31st, 2026 9:00 a.m-3:00 p.m. November 1st, 2026 9:00 a.m-3:00 p.m.November 2nd, 2026 8:00 a.m-5:00 p.m.Absentee Voting (AB)Complete an Online Absentee Application here or print an Absentee Ballot Application and mail, fax or e-mail the completed form to the Mahnomen County Auditor's Office.Mail to: Mahnomen County Elections DepartmentP.O Box 379Mahnomen, MN 56557Fax to: (218) 936-5656E-mail to: elections@co.mahnomen.mn.us
+
+Absentee Voting for the February 2026 Special General Election is December 26th, 2025-February 9th, 2026
+Absentee Voting for the Primary Election is June 26th-August 10th, 2026
+Absentee Voting for the General Election is September 18th-November 2nd, 2026
+Absentee Ballots are available 46 days prior to any election (voted absentee ballots must be received in our office by 8:00 p.m. on election day).
+
+Additional Hours for Absentee Voting:
+Special General ElectionFebruary 7th, 2026 9:00 a.m-3:00 p.m.February 9th, 2026 8:00 a.m-5:00 p.m. Primary ElectionAugust 1st, 2026 9:00 a.m-3:00 p.m. (Naytahwaush Fire Hall)August 8th, 2026 9:00 a.m-3:00 p.m.August 10th, 2026 8:00 a.m-5:00 p.m.General ElectionOctober 17th, 2026 9:00 a.m-3:00 p.m. (Naytahwaush Fire Hall)October 24th, 2026 9:00 a.m-3:00 p.m.October 27th, 2026 8:00 a.m-7:00 p.m.October 31st, 2026 9:00 a.m-3:00 p.m. November 1st, 2026 9:00 a.m-3:00 p.m.November 2nd, 2026 8:00 a.m-5:00 p.m.
+Election Quick Links
+
+Secretary Of State
+Register to Vote
+Other ways to Vote
+What's on my Ballot
+Election Results
+Minnesota Overseas Voter Services
+Mail Ballot Procedures
+
+Department Contacts
+Brenda LundonTitle: County Auditor-TreasurerDepartment: Auditor-Treasurer's OfficeEmail: brenda.lundon@co.mahnomen.mn.usPhone: 218-935-2545Fax: 218-936-5656Larry MoeTitle: Deputy Auditor-Tax ForfeitureDepartment: Auditor-Treasurer's OfficeEmail: larry.moe@co.mahnomen.mn.usPhone: 218-935-5669Fax: 218-936-5656Randy WallerTitle: Chief Deputy Auditor-Account ReceivablesDepartment: Auditor-Treasurer's OfficeEmail: randy.waller@co.mahmomen.mn.usPhone: 218-935-5669Fax: 218-936-5656Melissa NetlandTitle: Deputy Auditor-Payroll Services-HR/Passport AgentDepartment: Auditor-Treasurer's OfficeEmail: missy.netland@co.mahnomen.mn.usPhone: 218-935-5669Fax: 218-936-5656Lindsey KochmannTitle: Deputy Auditor-Accounts Payable/Passport AgentDepartment: Auditor-Treasurer's OfficeEmail: lindsey.kochmann@co.mahnomen.mn.usPhone: 218-935-5669Fax: 218-936-5656
+
+
+				
+			
+		
+	
+	
+
+
+
+
+	
+		
+		
+		Share this page
+	
+
+	
+		
+			
+				
+					×
+					Share this page
+				
+				
+					
+						Copy and paste this code into your website.
+						<a href="http://www.mahnomencounty.gov/department/departments_a_h/auditor/election_administration.php">Your Link Name</a>
+					
+					
+						Share this page on your favorite Social network
+						
+							
+								
+									 Facebook
+								
+							
+							
+								
+									 Twitter
+								
+							
+							
+								
+									 Reddit
+								
+							
+						
+					
+					Close
+				
+			
+		
+	
+	
+			
+
+		
+			
+				
+				
+				
+			
+			
+		
+		
+			
+			Contact Us
+				
+            Facebook
+			
+			
+				
+		
+					Meetings & Minutes
+				
+					Taxpayer Services
+				
+					Employment
+				
+				
+			
+		
+	
+	
+		
+					311 N Main P.O. Box 379 Mahnomen, MN 56557 
+			Powered by revize., the Government Website Experts
+			
+			
+			Login
+		
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

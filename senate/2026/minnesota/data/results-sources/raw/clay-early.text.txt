@@ -1,0 +1,2737 @@
+
+
+
+
+
+	
+
+				(function(w,d,s,l,i){w.GAMeasurementID='G-JDG1H6FG4B';w[l]=w[l]||[];w[l].push({'gtm.start':
+				new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+				j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+				'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+				})(window,document,'script','cpDataLayerGA4','GTM-K73C5PS');
+				
+				
+					var enableTelemetry = 'false'
+					var aiConfig = {
+					instrumentationKey: '1cde048e-3185-4906-aa46-c92a7312b60f'						
+					}
+					var appInsights = window.appInsights || function (a) { function b(a) { c[a] = function () { var b = arguments; c.queue.push(function () { c[a].apply(c, b) }) } } var c = { config: a }, d = document, e = window; setTimeout(function () { var b = d.createElement('script'); b.src = a.url || 'https://js.monitor.azure.com/scripts/a/ai.0.js', d.getElementsByTagName('script')[0].parentNode.appendChild(b) }); try { c.cookie = d.cookie } catch (a) { } c.queue = []; for (var f = ['Event', 'Exception', 'Metric', 'PageView', 'Trace', 'Dependency']; f.length;)b('track' + f.pop()); if (b('setAuthenticatedUserContext'), b('clearAuthenticatedUserContext'), b('startTrackEvent'), b('stopTrackEvent'), b('startTrackPage'), b('stopTrackPage'), b('flush'), !a.disableExceptionTracking) { f = 'onerror', b('_' + f); var g = e[f]; e[f] = function (a, b, d, e, h) { var i = g && g(a, b, d, e, h); return !0 !== i && c['_' + f](a, b, d, e, h), i } } return c }(aiConfig);
+					window.appInsights = appInsights, appInsights.queue && 0 === appInsights.queue.length;
+					// Add telemetry initializer
+					appInsights.queue.push(function() {
+						appInsights.context.addTelemetryInitializer(function(envelope) {
+							var telemetryItem = envelope.data.baseData;
+							// To check the telemetry item’s type:
+							if (!false)
+							{
+								//If the telemetry is not enabled, we still want to capture Google map custom event, so only allow that
+								if (envelope.name.indexOf('.Event') == -1)
+									return false;
+							}
+						});
+					});						
+					appInsights.trackPageView();
+				
+	
+		function populateAntiForgery(token) {
+			var input = document.createElement("input");
+			input.name = "__RequestVerificationToken";
+			input.type = "hidden";
+			input.value = token;
+			var absPat = /^https?:\/\/|^\/\//i;
+			var forms = document.getElementsByTagName("form");
+			for (var i = 0; i < forms.length; i++) {
+				if (forms[i].method == "post" &&
+					!forms[i].querySelector('[name="__RequestVerificationToken"]') &&
+					!absPat.test(forms[i].getAttribute("action"))) {
+					forms[i].appendChild(input.cloneNode());
+				}
+			}
+		}
+
+		function getAntiForgeryToken(callback, error) {
+			var xhr = new XMLHttpRequest();
+			xhr.open("GET", "/antiforgery");
+			xhr.addEventListener("load", function() {
+				try {
+					if (this.status !== 200) {
+						throw Error("Invalid status. Could not retrieve antiforgery token.");
+					}
+					var obj = JSON.parse(this.responseText);
+					callback(obj.token);
+				} catch (e) {
+					typeof error === "function" && error(e);
+				}
+			});
+			xhr.send();
+		}
+
+		getAntiForgeryToken(function(token) {
+			if (document.readyState === "complete"
+				|| document.readyState === "loaded" 
+				|| document.readyState === "interactive") {
+				populateAntiForgery(token);
+				return;
+			}
+			document.addEventListener("DOMContentLoaded", function() {
+				populateAntiForgery(token);
+			}, false);
+		}, console.error);
+	
+			
+
+	
+		window.departmentHeader = {};
+		window.pageSectionTracker = {};
+		window.isResponsiveEnabled = true;
+		window.isRemoveSetHeights= false;
+		if (window.isRemoveSetHeights) {
+			document.documentElement.className += ' removeSetHeights';
+		}
+		window.mainMenuMediaQuery = 'screen and (max-width: 40em)';
+		window.isMobileBrowserIncludingTablets = false;
+		window.fixedResponsiveMenu = false;
+		window.fullWidthResponsiveMenu = false;
+		window.responsiveMenuHeight = '';
+		window.responsiveMenuFontSize = '';
+		window.isContentAdvisor = true;
+		(function () {
+			window.setSizeCookie = function () {
+				document.cookie = "dpi=" + window.devicePixelRatio + "; path=/";
+				document.cookie = "viewportWidth=" + window.innerWidth + "; path=/";
+				document.cookie = "viewportHeight=" + window.innerHeight + "; path=/";
+				if (screen && screen.width && screen.height) {
+					document.cookie = "screenWidth=" + screen.width + "; path=/";
+					document.cookie = "screenHeight=" + screen.height + "; path=/";
+				}
+				document.cookie = "responsiveGhost=1; path=/";
+			};
+
+			setSizeCookie();
+		}());
+	
+		
+
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+	
+	
+	
+	
+		How to Vote Early | Clay County, MN - Official Website
+
+		
+			
+	
+	
+
+	
+	
+	
+	
+	<!--
+	var intCountryCode = 840;
+	var order = '';
+//-->
+	
+		
+
+	
+	
+		window.Pages = window.Pages || {};
+		// FrontEnd RWD initialization
+		window.Pages.rwdReady = $.Deferred();
+		window.Pages.toolBarDeferred = $.Deferred();
+		window.Pages.rwdSetupComplete = $.Deferred();
+		window.Pages.megaMenuLoaded = $.Deferred();
+		window.Pages.angularToolbarComplete = $.Deferred();
+		window.Pages.frontEndToolbarComplete = $.Deferred();
+	
+	
+	
+	
+	
+	
+	
+
+
+
+
+	
+	
+	
+	
+
+	
+		setEditorVariables(false, 840);
+		function getPrintPreviewType() { return 0; } function printPreview() {pPreview(getPrintPreviewType()); }
+	
+	
+
+
+
+    jQuery(document).click(function (event) {
+	var target = jQuery(event.target);
+	if (target.attr('src') && target.parents('.image').length && target.parents('.widget').length) {
+		var text = target.attr('title');
+		
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Image',
+				eventAction: 'Image - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.is('button') || target.hasClass('button') || target.parents().hasClass('button')) {
+		var text = "";
+		if (target.parents('.button')[0]) {
+			text = target.parents('.button').first().text();
+		} else if (target.text().length) {
+			text = target.text();
+		} else if (target.attr('title').length) {
+			text = target.attr('title');
+		}
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Button',
+				eventAction: 'Button - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetCustomHtml').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Custom Html',
+				eventAction: 'Custom Html Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.editor').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Editor',
+				eventAction: 'Editor Link Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.GraphicLinks').length) {
+		var text = "";
+		var targetGraphicLink = target;
+		if (target.hasClass('widgetGraphicLinksLink')) {
+			targetGraphicLink = jQuery(target.children()[0]);
+		}
+		if (targetGraphicLink.hasClass('text')) {
+			text = targetGraphicLink.text();
+		} else if (targetGraphicLink.attr('src').length) {
+			if (targetGraphicLink.attr('alt').length) {
+				text = targetGraphicLink.attr('alt');
+			} else {
+				text = targetGraphicLink.attr('src');
+			}
+		} else {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Graphic Links',
+				eventAction: 'Graphic Link - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.InfoAdvanced').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Info Advanced',
+				eventAction: 'Info Advanced Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.list').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'List',
+				eventAction: 'List Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.megaMenuItem').length || target.parents('.topMenuItem').length) {
+		var megaMenuText = jQuery('.topMenuItem.mouseover').find('span').text();
+		var breadCrumbs = [];
+		jQuery('.breadCrumbs > li').each(function () {
+			 breadCrumbs.push(this.textContent);
+		});
+		var pageTitle = breadCrumbs.join('>');
+		var subTitleText = target.parents('.megaMenuItem').children('.widgetTitle').children().text();
+		var text = "";
+		if (pageTitle) {
+			text += pageTitle + " | ";
+		} else {
+			text += document.title + ' - ';
+		}
+		if (target.text() == "" && megaMenuText == "") {
+			text += "N/A";
+		} else if (target.text().length && megaMenuText.length) {
+			if (megaMenuText == target.text()) {
+				text += megaMenuText;
+			} else {
+				text += megaMenuText + " - " + subTitleText + " - " + target.text();
+			}
+		} else if (target.text() == "") {
+			text += megaMenuText;
+		} else {
+			text += target.text();
+		}
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Mega Menu',
+				eventAction: 'Mega Menu : ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetNewsFlash').length && target.parents('.widgetItem').length) {
+		var text = jQuery(target.parents('.widgetItem')[0]).find('.widgetTitle').children().text();
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'News Flash',
+				eventAction: 'News Flash - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.hasClass('widgetQuickLinksLink') || target.find('.widgetQuickLinksLink').length) {
+		var text = target.text();
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Quick Links',
+				eventAction: 'Quick Links - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.attr('src') && target.parents('.cpSlideshow').length) {
+		var text = target.attr('title');
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Slideshow',
+				eventAction: 'Slideshow - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetText').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Text',
+				eventAction: 'Text Link Clicked',
+				eventLabel: window.location.href
+			});
+	}
+});
+	
+	
+		
+		
+			
+				
+			
+		
+	
+	
+		
+	
+	
+		
+			
+		
+	
+
+    
+
+Skip to Main Content
+
+    
+
+        
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+        
+                
+                    
+
+
+
+
+
+    
+        Create a Website Account - Manage notification subscriptions, save form progress and more.   
+        
+	        Website Sign In
+        
+    
+
+
+    $(document).ready(function () {
+        $('#signedOutToolbarCreateProfileButton').click(function (event) {
+            event.preventDefault();
+            window.location.href = '/MyAccount/ProfileCreate?from=url&url=/&dn=' + window.location.origin;
+        });
+
+			
+				$('#loggedOutToolbarSignInButton').click(function (event) {
+					event.preventDefault();
+					window.location.href = '/MyAccount/?from=url&url=' + encodeURIComponent(window.location.href.replace(window.location.origin, '')) + '&dn=' + window.location.host;
+				});
+			
+
+		if ('False' == 'True') {
+            $('#loggedOutToolbarSignInButton').hide();
+		}
+    })
+
+
+
+                
+            
+                
+                
+
+
+
+
+
+
+
+
+				
+	
+				                
+
+						
+	
+	
+		
+
+	
+	
+	
+	
+
+		$(document).ready(function () {
+			try {
+				// Minimum characters required before performing a search/autocomplete
+				var minPrefixLength = 3;
+				var autoCompleteDebounceDelay = 500;
+				var searchFieldSelector = "#searchField" + 'add72e6d-0b83-457f-be7b-05b98e4a2a3f';
+				var checkboxSelector = "#ysnSearchOnlyDept" + 'add72e6d-0b83-457f-be7b-05b98e4a2a3f';
+				var buttonSelector = ".widgetSearchButton" + 'add72e6d-0b83-457f-be7b-05b98e4a2a3f';
+				var autoCompleteCache = {};
+				var autoCompleteCacheKeys = [];
+				var autoCompleteCacheLimit = 25;
+				var currentAutoCompleteRequest = null;
+				var currentAutoCompleteRequestKey = null;
+				var autoCompleteDebounceTimer = null;
+				var autoCompleteDebounceKey = null;
+				var pendingAutoCompleteResponses = [];
+
+				function normalizeAutoCompleteTerm(term) {
+					return $.trim((term || "") + "").replace(/\s+/g, " ");
+				}
+
+				function shouldSearch(term) {
+					return normalizeAutoCompleteTerm(term).length >= minPrefixLength;
+				}
+
+				function getAutoCompleteUrl() {
+					return '/Search/AutoComplete' + ($(checkboxSelector).is(':checked') || false? '?departmentId=0' : '');
+				}
+
+				function getAutoCompleteCacheKey(requestUrl, term) {
+					return requestUrl + "|" + term.toLowerCase();
+				}
+
+				function cacheAutoCompleteResult(cacheKey, data) {
+					if (!Object.prototype.hasOwnProperty.call(autoCompleteCache, cacheKey)) {
+						autoCompleteCacheKeys.push(cacheKey);
+						if (autoCompleteCacheKeys.length > autoCompleteCacheLimit) {
+							delete autoCompleteCache[autoCompleteCacheKeys.shift()];
+						}
+					}
+					autoCompleteCache[cacheKey] = data;
+				}
+
+				function respondToPendingAutoComplete(data) {
+					var responses = pendingAutoCompleteResponses;
+					pendingAutoCompleteResponses = [];
+					for (var i = 0; i < responses.length; i++) {
+						responses[i](data);
+					}
+				}
+
+				function cancelPendingAutoComplete() {
+					clearTimeout(autoCompleteDebounceTimer);
+					autoCompleteDebounceKey = null;
+					if (currentAutoCompleteRequest != null) {
+						currentAutoCompleteRequest.abort();
+						currentAutoCompleteRequest = null;
+					}
+					currentAutoCompleteRequestKey = null;
+					respondToPendingAutoComplete([]);
+				}
+
+				function createWidgetAutoCompleteSource(options) {
+					return function (request, response) {
+						var term = normalizeAutoCompleteTerm(request.term);
+						if (!options.shouldSearch(term)) {
+							response([]);
+							return;
+						}
+
+						var requestUrl = options.url();
+						var cacheKey = getAutoCompleteCacheKey(requestUrl, term);
+						if (Object.prototype.hasOwnProperty.call(autoCompleteCache, cacheKey)) {
+							response(autoCompleteCache[cacheKey]);
+							if (options.success) {
+								options.success(autoCompleteCache[cacheKey]);
+							}
+							return;
+						}
+
+						if (currentAutoCompleteRequestKey === cacheKey || autoCompleteDebounceKey === cacheKey) {
+							pendingAutoCompleteResponses.push(response);
+							return;
+						}
+
+						cancelPendingAutoComplete();
+						autoCompleteDebounceKey = cacheKey;
+						pendingAutoCompleteResponses.push(response);
+						autoCompleteDebounceTimer = setTimeout(function () {
+							autoCompleteDebounceKey = null;
+							currentAutoCompleteRequestKey = cacheKey;
+							currentAutoCompleteRequest = $.ajax({
+								url: requestUrl,
+								dataType: "json",
+								timeout: options.timeout,
+								data: {
+									term: term,
+								},
+								success: function (data) {
+									if (currentAutoCompleteRequestKey === cacheKey) {
+										cacheAutoCompleteResult(cacheKey, data);
+										respondToPendingAutoComplete(data);
+										if (options.success) {
+											options.success(data);
+										}
+									}
+								},
+								error: function (xmlhttprequest, textstatus, message) {
+									if (textstatus === "abort") {
+										return;
+									}
+
+									if (options.error) {
+										options.error(xmlhttprequest, textstatus, message);
+									}
+
+									respondToPendingAutoComplete([]);
+								},
+								complete: function (xmlhttprequest) {
+									if (currentAutoCompleteRequest === xmlhttprequest) {
+										currentAutoCompleteRequest = null;
+										currentAutoCompleteRequestKey = null;
+									}
+								}
+							});
+						}, options.delay);
+					};
+				}
+
+				// click handler for search buttons
+				$(buttonSelector).click(function (e) {
+					e.preventDefault();
+					var $btn = $(this);
+					var $field = $btn.siblings(".widgetSearchBox");
+					var term = $field.val() + "";
+					if (!shouldSearch(term)) {
+						// do nothing until user types enough characters
+						$field.focus();
+						return;
+					}
+
+					if ($(checkboxSelector).is(':checked') || false)
+					{
+						doWidgetSearch($.trim(term), Number(0));
+					}
+					else {
+						doWidgetSearch($.trim(term), 0);
+					}
+				});
+
+				// enter key handler for the search field
+				$(searchFieldSelector).keypress(function (e) {
+					var code = e.which || e.keyCode;
+					if (code === 13) {
+						e.preventDefault();
+						var $this = $(this);
+						var term = $this.val() + "";
+						if (!shouldSearch(term)) {
+							// do nothing until user types enough characters
+							$this.focus();
+							return false;
+						}
+
+						if ($(checkboxSelector).is(':checked') || false) {
+							doWidgetSearch($.trim(term), Number(0));
+						} else {
+							doWidgetSearch($.trim(term), 0);
+						}
+						return false;
+					}
+					return true;
+				});
+
+				// autocomplete: set minLength and guard source
+				if (true) {
+					var $searchField = $(searchFieldSelector).autocomplete({
+						minLength: minPrefixLength,
+						source: createWidgetAutoCompleteSource({
+							delay: autoCompleteDebounceDelay,
+							timeout: 10000,
+							shouldSearch: shouldSearch,
+							url: getAutoCompleteUrl,
+							success: function () {
+								$('.autoCompleteError').remove();
+							},
+							error: function (xmlhttprequest, textstatus, message) {
+								if (textstatus === "timeout") {
+									if ($(searchFieldSelector).siblings('.autoCompleteError').length == 0)
+										$('<span class="autoCompleteError"><p class="alert error">Search autocomplete is currently not responding. Please try again later.</p></span>').insertAfter($(searchFieldSelector));
+								}
+							}
+						}),
+						html: true,
+						delay: 0,
+						select: function (event, ui) {
+							$(this).val(ui.item.value);
+							$(this).next().click();
+						}
+					});
+
+					$searchField.data("ui-autocomplete")._renderItem = function (ul, item) {
+						return $("<li class=\"itemList\"></li>")
+							.data("ui-autocomplete-item", item)
+							.append("<a>" + item.label + "</a>")
+							.appendTo(ul);
+					};
+				}
+
+				// keep searchBtnApplyQuery consistent with prefix rule
+				window.searchBtnApplyQuery = function() {
+					var $field = $(searchFieldSelector);
+					var term = $field.val() + "";
+					if (shouldSearch(term)) {
+						// update href for the icon/button (if present)
+						var btn = document.getElementById("btnSearchIcon");
+						if (btn) btn.href = "/Search?searchPhrase=" + encodeURIComponent($.trim(term));
+					} else {
+						var btn = document.getElementById("btnSearchIcon");
+						if (btn) btn.href = "#";
+					}
+				};
+			}
+			catch(e) {} //we're going to eat this error. Autocomplete won't work but we dont wan't to break anything else on the page.
+		});
+	
+
+	
+				
+		
+			
+						
+
+			Search
+		
+
+	
+
+
+
+	  
+		.widgetSearch ::-webkit-input-placeholder {
+		color: #314033;
+	  }
+		.widgetSearch :-moz-placeholder { /* Firefox 18- */
+	   color: #314033;
+	}
+		.widgetSearch ::-moz-placeholder {  /* Firefox 19+ */
+	   color: #314033;
+	}
+	.widgetSearch :-ms-input-placeholder {
+	   color: #314033;
+	}
+	
+
+	.widgetSearch .widgetBody .widgetSearchBoxadd72e6d-0b83-457f-be7b-05b98e4a2a3f
+	{
+		color: #314033;
+		background-color: #F7F5F2;
+height: 96px;
+border: 4px solid #BBA784;
+border-radius: 100px 0 100px 100px;
+padding: 0 82px 0 50px;
+font-family: Lato;
+font-size: 22px;
+	}
+	.widgetSearch .widgetBody .widgetSearchButtonadd72e6d-0b83-457f-be7b-05b98e4a2a3f
+	{
+		margin: 22px 35px 0 0;
+	}
+	.widgetSearch .widgetSearch-onlyDeptadd72e6d-0b83-457f-be7b-05b98e4a2a3f
+	{
+		display: inline-block;
+		color: #333;
+		
+		
+		 padding-top: 10px;
+	}
+	#ysnSearchOnlyDeptadd72e6d-0b83-457f-be7b-05b98e4a2a3f
+	{
+		position: relative;
+		top: .125em;
+	}
+
+
+
+
+
+
+
+
+
+	//Updates search icons href to have the correct queryString
+	function searchBtnApplyQuery() {
+		document.getElementById("btnSearchIcon").href = "/Search?searchPhrase=" + document.getElementById("searchFieldadd72e6d-0b83-457f-be7b-05b98e4a2a3f").value;
+	}
+
+
+
+
+	 
+
+	 
+
+			 
+
+
+	
+	
+				                
+
+						
+	
+	
+		
+
+
+
+
+
+
+	
+		
+				
+	
+	
+		
+				
+					
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+				
+			
+		
+	
+			
+
+
+
+	 
+
+	 
+
+			 
+
+
+	
+
+
+
+    About Us  			    Government   			    Services  			    Community  			    Business  			    How Do I...  			
+
+
+
+	
+		(function () {
+			function setupMenu() {
+				const menuID = 'mainNavMenu';
+				const menuType = MAIN_MENU;
+
+				//setup menu manager properties for main menu
+				if (!menuManager.mobileMainNav && true)
+					menuManager.adjustMainItemsWidth('#' + menuID);
+				menuManager.isMainMenuEditable = false;
+				menuManager.mainMenuMaxSubMenuLevels = 4;
+				menuManager.setMOMMode(2, menuType);
+
+				//Init main menu
+				const setupDraggable = menuManager.isMainMenuEditable;
+				const urlToGetHiddenMenus = '/Pages/MenuMain/HiddenMainSubMenus?pageID=1&moduleID=&themeID=22&menuContainerID=mainNav';
+
+				menuManager.setupMenu(menuID, 'mainNav', menuType, setupDraggable, urlToGetHiddenMenus);
+				menuManager.mainMenuInit = true;
+				menuManager.mainMenuTextResizer = true;
+				if (1.00 > 0)
+					menuManager.mainMenuTextResizerRatio = 1.00;
+				if (window.isResponsiveEnabled)
+					menuManager.mainMenuReady.resolve();
+
+			}
+
+			if (document.readyState === "complete"
+				|| document.readyState === "loaded"
+				|| document.readyState === "interactive") {
+				setupMenu();
+				return;
+			}
+
+			document.addEventListener("DOMContentLoaded", setupMenu);
+		})();
+	
+
+
+	
+				                
+
+
+
+	
+	
+				                
+
+
+
+	
+	
+				                
+
+
+
+	
+	
+				                
+
+
+
+	
+	
+				                
+
+
+
+	
+	
+				                
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+		
+		
+			
+			
+		
+			
+				$(window).on("load", function () {
+					$.when(window.Pages.rwdSetupComplete)
+						.done(function () {
+							renderExternalBannerSlideshow('banner1',
+								{"BannerOptionID":80,"ThemeID":22,"SlotName":"banner1","Name":"Default","IsDefault":true,"BannerMode":2,"SlideShowSlideTiming":"5","SlideshowTransition":0,"SlideShowTransitionTiming":"1","ImageScale":true,"ImageAlignment":1,"ImageScroll":true,"MuteSound":true,"VideoType":0,"Status":40,"SlideshowControlsPosition":0,"SlideshowControlsAlignment":0,"SlideshowBannerControlsColorScheme":0,"DisplayVideoPauseButton":false,"VideoPauseButtonAlignment":1,"VideoPauseButtonControlsAlignment":0,"VideoPauseButtonStyle":"#FFFFFF","VideoPauseButtonBackgroundStyle":"#000000","VideoPauseButtonAlignmentClass":"alignRight viewport","DisplaySlideshowPauseButton":true,"SlideshowControlsColor":"#FFFFFF","SlideshowControlsBackgroundColor":"#000000","SlideshowPauseButtonClass":"isHidden","BannerImages":[{"BannerImageID":310,"BannerOptionID":80,"FileName":"/ImageRepository/Document?documentID=15296","Height":420,"Width":2200,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":1,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":""},{"BannerImageID":311,"BannerOptionID":80,"FileName":"/ImageRepository/Document?documentID=15295","Height":420,"Width":2200,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":2,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":""}],"BannerVideos":[{"BannerVideoID":3,"BannerOptionID":80,"VideoFileName":"","ImageFileName":"EmptyBannerBkg202312050853377498.png","IsLink":false,"LinkAddress":null,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","VideoFileID":"00000000-0000-0000-0000-000000000000","ImageFileID":"00000000-0000-0000-0000-000000000000","VideoWidth":0,"VideoHeight":0,"ImageWidth":0,"ImageHeight":0,"LinkedVideoUrl":"","RecordStatus":0,"AltText":null}],"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/"},
+								'/App_Themes/2023 - Interior/Images/',
+								'Rotating');
+						});
+				});
+			
+
+
+
+
+
+
+		
+			HomeGovernment County GovernmentElection InformationHow to Vote Early
+		
+
+	   
+    
+
+	
+	
+		
+
+	
+	
+	
+	
+	
+	
+	
+
+				
+
+How to Vote Early		
+	
+		
+			
+
+						
+	
+	
+		
+
+	    
+
+
+        You can vote early if you wish - you no longer need a reason or excuse. You can request a ballot be mailed to you to vote from home, or you may vote in the County's Elections Office during the 46 days prior to the election. Vote by MailFirst, apply to have an absentee ballot sent to you either online or in print:Online: Use the MN Secretary of State's Absentee Ballot Online Request Form Print: Please complete an Absentee Voter Application (PDF) and return it to Clay County Elections. Once you've received and completed your ballot, return it:Drop off at or mail to the Clay County Government Center at 3510 12th Ave S Moorhead.You may also return it with the envelope included. We will not have drop sites this year.Track your ballotAccepted absentee ballotsAccepted ballots are held in a secure location until counting begins.Absentee ballot counting starts at 5 PM nineteen days before election day.Rejected absentee ballotsRejected ballots will not be counted. Voters whose ballots were rejected will receive a replacement. Ballots are not rejected for a missing secrecy envelope.  Common reasons ballots are rejected:A voter did not sign the signature envelope.The voter’s ID number did not match the one used on their application. (Put both your driver’s license number and last four digits of your Social Security Number on your signature envelope. This reduces the chance your absentee ballot will be rejected.)A non-registered voter did not fill out their election day registration form.The ballot was not received by election day.Ballot ProcessingBallot processing is always done by a team of two or more people. Each team handles one polling place or precinct at a time. This process starts at 5 PM, nineteen days before election day. The steps are:Count the unopened ballot envelopes.Compare the count to the voter database to make sure every accepted ballot is counted.Separate the ballot secrecy envelope from the signature envelope. This process eliminates a connection between a voter’s identify and their vote. Signature envelopes are set aside.Ballots are then run through a high-speed ballot counter.Elections officials are not allowed to access or release results until the polls close at 8 PM on Election Day.Absentee votes are combined with results from the polling place and then released.Absentee ballot materials are retained as required by statute and rules.
+    
+
+
+	$(document).ready(function (e) {		
+	    renderSlideshowIfApplicable($('#divEditor' + '4775c793-255f-4ec6-931a-2e20437b6fb7'));
+	});
+
+
+
+	 
+
+	 
+
+			 
+						
+	
+	
+		
+
+
+
+
+
+
+
+
+
+	
+		    
+        
+                    Absentee Ballot FAQs
+                                
+    
+	
+		
+						
+							
+
+
+        
+            
+                When is the Return Deadline?
+                
+            
+        
+        
+            
+                Drop your ballot off at Clay County Government Center- 3510 12th Ave S, Moorhead, MN 56560 from June 26th through August 10th.To be counted, your ballot must be received on Election Day. You can return your ballot in person no later than 5 PM at the Clay County Government Center- 3510 12th Ave S, Moorhead, MN 56560 November 3rd 2026. 
+            
+        
+
+
+        
+            
+                What are Common Mistakes to Avoid?
+                
+            
+        
+        
+            
+                Make sure the witness section is not blank or incomplete.Read the instructions carefully.Use a blue or black ink pen to mark your ballot.Use the same ID number (driver’s license or state ID or the last four digits of your Social Security Number) on your signature envelope that you used on your application. It's a good idea to put down both numbers in both places.Remember to sign the white signature envelope.
+            
+        
+
+
+        
+            
+                How are Absentee Ballots Counted?
+                
+            
+        
+        
+            
+                Before absentee ballots can be counted, they must be accepted. Upon receipt, ballots are inspected to ensure they meet all the requirements to be counted. The signature and ID information must match those on the absentee ballot application. Ballot envelopes are marked either accepted or rejected.
+            
+        
+							
+						
+		
+        View All FAQs
+        	
+		
+	
+    
+        /FAQ.aspx
+    
+
+	
+
+
+
+	function handleExpandCollapse(e) {
+		const element = e.currentTarget;
+		const answer = document.getElementById(element.getAttribute("aria-controls")).parentElement;
+		const expandArrow = element.getElementsByClassName("widgetFAQ--arrow")[0];
+		if (answer.classList.contains("hidden")) {
+			expandArrow.classList.add('widgetFAQ--arrow-expanded');
+			expandArrow.classList.remove('widgetFAQ--arrow-collapsed');
+			answer.classList.remove("hidden");
+			element.setAttribute("aria-expanded", "true");
+		} else {
+			expandArrow.classList.add('widgetFAQ--arrow-collapsed');
+			expandArrow.classList.remove('widgetFAQ--arrow-expanded');
+			answer.classList.add("hidden");
+			element.setAttribute("aria-expanded", "false");
+		}
+		e.preventDefault();
+		e.stopImmediatePropagation();
+		e.stopPropagation();
+	}
+    document.querySelectorAll(".widgetFAQ--question a").forEach(element => {
+        // When the link is clicked, expand or collapse the answer
+		element.addEventListener("click", handleExpandCollapse);
+	});
+
+
+
+	 
+
+	 
+
+			 
+						
+	
+	
+		
+
+	    
+
+
+        Vote by AgentVoters may authorize an agent to pick up and return an absentee ballot for them. This service is available only within the seven days preceding an election.Each agent is allowed to deliver ballots for a maximum of three voters.You can absentee vote by agent if you are a:Patient in a hospital, residential treatment center, or nursing home. Resident of a group home.Resident of a battered women's shelter.Resident of an assisted living facility.Disabled voter.Voter who would have difficulty getting to the polls because of incapacitating health reasons.How to vote by agentChoose an agent whoYou have a pre-existing relationship with.Is at least 18 years old.Is not a candidate in the election.Complete both of these formsRequest for Agent Delivery of Absentee Ballot Form (PDF) Absentee Ballot Application (PDF)Your agent will be given your ballot to bring to you.Vote your ballot.Have your agent return your voted ballot to the office they picked it up at.Your agent must show an ID with name and signature.Completed ballots must be returned by 8 PM on election day (at the latest). Your agent or someone else you designate must return your ballot to the same election office by 8 PM on Election Day. You can also return your ballot by mail, but election officials must receive your ballot on or before Election Day.
+    
+
+
+	$(document).ready(function (e) {		
+	    renderSlideshowIfApplicable($('#divEditor' + 'd033b173-aa7e-4aa3-9f35-aca92751b431'));
+	});
+
+
+
+	 
+
+	 
+	
+	
+		
+
+
+
+
+
+
+
+
+
+	
+		    
+        
+                    Vote by Agent FAQs
+                                
+    
+	
+		
+						
+							
+
+
+        
+            
+                Can I have an absentee application sent to me automatically for every election?
+                
+            
+        
+        
+            
+                If you would like to automatically receive an application for an absentee ballot before each election, you may complete an application to automatically receive absentee ballot applications (PDF).
+            
+        
+
+
+        
+            
+                Why did I receive a pre-filled absentee ballot application?
+                
+            
+        
+        
+            
+                Several organizations send out mailings to increase voter participation. Mailings can include information regarding voter registration status, along with pre-filled absentee ballot and voter registration applications. We cannot guarantee the accuracy of data used by these organizations.
+            
+        
+
+
+        
+            
+                Can I check the status of my absentee ballot or ballot application?
+                
+            
+        
+        
+            
+                Yes, at https://mnvotes.sos.state.mn.us/AbsenteeBallotStatus.aspx.
+            
+        
+
+
+        
+            
+                I voted absentee in the primary, will I automatically receive an absentee ballot for the general election?
+                
+            
+        
+        
+            
+                You may have requested both the primary and general election ballots on the same absentee ballot application. If you applied for both elections, you will automatically be sent your general election ballot and do not need to apply again. To check if you’ve already requested a ballot for the general election, please use the ballot status tracker at mnvotes.org.
+            
+        
+							
+						
+		
+        View All FAQs
+        	
+		
+	
+    
+        /FAQ.aspx
+    
+
+	
+
+
+
+	function handleExpandCollapse(e) {
+		const element = e.currentTarget;
+		const answer = document.getElementById(element.getAttribute("aria-controls")).parentElement;
+		const expandArrow = element.getElementsByClassName("widgetFAQ--arrow")[0];
+		if (answer.classList.contains("hidden")) {
+			expandArrow.classList.add('widgetFAQ--arrow-expanded');
+			expandArrow.classList.remove('widgetFAQ--arrow-collapsed');
+			answer.classList.remove("hidden");
+			element.setAttribute("aria-expanded", "true");
+		} else {
+			expandArrow.classList.add('widgetFAQ--arrow-collapsed');
+			expandArrow.classList.remove('widgetFAQ--arrow-expanded');
+			answer.classList.add("hidden");
+			element.setAttribute("aria-expanded", "false");
+		}
+		e.preventDefault();
+		e.stopImmediatePropagation();
+		e.stopPropagation();
+	}
+    document.querySelectorAll(".widgetFAQ--question a").forEach(element => {
+        // When the link is clicked, expand or collapse the answer
+		element.addEventListener("click", handleExpandCollapse);
+	});
+
+
+
+	 
+
+	 
+	
+	
+		
+
+	    
+
+
+        Military & Oversea VotersMilitary voters, their dependents, and other U.S. citizens who are overseas may be eligible to vote absentee under the Uniformed and Overseas Citizens Absentee Voting Act (UOCAVA).UOCAVA Voter Eligibility Members of the uniformed services or merchant marine — Army, Navy, Air Force, Marine Corps, Coast Guard, Merchant Marine, the commissioned corps of the Public Health Service, or the commissioned corps of the National Oceanic and Atmospheric Administration and will be absent from your precinct on Election Day due to your service.Spouses and dependents of a member of the uniformed services or merchant marine.Temporarily overseas — if you are a citizen who would be qualified to vote at your polling location in Minnesota if you were not overseas.Indefinitely overseas — if you are a citizen who currently has no plans to return to Minnesota, but you maintained residence in Minnesota for at least 20 days immediately prior to your departure from the United States. Voters who are indefinitely overseas are permitted to vote only for the offices of president, vice president, senator in Congress, and representative in Congress.Apply OnlineTo complete the online absentee ballot application to vote absentee while in the military or overseas, you must:Be eligible to complete the federal postcard application (PDF).Provide an email address.Provide your identification number from either your Minnesota driver's license, your Minnesota ID card, or the last four (4) digits of your Social Security Number.If you can't provide an email address and one of the identification numbers listed above, you cannot apply online and must submit a paper application.Apply by Mail, Email, FAX, or in PersonYou need to complete and submit a federal postcard application (PDF). Your spouse, parent, sibling, or child older than 18, may complete and submit the form for you.Use one of the following methods to complete the form:Minnesota Military and Overseas Voter Service: this free service will help you complete the FPCA to apply for an absentee ballot.Download and complete the federal postcard application (PDF) on your own. Be sure to read the instructions carefully and fill out the form completely.Submit your application by mail, or you can email it to us at Auditor@claycountymn.gov How to Submit your Voted BallotRegardless of how you received the ballot, you must return your voted ballot by mail to the election official the ballot was received from.
+    
+
+
+	$(document).ready(function (e) {		
+	    renderSlideshowIfApplicable($('#divEditor' + '9f378bf2-06c2-409a-8efe-0fa4c7f12a99'));
+	});
+
+
+
+	 
+
+	 
+
+			 
+						
+	
+	
+		
+
+
+
+
+
+
+
+
+
+	
+		    
+        
+                    Military & Oversea FAQs
+                                
+    
+	
+		
+						
+							
+
+
+        
+            
+                Can I have an absentee application sent to me automatically for every election?
+                
+            
+        
+        
+            
+                If you would like to automatically receive an application for an absentee ballot before each election, you may complete an application to automatically receive absentee ballot applications (PDF).
+            
+        
+
+
+        
+            
+                Why did I receive a pre-filled absentee ballot application?
+                
+            
+        
+        
+            
+                Several organizations send out mailings to increase voter participation. Mailings can include information regarding voter registration status, along with pre-filled absentee ballot and voter registration applications. We cannot guarantee the accuracy of data used by these organizations.
+            
+        
+
+
+        
+            
+                Can I check the status of my absentee ballot or ballot application?
+                
+            
+        
+        
+            
+                Yes, at https://mnvotes.sos.state.mn.us/AbsenteeBallotStatus.aspx.
+            
+        
+
+
+        
+            
+                I voted absentee in the primary, will I automatically receive an absentee ballot for the general election?
+                
+            
+        
+        
+            
+                You may have requested both the primary and general election ballots on the same absentee ballot application. If you applied for both elections, you will automatically be sent your general election ballot and do not need to apply again. To check if you’ve already requested a ballot for the general election, please use the ballot status tracker at mnvotes.org.
+            
+        
+
+
+        
+            
+                When can a military or overseas voter apply?
+                
+            
+        
+        
+            
+                You may submit an federal postcard application (PDF) any time during the year. However, you should submit it as far ahead of the election as possible to avoid delays in receiving your ballot.
+            
+        
+
+
+        
+            
+                Can a military or overseas voter receive a ballot electronically?
+                
+            
+        
+        
+            
+                Yes. You can receive the ballot by mail, fax or email. You will need to indicate on your application how you would like to receive the ballot.
+            
+        
+
+
+        
+            
+                Can a military or overseas voter return a voted ballot electronically?
+                
+            
+        
+        
+            
+                No. Regardless of how you received the ballot, you must return your voted ballot by mail to the election official the ballot was received from.
+            
+        
+
+
+        
+            
+                When should a military or overseas voter expect to get a ballot?
+                
+            
+        
+        
+            
+                Ballots are sent out by election officials at least 45 days prior to the election. For those voters whose applications were received fewer than 45 days before the election, ballots are sent as quickly as possible.Ballots sent by mail are airmailed to addresses outside the continental U.S. Your ballot will be sent to you by an express mail service if you provide a prepaid envelope to the county auditor’s office. Note: Your voted ballot must arrive back at the county no later than Election Day to be counted.
+            
+        
+
+
+        
+            
+                What if a military or overseas voter doesn’t receive a ballot?
+                
+            
+        
+        
+            
+                If you submit timely absentee ballot applications but never receive your ballot (or you are concerned that you will not be able to return your ballot in time to be counted), you may submit the federal write-in absentee ballot (PDF) (FWAB) as an alternative.A FWAB allows you to write in choices for all offices. For federal offices, you may indicate your choice by writing in a candidate name or political party. When voting for state or local offices on the FWAB, you must write the name of the candidate (not just the party) for your vote to be counted.
+            
+        
+
+
+        
+            
+                How long is a military or overseas voter application valid?
+                
+            
+        
+        
+            
+                An application is valid from the time the application is received through the end of that calendar year or through the next regularly scheduled state general election, whichever is later. You may specify a different end date in box 6 of the application (i.e.., "General election only"). A ballot will be sent automatically for all elections during that time in which you are eligible to vote. You must reapply each year in which you need a ballot or if your overseas mailing address changes.
+            
+        
+
+
+        
+            
+                Can a military or overseas voter self-certify a ballot?
+                
+            
+        
+        
+            
+                As a UOCAVA voter, Minnesota allows you to self-certify your FPCA, your ballot return envelope, and the FWAB. You can do this by using the same passport number, Minnesota driver's license or state ID number, or the last four digits of your Social Security Number on all forms throughout the process. If you do not have access to any of these documents, you may attest to the truthfulness of the information under penalty of perjury. For assistance, overseas citizens should contact the U.S. embassy or consulate, and military 
+            
+        
+							
+						
+		
+        View All FAQs
+        	
+		
+	
+    
+        /FAQ.aspx
+    
+
+	
+
+
+
+	function handleExpandCollapse(e) {
+		const element = e.currentTarget;
+		const answer = document.getElementById(element.getAttribute("aria-controls")).parentElement;
+		const expandArrow = element.getElementsByClassName("widgetFAQ--arrow")[0];
+		if (answer.classList.contains("hidden")) {
+			expandArrow.classList.add('widgetFAQ--arrow-expanded');
+			expandArrow.classList.remove('widgetFAQ--arrow-collapsed');
+			answer.classList.remove("hidden");
+			element.setAttribute("aria-expanded", "true");
+		} else {
+			expandArrow.classList.add('widgetFAQ--arrow-collapsed');
+			expandArrow.classList.remove('widgetFAQ--arrow-expanded');
+			answer.classList.add("hidden");
+			element.setAttribute("aria-expanded", "false");
+		}
+		e.preventDefault();
+		e.stopImmediatePropagation();
+		e.stopPropagation();
+	}
+    document.querySelectorAll(".widgetFAQ--question a").forEach(element => {
+        // When the link is clicked, expand or collapse the answer
+		element.addEventListener("click", handleExpandCollapse);
+	});
+
+
+
+	 
+
+	 
+
+			 
+
+
+		
+
+	
+
+	
+	
+
+	
+
+	
+				                
+
+
+
+	
+
+
+	
+				                
+
+
+
+	
+
+
+
+
+
+
+	
+	
+		
+			Register to Vote
+		
+			
+	
+		
+			How to Vote 
+		
+			
+	
+		
+			How to Vote Early
+		
+			
+	
+		
+			Important 2026 Election Dates
+		
+			
+	
+		
+			Polling Places
+		
+			
+	
+		
+			Filing for Public Office
+		
+			
+	
+		
+			Election Judge Information
+		
+			
+	
+		
+			Candidate Resources
+		
+			
+	
+		
+			Election Results
+		
+			
+	
+		
+			Campaign Financial Reports
+		
+			
+
+	
+
+
+	
+		(function () {
+			function setupSecondaryMenuProperties() {
+				//setup menu manager properties for secondary menu
+				menuManager.isSideMenuEditable = false;
+				menuManager.sideMenuMaxSubMenuLevels = 4;
+				menuManager.sideMenuHasCustomLinks = false;
+			}
+
+			if (document.readyState === "loading") {
+				document.addEventListener("DOMContentLoaded", setupSecondaryMenuProperties, { once: true });
+				return;
+			}
+
+			setupSecondaryMenuProperties();
+		})();
+	
+
+	
+		(function () {
+			function setupAccordionSecondaryNav() {
+				var $menuContainer = $('#secondaryNav');
+
+				$menuContainer.find('*[id^="SideItem"]').each(function () {
+					var ids = $('[id="' + this.id + '"]');
+					if (ids.length > 1)
+						$.each(ids, function (index, value) {
+							value.id = value.id + '_' + index;
+						});
+				});
+
+				$menuContainer.find('.hasAccordionChildren .openAccordionNav').off('click.secondaryNav').on('click.secondaryNav', function (e) {
+					e.preventDefault();
+					showHideAccordionMenuForSecondaryNav($(this));
+				});
+
+				$menuContainer.find(".grippy").each(function () {
+					menuManager.setupDraggableElement($(this), SIDE_MENU, '#secondaryNav');
+				});
+
+				$menuContainer.find("li").each(function () {
+					menuManager.setupDroppableAccordionElement($(this), SIDE_MENU);
+				});
+			}
+
+			if (document.readyState === "loading") {
+				document.addEventListener("DOMContentLoaded", setupAccordionSecondaryNav, { once: true });
+				return;
+			}
+
+			setupAccordionSecondaryNav();
+		})();
+	
+
+
+
+	
+				                
+
+
+
+	
+
+
+
+
+	
+				                
+
+						
+	
+	
+		
+
+
+
+
+
+
+	
+		
+				
+	
+	
+		
+				
+					
+
+
+	
+		
+			Agendas & Minutes
+		
+	
+
+		.fancyButton736.fancyButton:link,.fancyButton736.fancyButton:visited, .fancyButton736div.fancyButton{
+	background-image: url('/ImageRepository/Document?documentID=15304');
+	background-repeat: no-repeat;
+	background-position: center 10px ;
+transition: all .3s ease-in-out;}
+.fancyButton736.fancyButton:hover,.fancyButton736.fancyButton:focus,.fancyButton736.fancyButton:active,.fancyButton736.fancyButton.hover{
+	background-image: url('/ImageRepository/Document?documentID=15415');
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+.fancyButton736.fancyButton:link > span,.fancyButton736.fancyButton:visited > span, .fancyButton736div.fancyButton > span{
+}
+.fancyButton736.fancyButton:hover > span,.fancyButton736.fancyButton:focus > span,.fancyButton736.fancyButton:active > span,.fancyButton736.fancyButton.hover > span{
+}
+.fancyButton736.fancyButton .text{
+	color: rgb(49, 64, 51);
+	font-size: 1.25em;
+	font-family: "Lato";
+	padding-top: 140px;
+	font-weight: 700;
+	text-decoration: none;
+	padding-top: 140px;
+	background-image: url('/ImageRepository/Document?documentID=15409');
+	background-repeat: no-repeat;
+	background-position: center 10px ;
+transition: all .3s ease-in-out;
+}
+.fancyButton736.fancyButton:hover .text,.fancyButton736.fancyButton:focus .text,.fancyButton736.fancyButton:active .text,.fancyButton736.fancyButton.hover .text{
+	text-decoration: underline;
+	background-repeat: no-repeat;
+	background-position: center top;
+
+
+}
+
+
+ 
+
+
+	
+		
+			DMV
+		
+	
+
+		.fancyButton737.fancyButton:link,.fancyButton737.fancyButton:visited, .fancyButton737div.fancyButton{
+	background-image: url('/ImageRepository/Document?documentID=15304');
+	background-repeat: no-repeat;
+	background-position: center 10px ;
+transition: all .3s ease-in-out;}
+.fancyButton737.fancyButton:hover,.fancyButton737.fancyButton:focus,.fancyButton737.fancyButton:active,.fancyButton737.fancyButton.hover{
+	background-image: url('/ImageRepository/Document?documentID=15415');
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+.fancyButton737.fancyButton:link > span,.fancyButton737.fancyButton:visited > span, .fancyButton737div.fancyButton > span{
+}
+.fancyButton737.fancyButton:hover > span,.fancyButton737.fancyButton:focus > span,.fancyButton737.fancyButton:active > span,.fancyButton737.fancyButton.hover > span{
+}
+.fancyButton737.fancyButton .text{
+	color: rgb(49, 64, 51);
+	font-size: 1.25em;
+	font-family: "Lato";
+	padding-top: 140px;
+	font-weight: 700;
+	text-decoration: none;
+	padding-top: 140px;
+	background-image: url('/ImageRepository/Document?documentID=15438');
+	background-repeat: no-repeat;
+	background-position: center 60px ;
+transition: all .3s ease-in-out;
+}
+.fancyButton737.fancyButton:hover .text,.fancyButton737.fancyButton:focus .text,.fancyButton737.fancyButton:active .text,.fancyButton737.fancyButton.hover .text{
+	text-decoration: underline;
+	background-repeat: no-repeat;
+	background-position: center 40px ;
+
+
+}
+
+
+ 
+				
+			
+		
+	
+			
+
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+
+
+
+
+
+
+	
+		
+				
+	
+	
+		
+				
+					
+
+
+	
+		
+			Property Tax
+		
+	
+
+		.fancyButton738.fancyButton:link,.fancyButton738.fancyButton:visited, .fancyButton738div.fancyButton{
+	background-image: url('/ImageRepository/Document?documentID=15304');
+	background-repeat: no-repeat;
+	background-position: center 10px ;
+transition: all .3s ease-in-out;}
+.fancyButton738.fancyButton:hover,.fancyButton738.fancyButton:focus,.fancyButton738.fancyButton:active,.fancyButton738.fancyButton.hover{
+	background-image: url('/ImageRepository/Document?documentID=15415');
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+.fancyButton738.fancyButton:link > span,.fancyButton738.fancyButton:visited > span, .fancyButton738div.fancyButton > span{
+}
+.fancyButton738.fancyButton:hover > span,.fancyButton738.fancyButton:focus > span,.fancyButton738.fancyButton:active > span,.fancyButton738.fancyButton.hover > span{
+}
+.fancyButton738.fancyButton .text{
+	color: rgb(49, 64, 51);
+	font-size: 1.25em;
+	font-family: "Lato";
+	padding-top: 140px;
+	font-weight: 700;
+	text-decoration: none;
+	padding-top: 140px;
+	background-image: url('/ImageRepository/Document?documentID=15439');
+	background-repeat: no-repeat;
+	background-position: center 10px ;
+transition: all .3s ease-in-out;
+}
+.fancyButton738.fancyButton:hover .text,.fancyButton738.fancyButton:focus .text,.fancyButton738.fancyButton:active .text,.fancyButton738.fancyButton.hover .text{
+	text-decoration: underline;
+	background-repeat: no-repeat;
+	background-position: center top;
+
+
+}
+
+
+ 
+
+
+	
+		
+			GIS Mapping
+		
+	
+
+		.fancyButton739.fancyButton:link,.fancyButton739.fancyButton:visited, .fancyButton739div.fancyButton{
+	background-image: url('/ImageRepository/Document?documentID=15304');
+	background-repeat: no-repeat;
+	background-position: center 10px ;
+transition: all .3s ease-in-out;}
+.fancyButton739.fancyButton:hover,.fancyButton739.fancyButton:focus,.fancyButton739.fancyButton:active,.fancyButton739.fancyButton.hover{
+	background-image: url('/ImageRepository/Document?documentID=15415');
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+.fancyButton739.fancyButton:link > span,.fancyButton739.fancyButton:visited > span, .fancyButton739div.fancyButton > span{
+}
+.fancyButton739.fancyButton:hover > span,.fancyButton739.fancyButton:focus > span,.fancyButton739.fancyButton:active > span,.fancyButton739.fancyButton.hover > span{
+}
+.fancyButton739.fancyButton .text{
+	color: rgb(49, 64, 51);
+	font-size: 1.25em;
+	font-family: "Lato";
+	padding-top: 140px;
+	font-weight: 700;
+	text-decoration: none;
+	padding-top: 140px;
+	background-image: url('/ImageRepository/Document?documentID=15412');
+	background-repeat: no-repeat;
+	background-position: center 10px ;
+transition: all .3s ease-in-out;
+}
+.fancyButton739.fancyButton:hover .text,.fancyButton739.fancyButton:focus .text,.fancyButton739.fancyButton:active .text,.fancyButton739.fancyButton.hover .text{
+	text-decoration: underline;
+	background-repeat: no-repeat;
+	background-position: center top;
+
+
+}
+
+
+ 
+				
+			
+		
+	
+			
+
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+
+
+
+
+
+
+	
+		
+				
+	
+	
+		
+				
+					
+
+
+	
+		
+			Employment
+		
+	
+
+		.fancyButton740.fancyButton:link,.fancyButton740.fancyButton:visited, .fancyButton740div.fancyButton{
+	background-image: url('/ImageRepository/Document?documentID=15304');
+	background-repeat: no-repeat;
+	background-position: center 10px ;
+transition: all .3s ease-in-out;}
+.fancyButton740.fancyButton:hover,.fancyButton740.fancyButton:focus,.fancyButton740.fancyButton:active,.fancyButton740.fancyButton.hover{
+	background-image: url('/ImageRepository/Document?documentID=15415');
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+.fancyButton740.fancyButton:link > span,.fancyButton740.fancyButton:visited > span, .fancyButton740div.fancyButton > span{
+}
+.fancyButton740.fancyButton:hover > span,.fancyButton740.fancyButton:focus > span,.fancyButton740.fancyButton:active > span,.fancyButton740.fancyButton.hover > span{
+}
+.fancyButton740.fancyButton .text{
+	color: rgb(49, 64, 51);
+	font-size: 1.25em;
+	font-family: "Lato";
+	padding-top: 140px;
+	font-weight: 700;
+	text-decoration: none;
+	padding-top: 140px;
+	background-image: url('/ImageRepository/Document?documentID=15411');
+	background-repeat: no-repeat;
+	background-position: center 10px ;
+transition: all .3s ease-in-out;
+}
+.fancyButton740.fancyButton:hover .text,.fancyButton740.fancyButton:focus .text,.fancyButton740.fancyButton:active .text,.fancyButton740.fancyButton.hover .text{
+	text-decoration: underline;
+	background-repeat: no-repeat;
+	background-position: center top;
+
+
+}
+
+
+ 
+
+
+	
+		
+			Report a Concern
+		
+	
+
+		.fancyButton741.fancyButton:link,.fancyButton741.fancyButton:visited, .fancyButton741div.fancyButton{
+	background-image: url('/ImageRepository/Document?documentID=15304');
+	background-repeat: no-repeat;
+	background-position: center 10px ;
+transition: all .3s ease-in-out;}
+.fancyButton741.fancyButton:hover,.fancyButton741.fancyButton:focus,.fancyButton741.fancyButton:active,.fancyButton741.fancyButton.hover{
+	background-image: url('/ImageRepository/Document?documentID=15415');
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+.fancyButton741.fancyButton:link > span,.fancyButton741.fancyButton:visited > span, .fancyButton741div.fancyButton > span{
+}
+.fancyButton741.fancyButton:hover > span,.fancyButton741.fancyButton:focus > span,.fancyButton741.fancyButton:active > span,.fancyButton741.fancyButton.hover > span{
+}
+.fancyButton741.fancyButton .text{
+	color: rgb(49, 64, 51);
+	font-size: 1.25em;
+	font-family: "Lato";
+	padding-top: 140px;
+	font-weight: 700;
+	text-decoration: none;
+	padding-top: 140px;
+	background-image: url('/ImageRepository/Document?documentID=15414');
+	background-repeat: no-repeat;
+	background-position: center 20px ;
+transition: all .3s ease-in-out;
+}
+.fancyButton741.fancyButton:hover .text,.fancyButton741.fancyButton:focus .text,.fancyButton741.fancyButton:active .text,.fancyButton741.fancyButton.hover .text{
+	text-decoration: underline;
+	background-repeat: no-repeat;
+	background-position: center 10px ;
+
+
+}
+
+
+ 
+				
+			
+		
+	
+			
+
+
+
+	 
+
+	 
+
+			 
+
+
+	
+
+
+	
+				                
+
+						
+	
+	
+		
+    
+
+
+
+
+
+	
+			
+		
+								
+	
+	
+		
+					
+						
+
+
+	
+						
+					
+		
+	
+	
+
+	
+
+	
+
+
+
+
+	//Render slideshow if info advacned items contain one.
+	$(document).ready(function (e) {
+		$('#divInfoAdvad491402-676e-47ed-86f3-154816e946d0 .InfoAdvanced.widgetItem').each(function () {
+			renderSlideshowIfApplicable($(this));		
+		});
+	});
+
+	 
+
+	 
+
+							
+	
+	
+		
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+    
+
+
+
+
+
+	
+			
+		
+					Clay County
+								
+	
+	
+		
+					
+						
+
+
+	PO Box 280
+						
+					
+					
+						
+
+
+	Moorhead, MN 56560
+						
+					
+		
+	
+	
+
+	
+
+	
+
+
+
+
+	//Render slideshow if info advacned items contain one.
+	$(document).ready(function (e) {
+		$('#divInfoAdvca4cbaa1-2f9c-4cea-8224-b4d8c84778ed .InfoAdvanced.widgetItem').each(function () {
+			renderSlideshowIfApplicable($(this));		
+		});
+	});
+
+	 
+
+	 
+	
+	
+		
+    
+
+
+
+
+
+	
+			
+		
+								
+	
+	
+		
+					
+						
+
+
+	Phone: 218-299-5012
+						
+					
+					
+						
+
+
+	Directory
+						
+					
+					
+						
+
+
+	Get Directions
+						
+					
+		
+	
+	
+
+	
+
+	
+
+
+
+
+	//Render slideshow if info advacned items contain one.
+	$(document).ready(function (e) {
+		$('#divInfoAdvd6412e45-a162-416d-b14d-789c32c1783d .InfoAdvanced.widgetItem').each(function () {
+			renderSlideshowIfApplicable($(this));		
+		});
+	});
+
+	 
+
+	 
+
+			 
+
+
+	
+	
+				                
+
+						
+	
+	
+		
+	
+
+
+
+
+
+
+
+
+	
+			
+		
+						
+	
+	
+        
+				
+					
+
+
+
+
+    
+        Home
+        
+    
+					
+				
+				
+					
+
+
+
+
+    
+        Site Map
+        
+    
+					
+				
+				
+					
+
+
+
+
+    
+        Contact Us
+        
+    
+					
+				
+				
+					
+
+
+
+
+    
+        Disclaimer
+        
+    
+					
+				
+				
+					
+
+
+
+
+    
+        Privacy Policy (PDF)
+        
+    
+					
+				
+		
+        
+	
+	
+	
+	
+		/QuickLinks.aspx
+	
+
+	
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+ 
+	
+	
+		
+  /* CP icon */
+  .cpBylineIconTS {
+    color: #fff;
+    fill: currentColor;
+    width: 39px;
+    height: 26px;
+    display: inline;
+    vertical-align: middle;
+  }
+
+  /* Container */
+  .cpBylineTS {
+    text-align: right;
+  }
+
+  /* CP Text */
+  .cpBylineTextTS {
+    color: #fff;
+  }
+
+  /* Make link clearly identifiable */
+  .cpBylineTextTS a {
+    color: #fff;
+    text-decoration: underline;
+    font-weight: 600;
+  }
+
+  /* Hover state */
+  .cpBylineTextTS a:hover {
+    text-decoration: none;
+  }
+
+  /* Keyboard focus state (ADA requirement) */
+  .cpBylineTextTS a:focus,
+  .cpBylineTextTS a:focus-visible {
+    outline: 3px solid #ffffff;
+    outline-offset: 2px;
+    text-decoration: underline;
+  }
+
+
+
+  
+    
+    
+  
+  
+    Government Websites by 
+    
+       CivicPlus®
+    
+  
+
+	
+
+	
+
+	 
+
+	 
+
+			 
+
+
+	
+
+
+
+
+            
+        
+    
+
+
+
+
+	
+		
+			Loading
+			
+				
+					
+				
+			
+		
+		
+			
+				
+				Loading
+			
+		
+		
+			Do Not Show Again
+			Close
+		
+	
+
+
+
+
+
+
+
+		$(document).ready(function () {
+			var filter = {
+				targetId: '345',
+				targetType: 1
+			}
+
+			new SplashModalRender().triggerRender(filter);
+		});
+
+
+
+	
+	
+	
+	
+
+
+
+	
+
+
+
+
+
+
+    
+    
+
+
+	var translateActiveCookie = getCookieValue('translateActive');
+
+	if (translateActiveCookie == 'true') {
+		enableGoogleTranslate();
+	} else {
+		var button = '<a class="translateWidget" title="Enable Google Translate" style="background-color: #FFF;border-color: #9b9b9b #d5d5d5 transparent #d5d5d5;border-style: solid;border-width: 1px 1px 0 1px;bottom: 0px;color: #000;cursor: pointer;font-size: .9em;padding: 2px 6px 3px 4px;position: fixed;right: 20px;z-index: 5;">';
+		button += '<img alt="Google Translate Icon" src="/Assets/Images/GoogleTranslate.gif" style="box-sizing: content-box !important;height:19px;margin: -2px 0 0 -2px;padding-right: 5px;width:19px;">Enable Google Translate</a>';
+		$('div[data-cprole="structuralContainer"]').last().after(button);
+	}
+
+	function googleTranslateElementInit() {
+  		var el = document.getElementById("google_translate_element");
+  		if (el && el.innerHTML.trim() !== "") {
+  		    return;
+  		}
+
+  		new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+	}
+
+	function enableGoogleTranslate() {
+		$('#google_translate_element').show();
+		var sz = document.createElement('script'); sz.type = 'text/javascript'; sz.async = true;
+		sz.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(sz, s);
+		$('div[data-cprole="structuralContainer"]').last().after('<div id="google_translate_element" style="position: fixed; bottom: 0px; right: 20px; z-index: 5;"></div>');
+	        document.cookie = "translateActive=true; expires=12/31/2999; path=/";
+	}
+
+	$('a.translateWidget').unbind('click').click(function (e) {
+		$(this).hide();
+		enableGoogleTranslate();
+	});
+
+
+
+
+!function(){var b=function(){window.__AudioEyeSiteHash = "377595b61905e167ab408fdad869fc3e"; var a=document.createElement("script");a.src="https://wsmcdn.audioeye.com/aem.js";a.type="text/javascript";a.setAttribute("async","");document.getElementsByTagName("body")[0].appendChild(a)};"complete"!==document.readyState?window.addEventListener?window.addEventListener("load",b):window.attachEvent&&window.attachEvent("onload",b):b()}();
+
+
+
+
+  function getValueTS(elem, attr) {
+    const val = elem.css(attr);
+    if (val === undefined) return undefined;
+    const num = parseInt(val, 10);
+    if (num === NaN) return undefined;
+    return num;
+  }
+
+  function clampTS(number, min, max) {
+    return Math.min(Math.max(number, min), max);
+  }
+
+  function isPageEditingTS() {
+    return (
+      $("#doneEditing").length > 0 || // In live edit
+      typeof DesignCenter !== "undefined" // In theme manager
+    );
+  }
+
+  const bgColorRegexTS = /rgba\((\d+), (\d+), (\d+), (\d*\.?\d*)\)/;
+  function isTransparentTS(elem) {
+    const bg = elem.css('background-color');
+    if (typeof bg !== "string" || !bg.startsWith('rgba(')) return false;
+    const matchState = bg.match(bgColorRegexTS);
+    if (!matchState || matchState.length !== 5) return false;
+    const alpha = parseFloat(matchState[4], 10);
+    if (!(alpha >= 0 && alpha < 1)) return false;
+    return true;
+  }
+
+  function iterateLeftpads(cb) {
+    const containersTS = $("[class^='siteWrap'],[class*=' siteWrap']");
+    for (let i = 0; i < containersTS.length; i++) {
+      const containerTS = containersTS[i];
+      // Skip the body container and anything with data-skip-leftpad
+      if (
+        containerTS.id !== "bodyContainerTS" &&
+        containerTS.getAttribute('data-skip-leftpad') === null
+      ) {
+        cb(containerTS);
+      }
+    }
+  }
+
+  const anchor = $("#divToolbars");
+  const anchor2 = $("#headerContainerTS")
+
+  // Outer banner padding (push banner down)
+  const outerSizingTS = $("#bannerContainerTS");
+  // Inner banner padding (push banner content down) - Transparent header OR on attaching headers
+  const innerSizingTS = $("#bannerSizingTS");
+  const bodyContainerTS = $("#bodyContainerTS");
+
+  const forceUnfixClassTS = "forceUnfixTS";
+
+  const fixedTopTS = $(".fixedTopTS");
+  const fixedBottomTS = $(".fixedBottomTS");
+  const fixedLeftTS = $(".fixedLeftTS");
+
+  var initialTopTS;
+  var topAttachTS;
+  if (fixedTopTS && fixedTopTS.length === 1) {
+    initialTopTS = getValueTS(fixedTopTS, 'top');
+    const attachment = fixedTopTS.attr('data-attach');
+    if (attachment) topAttachTS = $("#" + attachment);
+    if (!topAttachTS || topAttachTS.length !== 1) topAttachTS = undefined;
+  }
+
+  function resizeAdjustmentTS() {
+    const editing = isPageEditingTS();
+
+    // Fixed top script
+    (function () {
+      if (!fixedTopTS || fixedTopTS.length !== 1 || initialTopTS === undefined) return;
+
+      if (editing) {
+        fixedTopTS[0].classList.add(forceUnfixClassTS);
+      } else {
+        fixedTopTS[0].classList.remove(forceUnfixClassTS);
+      }
+
+      const topPosition = fixedTopTS.css('position');
+      if (topPosition === 'fixed') {
+        if (topAttachTS) {
+          scrollAdjustmentTS();
+        } else {
+          const anchorHeight = anchor.outerHeight() - 1;
+          fixedTopTS.css('top', anchorHeight + initialTopTS);
+        }
+      } else {
+        fixedTopTS.css('top', initialTopTS);
+      }
+
+      if (topPosition === 'fixed' || topPosition === 'absolute') {
+        // Bump the banner content down
+        if (isTransparentTS(fixedTopTS)) {
+          innerSizingTS.css('padding-top', initialTopTS + fixedTopTS.outerHeight() - 1);
+          outerSizingTS.css('padding-top', '');
+
+          try {
+            window.Pages.onResizeHandlersExecute();
+          } catch (e) { }
+        } else {
+          outerSizingTS.css('padding-top', fixedTopTS.outerHeight() - 1);
+          innerSizingTS.css('padding-top', '');
+        }
+      } else {
+        innerSizingTS.css('padding-top', '');
+        outerSizingTS.css('padding-top', '');
+      }
+    })();
+
+    // Fixed bottom script
+    (function () {
+      if (!fixedBottomTS || fixedBottomTS.length === 0) return;
+
+      // If the widget has gone narrow, force unfix
+      if (editing || fixedBottomTS.outerHeight() > 200) {
+        fixedBottomTS[0].classList.add(forceUnfixClassTS);
+      } else {
+        fixedBottomTS[0].classList.remove(forceUnfixClassTS);
+      }
+
+      if (fixedBottomTS.css('position') === 'fixed') {
+        bodyContainerTS.css('padding-bottom', fixedBottomTS.outerHeight());
+      } else {
+        bodyContainerTS.css('padding-bottom', '');
+      }
+    })();
+
+    // Fixed left script
+    (function () {
+      if (!fixedLeftTS || fixedLeftTS.length === 0) return;
+
+      if (editing) {
+        fixedLeftTS[0].classList.add(forceUnfixClassTS);
+      } else {
+        fixedLeftTS[0].classList.remove(forceUnfixClassTS);
+      }
+
+      if (fixedLeftTS.css('position') === 'fixed') {
+        const anchorHeight = anchor.outerHeight() - 1;
+        fixedLeftTS.css('top', anchorHeight);
+        const leftBoundingTS = fixedLeftTS[0].getBoundingClientRect();
+        iterateLeftpads(function (containerTS) {
+          const containerBoundingTS = containerTS.getBoundingClientRect();
+          if (containerBoundingTS.left <= leftBoundingTS.right) {
+            $(containerTS).css('padding-left', leftBoundingTS.width + 16);
+          }
+        });
+      } else {
+        fixedLeftTS.css('top', '');
+        iterateLeftpads(function (containerTS) {
+          $(containerTS).css('padding-left', '');
+        });
+      }
+    })();
+  }
+
+  function scrollAdjustmentTS() {
+    if (!fixedTopTS || fixedTopTS.length !== 1 || !topAttachTS || topAttachTS.length !== 1) return;
+    const topPosition = fixedTopTS.css('position');
+    if (topPosition === 'fixed' || topPosition === 'absolute') {
+      const anchorBounding = anchor[0].getBoundingClientRect();
+      const attachBounding = topAttachTS[0].getBoundingClientRect();
+      const scrollTop = $(window).scrollTop();
+
+      fixedTopTS.css('top', Math.max(anchorBounding.bottom - 1, attachBounding.bottom));
+    } else {
+      fixedTopTS.css('top', initialTopTS);
+    }
+  }
+
+  $(window).load(function () {
+    setTimeout(function () {
+      resizeAdjustmentTS();
+    }, 350);
+
+    $(window).scroll(function () {
+      scrollAdjustmentTS();
+    });
+
+    var adjustTimeoutTS;
+    $(window).resize(function () {
+      clearTimeout(adjustTimeoutTS);
+      adjustTimeoutTS = setTimeout(function () {
+        resizeAdjustmentTS();
+      }, 350);
+    });
+
+    $.when(window.Pages.angularToolbarComplete).done(function () {
+      resizeAdjustmentTS();
+    });
+  });
+
+
+
+
+ //MonsidoScript#722270
+ 
+    window._monsido = window._monsido || {
+        token: "z8xAvNqL_jjxN0hwLbyujQ",
+        statistics: {
+            enabled: true,
+            cookieLessTracking: false,
+            documentTracking: {
+                enabled: false,
+                documentCls: "monsido_download",
+                documentIgnoreCls: "monsido_ignore_download",
+                documentExt: [],
+            },
+        },
+    };
+
+
+
+
+    
+        $(function () {
+            document.cookie = "responsiveGhost=0; path=/";
+        });
+        $(window).on("load", function () {
+            $('body').addClass('doneLoading').removeClass('hideContent');
+
+            if ($('#404Content').length > 0)
+                $('div#bodyWrapper').css('padding', '0px');
+        });
+    
+
+    
+        
+            body.hideContent {
+                opacity: 1 !important;
+            }
+        
+    
+
+        
+
+	
+
+		
+			Arrow Left
+			
+		
+
+		
+			Arrow Right
+			
+		
+
+	
+
+    loadCSS('//fonts.googleapis.com/css?family=Lato:700,700italic,900,900italic,italic,regular|Montserrat:500,600,700,800|Mulish:200,600,700,700italic,regular|Open+Sans:500,500italic,600,600italic,700,700italic,800,800italic,italic,regular|');
+    
+
+    []
+        
+            
+                
+                    Slideshow Left Arrow
+                    
+                        
+                    
+                
+                
+                    Slideshow Right Arrow
+                    
+                        
+                    
+                
+            
+        
+    
+	
+	
+
+    
+
+

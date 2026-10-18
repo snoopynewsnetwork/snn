@@ -1,0 +1,2102 @@
+
+
+
+
+
+	
+
+				(function(w,d,s,l,i){w.GAMeasurementID='G-2L2H5GKLCL';w[l]=w[l]||[];w[l].push({'gtm.start':
+				new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+				j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+				'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+				})(window,document,'script','cpDataLayerGA4','GTM-K73C5PS');
+				
+				
+					var enableTelemetry = 'false'
+					var aiConfig = {
+					instrumentationKey: '1cde048e-3185-4906-aa46-c92a7312b60f'						
+					}
+					var appInsights = window.appInsights || function (a) { function b(a) { c[a] = function () { var b = arguments; c.queue.push(function () { c[a].apply(c, b) }) } } var c = { config: a }, d = document, e = window; setTimeout(function () { var b = d.createElement('script'); b.src = a.url || 'https://js.monitor.azure.com/scripts/a/ai.0.js', d.getElementsByTagName('script')[0].parentNode.appendChild(b) }); try { c.cookie = d.cookie } catch (a) { } c.queue = []; for (var f = ['Event', 'Exception', 'Metric', 'PageView', 'Trace', 'Dependency']; f.length;)b('track' + f.pop()); if (b('setAuthenticatedUserContext'), b('clearAuthenticatedUserContext'), b('startTrackEvent'), b('stopTrackEvent'), b('startTrackPage'), b('stopTrackPage'), b('flush'), !a.disableExceptionTracking) { f = 'onerror', b('_' + f); var g = e[f]; e[f] = function (a, b, d, e, h) { var i = g && g(a, b, d, e, h); return !0 !== i && c['_' + f](a, b, d, e, h), i } } return c }(aiConfig);
+					window.appInsights = appInsights, appInsights.queue && 0 === appInsights.queue.length;
+					// Add telemetry initializer
+					appInsights.queue.push(function() {
+						appInsights.context.addTelemetryInitializer(function(envelope) {
+							var telemetryItem = envelope.data.baseData;
+							// To check the telemetry item’s type:
+							if (!false)
+							{
+								//If the telemetry is not enabled, we still want to capture Google map custom event, so only allow that
+								if (envelope.name.indexOf('.Event') == -1)
+									return false;
+							}
+						});
+					});						
+					appInsights.trackPageView();
+				
+	
+		function populateAntiForgery(token) {
+			var input = document.createElement("input");
+			input.name = "__RequestVerificationToken";
+			input.type = "hidden";
+			input.value = token;
+			var absPat = /^https?:\/\/|^\/\//i;
+			var forms = document.getElementsByTagName("form");
+			for (var i = 0; i < forms.length; i++) {
+				if (forms[i].method == "post" &&
+					!forms[i].querySelector('[name="__RequestVerificationToken"]') &&
+					!absPat.test(forms[i].getAttribute("action"))) {
+					forms[i].appendChild(input.cloneNode());
+				}
+			}
+		}
+
+		function getAntiForgeryToken(callback, error) {
+			var xhr = new XMLHttpRequest();
+			xhr.open("GET", "/antiforgery");
+			xhr.addEventListener("load", function() {
+				try {
+					if (this.status !== 200) {
+						throw Error("Invalid status. Could not retrieve antiforgery token.");
+					}
+					var obj = JSON.parse(this.responseText);
+					callback(obj.token);
+				} catch (e) {
+					typeof error === "function" && error(e);
+				}
+			});
+			xhr.send();
+		}
+
+		getAntiForgeryToken(function(token) {
+			if (document.readyState === "complete"
+				|| document.readyState === "loaded" 
+				|| document.readyState === "interactive") {
+				populateAntiForgery(token);
+				return;
+			}
+			document.addEventListener("DOMContentLoaded", function() {
+				populateAntiForgery(token);
+			}, false);
+		}, console.error);
+	
+			
+
+	
+		window.departmentHeader = {};
+		window.pageSectionTracker = {};
+		window.isResponsiveEnabled = true;
+		window.isRemoveSetHeights= true;
+		if (window.isRemoveSetHeights) {
+			document.documentElement.className += ' removeSetHeights';
+		}
+		window.mainMenuMediaQuery = 'screen and (max-width: 40em)';
+		window.isMobileBrowserIncludingTablets = false;
+		window.fixedResponsiveMenu = false;
+		window.fullWidthResponsiveMenu = true;
+		window.responsiveMenuHeight = '';
+		window.responsiveMenuFontSize = '';
+		window.isContentAdvisor = false;
+		(function () {
+			window.setSizeCookie = function () {
+				document.cookie = "dpi=" + window.devicePixelRatio + "; path=/";
+				document.cookie = "viewportWidth=" + window.innerWidth + "; path=/";
+				document.cookie = "viewportHeight=" + window.innerHeight + "; path=/";
+				if (screen && screen.width && screen.height) {
+					document.cookie = "screenWidth=" + screen.width + "; path=/";
+					document.cookie = "screenHeight=" + screen.height + "; path=/";
+				}
+				document.cookie = "responsiveGhost=1; path=/";
+			};
+
+			setSizeCookie();
+		}());
+	
+		
+
+	
+	
+	
+
+
+
+
+	
+	
+	
+	
+		Elections & Voting | Faribault County, MN
+
+		
+			
+	
+	
+
+	
+	
+	
+	
+	<!--
+	var intCountryCode = 840;
+	var order = '';
+//-->
+	
+		
+
+	
+	
+		window.Pages = window.Pages || {};
+		// FrontEnd RWD initialization
+		window.Pages.rwdReady = $.Deferred();
+		window.Pages.toolBarDeferred = $.Deferred();
+		window.Pages.rwdSetupComplete = $.Deferred();
+		window.Pages.megaMenuLoaded = $.Deferred();
+		window.Pages.angularToolbarComplete = $.Deferred();
+		window.Pages.frontEndToolbarComplete = $.Deferred();
+	
+	
+	
+	
+	
+	
+	
+
+
+
+
+	
+	
+	
+	
+
+	
+		setEditorVariables(false, 840);
+		function getPrintPreviewType() { return 0; } function printPreview() {pPreview(getPrintPreviewType()); }
+	
+	
+
+
+
+    jQuery(document).click(function (event) {
+	var target = jQuery(event.target);
+	if (target.attr('src') && target.parents('.image').length && target.parents('.widget').length) {
+		var text = target.attr('title');
+		
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Image',
+				eventAction: 'Image - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.is('button') || target.hasClass('button') || target.parents().hasClass('button')) {
+		var text = "";
+		if (target.parents('.button')[0]) {
+			text = target.parents('.button').first().text();
+		} else if (target.text().length) {
+			text = target.text();
+		} else if (target.attr('title').length) {
+			text = target.attr('title');
+		}
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Button',
+				eventAction: 'Button - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetCustomHtml').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Custom Html',
+				eventAction: 'Custom Html Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.editor').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Editor',
+				eventAction: 'Editor Link Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.GraphicLinks').length) {
+		var text = "";
+		var targetGraphicLink = target;
+		if (target.hasClass('widgetGraphicLinksLink')) {
+			targetGraphicLink = jQuery(target.children()[0]);
+		}
+		if (targetGraphicLink.hasClass('text')) {
+			text = targetGraphicLink.text();
+		} else if (targetGraphicLink.attr('src').length) {
+			if (targetGraphicLink.attr('alt').length) {
+				text = targetGraphicLink.attr('alt');
+			} else {
+				text = targetGraphicLink.attr('src');
+			}
+		} else {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Graphic Links',
+				eventAction: 'Graphic Link - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.InfoAdvanced').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Info Advanced',
+				eventAction: 'Info Advanced Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.list').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'List',
+				eventAction: 'List Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.megaMenuItem').length || target.parents('.topMenuItem').length) {
+		var megaMenuText = jQuery('.topMenuItem.mouseover').find('span').text();
+		var breadCrumbs = [];
+		jQuery('.breadCrumbs > li').each(function () {
+			 breadCrumbs.push(this.textContent);
+		});
+		var pageTitle = breadCrumbs.join('>');
+		var subTitleText = target.parents('.megaMenuItem').children('.widgetTitle').children().text();
+		var text = "";
+		if (pageTitle) {
+			text += pageTitle + " | ";
+		} else {
+			text += document.title + ' - ';
+		}
+		if (target.text() == "" && megaMenuText == "") {
+			text += "N/A";
+		} else if (target.text().length && megaMenuText.length) {
+			if (megaMenuText == target.text()) {
+				text += megaMenuText;
+			} else {
+				text += megaMenuText + " - " + subTitleText + " - " + target.text();
+			}
+		} else if (target.text() == "") {
+			text += megaMenuText;
+		} else {
+			text += target.text();
+		}
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Mega Menu',
+				eventAction: 'Mega Menu : ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetNewsFlash').length && target.parents('.widgetItem').length) {
+		var text = jQuery(target.parents('.widgetItem')[0]).find('.widgetTitle').children().text();
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'News Flash',
+				eventAction: 'News Flash - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.hasClass('widgetQuickLinksLink') || target.find('.widgetQuickLinksLink').length) {
+		var text = target.text();
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Quick Links',
+				eventAction: 'Quick Links - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.attr('src') && target.parents('.cpSlideshow').length) {
+		var text = target.attr('title');
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Slideshow',
+				eventAction: 'Slideshow - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetText').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Text',
+				eventAction: 'Text Link Clicked',
+				eventLabel: window.location.href
+			});
+	}
+});
+	
+	
+		
+		
+			
+				
+			
+		
+	
+	
+		
+	
+	
+		
+			
+		
+	
+
+    
+
+Skip to Main Content
+
+    
+
+        
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+        
+                
+                    
+
+
+
+
+
+    
+        Create a Website Account - Manage notification subscriptions, save form progress and more.   
+        
+	        Website Sign In
+        
+    
+
+
+    $(document).ready(function () {
+        $('#signedOutToolbarCreateProfileButton').click(function (event) {
+            event.preventDefault();
+            window.location.href = '/MyAccount/ProfileCreate?from=url&url=/&dn=' + window.location.origin;
+        });
+
+			
+				$('#loggedOutToolbarSignInButton').click(function (event) {
+					event.preventDefault();
+					window.location.href = '/MyAccount/?from=url&url=' + encodeURIComponent(window.location.href.replace(window.location.origin, '')) + '&dn=' + window.location.host;
+				});
+			
+
+		if ('False' == 'True') {
+            $('#loggedOutToolbarSignInButton').hide();
+		}
+    })
+
+
+
+                
+            
+                
+                
+
+
+
+
+
+
+
+				
+
+    Government  			    Departments  			    Services  			    A-Z Index 			
+
+
+
+	
+		(function () {
+			function setupMenu() {
+				const menuID = 'mainNavMenu';
+				const menuType = MAIN_MENU;
+
+				//setup menu manager properties for main menu
+				if (!menuManager.mobileMainNav && true)
+					menuManager.adjustMainItemsWidth('#' + menuID);
+				menuManager.isMainMenuEditable = false;
+				menuManager.mainMenuMaxSubMenuLevels = 4;
+				menuManager.setMOMMode(2, menuType);
+
+				//Init main menu
+				const setupDraggable = menuManager.isMainMenuEditable;
+				const urlToGetHiddenMenus = '/Pages/MenuMain/HiddenMainSubMenus?pageID=1&moduleID=&themeID=21&menuContainerID=mainNav';
+
+				menuManager.setupMenu(menuID, 'mainNav', menuType, setupDraggable, urlToGetHiddenMenus);
+				menuManager.mainMenuInit = true;
+				menuManager.mainMenuTextResizer = true;
+				if (1.00 > 0)
+					menuManager.mainMenuTextResizerRatio = 1.00;
+				if (window.isResponsiveEnabled)
+					menuManager.mainMenuReady.resolve();
+
+			}
+
+			if (document.readyState === "complete"
+				|| document.readyState === "loaded"
+				|| document.readyState === "interactive") {
+				setupMenu();
+				return;
+			}
+
+			document.addEventListener("DOMContentLoaded", setupMenu);
+		})();
+	
+
+
+	
+				                
+
+
+
+	
+	
+				                
+
+
+
+	
+	
+				                
+
+
+
+	
+	
+				                
+
+
+
+	
+
+
+
+
+	
+				                
+
+						
+	
+	
+		
+
+	
+	
+	
+	
+
+		$(document).ready(function () {
+			try {
+				// Minimum characters required before performing a search/autocomplete
+				var minPrefixLength = 3;
+				var autoCompleteDebounceDelay = 500;
+				var searchFieldSelector = "#searchField" + 'd9aadfac-7ac2-482c-90dd-a56b0aa8e2be';
+				var checkboxSelector = "#ysnSearchOnlyDept" + 'd9aadfac-7ac2-482c-90dd-a56b0aa8e2be';
+				var buttonSelector = ".widgetSearchButton" + 'd9aadfac-7ac2-482c-90dd-a56b0aa8e2be';
+				var autoCompleteCache = {};
+				var autoCompleteCacheKeys = [];
+				var autoCompleteCacheLimit = 25;
+				var currentAutoCompleteRequest = null;
+				var currentAutoCompleteRequestKey = null;
+				var autoCompleteDebounceTimer = null;
+				var autoCompleteDebounceKey = null;
+				var pendingAutoCompleteResponses = [];
+
+				function normalizeAutoCompleteTerm(term) {
+					return $.trim((term || "") + "").replace(/\s+/g, " ");
+				}
+
+				function shouldSearch(term) {
+					return normalizeAutoCompleteTerm(term).length >= minPrefixLength;
+				}
+
+				function getAutoCompleteUrl() {
+					return '/Search/AutoComplete' + ($(checkboxSelector).is(':checked') || false? '?departmentId=0' : '');
+				}
+
+				function getAutoCompleteCacheKey(requestUrl, term) {
+					return requestUrl + "|" + term.toLowerCase();
+				}
+
+				function cacheAutoCompleteResult(cacheKey, data) {
+					if (!Object.prototype.hasOwnProperty.call(autoCompleteCache, cacheKey)) {
+						autoCompleteCacheKeys.push(cacheKey);
+						if (autoCompleteCacheKeys.length > autoCompleteCacheLimit) {
+							delete autoCompleteCache[autoCompleteCacheKeys.shift()];
+						}
+					}
+					autoCompleteCache[cacheKey] = data;
+				}
+
+				function respondToPendingAutoComplete(data) {
+					var responses = pendingAutoCompleteResponses;
+					pendingAutoCompleteResponses = [];
+					for (var i = 0; i < responses.length; i++) {
+						responses[i](data);
+					}
+				}
+
+				function cancelPendingAutoComplete() {
+					clearTimeout(autoCompleteDebounceTimer);
+					autoCompleteDebounceKey = null;
+					if (currentAutoCompleteRequest != null) {
+						currentAutoCompleteRequest.abort();
+						currentAutoCompleteRequest = null;
+					}
+					currentAutoCompleteRequestKey = null;
+					respondToPendingAutoComplete([]);
+				}
+
+				function createWidgetAutoCompleteSource(options) {
+					return function (request, response) {
+						var term = normalizeAutoCompleteTerm(request.term);
+						if (!options.shouldSearch(term)) {
+							response([]);
+							return;
+						}
+
+						var requestUrl = options.url();
+						var cacheKey = getAutoCompleteCacheKey(requestUrl, term);
+						if (Object.prototype.hasOwnProperty.call(autoCompleteCache, cacheKey)) {
+							response(autoCompleteCache[cacheKey]);
+							if (options.success) {
+								options.success(autoCompleteCache[cacheKey]);
+							}
+							return;
+						}
+
+						if (currentAutoCompleteRequestKey === cacheKey || autoCompleteDebounceKey === cacheKey) {
+							pendingAutoCompleteResponses.push(response);
+							return;
+						}
+
+						cancelPendingAutoComplete();
+						autoCompleteDebounceKey = cacheKey;
+						pendingAutoCompleteResponses.push(response);
+						autoCompleteDebounceTimer = setTimeout(function () {
+							autoCompleteDebounceKey = null;
+							currentAutoCompleteRequestKey = cacheKey;
+							currentAutoCompleteRequest = $.ajax({
+								url: requestUrl,
+								dataType: "json",
+								timeout: options.timeout,
+								data: {
+									term: term,
+								},
+								success: function (data) {
+									if (currentAutoCompleteRequestKey === cacheKey) {
+										cacheAutoCompleteResult(cacheKey, data);
+										respondToPendingAutoComplete(data);
+										if (options.success) {
+											options.success(data);
+										}
+									}
+								},
+								error: function (xmlhttprequest, textstatus, message) {
+									if (textstatus === "abort") {
+										return;
+									}
+
+									if (options.error) {
+										options.error(xmlhttprequest, textstatus, message);
+									}
+
+									respondToPendingAutoComplete([]);
+								},
+								complete: function (xmlhttprequest) {
+									if (currentAutoCompleteRequest === xmlhttprequest) {
+										currentAutoCompleteRequest = null;
+										currentAutoCompleteRequestKey = null;
+									}
+								}
+							});
+						}, options.delay);
+					};
+				}
+
+				// click handler for search buttons
+				$(buttonSelector).click(function (e) {
+					e.preventDefault();
+					var $btn = $(this);
+					var $field = $btn.siblings(".widgetSearchBox");
+					var term = $field.val() + "";
+					if (!shouldSearch(term)) {
+						// do nothing until user types enough characters
+						$field.focus();
+						return;
+					}
+
+					if ($(checkboxSelector).is(':checked') || false)
+					{
+						doWidgetSearch($.trim(term), Number(0));
+					}
+					else {
+						doWidgetSearch($.trim(term), 0);
+					}
+				});
+
+				// enter key handler for the search field
+				$(searchFieldSelector).keypress(function (e) {
+					var code = e.which || e.keyCode;
+					if (code === 13) {
+						e.preventDefault();
+						var $this = $(this);
+						var term = $this.val() + "";
+						if (!shouldSearch(term)) {
+							// do nothing until user types enough characters
+							$this.focus();
+							return false;
+						}
+
+						if ($(checkboxSelector).is(':checked') || false) {
+							doWidgetSearch($.trim(term), Number(0));
+						} else {
+							doWidgetSearch($.trim(term), 0);
+						}
+						return false;
+					}
+					return true;
+				});
+
+				// autocomplete: set minLength and guard source
+				if (true) {
+					var $searchField = $(searchFieldSelector).autocomplete({
+						minLength: minPrefixLength,
+						source: createWidgetAutoCompleteSource({
+							delay: autoCompleteDebounceDelay,
+							timeout: 10000,
+							shouldSearch: shouldSearch,
+							url: getAutoCompleteUrl,
+							success: function () {
+								$('.autoCompleteError').remove();
+							},
+							error: function (xmlhttprequest, textstatus, message) {
+								if (textstatus === "timeout") {
+									if ($(searchFieldSelector).siblings('.autoCompleteError').length == 0)
+										$('<span class="autoCompleteError"><p class="alert error">Search autocomplete is currently not responding. Please try again later.</p></span>').insertAfter($(searchFieldSelector));
+								}
+							}
+						}),
+						html: true,
+						delay: 0,
+						select: function (event, ui) {
+							$(this).val(ui.item.value);
+							$(this).next().click();
+						}
+					});
+
+					$searchField.data("ui-autocomplete")._renderItem = function (ul, item) {
+						return $("<li class=\"itemList\"></li>")
+							.data("ui-autocomplete-item", item)
+							.append("<a>" + item.label + "</a>")
+							.appendTo(ul);
+					};
+				}
+
+				// keep searchBtnApplyQuery consistent with prefix rule
+				window.searchBtnApplyQuery = function() {
+					var $field = $(searchFieldSelector);
+					var term = $field.val() + "";
+					if (shouldSearch(term)) {
+						// update href for the icon/button (if present)
+						var btn = document.getElementById("btnSearchIcon");
+						if (btn) btn.href = "/Search?searchPhrase=" + encodeURIComponent($.trim(term));
+					} else {
+						var btn = document.getElementById("btnSearchIcon");
+						if (btn) btn.href = "#";
+					}
+				};
+			}
+			catch(e) {} //we're going to eat this error. Autocomplete won't work but we dont wan't to break anything else on the page.
+		});
+	
+
+	
+				
+		
+			
+						
+
+			Search
+		
+
+	
+
+
+
+	  
+		.widgetSearch ::-webkit-input-placeholder {
+		color: rgba(0,0,0, 1);
+	  }
+		.widgetSearch :-moz-placeholder { /* Firefox 18- */
+	   color: rgba(0,0,0, 1);
+	}
+		.widgetSearch ::-moz-placeholder {  /* Firefox 19+ */
+	   color: rgba(0,0,0, 1);
+	}
+	.widgetSearch :-ms-input-placeholder {
+	   color: rgba(0,0,0, 1);
+	}
+	
+
+	.widgetSearch .widgetBody .widgetSearchBoxd9aadfac-7ac2-482c-90dd-a56b0aa8e2be
+	{
+		color: rgba(0,0,0, 1);
+		background: rgba(255, 255, 255, 0.9);
+border: 6px solid rgba(255, 255, 255, 0.9);
+background-clip: padding-box;
+border-radius: 10px;
+height: 84px;
+font-family: Roboto Condensed;
+font-size: 1.1em;
+padding: 0 90px 0 20px;
+	}
+	.widgetSearch .widgetBody .widgetSearchButtond9aadfac-7ac2-482c-90dd-a56b0aa8e2be
+	{
+		margin: 14px 14px 0 0;
+	}
+	.widgetSearch .widgetSearch-onlyDeptd9aadfac-7ac2-482c-90dd-a56b0aa8e2be
+	{
+		display: inline-block;
+		color: #333;
+		
+		
+		 padding-top: 10px;
+	}
+	#ysnSearchOnlyDeptd9aadfac-7ac2-482c-90dd-a56b0aa8e2be
+	{
+		position: relative;
+		top: .125em;
+	}
+
+
+
+
+
+
+
+
+
+	//Updates search icons href to have the correct queryString
+	function searchBtnApplyQuery() {
+		document.getElementById("btnSearchIcon").href = "/Search?searchPhrase=" + document.getElementById("searchFieldd9aadfac-7ac2-482c-90dd-a56b0aa8e2be").value;
+	}
+
+
+
+
+	 
+
+	 
+
+			 
+
+
+	
+
+
+
+
+
+
+
+		
+		
+			
+			
+		
+			
+				$(window).on("load", function () {
+					$.when(window.Pages.rwdSetupComplete)
+						.done(function () {
+							renderExternalBannerSlideshow('banner1',
+								{"BannerOptionID":65,"ThemeID":21,"SlotName":"banner1","Name":"Default","IsDefault":true,"BannerMode":3,"SlideShowSlideTiming":"5","SlideshowTransition":0,"SlideShowTransitionTiming":"1","ImageScale":true,"ImageAlignment":1,"ImageScroll":true,"MuteSound":true,"VideoType":0,"Status":40,"SlideshowControlsPosition":0,"SlideshowControlsAlignment":0,"SlideshowBannerControlsColorScheme":0,"DisplayVideoPauseButton":false,"VideoPauseButtonAlignment":1,"VideoPauseButtonControlsAlignment":0,"VideoPauseButtonStyle":"#FFFFFF","VideoPauseButtonBackgroundStyle":"#000000","VideoPauseButtonAlignmentClass":"alignRight viewport","DisplaySlideshowPauseButton":false,"SlideshowControlsColor":"#FFFFFF","SlideshowControlsBackgroundColor":"#000000","SlideshowPauseButtonClass":"isHidden","BannerImages":[{"BannerImageID":131,"BannerOptionID":65,"FileName":"/ImageRepository/Document?documentID=1991","Height":1040,"Width":3684,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":1,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":""},{"BannerImageID":132,"BannerOptionID":65,"FileName":"/ImageRepository/Document?documentID=1994","Height":550,"Width":1950,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":2,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":""},{"BannerImageID":133,"BannerOptionID":65,"FileName":"/ImageRepository/Document?documentID=228","Height":500,"Width":1832,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":3,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":""}],"BannerVideos":[{"BannerVideoID":4,"BannerOptionID":65,"VideoFileName":"","ImageFileName":"EmptyBannerBkg202502281457055087.png","IsLink":false,"LinkAddress":null,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","VideoFileID":"00000000-0000-0000-0000-000000000000","ImageFileID":"00000000-0000-0000-0000-000000000000","VideoWidth":0,"VideoHeight":0,"ImageWidth":0,"ImageHeight":0,"LinkedVideoUrl":"","RecordStatus":0,"AltText":null}],"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/"},
+								'/App_Themes/Interior/Images/',
+								'Slideshow');
+						});
+				});
+			
+
+
+
+
+
+	
+				                
+
+
+
+	
+
+
+
+
+
+
+	
+	
+		
+			Campaign Finance Reporting
+		
+			
+	
+		
+			Election Calendar
+		
+			
+	
+		
+			Election News
+		
+			
+	
+		
+			Elected Officials Map
+		
+			
+	
+		
+			Township Officers
+		
+			
+
+	
+
+
+	
+		(function () {
+			function setupSecondaryMenuProperties() {
+				//setup menu manager properties for secondary menu
+				menuManager.isSideMenuEditable = false;
+				menuManager.sideMenuMaxSubMenuLevels = 4;
+				menuManager.sideMenuHasCustomLinks = false;
+			}
+
+			if (document.readyState === "loading") {
+				document.addEventListener("DOMContentLoaded", setupSecondaryMenuProperties, { once: true });
+				return;
+			}
+
+			setupSecondaryMenuProperties();
+		})();
+	
+
+	
+		(function () {
+			function setupAccordionSecondaryNav() {
+				var $menuContainer = $('#secondaryNav');
+
+				$menuContainer.find('*[id^="SideItem"]').each(function () {
+					var ids = $('[id="' + this.id + '"]');
+					if (ids.length > 1)
+						$.each(ids, function (index, value) {
+							value.id = value.id + '_' + index;
+						});
+				});
+
+				$menuContainer.find('.hasAccordionChildren .openAccordionNav').off('click.secondaryNav').on('click.secondaryNav', function (e) {
+					e.preventDefault();
+					showHideAccordionMenuForSecondaryNav($(this));
+				});
+
+				$menuContainer.find(".grippy").each(function () {
+					menuManager.setupDraggableElement($(this), SIDE_MENU, '#secondaryNav');
+				});
+
+				$menuContainer.find("li").each(function () {
+					menuManager.setupDroppableAccordionElement($(this), SIDE_MENU);
+				});
+			}
+
+			if (document.readyState === "loading") {
+				document.addEventListener("DOMContentLoaded", setupAccordionSecondaryNav, { once: true });
+				return;
+			}
+
+			setupAccordionSecondaryNav();
+		})();
+	
+
+
+
+	
+				                
+
+
+
+	
+
+
+
+		
+			HomeDepartmentsAuditor/TreasurerElections & Voting
+		
+
+	   
+    
+
+	
+	
+		
+
+	
+	
+	
+	
+	
+	
+	
+
+				
+
+Elections & Voting		
+	
+		
+			
+
+						
+	
+	
+		
+
+	    
+
+
+        Statewide Primary and General ElectionThe next regularly scheduled state election is a Primary election which will be held on August 11, 2026. The next regularly scheduled General election will be held on November 3, 2026. Polling locations on these election days are open from 7:00 am until 8:00 pm.The Secretary of State has several online services for Minnesota voters:Register to VoteRegister or Update Your RegistrationCheck Your RegistrationRegister on Election Day: Find out what you'll need to bring with youRegistered Voter List Request: This information is only available to registered Minnesota voters, and may only be used for purposes related to elections, political activities, or law enforcement (Minnesota Statutes 201.091).Election Day VotingWhere Do I Vote?    Election Day Voting  Election Day Voting  Election Day Voting  Election Day Voting  When is Election Day?Voting HoursOther Ways to VoteRequest an Absentee Ballot Within the U.S.Request an Absentee Ballot from Military or AbroadReturn Your Absentee Ballot by Mail or In PersonVote Early In PersonTrack Your Absentee BallotJoin Permanent Absentee ListWhat's on My Ballot?View Your Sample BallotSearch Candidate FilingsLocal Campaign Finance ReportingElection ResultsHow Elections WorkPrecinct CaucusesBecome a Candidate
+    
+
+
+	$(document).ready(function (e) {		
+	    renderSlideshowIfApplicable($('#divEditor' + '4c53d93b-91c0-47dc-8480-407ff3283417'));
+	});
+
+
+
+	 
+
+	 
+
+			 
+
+
+		
+
+	
+
+	
+	
+
+	
+
+	
+				                
+
+
+
+	
+
+
+
+
+	
+				                
+
+						
+	
+	
+		
+
+
+
+
+
+
+	
+		
+				
+	
+	
+		
+				
+					
+
+
+	
+		
+			County Board
+		
+	
+
+		.fancyButton73.fancyButton:link,.fancyButton73.fancyButton:visited, .fancyButton73div.fancyButton{
+	background-image: url('/ImageRepository/Document?documentID=233');
+	background-repeat: no-repeat;
+	background-position: center top;
+transition: all .3s ease-in-out;}
+.fancyButton73.fancyButton:hover,.fancyButton73.fancyButton:focus,.fancyButton73.fancyButton:active,.fancyButton73.fancyButton.hover{
+}
+.fancyButton73.fancyButton:link > span,.fancyButton73.fancyButton:visited > span, .fancyButton73div.fancyButton > span{
+}
+.fancyButton73.fancyButton:hover > span,.fancyButton73.fancyButton:focus > span,.fancyButton73.fancyButton:active > span,.fancyButton73.fancyButton.hover > span{
+}
+.fancyButton73.fancyButton .text{
+	color: rgb(34, 34, 34);
+	font-size: 1.1em;
+	font-family: "Roboto";
+	padding-top: 115px;
+	padding-right: 5px;
+	padding-left: 5px;
+	font-weight: 700;
+	text-decoration: none;
+	padding-top: 115px;
+	padding-right: 5px;
+	padding-left: 5px;
+	background-image: url('/ImageRepository/Document?documentID=2020');
+	background-repeat: no-repeat;
+	background-position: center 20px ;
+line-height: 1.2;
+background-size: 60px;
+position: relative;
+transition: all .2s ease-in-out;
+}
+.fancyButton73.fancyButton:hover .text,.fancyButton73.fancyButton:focus .text,.fancyButton73.fancyButton:active .text,.fancyButton73.fancyButton.hover .text{
+	text-decoration: underline;
+	background-repeat: no-repeat;
+	background-position: center 15px ;
+background-size: 70px;
+}
+
+
+ 
+
+
+	
+		
+			Employment
+		
+	
+
+		.fancyButton141.fancyButton:link,.fancyButton141.fancyButton:visited, .fancyButton141div.fancyButton{
+	background-image: url('/ImageRepository/Document?documentID=234');
+	background-repeat: no-repeat;
+	background-position: center top;
+transition: all .3s ease-in-out;}
+.fancyButton141.fancyButton:hover,.fancyButton141.fancyButton:focus,.fancyButton141.fancyButton:active,.fancyButton141.fancyButton.hover{
+}
+.fancyButton141.fancyButton:link > span,.fancyButton141.fancyButton:visited > span, .fancyButton141div.fancyButton > span{
+}
+.fancyButton141.fancyButton:hover > span,.fancyButton141.fancyButton:focus > span,.fancyButton141.fancyButton:active > span,.fancyButton141.fancyButton.hover > span{
+}
+.fancyButton141.fancyButton .text{
+	color: rgb(34, 34, 34);
+	font-size: 1.1em;
+	font-family: "Roboto";
+	padding-top: 115px;
+	padding-right: 5px;
+	padding-left: 5px;
+	font-weight: 700;
+	text-decoration: none;
+	padding-top: 115px;
+	padding-right: 5px;
+	padding-left: 5px;
+	background-image: url('/ImageRepository/Document?documentID=127');
+	background-repeat: no-repeat;
+	background-position: center 20px ;
+line-height: 1.2;
+background-size: 60px;
+position: relative;
+transition: all .2s ease-in-out;
+}
+.fancyButton141.fancyButton:hover .text,.fancyButton141.fancyButton:focus .text,.fancyButton141.fancyButton:active .text,.fancyButton141.fancyButton.hover .text{
+	text-decoration: underline;
+	background-repeat: no-repeat;
+	background-position: center 15px ;
+background-size: 70px;
+}
+
+
+ 
+				
+			
+		
+	
+			
+
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+
+
+
+
+
+
+	
+		
+				
+	
+	
+		
+				
+					
+
+
+	
+		
+			Map & GIS Hub
+		
+	
+
+		.fancyButton140.fancyButton:link,.fancyButton140.fancyButton:visited, .fancyButton140div.fancyButton{
+	background-image: url('/ImageRepository/Document?documentID=2077');
+	background-repeat: no-repeat;
+	background-position: center top;
+transition: all .3s ease-in-out;}
+.fancyButton140.fancyButton:hover,.fancyButton140.fancyButton:focus,.fancyButton140.fancyButton:active,.fancyButton140.fancyButton.hover{
+}
+.fancyButton140.fancyButton:link > span,.fancyButton140.fancyButton:visited > span, .fancyButton140div.fancyButton > span{
+}
+.fancyButton140.fancyButton:hover > span,.fancyButton140.fancyButton:focus > span,.fancyButton140.fancyButton:active > span,.fancyButton140.fancyButton.hover > span{
+}
+.fancyButton140.fancyButton .text{
+	color: rgb(34, 34, 34);
+	font-size: 1.1em;
+	font-family: "Roboto";
+	padding-top: 115px;
+	padding-right: 5px;
+	padding-left: 5px;
+	font-weight: 700;
+	text-decoration: none;
+	padding-top: 115px;
+	padding-right: 5px;
+	padding-left: 5px;
+	background-image: url('/ImageRepository/Document?documentID=2017');
+	background-repeat: no-repeat;
+	background-position: center 20px ;
+line-height: 1.2;
+background-size: 60px;
+position: relative;
+transition: all .2s ease-in-out;
+}
+.fancyButton140.fancyButton:hover .text,.fancyButton140.fancyButton:focus .text,.fancyButton140.fancyButton:active .text,.fancyButton140.fancyButton.hover .text{
+	text-decoration: underline;
+	background-repeat: no-repeat;
+	background-position: center 15px ;
+background-size: 70px;
+}
+
+
+ 
+
+
+	
+		
+			Online Payments
+		
+	
+
+		.fancyButton75.fancyButton:link,.fancyButton75.fancyButton:visited, .fancyButton75div.fancyButton{
+	background-image: url('/ImageRepository/Document?documentID=2078');
+	background-repeat: no-repeat;
+	background-position: center top;
+transition: all .3s ease-in-out;}
+.fancyButton75.fancyButton:hover,.fancyButton75.fancyButton:focus,.fancyButton75.fancyButton:active,.fancyButton75.fancyButton.hover{
+}
+.fancyButton75.fancyButton:link > span,.fancyButton75.fancyButton:visited > span, .fancyButton75div.fancyButton > span{
+}
+.fancyButton75.fancyButton:hover > span,.fancyButton75.fancyButton:focus > span,.fancyButton75.fancyButton:active > span,.fancyButton75.fancyButton.hover > span{
+}
+.fancyButton75.fancyButton .text{
+	color: rgb(34, 34, 34);
+	font-size: 1.1em;
+	font-family: "Roboto";
+	padding-top: 115px;
+	padding-right: 5px;
+	padding-left: 5px;
+	font-weight: 700;
+	text-decoration: none;
+	padding-top: 115px;
+	padding-right: 5px;
+	padding-left: 5px;
+	background-image: url('/ImageRepository/Document?documentID=135');
+	background-repeat: no-repeat;
+	background-position: center 20px ;
+line-height: 1.2;
+background-size: 60px;
+position: relative;
+transition: all .2s ease-in-out;
+}
+.fancyButton75.fancyButton:hover .text,.fancyButton75.fancyButton:focus .text,.fancyButton75.fancyButton:active .text,.fancyButton75.fancyButton.hover .text{
+	text-decoration: underline;
+	background-repeat: no-repeat;
+	background-position: center 15px ;
+background-size: 70px;
+}
+
+
+ 
+				
+			
+		
+	
+			
+
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+
+
+
+
+
+
+	
+		
+				
+	
+	
+		
+				
+					
+
+
+	
+		
+			Parks
+		
+	
+
+		.fancyButton78.fancyButton:link,.fancyButton78.fancyButton:visited, .fancyButton78div.fancyButton{
+	background-image: url('/ImageRepository/Document?documentID=234');
+	background-repeat: no-repeat;
+	background-position: center top;
+transition: all .3s ease-in-out;}
+.fancyButton78.fancyButton:hover,.fancyButton78.fancyButton:focus,.fancyButton78.fancyButton:active,.fancyButton78.fancyButton.hover{
+}
+.fancyButton78.fancyButton:link > span,.fancyButton78.fancyButton:visited > span, .fancyButton78div.fancyButton > span{
+}
+.fancyButton78.fancyButton:hover > span,.fancyButton78.fancyButton:focus > span,.fancyButton78.fancyButton:active > span,.fancyButton78.fancyButton.hover > span{
+}
+.fancyButton78.fancyButton .text{
+	color: rgb(34, 34, 34);
+	font-size: 1.1em;
+	font-family: "Roboto";
+	padding-top: 115px;
+	padding-right: 5px;
+	padding-left: 5px;
+	font-weight: 700;
+	text-decoration: none;
+	padding-top: 115px;
+	padding-right: 5px;
+	padding-left: 5px;
+	background-image: url('/ImageRepository/Document?documentID=2027');
+	background-repeat: no-repeat;
+	background-position: center 20px ;
+line-height: 1.2;
+background-size: 60px;
+position: relative;
+transition: all .2s ease-in-out;
+}
+.fancyButton78.fancyButton:hover .text,.fancyButton78.fancyButton:focus .text,.fancyButton78.fancyButton:active .text,.fancyButton78.fancyButton.hover .text{
+	text-decoration: underline;
+	background-repeat: no-repeat;
+	background-position: center 15px ;
+background-size: 70px;
+}
+
+
+ 
+
+
+	
+		
+			Sheriff & Jail
+		
+	
+
+		.fancyButton142.fancyButton:link,.fancyButton142.fancyButton:visited, .fancyButton142div.fancyButton{
+	background-image: url('/ImageRepository/Document?documentID=235');
+	background-repeat: no-repeat;
+	background-position: center top;
+transition: all .3s ease-in-out;}
+.fancyButton142.fancyButton:hover,.fancyButton142.fancyButton:focus,.fancyButton142.fancyButton:active,.fancyButton142.fancyButton.hover{
+}
+.fancyButton142.fancyButton:link > span,.fancyButton142.fancyButton:visited > span, .fancyButton142div.fancyButton > span{
+}
+.fancyButton142.fancyButton:hover > span,.fancyButton142.fancyButton:focus > span,.fancyButton142.fancyButton:active > span,.fancyButton142.fancyButton.hover > span{
+}
+.fancyButton142.fancyButton .text{
+	color: rgb(34, 34, 34);
+	font-size: 1.1em;
+	font-family: "Roboto";
+	padding-top: 115px;
+	padding-right: 5px;
+	padding-left: 5px;
+	font-weight: 700;
+	text-decoration: none;
+	padding-top: 115px;
+	padding-right: 5px;
+	padding-left: 5px;
+	background-image: url('/ImageRepository/Document?documentID=239');
+	background-repeat: no-repeat;
+	background-position: center 20px ;
+line-height: 1.2;
+background-size: 60px;
+position: relative;
+transition: all .2s ease-in-out;
+}
+.fancyButton142.fancyButton:hover .text,.fancyButton142.fancyButton:focus .text,.fancyButton142.fancyButton:active .text,.fancyButton142.fancyButton.hover .text{
+	text-decoration: underline;
+	background-repeat: no-repeat;
+	background-position: center 15px ;
+background-size: 70px;
+}
+
+
+ 
+				
+			
+		
+	
+			
+
+
+
+	 
+
+	 
+
+			 
+
+
+	
+
+
+	
+				                
+
+						
+	
+	
+		
+    
+
+
+
+
+
+	
+			
+		
+								
+	
+	
+		
+					
+						
+
+
+	
+						
+					
+		
+	
+	
+
+	
+
+	
+
+
+
+
+	//Render slideshow if info advacned items contain one.
+	$(document).ready(function (e) {
+		$('#divInfoAdvac8db26b-cde8-4207-8e3a-198c328a9aca .InfoAdvanced.widgetItem').each(function () {
+			renderSlideshowIfApplicable($(this));		
+		});
+	});
+
+	 
+
+	 
+
+							
+	
+	
+		
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+    
+
+
+
+
+
+	
+			
+		
+								
+	
+	
+		
+					
+						
+
+
+	415 N Main Street, P.O. Box 130
+
+
+	Blue Earth, MN 56013
+
+
+	Phone: 507-526-6225
+
+
+	Hours: Monday through Friday, 8 a.m. to 4:30 p.m.
+
+
+	Maps and Directions
+
+
+	Staff Directories
+						
+					
+		
+	
+	
+
+	
+
+	
+
+
+
+
+	//Render slideshow if info advacned items contain one.
+	$(document).ready(function (e) {
+		$('#divInfoAdv004b438a-5925-4f53-8a59-07c17a1658fa .InfoAdvanced.widgetItem').each(function () {
+			renderSlideshowIfApplicable($(this));		
+		});
+	});
+
+	 
+
+	 
+
+			 
+						
+	
+	
+		
+
+
+
+	 
+
+	 
+
+			 
+
+
+	
+
+
+	
+				                
+
+						
+	
+	
+		
+	
+
+
+
+
+
+
+
+
+	
+			
+		
+						
+	
+	
+        
+				
+					
+
+
+
+
+    
+        Home
+        
+    
+					
+				
+				
+					
+
+
+
+
+    
+        Site Map
+        
+    
+					
+				
+				
+					
+
+
+
+
+    
+        Accessibility
+        
+    
+					
+				
+				
+					
+
+
+
+
+    
+        Copyright Notices
+        
+    
+					
+				
+				
+					
+
+
+
+
+    
+        Privacy Policy
+        
+    
+					
+				
+		
+        
+	
+	
+	
+	
+		/QuickLinks.aspx
+	
+
+	
+
+
+	 
+
+	 
+
+			 
+
+
+	
+	
+				                
+
+						
+	
+	
+		
+ 
+	
+	
+		
+  /* CP icon */
+  .cpBylineIconTS {
+  }
+  /* CP Text */
+  .cpBylineTextTS,
+  .cpBylineTextTS a:link {
+  }
+
+  .cpBylineTS {
+  }
+  
+  .cpBylineIconTS {
+    fill: currentColor;
+    width: 39px;
+    height: 26px;
+    display: inline;
+    vertical-align: middle;
+  }
+
+
+
+  
+    
+    
+  
+  Government Websites by CivicPlus®
+
+
+	
+
+	
+
+	 
+
+	 
+
+			 
+
+
+	
+
+
+
+
+            
+        
+    
+
+
+
+
+	
+		
+			Loading
+			
+				
+					
+				
+			
+		
+		
+			
+				
+				Loading
+			
+		
+		
+			Do Not Show Again
+			Close
+		
+	
+
+
+
+
+
+
+
+		$(document).ready(function () {
+			var filter = {
+				targetId: '1245',
+				targetType: 1
+			}
+
+			new SplashModalRender().triggerRender(filter);
+		});
+
+
+
+	
+	
+	
+	
+
+
+
+	
+
+
+
+
+
+
+    
+    
+
+  function getValueTS(elem, attr) {
+    const val = elem.css(attr);
+    if (val === undefined) return undefined;
+    const num = parseInt(val, 10);
+    if (num === NaN) return undefined;
+    return num;
+  }
+
+  function clampTS(number, min, max) {
+    return Math.min(Math.max(number, min), max);
+  }
+
+  function isPageEditingTS() {
+    return (
+      $("#doneEditing").length > 0 || // In live edit
+      typeof DesignCenter !== "undefined" // In theme manager
+    );
+  }
+
+  const bgColorRegexTS = /rgba\((\d+), (\d+), (\d+), (\d*\.?\d*)\)/;
+  function isTransparentTS(elem) {
+    const bg = elem.css('background-color');
+    if (typeof bg !== "string" || !bg.startsWith('rgba(')) return false;
+    const matchState = bg.match(bgColorRegexTS);
+    if (!matchState || matchState.length !== 5) return false;
+    const alpha = parseFloat(matchState[4], 10);
+    if (!(alpha >= 0 && alpha < 1)) return false;
+    return true;
+  }
+
+  function iterateLeftpads(cb) {
+    const containersTS = $("[class^='siteWrap'],[class*=' siteWrap']");
+    for (let i = 0; i < containersTS.length; i++) {
+      const containerTS = containersTS[i];
+      // Skip the body container and anything with data-skip-leftpad
+      if (
+        containerTS.id !== "bodyContainerTS" &&
+        containerTS.getAttribute('data-skip-leftpad') === null
+      ) {
+        cb(containerTS);
+      }
+    }
+  }
+
+  function iterateRightpads(cb) {
+    const containersTS = $("[class^='siteWrap'],[class*=' siteWrap']");
+    for (let i = 0; i < containersTS.length; i++) {
+      const containerTS = containersTS[i];
+      // Skip the body container and anything with data-skip-rightpad
+      if (
+        containerTS.id !== "bodyContainerTS" &&
+        containerTS.getAttribute('data-skip-rightpad') === null
+      ) {
+        cb(containerTS);
+      }
+    }
+  }
+
+  const anchor = $("#divToolbars");
+
+  // Outer banner padding (push banner down)
+  const outerSizingTS = $("#bannerContainerTS");
+  // Inner banner padding (push banner content down) - Transparent header OR on attaching headers
+  const innerSizingTS = $("#bannerSizingTS");
+  const bodyContainerTS = $("#bodyContainerTS");
+  const headerContainerTS = $("#headerContainerTS");
+  const forceUnfixClassTS = "forceUnfixTS";
+
+  const fixedTopTS = $(".fixedTopTS");
+  const fixedBottomTS = $(".fixedBottomTS");
+  const fixedLeftTS = $(".fixedLeftTS");
+  const fixedRightTS = $(".fixedRightTS");
+
+  var initialTopTS;
+  var topAttachTS;
+  if (fixedTopTS && fixedTopTS.length === 1) {
+    initialTopTS = getValueTS(fixedTopTS, 'top');
+    const attachment = fixedTopTS.attr('data-attach');
+    if (attachment) topAttachTS = $("#" + attachment);
+    if (!topAttachTS || topAttachTS.length !== 1) topAttachTS = undefined;
+  }
+
+  function resizeAdjustmentTS() {
+    const editing = isPageEditingTS();
+
+    // Fixed top script
+    (function () {
+      if (!fixedTopTS || fixedTopTS.length !== 1 || initialTopTS === undefined) return;
+
+      if (editing) {
+        fixedTopTS[0].classList.add(forceUnfixClassTS);
+      } else {
+        fixedTopTS[0].classList.remove(forceUnfixClassTS);
+      }
+
+      const topPosition = fixedTopTS.css('position');
+      if (topPosition === 'fixed') {
+        if (topAttachTS) {
+          scrollAdjustmentTS();
+        } else {
+          const anchorHeight = anchor.outerHeight() - 1;
+          fixedTopTS.css('top', anchorHeight + initialTopTS);
+        }
+      } else {
+        fixedTopTS.css('top', initialTopTS);
+      }
+
+      if (topPosition === 'fixed' || topPosition === 'absolute') {
+        // Bump the banner content down
+        if (isTransparentTS(fixedTopTS)) {
+          innerSizingTS.css('padding-top', initialTopTS + fixedTopTS.outerHeight() - 1);
+          outerSizingTS.css('padding-top', '');
+
+          try {
+            window.Pages.onResizeHandlersExecute();
+          } catch (e) { }
+        } else {
+          outerSizingTS.css('padding-top', fixedTopTS.outerHeight() - 1);
+          innerSizingTS.css('padding-top', '');
+        }
+      } else {
+        innerSizingTS.css('padding-top', '');
+        outerSizingTS.css('padding-top', '');
+      }
+    })();
+
+    // Fixed bottom script
+    (function () {
+      if (!fixedBottomTS || fixedBottomTS.length === 0) return;
+
+      // If the widget has gone narrow, force unfix
+      if (editing || fixedBottomTS.outerHeight() > 200) {
+        fixedBottomTS[0].classList.add(forceUnfixClassTS);
+      } else {
+        fixedBottomTS[0].classList.remove(forceUnfixClassTS);
+      }
+
+      if (fixedBottomTS.css('position') === 'fixed') {
+        bodyContainerTS.css('padding-bottom', fixedBottomTS.outerHeight());
+      } else {
+        bodyContainerTS.css('padding-bottom', '');
+      }
+    })();
+
+    // Fixed left script
+    (function () {
+      if (!fixedLeftTS || fixedLeftTS.length === 0) return;
+
+      if (editing) {
+        fixedLeftTS[0].classList.add(forceUnfixClassTS);
+      } else {
+        fixedLeftTS[0].classList.remove(forceUnfixClassTS);
+      }
+
+      if (fixedLeftTS.css('position') === 'fixed') {
+        const anchorHeight = anchor.outerHeight() - 1;
+        const headerHeight = headerContainerTS.outerHeight() - 1;
+        fixedLeftTS.css('top', anchorHeight + headerHeight + 100);
+        const leftBoundingTS = fixedLeftTS[0].getBoundingClientRect();
+        iterateLeftpads(function (containerTS) {
+          const containerBoundingTS = containerTS.getBoundingClientRect();
+          if (containerBoundingTS.left <= leftBoundingTS.right) {
+            $(containerTS).css('padding-left', leftBoundingTS.width + 16);
+          }
+        });
+      } else {
+        fixedLeftTS.css('top', '');
+        iterateLeftpads(function (containerTS) {
+          $(containerTS).css('padding-left', '');
+        });
+      }
+    })();
+
+    // Fixed right script
+    (function () {
+      if (!fixedRightTS || fixedRightTS.length === 0) return;
+
+      if (editing) {
+        fixedRightTS[0].classList.add(forceUnfixClassTS);
+      } else {
+        fixedRightTS[0].classList.remove(forceUnfixClassTS);
+      }
+
+      if (fixedRightTS.css('position') === 'fixed') {
+        const anchorHeight = anchor.outerHeight() - 1;
+        const headerHeight = headerContainerTS.outerHeight() - 1;
+        fixedRightTS.css('top', anchorHeight + headerHeight + 100);
+        const rightBoundingTS = fixedRightTS[0].getBoundingClientRect();
+        iterateRightpads(function (containerTS) {
+          const containerBoundingTS = containerTS.getBoundingClientRect();
+          if (containerBoundingTS.right >= rightBoundingTS.left) {
+            $(containerTS).css('padding-right', rightBoundingTS.width + 16);
+          }
+        });
+      } else {
+        fixedRightTS.css('top', '');
+        iterateRightpads(function (containerTS) {
+          $(containerTS).css('padding-right', '');
+        });
+      }
+    })();
+  }
+
+  function scrollAdjustmentTS() {
+    if (!fixedTopTS || fixedTopTS.length !== 1 || !topAttachTS || topAttachTS.length !== 1) return;
+    const topPosition = fixedTopTS.css('position');
+    if (topPosition === 'fixed' || topPosition === 'absolute') {
+      const anchorBounding = anchor[0].getBoundingClientRect();
+      const attachBounding = topAttachTS[0].getBoundingClientRect();
+      const scrollTop = $(window).scrollTop();
+
+      fixedTopTS.css('top', Math.max(anchorBounding.bottom - 1, attachBounding.bottom));
+    } else {
+      fixedTopTS.css('top', initialTopTS);
+    }
+  }
+
+  $(window).load(function () {
+    setTimeout(function () {
+      resizeAdjustmentTS();
+    }, 350);
+
+    $(window).scroll(function () {
+      scrollAdjustmentTS();
+    });
+
+    var adjustTimeoutTS;
+    $(window).resize(function () {
+      clearTimeout(adjustTimeoutTS);
+      adjustTimeoutTS = setTimeout(function () {
+        resizeAdjustmentTS();
+      }, 350);
+    });
+
+    $.when(window.Pages.angularToolbarComplete).done(function () {
+      resizeAdjustmentTS();
+    });
+  });
+
+
+
+
+.moduleContentNew h1, .moduleContentNew h1 a, .moduleContentNew h1 a:link, .moduleContentNew h1 a:visited, .moduleContentNew h1 a:hover, .moduleContentNew h1 a:focus, .moduleContentNew h1 a:active, .moduleContentNew .h1, .moduleContentNew h2, .moduleContentNew h2 a, .moduleContentNew h2 a:link, .moduleContentNew h2 a:visited, .moduleContentNew h2 a:hover, .moduleContentNew h2 a:focus, .moduleContentNew h2 a:active .moduleContentNew .h2 {
+   Color:#23376D !important;
+ !function(){var b=function(){window.__AudioEyeSiteHash="a4609810786dd22cc9c32ad6ea208987";var a=document.createElement("script");a.src="https://wsmcdn.audioeye.com/aem.js";a.type="text/javascript";a.setAttribute("async","");document.getElementsByTagName("body")[0].appendChild(a)};"complete"!==document.readyState?window.addEventListener?window.addEventListener("load",b):window.attachEvent&&window.attachEvent("onload",b):b()}(); 
+
+
+    
+        $(function () {
+            document.cookie = "responsiveGhost=0; path=/";
+        });
+        $(window).on("load", function () {
+            $('body').addClass('doneLoading').removeClass('hideContent');
+
+            if ($('#404Content').length > 0)
+                $('div#bodyWrapper').css('padding', '0px');
+        });
+    
+
+    
+        
+            body.hideContent {
+                opacity: 1 !important;
+            }
+        
+    
+
+        
+
+	
+
+		
+			Arrow Left
+			
+		
+
+		
+			Arrow Right
+			
+		
+
+	
+
+    loadCSS('//fonts.googleapis.com/css?family=Roboto:500,500italic,600,600italic,700,700italic,italic,regular|Roboto+Condensed:500,500italic,600,600italic,700,700italic,italic,regular|');
+    
+
+    []
+        
+            
+                
+                    Slideshow Left Arrow
+                    
+                        
+                    
+                
+                
+                    Slideshow Right Arrow
+                    
+                        
+                    
+                
+            
+        
+    
+	
+	
+
+    
+(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a4c9f25b5bd4aa6d',t:'MTc5MjM1MTcxMg=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();
+

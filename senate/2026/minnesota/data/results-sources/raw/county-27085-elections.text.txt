@@ -1,0 +1,892 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+    
+    
+
+	     
+
+	
+	
+	
+	McLeod County, MN
+	
+	
+	
+
+    
+	
+	
+	
+
+	
+	
+
+
+
+
+
+	var defaultCalendarColor = "#3788d8";
+	var ImportCals = [];
+	var calendarProps = {'1' : { 'color' : '#11375e' , 'name' : 'County Board' },
+'6' : { 'color' : '' , 'name' : 'calendar-list-options' },
+'7' : { 'color' : '#3775d8' , 'name' : 'Committee Meetings' },
+'10' : { 'color' : '#38b548' , 'name' : 'Holidays and Closures' },
+'13' : { 'color' : '#3787d8' , 'name' : 'Events' },
+};
+	var RZCalendarTimezone = "US/Central";
+
+
+
+	
+	
+	
+	
+		
+
+
+	
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+	Skip to main content
+	
+
+
+
+
+if (typeof(RZ) == 'undefined') RZ = {};
+if (!RZ.link) RZ.link = new Object();
+RZ.pagetype = 'template'
+RZ.baseurlprefix = '../../'
+RZ.baseurlpath = 'government/elections/'
+RZ.protocolRelativeRevizeBaseUrl='//cms7.revize.com'
+
+RZ.pagetemplatename = 'freeform'
+RZ.pagetemplateid = '1'
+RZ.pagemodule = 'links'
+RZ.pagemoduleid = '1'
+RZ.pagerecordid = '58';
+
+RZ.pageid = 'links-58';
+RZ.pageparentid = '1';
+RZ.pagesectionid = '58';
+RZ.pagesectionname = 'elections';
+RZ.pagesectionlevel = '2';
+RZ.pagesectionfolder = 'government/elections/';
+RZ.pagesectionfilter = 'sectionid=58';
+RZ.pagelinkfilter = 'linklevel=2 and linksectionid=58';
+RZ.pagelinklevel = '2';
+RZ.pagelinkid = '58';
+RZ.pageidfield = '';
+
+RZ.isnewrecord = false;
+RZ.editmodule = '';
+RZ.editrecordid = '58';
+RZ.editrecordversion = '';
+RZ.editversion = '';
+RZ.editaction = '';
+
+RZ.page_roles = ''
+RZ.page_users = '08bb3131558046846e012a87c26ca6bdc0d786584277fc0d45a27ceea573fd80|094d6adab30a297fd568031dc45df0773f7f2c4cf7f6d3b68bc5966f87060bee|0c502c04fdfcfca507d3fe90bdf0a5ccfc73845605efcb82d9766e63c75c7565|367761ce6d3dfdb55075566f81295f36a817bee270b35a927d604eb9c1c74d50|5c02d273f8e30d30b87645cf04f9adc44fac5efe4ac14ae5be2c0395b14cd304|d33cce9c0169ddad455411526df44f3274db2a1efeac392fda806cf4496d5d2d'
+RZ.page_key = 'freeform[58]'
+RZ.parent_key = 'freeform[1]'
+RZ.inherit_key = 'freeform[58]'
+RZ.workflowname = ''
+RZ.permissions_options = 'warningsOFF'
+RZ.permissions_module = 'webspace_page_permissions'
+RZ.webspace = 'mcleodcountymn'
+RZ.webspacedesc = "";
+
+RZ.featurespattern = '(EZ)';
+null
+
+RZ.webspacelinksurl = ''
+RZ.webspacelinksurl = './webspace/links.html'
+RZ.workflowlist = ''
+RZ.revizeserverurl = 'https://cms7.revize.com/revize/mcleodcountymn';
+
+if (!RZ.nextseq) RZ.nextseq = {linknames:{},modules:{}};
+
+RZ.webspace_config = new Object();
+RZ.webspace_config.admin_email = "McLeodCounty.contactuspage@co.mcleod.mn.us";
+RZ.webspace_config.calendar_options = "max_events=6";
+RZ.webspace_config.form_captcha = "yes";
+RZ.webspace_config.form_server = "revizeserver";
+RZ.webspace_config.form_technology = "jsp";
+RZ.webspace_config.formwizard_ftp_password = "";
+RZ.webspace_config.formwizard_ftp_port = "";
+RZ.webspace_config.formwizard_ftp_server = "";
+RZ.webspace_config.formwizard_ftp_user = "";
+RZ.webspace_config.formwizard_setup = "yes";
+RZ.webspace_config.formwizard_smtp_password = "xxx";
+RZ.webspace_config.formwizard_smtp_server = "xxx";
+RZ.webspace_config.formwizard_smtp_user = "xxx";
+RZ.webspace_config.google_analytics = "";
+RZ.webspace_config.home_pageid = "0";
+RZ.webspace_config.home_sectionid = "0";
+RZ.webspace_config.home_template = "home,index,sitemap";
+RZ.webspace_config.icon_email = "<img src=\"/revize/images/email_icon_yellow.gif\" width=\"16\" border=\"0\" height=\"17\" title=\"Request email notification when page changes\" alt=\"Request email notification when page changes\" style=\"\" />";
+RZ.webspace_config.image_maxheight = "3000";
+RZ.webspace_config.image_maxwidth = "3000";
+RZ.webspace_config.image_setup = "yes";
+RZ.webspace_config.livesite_url = "";
+RZ.webspace_config.menu_links_module = "links";
+RZ.webspace_config.menu_newsection = "";
+RZ.webspace_config.menu_nexturl = "webspace_menu-editform.jsp";
+RZ.webspace_config.menu_sections_module = "sections";
+RZ.webspace_config.menu_system = "custom";
+RZ.webspace_config.menu_version = "1.00";
+RZ.webspace_config.new_menu_manager_enabled = "yes";
+RZ.webspace_config.notify_options = "";
+RZ.webspace_config.notify_return_url = "enotify/index.php";
+RZ.webspace_config.rte_setup = "yes";
+RZ.webspace_config.to_email = "website-noreply@co.mcleod.mn.us";
+RZ.webspace_config.use_folders = "1";
+
+RZ.isauthenticationactive = true
+RZ.warning = ""
+RZ.adminwinmsg = null
+
+RZ.channels = 'revize,fileschannel';
+RZ.jsversion = 1.2
+
+
+
+	
+
+
+
+ 
+
+
+	
+
+	
+		
+			
+			
+			    
+				
+			
+			
+                    
+
+
+
+
+ 
+
+	Government
+		
+			Attorney
+			Auditor-Treasurer
+				
+					Delinquent Taxes
+					Ordinances
+					Elections
+					Property Tax Info
+					Redistricting
+					Responsibilities
+					Tax Forfeited Property
+					Truth in Taxation
+				
+			
+			County Board
+				
+					Agendas & Minutes
+					County Board Guide
+					First District
+					Second District
+					Third District
+					Fourth District
+					Fifth District
+					Map of Districts
+				
+			
+			Court Administration
+			Courthouse
+			Elections
+				
+					Caucus Information
+					What's On My Ballot?
+					Absentee Voting
+					Candidates
+					Commissioner & District Maps
+					Election Results
+					How to Register to Vote
+					Military Voting
+					McLeod Polling Locations
+					Voting FAQ
+					Voting Information
+				
+			
+			Recorder
+				
+					Abstract Documents
+					Abstract Services
+					Bankruptcies
+					eRecording
+					Historical Records Access
+					Land Notification
+					Military Discharges
+					Ministerial / License
+					Notary Public Information
+					Passport Information
+					Plats and RLS
+					Property Search Landshark
+					Registrar of Titles
+					Responsibilities
+				
+			
+			Sheriff's Office
+				
+					About Us
+					Contact Us
+					Records Request
+					Burning Information
+					Civil Process
+					Crime Prevention
+					Divisions
+					Emergency Management
+					Forms
+					Gun Permits
+					Jail Information
+					Policies \ Public Notices
+					Posse
+					Predatory Offenders
+					Reports / News
+					Resources
+					Sentence to Serve Program
+					Take it to the Box
+					VINE Offender Information
+					Warrant Search
+				
+			
+		
+	
+	Departments
+		
+			Administration
+				
+					County Directory
+					Economic Development
+					Employment Information
+					Fee Schedule
+					Financial Statements
+					Newsletter
+					Salary Compliance Notice
+					Coronavirus Relief Information
+				
+			
+			Assessor
+				
+					Assessor Office Staff
+					Property Tax Information
+					Forms and Applications
+				
+			
+			Economic Development
+			Environmental Services
+				
+					Staff Contacts
+					Solid Waste Plan Update 2023
+					Aquatic Invasive Species (AIS)
+					Feedlots
+					Information and Resources
+					Planning & Zoning
+					Septic Systems
+					Soil and Water Conservation District (SWCD)
+					Solid Waste
+					Water Plan & Natural Resources Block Grant
+				
+			
+			Finance
+			Health & Human Services
+				
+					Contact Us
+					Adult Services
+					Child Support
+					Children & Family Services
+					Developmental Disabilities
+					Financial Assistance
+					Internship Opportunities
+					Public Health
+					Resource List for McLeod County
+					WIC & Nutrition
+				
+			
+			Public Works
+				
+					Bid Letting
+					ePermits
+					Engineering/Road Construction
+					GIS (Mapping & Surveying)
+					Highway Related
+					Parks & Recreation
+					Fairgrounds
+					Transportation Sales Tax
+				
+			
+			Veteran Services
+				
+					What's New
+					Federal Benefits
+					State Benefits
+					County Benefits
+					Upcoming Events
+					Local Veteran Organizations
+					Non-Profit Organizations
+					Beyond the Yellow Ribbon
+				
+			
+		
+	
+	Services
+		
+			Beyond The Yellow Ribbon
+			Court Services (Probation)
+			COVID Vaccine Clinics
+			GIS (Mapping & Surveying)
+			Land Notification
+			Law Library
+			License Center
+			Parks & Recreation
+			Soil and Water (SWCD)
+			U of MN Extension Services
+			Vital Statistics
+		
+	
+	How Do I
+		
+			Ask
+				
+					Citizen Request
+				
+			
+			Apply For
+				
+					Child Care Assistance
+					Child Support
+					Driver License
+					Employment
+					Family Child Care License
+					Financial Assistance
+					Fishing License
+					Gun Permit
+					Health Care Programs
+					Highway Permits
+					Homestead
+					Hunting License
+					Land Use (Building) Permits
+					Motor Vehicle
+					Passport
+					Septic System Permits
+					Social Services
+					State ID
+					Transient Merchant Application
+					Women, Infant, and Children (WIC)
+					Zoning Applications
+				
+			
+			Contact
+				
+					County Departments
+					SWCD (Soil & Water)
+				
+			
+			File
+				
+					Credential of License or Ordination
+					Make a Child Protection Report
+					Notary Public License
+				
+			
+			Find
+				
+					County Addresses & Phone Numbers
+					County Board
+					County Parks
+					Election History Results
+					Employment Information
+					Fairgrounds Rental Information
+					Interactive Parcel Mapping (GeoMoose)
+					Land Notification
+					Planning Commission Meetings
+					Plats & Registered land Survey
+					Property Search Landshark
+					Property Tax Information
+					Road Construction Information
+					Transportation Sales Tax
+					Camping/Shelter Reservations
+				
+			
+			Obtain
+				
+					Birth Certificate
+					Death Certficate
+					Highway Permits
+					Marriage Certificate
+					County Parks Campsite Reservation
+				
+			
+			Pay
+				
+					Pay Your Taxes
+				
+			
+			Record
+				
+					Abstract Documents
+					eRecording
+				
+			
+			Register
+				
+					County Newsletters
+					E-Notify
+					Register to Vote
+				
+			
+			Renew
+				
+					Driver's License and State IDs
+					Game & Fish Licenses (DNR)
+					Motor Vehicle License
+				
+			
+			Report
+				
+					County Road Issue
+					Park or Fairgrounds Concern
+				
+			
+			Subscribe To
+				
+					County Newsletter
+				
+			
+			View
+				
+					County Budget
+					County Newsletters
+					County Board Meetings
+					County Maps
+					Disclaimer & Site Compliance
+				
+			
+		
+	
+
+
+#post a{color:#006FE6;}
+			
+			
+				
+					
+						Search
+						
+						Search
+					
+				
+								
+					
+			
+		
+	
+	
+		
+		
+	
+
+	
+if (typeof RZlistbegin != 'undefined') RZlistbegin(1)
+
+
+if (typeof RZlinktemplate != 'undefined') RZlinktemplate('slider','','')
+if (typeof RZ.nextseq != 'undefined') RZ.nextseq.modules['slider_1']={field:'seq_no',seq:'3.00'};
+
+
+
+	
+		
+			RZ.module = 'slider';
+			
+			RZ.nexturl = 'editforms/slider_images-editlist.jsp?width=1700&height=740&pageid=58';
+			RZ.img = '<span class="rzBtn">Edit Slides</span>';
+			RZ.set = '';
+			RZ.options = '';
+			if (typeof RZaction != 'undefined') RZaction('editform');
+		
+		
+	
+	
+	    
+	
+	
+
+
+    
+	    
+            
+            
+                
+
+
+    
+    	
+			
+				
+					RZ.module = 'freeform';
+					RZ.nexturl = 'editforms/leftnav_title-editform.jsp';
+					RZ.img = '<span class="rzBtn noPush rzSmall">Edit Header left side</span>';
+					RZ.set = 'pageid=links-58';
+					RZ.options = '';
+					if (typeof RZaction != 'undefined') RZaction('editform');
+				
+						  
+            Related Links
+
+            
+			
+
+
+			
+				
+					RZ.module = 'links';
+					RZ.nexturl = "/revize/plugins/menus/webspace_menu-editlist.jsp?pageid=links-58&"
+								+ "linksfilter=linkplacement=leftnav and linkparentid=58&"
+								+ "numberoflevels=2&"
+								+ "linkoptions=url,template,file&"
+								+ "linknewsection=*all*";
+					RZ.img = '<span class="rzBtn noPush rzSmall" style="margin-top:0">Edit Left Nav</span>';
+					RZ.caption = '';
+					RZ.set = "links.linkplacement=leftnav"
+					RZ.options = '';
+					if (typeof RZaction != 'undefined') RZaction('editlist');
+				
+			
+			
+ 
+	Absentee Voting
+	Caucus Information
+	Candidates & Filing for Office
+	Commissioner & District Maps
+	Election Results
+	How to Register to Vote
+	Legal Notices
+	McLeod Polling Locations
+	Political Parties
+	Military Voting
+	Voting FAQ
+	What's On My Ballot?
+
+
+        
+	
+    
+ 
+            
+
+
+				
+					
+                        
+                            
+Home   Government   Elections
+ 
+                        
+                        
+                            
+
+Elections
+
+                            
+								
+                                
+
+
+    
+    
+        RZ.module = 'freeform';
+        RZ.nexturl = 'editforms/freeform-editform.jsp?';
+        RZ.img = '<span class="rzBtn">Edit Content</span>';
+        RZ.set = 'pageid=links-58';
+        RZ.options = '';
+        if (typeof RZaction != 'undefined') RZaction('editform');
+    
+    
+    
+        RZ.module = 'freeform';
+        RZ.nexturl = 'editforms/metadata-editform.jsp?';
+        RZ.img = '<span class="rzBtn">Edit Metadata</span>';
+        RZ.set = 'pageid=links-58';
+        RZ.options = '';
+        if (typeof RZaction != 'undefined') RZaction('editform');
+    
+    
+        RZ.nexturl = '';
+        RZ.img = '<span class="rzAdmin"><img src="images/edit/permissions.jpg" alt="Permissions" border="0" class="rzBtn" /></span>';
+        RZ.options = '';
+        if (typeof RZaction != 'undefined') RZaction('permissions');
+    
+    
+
+
+
+
+The Office of the Auditor-Treasurer works diligently to ensure that every vote is properly cast, counted and reported. We respect that Minnesota has consistently been a national leader in voter turnout with our paper ballot integrity. Please call us with your election questions at 320-864-1260.Click here to verify your voter registrationElection Dates in 2026:                                                      
+March 10, 2026 March Township ElectionTownships include: Collins, Hale, Hassan Valley, Hutchinson, Lynn, Penn and Round Grove.
+
+April 14, 2026 Special Election was held to fill the vacant office of County Commissioner District 5.
+August 11, 2026 State Primary Election , including County Commissioner District 5Four-Year Term will begin January 5, 2027.
+November 3, 2026 State General Election, including County Commissioner District 5Four-Year Term will begin January 5, 2027.
+
+
+
+         9/18/2026
+Absentee Voting Begins
+
+
+        11/03/2026
+Election Day
+
+
+
+ 
+
+
+
+
+
+
+
+
+                            
+                        
+
+				
+			
+			
+		
+		
+	
+
+
+
+
+	
+
+	
+		
+		Sign up for the latest news and updates
+		Learn More 
+	
+
+
+
+	
+	
+		
+			
+				
+					
+						
+							
+							
+						
+					
+					
+						
+                            
+							
+								GOVERNMENT CENTER520 Chandler Avenue North Glencoe, Minnesota 55336 
+							
+							
+								Phone: 320-864-5551
+							
+							
+							
+								Contact us 
+							
+						
+					
+					
+						
+						
+						
+								COURTHOUSE & LAW ENFORCEMENT CENTER830 11th Street EastGlencoe, Minnesota 55336
+
+							
+								ENVIRONMENTAL SERVICES1065 5th Avenue Southeast Hutchinson, Minnesota 55350
+
+							
+								FAIRGROUNDS840 Century Avenue Southwest Hutchinson, Minnesota 55350
+
+							
+						
+						
+						
+						
+					
+				
+			
+			
+				
+					
+						
+							
+							
+									 
+
+								
+							
+						
+					
+					
+						
+							
+									Contact Information
+								
+									Job Opportunities
+								
+									News & Updates
+								
+									Upcoming Events
+								
+									Locations
+								
+									Employee Portal
+								
+							
+
+							
+    
+    
+if (typeof RZlistbegin != 'undefined') RZlistbegin(7)
+
+
+    Facebook linkFacebook
+    
+if (typeof RZlinktemplate != 'undefined') RZlinktemplate('global','','')
+if (typeof RZ.nextseq != 'undefined') RZ.nextseq.modules['global_7']={field:'seq_no',seq:'2.00'};
+
+
+
+							
+						
+					
+				
+			
+		
+		
+        	
+			
+				© 2026 McLeod County, Minnesota   
+				
+			
+			
+				Powered by Revize. Government Website Experts: Login
+			
+		
+	
+
+
+    
+    
+    
+    
+
+
+
+
+  
+    
+	  
+		  
+			
+			
+		  
+      
+	  
+		 
+		 
+		 
+		 
+	  
+      
+        Close
+        Read More
+      
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    (function(d){
+       var s = d.createElement("script");
+       s.setAttribute("data-position", 6);
+       s.setAttribute("data-account", "sudb1U5E4V");
+       s.setAttribute("src", "https://cdn.userway.org/widget.js");
+       (d.body || d.head).appendChild(s);})(document)
+   
+
+Please ensure Javascript is enabled for purposes of
+website accessibility
+ 
+
+
+
+
+
+
+

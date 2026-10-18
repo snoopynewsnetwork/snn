@@ -1,0 +1,261 @@
+[
+  {
+    "id": "unknown-pool",
+    "A": "DFL example",
+    "B": "Republican example",
+    "units": [
+      {
+        "key": "all87-aggregate",
+        "counted": {
+          "DFL example": 100,
+          "Republican example": 110,
+          "Libertarian example": 10
+        },
+        "remaining_all": null,
+        "pair_fraction": 0.9,
+        "A_pair_share": 0.5,
+        "other_distribution": {
+          "Libertarian example": 1
+        }
+      }
+    ]
+  },
+  {
+    "id": "no-pool-A-ahead",
+    "A": "DFL example",
+    "B": "Republican example",
+    "units": [
+      {
+        "key": "all87-aggregate",
+        "counted": {
+          "DFL example": 111,
+          "Republican example": 100,
+          "Libertarian example": 10
+        },
+        "remaining_all": 0,
+        "pair_fraction": 0.9,
+        "A_pair_share": 0.5,
+        "other_distribution": {
+          "Libertarian example": 1
+        }
+      }
+    ]
+  },
+  {
+    "id": "no-pool-tied",
+    "A": "DFL example",
+    "B": "Republican example",
+    "units": [
+      {
+        "key": "all87-aggregate",
+        "counted": {
+          "DFL example": 100,
+          "Republican example": 100,
+          "Libertarian example": 10
+        },
+        "remaining_all": 0,
+        "pair_fraction": 0.9,
+        "A_pair_share": 0.5,
+        "other_distribution": {
+          "Libertarian example": 1
+        }
+      }
+    ]
+  },
+  {
+    "id": "negative-pool-rejected",
+    "A": "DFL example",
+    "B": "Republican example",
+    "units": [
+      {
+        "key": "all87-aggregate",
+        "counted": {
+          "DFL example": 100,
+          "Republican example": 110,
+          "Libertarian example": 10
+        },
+        "remaining_all": -1,
+        "pair_fraction": 0.9,
+        "A_pair_share": 0.5,
+        "other_distribution": {
+          "Libertarian example": 1
+        }
+      }
+    ]
+  },
+  {
+    "id": "impossible-even-all-remaining-A",
+    "A": "DFL example",
+    "B": "Republican example",
+    "units": [
+      {
+        "key": "all87-aggregate",
+        "counted": {
+          "DFL example": 100,
+          "Republican example": 1000,
+          "Libertarian example": 10
+        },
+        "remaining_all": 100,
+        "pair_fraction": 0.9,
+        "A_pair_share": 0.5,
+        "other_distribution": {
+          "Libertarian example": 1
+        }
+      }
+    ]
+  },
+  {
+    "id": "secured-even-all-remaining-B",
+    "A": "DFL example",
+    "B": "Republican example",
+    "units": [
+      {
+        "key": "all87-aggregate",
+        "counted": {
+          "DFL example": 1000,
+          "Republican example": 100,
+          "Libertarian example": 10
+        },
+        "remaining_all": 100,
+        "pair_fraction": 0.9,
+        "A_pair_share": 0.5,
+        "other_distribution": {
+          "Libertarian example": 1
+        }
+      }
+    ]
+  },
+  {
+    "id": "clipped-preference-high",
+    "A": "DFL example",
+    "B": "Republican example",
+    "units": [
+      {
+        "key": "priority-example",
+        "counted": {
+          "DFL example": 100,
+          "Republican example": 110,
+          "Libertarian example": 10
+        },
+        "remaining_all": 200,
+        "pair_fraction": 0.9,
+        "A_pair_share": 1.2,
+        "other_distribution": {
+          "Libertarian example": 1
+        }
+      },
+      {
+        "key": "all-other-units-explicit",
+        "counted": {
+          "DFL example": 250,
+          "Republican example": 300,
+          "Libertarian example": 10
+        },
+        "remaining_all": 700,
+        "pair_fraction": 0.9,
+        "A_pair_share": 0.52,
+        "other_distribution": {
+          "Libertarian example": 1
+        }
+      }
+    ]
+  },
+  {
+    "id": "clipped-preference-low",
+    "A": "DFL example",
+    "B": "Republican example",
+    "units": [
+      {
+        "key": "all87-aggregate",
+        "counted": {
+          "DFL example": 100,
+          "Republican example": 110,
+          "Libertarian example": 10
+        },
+        "remaining_all": 200,
+        "pair_fraction": 0.9,
+        "A_pair_share": -0.2,
+        "other_distribution": {
+          "Libertarian example": 1
+        }
+      }
+    ]
+  },
+  {
+    "id": "final-denominator-cushion",
+    "A": "DFL example",
+    "B": "Republican example",
+    "units": [
+      {
+        "key": "priority-example",
+        "counted": {
+          "DFL example": 100,
+          "Republican example": 130,
+          "Libertarian example": 10
+        },
+        "remaining_all": 100,
+        "pair_fraction": 0.9,
+        "A_pair_share": 0.6,
+        "other_distribution": {
+          "Libertarian example": 1
+        }
+      },
+      {
+        "key": "all-other-units-explicit",
+        "counted": {
+          "DFL example": 500,
+          "Republican example": 490,
+          "Libertarian example": 10
+        },
+        "remaining_all": 1000,
+        "pair_fraction": 0.9,
+        "A_pair_share": 0.51,
+        "other_distribution": {
+          "Libertarian example": 1
+        }
+      }
+    ]
+  },
+  {
+    "id": "no-positive-pair-pool-with-other-votes",
+    "A": "DFL example",
+    "B": "Republican example",
+    "units": [
+      {
+        "key": "all87-aggregate",
+        "counted": {
+          "DFL example": 100,
+          "Republican example": 110,
+          "Libertarian example": 10
+        },
+        "remaining_all": 100,
+        "pair_fraction": 0,
+        "A_pair_share": 0.5,
+        "other_distribution": {
+          "Libertarian example": 1
+        }
+      }
+    ]
+  },
+  {
+    "id": "strong-named-other-can-win",
+    "A": "DFL example",
+    "B": "Republican example",
+    "units": [
+      {
+        "key": "all87-aggregate",
+        "counted": {
+          "DFL example": 100,
+          "Republican example": 90,
+          "Libertarian example": 1000
+        },
+        "remaining_all": 100,
+        "pair_fraction": 0.8,
+        "A_pair_share": 0.7,
+        "other_distribution": {
+          "Libertarian example": 1
+        }
+      }
+    ]
+  }
+]

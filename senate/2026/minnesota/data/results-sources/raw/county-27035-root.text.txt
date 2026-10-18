@@ -1,0 +1,2364 @@
+
+
+
+
+
+	
+
+				(function(w,d,s,l,i){w.GAMeasurementID='G-PDFQ465KNH';w[l]=w[l]||[];w[l].push({'gtm.start':
+				new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+				j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+				'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+				})(window,document,'script','cpDataLayerGA4','GTM-K73C5PS');
+				
+				
+					var enableTelemetry = 'false'
+					var aiConfig = {
+					instrumentationKey: '1cde048e-3185-4906-aa46-c92a7312b60f'						
+					}
+					var appInsights = window.appInsights || function (a) { function b(a) { c[a] = function () { var b = arguments; c.queue.push(function () { c[a].apply(c, b) }) } } var c = { config: a }, d = document, e = window; setTimeout(function () { var b = d.createElement('script'); b.src = a.url || 'https://js.monitor.azure.com/scripts/a/ai.0.js', d.getElementsByTagName('script')[0].parentNode.appendChild(b) }); try { c.cookie = d.cookie } catch (a) { } c.queue = []; for (var f = ['Event', 'Exception', 'Metric', 'PageView', 'Trace', 'Dependency']; f.length;)b('track' + f.pop()); if (b('setAuthenticatedUserContext'), b('clearAuthenticatedUserContext'), b('startTrackEvent'), b('stopTrackEvent'), b('startTrackPage'), b('stopTrackPage'), b('flush'), !a.disableExceptionTracking) { f = 'onerror', b('_' + f); var g = e[f]; e[f] = function (a, b, d, e, h) { var i = g && g(a, b, d, e, h); return !0 !== i && c['_' + f](a, b, d, e, h), i } } return c }(aiConfig);
+					window.appInsights = appInsights, appInsights.queue && 0 === appInsights.queue.length;
+					// Add telemetry initializer
+					appInsights.queue.push(function() {
+						appInsights.context.addTelemetryInitializer(function(envelope) {
+							var telemetryItem = envelope.data.baseData;
+							// To check the telemetry item’s type:
+							if (!false)
+							{
+								//If the telemetry is not enabled, we still want to capture Google map custom event, so only allow that
+								if (envelope.name.indexOf('.Event') == -1)
+									return false;
+							}
+						});
+					});						
+					appInsights.trackPageView();
+				
+	
+		function populateAntiForgery(token) {
+			var input = document.createElement("input");
+			input.name = "__RequestVerificationToken";
+			input.type = "hidden";
+			input.value = token;
+			var absPat = /^https?:\/\/|^\/\//i;
+			var forms = document.getElementsByTagName("form");
+			for (var i = 0; i < forms.length; i++) {
+				if (forms[i].method == "post" &&
+					!forms[i].querySelector('[name="__RequestVerificationToken"]') &&
+					!absPat.test(forms[i].getAttribute("action"))) {
+					forms[i].appendChild(input.cloneNode());
+				}
+			}
+		}
+
+		function getAntiForgeryToken(callback, error) {
+			var xhr = new XMLHttpRequest();
+			xhr.open("GET", "/antiforgery");
+			xhr.addEventListener("load", function() {
+				try {
+					if (this.status !== 200) {
+						throw Error("Invalid status. Could not retrieve antiforgery token.");
+					}
+					var obj = JSON.parse(this.responseText);
+					callback(obj.token);
+				} catch (e) {
+					typeof error === "function" && error(e);
+				}
+			});
+			xhr.send();
+		}
+
+		getAntiForgeryToken(function(token) {
+			if (document.readyState === "complete"
+				|| document.readyState === "loaded" 
+				|| document.readyState === "interactive") {
+				populateAntiForgery(token);
+				return;
+			}
+			document.addEventListener("DOMContentLoaded", function() {
+				populateAntiForgery(token);
+			}, false);
+		}, console.error);
+	
+			
+
+	
+		window.departmentHeader = {};
+		window.pageSectionTracker = {};
+		window.isResponsiveEnabled = true;
+		window.isRemoveSetHeights= true;
+		if (window.isRemoveSetHeights) {
+			document.documentElement.className += ' removeSetHeights';
+		}
+		window.mainMenuMediaQuery = 'screen and (max-width: 40em)';
+		window.isMobileBrowserIncludingTablets = false;
+		window.fixedResponsiveMenu = false;
+		window.fullWidthResponsiveMenu = false;
+		window.responsiveMenuHeight = '';
+		window.responsiveMenuFontSize = '';
+		window.isContentAdvisor = false;
+		(function () {
+			window.setSizeCookie = function () {
+				document.cookie = "dpi=" + window.devicePixelRatio + "; path=/";
+				document.cookie = "viewportWidth=" + window.innerWidth + "; path=/";
+				document.cookie = "viewportHeight=" + window.innerHeight + "; path=/";
+				if (screen && screen.width && screen.height) {
+					document.cookie = "screenWidth=" + screen.width + "; path=/";
+					document.cookie = "screenHeight=" + screen.height + "; path=/";
+				}
+				document.cookie = "responsiveGhost=1; path=/";
+			};
+
+			setSizeCookie();
+		}());
+	
+		
+
+	
+	
+
+	
+
+
+
+
+	
+	
+	
+	
+		Elections | Crow Wing County, MN - Official Website
+
+		
+		
+			
+	
+	
+
+	
+	
+	
+	
+	<!--
+	var intCountryCode = 840;
+	var order = '';
+//-->
+	
+		
+
+	
+	
+		window.Pages = window.Pages || {};
+		// FrontEnd RWD initialization
+		window.Pages.rwdReady = $.Deferred();
+		window.Pages.toolBarDeferred = $.Deferred();
+		window.Pages.rwdSetupComplete = $.Deferred();
+		window.Pages.megaMenuLoaded = $.Deferred();
+		window.Pages.angularToolbarComplete = $.Deferred();
+		window.Pages.frontEndToolbarComplete = $.Deferred();
+	
+	
+	
+	
+	
+	
+	
+
+
+
+
+	
+	
+	
+	
+
+	
+		setEditorVariables(false, 840);
+		function getPrintPreviewType() { return 0; } function printPreview() {pPreview(getPrintPreviewType()); }
+	
+	
+
+
+
+    jQuery(document).click(function (event) {
+	var target = jQuery(event.target);
+	if (target.attr('src') && target.parents('.image').length && target.parents('.widget').length) {
+		var text = target.attr('title');
+		
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Image',
+				eventAction: 'Image - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.is('button') || target.hasClass('button') || target.parents().hasClass('button')) {
+		var text = "";
+		if (target.parents('.button')[0]) {
+			text = target.parents('.button').first().text();
+		} else if (target.text().length) {
+			text = target.text();
+		} else if (target.attr('title').length) {
+			text = target.attr('title');
+		}
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Button',
+				eventAction: 'Button - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetCustomHtml').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Custom Html',
+				eventAction: 'Custom Html Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.editor').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Editor',
+				eventAction: 'Editor Link Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.GraphicLinks').length) {
+		var text = "";
+		var targetGraphicLink = target;
+		if (target.hasClass('widgetGraphicLinksLink')) {
+			targetGraphicLink = jQuery(target.children()[0]);
+		}
+		if (targetGraphicLink.hasClass('text')) {
+			text = targetGraphicLink.text();
+		} else if (targetGraphicLink.attr('src').length) {
+			if (targetGraphicLink.attr('alt').length) {
+				text = targetGraphicLink.attr('alt');
+			} else {
+				text = targetGraphicLink.attr('src');
+			}
+		} else {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Graphic Links',
+				eventAction: 'Graphic Link - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.InfoAdvanced').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Info Advanced',
+				eventAction: 'Info Advanced Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.list').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'List',
+				eventAction: 'List Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.megaMenuItem').length || target.parents('.topMenuItem').length) {
+		var megaMenuText = jQuery('.topMenuItem.mouseover').find('span').text();
+		var breadCrumbs = [];
+		jQuery('.breadCrumbs > li').each(function () {
+			 breadCrumbs.push(this.textContent);
+		});
+		var pageTitle = breadCrumbs.join('>');
+		var subTitleText = target.parents('.megaMenuItem').children('.widgetTitle').children().text();
+		var text = "";
+		if (pageTitle) {
+			text += pageTitle + " | ";
+		} else {
+			text += document.title + ' - ';
+		}
+		if (target.text() == "" && megaMenuText == "") {
+			text += "N/A";
+		} else if (target.text().length && megaMenuText.length) {
+			if (megaMenuText == target.text()) {
+				text += megaMenuText;
+			} else {
+				text += megaMenuText + " - " + subTitleText + " - " + target.text();
+			}
+		} else if (target.text() == "") {
+			text += megaMenuText;
+		} else {
+			text += target.text();
+		}
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Mega Menu',
+				eventAction: 'Mega Menu : ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetNewsFlash').length && target.parents('.widgetItem').length) {
+		var text = jQuery(target.parents('.widgetItem')[0]).find('.widgetTitle').children().text();
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'News Flash',
+				eventAction: 'News Flash - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.hasClass('widgetQuickLinksLink') || target.find('.widgetQuickLinksLink').length) {
+		var text = target.text();
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Quick Links',
+				eventAction: 'Quick Links - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.attr('src') && target.parents('.cpSlideshow').length) {
+		var text = target.attr('title');
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Slideshow',
+				eventAction: 'Slideshow - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetText').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Text',
+				eventAction: 'Text Link Clicked',
+				eventLabel: window.location.href
+			});
+	}
+});
+	
+	
+		
+		
+			
+				
+			
+		
+	
+	
+		
+	
+	
+		
+			
+		
+	
+
+    
+
+Skip to Main Content
+
+    
+
+        
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+        
+                
+                    
+
+
+
+                
+            
+                
+                
+
+
+
+
+
+
+
+
+
+				
+
+
+
+	
+				                
+
+						
+	
+	
+		
+
+
+
+
+
+
+	
+		
+				
+	
+	
+		
+				
+					
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+				
+			
+		
+	
+			
+
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+	
+
+
+
+
+
+
+
+
+	
+			
+		
+						
+	
+	
+        
+				
+					
+
+
+
+
+    
+        Calendar
+        
+    
+					
+				
+				
+					
+
+
+
+
+    
+        Careers
+        
+    
+					
+				
+				
+					
+
+
+
+
+    
+        Contact Us
+        
+    
+					
+				
+		
+        
+	
+	
+	
+	
+		/QuickLinks.aspx
+	
+
+	
+
+
+	 
+
+	 
+
+			 
+
+
+	
+
+
+
+    Residents  			    Business  			    Online Services  			    Your Government  			    How Do I...  			
+
+
+
+	
+		(function () {
+			function setupMenu() {
+				const menuID = 'mainNavMenu';
+				const menuType = MAIN_MENU;
+
+				//setup menu manager properties for main menu
+				if (!menuManager.mobileMainNav && true)
+					menuManager.adjustMainItemsWidth('#' + menuID);
+				menuManager.isMainMenuEditable = false;
+				menuManager.mainMenuMaxSubMenuLevels = 4;
+				menuManager.setMOMMode(2, menuType);
+
+				//Init main menu
+				const setupDraggable = menuManager.isMainMenuEditable;
+				const urlToGetHiddenMenus = '/Pages/MenuMain/HiddenMainSubMenus?pageID=1&moduleID=&themeID=12&menuContainerID=mainNav';
+
+				menuManager.setupMenu(menuID, 'mainNav', menuType, setupDraggable, urlToGetHiddenMenus);
+				menuManager.mainMenuInit = true;
+				menuManager.mainMenuTextResizer = true;
+				if (1.00 > 0)
+					menuManager.mainMenuTextResizerRatio = 1.00;
+				if (window.isResponsiveEnabled)
+					menuManager.mainMenuReady.resolve();
+
+			}
+
+			if (document.readyState === "complete"
+				|| document.readyState === "loaded"
+				|| document.readyState === "interactive") {
+				setupMenu();
+				return;
+			}
+
+			document.addEventListener("DOMContentLoaded", setupMenu);
+		})();
+	
+
+
+	
+				                
+
+
+
+	
+	
+				                
+
+
+
+	
+	
+				                
+
+
+
+	
+	
+				                
+
+
+
+	
+	
+				                
+
+
+
+	
+	
+				                
+
+						
+	
+	
+		
+
+	
+	
+	
+	
+
+		$(document).ready(function () {
+			try {
+				// Minimum characters required before performing a search/autocomplete
+				var minPrefixLength = 3;
+				var autoCompleteDebounceDelay = 500;
+				var searchFieldSelector = "#searchField" + '25b51628-6988-46f9-b610-fd0316acb8fb';
+				var checkboxSelector = "#ysnSearchOnlyDept" + '25b51628-6988-46f9-b610-fd0316acb8fb';
+				var buttonSelector = ".widgetSearchButton" + '25b51628-6988-46f9-b610-fd0316acb8fb';
+				var autoCompleteCache = {};
+				var autoCompleteCacheKeys = [];
+				var autoCompleteCacheLimit = 25;
+				var currentAutoCompleteRequest = null;
+				var currentAutoCompleteRequestKey = null;
+				var autoCompleteDebounceTimer = null;
+				var autoCompleteDebounceKey = null;
+				var pendingAutoCompleteResponses = [];
+
+				function normalizeAutoCompleteTerm(term) {
+					return $.trim((term || "") + "").replace(/\s+/g, " ");
+				}
+
+				function shouldSearch(term) {
+					return normalizeAutoCompleteTerm(term).length >= minPrefixLength;
+				}
+
+				function getAutoCompleteUrl() {
+					return '/Search/AutoComplete' + ($(checkboxSelector).is(':checked') || false? '?departmentId=0' : '');
+				}
+
+				function getAutoCompleteCacheKey(requestUrl, term) {
+					return requestUrl + "|" + term.toLowerCase();
+				}
+
+				function cacheAutoCompleteResult(cacheKey, data) {
+					if (!Object.prototype.hasOwnProperty.call(autoCompleteCache, cacheKey)) {
+						autoCompleteCacheKeys.push(cacheKey);
+						if (autoCompleteCacheKeys.length > autoCompleteCacheLimit) {
+							delete autoCompleteCache[autoCompleteCacheKeys.shift()];
+						}
+					}
+					autoCompleteCache[cacheKey] = data;
+				}
+
+				function respondToPendingAutoComplete(data) {
+					var responses = pendingAutoCompleteResponses;
+					pendingAutoCompleteResponses = [];
+					for (var i = 0; i < responses.length; i++) {
+						responses[i](data);
+					}
+				}
+
+				function cancelPendingAutoComplete() {
+					clearTimeout(autoCompleteDebounceTimer);
+					autoCompleteDebounceKey = null;
+					if (currentAutoCompleteRequest != null) {
+						currentAutoCompleteRequest.abort();
+						currentAutoCompleteRequest = null;
+					}
+					currentAutoCompleteRequestKey = null;
+					respondToPendingAutoComplete([]);
+				}
+
+				function createWidgetAutoCompleteSource(options) {
+					return function (request, response) {
+						var term = normalizeAutoCompleteTerm(request.term);
+						if (!options.shouldSearch(term)) {
+							response([]);
+							return;
+						}
+
+						var requestUrl = options.url();
+						var cacheKey = getAutoCompleteCacheKey(requestUrl, term);
+						if (Object.prototype.hasOwnProperty.call(autoCompleteCache, cacheKey)) {
+							response(autoCompleteCache[cacheKey]);
+							if (options.success) {
+								options.success(autoCompleteCache[cacheKey]);
+							}
+							return;
+						}
+
+						if (currentAutoCompleteRequestKey === cacheKey || autoCompleteDebounceKey === cacheKey) {
+							pendingAutoCompleteResponses.push(response);
+							return;
+						}
+
+						cancelPendingAutoComplete();
+						autoCompleteDebounceKey = cacheKey;
+						pendingAutoCompleteResponses.push(response);
+						autoCompleteDebounceTimer = setTimeout(function () {
+							autoCompleteDebounceKey = null;
+							currentAutoCompleteRequestKey = cacheKey;
+							currentAutoCompleteRequest = $.ajax({
+								url: requestUrl,
+								dataType: "json",
+								timeout: options.timeout,
+								data: {
+									term: term,
+								},
+								success: function (data) {
+									if (currentAutoCompleteRequestKey === cacheKey) {
+										cacheAutoCompleteResult(cacheKey, data);
+										respondToPendingAutoComplete(data);
+										if (options.success) {
+											options.success(data);
+										}
+									}
+								},
+								error: function (xmlhttprequest, textstatus, message) {
+									if (textstatus === "abort") {
+										return;
+									}
+
+									if (options.error) {
+										options.error(xmlhttprequest, textstatus, message);
+									}
+
+									respondToPendingAutoComplete([]);
+								},
+								complete: function (xmlhttprequest) {
+									if (currentAutoCompleteRequest === xmlhttprequest) {
+										currentAutoCompleteRequest = null;
+										currentAutoCompleteRequestKey = null;
+									}
+								}
+							});
+						}, options.delay);
+					};
+				}
+
+				// click handler for search buttons
+				$(buttonSelector).click(function (e) {
+					e.preventDefault();
+					var $btn = $(this);
+					var $field = $btn.siblings(".widgetSearchBox");
+					var term = $field.val() + "";
+					if (!shouldSearch(term)) {
+						// do nothing until user types enough characters
+						$field.focus();
+						return;
+					}
+
+					if ($(checkboxSelector).is(':checked') || false)
+					{
+						doWidgetSearch($.trim(term), Number(0));
+					}
+					else {
+						doWidgetSearch($.trim(term), 0);
+					}
+				});
+
+				// enter key handler for the search field
+				$(searchFieldSelector).keypress(function (e) {
+					var code = e.which || e.keyCode;
+					if (code === 13) {
+						e.preventDefault();
+						var $this = $(this);
+						var term = $this.val() + "";
+						if (!shouldSearch(term)) {
+							// do nothing until user types enough characters
+							$this.focus();
+							return false;
+						}
+
+						if ($(checkboxSelector).is(':checked') || false) {
+							doWidgetSearch($.trim(term), Number(0));
+						} else {
+							doWidgetSearch($.trim(term), 0);
+						}
+						return false;
+					}
+					return true;
+				});
+
+				// autocomplete: set minLength and guard source
+				if (true) {
+					var $searchField = $(searchFieldSelector).autocomplete({
+						minLength: minPrefixLength,
+						source: createWidgetAutoCompleteSource({
+							delay: autoCompleteDebounceDelay,
+							timeout: 10000,
+							shouldSearch: shouldSearch,
+							url: getAutoCompleteUrl,
+							success: function () {
+								$('.autoCompleteError').remove();
+							},
+							error: function (xmlhttprequest, textstatus, message) {
+								if (textstatus === "timeout") {
+									if ($(searchFieldSelector).siblings('.autoCompleteError').length == 0)
+										$('<span class="autoCompleteError"><p class="alert error">Search autocomplete is currently not responding. Please try again later.</p></span>').insertAfter($(searchFieldSelector));
+								}
+							}
+						}),
+						html: true,
+						delay: 0,
+						select: function (event, ui) {
+							$(this).val(ui.item.value);
+							$(this).next().click();
+						}
+					});
+
+					$searchField.data("ui-autocomplete")._renderItem = function (ul, item) {
+						return $("<li class=\"itemList\"></li>")
+							.data("ui-autocomplete-item", item)
+							.append("<a>" + item.label + "</a>")
+							.appendTo(ul);
+					};
+				}
+
+				// keep searchBtnApplyQuery consistent with prefix rule
+				window.searchBtnApplyQuery = function() {
+					var $field = $(searchFieldSelector);
+					var term = $field.val() + "";
+					if (shouldSearch(term)) {
+						// update href for the icon/button (if present)
+						var btn = document.getElementById("btnSearchIcon");
+						if (btn) btn.href = "/Search?searchPhrase=" + encodeURIComponent($.trim(term));
+					} else {
+						var btn = document.getElementById("btnSearchIcon");
+						if (btn) btn.href = "#";
+					}
+				};
+			}
+			catch(e) {} //we're going to eat this error. Autocomplete won't work but we dont wan't to break anything else on the page.
+		});
+	
+
+	
+				
+		
+			
+						
+
+			Search
+		
+
+	
+
+
+
+	  
+		.widgetSearch ::-webkit-input-placeholder {
+		color: #383838;
+	  }
+		.widgetSearch :-moz-placeholder { /* Firefox 18- */
+	   color: #383838;
+	}
+		.widgetSearch ::-moz-placeholder {  /* Firefox 19+ */
+	   color: #383838;
+	}
+	.widgetSearch :-ms-input-placeholder {
+	   color: #383838;
+	}
+	
+
+	.widgetSearch .widgetBody .widgetSearchBox25b51628-6988-46f9-b610-fd0316acb8fb
+	{
+		color: #000000;
+		background: #EFE5D2;
+border: 0;
+height: 54px;
+border-radius: 6px;
+padding: 0 69px 0 19px;
+font: italic normal 20px Mulish;
+	}
+	.widgetSearch .widgetBody .widgetSearchButton25b51628-6988-46f9-b610-fd0316acb8fb
+	{
+		margin: 2px 2px 0 0;
+	}
+	.widgetSearch .widgetSearch-onlyDept25b51628-6988-46f9-b610-fd0316acb8fb
+	{
+		display: inline-block;
+		color: #333;
+		
+		
+		 padding-top: 10px;
+	}
+	#ysnSearchOnlyDept25b51628-6988-46f9-b610-fd0316acb8fb
+	{
+		position: relative;
+		top: .125em;
+	}
+
+
+
+
+
+
+
+
+
+	//Updates search icons href to have the correct queryString
+	function searchBtnApplyQuery() {
+		document.getElementById("btnSearchIcon").href = "/Search?searchPhrase=" + document.getElementById("searchField25b51628-6988-46f9-b610-fd0316acb8fb").value;
+	}
+
+
+
+
+	 
+
+	 
+
+			 
+
+
+	
+
+
+
+
+
+
+
+	
+				                
+
+
+
+	
+
+
+
+
+
+
+
+		
+		
+			
+			
+		
+			
+				$(window).on("load", function () {
+					$.when(window.Pages.rwdSetupComplete)
+						.done(function () {
+							renderExternalBannerSlideshow('banner1',
+								{"BannerOptionID":25,"ThemeID":12,"SlotName":"banner1","Name":"Default","IsDefault":true,"BannerMode":2,"SlideShowSlideTiming":"5","SlideshowTransition":0,"SlideShowTransitionTiming":"1","ImageScale":true,"ImageAlignment":1,"ImageScroll":true,"MuteSound":true,"VideoType":0,"Status":40,"SlideshowControlsPosition":0,"SlideshowControlsAlignment":0,"SlideshowBannerControlsColorScheme":0,"DisplayVideoPauseButton":false,"VideoPauseButtonAlignment":1,"VideoPauseButtonControlsAlignment":0,"VideoPauseButtonStyle":"#FFFFFF","VideoPauseButtonBackgroundStyle":"#000000","VideoPauseButtonAlignmentClass":"alignRight viewport","DisplaySlideshowPauseButton":true,"SlideshowControlsColor":"#FFFFFF","SlideshowControlsBackgroundColor":"#000000","SlideshowPauseButtonClass":"isHidden","BannerImages":[{"BannerImageID":74,"BannerOptionID":25,"FileName":"/ImageRepository/Document?documentID=20351","Height":350,"Width":2200,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":1,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":""},{"BannerImageID":75,"BannerOptionID":25,"FileName":"/ImageRepository/Document?documentID=20352","Height":350,"Width":2200,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":2,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":""},{"BannerImageID":76,"BannerOptionID":25,"FileName":"/ImageRepository/Document?documentID=20350","Height":350,"Width":2200,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":3,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":""}],"BannerVideos":[{"BannerVideoID":8,"BannerOptionID":25,"VideoFileName":"","ImageFileName":"EmptyBannerBkg202309102024321331.png","IsLink":false,"LinkAddress":null,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","VideoFileID":"00000000-0000-0000-0000-000000000000","ImageFileID":"00000000-0000-0000-0000-000000000000","VideoWidth":0,"VideoHeight":0,"ImageWidth":0,"ImageHeight":0,"LinkedVideoUrl":"","RecordStatus":0,"AltText":null}],"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/"},
+								'/App_Themes/2023 - Interior/Images/',
+								'Rotating');
+						});
+				});
+			
+
+
+
+
+
+	
+				                
+
+
+
+	
+
+
+
+
+
+
+	
+	
+		
+			2026 Caucus Information
+		
+			
+	
+		
+			Campaign Finance Information
+				
+		
+					
+						
+			
+				2020 Campaign Financial Report Search Screen
+			
+					
+		
+			
+				2022 Campaign Financial Report Search Screen
+			
+					
+		
+			
+				2026 Campaign Financial Report Search Screen
+			
+					
+
+			
+	
+	
+		
+			Filing for Office
+		
+			
+	
+		
+			Political Parties Contact Information
+		
+			
+	
+		
+			Polling Place
+		
+			
+	
+		
+			Who Represents Me? and Legislative Districts
+		
+			
+	
+		
+			Election Results
+		
+			
+
+	
+
+
+	
+		(function () {
+			function setupSecondaryMenuProperties() {
+				//setup menu manager properties for secondary menu
+				menuManager.isSideMenuEditable = false;
+				menuManager.sideMenuMaxSubMenuLevels = 4;
+				menuManager.sideMenuHasCustomLinks = false;
+			}
+
+			if (document.readyState === "loading") {
+				document.addEventListener("DOMContentLoaded", setupSecondaryMenuProperties, { once: true });
+				return;
+			}
+
+			setupSecondaryMenuProperties();
+		})();
+	
+
+	
+		(function () {
+			function setupAccordionSecondaryNav() {
+				var $menuContainer = $('#secondaryNav');
+
+				$menuContainer.find('*[id^="SideItem"]').each(function () {
+					var ids = $('[id="' + this.id + '"]');
+					if (ids.length > 1)
+						$.each(ids, function (index, value) {
+							value.id = value.id + '_' + index;
+						});
+				});
+
+				$menuContainer.find('.hasAccordionChildren .openAccordionNav').off('click.secondaryNav').on('click.secondaryNav', function (e) {
+					e.preventDefault();
+					showHideAccordionMenuForSecondaryNav($(this));
+				});
+
+				$menuContainer.find(".grippy").each(function () {
+					menuManager.setupDraggableElement($(this), SIDE_MENU, '#secondaryNav');
+				});
+
+				$menuContainer.find("li").each(function () {
+					menuManager.setupDroppableAccordionElement($(this), SIDE_MENU);
+				});
+			}
+
+			if (document.readyState === "loading") {
+				document.addEventListener("DOMContentLoaded", setupAccordionSecondaryNav, { once: true });
+				return;
+			}
+
+			setupAccordionSecondaryNav();
+		})();
+	
+
+
+
+	
+				                
+
+
+
+	
+
+
+
+		
+			HomeYour GovernmentAdministrative ServicesElections
+		
+
+	   
+    
+
+	
+	
+		
+
+	
+	
+	
+	
+	
+	
+	
+
+				
+
+Elections		
+	
+		
+			
+
+						
+	
+	
+		
+
+	    
+
+
+        Elections & VotingWelcome to Crow Wing County Elections. Our office administers federal, state and county elections for all jurisdictions in the county and offers assistance and support for cities, townships and school districts in conducting elections. Upcoming elections for 2026 include:State General November 3, 2026Mail ballot precincts can vote at the Historic Courthouse from 7:00 a.m. to 8:00 p.m. on election day. Absentee ballots can be dropped off until 5:00 p.m. on election day. If you are not in a mail ballot precinct, you must vote in your polling location on election day. To find out where you vote: Precinct FinderAbsentee VotingImportant RemindersAll Crow Wing County voters may vote early in person at the Crow Wing County Elections Office, 2nd Floor West Wing, Historic Courthouse, 326 Laurel Street, Brainerd, MN.  In-Person Voting will begin: Friday, September 18Start of Early Voting: Friday, October 16Last day to vote early in person: Monday, November 2Wednesday, October 7th: Temporary Absentee Ballot Polling Place Central Lakes College Business Center E208 501 W College Dr, Brainerd, MN 56401 from 9:00 a.m. - 3:00 p.m.Hours are Monday through Friday from 8:00 a.m. to 4:30 p.m. excluding legal holidays.   Open these extended hours:Open 9:00 a.m.-3:00 p.m. on October 24 (Sat)Open until 7:00 p.m. on October 27 (Tue)Open 9:00 a.m.-3:00 p.m. on October 31 (Sat)Open 9:00 a.m.-3:00 p.m. on November 1 (Sun)Open until 5:00 p.m. on November 2 (Mon)Voting Absentee by MailTo apply for an absentee ballot, you can complete and submit an absentee ballot application:Do not submit more than one absentee ballot application for each election.A completed and signed absentee ballot application must be received before a ballot can be issued to a voter.  If you received an absentee ballot application in the mail from a participating organization, you may have already completed an absentee ballot application and it is currently being processed. If you are unsure, please check track the status of your absentee ballot before you submit another application.Online ApplicationDownload a paper application– complete and return to Crow Wing County ElectionsYour absentee ballot will be mailed to you as soon as the ballots are available.Returning Voted Absentee BallotsAbsentee Ballots must be returned to the Crow Wing County Elections Office, 2nd Floor West Wing, Historic Courthouse, 326 Laurel Street, Brainerd, MN no later than 5:00 p.m. on Election Day to be counted. ResultsPrevious ElectionsView the results of past elections by voting years.View the Office of the Minnesota Secretary of State Check your voter registration Office of the Minnesota Secretary of State Am I Registered?Register online Office of the Minnesota Secretary of State Online Registration.Paper Application Office of the Minnesota Secretary of State Paper Registration.What’s On My Ballot?View your sample ballot Office of the Minnesota Secretary of State What’s On My Ballot?VisionTo be recognized as a leader among Minnesota Counties in providing exemplary services.MissionProfessionally administer fair and impartial elections and business licenses in accordance with Minnesota statutes and rules.
+    
+
+
+	$(document).ready(function (e) {		
+	    renderSlideshowIfApplicable($('#divEditor' + '05d482b6-9828-4e01-9b0d-60f32027a8e2'));
+	});
+
+
+
+	 
+
+	 
+
+			 
+
+
+		
+
+	
+
+	
+	
+
+	
+
+	
+				                
+
+						
+	
+	
+		
+
+
+
+
+
+
+
+
+
+	
+			
+					Contact Us
+							
+						
+		
+
+				Elections
+
+					Email Elections
+					
+
+
+				
+					Physical Address
+					
+					Historic Courthouse
+						326 Laurel Street - Suite 22
+					Brainerd, MN 56401
+
+				
+				
+
+
+
+				Phone: (218) 824-1051
+							Fax: (218) 824-1301
+										
+
+				
+
+					HoursMonday through Friday8 a.m. to 4:30 p.m.
+				
+				
+
+
+		
+									
+	
+
+	 
+
+	 
+
+			 
+
+
+	
+
+
+
+
+	
+				                
+
+						
+	
+	
+		
+
+
+
+
+
+
+	
+		
+				
+	
+	
+		
+				
+					
+
+
+	
+		
+			County Board
+		
+	
+
+		.fancyButton428.fancyButton:link,.fancyButton428.fancyButton:visited, .fancyButton428div.fancyButton{
+	background-image: url('/ImageRepository/Document?documentID=20372');
+	background-repeat: no-repeat;
+	background-position: center 1em ;
+background-size: 132px;
+transition: all .3s ease-in-out;}
+.fancyButton428.fancyButton:hover,.fancyButton428.fancyButton:focus,.fancyButton428.fancyButton:active,.fancyButton428.fancyButton.hover{
+	background-image: url('/ImageRepository/Document?documentID=20371');
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+.fancyButton428.fancyButton:link > span,.fancyButton428.fancyButton:visited > span, .fancyButton428div.fancyButton > span{
+}
+.fancyButton428.fancyButton:hover > span,.fancyButton428.fancyButton:focus > span,.fancyButton428.fancyButton:active > span,.fancyButton428.fancyButton.hover > span{
+}
+.fancyButton428.fancyButton .text{
+	color: rgb(56, 56, 56);
+	font-family: "Montserrat";
+	padding-top: 156px;
+	font-style: normal;
+	text-decoration: none;
+	padding-top: 156px;
+	background-image: url('/ImageRepository/Document?documentID=20374');
+	background-repeat: no-repeat;
+	background-position: center 2.75em ;
+background-size: 70px;
+transition: all .3s ease-in-out;
+}
+.fancyButton428.fancyButton:hover .text,.fancyButton428.fancyButton:focus .text,.fancyButton428.fancyButton:active .text,.fancyButton428.fancyButton.hover .text{
+	text-decoration: none;
+	background-image: url('/ImageRepository/Document?documentID=20373');
+	background-repeat: no-repeat;
+	background-position: center 1.75em ;
+
+
+}
+.fancyButton428.fancyButton .textStyle1{
+	color: rgb(56, 56, 56);
+	font-size: 1.2em;
+	font-weight: 700;
+	text-decoration: none;
+line-height: 1.3;}
+.fancyButton428.fancyButton:hover .textStyle1, .fancyButton428.fancyButton.hover .textStyle1{
+	text-decoration: underline;
+
+}
+
+
+ 
+
+
+	
+		
+			County Maps
+		
+	
+
+		.fancyButton429.fancyButton:link,.fancyButton429.fancyButton:visited, .fancyButton429div.fancyButton{
+	background-image: url('/ImageRepository/Document?documentID=20372');
+	background-repeat: no-repeat;
+	background-position: center 1em ;
+background-size: 132px;
+transition: all .3s ease-in-out;}
+.fancyButton429.fancyButton:hover,.fancyButton429.fancyButton:focus,.fancyButton429.fancyButton:active,.fancyButton429.fancyButton.hover{
+	background-image: url('/ImageRepository/Document?documentID=20371');
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+.fancyButton429.fancyButton:link > span,.fancyButton429.fancyButton:visited > span, .fancyButton429div.fancyButton > span{
+}
+.fancyButton429.fancyButton:hover > span,.fancyButton429.fancyButton:focus > span,.fancyButton429.fancyButton:active > span,.fancyButton429.fancyButton.hover > span{
+}
+.fancyButton429.fancyButton .text{
+	color: rgb(56, 56, 56);
+	font-family: "Montserrat";
+	padding-top: 156px;
+	font-style: normal;
+	text-decoration: none;
+	padding-top: 156px;
+	background-image: url('/ImageRepository/Document?documentID=20376');
+	background-repeat: no-repeat;
+	background-position: center 2.75em ;
+background-size: 70px;
+transition: all .3s ease-in-out;
+}
+.fancyButton429.fancyButton:hover .text,.fancyButton429.fancyButton:focus .text,.fancyButton429.fancyButton:active .text,.fancyButton429.fancyButton.hover .text{
+	text-decoration: none;
+	background-image: url('/ImageRepository/Document?documentID=20375');
+	background-repeat: no-repeat;
+	background-position: center 1.75em ;
+
+
+}
+.fancyButton429.fancyButton .textStyle1{
+	color: rgb(56, 56, 56);
+	font-size: 1.2em;
+	font-weight: 700;
+	text-decoration: none;
+line-height: 1.3;}
+.fancyButton429.fancyButton:hover .textStyle1, .fancyButton429.fancyButton.hover .textStyle1{
+	text-decoration: underline;
+
+}
+
+
+ 
+				
+			
+		
+	
+			
+
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+
+
+
+
+
+
+	
+		
+				
+	
+	
+		
+				
+					
+
+
+	
+		
+			Online Payments
+		
+	
+
+		.fancyButton430.fancyButton:link,.fancyButton430.fancyButton:visited, .fancyButton430div.fancyButton{
+	background-image: url('/ImageRepository/Document?documentID=20372');
+	background-repeat: no-repeat;
+	background-position: center 1em ;
+background-size: 132px;
+transition: all .3s ease-in-out;}
+.fancyButton430.fancyButton:hover,.fancyButton430.fancyButton:focus,.fancyButton430.fancyButton:active,.fancyButton430.fancyButton.hover{
+	background-image: url('/ImageRepository/Document?documentID=20371');
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+.fancyButton430.fancyButton:link > span,.fancyButton430.fancyButton:visited > span, .fancyButton430div.fancyButton > span{
+}
+.fancyButton430.fancyButton:hover > span,.fancyButton430.fancyButton:focus > span,.fancyButton430.fancyButton:active > span,.fancyButton430.fancyButton.hover > span{
+}
+.fancyButton430.fancyButton .text{
+	color: rgb(56, 56, 56);
+	font-family: "Montserrat";
+	padding-top: 156px;
+	font-style: normal;
+	text-decoration: none;
+	padding-top: 156px;
+	background-image: url('/ImageRepository/Document?documentID=20378');
+	background-repeat: no-repeat;
+	background-position: center 2.75em ;
+background-size: 70px;
+transition: all .3s ease-in-out;
+}
+.fancyButton430.fancyButton:hover .text,.fancyButton430.fancyButton:focus .text,.fancyButton430.fancyButton:active .text,.fancyButton430.fancyButton.hover .text{
+	text-decoration: none;
+	background-image: url('/ImageRepository/Document?documentID=20377');
+	background-repeat: no-repeat;
+	background-position: center 1.75em ;
+
+
+}
+.fancyButton430.fancyButton .textStyle1{
+	color: rgb(56, 56, 56);
+	font-size: 1.2em;
+	font-weight: 700;
+	text-decoration: none;
+line-height: 1.3;}
+.fancyButton430.fancyButton:hover .textStyle1, .fancyButton430.fancyButton.hover .textStyle1{
+	text-decoration: underline;
+
+}
+
+
+ 
+
+
+	
+		
+			Permits
+		
+	
+
+		.fancyButton431.fancyButton:link,.fancyButton431.fancyButton:visited, .fancyButton431div.fancyButton{
+	background-image: url('/ImageRepository/Document?documentID=20372');
+	background-repeat: no-repeat;
+	background-position: center 1em ;
+background-size: 132px;
+transition: all .3s ease-in-out;}
+.fancyButton431.fancyButton:hover,.fancyButton431.fancyButton:focus,.fancyButton431.fancyButton:active,.fancyButton431.fancyButton.hover{
+	background-image: url('/ImageRepository/Document?documentID=20371');
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+.fancyButton431.fancyButton:link > span,.fancyButton431.fancyButton:visited > span, .fancyButton431div.fancyButton > span{
+}
+.fancyButton431.fancyButton:hover > span,.fancyButton431.fancyButton:focus > span,.fancyButton431.fancyButton:active > span,.fancyButton431.fancyButton.hover > span{
+}
+.fancyButton431.fancyButton .text{
+	color: rgb(56, 56, 56);
+	font-family: "Montserrat";
+	padding-top: 156px;
+	font-style: normal;
+	text-decoration: none;
+	padding-top: 156px;
+	background-image: url('/ImageRepository/Document?documentID=20380');
+	background-repeat: no-repeat;
+	background-position: center 2.875em ;
+background-size: 70px;
+transition: all .3s ease-in-out;
+}
+.fancyButton431.fancyButton:hover .text,.fancyButton431.fancyButton:focus .text,.fancyButton431.fancyButton:active .text,.fancyButton431.fancyButton.hover .text{
+	text-decoration: none;
+	background-image: url('/ImageRepository/Document?documentID=20379');
+	background-repeat: no-repeat;
+	background-position: center 1.875em ;
+
+
+}
+.fancyButton431.fancyButton .textStyle1{
+	color: rgb(56, 56, 56);
+	font-size: 1.2em;
+	font-weight: 700;
+	text-decoration: none;
+line-height: 1.3;}
+.fancyButton431.fancyButton:hover .textStyle1, .fancyButton431.fancyButton.hover .textStyle1{
+	text-decoration: underline;
+
+}
+
+
+ 
+				
+			
+		
+	
+			
+
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+
+
+
+
+
+
+	
+		
+				
+	
+	
+		
+				
+					
+
+
+	
+		
+			Property Search
+		
+	
+
+		.fancyButton432.fancyButton:link,.fancyButton432.fancyButton:visited, .fancyButton432div.fancyButton{
+	background-image: url('/ImageRepository/Document?documentID=20372');
+	background-repeat: no-repeat;
+	background-position: center 1em ;
+background-size: 132px;
+transition: all .3s ease-in-out;}
+.fancyButton432.fancyButton:hover,.fancyButton432.fancyButton:focus,.fancyButton432.fancyButton:active,.fancyButton432.fancyButton.hover{
+	background-image: url('/ImageRepository/Document?documentID=20371');
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+.fancyButton432.fancyButton:link > span,.fancyButton432.fancyButton:visited > span, .fancyButton432div.fancyButton > span{
+}
+.fancyButton432.fancyButton:hover > span,.fancyButton432.fancyButton:focus > span,.fancyButton432.fancyButton:active > span,.fancyButton432.fancyButton.hover > span{
+}
+.fancyButton432.fancyButton .text{
+	color: rgb(56, 56, 56);
+	font-family: "Montserrat";
+	padding-top: 156px;
+	font-style: normal;
+	text-decoration: none;
+	padding-top: 156px;
+	background-image: url('/ImageRepository/Document?documentID=20382');
+	background-repeat: no-repeat;
+	background-position: center 2.75em ;
+background-size: 70px;
+transition: all .3s ease-in-out;
+}
+.fancyButton432.fancyButton:hover .text,.fancyButton432.fancyButton:focus .text,.fancyButton432.fancyButton:active .text,.fancyButton432.fancyButton.hover .text{
+	text-decoration: none;
+	background-image: url('/ImageRepository/Document?documentID=20381');
+	background-repeat: no-repeat;
+	background-position: center 1.75em ;
+
+
+}
+.fancyButton432.fancyButton .textStyle1{
+	color: rgb(56, 56, 56);
+	font-size: 1.2em;
+	font-weight: 700;
+	text-decoration: none;
+line-height: 1.3;}
+.fancyButton432.fancyButton:hover .textStyle1, .fancyButton432.fancyButton.hover .textStyle1{
+	text-decoration: underline;
+
+}
+
+
+ 
+
+
+	
+		
+			Report A Concern
+		
+	
+
+		.fancyButton433.fancyButton:link,.fancyButton433.fancyButton:visited, .fancyButton433div.fancyButton{
+	background-image: url('/ImageRepository/Document?documentID=20372');
+	background-repeat: no-repeat;
+	background-position: center 1em ;
+background-size: 132px;
+transition: all .3s ease-in-out;}
+.fancyButton433.fancyButton:hover,.fancyButton433.fancyButton:focus,.fancyButton433.fancyButton:active,.fancyButton433.fancyButton.hover{
+	background-image: url('/ImageRepository/Document?documentID=20371');
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+.fancyButton433.fancyButton:link > span,.fancyButton433.fancyButton:visited > span, .fancyButton433div.fancyButton > span{
+}
+.fancyButton433.fancyButton:hover > span,.fancyButton433.fancyButton:focus > span,.fancyButton433.fancyButton:active > span,.fancyButton433.fancyButton.hover > span{
+}
+.fancyButton433.fancyButton .text{
+	color: rgb(56, 56, 56);
+	font-family: "Montserrat";
+	padding-top: 156px;
+	font-style: normal;
+	text-decoration: none;
+	padding-top: 156px;
+	background-image: url('/ImageRepository/Document?documentID=20384');
+	background-repeat: no-repeat;
+	background-position: center 2.875em ;
+background-size: 70px;
+transition: all .3s ease-in-out;
+}
+.fancyButton433.fancyButton:hover .text,.fancyButton433.fancyButton:focus .text,.fancyButton433.fancyButton:active .text,.fancyButton433.fancyButton.hover .text{
+	text-decoration: none;
+	background-image: url('/ImageRepository/Document?documentID=20383');
+	background-repeat: no-repeat;
+	background-position: center 1.875em ;
+
+
+}
+.fancyButton433.fancyButton .textStyle1{
+	color: rgb(56, 56, 56);
+	font-size: 1.2em;
+	font-weight: 700;
+	text-decoration: none;
+line-height: 1.3;}
+.fancyButton433.fancyButton:hover .textStyle1, .fancyButton433.fancyButton.hover .textStyle1{
+	text-decoration: underline;
+
+}
+
+
+ 
+				
+			
+		
+	
+			
+
+
+
+	 
+
+	 
+
+			 
+
+
+	
+
+
+	
+				                
+
+						
+	
+	
+		
+    
+
+
+
+
+
+	
+			
+		
+								
+	
+	
+		
+					
+						
+
+
+	OUR VISIONBEING MINNESOTA’S FAVORITE PLACE.
+						
+					
+					
+						
+
+
+	OUR MISSIONSERVE WELL.DELIVER VALUE.DRIVE RESULTS.
+						
+					
+					
+						
+
+
+	OUR VALUESBE RESPONSIBLE.TREAT PEOPLE RIGHT.BUILD A BETTER FUTURE.
+						
+					
+		
+	
+	
+
+	
+
+	
+
+
+
+
+	//Render slideshow if info advacned items contain one.
+	$(document).ready(function (e) {
+		$('#divInfoAdv5d89b183-c1dd-4484-b60b-4bfd4ced7632 .InfoAdvanced.widgetItem').each(function () {
+			renderSlideshowIfApplicable($(this));		
+		});
+	});
+
+	 
+
+	 
+
+			 
+
+
+	
+
+
+	
+				                
+
+						
+	
+	
+		
+    
+
+
+
+
+
+	
+			
+		
+								
+	
+	
+		
+					
+						
+
+
+	
+						
+					
+		
+	
+	
+
+	
+
+	
+
+
+
+
+	//Render slideshow if info advacned items contain one.
+	$(document).ready(function (e) {
+		$('#divInfoAdv17ca1cda-aae5-440f-bd34-6fad0b326146 .InfoAdvanced.widgetItem').each(function () {
+			renderSlideshowIfApplicable($(this));		
+		});
+	});
+
+	 
+
+	 
+
+							
+	
+	
+		
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+    
+
+
+
+
+
+	
+			
+		
+					Contact Us
+								
+	
+	
+		
+					
+						
+
+
+	Historic Court House326 Laurel StreetBrainerd, MN 56401
+
+
+	Phone: 218-824-1067Email: coadmin@crowwing.govView Staff Directory
+						
+					
+		
+	
+	
+
+	
+
+	
+
+
+
+
+	//Render slideshow if info advacned items contain one.
+	$(document).ready(function (e) {
+		$('#divInfoAdv89a164b1-103d-42fa-acfb-2677bd682d6e .InfoAdvanced.widgetItem').each(function () {
+			renderSlideshowIfApplicable($(this));		
+		});
+	});
+
+	 
+
+	 
+
+							
+	
+	
+		
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+	
+
+
+
+
+
+
+
+
+	
+			
+		
+					Quick Links
+						
+	
+	
+        
+				
+					
+
+
+
+
+    
+        Apply for a job
+        
+    
+
+
+
+
+    
+        Legal Notices
+        
+    
+
+
+
+
+    
+        Find property info
+        
+    
+
+
+
+
+    
+        Frequently Asked Questions
+        
+    
+
+
+
+
+    
+        Visiting Crow Wing County
+        
+    
+					
+				
+		
+        
+	
+	
+	
+	
+		/QuickLinks.aspx
+	
+
+	
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+	
+
+
+
+
+
+
+
+
+	
+			
+		
+					Site Links
+						
+	
+	
+        
+				
+					
+
+
+
+
+    
+        Accessibility
+        
+    
+
+
+
+
+    
+        Copyright Notices
+        
+    
+
+
+
+
+    
+        Privacy Policy
+        
+    
+
+
+
+
+    
+        Site Map
+        
+    
+
+
+
+
+    
+        Social Media Policy
+        
+    
+					
+				
+		
+        
+	
+	
+	
+	
+		/QuickLinks.aspx
+	
+
+	
+
+
+	 
+
+	 
+
+			 
+
+
+	
+
+
+	
+				                
+
+						
+	
+	
+		
+ 
+	
+	
+		
+  /* CP icon */
+  .cpBylineIconTS {
+    color: #fff;
+  }
+  /* CP Text */
+  .cpBylineTextTS,
+  .cpBylineTextTS a:link {
+    color: #fff;
+  }
+
+  .cpBylineTS {
+    text-align: center;
+  }
+  
+  .cpBylineIconTS {
+    fill: currentColor;
+    width: 39px;
+    height: 26px;
+    display: inline;
+    vertical-align: middle;
+  }
+
+
+
+  
+    
+    
+  
+  Government Websites by CivicPlus®
+
+
+	
+
+	
+
+	 
+
+	 
+
+			 
+
+
+	
+
+
+
+
+            
+        
+    
+
+
+
+
+	
+		
+			Loading
+			
+				
+					
+				
+			
+		
+		
+			
+				
+				Loading
+			
+		
+		
+			Do Not Show Again
+			Close
+		
+	
+
+
+
+
+
+
+
+		$(document).ready(function () {
+			var filter = {
+				targetId: '110',
+				targetType: 1
+			}
+
+			new SplashModalRender().triggerRender(filter);
+		});
+
+
+
+	
+	
+	
+	
+
+
+
+	
+
+
+
+
+
+
+    
+    
+
+$('head').prepend('<meta http-equiv="X-UA-Compatible" content="IE=10">');
+
+
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ 
+  ga('create', 'UA-81813761-1', 'auto');
+  ga('send', 'pageview');
+
+
+
+
+ 
+
+  #google-translate-container {
+    float: right;
+    padding: 3px 5px 0px 0px;
+    position: fixed; 
+    bottom: 15px; 
+    right: 170px; 
+    z-index: 5;
+  }
+  .goog-te-combo, .goog-te-banner *, .goog-te-ftab *, .goog-te-menu *, .goog-te-menu2 *, .goog-te-balloon * {
+    font-family: arial;
+    font-size: 10pt;
+    background-image: url("https://www.gstatic.com/images/branding/product/2x/translate_24dp.png");
+    background-position: 5px 5px;
+    background-size: 18px;
+    background-repeat: no-repeat;
+    text-indent: 16px;
+    background-color: #fff;
+    color: #000 !important;
+  }
+  .goog-logo-link {
+    display: none !important;
+  }
+  .goog-te-gadget {
+    color: transparent !important;
+  }
+  .goog-te-gadget .goog-te-combo {
+    margin: 2px 0 !important;
+    border-radius: 15px !important;
+    }
+  .goog-te-combo{
+    border: 1px solid !important;
+    border-color: #bcc9d7 #96a3b1 #96a3b1 #bcc9d7 !important;
+    border-radius: 50px !important;
+    height:31px !important;
+    padding: 0 1px 0 .25rem !important;
+                width: 156px;
+  }
+ 
+  #launcher-wrapper {
+    bottom: 50px !important;
+  }
+ 
+
+ 
+
+
+
+
+ 
+
+ 
+  function googleTranslateElementInit() {
+    var el = document.getElementById("google_translate_element");
+    if (el && el.innerHTML.trim() !== "") {
+        return;
+    }
+
+    new google.translate.TranslateElement({ pageLanguage: "en" }, "google_translate_element");
+    // begin accessibility compliance
+    $('img.goog-te-gadget-icon').attr('alt','Google Translate');
+    $('div#goog-gt-tt div.logo img').attr('alt','translate');
+    $('div#goog-gt-tt .original-text').css('text-align','left');
+    $('.goog-te-gadget-simple .goog-te-menu-value span').css('color','#000000');
+    $('.goog-te-combo').attr('aria-label','google translate languages');
+    $('svg.goog-te-spinner').attr('title','Google Translate Spinner');
+    $('.goog-te-gadget-simple .goog-te-menu-value span').css('color','#000000');
+  }
+ 
+  $(function() {
+    $.getScript("//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit");
+  });
+ 
+
+ 
+
+
+
+
+!function(){var b=function(){window.__AudioEyeSiteHash = "db766d0c9bef620b01df37aabe2092f2"; var a=document.createElement("script");a.src="
+https://wsmcdn.audioeye.com/aem.js";a.type="text/javascript";a.setAttribute("async","");document.getElementsByTagName("body")[0].appendChild(a)};"complete"!==document.readyState?window.addEventListener?window.addEventListener("load",b):window.attachEvent&&window.attachEvent("onload",b):b()}();
+
+
+
+    window._monsido = window._monsido || {
+        token: "L25W7qFwPUKwcpJOwPjTug",
+        statistics: {
+            enabled: true,
+            cookieLessTracking: false,
+            documentTracking: {
+                enabled: true,
+                documentCls: "monsido_download",
+                documentIgnoreCls: "monsido_ignore_download",
+                documentExt: [],
+            },
+        },
+        heatmap: {
+            enabled: true,
+        },
+        pageCorrect: {
+            enabled: true,
+        },
+    };
+
+
+
+
+ !function(){var b=function(){window.__AudioEyeSiteHash="db766d0c9bef620b01df37aabe2092f2";var a=document.createElement("script");a.src="https://wsmcdn.audioeye.com/aem.js";a.type="text/javascript";a.setAttribute("async","");document.getElementsByTagName("body")[0].appendChild(a)};"complete"!==document.readyState?window.addEventListener?window.addEventListener("load",b):window.attachEvent&&window.attachEvent("onload",b):b()}(); 
+
+
+    
+        $(function () {
+            document.cookie = "responsiveGhost=0; path=/";
+        });
+        $(window).on("load", function () {
+            $('body').addClass('doneLoading').removeClass('hideContent');
+
+            if ($('#404Content').length > 0)
+                $('div#bodyWrapper').css('padding', '0px');
+        });
+    
+
+    
+        
+            body.hideContent {
+                opacity: 1 !important;
+            }
+        
+    
+
+        
+
+	
+
+		
+			Arrow Left
+			
+		
+
+		
+			Arrow Right
+			
+		
+
+	
+
+    loadCSS('//fonts.googleapis.com/css?family=Montserrat:500,600,700,800,italic,regular|Mulish:600,600italic,700,700italic,800,800italic,italic,regular|Raleway:100,200,300,500,600,700,800,900,regular|');
+    
+
+    []
+        
+            
+                
+                    Slideshow Left Arrow
+                    
+                        
+                    
+                
+                
+                    Slideshow Right Arrow
+                    
+                        
+                    
+                
+            
+        
+    
+	
+	
+
+    
+
+

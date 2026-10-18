@@ -1,0 +1,2661 @@
+
+
+
+
+			
+
+	
+
+				(function(w,d,s,l,i){w.GAMeasurementID='G-F964B468CF';w[l]=w[l]||[];w[l].push({'gtm.start':
+				new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+				j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+				'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+				})(window,document,'script','cpDataLayerGA4','GTM-K73C5PS');
+				
+				
+					var enableTelemetry = 'false'
+					var aiConfig = {
+					instrumentationKey: '1cde048e-3185-4906-aa46-c92a7312b60f'						
+					}
+					var appInsights = window.appInsights || function (a) { function b(a) { c[a] = function () { var b = arguments; c.queue.push(function () { c[a].apply(c, b) }) } } var c = { config: a }, d = document, e = window; setTimeout(function () { var b = d.createElement('script'); b.src = a.url || 'https://js.monitor.azure.com/scripts/a/ai.0.js', d.getElementsByTagName('script')[0].parentNode.appendChild(b) }); try { c.cookie = d.cookie } catch (a) { } c.queue = []; for (var f = ['Event', 'Exception', 'Metric', 'PageView', 'Trace', 'Dependency']; f.length;)b('track' + f.pop()); if (b('setAuthenticatedUserContext'), b('clearAuthenticatedUserContext'), b('startTrackEvent'), b('stopTrackEvent'), b('startTrackPage'), b('stopTrackPage'), b('flush'), !a.disableExceptionTracking) { f = 'onerror', b('_' + f); var g = e[f]; e[f] = function (a, b, d, e, h) { var i = g && g(a, b, d, e, h); return !0 !== i && c['_' + f](a, b, d, e, h), i } } return c }(aiConfig);
+					window.appInsights = appInsights, appInsights.queue && 0 === appInsights.queue.length;
+					// Add telemetry initializer
+					appInsights.queue.push(function() {
+						appInsights.context.addTelemetryInitializer(function(envelope) {
+							var telemetryItem = envelope.data.baseData;
+							// To check the telemetry item’s type:
+							if (!false)
+							{
+								//If the telemetry is not enabled, we still want to capture Google map custom event, so only allow that
+								if (envelope.name.indexOf('.Event') == -1)
+									return false;
+							}
+						});
+					});						
+					appInsights.trackPageView();
+				
+	
+		function populateAntiForgery(token) {
+			var input = document.createElement("input");
+			input.name = "__RequestVerificationToken";
+			input.type = "hidden";
+			input.value = token;
+			var absPat = /^https?:\/\/|^\/\//i;
+			var forms = document.getElementsByTagName("form");
+			for (var i = 0; i < forms.length; i++) {
+				if (forms[i].method == "post" &&
+					!forms[i].querySelector('[name="__RequestVerificationToken"]') &&
+					!absPat.test(forms[i].getAttribute("action"))) {
+					forms[i].appendChild(input.cloneNode());
+				}
+			}
+		}
+
+		function getAntiForgeryToken(callback, error) {
+			var xhr = new XMLHttpRequest();
+			xhr.open("GET", "/antiforgery");
+			xhr.addEventListener("load", function() {
+				try {
+					if (this.status !== 200) {
+						throw Error("Invalid status. Could not retrieve antiforgery token.");
+					}
+					var obj = JSON.parse(this.responseText);
+					callback(obj.token);
+				} catch (e) {
+					typeof error === "function" && error(e);
+				}
+			});
+			xhr.send();
+		}
+
+		getAntiForgeryToken(function(token) {
+			if (document.readyState === "complete"
+				|| document.readyState === "loaded" 
+				|| document.readyState === "interactive") {
+				populateAntiForgery(token);
+				return;
+			}
+			document.addEventListener("DOMContentLoaded", function() {
+				populateAntiForgery(token);
+			}, false);
+		}, console.error);
+	
+			
+
+	
+		window.departmentHeader = {};
+		window.pageSectionTracker = {};
+		window.isResponsiveEnabled = true;
+		window.isRemoveSetHeights= false;
+		if (window.isRemoveSetHeights) {
+			document.documentElement.className += ' removeSetHeights';
+		}
+		window.mainMenuMediaQuery = 'screen and (max-width: 40em)';
+		window.isMobileBrowserIncludingTablets = false;
+		window.fixedResponsiveMenu = false;
+		window.fullWidthResponsiveMenu = false;
+		window.responsiveMenuHeight = '';
+		window.responsiveMenuFontSize = '';
+		window.isContentAdvisor = false;
+		(function () {
+			window.setSizeCookie = function () {
+				document.cookie = "dpi=" + window.devicePixelRatio + "; path=/";
+				document.cookie = "viewportWidth=" + window.innerWidth + "; path=/";
+				document.cookie = "viewportHeight=" + window.innerHeight + "; path=/";
+				if (screen && screen.width && screen.height) {
+					document.cookie = "screenWidth=" + screen.width + "; path=/";
+					document.cookie = "screenHeight=" + screen.height + "; path=/";
+				}
+				document.cookie = "responsiveGhost=1; path=/";
+			};
+
+			setSizeCookie();
+		}());
+	
+		
+
+	
+	
+	
+	
+	
+	
+	
+		Quick Links • Auditor/Treasuers Department - Elections
+
+			
+	
+	
+
+	
+	
+	
+	
+	<!--
+	var intCountryCode = 840;
+	var order = '';
+//-->
+	
+		
+
+	
+	
+		window.Pages = window.Pages || {};
+		// FrontEnd RWD initialization
+		window.Pages.rwdReady = $.Deferred();
+		window.Pages.toolBarDeferred = $.Deferred();
+		window.Pages.rwdSetupComplete = $.Deferred();
+		window.Pages.megaMenuLoaded = $.Deferred();
+		window.Pages.angularToolbarComplete = $.Deferred();
+		window.Pages.frontEndToolbarComplete = $.Deferred();
+	
+	
+
+	
+		
+	
+	
+
+    
+	
+	
+	
+	
+    
+		
+	
+	
+	
+	
+	
+	
+
+
+
+	
+	
+	
+
+	
+	
+	
+	
+
+	
+		setEditorVariables(false, 840);
+		function getPrintPreviewType() { return 0; } function printPreview() {pPreview(getPrintPreviewType()); }
+	
+	
+
+
+
+    jQuery(document).click(function (event) {
+	var target = jQuery(event.target);
+	if (target.attr('src') && target.parents('.image').length && target.parents('.widget').length) {
+		var text = target.attr('title');
+		
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Image',
+				eventAction: 'Image - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.is('button') || target.hasClass('button') || target.parents().hasClass('button')) {
+		var text = "";
+		if (target.parents('.button')[0]) {
+			text = target.parents('.button').first().text();
+		} else if (target.text().length) {
+			text = target.text();
+		} else if (target.attr('title').length) {
+			text = target.attr('title');
+		}
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Button',
+				eventAction: 'Button - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetCustomHtml').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Custom Html',
+				eventAction: 'Custom Html Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.editor').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Editor',
+				eventAction: 'Editor Link Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.GraphicLinks').length) {
+		var text = "";
+		var targetGraphicLink = target;
+		if (target.hasClass('widgetGraphicLinksLink')) {
+			targetGraphicLink = jQuery(target.children()[0]);
+		}
+		if (targetGraphicLink.hasClass('text')) {
+			text = targetGraphicLink.text();
+		} else if (targetGraphicLink.attr('src').length) {
+			if (targetGraphicLink.attr('alt').length) {
+				text = targetGraphicLink.attr('alt');
+			} else {
+				text = targetGraphicLink.attr('src');
+			}
+		} else {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Graphic Links',
+				eventAction: 'Graphic Link - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.InfoAdvanced').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Info Advanced',
+				eventAction: 'Info Advanced Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.list').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'List',
+				eventAction: 'List Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.megaMenuItem').length || target.parents('.topMenuItem').length) {
+		var megaMenuText = jQuery('.topMenuItem.mouseover').find('span').text();
+		var breadCrumbs = [];
+		jQuery('.breadCrumbs > li').each(function () {
+			 breadCrumbs.push(this.textContent);
+		});
+		var pageTitle = breadCrumbs.join('>');
+		var subTitleText = target.parents('.megaMenuItem').children('.widgetTitle').children().text();
+		var text = "";
+		if (pageTitle) {
+			text += pageTitle + " | ";
+		} else {
+			text += document.title + ' - ';
+		}
+		if (target.text() == "" && megaMenuText == "") {
+			text += "N/A";
+		} else if (target.text().length && megaMenuText.length) {
+			if (megaMenuText == target.text()) {
+				text += megaMenuText;
+			} else {
+				text += megaMenuText + " - " + subTitleText + " - " + target.text();
+			}
+		} else if (target.text() == "") {
+			text += megaMenuText;
+		} else {
+			text += target.text();
+		}
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Mega Menu',
+				eventAction: 'Mega Menu : ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetNewsFlash').length && target.parents('.widgetItem').length) {
+		var text = jQuery(target.parents('.widgetItem')[0]).find('.widgetTitle').children().text();
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'News Flash',
+				eventAction: 'News Flash - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.hasClass('widgetQuickLinksLink') || target.find('.widgetQuickLinksLink').length) {
+		var text = target.text();
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Quick Links',
+				eventAction: 'Quick Links - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.attr('src') && target.parents('.cpSlideshow').length) {
+		var text = target.attr('title');
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Slideshow',
+				eventAction: 'Slideshow - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetText').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Text',
+				eventAction: 'Text Link Clicked',
+				eventLabel: window.location.href
+			});
+	}
+});
+	
+	
+		
+		
+			
+				
+			
+		
+	
+	
+		
+	
+	
+		
+			
+		
+	
+
+    
+
+Skip to Main Content
+
+    
+
+        
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+        
+    
+    
+        
+                
+                    
+
+
+
+
+
+    
+        Create a Website Account - Manage notification subscriptions, save form progress and more.   
+        
+	        Website Sign In
+        
+    
+
+
+    $(document).ready(function () {
+        $('#signedOutToolbarCreateProfileButton').click(function (event) {
+            event.preventDefault();
+            window.location.href = '/MyAccount/ProfileCreate?from=url&url=/&dn=' + window.location.origin;
+        });
+
+			
+				$('#loggedOutToolbarSignInButton').click(function (event) {
+					event.preventDefault();
+					window.location.href = '/MyAccount/?from=url&url=' + encodeURIComponent(window.location.href.replace(window.location.origin, '')) + '&dn=' + window.location.host;
+				});
+			
+
+		if ('False' == 'True') {
+            $('#loggedOutToolbarSignInButton').hide();
+		}
+    })
+
+
+
+                
+            
+                
+                
+
+
+
+    Government  			    Departments  			    Residents  			    Visitors  			    How Do I...  			
+
+
+
+	
+		(function () {
+			function setupMenu() {
+				const menuID = 'mainNavMenu';
+				const menuType = MAIN_MENU;
+
+				//setup menu manager properties for main menu
+				if (!menuManager.mobileMainNav && true)
+					menuManager.adjustMainItemsWidth('#' + menuID);
+				menuManager.isMainMenuEditable = false;
+				menuManager.mainMenuMaxSubMenuLevels = 4;
+				menuManager.setMOMMode(2, menuType);
+
+				//Init main menu
+				const setupDraggable = menuManager.isMainMenuEditable;
+				const urlToGetHiddenMenus = '/Pages/MenuMain/HiddenMainSubMenus?pageID=1&moduleID=29&themeID=1&menuContainerID=mainNav';
+
+				menuManager.setupMenu(menuID, 'mainNav', menuType, setupDraggable, urlToGetHiddenMenus);
+				menuManager.mainMenuInit = true;
+				menuManager.mainMenuTextResizer = true;
+				if (0.99 > 0)
+					menuManager.mainMenuTextResizerRatio = 0.99;
+				if (window.isResponsiveEnabled)
+					menuManager.mainMenuReady.resolve();
+
+			}
+
+			if (document.readyState === "complete"
+				|| document.readyState === "loaded"
+				|| document.readyState === "interactive") {
+				setupMenu();
+				return;
+			}
+
+			document.addEventListener("DOMContentLoaded", setupMenu);
+		})();
+	
+
+
+	
+				                
+
+
+
+	
+	
+				                
+
+
+
+	
+	
+				                
+
+
+
+	
+	
+				                
+
+
+
+	
+	
+				                
+
+
+
+	
+
+
+
+
+
+
+
+				
+	
+				                
+
+						
+	
+	
+		
+
+
+		
+			$(document).ready(function () {
+				setWidgetServiceClicking($("#widgetSiteToolsHeader71f1421d-4e2e-499f-882d-f4b222f90fc6"), true, function () {
+					var $widgetBody = $('#widgetSiteToolsBody71f1421d-4e2e-499f-882d-f4b222f90fc6');
+
+					if ($widgetBody.is(':visible')) {
+						var menuItems = $('.widgetItem a', $widgetBody);
+
+						$(menuItems[0]).focus();
+
+						$('.widgetItem', $widgetBody).unbind("keydown").bind("keydown", function (e) {
+
+							if (e.which === 9) {
+								var index = menuItems.index(e.target);
+
+								if ((index === 0 && e.shiftKey) || (index === (menuItems.length - 1) && !e.shiftKey)) {
+									$("#widgetSiteToolsHeader71f1421d-4e2e-499f-882d-f4b222f90fc6").trigger('click').focus();
+								}
+							}
+						});
+					} else {
+						$('.widgetItem', $widgetBody).unbind("keydown");
+					}
+				});
+			});
+		
+	.widgetOptionSet7.widget {
+padding-top:.5em;
+}
+
+	
+				
+			
+		
+	
+         
+	
+		
+					Home
+					My Account
+					Printer Friendly
+					Email Page
+					Contact Us
+					RSS
+					Site Map
+					Translate Page
+					Notifications
+					Documents
+		
+	
+
+		 
+	
+
+	
+
+
+
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+
+	
+	
+	
+	
+
+		$(document).ready(function () {
+			try {
+				// Minimum characters required before performing a search/autocomplete
+				var minPrefixLength = 3;
+				var autoCompleteDebounceDelay = 500;
+				var searchFieldSelector = "#searchField" + 'd21bb818-7c5c-4db6-8a0c-094d55852c34';
+				var checkboxSelector = "#ysnSearchOnlyDept" + 'd21bb818-7c5c-4db6-8a0c-094d55852c34';
+				var buttonSelector = ".widgetSearchButton" + 'd21bb818-7c5c-4db6-8a0c-094d55852c34';
+				var autoCompleteCache = {};
+				var autoCompleteCacheKeys = [];
+				var autoCompleteCacheLimit = 25;
+				var currentAutoCompleteRequest = null;
+				var currentAutoCompleteRequestKey = null;
+				var autoCompleteDebounceTimer = null;
+				var autoCompleteDebounceKey = null;
+				var pendingAutoCompleteResponses = [];
+
+				function normalizeAutoCompleteTerm(term) {
+					return $.trim((term || "") + "").replace(/\s+/g, " ");
+				}
+
+				function shouldSearch(term) {
+					return normalizeAutoCompleteTerm(term).length >= minPrefixLength;
+				}
+
+				function getAutoCompleteUrl() {
+					return '/Search/AutoComplete' + ($(checkboxSelector).is(':checked') || false? '?departmentId=0' : '');
+				}
+
+				function getAutoCompleteCacheKey(requestUrl, term) {
+					return requestUrl + "|" + term.toLowerCase();
+				}
+
+				function cacheAutoCompleteResult(cacheKey, data) {
+					if (!Object.prototype.hasOwnProperty.call(autoCompleteCache, cacheKey)) {
+						autoCompleteCacheKeys.push(cacheKey);
+						if (autoCompleteCacheKeys.length > autoCompleteCacheLimit) {
+							delete autoCompleteCache[autoCompleteCacheKeys.shift()];
+						}
+					}
+					autoCompleteCache[cacheKey] = data;
+				}
+
+				function respondToPendingAutoComplete(data) {
+					var responses = pendingAutoCompleteResponses;
+					pendingAutoCompleteResponses = [];
+					for (var i = 0; i < responses.length; i++) {
+						responses[i](data);
+					}
+				}
+
+				function cancelPendingAutoComplete() {
+					clearTimeout(autoCompleteDebounceTimer);
+					autoCompleteDebounceKey = null;
+					if (currentAutoCompleteRequest != null) {
+						currentAutoCompleteRequest.abort();
+						currentAutoCompleteRequest = null;
+					}
+					currentAutoCompleteRequestKey = null;
+					respondToPendingAutoComplete([]);
+				}
+
+				function createWidgetAutoCompleteSource(options) {
+					return function (request, response) {
+						var term = normalizeAutoCompleteTerm(request.term);
+						if (!options.shouldSearch(term)) {
+							response([]);
+							return;
+						}
+
+						var requestUrl = options.url();
+						var cacheKey = getAutoCompleteCacheKey(requestUrl, term);
+						if (Object.prototype.hasOwnProperty.call(autoCompleteCache, cacheKey)) {
+							response(autoCompleteCache[cacheKey]);
+							if (options.success) {
+								options.success(autoCompleteCache[cacheKey]);
+							}
+							return;
+						}
+
+						if (currentAutoCompleteRequestKey === cacheKey || autoCompleteDebounceKey === cacheKey) {
+							pendingAutoCompleteResponses.push(response);
+							return;
+						}
+
+						cancelPendingAutoComplete();
+						autoCompleteDebounceKey = cacheKey;
+						pendingAutoCompleteResponses.push(response);
+						autoCompleteDebounceTimer = setTimeout(function () {
+							autoCompleteDebounceKey = null;
+							currentAutoCompleteRequestKey = cacheKey;
+							currentAutoCompleteRequest = $.ajax({
+								url: requestUrl,
+								dataType: "json",
+								timeout: options.timeout,
+								data: {
+									term: term,
+								},
+								success: function (data) {
+									if (currentAutoCompleteRequestKey === cacheKey) {
+										cacheAutoCompleteResult(cacheKey, data);
+										respondToPendingAutoComplete(data);
+										if (options.success) {
+											options.success(data);
+										}
+									}
+								},
+								error: function (xmlhttprequest, textstatus, message) {
+									if (textstatus === "abort") {
+										return;
+									}
+
+									if (options.error) {
+										options.error(xmlhttprequest, textstatus, message);
+									}
+
+									respondToPendingAutoComplete([]);
+								},
+								complete: function (xmlhttprequest) {
+									if (currentAutoCompleteRequest === xmlhttprequest) {
+										currentAutoCompleteRequest = null;
+										currentAutoCompleteRequestKey = null;
+									}
+								}
+							});
+						}, options.delay);
+					};
+				}
+
+				// click handler for search buttons
+				$(buttonSelector).click(function (e) {
+					e.preventDefault();
+					var $btn = $(this);
+					var $field = $btn.siblings(".widgetSearchBox");
+					var term = $field.val() + "";
+					if (!shouldSearch(term)) {
+						// do nothing until user types enough characters
+						$field.focus();
+						return;
+					}
+
+					if ($(checkboxSelector).is(':checked') || false)
+					{
+						doWidgetSearch($.trim(term), Number(0));
+					}
+					else {
+						doWidgetSearch($.trim(term), 0);
+					}
+				});
+
+				// enter key handler for the search field
+				$(searchFieldSelector).keypress(function (e) {
+					var code = e.which || e.keyCode;
+					if (code === 13) {
+						e.preventDefault();
+						var $this = $(this);
+						var term = $this.val() + "";
+						if (!shouldSearch(term)) {
+							// do nothing until user types enough characters
+							$this.focus();
+							return false;
+						}
+
+						if ($(checkboxSelector).is(':checked') || false) {
+							doWidgetSearch($.trim(term), Number(0));
+						} else {
+							doWidgetSearch($.trim(term), 0);
+						}
+						return false;
+					}
+					return true;
+				});
+
+				// autocomplete: set minLength and guard source
+				if (true) {
+					var $searchField = $(searchFieldSelector).autocomplete({
+						minLength: minPrefixLength,
+						source: createWidgetAutoCompleteSource({
+							delay: autoCompleteDebounceDelay,
+							timeout: 10000,
+							shouldSearch: shouldSearch,
+							url: getAutoCompleteUrl,
+							success: function () {
+								$('.autoCompleteError').remove();
+							},
+							error: function (xmlhttprequest, textstatus, message) {
+								if (textstatus === "timeout") {
+									if ($(searchFieldSelector).siblings('.autoCompleteError').length == 0)
+										$('<span class="autoCompleteError"><p class="alert error">Search autocomplete is currently not responding. Please try again later.</p></span>').insertAfter($(searchFieldSelector));
+								}
+							}
+						}),
+						html: true,
+						delay: 0,
+						select: function (event, ui) {
+							$(this).val(ui.item.value);
+							$(this).next().click();
+						}
+					});
+
+					$searchField.data("ui-autocomplete")._renderItem = function (ul, item) {
+						return $("<li class=\"itemList\"></li>")
+							.data("ui-autocomplete-item", item)
+							.append("<a>" + item.label + "</a>")
+							.appendTo(ul);
+					};
+				}
+
+				// keep searchBtnApplyQuery consistent with prefix rule
+				window.searchBtnApplyQuery = function() {
+					var $field = $(searchFieldSelector);
+					var term = $field.val() + "";
+					if (shouldSearch(term)) {
+						// update href for the icon/button (if present)
+						var btn = document.getElementById("btnSearchIcon");
+						if (btn) btn.href = "/Search?searchPhrase=" + encodeURIComponent($.trim(term));
+					} else {
+						var btn = document.getElementById("btnSearchIcon");
+						if (btn) btn.href = "#";
+					}
+				};
+			}
+			catch(e) {} //we're going to eat this error. Autocomplete won't work but we dont wan't to break anything else on the page.
+		});
+	
+
+	
+				
+		
+			
+						
+
+			Search
+		
+
+	
+
+
+
+	  
+		.widgetSearch ::-webkit-input-placeholder {
+		color: #455358;
+	  }
+		.widgetSearch :-moz-placeholder { /* Firefox 18- */
+	   color: #455358;
+	}
+		.widgetSearch ::-moz-placeholder {  /* Firefox 19+ */
+	   color: #455358;
+	}
+	.widgetSearch :-ms-input-placeholder {
+	   color: #455358;
+	}
+	
+
+	.widgetSearch .widgetBody .widgetSearchBoxd21bb818-7c5c-4db6-8a0c-094d55852c34
+	{
+		color: #455358;
+		border-radius: 2px; background-color: rgba(255, 255, 255, 0.851);
+ height: 58px; padding: 5px 40px 5px 10px;  border: none;
+	}
+	.widgetSearch .widgetBody .widgetSearchButtond21bb818-7c5c-4db6-8a0c-094d55852c34
+	{
+		margin: 14px 10px 0 0;
+	}
+	.widgetSearch .widgetSearch-onlyDeptd21bb818-7c5c-4db6-8a0c-094d55852c34
+	{
+		display: inline-block;
+		color: #333;
+		
+		
+		 padding-top: 10px;
+	}
+	#ysnSearchOnlyDeptd21bb818-7c5c-4db6-8a0c-094d55852c34
+	{
+		position: relative;
+		top: .125em;
+	}
+
+
+
+
+
+
+
+
+
+	//Updates search icons href to have the correct queryString
+	function searchBtnApplyQuery() {
+		document.getElementById("btnSearchIcon").href = "/Search?searchPhrase=" + document.getElementById("searchFieldd21bb818-7c5c-4db6-8a0c-094d55852c34").value;
+	}
+
+
+
+
+	 
+
+	 
+
+			 
+
+
+	
+
+
+
+
+
+		
+			HomeQuick Links
+		
+
+	   
+    
+
+
+
+
+	
+	<!--
+	var isie6 = false, isie7 = false, isie6or7 = false;
+	var intCountryCode = 840;
+
+	function setUrlLength(editor) {
+		//Toggle Image Context Menu Items
+		setMenuItems(editor);
+		//setContentBackgroundColor(editor);
+		removeIEParagraphs(editor);
+	}
+	function setUrlLengthAndToolToggle(editor) {
+		var minToolsGroups = 2; // Number of MinimumSetOfTools tools groups.
+		
+		// Hide the MinimumSetOfTools on load.
+		var toolbar = editor.get_toolContainer(); // Get toolbar container.
+		var toolgroups = toolbar.getElementsByTagName("UL"); // Get all toolgroups containers.
+		
+		for (var i = toolgroups.length - 1; i >= minToolsGroups; i--)			toolgroups[i].style.display = "none";
+		
+		if (editor.isIE) {
+			var elem = editor.get_element();
+			elem.style.height = "430px";
+ 			elem.style.minHeight = "430px";
+		}
+		
+		// Toggle Image Context Menu Items.
+		setMenuItems(editor);
+		//setContentBackgroundColor(editor);
+		removeIEParagraphs(editor);
+	}
+//-->
+
+
+	
+
+	
+
+
+
+
+
+
+
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+
+
+
+
+
+
+
+
+
+	
+
+		
+		
+		
+		
+		
+		 
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$ctl00$MainContent$scriptManager', 'aspnetForm', ['tctl00$ctl00$MainContent$ModuleContent$ctl00$contentUpdatePanel','','tctl00$ctl00$MainContent$ModuleContent$ctl00$UpdatePanel22',''], [], [], 90, 'ctl00$ctl00');
+//]]>
+
+
+		
+			Sys.WebForms.PageRequestManager.getInstance().add_beginRequest(beginRequest);
+			Sys.WebForms.PageRequestManager.getInstance().add_pageLoaded(pageLoaded);
+		
+		
+		
+
+
+
+
+	
+	
+	
+	
+			
+				
+				
+				
+		  
+	
+		
+      
+Auditor/Treasuers Department - Elections      
+      
+	
+      
+       
+       Caucus Finder      
+				
+      
+       
+       Who Can Vote?      
+				
+      
+       
+       Register to Vote      
+				
+      
+       
+       Register on Election Day      
+				
+      
+       
+       Other Ways to Vote      
+				
+      
+       
+       Registration Frequently Asked Questions      
+				
+      
+       
+       Election Results      
+				
+      
+       
+       Polling Place Finder      
+				
+      
+       
+       What If I'm a College Student?      
+				
+      
+       
+       Candidate Filings       
+				
+      
+      
+
+	
+			
+			
+				
+				
+					Categories
+					
+								
+			All Categories
+		
+		
+			Administrative Services - Employee Email
+		
+		
+			Assessors Department
+		
+		
+			Attorneys Department
+		
+		
+			Auditor/Treasuers Department - Elections
+		
+		
+			Auditor/Treasurers Department
+		
+		
+			Court Administration Department
+		
+		
+			COVID-19 Quick Links
+		
+		
+			Environmental Services Department
+		
+		
+			Helpful Links
+		
+		
+			HHS Child Support
+		
+		
+			HHS Family Services - Adult Mental Health
+		
+		
+			HHS Family Services - Case Management Agencies Contracted with Itasca County
+		
+		
+			HHS Family Services - Children's Mental Health
+		
+		
+			HHS Financial - Cash Assistance
+		
+		
+			HHS IMCare - Providers
+		
+		
+			HHS Public Health - Immunizations
+		
+		
+			Human Resources
+		
+		
+			Itasca County Fairgrounds
+		
+		
+			Land Department - Forest Management 
+		
+		
+			Land Department - Land Management Planning
+		
+		
+			Probation Department
+		
+		
+			Public Health - Adult Immunizations
+		
+		
+			Public Health - Emergency Preparedness
+		
+		
+			Public Health - Family Health
+		
+		
+			Public Health - Financial Services
+		
+		
+			Public Health -Child Immunizations
+		
+		
+			Quick Links
+		
+		
+			Recorders Department - Birth Certificates
+		
+		
+			Recorders Department - Real Estate Recording
+		
+		
+			Sheriffs Department
+		
+		
+			Sheriffs Department - Civil Process Division
+		
+		
+			Sheriffs Department - Emergency Management Division
+		
+		
+			Sheriffs Department - Inmate Phone Priveleges
+		
+		
+			Sheriffs Department - Jail Division
+		
+		
+			Sheriffs Department - Records
+		
+		
+			Sheriffs Department - Records - Accident or Incident Reports
+		
+		
+			Sheriffs Department - Records - Background Checks
+		
+		
+			Sheriffs Department - Records - Permit to Carry
+		
+		
+			Sheriffs Department - Records - Permit to Purchase
+		
+		
+			Sheriffs Department - Search & Rescue / Dive Team
+		
+		
+			Surveying & Mapping Department
+		
+		
+			Transportation Department
+		
+		
+			Transportation Department - Spring Load Restrictions
+		
+		
+			UM Extension - Master Gardner Program
+		
+		
+			Useful Links
+		
+		
+			Veteran Services
+		
+		
+			Veteran Services - Assistance & Families
+		
+		
+			Veteran Services - Benefits
+		
+		
+			Veteran Services - Crisis
+		
+		
+			Veteran Services - Dependent & Survivors
+		
+		
+			Veteran Services - Education
+		
+		
+			Veteran Services - Employment
+		
+		
+			Veteran Services - Health & Disability
+		
+		
+			Veteran Services - Home Loans
+		
+		
+			Veteran Services - Life Insurance
+		
+		
+			Veteran Services - Locations
+		
+		
+			Veteran Services - Memorials & Burials
+		
+		
+			Veteran Services - Mental Health
+		
+		
+			Veteran Services - Military Exposures
+		
+		
+			Veteran Services - Pension
+		
+		
+			Veteran Services - Special Veteran Groups
+		
+		
+			Veteran Services - Veterans Homes
+		
+		
+			Victim Assistance Links
+		
+		
+			Visitors
+		
+
+					
+				
+			
+		
+
+	
+
+
+<!--
+	function redrawContent(closeModal) {
+		raiseAsyncPostback('ctl00_ctl00_MainContent_ModuleContent_ctl00_contentUpdatePanel', '', closeModal);
+	}
+//-->
+
+
+
+
+order+='ModuleContent\n'
+
+		
+	Live Edit
+
+	
+
+
+//<![CDATA[
+Sys.Application.add_init(function() {
+    $create(AjaxControlToolkit.ModalPopupBehavior, {"BackgroundCssClass":"modalBackground","CancelControlID":"ctl00_LiveEditCloseButton","PopupControlID":"ctl00_ctl00_MainContent_ctl00_liveEditPopupWindow","PopupDragHandleControlID":"ctl00_liveEditTitleBar","dynamicServicePath":"/QuickLinks.aspx","id":"editItemBehavior"}, null, null, $get("ctl00_ctl00_MainContent_ctl00_liveEditSpawnWindow"));
+});
+//]]>
+
+
+	
+		
+	
+	
+	
+	
+	
+	 
+	
+
+	
+				                
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+	
+		(function () {
+			function setupSecondaryMenuProperties() {
+				//setup menu manager properties for secondary menu
+				menuManager.isSideMenuEditable = false;
+				menuManager.sideMenuMaxSubMenuLevels = 4;
+				menuManager.sideMenuHasCustomLinks = true;
+			}
+
+			if (document.readyState === "loading") {
+				document.addEventListener("DOMContentLoaded", setupSecondaryMenuProperties, { once: true });
+				return;
+			}
+
+			setupSecondaryMenuProperties();
+		})();
+	
+	
+		(function () {
+			function setupLazyLoadSecondaryNav() {
+				//Init secondary menu
+				var setupDraggable = menuManager.isSideMenuEditable;
+				var urlToGetHiddenMenus = '/Pages/MenuSecondary/HiddenSecondarySubMenus?pageID=1&moduleID=29&themeID=1&menuContainerID=secondaryNav';
+				var menuID = 'secondaryMenusecondaryNav';
+				menuManager.setMOMMode(2, SIDE_MENU);
+				menuManager.setupMenu(menuID, 'secondaryNav', SIDE_MENU, setupDraggable, urlToGetHiddenMenus);
+			}
+
+			if (document.readyState === "loading") {
+				document.addEventListener("DOMContentLoaded", setupLazyLoadSecondaryNav, { once: true });
+				return;
+			}
+
+			setupLazyLoadSecondaryNav();
+		})();
+	
+
+
+
+
+	
+				                
+
+
+
+	
+
+
+
+
+	
+				                
+
+						
+	
+	
+		
+
+
+
+
+
+
+	
+		
+				
+	
+	
+		
+				
+					
+
+
+	
+		
+			County BoardCommissioner Information
+		
+	
+
+		.fancyButton47.fancyButton:link,.fancyButton47.fancyButton:visited, .fancyButton47div.fancyButton{
+	background-image: url('/ImageRepository/Path?filePath=/documents/Intranet/19/GB-County Board.png');
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+.fancyButton47.fancyButton:hover,.fancyButton47.fancyButton:focus,.fancyButton47.fancyButton:active,.fancyButton47.fancyButton.hover{
+	background-image: url('/ImageRepository/Path?filePath=/documents/Intranet/19/GB-County Board2.png');
+	background-repeat: no-repeat;
+	background-position: center top;
+opacity: 1;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;}
+.fancyButton47.fancyButton:link > span,.fancyButton47.fancyButton:visited > span, .fancyButton47div.fancyButton > span{
+}
+.fancyButton47.fancyButton:hover > span,.fancyButton47.fancyButton:focus > span,.fancyButton47.fancyButton:active > span,.fancyButton47.fancyButton.hover > span{
+}
+.fancyButton47.fancyButton .text{
+	color: #2e4271;
+	font-size: 1.2em;
+	font-family: "Work Sans";
+	text-align: center;
+	padding-top: 106px;
+	font-weight: 500;
+	text-decoration: none;
+	padding-top: 106px;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+line-height:1.1;}
+.fancyButton47.fancyButton:hover .text,.fancyButton47.fancyButton:focus .text,.fancyButton47.fancyButton:active .text,.fancyButton47.fancyButton.hover .text{
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+.fancyButton47.fancyButton .textStyle1{
+	color: #505811;
+	font-size: .8em;
+	text-align: center;
+	font-style: normal;
+	text-decoration: none;
+line-height:1.1;}
+.fancyButton47.fancyButton:hover .textStyle1, .fancyButton47.fancyButton.hover .textStyle1{
+	color: #505811;
+	text-decoration: none;
+
+}
+
+
+ 
+
+
+	
+		
+			Notify Me®Stay informed
+		
+	
+
+		.fancyButton48.fancyButton:link,.fancyButton48.fancyButton:visited, .fancyButton48div.fancyButton{
+	background-image: url('/ImageRepository/Path?filePath=/documents/Intranet/19/GB-Notify Me.png');
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+.fancyButton48.fancyButton:hover,.fancyButton48.fancyButton:focus,.fancyButton48.fancyButton:active,.fancyButton48.fancyButton.hover{
+	background-image: url('/ImageRepository/Path?filePath=/documents/Intranet/19/GB-Notify Me2.png');
+	background-repeat: no-repeat;
+	background-position: center top;
+opacity: 1;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;}
+.fancyButton48.fancyButton:link > span,.fancyButton48.fancyButton:visited > span, .fancyButton48div.fancyButton > span{
+}
+.fancyButton48.fancyButton:hover > span,.fancyButton48.fancyButton:focus > span,.fancyButton48.fancyButton:active > span,.fancyButton48.fancyButton.hover > span{
+}
+.fancyButton48.fancyButton .text{
+	color: #2e4271;
+	font-size: 1.2em;
+	font-family: "Work Sans";
+	text-align: center;
+	padding-top: 106px;
+	font-weight: 500;
+	text-decoration: none;
+	padding-top: 106px;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+line-height:1.1;}
+.fancyButton48.fancyButton:hover .text,.fancyButton48.fancyButton:focus .text,.fancyButton48.fancyButton:active .text,.fancyButton48.fancyButton.hover .text{
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+.fancyButton48.fancyButton .textStyle1{
+	color: #505811;
+	font-size: .8em;
+	text-align: center;
+	font-style: normal;
+	text-decoration: none;
+line-height:1.1;}
+.fancyButton48.fancyButton:hover .textStyle1, .fancyButton48.fancyButton.hover .textStyle1{
+	text-decoration: none;
+
+}
+
+
+ 
+
+
+	
+		
+			EmploymentView current openings
+		
+	
+
+		.fancyButton49.fancyButton:link,.fancyButton49.fancyButton:visited, .fancyButton49div.fancyButton{
+	background-image: url('/ImageRepository/Path?filePath=/documents/Intranet/19/GB-Employment.png');
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+.fancyButton49.fancyButton:hover,.fancyButton49.fancyButton:focus,.fancyButton49.fancyButton:active,.fancyButton49.fancyButton.hover{
+	background-image: url('/ImageRepository/Path?filePath=/documents/Intranet/19/GB-Employment2.png');
+	background-repeat: no-repeat;
+	background-position: center top;
+opacity: 1;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;}
+.fancyButton49.fancyButton:link > span,.fancyButton49.fancyButton:visited > span, .fancyButton49div.fancyButton > span{
+}
+.fancyButton49.fancyButton:hover > span,.fancyButton49.fancyButton:focus > span,.fancyButton49.fancyButton:active > span,.fancyButton49.fancyButton.hover > span{
+}
+.fancyButton49.fancyButton .text{
+	color: #2e4271;
+	font-size: 1.2em;
+	font-family: "Work Sans";
+	text-align: center;
+	padding-top: 106px;
+	font-weight: 500;
+	text-decoration: none;
+	padding-top: 106px;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+line-height:1.1;}
+.fancyButton49.fancyButton:hover .text,.fancyButton49.fancyButton:focus .text,.fancyButton49.fancyButton:active .text,.fancyButton49.fancyButton.hover .text{
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+.fancyButton49.fancyButton .textStyle1{
+	color: #505811;
+	font-size: .9em;
+	text-align: center;
+	font-style: normal;
+	text-decoration: none;
+line-height:1.1;}
+.fancyButton49.fancyButton:hover .textStyle1, .fancyButton49.fancyButton.hover .textStyle1{
+	text-decoration: none;
+
+}
+
+
+ 
+
+
+	
+		
+			Property InfoParcel Information
+		
+	
+
+		.fancyButton50.fancyButton:link,.fancyButton50.fancyButton:visited, .fancyButton50div.fancyButton{
+	background-image: url('/ImageRepository/Path?filePath=/documents/Intranet/19/GB-Property Info.png');
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+.fancyButton50.fancyButton:hover,.fancyButton50.fancyButton:focus,.fancyButton50.fancyButton:active,.fancyButton50.fancyButton.hover{
+	background-image: url('/ImageRepository/Path?filePath=/documents/Intranet/19/GB-Property Info2.png');
+	background-repeat: no-repeat;
+	background-position: center top;
+opacity: 1;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;}
+.fancyButton50.fancyButton:link > span,.fancyButton50.fancyButton:visited > span, .fancyButton50div.fancyButton > span{
+}
+.fancyButton50.fancyButton:hover > span,.fancyButton50.fancyButton:focus > span,.fancyButton50.fancyButton:active > span,.fancyButton50.fancyButton.hover > span{
+}
+.fancyButton50.fancyButton .text{
+	color: #2e4271;
+	font-size: 1.2em;
+	font-family: "Work Sans";
+	text-align: center;
+	padding-top: 106px;
+	font-weight: 500;
+	text-decoration: none;
+	padding-top: 106px;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+line-height:1.1;}
+.fancyButton50.fancyButton:hover .text,.fancyButton50.fancyButton:focus .text,.fancyButton50.fancyButton:active .text,.fancyButton50.fancyButton.hover .text{
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+.fancyButton50.fancyButton .textStyle1{
+	color: #505811;
+	font-size: .9em;
+	text-align: center;
+	font-style: normal;
+	text-decoration: none;
+line-height:1.1;}
+.fancyButton50.fancyButton:hover .textStyle1, .fancyButton50.fancyButton.hover .textStyle1{
+	text-decoration: none;
+
+}
+
+
+ 
+
+
+	
+		
+			Contact UsStaff Directory
+		
+	
+
+		.fancyButton51.fancyButton:link,.fancyButton51.fancyButton:visited, .fancyButton51div.fancyButton{
+	background-image: url('/ImageRepository/Path?filePath=/documents/Intranet/19/GB-Contact Us.png');
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+.fancyButton51.fancyButton:hover,.fancyButton51.fancyButton:focus,.fancyButton51.fancyButton:active,.fancyButton51.fancyButton.hover{
+	background-image: url('/ImageRepository/Path?filePath=/documents/Intranet/19/GB-Contact Us2.png');
+	background-repeat: no-repeat;
+	background-position: center top;
+opacity: 1;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;}
+.fancyButton51.fancyButton:link > span,.fancyButton51.fancyButton:visited > span, .fancyButton51div.fancyButton > span{
+}
+.fancyButton51.fancyButton:hover > span,.fancyButton51.fancyButton:focus > span,.fancyButton51.fancyButton:active > span,.fancyButton51.fancyButton.hover > span{
+}
+.fancyButton51.fancyButton .text{
+	color: #2e4271;
+	font-size: 1.2em;
+	font-family: "Work Sans";
+	text-align: center;
+	padding-top: 106px;
+	font-weight: 500;
+	text-decoration: none;
+	padding-top: 106px;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+line-height:1.1;}
+.fancyButton51.fancyButton:hover .text,.fancyButton51.fancyButton:focus .text,.fancyButton51.fancyButton:active .text,.fancyButton51.fancyButton.hover .text{
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+.fancyButton51.fancyButton .textStyle1{
+	color: #505811;
+	font-size: .9em;
+	text-align: center;
+	font-style: normal;
+	text-decoration: none;
+line-height:1.1;}
+.fancyButton51.fancyButton:hover .textStyle1, .fancyButton51.fancyButton.hover .textStyle1{
+	text-decoration: none;
+
+}
+.fancyButton51.fancyButton .textStyle2{
+	color: #2e4271;
+	font-size: 1.2em;
+	font-style: normal;
+	text-decoration: none;
+line-height:1.1;}
+.fancyButton51.fancyButton:hover .textStyle2, .fancyButton51.fancyButton.hover .textStyle2{
+	text-decoration: none;
+
+}
+
+
+ 
+
+
+	
+		
+			FormsForm Center
+		
+	
+
+		.fancyButton52.fancyButton:link,.fancyButton52.fancyButton:visited, .fancyButton52div.fancyButton{
+	background-image: url('/ImageRepository/Path?filePath=/documents/Intranet/19/GB-Forms.png');
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+.fancyButton52.fancyButton:hover,.fancyButton52.fancyButton:focus,.fancyButton52.fancyButton:active,.fancyButton52.fancyButton.hover{
+	background-image: url('/ImageRepository/Path?filePath=/documents/Intranet/19/GB-Forms2.png');
+	background-repeat: no-repeat;
+	background-position: center top;
+opacity: 1;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;}
+.fancyButton52.fancyButton:link > span,.fancyButton52.fancyButton:visited > span, .fancyButton52div.fancyButton > span{
+}
+.fancyButton52.fancyButton:hover > span,.fancyButton52.fancyButton:focus > span,.fancyButton52.fancyButton:active > span,.fancyButton52.fancyButton.hover > span{
+}
+.fancyButton52.fancyButton .text{
+	color: #2e4271;
+	font-size: 1.2em;
+	font-family: "Work Sans";
+	text-align: center;
+	padding-top: 106px;
+	font-weight: 500;
+	text-decoration: none;
+	padding-top: 106px;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+line-height:1.1;}
+.fancyButton52.fancyButton:hover .text,.fancyButton52.fancyButton:focus .text,.fancyButton52.fancyButton:active .text,.fancyButton52.fancyButton.hover .text{
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+.fancyButton52.fancyButton .textStyle1{
+	color: #505811;
+	font-size: .9em;
+	text-align: center;
+	font-style: normal;
+	text-decoration: none;
+line-height:1.1;}
+.fancyButton52.fancyButton:hover .textStyle1, .fancyButton52.fancyButton.hover .textStyle1{
+	text-decoration: none;
+
+}
+
+
+ 
+
+
+	
+		
+			MapsGet Information
+		
+	
+
+		.fancyButton460.fancyButton:link,.fancyButton460.fancyButton:visited, .fancyButton460div.fancyButton{
+	background-image: url('/ImageRepository/Path?filePath=/documents/Intranet/19/GB-Maps.png');
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+.fancyButton460.fancyButton:hover,.fancyButton460.fancyButton:focus,.fancyButton460.fancyButton:active,.fancyButton460.fancyButton.hover{
+	background-image: url('/ImageRepository/Path?filePath=/documents/Intranet/19/GB-Maps2_1.png');
+	background-repeat: no-repeat;
+	background-position: center top;
+opacity: 1;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;}
+.fancyButton460.fancyButton:link > span,.fancyButton460.fancyButton:visited > span, .fancyButton460div.fancyButton > span{
+}
+.fancyButton460.fancyButton:hover > span,.fancyButton460.fancyButton:focus > span,.fancyButton460.fancyButton:active > span,.fancyButton460.fancyButton.hover > span{
+}
+.fancyButton460.fancyButton .text{
+	color: #2e4271;
+	font-size: 1.2em;
+	font-family: "Work Sans";
+	text-align: center;
+	padding-top: 106px;
+	font-weight: 500;
+	text-decoration: none;
+	padding-top: 106px;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+line-height:1.1;}
+.fancyButton460.fancyButton:hover .text,.fancyButton460.fancyButton:focus .text,.fancyButton460.fancyButton:active .text,.fancyButton460.fancyButton.hover .text{
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+.fancyButton460.fancyButton .textStyle1{
+	color: #505811;
+	font-size: .8em;
+	text-align: center;
+	font-style: normal;
+	text-decoration: none;
+line-height:1.1;}
+.fancyButton460.fancyButton:hover .textStyle1, .fancyButton460.fancyButton.hover .textStyle1{
+	color: #505811;
+	text-decoration: none;
+
+}
+
+
+ 
+				
+			
+		
+	
+			
+
+
+
+	 
+
+	 
+
+			 
+
+
+	
+
+
+	
+				                
+
+						
+	
+	
+		
+	
+
+
+
+
+
+
+
+
+	
+			
+		
+					Helpful Links
+						
+	
+	
+        
+				
+					
+
+
+
+
+    
+        Itasca County Fairground Campground
+        
+    
+
+
+
+
+    
+        ICTV
+        
+    
+
+
+
+
+    
+        It's In Minnesota's Nature!
+        
+    
+
+
+
+
+    
+        Edge of the Wilderness
+        
+    
+					
+				
+		
+        
+	
+	
+	
+	
+		/QuickLinks.aspx
+	
+
+	
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+	
+
+
+
+
+
+
+
+
+	
+			
+		
+					Quick Links
+						
+	
+	
+        
+				
+					
+
+
+
+
+    
+        Emergency Notification System
+        
+    
+
+
+
+
+    
+        Itasca County Privacy Policy
+        
+    
+
+
+
+
+    
+        Salary Compliance Notice
+        
+    
+
+
+
+
+    
+        Pay Your Property Taxes
+        
+    
+					
+				
+		
+        
+	
+	
+	
+	
+		/QuickLinks.aspx
+	
+
+	
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+
+
+
+
+
+
+
+
+
+	
+		    
+        
+                    Frequently Asked Questions
+                                
+    
+	
+		
+					
+					
+						
+
+
+        
+            How do I contact a county department?
+        
+
+
+        
+            Where can I find the answers to my frequently asked questions?
+        
+						
+					
+		
+        	
+		
+	
+    
+        /FAQ.aspx
+    
+
+	
+
+
+
+	function handleExpandCollapse(e) {
+		const element = e.currentTarget;
+		const answer = document.getElementById(element.getAttribute("aria-controls")).parentElement;
+		const expandArrow = element.getElementsByClassName("widgetFAQ--arrow")[0];
+		if (answer.classList.contains("hidden")) {
+			expandArrow.classList.add('widgetFAQ--arrow-expanded');
+			expandArrow.classList.remove('widgetFAQ--arrow-collapsed');
+			answer.classList.remove("hidden");
+			element.setAttribute("aria-expanded", "true");
+		} else {
+			expandArrow.classList.add('widgetFAQ--arrow-collapsed');
+			expandArrow.classList.remove('widgetFAQ--arrow-expanded');
+			answer.classList.add("hidden");
+			element.setAttribute("aria-expanded", "false");
+		}
+		e.preventDefault();
+		e.stopImmediatePropagation();
+		e.stopPropagation();
+	}
+    document.querySelectorAll(".widgetFAQ--question a").forEach(element => {
+        // When the link is clicked, expand or collapse the answer
+		element.addEventListener("click", handleExpandCollapse);
+	});
+
+
+
+	 
+
+	 
+
+			 
+
+
+	
+
+
+	
+				                
+
+						
+	
+	
+		
+	
+
+
+
+
+
+
+
+
+	
+			
+		
+						
+	
+	
+        
+				
+					
+
+
+
+
+    
+        Site Map
+        
+    
+					
+				
+				
+					
+
+
+
+
+    
+        Accessibility
+        
+    
+					
+				
+				
+					
+
+
+
+
+    
+        Copyright Privacy
+        
+    
+					
+				
+				
+					
+
+
+
+
+    
+        Government Websites by CivicPlus®
+        
+    
+					
+				
+		
+        
+	
+	
+	
+	
+		/QuickLinks.aspx
+	
+
+	
+
+
+	 
+
+	 
+
+			 
+						
+	
+	
+		
+    
+
+
+
+
+
+	
+			
+		
+								
+	
+	
+		
+					
+						
+
+
+	                     Itasca County    |   123 NE 4th Street   |   Grand Rapids, MN  55744   |   Phone: 218-327-7363  |   Toll Free: 800-422-0312
+Report website problems to helpdesk@co.itasca.mn.us
+
+						
+					
+		
+	
+	
+
+	
+
+	
+
+
+
+
+	//Render slideshow if info advacned items contain one.
+	$(document).ready(function (e) {
+		$('#divInfoAdv8d1e109a-075d-440e-97a0-ff1c23595bf6 .InfoAdvanced.widgetItem').each(function () {
+			renderSlideshowIfApplicable($(this));		
+		});
+	});
+
+	 
+
+	 
+
+			 
+						
+	
+	
+		
+
+
+	 
+
+	 
+
+			 
+						
+	
+	
+		
+
+
+	 
+
+	 
+
+			 
+						
+	
+	
+		
+
+
+
+
+
+
+	
+		
+				
+	
+	
+		
+				
+					
+
+
+	
+		
+			   
+		
+	
+
+		.fancyButton54.fancyButton:link,.fancyButton54.fancyButton:visited, .fancyButton54div.fancyButton{
+	height: 42px;
+	width: 42px;
+	background-image: url('/ImageRepository/Path?filePath=/documents/Intranet/19/Youtube.png');
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+.fancyButton54.fancyButton:hover,.fancyButton54.fancyButton:focus,.fancyButton54.fancyButton:active,.fancyButton54.fancyButton.hover{
+	background-image: url('/ImageRepository/Path?filePath=/documents/Intranet/19/Youtube2.png');
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+.fancyButton54.fancyButton:link > span,.fancyButton54.fancyButton:visited > span, .fancyButton54div.fancyButton > span{
+}
+.fancyButton54.fancyButton:hover > span,.fancyButton54.fancyButton:focus > span,.fancyButton54.fancyButton:active > span,.fancyButton54.fancyButton.hover > span{
+}
+.fancyButton54.fancyButton .text{
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+opacity:0.0;}
+.fancyButton54.fancyButton:hover .text,.fancyButton54.fancyButton:focus .text,.fancyButton54.fancyButton:active .text,.fancyButton54.fancyButton.hover .text{
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+
+
+ 
+
+
+	
+		
+			   
+		
+	
+
+		.fancyButton55.fancyButton:link,.fancyButton55.fancyButton:visited, .fancyButton55div.fancyButton{
+	height: 42px;
+	width: 42px;
+	background-image: url('/ImageRepository/Path?filePath=/documents/Intranet/19/Facebook.png');
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+.fancyButton55.fancyButton:hover,.fancyButton55.fancyButton:focus,.fancyButton55.fancyButton:active,.fancyButton55.fancyButton.hover{
+	background-image: url('/ImageRepository/Path?filePath=/documents/Intranet/19/Facebook2.png');
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+.fancyButton55.fancyButton:link > span,.fancyButton55.fancyButton:visited > span, .fancyButton55div.fancyButton > span{
+}
+.fancyButton55.fancyButton:hover > span,.fancyButton55.fancyButton:focus > span,.fancyButton55.fancyButton:active > span,.fancyButton55.fancyButton.hover > span{
+}
+.fancyButton55.fancyButton .text{
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+opacity:0.0;}
+.fancyButton55.fancyButton:hover .text,.fancyButton55.fancyButton:focus .text,.fancyButton55.fancyButton:active .text,.fancyButton55.fancyButton.hover .text{
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+
+
+ 
+
+
+	
+		
+			   
+		
+	
+
+		.fancyButton56.fancyButton:link,.fancyButton56.fancyButton:visited, .fancyButton56div.fancyButton{
+	height: 42px;
+	width: 42px;
+	background-image: url('/ImageRepository/Path?filePath=/documents/Intranet/19/Instagram.png');
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+.fancyButton56.fancyButton:hover,.fancyButton56.fancyButton:focus,.fancyButton56.fancyButton:active,.fancyButton56.fancyButton.hover{
+	background-image: url('/ImageRepository/Path?filePath=/documents/Intranet/19/Instagram2.png');
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+.fancyButton56.fancyButton:link > span,.fancyButton56.fancyButton:visited > span, .fancyButton56div.fancyButton > span{
+}
+.fancyButton56.fancyButton:hover > span,.fancyButton56.fancyButton:focus > span,.fancyButton56.fancyButton:active > span,.fancyButton56.fancyButton.hover > span{
+}
+.fancyButton56.fancyButton .text{
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+opacity:0.0;}
+.fancyButton56.fancyButton:hover .text,.fancyButton56.fancyButton:focus .text,.fancyButton56.fancyButton:active .text,.fancyButton56.fancyButton.hover .text{
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+
+
+ 
+
+
+	
+		
+			   
+		
+	
+
+		.fancyButton57.fancyButton:link,.fancyButton57.fancyButton:visited, .fancyButton57div.fancyButton{
+	height: 42px;
+	width: 42px;
+	background-image: url('/ImageRepository/Path?filePath=/documents/Intranet/19/Twitter.png');
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+.fancyButton57.fancyButton:hover,.fancyButton57.fancyButton:focus,.fancyButton57.fancyButton:active,.fancyButton57.fancyButton.hover{
+	background-image: url('/ImageRepository/Path?filePath=/documents/Intranet/19/Twitter2.png');
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+.fancyButton57.fancyButton:link > span,.fancyButton57.fancyButton:visited > span, .fancyButton57div.fancyButton > span{
+}
+.fancyButton57.fancyButton:hover > span,.fancyButton57.fancyButton:focus > span,.fancyButton57.fancyButton:active > span,.fancyButton57.fancyButton.hover > span{
+}
+.fancyButton57.fancyButton .text{
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+opacity:0.0;}
+.fancyButton57.fancyButton:hover .text,.fancyButton57.fancyButton:focus .text,.fancyButton57.fancyButton:active .text,.fancyButton57.fancyButton.hover .text{
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+
+
+ 
+				
+			
+		
+	
+			
+
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+
+
+		
+			$(document).ready(function () {
+				setWidgetServiceClicking($("#widgetShareHeaderff451651-1f5b-451a-af20-1e1304d63fcf"), true, function () {
+					var $widgetBody = $('#widgetShareBodyff451651-1f5b-451a-af20-1e1304d63fcf');
+
+					if ($widgetBody.is(':visible')) {
+						var menuItems = $('.widgetItem a', $widgetBody);
+
+						$(menuItems[0]).focus();
+
+						$('.widgetItem', $widgetBody).unbind("keydown").bind("keydown", function (e) {
+
+							if (e.which === 9) {
+								var index = menuItems.index(e.target);
+
+								if ((index === 0 && e.shiftKey) || (index === (menuItems.length - 1) && !e.shiftKey)) {
+									$("#widgetShareHeaderff451651-1f5b-451a-af20-1e1304d63fcf").trigger('click').focus();
+								}
+							}
+			});
+					} else {
+						$('.widgetItem', $widgetBody).unbind("keydown");
+					}
+				});
+			});
+		
+.widgetOptionSet14.widget {
+padding:.25em .9em 0 .9em;
+}
+	
+			
+				
+	
+    
+        
+	
+		
+                Facebook
+                Twitter
+                Pinterest
+                Delicious
+                Blogger
+                LinkedIn
+		
+	
+
+        
+    
+
+	
+
+
+
+	 
+
+	 
+
+			 
+
+
+	
+
+
+
+
+
+
+		
+			
+				$(window).on("load", function () {
+					$.when(window.Pages.rwdSetupComplete)
+						.done(function () {
+							renderBanner('banner1-2',
+								'banner1',
+								{"BannerOptionID":2,"ThemeID":1,"SlotName":"banner1","Name":"Default","IsDefault":true,"BannerMode":1,"SlideShowSlideTiming":null,"SlideshowTransition":0,"SlideShowTransitionTiming":null,"ImageScale":false,"ImageAlignment":2,"ImageScroll":true,"MuteSound":true,"VideoType":0,"Status":40,"SlideshowControlsPosition":0,"SlideshowControlsAlignment":0,"SlideshowBannerControlsColorScheme":0,"DisplayVideoPauseButton":false,"VideoPauseButtonAlignment":1,"VideoPauseButtonControlsAlignment":0,"VideoPauseButtonStyle":"#FFFFFF","VideoPauseButtonBackgroundStyle":"#000000","VideoPauseButtonAlignmentClass":"alignRight viewport","DisplaySlideshowPauseButton":true,"SlideshowControlsColor":"#FFFFFF","SlideshowControlsBackgroundColor":"#000000","SlideshowPauseButtonClass":"isHidden","BannerImages":[{"BannerImageID":56,"BannerOptionID":2,"FileName":"/ImageRepository/Document?documentID=29","Height":463,"Width":1800,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":1,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":null}],"BannerVideos":[],"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/"},
+								{"BannerImageID":56,"BannerOptionID":2,"FileName":"/ImageRepository/Document?documentID=29","Height":463,"Width":1800,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":1,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":null},
+								'/App_Themes/Interior/Images/',
+								'<img alt="" class="bannerObject" src="/ImageRepository/Document?documentID=29" />');
+						});
+				});
+			
+
+
+
+
+            
+        
+    
+
+
+
+
+
+	
+		
+			Loading
+			
+				
+					
+				
+			
+		
+		
+			
+				
+				Loading
+			
+		
+		
+			Do Not Show Again
+			Close
+		
+	
+
+
+
+
+
+
+
+		$(document).ready(function () {
+			var filter = {
+				targetId: '',
+				targetType: 0
+			}
+
+			new SplashModalRender().triggerRender(filter);
+		});
+
+
+	
+	function dynamicStretchContainers () {Core.Layout.stretchContainers('#structuralContainer2, #structuralContainer1, #structuralContainer9');}
+
+
+
+
+
+
+    
+    
+
+
+    
+        $(function () {
+            document.cookie = "responsiveGhost=0; path=/";
+        });
+        $(window).on("load", function () {
+            $('body').addClass('doneLoading').removeClass('hideContent');
+
+            if ($('#404Content').length > 0)
+                $('div#bodyWrapper').css('padding', '0px');
+        });
+    
+
+    
+        
+            body.hideContent {
+                opacity: 1 !important;
+            }
+        
+    
+
+        
+
+	
+
+		
+			Arrow Left
+			
+		
+
+		
+			Arrow Right
+			
+		
+
+	
+
+    loadCSS('//fonts.googleapis.com/css?family=Montserrat:700,regular|Open+Sans:600,700,regular|Work+Sans:500,600,700,regular|');
+    
+
+    []
+        
+            
+                
+                    Slideshow Left Arrow
+                    
+                        
+                    
+                
+                
+                    Slideshow Right Arrow
+                    
+                        
+                    
+                
+            
+        
+    
+	
+	
+
+    
+
+

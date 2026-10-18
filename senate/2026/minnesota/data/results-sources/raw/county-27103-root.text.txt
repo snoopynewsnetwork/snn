@@ -1,0 +1,2736 @@
+
+
+
+
+
+	
+
+				(function(w,d,s,l,i){w.GAMeasurementID='G-TTHB5ZTY0M';w[l]=w[l]||[];w[l].push({'gtm.start':
+				new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+				j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+				'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+				})(window,document,'script','cpDataLayerGA4','GTM-K73C5PS');
+				
+				
+					var enableTelemetry = 'false'
+					var aiConfig = {
+					instrumentationKey: '1cde048e-3185-4906-aa46-c92a7312b60f'						
+					}
+					var appInsights = window.appInsights || function (a) { function b(a) { c[a] = function () { var b = arguments; c.queue.push(function () { c[a].apply(c, b) }) } } var c = { config: a }, d = document, e = window; setTimeout(function () { var b = d.createElement('script'); b.src = a.url || 'https://js.monitor.azure.com/scripts/a/ai.0.js', d.getElementsByTagName('script')[0].parentNode.appendChild(b) }); try { c.cookie = d.cookie } catch (a) { } c.queue = []; for (var f = ['Event', 'Exception', 'Metric', 'PageView', 'Trace', 'Dependency']; f.length;)b('track' + f.pop()); if (b('setAuthenticatedUserContext'), b('clearAuthenticatedUserContext'), b('startTrackEvent'), b('stopTrackEvent'), b('startTrackPage'), b('stopTrackPage'), b('flush'), !a.disableExceptionTracking) { f = 'onerror', b('_' + f); var g = e[f]; e[f] = function (a, b, d, e, h) { var i = g && g(a, b, d, e, h); return !0 !== i && c['_' + f](a, b, d, e, h), i } } return c }(aiConfig);
+					window.appInsights = appInsights, appInsights.queue && 0 === appInsights.queue.length;
+					// Add telemetry initializer
+					appInsights.queue.push(function() {
+						appInsights.context.addTelemetryInitializer(function(envelope) {
+							var telemetryItem = envelope.data.baseData;
+							// To check the telemetry item’s type:
+							if (!false)
+							{
+								//If the telemetry is not enabled, we still want to capture Google map custom event, so only allow that
+								if (envelope.name.indexOf('.Event') == -1)
+									return false;
+							}
+						});
+					});						
+					appInsights.trackPageView();
+				
+	
+		function populateAntiForgery(token) {
+			var input = document.createElement("input");
+			input.name = "__RequestVerificationToken";
+			input.type = "hidden";
+			input.value = token;
+			var absPat = /^https?:\/\/|^\/\//i;
+			var forms = document.getElementsByTagName("form");
+			for (var i = 0; i < forms.length; i++) {
+				if (forms[i].method == "post" &&
+					!forms[i].querySelector('[name="__RequestVerificationToken"]') &&
+					!absPat.test(forms[i].getAttribute("action"))) {
+					forms[i].appendChild(input.cloneNode());
+				}
+			}
+		}
+
+		function getAntiForgeryToken(callback, error) {
+			var xhr = new XMLHttpRequest();
+			xhr.open("GET", "/antiforgery");
+			xhr.addEventListener("load", function() {
+				try {
+					if (this.status !== 200) {
+						throw Error("Invalid status. Could not retrieve antiforgery token.");
+					}
+					var obj = JSON.parse(this.responseText);
+					callback(obj.token);
+				} catch (e) {
+					typeof error === "function" && error(e);
+				}
+			});
+			xhr.send();
+		}
+
+		getAntiForgeryToken(function(token) {
+			if (document.readyState === "complete"
+				|| document.readyState === "loaded" 
+				|| document.readyState === "interactive") {
+				populateAntiForgery(token);
+				return;
+			}
+			document.addEventListener("DOMContentLoaded", function() {
+				populateAntiForgery(token);
+			}, false);
+		}, console.error);
+	
+			
+
+	
+		window.departmentHeader = {};
+		window.pageSectionTracker = {"PageSectionTrackerId":1,"PageSectionTrackerName":"Home"};
+		window.isResponsiveEnabled = true;
+		window.isRemoveSetHeights= false;
+		if (window.isRemoveSetHeights) {
+			document.documentElement.className += ' removeSetHeights';
+		}
+		window.mainMenuMediaQuery = 'screen and (max-width: 40em)';
+		window.isMobileBrowserIncludingTablets = false;
+		window.fixedResponsiveMenu = false;
+		window.fullWidthResponsiveMenu = false;
+		window.responsiveMenuHeight = '';
+		window.responsiveMenuFontSize = '';
+		window.isContentAdvisor = false;
+		(function () {
+			window.setSizeCookie = function () {
+				document.cookie = "dpi=" + window.devicePixelRatio + "; path=/";
+				document.cookie = "viewportWidth=" + window.innerWidth + "; path=/";
+				document.cookie = "viewportHeight=" + window.innerHeight + "; path=/";
+				if (screen && screen.width && screen.height) {
+					document.cookie = "screenWidth=" + screen.width + "; path=/";
+					document.cookie = "screenHeight=" + screen.height + "; path=/";
+				}
+				document.cookie = "responsiveGhost=1; path=/";
+			};
+
+			setSizeCookie();
+		}());
+	
+		
+
+	
+	
+	
+
+	
+	
+	
+	
+		Nicollet County, MN - Official Website | Official Website
+
+		
+		
+			
+	
+	
+
+	
+	
+	
+	
+	<!--
+	var intCountryCode = 840;
+	var order = '';
+//-->
+	
+		
+
+	
+	
+		window.Pages = window.Pages || {};
+		// FrontEnd RWD initialization
+		window.Pages.rwdReady = $.Deferred();
+		window.Pages.toolBarDeferred = $.Deferred();
+		window.Pages.rwdSetupComplete = $.Deferred();
+		window.Pages.megaMenuLoaded = $.Deferred();
+		window.Pages.angularToolbarComplete = $.Deferred();
+		window.Pages.frontEndToolbarComplete = $.Deferred();
+	
+	
+	
+	
+	
+	
+	
+
+
+
+
+	
+	
+	
+	
+
+	
+		setEditorVariables(false, 840);
+		function getPrintPreviewType() { return 0; } function printPreview() {pPreview(getPrintPreviewType()); }
+	
+	
+
+
+
+    jQuery(document).click(function (event) {
+	var target = jQuery(event.target);
+	if (target.attr('src') && target.parents('.image').length && target.parents('.widget').length) {
+		var text = target.attr('title');
+		
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Image',
+				eventAction: 'Image - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.is('button') || target.hasClass('button') || target.parents().hasClass('button')) {
+		var text = "";
+		if (target.parents('.button')[0]) {
+			text = target.parents('.button').first().text();
+		} else if (target.text().length) {
+			text = target.text();
+		} else if (target.attr('title').length) {
+			text = target.attr('title');
+		}
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Button',
+				eventAction: 'Button - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetCustomHtml').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Custom Html',
+				eventAction: 'Custom Html Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.editor').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Editor',
+				eventAction: 'Editor Link Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.GraphicLinks').length) {
+		var text = "";
+		var targetGraphicLink = target;
+		if (target.hasClass('widgetGraphicLinksLink')) {
+			targetGraphicLink = jQuery(target.children()[0]);
+		}
+		if (targetGraphicLink.hasClass('text')) {
+			text = targetGraphicLink.text();
+		} else if (targetGraphicLink.attr('src').length) {
+			if (targetGraphicLink.attr('alt').length) {
+				text = targetGraphicLink.attr('alt');
+			} else {
+				text = targetGraphicLink.attr('src');
+			}
+		} else {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Graphic Links',
+				eventAction: 'Graphic Link - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.InfoAdvanced').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Info Advanced',
+				eventAction: 'Info Advanced Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.list').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'List',
+				eventAction: 'List Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.megaMenuItem').length || target.parents('.topMenuItem').length) {
+		var megaMenuText = jQuery('.topMenuItem.mouseover').find('span').text();
+		var breadCrumbs = [];
+		jQuery('.breadCrumbs > li').each(function () {
+			 breadCrumbs.push(this.textContent);
+		});
+		var pageTitle = breadCrumbs.join('>');
+		var subTitleText = target.parents('.megaMenuItem').children('.widgetTitle').children().text();
+		var text = "";
+		if (pageTitle) {
+			text += pageTitle + " | ";
+		} else {
+			text += document.title + ' - ';
+		}
+		if (target.text() == "" && megaMenuText == "") {
+			text += "N/A";
+		} else if (target.text().length && megaMenuText.length) {
+			if (megaMenuText == target.text()) {
+				text += megaMenuText;
+			} else {
+				text += megaMenuText + " - " + subTitleText + " - " + target.text();
+			}
+		} else if (target.text() == "") {
+			text += megaMenuText;
+		} else {
+			text += target.text();
+		}
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Mega Menu',
+				eventAction: 'Mega Menu : ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetNewsFlash').length && target.parents('.widgetItem').length) {
+		var text = jQuery(target.parents('.widgetItem')[0]).find('.widgetTitle').children().text();
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'News Flash',
+				eventAction: 'News Flash - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.hasClass('widgetQuickLinksLink') || target.find('.widgetQuickLinksLink').length) {
+		var text = target.text();
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Quick Links',
+				eventAction: 'Quick Links - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.attr('src') && target.parents('.cpSlideshow').length) {
+		var text = target.attr('title');
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Slideshow',
+				eventAction: 'Slideshow - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetText').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Text',
+				eventAction: 'Text Link Clicked',
+				eventLabel: window.location.href
+			});
+	}
+});
+	
+	
+		
+		
+			
+				
+			
+		
+	
+	
+		
+	
+	
+		
+			
+		
+	
+
+    
+
+Skip to Main Content
+
+    
+
+        
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+        
+                
+                    
+
+
+
+
+
+    
+        Create a Website Account - Manage notification subscriptions, save form progress and more.   
+        
+	        Website Sign In
+        
+    
+
+
+    $(document).ready(function () {
+        $('#signedOutToolbarCreateProfileButton').click(function (event) {
+            event.preventDefault();
+            window.location.href = '/MyAccount/ProfileCreate?from=url&url=/&dn=' + window.location.origin;
+        });
+
+			
+				$('#loggedOutToolbarSignInButton').click(function (event) {
+					event.preventDefault();
+					window.location.href = '/MyAccount/?from=url&url=' + encodeURIComponent(window.location.href.replace(window.location.origin, '')) + '&dn=' + window.location.host;
+				});
+			
+
+		if ('False' == 'True') {
+            $('#loggedOutToolbarSignInButton').hide();
+		}
+    })
+
+
+
+                
+            
+                
+                
+
+
+
+
+
+
+
+
+				
+	
+				                
+
+						
+	
+	
+		
+
+
+
+
+	padding-right: 1em;
+
+
+	
+		
+				
+	
+	
+		
+				
+					
+
+ 
+
+
+ 
+
+
+ 
+
+				
+			
+		
+	
+			
+
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+
+	
+	
+	
+	
+
+		$(document).ready(function () {
+			try {
+				// Minimum characters required before performing a search/autocomplete
+				var minPrefixLength = 3;
+				var autoCompleteDebounceDelay = 500;
+				var searchFieldSelector = "#searchField" + '6426d750-e773-4fea-b355-4ac7a70a6bc7';
+				var checkboxSelector = "#ysnSearchOnlyDept" + '6426d750-e773-4fea-b355-4ac7a70a6bc7';
+				var buttonSelector = ".widgetSearchButton" + '6426d750-e773-4fea-b355-4ac7a70a6bc7';
+				var autoCompleteCache = {};
+				var autoCompleteCacheKeys = [];
+				var autoCompleteCacheLimit = 25;
+				var currentAutoCompleteRequest = null;
+				var currentAutoCompleteRequestKey = null;
+				var autoCompleteDebounceTimer = null;
+				var autoCompleteDebounceKey = null;
+				var pendingAutoCompleteResponses = [];
+
+				function normalizeAutoCompleteTerm(term) {
+					return $.trim((term || "") + "").replace(/\s+/g, " ");
+				}
+
+				function shouldSearch(term) {
+					return normalizeAutoCompleteTerm(term).length >= minPrefixLength;
+				}
+
+				function getAutoCompleteUrl() {
+					return '/Search/AutoComplete' + ($(checkboxSelector).is(':checked') || false? '?departmentId=0' : '');
+				}
+
+				function getAutoCompleteCacheKey(requestUrl, term) {
+					return requestUrl + "|" + term.toLowerCase();
+				}
+
+				function cacheAutoCompleteResult(cacheKey, data) {
+					if (!Object.prototype.hasOwnProperty.call(autoCompleteCache, cacheKey)) {
+						autoCompleteCacheKeys.push(cacheKey);
+						if (autoCompleteCacheKeys.length > autoCompleteCacheLimit) {
+							delete autoCompleteCache[autoCompleteCacheKeys.shift()];
+						}
+					}
+					autoCompleteCache[cacheKey] = data;
+				}
+
+				function respondToPendingAutoComplete(data) {
+					var responses = pendingAutoCompleteResponses;
+					pendingAutoCompleteResponses = [];
+					for (var i = 0; i < responses.length; i++) {
+						responses[i](data);
+					}
+				}
+
+				function cancelPendingAutoComplete() {
+					clearTimeout(autoCompleteDebounceTimer);
+					autoCompleteDebounceKey = null;
+					if (currentAutoCompleteRequest != null) {
+						currentAutoCompleteRequest.abort();
+						currentAutoCompleteRequest = null;
+					}
+					currentAutoCompleteRequestKey = null;
+					respondToPendingAutoComplete([]);
+				}
+
+				function createWidgetAutoCompleteSource(options) {
+					return function (request, response) {
+						var term = normalizeAutoCompleteTerm(request.term);
+						if (!options.shouldSearch(term)) {
+							response([]);
+							return;
+						}
+
+						var requestUrl = options.url();
+						var cacheKey = getAutoCompleteCacheKey(requestUrl, term);
+						if (Object.prototype.hasOwnProperty.call(autoCompleteCache, cacheKey)) {
+							response(autoCompleteCache[cacheKey]);
+							if (options.success) {
+								options.success(autoCompleteCache[cacheKey]);
+							}
+							return;
+						}
+
+						if (currentAutoCompleteRequestKey === cacheKey || autoCompleteDebounceKey === cacheKey) {
+							pendingAutoCompleteResponses.push(response);
+							return;
+						}
+
+						cancelPendingAutoComplete();
+						autoCompleteDebounceKey = cacheKey;
+						pendingAutoCompleteResponses.push(response);
+						autoCompleteDebounceTimer = setTimeout(function () {
+							autoCompleteDebounceKey = null;
+							currentAutoCompleteRequestKey = cacheKey;
+							currentAutoCompleteRequest = $.ajax({
+								url: requestUrl,
+								dataType: "json",
+								timeout: options.timeout,
+								data: {
+									term: term,
+								},
+								success: function (data) {
+									if (currentAutoCompleteRequestKey === cacheKey) {
+										cacheAutoCompleteResult(cacheKey, data);
+										respondToPendingAutoComplete(data);
+										if (options.success) {
+											options.success(data);
+										}
+									}
+								},
+								error: function (xmlhttprequest, textstatus, message) {
+									if (textstatus === "abort") {
+										return;
+									}
+
+									if (options.error) {
+										options.error(xmlhttprequest, textstatus, message);
+									}
+
+									respondToPendingAutoComplete([]);
+								},
+								complete: function (xmlhttprequest) {
+									if (currentAutoCompleteRequest === xmlhttprequest) {
+										currentAutoCompleteRequest = null;
+										currentAutoCompleteRequestKey = null;
+									}
+								}
+							});
+						}, options.delay);
+					};
+				}
+
+				// click handler for search buttons
+				$(buttonSelector).click(function (e) {
+					e.preventDefault();
+					var $btn = $(this);
+					var $field = $btn.siblings(".widgetSearchBox");
+					var term = $field.val() + "";
+					if (!shouldSearch(term)) {
+						// do nothing until user types enough characters
+						$field.focus();
+						return;
+					}
+
+					if ($(checkboxSelector).is(':checked') || false)
+					{
+						doWidgetSearch($.trim(term), Number(0));
+					}
+					else {
+						doWidgetSearch($.trim(term), 0);
+					}
+				});
+
+				// enter key handler for the search field
+				$(searchFieldSelector).keypress(function (e) {
+					var code = e.which || e.keyCode;
+					if (code === 13) {
+						e.preventDefault();
+						var $this = $(this);
+						var term = $this.val() + "";
+						if (!shouldSearch(term)) {
+							// do nothing until user types enough characters
+							$this.focus();
+							return false;
+						}
+
+						if ($(checkboxSelector).is(':checked') || false) {
+							doWidgetSearch($.trim(term), Number(0));
+						} else {
+							doWidgetSearch($.trim(term), 0);
+						}
+						return false;
+					}
+					return true;
+				});
+
+				// autocomplete: set minLength and guard source
+				if (true) {
+					var $searchField = $(searchFieldSelector).autocomplete({
+						minLength: minPrefixLength,
+						source: createWidgetAutoCompleteSource({
+							delay: autoCompleteDebounceDelay,
+							timeout: 10000,
+							shouldSearch: shouldSearch,
+							url: getAutoCompleteUrl,
+							success: function () {
+								$('.autoCompleteError').remove();
+							},
+							error: function (xmlhttprequest, textstatus, message) {
+								if (textstatus === "timeout") {
+									if ($(searchFieldSelector).siblings('.autoCompleteError').length == 0)
+										$('<span class="autoCompleteError"><p class="alert error">Search autocomplete is currently not responding. Please try again later.</p></span>').insertAfter($(searchFieldSelector));
+								}
+							}
+						}),
+						html: true,
+						delay: 0,
+						select: function (event, ui) {
+							$(this).val(ui.item.value);
+							$(this).next().click();
+						}
+					});
+
+					$searchField.data("ui-autocomplete")._renderItem = function (ul, item) {
+						return $("<li class=\"itemList\"></li>")
+							.data("ui-autocomplete-item", item)
+							.append("<a>" + item.label + "</a>")
+							.appendTo(ul);
+					};
+				}
+
+				// keep searchBtnApplyQuery consistent with prefix rule
+				window.searchBtnApplyQuery = function() {
+					var $field = $(searchFieldSelector);
+					var term = $field.val() + "";
+					if (shouldSearch(term)) {
+						// update href for the icon/button (if present)
+						var btn = document.getElementById("btnSearchIcon");
+						if (btn) btn.href = "/Search?searchPhrase=" + encodeURIComponent($.trim(term));
+					} else {
+						var btn = document.getElementById("btnSearchIcon");
+						if (btn) btn.href = "#";
+					}
+				};
+			}
+			catch(e) {} //we're going to eat this error. Autocomplete won't work but we dont wan't to break anything else on the page.
+		});
+	
+	.widgetOptionSet15.widget {
+min-width: 350px;
+}
+
+	
+				
+		
+			
+						
+
+			Search
+		
+
+	
+
+
+
+	  
+		.widgetSearch ::-webkit-input-placeholder {
+		color: #003a6a;
+	  }
+		.widgetSearch :-moz-placeholder { /* Firefox 18- */
+	   color: #003a6a;
+	}
+		.widgetSearch ::-moz-placeholder {  /* Firefox 19+ */
+	   color: #003a6a;
+	}
+	.widgetSearch :-ms-input-placeholder {
+	   color: #003a6a;
+	}
+	
+
+	.widgetSearch .widgetBody .widgetSearchBox6426d750-e773-4fea-b355-4ac7a70a6bc7
+	{
+		color: #003a6a;
+		height:  45px;
+padding-left: 1.5em;
+margin-left: 1em;
+background: #f1f1f1;
+border: none;
+font: 1em Source Sans Pro;
+	}
+	.widgetSearch .widgetBody .widgetSearchButton6426d750-e773-4fea-b355-4ac7a70a6bc7
+	{
+		margin: 10px;
+	}
+	.widgetSearch .widgetSearch-onlyDept6426d750-e773-4fea-b355-4ac7a70a6bc7
+	{
+		display: inline-block;
+		color: #333;
+		
+		
+		 padding-top: 10px;
+	}
+	#ysnSearchOnlyDept6426d750-e773-4fea-b355-4ac7a70a6bc7
+	{
+		position: relative;
+		top: .125em;
+	}
+
+
+
+
+
+
+
+
+
+	//Updates search icons href to have the correct queryString
+	function searchBtnApplyQuery() {
+		document.getElementById("btnSearchIcon").href = "/Search?searchPhrase=" + document.getElementById("searchField6426d750-e773-4fea-b355-4ac7a70a6bc7").value;
+	}
+
+
+
+
+	 
+
+	 
+
+			 
+
+
+	
+
+    About Us  			    Your Government  			    Services  			    How Do I…?  			    Connect With Us  			
+
+
+
+	
+		(function () {
+			function setupMenu() {
+				const menuID = 'mainNavMenu';
+				const menuType = MAIN_MENU;
+
+				//setup menu manager properties for main menu
+				if (!menuManager.mobileMainNav && false)
+					menuManager.adjustMainItemsWidth('#' + menuID);
+				menuManager.isMainMenuEditable = false;
+				menuManager.mainMenuMaxSubMenuLevels = 4;
+				menuManager.setMOMMode(2, menuType);
+
+				//Init main menu
+				const setupDraggable = menuManager.isMainMenuEditable;
+				const urlToGetHiddenMenus = '/Pages/MenuMain/HiddenMainSubMenus?pageID=1&moduleID=&themeID=19&menuContainerID=mainNav';
+
+				menuManager.setupMenu(menuID, 'mainNav', menuType, setupDraggable, urlToGetHiddenMenus);
+				menuManager.mainMenuInit = true;
+				menuManager.mainMenuTextResizer = true;
+				if (1.00 > 0)
+					menuManager.mainMenuTextResizerRatio = 1.00;
+				if (window.isResponsiveEnabled)
+					menuManager.mainMenuReady.resolve();
+
+			}
+
+			if (document.readyState === "complete"
+				|| document.readyState === "loaded"
+				|| document.readyState === "interactive") {
+				setupMenu();
+				return;
+			}
+
+			document.addEventListener("DOMContentLoaded", setupMenu);
+		})();
+	
+
+
+	
+				                
+
+
+
+	
+	
+				                
+
+
+
+	
+	
+				                
+
+
+
+	
+	
+				                
+
+
+
+	
+	
+				                
+
+
+
+	
+
+
+
+	
+				                
+
+						
+	
+	
+		
+
+	
+		
+		
+	
+		
+			
+
+	
+		
+					
+
+
+							
+
+										
+		
+					
+						
+							
+								
+							
+						
+						
+							
+								
+							
+						
+					
+
+
+	
+	
+	
+		// <!--
+		var $1 = typeof $ == 'undefined' ? window.parent.$ : $;
+		$1(document).ready(function () {
+			new Slideshow().generate('1959','1','60',false,false,0);
+			$('#ssPlay-btn-1959').addClass('isHidden');
+		});
+		var $pages = typeof window.Pages == 'undefined' ? window.parent.Pages : window.Pages;
+		$1.when($pages.rwdReady).done(function () {
+			var divSlideshowID = 'divSlideshow1959';
+			var mediaQuerySize = 25;
+			if (mediaQuerySize == 0)
+				mediaQuerySize = 25; //default for not widget slide show
+			var mediaElementQuery = '#' + divSlideshowID + ':media(this-min-width:' + mediaQuerySize + 'em)';
+			var $cpMedia = typeof window.cpMedia == 'undefined' ? window.parent.cpMedia : window.cpMedia;
+			var $divSlideShow = $('#' + divSlideshowID);
+			var $arrows = $divSlideShow.find('a.arrow');
+			var $arrowsNew = $divSlideShow.find('a.arrowNew');
+			var $divExternalSlideshow = $('.bannerSlideshowControlsNew').last();
+			var $overlays = $(document.getElementsByName('captionOverlay_1959'));
+
+			if(window.isMobileBrowserIncludingTablets){
+				$overlays.each(function (overlay) {
+					$(overlay).removeClass('overlay')
+				});
+			}
+
+			$cpMedia.unregister(mediaElementQuery)
+				.register(mediaElementQuery,
+				{
+				deferSetup: false,
+				setup: function () {
+					cpMedia.diag('$(element).removeClass("wide"), mediaQuery: ' + mediaElementQuery);
+					$divSlideShow.removeClass('wide').addClass('narrow');
+						if ($divExternalSlideshow.length > 0) {
+							$divExternalSlideshow.hide();
+						}
+					if ($arrows.length > 0) {
+						$arrows.hide();
+						if (typeof ($$) !== 'undefined') {
+								$$('#' + divSlideshowID)
+									.on('swipeRight',
+										function (e, a) {
+								$arrows.filter('.prev').click();
+							});
+								$$('#' + divSlideshowID)
+									.on('swipeLeft',
+										function (e) {
+								$arrows.filter('.next').click();
+							});
+						}
+					}
+						if ($arrowsNew.length > 0) {
+
+							if (!(true && !window.isMobileBrowserIncludingTablets)) {
+							$arrowsNew.hide();
+							}
+							if (typeof ($$) !== 'undefined') {
+								$$('#' + divSlideshowID)
+									.on('swipeRight',
+										function (e, a) {
+											$arrowsNew.filter('.prev').click();
+										});
+								$$('#' + divSlideshowID)
+									.on('swipeLeft',
+										function (e) {
+											$arrowsNew.filter('.next').click();
+										});
+							}
+						}
+						if ($overlays.length > 0 && window.isMobileBrowserIncludingTablets) {
+							if (2 == 1) {
+								$overlays.hide();
+							} else if (2 == 2) {
+								$overlays.removeClass('overlay');
+							}
+						}
+				},
+				match: function () {
+					cpMedia.diag('$(element).addClass("wide"), mediaQuery: ' + mediaElementQuery);
+					$divSlideShow.addClass('wide').removeClass('narrow');
+					if ($divExternalSlideshow.length > 0 && !$divExternalSlideshow.hasClass('none')) {
+						$divExternalSlideshow.show();
+					}
+					if ($arrows.length > 0) {
+						$arrows.show();
+						if (typeof ($$) !== 'undefined') {
+							$$('#' + divSlideshowID).off('swipeRight');
+							$$('#' + divSlideshowID).off('swipeLeft');
+						}
+					}
+					if ($arrowsNew.length > 0) {
+						$arrowsNew.show();
+						if (typeof ($$) !== 'undefined') {
+							$$('#' + divSlideshowID).off('swipeRight');
+							$$('#' + divSlideshowID).off('swipeLeft');
+						}
+					}
+					if ($overlays.length > 0) {
+						if (2 == 1) {
+							$overlays.show();
+					} else if (2 == 2 && !window.isMobileBrowserIncludingTablets) {
+							$overlays.addClass('overlay');
+						}
+					}
+				},
+				unmatch: function () {
+					cpMedia.diag('$(element).removeClass("wide"), mediaQuery: ' + mediaElementQuery);
+					$divSlideShow.removeClass('wide').addClass('narrow');
+					if ($divExternalSlideshow.length > 0) {
+						$divExternalSlideshow.hide();
+					}
+					if ($arrows.length > 0) {
+						$arrows.hide();
+
+						if (typeof ($$) !== 'undefined') {
+							$$('#' + divSlideshowID).on('swipeRight', function (e) {
+								$arrows.filter('.prev').click();
+							});
+							$$('#' + divSlideshowID).on('swipeLeft', function (e) {
+								$arrows.filter('.next').click();
+							});
+						}
+					}
+					if ($arrowsNew.length > 0) {
+						if (typeof ($$) !== 'undefined') {
+							$$('#' + divSlideshowID).on('swipeRight', function (e) {
+								$arrowsNew.filter('.prev').click();
+							});
+							$$('#' + divSlideshowID).on('swipeLeft', function (e) {
+								$arrowsNew.filter('.next').click();
+							});
+						}
+					}
+					if ($overlays.length > 0 && window.isMobileBrowserIncludingTablets) {
+						if (2 == 1) {
+							$overlays.hide();
+						} else if (2 == 2) {
+							$overlays.removeClass('overlay');
+						}
+					}
+				}
+			});
+		});
+		// -->
+	
+
+
+			
+
+
+	(function () {
+		const widgetHandlers = function (e) {
+			$('.slideshowOptions.nonEmpty').unbind('click').click(function (e) {
+				var $this = $(this);
+				// If the parent is a slider we need to tweak our "this" reference to refer to the options handle. 
+				// This came about, because we needed to use slider images to trigger options. - JE
+				if ($this.parent().hasClass('cpSlider')) {
+					$this = $this.closest('.widget.slideShow').siblings('.handle.options');
+				}
+
+				//Set values for global variables for slideshow.
+				if ($this.attr('data-widgetID').length !== 0) {
+					parentID_Slideshow = 'slideshow' + $this.attr('data-widgetID');
+				}
+				callbackfnSlideshowSave = null;
+				var pageID = ContentCollectionInstance.PageID;
+				var moduleID = ContentCollectionInstance.ModuleID;
+				var qs = '?pageID=' + pageID + '&moduleID=' + moduleID;
+				//Set slideshow widgetID
+				ContentCollectionInstance.SlideshowWidgetID = $this.siblings('.widgetID').val();
+				$popUp_Slideshow = openCpModal({
+					title: 'Slideshow',
+					className: 'newCP adminWrap cpPopOver admin modalSlideshow',
+					isFrontEnd: false,
+					useIframe: false,
+					draggable: true,
+					url: '/Slideshow/SlideshowConfiguration/' + $this.siblings('.slideShow').find('.hdnSlideshowUniqueID').val() + qs
+				});
+			});
+
+			$('.slideshowOptions.empty').unbind('click').click(function (e) {
+				var $this = $(this);
+				parentID_Slideshow = $this.parents('.slideShow').attr('id');
+				var pageID = ContentCollectionInstance.PageID;
+				var moduleID = ContentCollectionInstance.ModuleID;
+				var qs = '?pageID=' + pageID + '&moduleID=' + moduleID;
+				ContentCollectionInstance.SlideshowWidgetID = $(this).parents('.slideShow').attr('data-widgetID');
+				$popUp_Slideshow = openCpModal({
+					title: 'Slideshow',
+					className: 'newCP adminWrap cpPopOver admin modalSlideshow',
+					isFrontEnd: false,
+					useIframe: false,
+					draggable: true,
+					url: '/Slideshow/SlideshowConfiguration/' + $(this).next('.hdnSlideshowUniqueID').val() + qs
+				});
+			});
+		};
+
+		if (document.readyState === "complete"
+			|| document.readyState === "loaded"
+			|| document.readyState === "interactive") {
+			widgetHandlers();
+			return;
+		}
+
+		document.addEventListener("DOMContentLoaded", widgetHandlers);
+	})();
+
+	
+
+
+
+	function SlideshowWidgetCallback(widgetID, response) {
+		if (window.ContentCollectionInstance.IsWorkingCopy) {
+			//Remove this field since the partial view adds it back.
+			$('#slideshow' + widgetID).find('.hdnSlideshowUniqueID').remove();
+			if ($('#slideshow' + widgetID).find('.cpSlideshow').length > 0)
+				$('#slideshow' + widgetID).find('.cpSlideshow').replaceWith(response);
+			else
+				$('#slideshow' + widgetID).find('.slideshowOptions.empty.placeholder').replaceWith(response);
+
+			contentUpdated();
+		}
+		else {
+			ContentCollectionInstance.reloadContent();
+		}
+
+		$('.slideshowOptions.nonEmpty').unbind('click').click(function (e) {
+			var $this = $(this);
+			// If the parent is a slider we need to tweak our "this" reference to refer to the options handle. 
+			// This came about, because we needed to use slider images to trigger options. - JE
+			if ($this.parent().hasClass('cpSlider')) {
+				$this = $this.closest('.widget.slideShow').siblings('.handle.options');
+			}
+
+			//Set values for global variables for slideshow.
+			if ($this.attr('data-widgetID').length !== 0) {
+				parentID_Slideshow = 'slideshow' + $this.attr('data-widgetID');
+			}
+			callbackfnSlideshowSave = null;
+			var pageID = ContentCollectionInstance.PageID;
+			var moduleID = ContentCollectionInstance.ModuleID;
+			var qs = '?pageID=' + pageID + '&moduleID=' + moduleID;
+			//Set slideshow widgetID
+			ContentCollectionInstance.SlideshowWidgetID = $this.siblings('.widgetID').val();
+			$popUp_Slideshow = openCpModal({
+				title: 'Slideshow',
+				className: 'newCP adminWrap cpPopOver admin modalSlideshow',
+				isFrontEnd: false,
+				useIframe: false,
+				draggable: true,
+				url: '/Slideshow/SlideshowConfiguration/' + $this.siblings('.slideShow').find('.hdnSlideshowUniqueID').val() + qs
+			});
+		});
+
+		$('.slideshowOptions.empty').unbind('click').click(function (e) {
+			var $this = $(this);
+			parentID_Slideshow = $this.parents('.slideShow').attr('id');
+			var pageID = ContentCollectionInstance.PageID;
+			var moduleID = ContentCollectionInstance.ModuleID;
+			var qs = '?pageID=' + pageID + '&moduleID=' + moduleID;
+			ContentCollectionInstance.SlideshowWidgetID = $(this).parents('.slideShow').attr('data-widgetID');
+			$popUp_Slideshow = openCpModal({
+				title: 'Slideshow',
+				className: 'newCP adminWrap cpPopOver admin modalSlideshow',
+				isFrontEnd: false,
+				useIframe: false,
+				draggable: true,
+				url: '/Slideshow/SlideshowConfiguration/' + $(this).next('.hdnSlideshowUniqueID').val() + qs
+			});
+		});
+	}
+
+	(function (){
+		const widgetHandlers = function () {
+			var hasEditRights = false;
+			if (window.File && window.FileList && window.FileReader && hasEditRights) {
+				var SlideshowWidget = 3;
+				makeWidgetAreaDroppable('b1439434-7a3a-4ea2-a4f5-5978740cb722', $('#slideshow' + 'b1439434-7a3a-4ea2-a4f5-5978740cb722'), SlideshowWidget, true, SlideshowWidgetCallback);
+			}
+
+			if(hasEditRights)
+				browserVersionNotCompatibleWithDragDropTextUpdate($('#slideshowPlaceholder' + 'b1439434-7a3a-4ea2-a4f5-5978740cb722'), 'Click to start adding images.');
+		};
+
+		if (document.readyState === "complete"
+			|| document.readyState === "loaded"
+			|| document.readyState === "interactive") {
+			widgetHandlers();
+			return;
+		}
+
+		document.addEventListener("DOMContentLoaded", widgetHandlers);		
+	})();
+
+	 
+
+	 
+
+			 
+
+
+	
+
+
+
+
+
+
+		
+			
+				$(window).on("load", function () {
+					$.when(window.Pages.rwdSetupComplete)
+						.done(function () {
+							renderBanner('banner1-58',
+								'banner1',
+								{"BannerOptionID":58,"ThemeID":19,"SlotName":"banner1","Name":"Default","IsDefault":true,"BannerMode":1,"SlideShowSlideTiming":"7","SlideshowTransition":0,"SlideShowTransitionTiming":"1","ImageScale":true,"ImageAlignment":1,"ImageScroll":true,"MuteSound":true,"VideoType":0,"Status":40,"SlideshowControlsPosition":1,"SlideshowControlsAlignment":0,"SlideshowBannerControlsColorScheme":0,"DisplayVideoPauseButton":false,"VideoPauseButtonAlignment":1,"VideoPauseButtonControlsAlignment":0,"VideoPauseButtonStyle":"#FFFFFF","VideoPauseButtonBackgroundStyle":"#000000","VideoPauseButtonAlignmentClass":"alignRight viewport","DisplaySlideshowPauseButton":true,"SlideshowControlsColor":"#FFFFFF","SlideshowControlsBackgroundColor":"#000000","SlideshowPauseButtonClass":"alignCenter viewport","BannerImages":[{"BannerImageID":82,"BannerOptionID":58,"FileName":"/ImageRepository/Document?documentID=5639","Height":1,"Width":1,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":1,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":null}],"BannerVideos":[],"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/"},
+								{"BannerImageID":82,"BannerOptionID":58,"FileName":"/ImageRepository/Document?documentID=5639","Height":1,"Width":1,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":1,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":null},
+								'/App_Themes/Home/Images/',
+								'<img alt="" class="bannerObject" src="/ImageRepository/Document?documentID=5639" />');
+						});
+				});
+			
+
+
+
+	
+				                
+
+						
+	
+	
+		
+
+
+
+
+	.widgetOptionSet41 .widgetItem {
+padding: 1em;
+}
+.widgetOptionSet41 .fancyButton span {
+color: #fff !important;
+}
+
+
+	
+		
+				
+	
+	
+		
+				
+					
+
+
+	
+		
+			CareersView current openings
+		
+	
+
+		.fancyButton450.fancyButton:link,.fancyButton450.fancyButton:visited, .fancyButton450div.fancyButton{
+	padding-top: 90px;
+	background-image: url('/ImageRepository/Document?documentID=4097');
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+.fancyButton450.fancyButton:hover,.fancyButton450.fancyButton:focus,.fancyButton450.fancyButton:active,.fancyButton450.fancyButton.hover{
+	background-image: url('/ImageRepository/Document?documentID=4098');
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+.fancyButton450.fancyButton:link > span,.fancyButton450.fancyButton:visited > span, .fancyButton450div.fancyButton > span{
+}
+.fancyButton450.fancyButton:hover > span,.fancyButton450.fancyButton:focus > span,.fancyButton450.fancyButton:active > span,.fancyButton450.fancyButton.hover > span{
+}
+.fancyButton450.fancyButton .text{
+	text-align: center;
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+.fancyButton450.fancyButton:hover .text,.fancyButton450.fancyButton:focus .text,.fancyButton450.fancyButton:active .text,.fancyButton450.fancyButton.hover .text{
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+.fancyButton450.fancyButton .textStyle1{
+	color: #464847;
+	font-size: 1.05em;
+	font-family: Montserrat;
+	text-align: center;
+	font-weight: 700;
+	text-decoration: none;
+text-transform: uppercase;}
+.fancyButton450.fancyButton:hover .textStyle1, .fancyButton450.fancyButton.hover .textStyle1{
+	text-decoration: none;
+
+}
+.fancyButton450.fancyButton .textStyle2{
+	color: #464847;
+	font-size: .9em;
+	font-family: Montserrat;
+	font-weight: 600;
+	text-decoration: none;
+
+}
+.fancyButton450.fancyButton:hover .textStyle2, .fancyButton450.fancyButton.hover .textStyle2{
+	text-decoration: none;
+
+}
+
+
+ 
+
+
+	
+		
+			jailView inmate roster
+		
+	
+
+		.fancyButton451.fancyButton:link,.fancyButton451.fancyButton:visited, .fancyButton451div.fancyButton{
+	padding-top: 90px;
+	background-image: url('/ImageRepository/Document?documentID=4103');
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+.fancyButton451.fancyButton:hover,.fancyButton451.fancyButton:focus,.fancyButton451.fancyButton:active,.fancyButton451.fancyButton.hover{
+	background-image: url('/ImageRepository/Document?documentID=4092');
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+.fancyButton451.fancyButton:link > span,.fancyButton451.fancyButton:visited > span, .fancyButton451div.fancyButton > span{
+}
+.fancyButton451.fancyButton:hover > span,.fancyButton451.fancyButton:focus > span,.fancyButton451.fancyButton:active > span,.fancyButton451.fancyButton.hover > span{
+}
+.fancyButton451.fancyButton .text{
+	text-align: center;
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+.fancyButton451.fancyButton:hover .text,.fancyButton451.fancyButton:focus .text,.fancyButton451.fancyButton:active .text,.fancyButton451.fancyButton.hover .text{
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+.fancyButton451.fancyButton .textStyle1{
+	color: #464847;
+	font-size: 1.05em;
+	font-family: Montserrat;
+	text-align: center;
+	font-weight: 700;
+	text-decoration: none;
+text-transform: uppercase;}
+.fancyButton451.fancyButton:hover .textStyle1, .fancyButton451.fancyButton.hover .textStyle1{
+	text-decoration: none;
+
+}
+.fancyButton451.fancyButton .textStyle2{
+	color: #464847;
+	font-size: .9em;
+	font-family: Montserrat;
+	font-weight: 600;
+	text-decoration: none;
+
+}
+.fancyButton451.fancyButton:hover .textStyle2, .fancyButton451.fancyButton.hover .textStyle2{
+	text-decoration: none;
+
+}
+
+
+ 
+
+
+	
+		
+			Property infoSearch location & taxes
+		
+	
+
+		.fancyButton452.fancyButton:link,.fancyButton452.fancyButton:visited, .fancyButton452div.fancyButton{
+	padding-top: 90px;
+	background-image: url('/ImageRepository/Document?documentID=4095');
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+.fancyButton452.fancyButton:hover,.fancyButton452.fancyButton:focus,.fancyButton452.fancyButton:active,.fancyButton452.fancyButton.hover{
+	background-image: url('/ImageRepository/Document?documentID=4096');
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+.fancyButton452.fancyButton:link > span,.fancyButton452.fancyButton:visited > span, .fancyButton452div.fancyButton > span{
+}
+.fancyButton452.fancyButton:hover > span,.fancyButton452.fancyButton:focus > span,.fancyButton452.fancyButton:active > span,.fancyButton452.fancyButton.hover > span{
+}
+.fancyButton452.fancyButton .text{
+	text-align: center;
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+.fancyButton452.fancyButton:hover .text,.fancyButton452.fancyButton:focus .text,.fancyButton452.fancyButton:active .text,.fancyButton452.fancyButton.hover .text{
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+.fancyButton452.fancyButton .textStyle1{
+	color: #464847;
+	font-size: 1.05em;
+	font-family: Montserrat;
+	text-align: center;
+	font-weight: 700;
+	text-decoration: none;
+text-transform: uppercase;}
+.fancyButton452.fancyButton:hover .textStyle1, .fancyButton452.fancyButton.hover .textStyle1{
+	text-decoration: none;
+
+}
+.fancyButton452.fancyButton .textStyle2{
+	color: #464847;
+	font-size: .9em;
+	font-family: Montserrat;
+	font-weight: 600;
+	text-decoration: none;
+
+}
+.fancyButton452.fancyButton:hover .textStyle2, .fancyButton452.fancyButton.hover .textStyle2{
+	text-decoration: none;
+
+}
+
+
+ 
+				
+			
+		
+	
+			
+
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+
+
+
+
+	.widgetOptionSet41 .widgetItem {
+padding: 1em;
+}
+.widgetOptionSet41 .fancyButton span {
+color: #fff !important;
+}
+
+
+	
+		
+				
+	
+	
+		
+				
+					
+
+
+	
+		
+			County BoardWatch meetings
+		
+	
+
+		.fancyButton453.fancyButton:link,.fancyButton453.fancyButton:visited, .fancyButton453div.fancyButton{
+	padding-top: 90px;
+	background-image: url('/ImageRepository/Document?documentID=4099');
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+.fancyButton453.fancyButton:hover,.fancyButton453.fancyButton:focus,.fancyButton453.fancyButton:active,.fancyButton453.fancyButton.hover{
+	background-image: url('/ImageRepository/Document?documentID=4100');
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+.fancyButton453.fancyButton:link > span,.fancyButton453.fancyButton:visited > span, .fancyButton453div.fancyButton > span{
+}
+.fancyButton453.fancyButton:hover > span,.fancyButton453.fancyButton:focus > span,.fancyButton453.fancyButton:active > span,.fancyButton453.fancyButton.hover > span{
+}
+.fancyButton453.fancyButton .text{
+	text-align: center;
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+.fancyButton453.fancyButton:hover .text,.fancyButton453.fancyButton:focus .text,.fancyButton453.fancyButton:active .text,.fancyButton453.fancyButton.hover .text{
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+.fancyButton453.fancyButton .textStyle1{
+	color: #464847;
+	font-size: 1.05em;
+	font-family: Montserrat;
+	text-align: center;
+	font-weight: 700;
+	text-decoration: none;
+text-transform: uppercase;}
+.fancyButton453.fancyButton:hover .textStyle1, .fancyButton453.fancyButton.hover .textStyle1{
+	text-decoration: none;
+
+}
+.fancyButton453.fancyButton .textStyle2{
+	color: #464847;
+	font-size: .9em;
+	font-family: Montserrat;
+	font-weight: 600;
+	text-decoration: none;
+
+}
+.fancyButton453.fancyButton:hover .textStyle2, .fancyButton453.fancyButton.hover .textStyle2{
+	text-decoration: none;
+
+}
+
+
+ 
+
+
+	
+		
+			DirectorySearch Contacts
+		
+	
+
+		.fancyButton454.fancyButton:link,.fancyButton454.fancyButton:visited, .fancyButton454div.fancyButton{
+	padding-top: 90px;
+	background-image: url('/ImageRepository/Document?documentID=4101');
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+.fancyButton454.fancyButton:hover,.fancyButton454.fancyButton:focus,.fancyButton454.fancyButton:active,.fancyButton454.fancyButton.hover{
+	background-image: url('/ImageRepository/Document?documentID=4102');
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+.fancyButton454.fancyButton:link > span,.fancyButton454.fancyButton:visited > span, .fancyButton454div.fancyButton > span{
+}
+.fancyButton454.fancyButton:hover > span,.fancyButton454.fancyButton:focus > span,.fancyButton454.fancyButton:active > span,.fancyButton454.fancyButton.hover > span{
+}
+.fancyButton454.fancyButton .text{
+	text-align: center;
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+.fancyButton454.fancyButton:hover .text,.fancyButton454.fancyButton:focus .text,.fancyButton454.fancyButton:active .text,.fancyButton454.fancyButton.hover .text{
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+.fancyButton454.fancyButton .textStyle1{
+	color: #464847;
+	font-size: 1.05em;
+	font-family: Montserrat;
+	text-align: center;
+	font-weight: 700;
+	text-decoration: none;
+text-transform: uppercase;}
+.fancyButton454.fancyButton:hover .textStyle1, .fancyButton454.fancyButton.hover .textStyle1{
+	text-decoration: none;
+
+}
+.fancyButton454.fancyButton .textStyle2{
+	color: #464847;
+	font-size: .9em;
+	font-family: Montserrat;
+	font-weight: 600;
+	text-decoration: none;
+
+}
+.fancyButton454.fancyButton:hover .textStyle2, .fancyButton454.fancyButton.hover .textStyle2{
+	text-decoration: none;
+
+}
+
+
+ 
+
+
+	
+		
+			online paymentsPay your bill online
+		
+	
+
+		.fancyButton455.fancyButton:link,.fancyButton455.fancyButton:visited, .fancyButton455div.fancyButton{
+	padding-top: 90px;
+	background-image: url('/ImageRepository/Document?documentID=4093');
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+.fancyButton455.fancyButton:hover,.fancyButton455.fancyButton:focus,.fancyButton455.fancyButton:active,.fancyButton455.fancyButton.hover{
+	background-image: url('/ImageRepository/Document?documentID=4094');
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+.fancyButton455.fancyButton:link > span,.fancyButton455.fancyButton:visited > span, .fancyButton455div.fancyButton > span{
+}
+.fancyButton455.fancyButton:hover > span,.fancyButton455.fancyButton:focus > span,.fancyButton455.fancyButton:active > span,.fancyButton455.fancyButton.hover > span{
+}
+.fancyButton455.fancyButton .text{
+	text-align: center;
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+.fancyButton455.fancyButton:hover .text,.fancyButton455.fancyButton:focus .text,.fancyButton455.fancyButton:active .text,.fancyButton455.fancyButton.hover .text{
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+.fancyButton455.fancyButton .textStyle1{
+	color: #464847;
+	font-size: 1.05em;
+	font-family: Montserrat;
+	text-align: center;
+	font-weight: 700;
+	text-decoration: none;
+text-transform: uppercase;}
+.fancyButton455.fancyButton:hover .textStyle1, .fancyButton455.fancyButton.hover .textStyle1{
+	text-decoration: none;
+
+}
+.fancyButton455.fancyButton .textStyle2{
+	color: #464847;
+	font-size: .9em;
+	font-family: Montserrat;
+	font-weight: 600;
+	text-decoration: none;
+
+}
+.fancyButton455.fancyButton:hover .textStyle2, .fancyButton455.fancyButton.hover .textStyle2{
+	text-decoration: none;
+
+}
+
+
+ 
+				
+			
+		
+	
+			
+
+
+
+	 
+
+	 
+
+			 
+
+
+	
+
+
+
+
+
+$('#breadCrumbs').hide();
+	
+	
+		
+
+	
+	
+	
+	
+	
+	
+	
+
+			
+		
+			
+
+						
+	
+	
+		
+
+	    
+
+
+        NEWS & EVENTS
+    
+
+
+	$(document).ready(function (e) {		
+	    renderSlideshowIfApplicable($('#divEditor' + 'eed92956-65fd-42b2-af94-6f9fc785b968'));
+	});
+
+
+
+	 
+
+	 
+
+			 
+						
+	
+	
+		
+
+	
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+			
+							  COUNTY MEETINGS
+
+			
+					
+	
+				
+
+
+
+
+October 2026
+	
+													
+													
+
+S
+
+
+M
+
+
+T
+
+
+W
+
+
+T
+
+
+F
+
+
+S
+
+
+													
+												
+													
+27				
+
+28				
+
+29				
+
+30				
+
+01				
+
+02				
+
+03				
+
+
+04				
+
+05				
+
+06				
+
+07				
+
+08				
+
+09				
+
+10				
+
+
+11				
+
+12				
+
+13				
+
+14				
+
+15				
+
+16				
+
+17				
+
+
+18				
+
+19				
+
+20				
+
+21				
+
+22				
+
+23				
+
+24				
+
+
+25				
+
+26				
+
+27				
+
+28				
+
+29				
+
+30				
+
+31				
+
+
+
+												
+												
+
+
+
+
+					
+
+
+
+
+
+
+
+
+	
+
+
+
+
+				
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		Mon, Oct. 19  
+		
+					Board of Adjustment & Appeals Meeting
+
+		
+			Board of Adjustment & Appeals MeetingRead More
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		Mon, Oct. 19  
+		
+					Planning & Zoning Advisory Commission
+
+		
+			Planning & Zoning Advisory CommissionRead More
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		Tue, Oct. 20  
+		
+					Board Workshop - 3rd Tuesday
+
+		
+			Board Workshop - 3rd TuesdayRead More
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		Tue, Oct. 27  
+		
+					Board of Commissioners Meeting
+
+		
+			Board of Commissioners MeetingRead More
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		Tue, Oct. 27  
+		
+					Drainage Authority Meeting
+
+		
+			Drainage Authority MeetingRead More
+	
+					
+				
+
+
+									
+		        View All
+					
+	
+		
+	
+	
+		/Calendar.aspx
+	
+
+
+
+	 
+
+	 
+
+			 
+
+
+		
+
+	
+
+	
+	
+
+	
+
+
+
+
+	
+				                
+
+						
+	
+	
+		
+
+	    
+
+
+        MissionProviding eﬃcient services with innovation and accountability VisionSetting the standard for providing superior and eﬃcient county government services through leadership, accountability, and innovation to a growing and diverse society. ValuesLeadership: Having a vision, sharing that vision, and inspiring others to support our vision while creating their own.Integrity: Our decisions and actions display a consistent commitment to moral and ethical values.Accountability: To account for our activities, accept responsibility for them, and to disclose the results in a transparent manner.Eﬃciency: Our ability to do things well, successfully, and without waste. Innovation: Our transformation of an idea into a service that creates value.
+    
+
+
+	$(document).ready(function (e) {		
+	    renderSlideshowIfApplicable($('#divEditor' + 'ce433868-e697-48dc-9cf4-a82c3c1ee5ea'));
+	});
+
+
+
+	 
+
+	 
+
+			 
+
+
+	
+
+
+
+	
+				                
+
+						
+	
+	
+		
+	
+
+
+
+
+
+
+
+
+	
+			
+		
+					Popular Links
+						
+	
+	
+        
+				
+					
+
+
+
+
+    
+        Agendas and Minutes
+        
+    
+
+
+
+
+    
+        Career Opportunities
+        
+    
+
+
+
+
+    
+        Commissioners
+        
+    
+
+
+
+
+    
+        Finance and Budget
+        
+    
+
+
+
+
+    
+        Real ID and Driver’s License
+        
+    
+
+
+
+
+    
+        Licensing
+        
+    
+
+
+
+
+    
+        Data Practices Requests
+        
+    
+
+
+
+
+    
+        Bids/Proposals/Notices
+        
+    
+
+
+
+
+    
+        Staff Directory
+        
+    
+					
+				
+		
+        
+	
+	
+	
+	
+		/QuickLinks.aspx
+	
+
+	
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+
+	    
+
+
+        Contact Us:Nicollet County Government Center501 S Minnesota AveSt. Peter, MN 56082 Main Line: (507) 934-6800Health & Human Services: (507) 934-8559Courts: (507) 550-7032
+    
+
+
+	$(document).ready(function (e) {		
+	    renderSlideshowIfApplicable($('#divEditor' + 'a1164b7f-cdcb-4da4-9ed1-63ae72ced56b'));
+	});
+
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+	
+
+
+
+
+
+
+
+
+	
+			
+		
+					Helpful Links
+						
+	
+	
+        
+				
+					
+
+
+
+
+    
+        Home
+        
+    
+
+
+
+
+    
+        Employee Login
+        
+    
+
+
+
+
+    
+        Site Map
+        
+    
+
+
+
+
+    
+        Contact Us
+        
+    
+
+
+
+
+    
+        Accessibility
+        
+    
+
+
+
+
+    
+        Copyright Notices
+        
+    
+					
+				
+		
+        
+	
+	
+	
+	
+		/QuickLinks.aspx
+	
+
+	
+
+
+	 
+
+	 
+
+			 
+
+
+	
+
+
+	
+				                
+
+
+
+	
+
+
+	
+				                
+
+
+
+	
+
+
+	
+				                
+
+						
+	
+	
+		
+ 
+	
+	
+		
+  
+  Government Websites by CivicPlus®
+
+	
+
+	
+
+	 
+
+	 
+
+			 
+
+
+	
+
+
+
+
+            
+        
+    
+
+
+
+
+	
+		
+			Loading
+			
+				
+					
+				
+			
+		
+		
+			
+				
+				Loading
+			
+		
+		
+			Do Not Show Again
+			Close
+		
+	
+
+
+
+
+
+
+
+		$(document).ready(function () {
+			var filter = {
+				targetId: '1',
+				targetType: 1
+			}
+
+			new SplashModalRender().triggerRender(filter);
+		});
+
+
+
+	
+	
+	
+	
+
+
+
+	
+
+
+
+
+
+
+    
+    
+
+var Typer = function(element) {
+  this.element = element;
+  var delim = element.dataset.delim || ","; // default to comma
+  var words = element.dataset.words || "override these,sample typing";
+  this.words = words.split(delim).filter(function(v){return v;}); // non empty words
+  this.delay = element.dataset.delay || 200;
+  this.loop = element.dataset.loop || "true";
+  this.deleteDelay = element.dataset.deletedelay || element.dataset.deleteDelay || 800;
+
+  this.progress = { word:0, char:0, building:true, atWordEnd:false, looped: 0 };
+  this.typing = true;
+
+  var colors = element.dataset.colors || "black";
+  this.colors = colors.split(",");
+  this.element.style.color = this.colors[0];
+  this.colorIndex = 0;
+
+  this.doTyping();
+};
+
+Typer.prototype.start = function() {
+  if (!this.typing) {
+    this.typing = true;
+    this.doTyping();
+  }
+};
+Typer.prototype.stop = function() {
+  this.typing = false;
+};
+Typer.prototype.doTyping = function() {
+  var e = this.element;
+  var p = this.progress;
+  var w = p.word;
+  var c = p.char;
+  var currentDisplay = [...this.words[w]].slice(0, c).join("");
+  p.atWordEnd = false;
+  if (this.cursor) {
+    this.cursor.element.style.opacity = "1";
+    this.cursor.on = true;
+    clearInterval(this.cursor.interval);
+    var itself = this.cursor;
+    this.cursor.interval = setInterval(function() {itself.updateBlinkState();}, 400);
+  }
+
+  e.innerHTML = currentDisplay;
+
+  if (p.building) {
+    if (p.char == [...this.words[w]].length) {
+      p.building = false;
+      p.atWordEnd = true;
+    } else {
+      p.char += 1;
+    }
+  } else {
+    if (p.char == 0) {
+      p.building = true;
+      p.word = (p.word + 1) % this.words.length;
+      this.colorIndex = (this.colorIndex + 1) % this.colors.length;
+      this.element.style.color = this.colors[this.colorIndex];
+    } else {
+      p.char -= 1;
+    }
+  }
+
+  if(p.atWordEnd) p.looped += 1;
+
+  if(!p.building && (this.loop == "false" || this.loop <= p.looped) ){
+    this.typing = false;
+  }
+
+  var myself = this;
+  setTimeout(function() {
+    if (myself.typing) { myself.doTyping(); };
+  }, p.atWordEnd ? this.deleteDelay : this.delay);
+};
+
+var Cursor = function(element) {
+  this.element = element;
+  this.cursorDisplay = element.dataset.cursordisplay || "_";
+  element.innerHTML = this.cursorDisplay;
+  this.on = true;
+  element.style.transition = "all 0.1s";
+  var myself = this;
+  this.interval = setInterval(function() {
+    myself.updateBlinkState();
+  }, 400);
+}
+Cursor.prototype.updateBlinkState = function() {
+  if (this.on) {
+    this.element.style.opacity = "0";
+    this.on = false;
+  } else {
+    this.element.style.opacity = "1";
+    this.on = true;
+  }
+}
+
+function TyperSetup() {
+  var typers = {};
+  var elements = document.getElementsByClassName("typer");
+  for (var i = 0, e; e = elements[i++];) {
+    typers[e.id] = new Typer(e);
+  }
+  var elements = document.getElementsByClassName("typer-stop");
+  for (var i = 0, e; e = elements[i++];) {
+    let owner = typers[e.dataset.owner];
+    e.onclick = function(){owner.stop();};
+  }
+  var elements = document.getElementsByClassName("typer-start");
+  for (var i = 0, e; e = elements[i++];) {
+    let owner = typers[e.dataset.owner];
+    e.onclick = function(){owner.start();};
+  }
+
+  var elements2 = document.getElementsByClassName("cursor");
+  for (var i = 0, e; e = elements2[i++];) {
+    let t = new Cursor(e);
+    t.owner = typers[e.dataset.owner];
+    t.owner.cursor = t;
+  }
+}
+
+TyperSetup();
+
+
+
+
+
+
+ 
+
+#google-translate-container {float: right;padding: 3px 5px 0px 0px;}.goog-te-combo,.goog-te-banner *,.goog-te-ftab *,.goog-te-menu *,.goog-te-menu2 *,.goog-te-balloon * {font-family: arial;font-size: 10pt;background-image: url("https://theme.zdassets.com/theme_assets/958586/bae8aa24db8d43595871692a9d259186f2db3fb4.png");background-position: 3px 4px;background-size: 22px;background-repeat: no-repeat;text-indent: 20px;background-color: #fff;color: #000 !important;}.goog-logo-link {display: none !important;}.goog-te-gadget {color: transparent !important;}.goog-te-gadget .goog-te-combo {margin: 2px 0 !important;border-radius: 15px !important;}.goog-te-combo{border: 1px solid !important;border-color: #bcc9d7 #96a3b1 #96a3b1 #bcc9d7 !important;border-radius: 0 !important;height:32px; !important;padding: 0 1px 0 .25rem !important;}
+
+#launcher-wrapper {bottom: 50px !important;}
+
+
+
+
+
+
+
+
+
+
+
+function googleTranslateElementInit() {
+var el = document.getElementById("google_translate_element");
+if (el && el.innerHTML.trim() !== "") {
+    return;
+}
+
+
+new google.translate.TranslateElement({ pageLanguage: "en" }, "google_translate_element");
+
+// begin accessibility compliance
+
+$('img.goog-te-gadget-icon').attr('alt','Google Translate');
+
+$('div#goog-gt-tt div.logo img').attr('alt','translate');
+
+$('div#goog-gt-tt .original-text').css('text-align','left');
+
+$('.goog-te-gadget-simple .goog-te-menu-value span').css('color','#000000');
+
+$('.goog-te-combo').attr('aria-label','google translate languages');
+
+$('svg.goog-te-spinner').attr('title','Google Translate Spinner');
+
+$('.goog-te-gadget-simple .goog-te-menu-value span').css('color','#000000');
+
+}
+
+$(function() {
+
+$.getScript("//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit");
+
+});
+
+
+
+ 
+
+ 
+
+ !function(){var b=function(){window.__AudioEyeSiteHash="5be1ec618f2c9fc2a36f51babd02f750";var a=document.createElement("script");a.src="https://wsmcdn.audioeye.com/aem.js";a.type="text/javascript";a.setAttribute("async","");document.getElementsByTagName("body")[0].appendChild(a)};"complete"!==document.readyState?window.addEventListener?window.addEventListener("load",b):window.attachEvent&&window.attachEvent("onload",b):b()}(); 
+
+
+    
+        $(function () {
+            document.cookie = "responsiveGhost=0; path=/";
+        });
+        $(window).on("load", function () {
+            $('body').addClass('doneLoading').removeClass('hideContent');
+
+            if ($('#404Content').length > 0)
+                $('div#bodyWrapper').css('padding', '0px');
+        });
+    
+
+    
+        
+            body.hideContent {
+                opacity: 1 !important;
+            }
+        
+    
+
+        
+
+	
+
+		
+			Arrow Left
+			
+		
+
+		
+			Arrow Right
+			
+		
+
+	
+
+    loadCSS('//fonts.googleapis.com/css?family=Montserrat:500,600,700,regular|Muli:700,regular|Open+Sans:regular|Poppins:500|Source+Sans+Pro:regular|');
+    
+
+    []
+        
+            
+                
+                    Slideshow Left Arrow
+                    
+                        
+                    
+                
+                
+                    Slideshow Right Arrow
+                    
+                        
+                    
+                
+            
+        
+    
+	
+	
+
+    
+
+

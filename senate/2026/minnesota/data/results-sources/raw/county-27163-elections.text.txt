@@ -1,0 +1,2654 @@
+
+
+
+
+
+	
+
+				(function(w,d,s,l,i){w.GAMeasurementID='G-5GR87NT5XY';w[l]=w[l]||[];w[l].push({'gtm.start':
+				new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+				j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+				'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+				})(window,document,'script','cpDataLayerGA4','GTM-K73C5PS');
+				
+				
+					var enableTelemetry = 'false'
+					var aiConfig = {
+					instrumentationKey: '1cde048e-3185-4906-aa46-c92a7312b60f'						
+					}
+					var appInsights = window.appInsights || function (a) { function b(a) { c[a] = function () { var b = arguments; c.queue.push(function () { c[a].apply(c, b) }) } } var c = { config: a }, d = document, e = window; setTimeout(function () { var b = d.createElement('script'); b.src = a.url || 'https://js.monitor.azure.com/scripts/a/ai.0.js', d.getElementsByTagName('script')[0].parentNode.appendChild(b) }); try { c.cookie = d.cookie } catch (a) { } c.queue = []; for (var f = ['Event', 'Exception', 'Metric', 'PageView', 'Trace', 'Dependency']; f.length;)b('track' + f.pop()); if (b('setAuthenticatedUserContext'), b('clearAuthenticatedUserContext'), b('startTrackEvent'), b('stopTrackEvent'), b('startTrackPage'), b('stopTrackPage'), b('flush'), !a.disableExceptionTracking) { f = 'onerror', b('_' + f); var g = e[f]; e[f] = function (a, b, d, e, h) { var i = g && g(a, b, d, e, h); return !0 !== i && c['_' + f](a, b, d, e, h), i } } return c }(aiConfig);
+					window.appInsights = appInsights, appInsights.queue && 0 === appInsights.queue.length;
+					// Add telemetry initializer
+					appInsights.queue.push(function() {
+						appInsights.context.addTelemetryInitializer(function(envelope) {
+							var telemetryItem = envelope.data.baseData;
+							// To check the telemetry item’s type:
+							if (!false)
+							{
+								//If the telemetry is not enabled, we still want to capture Google map custom event, so only allow that
+								if (envelope.name.indexOf('.Event') == -1)
+									return false;
+							}
+						});
+					});						
+					appInsights.trackPageView();
+				
+	
+		function populateAntiForgery(token) {
+			var input = document.createElement("input");
+			input.name = "__RequestVerificationToken";
+			input.type = "hidden";
+			input.value = token;
+			var absPat = /^https?:\/\/|^\/\//i;
+			var forms = document.getElementsByTagName("form");
+			for (var i = 0; i < forms.length; i++) {
+				if (forms[i].method == "post" &&
+					!forms[i].querySelector('[name="__RequestVerificationToken"]') &&
+					!absPat.test(forms[i].getAttribute("action"))) {
+					forms[i].appendChild(input.cloneNode());
+				}
+			}
+		}
+
+		function getAntiForgeryToken(callback, error) {
+			var xhr = new XMLHttpRequest();
+			xhr.open("GET", "/antiforgery");
+			xhr.addEventListener("load", function() {
+				try {
+					if (this.status !== 200) {
+						throw Error("Invalid status. Could not retrieve antiforgery token.");
+					}
+					var obj = JSON.parse(this.responseText);
+					callback(obj.token);
+				} catch (e) {
+					typeof error === "function" && error(e);
+				}
+			});
+			xhr.send();
+		}
+
+		getAntiForgeryToken(function(token) {
+			if (document.readyState === "complete"
+				|| document.readyState === "loaded" 
+				|| document.readyState === "interactive") {
+				populateAntiForgery(token);
+				return;
+			}
+			document.addEventListener("DOMContentLoaded", function() {
+				populateAntiForgery(token);
+			}, false);
+		}, console.error);
+	
+			
+
+	
+		window.departmentHeader = {};
+		window.pageSectionTracker = {};
+		window.isResponsiveEnabled = true;
+		window.isRemoveSetHeights= true;
+		if (window.isRemoveSetHeights) {
+			document.documentElement.className += ' removeSetHeights';
+		}
+		window.mainMenuMediaQuery = 'screen and (max-width: 40em)';
+		window.isMobileBrowserIncludingTablets = false;
+		window.fixedResponsiveMenu = true;
+		window.fullWidthResponsiveMenu = false;
+		window.responsiveMenuHeight = '';
+		window.responsiveMenuFontSize = '';
+		window.isContentAdvisor = false;
+		(function () {
+			window.setSizeCookie = function () {
+				document.cookie = "dpi=" + window.devicePixelRatio + "; path=/";
+				document.cookie = "viewportWidth=" + window.innerWidth + "; path=/";
+				document.cookie = "viewportHeight=" + window.innerHeight + "; path=/";
+				if (screen && screen.width && screen.height) {
+					document.cookie = "screenWidth=" + screen.width + "; path=/";
+					document.cookie = "screenHeight=" + screen.height + "; path=/";
+				}
+				document.cookie = "responsiveGhost=1; path=/";
+			};
+
+			setSizeCookie();
+		}());
+	
+		
+
+	
+	
+
+
+
+
+
+
+
+	
+
+
+
+	
+	
+	
+	
+		Elections & Voting | Washington County, MN - Official Website
+
+		
+		
+	
+		
+	
+	
+
+	
+	
+	
+	
+	<!--
+	var intCountryCode = 840;
+	var order = '';
+//-->
+	
+		
+
+	
+	
+		window.Pages = window.Pages || {};
+		// FrontEnd RWD initialization
+		window.Pages.rwdReady = $.Deferred();
+		window.Pages.toolBarDeferred = $.Deferred();
+		window.Pages.rwdSetupComplete = $.Deferred();
+		window.Pages.megaMenuLoaded = $.Deferred();
+		window.Pages.angularToolbarComplete = $.Deferred();
+		window.Pages.frontEndToolbarComplete = $.Deferred();
+	
+	
+	
+	
+	
+	
+	
+
+
+
+
+	
+	
+	
+	
+
+	
+		setEditorVariables(false, 840);
+		function getPrintPreviewType() { return 0; } function printPreview() {pPreview(getPrintPreviewType()); }
+	
+	
+
+
+
+    jQuery(document).click(function (event) {
+	var target = jQuery(event.target);
+	if (target.attr('src') && target.parents('.image').length && target.parents('.widget').length) {
+		var text = target.attr('title');
+		
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Image',
+				eventAction: 'Image - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.is('button') || target.hasClass('button') || target.parents().hasClass('button')) {
+		var text = "";
+		if (target.parents('.button')[0]) {
+			text = target.parents('.button').first().text();
+		} else if (target.text().length) {
+			text = target.text();
+		} else if (target.attr('title').length) {
+			text = target.attr('title');
+		}
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Button',
+				eventAction: 'Button - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetCustomHtml').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Custom Html',
+				eventAction: 'Custom Html Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.editor').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Editor',
+				eventAction: 'Editor Link Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.GraphicLinks').length) {
+		var text = "";
+		var targetGraphicLink = target;
+		if (target.hasClass('widgetGraphicLinksLink')) {
+			targetGraphicLink = jQuery(target.children()[0]);
+		}
+		if (targetGraphicLink.hasClass('text')) {
+			text = targetGraphicLink.text();
+		} else if (targetGraphicLink.attr('src').length) {
+			if (targetGraphicLink.attr('alt').length) {
+				text = targetGraphicLink.attr('alt');
+			} else {
+				text = targetGraphicLink.attr('src');
+			}
+		} else {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Graphic Links',
+				eventAction: 'Graphic Link - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.InfoAdvanced').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Info Advanced',
+				eventAction: 'Info Advanced Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.list').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'List',
+				eventAction: 'List Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.megaMenuItem').length || target.parents('.topMenuItem').length) {
+		var megaMenuText = jQuery('.topMenuItem.mouseover').find('span').text();
+		var breadCrumbs = [];
+		jQuery('.breadCrumbs > li').each(function () {
+			 breadCrumbs.push(this.textContent);
+		});
+		var pageTitle = breadCrumbs.join('>');
+		var subTitleText = target.parents('.megaMenuItem').children('.widgetTitle').children().text();
+		var text = "";
+		if (pageTitle) {
+			text += pageTitle + " | ";
+		} else {
+			text += document.title + ' - ';
+		}
+		if (target.text() == "" && megaMenuText == "") {
+			text += "N/A";
+		} else if (target.text().length && megaMenuText.length) {
+			if (megaMenuText == target.text()) {
+				text += megaMenuText;
+			} else {
+				text += megaMenuText + " - " + subTitleText + " - " + target.text();
+			}
+		} else if (target.text() == "") {
+			text += megaMenuText;
+		} else {
+			text += target.text();
+		}
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Mega Menu',
+				eventAction: 'Mega Menu : ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetNewsFlash').length && target.parents('.widgetItem').length) {
+		var text = jQuery(target.parents('.widgetItem')[0]).find('.widgetTitle').children().text();
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'News Flash',
+				eventAction: 'News Flash - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.hasClass('widgetQuickLinksLink') || target.find('.widgetQuickLinksLink').length) {
+		var text = target.text();
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Quick Links',
+				eventAction: 'Quick Links - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.attr('src') && target.parents('.cpSlideshow').length) {
+		var text = target.attr('title');
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Slideshow',
+				eventAction: 'Slideshow - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetText').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Text',
+				eventAction: 'Text Link Clicked',
+				eventLabel: window.location.href
+			});
+	}
+});
+	
+	
+		
+		
+			
+				
+			
+		
+	
+	
+		
+	
+	
+		
+			
+		
+	
+
+    
+
+Skip to Main Content
+
+    
+
+        
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+        
+                
+                    
+
+
+
+                
+            
+                
+                
+
+
+
+	
+				                
+
+						
+	
+	
+		
+	
+
+
+
+
+
+
+
+
+	
+			
+		
+						
+	
+	
+        
+				
+					
+
+
+
+
+    
+        Jobs
+        
+    
+					
+				
+				
+					
+
+
+
+
+    
+        Contact
+        
+    
+					
+				
+		
+        
+	
+	
+	
+	
+		/QuickLinks.aspx
+	
+
+	
+
+
+	 
+
+	 
+
+			 
+
+
+	
+	
+				                
+
+						
+	
+	
+		
+ 
+	
+	
+		 function googleTranslateElementInit() { new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'ar,de,el,en,es,fr,ga,hi,id,it,iw,ja,ko,pt,ru,sv,tl,vi,zh-CN,zh-TW', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, gaTrack: true, gaId: 'UA-87122838-1'}, 'google_translate_element'); } 
+	
+
+	
+
+	 
+
+	 
+
+			 
+
+
+	
+
+
+
+
+
+
+
+				
+
+    Resident  			    Business  			    Government  			    Online Services  			
+
+
+
+	
+		(function () {
+			function setupMenu() {
+				const menuID = 'mainNavMenu';
+				const menuType = MAIN_MENU;
+
+				//setup menu manager properties for main menu
+				if (!menuManager.mobileMainNav && true)
+					menuManager.adjustMainItemsWidth('#' + menuID);
+				menuManager.isMainMenuEditable = false;
+				menuManager.mainMenuMaxSubMenuLevels = 4;
+				menuManager.setMOMMode(2, menuType);
+
+				//Init main menu
+				const setupDraggable = menuManager.isMainMenuEditable;
+				const urlToGetHiddenMenus = '/Pages/MenuMain/HiddenMainSubMenus?pageID=1&moduleID=&themeID=18&menuContainerID=mainNav';
+
+				menuManager.setupMenu(menuID, 'mainNav', menuType, setupDraggable, urlToGetHiddenMenus);
+				menuManager.mainMenuInit = true;
+				menuManager.mainMenuTextResizer = false;
+				if (1.00 > 0)
+					menuManager.mainMenuTextResizerRatio = 1.00;
+				if (window.isResponsiveEnabled)
+					menuManager.mainMenuReady.resolve();
+
+			}
+
+			if (document.readyState === "complete"
+				|| document.readyState === "loaded"
+				|| document.readyState === "interactive") {
+				setupMenu();
+				return;
+			}
+
+			document.addEventListener("DOMContentLoaded", setupMenu);
+		})();
+	
+
+
+	
+				                
+
+
+
+	
+	
+				                
+
+
+
+	
+	
+				                
+
+
+
+	
+	
+				                
+
+
+
+	
+	
+				                
+
+						
+	
+	
+		
+ 
+	
+	
+		
+/*
+ * Google Programmable Search Engine
+ * CX: 76e3247bef3ce4f75
+ *
+ * This tracks Sitewide PSE searches in GA4 ONLY if the visitor
+ * has previously used the Library search.
+ */
+
+window.__gcse = window.__gcse || {};
+
+window.__gcse.searchCallbacks = {
+  web: {
+    starting: function(gname, query) {
+
+      /*
+       * Check whether the visitor has used the Library
+       * search during this browser session.
+       *
+       * Your Library search needs to set:
+       * sessionStorage.setItem("library_search_used", "true");
+       */
+      var otherSearchUsed =
+        sessionStorage.getItem("library_search_used") === "true";
+
+      if (otherSearchUsed && typeof gtag === "function") {
+
+        gtag("event", "search", {
+          search_term: query
+        });
+
+        console.log(
+          "Sitewide PSE search tracked:",
+          query
+        );
+
+      } else {
+
+        console.log(
+          "Sitewide PSE search NOT tracked:",
+          query
+        );
+      }
+
+      return "";
+    }
+  }
+};
+
+
+
+
+
+
+	
+
+	
+
+	 
+
+	 
+
+			 
+
+
+	
+
+
+
+
+	
+				                
+
+
+
+	
+
+
+
+
+
+
+		
+		
+			
+			
+		
+			
+				$(window).on("load", function () {
+					$.when(window.Pages.rwdSetupComplete)
+						.done(function () {
+							renderExternalBannerSlideshow('banner1',
+								{"BannerOptionID":40,"ThemeID":18,"SlotName":"banner1","Name":"Default","IsDefault":true,"BannerMode":2,"SlideShowSlideTiming":"5","SlideshowTransition":0,"SlideShowTransitionTiming":"1","ImageScale":true,"ImageAlignment":1,"ImageScroll":true,"MuteSound":true,"VideoType":0,"Status":40,"SlideshowControlsPosition":0,"SlideshowControlsAlignment":0,"SlideshowBannerControlsColorScheme":0,"DisplayVideoPauseButton":false,"VideoPauseButtonAlignment":1,"VideoPauseButtonControlsAlignment":0,"VideoPauseButtonStyle":"#FFFFFF","VideoPauseButtonBackgroundStyle":"#000000","VideoPauseButtonAlignmentClass":"alignRight viewport","DisplaySlideshowPauseButton":true,"SlideshowControlsColor":"#FFFFFF","SlideshowControlsBackgroundColor":"#000000","SlideshowPauseButtonClass":"isHidden","BannerImages":[{"BannerImageID":568,"BannerOptionID":40,"FileName":"/ImageRepository/Document?documentID=75035","Height":1,"Width":1,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":1,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":""}],"BannerVideos":[],"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/"},
+								'/App_Themes/Simple/Images/',
+								'Rotating');
+						});
+				});
+			
+
+
+
+
+
+
+		
+			HomeGovernmentElections & Voting
+		
+
+	   
+    
+
+	
+	
+		
+
+	
+	
+	
+	
+	
+	
+	
+
+				
+
+Elections & Voting		
+	
+		
+			
+
+						
+	
+	
+		
+
+	    
+
+
+        The Elections Administration is proud to serve more than 200,000 registered voters in Washington County. The county provides voter registration and election administration services for federal, state, and local elections.
+    
+
+
+	$(document).ready(function (e) {		
+	    renderSlideshowIfApplicable($('#divEditor' + '0cb061a1-8484-497a-b329-bdc798946a92'));
+	});
+
+
+
+	 
+
+	 
+
+			 
+						
+	
+	
+		
+
+	    
+
+
+        State General Election 2026
+    
+
+
+	$(document).ready(function (e) {		
+	    renderSlideshowIfApplicable($('#divEditor' + '9914cdc2-8ec5-467b-b8c5-0cc4ba8e4fb5'));
+	});
+
+
+
+	 
+
+	 
+
+			 
+						
+	
+	
+		
+
+	
+
+		
+					
+							Early (Absentee) In-Person Voting
+
+					
+				
+
+
+	    
+
+
+        Voting process is identical to getting an absentee ballot mailed to you, except done in person.September 18 - November 2Regular Hours: Monday–Friday: 8 a.m.–4:30 p.m.Extended Voting Hours:Saturday, October 24: 8 a.m.–3 p.m.Tuesday, October 27: 8 a.m.–7 p.m.Saturday, October 31: 8 a.m.–3 p.m.Sunday, November 1: 8 a.m.–3 p.m.Monday, November 2: 8 a.m.–5 p.m.Vote Center Locations:Central Service and License Center | 1261 Woodlane Drive, Woodbury, MN 55125Cottage Grove Service Center | 13000 Ravine Parkway South, Cottage Grove, MN 55016Headwaters Service and License Center | 19955 Forest Road North, Forest Lake, MN 55025Washington County Government Center | 14949 62nd Street North, Stillwater, MN 55082
+    
+
+
+	$(document).ready(function (e) {		
+	    renderSlideshowIfApplicable($('#divEditor' + 'b6e29131-f701-4d16-8829-8c31462ae4f6'));
+	});
+
+
+
+				
+					
+							Early (Direct) In-Person Voting
+
+					
+				
+
+
+	    
+
+
+        Voters cast their ballot in person using the same ballot tabulator that is used on Election Day.October 16 - November 2Regular Hours: Monday–Friday: 8 a.m.–4:30 p.m.Extended Voting Hours:Saturday, October 24: 8 a.m.–3 p.m.Tuesday, October 27: 8 a.m.–7 p.m.Saturday, October 31: 8 a.m.–3 p.m.Sunday, November 1: 8 a.m.–3 p.m.Monday, November 2: 8 a.m.–5 p.m.Vote Center Locations:Central Service and License Center | 1261 Woodlane Drive, Woodbury, MN 55125Cottage Grove Service Center | 13000 Ravine Parkway South, Cottage Grove, MN 55016Headwaters Service and License Center | 19955 Forest Road North, Forest Lake, MN 55025Washington County Government Center | 14949 62nd Street North, Stillwater, MN 55082
+    
+
+
+	$(document).ready(function (e) {		
+	    renderSlideshowIfApplicable($('#divEditor' + '31d8ab82-0212-4ecb-85bb-d0aecd152dec'));
+	});
+
+
+
+				
+					
+							Election Day
+
+					
+				
+
+
+	    
+
+
+        November 3Polling Place Hours: 7 a.m.-8 p.m.
+    
+
+
+	$(document).ready(function (e) {		
+	    renderSlideshowIfApplicable($('#divEditor' + 'bdf3a0b5-7594-416f-bc76-e2539c15d692'));
+	});
+
+
+
+				
+					
+							Public Accuracy Test
+
+					
+				
+
+
+	    
+
+
+        October 9Time: 10 a.m.Location: LL14 Room | Washington County Government Center | 14949 62nd Street North, Stillwater, MN 55082For city or township public accuracy test information, contact your local jurisdiction's city or township clerk.
+    
+
+
+	$(document).ready(function (e) {		
+	    renderSlideshowIfApplicable($('#divEditor' + '8c809104-6a83-4fe7-bf26-16048527fa73'));
+	});
+
+
+
+				
+					
+							Public Canvassing Board
+
+					
+				
+
+
+	    
+
+
+         November 9 Time: 3 p.m.Location: 5th Floor Board Room | Washington County Government Center | 14949 62nd Street North, Stillwater, MN 55082
+    
+
+
+	$(document).ready(function (e) {		
+	    renderSlideshowIfApplicable($('#divEditor' + 'e5bcb27d-0b94-42f3-8d81-5983968f7fc8'));
+	});
+
+
+
+				
+					
+							Post Election Review
+
+					
+				
+
+
+	    
+
+
+         November 16 Time: 9 a.m.Location: LL14 Room | Washington County Government Center | 14949 62nd Street North, Stillwater, MN 55082
+    
+
+
+	$(document).ready(function (e) {		
+	    renderSlideshowIfApplicable($('#divEditor' + '83d256e2-84b0-4e42-be4c-6645f09a95b5'));
+	});
+
+
+
+				
+					
+							Safe and Secure Elections
+
+					
+				
+
+
+	    
+
+
+        Through careful planning, ongoing training and strong partnerships, Washington County is committed to protecting every election and the voters it serves. View this video to learn more.
+    
+
+
+	$(document).ready(function (e) {		
+	    renderSlideshowIfApplicable($('#divEditor' + '01499321-471d-4cf9-87e4-a2be93d6f031'));
+	});
+
+
+
+				
+					
+	
+	
+
+		//If responsive not enabled, execute this after a timeout
+		if(!isResponsiveEnabled)
+		{
+			window.setTimeout(function(){
+				var tabbedWidgetID = 'divTabbed01c4205b-272b-42da-a5f0-229711a211a0';
+				typeof setTabbedWidgetsTabHeight === "function" && setTabbedWidgetsTabHeight(tabbedWidgetID);
+			}, 1500);
+		}
+
+		function reinitCarousels() {
+			if (window.carouselsToInit) {
+				for (var i = 0; i < window.carouselsToInit.length; i++) {
+					carouselsToInit[i]();
+				}
+			}
+		}
+		function sizeTabbedContent(element){
+			if(window.Pages){
+				if(window.Pages.onResizeHandlers){
+					var setTabbedInterval = setInterval(function () {
+						window.Pages.onResizeHandlers.forEach(function(car){car();});
+					}, 25)
+
+
+					setTimeout(function () {
+						clearInterval(setTabbedInterval);
+						if ($.cookie("enableLiveEdit") === "true") {
+							setInterval(function () {
+								window.Pages.onResizeHandlers.forEach(function(car){car();});
+							}, 2000);
+						}
+					}, 2500);
+					element.onclick="window.setTimeout(function(){reinitCarousels();},2);"
+				}
+			}
+		}
+
+		function adjustTab(e) {
+			e.preventDefault();
+			window.setTimeout(function(){
+				reinitCarousels();
+			}, 2);
+			sizeTabbedContent(this);
+		}
+
+		var tabButtons = document.querySelectorAll("#divTabbed01c4205b-272b-42da-a5f0-229711a211a0 .tabButton");
+
+		tabButtons.forEach(function (tabButton) {
+			tabButton.addEventListener("click", adjustTab);
+		});
+
+	
+
+
+
+	 
+
+	 
+
+			 
+						
+	
+	
+		
+
+
+
+
+
+
+	
+		
+				
+	
+	
+		
+				
+					
+
+
+	
+		
+			Campaign Finance
+		
+	
+
+		.fancyButton3116.fancyButton:link,.fancyButton3116.fancyButton:visited, .fancyButton3116div.fancyButton{
+	background-color: rgb(43, 93, 148);
+	background-repeat: no-repeat;
+	background-position: left top;
+border-radius: 10px;
+border: 2px solid #2B5D94;
+box-shadow: 0 3px 16px #0000001A;
+-webkit-transition: .3s ease-in-out;
+-moz-transition: .3s ease-in-out;
+-o-transition: .3s ease-in-out;
+transition: .3s ease-in-out;}
+.fancyButton3116.fancyButton:hover,.fancyButton3116.fancyButton:focus,.fancyButton3116.fancyButton:active,.fancyButton3116.fancyButton.hover{
+	background-color: rgb(255, 255, 255);
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+.fancyButton3116.fancyButton:link > span,.fancyButton3116.fancyButton:visited > span, .fancyButton3116div.fancyButton > span{
+}
+.fancyButton3116.fancyButton:hover > span,.fancyButton3116.fancyButton:focus > span,.fancyButton3116.fancyButton:active > span,.fancyButton3116.fancyButton.hover > span{
+}
+.fancyButton3116.fancyButton .text{
+	color: rgb(255, 255, 255);
+	font-size: 1.1em;
+	font-family: "Public Sans";
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 16px;
+	padding-left: 16px;
+	font-weight: 600;
+	text-decoration: none;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 16px;
+	padding-left: 16px;
+	background-repeat: no-repeat;
+	background-position: left top;
+height: 80px;
+-webkit-transition: .2s ease-in-out;
+-moz-transition: .2s ease-in-out;
+-o-transition: .2s ease-in-out;
+transition: .2s ease-in-out;
+}
+.fancyButton3116.fancyButton:hover .text,.fancyButton3116.fancyButton:focus .text,.fancyButton3116.fancyButton:active .text,.fancyButton3116.fancyButton.hover .text{
+	color: rgb(43, 93, 148);
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+.fancyButton3116.fancyButton .textStyle1{
+	color: rgb(255, 255, 255);
+	font-size: 1.1em;
+	font-style: normal;
+	text-decoration: none;
+
+}
+.fancyButton3116.fancyButton:hover .textStyle1, .fancyButton3116.fancyButton.hover .textStyle1{
+	color: rgb(43, 93, 148);
+	text-decoration: none;
+
+}
+
+
+ 
+
+
+	
+		
+			Election Judges
+		
+	
+
+		.fancyButton3117.fancyButton:link,.fancyButton3117.fancyButton:visited, .fancyButton3117div.fancyButton{
+	background-color: rgb(43, 93, 148);
+	background-repeat: no-repeat;
+	background-position: left top;
+border-radius: 10px;
+border: 2px solid #2B5D94;
+box-shadow: 0 3px 16px #0000001A;
+-webkit-transition: .3s ease-in-out;
+-moz-transition: .3s ease-in-out;
+-o-transition: .3s ease-in-out;
+transition: .3s ease-in-out;}
+.fancyButton3117.fancyButton:hover,.fancyButton3117.fancyButton:focus,.fancyButton3117.fancyButton:active,.fancyButton3117.fancyButton.hover{
+	background-color: rgb(255, 255, 255);
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+.fancyButton3117.fancyButton:link > span,.fancyButton3117.fancyButton:visited > span, .fancyButton3117div.fancyButton > span{
+}
+.fancyButton3117.fancyButton:hover > span,.fancyButton3117.fancyButton:focus > span,.fancyButton3117.fancyButton:active > span,.fancyButton3117.fancyButton.hover > span{
+}
+.fancyButton3117.fancyButton .text{
+	color: rgb(255, 255, 255);
+	font-size: 1.1em;
+	font-family: "Public Sans";
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 16px;
+	padding-left: 16px;
+	font-weight: 600;
+	text-decoration: none;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 16px;
+	padding-left: 16px;
+	background-repeat: no-repeat;
+	background-position: left top;
+height: 80px;
+-webkit-transition: .2s ease-in-out;
+-moz-transition: .2s ease-in-out;
+-o-transition: .2s ease-in-out;
+transition: .2s ease-in-out;
+}
+.fancyButton3117.fancyButton:hover .text,.fancyButton3117.fancyButton:focus .text,.fancyButton3117.fancyButton:active .text,.fancyButton3117.fancyButton.hover .text{
+	color: rgb(43, 93, 148);
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+.fancyButton3117.fancyButton .textStyle1{
+	color: rgb(255, 255, 255);
+	font-size: 1.1em;
+	font-style: normal;
+	text-decoration: none;
+
+}
+.fancyButton3117.fancyButton:hover .textStyle1, .fancyButton3117.fancyButton.hover .textStyle1{
+	color: rgb(43, 93, 148);
+	text-decoration: none;
+
+}
+
+
+ 
+
+
+	
+		
+			Find Your Polling Place
+		
+	
+
+		.fancyButton3115.fancyButton:link,.fancyButton3115.fancyButton:visited, .fancyButton3115div.fancyButton{
+	background-color: rgb(43, 93, 148);
+	background-repeat: no-repeat;
+	background-position: left top;
+border-radius: 10px;
+border: 2px solid #2B5D94;
+box-shadow: 0 3px 16px #0000001A;
+-webkit-transition: .3s ease-in-out;
+-moz-transition: .3s ease-in-out;
+-o-transition: .3s ease-in-out;
+transition: .3s ease-in-out;}
+.fancyButton3115.fancyButton:hover,.fancyButton3115.fancyButton:focus,.fancyButton3115.fancyButton:active,.fancyButton3115.fancyButton.hover{
+	background-color: rgb(255, 255, 255);
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+.fancyButton3115.fancyButton:link > span,.fancyButton3115.fancyButton:visited > span, .fancyButton3115div.fancyButton > span{
+}
+.fancyButton3115.fancyButton:hover > span,.fancyButton3115.fancyButton:focus > span,.fancyButton3115.fancyButton:active > span,.fancyButton3115.fancyButton.hover > span{
+}
+.fancyButton3115.fancyButton .text{
+	color: rgb(255, 255, 255);
+	font-size: 1.1em;
+	font-family: "Public Sans";
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 16px;
+	padding-left: 16px;
+	font-weight: 600;
+	text-decoration: none;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 16px;
+	padding-left: 16px;
+	background-repeat: no-repeat;
+	background-position: left top;
+height: 80px;
+-webkit-transition: .2s ease-in-out;
+-moz-transition: .2s ease-in-out;
+-o-transition: .2s ease-in-out;
+transition: .2s ease-in-out;
+}
+.fancyButton3115.fancyButton:hover .text,.fancyButton3115.fancyButton:focus .text,.fancyButton3115.fancyButton:active .text,.fancyButton3115.fancyButton.hover .text{
+	color: rgb(43, 93, 148);
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+.fancyButton3115.fancyButton .textStyle1{
+	color: rgb(255, 255, 255);
+	font-size: 1.1em;
+	font-style: normal;
+	text-decoration: none;
+
+}
+.fancyButton3115.fancyButton:hover .textStyle1, .fancyButton3115.fancyButton.hover .textStyle1{
+	color: rgb(43, 93, 148);
+	text-decoration: none;
+
+}
+
+
+ 
+
+
+	
+		
+			Register to Vote
+		
+	
+
+		.fancyButton3113.fancyButton:link,.fancyButton3113.fancyButton:visited, .fancyButton3113div.fancyButton{
+	background-color: rgb(43, 93, 148);
+	background-repeat: no-repeat;
+	background-position: left top;
+border-radius: 10px;
+border: 2px solid #2B5D94;
+box-shadow: 0 3px 16px #0000001A;
+-webkit-transition: .3s ease-in-out;
+-moz-transition: .3s ease-in-out;
+-o-transition: .3s ease-in-out;
+transition: .3s ease-in-out;}
+.fancyButton3113.fancyButton:hover,.fancyButton3113.fancyButton:focus,.fancyButton3113.fancyButton:active,.fancyButton3113.fancyButton.hover{
+	background-color: rgb(255, 255, 255);
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+.fancyButton3113.fancyButton:link > span,.fancyButton3113.fancyButton:visited > span, .fancyButton3113div.fancyButton > span{
+}
+.fancyButton3113.fancyButton:hover > span,.fancyButton3113.fancyButton:focus > span,.fancyButton3113.fancyButton:active > span,.fancyButton3113.fancyButton.hover > span{
+}
+.fancyButton3113.fancyButton .text{
+	color: rgb(255, 255, 255);
+	font-size: 1.1em;
+	font-family: "Public Sans";
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 16px;
+	padding-left: 16px;
+	font-weight: 600;
+	text-decoration: none;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 16px;
+	padding-left: 16px;
+	background-repeat: no-repeat;
+	background-position: left top;
+height: 80px;
+-webkit-transition: .2s ease-in-out;
+-moz-transition: .2s ease-in-out;
+-o-transition: .2s ease-in-out;
+transition: .2s ease-in-out;
+}
+.fancyButton3113.fancyButton:hover .text,.fancyButton3113.fancyButton:focus .text,.fancyButton3113.fancyButton:active .text,.fancyButton3113.fancyButton.hover .text{
+	color: rgb(43, 93, 148);
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+.fancyButton3113.fancyButton .textStyle1{
+	color: rgb(255, 255, 255);
+	font-size: 1.1em;
+	font-style: normal;
+	text-decoration: none;
+
+}
+.fancyButton3113.fancyButton:hover .textStyle1, .fancyButton3113.fancyButton.hover .textStyle1{
+	color: rgb(43, 93, 148);
+	text-decoration: none;
+
+}
+
+
+ 
+
+
+	
+		
+			Voter Guide (PDF)
+		
+	
+
+		.fancyButton3114.fancyButton:link,.fancyButton3114.fancyButton:visited, .fancyButton3114div.fancyButton{
+	background-color: rgb(43, 93, 148);
+	background-repeat: no-repeat;
+	background-position: left top;
+border-radius: 10px;
+border: 2px solid #2B5D94;
+box-shadow: 0 3px 16px #0000001A;
+-webkit-transition: .3s ease-in-out;
+-moz-transition: .3s ease-in-out;
+-o-transition: .3s ease-in-out;
+transition: .3s ease-in-out;}
+.fancyButton3114.fancyButton:hover,.fancyButton3114.fancyButton:focus,.fancyButton3114.fancyButton:active,.fancyButton3114.fancyButton.hover{
+	background-color: rgb(255, 255, 255);
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+.fancyButton3114.fancyButton:link > span,.fancyButton3114.fancyButton:visited > span, .fancyButton3114div.fancyButton > span{
+}
+.fancyButton3114.fancyButton:hover > span,.fancyButton3114.fancyButton:focus > span,.fancyButton3114.fancyButton:active > span,.fancyButton3114.fancyButton.hover > span{
+}
+.fancyButton3114.fancyButton .text{
+	color: rgb(255, 255, 255);
+	font-size: 1.1em;
+	font-family: "Public Sans";
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 16px;
+	padding-left: 16px;
+	font-weight: 600;
+	text-decoration: none;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 16px;
+	padding-left: 16px;
+	background-repeat: no-repeat;
+	background-position: left top;
+height: 80px;
+-webkit-transition: .2s ease-in-out;
+-moz-transition: .2s ease-in-out;
+-o-transition: .2s ease-in-out;
+transition: .2s ease-in-out;
+}
+.fancyButton3114.fancyButton:hover .text,.fancyButton3114.fancyButton:focus .text,.fancyButton3114.fancyButton:active .text,.fancyButton3114.fancyButton.hover .text{
+	color: rgb(43, 93, 148);
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+.fancyButton3114.fancyButton .textStyle1{
+	color: rgb(255, 255, 255);
+	font-size: 1.1em;
+	font-style: normal;
+	text-decoration: none;
+
+}
+.fancyButton3114.fancyButton:hover .textStyle1, .fancyButton3114.fancyButton.hover .textStyle1{
+	color: rgb(43, 93, 148);
+	text-decoration: none;
+
+}
+
+
+ 
+
+
+	
+		
+			Land & Water Legacy Program Referendum
+		
+	
+
+		.fancyButton3709.fancyButton:link,.fancyButton3709.fancyButton:visited, .fancyButton3709div.fancyButton{
+	background-color: rgb(43, 93, 148);
+	background-repeat: no-repeat;
+	background-position: left top;
+border-radius: 10px;
+border: 2px solid #2B5D94;
+box-shadow: 0 3px 16px #0000001A;
+-webkit-transition: .3s ease-in-out;
+-moz-transition: .3s ease-in-out;
+-o-transition: .3s ease-in-out;
+transition: .3s ease-in-out;}
+.fancyButton3709.fancyButton:hover,.fancyButton3709.fancyButton:focus,.fancyButton3709.fancyButton:active,.fancyButton3709.fancyButton.hover{
+	background-color: rgb(255, 255, 255);
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+.fancyButton3709.fancyButton:link > span,.fancyButton3709.fancyButton:visited > span, .fancyButton3709div.fancyButton > span{
+}
+.fancyButton3709.fancyButton:hover > span,.fancyButton3709.fancyButton:focus > span,.fancyButton3709.fancyButton:active > span,.fancyButton3709.fancyButton.hover > span{
+}
+.fancyButton3709.fancyButton .text{
+	color: rgb(255, 255, 255);
+	font-size: 1.1em;
+	font-family: "Public Sans";
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 16px;
+	padding-left: 16px;
+	font-weight: 600;
+	text-decoration: none;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 16px;
+	padding-left: 16px;
+	background-repeat: no-repeat;
+	background-position: left top;
+height: 80px;
+-webkit-transition: .2s ease-in-out;
+-moz-transition: .2s ease-in-out;
+-o-transition: .2s ease-in-out;
+transition: .2s ease-in-out;
+}
+.fancyButton3709.fancyButton:hover .text,.fancyButton3709.fancyButton:focus .text,.fancyButton3709.fancyButton:active .text,.fancyButton3709.fancyButton.hover .text{
+	color: rgb(43, 93, 148);
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+.fancyButton3709.fancyButton .textStyle1{
+	color: rgb(255, 255, 255);
+	font-size: 1.1em;
+	font-style: normal;
+	text-decoration: none;
+
+}
+.fancyButton3709.fancyButton:hover .textStyle1, .fancyButton3709.fancyButton.hover .textStyle1{
+	color: rgb(43, 93, 148);
+	text-decoration: none;
+
+}
+
+
+ 
+				
+			
+		
+	
+			
+
+
+
+	 
+
+	 
+
+			 
+						
+	
+	
+		
+
+	
+
+		
+					
+							Language Minority Districts
+
+					
+				
+
+
+	    
+
+
+        Some precincts in Washington County are designated as Language Minority Districts (LMDs) according to Minnesota Statute 204B.295. Translated voting instructions and sample ballots are available during any regular or state special election in the following precincts:HmongNewportOakdale P4Oakdale P5Oakdale P6Oakdale P7Woodbury P13Woodbury P14Woodbury P15Woodbury P16MandarinOak Park HeightsStillwater W1 P1Stillwater W2 P2SpanishCottage Grove P4Lake Elmo P1LandfallOakdale P1Oakdale P8Woodbury P9VietnameseWoodbury P12
+    
+
+
+	$(document).ready(function (e) {		
+	    renderSlideshowIfApplicable($('#divEditor' + 'a764b8a5-fca5-49bf-9284-7f8c20bd59d7'));
+	});
+
+
+
+				
+					
+							Know Your Voter Rights
+
+					
+				
+
+
+	    
+
+
+        As a voter in Minnesota, you can:Have time off work to vote. You have a right to take time off work to vote without losing your pay, personal leave, or vacation time.Vote, if in line by 8 p.m. You have the right to vote if you are in line to vote anytime before 8 p.m.Register to vote on Election Day. You have the right to register to vote on Election Day if you can show the required proof of residence.Sign in orally. You have the right to orally confirm who you are and to ask another person to sign for you if you cannot sign your name.Ask for help. You have the right to ask anyone for help, except for an agent of your employer or union. A voter who requires assistance in marking a ballot (blindness, disability, or inability to read or write), may be given assistance by a person of the voter’s choice (with the exception of their employer, anyone authorized to act on behalf of their employer, or officer or agent of the voter’s union).Bring children to the polls. You have the right to bring your children with you to vote.Vote if you are not incarcerated for a felony conviction. You can vote if you are not currently incarcerated, even if you are on probation or parole, or have other conditions such as restitution.Vote if under guardianship. You have the right to vote if you are under a guardianship, unless a judge has revoked your right to vote.Vote without being influenced. You have the right to vote without anyone in the polling place trying to influence your vote.Get a replacement ballot. You have the right to a replacement ballot if you make a mistake on your ballot before you cast it.File a complaint. You have the right to file a written complaint at your polling place if you are unhappy with the way an election is being run.Bring a sample ballot. You have the right to take a sample ballot into the voting booth.Bring the Voter’s Bill of Rights. You have the right to take a copy of the Voter’s Bill of Rights (Minnesota Statutes 204C.08, subd. 1d) into the voting booth.
+    
+
+
+	$(document).ready(function (e) {		
+	    renderSlideshowIfApplicable($('#divEditor' + '28969cff-f807-4c6e-bba7-3f30e81df0da'));
+	});
+
+
+
+				
+					
+							Vote Early (Absentee Voting)
+
+					
+				
+
+
+	    
+
+
+        To vote by mail, apply to have an absentee ballot mailed to you. You do not need to be registered to apply. For your ballot to count, remember this important information: Carefully read the ballot instructions.You will need a witness when you vote and complete your ballot. The witness can be either a registered Minnesota voter or a notary.Return the ballot and forms right away. Your ballot will not count if it is received after Election Day.Apply for an absentee ballotTo automatically receive an absentee ballot for every election you are eligible to vote in, join the Permanent Absentee List.Join the Permanent Absentee List and find other ways to voteTo have a paper Voter Registration Application mailed to you, call Washington County Elections at 651-430-6790. Application deadlineYou can apply for a ballot any time during the year, except on the day of the election. Leave time for election officials to mail your ballot. Your returned ballot must be received by Election Day. Return your absentee ballotIn person: You can return your ballot in person no later than 8 p.m. on Election Day.Visit the Elections CalendarYou must return it to the election office that sent your ballot. You can drop off ballots for up to three other voters. You will need to show identification with name and signature when returning a ballot for someone else. Some voters may also return it in one of the designated ballot drop box locations.See Ballot Drop Box LocationsYou may not drop your ballot off at your polling place on election day.By mail: Your ballot must be received by Election Day or it will not be counted. Return your ballot by mail or package delivery service (such as FedEx or UPS).Have an agent pick up your ballot: In special situations, you may ask an agent to pick up and return an absentee ballot for you. This is called ”agent delivery.”Learn More About Agent DeliveryTrack Your BallotYou can track the status of your ballot and confirm that it was received and counted. Track Your BallotDeadline to return your ballotYour ballot will not count if it is received after Election Day. 
+    
+
+
+	$(document).ready(function (e) {		
+	    renderSlideshowIfApplicable($('#divEditor' + 'ceb4f887-d771-4f65-9f41-ab0d3a87cc89'));
+	});
+
+
+
+				
+					
+							What's on Your Ballot?
+
+					
+				
+
+
+	    
+
+
+        Sample ballots show a list of the candidates and ballot questions about 45 days before an election.Learn what is on your ballot
+    
+
+
+	$(document).ready(function (e) {		
+	    renderSlideshowIfApplicable($('#divEditor' + 'e3336fcf-c9eb-4070-97aa-7b7f4a40a1b5'));
+	});
+
+
+
+				
+					
+							Additional Resources
+
+					
+				
+
+
+	    
+
+
+        Elections & Voting (Minnesota Secretary of State)How Elections WorkHow to Become a CandidateVote Center Map (PDF)
+    
+
+
+	$(document).ready(function (e) {		
+	    renderSlideshowIfApplicable($('#divEditor' + '214bf69d-4796-4c87-9300-07ac037e33ed'));
+	});
+
+
+
+				
+					
+	
+	
+
+		//If responsive not enabled, execute this after a timeout
+		if(!isResponsiveEnabled)
+		{
+			window.setTimeout(function(){
+				var tabbedWidgetID = 'divTabbeddbd5d042-9698-473c-a5fb-2e4373c78c35';
+				typeof setTabbedWidgetsTabHeight === "function" && setTabbedWidgetsTabHeight(tabbedWidgetID);
+			}, 1500);
+		}
+
+		function reinitCarousels() {
+			if (window.carouselsToInit) {
+				for (var i = 0; i < window.carouselsToInit.length; i++) {
+					carouselsToInit[i]();
+				}
+			}
+		}
+		function sizeTabbedContent(element){
+			if(window.Pages){
+				if(window.Pages.onResizeHandlers){
+					var setTabbedInterval = setInterval(function () {
+						window.Pages.onResizeHandlers.forEach(function(car){car();});
+					}, 25)
+
+
+					setTimeout(function () {
+						clearInterval(setTabbedInterval);
+						if ($.cookie("enableLiveEdit") === "true") {
+							setInterval(function () {
+								window.Pages.onResizeHandlers.forEach(function(car){car();});
+							}, 2000);
+						}
+					}, 2500);
+					element.onclick="window.setTimeout(function(){reinitCarousels();},2);"
+				}
+			}
+		}
+
+		function adjustTab(e) {
+			e.preventDefault();
+			window.setTimeout(function(){
+				reinitCarousels();
+			}, 2);
+			sizeTabbedContent(this);
+		}
+
+		var tabButtons = document.querySelectorAll("#divTabbeddbd5d042-9698-473c-a5fb-2e4373c78c35 .tabButton");
+
+		tabButtons.forEach(function (tabButton) {
+			tabButton.addEventListener("click", adjustTab);
+		});
+
+	
+
+
+
+	 
+
+	 
+
+			 
+
+
+		
+
+	
+
+	
+	
+
+	
+
+
+
+
+
+	
+				                
+
+						
+	
+	
+		
+
+	    
+
+
+        Contact Us
+    
+
+
+	$(document).ready(function (e) {		
+	    renderSlideshowIfApplicable($('#divEditor' + '8757b9c7-07dc-4c98-83df-61807a6fe383'));
+	});
+
+
+
+	 
+
+	 
+
+			 
+						
+	
+	
+		
+
+
+	 
+
+	 
+
+			 
+						
+	
+	
+		
+
+	    
+
+
+        Elections Administration Phone: 651-430-6790Email Staff Office HoursMonday - Friday8 a.m. - 4:30 p.m. 
+    
+
+
+	$(document).ready(function (e) {		
+	    renderSlideshowIfApplicable($('#divEditor' + '31a32f5c-d422-483a-a535-4453ccebbd31'));
+	});
+
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+
+	    
+
+
+        Washington County Government Center14949 62nd Street NorthStillwater, MN 55082 Office HoursMonday - Friday8 a.m. - 4:30 p.m. 
+    
+
+
+	$(document).ready(function (e) {		
+	    renderSlideshowIfApplicable($('#divEditor' + 'f05d128a-ee48-4db8-b52d-14a22b28af62'));
+	});
+
+
+
+	 
+
+	 
+
+			 
+
+
+	
+
+
+	
+				                
+
+
+
+	
+
+
+
+	
+				                
+
+						
+	
+	
+		
+    
+
+
+
+
+
+	
+			
+		
+								
+	
+	
+		
+					
+						
+
+
+	
+						
+					
+		
+	
+	
+
+	
+
+	
+
+
+
+
+	//Render slideshow if info advacned items contain one.
+	$(document).ready(function (e) {
+		$('#divInfoAdv87101417-f199-4287-ad4f-0417d230a23d .InfoAdvanced.widgetItem').each(function () {
+			renderSlideshowIfApplicable($(this));		
+		});
+	});
+
+	 
+
+	 
+	
+	
+		
+
+
+
+
+
+
+	
+		
+				
+	
+	
+		
+				
+					
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+				
+			
+		
+	
+			
+
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+    
+
+
+
+
+
+	
+			
+		
+					Contact Us
+								
+	
+	
+		
+					
+						
+
+
+	P.O. Box 614949 62nd Street NorthStillwater, MN 55082-6132P: 651-430-6000P: 651-430-6246 (TTY)
+						
+					
+		
+	
+	
+
+	
+
+	
+
+
+
+
+	//Render slideshow if info advacned items contain one.
+	$(document).ready(function (e) {
+		$('#divInfoAdv97d64aa8-a7af-4bf2-b44c-e2d486a1596c .InfoAdvanced.widgetItem').each(function () {
+			renderSlideshowIfApplicable($(this));		
+		});
+	});
+
+	 
+
+	 
+
+							
+	
+	
+		
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+	
+
+
+
+
+
+
+
+
+	
+			
+		
+					Essential Links
+						
+	
+	
+        
+				
+					
+
+
+
+
+    
+        Elections
+        
+    
+
+
+
+
+    
+        Property & Environment
+        
+    
+
+
+
+
+    
+        Parks & Trails
+        
+    
+
+
+
+
+    
+        Library
+        
+    
+
+
+
+
+    
+        Public Safety & Law
+        
+    
+
+
+
+
+    
+        Employee Portal
+        
+    
+					
+				
+		
+        
+	
+	
+	
+	
+		/QuickLinks.aspx
+	
+
+	
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+	
+
+
+
+
+
+
+
+
+	
+			
+		
+					Site Links
+						
+	
+	
+        
+				
+					
+
+
+
+
+    
+        Accessibility
+        
+    
+
+
+
+
+    
+        Copyright
+        
+    
+
+
+
+
+    
+        Data Practices
+        
+    
+
+
+
+
+    
+        Privacy Policy
+        
+    
+
+
+
+
+    
+        Site Map
+        
+    
+					
+				
+		
+        
+	
+	
+	
+	
+		/QuickLinks.aspx
+	
+
+	
+
+
+	 
+
+	 
+
+			 
+
+
+	
+
+
+
+
+
+
+		
+			
+				$(window).on("load", function () {
+					$.when(window.Pages.rwdSetupComplete)
+						.done(function () {
+							renderBanner('banner2-42',
+								'banner2',
+								{"BannerOptionID":42,"ThemeID":18,"SlotName":"banner2","Name":"Default","IsDefault":true,"BannerMode":1,"SlideShowSlideTiming":"5","SlideshowTransition":0,"SlideShowTransitionTiming":"1","ImageScale":true,"ImageAlignment":1,"ImageScroll":true,"MuteSound":true,"VideoType":0,"Status":40,"SlideshowControlsPosition":0,"SlideshowControlsAlignment":0,"SlideshowBannerControlsColorScheme":0,"DisplayVideoPauseButton":false,"VideoPauseButtonAlignment":1,"VideoPauseButtonControlsAlignment":0,"VideoPauseButtonStyle":"#FFFFFF","VideoPauseButtonBackgroundStyle":"#000000","VideoPauseButtonAlignmentClass":"alignRight viewport","DisplaySlideshowPauseButton":false,"SlideshowControlsColor":"#FFFFFF","SlideshowControlsBackgroundColor":"#000000","SlideshowPauseButtonClass":"isHidden","BannerImages":[{"BannerImageID":570,"BannerOptionID":42,"FileName":"/ImageRepository/Document?documentID=74998","Height":700,"Width":2200,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":1,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":null}],"BannerVideos":[],"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/"},
+								{"BannerImageID":570,"BannerOptionID":42,"FileName":"/ImageRepository/Document?documentID=74998","Height":700,"Width":2200,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":1,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":null},
+								'/App_Themes/Simple/Images/',
+								'<img alt="" class="bannerObject" src="/ImageRepository/Document?documentID=74998" />');
+						});
+				});
+			
+
+
+
+	
+				                
+
+						
+	
+	
+		
+ 
+	
+	
+		
+  /* CP icon */
+  .cpBylineIconTS {
+    color: #fff;
+  }
+  /* CP Text */
+  .cpBylineTextTS,
+  .cpBylineTextTS a:link {
+    color: #fff;
+  }
+
+  .cpBylineTS {
+    text-align: center;
+  }
+  
+  .cpBylineIconTS {
+    fill: currentColor;
+    width: 39px;
+    height: 26px;
+    display: inline;
+    vertical-align: middle;
+  }
+
+
+
+  
+    
+    
+  
+  Government Websites by CivicPlus®
+
+
+	
+
+	
+
+	 
+
+	 
+
+			 
+
+
+	
+
+
+
+
+            
+        
+    
+
+
+
+
+	
+		
+			Loading
+			
+				
+					
+				
+			
+		
+		
+			
+				
+				Loading
+			
+		
+		
+			Do Not Show Again
+			Close
+		
+	
+
+
+
+
+
+
+
+		$(document).ready(function () {
+			var filter = {
+				targetId: '667',
+				targetType: 1
+			}
+
+			new SplashModalRender().triggerRender(filter);
+		});
+
+
+
+	
+	
+	
+	
+
+
+
+	
+
+
+
+
+
+
+    
+    
+
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-55732236-1', 'auto');
+  ga('send', 'pageview');
+
+
+
+
+
+
+
+
+
+
+
+
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date()); gtag('config', 'G-M7FYBH3X59');
+
+
+
+
+    window._monsido = window._monsido || {
+        token: "7xUbVKA1UChtNGYrPIC9zg",
+        statistics: {
+            enabled: true,
+            cookieLessTracking: true,
+            documentTracking: {
+                enabled: true,
+                documentCls: "monsido_download",
+                documentIgnoreCls: "monsido_ignore_download",
+                documentExt: [],
+            },
+        },
+        heatmap: {
+            enabled: true,
+        },
+        pageCorrect: {
+            enabled: true,
+        },
+        pageAssistV2: {
+            enabled: true,
+            theme: "light",
+            mainColor: "#783CE2",
+            textColor: "#ffffff",
+            linkColor: "#783CE2",
+            buttonHoverColor: "#783CE2",
+            mainDarkColor: "#052942",
+            textDarkColor: "#ffffff",
+            linkColorDark: "#FFCF4B",
+            buttonHoverDarkColor: "#FFCF4B",
+            greeting: "Discover your personalization options",
+            direction: "leftbottom",
+            coordinates: "undefined undefined undefined undefined",
+            iconShape: "circle",
+            title: "Personalization Options",
+            titleText: "Welcome to PageAssist toolbar! Adjust the options below to cater the website to your accessibility needs.",
+            iconPictureUrl: "logo",
+            logoPictureUrl: "",
+            logoPictureBase64: "",
+            languages: [""],
+            defaultLanguage: "",
+            skipTo: false,
+            alwaysOnTop: false,
+        },
+    };
+
+
+
+
+
+
+  function getValueTS(elem, attr) {
+    var val = elem.css(attr);
+    if (val === undefined) return undefined;
+    var num = parseInt(val, 10);
+    if (num === NaN) return undefined;
+    return num;
+  }
+
+  function clampTS(number, min, max) {
+    return Math.min(Math.max(number, min), max);
+  }
+
+  function isPageEditingTS() {
+    return (
+      $("#doneEditing").length > 0 || // In live edit
+      typeof DesignCenter !== "undefined" // In theme manager
+    );
+  }
+
+  var bgColorRegexTS = new RegExp("rgba\((\d+), (\d+), (\d+), (\d*\.?\d*)\)");
+  function isTransparentTS(elem) {
+    var bg = elem.css('background-color');
+    if (typeof bg !== "string") return false;
+    if (bg === "transparent") return true;
+    if (!bg.startsWith('rgba(')) return false;
+    var matchState = bg.match(bgColorRegexTS);
+    if (!matchState || matchState.length !== 5) return false;
+    var alpha = parseFloat(matchState[4], 10);
+    if (!(alpha >= 0 && alpha < 1)) return false;
+    return true;
+  }
+
+  function iterateLeftpads(cb) {
+    var containersTS = $("[class^='siteWrap'],[class*=' siteWrap']");
+    for (var i = 0; i < containersTS.length; i++) {
+      var containerTS = containersTS[i];
+      // Skip the body container and anything with data-skip-leftpad
+      if (
+        containerTS.id !== "bodyContainerTS" &&
+        containerTS.getAttribute('data-skip-leftpad') === null
+      ) {
+        cb(containerTS);
+      }
+    }
+  }
+
+  function iterateRightpads(cb) {
+    var containersTS = $("[class^='siteWrap'],[class*=' siteWrap']");
+    for (var i = 0; i < containersTS.length; i++) {
+      var containerTS = containersTS[i];
+      // Skip the body container and anything with data-skip-rightpad
+      if (
+        containerTS.id !== "bodyContainerTS" &&
+        containerTS.getAttribute('data-skip-rightpad') === null
+      ) {
+        cb(containerTS);
+      }
+    }
+  }
+
+  var anchor = $("#divToolbars");
+  var bodyContainerTS = $("#bodyContainerTS");
+
+  // Outer banner padding (push banner down)
+  var outerSizingTS = $("#bannerContainerTS");
+  // Inner banner padding (push banner content down) - Transparent header OR on attaching headers
+  var innerSizingTS = $("#bannerSizingTS");
+
+  var forceUnfixClassTS = "forceUnfixTS";
+
+  var fixedTopTS = $(".fixedTopTS");
+  var fixedBottomTS = $(".fixedBottomTS");
+  var fixedLeftTS = $(".fixedLeftTS");
+  var fixedRightTS = $(".fixedRightTS");
+
+  var initialTopTS;
+  var topAttachTS;
+  if (fixedTopTS && fixedTopTS.length === 1) {
+    initialTopTS = getValueTS(fixedTopTS, 'top');
+    var attachment = fixedTopTS.attr('data-attach');
+    if (attachment) topAttachTS = $("#" + attachment);
+    if (!topAttachTS || topAttachTS.length !== 1) topAttachTS = undefined;
+  }
+
+  function resizeAdjustmentTS() {
+    var editing = isPageEditingTS();
+
+    // Fixed top script
+    (function () {
+      if (!fixedTopTS || fixedTopTS.length !== 1 || initialTopTS === undefined) return;
+
+      if (editing) {
+        fixedTopTS[0].classList.add(forceUnfixClassTS);
+      } else {
+        fixedTopTS[0].classList.remove(forceUnfixClassTS);
+      }
+
+      var topPosition = fixedTopTS.css('position');
+      if (topPosition === 'fixed') {
+        if (topAttachTS) {
+          scrollAdjustmentTS();
+        } else {
+          var anchorHeight = anchor.outerHeight() - 1;
+          fixedTopTS.css('top', anchorHeight + initialTopTS);
+        }
+      } else {
+        fixedTopTS.css('top', initialTopTS);
+      }
+
+      if (topPosition === 'fixed' || topPosition === 'absolute') {
+        // Bump the banner content down
+        if (isTransparentTS(fixedTopTS)) {
+          innerSizingTS.css('padding-top', initialTopTS + fixedTopTS.outerHeight());
+          outerSizingTS.css('padding-top', '');
+
+          try {
+            window.Pages.onResizeHandlersExecute();
+          } catch (e) { }
+        } else {
+          outerSizingTS.css('padding-top', fixedTopTS.outerHeight() - 1);
+          innerSizingTS.css('padding-top', '');
+        }
+      } else {
+        innerSizingTS.css('padding-top', '');
+        outerSizingTS.css('padding-top', '');
+      }
+    })();
+
+    // Fixed bottom script
+    (function () {
+      if (!fixedBottomTS || fixedBottomTS.length === 0) return;
+
+      // If the widget has gone narrow, force unfix
+      if (editing || fixedBottomTS.outerHeight() > 200) {
+        fixedBottomTS[0].classList.add(forceUnfixClassTS);
+      } else {
+        fixedBottomTS[0].classList.remove(forceUnfixClassTS);
+      }
+
+      if (fixedBottomTS.css('position') === 'fixed') {
+        bodyContainerTS.css('padding-bottom', fixedBottomTS.outerHeight());
+      } else {
+        bodyContainerTS.css('padding-bottom', '');
+      }
+    })();
+
+    // Fixed left script
+    (function () {
+      if (!fixedLeftTS || fixedLeftTS.length === 0) return;
+
+      if (editing) {
+        fixedLeftTS[0].classList.add(forceUnfixClassTS);
+      } else {
+        fixedLeftTS[0].classList.remove(forceUnfixClassTS);
+      }
+
+      if (fixedLeftTS.css('position') === 'fixed') {
+        var anchorHeight = anchor.outerHeight() - 1;
+        fixedLeftTS.css('top', anchorHeight);
+        var leftBoundingTS = fixedLeftTS[0].getBoundingClientRect();
+        iterateLeftpads(function (containerTS) {
+          var containerBoundingTS = containerTS.getBoundingClientRect();
+          if (containerBoundingTS.left <= leftBoundingTS.right) {
+            $(containerTS).css('padding-left', leftBoundingTS.width + 16);
+          } else {
+            $(containerTS).css('padding-left', '');
+          }
+        });
+      } else {
+        fixedLeftTS.css('top', '');
+        iterateLeftpads(function (containerTS) {
+          $(containerTS).css('padding-left', '');
+        });
+      }
+    })();
+
+    // Fixed right script
+    (function () {
+      if (!fixedRightTS || fixedRightTS.length === 0) return;
+
+      if (editing) {
+        fixedRightTS[0].classList.add(forceUnfixClassTS);
+      } else {
+        fixedRightTS[0].classList.remove(forceUnfixClassTS);
+      }
+
+      if (fixedRightTS.css('position') === 'fixed') {
+        var anchorHeight = anchor.outerHeight() - 1;
+        fixedRightTS.css('top', anchorHeight);
+        var rightBoundingTS = fixedRightTS[0].getBoundingClientRect();
+        iterateRightpads(function (containerTS) {
+          var containerBoundingTS = containerTS.getBoundingClientRect();
+          if (containerBoundingTS.right >= rightBoundingTS.left) {
+            $(containerTS).css('padding-right', rightBoundingTS.width + 16);
+          }
+        });
+      } else {
+        fixedRightTS.css('top', '');
+        iterateRightpads(function (containerTS) {
+          $(containerTS).css('padding-right', '');
+        });
+      }
+    })();
+  }
+
+  function scrollAdjustmentTS() {
+    if (!fixedTopTS || fixedTopTS.length !== 1 || !topAttachTS || topAttachTS.length !== 1) return;
+    var topPosition = fixedTopTS.css('position');
+    if (topPosition === 'fixed' || topPosition === 'absolute') {
+      var anchorBounding = anchor[0].getBoundingClientRect();
+      var attachBounding = topAttachTS[0].getBoundingClientRect();
+      var scrollTop = $(window).scrollTop();
+
+      fixedTopTS.css('top', Math.max(anchorBounding.bottom - 1, attachBounding.bottom));
+    } else {
+      fixedTopTS.css('top', initialTopTS);
+    }
+  }
+
+  $(window).load(function () {
+    setTimeout(function () {
+      try {
+        resizeAdjustmentTS();
+      } catch (e) {
+        console.error(e);
+      }
+    }, 350);
+
+    $(window).scroll(function () {
+      try {
+        scrollAdjustmentTS();
+      } catch (e) {
+        console.error(e);
+      }
+    });
+
+    var adjustTimeoutTS;
+    $(window).resize(function () {
+      clearTimeout(adjustTimeoutTS);
+      adjustTimeoutTS = setTimeout(function () {
+        try {
+          resizeAdjustmentTS();
+        } catch (e) {
+          console.error(e);
+        }
+      }, 350);
+    });
+
+    $.when(window.Pages.angularToolbarComplete).done(function () {
+      try {
+        resizeAdjustmentTS();
+      } catch (e) {
+        console.error(e);
+      }
+    });
+  });
+
+
+
+
+
+
+    window.ResidentAgentWidget.load({
+        agentId: '2697c5c0-3712-4215-8a36-657c8d1b5526',
+        apiUrl: 'https://residentagent-api-production.azurewebsites.net'
+    });
+
+
+
+    
+        $(function () {
+            document.cookie = "responsiveGhost=0; path=/";
+        });
+        $(window).on("load", function () {
+            $('body').addClass('doneLoading').removeClass('hideContent');
+
+            if ($('#404Content').length > 0)
+                $('div#bodyWrapper').css('padding', '0px');
+        });
+    
+
+    
+        
+            body.hideContent {
+                opacity: 1 !important;
+            }
+        
+    
+
+        
+
+	
+
+		
+			Arrow Left
+			
+		
+
+		
+			Arrow Right
+			
+		
+
+	
+
+    loadCSS('//fonts.googleapis.com/css?family=Lato:100,100italic,300,300italic,700,700italic,900,900italic,italic,regular|Montserrat:700,regular|Open+Sans:500,600,700,800,italic,regular|Public+Sans:500,600,700,800,900,italic,regular|STIX+Two+Text:500,500italic,600,600italic,700,700italic,italic,regular|Work+Sans:600,regular|');
+    
+
+    []
+        
+            
+                
+                    Slideshow Left Arrow
+                    
+                        
+                    
+                
+                
+                    Slideshow Right Arrow
+                    
+                        
+                    
+                
+            
+        
+    
+	
+	
+
+    
+
+

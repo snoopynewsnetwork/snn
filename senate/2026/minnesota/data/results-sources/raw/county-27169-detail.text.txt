@@ -1,0 +1,2762 @@
+
+
+
+
+
+	
+
+				(function(w,d,s,l,i){w.GAMeasurementID='G-M81SESL2MH';w[l]=w[l]||[];w[l].push({'gtm.start':
+				new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+				j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+				'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+				})(window,document,'script','cpDataLayerGA4','GTM-K73C5PS');
+				
+				
+					var enableTelemetry = 'false'
+					var aiConfig = {
+					instrumentationKey: '1cde048e-3185-4906-aa46-c92a7312b60f'						
+					}
+					var appInsights = window.appInsights || function (a) { function b(a) { c[a] = function () { var b = arguments; c.queue.push(function () { c[a].apply(c, b) }) } } var c = { config: a }, d = document, e = window; setTimeout(function () { var b = d.createElement('script'); b.src = a.url || 'https://js.monitor.azure.com/scripts/a/ai.0.js', d.getElementsByTagName('script')[0].parentNode.appendChild(b) }); try { c.cookie = d.cookie } catch (a) { } c.queue = []; for (var f = ['Event', 'Exception', 'Metric', 'PageView', 'Trace', 'Dependency']; f.length;)b('track' + f.pop()); if (b('setAuthenticatedUserContext'), b('clearAuthenticatedUserContext'), b('startTrackEvent'), b('stopTrackEvent'), b('startTrackPage'), b('stopTrackPage'), b('flush'), !a.disableExceptionTracking) { f = 'onerror', b('_' + f); var g = e[f]; e[f] = function (a, b, d, e, h) { var i = g && g(a, b, d, e, h); return !0 !== i && c['_' + f](a, b, d, e, h), i } } return c }(aiConfig);
+					window.appInsights = appInsights, appInsights.queue && 0 === appInsights.queue.length;
+					// Add telemetry initializer
+					appInsights.queue.push(function() {
+						appInsights.context.addTelemetryInitializer(function(envelope) {
+							var telemetryItem = envelope.data.baseData;
+							// To check the telemetry item’s type:
+							if (!false)
+							{
+								//If the telemetry is not enabled, we still want to capture Google map custom event, so only allow that
+								if (envelope.name.indexOf('.Event') == -1)
+									return false;
+							}
+						});
+					});						
+					appInsights.trackPageView();
+				
+	
+		function populateAntiForgery(token) {
+			var input = document.createElement("input");
+			input.name = "__RequestVerificationToken";
+			input.type = "hidden";
+			input.value = token;
+			var absPat = /^https?:\/\/|^\/\//i;
+			var forms = document.getElementsByTagName("form");
+			for (var i = 0; i < forms.length; i++) {
+				if (forms[i].method == "post" &&
+					!forms[i].querySelector('[name="__RequestVerificationToken"]') &&
+					!absPat.test(forms[i].getAttribute("action"))) {
+					forms[i].appendChild(input.cloneNode());
+				}
+			}
+		}
+
+		function getAntiForgeryToken(callback, error) {
+			var xhr = new XMLHttpRequest();
+			xhr.open("GET", "/antiforgery");
+			xhr.addEventListener("load", function() {
+				try {
+					if (this.status !== 200) {
+						throw Error("Invalid status. Could not retrieve antiforgery token.");
+					}
+					var obj = JSON.parse(this.responseText);
+					callback(obj.token);
+				} catch (e) {
+					typeof error === "function" && error(e);
+				}
+			});
+			xhr.send();
+		}
+
+		getAntiForgeryToken(function(token) {
+			if (document.readyState === "complete"
+				|| document.readyState === "loaded" 
+				|| document.readyState === "interactive") {
+				populateAntiForgery(token);
+				return;
+			}
+			document.addEventListener("DOMContentLoaded", function() {
+				populateAntiForgery(token);
+			}, false);
+		}, console.error);
+	
+			
+
+	
+		window.departmentHeader = {};
+		window.pageSectionTracker = {"PageSectionTrackerId":101,"PageSectionTrackerName":"Departments"};
+		window.isResponsiveEnabled = true;
+		window.isRemoveSetHeights= true;
+		if (window.isRemoveSetHeights) {
+			document.documentElement.className += ' removeSetHeights';
+		}
+		window.mainMenuMediaQuery = 'screen and (max-width: 40em)';
+		window.isMobileBrowserIncludingTablets = false;
+		window.fixedResponsiveMenu = false;
+		window.fullWidthResponsiveMenu = true;
+		window.responsiveMenuHeight = '';
+		window.responsiveMenuFontSize = '';
+		window.isContentAdvisor = false;
+		(function () {
+			window.setSizeCookie = function () {
+				document.cookie = "dpi=" + window.devicePixelRatio + "; path=/";
+				document.cookie = "viewportWidth=" + window.innerWidth + "; path=/";
+				document.cookie = "viewportHeight=" + window.innerHeight + "; path=/";
+				if (screen && screen.width && screen.height) {
+					document.cookie = "screenWidth=" + screen.width + "; path=/";
+					document.cookie = "screenHeight=" + screen.height + "; path=/";
+				}
+				document.cookie = "responsiveGhost=1; path=/";
+			};
+
+			setSizeCookie();
+		}());
+	
+		
+
+	
+	
+	
+
+
+
+
+	
+	
+	
+	
+		 Election Administration | Winona County, MN
+
+		
+			
+	
+	
+
+	
+	
+	
+	
+	<!--
+	var intCountryCode = 840;
+	var order = '';
+//-->
+	
+		
+
+	
+	
+		window.Pages = window.Pages || {};
+		// FrontEnd RWD initialization
+		window.Pages.rwdReady = $.Deferred();
+		window.Pages.toolBarDeferred = $.Deferred();
+		window.Pages.rwdSetupComplete = $.Deferred();
+		window.Pages.megaMenuLoaded = $.Deferred();
+		window.Pages.angularToolbarComplete = $.Deferred();
+		window.Pages.frontEndToolbarComplete = $.Deferred();
+	
+	
+	
+	
+	
+	
+	
+
+
+
+
+	
+	
+	
+	
+
+	
+		setEditorVariables(false, 840);
+		function getPrintPreviewType() { return 0; } function printPreview() {pPreview(getPrintPreviewType()); }
+	
+	
+
+
+
+    jQuery(document).click(function (event) {
+	var target = jQuery(event.target);
+	if (target.attr('src') && target.parents('.image').length && target.parents('.widget').length) {
+		var text = target.attr('title');
+		
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Image',
+				eventAction: 'Image - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.is('button') || target.hasClass('button') || target.parents().hasClass('button')) {
+		var text = "";
+		if (target.parents('.button')[0]) {
+			text = target.parents('.button').first().text();
+		} else if (target.text().length) {
+			text = target.text();
+		} else if (target.attr('title').length) {
+			text = target.attr('title');
+		}
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Button',
+				eventAction: 'Button - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetCustomHtml').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Custom Html',
+				eventAction: 'Custom Html Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.editor').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Editor',
+				eventAction: 'Editor Link Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.GraphicLinks').length) {
+		var text = "";
+		var targetGraphicLink = target;
+		if (target.hasClass('widgetGraphicLinksLink')) {
+			targetGraphicLink = jQuery(target.children()[0]);
+		}
+		if (targetGraphicLink.hasClass('text')) {
+			text = targetGraphicLink.text();
+		} else if (targetGraphicLink.attr('src').length) {
+			if (targetGraphicLink.attr('alt').length) {
+				text = targetGraphicLink.attr('alt');
+			} else {
+				text = targetGraphicLink.attr('src');
+			}
+		} else {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Graphic Links',
+				eventAction: 'Graphic Link - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.InfoAdvanced').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Info Advanced',
+				eventAction: 'Info Advanced Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.list').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'List',
+				eventAction: 'List Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.megaMenuItem').length || target.parents('.topMenuItem').length) {
+		var megaMenuText = jQuery('.topMenuItem.mouseover').find('span').text();
+		var breadCrumbs = [];
+		jQuery('.breadCrumbs > li').each(function () {
+			 breadCrumbs.push(this.textContent);
+		});
+		var pageTitle = breadCrumbs.join('>');
+		var subTitleText = target.parents('.megaMenuItem').children('.widgetTitle').children().text();
+		var text = "";
+		if (pageTitle) {
+			text += pageTitle + " | ";
+		} else {
+			text += document.title + ' - ';
+		}
+		if (target.text() == "" && megaMenuText == "") {
+			text += "N/A";
+		} else if (target.text().length && megaMenuText.length) {
+			if (megaMenuText == target.text()) {
+				text += megaMenuText;
+			} else {
+				text += megaMenuText + " - " + subTitleText + " - " + target.text();
+			}
+		} else if (target.text() == "") {
+			text += megaMenuText;
+		} else {
+			text += target.text();
+		}
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Mega Menu',
+				eventAction: 'Mega Menu : ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetNewsFlash').length && target.parents('.widgetItem').length) {
+		var text = jQuery(target.parents('.widgetItem')[0]).find('.widgetTitle').children().text();
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'News Flash',
+				eventAction: 'News Flash - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.hasClass('widgetQuickLinksLink') || target.find('.widgetQuickLinksLink').length) {
+		var text = target.text();
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Quick Links',
+				eventAction: 'Quick Links - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.attr('src') && target.parents('.cpSlideshow').length) {
+		var text = target.attr('title');
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Slideshow',
+				eventAction: 'Slideshow - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetText').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Text',
+				eventAction: 'Text Link Clicked',
+				eventLabel: window.location.href
+			});
+	}
+});
+	
+	
+		
+		
+			
+				
+			
+		
+	
+	
+		
+	
+	
+		
+			
+		
+	
+
+    
+
+Skip to Main Content
+
+    
+
+        
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+        
+                
+                    
+
+
+
+
+
+    
+        Create a Website Account - Manage notification subscriptions, save form progress and more.   
+        
+	        Website Sign In
+        
+    
+
+
+    $(document).ready(function () {
+        $('#signedOutToolbarCreateProfileButton').click(function (event) {
+            event.preventDefault();
+            window.location.href = '/MyAccount/ProfileCreate?from=url&url=/&dn=' + window.location.origin;
+        });
+
+			
+				$('#loggedOutToolbarSignInButton').click(function (event) {
+					event.preventDefault();
+					window.location.href = '/MyAccount/?from=url&url=' + encodeURIComponent(window.location.href.replace(window.location.origin, '')) + '&dn=' + window.location.host;
+				});
+			
+
+		if ('False' == 'True') {
+            $('#loggedOutToolbarSignInButton').hide();
+		}
+    })
+
+
+
+                
+            
+                
+                
+
+
+
+
+
+
+
+				
+
+    Government  			    Departments  			    How Do I...  			    Notice of Data Security Incident 			
+
+
+
+	
+		(function () {
+			function setupMenu() {
+				const menuID = 'mainNavMenu';
+				const menuType = MAIN_MENU;
+
+				//setup menu manager properties for main menu
+				if (!menuManager.mobileMainNav && true)
+					menuManager.adjustMainItemsWidth('#' + menuID);
+				menuManager.isMainMenuEditable = false;
+				menuManager.mainMenuMaxSubMenuLevels = 4;
+				menuManager.setMOMMode(2, menuType);
+
+				//Init main menu
+				const setupDraggable = menuManager.isMainMenuEditable;
+				const urlToGetHiddenMenus = '/Pages/MenuMain/HiddenMainSubMenus?pageID=1&moduleID=&themeID=16&menuContainerID=mainNav';
+
+				menuManager.setupMenu(menuID, 'mainNav', menuType, setupDraggable, urlToGetHiddenMenus);
+				menuManager.mainMenuInit = true;
+				menuManager.mainMenuTextResizer = false;
+				if (1.00 > 0)
+					menuManager.mainMenuTextResizerRatio = 1.00;
+				if (window.isResponsiveEnabled)
+					menuManager.mainMenuReady.resolve();
+
+			}
+
+			if (document.readyState === "complete"
+				|| document.readyState === "loaded"
+				|| document.readyState === "interactive") {
+				setupMenu();
+				return;
+			}
+
+			document.addEventListener("DOMContentLoaded", setupMenu);
+		})();
+	
+
+
+	
+				                
+
+
+
+	
+	
+				                
+
+
+
+	
+	
+				                
+
+
+
+	
+	
+				                
+
+
+
+	
+	
+				                
+
+						
+	
+	
+		
+
+	
+	
+	
+	
+
+		$(document).ready(function () {
+			try {
+				// Minimum characters required before performing a search/autocomplete
+				var minPrefixLength = 3;
+				var autoCompleteDebounceDelay = 500;
+				var searchFieldSelector = "#searchField" + 'd4921553-38af-4b82-ad1d-598ec700953e';
+				var checkboxSelector = "#ysnSearchOnlyDept" + 'd4921553-38af-4b82-ad1d-598ec700953e';
+				var buttonSelector = ".widgetSearchButton" + 'd4921553-38af-4b82-ad1d-598ec700953e';
+				var autoCompleteCache = {};
+				var autoCompleteCacheKeys = [];
+				var autoCompleteCacheLimit = 25;
+				var currentAutoCompleteRequest = null;
+				var currentAutoCompleteRequestKey = null;
+				var autoCompleteDebounceTimer = null;
+				var autoCompleteDebounceKey = null;
+				var pendingAutoCompleteResponses = [];
+
+				function normalizeAutoCompleteTerm(term) {
+					return $.trim((term || "") + "").replace(/\s+/g, " ");
+				}
+
+				function shouldSearch(term) {
+					return normalizeAutoCompleteTerm(term).length >= minPrefixLength;
+				}
+
+				function getAutoCompleteUrl() {
+					return '/Search/AutoComplete' + ($(checkboxSelector).is(':checked') || false? '?departmentId=0' : '');
+				}
+
+				function getAutoCompleteCacheKey(requestUrl, term) {
+					return requestUrl + "|" + term.toLowerCase();
+				}
+
+				function cacheAutoCompleteResult(cacheKey, data) {
+					if (!Object.prototype.hasOwnProperty.call(autoCompleteCache, cacheKey)) {
+						autoCompleteCacheKeys.push(cacheKey);
+						if (autoCompleteCacheKeys.length > autoCompleteCacheLimit) {
+							delete autoCompleteCache[autoCompleteCacheKeys.shift()];
+						}
+					}
+					autoCompleteCache[cacheKey] = data;
+				}
+
+				function respondToPendingAutoComplete(data) {
+					var responses = pendingAutoCompleteResponses;
+					pendingAutoCompleteResponses = [];
+					for (var i = 0; i < responses.length; i++) {
+						responses[i](data);
+					}
+				}
+
+				function cancelPendingAutoComplete() {
+					clearTimeout(autoCompleteDebounceTimer);
+					autoCompleteDebounceKey = null;
+					if (currentAutoCompleteRequest != null) {
+						currentAutoCompleteRequest.abort();
+						currentAutoCompleteRequest = null;
+					}
+					currentAutoCompleteRequestKey = null;
+					respondToPendingAutoComplete([]);
+				}
+
+				function createWidgetAutoCompleteSource(options) {
+					return function (request, response) {
+						var term = normalizeAutoCompleteTerm(request.term);
+						if (!options.shouldSearch(term)) {
+							response([]);
+							return;
+						}
+
+						var requestUrl = options.url();
+						var cacheKey = getAutoCompleteCacheKey(requestUrl, term);
+						if (Object.prototype.hasOwnProperty.call(autoCompleteCache, cacheKey)) {
+							response(autoCompleteCache[cacheKey]);
+							if (options.success) {
+								options.success(autoCompleteCache[cacheKey]);
+							}
+							return;
+						}
+
+						if (currentAutoCompleteRequestKey === cacheKey || autoCompleteDebounceKey === cacheKey) {
+							pendingAutoCompleteResponses.push(response);
+							return;
+						}
+
+						cancelPendingAutoComplete();
+						autoCompleteDebounceKey = cacheKey;
+						pendingAutoCompleteResponses.push(response);
+						autoCompleteDebounceTimer = setTimeout(function () {
+							autoCompleteDebounceKey = null;
+							currentAutoCompleteRequestKey = cacheKey;
+							currentAutoCompleteRequest = $.ajax({
+								url: requestUrl,
+								dataType: "json",
+								timeout: options.timeout,
+								data: {
+									term: term,
+								},
+								success: function (data) {
+									if (currentAutoCompleteRequestKey === cacheKey) {
+										cacheAutoCompleteResult(cacheKey, data);
+										respondToPendingAutoComplete(data);
+										if (options.success) {
+											options.success(data);
+										}
+									}
+								},
+								error: function (xmlhttprequest, textstatus, message) {
+									if (textstatus === "abort") {
+										return;
+									}
+
+									if (options.error) {
+										options.error(xmlhttprequest, textstatus, message);
+									}
+
+									respondToPendingAutoComplete([]);
+								},
+								complete: function (xmlhttprequest) {
+									if (currentAutoCompleteRequest === xmlhttprequest) {
+										currentAutoCompleteRequest = null;
+										currentAutoCompleteRequestKey = null;
+									}
+								}
+							});
+						}, options.delay);
+					};
+				}
+
+				// click handler for search buttons
+				$(buttonSelector).click(function (e) {
+					e.preventDefault();
+					var $btn = $(this);
+					var $field = $btn.siblings(".widgetSearchBox");
+					var term = $field.val() + "";
+					if (!shouldSearch(term)) {
+						// do nothing until user types enough characters
+						$field.focus();
+						return;
+					}
+
+					if ($(checkboxSelector).is(':checked') || false)
+					{
+						doWidgetSearch($.trim(term), Number(0));
+					}
+					else {
+						doWidgetSearch($.trim(term), 0);
+					}
+				});
+
+				// enter key handler for the search field
+				$(searchFieldSelector).keypress(function (e) {
+					var code = e.which || e.keyCode;
+					if (code === 13) {
+						e.preventDefault();
+						var $this = $(this);
+						var term = $this.val() + "";
+						if (!shouldSearch(term)) {
+							// do nothing until user types enough characters
+							$this.focus();
+							return false;
+						}
+
+						if ($(checkboxSelector).is(':checked') || false) {
+							doWidgetSearch($.trim(term), Number(0));
+						} else {
+							doWidgetSearch($.trim(term), 0);
+						}
+						return false;
+					}
+					return true;
+				});
+
+				// autocomplete: set minLength and guard source
+				if (true) {
+					var $searchField = $(searchFieldSelector).autocomplete({
+						minLength: minPrefixLength,
+						source: createWidgetAutoCompleteSource({
+							delay: autoCompleteDebounceDelay,
+							timeout: 10000,
+							shouldSearch: shouldSearch,
+							url: getAutoCompleteUrl,
+							success: function () {
+								$('.autoCompleteError').remove();
+							},
+							error: function (xmlhttprequest, textstatus, message) {
+								if (textstatus === "timeout") {
+									if ($(searchFieldSelector).siblings('.autoCompleteError').length == 0)
+										$('<span class="autoCompleteError"><p class="alert error">Search autocomplete is currently not responding. Please try again later.</p></span>').insertAfter($(searchFieldSelector));
+								}
+							}
+						}),
+						html: true,
+						delay: 0,
+						select: function (event, ui) {
+							$(this).val(ui.item.value);
+							$(this).next().click();
+						}
+					});
+
+					$searchField.data("ui-autocomplete")._renderItem = function (ul, item) {
+						return $("<li class=\"itemList\"></li>")
+							.data("ui-autocomplete-item", item)
+							.append("<a>" + item.label + "</a>")
+							.appendTo(ul);
+					};
+				}
+
+				// keep searchBtnApplyQuery consistent with prefix rule
+				window.searchBtnApplyQuery = function() {
+					var $field = $(searchFieldSelector);
+					var term = $field.val() + "";
+					if (shouldSearch(term)) {
+						// update href for the icon/button (if present)
+						var btn = document.getElementById("btnSearchIcon");
+						if (btn) btn.href = "/Search?searchPhrase=" + encodeURIComponent($.trim(term));
+					} else {
+						var btn = document.getElementById("btnSearchIcon");
+						if (btn) btn.href = "#";
+					}
+				};
+			}
+			catch(e) {} //we're going to eat this error. Autocomplete won't work but we dont wan't to break anything else on the page.
+		});
+	
+
+	
+				
+		
+			
+						
+
+			Search
+		
+
+	
+
+
+
+	  
+		.widgetSearch ::-webkit-input-placeholder {
+		color: #333333;
+	  }
+		.widgetSearch :-moz-placeholder { /* Firefox 18- */
+	   color: #333333;
+	}
+		.widgetSearch ::-moz-placeholder {  /* Firefox 19+ */
+	   color: #333333;
+	}
+	.widgetSearch :-ms-input-placeholder {
+	   color: #333333;
+	}
+	
+
+	.widgetSearch .widgetBody .widgetSearchBoxd4921553-38af-4b82-ad1d-598ec700953e
+	{
+		color: #333333;
+		border-radius: 5px;
+background: #FFF;
+border: 0;
+font-family: Poppins;
+font-size: 1em;
+padding: 0 75px 0 20px;
+height: 59px;
+	}
+	.widgetSearch .widgetBody .widgetSearchButtond4921553-38af-4b82-ad1d-598ec700953e
+	{
+		margin: 7px 7px 0 0;
+	}
+	.widgetSearch .widgetSearch-onlyDeptd4921553-38af-4b82-ad1d-598ec700953e
+	{
+		display: inline-block;
+		color: #333;
+		
+		
+		 padding-top: 10px;
+	}
+	#ysnSearchOnlyDeptd4921553-38af-4b82-ad1d-598ec700953e
+	{
+		position: relative;
+		top: .125em;
+	}
+
+
+
+
+
+
+
+
+
+	//Updates search icons href to have the correct queryString
+	function searchBtnApplyQuery() {
+		document.getElementById("btnSearchIcon").href = "/Search?searchPhrase=" + document.getElementById("searchFieldd4921553-38af-4b82-ad1d-598ec700953e").value;
+	}
+
+
+
+
+	 
+
+	 
+
+			 
+
+
+	
+
+
+
+
+	
+				                
+
+
+
+	
+
+
+
+
+
+
+
+		
+		
+			
+			
+		
+			
+				$(window).on("load", function () {
+					$.when(window.Pages.rwdSetupComplete)
+						.done(function () {
+							renderExternalBannerSlideshow('banner1',
+								{"BannerOptionID":51,"ThemeID":16,"SlotName":"banner1","Name":"Default","IsDefault":true,"BannerMode":2,"SlideShowSlideTiming":"5","SlideshowTransition":0,"SlideShowTransitionTiming":"1","ImageScale":true,"ImageAlignment":1,"ImageScroll":true,"MuteSound":true,"VideoType":0,"Status":40,"SlideshowControlsPosition":0,"SlideshowControlsAlignment":0,"SlideshowBannerControlsColorScheme":0,"DisplayVideoPauseButton":false,"VideoPauseButtonAlignment":1,"VideoPauseButtonControlsAlignment":0,"VideoPauseButtonStyle":"#FFFFFF","VideoPauseButtonBackgroundStyle":"#000000","VideoPauseButtonAlignmentClass":"alignRight viewport","DisplaySlideshowPauseButton":false,"SlideshowControlsColor":"#FFFFFF","SlideshowControlsBackgroundColor":"#000000","SlideshowPauseButtonClass":"isHidden","BannerImages":[{"BannerImageID":88,"BannerOptionID":51,"FileName":"/ImageRepository/Document?documentID=5413","Height":300,"Width":2200,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":1,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":""},{"BannerImageID":89,"BannerOptionID":51,"FileName":"/ImageRepository/Document?documentID=5412","Height":300,"Width":2200,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":2,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":""},{"BannerImageID":90,"BannerOptionID":51,"FileName":"/ImageRepository/Document?documentID=5411","Height":300,"Width":2200,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":3,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":""}],"BannerVideos":[{"BannerVideoID":4,"BannerOptionID":51,"VideoFileName":"","ImageFileName":"EmptyBannerBkg202601311327287406.png","IsLink":false,"LinkAddress":null,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","VideoFileID":"00000000-0000-0000-0000-000000000000","ImageFileID":"00000000-0000-0000-0000-000000000000","VideoWidth":0,"VideoHeight":0,"ImageWidth":0,"ImageHeight":0,"LinkedVideoUrl":"","RecordStatus":0,"AltText":null}],"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/"},
+								'/App_Themes/Interior/Images/',
+								'Rotating');
+						});
+				});
+			
+
+
+
+
+
+	
+				                
+
+
+
+	
+
+
+
+
+
+
+	
+	
+		
+			 Property Taxes
+		
+			
+	
+		
+			ACH Tax Payment Option
+		
+			
+	
+		
+			Pay Your Taxes Online
+		
+			
+	
+		
+			Election Administration
+		
+			
+	
+		
+			Affidavit of Candidacy
+		
+			
+	
+		
+			Campaign Financial Reports
+		
+			
+	
+		
+			Electronic Funds Transfer Policy
+		
+			
+	
+		
+			Forfeited Tax Sales
+		
+			
+	
+		
+			Gambling
+		
+			
+	
+		
+			License Center
+		
+			
+	
+		
+			Liquor Licenses
+		
+			
+	
+		
+			Township, City, & School District Officials (PDF)
+		
+			
+	
+		
+			Tax Lien Sales
+		
+			
+	
+		
+			Transportation Sales & Use Tax
+		
+			
+
+	
+
+
+	
+		(function () {
+			function setupSecondaryMenuProperties() {
+				//setup menu manager properties for secondary menu
+				menuManager.isSideMenuEditable = false;
+				menuManager.sideMenuMaxSubMenuLevels = 4;
+				menuManager.sideMenuHasCustomLinks = false;
+			}
+
+			if (document.readyState === "loading") {
+				document.addEventListener("DOMContentLoaded", setupSecondaryMenuProperties, { once: true });
+				return;
+			}
+
+			setupSecondaryMenuProperties();
+		})();
+	
+
+	
+		(function () {
+			function setupAccordionSecondaryNav() {
+				var $menuContainer = $('#secondaryNav');
+
+				$menuContainer.find('*[id^="SideItem"]').each(function () {
+					var ids = $('[id="' + this.id + '"]');
+					if (ids.length > 1)
+						$.each(ids, function (index, value) {
+							value.id = value.id + '_' + index;
+						});
+				});
+
+				$menuContainer.find('.hasAccordionChildren .openAccordionNav').off('click.secondaryNav').on('click.secondaryNav', function (e) {
+					e.preventDefault();
+					showHideAccordionMenuForSecondaryNav($(this));
+				});
+
+				$menuContainer.find(".grippy").each(function () {
+					menuManager.setupDraggableElement($(this), SIDE_MENU, '#secondaryNav');
+				});
+
+				$menuContainer.find("li").each(function () {
+					menuManager.setupDroppableAccordionElement($(this), SIDE_MENU);
+				});
+			}
+
+			if (document.readyState === "loading") {
+				document.addEventListener("DOMContentLoaded", setupAccordionSecondaryNav, { once: true });
+				return;
+			}
+
+			setupAccordionSecondaryNav();
+		})();
+	
+
+
+
+	
+				                
+
+
+
+	
+
+
+
+		
+			HomeDepartmentsAuditor-TreasurerElection Administration
+		
+
+	   
+    
+
+	
+	
+		
+
+	
+	
+	
+	
+	
+	
+	
+
+				
+
+ Election Administration		
+	
+		
+			
+
+						
+	
+	
+		
+
+	    
+
+
+        OverviewThe Auditor's Office is responsible for administering Federal, State, and County elections. These duties include the maintenance of the Voter Registration System, candidate filing, training of election judges, providing oversight on polling place issues for all precincts, ordering ballots and supplies for all precincts, tabulation of election night results, and conducting canvassing. State General ElectionThe next regularly scheduled General election will be held on November 3, 2026. Polling locations on these election days are open from 7:00 am until 8:00 pm.*The Public Accuracy Test will take place Tuesday, October 13th at noon in the County Board Room, 202 W 3rd St, Winona, MN 55987.Absentee and Early Voting InformationAbsentee Voting for the November 3rd General Election begins Friday, September 18th and continues until Monday, November 2nd. The voting hours are from 8:00 am until 4:00 pm Monday through Friday. Additional voting hours occur on Saturday, October 24th, Saturday, October 31st, and Sunday, November 1st from 9:00 until 3:00 pm. Tuesday, October 27 from 4:00 pm until 7:00 pm, and Monday, November 2nd until 5:00 pm.Early voting (voters are able to deposit their ballot directly into a tabulator) begins on October 16th and continues until 5:00pm on Monday November 2nd with the same hours as absentee voting.An additional pop-up absentee voting opportunity will be available at Winona State University on October 29th. This site will be open from 10:00 am to 3:00 pm. in Kryzsko Commons located at 250 W. 10th St., Winona, MN 55987. Parking available off Howard St (10th) between Huff St & Main St.Sample Ballots are available on the state’s website, mnvotes.gov. To view your sample ballot or find your polling location, follow the link and enter your address. Note: Streets in Winona that have 2 names can only be found using the numeric naming. The directional is always moved to the end. Example "123 West Broadway, Winona, MN 55987" would need to be searched as "123 6th Street West".Helpful Election Links:Email elections@winonacounty.gov with questions or call (507) 457-8830.Online Voter Registration can be found on the State's website here. You can also use this link to update your registration if you have moved, had a name change or have not voted in the last 4 years.If you wish to register on paper, print out this application and return it to Winona County Auditor-Treasurer, 202 W 3rd St, Winona, MN 55987.OSS Candidate Filing searchPast County-Level Election Results:August 13th 2024 - State PrimaryMarch 2024 - PNP Certified State Abstract, Certified Write-in AbstractAug 8th, 2023 - Special General Election Certified AbstractMay 9th, 2023 - Primary Certified Abstract. After the tie-breaker, Joshua Elsing and Bill Spitzer moved on to the Special General Election August 8th, 2023.
+    
+
+
+	$(document).ready(function (e) {		
+	    renderSlideshowIfApplicable($('#divEditor' + '670558d7-e7ef-4355-a2cf-b8c1dd91ba9a'));
+	});
+
+
+
+	 
+
+	 
+
+			 
+						
+	
+	
+		
+
+
+
+	
+			
+		
+			
+
+        
+                    Helpful Documents
+
+	
+		
+					City and Town Hall Locations (PDF)
+					
+
+		
+	
+                    
+
+
+
+
+    $(document).ready(function () {
+        //Remove section heading when it is empty and live edit is off.
+        if ('false' === 'false') {
+            var jqh3Selector = $('#widgetRelDoc' + 'dbf57011-75e1-4009-a1d2-16c49b1d4eb9').find('div.widgetBody div.row div.relatedDocumentsSection h3.widgetTitle');
+    		if (jqh3Selector.val() == "") {
+    			jqh3Selector
+                    .filter(function () {
+                        return $.trim($(this).text()) === ''
+                    })
+                    .remove();
+            }
+        }
+    });
+
+		
+
+
+
+	
+
+
+
+    var documentsToInsert = [];
+    var foldersToInsert = [];
+
+    $(document).ready(function () {
+        var hasEditRights = false;        
+        if (window.File && window.FileList && window.FileReader && hasEditRights) {
+            var RelatedDocumentsWidget = 5;
+            makeWidgetAreaDroppable('dbf57011-75e1-4009-a1d2-16c49b1d4eb9', $('#widgetRelDoc' + 'dbf57011-75e1-4009-a1d2-16c49b1d4eb9'), RelatedDocumentsWidget, true, RelatedDocumentsCallback);
+        }
+
+		if(hasEditRights)
+    		browserVersionNotCompatibleWithDragDropTextUpdate($('#addFile' + 'dbf57011-75e1-4009-a1d2-16c49b1d4eb9'), 'Add a new file');
+    });
+
+    function RelatedDocumentsCallback(widgetID, response)
+    {
+        if (window.ContentCollectionInstance.IsWorkingCopy) {
+        	$('#widgetRelDoc' + widgetID).replaceWith(response);            
+            contentUpdated();
+            attachRelatedDocumentsHandlers();            
+        }
+        else {
+            ContentCollectionInstance.reloadContent();
+        }      
+    }
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+	
+
+
+
+
+
+
+
+
+	
+			
+		
+					Quick Links
+						
+	
+	
+        
+				
+					
+
+
+
+
+    
+        Polling Place Finder
+        
+    
+
+
+
+
+    
+        MN Voter Status Verification
+        
+    
+
+
+
+
+    
+        Online Voter Registration
+        
+    
+
+
+
+
+    
+        Online Absentee Ballot Application
+        
+    
+
+
+
+
+    
+        Absentee Ballot Status Look Up
+        
+    
+
+
+
+
+    
+        Online Military and Overseas Voter Absentee Ballot Application
+        
+    
+
+
+
+
+    
+        Military and Overseas Voter Service
+        
+    
+
+
+
+
+    
+        Become a Candidate
+        
+    
+					
+				
+		
+        View All Links
+        
+	
+	
+	
+	
+		/QuickLinks.aspx
+	
+
+	
+
+
+	 
+
+	 
+
+			 
+
+
+		
+
+	
+
+	
+	
+
+	
+
+	
+				                
+
+
+
+	
+
+
+
+
+	
+				                
+
+						
+	
+	
+		
+
+
+
+
+
+
+	
+		
+				
+	
+	
+		
+				
+					
+
+
+	
+		
+			Agendas & Minutes
+		
+	
+
+		.fancyButton529.fancyButton:link,.fancyButton529.fancyButton:visited, .fancyButton529div.fancyButton{
+	background-repeat: no-repeat;
+	background-position: left top;
+position: relative;
+z-index: 1;
+}
+
+.fancyButton529::after,
+.fancyButton529::before {
+content: "";
+position: absolute;
+left: 50%;
+transform: translateX(-50%);
+border-radius: 50%;
+transition: all .3s ease-in-out;
+}
+
+.fancyButton529::after {
+top: 4px;
+width: 120px;
+height: 120px;
+background: #07436A;
+z-index: -2;
+}
+
+.fancyButton529::before {
+top: 19px;
+width: 90px;
+height: 90px;
+background: #fff;
+z-index: -1;}
+.fancyButton529.fancyButton:hover,.fancyButton529.fancyButton:focus,.fancyButton529.fancyButton:active,.fancyButton529.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+
+.fancyButton529:is(:hover,:focus,:active)::after {
+top: 0px;
+}
+
+.fancyButton529:is(:hover,:focus,:active)::before {
+width: 110px;
+height: 110px;
+top: 5px;}
+.fancyButton529.fancyButton:link > span,.fancyButton529.fancyButton:visited > span, .fancyButton529div.fancyButton > span{
+}
+.fancyButton529.fancyButton:hover > span,.fancyButton529.fancyButton:focus > span,.fancyButton529.fancyButton:active > span,.fancyButton529.fancyButton.hover > span{
+}
+.fancyButton529.fancyButton .text{
+	color: rgb(51, 51, 51);
+	font-size: 1.1em;
+	font-family: "Poppins";
+	padding-top: 135px;
+	padding-right: 5px;
+	padding-left: 5px;
+	font-weight: 600;
+	text-decoration: none;
+	padding-top: 135px;
+	padding-right: 5px;
+	padding-left: 5px;
+	background-image: url('/ImageRepository/Document?documentID=5433');
+	background-repeat: no-repeat;
+	background-position: center 39px ;
+line-height: 1.2;
+text-transform: uppercase;
+transition: all .3s ease-in-out;
+}
+.fancyButton529.fancyButton:hover .text,.fancyButton529.fancyButton:focus .text,.fancyButton529.fancyButton:active .text,.fancyButton529.fancyButton.hover .text{
+	text-decoration: underline;
+	background-repeat: no-repeat;
+	background-position: center 35px ;
+
+
+}
+
+
+ 
+
+
+	
+		
+			Career Opportunities
+		
+	
+
+		.fancyButton530.fancyButton:link,.fancyButton530.fancyButton:visited, .fancyButton530div.fancyButton{
+	background-repeat: no-repeat;
+	background-position: left top;
+position: relative;
+z-index: 1;
+}
+
+.fancyButton530::after,
+.fancyButton530::before {
+content: "";
+position: absolute;
+left: 50%;
+transform: translateX(-50%);
+border-radius: 50%;
+transition: all .3s ease-in-out;
+}
+
+.fancyButton530::after {
+top: 4px;
+width: 120px;
+height: 120px;
+background: #5C6249;
+z-index: -2;
+}
+
+.fancyButton530::before {
+top: 19px;
+width: 90px;
+height: 90px;
+background: #fff;
+z-index: -1;}
+.fancyButton530.fancyButton:hover,.fancyButton530.fancyButton:focus,.fancyButton530.fancyButton:active,.fancyButton530.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+
+.fancyButton530:is(:hover,:focus,:active)::after {
+top: 0px;
+}
+
+.fancyButton530:is(:hover,:focus,:active)::before {
+width: 110px;
+height: 110px;
+top: 5px;}
+.fancyButton530.fancyButton:link > span,.fancyButton530.fancyButton:visited > span, .fancyButton530div.fancyButton > span{
+}
+.fancyButton530.fancyButton:hover > span,.fancyButton530.fancyButton:focus > span,.fancyButton530.fancyButton:active > span,.fancyButton530.fancyButton.hover > span{
+}
+.fancyButton530.fancyButton .text{
+	color: rgb(51, 51, 51);
+	font-size: 1.1em;
+	font-family: "Poppins";
+	padding-top: 135px;
+	padding-right: 5px;
+	padding-left: 5px;
+	font-weight: 600;
+	text-decoration: none;
+	padding-top: 135px;
+	padding-right: 5px;
+	padding-left: 5px;
+	background-image: url('/ImageRepository/Document?documentID=5434');
+	background-repeat: no-repeat;
+	background-position: center 39px ;
+line-height: 1.2;
+text-transform: uppercase;
+transition: all .3s ease-in-out;
+}
+.fancyButton530.fancyButton:hover .text,.fancyButton530.fancyButton:focus .text,.fancyButton530.fancyButton:active .text,.fancyButton530.fancyButton.hover .text{
+	text-decoration: underline;
+	background-repeat: no-repeat;
+	background-position: center 35px ;
+
+
+}
+
+
+ 
+				
+			
+		
+	
+			
+
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+
+
+
+
+
+
+	
+		
+				
+	
+	
+		
+				
+					
+
+
+	
+		
+			Financial Transparency
+		
+	
+
+		.fancyButton535.fancyButton:link,.fancyButton535.fancyButton:visited, .fancyButton535div.fancyButton{
+	background-repeat: no-repeat;
+	background-position: left top;
+position: relative;
+z-index: 1;
+}
+
+.fancyButton535::after,
+.fancyButton535::before {
+content: "";
+position: absolute;
+left: 50%;
+transform: translateX(-50%);
+border-radius: 50%;
+transition: all .3s ease-in-out;
+}
+
+.fancyButton535::after {
+top: 4px;
+width: 120px;
+height: 120px;
+background: #7A8F4B;
+z-index: -2;
+}
+
+.fancyButton535::before {
+top: 19px;
+width: 90px;
+height: 90px;
+background: #fff;
+z-index: -1;}
+.fancyButton535.fancyButton:hover,.fancyButton535.fancyButton:focus,.fancyButton535.fancyButton:active,.fancyButton535.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+
+.fancyButton535:is(:hover,:focus,:active)::after {
+top: 0px;
+}
+
+.fancyButton535:is(:hover,:focus,:active)::before {
+width: 110px;
+height: 110px;
+top: 5px;}
+.fancyButton535.fancyButton:link > span,.fancyButton535.fancyButton:visited > span, .fancyButton535div.fancyButton > span{
+}
+.fancyButton535.fancyButton:hover > span,.fancyButton535.fancyButton:focus > span,.fancyButton535.fancyButton:active > span,.fancyButton535.fancyButton.hover > span{
+}
+.fancyButton535.fancyButton .text{
+	color: rgb(51, 51, 51);
+	font-size: 1.1em;
+	font-family: "Poppins";
+	padding-top: 135px;
+	padding-right: 5px;
+	padding-left: 5px;
+	font-weight: 600;
+	text-decoration: none;
+	padding-top: 135px;
+	padding-right: 5px;
+	padding-left: 5px;
+	background-image: url('/ImageRepository/Document?documentID=5435');
+	background-repeat: no-repeat;
+	background-position: center 39px ;
+line-height: 1.2;
+text-transform: uppercase;
+transition: all .3s ease-in-out;
+}
+.fancyButton535.fancyButton:hover .text,.fancyButton535.fancyButton:focus .text,.fancyButton535.fancyButton:active .text,.fancyButton535.fancyButton.hover .text{
+	text-decoration: underline;
+	background-repeat: no-repeat;
+	background-position: center 35px ;
+
+
+}
+
+
+ 
+
+
+	
+		
+			Pay Taxes Online
+		
+	
+
+		.fancyButton532.fancyButton:link,.fancyButton532.fancyButton:visited, .fancyButton532div.fancyButton{
+	background-repeat: no-repeat;
+	background-position: left top;
+position: relative;
+z-index: 1;
+}
+
+.fancyButton532::after,
+.fancyButton532::before {
+content: "";
+position: absolute;
+left: 50%;
+transform: translateX(-50%);
+border-radius: 50%;
+transition: all .3s ease-in-out;
+}
+
+.fancyButton532::after {
+top: 4px;
+width: 120px;
+height: 120px;
+background: #07436A;
+z-index: -2;
+}
+
+.fancyButton532::before {
+top: 19px;
+width: 90px;
+height: 90px;
+background: #fff;
+z-index: -1;}
+.fancyButton532.fancyButton:hover,.fancyButton532.fancyButton:focus,.fancyButton532.fancyButton:active,.fancyButton532.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+
+.fancyButton532:is(:hover,:focus,:active)::after {
+top: 0px;
+}
+
+.fancyButton532:is(:hover,:focus,:active)::before {
+width: 110px;
+height: 110px;
+top: 5px;}
+.fancyButton532.fancyButton:link > span,.fancyButton532.fancyButton:visited > span, .fancyButton532div.fancyButton > span{
+}
+.fancyButton532.fancyButton:hover > span,.fancyButton532.fancyButton:focus > span,.fancyButton532.fancyButton:active > span,.fancyButton532.fancyButton.hover > span{
+}
+.fancyButton532.fancyButton .text{
+	color: rgb(51, 51, 51);
+	font-size: 1.1em;
+	font-family: "Poppins";
+	padding-top: 135px;
+	padding-right: 5px;
+	padding-left: 5px;
+	font-weight: 600;
+	text-decoration: none;
+	padding-top: 135px;
+	padding-right: 5px;
+	padding-left: 5px;
+	background-image: url('/ImageRepository/Document?documentID=5436');
+	background-repeat: no-repeat;
+	background-position: center 39px ;
+line-height: 1.2;
+text-transform: uppercase;
+transition: all .3s ease-in-out;
+}
+.fancyButton532.fancyButton:hover .text,.fancyButton532.fancyButton:focus .text,.fancyButton532.fancyButton:active .text,.fancyButton532.fancyButton.hover .text{
+	text-decoration: underline;
+	background-repeat: no-repeat;
+	background-position: center 35px ;
+
+
+}
+
+
+ 
+				
+			
+		
+	
+			
+
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+
+
+
+
+
+
+	
+		
+				
+	
+	
+		
+				
+					
+
+
+	
+		
+			Recycling
+		
+	
+
+		.fancyButton533.fancyButton:link,.fancyButton533.fancyButton:visited, .fancyButton533div.fancyButton{
+	background-repeat: no-repeat;
+	background-position: left top;
+position: relative;
+z-index: 1;
+}
+
+.fancyButton533::after,
+.fancyButton533::before {
+content: "";
+position: absolute;
+left: 50%;
+transform: translateX(-50%);
+border-radius: 50%;
+transition: all .3s ease-in-out;
+}
+
+.fancyButton533::after {
+top: 4px;
+width: 120px;
+height: 120px;
+background: #5C6249;
+z-index: -2;
+}
+
+.fancyButton533::before {
+top: 19px;
+width: 90px;
+height: 90px;
+background: #fff;
+z-index: -1;}
+.fancyButton533.fancyButton:hover,.fancyButton533.fancyButton:focus,.fancyButton533.fancyButton:active,.fancyButton533.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+
+.fancyButton533:is(:hover,:focus,:active)::after {
+top: 0px;
+}
+
+.fancyButton533:is(:hover,:focus,:active)::before {
+width: 110px;
+height: 110px;
+top: 5px;}
+.fancyButton533.fancyButton:link > span,.fancyButton533.fancyButton:visited > span, .fancyButton533div.fancyButton > span{
+}
+.fancyButton533.fancyButton:hover > span,.fancyButton533.fancyButton:focus > span,.fancyButton533.fancyButton:active > span,.fancyButton533.fancyButton.hover > span{
+}
+.fancyButton533.fancyButton .text{
+	color: rgb(51, 51, 51);
+	font-size: 1.1em;
+	font-family: "Poppins";
+	padding-top: 135px;
+	padding-right: 5px;
+	padding-left: 5px;
+	font-weight: 600;
+	text-decoration: none;
+	padding-top: 135px;
+	padding-right: 5px;
+	padding-left: 5px;
+	background-image: url('/ImageRepository/Document?documentID=5437');
+	background-repeat: no-repeat;
+	background-position: center 39px ;
+line-height: 1.2;
+text-transform: uppercase;
+transition: all .3s ease-in-out;
+}
+.fancyButton533.fancyButton:hover .text,.fancyButton533.fancyButton:focus .text,.fancyButton533.fancyButton:active .text,.fancyButton533.fancyButton.hover .text{
+	text-decoration: underline;
+	background-repeat: no-repeat;
+	background-position: center 35px ;
+
+
+}
+
+
+ 
+
+
+	
+		
+			Report a Concern
+		
+	
+
+		.fancyButton534.fancyButton:link,.fancyButton534.fancyButton:visited, .fancyButton534div.fancyButton{
+	background-repeat: no-repeat;
+	background-position: left top;
+position: relative;
+z-index: 1;
+}
+
+.fancyButton534::after,
+.fancyButton534::before {
+content: "";
+position: absolute;
+left: 50%;
+transform: translateX(-50%);
+border-radius: 50%;
+transition: all .3s ease-in-out;
+}
+
+.fancyButton534::after {
+top: 4px;
+width: 120px;
+height: 120px;
+background: #7A8F4B;
+z-index: -2;
+}
+
+.fancyButton534::before {
+top: 19px;
+width: 90px;
+height: 90px;
+background: #fff;
+z-index: -1;}
+.fancyButton534.fancyButton:hover,.fancyButton534.fancyButton:focus,.fancyButton534.fancyButton:active,.fancyButton534.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+
+.fancyButton534:is(:hover,:focus,:active)::after {
+top: 0px;
+}
+
+.fancyButton534:is(:hover,:focus,:active)::before {
+width: 110px;
+height: 110px;
+top: 5px;}
+.fancyButton534.fancyButton:link > span,.fancyButton534.fancyButton:visited > span, .fancyButton534div.fancyButton > span{
+}
+.fancyButton534.fancyButton:hover > span,.fancyButton534.fancyButton:focus > span,.fancyButton534.fancyButton:active > span,.fancyButton534.fancyButton.hover > span{
+}
+.fancyButton534.fancyButton .text{
+	color: rgb(51, 51, 51);
+	font-size: 1.1em;
+	font-family: "Poppins";
+	padding-top: 135px;
+	padding-right: 5px;
+	padding-left: 5px;
+	font-weight: 600;
+	text-decoration: none;
+	padding-top: 135px;
+	padding-right: 5px;
+	padding-left: 5px;
+	background-image: url('/ImageRepository/Document?documentID=5438');
+	background-repeat: no-repeat;
+	background-position: center 39px ;
+line-height: 1.2;
+text-transform: uppercase;
+transition: all .3s ease-in-out;
+}
+.fancyButton534.fancyButton:hover .text,.fancyButton534.fancyButton:focus .text,.fancyButton534.fancyButton:active .text,.fancyButton534.fancyButton.hover .text{
+	text-decoration: underline;
+	background-repeat: no-repeat;
+	background-position: center 35px ;
+
+
+}
+
+
+ 
+				
+			
+		
+	
+			
+
+
+
+	 
+
+	 
+
+			 
+
+
+	
+
+
+	
+				                
+
+						
+	
+	
+		
+    
+
+
+
+
+
+	
+			
+		
+								
+	
+	
+		
+					
+						
+
+
+	
+
+
+	202 West Third Street     Winona, MN 55987
+
+
+	Phone: 507-457-6350
+
+
+	Email: contactus@winonacounty.gov
+
+
+	Sheriff's Non-Emergency Line: 507-457-6491
+						
+					
+		
+	
+	
+
+	
+
+	
+
+
+
+
+	//Render slideshow if info advacned items contain one.
+	$(document).ready(function (e) {
+		$('#divInfoAdv328d9ca9-0291-40e3-89a1-c8f376688d66 .InfoAdvanced.widgetItem').each(function () {
+			renderSlideshowIfApplicable($(this));		
+		});
+	});
+
+	 
+
+	 
+	
+	
+		
+
+
+
+
+
+
+	
+		
+				
+	
+	
+		
+				
+					
+
+ 
+
+
+ 
+
+				
+			
+		
+	
+			
+
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+	
+
+
+
+
+
+
+
+
+	
+			
+		
+					Helpful Links
+						
+	
+	
+        
+				
+					
+
+
+
+
+    
+        County Valuations
+        
+    
+
+
+
+
+    
+        Access to Electronic License Data
+        
+    
+
+
+
+
+    
+        ATV Registration
+        
+    
+
+
+
+
+    
+        Disability Parking Certificates
+        
+    
+
+
+
+
+    
+        Driver Compliance - Vision Report
+        
+    
+
+
+
+
+    
+        Ordinances
+        
+    
+
+
+
+
+    
+        Winona County Events Calendar
+        
+    
+					
+				
+		
+        
+	
+	
+	
+	
+		/QuickLinks.aspx
+	
+
+	
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+	
+
+
+
+
+
+
+
+
+	
+			
+		
+					Quick Links
+						
+	
+	
+        
+				
+					
+
+
+
+
+    
+        Child Abuse and Protection
+        
+    
+
+
+
+
+    
+        Curbside Recycling Finder
+        
+    
+
+
+
+
+    
+        Highway Maps
+        
+    
+
+
+
+
+    
+        LandShark Map
+        
+    
+
+
+
+
+    
+        Opioid Response
+        
+    
+
+
+
+
+    
+        Parcel Viewer
+        
+    
+
+
+
+
+    
+        Property Taxes
+        
+    
+					
+				
+		
+        
+	
+	
+	
+	
+		/QuickLinks.aspx
+	
+
+	
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+	
+
+
+
+
+
+
+
+
+	
+			
+		
+					Site Links
+						
+	
+	
+        
+				
+					
+
+
+
+
+    
+        Home
+        
+    
+
+
+
+
+    
+        Site Map
+        
+    
+
+
+
+
+    
+        Contact Us
+        
+    
+
+
+
+
+    
+        Accessibility
+        
+    
+
+
+
+
+    
+        Copyright Notices
+        
+    
+
+
+
+
+    
+        Privacy Policy
+        
+    
+
+
+
+
+    
+        SMS Terms of Service
+        
+    
+					
+				
+		
+        
+	
+	
+	
+	
+		/QuickLinks.aspx
+	
+
+	
+
+
+	 
+
+	 
+
+			 
+
+
+	
+
+
+	
+				                
+
+						
+	
+	
+		
+ 
+	
+	
+		
+  .cpBylineIconTS {
+    fill: currentColor;
+    width: 39px;
+    height: 26px;
+    display: inline;
+    vertical-align: middle;
+  }
+
+
+
+  
+    
+    
+  
+  Government Websites by CivicPlus®
+
+
+	
+
+	
+
+	 
+
+	 
+
+			 
+
+
+	
+
+
+
+
+            
+        
+    
+
+
+
+
+	
+		
+			Loading
+			
+				
+					
+				
+			
+		
+		
+			
+				
+				Loading
+			
+		
+		
+			Do Not Show Again
+			Close
+		
+	
+
+
+
+
+
+
+
+		$(document).ready(function () {
+			var filter = {
+				targetId: '170',
+				targetType: 1
+			}
+
+			new SplashModalRender().triggerRender(filter);
+		});
+
+
+
+	
+	
+	
+	
+
+
+
+	
+
+
+
+
+
+
+    
+    
+
+  function getValueTS(elem, attr) {
+    var val = elem.css(attr);
+    if (val === undefined) return undefined;
+    var num = parseInt(val, 10);
+    if (num === NaN) return undefined;
+    return num;
+  }
+
+  function clampTS(number, min, max) {
+    return Math.min(Math.max(number, min), max);
+  }
+
+  function isPageEditingTS() {
+    return (
+      $("#doneEditing").length > 0 || // In live edit
+      typeof DesignCenter !== "undefined" // In theme manager
+    );
+  }
+
+  var bgColorRegexTS = new RegExp("rgba\((\d+), (\d+), (\d+), (\d*\.?\d*)\)");
+  function isTransparentTS(elem) {
+    var bg = elem.css('background-color');
+    if (typeof bg !== "string") return false;
+    if (bg === "transparent") return true;
+    if (!bg.startsWith('rgba(')) return false;
+    var matchState = bg.match(bgColorRegexTS);
+    if (!matchState || matchState.length !== 5) return false;
+    var alpha = parseFloat(matchState[4], 10);
+    if (!(alpha >= 0 && alpha < 1)) return false;
+    return true;
+  }
+
+  function iterateLeftpads(cb) {
+    var containersTS = $("[class^='siteWrap'],[class*=' siteWrap']");
+    for (var i = 0; i < containersTS.length; i++) {
+      var containerTS = containersTS[i];
+      // Skip the body container and anything with data-skip-leftpad
+      if (
+        containerTS.id !== "bodyContainerTS" &&
+        containerTS.getAttribute('data-skip-leftpad') === null
+      ) {
+        cb(containerTS);
+      }
+    }
+  }
+
+  function iterateRightpads(cb) {
+    var containersTS = $("[class^='siteWrap'],[class*=' siteWrap']");
+    for (var i = 0; i < containersTS.length; i++) {
+      var containerTS = containersTS[i];
+      // Skip the body container and anything with data-skip-rightpad
+      if (
+        containerTS.id !== "bodyContainerTS" &&
+        containerTS.getAttribute('data-skip-rightpad') === null
+      ) {
+        cb(containerTS);
+      }
+    }
+  }
+
+  var anchor = $("#divToolbars");
+  var bodyContainerTS = $("#bodyContainerTS");
+
+  // Outer banner padding (push banner down)
+  var outerSizingTS = $("#bannerContainerTS");
+  // Inner banner padding (push banner content down) - Transparent header OR on attaching headers
+  var innerSizingTS = $("#bannerSizingTS");
+
+  var forceUnfixClassTS = "forceUnfixTS";
+
+  var fixedTopTS = $(".fixedTopTS");
+  var fixedBottomTS = $(".fixedBottomTS");
+  var fixedLeftTS = $(".fixedLeftTS");
+  var fixedRightTS = $(".fixedRightTS");
+
+  var initialTopTS;
+  var topAttachTS;
+  if (fixedTopTS && fixedTopTS.length === 1) {
+    initialTopTS = getValueTS(fixedTopTS, 'top');
+    var attachment = fixedTopTS.attr('data-attach');
+    if (attachment) topAttachTS = $("#" + attachment);
+    if (!topAttachTS || topAttachTS.length !== 1) topAttachTS = undefined;
+  }
+
+  function resizeAdjustmentTS() {
+    var editing = isPageEditingTS();
+
+    // Fixed top script
+    (function () {
+      if (!fixedTopTS || fixedTopTS.length !== 1 || initialTopTS === undefined) return;
+
+      if (editing) {
+        fixedTopTS[0].classList.add(forceUnfixClassTS);
+      } else {
+        fixedTopTS[0].classList.remove(forceUnfixClassTS);
+      }
+
+      var topPosition = fixedTopTS.css('position');
+      if (topPosition === 'fixed') {
+        if (topAttachTS) {
+          scrollAdjustmentTS();
+        } else {
+          var anchorHeight = anchor.outerHeight() - 1;
+          fixedTopTS.css('top', anchorHeight + initialTopTS);
+        }
+      } else {
+        fixedTopTS.css('top', initialTopTS);
+      }
+
+      if (topPosition === 'fixed' || topPosition === 'absolute') {
+        // Bump the banner content down
+        if (isTransparentTS(fixedTopTS)) {
+          innerSizingTS.css('padding-top', initialTopTS + fixedTopTS.outerHeight());
+          outerSizingTS.css('padding-top', '');
+
+          try {
+            window.Pages.onResizeHandlersExecute();
+          } catch (e) { }
+        } else {
+          outerSizingTS.css('padding-top', fixedTopTS.outerHeight() - 1);
+          innerSizingTS.css('padding-top', '');
+        }
+      } else {
+        innerSizingTS.css('padding-top', '');
+        outerSizingTS.css('padding-top', '');
+      }
+    })();
+
+    // Fixed bottom script
+    (function () {
+      if (!fixedBottomTS || fixedBottomTS.length === 0) return;
+
+      // If the widget has gone narrow, force unfix
+      if (editing || fixedBottomTS.outerHeight() > 200) {
+        fixedBottomTS[0].classList.add(forceUnfixClassTS);
+      } else {
+        fixedBottomTS[0].classList.remove(forceUnfixClassTS);
+      }
+
+      if (fixedBottomTS.css('position') === 'fixed') {
+        bodyContainerTS.css('padding-bottom', fixedBottomTS.outerHeight());
+      } else {
+        bodyContainerTS.css('padding-bottom', '');
+      }
+    })();
+
+    // Fixed left script
+    (function () {
+      if (!fixedLeftTS || fixedLeftTS.length === 0) return;
+
+      if (editing) {
+        fixedLeftTS[0].classList.add(forceUnfixClassTS);
+      } else {
+        fixedLeftTS[0].classList.remove(forceUnfixClassTS);
+      }
+
+      if (fixedLeftTS.css('position') === 'fixed') {
+        var anchorHeight = anchor.outerHeight() - 1;
+        fixedLeftTS.css('top', anchorHeight);
+        var leftBoundingTS = fixedLeftTS[0].getBoundingClientRect();
+        iterateLeftpads(function (containerTS) {
+          var containerBoundingTS = containerTS.getBoundingClientRect();
+          if (containerBoundingTS.left <= leftBoundingTS.right) {
+            $(containerTS).css('padding-left', leftBoundingTS.width + 16);
+          } else {
+            $(containerTS).css('padding-left', '');
+          }
+        });
+      } else {
+        fixedLeftTS.css('top', '');
+        iterateLeftpads(function (containerTS) {
+          $(containerTS).css('padding-left', '');
+        });
+      }
+    })();
+
+    // Fixed right script
+    (function () {
+      if (!fixedRightTS || fixedRightTS.length === 0) return;
+
+      if (editing) {
+        fixedRightTS[0].classList.add(forceUnfixClassTS);
+      } else {
+        fixedRightTS[0].classList.remove(forceUnfixClassTS);
+      }
+
+      if (fixedRightTS.css('position') === 'fixed') {
+        var anchorHeight = anchor.outerHeight() - 1;
+        fixedRightTS.css('top', anchorHeight);
+        var rightBoundingTS = fixedRightTS[0].getBoundingClientRect();
+        iterateRightpads(function (containerTS) {
+          var containerBoundingTS = containerTS.getBoundingClientRect();
+          if (containerBoundingTS.right >= rightBoundingTS.left) {
+            $(containerTS).css('padding-right', rightBoundingTS.width + 16);
+          }
+        });
+      } else {
+        fixedRightTS.css('top', '');
+        iterateRightpads(function (containerTS) {
+          $(containerTS).css('padding-right', '');
+        });
+      }
+    })();
+  }
+
+  function scrollAdjustmentTS() {
+    if (!fixedTopTS || fixedTopTS.length !== 1 || !topAttachTS || topAttachTS.length !== 1) return;
+    var topPosition = fixedTopTS.css('position');
+    if (topPosition === 'fixed' || topPosition === 'absolute') {
+      var anchorBounding = anchor[0].getBoundingClientRect();
+      var attachBounding = topAttachTS[0].getBoundingClientRect();
+      var scrollTop = $(window).scrollTop();
+
+      fixedTopTS.css('top', Math.max(anchorBounding.bottom - 1, attachBounding.bottom));
+    } else {
+      fixedTopTS.css('top', initialTopTS);
+    }
+  }
+
+  $(window).load(function () {
+    setTimeout(function () {
+      try {
+        resizeAdjustmentTS();
+      } catch (e) {
+        console.error(e);
+      }
+    }, 350);
+
+    $(window).scroll(function () {
+      try {
+        scrollAdjustmentTS();
+      } catch (e) {
+        console.error(e);
+      }
+    });
+
+    var adjustTimeoutTS;
+    $(window).resize(function () {
+      clearTimeout(adjustTimeoutTS);
+      adjustTimeoutTS = setTimeout(function () {
+        try {
+          resizeAdjustmentTS();
+        } catch (e) {
+          console.error(e);
+        }
+      }, 350);
+    });
+
+    $.when(window.Pages.angularToolbarComplete).done(function () {
+      try {
+        resizeAdjustmentTS();
+      } catch (e) {
+        console.error(e);
+      }
+    });
+  });
+
+
+
+
+ 
+ 
+function moveBannerToOuterWrap() { 
+    if ($(".fixedBannerTS").length) { 
+		if ($("#bannerDivbanner2").length) { 
+			$("#bannerDivbanner2").appendTo("#outer-wrap"); 
+		} else { 
+			setTimeout(function() { 
+				moveBannerToOuterWrap(); 
+			}, 500); 
+		} 
+	}
+} 
+moveBannerToOuterWrap(); 
+ 
+
+
+
+    
+        $(function () {
+            document.cookie = "responsiveGhost=0; path=/";
+        });
+        $(window).on("load", function () {
+            $('body').addClass('doneLoading').removeClass('hideContent');
+
+            if ($('#404Content').length > 0)
+                $('div#bodyWrapper').css('padding', '0px');
+        });
+    
+
+    
+        
+            body.hideContent {
+                opacity: 1 !important;
+            }
+        
+    
+
+        
+
+	
+
+		
+			Arrow Left
+			
+		
+
+		
+			Arrow Right
+			
+		
+
+	
+
+    loadCSS('//fonts.googleapis.com/css?family=Lato:700,700italic,900,900italic,italic,regular|Poppins:500,500italic,600,600italic,700,700italic,800,800italic,900,900italic,italic,regular|');
+    
+
+    []
+        
+            
+                
+                    Slideshow Left Arrow
+                    
+                        
+                    
+                
+                
+                    Slideshow Right Arrow
+                    
+                        
+                    
+                
+            
+        
+    
+	
+	
+
+    
+
+

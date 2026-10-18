@@ -1,0 +1,752 @@
+{
+  "status": "pass_independent_candidate_exports_with_retained_separate_statistics_disagreement",
+  "checked_utc": "2026-10-18T19:48:38.418088+00:00",
+  "method": "Independent stdlibsemicolonCSV and originalOOXMLcell-address parser, complete native/county/state candidate positions; no worker export extractor imported. Internal countycodes are matched to actual originalfields, never converted toFIPS byordinal.",
+  "source_refs": [
+    {
+      "id": "export-2024-precinct",
+      "url": "https://electionresultsfiles.sos.mn.gov/20241105/ussenatepct.txt",
+      "raw_sha256": "b783574e29b54871e786d2d6c7ff68aa0709d3a8cf7df1d5b655e6c640ac0049",
+      "raw_bytes": 1463585
+    },
+    {
+      "id": "export-2024-state",
+      "url": "https://electionresultsfiles.sos.mn.gov/20241105/ussenate.txt",
+      "raw_sha256": "8d513ac8b45c445d6f78dbc498253695bef1e357be2d3e9cad4d3e32fa10fdc9",
+      "raw_bytes": 395
+    },
+    {
+      "id": "export-2024-county",
+      "url": "https://electionresultsfiles.sos.mn.gov/20241105/ussenatecty.txt",
+      "raw_sha256": "2c900d612c5d2116e61986472d263f702c70dc905383648e1e56a8e143314876",
+      "raw_bytes": 31470
+    },
+    {
+      "id": "export-2022-precinct",
+      "url": "https://electionresultsfiles.sos.mn.gov/20221108/governorpct.txt",
+      "raw_sha256": "dfd7d6409f4b7f66380c7f89e8119a224519002a412ec449394c79922d454236",
+      "raw_bytes": 2743628
+    },
+    {
+      "id": "export-2022-state",
+      "url": "https://electionresultsfiles.sos.mn.gov/20221108/Governor.txt",
+      "raw_sha256": "e623ab3e86bf704bdf9df144d910b8126b71d168e1fb51e03250c5c102f94474",
+      "raw_bytes": 723
+    },
+    {
+      "id": "export-2020-precinct",
+      "url": "https://electionresultsfiles.sos.mn.gov/20201103/ussenatepct.txt",
+      "raw_sha256": "173f3d5ce061e0e65cce3fd9e43f703a4117c41717e03823f033f84ae4844a49",
+      "raw_bytes": 1451510
+    },
+    {
+      "id": "export-2020-state",
+      "url": "https://electionresultsfiles.sos.mn.gov/20201103/ussenate.txt",
+      "raw_sha256": "44b13763766bb263af9c9b9944adc9aa6e6865ab1da34f1323d469dc6df94c4f",
+      "raw_bytes": 392
+    },
+    {
+      "id": "export-2020-county",
+      "url": "https://electionresultsfiles.sos.mn.gov/20201103/ussenatecty.txt",
+      "raw_sha256": "02e353f991be29a0621971d0e1bdfe59a29c0534b3343966692e655c3da4a557",
+      "raw_bytes": 31159
+    },
+    {
+      "id": "export-2024-statistics",
+      "url": "https://electionresultsfiles.sos.mn.gov/20241105/pctstats.txt",
+      "raw_sha256": "17351d1ec969f7df07d17c0acf2f4e3fa56d5448ba1339fd0d8826d0b9c61108",
+      "raw_bytes": 208613
+    }
+  ],
+  "candidate_controls": {
+    "2024": {
+      "native_units": 4103,
+      "all_native_candidate_positions": 20515,
+      "candidate_source_parties_and_names": {
+        "LIB": "Rebecca Whiting",
+        "DFL": "Amy Klobuchar",
+        "IA": "Joyce Lynne Lacey",
+        "R": "Royce White",
+        "WI": "WRITE-IN"
+      },
+      "state_candidate_controls": 5,
+      "county_candidate_controls": 435,
+      "all_candidate_total": 3189323,
+      "actual_candidate_source_fields": {
+        "LIB": "USSENLIB",
+        "DFL": "USSENDFL",
+        "IA": "USSENIA",
+        "R": "USSENR",
+        "WI": "USSENWI"
+      }
+    },
+    "2022": {
+      "native_units": 4103,
+      "all_native_candidate_positions": 28721,
+      "candidate_source_parties_and_names": {
+        "GLC": "Steve Patterson and Matt Huff",
+        "LMN": "James McCaskel and David Sandbeck",
+        "R": "Scott Jensen and Matt Birk",
+        "DFL": "Tim Walz and Peggy Flanagan",
+        "IA": "Hugh McTavish and Mike Winter",
+        "SWP": "Gabrielle M. Prosser and Kevin A. Dwire",
+        "WI": "WRITE-IN"
+      },
+      "state_candidate_controls": 7,
+      "county_candidate_controls": 0,
+      "all_candidate_total": 2510661,
+      "actual_candidate_source_fields": {
+        "GLC": "MNGOVGLC",
+        "LMN": "MNGOVLMN",
+        "R": "MNGOVR",
+        "DFL": "MNGOVDFL",
+        "IA": "MNGOVIA",
+        "SWP": "MNGOVSWP",
+        "WI": "MNGOVWI"
+      }
+    },
+    "2020": {
+      "native_units": 4110,
+      "all_native_candidate_positions": 20550,
+      "candidate_source_parties_and_names": {
+        "LMN": "Kevin O'Connor",
+        "GLC": "Oliver Steinberg",
+        "R": "Jason Lewis",
+        "DFL": "Tina Smith",
+        "WI": "WRITE-IN"
+      },
+      "state_candidate_controls": 5,
+      "county_candidate_controls": 435,
+      "all_candidate_total": 3214256,
+      "actual_candidate_source_fields": {
+        "LMN": "USSENLMN",
+        "GLC": "USSENGLC",
+        "R": "USSENR",
+        "DFL": "USSENDFL",
+        "WI": "USSENWI"
+      }
+    }
+  },
+  "statistics_2024_field_checks": 28721,
+  "statistics_2024_disagreement_count": 56,
+  "statistics_2024_TOTVOTING_export_minus_workbook": -172,
+  "statistics_2024_raw_differences": [
+    {
+      "raw_line": 1842,
+      "source_column_zero_based": 8,
+      "source_county_code": "35",
+      "PCTCODE": "0005",
+      "VTDID": "270690005",
+      "field": "AB_MB",
+      "original_workbook": 63,
+      "current_fetched_export": 60,
+      "export_minus_workbook": -3
+    },
+    {
+      "raw_line": 1842,
+      "source_column_zero_based": 11,
+      "source_county_code": "35",
+      "PCTCODE": "0005",
+      "VTDID": "270690005",
+      "field": "TOTVOTING",
+      "original_workbook": 63,
+      "current_fetched_export": 60,
+      "export_minus_workbook": -3
+    },
+    {
+      "raw_line": 1846,
+      "source_column_zero_based": 8,
+      "source_county_code": "35",
+      "PCTCODE": "0025",
+      "VTDID": "270690025",
+      "field": "AB_MB",
+      "original_workbook": 27,
+      "current_fetched_export": 26,
+      "export_minus_workbook": -1
+    },
+    {
+      "raw_line": 1846,
+      "source_column_zero_based": 11,
+      "source_county_code": "35",
+      "PCTCODE": "0025",
+      "VTDID": "270690025",
+      "field": "TOTVOTING",
+      "original_workbook": 27,
+      "current_fetched_export": 26,
+      "export_minus_workbook": -1
+    },
+    {
+      "raw_line": 1847,
+      "source_column_zero_based": 8,
+      "source_county_code": "35",
+      "PCTCODE": "0030",
+      "VTDID": "270690030",
+      "field": "AB_MB",
+      "original_workbook": 100,
+      "current_fetched_export": 98,
+      "export_minus_workbook": -2
+    },
+    {
+      "raw_line": 1847,
+      "source_column_zero_based": 11,
+      "source_county_code": "35",
+      "PCTCODE": "0030",
+      "VTDID": "270690030",
+      "field": "TOTVOTING",
+      "original_workbook": 100,
+      "current_fetched_export": 98,
+      "export_minus_workbook": -2
+    },
+    {
+      "raw_line": 1848,
+      "source_column_zero_based": 8,
+      "source_county_code": "35",
+      "PCTCODE": "0035",
+      "VTDID": "270690035",
+      "field": "AB_MB",
+      "original_workbook": 12,
+      "current_fetched_export": 9,
+      "export_minus_workbook": -3
+    },
+    {
+      "raw_line": 1848,
+      "source_column_zero_based": 11,
+      "source_county_code": "35",
+      "PCTCODE": "0035",
+      "VTDID": "270690035",
+      "field": "TOTVOTING",
+      "original_workbook": 12,
+      "current_fetched_export": 9,
+      "export_minus_workbook": -3
+    },
+    {
+      "raw_line": 1849,
+      "source_column_zero_based": 8,
+      "source_county_code": "35",
+      "PCTCODE": "0040",
+      "VTDID": "270690040",
+      "field": "AB_MB",
+      "original_workbook": 43,
+      "current_fetched_export": 40,
+      "export_minus_workbook": -3
+    },
+    {
+      "raw_line": 1849,
+      "source_column_zero_based": 11,
+      "source_county_code": "35",
+      "PCTCODE": "0040",
+      "VTDID": "270690040",
+      "field": "TOTVOTING",
+      "original_workbook": 43,
+      "current_fetched_export": 40,
+      "export_minus_workbook": -3
+    },
+    {
+      "raw_line": 1850,
+      "source_column_zero_based": 7,
+      "source_county_code": "35",
+      "PCTCODE": "0045",
+      "VTDID": "270690045",
+      "field": "SIGNATURES",
+      "original_workbook": 335,
+      "current_fetched_export": 305,
+      "export_minus_workbook": -30
+    },
+    {
+      "raw_line": 1850,
+      "source_column_zero_based": 8,
+      "source_county_code": "35",
+      "PCTCODE": "0045",
+      "VTDID": "270690045",
+      "field": "AB_MB",
+      "original_workbook": 192,
+      "current_fetched_export": 170,
+      "export_minus_workbook": -22
+    },
+    {
+      "raw_line": 1850,
+      "source_column_zero_based": 11,
+      "source_county_code": "35",
+      "PCTCODE": "0045",
+      "VTDID": "270690045",
+      "field": "TOTVOTING",
+      "original_workbook": 529,
+      "current_fetched_export": 477,
+      "export_minus_workbook": -52
+    },
+    {
+      "raw_line": 1851,
+      "source_column_zero_based": 8,
+      "source_county_code": "35",
+      "PCTCODE": "0050",
+      "VTDID": "270690050",
+      "field": "AB_MB",
+      "original_workbook": 60,
+      "current_fetched_export": 59,
+      "export_minus_workbook": -1
+    },
+    {
+      "raw_line": 1851,
+      "source_column_zero_based": 11,
+      "source_county_code": "35",
+      "PCTCODE": "0050",
+      "VTDID": "270690050",
+      "field": "TOTVOTING",
+      "original_workbook": 60,
+      "current_fetched_export": 59,
+      "export_minus_workbook": -1
+    },
+    {
+      "raw_line": 1853,
+      "source_column_zero_based": 8,
+      "source_county_code": "35",
+      "PCTCODE": "0060",
+      "VTDID": "270690060",
+      "field": "AB_MB",
+      "original_workbook": 21,
+      "current_fetched_export": 20,
+      "export_minus_workbook": -1
+    },
+    {
+      "raw_line": 1853,
+      "source_column_zero_based": 11,
+      "source_county_code": "35",
+      "PCTCODE": "0060",
+      "VTDID": "270690060",
+      "field": "TOTVOTING",
+      "original_workbook": 21,
+      "current_fetched_export": 20,
+      "export_minus_workbook": -1
+    },
+    {
+      "raw_line": 1855,
+      "source_column_zero_based": 8,
+      "source_county_code": "35",
+      "PCTCODE": "0070",
+      "VTDID": "270690070",
+      "field": "AB_MB",
+      "original_workbook": 13,
+      "current_fetched_export": 11,
+      "export_minus_workbook": -2
+    },
+    {
+      "raw_line": 1855,
+      "source_column_zero_based": 11,
+      "source_county_code": "35",
+      "PCTCODE": "0070",
+      "VTDID": "270690070",
+      "field": "TOTVOTING",
+      "original_workbook": 13,
+      "current_fetched_export": 11,
+      "export_minus_workbook": -2
+    },
+    {
+      "raw_line": 1856,
+      "source_column_zero_based": 8,
+      "source_county_code": "35",
+      "PCTCODE": "0075",
+      "VTDID": "270690075",
+      "field": "AB_MB",
+      "original_workbook": 19,
+      "current_fetched_export": 18,
+      "export_minus_workbook": -1
+    },
+    {
+      "raw_line": 1856,
+      "source_column_zero_based": 11,
+      "source_county_code": "35",
+      "PCTCODE": "0075",
+      "VTDID": "270690075",
+      "field": "TOTVOTING",
+      "original_workbook": 19,
+      "current_fetched_export": 18,
+      "export_minus_workbook": -1
+    },
+    {
+      "raw_line": 1857,
+      "source_column_zero_based": 8,
+      "source_county_code": "35",
+      "PCTCODE": "0080",
+      "VTDID": "270690080",
+      "field": "AB_MB",
+      "original_workbook": 64,
+      "current_fetched_export": 60,
+      "export_minus_workbook": -4
+    },
+    {
+      "raw_line": 1857,
+      "source_column_zero_based": 11,
+      "source_county_code": "35",
+      "PCTCODE": "0080",
+      "VTDID": "270690080",
+      "field": "TOTVOTING",
+      "original_workbook": 64,
+      "current_fetched_export": 60,
+      "export_minus_workbook": -4
+    },
+    {
+      "raw_line": 1858,
+      "source_column_zero_based": 7,
+      "source_county_code": "35",
+      "PCTCODE": "0085",
+      "VTDID": "270690085",
+      "field": "SIGNATURES",
+      "original_workbook": 343,
+      "current_fetched_export": 308,
+      "export_minus_workbook": -35
+    },
+    {
+      "raw_line": 1858,
+      "source_column_zero_based": 8,
+      "source_county_code": "35",
+      "PCTCODE": "0085",
+      "VTDID": "270690085",
+      "field": "AB_MB",
+      "original_workbook": 61,
+      "current_fetched_export": 50,
+      "export_minus_workbook": -11
+    },
+    {
+      "raw_line": 1858,
+      "source_column_zero_based": 11,
+      "source_county_code": "35",
+      "PCTCODE": "0085",
+      "VTDID": "270690085",
+      "field": "TOTVOTING",
+      "original_workbook": 406,
+      "current_fetched_export": 360,
+      "export_minus_workbook": -46
+    },
+    {
+      "raw_line": 1859,
+      "source_column_zero_based": 8,
+      "source_county_code": "35",
+      "PCTCODE": "0090",
+      "VTDID": "270690090",
+      "field": "AB_MB",
+      "original_workbook": 110,
+      "current_fetched_export": 100,
+      "export_minus_workbook": -10
+    },
+    {
+      "raw_line": 1859,
+      "source_column_zero_based": 11,
+      "source_county_code": "35",
+      "PCTCODE": "0090",
+      "VTDID": "270690090",
+      "field": "TOTVOTING",
+      "original_workbook": 110,
+      "current_fetched_export": 100,
+      "export_minus_workbook": -10
+    },
+    {
+      "raw_line": 1861,
+      "source_column_zero_based": 8,
+      "source_county_code": "35",
+      "PCTCODE": "0095",
+      "VTDID": "270690095",
+      "field": "AB_MB",
+      "original_workbook": 100,
+      "current_fetched_export": 94,
+      "export_minus_workbook": -6
+    },
+    {
+      "raw_line": 1861,
+      "source_column_zero_based": 11,
+      "source_county_code": "35",
+      "PCTCODE": "0095",
+      "VTDID": "270690095",
+      "field": "TOTVOTING",
+      "original_workbook": 100,
+      "current_fetched_export": 94,
+      "export_minus_workbook": -6
+    },
+    {
+      "raw_line": 1862,
+      "source_column_zero_based": 8,
+      "source_county_code": "35",
+      "PCTCODE": "0100",
+      "VTDID": "270690100",
+      "field": "AB_MB",
+      "original_workbook": 200,
+      "current_fetched_export": 187,
+      "export_minus_workbook": -13
+    },
+    {
+      "raw_line": 1862,
+      "source_column_zero_based": 11,
+      "source_county_code": "35",
+      "PCTCODE": "0100",
+      "VTDID": "270690100",
+      "field": "TOTVOTING",
+      "original_workbook": 200,
+      "current_fetched_export": 187,
+      "export_minus_workbook": -13
+    },
+    {
+      "raw_line": 1863,
+      "source_column_zero_based": 8,
+      "source_county_code": "35",
+      "PCTCODE": "0105",
+      "VTDID": "270690105",
+      "field": "AB_MB",
+      "original_workbook": 23,
+      "current_fetched_export": 21,
+      "export_minus_workbook": -2
+    },
+    {
+      "raw_line": 1863,
+      "source_column_zero_based": 11,
+      "source_county_code": "35",
+      "PCTCODE": "0105",
+      "VTDID": "270690105",
+      "field": "TOTVOTING",
+      "original_workbook": 23,
+      "current_fetched_export": 21,
+      "export_minus_workbook": -2
+    },
+    {
+      "raw_line": 1865,
+      "source_column_zero_based": 8,
+      "source_county_code": "35",
+      "PCTCODE": "0115",
+      "VTDID": "270690115",
+      "field": "AB_MB",
+      "original_workbook": 60,
+      "current_fetched_export": 57,
+      "export_minus_workbook": -3
+    },
+    {
+      "raw_line": 1865,
+      "source_column_zero_based": 11,
+      "source_county_code": "35",
+      "PCTCODE": "0115",
+      "VTDID": "270690115",
+      "field": "TOTVOTING",
+      "original_workbook": 60,
+      "current_fetched_export": 57,
+      "export_minus_workbook": -3
+    },
+    {
+      "raw_line": 1868,
+      "source_column_zero_based": 8,
+      "source_county_code": "35",
+      "PCTCODE": "0125",
+      "VTDID": "270690125",
+      "field": "AB_MB",
+      "original_workbook": 28,
+      "current_fetched_export": 27,
+      "export_minus_workbook": -1
+    },
+    {
+      "raw_line": 1868,
+      "source_column_zero_based": 11,
+      "source_county_code": "35",
+      "PCTCODE": "0125",
+      "VTDID": "270690125",
+      "field": "TOTVOTING",
+      "original_workbook": 28,
+      "current_fetched_export": 27,
+      "export_minus_workbook": -1
+    },
+    {
+      "raw_line": 1869,
+      "source_column_zero_based": 8,
+      "source_county_code": "35",
+      "PCTCODE": "0130",
+      "VTDID": "270690130",
+      "field": "AB_MB",
+      "original_workbook": 72,
+      "current_fetched_export": 69,
+      "export_minus_workbook": -3
+    },
+    {
+      "raw_line": 1869,
+      "source_column_zero_based": 11,
+      "source_county_code": "35",
+      "PCTCODE": "0130",
+      "VTDID": "270690130",
+      "field": "TOTVOTING",
+      "original_workbook": 72,
+      "current_fetched_export": 69,
+      "export_minus_workbook": -3
+    },
+    {
+      "raw_line": 1870,
+      "source_column_zero_based": 8,
+      "source_county_code": "35",
+      "PCTCODE": "0135",
+      "VTDID": "270690135",
+      "field": "AB_MB",
+      "original_workbook": 68,
+      "current_fetched_export": 67,
+      "export_minus_workbook": -1
+    },
+    {
+      "raw_line": 1870,
+      "source_column_zero_based": 11,
+      "source_county_code": "35",
+      "PCTCODE": "0135",
+      "VTDID": "270690135",
+      "field": "TOTVOTING",
+      "original_workbook": 69,
+      "current_fetched_export": 68,
+      "export_minus_workbook": -1
+    },
+    {
+      "raw_line": 1872,
+      "source_column_zero_based": 8,
+      "source_county_code": "35",
+      "PCTCODE": "0145",
+      "VTDID": "270690145",
+      "field": "AB_MB",
+      "original_workbook": 17,
+      "current_fetched_export": 14,
+      "export_minus_workbook": -3
+    },
+    {
+      "raw_line": 1872,
+      "source_column_zero_based": 11,
+      "source_county_code": "35",
+      "PCTCODE": "0145",
+      "VTDID": "270690145",
+      "field": "TOTVOTING",
+      "original_workbook": 17,
+      "current_fetched_export": 14,
+      "export_minus_workbook": -3
+    },
+    {
+      "raw_line": 1873,
+      "source_column_zero_based": 8,
+      "source_county_code": "35",
+      "PCTCODE": "0150",
+      "VTDID": "270690150",
+      "field": "AB_MB",
+      "original_workbook": 35,
+      "current_fetched_export": 34,
+      "export_minus_workbook": -1
+    },
+    {
+      "raw_line": 1873,
+      "source_column_zero_based": 11,
+      "source_county_code": "35",
+      "PCTCODE": "0150",
+      "VTDID": "270690150",
+      "field": "TOTVOTING",
+      "original_workbook": 35,
+      "current_fetched_export": 34,
+      "export_minus_workbook": -1
+    },
+    {
+      "raw_line": 1876,
+      "source_column_zero_based": 8,
+      "source_county_code": "35",
+      "PCTCODE": "0165",
+      "VTDID": "270690165",
+      "field": "AB_MB",
+      "original_workbook": 31,
+      "current_fetched_export": 30,
+      "export_minus_workbook": -1
+    },
+    {
+      "raw_line": 1876,
+      "source_column_zero_based": 11,
+      "source_county_code": "35",
+      "PCTCODE": "0165",
+      "VTDID": "270690165",
+      "field": "TOTVOTING",
+      "original_workbook": 31,
+      "current_fetched_export": 30,
+      "export_minus_workbook": -1
+    },
+    {
+      "raw_line": 1877,
+      "source_column_zero_based": 8,
+      "source_county_code": "35",
+      "PCTCODE": "0170",
+      "VTDID": "270690170",
+      "field": "AB_MB",
+      "original_workbook": 19,
+      "current_fetched_export": 18,
+      "export_minus_workbook": -1
+    },
+    {
+      "raw_line": 1877,
+      "source_column_zero_based": 11,
+      "source_county_code": "35",
+      "PCTCODE": "0170",
+      "VTDID": "270690170",
+      "field": "TOTVOTING",
+      "original_workbook": 19,
+      "current_fetched_export": 18,
+      "export_minus_workbook": -1
+    },
+    {
+      "raw_line": 1878,
+      "source_column_zero_based": 8,
+      "source_county_code": "35",
+      "PCTCODE": "0175",
+      "VTDID": "270690175",
+      "field": "AB_MB",
+      "original_workbook": 28,
+      "current_fetched_export": 25,
+      "export_minus_workbook": -3
+    },
+    {
+      "raw_line": 1878,
+      "source_column_zero_based": 11,
+      "source_county_code": "35",
+      "PCTCODE": "0175",
+      "VTDID": "270690175",
+      "field": "TOTVOTING",
+      "original_workbook": 29,
+      "current_fetched_export": 26,
+      "export_minus_workbook": -3
+    },
+    {
+      "raw_line": 1879,
+      "source_column_zero_based": 8,
+      "source_county_code": "35",
+      "PCTCODE": "0180",
+      "VTDID": "270690180",
+      "field": "AB_MB",
+      "original_workbook": 40,
+      "current_fetched_export": 39,
+      "export_minus_workbook": -1
+    },
+    {
+      "raw_line": 1879,
+      "source_column_zero_based": 11,
+      "source_county_code": "35",
+      "PCTCODE": "0180",
+      "VTDID": "270690180",
+      "field": "TOTVOTING",
+      "original_workbook": 40,
+      "current_fetched_export": 39,
+      "export_minus_workbook": -1
+    },
+    {
+      "raw_line": 1880,
+      "source_column_zero_based": 8,
+      "source_county_code": "35",
+      "PCTCODE": "0185",
+      "VTDID": "270690185",
+      "field": "AB_MB",
+      "original_workbook": 104,
+      "current_fetched_export": 100,
+      "export_minus_workbook": -4
+    },
+    {
+      "raw_line": 1880,
+      "source_column_zero_based": 11,
+      "source_county_code": "35",
+      "PCTCODE": "0185",
+      "VTDID": "270690185",
+      "field": "TOTVOTING",
+      "original_workbook": 104,
+      "current_fetched_export": 100,
+      "export_minus_workbook": -4
+    }
+  ],
+  "scope": "Historical candidate controls are coherent; separate current-fetched statistics vintage differences remain unallocated. GenericWI not valid named allocation. No candidate-method preference inference, currentNovember counts or geographic crosswalk approval."
+}

@@ -1,0 +1,1181 @@
+
+
+
+
+	
+
+
+
+
+
+//----- Check href of all <a...> tags, if it matchs page url and immediate parent is <LI>,
+//		append "active" to className of all ancestor <LI> tags until the parent of the <LI>
+//		tag is not <UL> or the parent of the <UL> is not another <LI> tag.
+var functionRef = function setClassActive()
+{
+	var e;
+	try
+	{
+		var pattern = new RegExp("http[s]?://.*?/(.*)[?#]?","");
+		var tags = document.getElementsByTagName("A");
+		if (tags)
+		{
+			for (var i=0;i<tags.length;i++)
+			{
+				var el = tags[i];
+				var resultsTag = el.href.match(pattern);
+				var resultsPage = location.href.match(pattern);
+				if (!resultsTag || !resultsPage) continue;
+				if (resultsTag[1] != resultsPage[1]) continue;
+	
+				// go up li tree marking this and all parent class=active
+				var li = el.parentNode;
+				while (li && li.tagName == 'LI')
+				{
+					if (li.className != '') 
+						li.className += ' ';
+					li.className += 'active';
+					var ul = li.parentNode;
+					if (!ul || ul.tagName != 'UL') break;
+					li = ul.parentNode;
+				}
+				//let's catch all links e.g. topnav, leftnav, quick links, etc
+				//break;	//found url match, quit checking tags
+			}
+		}
+	}
+	catch (e) {}
+}
+//----- Activate topnavActive once page loads
+if (typeof addEventListener != 'undefined') addEventListener('load', functionRef, false);	//standards browser
+else if (typeof attachEvent != 'undefined') attachEvent("onload", functionRef);				//IE early versions
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+	
+	
+
+	
+	
+	
+	
+
+	
+
+
+
+
+
+	Roseau County, MN
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	 
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+	var defaultCalendarColor = "#3788d8";
+	var ImportCals = ["3",];
+	var calendarProps = {'1' : { 'color' : '#000000' , 'name' : 'Master' },
+'3' : { 'color' : '#3959af' , 'name' : 'Local Events' },
+'4' : { 'color' : '' , 'name' : 'calendar-list-options' },
+};
+	var RZCalendarTimezone = "";
+
+
+
+	
+	
+
+	
+	
+
+var __uzdbm_1 = "8f632416-be06-4062-9b65-784c25502998";var __uzdbm_2 = "YjZlNTQ5ZmEtZHhqdS00MTQwLTk2ZWUtYjk3NmM5NzY2MzM4JDEwNC41NS4yMDkuNw==";var __uzdbm_3 = "";var __uzdbm_4 = "false";var __uzdbm_5 = "";var __uzdbm_6 = "";var __uzdbm_7 = "";    (function (w, d, e, u, c, g, a, b) {     w["SSJSConnectorObj"] = w["SSJSConnectorObj"] || {       ss_cid: c,       domain_info: "auto",     };     w[g] = function (i, j) {       w["SSJSConnectorObj"][i] = j;     };     a = d.createElement(e);     a.async = true;     if (       navigator.userAgent.indexOf('MSIE') !== -1 ||       navigator.appVersion.indexOf('Trident/') > -1     ) {       u = u.replace("/advanced/", "/advanced/ie/");     }     a.src = u;     b = d.getElementsByTagName(e)[0];     b.parentNode.insertBefore(a, b);   })(     window, document, "script", "/18f5227b-e27b-445a-a53f-f845fbe69b40/stormcaster.js", "dxjw", "ssConf"   );   ssConf("c1", "https://roseaucountymn.gov");   ssConf("c3", "c99a4269-161c-4242-a3f0-28d44fa6ce24");   ssConf("au", "roseaucountymn.gov");   ssConf("cu", "validate.perfdrive.com, ssc");  
+
+
+
+
+
+
+if (typeof(RZ) == 'undefined') RZ = {};
+if (!RZ.link) RZ.link = new Object();
+RZ.pagetype = 'template'
+RZ.baseurlprefix = ''
+RZ.baseurlpath = ''
+RZ.protocolRelativeRevizeBaseUrl='//webgen1.revize.com'
+
+RZ.pagetemplatename = 'index'
+RZ.pagetemplateid = '12'
+RZ.pagemodule = ''
+RZ.pagemoduleid = ''
+RZ.pagerecordid = '';
+
+RZ.pageid = 'index';
+RZ.pageparentid = '';
+RZ.pagesectionid = '0';
+RZ.pagesectionname = '';
+RZ.pagesectionlevel = '0';
+RZ.pagesectionfolder = '';
+RZ.pagesectionfilter = 'sectionid=0';
+RZ.pagelinkfilter = 'linklevel=0 and linksectionid=0';
+RZ.pagelinklevel = '0';
+RZ.pagelinkid = '-1';
+RZ.pageidfield = '';
+
+RZ.isnewrecord = false;
+RZ.editmodule = '';
+RZ.editrecordid = '';
+RZ.editrecordversion = '';
+RZ.editversion = '';
+RZ.editaction = '';
+
+RZ.page_roles = ''
+RZ.page_users = '08780e4a9c569a09da83d1c680f961d1cc2de79892772fa4ce4943b248552ed8'
+RZ.page_key = 'index[]'
+RZ.parent_key = ''
+RZ.inherit_key = 'index[]'
+RZ.workflowname = ''
+RZ.permissions_options = ''
+RZ.permissions_module = 'webspace_page_permissions'
+RZ.webspace = 'roseaucntymn'
+RZ.webspacedesc = ".Gov";
+
+RZ.featurespattern = '(EZ)';
+null
+
+RZ.webspacelinksurl = ''
+RZ.webspacelinksurl = './webspace/links.html'
+RZ.workflowlist = ''
+RZ.revizeserverurl = 'https://webgen1.revize.com/revize/roseaucntymn';
+
+if (!RZ.nextseq) RZ.nextseq = {linknames:{},modules:{}};
+
+RZ.webspace_config = new Object();
+RZ.webspace_config.admin_email = "noreply@co.walla-walla.wa.us";
+RZ.webspace_config.calendar_options = "max_events=4";
+RZ.webspace_config.form_captcha = "yes";
+RZ.webspace_config.form_server = "revizeserver";
+RZ.webspace_config.form_technology = "jsp";
+RZ.webspace_config.formwizard_ftp_password = "";
+RZ.webspace_config.formwizard_ftp_port = "";
+RZ.webspace_config.formwizard_ftp_server = "";
+RZ.webspace_config.formwizard_ftp_user = "";
+RZ.webspace_config.formwizard_setup = "yes";
+RZ.webspace_config.formwizard_smtp_password = "xxx";
+RZ.webspace_config.formwizard_smtp_server = "xxx";
+RZ.webspace_config.formwizard_smtp_user = "xxx";
+RZ.webspace_config.google_analytics = "";
+RZ.webspace_config.home_pageid = "0";
+RZ.webspace_config.home_sectionid = "0";
+RZ.webspace_config.home_template = "home,index,sitemap";
+RZ.webspace_config.icon_email = "<img src=\"/revize/images/email_icon_yellow.gif\" width=\"16\" border=\"0\" height=\"17\" title=\"Request email notification when page changes\" alt=\"Request email notification when page changes\" style=\"\" />";
+RZ.webspace_config.image_maxheight = "3000";
+RZ.webspace_config.image_maxwidth = "3000";
+RZ.webspace_config.image_setup = "yes";
+RZ.webspace_config.isNewMenuManagerEnabled = "yes";
+RZ.webspace_config.livesite_url = "";
+RZ.webspace_config.menu_links_module = "links";
+RZ.webspace_config.menu_newsection = "";
+RZ.webspace_config.menu_nexturl = "webspace_menu-editform.jsp";
+RZ.webspace_config.menu_sections_module = "sections";
+RZ.webspace_config.menu_system = "custom";
+RZ.webspace_config.menu_version = "1.00";
+RZ.webspace_config.new_menu_manager_enabled = "yes";
+RZ.webspace_config.notify_return_url = "enotify/index.php";
+RZ.webspace_config.rte_setup = "yes";
+RZ.webspace_config.to_email = "";
+RZ.webspace_config.use_folders = "1";
+RZ.webspace_config.use_new_buttons = "yes";
+
+RZ.isauthenticationactive = true
+RZ.warning = ""
+RZ.adminwinmsg = null
+
+RZ.channels = 'revize,fileschannel';
+RZ.jsversion = 1.2
+
+
+
+
+	
+
+
+
+	Skip to main content
+	
+		
+			
+				close menu
+			
+			
+					This website uses cookies to store your accessibility preferences. No personal / identifying information is stored.
+			
+			
+				Dismiss
+			
+		
+	
+	
+	
+	
+		
+			(function(d){
+				 var s = d.createElement("script");
+				 s.setAttribute("data-position", 5);
+				 s.setAttribute("data-color", '#000');
+				 s.setAttribute("data-account", "sudb1U5E4V");
+				 s.setAttribute("src", "https://cdn.userway.org/widget.js"); 
+				 (d.body || d.head).appendChild(s);})(document)
+		
+		
+		Please ensure Javascript is enabled for purposes of 
+		website accessibility
+		
+		 
+	
+		
+		
+			
+		
+	
+	
+
+
+
+
+
+
+
+
+		
+			
+				
+				
+			
+		
+			
+				
+					
+						
+
+
+
+
+
+	
+	
+	
+
+					
+					
+						
+							
+
+
+            Facebook
+						
+						
+						
+							function googleTranslateElementInit() {
+								new google.translate.TranslateElement({pagelanguage: 'en',
+									layout: google.translate.TranslateElement.InlineLayout.SIMPLE},
+									'google-translate');
+							}
+						
+						
+						
+						
+							EN 
+								
+									English
+									Afrikaans
+									Albanian
+									Arabic
+									Armenian
+									Azerbaijani
+									Basque
+									Belarusian
+									Bengali
+									Bosnian
+									Bulgarian
+									Catalan
+									Cebuano
+									Chinese (Simplified)
+									Chinese (Traditional)
+									Croatian
+									Czech
+									Danish
+									Dutch
+									Esperanto
+									Estonian
+									Filipino
+									Finnish
+									French
+									Galician
+									Georgian
+									German
+									Greek
+									Gujarati
+									Haitian Creole
+									Hausa
+									Hebrew
+									Hindi
+									Hmong
+									Hungarian
+									Icelandic
+									Igbo
+									Indonesian
+									Irish
+									Italian
+									Japanese
+									Javanese
+									Kannada
+									Khmer
+									Korean
+									Lao
+									Latin
+									Latvian
+									Lithuanian
+									Macedonian
+									Malay
+									Maltese
+									Maori
+									Marathi
+									Mongolian
+									Nepali
+									Norwegian
+									Persian
+									Polish
+									Portuguese
+									Punjabi
+									Romanian
+									Russian
+									Serbian
+									Slovak
+									Slovenian
+									Somali
+									Spanish
+									Swahili
+									Swedish
+									Tamil
+									Telugu
+									Thai
+									Turkish
+									Ukrainian
+									Urdu
+									Vietnamese
+									Welsh
+									Yiddish
+									Yoruba
+									Zulu
+								
+							
+						
+							
+								Search
+								
+								
+							
+						
+					
+				
+			
+		
+		
+			
+				
+					
+					
+					
+
+
+ 
+
+	Home
+	Offices
+		
+			Assessor
+			Attorney
+			Auditor
+			Court Administrator
+			Coordinator
+			Emergency Management
+			Environmental Services
+			Highway Department
+			Information Technology
+			Recorder
+			Sheriff
+			Social Services
+			Treasurer
+			Veterans Services
+		
+	
+	Government
+		
+			Board Meeting Schedule
+			Committee Appointments
+			Commissioner Districts
+			Meeting Documents
+		
+	
+	Residents
+		
+			Dog Pound
+			Online Atlas
+			Property Taxes
+			Public Information
+			Roseau County Extension 4-H
+				
+					Nutrition Information
+					Parents Forever
+					Roseau County Fair
+					U Of M Extension Home
+				
+			
+			Victim Services
+			Your County
+		
+	
+	Community
+		
+			School Districts
+			Watersheds
+				
+					Roseau River Watershed
+					Warroad River Watershed
+					Two Rivers Watershed
+					Middle-Snake-Tamarac Rivers Watershed
+					Red Lake Watershed
+				
+			
+			Townships
+			Local Attractions
+				
+					Roseau
+					Warroad
+					Greenbush
+					Badger
+					Roosevelt
+					Strathcona
+					Wannaska
+				
+			
+		
+	
+	How Do I?
+		
+			Apply For
+				
+					Employment Opportunity
+					Birth/Death Certificate
+					Marriage License
+				
+			
+			Contact
+			Data Requests and Forms
+			Employee Access
+			Online Maps
+			Pay Property Tax Online
+			Request A 911 Address
+			Sign Up For Emergency Alerts
+			View Court Calendar
+		
+	
+
+
+
+
+@media only screen and (max-width:991px){
+#nav ul a, #nav ul span {
+color: #fff!important;
+}
+}
+#entry{height:unset!important;}
+
+
+
+
+
+
+
+					
+					
+						
+							
+								RZ.module = 'revize_topnav';
+								RZ.nexturl = "/revize/plugins/menus/webspace_menu-editlist.jsp?pageid=index&"
+										   + "linksfilter=linkplacement=topnav and linkparentid=0&"
+										   + "numberoflevels=3&"
+										   + "linkoptions=url,template,file&"
+										   + "linknewsection=*all*";
+								RZ.img = '<span class="rzBtn rzBtn-xs">Edit Top Nav</span>';
+								RZ.caption = '';
+								RZ.set="links.linkplacement=topnav";
+								RZ.options = '';
+								if (typeof RZaction != 'undefined') RZaction('editlist');
+							
+							
+								RZ.module = 'global';
+								RZ.recordid = '';
+								RZ.nexturl = "/revize/webgen_includes/gov/editforms/social-editform.jsp";
+								RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = '';
+								RZ.img = '<span class="rzBtn rzBtn-xs">Edit Social</span>';
+								RZ.set = 'global.pageid=index';
+								RZ.options = '';
+								if (typeof RZaction != 'undefined') RZaction('editform');
+							
+
+							
+								RZ.module = 'alert';
+								RZ.recordid = '';
+								RZ.nexturl = "/revize/webgen_includes/gov/editforms/alert-editform.jsp";
+								RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = '';
+								RZ.img = '<span class="rzBtn rzBtn-xs">Edit Alert</span>';
+								RZ.set = 'alert.pageid=alert';
+								RZ.options = '';
+								if (typeof RZaction != 'undefined') RZaction('editform');
+							
+						
+					
+					
+					
+				
+			
+		
+	
+
+
+
+	
+		
+		
+			
+				RZ.module = 'slider';
+				RZ.nexturl = "/revize/webgen_includes/gov/editforms/slider-editlist.jsp?pageid=index";
+				RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = '';
+				RZ.img = '<span class="rzBtn">Edit Slider</span>';
+				RZ.caption = '';
+				RZ.options = '';
+				if (typeof RZaction != 'undefined') RZaction('editlist');
+			
+			
+				
+					RZ.module = 'generic';
+					RZ.nexturl = '/revize/webgen_includes/gov/editforms/content_link-editform.jsp';
+					RZ.img = '<span class="rzBtn">Edit Caption</span>';
+					RZ.set = 'pageid=index-caption';
+					RZ.options = '';
+					if (typeof RZaction != 'undefined') RZaction('editform');
+				
+				
+					RZ.module = 'global';
+					RZ.recordid = '';
+					RZ.nexturl = "/revize/webgen_includes/gov/optionspanel/global_styles-editform.jsp";
+					RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = '';
+					RZ.img = '<span class="rzBtn">Edit Global Styles</span>';
+					RZ.set = 'global.pageid=index';
+					RZ.options = '';
+					if (typeof RZaction != 'undefined') RZaction('editform');
+				
+				
+					RZ.module = 'freeform';
+					RZ.recordid = '';
+					RZ.nexturl = "/revize/webgen_includes/gov/editforms/metadata-editform.jsp";
+					RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = '';
+					RZ.img = '<span class="rzBtn">Edit Metadata</span>';
+					RZ.set = "freeform.pageid=index";
+					RZ.options = '';
+					if (typeof RZaction != 'undefined') RZaction('editform');
+				
+				
+					if (RZlogin('')) {
+						document.write(`
+							<a href="http://cms4.revize.com/revize/supportrevize/revize_faq.php" target="_blank" class="rzBtn">Help</a>
+							<a href="javascript:void(0);" id="RZadminwinButton" onmouseup="RZadminwin()"><span class="rzBtn">admin panel</span></a>
+						`);
+					}
+				
+				
+		
+		
+		
+			Courthouse pic - croppedEmblem_W1HighwayShop_WA view of lake of the woods from a drone over WarroadThe Mural in Badger
+		
+		
+	
+
+			
+	
+		
+			Latest News
+		
+		
+
+	
+		
+			RZ.module = 'generic';
+			RZ.recordid = '';
+			RZ.nexturl = "/revize/webgen_includes/gov/editforms/text-editform.jsp";
+			RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = '';
+			RZ.img = '<span class="rzBtn">Edit Title</span>';
+			RZ.set = "generic.pageid=index-news";
+			RZ.options = '';
+			if (typeof RZaction != 'undefined') RZaction('editform');
+		
+		
+			RZ.module = 'news'; RZ.linkname = '';
+			RZ.template = '*none*'; RZ.recordid = 'new';
+			RZ.nexturl = "/revize/webgen_includes/gov/editforms/news-editform.jsp";
+			RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = '';
+			RZ.img = '<span class="rzBtn">Add News Item</span>';
+			RZ.set = 'news.pageid=news-main';
+			RZ.options = '';
+			if (typeof RZaction != 'undefined') RZaction('newitem');
+		
+	
+
+
+	
+		
+			
+			
+				
+				RZ.module = 'news'; RZ.linkname = '';
+				RZ.template = '*none*'; RZ.recordid = '39';
+				RZ.nexturl = "/revize/webgen_includes/gov/editforms/news-editform.jsp";
+				RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = '';
+				RZ.img = '<i title="Edit Item"  class="fa fa-pencil"><span class="sr-only">Edit</span></i>';
+				RZ.set = '';
+				RZ.options = '';
+				if (typeof RZaction != 'undefined') RZaction('edititem');
+				
+			
+			
+				
+				RZ.module = 'news';
+				RZ.recordid = '39';
+				RZ.name = 'RZdelete' + RZ.recordid;
+				RZ.img = '<i title="Delete Item" class="fa fa-trash"><span class="sr-only">Delete</span></i>';
+				RZ.options = '';
+				if (typeof RZaction != 'undefined') RZaction('delete');
+				
+			
+		
+		
+			Aug26
+			
+				General Notice Regarding Absentee Voting
+			
+		
+	
+
+		
+
+	
+		
+			
+			
+				
+				RZ.module = 'news'; RZ.linkname = '';
+				RZ.template = '*none*'; RZ.recordid = '40';
+				RZ.nexturl = "/revize/webgen_includes/gov/editforms/news-editform.jsp";
+				RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = '';
+				RZ.img = '<i title="Edit Item"  class="fa fa-pencil"><span class="sr-only">Edit</span></i>';
+				RZ.set = '';
+				RZ.options = '';
+				if (typeof RZaction != 'undefined') RZaction('edititem');
+				
+			
+			
+				
+				RZ.module = 'news';
+				RZ.recordid = '40';
+				RZ.name = 'RZdelete' + RZ.recordid;
+				RZ.img = '<i title="Delete Item" class="fa fa-trash"><span class="sr-only">Delete</span></i>';
+				RZ.options = '';
+				if (typeof RZaction != 'undefined') RZaction('delete');
+				
+			
+		
+		
+			Aug26
+			
+				General Notice to Voters of Mail-Ballot Precincts in Roseau County
+			
+		
+	
+
+		
+
+	
+		
+			
+			
+				
+				RZ.module = 'news'; RZ.linkname = '';
+				RZ.template = '*none*'; RZ.recordid = '37';
+				RZ.nexturl = "/revize/webgen_includes/gov/editforms/news-editform.jsp";
+				RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = '';
+				RZ.img = '<i title="Edit Item"  class="fa fa-pencil"><span class="sr-only">Edit</span></i>';
+				RZ.set = '';
+				RZ.options = '';
+				if (typeof RZaction != 'undefined') RZaction('edititem');
+				
+			
+			
+				
+				RZ.module = 'news';
+				RZ.recordid = '37';
+				RZ.name = 'RZdelete' + RZ.recordid;
+				RZ.img = '<i title="Delete Item" class="fa fa-trash"><span class="sr-only">Delete</span></i>';
+				RZ.options = '';
+				if (typeof RZaction != 'undefined') RZaction('delete');
+				
+			
+		
+		
+			Aug17
+			
+				Notice of Hearing - Partial Abandonment
+			
+		
+	
+
+		
+
+	
+		
+			
+			
+				
+				RZ.module = 'news'; RZ.linkname = '';
+				RZ.template = '*none*'; RZ.recordid = '35';
+				RZ.nexturl = "/revize/webgen_includes/gov/editforms/news-editform.jsp";
+				RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = '';
+				RZ.img = '<i title="Edit Item"  class="fa fa-pencil"><span class="sr-only">Edit</span></i>';
+				RZ.set = '';
+				RZ.options = '';
+				if (typeof RZaction != 'undefined') RZaction('edititem');
+				
+			
+			
+				
+				RZ.module = 'news';
+				RZ.recordid = '35';
+				RZ.name = 'RZdelete' + RZ.recordid;
+				RZ.img = '<i title="Delete Item" class="fa fa-trash"><span class="sr-only">Delete</span></i>';
+				RZ.options = '';
+				if (typeof RZaction != 'undefined') RZaction('delete');
+				
+			
+		
+		
+			Aug06
+			
+				Notice of General Election
+			
+		
+	
+
+		
+
+	
+		
+			
+			
+				
+				RZ.module = 'news'; RZ.linkname = '';
+				RZ.template = '*none*'; RZ.recordid = '33';
+				RZ.nexturl = "/revize/webgen_includes/gov/editforms/news-editform.jsp";
+				RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = '';
+				RZ.img = '<i title="Edit Item"  class="fa fa-pencil"><span class="sr-only">Edit</span></i>';
+				RZ.set = '';
+				RZ.options = '';
+				if (typeof RZaction != 'undefined') RZaction('edititem');
+				
+			
+			
+				
+				RZ.module = 'news';
+				RZ.recordid = '33';
+				RZ.name = 'RZdelete' + RZ.recordid;
+				RZ.img = '<i title="Delete Item" class="fa fa-trash"><span class="sr-only">Delete</span></i>';
+				RZ.options = '';
+				if (typeof RZaction != 'undefined') RZaction('delete');
+				
+			
+		
+		
+			Jul12
+			
+				Minnesota Department of Children, Youth, and Families Grant Contract
+			
+		
+	
+
+		
+
+	
+		
+			
+			
+				
+				RZ.module = 'news'; RZ.linkname = '';
+				RZ.template = '*none*'; RZ.recordid = '10';
+				RZ.nexturl = "/revize/webgen_includes/gov/editforms/news-editform.jsp";
+				RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = '';
+				RZ.img = '<i title="Edit Item"  class="fa fa-pencil"><span class="sr-only">Edit</span></i>';
+				RZ.set = '';
+				RZ.options = '';
+				if (typeof RZaction != 'undefined') RZaction('edititem');
+				
+			
+			
+				
+				RZ.module = 'news';
+				RZ.recordid = '10';
+				RZ.name = 'RZdelete' + RZ.recordid;
+				RZ.img = '<i title="Delete Item" class="fa fa-trash"><span class="sr-only">Delete</span></i>';
+				RZ.options = '';
+				if (typeof RZaction != 'undefined') RZaction('delete');
+				
+			
+		
+		
+			Dec03
+			
+				Sign up for Emergency Alert Notifications
+			
+		
+	
+
+		
+
+
+		See All News
+	
+						
+	
+	
+
+
+	 
+	
+		
+			
+				
+					RZ.module = 'generic';
+					RZ.recordid = '';
+					RZ.nexturl = "/revize/webgen_includes/gov/editforms/text-editform.jsp";
+					RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = '';
+					RZ.img = '<span class="rzBtn">Edit Title</span>';
+					RZ.set = "generic.pageid=index-quicks";
+					RZ.options = '';
+					if (typeof RZaction != 'undefined') RZaction('editform');
+							
+				
+					RZ.module = 'imagelink';
+					RZ.nexturl = "/revize/webgen_includes/gov/editforms/quick-links-editlist.jsp?pageid=index-quicks";
+					RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = '';
+					RZ.img = '<span class="rzBtn">Edit Quick Links</span>';
+					RZ.caption = '';
+					RZ.options = '';
+					if (typeof RZaction != 'undefined') RZaction('editlist');
+				
+			
+		
+	
+	
+		
+			
+			Document Center
+		
+				
+			
+			Online Payments
+		
+				
+			
+			Election Information
+		
+				
+			
+			Careers
+		
+				
+			
+			Online Atlas
+		
+				
+			
+			Employees
+		
+		
+	 
+	
+		
+			
+				
+					Upcoming Events
+					
+						
+							
+								
+									RZ.module = 'generic';
+									RZ.recordid = '';
+									RZ.nexturl = "/revize/webgen_includes/gov/editforms/text-editform.jsp";
+									RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = '';
+									RZ.img = '<span class="rzBtn">Edit Title</span>';
+									RZ.set = "generic.pageid=index-events";
+									RZ.options = '';
+									if (typeof RZaction != 'undefined') RZaction('editform');
+								
+								
+									RZ.module = 'generic';
+									RZ.recordid = '';
+									RZ.nexturl = "/revize/webgen_includes/gov/editforms/calendar-editform.jsp";
+									RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = '';
+									RZ.img = '<span class="rzBtn">Calendar Options</span>';
+									RZ.set = "generic.pageid=index-events-options";
+									RZ.options = '';
+									if (typeof RZaction != 'undefined') RZaction('editform');
+								
+							
+						
+					
+					
+						
+						
+							document.addEventListener('DOMContentLoaded', function() {
+									window.revizeCalendar.fns.mini.calendarProps = function() {
+										var props = window.revizeCalendar_proto.fns.mini.calendarProps();
+										props.height = "auto";
+										return props;
+									}
+								window.revizeCalendar.fns.mini.postRender = function(cal, calendar) {
+									var calCont = document.querySelector("#mini-events");
+									calCont.querySelector(".mini-calendar").dataset["calendar"] = "";
+									calCont.querySelector(".mini-events-list").dataset["calendar"] = "";
+									calCont.querySelector(".mini-events-list").dataset["listLength"] = "" || "2";
+								}
+							});
+						
+					
+					See All Events
+				
+			
+		
+	
+	
+		
+			
+				
+					
+						
+							
+								RZ.module = 'generic';
+								RZ.nexturl = '/revize/webgen_includes/gov/editforms/learn-editform.jsp';
+								RZ.img = '<span class="rzBtn">Edit Section</span>';
+								RZ.set = 'pageid=index-learn';
+								RZ.options = '';
+								if (typeof RZaction != 'undefined') RZaction('editform');
+							
+						
+					
+					
+
+					
+				
+			
+		
+	
+
+ 
+
+#tourbookwrap {
+width: 70%;
+}
+
+@media only screen and (max-width:991px) {
+#tourbookwrap {
+width: 100%;
+}
+.tour-wrap{
+flex-wrap:wrap
+}
+}
+
+
+	
+		
+		
+		
+		
+		Share this page
+	
+
+	
+		
+			
+				
+					Share this page
+					
+				
+				
+					
+						
+							 
+						
+	
+						
+							 
+						
+	
+						
+							 
+						
+	
+						
+							 
+						
+					
+					
+				
+				
+					Close
+				
+			
+		
+	
+	
+		
+			
+
+
+
+
+		
+			
+				
+				
+				
+			
+		
+		
+			
+				
+					RZ.module = 'generic';
+					RZ.nexturl = '/revize/webgen_includes/gov/editforms/link-editform.jsp';
+					RZ.img = '<span class="rzBtn">Edit Link</span>';
+					RZ.set = 'pageid=footer-help';
+					RZ.options = '';
+					if (typeof RZaction != 'undefined') RZaction('editform');
+								
+            Facebook
+			
+			
+				
+					RZ.module = 'links';
+					RZ.nexturl = "/revize/plugins/menus/webspace_menu-editlist.jsp?pageid=index&"
+							   + "linksfilter=linkplacement=footer-nav-1 and linkparentid=0&"
+							   + "numberoflevels=1&"
+							   + "linkoptions=url,file&"
+							   + "linknewsection=*all*";
+					RZ.img = '<span class="rzBtn">Edit Links</span>';
+					RZ.caption = '';
+					RZ.set="links.linkplacement=footer-nav-1,links.linkparentid=0";
+					RZ.options = '';
+					if (typeof RZaction != 'undefined') RZaction('editlist');
+									
+		
+					Careers
+				
+					Contact Us
+				
+					Election Information
+				
+				
+			
+		
+	
+	
+		
+				
+			RZ.module = 'generic';
+			RZ.nexturl = '/revize/webgen_includes/gov/editforms/text-editform.jsp';
+			RZ.img = '<span class="rzBtn">Edit Copyright</span>';
+			RZ.set = 'pageid=footer-copyright';
+			RZ.options = '';
+			if (typeof RZaction != 'undefined') RZaction('editform');
+					606 5th Avenue SW, Roseau, MN 56751
+			Powered by revize., the Government Website Experts
+			
+			
+			Login
+		
+	
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

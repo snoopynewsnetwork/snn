@@ -1,0 +1,2220 @@
+
+
+
+
+
+	
+
+				(function(w,d,s,l,i){w.GAMeasurementID='G-WW2H5WBKJB';w[l]=w[l]||[];w[l].push({'gtm.start':
+				new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+				j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+				'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+				})(window,document,'script','cpDataLayerGA4','GTM-K73C5PS');
+				
+				
+					var enableTelemetry = 'false'
+					var aiConfig = {
+					instrumentationKey: '1cde048e-3185-4906-aa46-c92a7312b60f'						
+					}
+					var appInsights = window.appInsights || function (a) { function b(a) { c[a] = function () { var b = arguments; c.queue.push(function () { c[a].apply(c, b) }) } } var c = { config: a }, d = document, e = window; setTimeout(function () { var b = d.createElement('script'); b.src = a.url || 'https://js.monitor.azure.com/scripts/a/ai.0.js', d.getElementsByTagName('script')[0].parentNode.appendChild(b) }); try { c.cookie = d.cookie } catch (a) { } c.queue = []; for (var f = ['Event', 'Exception', 'Metric', 'PageView', 'Trace', 'Dependency']; f.length;)b('track' + f.pop()); if (b('setAuthenticatedUserContext'), b('clearAuthenticatedUserContext'), b('startTrackEvent'), b('stopTrackEvent'), b('startTrackPage'), b('stopTrackPage'), b('flush'), !a.disableExceptionTracking) { f = 'onerror', b('_' + f); var g = e[f]; e[f] = function (a, b, d, e, h) { var i = g && g(a, b, d, e, h); return !0 !== i && c['_' + f](a, b, d, e, h), i } } return c }(aiConfig);
+					window.appInsights = appInsights, appInsights.queue && 0 === appInsights.queue.length;
+					// Add telemetry initializer
+					appInsights.queue.push(function() {
+						appInsights.context.addTelemetryInitializer(function(envelope) {
+							var telemetryItem = envelope.data.baseData;
+							// To check the telemetry item’s type:
+							if (!false)
+							{
+								//If the telemetry is not enabled, we still want to capture Google map custom event, so only allow that
+								if (envelope.name.indexOf('.Event') == -1)
+									return false;
+							}
+						});
+					});						
+					appInsights.trackPageView();
+				
+	
+		function populateAntiForgery(token) {
+			var input = document.createElement("input");
+			input.name = "__RequestVerificationToken";
+			input.type = "hidden";
+			input.value = token;
+			var absPat = /^https?:\/\/|^\/\//i;
+			var forms = document.getElementsByTagName("form");
+			for (var i = 0; i < forms.length; i++) {
+				if (forms[i].method == "post" &&
+					!forms[i].querySelector('[name="__RequestVerificationToken"]') &&
+					!absPat.test(forms[i].getAttribute("action"))) {
+					forms[i].appendChild(input.cloneNode());
+				}
+			}
+		}
+
+		function getAntiForgeryToken(callback, error) {
+			var xhr = new XMLHttpRequest();
+			xhr.open("GET", "/antiforgery");
+			xhr.addEventListener("load", function() {
+				try {
+					if (this.status !== 200) {
+						throw Error("Invalid status. Could not retrieve antiforgery token.");
+					}
+					var obj = JSON.parse(this.responseText);
+					callback(obj.token);
+				} catch (e) {
+					typeof error === "function" && error(e);
+				}
+			});
+			xhr.send();
+		}
+
+		getAntiForgeryToken(function(token) {
+			if (document.readyState === "complete"
+				|| document.readyState === "loaded" 
+				|| document.readyState === "interactive") {
+				populateAntiForgery(token);
+				return;
+			}
+			document.addEventListener("DOMContentLoaded", function() {
+				populateAntiForgery(token);
+			}, false);
+		}, console.error);
+	
+			
+
+	
+		window.departmentHeader = {};
+		window.pageSectionTracker = {};
+		window.isResponsiveEnabled = true;
+		window.isRemoveSetHeights= false;
+		if (window.isRemoveSetHeights) {
+			document.documentElement.className += ' removeSetHeights';
+		}
+		window.mainMenuMediaQuery = 'screen and (max-width: 40em)';
+		window.isMobileBrowserIncludingTablets = false;
+		window.fixedResponsiveMenu = false;
+		window.fullWidthResponsiveMenu = false;
+		window.responsiveMenuHeight = '';
+		window.responsiveMenuFontSize = '';
+		window.isContentAdvisor = false;
+		(function () {
+			window.setSizeCookie = function () {
+				document.cookie = "dpi=" + window.devicePixelRatio + "; path=/";
+				document.cookie = "viewportWidth=" + window.innerWidth + "; path=/";
+				document.cookie = "viewportHeight=" + window.innerHeight + "; path=/";
+				if (screen && screen.width && screen.height) {
+					document.cookie = "screenWidth=" + screen.width + "; path=/";
+					document.cookie = "screenHeight=" + screen.height + "; path=/";
+				}
+				document.cookie = "responsiveGhost=1; path=/";
+			};
+
+			setSizeCookie();
+		}());
+	
+		
+
+	
+	
+	
+
+
+
+	
+	
+	
+	
+		Elections | Le Sueur County, MN
+
+		
+			
+	
+	
+
+	
+	
+	
+	
+	<!--
+	var intCountryCode = 840;
+	var order = '';
+//-->
+	
+		
+
+	
+	
+		window.Pages = window.Pages || {};
+		// FrontEnd RWD initialization
+		window.Pages.rwdReady = $.Deferred();
+		window.Pages.toolBarDeferred = $.Deferred();
+		window.Pages.rwdSetupComplete = $.Deferred();
+		window.Pages.megaMenuLoaded = $.Deferred();
+		window.Pages.angularToolbarComplete = $.Deferred();
+		window.Pages.frontEndToolbarComplete = $.Deferred();
+	
+	
+	
+	
+	
+	
+	
+
+
+
+
+	
+	
+	
+	
+
+	
+		setEditorVariables(false, 840);
+		function getPrintPreviewType() { return 0; } function printPreview() {pPreview(getPrintPreviewType()); }
+	
+	
+
+
+
+    jQuery(document).click(function (event) {
+	var target = jQuery(event.target);
+	if (target.attr('src') && target.parents('.image').length && target.parents('.widget').length) {
+		var text = target.attr('title');
+		
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Image',
+				eventAction: 'Image - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.is('button') || target.hasClass('button') || target.parents().hasClass('button')) {
+		var text = "";
+		if (target.parents('.button')[0]) {
+			text = target.parents('.button').first().text();
+		} else if (target.text().length) {
+			text = target.text();
+		} else if (target.attr('title').length) {
+			text = target.attr('title');
+		}
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Button',
+				eventAction: 'Button - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetCustomHtml').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Custom Html',
+				eventAction: 'Custom Html Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.editor').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Editor',
+				eventAction: 'Editor Link Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.GraphicLinks').length) {
+		var text = "";
+		var targetGraphicLink = target;
+		if (target.hasClass('widgetGraphicLinksLink')) {
+			targetGraphicLink = jQuery(target.children()[0]);
+		}
+		if (targetGraphicLink.hasClass('text')) {
+			text = targetGraphicLink.text();
+		} else if (targetGraphicLink.attr('src').length) {
+			if (targetGraphicLink.attr('alt').length) {
+				text = targetGraphicLink.attr('alt');
+			} else {
+				text = targetGraphicLink.attr('src');
+			}
+		} else {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Graphic Links',
+				eventAction: 'Graphic Link - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.InfoAdvanced').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Info Advanced',
+				eventAction: 'Info Advanced Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.list').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'List',
+				eventAction: 'List Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.megaMenuItem').length || target.parents('.topMenuItem').length) {
+		var megaMenuText = jQuery('.topMenuItem.mouseover').find('span').text();
+		var breadCrumbs = [];
+		jQuery('.breadCrumbs > li').each(function () {
+			 breadCrumbs.push(this.textContent);
+		});
+		var pageTitle = breadCrumbs.join('>');
+		var subTitleText = target.parents('.megaMenuItem').children('.widgetTitle').children().text();
+		var text = "";
+		if (pageTitle) {
+			text += pageTitle + " | ";
+		} else {
+			text += document.title + ' - ';
+		}
+		if (target.text() == "" && megaMenuText == "") {
+			text += "N/A";
+		} else if (target.text().length && megaMenuText.length) {
+			if (megaMenuText == target.text()) {
+				text += megaMenuText;
+			} else {
+				text += megaMenuText + " - " + subTitleText + " - " + target.text();
+			}
+		} else if (target.text() == "") {
+			text += megaMenuText;
+		} else {
+			text += target.text();
+		}
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Mega Menu',
+				eventAction: 'Mega Menu : ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetNewsFlash').length && target.parents('.widgetItem').length) {
+		var text = jQuery(target.parents('.widgetItem')[0]).find('.widgetTitle').children().text();
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'News Flash',
+				eventAction: 'News Flash - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.hasClass('widgetQuickLinksLink') || target.find('.widgetQuickLinksLink').length) {
+		var text = target.text();
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Quick Links',
+				eventAction: 'Quick Links - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.attr('src') && target.parents('.cpSlideshow').length) {
+		var text = target.attr('title');
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Slideshow',
+				eventAction: 'Slideshow - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetText').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Text',
+				eventAction: 'Text Link Clicked',
+				eventLabel: window.location.href
+			});
+	}
+});
+	
+	
+		
+		
+			
+				
+			
+		
+	
+	
+		
+	
+	
+		
+			
+		
+	
+
+    
+
+Skip to Main Content
+
+    
+
+        
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+            
+
+    
+        
+                
+                    
+
+
+
+
+
+    
+        Create a Website Account - Manage notification subscriptions, save form progress and more.   
+        
+	        Website Sign In
+        
+    
+
+
+    $(document).ready(function () {
+        $('#signedOutToolbarCreateProfileButton').click(function (event) {
+            event.preventDefault();
+            window.location.href = '/MyAccount/ProfileCreate?from=url&url=/&dn=' + window.location.origin;
+        });
+
+			
+				$('#loggedOutToolbarSignInButton').click(function (event) {
+					event.preventDefault();
+					window.location.href = '/MyAccount/?from=url&url=' + encodeURIComponent(window.location.href.replace(window.location.origin, '')) + '&dn=' + window.location.host;
+				});
+			
+
+		if ('False' == 'True') {
+            $('#loggedOutToolbarSignInButton').hide();
+		}
+    })
+
+
+
+                
+            
+                
+                
+
+
+
+
+
+
+
+
+				
+
+    About Us  			    County Government  			    Services  			    How Do I...  			    Contact Us 			
+
+
+
+	
+		(function () {
+			function setupMenu() {
+				const menuID = 'mainNavMenu';
+				const menuType = MAIN_MENU;
+
+				//setup menu manager properties for main menu
+				if (!menuManager.mobileMainNav && true)
+					menuManager.adjustMainItemsWidth('#' + menuID);
+				menuManager.isMainMenuEditable = false;
+				menuManager.mainMenuMaxSubMenuLevels = 4;
+				menuManager.setMOMMode(2, menuType);
+
+				//Init main menu
+				const setupDraggable = menuManager.isMainMenuEditable;
+				const urlToGetHiddenMenus = '/Pages/MenuMain/HiddenMainSubMenus?pageID=1&moduleID=&themeID=18&menuContainerID=mainNav';
+
+				menuManager.setupMenu(menuID, 'mainNav', menuType, setupDraggable, urlToGetHiddenMenus);
+				menuManager.mainMenuInit = true;
+				menuManager.mainMenuTextResizer = false;
+				if (1.00 > 0)
+					menuManager.mainMenuTextResizerRatio = 1.00;
+				if (window.isResponsiveEnabled)
+					menuManager.mainMenuReady.resolve();
+
+			}
+
+			if (document.readyState === "complete"
+				|| document.readyState === "loaded"
+				|| document.readyState === "interactive") {
+				setupMenu();
+				return;
+			}
+
+			document.addEventListener("DOMContentLoaded", setupMenu);
+		})();
+	
+
+
+	
+				                
+
+
+
+	
+	
+				                
+
+
+
+	
+	
+				                
+
+
+
+	
+	
+				                
+
+
+
+	
+
+
+
+	
+				                
+
+						
+	
+	
+		
+
+	
+	
+	
+	
+
+		$(document).ready(function () {
+			try {
+				// Minimum characters required before performing a search/autocomplete
+				var minPrefixLength = 3;
+				var autoCompleteDebounceDelay = 500;
+				var searchFieldSelector = "#searchField" + 'cfd8862e-60e1-47b5-9410-00c3f9ca1e56';
+				var checkboxSelector = "#ysnSearchOnlyDept" + 'cfd8862e-60e1-47b5-9410-00c3f9ca1e56';
+				var buttonSelector = ".widgetSearchButton" + 'cfd8862e-60e1-47b5-9410-00c3f9ca1e56';
+				var autoCompleteCache = {};
+				var autoCompleteCacheKeys = [];
+				var autoCompleteCacheLimit = 25;
+				var currentAutoCompleteRequest = null;
+				var currentAutoCompleteRequestKey = null;
+				var autoCompleteDebounceTimer = null;
+				var autoCompleteDebounceKey = null;
+				var pendingAutoCompleteResponses = [];
+
+				function normalizeAutoCompleteTerm(term) {
+					return $.trim((term || "") + "").replace(/\s+/g, " ");
+				}
+
+				function shouldSearch(term) {
+					return normalizeAutoCompleteTerm(term).length >= minPrefixLength;
+				}
+
+				function getAutoCompleteUrl() {
+					return '/Search/AutoComplete' + ($(checkboxSelector).is(':checked') || false? '?departmentId=0' : '');
+				}
+
+				function getAutoCompleteCacheKey(requestUrl, term) {
+					return requestUrl + "|" + term.toLowerCase();
+				}
+
+				function cacheAutoCompleteResult(cacheKey, data) {
+					if (!Object.prototype.hasOwnProperty.call(autoCompleteCache, cacheKey)) {
+						autoCompleteCacheKeys.push(cacheKey);
+						if (autoCompleteCacheKeys.length > autoCompleteCacheLimit) {
+							delete autoCompleteCache[autoCompleteCacheKeys.shift()];
+						}
+					}
+					autoCompleteCache[cacheKey] = data;
+				}
+
+				function respondToPendingAutoComplete(data) {
+					var responses = pendingAutoCompleteResponses;
+					pendingAutoCompleteResponses = [];
+					for (var i = 0; i < responses.length; i++) {
+						responses[i](data);
+					}
+				}
+
+				function cancelPendingAutoComplete() {
+					clearTimeout(autoCompleteDebounceTimer);
+					autoCompleteDebounceKey = null;
+					if (currentAutoCompleteRequest != null) {
+						currentAutoCompleteRequest.abort();
+						currentAutoCompleteRequest = null;
+					}
+					currentAutoCompleteRequestKey = null;
+					respondToPendingAutoComplete([]);
+				}
+
+				function createWidgetAutoCompleteSource(options) {
+					return function (request, response) {
+						var term = normalizeAutoCompleteTerm(request.term);
+						if (!options.shouldSearch(term)) {
+							response([]);
+							return;
+						}
+
+						var requestUrl = options.url();
+						var cacheKey = getAutoCompleteCacheKey(requestUrl, term);
+						if (Object.prototype.hasOwnProperty.call(autoCompleteCache, cacheKey)) {
+							response(autoCompleteCache[cacheKey]);
+							if (options.success) {
+								options.success(autoCompleteCache[cacheKey]);
+							}
+							return;
+						}
+
+						if (currentAutoCompleteRequestKey === cacheKey || autoCompleteDebounceKey === cacheKey) {
+							pendingAutoCompleteResponses.push(response);
+							return;
+						}
+
+						cancelPendingAutoComplete();
+						autoCompleteDebounceKey = cacheKey;
+						pendingAutoCompleteResponses.push(response);
+						autoCompleteDebounceTimer = setTimeout(function () {
+							autoCompleteDebounceKey = null;
+							currentAutoCompleteRequestKey = cacheKey;
+							currentAutoCompleteRequest = $.ajax({
+								url: requestUrl,
+								dataType: "json",
+								timeout: options.timeout,
+								data: {
+									term: term,
+								},
+								success: function (data) {
+									if (currentAutoCompleteRequestKey === cacheKey) {
+										cacheAutoCompleteResult(cacheKey, data);
+										respondToPendingAutoComplete(data);
+										if (options.success) {
+											options.success(data);
+										}
+									}
+								},
+								error: function (xmlhttprequest, textstatus, message) {
+									if (textstatus === "abort") {
+										return;
+									}
+
+									if (options.error) {
+										options.error(xmlhttprequest, textstatus, message);
+									}
+
+									respondToPendingAutoComplete([]);
+								},
+								complete: function (xmlhttprequest) {
+									if (currentAutoCompleteRequest === xmlhttprequest) {
+										currentAutoCompleteRequest = null;
+										currentAutoCompleteRequestKey = null;
+									}
+								}
+							});
+						}, options.delay);
+					};
+				}
+
+				// click handler for search buttons
+				$(buttonSelector).click(function (e) {
+					e.preventDefault();
+					var $btn = $(this);
+					var $field = $btn.siblings(".widgetSearchBox");
+					var term = $field.val() + "";
+					if (!shouldSearch(term)) {
+						// do nothing until user types enough characters
+						$field.focus();
+						return;
+					}
+
+					if ($(checkboxSelector).is(':checked') || false)
+					{
+						doWidgetSearch($.trim(term), Number(0));
+					}
+					else {
+						doWidgetSearch($.trim(term), 0);
+					}
+				});
+
+				// enter key handler for the search field
+				$(searchFieldSelector).keypress(function (e) {
+					var code = e.which || e.keyCode;
+					if (code === 13) {
+						e.preventDefault();
+						var $this = $(this);
+						var term = $this.val() + "";
+						if (!shouldSearch(term)) {
+							// do nothing until user types enough characters
+							$this.focus();
+							return false;
+						}
+
+						if ($(checkboxSelector).is(':checked') || false) {
+							doWidgetSearch($.trim(term), Number(0));
+						} else {
+							doWidgetSearch($.trim(term), 0);
+						}
+						return false;
+					}
+					return true;
+				});
+
+				// autocomplete: set minLength and guard source
+				if (true) {
+					var $searchField = $(searchFieldSelector).autocomplete({
+						minLength: minPrefixLength,
+						source: createWidgetAutoCompleteSource({
+							delay: autoCompleteDebounceDelay,
+							timeout: 10000,
+							shouldSearch: shouldSearch,
+							url: getAutoCompleteUrl,
+							success: function () {
+								$('.autoCompleteError').remove();
+							},
+							error: function (xmlhttprequest, textstatus, message) {
+								if (textstatus === "timeout") {
+									if ($(searchFieldSelector).siblings('.autoCompleteError').length == 0)
+										$('<span class="autoCompleteError"><p class="alert error">Search autocomplete is currently not responding. Please try again later.</p></span>').insertAfter($(searchFieldSelector));
+								}
+							}
+						}),
+						html: true,
+						delay: 0,
+						select: function (event, ui) {
+							$(this).val(ui.item.value);
+							$(this).next().click();
+						}
+					});
+
+					$searchField.data("ui-autocomplete")._renderItem = function (ul, item) {
+						return $("<li class=\"itemList\"></li>")
+							.data("ui-autocomplete-item", item)
+							.append("<a>" + item.label + "</a>")
+							.appendTo(ul);
+					};
+				}
+
+				// keep searchBtnApplyQuery consistent with prefix rule
+				window.searchBtnApplyQuery = function() {
+					var $field = $(searchFieldSelector);
+					var term = $field.val() + "";
+					if (shouldSearch(term)) {
+						// update href for the icon/button (if present)
+						var btn = document.getElementById("btnSearchIcon");
+						if (btn) btn.href = "/Search?searchPhrase=" + encodeURIComponent($.trim(term));
+					} else {
+						var btn = document.getElementById("btnSearchIcon");
+						if (btn) btn.href = "#";
+					}
+				};
+			}
+			catch(e) {} //we're going to eat this error. Autocomplete won't work but we dont wan't to break anything else on the page.
+		});
+	
+
+	
+				
+		
+			
+						
+
+			Search
+		
+
+	
+
+
+
+	  
+		.widgetSearch ::-webkit-input-placeholder {
+		color: #383838;
+	  }
+		.widgetSearch :-moz-placeholder { /* Firefox 18- */
+	   color: #383838;
+	}
+		.widgetSearch ::-moz-placeholder {  /* Firefox 19+ */
+	   color: #383838;
+	}
+	.widgetSearch :-ms-input-placeholder {
+	   color: #383838;
+	}
+	
+
+	.widgetSearch .widgetBody .widgetSearchBoxcfd8862e-60e1-47b5-9410-00c3f9ca1e56
+	{
+		color: #383838;
+		background-color: #fff; 
+border: 6px solid #ffffff4D;
+border-radius: 8px;
+background-clip: padding-box;
+font-family: Roboto Condensed;
+font-size: 1.05em;
+padding: 0 90px 0 20px;
+height: 82px;
+	}
+	.widgetSearch .widgetBody .widgetSearchButtoncfd8862e-60e1-47b5-9410-00c3f9ca1e56
+	{
+		margin: 16px 16px 0 0;
+	}
+	.widgetSearch .widgetSearch-onlyDeptcfd8862e-60e1-47b5-9410-00c3f9ca1e56
+	{
+		display: inline-block;
+		color: #333;
+		
+		
+		 padding-top: 10px;
+	}
+	#ysnSearchOnlyDeptcfd8862e-60e1-47b5-9410-00c3f9ca1e56
+	{
+		position: relative;
+		top: .125em;
+	}
+
+
+
+
+
+
+
+
+
+	//Updates search icons href to have the correct queryString
+	function searchBtnApplyQuery() {
+		document.getElementById("btnSearchIcon").href = "/Search?searchPhrase=" + document.getElementById("searchFieldcfd8862e-60e1-47b5-9410-00c3f9ca1e56").value;
+	}
+
+
+
+
+	 
+
+	 
+
+			 
+
+
+	
+
+
+
+
+
+
+
+		
+		
+			
+			
+		
+			
+				$(window).on("load", function () {
+					$.when(window.Pages.rwdSetupComplete)
+						.done(function () {
+							renderExternalBannerSlideshow('banner1',
+								{"BannerOptionID":54,"ThemeID":18,"SlotName":"banner1","Name":"Default","IsDefault":true,"BannerMode":2,"SlideShowSlideTiming":"5","SlideshowTransition":0,"SlideShowTransitionTiming":"1","ImageScale":true,"ImageAlignment":1,"ImageScroll":true,"MuteSound":true,"VideoType":0,"Status":40,"SlideshowControlsPosition":0,"SlideshowControlsAlignment":0,"SlideshowBannerControlsColorScheme":0,"DisplayVideoPauseButton":false,"VideoPauseButtonAlignment":1,"VideoPauseButtonControlsAlignment":0,"VideoPauseButtonStyle":"#FFFFFF","VideoPauseButtonBackgroundStyle":"#000000","VideoPauseButtonAlignmentClass":"alignRight viewport","DisplaySlideshowPauseButton":true,"SlideshowControlsColor":"#FFFFFF","SlideshowControlsBackgroundColor":"#000000","SlideshowPauseButtonClass":"isHidden","BannerImages":[{"BannerImageID":83,"BannerOptionID":54,"FileName":"/ImageRepository/Document?documentID=5302","Height":400,"Width":2200,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":1,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":""},{"BannerImageID":84,"BannerOptionID":54,"FileName":"/ImageRepository/Document?documentID=5301","Height":400,"Width":2200,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":2,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":""}],"BannerVideos":[{"BannerVideoID":1,"BannerOptionID":54,"VideoFileName":"","ImageFileName":"EmptyBannerBkg202304051358371662.png","IsLink":false,"LinkAddress":null,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","VideoFileID":"00000000-0000-0000-0000-000000000000","ImageFileID":"00000000-0000-0000-0000-000000000000","VideoWidth":0,"VideoHeight":0,"ImageWidth":0,"ImageHeight":0,"LinkedVideoUrl":"","RecordStatus":0,"AltText":null}],"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/"},
+								'/App_Themes/Interior/Images/',
+								'Rotating');
+						});
+				});
+			
+
+
+
+
+
+
+		
+			HomeCounty GovernmentElections
+		
+
+	   
+    
+
+	
+	
+		
+
+	
+	
+	
+	
+	
+	
+	
+
+				
+
+Elections		
+	
+		
+			
+
+						
+	
+	
+		
+
+	    
+
+
+        Responsible for overseeing Federal, State and Local elections, Le Sueur County also assists cities and school districts within the county in the election process. For available services and questions related to voting and elections, the following pages provide more information.Statewide Primary and General ElectionThe next regularly scheduled General Election will be held on November 3, 2026.Notice of General Election 2026Notice to Voters - General Election 20262026 Election - Important DatesDATEEVENTFriday, September 18, 2026Absentee Voting begins for General Election.Monday, October 12, 2026Public Accuracy Test - 9:00 a.m. - Le Sueur County Government Center Commissioner ChambersTuesday, October 13, 2026Pre-registration ends for General Election.  Last day to pre-register to vote.  Offices open until 5:00 p.m.Friday, October 16, 2026Early voting (placing voted ballot directly into ballot tabulator) begins for General Election.Saturday, October 24, 2026Extended voting hours from 9:00 a.m. - 3:00 p.m.Tuesday, October 27, 2026Extended voting hours from 8:00 a.m. - 7:00 p.m.Saturday, October 31, 2206Extended voting hours from 9:00 a.m. - 3:00 p.m.Sunday, November 1, 2026Extended voting hours from 9:00 a.m. - 3:00 p.m.Monday, November 2, 2026Last day for absentee/early voting.  Extended voting hours from 8:00 a.m. - 5:00 p.m.Tuesday, November 3, 2026General Election Day.  Polling places open from 7:00 a.m. - 8:00 p.m.Who is eligible to vote?You are eligible to vote in Minnesota if you are at least 18 years of age or older, a citizen of the United States and a resident of Minnesota for at least 20 days immediately preceding the election day.How do I register to vote?You can complete a voter registration application (PDF) or you can register online.  Completed applications can be dropped off or sent to the Le Sueur County Elections Office at 88 S Park Avenue, Le Center, MN  56057.Why should I pre-register to vote?Voting will be faster and easier if you are registered to vote when you arrive at the polls on election day.  You can register on Election Day; however, you will need to bring proof of residence with you.How do I register on Election Day?To register on Election Day, you must have proof of residence in your precinct.  Only proofs authorized by law will be accepted.Valid proof of identity includes any of the following:MN Driver’s License, Learner’s Permit, or Identification card showing a current address (or yellow receipt for any of these).Valid, previous registration from the same precinct."Notice of Ineffective or Late Registration" from the Public Service office.A registered voter from your precinct who personally knows you reside in the precinct and will vouch for your identity.A photo ID and a current utility bill showing your name and address in the precinct.Absentee VotingAbsentee ballots are available 46 days before the election.  Individuals interested in absentee voting may do so either by mail or in person at the Le Sueur County Government Center.  Standard office hours are 8:00 a.m. - 4:30 p.m. Monday through Thursday and 8:00 a.m. - 4:00 p.m. on Friday.  The office is also open for extended voting hours, see the table above for extended voting hours.  You do not have to be a registered voter to vote by absentee ballot (you will register during the absentee voting process).Absentee Voting Location & Hours - 2026 General ElectionOnline Absentee Ballot RequestMilitary/Overseas Absentee Ballot ApplicationApplication to Automatically Receive an Absentee BallotHow do I file for office?An individual who desires to become a candidate for an office shall file an affidavit of candidacy at the following locations:Federal - File with Secretary of StateState - File with Secretary of State or County in which candidate residesCounty - File with Le Sueur County ElectionsCity - File with City ClerkTownship - File with Township ClerkSchool - File with SchoolSoil & Water - File with Le Sueur County ElectionsTo see who has filed for office in Minnesota, please visit the Secretary of State candidate filings website. 
+    
+
+
+	$(document).ready(function (e) {		
+	    renderSlideshowIfApplicable($('#divEditor' + '9d9066e8-7ac6-400e-990e-01cc71b12841'));
+	});
+
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+
+
+
+
+
+
+
+
+
+	
+			
+					Contact Us
+							
+						
+		
+
+				Elections
+
+							Contact Elections
+					
+
+
+				
+					Physical Address
+					
+					88 South Park Ave
+					Le Center, MN 56057
+
+				
+				
+
+
+				
+					Mailing Address
+					88 South Park Ave
+					Le Center, MN 56057
+				
+				
+
+				Phone: 5073578223
+													
+
+
+				Directory
+				
+
+		
+									
+	
+
+	 
+
+	 
+
+			 
+						
+	
+	
+		
+		
+				9
+	1
+	1
+	2		
+	
+		
+	
+		
+
+					
+						
+										
+				
+					Absentee Ballot Application: Military & Overseas
+				
+				Complete the online Absentee Ballot Application for Minnesota Military and Overseas Voters (FPCA) or download a paper copy.
+				
+						
+				
+					Absentee Ballot Online Application
+				
+				Take a look at the online absentee ballot for voting.
+				
+						
+				
+					Campaign Finance Reports
+				
+				According to Minnesota State statute, local officials are required to publish the campaign finance reports of candidates online based upon both jurisdiction population and dollar amounts spent. 
+				
+						
+				
+					Election Results
+				
+				Access election results for the state of Minnesota.
+				
+						
+				
+					How To Find Your Representatives
+				
+				Find your representative using Geographic Information Services.
+				
+						
+				
+					Online Voter Registration Application
+				
+				Access the Minnesota Online Voter Registration Application.
+				
+						
+				
+					Poll Finder
+				
+				Enter your address into this Polling Place Finder to find out important voting information for your precinct.
+				
+						
+				
+					Voter Questions & Information
+				
+				Visit the Office of the Minnesota Secretary of State Steve Simon for voter questions and information.
+				
+						
+				
+					Mail Balloting
+				
+				
+				
+									
+					
+		
+	
+
+
+
+
+	
+
+		
+
+
+
+	 
+
+	 
+
+			 
+
+
+		
+
+	
+
+	
+	
+
+	
+
+	
+				                
+
+
+
+	
+
+
+	
+				                
+
+
+
+	
+
+
+
+
+
+
+	
+	
+		
+			Absentee Ballot Application: Military & Overseas
+		
+			
+	
+		
+			Absentee Ballot Online Application
+		
+			
+	
+		
+			Campaign Finance Reports
+				
+		
+					
+						
+			
+				2022 Campaign Finance Reports
+			
+					
+		
+			
+				2024 Campaign Finance Reports
+			
+					
+		
+			
+				2026 Campaign Finance Reports
+			
+					
+
+			
+	
+	
+		
+			Election Results
+		
+			
+	
+		
+			How To Find Your Representatives
+		
+			
+	
+		
+			Online Voter Registration Application
+		
+			
+	
+		
+			Poll Finder
+		
+			
+	
+		
+			Voter Questions & Information
+		
+			
+	
+		
+			Mail Balloting
+		
+			
+
+	
+
+
+	
+		(function () {
+			function setupSecondaryMenuProperties() {
+				//setup menu manager properties for secondary menu
+				menuManager.isSideMenuEditable = false;
+				menuManager.sideMenuMaxSubMenuLevels = 4;
+				menuManager.sideMenuHasCustomLinks = false;
+			}
+
+			if (document.readyState === "loading") {
+				document.addEventListener("DOMContentLoaded", setupSecondaryMenuProperties, { once: true });
+				return;
+			}
+
+			setupSecondaryMenuProperties();
+		})();
+	
+
+	
+		(function () {
+			function setupAccordionSecondaryNav() {
+				var $menuContainer = $('#secondaryNav');
+
+				$menuContainer.find('*[id^="SideItem"]').each(function () {
+					var ids = $('[id="' + this.id + '"]');
+					if (ids.length > 1)
+						$.each(ids, function (index, value) {
+							value.id = value.id + '_' + index;
+						});
+				});
+
+				$menuContainer.find('.hasAccordionChildren .openAccordionNav').off('click.secondaryNav').on('click.secondaryNav', function (e) {
+					e.preventDefault();
+					showHideAccordionMenuForSecondaryNav($(this));
+				});
+
+				$menuContainer.find(".grippy").each(function () {
+					menuManager.setupDraggableElement($(this), SIDE_MENU, '#secondaryNav');
+				});
+
+				$menuContainer.find("li").each(function () {
+					menuManager.setupDroppableAccordionElement($(this), SIDE_MENU);
+				});
+			}
+
+			if (document.readyState === "loading") {
+				document.addEventListener("DOMContentLoaded", setupAccordionSecondaryNav, { once: true });
+				return;
+			}
+
+			setupAccordionSecondaryNav();
+		})();
+	
+
+
+
+	
+				                
+
+
+
+	
+
+
+
+
+	
+				                
+
+						
+	
+	
+		
+
+
+
+
+
+
+	
+		
+				
+	
+	
+		
+				
+					
+
+
+	
+		
+			Land Records, Zoning, Planning & TaxesOnline Information
+		
+	
+
+		.fancyButton360.fancyButton:link,.fancyButton360.fancyButton:visited, .fancyButton360div.fancyButton{
+	background-image: url('/ImageRepository/Document?documentID=5328');
+	background-repeat: no-repeat;
+	background-position: center 8px ;
+transition: all .2s ease-in-out;}
+.fancyButton360.fancyButton:hover,.fancyButton360.fancyButton:focus,.fancyButton360.fancyButton:active,.fancyButton360.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: center 0px ;
+}
+.fancyButton360.fancyButton:link > span,.fancyButton360.fancyButton:visited > span, .fancyButton360div.fancyButton > span{
+}
+.fancyButton360.fancyButton:hover > span,.fancyButton360.fancyButton:focus > span,.fancyButton360.fancyButton:active > span,.fancyButton360.fancyButton.hover > span{
+}
+.fancyButton360.fancyButton .text{
+	color: #204C66;
+	font-size: .95em;
+	font-family: "Roboto";
+	padding-top: 110px;
+	padding-right: 1em;
+	padding-left: 1em;
+	font-style: normal;
+	text-decoration: none;
+	padding-top: 110px;
+	padding-right: 1em;
+	padding-left: 1em;
+	background-image: url('/ImageRepository/Document?documentID=5333');
+	background-repeat: no-repeat;
+	background-position: center 29px ;
+transition: all .2s ease-in-out;
+line-height: 1.2;
+}
+.fancyButton360.fancyButton:hover .text,.fancyButton360.fancyButton:focus .text,.fancyButton360.fancyButton:active .text,.fancyButton360.fancyButton.hover .text{
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: center 21px ;
+
+
+}
+.fancyButton360.fancyButton .textStyle1{
+	color: #383838;
+	font-size: 1.2em;
+	font-family: Roboto;
+	font-style: normal;
+	text-decoration: none;
+line-height: 1.2;
+padding-bottom: 5px;
+display: inline-block;}
+.fancyButton360.fancyButton:hover .textStyle1, .fancyButton360.fancyButton.hover .textStyle1{
+	text-decoration: underline;
+
+}
+
+
+ 
+
+
+	
+		
+			EmploymentCounty Job Postings
+		
+	
+
+		.fancyButton361.fancyButton:link,.fancyButton361.fancyButton:visited, .fancyButton361div.fancyButton{
+	background-image: url('/ImageRepository/Document?documentID=5326');
+	background-repeat: no-repeat;
+	background-position: center 8px ;
+transition: all .2s ease-in-out;}
+.fancyButton361.fancyButton:hover,.fancyButton361.fancyButton:focus,.fancyButton361.fancyButton:active,.fancyButton361.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: center 0px ;
+}
+.fancyButton361.fancyButton:link > span,.fancyButton361.fancyButton:visited > span, .fancyButton361div.fancyButton > span{
+}
+.fancyButton361.fancyButton:hover > span,.fancyButton361.fancyButton:focus > span,.fancyButton361.fancyButton:active > span,.fancyButton361.fancyButton.hover > span{
+}
+.fancyButton361.fancyButton .text{
+	color: #204C66;
+	font-size: .95em;
+	font-family: "Roboto";
+	padding-top: 110px;
+	padding-right: 1em;
+	padding-left: 1em;
+	font-style: normal;
+	text-decoration: none;
+	padding-top: 110px;
+	padding-right: 1em;
+	padding-left: 1em;
+	background-image: url('/ImageRepository/Document?documentID=5331');
+	background-repeat: no-repeat;
+	background-position: center 29px ;
+transition: all .2s ease-in-out;
+line-height: 1.2;
+}
+.fancyButton361.fancyButton:hover .text,.fancyButton361.fancyButton:focus .text,.fancyButton361.fancyButton:active .text,.fancyButton361.fancyButton.hover .text{
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: center 21px ;
+
+
+}
+.fancyButton361.fancyButton .textStyle1{
+	color: #383838;
+	font-size: 1.2em;
+	font-family: Roboto;
+	font-style: normal;
+	text-decoration: none;
+line-height: 1.2;
+padding-bottom: 5px;
+display: inline-block;}
+.fancyButton361.fancyButton:hover .textStyle1, .fancyButton361.fancyButton.hover .textStyle1{
+	text-decoration: underline;
+
+}
+
+
+ 
+
+
+	
+		
+			Enviromental PermitsPlanning and Zoning
+		
+	
+
+		.fancyButton362.fancyButton:link,.fancyButton362.fancyButton:visited, .fancyButton362div.fancyButton{
+	background-image: url('/ImageRepository/Document?documentID=5324');
+	background-repeat: no-repeat;
+	background-position: center 8px ;
+transition: all .2s ease-in-out;}
+.fancyButton362.fancyButton:hover,.fancyButton362.fancyButton:focus,.fancyButton362.fancyButton:active,.fancyButton362.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: center 0px ;
+}
+.fancyButton362.fancyButton:link > span,.fancyButton362.fancyButton:visited > span, .fancyButton362div.fancyButton > span{
+}
+.fancyButton362.fancyButton:hover > span,.fancyButton362.fancyButton:focus > span,.fancyButton362.fancyButton:active > span,.fancyButton362.fancyButton.hover > span{
+}
+.fancyButton362.fancyButton .text{
+	color: #204C66;
+	font-size: .95em;
+	font-family: "Roboto";
+	padding-top: 110px;
+	padding-right: 1em;
+	padding-left: 1em;
+	font-style: normal;
+	text-decoration: none;
+	padding-top: 110px;
+	padding-right: 1em;
+	padding-left: 1em;
+	background-image: url('/ImageRepository/Document?documentID=5332');
+	background-repeat: no-repeat;
+	background-position: center 29px ;
+transition: all .2s ease-in-out;
+line-height: 1.2;
+}
+.fancyButton362.fancyButton:hover .text,.fancyButton362.fancyButton:focus .text,.fancyButton362.fancyButton:active .text,.fancyButton362.fancyButton.hover .text{
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: center 21px ;
+
+
+}
+.fancyButton362.fancyButton .textStyle1{
+	color: #383838;
+	font-size: 1.2em;
+	font-family: Roboto;
+	font-style: normal;
+	text-decoration: none;
+line-height: 1.2;
+padding-bottom: 5px;
+display: inline-block;}
+.fancyButton362.fancyButton:hover .textStyle1, .fancyButton362.fancyButton.hover .textStyle1{
+	text-decoration: underline;
+
+}
+
+
+ 
+				
+			
+		
+	
+			
+
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+
+
+
+
+
+
+	
+		
+				
+	
+	
+		
+				
+					
+
+
+	
+		
+			Sheriff's OfficeSheriff and Justice Center
+		
+	
+
+		.fancyButton364.fancyButton:link,.fancyButton364.fancyButton:visited, .fancyButton364div.fancyButton{
+	background-image: url('/ImageRepository/Document?documentID=5327');
+	background-repeat: no-repeat;
+	background-position: center 8px ;
+transition: all .2s ease-in-out;}
+.fancyButton364.fancyButton:hover,.fancyButton364.fancyButton:focus,.fancyButton364.fancyButton:active,.fancyButton364.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: center 0px ;
+}
+.fancyButton364.fancyButton:link > span,.fancyButton364.fancyButton:visited > span, .fancyButton364div.fancyButton > span{
+}
+.fancyButton364.fancyButton:hover > span,.fancyButton364.fancyButton:focus > span,.fancyButton364.fancyButton:active > span,.fancyButton364.fancyButton.hover > span{
+}
+.fancyButton364.fancyButton .text{
+	color: #204C66;
+	font-size: .95em;
+	font-family: "Roboto";
+	padding-top: 110px;
+	padding-right: 1em;
+	padding-left: 1em;
+	font-style: normal;
+	text-decoration: none;
+	padding-top: 110px;
+	padding-right: 1em;
+	padding-left: 1em;
+	background-image: url('/ImageRepository/Document?documentID=5337');
+	background-repeat: no-repeat;
+	background-position: center 29px ;
+transition: all .2s ease-in-out;
+line-height: 1.2;
+}
+.fancyButton364.fancyButton:hover .text,.fancyButton364.fancyButton:focus .text,.fancyButton364.fancyButton:active .text,.fancyButton364.fancyButton.hover .text{
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: center 21px ;
+
+
+}
+.fancyButton364.fancyButton .textStyle1{
+	color: #383838;
+	font-size: 1.2em;
+	font-family: Roboto;
+	font-style: normal;
+	text-decoration: none;
+line-height: 1.2;
+padding-bottom: 5px;
+display: inline-block;}
+.fancyButton364.fancyButton:hover .textStyle1, .fancyButton364.fancyButton.hover .textStyle1{
+	text-decoration: underline;
+
+}
+
+
+ 
+
+
+	
+		
+			Public HealthCounty Services
+		
+	
+
+		.fancyButton365.fancyButton:link,.fancyButton365.fancyButton:visited, .fancyButton365div.fancyButton{
+	background-image: url('/ImageRepository/Document?documentID=5325');
+	background-repeat: no-repeat;
+	background-position: center 8px ;
+transition: all .2s ease-in-out;}
+.fancyButton365.fancyButton:hover,.fancyButton365.fancyButton:focus,.fancyButton365.fancyButton:active,.fancyButton365.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: center 0px ;
+}
+.fancyButton365.fancyButton:link > span,.fancyButton365.fancyButton:visited > span, .fancyButton365div.fancyButton > span{
+}
+.fancyButton365.fancyButton:hover > span,.fancyButton365.fancyButton:focus > span,.fancyButton365.fancyButton:active > span,.fancyButton365.fancyButton.hover > span{
+}
+.fancyButton365.fancyButton .text{
+	color: #204C66;
+	font-size: .95em;
+	font-family: "Roboto";
+	padding-top: 110px;
+	padding-right: 1em;
+	padding-left: 1em;
+	font-style: normal;
+	text-decoration: none;
+	padding-top: 110px;
+	padding-right: 1em;
+	padding-left: 1em;
+	background-image: url('/ImageRepository/Document?documentID=5336');
+	background-repeat: no-repeat;
+	background-position: center 29px ;
+transition: all .2s ease-in-out;
+line-height: 1.2;
+}
+.fancyButton365.fancyButton:hover .text,.fancyButton365.fancyButton:focus .text,.fancyButton365.fancyButton:active .text,.fancyButton365.fancyButton.hover .text{
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: center 21px ;
+
+
+}
+.fancyButton365.fancyButton .textStyle1{
+	color: #383838;
+	font-size: 1.2em;
+	font-family: Roboto;
+	font-style: normal;
+	text-decoration: none;
+line-height: 1.2;
+padding-bottom: 5px;
+display: inline-block;}
+.fancyButton365.fancyButton:hover .textStyle1, .fancyButton365.fancyButton.hover .textStyle1{
+	text-decoration: underline;
+
+}
+
+
+ 
+
+
+	
+		
+			Human ServicesAdditional Support
+		
+	
+
+		.fancyButton366.fancyButton:link,.fancyButton366.fancyButton:visited, .fancyButton366div.fancyButton{
+	background-image: url('/ImageRepository/Document?documentID=5330');
+	background-repeat: no-repeat;
+	background-position: center 8px ;
+transition: all .2s ease-in-out;}
+.fancyButton366.fancyButton:hover,.fancyButton366.fancyButton:focus,.fancyButton366.fancyButton:active,.fancyButton366.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: center 0px ;
+}
+.fancyButton366.fancyButton:link > span,.fancyButton366.fancyButton:visited > span, .fancyButton366div.fancyButton > span{
+}
+.fancyButton366.fancyButton:hover > span,.fancyButton366.fancyButton:focus > span,.fancyButton366.fancyButton:active > span,.fancyButton366.fancyButton.hover > span{
+}
+.fancyButton366.fancyButton .text{
+	color: #204C66;
+	font-size: .95em;
+	font-family: "Roboto";
+	padding-top: 110px;
+	padding-right: 1em;
+	padding-left: 1em;
+	font-style: normal;
+	text-decoration: none;
+	padding-top: 110px;
+	padding-right: 1em;
+	padding-left: 1em;
+	background-image: url('/ImageRepository/Document?documentID=5335');
+	background-repeat: no-repeat;
+	background-position: center 29px ;
+transition: all .2s ease-in-out;
+line-height: 1.2;
+}
+.fancyButton366.fancyButton:hover .text,.fancyButton366.fancyButton:focus .text,.fancyButton366.fancyButton:active .text,.fancyButton366.fancyButton.hover .text{
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: center 21px ;
+
+
+}
+.fancyButton366.fancyButton .textStyle1{
+	color: #383838;
+	font-size: 1.2em;
+	font-family: Roboto;
+	font-style: normal;
+	text-decoration: none;
+line-height: 1.2;
+padding-bottom: 5px;
+display: inline-block;}
+.fancyButton366.fancyButton:hover .textStyle1, .fancyButton366.fancyButton.hover .textStyle1{
+	text-decoration: underline;
+
+}
+
+
+ 
+				
+			
+		
+	
+			
+
+
+
+	 
+
+	 
+
+			 
+
+
+	
+
+
+	
+				                
+
+						
+	
+	
+		
+    
+
+
+
+
+
+	
+			
+		
+								
+	
+	
+		
+					
+						
+
+
+	
+						
+					
+		
+	
+	
+
+	
+
+	
+
+
+
+
+	//Render slideshow if info advacned items contain one.
+	$(document).ready(function (e) {
+		$('#divInfoAdv9994a628-59d2-4651-8107-21a186292349 .InfoAdvanced.widgetItem').each(function () {
+			renderSlideshowIfApplicable($(this));		
+		});
+	});
+
+	 
+
+	 
+	
+	
+		
+
+
+
+
+
+
+	
+		
+				
+	
+	
+		
+				
+					
+
+
+	
+		
+			Facebook
+		
+	
+
+		.fancyButton359.fancyButton:link,.fancyButton359.fancyButton:visited, .fancyButton359div.fancyButton{
+	padding-left: 40px;
+	background-image: url('/ImageRepository/Document?documentID=5312');
+	background-repeat: no-repeat;
+	background-position: left top;
+max-width: 120px;
+margin: 0 auto;}
+.fancyButton359.fancyButton:hover,.fancyButton359.fancyButton:focus,.fancyButton359.fancyButton:active,.fancyButton359.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+.fancyButton359.fancyButton:link > span,.fancyButton359.fancyButton:visited > span, .fancyButton359div.fancyButton > span{
+}
+.fancyButton359.fancyButton:hover > span,.fancyButton359.fancyButton:focus > span,.fancyButton359.fancyButton:active > span,.fancyButton359.fancyButton.hover > span{
+}
+.fancyButton359.fancyButton .text{
+	color: #ffffff;
+	font-size: 1.2em;
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+.fancyButton359.fancyButton:hover .text,.fancyButton359.fancyButton:focus .text,.fancyButton359.fancyButton:active .text,.fancyButton359.fancyButton.hover .text{
+	text-decoration: underline;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+
+
+ 
+				
+			
+		
+	
+			
+
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+    
+
+
+
+
+
+	
+			
+		
+					Contact Us
+								
+	
+	
+		
+					
+						
+
+
+	Le Sueur County Government Center88 South Park AvenueLe Center, MN 56057Phone: 507-357-2251Monday through Thursday8 am to 4:30 pmFriday 8 am to 4 pmClosed Weekends & Holidays
+						
+					
+		
+	
+	
+
+	
+
+	
+
+
+
+
+	//Render slideshow if info advacned items contain one.
+	$(document).ready(function (e) {
+		$('#divInfoAdvc6e15d22-c2fc-499b-b5ed-ec8bab49ba40 .InfoAdvanced.widgetItem').each(function () {
+			renderSlideshowIfApplicable($(this));		
+		});
+	});
+
+	 
+
+	 
+
+							
+	
+	
+		
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+	
+
+
+
+
+
+
+
+
+	
+			
+		
+					Quick Links
+						
+	
+	
+        
+				
+					
+
+
+
+
+    
+        Board of Commissioners
+        
+    
+
+
+
+
+    
+        Cities & Town Links
+        
+    
+
+
+
+
+    
+        Employment
+        
+    
+
+
+
+
+    
+        Public Emergency Notifications
+        
+    
+
+
+
+
+    
+        Notices
+        
+    
+					
+				
+		
+        
+	
+	
+	
+	
+		/QuickLinks.aspx
+	
+
+	
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+	
+
+
+
+
+
+
+
+
+	
+			
+		
+					Site Links
+						
+	
+	
+        
+				
+					
+
+
+
+
+    
+        Home
+        
+    
+
+
+
+
+    
+        Site Map
+        
+    
+
+
+
+
+    
+        Accessibility
+        
+    
+
+
+
+
+    
+        Disclaimer
+        
+    
+
+
+
+
+    
+        Copyright Notices
+        
+    
+					
+				
+		
+        
+	
+	
+	
+	
+		/QuickLinks.aspx
+	
+
+	
+
+
+	 
+
+	 
+
+			 
+
+
+	
+
+
+	
+				                
+
+						
+	
+	
+		
+ 
+	
+	
+		
+  /* CP icon */
+  .cpBylineIconTS {
+  }
+  /* CP Text */
+  .cpBylineTextTS,
+  .cpBylineTextTS a:link {
+  }
+
+  .cpBylineTS {
+    text-align: center;
+  }
+  
+  .cpBylineIconTS {
+    fill: currentColor;
+    width: 39px;
+    height: 26px;
+    display: inline;
+    vertical-align: middle;
+  }
+
+
+
+  
+    
+    
+  
+  Government Websites by CivicPlus®
+
+
+	
+
+	
+
+	 
+
+	 
+
+			 
+
+
+	
+
+
+
+
+            
+        
+    
+
+
+
+
+	
+		
+			Loading
+			
+				
+					
+				
+			
+		
+		
+			
+				
+				Loading
+			
+		
+		
+			Do Not Show Again
+			Close
+		
+	
+
+
+
+
+
+
+
+		$(document).ready(function () {
+			var filter = {
+				targetId: '341',
+				targetType: 1
+			}
+
+			new SplashModalRender().triggerRender(filter);
+		});
+
+
+
+	
+	
+	
+	
+
+
+
+	
+
+
+
+
+
+
+    
+    
+
+
+    
+        $(function () {
+            document.cookie = "responsiveGhost=0; path=/";
+        });
+        $(window).on("load", function () {
+            $('body').addClass('doneLoading').removeClass('hideContent');
+
+            if ($('#404Content').length > 0)
+                $('div#bodyWrapper').css('padding', '0px');
+        });
+    
+
+    
+        
+            body.hideContent {
+                opacity: 1 !important;
+            }
+        
+    
+
+        
+
+	
+
+		
+			Arrow Left
+			
+		
+
+		
+			Arrow Right
+			
+		
+
+	
+
+    loadCSS('//fonts.googleapis.com/css?family=Montserrat:500,500italic,600,600italic,700,700italic,800,800italic,900,900italic,italic,regular|Roboto:500,500italic,700,700italic,italic,regular|Roboto+Condensed:700,700italic,italic,regular|');
+    
+
+    []
+        
+            
+                
+                    Slideshow Left Arrow
+                    
+                        
+                    
+                
+                
+                    Slideshow Right Arrow
+                    
+                        
+                    
+                
+            
+        
+    
+	
+	
+
+    
+
+

@@ -1,0 +1,1054 @@
+
+
+
+
+
+		 	
+
+
+
+
+
+
+//----- Check href of all <a...> tags, if it matchs page url and immediate parent is <LI>,
+//		append "active" to className of all ancestor <LI> tags until the parent of the <LI>
+//		tag is not <UL> or the parent of the <UL> is not another <LI> tag.
+var functionRef = function setClassActive()
+{
+	var e;
+	try
+	{
+		var pattern = new RegExp("http[s]?://.*?/(.*)[?#]?","");
+		var tags = document.getElementsByTagName("A");
+		if (tags)
+		{
+			for (var i=0;i<tags.length;i++)
+			{
+				var el = tags[i];
+				var resultsTag = el.href.match(pattern);
+				var resultsPage = location.href.match(pattern);
+				if (!resultsTag || !resultsPage) continue;
+				if (resultsTag[1] != resultsPage[1]) continue;
+	
+				// go up li tree marking this and all parent class=active
+				var li = el.parentNode;
+				while (li && li.tagName == 'LI')
+				{
+					if (li.className != '') 
+						li.className += ' ';
+					li.className += 'active';
+					var ul = li.parentNode;
+					if (!ul || ul.tagName != 'UL') break;
+					li = ul.parentNode;
+				}
+				//let's catch all links e.g. topnav, leftnav, quick links, etc
+				//break;	//found url match, quit checking tags
+			}
+		}
+	}
+	catch (e) {}
+}
+//----- Activate topnavActive once page loads
+if (typeof addEventListener != 'undefined') addEventListener('load', functionRef, false);	//standards browser
+else if (typeof attachEvent != 'undefined') attachEvent("onload", functionRef);				//IE early versions
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+	
+	
+
+	
+	
+	
+	
+
+	
+
+
+
+
+
+	Roseau County, MN
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+
+
+	 
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+	var defaultCalendarColor = "#3788d8";
+	var ImportCals = ["3",];
+	var calendarProps = {'1' : { 'color' : '#000000' , 'name' : 'Master' },
+'3' : { 'color' : '#3959af' , 'name' : 'Local Events' },
+'4' : { 'color' : '' , 'name' : 'calendar-list-options' },
+};
+	var RZCalendarTimezone = "";
+
+
+
+	
+	
+
+	
+	
+
+var __uzdbm_1 = "8b450234-9da7-4431-b2b7-babcad5ef899";var __uzdbm_2 = "MWNjNWE5YTktZHhqdS00Yjg4LTlmNjAtY2RlODY5M2VmZDgwJDEwNC41NS4yMDkuNw==";var __uzdbm_3 = "";var __uzdbm_4 = "false";var __uzdbm_5 = "";var __uzdbm_6 = "";var __uzdbm_7 = "";    (function (w, d, e, u, c, g, a, b) {     w["SSJSConnectorObj"] = w["SSJSConnectorObj"] || {       ss_cid: c,       domain_info: "auto",     };     w[g] = function (i, j) {       w["SSJSConnectorObj"][i] = j;     };     a = d.createElement(e);     a.async = true;     if (       navigator.userAgent.indexOf('MSIE') !== -1 ||       navigator.appVersion.indexOf('Trident/') > -1     ) {       u = u.replace("/advanced/", "/advanced/ie/");     }     a.src = u;     b = d.getElementsByTagName(e)[0];     b.parentNode.insertBefore(a, b);   })(     window, document, "script", "/18f5227b-e27b-445a-a53f-f845fbe69b40/stormcaster.js", "dxjw", "ssConf"   );   ssConf("c1", "https://roseaucountymn.gov");   ssConf("c3", "c99a4269-161c-4242-a3f0-28d44fa6ce24");   ssConf("au", "roseaucountymn.gov");   ssConf("cu", "validate.perfdrive.com, ssc");  
+
+
+
+
+
+
+if (typeof(RZ) == 'undefined') RZ = {};
+if (!RZ.link) RZ.link = new Object();
+RZ.pagetype = 'template'
+RZ.baseurlprefix = '../../../'
+RZ.baseurlpath = 'government/offices/auditor/'
+RZ.protocolRelativeRevizeBaseUrl='//webgen1.revize.com'
+
+RZ.pagetemplatename = 'freeform'
+RZ.pagetemplateid = '2'
+RZ.pagemodule = 'links'
+RZ.pagemoduleid = '5'
+RZ.pagerecordid = '179';
+
+RZ.pageid = 'links-179';
+RZ.pageparentid = '121';
+RZ.pagesectionid = '121';
+RZ.pagesectionname = 'auditor';
+RZ.pagesectionlevel = '2';
+RZ.pagesectionfolder = 'offices/auditor/';
+RZ.pagesectionfilter = 'sectionid=121';
+RZ.pagelinkfilter = 'linklevel=3 and linksectionid=121';
+RZ.pagelinklevel = '3';
+RZ.pagelinkid = '179';
+RZ.pageidfield = '';
+
+RZ.isnewrecord = false;
+RZ.editmodule = '';
+RZ.editrecordid = '179';
+RZ.editrecordversion = '';
+RZ.editversion = '';
+RZ.editaction = '';
+
+RZ.page_roles = ''
+RZ.page_users = '08780e4a9c569a09da83d1c680f961d1cc2de79892772fa4ce4943b248552ed8'
+RZ.page_key = 'freeform[179]'
+RZ.parent_key = 'freeform[121]'
+RZ.inherit_key = 'index[]'
+RZ.workflowname = ''
+RZ.permissions_options = ''
+RZ.permissions_module = 'webspace_page_permissions'
+RZ.webspace = 'roseaucntymn'
+RZ.webspacedesc = ".Gov";
+
+RZ.featurespattern = '(EZ)';
+null
+
+RZ.webspacelinksurl = ''
+RZ.webspacelinksurl = './webspace/links.html'
+RZ.workflowlist = ''
+RZ.revizeserverurl = 'https://webgen1.revize.com/revize/roseaucntymn';
+
+if (!RZ.nextseq) RZ.nextseq = {linknames:{},modules:{}};
+
+RZ.webspace_config = new Object();
+RZ.webspace_config.admin_email = "noreply@co.walla-walla.wa.us";
+RZ.webspace_config.calendar_options = "max_events=4";
+RZ.webspace_config.form_captcha = "yes";
+RZ.webspace_config.form_server = "revizeserver";
+RZ.webspace_config.form_technology = "jsp";
+RZ.webspace_config.formwizard_ftp_password = "";
+RZ.webspace_config.formwizard_ftp_port = "";
+RZ.webspace_config.formwizard_ftp_server = "";
+RZ.webspace_config.formwizard_ftp_user = "";
+RZ.webspace_config.formwizard_setup = "yes";
+RZ.webspace_config.formwizard_smtp_password = "xxx";
+RZ.webspace_config.formwizard_smtp_server = "xxx";
+RZ.webspace_config.formwizard_smtp_user = "xxx";
+RZ.webspace_config.google_analytics = "";
+RZ.webspace_config.home_pageid = "0";
+RZ.webspace_config.home_sectionid = "0";
+RZ.webspace_config.home_template = "home,index,sitemap";
+RZ.webspace_config.icon_email = "<img src=\"/revize/images/email_icon_yellow.gif\" width=\"16\" border=\"0\" height=\"17\" title=\"Request email notification when page changes\" alt=\"Request email notification when page changes\" style=\"\" />";
+RZ.webspace_config.image_maxheight = "3000";
+RZ.webspace_config.image_maxwidth = "3000";
+RZ.webspace_config.image_setup = "yes";
+RZ.webspace_config.isNewMenuManagerEnabled = "yes";
+RZ.webspace_config.livesite_url = "";
+RZ.webspace_config.menu_links_module = "links";
+RZ.webspace_config.menu_newsection = "";
+RZ.webspace_config.menu_nexturl = "webspace_menu-editform.jsp";
+RZ.webspace_config.menu_sections_module = "sections";
+RZ.webspace_config.menu_system = "custom";
+RZ.webspace_config.menu_version = "1.00";
+RZ.webspace_config.new_menu_manager_enabled = "yes";
+RZ.webspace_config.notify_return_url = "enotify/index.php";
+RZ.webspace_config.rte_setup = "yes";
+RZ.webspace_config.to_email = "";
+RZ.webspace_config.use_folders = "1";
+RZ.webspace_config.use_new_buttons = "yes";
+
+RZ.isauthenticationactive = true
+RZ.warning = ""
+RZ.adminwinmsg = null
+
+RZ.channels = 'revize,fileschannel';
+RZ.jsversion = 1.2
+
+
+
+
+	
+
+
+
+	Skip to main content
+	
+		
+			
+				close menu
+			
+			
+					This website uses cookies to store your accessibility preferences. No personal / identifying information is stored.
+			
+			
+				Dismiss
+			
+		
+	
+	
+	
+	
+		
+			(function(d){
+				 var s = d.createElement("script");
+				 s.setAttribute("data-position", 5);
+				 s.setAttribute("data-color", '#000');
+				 s.setAttribute("data-account", "sudb1U5E4V");
+				 s.setAttribute("src", "https://cdn.userway.org/widget.js"); 
+				 (d.body || d.head).appendChild(s);})(document)
+		
+		
+		Please ensure Javascript is enabled for purposes of 
+		website accessibility
+		
+		 
+	
+		
+		
+			
+		
+	
+	
+
+
+
+
+
+
+
+
+		
+			
+				
+				
+			
+		
+			
+				
+					
+						
+
+
+
+
+
+	
+	
+	
+
+					
+					
+						
+							
+
+
+            Facebook
+						
+						
+						
+							function googleTranslateElementInit() {
+								new google.translate.TranslateElement({pagelanguage: 'en',
+									layout: google.translate.TranslateElement.InlineLayout.SIMPLE},
+									'google-translate');
+							}
+						
+						
+						
+						
+							EN 
+								
+									English
+									Afrikaans
+									Albanian
+									Arabic
+									Armenian
+									Azerbaijani
+									Basque
+									Belarusian
+									Bengali
+									Bosnian
+									Bulgarian
+									Catalan
+									Cebuano
+									Chinese (Simplified)
+									Chinese (Traditional)
+									Croatian
+									Czech
+									Danish
+									Dutch
+									Esperanto
+									Estonian
+									Filipino
+									Finnish
+									French
+									Galician
+									Georgian
+									German
+									Greek
+									Gujarati
+									Haitian Creole
+									Hausa
+									Hebrew
+									Hindi
+									Hmong
+									Hungarian
+									Icelandic
+									Igbo
+									Indonesian
+									Irish
+									Italian
+									Japanese
+									Javanese
+									Kannada
+									Khmer
+									Korean
+									Lao
+									Latin
+									Latvian
+									Lithuanian
+									Macedonian
+									Malay
+									Maltese
+									Maori
+									Marathi
+									Mongolian
+									Nepali
+									Norwegian
+									Persian
+									Polish
+									Portuguese
+									Punjabi
+									Romanian
+									Russian
+									Serbian
+									Slovak
+									Slovenian
+									Somali
+									Spanish
+									Swahili
+									Swedish
+									Tamil
+									Telugu
+									Thai
+									Turkish
+									Ukrainian
+									Urdu
+									Vietnamese
+									Welsh
+									Yiddish
+									Yoruba
+									Zulu
+								
+							
+						
+						
+							
+								Search
+								
+								
+							
+						
+					
+				
+			
+		
+		
+			
+				
+					
+					
+					
+
+
+ 
+
+	Home
+	Offices
+		
+			Assessor
+			Attorney
+			Auditor
+			Court Administrator
+			Coordinator
+			Emergency Management
+			Environmental Services
+			Highway Department
+			Information Technology
+			Recorder
+			Sheriff
+			Social Services
+			Treasurer
+			Veterans Services
+		
+	
+	Government
+		
+			Board Meeting Schedule
+			Committee Appointments
+			Commissioner Districts
+			Meeting Documents
+		
+	
+	Residents
+		
+			Dog Pound
+			Online Atlas
+			Property Taxes
+			Public Information
+			Roseau County Extension 4-H
+				
+					Nutrition Information
+					Parents Forever
+					Roseau County Fair
+					U Of M Extension Home
+				
+			
+			Victim Services
+			Your County
+		
+	
+	Community
+		
+			School Districts
+			Watersheds
+				
+					Roseau River Watershed
+					Warroad River Watershed
+					Two Rivers Watershed
+					Middle-Snake-Tamarac Rivers Watershed
+					Red Lake Watershed
+				
+			
+			Townships
+			Local Attractions
+				
+					Roseau
+					Warroad
+					Greenbush
+					Badger
+					Roosevelt
+					Strathcona
+					Wannaska
+				
+			
+		
+	
+	How Do I?
+		
+			Apply For
+				
+					Employment Opportunity
+					Birth/Death Certificate
+					Marriage License
+				
+			
+			Contact
+			Data Requests and Forms
+			Employee Access
+			Online Maps
+			Pay Property Tax Online
+			Request A 911 Address
+			Sign Up For Emergency Alerts
+			View Court Calendar
+		
+	
+
+
+
+
+@media only screen and (max-width:991px){
+#nav ul a, #nav ul span {
+color: #fff!important;
+}
+}
+#entry{height:unset!important;}
+
+
+
+
+
+
+
+					
+					
+				
+			
+		
+	
+
+
+
+	
+		
+		
+			
+				RZ.module = 'slider';
+				RZ.nexturl = "/revize/webgen_includes/gov/editforms/slider-editlist.jsp?pageid=121";
+				RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = '';
+				RZ.img = '<span class="rzBtn">Edit Slider</span>';
+				RZ.caption = '';
+				RZ.options = '';
+				if (typeof RZaction != 'undefined') RZaction('editlist');
+			
+			
+		
+		
+		
+			A default banner image
+		
+		
+	
+
+				
+	
+	
+
+
+
+
+	
+		
+			
+				
+				
+				
+
+
+		
+									
+					
+					RZ.module = 'links';
+					RZ.nexturl = "/revize/plugins/menus/webspace_menu-editlist.jsp?pageid=links-179&"
+					+ "linksfilter=linkplacement=leftnav and linkparentid=121&"
+					+ "numberoflevels=2&"
+					+ "linkoptions=url,template,file&"
+					+ "linknewsection=*all*";
+					RZ.img = '<span class="rzBtn">Edit Links</span>';
+					RZ.caption = '';
+					RZ.set = "links.linkplacement=leftnav"
+					RZ.options = '';
+					if (typeof RZaction != 'undefined') RZaction('editlist');
+					
+				
+		
+				
+ 
+	Check My Registration
+	Elections
+	Register To Vote
+	Vote By Absentee
+
+
+				
+			
+		
+	
+		
+			
+				
+	
+		Home
+							 Offices 
+							 Auditor 
+							 Elections
+	
+
+
+				
+					Font Size
+					Increase font size
+					Decrease font size
+				
+			
+			
+				Elections
+				
+				
+					
+		
+			RZ.module = 'freeform';
+			RZ.recordid = '';
+			RZ.nexturl = "/revize/webgen_includes/gov/editforms/freeform-editform.jsp";
+			RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = '';
+			RZ.img = '<span class="rzBtn">Edit Page Content</span>';
+			RZ.set = 'freeform.pageid=links-179';
+			RZ.options = '';
+			if (typeof RZaction != 'undefined') RZaction('editform');
+		
+	
+	
+		RZ.module = 'freeform';
+		RZ.recordid = '';
+		RZ.nexturl = "/revize/webgen_includes/gov/editforms/metadata-editform.jsp";
+		RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = '';
+		RZ.img = '<span class="rzBtn">Edit Metadata</span>';
+		RZ.set = 'freeform.pageid=links-179';
+		RZ.options = '';
+		if (typeof RZaction != 'undefined') RZaction('editform');
+	
+	
+		if (RZlogin('')) {
+			document.write(`
+				<a href="http://cms4.revize.com/revize/supportrevize/revize_faq.php" target="_blank" class="rzBtn">Help</a>
+				<a href="javascript:void(0);" id="RZadminwinButton" onmouseup="RZadminwin()"><span class="rzBtn">admin panel</span></a>
+			`);
+		}
+	
+
+
+					
+
+	Contact Information
+Roseau County Courthouse
+606 5th Ave SW Room 160
+Roseau, MN 56751
+218-463-1282
+elections@co.roseau.mn.us 
+In-Person Voting
+
+
+
+
+Cities/Townships
+
+
+Polling Location 
+
+
+Voting Hours
+
+
+
+
+City of Badger
+
+
+Badger Community Center
+
+
+7am - 8pm
+
+
+
+
+City of Greenbush
+
+
+Greenbush Community Center
+
+
+7am - 8pm
+
+
+
+
+City of Roseau
+
+
+Roseau City Center
+
+
+7am - 8pm
+
+
+
+
+City of Warroad
+
+
+Warroad Community Center
+
+
+7am - 8pm
+
+
+
+
+Dewey Township
+
+
+Greenbush Community Center
+
+
+7am - 8pm
+
+
+
+
+Jadis Township
+
+
+Roseau City Center
+
+
+7am - 8pm
+
+
+
+
+Lake Township
+
+
+Lake Town Hall
+
+
+7am - 8pm
+
+
+
+
+Laona Township
+
+
+Laona Town Hall
+
+
+7am - 8pm
+
+
+
+
+Malung Township
+
+
+Malung Community Center
+
+
+8am - 8pm
+
+
+
+
+Moranville Township
+
+
+Moranville Town Hall
+
+
+7am - 8pm
+
+
+
+
+Ross Township
+
+
+Roseau City Center
+
+
+7am - 8pm
+
+
+
+
+Absentee Voting Locations 
+All residents of Roseau County may vote in-person at
+Roseau County Courthouse, 606 5th Ave. SW Room 160, Roseau, MN 56751. Hours are 8:00 AM to 4:30 PM, Monday through Friday 
+ADDITIONAL HOURS FOR VOTING: 
+
+Saturday, August 8, 2026 9:00 am to 3:00 pmMonday, August 10, 2026 8:00 am to 5:00 pmSaturday, October 24, 2026 9:00 am to 3:00 pmTuesday, October 27, 2026 8:00 am to 7:00 pmSaturday, October 31, 2026 9:00 am to 3:00 pmSunday, November 1, 2026 9:00 am to 3:00 pmMonday, November 2, 2026 8:00 am to 5:00 pm
+
+ 
+Voters can apply for an absentee ballot online at mnvotes.org or contact the Auditors Office and an application will be mailed or faxed to you.
+Return the completed application as soon as possible to:
+Roseau County Courthouse
+606 5th Ave SW Room 160
+Roseau, MN 56751
+Upon completed application ballot will be mailed with instructions on how to complete process and return to the Roseau County Election Office. 
+Voters will have the option to track their ballot online at https://mnvotes.sos.state.mn.us/AbsenteeBallotStatus.aspx.
+If you have any questions, please contact the Roseau County Auditors Office at 218-463-1282, or email elections@co.roseau.mn.us  
+Mail Ballot Cities/Townships
+All townships, and cities having fewer than 400 registered voters on June 1 of an election year, may apply to the county auditor for permission to conduct balloting by mail.
+Mail balloting is authorized by resolution of the governing body and remains in effect for subsequent state and county elections until it is revoked.
+Ballots will be sent to all registered voters in mail ballot precincts no more than 46 days and no later than 14 days before a regularly scheduled election for federal, state, and county elections.
+A postage-paid return mailing envelope, a ballot secrecy envelope and instructions for marking and returning ballots will be included with each ballot.
+Check to see if you are registered to vote by visiting the Secretary of State website.
+Cities
+
+Roosevelt
+Strathcona
+
+Townships
+
+Barnett
+Barto
+Beaver
+Cedarbend
+Deer
+Dieter
+Enstrom
+Falun
+Golden Valley
+Grimstad
+Hereim
+Huss
+Lind
+Mckinock
+Moose
+Nereson
+Palmville
+Pohlitz
+Polonia
+Poplar Grove
+Reine
+Skagen
+Soler
+Spruce
+Stafford
+Stokes
+Unorganized
+
+Voter Registration
+Online Registration Is Now Available
+To register online you will need to have an email address and a Minnesota-issued driver's license, Minnesota ID card or last 4 digits of Social Security Number. Visit the Secretary of State website for more information for online registration.
+In-Person Registration
+If you reside in Roseau County and would like to register to vote, download and complete the Voter Registration Form and mail it back to:
+Roseau County Courthouse
+606 5th Ave SW Room 160
+Roseau, MN 56751
+In Minnesota, a person must register to vote before you can vote. There are two options to registering to vote:
+
+You may register up to 20 days before Election Day
+On Election Day at your polling place
+
+Your name will appear on the polling place roster if you choose to register to vote at least 20 days before Election Day. Your registration will remain current until you move, change your name or do not vote for four consecutive years.
+Voter Eligibility
+If you want to vote, you must certify:
+
+You are 18 years old on Election Day
+You are a citizen of the United States
+You will have resided in Minnesota for 20 days immediately preceding Election Day
+You are not currently incarcerated for a felony conviction
+You are not under court-ordered guardianship, where a court has revoked your voting rights
+You have not been ruled legally incompetent by a court of law
+
+Election Day Registration
+If you are not registered or you need to update your registration on Election Day, you may do so at your polling place. Your polling place is based on the location of your residence. Find your polling place. You are required to provide proof of residence when registering on Election Day.
+You must have one of the following with your current name and address in the precinct to verify your residence:
+
+A Valid Minnesota driver's license, learner's permit, Minnesota ID card, or a white receipt for any of these
+A Valid student ID card including your photo, if you are on a student housing list on file at the polling place
+A Tribal ID card that contains your picture and signature
+A Valid registration in the same precinct under a different name or address
+A Notice of late registration sent to you by your county auditor
+A Voter registered in the same precinct as you who can confirm your address with a signed oath
+An Employee of a residential facility, including nursing homes, battered women's shelters, homeless shelter and other licensed facilities, may vouch that you live there (only if the facility has provided the county with a certified list of employees)
+
+Or, you may provide both a photo ID from the list below, and one of the current bills listed below with your current name and address in the precinct.
+Photo IDs (May be Expired)
+ID must contain the voter's name and photo, and may be expired.
+
+Driver's License, state ID card or learner's permit issued by any state
+United State Passport
+United Stats Military ID card
+Tribal ID card with the name, signature and photo of the voter
+Minnesota university, college, or technical college ID card
+Minnesota high school ID card
+
+Approved Documents
+The document must have the voter's current name and address in the precinct, and can be shown electronically or on paper.
+
+Residential lease or rental agreement (must be valid through Election Day)
+Current student fee statement
+Bill, account or start of service statement due or dated within 30 days of election for:
+
+Phone (landline, cell, VOIP, etc.)
+Television (cable, satellite, etc.)
+Internet services
+Solid waste or sewer services
+Electric, gas or water
+Banking or credit card
+Rent or mortgage payments
+
+
+
+For more information on registering to vote visit the Secretary of State website.
+
+
+				
+			
+		
+	
+	
+
+
+
+
+	
+		
+		
+		
+		
+		Share this page
+	
+
+	
+		
+			
+				
+					Share this page
+					
+				
+				
+					
+						
+							 
+						
+	
+						
+							 
+						
+	
+						
+							 
+						
+	
+						
+							 
+						
+					
+					
+				
+				
+					Close
+				
+			
+		
+	
+	
+		
+			
+
+
+
+
+		
+			
+				
+				
+				
+			
+		
+		
+			
+				
+            Facebook
+			
+			
+				
+		
+					Careers
+				
+					Contact Us
+				
+					Election Information
+				
+				
+			
+		
+	
+	
+		
+					606 5th Avenue SW, Roseau, MN 56751
+			Powered by revize., the Government Website Experts
+			
+			
+			Login
+		
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

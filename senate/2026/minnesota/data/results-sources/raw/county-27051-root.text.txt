@@ -1,0 +1,2996 @@
+
+
+
+
+
+	
+
+				(function(w,d,s,l,i){w.GAMeasurementID='G-670F4XGMS1';w[l]=w[l]||[];w[l].push({'gtm.start':
+				new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+				j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+				'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+				})(window,document,'script','cpDataLayerGA4','GTM-K73C5PS');
+				
+				
+					var enableTelemetry = 'false'
+					var aiConfig = {
+					instrumentationKey: '1cde048e-3185-4906-aa46-c92a7312b60f'						
+					}
+					var appInsights = window.appInsights || function (a) { function b(a) { c[a] = function () { var b = arguments; c.queue.push(function () { c[a].apply(c, b) }) } } var c = { config: a }, d = document, e = window; setTimeout(function () { var b = d.createElement('script'); b.src = a.url || 'https://js.monitor.azure.com/scripts/a/ai.0.js', d.getElementsByTagName('script')[0].parentNode.appendChild(b) }); try { c.cookie = d.cookie } catch (a) { } c.queue = []; for (var f = ['Event', 'Exception', 'Metric', 'PageView', 'Trace', 'Dependency']; f.length;)b('track' + f.pop()); if (b('setAuthenticatedUserContext'), b('clearAuthenticatedUserContext'), b('startTrackEvent'), b('stopTrackEvent'), b('startTrackPage'), b('stopTrackPage'), b('flush'), !a.disableExceptionTracking) { f = 'onerror', b('_' + f); var g = e[f]; e[f] = function (a, b, d, e, h) { var i = g && g(a, b, d, e, h); return !0 !== i && c['_' + f](a, b, d, e, h), i } } return c }(aiConfig);
+					window.appInsights = appInsights, appInsights.queue && 0 === appInsights.queue.length;
+					// Add telemetry initializer
+					appInsights.queue.push(function() {
+						appInsights.context.addTelemetryInitializer(function(envelope) {
+							var telemetryItem = envelope.data.baseData;
+							// To check the telemetry item’s type:
+							if (!false)
+							{
+								//If the telemetry is not enabled, we still want to capture Google map custom event, so only allow that
+								if (envelope.name.indexOf('.Event') == -1)
+									return false;
+							}
+						});
+					});						
+					appInsights.trackPageView();
+				
+	
+		function populateAntiForgery(token) {
+			var input = document.createElement("input");
+			input.name = "__RequestVerificationToken";
+			input.type = "hidden";
+			input.value = token;
+			var absPat = /^https?:\/\/|^\/\//i;
+			var forms = document.getElementsByTagName("form");
+			for (var i = 0; i < forms.length; i++) {
+				if (forms[i].method == "post" &&
+					!forms[i].querySelector('[name="__RequestVerificationToken"]') &&
+					!absPat.test(forms[i].getAttribute("action"))) {
+					forms[i].appendChild(input.cloneNode());
+				}
+			}
+		}
+
+		function getAntiForgeryToken(callback, error) {
+			var xhr = new XMLHttpRequest();
+			xhr.open("GET", "/antiforgery");
+			xhr.addEventListener("load", function() {
+				try {
+					if (this.status !== 200) {
+						throw Error("Invalid status. Could not retrieve antiforgery token.");
+					}
+					var obj = JSON.parse(this.responseText);
+					callback(obj.token);
+				} catch (e) {
+					typeof error === "function" && error(e);
+				}
+			});
+			xhr.send();
+		}
+
+		getAntiForgeryToken(function(token) {
+			if (document.readyState === "complete"
+				|| document.readyState === "loaded" 
+				|| document.readyState === "interactive") {
+				populateAntiForgery(token);
+				return;
+			}
+			document.addEventListener("DOMContentLoaded", function() {
+				populateAntiForgery(token);
+			}, false);
+		}, console.error);
+	
+			
+
+	
+		window.departmentHeader = {};
+		window.pageSectionTracker = {};
+		window.isResponsiveEnabled = true;
+		window.isRemoveSetHeights= false;
+		if (window.isRemoveSetHeights) {
+			document.documentElement.className += ' removeSetHeights';
+		}
+		window.mainMenuMediaQuery = 'screen and (max-width: 40em)';
+		window.isMobileBrowserIncludingTablets = false;
+		window.fixedResponsiveMenu = false;
+		window.fullWidthResponsiveMenu = false;
+		window.responsiveMenuHeight = '';
+		window.responsiveMenuFontSize = '';
+		window.isContentAdvisor = false;
+		(function () {
+			window.setSizeCookie = function () {
+				document.cookie = "dpi=" + window.devicePixelRatio + "; path=/";
+				document.cookie = "viewportWidth=" + window.innerWidth + "; path=/";
+				document.cookie = "viewportHeight=" + window.innerHeight + "; path=/";
+				if (screen && screen.width && screen.height) {
+					document.cookie = "screenWidth=" + screen.width + "; path=/";
+					document.cookie = "screenHeight=" + screen.height + "; path=/";
+				}
+				document.cookie = "responsiveGhost=1; path=/";
+			};
+
+			setSizeCookie();
+		}());
+	
+		
+
+	
+	
+	
+
+	
+	
+	
+	
+		Grant County, MN - Official Website | Official Website
+
+		
+		
+			
+	
+	
+
+	
+	
+	
+	
+	<!--
+	var intCountryCode = 840;
+	var order = '';
+//-->
+	
+		
+
+	
+	
+		window.Pages = window.Pages || {};
+		// FrontEnd RWD initialization
+		window.Pages.rwdReady = $.Deferred();
+		window.Pages.toolBarDeferred = $.Deferred();
+		window.Pages.rwdSetupComplete = $.Deferred();
+		window.Pages.megaMenuLoaded = $.Deferred();
+		window.Pages.angularToolbarComplete = $.Deferred();
+		window.Pages.frontEndToolbarComplete = $.Deferred();
+	
+	
+	
+	
+	
+	
+	
+
+
+
+
+	
+	
+	
+	
+
+	
+		setEditorVariables(false, 840);
+		function getPrintPreviewType() { return 0; } function printPreview() {pPreview(getPrintPreviewType()); }
+	
+	
+
+
+
+    jQuery(document).click(function (event) {
+	var target = jQuery(event.target);
+	if (target.attr('src') && target.parents('.image').length && target.parents('.widget').length) {
+		var text = target.attr('title');
+		
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Image',
+				eventAction: 'Image - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.is('button') || target.hasClass('button') || target.parents().hasClass('button')) {
+		var text = "";
+		if (target.parents('.button')[0]) {
+			text = target.parents('.button').first().text();
+		} else if (target.text().length) {
+			text = target.text();
+		} else if (target.attr('title').length) {
+			text = target.attr('title');
+		}
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Button',
+				eventAction: 'Button - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetCustomHtml').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Custom Html',
+				eventAction: 'Custom Html Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.editor').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Editor',
+				eventAction: 'Editor Link Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.GraphicLinks').length) {
+		var text = "";
+		var targetGraphicLink = target;
+		if (target.hasClass('widgetGraphicLinksLink')) {
+			targetGraphicLink = jQuery(target.children()[0]);
+		}
+		if (targetGraphicLink.hasClass('text')) {
+			text = targetGraphicLink.text();
+		} else if (targetGraphicLink.attr('src').length) {
+			if (targetGraphicLink.attr('alt').length) {
+				text = targetGraphicLink.attr('alt');
+			} else {
+				text = targetGraphicLink.attr('src');
+			}
+		} else {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Graphic Links',
+				eventAction: 'Graphic Link - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.InfoAdvanced').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Info Advanced',
+				eventAction: 'Info Advanced Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.list').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'List',
+				eventAction: 'List Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.megaMenuItem').length || target.parents('.topMenuItem').length) {
+		var megaMenuText = jQuery('.topMenuItem.mouseover').find('span').text();
+		var breadCrumbs = [];
+		jQuery('.breadCrumbs > li').each(function () {
+			 breadCrumbs.push(this.textContent);
+		});
+		var pageTitle = breadCrumbs.join('>');
+		var subTitleText = target.parents('.megaMenuItem').children('.widgetTitle').children().text();
+		var text = "";
+		if (pageTitle) {
+			text += pageTitle + " | ";
+		} else {
+			text += document.title + ' - ';
+		}
+		if (target.text() == "" && megaMenuText == "") {
+			text += "N/A";
+		} else if (target.text().length && megaMenuText.length) {
+			if (megaMenuText == target.text()) {
+				text += megaMenuText;
+			} else {
+				text += megaMenuText + " - " + subTitleText + " - " + target.text();
+			}
+		} else if (target.text() == "") {
+			text += megaMenuText;
+		} else {
+			text += target.text();
+		}
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Mega Menu',
+				eventAction: 'Mega Menu : ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetNewsFlash').length && target.parents('.widgetItem').length) {
+		var text = jQuery(target.parents('.widgetItem')[0]).find('.widgetTitle').children().text();
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'News Flash',
+				eventAction: 'News Flash - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.hasClass('widgetQuickLinksLink') || target.find('.widgetQuickLinksLink').length) {
+		var text = target.text();
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Quick Links',
+				eventAction: 'Quick Links - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.attr('src') && target.parents('.cpSlideshow').length) {
+		var text = target.attr('title');
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Slideshow',
+				eventAction: 'Slideshow - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetText').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Text',
+				eventAction: 'Text Link Clicked',
+				eventLabel: window.location.href
+			});
+	}
+});
+	
+	
+		
+		
+			
+				
+			
+		
+	
+	
+		
+	
+	
+		
+			
+		
+	
+
+    
+
+Skip to Main Content
+
+    
+
+        
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+        
+                
+                    
+
+
+
+
+
+    
+        Create a Website Account - Manage notification subscriptions, save form progress and more.   
+        
+	        Website Sign In
+        
+    
+
+
+    $(document).ready(function () {
+        $('#signedOutToolbarCreateProfileButton').click(function (event) {
+            event.preventDefault();
+            window.location.href = '/MyAccount/ProfileCreate?from=url&url=/&dn=' + window.location.origin;
+        });
+
+			
+				$('#loggedOutToolbarSignInButton').click(function (event) {
+					event.preventDefault();
+					window.location.href = '/MyAccount/?from=url&url=' + encodeURIComponent(window.location.href.replace(window.location.origin, '')) + '&dn=' + window.location.host;
+				});
+			
+
+		if ('False' == 'True') {
+            $('#loggedOutToolbarSignInButton').hide();
+		}
+    })
+
+
+
+                
+            
+                
+                
+
+
+
+
+
+
+
+				
+
+    Departments  			    Government  			    Our Communities  			    County Resources  			    How Do I...  			
+
+
+
+	
+		(function () {
+			function setupMenu() {
+				const menuID = 'mainNavMenu';
+				const menuType = MAIN_MENU;
+
+				//setup menu manager properties for main menu
+				if (!menuManager.mobileMainNav && true)
+					menuManager.adjustMainItemsWidth('#' + menuID);
+				menuManager.isMainMenuEditable = false;
+				menuManager.mainMenuMaxSubMenuLevels = 4;
+				menuManager.setMOMMode(2, menuType);
+
+				//Init main menu
+				const setupDraggable = menuManager.isMainMenuEditable;
+				const urlToGetHiddenMenus = '/Pages/MenuMain/HiddenMainSubMenus?pageID=1&moduleID=&themeID=27&menuContainerID=mainNav';
+
+				menuManager.setupMenu(menuID, 'mainNav', menuType, setupDraggable, urlToGetHiddenMenus);
+				menuManager.mainMenuInit = true;
+				menuManager.mainMenuTextResizer = false;
+				if (1.00 > 0)
+					menuManager.mainMenuTextResizerRatio = 1.00;
+				if (window.isResponsiveEnabled)
+					menuManager.mainMenuReady.resolve();
+
+			}
+
+			if (document.readyState === "complete"
+				|| document.readyState === "loaded"
+				|| document.readyState === "interactive") {
+				setupMenu();
+				return;
+			}
+
+			document.addEventListener("DOMContentLoaded", setupMenu);
+		})();
+	
+
+
+	
+				                
+
+
+
+	
+	
+				                
+
+
+
+	
+	
+				                
+
+
+
+	
+	
+				                
+
+
+
+	
+	
+				                
+
+
+
+	
+	
+				                
+
+						
+	
+	
+		
+
+
+
+
+
+
+	
+		
+				
+	
+	
+		
+				
+					
+
+ 
+
+
+ 
+
+				
+			
+		
+	
+			
+
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+
+	
+	
+	
+	
+
+		$(document).ready(function () {
+			try {
+				// Minimum characters required before performing a search/autocomplete
+				var minPrefixLength = 3;
+				var autoCompleteDebounceDelay = 500;
+				var searchFieldSelector = "#searchField" + 'c4b41dba-7033-4e05-9778-a5ffd0063379';
+				var checkboxSelector = "#ysnSearchOnlyDept" + 'c4b41dba-7033-4e05-9778-a5ffd0063379';
+				var buttonSelector = ".widgetSearchButton" + 'c4b41dba-7033-4e05-9778-a5ffd0063379';
+				var autoCompleteCache = {};
+				var autoCompleteCacheKeys = [];
+				var autoCompleteCacheLimit = 25;
+				var currentAutoCompleteRequest = null;
+				var currentAutoCompleteRequestKey = null;
+				var autoCompleteDebounceTimer = null;
+				var autoCompleteDebounceKey = null;
+				var pendingAutoCompleteResponses = [];
+
+				function normalizeAutoCompleteTerm(term) {
+					return $.trim((term || "") + "").replace(/\s+/g, " ");
+				}
+
+				function shouldSearch(term) {
+					return normalizeAutoCompleteTerm(term).length >= minPrefixLength;
+				}
+
+				function getAutoCompleteUrl() {
+					return '/Search/AutoComplete' + ($(checkboxSelector).is(':checked') || false? '?departmentId=0' : '');
+				}
+
+				function getAutoCompleteCacheKey(requestUrl, term) {
+					return requestUrl + "|" + term.toLowerCase();
+				}
+
+				function cacheAutoCompleteResult(cacheKey, data) {
+					if (!Object.prototype.hasOwnProperty.call(autoCompleteCache, cacheKey)) {
+						autoCompleteCacheKeys.push(cacheKey);
+						if (autoCompleteCacheKeys.length > autoCompleteCacheLimit) {
+							delete autoCompleteCache[autoCompleteCacheKeys.shift()];
+						}
+					}
+					autoCompleteCache[cacheKey] = data;
+				}
+
+				function respondToPendingAutoComplete(data) {
+					var responses = pendingAutoCompleteResponses;
+					pendingAutoCompleteResponses = [];
+					for (var i = 0; i < responses.length; i++) {
+						responses[i](data);
+					}
+				}
+
+				function cancelPendingAutoComplete() {
+					clearTimeout(autoCompleteDebounceTimer);
+					autoCompleteDebounceKey = null;
+					if (currentAutoCompleteRequest != null) {
+						currentAutoCompleteRequest.abort();
+						currentAutoCompleteRequest = null;
+					}
+					currentAutoCompleteRequestKey = null;
+					respondToPendingAutoComplete([]);
+				}
+
+				function createWidgetAutoCompleteSource(options) {
+					return function (request, response) {
+						var term = normalizeAutoCompleteTerm(request.term);
+						if (!options.shouldSearch(term)) {
+							response([]);
+							return;
+						}
+
+						var requestUrl = options.url();
+						var cacheKey = getAutoCompleteCacheKey(requestUrl, term);
+						if (Object.prototype.hasOwnProperty.call(autoCompleteCache, cacheKey)) {
+							response(autoCompleteCache[cacheKey]);
+							if (options.success) {
+								options.success(autoCompleteCache[cacheKey]);
+							}
+							return;
+						}
+
+						if (currentAutoCompleteRequestKey === cacheKey || autoCompleteDebounceKey === cacheKey) {
+							pendingAutoCompleteResponses.push(response);
+							return;
+						}
+
+						cancelPendingAutoComplete();
+						autoCompleteDebounceKey = cacheKey;
+						pendingAutoCompleteResponses.push(response);
+						autoCompleteDebounceTimer = setTimeout(function () {
+							autoCompleteDebounceKey = null;
+							currentAutoCompleteRequestKey = cacheKey;
+							currentAutoCompleteRequest = $.ajax({
+								url: requestUrl,
+								dataType: "json",
+								timeout: options.timeout,
+								data: {
+									term: term,
+								},
+								success: function (data) {
+									if (currentAutoCompleteRequestKey === cacheKey) {
+										cacheAutoCompleteResult(cacheKey, data);
+										respondToPendingAutoComplete(data);
+										if (options.success) {
+											options.success(data);
+										}
+									}
+								},
+								error: function (xmlhttprequest, textstatus, message) {
+									if (textstatus === "abort") {
+										return;
+									}
+
+									if (options.error) {
+										options.error(xmlhttprequest, textstatus, message);
+									}
+
+									respondToPendingAutoComplete([]);
+								},
+								complete: function (xmlhttprequest) {
+									if (currentAutoCompleteRequest === xmlhttprequest) {
+										currentAutoCompleteRequest = null;
+										currentAutoCompleteRequestKey = null;
+									}
+								}
+							});
+						}, options.delay);
+					};
+				}
+
+				// click handler for search buttons
+				$(buttonSelector).click(function (e) {
+					e.preventDefault();
+					var $btn = $(this);
+					var $field = $btn.siblings(".widgetSearchBox");
+					var term = $field.val() + "";
+					if (!shouldSearch(term)) {
+						// do nothing until user types enough characters
+						$field.focus();
+						return;
+					}
+
+					if ($(checkboxSelector).is(':checked') || false)
+					{
+						doWidgetSearch($.trim(term), Number(0));
+					}
+					else {
+						doWidgetSearch($.trim(term), 0);
+					}
+				});
+
+				// enter key handler for the search field
+				$(searchFieldSelector).keypress(function (e) {
+					var code = e.which || e.keyCode;
+					if (code === 13) {
+						e.preventDefault();
+						var $this = $(this);
+						var term = $this.val() + "";
+						if (!shouldSearch(term)) {
+							// do nothing until user types enough characters
+							$this.focus();
+							return false;
+						}
+
+						if ($(checkboxSelector).is(':checked') || false) {
+							doWidgetSearch($.trim(term), Number(0));
+						} else {
+							doWidgetSearch($.trim(term), 0);
+						}
+						return false;
+					}
+					return true;
+				});
+
+				// autocomplete: set minLength and guard source
+				if (true) {
+					var $searchField = $(searchFieldSelector).autocomplete({
+						minLength: minPrefixLength,
+						source: createWidgetAutoCompleteSource({
+							delay: autoCompleteDebounceDelay,
+							timeout: 10000,
+							shouldSearch: shouldSearch,
+							url: getAutoCompleteUrl,
+							success: function () {
+								$('.autoCompleteError').remove();
+							},
+							error: function (xmlhttprequest, textstatus, message) {
+								if (textstatus === "timeout") {
+									if ($(searchFieldSelector).siblings('.autoCompleteError').length == 0)
+										$('<span class="autoCompleteError"><p class="alert error">Search autocomplete is currently not responding. Please try again later.</p></span>').insertAfter($(searchFieldSelector));
+								}
+							}
+						}),
+						html: true,
+						delay: 0,
+						select: function (event, ui) {
+							$(this).val(ui.item.value);
+							$(this).next().click();
+						}
+					});
+
+					$searchField.data("ui-autocomplete")._renderItem = function (ul, item) {
+						return $("<li class=\"itemList\"></li>")
+							.data("ui-autocomplete-item", item)
+							.append("<a>" + item.label + "</a>")
+							.appendTo(ul);
+					};
+				}
+
+				// keep searchBtnApplyQuery consistent with prefix rule
+				window.searchBtnApplyQuery = function() {
+					var $field = $(searchFieldSelector);
+					var term = $field.val() + "";
+					if (shouldSearch(term)) {
+						// update href for the icon/button (if present)
+						var btn = document.getElementById("btnSearchIcon");
+						if (btn) btn.href = "/Search?searchPhrase=" + encodeURIComponent($.trim(term));
+					} else {
+						var btn = document.getElementById("btnSearchIcon");
+						if (btn) btn.href = "#";
+					}
+				};
+			}
+			catch(e) {} //we're going to eat this error. Autocomplete won't work but we dont wan't to break anything else on the page.
+		});
+	
+
+	
+				
+		
+			
+						
+
+			Search
+		
+
+	
+
+
+
+	  
+		.widgetSearch ::-webkit-input-placeholder {
+		color: #222;
+	  }
+		.widgetSearch :-moz-placeholder { /* Firefox 18- */
+	   color: #222;
+	}
+		.widgetSearch ::-moz-placeholder {  /* Firefox 19+ */
+	   color: #222;
+	}
+	.widgetSearch :-ms-input-placeholder {
+	   color: #222;
+	}
+	
+
+	.widgetSearch .widgetBody .widgetSearchBoxc4b41dba-7033-4e05-9778-a5ffd0063379
+	{
+		color: #222;
+		background-color: transparent;
+border: none;
+border-left: solid 2px #57736A;
+height: 49px;
+font-family: Barlow;
+font-size: 15px;
+padding: 0 55px 0 20px;
+	}
+	.widgetSearch .widgetBody .widgetSearchButtonc4b41dba-7033-4e05-9778-a5ffd0063379
+	{
+		
+	}
+	.widgetSearch .widgetSearch-onlyDeptc4b41dba-7033-4e05-9778-a5ffd0063379
+	{
+		display: inline-block;
+		color: #333;
+		
+		
+		 padding-top: 10px;
+	}
+	#ysnSearchOnlyDeptc4b41dba-7033-4e05-9778-a5ffd0063379
+	{
+		position: relative;
+		top: .125em;
+	}
+
+
+
+
+
+
+
+
+
+	//Updates search icons href to have the correct queryString
+	function searchBtnApplyQuery() {
+		document.getElementById("btnSearchIcon").href = "/Search?searchPhrase=" + document.getElementById("searchFieldc4b41dba-7033-4e05-9778-a5ffd0063379").value;
+	}
+
+
+
+
+	 
+
+	 
+
+			 
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+		
+		
+			
+			
+		
+			
+				$(window).on("load", function () {
+					$.when(window.Pages.rwdSetupComplete)
+						.done(function () {
+							renderExternalBannerSlideshow('banner1',
+								{"BannerOptionID":73,"ThemeID":27,"SlotName":"banner1","Name":"Default","IsDefault":true,"BannerMode":3,"SlideShowSlideTiming":"8","SlideshowTransition":0,"SlideShowTransitionTiming":"1","ImageScale":true,"ImageAlignment":1,"ImageScroll":true,"MuteSound":true,"VideoType":0,"Status":40,"SlideshowControlsPosition":0,"SlideshowControlsAlignment":0,"SlideshowBannerControlsColorScheme":0,"DisplayVideoPauseButton":false,"VideoPauseButtonAlignment":1,"VideoPauseButtonControlsAlignment":0,"VideoPauseButtonStyle":"#FFFFFF","VideoPauseButtonBackgroundStyle":"#000000","VideoPauseButtonAlignmentClass":"alignRight viewport","DisplaySlideshowPauseButton":false,"SlideshowControlsColor":"#FFFFFF","SlideshowControlsBackgroundColor":"#000000","SlideshowPauseButtonClass":"isHidden","BannerImages":[{"BannerImageID":101,"BannerOptionID":73,"FileName":"/ImageRepository/Document?documentID=3494","Height":700,"Width":2200,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":2,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":""},{"BannerImageID":102,"BannerOptionID":73,"FileName":"/ImageRepository/Document?documentID=3495","Height":700,"Width":2200,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":3,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":""},{"BannerImageID":103,"BannerOptionID":73,"FileName":"/ImageRepository/Document?documentID=3626","Height":700,"Width":2200,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":3,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":""}],"BannerVideos":[],"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/"},
+								'/App_Themes/2026 - Home/Images/',
+								'Slideshow');
+						});
+				});
+			
+
+
+
+
+	
+				                
+
+						
+	
+	
+		
+
+
+
+
+
+
+	
+		
+				
+	
+	
+		
+				
+					
+
+
+	
+		
+			Employment
+		
+	
+
+		.fancyButton1225.fancyButton:link,.fancyButton1225.fancyButton:visited, .fancyButton1225div.fancyButton{
+	background-repeat: no-repeat;
+	background-position: left top;
+position: relative;
+}
+
+.fancyButton1225:after {
+content: "";
+position: absolute;
+background: #E9EFEB;
+border: solid 5px #fff;
+border-radius: 50%;
+box-sizing: border-box;
+height: 130px;
+width: 130px;
+top: 5px;
+left: 50%;
+transform: translateX(-50%);
+transition: all .3s ease-in-out;
+box-shadow: inset rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, inset rgba(0, 0, 0, 0.06) 0px 2px 4px -1px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;}
+.fancyButton1225.fancyButton:hover,.fancyButton1225.fancyButton:focus,.fancyButton1225.fancyButton:active,.fancyButton1225.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+
+.fancyButton1225:is(:hover,:focus,:active):after {
+top: 0;
+background: #252E34;}
+.fancyButton1225.fancyButton:link > span,.fancyButton1225.fancyButton:visited > span, .fancyButton1225div.fancyButton > span{
+}
+.fancyButton1225.fancyButton:hover > span,.fancyButton1225.fancyButton:focus > span,.fancyButton1225.fancyButton:active > span,.fancyButton1225.fancyButton.hover > span{
+}
+.fancyButton1225.fancyButton .text{
+	color: rgb(34, 34, 34);
+	font-size: 1.2em;
+	font-family: "Barlow";
+	padding-top: 153px;
+	font-weight: 500;
+	text-decoration: none;
+	padding-top: 153px;
+	background-image: url('/ImageRepository/Document?documentID=3476');
+	background-repeat: no-repeat;
+	background-position: center 30px ;
+position: relative;
+z-index: 2;
+line-height: 1.2;
+transition: all .3s ease-in-out;
+}
+.fancyButton1225.fancyButton:hover .text,.fancyButton1225.fancyButton:focus .text,.fancyButton1225.fancyButton:active .text,.fancyButton1225.fancyButton.hover .text{
+	text-decoration: underline;
+	background-image: url('/ImageRepository/Document?documentID=3477');
+	background-repeat: no-repeat;
+	background-position: center 25px ;
+
+
+}
+
+
+ 
+
+
+	
+		
+			Regroup
+		
+	
+
+		.fancyButton1226.fancyButton:link,.fancyButton1226.fancyButton:visited, .fancyButton1226div.fancyButton{
+	background-repeat: no-repeat;
+	background-position: left top;
+position: relative;
+}
+
+.fancyButton1226:after {
+content: "";
+position: absolute;
+background: #E9EFEB;
+border: solid 5px #fff;
+border-radius: 50%;
+box-sizing: border-box;
+height: 130px;
+width: 130px;
+top: 5px;
+left: 50%;
+transform: translateX(-50%);
+transition: all .3s ease-in-out;
+box-shadow: inset rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, inset rgba(0, 0, 0, 0.06) 0px 2px 4px -1px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;}
+.fancyButton1226.fancyButton:hover,.fancyButton1226.fancyButton:focus,.fancyButton1226.fancyButton:active,.fancyButton1226.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+
+.fancyButton1226:is(:hover,:focus,:active):after {
+top: 0;
+background: #252E34;}
+.fancyButton1226.fancyButton:link > span,.fancyButton1226.fancyButton:visited > span, .fancyButton1226div.fancyButton > span{
+}
+.fancyButton1226.fancyButton:hover > span,.fancyButton1226.fancyButton:focus > span,.fancyButton1226.fancyButton:active > span,.fancyButton1226.fancyButton.hover > span{
+}
+.fancyButton1226.fancyButton .text{
+	color: rgb(34, 34, 34);
+	font-size: 1.2em;
+	font-family: "Barlow";
+	padding-top: 153px;
+	font-weight: 500;
+	text-decoration: none;
+	padding-top: 153px;
+	background-image: url('/ImageRepository/Document?documentID=3438');
+	background-repeat: no-repeat;
+	background-position: center 30px ;
+position: relative;
+z-index: 2;
+line-height: 1.2;
+transition: all .3s ease-in-out;
+}
+.fancyButton1226.fancyButton:hover .text,.fancyButton1226.fancyButton:focus .text,.fancyButton1226.fancyButton:active .text,.fancyButton1226.fancyButton.hover .text{
+	text-decoration: underline;
+	background-image: url('/ImageRepository/Document?documentID=3487');
+	background-repeat: no-repeat;
+	background-position: center 25px ;
+
+
+}
+
+
+ 
+				
+			
+		
+	
+			
+
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+
+
+
+
+
+
+	
+		
+				
+	
+	
+		
+				
+					
+
+
+	
+		
+			GIS / Maps
+		
+	
+
+		.fancyButton1227.fancyButton:link,.fancyButton1227.fancyButton:visited, .fancyButton1227div.fancyButton{
+	background-repeat: no-repeat;
+	background-position: left top;
+position: relative;
+}
+
+.fancyButton1227:after {
+content: "";
+position: absolute;
+background: #E9EFEB;
+border: solid 5px #fff;
+border-radius: 50%;
+box-sizing: border-box;
+height: 130px;
+width: 130px;
+top: 5px;
+left: 50%;
+transform: translateX(-50%);
+transition: all .3s ease-in-out;
+box-shadow: inset rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, inset rgba(0, 0, 0, 0.06) 0px 2px 4px -1px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;}
+.fancyButton1227.fancyButton:hover,.fancyButton1227.fancyButton:focus,.fancyButton1227.fancyButton:active,.fancyButton1227.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+
+.fancyButton1227:is(:hover,:focus,:active):after {
+top: 0;
+background: #252E34;}
+.fancyButton1227.fancyButton:link > span,.fancyButton1227.fancyButton:visited > span, .fancyButton1227div.fancyButton > span{
+}
+.fancyButton1227.fancyButton:hover > span,.fancyButton1227.fancyButton:focus > span,.fancyButton1227.fancyButton:active > span,.fancyButton1227.fancyButton.hover > span{
+}
+.fancyButton1227.fancyButton .text{
+	color: rgb(34, 34, 34);
+	font-size: 1.2em;
+	font-family: "Barlow";
+	padding-top: 153px;
+	font-weight: 500;
+	text-decoration: none;
+	padding-top: 153px;
+	background-image: url('/ImageRepository/Document?documentID=3482');
+	background-repeat: no-repeat;
+	background-position: center 30px ;
+position: relative;
+z-index: 2;
+line-height: 1.2;
+transition: all .3s ease-in-out;
+}
+.fancyButton1227.fancyButton:hover .text,.fancyButton1227.fancyButton:focus .text,.fancyButton1227.fancyButton:active .text,.fancyButton1227.fancyButton.hover .text{
+	text-decoration: underline;
+	background-image: url('/ImageRepository/Document?documentID=3481');
+	background-repeat: no-repeat;
+	background-position: center 25px ;
+
+
+}
+
+
+ 
+
+
+	
+		
+			Licenses & Permits
+		
+	
+
+		.fancyButton1228.fancyButton:link,.fancyButton1228.fancyButton:visited, .fancyButton1228div.fancyButton{
+	background-repeat: no-repeat;
+	background-position: left top;
+position: relative;
+}
+
+.fancyButton1228:after {
+content: "";
+position: absolute;
+background: #E9EFEB;
+border: solid 5px #fff;
+border-radius: 50%;
+box-sizing: border-box;
+height: 130px;
+width: 130px;
+top: 5px;
+left: 50%;
+transform: translateX(-50%);
+transition: all .3s ease-in-out;
+box-shadow: inset rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, inset rgba(0, 0, 0, 0.06) 0px 2px 4px -1px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;}
+.fancyButton1228.fancyButton:hover,.fancyButton1228.fancyButton:focus,.fancyButton1228.fancyButton:active,.fancyButton1228.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+
+.fancyButton1228:is(:hover,:focus,:active):after {
+top: 0;
+background: #252E34;}
+.fancyButton1228.fancyButton:link > span,.fancyButton1228.fancyButton:visited > span, .fancyButton1228div.fancyButton > span{
+}
+.fancyButton1228.fancyButton:hover > span,.fancyButton1228.fancyButton:focus > span,.fancyButton1228.fancyButton:active > span,.fancyButton1228.fancyButton.hover > span{
+}
+.fancyButton1228.fancyButton .text{
+	color: rgb(34, 34, 34);
+	font-size: 1.2em;
+	font-family: "Barlow";
+	padding-top: 153px;
+	font-weight: 500;
+	text-decoration: none;
+	padding-top: 153px;
+	background-image: url('/ImageRepository/Document?documentID=3484');
+	background-repeat: no-repeat;
+	background-position: center 30px ;
+position: relative;
+z-index: 2;
+line-height: 1.2;
+transition: all .3s ease-in-out;
+}
+.fancyButton1228.fancyButton:hover .text,.fancyButton1228.fancyButton:focus .text,.fancyButton1228.fancyButton:active .text,.fancyButton1228.fancyButton.hover .text{
+	text-decoration: underline;
+	background-image: url('/ImageRepository/Document?documentID=3483');
+	background-repeat: no-repeat;
+	background-position: center 25px ;
+
+
+}
+
+
+ 
+				
+			
+		
+	
+			
+
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+
+
+
+
+
+
+	
+		
+				
+	
+	
+		
+				
+					
+
+
+	
+		
+			Notify Me®
+		
+	
+
+		.fancyButton1229.fancyButton:link,.fancyButton1229.fancyButton:visited, .fancyButton1229div.fancyButton{
+	background-repeat: no-repeat;
+	background-position: left top;
+position: relative;
+}
+
+.fancyButton1229:after {
+content: "";
+position: absolute;
+background: #E9EFEB;
+border: solid 5px #fff;
+border-radius: 50%;
+box-sizing: border-box;
+height: 130px;
+width: 130px;
+top: 5px;
+left: 50%;
+transform: translateX(-50%);
+transition: all .3s ease-in-out;
+box-shadow: inset rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, inset rgba(0, 0, 0, 0.06) 0px 2px 4px -1px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;}
+.fancyButton1229.fancyButton:hover,.fancyButton1229.fancyButton:focus,.fancyButton1229.fancyButton:active,.fancyButton1229.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+
+.fancyButton1229:is(:hover,:focus,:active):after {
+top: 0;
+background: #252E34;}
+.fancyButton1229.fancyButton:link > span,.fancyButton1229.fancyButton:visited > span, .fancyButton1229div.fancyButton > span{
+}
+.fancyButton1229.fancyButton:hover > span,.fancyButton1229.fancyButton:focus > span,.fancyButton1229.fancyButton:active > span,.fancyButton1229.fancyButton.hover > span{
+}
+.fancyButton1229.fancyButton .text{
+	color: rgb(34, 34, 34);
+	font-size: 1.2em;
+	font-family: "Barlow";
+	padding-top: 153px;
+	font-weight: 500;
+	text-decoration: none;
+	padding-top: 153px;
+	background-image: url('/ImageRepository/Document?documentID=3486');
+	background-repeat: no-repeat;
+	background-position: center 30px ;
+position: relative;
+z-index: 2;
+line-height: 1.2;
+transition: all .3s ease-in-out;
+}
+.fancyButton1229.fancyButton:hover .text,.fancyButton1229.fancyButton:focus .text,.fancyButton1229.fancyButton:active .text,.fancyButton1229.fancyButton.hover .text{
+	text-decoration: underline;
+	background-image: url('/ImageRepository/Document?documentID=3485');
+	background-repeat: no-repeat;
+	background-position: center 25px ;
+
+
+}
+
+
+ 
+
+
+	
+		
+			Tax / Parcel
+		
+	
+
+		.fancyButton1230.fancyButton:link,.fancyButton1230.fancyButton:visited, .fancyButton1230div.fancyButton{
+	background-repeat: no-repeat;
+	background-position: left top;
+position: relative;
+}
+
+.fancyButton1230:after {
+content: "";
+position: absolute;
+background: #E9EFEB;
+border: solid 5px #fff;
+border-radius: 50%;
+box-sizing: border-box;
+height: 130px;
+width: 130px;
+top: 5px;
+left: 50%;
+transform: translateX(-50%);
+transition: all .3s ease-in-out;
+box-shadow: inset rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, inset rgba(0, 0, 0, 0.06) 0px 2px 4px -1px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;}
+.fancyButton1230.fancyButton:hover,.fancyButton1230.fancyButton:focus,.fancyButton1230.fancyButton:active,.fancyButton1230.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+
+.fancyButton1230:is(:hover,:focus,:active):after {
+top: 0;
+background: #252E34;}
+.fancyButton1230.fancyButton:link > span,.fancyButton1230.fancyButton:visited > span, .fancyButton1230div.fancyButton > span{
+}
+.fancyButton1230.fancyButton:hover > span,.fancyButton1230.fancyButton:focus > span,.fancyButton1230.fancyButton:active > span,.fancyButton1230.fancyButton.hover > span{
+}
+.fancyButton1230.fancyButton .text{
+	color: rgb(34, 34, 34);
+	font-size: 1.2em;
+	font-family: "Barlow";
+	padding-top: 153px;
+	font-weight: 500;
+	text-decoration: none;
+	padding-top: 153px;
+	background-image: url('/ImageRepository/Document?documentID=3490');
+	background-repeat: no-repeat;
+	background-position: center 30px ;
+position: relative;
+z-index: 2;
+line-height: 1.2;
+transition: all .3s ease-in-out;
+}
+.fancyButton1230.fancyButton:hover .text,.fancyButton1230.fancyButton:focus .text,.fancyButton1230.fancyButton:active .text,.fancyButton1230.fancyButton.hover .text{
+	text-decoration: underline;
+	background-image: url('/ImageRepository/Document?documentID=3489');
+	background-repeat: no-repeat;
+	background-position: center 25px ;
+
+
+}
+
+
+ 
+				
+			
+		
+	
+			
+
+
+
+	 
+
+	 
+
+			 
+
+
+	
+
+
+
+
+
+$('#breadCrumbs').hide();
+	
+	
+		
+
+	
+	
+	
+	
+	
+	
+	
+
+			
+		
+			
+
+
+
+		
+
+	
+
+	
+	
+
+	
+
+
+
+
+
+	
+				                
+
+
+
+	
+
+
+
+	
+				                
+
+						
+	
+	
+		
+    
+
+
+
+
+
+	
+			
+		
+								
+	
+	
+		
+					
+						
+
+
+	News & UpdatesSee what's happening
+						
+					
+		
+	
+	
+
+	
+
+	
+
+
+
+
+	//Render slideshow if info advacned items contain one.
+	$(document).ready(function (e) {
+		$('#divInfoAdv22fcd3d1-2114-4428-b972-e786ba1a0003 .InfoAdvanced.widgetItem').each(function () {
+			renderSlideshowIfApplicable($(this));		
+		});
+	});
+
+	 
+
+	 
+	
+	
+		
+
+		
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+			
+
+
+
+
+
+	
+		
+						
+						
+									2nd Sale-Notice of Sale of Tax Forfeited Lands 
+	
+						Read on...
+	
+
+						
+						
+						
+						
+									Notice of Surplus Sale 
+	
+						Read on...
+	
+
+						
+						
+						
+								
+						
+									Filling Radar Gaps-Statewide solution 
+	
+						Read on...
+	
+
+						
+						
+						
+								
+						
+									2026 Election Information 
+	
+						Read on...
+	
+
+						
+						
+						
+								
+						
+									Did You Know? 
+	
+Don’t forget, you can subscribe to be notified when new items are added to the County website!						Read on...
+	
+
+						
+						
+						
+						
+									Alert Center 
+	
+Access various alerts including road closures, parking alerts, boil water advisories, and more. Alerts will be displayed at the top of the website when active. Visitors can also sign up to receive notifications on specific categories to always stay...						Sign up for alerts
+	
+
+						
+						
+						
+						
+									Create an Account 
+	
+With the MyAccount feature, you can customize your viewing experience, sign up for notifications, and engage in information you care about.						Create an Account
+	
+
+						
+						
+						
+						
+									Stay Connected 
+	
+Notify Me allows you to subscribe to an unlimited number of email lists. Receive email or text message updates regarding the information you have requested.						Learn more about Notify Me
+	
+
+						
+						
+						
+						
+									Report a Concern 
+	
+Use Citizen Request Tracker to notify us about a general concern, comment, or compliment. Visitors can also log in to check on the progress of existing requests.						Read more about CRT
+	
+
+						
+						
+
+		
+	
+
+
+	// <!--
+	window.$ = window.$ || window.parent.$;
+
+	$(window).on('load', function () {
+		//Wait for the DOM to load completely before executing carousel logic since its all based on carousel width which wont come out correct until the DOM has loaded. Vishal
+		if(!window.carouselsToInit){
+			window.carouselsToInit = new Array();
+		}
+		var widgetNewsFlashd8164e9fa7d94473a7297ba742f9b4a4 = function()
+		{
+			var widgetWindow = $('#widgetNewsFlashd8164e9f-a7d9-4473-a729-7ba742f9b4a4').find('.cpWindow')[0];
+			if(widgetWindow){
+				if(widgetWindow.clientWidth != 0){
+					window.setTimeout(function(){
+						$('#widgetNewsFlashd8164e9f-a7d9-4473-a729-7ba742f9b4a4').adaptiveCarousel({
+							minSlideWidth: 150,
+							maxSlideWidth: 300,
+							gutterWidth: 40,
+							circular: true,
+							teaser: false,
+							transitionTiming: 500,
+							noImageRequired: false
+							});
+					}, 250);
+					var index = window.carouselsToInit.indexOf(widgetNewsFlashd8164e9fa7d94473a7297ba742f9b4a4);
+					if (index > -1) {
+						window.carouselsToInit.splice(index, 1);
+					}
+				}
+			}
+		}
+		var indexCarouselsToInit = window.carouselsToInit.indexOf(widgetNewsFlashd8164e9fa7d94473a7297ba742f9b4a4);
+		if (indexCarouselsToInit === -1) {
+			window.carouselsToInit.push(widgetNewsFlashd8164e9fa7d94473a7297ba742f9b4a4);
+		}
+
+		if (window.carouselsToInit) {
+			window.carouselsToInit.forEach(function (carouselToInit) { carouselToInit(); });
+		}
+
+		if (window.Pages.onResizeHandlers){
+			window.Pages.onResizeHandlers.forEach(function(car){car();});
+		}
+	});
+
+	if (Modernizr.touch) {
+		var $pages = typeof window.Pages == 'undefined' ? window.parent.Pages : window.Pages;
+		$.when($pages.rwdReady).done(function () {
+			//only for responsive sites
+			if (typeof($$) !== 'undefined') {
+				$$('#widgetNewsFlashd8164e9f-a7d9-4473-a729-7ba742f9b4a4').on('swipeRight', function (e, a) {
+					$(this).adaptiveCarousel("moveBack");
+				});
+				$$('#widgetNewsFlashd8164e9f-a7d9-4473-a729-7ba742f9b4a4').on('swipeLeft', function (e) {
+					$(this).adaptiveCarousel("moveForward");
+				});
+			}
+		});
+	}
+	// -->
+
+
+		View All News
+			
+	
+	
+	
+		/CivicAlerts.aspx
+	
+
+	
+
+
+
+
+
+
+
+
+
+	 
+		
+
+
+
+
+
+
+	
+		
+				
+	
+	
+		
+					
+						
+
+
+	
+		
+			Agendas & MinutesLearn More
+		
+	
+
+		.fancyButton1235.fancyButton:link,.fancyButton1235.fancyButton:visited, .fancyButton1235div.fancyButton{
+	background-image: url('/ImageRepository/Document?documentID=3552');
+	background-repeat: no-repeat;
+	background-position: center center;
+min-height: 300px;
+max-width: 380px;
+background-size: cover;
+margin: 0 auto;
+display: grid;
+grid-template-rows: 1fr;
+box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+border-radius: 10px;
+overflow: hidden;
+transition: all .3s ease-in-out;
+}
+
+.fancyButton1235 > span {
+grid-row-start: 2;}
+.fancyButton1235.fancyButton:hover,.fancyButton1235.fancyButton:focus,.fancyButton1235.fancyButton:active,.fancyButton1235.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: center center;
+grid-template-rows: 0fr;}
+.fancyButton1235.fancyButton:link > span,.fancyButton1235.fancyButton:visited > span, .fancyButton1235div.fancyButton > span{
+}
+.fancyButton1235.fancyButton:hover > span,.fancyButton1235.fancyButton:focus > span,.fancyButton1235.fancyButton:active > span,.fancyButton1235.fancyButton.hover > span{
+}
+.fancyButton1235.fancyButton .text{
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-right: 10px;
+	padding-left: 10px;
+	text-decoration: none;
+	background-color: rgb(37, 46, 52);
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-right: 10px;
+	padding-left: 10px;
+	background-repeat: no-repeat;
+	background-position: left top;
+transition: all .3s ease-in-out;
+}
+.fancyButton1235.fancyButton:hover .text,.fancyButton1235.fancyButton:focus .text,.fancyButton1235.fancyButton:active .text,.fancyButton1235.fancyButton.hover .text{
+	text-decoration: none;
+	background-color: rgba(37, 46, 52, 0.85);
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+.fancyButton1235.fancyButton .textStyle1{
+	color: rgb(233, 239, 235);
+	font-size: 1.5em;
+	font-family: Barlow Condensed;
+	font-weight: 600;
+	text-decoration: none;
+display: block;
+line-height: 1.2;
+text-transform: uppercase;
+position: relative;
+padding-bottom: 0.5em;
+margin-bottom: 0;
+transition: all .3s ease-in-out;
+}
+
+.fancyButton1235 .textStyle1:after {
+content: "";
+position: absolute;
+background: #57736A;
+height: 2px;
+width: 100px;
+max-width: 85%;
+left: 50%;
+bottom: 0;
+transform: translateX(-50%);
+transition: all .3s ease-in-out;}
+.fancyButton1235.fancyButton:hover .textStyle1, .fancyButton1235.fancyButton.hover .textStyle1{
+	text-decoration: underline;
+margin-bottom: 0.35em;
+}
+
+.fancyButton1235:is(:hover,:focus,:active) .textStyle1:after {
+width: 150px;
+background: #D7C126;}
+.fancyButton1235.fancyButton .textStyle2{
+	color: rgb(255, 255, 255);
+	font-family: Arial;
+	font-style: normal;
+	text-decoration: none;
+display: block;
+line-height: 0;
+opacity: 0;
+transition: all .3s ease-in-out;}
+.fancyButton1235.fancyButton:hover .textStyle2, .fancyButton1235.fancyButton.hover .textStyle2{
+	text-decoration: none;
+line-height: 1.5;
+opacity: 1;}
+
+
+ 
+
+
+	
+		
+			Watch MeetingsLearn More
+		
+	
+
+		.fancyButton1236.fancyButton:link,.fancyButton1236.fancyButton:visited, .fancyButton1236div.fancyButton{
+	background-image: url('/ImageRepository/Document?documentID=3567');
+	background-repeat: no-repeat;
+	background-position: center center;
+min-height: 300px;
+max-width: 380px;
+background-size: cover;
+margin: 0 auto;
+display: grid;
+grid-template-rows: 1fr;
+box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+border-radius: 10px;
+overflow: hidden;
+transition: all .3s ease-in-out;
+}
+
+.fancyButton1236 > span {
+grid-row-start: 2;}
+.fancyButton1236.fancyButton:hover,.fancyButton1236.fancyButton:focus,.fancyButton1236.fancyButton:active,.fancyButton1236.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: center center;
+grid-template-rows: 0fr;}
+.fancyButton1236.fancyButton:link > span,.fancyButton1236.fancyButton:visited > span, .fancyButton1236div.fancyButton > span{
+}
+.fancyButton1236.fancyButton:hover > span,.fancyButton1236.fancyButton:focus > span,.fancyButton1236.fancyButton:active > span,.fancyButton1236.fancyButton.hover > span{
+}
+.fancyButton1236.fancyButton .text{
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-right: 10px;
+	padding-left: 10px;
+	text-decoration: none;
+	background-color: rgb(37, 46, 52);
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-right: 10px;
+	padding-left: 10px;
+	background-repeat: no-repeat;
+	background-position: left top;
+transition: all .3s ease-in-out;
+}
+.fancyButton1236.fancyButton:hover .text,.fancyButton1236.fancyButton:focus .text,.fancyButton1236.fancyButton:active .text,.fancyButton1236.fancyButton.hover .text{
+	text-decoration: none;
+	background-color: rgba(37, 46, 52, 0.85);
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+.fancyButton1236.fancyButton .textStyle1{
+	color: rgb(233, 239, 235);
+	font-size: 1.5em;
+	font-family: Barlow Condensed;
+	font-weight: 600;
+	text-decoration: none;
+display: block;
+line-height: 1.2;
+text-transform: uppercase;
+position: relative;
+padding-bottom: 0.5em;
+margin-bottom: 0;
+transition: all .3s ease-in-out;
+}
+
+.fancyButton1236 .textStyle1:after {
+content: "";
+position: absolute;
+background: #57736A;
+height: 2px;
+width: 100px;
+max-width: 85%;
+left: 50%;
+bottom: 0;
+transform: translateX(-50%);
+transition: all .3s ease-in-out;}
+.fancyButton1236.fancyButton:hover .textStyle1, .fancyButton1236.fancyButton.hover .textStyle1{
+	text-decoration: underline;
+margin-bottom: 0.35em;
+}
+
+.fancyButton1236:is(:hover,:focus,:active) .textStyle1:after {
+width: 150px;
+background: #D7C126;}
+.fancyButton1236.fancyButton .textStyle2{
+	color: rgb(255, 255, 255);
+	font-family: Arial;
+	font-style: normal;
+	text-decoration: none;
+display: block;
+line-height: 0;
+opacity: 0;
+transition: all .3s ease-in-out;}
+.fancyButton1236.fancyButton:hover .textStyle2, .fancyButton1236.fancyButton.hover .textStyle2{
+	text-decoration: none;
+line-height: 1.5;
+opacity: 1;}
+
+
+ 
+					
+			
+		
+	
+			
+
+
+
+	 
+
+	 
+
+			 
+
+
+	
+
+
+	
+				                
+
+						
+	
+	
+		
+    
+
+
+
+
+
+	
+			
+		
+								
+	
+	
+		
+					
+						
+
+
+	Events & HighlightsStay up to date
+						
+					
+		
+	
+	
+
+	
+
+	
+
+
+
+
+	//Render slideshow if info advacned items contain one.
+	$(document).ready(function (e) {
+		$('#divInfoAdve44149b2-c212-41df-8379-24911feb651e .InfoAdvanced.widgetItem').each(function () {
+			renderSlideshowIfApplicable($(this));		
+		});
+	});
+
+	 
+
+	 
+	
+	
+		
+
+	
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+			
+						
+			
+					
+		Oct
+20	
+
+					
+		
+
+
+				County Board of Commissioners Meeting
+					
+			County Board of Commissioners MeetingRead on...
+	
+
+			
+		
+		
+			
+					
+		Oct
+29	
+
+					
+		
+
+
+				Dept. of Motor Vehicles -Exam Day
+					
+			Dept. of Motor Vehicles -Exam DayRead on...
+	
+
+			
+		
+		
+			
+					
+		Nov
+3	
+
+					
+		
+
+
+				General Election Day
+					
+			General Election DayRead on...
+	
+
+			
+		
+		
+			
+					
+		Nov
+5	
+
+					
+		
+
+
+				County Board of Commissioners Meeting
+					
+			County Board of Commissioners MeetingRead on...
+	
+
+			
+		
+		
+			
+					
+		Nov
+6	
+
+					
+		
+
+
+				Western Prairie Human Services Board Meeting
+					
+			Western Prairie Human Services Board MeetingRead on...
+	
+
+			
+		
+		
+			
+					
+		Nov
+16	
+
+					
+		
+
+
+				Agricultural Property Taxes-Second Half Due
+					
+			Agricultural Property Taxes-Second Half DueRead on...
+	
+	
+		
+
+
+				Mobile/Manufactured Homes-Second Half Due
+					
+			Mobile/Manufactured Homes-Second Half DueRead on...
+	
+
+			
+		
+
+			
+		        View All Events
+					
+	
+		
+	
+	
+		/Calendar.aspx
+	
+
+
+
+	 
+
+	 
+
+			 
+
+
+	
+
+
+
+	
+				                
+
+						
+	
+	
+		
+    
+
+
+
+
+
+	
+			
+		
+								
+	
+	
+		
+					
+						
+
+
+	
+						
+					
+		
+	
+	
+
+	
+
+	
+
+
+
+
+	//Render slideshow if info advacned items contain one.
+	$(document).ready(function (e) {
+		$('#divInfoAdv739a5bc0-da7b-47f7-9004-1e257d507719 .InfoAdvanced.widgetItem').each(function () {
+			renderSlideshowIfApplicable($(this));		
+		});
+	});
+
+	 
+
+	 
+
+							
+	
+	
+		
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+    
+
+
+
+
+
+	
+			
+		
+					Contact Us
+								
+	
+	
+		
+					
+						
+
+
+	Grant County
+
+
+	10 2nd St. NE
+
+
+	Elbow Lake, MN 56531-4400
+						
+					
+		
+	
+	
+
+	
+
+	
+
+
+
+
+	//Render slideshow if info advacned items contain one.
+	$(document).ready(function (e) {
+		$('#divInfoAdv27cdb338-6b31-4de9-83b2-09d3a9a32499 .InfoAdvanced.widgetItem').each(function () {
+			renderSlideshowIfApplicable($(this));		
+		});
+	});
+
+	 
+
+	 
+
+							
+	
+	
+		
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+	
+
+
+
+
+
+
+
+
+	
+			
+		
+					Popular Pages
+						
+	
+	
+        
+				
+					
+
+
+
+
+    
+        Assessor
+        
+    
+
+
+
+
+    
+        Parks & Recreation
+        
+    
+
+
+
+
+    
+        Housing
+        
+    
+
+
+
+
+    
+        Youth & Family
+        
+    
+
+
+
+
+    
+        Senior Services
+        
+    
+
+
+
+
+    
+        Rainbow Rider Transportation
+        
+    
+					
+				
+				
+					
+
+
+
+
+    
+        Employment
+        
+    
+
+
+
+
+    
+        Sheriff’s Office
+        
+    
+
+
+
+
+    
+        County Departments
+        
+    
+
+
+
+
+    
+        Treasurer
+        
+    
+
+
+
+
+    
+        Western Prairie Human Services
+        
+    
+
+
+
+
+    
+        Real Estate
+        
+    
+					
+				
+		
+        
+	
+	
+	
+	
+		/QuickLinks.aspx
+	
+
+	
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+	
+
+
+
+
+
+
+
+
+	
+			
+		
+					Site Links
+						
+	
+	
+        
+				
+					
+
+
+
+
+    
+        Home
+        
+    
+
+
+
+
+    
+        Site Map
+        
+    
+
+
+
+
+    
+        Accessibility
+        
+    
+
+
+
+
+    
+        Copyright Notices
+        
+    
+					
+				
+		
+        
+	
+	
+	
+	
+		/QuickLinks.aspx
+	
+
+	
+
+
+	 
+
+	 
+
+			 
+
+
+	
+
+
+	
+				                
+
+						
+	
+	
+		
+ 
+	
+	
+		
+  /* CP icon */
+  .cpBylineIconTS {
+    color: #222;
+  }
+  /* CP Text */
+  .cpBylineTextTS,
+  .cpBylineTextTS a:link {
+    color: #222;
+  }
+
+  .cpBylineTextTS a:visited {
+    color: #222;
+  }
+
+  .cpBylineTextTS a {
+    text-decoration: underline!important;
+  }
+
+  .cpBylineTS {
+    text-align: center;
+  }
+  
+  .cpBylineIconTS {
+    fill: currentColor;
+    width: 39px;
+    height: 26px;
+    display: inline;
+    vertical-align: middle;
+  }
+
+
+
+  
+    
+    
+  
+  Government Websites by CivicPlus®
+
+	
+
+	
+
+	 
+
+	 
+
+			 
+
+
+	
+
+
+
+
+
+            
+        
+    
+
+
+
+
+	
+		
+			Loading
+			
+				
+					
+				
+			
+		
+		
+			
+				
+				Loading
+			
+		
+		
+			Do Not Show Again
+			Close
+		
+	
+
+
+
+
+
+
+
+		$(document).ready(function () {
+			var filter = {
+				targetId: '1',
+				targetType: 1
+			}
+
+			new SplashModalRender().triggerRender(filter);
+		});
+
+
+
+	
+	
+	
+	
+
+
+
+	
+
+
+
+
+
+
+    
+    
+
+
+  #google-translate-container {
+    float: right;
+    padding: 3px 5px 0px 0px;
+    position: fixed; 
+    bottom: 16px; 
+    right: 10px; 
+    z-index: 5;
+  }
+  
+  .goog-te-combo, .goog-te-banner *, .goog-te-ftab *, .goog-te-menu *, .goog-te-menu2 *, .goog-te-balloon * {
+    font-family: arial;
+    font-size: 10pt;
+    background-image: url("https://www.gstatic.com/images/branding/product/2x/translate_24dp.png");
+    background-position: 5px 5px;
+    background-size: 18px;
+    background-repeat: no-repeat;
+    text-indent: 16px;
+    background-color: #fff;
+    color: #000 !important;
+  }
+  
+  .goog-logo-link {
+    display: none !important;
+  }
+  
+  .goog-te-gadget {
+    color: transparent !important;
+  }
+  
+  .goog-te-gadget .goog-te-combo {
+    margin: 2px 0 !important;
+    border-radius: 15px !important;
+    }
+  
+  .goog-te-combo{
+    border: 1px solid !important;
+    border-color: #bcc9d7 #96a3b1 #96a3b1 #bcc9d7 !important;
+    border-radius: 50px !important;
+    height:31px !important;
+    padding: 0 1px 0 .25rem !important;
+                width: 156px;
+  }
+
+  #launcher-wrapper {
+    bottom: 50px !important;
+  }
+
+
+
+
+  
+  
+
+
+
+
+  function googleTranslateElementInit() {
+    var el = document.getElementById("google_translate_element");
+    if (el && el.innerHTML.trim() !== "") {
+        return;
+    }
+
+    new google.translate.TranslateElement({ pageLanguage: "en" }, "google_translate_element");
+    // begin accessibility compliance
+    $('img.goog-te-gadget-icon').attr('alt','Google Translate');
+    $('div#goog-gt-tt div.logo img').attr('alt','translate');
+    $('div#goog-gt-tt .original-text').css('text-align','left');
+    $('.goog-te-gadget-simple .goog-te-menu-value span').css('color','#000000');
+    $('.goog-te-combo').attr('aria-label','google translate languages');
+    $('svg.goog-te-spinner').attr('title','Google Translate Spinner');
+    $('.goog-te-gadget-simple .goog-te-menu-value span').css('color','#000000');
+  }
+
+  $(function() {
+    $.getScript("//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit");
+  });
+
+
+
+
+
+
+
+
+
+
+
+  function getValueTS(elem, attr) {
+    const val = elem.css(attr);
+    if (val === undefined) return undefined;
+    const num = parseInt(val, 10);
+    if (num === NaN) return undefined;
+    return num;
+  }
+
+  function clampTS(number, min, max) {
+    return Math.min(Math.max(number, min), max);
+  }
+
+  function isPageEditingTS() {
+    return (
+      $("#doneEditing").length > 0 || // In live edit
+      typeof DesignCenter !== "undefined" // In theme manager
+    );
+  }
+
+  const bgColorRegexTS = /rgba\((\d+), (\d+), (\d+), (\d*\.?\d*)\)/;
+  function isTransparentTS(elem) {
+    const bg = elem.css('background-color');
+    if (typeof bg !== "string" || !bg.startsWith('rgba(')) return false;
+    const matchState = bg.match(bgColorRegexTS);
+    if (!matchState || matchState.length !== 5) return false;
+    const alpha = parseFloat(matchState[4], 10);
+    if (!(alpha >= 0 && alpha < 1)) return false;
+    return true;
+  }
+
+  function iterateLeftpads(cb) {
+    const containersTS = $("[class^='siteWrap'],[class*=' siteWrap']");
+    for (let i = 0; i < containersTS.length; i++) {
+      const containerTS = containersTS[i];
+      // Skip the body container and anything with data-skip-leftpad
+      if (
+        containerTS.id !== "bodyContainerTS" &&
+        containerTS.getAttribute('data-skip-leftpad') === null
+      ) {
+        cb(containerTS);
+      }
+    }
+  }
+
+  const anchor = $("#divToolbars");
+  const anchor2 = $("#headerContainerTS")
+
+  // Outer banner padding (push banner down)
+  const outerSizingTS = $("#bannerContainerTS");
+  // Inner banner padding (push banner content down) - Transparent header OR on attaching headers
+  const innerSizingTS = $("#bannerSizingTS");
+  const bodyContainerTS = $("#bodyContainerTS");
+
+  const forceUnfixClassTS = "forceUnfixTS";
+
+  const fixedTopTS = $(".fixedTopTS");
+  const fixedBottomTS = $(".fixedBottomTS");
+  const fixedLeftTS = $(".fixedLeftTS");
+
+  var initialTopTS;
+  var topAttachTS;
+  if (fixedTopTS && fixedTopTS.length === 1) {
+    initialTopTS = getValueTS(fixedTopTS, 'top');
+    const attachment = fixedTopTS.attr('data-attach');
+    if (attachment) topAttachTS = $("#" + attachment);
+    if (!topAttachTS || topAttachTS.length !== 1) topAttachTS = undefined;
+  }
+
+  function resizeAdjustmentTS() {
+    const editing = isPageEditingTS();
+
+    // Fixed top script
+    (function () {
+      if (!fixedTopTS || fixedTopTS.length !== 1 || initialTopTS === undefined) return;
+
+      if (editing) {
+        fixedTopTS[0].classList.add(forceUnfixClassTS);
+      } else {
+        fixedTopTS[0].classList.remove(forceUnfixClassTS);
+      }
+
+      const topPosition = fixedTopTS.css('position');
+      if (topPosition === 'fixed') {
+        if (topAttachTS) {
+          scrollAdjustmentTS();
+        } else {
+          const anchorHeight = anchor.outerHeight() - 1;
+          fixedTopTS.css('top', anchorHeight + initialTopTS);
+        }
+      } else {
+        fixedTopTS.css('top', initialTopTS);
+      }
+
+      if (topPosition === 'fixed' || topPosition === 'absolute') {
+        // Bump the banner content down
+        if (isTransparentTS(fixedTopTS)) {
+          innerSizingTS.css('padding-top', initialTopTS + fixedTopTS.outerHeight() - 1);
+          outerSizingTS.css('padding-top', '');
+
+          try {
+            window.Pages.onResizeHandlersExecute();
+          } catch (e) { }
+        } else {
+          outerSizingTS.css('padding-top', fixedTopTS.outerHeight() - 1);
+          innerSizingTS.css('padding-top', '');
+        }
+      } else {
+        innerSizingTS.css('padding-top', '');
+        outerSizingTS.css('padding-top', '');
+      }
+    })();
+
+    // Fixed bottom script
+    (function () {
+      if (!fixedBottomTS || fixedBottomTS.length === 0) return;
+
+      // If the widget has gone narrow, force unfix
+      if (editing || fixedBottomTS.outerHeight() > 200) {
+        fixedBottomTS[0].classList.add(forceUnfixClassTS);
+      } else {
+        fixedBottomTS[0].classList.remove(forceUnfixClassTS);
+      }
+
+      if (fixedBottomTS.css('position') === 'fixed') {
+        bodyContainerTS.css('padding-bottom', fixedBottomTS.outerHeight());
+      } else {
+        bodyContainerTS.css('padding-bottom', '');
+      }
+    })();
+
+    // Fixed left script
+    (function () {
+      if (!fixedLeftTS || fixedLeftTS.length === 0) return;
+
+      if (editing) {
+        fixedLeftTS[0].classList.add(forceUnfixClassTS);
+      } else {
+        fixedLeftTS[0].classList.remove(forceUnfixClassTS);
+      }
+
+      if (fixedLeftTS.css('position') === 'fixed') {
+        const anchorHeight = anchor.outerHeight() - 1;
+        fixedLeftTS.css('top', anchorHeight);
+        const leftBoundingTS = fixedLeftTS[0].getBoundingClientRect();
+        iterateLeftpads(function (containerTS) {
+          const containerBoundingTS = containerTS.getBoundingClientRect();
+          if (containerBoundingTS.left <= leftBoundingTS.right) {
+            $(containerTS).css('padding-left', leftBoundingTS.width + 16);
+          }
+        });
+      } else {
+        fixedLeftTS.css('top', '');
+        iterateLeftpads(function (containerTS) {
+          $(containerTS).css('padding-left', '');
+        });
+      }
+    })();
+  }
+
+  function scrollAdjustmentTS() {
+    if (!fixedTopTS || fixedTopTS.length !== 1 || !topAttachTS || topAttachTS.length !== 1) return;
+    const topPosition = fixedTopTS.css('position');
+    if (topPosition === 'fixed' || topPosition === 'absolute') {
+      const anchorBounding = anchor[0].getBoundingClientRect();
+      const attachBounding = topAttachTS[0].getBoundingClientRect();
+      const scrollTop = $(window).scrollTop();
+
+      fixedTopTS.css('top', Math.max(anchorBounding.bottom - 1, attachBounding.bottom));
+    } else {
+      fixedTopTS.css('top', initialTopTS);
+    }
+  }
+
+  $(window).load(function () {
+    setTimeout(function () {
+      resizeAdjustmentTS();
+    }, 350);
+
+    $(window).scroll(function () {
+      scrollAdjustmentTS();
+    });
+
+    var adjustTimeoutTS;
+    $(window).resize(function () {
+      clearTimeout(adjustTimeoutTS);
+      adjustTimeoutTS = setTimeout(function () {
+        resizeAdjustmentTS();
+      }, 350);
+    });
+
+    $.when(window.Pages.angularToolbarComplete).done(function () {
+      resizeAdjustmentTS();
+    });
+  });
+
+
+
+
+    
+        $(function () {
+            document.cookie = "responsiveGhost=0; path=/";
+        });
+        $(window).on("load", function () {
+            $('body').addClass('doneLoading').removeClass('hideContent');
+
+            if ($('#404Content').length > 0)
+                $('div#bodyWrapper').css('padding', '0px');
+        });
+    
+
+    
+        
+            body.hideContent {
+                opacity: 1 !important;
+            }
+        
+    
+
+        
+
+	
+
+		
+			Arrow Left
+			
+		
+
+		
+			Arrow Right
+			
+		
+
+	
+
+    loadCSS('//fonts.googleapis.com/css?family=Barlow:500,600,700,800,900,regular|Barlow+Condensed:500,600,700,800,900,regular|Libre+Baskerville:700,italic,regular|Quattrocento:700,regular|Quattrocento+Sans:700,700italic,italic,regular|Roboto:500,700,700italic,italic,regular|');
+    
+
+    []
+        
+            
+                
+                    Slideshow Left Arrow
+                    
+                        
+                    
+                
+                
+                    Slideshow Right Arrow
+                    
+                        
+                    
+                
+            
+        
+    
+	
+	
+
+    
+
+

@@ -1,0 +1,28 @@
+#!/usr/bin/env python3
+"""Bounded public research captures, with exact source metadata and compressed bytes."""
+from pathlib import Path
+from concurrent.futures import ThreadPoolExecutor
+import datetime,gzip,hashlib,json,requests,subprocess,tempfile
+ROOT=Path(__file__).resolve().parent
+URLS={'mpr-hub': 'https://www.mprnews.org/election-2026', 'mpr-results': 'https://elections.mpr.org/', 'mpr-primary-liveblog': 'https://www.mprnews.org/minnesota-primary-election-live-updates', 'kstp-home': 'https://kstp.com/', 'wdio-home': 'https://www.wdio.com/', 'valley-home': 'https://www.valleynewslive.com/', 'sos-results': 'https://www.sos.mn.gov/elections-voting/election-results', 'sos-enr-home': 'https://electionresults.sos.mn.gov/', 'sos-media-current': 'https://electionresults.sos.mn.gov/Select/MediaFiles/Index?ersElectionId=200', 'sos-2026-absentee': 'https://www.sos.mn.gov/media/n31bt5gc/2026voteearlyab.pdf', 'nyt-elections': 'https://www.nytimes.com/section/politics/elections', 'mpr-app-js': 'https://elections.mpr.org/static/js/main.f0fc8bd2.js', 'keyc-results': 'https://www.keyc.com/politics/election-results/', 'kaal-results': 'https://www.kaaltv.com/election-results/', 'mpr-primary-senate-data': 'https://electionsapi.publicradio.org/2026-08-11/us_senate_races', 'sos-2024-general-index': 'https://www.sos.mn.gov/elections-voting/election-results/2024/2024-general-election-results/', 'sos-2022-general-index': 'https://www.sos.mn.gov/elections-voting/election-results/2022/2022-general-election-results/', 'sos-2020-general-index': 'https://www.sos.mn.gov/elections-voting/election-results/2020/2020-general-election-results/', 'sos-2024-precinct-index': 'https://www.sos.mn.gov/elections-voting/election-results/2024/2024-general-election-results/2024-precinct-results-spreadsheet/', 'sos-2024-canvass-index': 'https://www.sos.mn.gov/elections-voting/election-results/2024/2024-general-election-results/2024-state-canvassing-board-general/', 'sos-2022-precinct-index': 'https://www.sos.mn.gov/elections-voting/election-results/2022/2022-general-election-results/2022-precinct-results-spreadsheet/', 'sos-2022-canvass-index': 'https://www.sos.mn.gov/elections-voting/election-results/2022/2022-general-election-results/2022-state-canvassing-board-general/', 'sos-2024-precinct-original': 'https://www.sos.mn.gov/media/yt3llxwd/2024-general-federal-state-results-by-precinct-official.xlsx', 'sos-2022-precinct-original': 'https://www.sos.mn.gov/media/5176/2022-general-federal-state-results-by-precinct-official.xlsx', 'sos-2024-canvass-detail': 'https://officialdocuments.sos.mn.gov/Document/Details/152508', 'sos-2020-precinct-index': 'https://sos.mn.gov/elections-voting/election-results/2020/2020-general-election-results/2020-precinct-results-spreadsheet/', 'sos-2020-precinct-original': 'https://sos.mn.gov/media/4373/2020-general-federal-state-results-by-precinct-official.xlsx', 'sos-2024-amended-release': 'https://www.sos.mn.gov/about-the-office/news-room/state-canvassing-board-approves-amended-canvassing-report-for-the-2024-general-election/?searchTerm=RESULTS', 'sos-2020-general-index-nonwww': 'https://sos.mn.gov/elections-voting/election-results/2020/2020-general-election-results/', 'sos-2020-canvass-original': 'https://www.sos.mn.gov/media/4364/mn-2020-state-general-canvassing-report-post-per.pdf', 'stcloud-times-home': 'https://www.sctimes.com/', 'bemidji-pioneer-home': 'https://www.bemidjipioneer.com/', 'fergus-journal-home': 'https://www.fergusfallsjournal.com/', 'lrl-2024-election-report': 'https://www.lrl.mn.gov/docs/2025/mandated/250648.pdf', 'bemidji-election-parent': 'https://www.bemidjipioneer.com/topics/election-2026', 'bemidji-senate-debate': 'https://www.bemidjipioneer.com/news/minnesota/flanagan-tafoya-face-off-in-first-u-s-senate-debate', 'fergus-senate-debate': 'https://www.fergusfallsjournal.com/news/minnesota/flanagan-tafoya-face-off-in-first-u-s-senate-debate', 'sos-november-observed201': 'https://electionresults.sos.mn.gov/201', 'townsquare-november-results': 'https://townsquare.tv/2026-general-election-results/'}
+def fetch(item):
+ key,url=item;row={'id':key,'url':url,'retrieved_at_utc':datetime.datetime.now(datetime.timezone.utc).isoformat()}
+ try:
+  r=requests.get(url,timeout=35);path=ROOT/(key+'.html.gz');path.write_bytes(gzip.compress(r.content,mtime=0))
+  row.update(status=r.status_code,final_url=r.url,raw_sha256=hashlib.sha256(r.content).hexdigest(),asset=path.name,stored_sha256=hashlib.sha256(path.read_bytes()).hexdigest(),bytes=len(r.content),headers=dict(r.headers))
+ except requests.exceptions.SSLError as e:
+  row['requests_error']=str(e)
+  with tempfile.TemporaryDirectory() as t:
+   body=Path(t)/'body';hdr=Path(t)/'headers'
+   c=subprocess.run(['curl','--silent','--show-error','--location','--max-time','35','--dump-header',str(hdr),'--output',str(body),'--write-out','%{http_code}\\n%{url_effective}',url],capture_output=True,text=True)
+   row['transport']='system curl with default certificate verification'
+   if c.returncode==0:
+    code,final=c.stdout.split('\\n',1) if '\\n' in c.stdout else c.stdout.split('\n',1)
+    raw=body.read_bytes();path=ROOT/(key+'.html.gz');path.write_bytes(gzip.compress(raw,mtime=0))
+    row.update(status=int(code),final_url=final,raw_sha256=hashlib.sha256(raw).hexdigest(),asset=path.name,stored_sha256=hashlib.sha256(path.read_bytes()).hexdigest(),bytes=len(raw),raw_headers=hdr.read_text())
+   else:row['error']=c.stderr
+ except requests.RequestException as e:row['error']=str(e)
+ return row
+if __name__=='__main__':
+ rows=list(ThreadPoolExecutor(max_workers=4).map(fetch,URLS.items()));(ROOT/'manifest.json').write_text(json.dumps(rows,indent=2)+'\n')
+ for r in rows:print(r['id'],r.get('status',r.get('error')))

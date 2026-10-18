@@ -1,0 +1,75 @@
+{
+  "schema": "mn-validation/1.0",
+  "status": "pass",
+  "checked_utc": "2026-10-18T19:29:51.165846+00:00",
+  "checks": {
+    "shared_source_hashes_and_XLSX_CRC": "pass",
+    "fresh_capture_hashes": "pass",
+    "native_to_county_and_municipal_candidate_method_aggregations": {
+      "status": "pass",
+      "cells": 176676
+    },
+    "complete_native_FIPS_source_rows_duplicates_controls": "pass",
+    "preserved_contest_ballot_anomalies": [
+      {
+        "contest": "2024-president",
+        "native_key": "MN:2024:VTDID:270610096",
+        "PCTNAME": "Deer River P-2",
+        "COUNTYNAME": "Itasca",
+        "contest_votes": 378,
+        "TOTVOTING": 377,
+        "source_row": "1691"
+      },
+      {
+        "contest": "2022-governor",
+        "native_key": "MN:2022:VTDID:270790140",
+        "PCTNAME": "WATERVILLE TWP.",
+        "COUNTYNAME": "Le Sueur",
+        "contest_votes": 378,
+        "TOTVOTING": 377,
+        "source_row": "1993"
+      }
+    ],
+    "baseline_all_levels_denominators_weights_and_coverage": "pass",
+    "all_candidate_fields_primary_statewide_balances": {
+      "status": "pass",
+      "candidate_rows": 187741
+    },
+    "full_orders_exact_integer80_external_acceptance": "pass",
+    "coordinator_acceptance_path": "data/coordinator-priority-acceptance.json",
+    "actual_peer_readonly_audit": "pass",
+    "all_unit_bounded_targets_and_selected_only_solves": {
+      "status": "pass",
+      "rows": {
+        "county": 4176,
+        "native": 32838,
+        "municipal": 22098
+      },
+      "state_scenarios": 64,
+      "max_target_net_error": 2.9604052542708814e-10
+    },
+    "full_candidate_scenario_denominators": "pass",
+    "live_fixed_counted_final_denominators_edge_cases_and_true_clipping": "pass",
+    "named_writeins_overlap_and_957_canvass_controls": "pass",
+    "current_general_ballot_visual_scope": "two official November sample styles; liveIDs/writein roster unverified",
+    "relative_markdown_links": {
+      "status": "pass",
+      "checked": 26
+    },
+    "owned_asset_hashes_sizes_and_no_cache": {
+      "status": "pass_generated_and_immediately_verified",
+      "owned_files": 73,
+      "max_stored_bytes": 4463444,
+      "bound_exclusive": 40000000,
+      "self_hash_scope": "manifest excludes its own recursive hash"
+    }
+  },
+  "material_gaps": [
+    "No2022/2024 independently downloaded county canvassPDF/named-writein annex; official workbooks and state controls retained.",
+    "Blank/under/over and candidate-method/native named-writein allocations unavailable.",
+    "Historical warning/discrepancy rows retained without adjustment.",
+    "Current general printed candidates verified on2officialsamplePDFs; livecandidateIDs/full eligiblewritein roster/currentnativecrosswalk unverified.",
+    "SomeHTTP200sourcepages are challenges; intermediate redirect responseheaders unavailable from historical/urllibcaptures.",
+    "No2026turnoutprojection/livecollector/knownlivecadence/calibratedprobability/currentgeometryapproval."
+  ]
+}

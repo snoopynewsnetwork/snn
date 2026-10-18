@@ -1,0 +1,2645 @@
+
+
+
+
+
+	
+
+				(function(w,d,s,l,i){w.GAMeasurementID='G-5GR87NT5XY';w[l]=w[l]||[];w[l].push({'gtm.start':
+				new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+				j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+				'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+				})(window,document,'script','cpDataLayerGA4','GTM-K73C5PS');
+				
+				
+					var enableTelemetry = 'false'
+					var aiConfig = {
+					instrumentationKey: '1cde048e-3185-4906-aa46-c92a7312b60f'						
+					}
+					var appInsights = window.appInsights || function (a) { function b(a) { c[a] = function () { var b = arguments; c.queue.push(function () { c[a].apply(c, b) }) } } var c = { config: a }, d = document, e = window; setTimeout(function () { var b = d.createElement('script'); b.src = a.url || 'https://js.monitor.azure.com/scripts/a/ai.0.js', d.getElementsByTagName('script')[0].parentNode.appendChild(b) }); try { c.cookie = d.cookie } catch (a) { } c.queue = []; for (var f = ['Event', 'Exception', 'Metric', 'PageView', 'Trace', 'Dependency']; f.length;)b('track' + f.pop()); if (b('setAuthenticatedUserContext'), b('clearAuthenticatedUserContext'), b('startTrackEvent'), b('stopTrackEvent'), b('startTrackPage'), b('stopTrackPage'), b('flush'), !a.disableExceptionTracking) { f = 'onerror', b('_' + f); var g = e[f]; e[f] = function (a, b, d, e, h) { var i = g && g(a, b, d, e, h); return !0 !== i && c['_' + f](a, b, d, e, h), i } } return c }(aiConfig);
+					window.appInsights = appInsights, appInsights.queue && 0 === appInsights.queue.length;
+					// Add telemetry initializer
+					appInsights.queue.push(function() {
+						appInsights.context.addTelemetryInitializer(function(envelope) {
+							var telemetryItem = envelope.data.baseData;
+							// To check the telemetry item’s type:
+							if (!false)
+							{
+								//If the telemetry is not enabled, we still want to capture Google map custom event, so only allow that
+								if (envelope.name.indexOf('.Event') == -1)
+									return false;
+							}
+						});
+					});						
+					appInsights.trackPageView();
+				
+	
+		function populateAntiForgery(token) {
+			var input = document.createElement("input");
+			input.name = "__RequestVerificationToken";
+			input.type = "hidden";
+			input.value = token;
+			var absPat = /^https?:\/\/|^\/\//i;
+			var forms = document.getElementsByTagName("form");
+			for (var i = 0; i < forms.length; i++) {
+				if (forms[i].method == "post" &&
+					!forms[i].querySelector('[name="__RequestVerificationToken"]') &&
+					!absPat.test(forms[i].getAttribute("action"))) {
+					forms[i].appendChild(input.cloneNode());
+				}
+			}
+		}
+
+		function getAntiForgeryToken(callback, error) {
+			var xhr = new XMLHttpRequest();
+			xhr.open("GET", "/antiforgery");
+			xhr.addEventListener("load", function() {
+				try {
+					if (this.status !== 200) {
+						throw Error("Invalid status. Could not retrieve antiforgery token.");
+					}
+					var obj = JSON.parse(this.responseText);
+					callback(obj.token);
+				} catch (e) {
+					typeof error === "function" && error(e);
+				}
+			});
+			xhr.send();
+		}
+
+		getAntiForgeryToken(function(token) {
+			if (document.readyState === "complete"
+				|| document.readyState === "loaded" 
+				|| document.readyState === "interactive") {
+				populateAntiForgery(token);
+				return;
+			}
+			document.addEventListener("DOMContentLoaded", function() {
+				populateAntiForgery(token);
+			}, false);
+		}, console.error);
+	
+			
+
+	
+		window.departmentHeader = {};
+		window.pageSectionTracker = {};
+		window.isResponsiveEnabled = true;
+		window.isRemoveSetHeights= true;
+		if (window.isRemoveSetHeights) {
+			document.documentElement.className += ' removeSetHeights';
+		}
+		window.mainMenuMediaQuery = 'screen and (max-width: 40em)';
+		window.isMobileBrowserIncludingTablets = false;
+		window.fixedResponsiveMenu = true;
+		window.fullWidthResponsiveMenu = false;
+		window.responsiveMenuHeight = '';
+		window.responsiveMenuFontSize = '';
+		window.isContentAdvisor = false;
+		(function () {
+			window.setSizeCookie = function () {
+				document.cookie = "dpi=" + window.devicePixelRatio + "; path=/";
+				document.cookie = "viewportWidth=" + window.innerWidth + "; path=/";
+				document.cookie = "viewportHeight=" + window.innerHeight + "; path=/";
+				if (screen && screen.width && screen.height) {
+					document.cookie = "screenWidth=" + screen.width + "; path=/";
+					document.cookie = "screenHeight=" + screen.height + "; path=/";
+				}
+				document.cookie = "responsiveGhost=1; path=/";
+			};
+
+			setSizeCookie();
+		}());
+	
+		
+
+	
+	
+
+
+
+
+
+
+
+	
+
+	
+	
+	
+	
+		Washington County, MN - Official Website | Official Website
+
+		
+		
+	
+
+
+
+
+		
+	
+	
+
+	
+	
+	
+	
+	<!--
+	var intCountryCode = 840;
+	var order = '';
+//-->
+	
+		
+
+	
+	
+		window.Pages = window.Pages || {};
+		// FrontEnd RWD initialization
+		window.Pages.rwdReady = $.Deferred();
+		window.Pages.toolBarDeferred = $.Deferred();
+		window.Pages.rwdSetupComplete = $.Deferred();
+		window.Pages.megaMenuLoaded = $.Deferred();
+		window.Pages.angularToolbarComplete = $.Deferred();
+		window.Pages.frontEndToolbarComplete = $.Deferred();
+	
+	
+	
+	
+	
+	
+	
+
+
+
+
+	
+	
+	
+	
+
+	
+		setEditorVariables(false, 840);
+		function getPrintPreviewType() { return 0; } function printPreview() {pPreview(getPrintPreviewType()); }
+	
+	
+
+
+
+    jQuery(document).click(function (event) {
+	var target = jQuery(event.target);
+	if (target.attr('src') && target.parents('.image').length && target.parents('.widget').length) {
+		var text = target.attr('title');
+		
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Image',
+				eventAction: 'Image - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.is('button') || target.hasClass('button') || target.parents().hasClass('button')) {
+		var text = "";
+		if (target.parents('.button')[0]) {
+			text = target.parents('.button').first().text();
+		} else if (target.text().length) {
+			text = target.text();
+		} else if (target.attr('title').length) {
+			text = target.attr('title');
+		}
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Button',
+				eventAction: 'Button - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetCustomHtml').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Custom Html',
+				eventAction: 'Custom Html Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.editor').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Editor',
+				eventAction: 'Editor Link Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.GraphicLinks').length) {
+		var text = "";
+		var targetGraphicLink = target;
+		if (target.hasClass('widgetGraphicLinksLink')) {
+			targetGraphicLink = jQuery(target.children()[0]);
+		}
+		if (targetGraphicLink.hasClass('text')) {
+			text = targetGraphicLink.text();
+		} else if (targetGraphicLink.attr('src').length) {
+			if (targetGraphicLink.attr('alt').length) {
+				text = targetGraphicLink.attr('alt');
+			} else {
+				text = targetGraphicLink.attr('src');
+			}
+		} else {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Graphic Links',
+				eventAction: 'Graphic Link - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.InfoAdvanced').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Info Advanced',
+				eventAction: 'Info Advanced Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.list').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'List',
+				eventAction: 'List Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.megaMenuItem').length || target.parents('.topMenuItem').length) {
+		var megaMenuText = jQuery('.topMenuItem.mouseover').find('span').text();
+		var breadCrumbs = [];
+		jQuery('.breadCrumbs > li').each(function () {
+			 breadCrumbs.push(this.textContent);
+		});
+		var pageTitle = breadCrumbs.join('>');
+		var subTitleText = target.parents('.megaMenuItem').children('.widgetTitle').children().text();
+		var text = "";
+		if (pageTitle) {
+			text += pageTitle + " | ";
+		} else {
+			text += document.title + ' - ';
+		}
+		if (target.text() == "" && megaMenuText == "") {
+			text += "N/A";
+		} else if (target.text().length && megaMenuText.length) {
+			if (megaMenuText == target.text()) {
+				text += megaMenuText;
+			} else {
+				text += megaMenuText + " - " + subTitleText + " - " + target.text();
+			}
+		} else if (target.text() == "") {
+			text += megaMenuText;
+		} else {
+			text += target.text();
+		}
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Mega Menu',
+				eventAction: 'Mega Menu : ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetNewsFlash').length && target.parents('.widgetItem').length) {
+		var text = jQuery(target.parents('.widgetItem')[0]).find('.widgetTitle').children().text();
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'News Flash',
+				eventAction: 'News Flash - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.hasClass('widgetQuickLinksLink') || target.find('.widgetQuickLinksLink').length) {
+		var text = target.text();
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Quick Links',
+				eventAction: 'Quick Links - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.attr('src') && target.parents('.cpSlideshow').length) {
+		var text = target.attr('title');
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Slideshow',
+				eventAction: 'Slideshow - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetText').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Text',
+				eventAction: 'Text Link Clicked',
+				eventLabel: window.location.href
+			});
+	}
+});
+	
+	
+		
+		
+			
+				
+			
+		
+	
+	
+		
+	
+	
+		
+			
+		
+	
+
+    
+
+Skip to Main Content
+
+    
+
+        
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+        
+                
+                    
+
+
+
+                
+            
+                
+                
+
+
+
+	
+				                
+
+						
+	
+	
+		
+	
+
+
+
+
+
+
+
+
+	
+			
+		
+						
+	
+	
+        
+				
+					
+
+
+
+
+    
+        Jobs
+        
+    
+					
+				
+				
+					
+
+
+
+
+    
+        Contact
+        
+    
+					
+				
+		
+        
+	
+	
+	
+	
+		/QuickLinks.aspx
+	
+
+	
+
+
+	 
+
+	 
+
+			 
+
+
+	
+	
+				                
+
+						
+	
+	
+		
+ 
+	
+	
+		 function googleTranslateElementInit() { new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'ar,de,el,en,es,fr,ga,hi,id,it,iw,ja,ko,pt,ru,sv,tl,vi,zh-CN,zh-TW', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, gaTrack: true, gaId: 'UA-87122838-1'}, 'google_translate_element'); } 
+	
+
+	
+
+	 
+
+	 
+
+			 
+
+
+	
+
+
+
+
+
+
+
+				
+
+    Resident  			    Business  			    Government  			    Online Services  			
+
+
+
+	
+		(function () {
+			function setupMenu() {
+				const menuID = 'mainNavMenu';
+				const menuType = MAIN_MENU;
+
+				//setup menu manager properties for main menu
+				if (!menuManager.mobileMainNav && true)
+					menuManager.adjustMainItemsWidth('#' + menuID);
+				menuManager.isMainMenuEditable = false;
+				menuManager.mainMenuMaxSubMenuLevels = 4;
+				menuManager.setMOMMode(2, menuType);
+
+				//Init main menu
+				const setupDraggable = menuManager.isMainMenuEditable;
+				const urlToGetHiddenMenus = '/Pages/MenuMain/HiddenMainSubMenus?pageID=1&moduleID=&themeID=16&menuContainerID=mainNav';
+
+				menuManager.setupMenu(menuID, 'mainNav', menuType, setupDraggable, urlToGetHiddenMenus);
+				menuManager.mainMenuInit = true;
+				menuManager.mainMenuTextResizer = false;
+				if (1.00 > 0)
+					menuManager.mainMenuTextResizerRatio = 1.00;
+				if (window.isResponsiveEnabled)
+					menuManager.mainMenuReady.resolve();
+
+			}
+
+			if (document.readyState === "complete"
+				|| document.readyState === "loaded"
+				|| document.readyState === "interactive") {
+				setupMenu();
+				return;
+			}
+
+			document.addEventListener("DOMContentLoaded", setupMenu);
+		})();
+	
+
+
+	
+				                
+
+
+
+	
+	
+				                
+
+
+
+	
+	
+				                
+
+
+
+	
+	
+				                
+
+
+
+	
+	
+				                
+
+						
+	
+	
+		
+ 
+	
+	
+		
+/*
+ * Google Programmable Search Engine
+ * CX: 76e3247bef3ce4f75
+ *
+ * This tracks Sitewide PSE searches in GA4 ONLY if the visitor
+ * has previously used the Library search.
+ */
+
+window.__gcse = window.__gcse || {};
+
+window.__gcse.searchCallbacks = {
+  web: {
+    starting: function(gname, query) {
+
+      /*
+       * Check whether the visitor has used the Library
+       * search during this browser session.
+       *
+       * Your Library search needs to set:
+       * sessionStorage.setItem("library_search_used", "true");
+       */
+      var otherSearchUsed =
+        sessionStorage.getItem("library_search_used") === "true";
+
+      if (otherSearchUsed && typeof gtag === "function") {
+
+        gtag("event", "search", {
+          search_term: query
+        });
+
+        console.log(
+          "Sitewide PSE search tracked:",
+          query
+        );
+
+      } else {
+
+        console.log(
+          "Sitewide PSE search NOT tracked:",
+          query
+        );
+      }
+
+      return "";
+    }
+  }
+};
+
+
+
+
+
+
+	
+
+	
+
+	 
+
+	 
+
+			 
+
+
+	
+
+
+
+
+	
+				                
+
+						
+	
+	
+		
+    
+
+
+
+
+
+	
+			
+		
+								
+	
+	
+		
+					
+						
+
+
+	Welcome to Washington County, MN
+
+
+	Rooted in Connection, Growing with Direction
+						
+					
+		
+	
+	
+
+	
+
+	
+
+
+
+
+	//Render slideshow if info advacned items contain one.
+	$(document).ready(function (e) {
+		$('#divInfoAdvf9077543-9829-4a5b-885d-7eaa5d27e70a .InfoAdvanced.widgetItem').each(function () {
+			renderSlideshowIfApplicable($(this));		
+		});
+	});
+
+	 
+
+	 
+
+			 
+
+
+	
+
+
+
+
+
+
+		
+		
+			
+			
+		
+			
+				$(window).on("load", function () {
+					$.when(window.Pages.rwdSetupComplete)
+						.done(function () {
+							renderExternalBannerSlideshow('banner1',
+								{"BannerOptionID":34,"ThemeID":16,"SlotName":"banner1","Name":"Default","IsDefault":true,"BannerMode":2,"SlideShowSlideTiming":"5","SlideshowTransition":0,"SlideShowTransitionTiming":"1","ImageScale":true,"ImageAlignment":1,"ImageScroll":true,"MuteSound":true,"VideoType":0,"Status":40,"SlideshowControlsPosition":0,"SlideshowControlsAlignment":0,"SlideshowBannerControlsColorScheme":0,"DisplayVideoPauseButton":false,"VideoPauseButtonAlignment":1,"VideoPauseButtonControlsAlignment":0,"VideoPauseButtonStyle":"#FFFFFF","VideoPauseButtonBackgroundStyle":"#000000","VideoPauseButtonAlignmentClass":"alignRight viewport","DisplaySlideshowPauseButton":true,"SlideshowControlsColor":"#FFFFFF","SlideshowControlsBackgroundColor":"#000000","SlideshowPauseButtonClass":"isHidden","BannerImages":[{"BannerImageID":666,"BannerOptionID":34,"FileName":"/ImageRepository/Document?documentID=77240","Height":700,"Width":2200,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":5,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":""},{"BannerImageID":667,"BannerOptionID":34,"FileName":"/ImageRepository/Document?documentID=77241","Height":700,"Width":2200,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":6,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":""},{"BannerImageID":668,"BannerOptionID":34,"FileName":"/ImageRepository/Document?documentID=77242","Height":700,"Width":2200,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":7,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":""},{"BannerImageID":669,"BannerOptionID":34,"FileName":"/ImageRepository/Document?documentID=77243","Height":700,"Width":2200,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":8,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":""}],"BannerVideos":[],"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/"},
+								'/App_Themes/Home/Images/',
+								'Rotating');
+						});
+				});
+			
+
+
+
+	
+				                
+
+						
+	
+	
+		
+    
+
+
+
+
+
+	
+			
+		
+								
+	
+	
+		
+					
+						
+
+
+	Washington County Popular Resources
+
+
+	Explore our most frequently used tools and services, designed to help you quickly access important information and complete common tasks. Stay informed and get what you need—fast.
+						
+					
+		
+	
+	
+
+	
+
+	
+
+
+
+
+	//Render slideshow if info advacned items contain one.
+	$(document).ready(function (e) {
+		$('#divInfoAdvd135ffef-6b9f-4966-86f8-ffc8811b3908 .InfoAdvanced.widgetItem').each(function () {
+			renderSlideshowIfApplicable($(this));		
+		});
+	});
+
+	 
+
+	 
+
+							
+	
+	
+		
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+
+
+
+
+
+
+	
+		
+				
+	
+	
+		
+				
+					
+
+
+	
+		
+			Construction
+		
+	
+
+		.fancyButton2837.fancyButton:link,.fancyButton2837.fancyButton:visited, .fancyButton2837div.fancyButton{
+	background-color: rgb(43, 93, 148);
+	background-repeat: no-repeat;
+	background-position: left top;
+border-radius: 10px;
+border: 2px solid #2B5D94;
+box-shadow: 0 3px 16px #0000001A;
+-webkit-transition: .3s ease-in-out;
+-moz-transition: .3s ease-in-out;
+-o-transition: .3s ease-in-out;
+transition: .3s ease-in-out;}
+.fancyButton2837.fancyButton:hover,.fancyButton2837.fancyButton:focus,.fancyButton2837.fancyButton:active,.fancyButton2837.fancyButton.hover{
+	background-color: rgb(255, 255, 255);
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+.fancyButton2837.fancyButton:link > span,.fancyButton2837.fancyButton:visited > span, .fancyButton2837div.fancyButton > span{
+}
+.fancyButton2837.fancyButton:hover > span,.fancyButton2837.fancyButton:focus > span,.fancyButton2837.fancyButton:active > span,.fancyButton2837.fancyButton.hover > span{
+}
+.fancyButton2837.fancyButton .text{
+	color: rgb(255, 255, 255);
+	font-size: 1.1em;
+	font-family: "Public Sans";
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 16px;
+	padding-left: 16px;
+	font-weight: 600;
+	text-decoration: none;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 16px;
+	padding-left: 16px;
+	background-repeat: no-repeat;
+	background-position: right center;
+height: 80px;
+-webkit-transition: .2s ease-in-out;
+-moz-transition: .2s ease-in-out;
+-o-transition: .2s ease-in-out;
+transition: .2s ease-in-out;
+}
+.fancyButton2837.fancyButton:hover .text,.fancyButton2837.fancyButton:focus .text,.fancyButton2837.fancyButton:active .text,.fancyButton2837.fancyButton.hover .text{
+	color: rgb(43, 93, 148);
+	text-decoration: underline;
+	background-repeat: no-repeat;
+	background-position: right center;
+
+
+}
+
+
+ 
+
+
+	
+		
+			Elections & Voting
+		
+	
+
+		.fancyButton3710.fancyButton:link,.fancyButton3710.fancyButton:visited, .fancyButton3710div.fancyButton{
+	background-color: rgb(43, 93, 148);
+	background-repeat: no-repeat;
+	background-position: left top;
+border-radius: 10px;
+border: 2px solid #2B5D94;
+box-shadow: 0 3px 16px #0000001A;
+-webkit-transition: .3s ease-in-out;
+-moz-transition: .3s ease-in-out;
+-o-transition: .3s ease-in-out;
+transition: .3s ease-in-out;}
+.fancyButton3710.fancyButton:hover,.fancyButton3710.fancyButton:focus,.fancyButton3710.fancyButton:active,.fancyButton3710.fancyButton.hover{
+	background-color: rgb(255, 255, 255);
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+.fancyButton3710.fancyButton:link > span,.fancyButton3710.fancyButton:visited > span, .fancyButton3710div.fancyButton > span{
+}
+.fancyButton3710.fancyButton:hover > span,.fancyButton3710.fancyButton:focus > span,.fancyButton3710.fancyButton:active > span,.fancyButton3710.fancyButton.hover > span{
+}
+.fancyButton3710.fancyButton .text{
+	color: rgb(255, 255, 255);
+	font-size: 1.1em;
+	font-family: "Public Sans";
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 16px;
+	padding-left: 16px;
+	font-weight: 600;
+	text-decoration: none;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 16px;
+	padding-left: 16px;
+	background-repeat: no-repeat;
+	background-position: right center;
+height: 80px;
+-webkit-transition: .2s ease-in-out;
+-moz-transition: .2s ease-in-out;
+-o-transition: .2s ease-in-out;
+transition: .2s ease-in-out;
+}
+.fancyButton3710.fancyButton:hover .text,.fancyButton3710.fancyButton:focus .text,.fancyButton3710.fancyButton:active .text,.fancyButton3710.fancyButton.hover .text{
+	color: rgb(43, 93, 148);
+	text-decoration: underline;
+	background-repeat: no-repeat;
+	background-position: right center;
+
+
+}
+
+
+ 
+
+
+	
+		
+			Land & Water Legacy Referendum
+		
+	
+
+		.fancyButton3708.fancyButton:link,.fancyButton3708.fancyButton:visited, .fancyButton3708div.fancyButton{
+	background-color: rgb(43, 93, 148);
+	background-repeat: no-repeat;
+	background-position: left top;
+border-radius: 10px;
+border: 2px solid #2B5D94;
+box-shadow: 0 3px 16px #0000001A;
+-webkit-transition: .3s ease-in-out;
+-moz-transition: .3s ease-in-out;
+-o-transition: .3s ease-in-out;
+transition: .3s ease-in-out;}
+.fancyButton3708.fancyButton:hover,.fancyButton3708.fancyButton:focus,.fancyButton3708.fancyButton:active,.fancyButton3708.fancyButton.hover{
+	background-color: rgb(255, 255, 255);
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+.fancyButton3708.fancyButton:link > span,.fancyButton3708.fancyButton:visited > span, .fancyButton3708div.fancyButton > span{
+}
+.fancyButton3708.fancyButton:hover > span,.fancyButton3708.fancyButton:focus > span,.fancyButton3708.fancyButton:active > span,.fancyButton3708.fancyButton.hover > span{
+}
+.fancyButton3708.fancyButton .text{
+	color: rgb(255, 255, 255);
+	font-size: 1.1em;
+	font-family: "Public Sans";
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 16px;
+	padding-left: 16px;
+	font-weight: 600;
+	text-decoration: none;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 16px;
+	padding-left: 16px;
+	background-repeat: no-repeat;
+	background-position: right center;
+height: 80px;
+-webkit-transition: .2s ease-in-out;
+-moz-transition: .2s ease-in-out;
+-o-transition: .2s ease-in-out;
+transition: .2s ease-in-out;
+}
+.fancyButton3708.fancyButton:hover .text,.fancyButton3708.fancyButton:focus .text,.fancyButton3708.fancyButton:active .text,.fancyButton3708.fancyButton.hover .text{
+	color: rgb(43, 93, 148);
+	text-decoration: underline;
+	background-repeat: no-repeat;
+	background-position: right center;
+
+
+}
+
+
+ 
+
+
+	
+		
+			Parks & Trails
+		
+	
+
+		.fancyButton3711.fancyButton:link,.fancyButton3711.fancyButton:visited, .fancyButton3711div.fancyButton{
+	background-color: rgb(43, 93, 148);
+	background-repeat: no-repeat;
+	background-position: left top;
+border-radius: 10px;
+border: 2px solid #2B5D94;
+box-shadow: 0 3px 16px #0000001A;
+-webkit-transition: .3s ease-in-out;
+-moz-transition: .3s ease-in-out;
+-o-transition: .3s ease-in-out;
+transition: .3s ease-in-out;}
+.fancyButton3711.fancyButton:hover,.fancyButton3711.fancyButton:focus,.fancyButton3711.fancyButton:active,.fancyButton3711.fancyButton.hover{
+	background-color: rgb(255, 255, 255);
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+.fancyButton3711:is(:hover,:focus,:active)::after {
+width: 100%;}
+.fancyButton3711.fancyButton:link > span,.fancyButton3711.fancyButton:visited > span, .fancyButton3711div.fancyButton > span{
+}
+.fancyButton3711.fancyButton:hover > span,.fancyButton3711.fancyButton:focus > span,.fancyButton3711.fancyButton:active > span,.fancyButton3711.fancyButton.hover > span{
+}
+.fancyButton3711.fancyButton .text{
+	color: rgb(255, 255, 255);
+	font-size: 1.1em;
+	font-family: "Public Sans";
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 16px;
+	padding-left: 16px;
+	font-weight: 600;
+	text-decoration: none;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 16px;
+	padding-left: 16px;
+	background-repeat: no-repeat;
+	background-position: right center;
+height: 80px;
+-webkit-transition: .2s ease-in-out;
+-moz-transition: .2s ease-in-out;
+-o-transition: .2s ease-in-out;
+transition: .2s ease-in-out;
+}
+.fancyButton3711.fancyButton:hover .text,.fancyButton3711.fancyButton:focus .text,.fancyButton3711.fancyButton:active .text,.fancyButton3711.fancyButton.hover .text{
+	color: rgb(43, 93, 148);
+	text-decoration: underline;
+	background-repeat: no-repeat;
+	background-position: right center;
+
+
+}
+
+
+ 
+
+
+	
+		
+			Property & Environment
+		
+	
+
+		.fancyButton2836.fancyButton:link,.fancyButton2836.fancyButton:visited, .fancyButton2836div.fancyButton{
+	background-color: rgb(43, 93, 148);
+	background-repeat: no-repeat;
+	background-position: left top;
+border-radius: 10px;
+border: 2px solid #2B5D94;
+box-shadow: 0 3px 16px #0000001A;
+-webkit-transition: .3s ease-in-out;
+-moz-transition: .3s ease-in-out;
+-o-transition: .3s ease-in-out;
+transition: .3s ease-in-out;}
+.fancyButton2836.fancyButton:hover,.fancyButton2836.fancyButton:focus,.fancyButton2836.fancyButton:active,.fancyButton2836.fancyButton.hover{
+	background-color: rgb(255, 255, 255);
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+.fancyButton2836.fancyButton:link > span,.fancyButton2836.fancyButton:visited > span, .fancyButton2836div.fancyButton > span{
+}
+.fancyButton2836.fancyButton:hover > span,.fancyButton2836.fancyButton:focus > span,.fancyButton2836.fancyButton:active > span,.fancyButton2836.fancyButton.hover > span{
+}
+.fancyButton2836.fancyButton .text{
+	color: rgb(255, 255, 255);
+	font-size: 1.1em;
+	font-family: "Public Sans";
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 16px;
+	padding-left: 16px;
+	font-weight: 600;
+	text-decoration: none;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 16px;
+	padding-left: 16px;
+	background-repeat: no-repeat;
+	background-position: right center;
+height: 80px;
+-webkit-transition: .2s ease-in-out;
+-moz-transition: .2s ease-in-out;
+-o-transition: .2s ease-in-out;
+transition: .2s ease-in-out;
+}
+.fancyButton2836.fancyButton:hover .text,.fancyButton2836.fancyButton:focus .text,.fancyButton2836.fancyButton:active .text,.fancyButton2836.fancyButton.hover .text{
+	color: rgb(43, 93, 148);
+	text-decoration: underline;
+	background-repeat: no-repeat;
+	background-position: right center;
+
+
+}
+
+
+ 
+
+
+	
+		
+			Receive Notifications
+		
+	
+
+		.fancyButton3713.fancyButton:link,.fancyButton3713.fancyButton:visited, .fancyButton3713div.fancyButton{
+	background-color: rgb(43, 93, 148);
+	background-repeat: no-repeat;
+	background-position: left top;
+border-radius: 10px;
+border: 2px solid #2B5D94;
+box-shadow: 0 3px 16px #0000001A;
+-webkit-transition: .3s ease-in-out;
+-moz-transition: .3s ease-in-out;
+-o-transition: .3s ease-in-out;
+transition: .3s ease-in-out;}
+.fancyButton3713.fancyButton:hover,.fancyButton3713.fancyButton:focus,.fancyButton3713.fancyButton:active,.fancyButton3713.fancyButton.hover{
+	background-color: rgb(255, 255, 255);
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+.fancyButton3713.fancyButton:link > span,.fancyButton3713.fancyButton:visited > span, .fancyButton3713div.fancyButton > span{
+}
+.fancyButton3713.fancyButton:hover > span,.fancyButton3713.fancyButton:focus > span,.fancyButton3713.fancyButton:active > span,.fancyButton3713.fancyButton.hover > span{
+}
+.fancyButton3713.fancyButton .text{
+	color: rgb(255, 255, 255);
+	font-size: 1.1em;
+	font-family: "Public Sans";
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 16px;
+	padding-left: 16px;
+	font-weight: 600;
+	text-decoration: none;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 16px;
+	padding-left: 16px;
+	background-repeat: no-repeat;
+	background-position: right center;
+height: 80px;
+-webkit-transition: .2s ease-in-out;
+-moz-transition: .2s ease-in-out;
+-o-transition: .2s ease-in-out;
+transition: .2s ease-in-out;
+}
+.fancyButton3713.fancyButton:hover .text,.fancyButton3713.fancyButton:focus .text,.fancyButton3713.fancyButton:active .text,.fancyButton3713.fancyButton.hover .text{
+	color: rgb(43, 93, 148);
+	text-decoration: underline;
+	background-repeat: no-repeat;
+	background-position: right center;
+
+
+}
+
+
+ 
+				
+			
+		
+	
+			
+
+
+
+	 
+
+	 
+
+			 
+
+
+	
+
+
+
+
+
+$('#breadCrumbs').hide();
+	
+	
+		
+
+	
+	
+	
+	
+	
+	
+	
+
+			
+		
+			
+
+
+
+		
+
+	
+
+	
+	
+
+	
+
+
+
+
+
+	
+				                
+
+						
+	
+	
+		
+    
+
+
+
+
+
+	
+			
+		
+								
+	
+	
+		
+					
+						
+
+
+	County News
+
+
+	Stay up to date
+						
+					
+		
+	
+	
+
+	
+
+	
+
+
+
+
+	//Render slideshow if info advacned items contain one.
+	$(document).ready(function (e) {
+		$('#divInfoAdvaefcd8cd-3da7-4fec-9fb2-ba286ed18e9d .InfoAdvanced.widgetItem').each(function () {
+			renderSlideshowIfApplicable($(this));		
+		});
+	});
+
+	 
+
+	 
+
+			 
+						
+	
+	
+		
+
+		
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+			
+
+
+
+
+
+	
+		
+						
+								
+						
+									News from the Washington County Board of Commissioners meeting, October 13 
+	
+						Continue reading...
+	
+
+						
+						
+						
+								
+						
+									Maintaining Safe and Secure Elections in Washington County 
+	
+			Play video...
+	
+
+						
+						
+						
+								
+						
+									Frequently Asked Questions About Our New Website 
+	
+						Read on...
+	
+
+						
+						
+
+		
+	
+
+
+	// <!--
+	window.$ = window.$ || window.parent.$;
+
+	$(window).on('load', function () {
+		//Wait for the DOM to load completely before executing carousel logic since its all based on carousel width which wont come out correct until the DOM has loaded. Vishal
+		if(!window.carouselsToInit){
+			window.carouselsToInit = new Array();
+		}
+		var widgetNewsFlashf1f81ca68f444fddac56e81e7280f466 = function()
+		{
+			var widgetWindow = $('#widgetNewsFlashf1f81ca6-8f44-4fdd-ac56-e81e7280f466').find('.cpWindow')[0];
+			if(widgetWindow){
+				if(widgetWindow.clientWidth != 0){
+					window.setTimeout(function(){
+						$('#widgetNewsFlashf1f81ca6-8f44-4fdd-ac56-e81e7280f466').adaptiveCarousel({
+							minSlideWidth: 200,
+							maxSlideWidth: 400,
+							gutterWidth: 40,
+							circular: true,
+							teaser: false,
+							transitionTiming: 500,
+							noImageRequired: false
+							});
+					}, 250);
+					var index = window.carouselsToInit.indexOf(widgetNewsFlashf1f81ca68f444fddac56e81e7280f466);
+					if (index > -1) {
+						window.carouselsToInit.splice(index, 1);
+					}
+				}
+			}
+		}
+		var indexCarouselsToInit = window.carouselsToInit.indexOf(widgetNewsFlashf1f81ca68f444fddac56e81e7280f466);
+		if (indexCarouselsToInit === -1) {
+			window.carouselsToInit.push(widgetNewsFlashf1f81ca68f444fddac56e81e7280f466);
+		}
+
+		if (window.carouselsToInit) {
+			window.carouselsToInit.forEach(function (carouselToInit) { carouselToInit(); });
+		}
+
+		if (window.Pages.onResizeHandlers){
+			window.Pages.onResizeHandlers.forEach(function(car){car();});
+		}
+	});
+
+	if (Modernizr.touch) {
+		var $pages = typeof window.Pages == 'undefined' ? window.parent.Pages : window.Pages;
+		$.when($pages.rwdReady).done(function () {
+			//only for responsive sites
+			if (typeof($$) !== 'undefined') {
+				$$('#widgetNewsFlashf1f81ca6-8f44-4fdd-ac56-e81e7280f466').on('swipeRight', function (e, a) {
+					$(this).adaptiveCarousel("moveBack");
+				});
+				$$('#widgetNewsFlashf1f81ca6-8f44-4fdd-ac56-e81e7280f466').on('swipeLeft', function (e) {
+					$(this).adaptiveCarousel("moveForward");
+				});
+			}
+		});
+	}
+	// -->
+
+
+		View All News
+			
+	
+	
+	
+		/CivicAlerts.aspx
+	
+
+	
+
+
+
+
+
+
+
+
+
+	 
+
+	 
+
+			 
+
+
+	
+
+
+	
+				                
+
+						
+	
+	
+		
+    
+
+
+
+
+
+	
+			
+		
+								
+	
+	
+		
+					
+						
+
+
+	Upcoming Events
+
+
+	Mark your calendar
+						
+					
+		
+	
+	
+
+	
+
+	
+
+
+
+
+	//Render slideshow if info advacned items contain one.
+	$(document).ready(function (e) {
+		$('#divInfoAdvbbe7d40e-a482-4b2d-9b58-417c3f1a3315 .InfoAdvanced.widgetItem').each(function () {
+			renderSlideshowIfApplicable($(this));		
+		});
+	});
+
+	 
+
+	 
+
+			 
+						
+	
+	
+		
+
+	
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+				
+					
+
+
+
+
+
+
+
+
+	
+
+
+
+
+				
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		Tuesday, October 20  
+		
+					County Board Meeting
+
+		
+			County Board MeetingView Event
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		Tuesday, October 20  
+		
+					County Board Meeting
+
+		
+			County Board MeetingView Event
+	
+					
+				
+				
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		Tuesday, October 20  
+		
+					Intro to Archery
+
+		
+		
+			Lake Elmo Park Reserve
+		
+			Intro to ArcheryView Event
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		Thursday, October 22  
+		
+					Courthouse by Candlelight
+
+		
+		
+			Historic Courthouse
+		
+			Courthouse by CandlelightView Event
+	
+					
+				
+				
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		Saturday, October 24  
+		
+					Escape Room at the Historic Courthouse
+
+		
+		
+			Historic Courthouse
+		
+			Escape Room at the Historic CourthouseView Event
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		Sunday, October 25  
+		
+					Full Moon Forest Bathing 
+
+		
+		
+			Lake Elmo Park Reserve
+		
+			Full Moon Forest Bathing View Event
+	
+					
+				
+
+
+									
+		        View Full Calendar
+					
+	
+		
+	
+	
+		/Calendar.aspx
+	
+
+
+
+	 
+
+	 
+
+			 
+
+
+	
+
+
+
+	
+				                
+
+						
+	
+	
+		
+    
+
+
+
+
+
+	
+			
+		
+								
+	
+	
+		
+					
+						
+
+
+	
+						
+					
+		
+	
+	
+
+	
+
+	
+
+
+
+
+	//Render slideshow if info advacned items contain one.
+	$(document).ready(function (e) {
+		$('#divInfoAdv4758a247-3887-4f77-8a9e-f4c9c7df8b67 .InfoAdvanced.widgetItem').each(function () {
+			renderSlideshowIfApplicable($(this));		
+		});
+	});
+
+	 
+
+	 
+	
+	
+		
+
+
+
+
+
+
+	
+		
+				
+	
+	
+		
+				
+					
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+
+ 
+
+				
+			
+		
+	
+			
+
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+    
+
+
+
+
+
+	
+			
+		
+					Contact Us
+								
+	
+	
+		
+					
+						
+
+
+	P.O. Box 614949 62nd Street NorthStillwater, MN 55082-6132P: 651-430-6000P: 651-430-6246 (TTY)
+						
+					
+		
+	
+	
+
+	
+
+	
+
+
+
+
+	//Render slideshow if info advacned items contain one.
+	$(document).ready(function (e) {
+		$('#divInfoAdv2cde5b96-411b-4f47-b6a0-68bb08dd050c .InfoAdvanced.widgetItem').each(function () {
+			renderSlideshowIfApplicable($(this));		
+		});
+	});
+
+	 
+
+	 
+
+							
+	
+	
+		
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+	
+
+
+
+
+
+
+
+
+	
+			
+		
+					Essential Links
+						
+	
+	
+        
+				
+					
+
+
+
+
+    
+        Elections
+        
+    
+
+
+
+
+    
+        Property & Environment
+        
+    
+
+
+
+
+    
+        Parks & Trails
+        
+    
+
+
+
+
+    
+        Library
+        
+    
+
+
+
+
+    
+        Public Safety & Law
+        
+    
+
+
+
+
+    
+        Employee Portal
+        
+    
+					
+				
+		
+        
+	
+	
+	
+	
+		/QuickLinks.aspx
+	
+
+	
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+	
+
+
+
+
+
+
+
+
+	
+			
+		
+					Site Links
+						
+	
+	
+        
+				
+					
+
+
+
+
+    
+        Accessibility
+        
+    
+
+
+
+
+    
+        Copyright
+        
+    
+
+
+
+
+    
+        Data Practices
+        
+    
+
+
+
+
+    
+        Privacy Policy
+        
+    
+
+
+
+
+    
+        Site Map
+        
+    
+					
+				
+		
+        
+	
+	
+	
+	
+		/QuickLinks.aspx
+	
+
+	
+
+
+	 
+
+	 
+
+			 
+
+
+	
+
+
+
+
+
+
+		
+			
+				$(window).on("load", function () {
+					$.when(window.Pages.rwdSetupComplete)
+						.done(function () {
+							renderBanner('banner2-36',
+								'banner2',
+								{"BannerOptionID":36,"ThemeID":16,"SlotName":"banner2","Name":"Default","IsDefault":true,"BannerMode":1,"SlideShowSlideTiming":"5","SlideshowTransition":0,"SlideShowTransitionTiming":"1","ImageScale":true,"ImageAlignment":1,"ImageScroll":true,"MuteSound":true,"VideoType":0,"Status":40,"SlideshowControlsPosition":0,"SlideshowControlsAlignment":0,"SlideshowBannerControlsColorScheme":0,"DisplayVideoPauseButton":false,"VideoPauseButtonAlignment":1,"VideoPauseButtonControlsAlignment":0,"VideoPauseButtonStyle":"#FFFFFF","VideoPauseButtonBackgroundStyle":"#000000","VideoPauseButtonAlignmentClass":"alignRight viewport","DisplaySlideshowPauseButton":false,"SlideshowControlsColor":"#FFFFFF","SlideshowControlsBackgroundColor":"#000000","SlideshowPauseButtonClass":"isHidden","BannerImages":[{"BannerImageID":557,"BannerOptionID":36,"FileName":"/ImageRepository/Document?documentID=74998","Height":700,"Width":2200,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":1,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":null}],"BannerVideos":[],"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/"},
+								{"BannerImageID":557,"BannerOptionID":36,"FileName":"/ImageRepository/Document?documentID=74998","Height":700,"Width":2200,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":1,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":null},
+								'/App_Themes/Home/Images/',
+								'<img alt="" class="bannerObject" src="/ImageRepository/Document?documentID=74998" />');
+						});
+				});
+			
+
+
+
+	
+				                
+
+						
+	
+	
+		
+ 
+	
+	
+		
+  /* CP icon */
+  .cpBylineIconTS {
+    color: #fff;
+  }
+  /* CP Text */
+  .cpBylineTextTS,
+  .cpBylineTextTS a:link {
+    color: #fff;
+  }
+
+  .cpBylineTS {
+    text-align: center;
+  }
+  
+  .cpBylineIconTS {
+    fill: currentColor;
+    width: 39px;
+    height: 26px;
+    display: inline;
+    vertical-align: middle;
+  }
+
+
+
+  
+    
+    
+  
+  Government Websites by CivicPlus®
+
+
+	
+
+	
+
+	 
+
+	 
+
+			 
+
+
+	
+
+
+
+
+            
+        
+    
+
+
+
+
+	
+		
+			Loading
+			
+				
+					
+				
+			
+		
+		
+			
+				
+				Loading
+			
+		
+		
+			Do Not Show Again
+			Close
+		
+	
+
+
+
+
+
+
+
+		$(document).ready(function () {
+			var filter = {
+				targetId: '1',
+				targetType: 1
+			}
+
+			new SplashModalRender().triggerRender(filter);
+		});
+
+
+
+	
+	
+	
+	
+
+
+
+	
+
+
+
+
+
+
+    
+    
+
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-55732236-1', 'auto');
+  ga('send', 'pageview');
+
+
+
+
+
+
+
+
+
+
+
+
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date()); gtag('config', 'G-M7FYBH3X59');
+
+
+
+
+    window._monsido = window._monsido || {
+        token: "7xUbVKA1UChtNGYrPIC9zg",
+        statistics: {
+            enabled: true,
+            cookieLessTracking: true,
+            documentTracking: {
+                enabled: true,
+                documentCls: "monsido_download",
+                documentIgnoreCls: "monsido_ignore_download",
+                documentExt: [],
+            },
+        },
+        heatmap: {
+            enabled: true,
+        },
+        pageCorrect: {
+            enabled: true,
+        },
+        pageAssistV2: {
+            enabled: true,
+            theme: "light",
+            mainColor: "#783CE2",
+            textColor: "#ffffff",
+            linkColor: "#783CE2",
+            buttonHoverColor: "#783CE2",
+            mainDarkColor: "#052942",
+            textDarkColor: "#ffffff",
+            linkColorDark: "#FFCF4B",
+            buttonHoverDarkColor: "#FFCF4B",
+            greeting: "Discover your personalization options",
+            direction: "leftbottom",
+            coordinates: "undefined undefined undefined undefined",
+            iconShape: "circle",
+            title: "Personalization Options",
+            titleText: "Welcome to PageAssist toolbar! Adjust the options below to cater the website to your accessibility needs.",
+            iconPictureUrl: "logo",
+            logoPictureUrl: "",
+            logoPictureBase64: "",
+            languages: [""],
+            defaultLanguage: "",
+            skipTo: false,
+            alwaysOnTop: false,
+        },
+    };
+
+
+
+
+
+
+  function getValueTS(elem, attr) {
+    var val = elem.css(attr);
+    if (val === undefined) return undefined;
+    var num = parseInt(val, 10);
+    if (num === NaN) return undefined;
+    return num;
+  }
+
+  function clampTS(number, min, max) {
+    return Math.min(Math.max(number, min), max);
+  }
+
+  function isPageEditingTS() {
+    return (
+      $("#doneEditing").length > 0 || // In live edit
+      typeof DesignCenter !== "undefined" // In theme manager
+    );
+  }
+
+  var bgColorRegexTS = new RegExp("rgba\((\d+), (\d+), (\d+), (\d*\.?\d*)\)");
+  function isTransparentTS(elem) {
+    var bg = elem.css('background-color');
+    if (typeof bg !== "string") return false;
+    if (bg === "transparent") return true;
+    if (!bg.startsWith('rgba(')) return false;
+    var matchState = bg.match(bgColorRegexTS);
+    if (!matchState || matchState.length !== 5) return false;
+    var alpha = parseFloat(matchState[4], 10);
+    if (!(alpha >= 0 && alpha < 1)) return false;
+    return true;
+  }
+
+  function iterateLeftpads(cb) {
+    var containersTS = $("[class^='siteWrap'],[class*=' siteWrap']");
+    for (var i = 0; i < containersTS.length; i++) {
+      var containerTS = containersTS[i];
+      // Skip the body container and anything with data-skip-leftpad
+      if (
+        containerTS.id !== "bodyContainerTS" &&
+        containerTS.getAttribute('data-skip-leftpad') === null
+      ) {
+        cb(containerTS);
+      }
+    }
+  }
+
+  function iterateRightpads(cb) {
+    var containersTS = $("[class^='siteWrap'],[class*=' siteWrap']");
+    for (var i = 0; i < containersTS.length; i++) {
+      var containerTS = containersTS[i];
+      // Skip the body container and anything with data-skip-rightpad
+      if (
+        containerTS.id !== "bodyContainerTS" &&
+        containerTS.getAttribute('data-skip-rightpad') === null
+      ) {
+        cb(containerTS);
+      }
+    }
+  }
+
+  var anchor = $("#divToolbars");
+  var bodyContainerTS = $("#bodyContainerTS");
+
+  // Outer banner padding (push banner down)
+  var outerSizingTS = $("#bannerContainerTS");
+  // Inner banner padding (push banner content down) - Transparent header OR on attaching headers
+  var innerSizingTS = $("#bannerSizingTS");
+
+  var forceUnfixClassTS = "forceUnfixTS";
+
+  var fixedTopTS = $(".fixedTopTS");
+  var fixedBottomTS = $(".fixedBottomTS");
+  var fixedLeftTS = $(".fixedLeftTS");
+  var fixedRightTS = $(".fixedRightTS");
+
+  var initialTopTS;
+  var topAttachTS;
+  if (fixedTopTS && fixedTopTS.length === 1) {
+    initialTopTS = getValueTS(fixedTopTS, 'top');
+    var attachment = fixedTopTS.attr('data-attach');
+    if (attachment) topAttachTS = $("#" + attachment);
+    if (!topAttachTS || topAttachTS.length !== 1) topAttachTS = undefined;
+  }
+
+  function resizeAdjustmentTS() {
+    var editing = isPageEditingTS();
+
+    // Fixed top script
+    (function () {
+      if (!fixedTopTS || fixedTopTS.length !== 1 || initialTopTS === undefined) return;
+
+      if (editing) {
+        fixedTopTS[0].classList.add(forceUnfixClassTS);
+      } else {
+        fixedTopTS[0].classList.remove(forceUnfixClassTS);
+      }
+
+      var topPosition = fixedTopTS.css('position');
+      if (topPosition === 'fixed') {
+        if (topAttachTS) {
+          scrollAdjustmentTS();
+        } else {
+          var anchorHeight = anchor.outerHeight() - 1;
+          fixedTopTS.css('top', anchorHeight + initialTopTS);
+        }
+      } else {
+        fixedTopTS.css('top', initialTopTS);
+      }
+
+      if (topPosition === 'fixed' || topPosition === 'absolute') {
+        // Bump the banner content down
+        if (isTransparentTS(fixedTopTS)) {
+          innerSizingTS.css('padding-top', initialTopTS + fixedTopTS.outerHeight());
+          outerSizingTS.css('padding-top', '');
+
+          try {
+            window.Pages.onResizeHandlersExecute();
+          } catch (e) { }
+        } else {
+          outerSizingTS.css('padding-top', fixedTopTS.outerHeight() - 1);
+          innerSizingTS.css('padding-top', '');
+        }
+      } else {
+        innerSizingTS.css('padding-top', '');
+        outerSizingTS.css('padding-top', '');
+      }
+    })();
+
+    // Fixed bottom script
+    (function () {
+      if (!fixedBottomTS || fixedBottomTS.length === 0) return;
+
+      // If the widget has gone narrow, force unfix
+      if (editing || fixedBottomTS.outerHeight() > 200) {
+        fixedBottomTS[0].classList.add(forceUnfixClassTS);
+      } else {
+        fixedBottomTS[0].classList.remove(forceUnfixClassTS);
+      }
+
+      if (fixedBottomTS.css('position') === 'fixed') {
+        bodyContainerTS.css('padding-bottom', fixedBottomTS.outerHeight());
+      } else {
+        bodyContainerTS.css('padding-bottom', '');
+      }
+    })();
+
+    // Fixed left script
+    (function () {
+      if (!fixedLeftTS || fixedLeftTS.length === 0) return;
+
+      if (editing) {
+        fixedLeftTS[0].classList.add(forceUnfixClassTS);
+      } else {
+        fixedLeftTS[0].classList.remove(forceUnfixClassTS);
+      }
+
+      if (fixedLeftTS.css('position') === 'fixed') {
+        var anchorHeight = anchor.outerHeight() - 1;
+        fixedLeftTS.css('top', anchorHeight);
+        var leftBoundingTS = fixedLeftTS[0].getBoundingClientRect();
+        iterateLeftpads(function (containerTS) {
+          var containerBoundingTS = containerTS.getBoundingClientRect();
+          if (containerBoundingTS.left <= leftBoundingTS.right) {
+            $(containerTS).css('padding-left', leftBoundingTS.width + 16);
+          } else {
+            $(containerTS).css('padding-left', '');
+          }
+        });
+      } else {
+        fixedLeftTS.css('top', '');
+        iterateLeftpads(function (containerTS) {
+          $(containerTS).css('padding-left', '');
+        });
+      }
+    })();
+
+    // Fixed right script
+    (function () {
+      if (!fixedRightTS || fixedRightTS.length === 0) return;
+
+      if (editing) {
+        fixedRightTS[0].classList.add(forceUnfixClassTS);
+      } else {
+        fixedRightTS[0].classList.remove(forceUnfixClassTS);
+      }
+
+      if (fixedRightTS.css('position') === 'fixed') {
+        var anchorHeight = anchor.outerHeight() - 1;
+        fixedRightTS.css('top', anchorHeight);
+        var rightBoundingTS = fixedRightTS[0].getBoundingClientRect();
+        iterateRightpads(function (containerTS) {
+          var containerBoundingTS = containerTS.getBoundingClientRect();
+          if (containerBoundingTS.right >= rightBoundingTS.left) {
+            $(containerTS).css('padding-right', rightBoundingTS.width + 16);
+          }
+        });
+      } else {
+        fixedRightTS.css('top', '');
+        iterateRightpads(function (containerTS) {
+          $(containerTS).css('padding-right', '');
+        });
+      }
+    })();
+  }
+
+  function scrollAdjustmentTS() {
+    if (!fixedTopTS || fixedTopTS.length !== 1 || !topAttachTS || topAttachTS.length !== 1) return;
+    var topPosition = fixedTopTS.css('position');
+    if (topPosition === 'fixed' || topPosition === 'absolute') {
+      var anchorBounding = anchor[0].getBoundingClientRect();
+      var attachBounding = topAttachTS[0].getBoundingClientRect();
+      var scrollTop = $(window).scrollTop();
+
+      fixedTopTS.css('top', Math.max(anchorBounding.bottom - 1, attachBounding.bottom));
+    } else {
+      fixedTopTS.css('top', initialTopTS);
+    }
+  }
+
+  $(window).load(function () {
+    setTimeout(function () {
+      try {
+        resizeAdjustmentTS();
+      } catch (e) {
+        console.error(e);
+      }
+    }, 350);
+
+    $(window).scroll(function () {
+      try {
+        scrollAdjustmentTS();
+      } catch (e) {
+        console.error(e);
+      }
+    });
+
+    var adjustTimeoutTS;
+    $(window).resize(function () {
+      clearTimeout(adjustTimeoutTS);
+      adjustTimeoutTS = setTimeout(function () {
+        try {
+          resizeAdjustmentTS();
+        } catch (e) {
+          console.error(e);
+        }
+      }, 350);
+    });
+
+    $.when(window.Pages.angularToolbarComplete).done(function () {
+      try {
+        resizeAdjustmentTS();
+      } catch (e) {
+        console.error(e);
+      }
+    });
+  });
+
+
+
+
+
+
+    window.ResidentAgentWidget.load({
+        agentId: '2697c5c0-3712-4215-8a36-657c8d1b5526',
+        apiUrl: 'https://residentagent-api-production.azurewebsites.net'
+    });
+
+
+
+    
+        $(function () {
+            document.cookie = "responsiveGhost=0; path=/";
+        });
+        $(window).on("load", function () {
+            $('body').addClass('doneLoading').removeClass('hideContent');
+
+            if ($('#404Content').length > 0)
+                $('div#bodyWrapper').css('padding', '0px');
+        });
+    
+
+    
+        
+            body.hideContent {
+                opacity: 1 !important;
+            }
+        
+    
+
+        
+
+	
+
+		
+			Arrow Left
+			
+		
+
+		
+			Arrow Right
+			
+		
+
+	
+
+    loadCSS('//fonts.googleapis.com/css?family=Lato:100,100italic,300,300italic,700,700italic,900,900italic,italic,regular|Montserrat:700,regular|Open+Sans:500,600,700,800,italic,regular|Public+Sans:500,600,700,800,900,italic,regular|STIX+Two+Text:500,500italic,600,600italic,700,700italic,italic,regular|Work+Sans:600,regular|');
+    
+
+    []
+        
+            
+                
+                    Slideshow Left Arrow
+                    
+                        
+                    
+                
+                
+                    Slideshow Right Arrow
+                    
+                        
+                    
+                
+            
+        
+    
+	
+	
+
+    
+
+

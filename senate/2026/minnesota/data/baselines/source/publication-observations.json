@@ -1,0 +1,71 @@
+{
+  "observed_utc": "2026-10-18T19:17:34.292708+00:00",
+  "mechanism": "research web parser; observations are not original HTTP response bytes or claimed raw headers",
+  "historical_controls_source": "Independently inspected SOS general-result pages2024/2022/2020; numeric and named identities in candidate-identities.json. Original2020PDF independently parsed, not peer imported.",
+  "source_chains": [
+    {
+      "year": 2024,
+      "general_landing": "https://www.sos.mn.gov/elections-voting/election-results/2024/2024-general-election-results/",
+      "spreadsheet_landing": "https://www.sos.mn.gov/elections-voting/election-results/2024/2024-general-election-results/2024-precinct-results-spreadsheet/",
+      "original_download": "https://www.sos.mn.gov/media/yt3llxwd/2024-general-federal-state-results-by-precinct-official.xlsx"
+    },
+    {
+      "year": 2022,
+      "general_landing": "https://www.sos.mn.gov/elections-voting/election-results/2022/2022-general-election-results/",
+      "spreadsheet_landing": "https://www.sos.mn.gov/elections-voting/election-results/2022/2022-general-election-results/2022-precinct-results-spreadsheet/",
+      "original_download": "https://www.sos.mn.gov/media/5176/2022-general-federal-state-results-by-precinct-official.xlsx"
+    },
+    {
+      "year": 2020,
+      "general_landing": "https://www.sos.mn.gov/elections-voting/election-results/2020/2020-general-election-results/",
+      "spreadsheet_landing": "https://www.sos.mn.gov/elections-voting/election-results/2020/2020-general-election-results/2020-precinct-results-spreadsheet/",
+      "original_download": "https://sos.mn.gov/media/4373/2020-general-federal-state-results-by-precinct-official.xlsx"
+    }
+  ],
+  "statistics_controls": {
+    "2024": {
+      "url": "https://www.sos.mn.gov/elections-voting/election-results/2024/2024-general-election-results/2024-election-statistics/",
+      "REG7AM": 3686596,
+      "EDR": 296287,
+      "TOTVOTING": 3272414,
+      "status": "historical SOS statistics publication; county canvass source scope in workbook Notes"
+    },
+    "2022": {
+      "url": "https://www.sos.mn.gov/elections-voting/election-results/2022/2022-general-election-results/2022-election-statistics/",
+      "REG7AM": 3562753,
+      "EDR": 141095,
+      "TOTVOTING": 2525873,
+      "status": "historical SOS statistics publication; county canvass source scope in workbook Notes"
+    },
+    "2020": {
+      "url": "https://www.sos.mn.gov/elections-voting/election-results/2020/2020-general-election-results/2020-election-statistics/",
+      "REG7AM": 3588299,
+      "EDR": 259742,
+      "TOTVOTING": 3292997,
+      "status": "historical SOS statistics publication; county canvass source scope in workbook Notes"
+    }
+  },
+  "current2026": {
+    "url": "https://candidates.sos.mn.gov/",
+    "web_observation": "Page identifies November3 general and general-candidate downloadable text products, but complete actual final Senate list/IDs not extracted. CandidateFilingResults search exposes primary filing applicants, so rejected for final ballot mapping. Browser unavailable; direct capture challenge. No current mapping asserted.",
+    "candidate_layout_url": "https://candidates.sos.mn.gov/Media/MediaFileFormat.txt",
+    "layout_observation": "semicolon file fields OfficeID,CandidateName,OfficeID,OfficeTitle,CountyID,Party abbreviation; source warns corrections/change until election day",
+    "mapping_status": "Printed November general names/parties established by official city sample PDFs; see current-ballot.json. Statewide final result IDs/write-in roster remain unavailable.",
+    "subsequent_recovery": "Official CityofIndependence general election page links two actual November3PDFs; eachpage1 visually inspected, fourSenate candidates with same names/parties. Earlier candidatefinder challenge/primary-filings rejection remains retained."
+  },
+  "canvass_metadata": [
+    {
+      "url": "https://officialdocuments.sos.mn.gov/Document/Details/152508",
+      "document_number": "20244152",
+      "document_date": "2024-11-21",
+      "scope": "metadata record only; not a newly acquired2024canvassPDF"
+    },
+    {
+      "url": "https://officialdocuments.sos.mn.gov/Document/Details/140194",
+      "document_number": "224677",
+      "document_date": "2022-11-29",
+      "status_change": "2022-12-02",
+      "scope": "metadata record only; not a newly acquired2022canvassPDF"
+    }
+  ]
+}

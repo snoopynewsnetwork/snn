@@ -1,0 +1,131 @@
+[
+  {
+    "input": {
+      "id": "clipping-required",
+      "shares": [
+        0.01,
+        0.9
+      ],
+      "weights": [
+        10,
+        100
+      ],
+      "target": 0
+    },
+    "output": {
+      "status": "feasible_with_clipping",
+      "unbounded_shift": -0.3190909090909091,
+      "bounded_shift": -0.3500000000000001,
+      "shares": [
+        0.0,
+        0.5499999999999999
+      ],
+      "net": -1.4210854715202004e-14,
+      "clipped_units": 1
+    }
+  },
+  {
+    "input": {
+      "id": "impossible-target",
+      "shares": [
+        0.5
+      ],
+      "weights": [
+        100
+      ],
+      "target": 101
+    },
+    "output": {
+      "status": "impossible",
+      "unbounded_shift": 0.505,
+      "bounded_shift": null,
+      "shares": null,
+      "net": null,
+      "clipped_units": null
+    }
+  },
+  {
+    "input": {
+      "id": "no-positive-pool",
+      "shares": [
+        0.5
+      ],
+      "weights": [
+        0
+      ],
+      "target": 0
+    },
+    "output": {
+      "status": "no_positive_pool",
+      "unbounded_shift": null,
+      "bounded_shift": null,
+      "shares": [
+        0.5
+      ],
+      "net": 0.0,
+      "clipped_units": 0
+    }
+  },
+  {
+    "input": {
+      "id": "unknown-preference",
+      "shares": [
+        null
+      ],
+      "weights": [
+        100
+      ],
+      "target": 0
+    },
+    "output": {
+      "status": "unknown_or_invalid_preference",
+      "unbounded_shift": null,
+      "bounded_shift": null,
+      "shares": null,
+      "net": null,
+      "clipped_units": null
+    }
+  },
+  {
+    "input": {
+      "id": "negative-weight-rejected",
+      "shares": [
+        0.5
+      ],
+      "weights": [
+        -1
+      ],
+      "target": 0
+    },
+    "output": {
+      "status": "invalid_weights_or_target",
+      "unbounded_shift": null,
+      "bounded_shift": null,
+      "shares": null,
+      "net": null,
+      "clipped_units": null
+    }
+  },
+  {
+    "input": {
+      "id": "already-winning-negative-shift",
+      "shares": [
+        0.6
+      ],
+      "weights": [
+        100
+      ],
+      "target": 0
+    },
+    "output": {
+      "status": "feasible_unclipped",
+      "unbounded_shift": -0.09999999999999998,
+      "bounded_shift": -0.1,
+      "shares": [
+        0.5
+      ],
+      "net": 0.0,
+      "clipped_units": 0
+    }
+  }
+]

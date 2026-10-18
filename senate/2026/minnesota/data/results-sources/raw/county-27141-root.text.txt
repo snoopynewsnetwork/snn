@@ -1,0 +1,2992 @@
+
+
+
+
+
+	
+
+				(function(w,d,s,l,i){w.GAMeasurementID='G-LDP30SGDF2';w[l]=w[l]||[];w[l].push({'gtm.start':
+				new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+				j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+				'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+				})(window,document,'script','cpDataLayerGA4','GTM-K73C5PS');
+				
+				
+					var enableTelemetry = 'false'
+					var aiConfig = {
+					instrumentationKey: '1cde048e-3185-4906-aa46-c92a7312b60f'						
+					}
+					var appInsights = window.appInsights || function (a) { function b(a) { c[a] = function () { var b = arguments; c.queue.push(function () { c[a].apply(c, b) }) } } var c = { config: a }, d = document, e = window; setTimeout(function () { var b = d.createElement('script'); b.src = a.url || 'https://js.monitor.azure.com/scripts/a/ai.0.js', d.getElementsByTagName('script')[0].parentNode.appendChild(b) }); try { c.cookie = d.cookie } catch (a) { } c.queue = []; for (var f = ['Event', 'Exception', 'Metric', 'PageView', 'Trace', 'Dependency']; f.length;)b('track' + f.pop()); if (b('setAuthenticatedUserContext'), b('clearAuthenticatedUserContext'), b('startTrackEvent'), b('stopTrackEvent'), b('startTrackPage'), b('stopTrackPage'), b('flush'), !a.disableExceptionTracking) { f = 'onerror', b('_' + f); var g = e[f]; e[f] = function (a, b, d, e, h) { var i = g && g(a, b, d, e, h); return !0 !== i && c['_' + f](a, b, d, e, h), i } } return c }(aiConfig);
+					window.appInsights = appInsights, appInsights.queue && 0 === appInsights.queue.length;
+					// Add telemetry initializer
+					appInsights.queue.push(function() {
+						appInsights.context.addTelemetryInitializer(function(envelope) {
+							var telemetryItem = envelope.data.baseData;
+							// To check the telemetry item’s type:
+							if (!false)
+							{
+								//If the telemetry is not enabled, we still want to capture Google map custom event, so only allow that
+								if (envelope.name.indexOf('.Event') == -1)
+									return false;
+							}
+						});
+					});						
+					appInsights.trackPageView();
+				
+	
+		function populateAntiForgery(token) {
+			var input = document.createElement("input");
+			input.name = "__RequestVerificationToken";
+			input.type = "hidden";
+			input.value = token;
+			var absPat = /^https?:\/\/|^\/\//i;
+			var forms = document.getElementsByTagName("form");
+			for (var i = 0; i < forms.length; i++) {
+				if (forms[i].method == "post" &&
+					!forms[i].querySelector('[name="__RequestVerificationToken"]') &&
+					!absPat.test(forms[i].getAttribute("action"))) {
+					forms[i].appendChild(input.cloneNode());
+				}
+			}
+		}
+
+		function getAntiForgeryToken(callback, error) {
+			var xhr = new XMLHttpRequest();
+			xhr.open("GET", "/antiforgery");
+			xhr.addEventListener("load", function() {
+				try {
+					if (this.status !== 200) {
+						throw Error("Invalid status. Could not retrieve antiforgery token.");
+					}
+					var obj = JSON.parse(this.responseText);
+					callback(obj.token);
+				} catch (e) {
+					typeof error === "function" && error(e);
+				}
+			});
+			xhr.send();
+		}
+
+		getAntiForgeryToken(function(token) {
+			if (document.readyState === "complete"
+				|| document.readyState === "loaded" 
+				|| document.readyState === "interactive") {
+				populateAntiForgery(token);
+				return;
+			}
+			document.addEventListener("DOMContentLoaded", function() {
+				populateAntiForgery(token);
+			}, false);
+		}, console.error);
+	
+			
+
+	
+		window.departmentHeader = {};
+		window.pageSectionTracker = {};
+		window.isResponsiveEnabled = true;
+		window.isRemoveSetHeights= false;
+		if (window.isRemoveSetHeights) {
+			document.documentElement.className += ' removeSetHeights';
+		}
+		window.mainMenuMediaQuery = 'screen and (max-width: 40em)';
+		window.isMobileBrowserIncludingTablets = false;
+		window.fixedResponsiveMenu = false;
+		window.fullWidthResponsiveMenu = false;
+		window.responsiveMenuHeight = '';
+		window.responsiveMenuFontSize = '';
+		window.isContentAdvisor = false;
+		(function () {
+			window.setSizeCookie = function () {
+				document.cookie = "dpi=" + window.devicePixelRatio + "; path=/";
+				document.cookie = "viewportWidth=" + window.innerWidth + "; path=/";
+				document.cookie = "viewportHeight=" + window.innerHeight + "; path=/";
+				if (screen && screen.width && screen.height) {
+					document.cookie = "screenWidth=" + screen.width + "; path=/";
+					document.cookie = "screenHeight=" + screen.height + "; path=/";
+				}
+				document.cookie = "responsiveGhost=1; path=/";
+			};
+
+			setSizeCookie();
+		}());
+	
+		
+
+	
+	
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KFFHFFDD');
+
+
+	
+
+	
+	
+	
+	
+		Sherburne County, MN | Official Website
+
+		
+		
+			
+	
+	
+
+	
+	
+	
+	
+	<!--
+	var intCountryCode = 840;
+	var order = '';
+//-->
+	
+		
+
+	
+	
+		window.Pages = window.Pages || {};
+		// FrontEnd RWD initialization
+		window.Pages.rwdReady = $.Deferred();
+		window.Pages.toolBarDeferred = $.Deferred();
+		window.Pages.rwdSetupComplete = $.Deferred();
+		window.Pages.megaMenuLoaded = $.Deferred();
+		window.Pages.angularToolbarComplete = $.Deferred();
+		window.Pages.frontEndToolbarComplete = $.Deferred();
+	
+	
+	
+	
+	
+	
+	
+
+
+
+
+	
+	
+	
+	
+
+	
+		setEditorVariables(false, 840);
+		function getPrintPreviewType() { return 0; } function printPreview() {pPreview(getPrintPreviewType()); }
+	
+	
+
+
+
+    jQuery(document).click(function (event) {
+	var target = jQuery(event.target);
+	if (target.attr('src') && target.parents('.image').length && target.parents('.widget').length) {
+		var text = target.attr('title');
+		
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Image',
+				eventAction: 'Image - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.is('button') || target.hasClass('button') || target.parents().hasClass('button')) {
+		var text = "";
+		if (target.parents('.button')[0]) {
+			text = target.parents('.button').first().text();
+		} else if (target.text().length) {
+			text = target.text();
+		} else if (target.attr('title').length) {
+			text = target.attr('title');
+		}
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Button',
+				eventAction: 'Button - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetCustomHtml').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Custom Html',
+				eventAction: 'Custom Html Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.editor').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Editor',
+				eventAction: 'Editor Link Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.GraphicLinks').length) {
+		var text = "";
+		var targetGraphicLink = target;
+		if (target.hasClass('widgetGraphicLinksLink')) {
+			targetGraphicLink = jQuery(target.children()[0]);
+		}
+		if (targetGraphicLink.hasClass('text')) {
+			text = targetGraphicLink.text();
+		} else if (targetGraphicLink.attr('src').length) {
+			if (targetGraphicLink.attr('alt').length) {
+				text = targetGraphicLink.attr('alt');
+			} else {
+				text = targetGraphicLink.attr('src');
+			}
+		} else {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Graphic Links',
+				eventAction: 'Graphic Link - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.InfoAdvanced').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Info Advanced',
+				eventAction: 'Info Advanced Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.list').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'List',
+				eventAction: 'List Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.megaMenuItem').length || target.parents('.topMenuItem').length) {
+		var megaMenuText = jQuery('.topMenuItem.mouseover').find('span').text();
+		var breadCrumbs = [];
+		jQuery('.breadCrumbs > li').each(function () {
+			 breadCrumbs.push(this.textContent);
+		});
+		var pageTitle = breadCrumbs.join('>');
+		var subTitleText = target.parents('.megaMenuItem').children('.widgetTitle').children().text();
+		var text = "";
+		if (pageTitle) {
+			text += pageTitle + " | ";
+		} else {
+			text += document.title + ' - ';
+		}
+		if (target.text() == "" && megaMenuText == "") {
+			text += "N/A";
+		} else if (target.text().length && megaMenuText.length) {
+			if (megaMenuText == target.text()) {
+				text += megaMenuText;
+			} else {
+				text += megaMenuText + " - " + subTitleText + " - " + target.text();
+			}
+		} else if (target.text() == "") {
+			text += megaMenuText;
+		} else {
+			text += target.text();
+		}
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Mega Menu',
+				eventAction: 'Mega Menu : ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetNewsFlash').length && target.parents('.widgetItem').length) {
+		var text = jQuery(target.parents('.widgetItem')[0]).find('.widgetTitle').children().text();
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'News Flash',
+				eventAction: 'News Flash - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.hasClass('widgetQuickLinksLink') || target.find('.widgetQuickLinksLink').length) {
+		var text = target.text();
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Quick Links',
+				eventAction: 'Quick Links - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.attr('src') && target.parents('.cpSlideshow').length) {
+		var text = target.attr('title');
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Slideshow',
+				eventAction: 'Slideshow - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetText').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Text',
+				eventAction: 'Text Link Clicked',
+				eventLabel: window.location.href
+			});
+	}
+});
+	
+	
+		
+		
+			
+				
+			
+		
+	
+	
+		
+	
+	
+		
+			
+		
+	
+
+    
+
+Skip to Main Content
+
+    
+
+        
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+        
+                
+                    
+
+
+
+
+
+    
+        Create a Website Account - Manage notification subscriptions, save form progress and more.   
+        
+	        Website Sign In
+        
+    
+
+
+    $(document).ready(function () {
+        $('#signedOutToolbarCreateProfileButton').click(function (event) {
+            event.preventDefault();
+            window.location.href = '/MyAccount/ProfileCreate?from=url&url=/&dn=' + window.location.origin;
+        });
+
+			
+				$('#loggedOutToolbarSignInButton').click(function (event) {
+					event.preventDefault();
+					window.location.href = '/MyAccount/?from=url&url=' + encodeURIComponent(window.location.href.replace(window.location.origin, '')) + '&dn=' + window.location.host;
+				});
+			
+
+		if ('False' == 'True') {
+            $('#loggedOutToolbarSignInButton').hide();
+		}
+    })
+
+
+
+                
+            
+                
+                
+
+
+
+
+
+
+
+
+				
+	
+				                
+
+						
+	
+	
+		
+
+	
+	
+	
+	
+
+		$(document).ready(function () {
+			try {
+				// Minimum characters required before performing a search/autocomplete
+				var minPrefixLength = 3;
+				var autoCompleteDebounceDelay = 500;
+				var searchFieldSelector = "#searchField" + 'e0685dda-9469-408d-9829-db37ea7ed85d';
+				var checkboxSelector = "#ysnSearchOnlyDept" + 'e0685dda-9469-408d-9829-db37ea7ed85d';
+				var buttonSelector = ".widgetSearchButton" + 'e0685dda-9469-408d-9829-db37ea7ed85d';
+				var autoCompleteCache = {};
+				var autoCompleteCacheKeys = [];
+				var autoCompleteCacheLimit = 25;
+				var currentAutoCompleteRequest = null;
+				var currentAutoCompleteRequestKey = null;
+				var autoCompleteDebounceTimer = null;
+				var autoCompleteDebounceKey = null;
+				var pendingAutoCompleteResponses = [];
+
+				function normalizeAutoCompleteTerm(term) {
+					return $.trim((term || "") + "").replace(/\s+/g, " ");
+				}
+
+				function shouldSearch(term) {
+					return normalizeAutoCompleteTerm(term).length >= minPrefixLength;
+				}
+
+				function getAutoCompleteUrl() {
+					return '/Search/AutoComplete' + ($(checkboxSelector).is(':checked') || false? '?departmentId=0' : '');
+				}
+
+				function getAutoCompleteCacheKey(requestUrl, term) {
+					return requestUrl + "|" + term.toLowerCase();
+				}
+
+				function cacheAutoCompleteResult(cacheKey, data) {
+					if (!Object.prototype.hasOwnProperty.call(autoCompleteCache, cacheKey)) {
+						autoCompleteCacheKeys.push(cacheKey);
+						if (autoCompleteCacheKeys.length > autoCompleteCacheLimit) {
+							delete autoCompleteCache[autoCompleteCacheKeys.shift()];
+						}
+					}
+					autoCompleteCache[cacheKey] = data;
+				}
+
+				function respondToPendingAutoComplete(data) {
+					var responses = pendingAutoCompleteResponses;
+					pendingAutoCompleteResponses = [];
+					for (var i = 0; i < responses.length; i++) {
+						responses[i](data);
+					}
+				}
+
+				function cancelPendingAutoComplete() {
+					clearTimeout(autoCompleteDebounceTimer);
+					autoCompleteDebounceKey = null;
+					if (currentAutoCompleteRequest != null) {
+						currentAutoCompleteRequest.abort();
+						currentAutoCompleteRequest = null;
+					}
+					currentAutoCompleteRequestKey = null;
+					respondToPendingAutoComplete([]);
+				}
+
+				function createWidgetAutoCompleteSource(options) {
+					return function (request, response) {
+						var term = normalizeAutoCompleteTerm(request.term);
+						if (!options.shouldSearch(term)) {
+							response([]);
+							return;
+						}
+
+						var requestUrl = options.url();
+						var cacheKey = getAutoCompleteCacheKey(requestUrl, term);
+						if (Object.prototype.hasOwnProperty.call(autoCompleteCache, cacheKey)) {
+							response(autoCompleteCache[cacheKey]);
+							if (options.success) {
+								options.success(autoCompleteCache[cacheKey]);
+							}
+							return;
+						}
+
+						if (currentAutoCompleteRequestKey === cacheKey || autoCompleteDebounceKey === cacheKey) {
+							pendingAutoCompleteResponses.push(response);
+							return;
+						}
+
+						cancelPendingAutoComplete();
+						autoCompleteDebounceKey = cacheKey;
+						pendingAutoCompleteResponses.push(response);
+						autoCompleteDebounceTimer = setTimeout(function () {
+							autoCompleteDebounceKey = null;
+							currentAutoCompleteRequestKey = cacheKey;
+							currentAutoCompleteRequest = $.ajax({
+								url: requestUrl,
+								dataType: "json",
+								timeout: options.timeout,
+								data: {
+									term: term,
+								},
+								success: function (data) {
+									if (currentAutoCompleteRequestKey === cacheKey) {
+										cacheAutoCompleteResult(cacheKey, data);
+										respondToPendingAutoComplete(data);
+										if (options.success) {
+											options.success(data);
+										}
+									}
+								},
+								error: function (xmlhttprequest, textstatus, message) {
+									if (textstatus === "abort") {
+										return;
+									}
+
+									if (options.error) {
+										options.error(xmlhttprequest, textstatus, message);
+									}
+
+									respondToPendingAutoComplete([]);
+								},
+								complete: function (xmlhttprequest) {
+									if (currentAutoCompleteRequest === xmlhttprequest) {
+										currentAutoCompleteRequest = null;
+										currentAutoCompleteRequestKey = null;
+									}
+								}
+							});
+						}, options.delay);
+					};
+				}
+
+				// click handler for search buttons
+				$(buttonSelector).click(function (e) {
+					e.preventDefault();
+					var $btn = $(this);
+					var $field = $btn.siblings(".widgetSearchBox");
+					var term = $field.val() + "";
+					if (!shouldSearch(term)) {
+						// do nothing until user types enough characters
+						$field.focus();
+						return;
+					}
+
+					if ($(checkboxSelector).is(':checked') || false)
+					{
+						doWidgetSearch($.trim(term), Number(0));
+					}
+					else {
+						doWidgetSearch($.trim(term), 0);
+					}
+				});
+
+				// enter key handler for the search field
+				$(searchFieldSelector).keypress(function (e) {
+					var code = e.which || e.keyCode;
+					if (code === 13) {
+						e.preventDefault();
+						var $this = $(this);
+						var term = $this.val() + "";
+						if (!shouldSearch(term)) {
+							// do nothing until user types enough characters
+							$this.focus();
+							return false;
+						}
+
+						if ($(checkboxSelector).is(':checked') || false) {
+							doWidgetSearch($.trim(term), Number(0));
+						} else {
+							doWidgetSearch($.trim(term), 0);
+						}
+						return false;
+					}
+					return true;
+				});
+
+				// autocomplete: set minLength and guard source
+				if (true) {
+					var $searchField = $(searchFieldSelector).autocomplete({
+						minLength: minPrefixLength,
+						source: createWidgetAutoCompleteSource({
+							delay: autoCompleteDebounceDelay,
+							timeout: 10000,
+							shouldSearch: shouldSearch,
+							url: getAutoCompleteUrl,
+							success: function () {
+								$('.autoCompleteError').remove();
+							},
+							error: function (xmlhttprequest, textstatus, message) {
+								if (textstatus === "timeout") {
+									if ($(searchFieldSelector).siblings('.autoCompleteError').length == 0)
+										$('<span class="autoCompleteError"><p class="alert error">Search autocomplete is currently not responding. Please try again later.</p></span>').insertAfter($(searchFieldSelector));
+								}
+							}
+						}),
+						html: true,
+						delay: 0,
+						select: function (event, ui) {
+							$(this).val(ui.item.value);
+							$(this).next().click();
+						}
+					});
+
+					$searchField.data("ui-autocomplete")._renderItem = function (ul, item) {
+						return $("<li class=\"itemList\"></li>")
+							.data("ui-autocomplete-item", item)
+							.append("<a>" + item.label + "</a>")
+							.appendTo(ul);
+					};
+				}
+
+				// keep searchBtnApplyQuery consistent with prefix rule
+				window.searchBtnApplyQuery = function() {
+					var $field = $(searchFieldSelector);
+					var term = $field.val() + "";
+					if (shouldSearch(term)) {
+						// update href for the icon/button (if present)
+						var btn = document.getElementById("btnSearchIcon");
+						if (btn) btn.href = "/Search?searchPhrase=" + encodeURIComponent($.trim(term));
+					} else {
+						var btn = document.getElementById("btnSearchIcon");
+						if (btn) btn.href = "#";
+					}
+				};
+			}
+			catch(e) {} //we're going to eat this error. Autocomplete won't work but we dont wan't to break anything else on the page.
+		});
+	
+
+	
+				
+		
+			
+						
+
+			Search
+		
+
+	
+
+
+
+	  
+		.widgetSearch ::-webkit-input-placeholder {
+		color: #383838;
+	  }
+		.widgetSearch :-moz-placeholder { /* Firefox 18- */
+	   color: #383838;
+	}
+		.widgetSearch ::-moz-placeholder {  /* Firefox 19+ */
+	   color: #383838;
+	}
+	.widgetSearch :-ms-input-placeholder {
+	   color: #383838;
+	}
+	
+
+	.widgetSearch .widgetBody .widgetSearchBoxe0685dda-9469-408d-9829-db37ea7ed85d
+	{
+		color: #383838;
+		font-size: 1em;
+font-family: Open Sans;
+background-color: #ffffff;
+border: none;
+border-radius: 10px;
+height: 65px;
+padding: 0 80px 0 20px;
+box-shadow: 0 3px 6px #00000033;
+	}
+	.widgetSearch .widgetBody .widgetSearchButtone0685dda-9469-408d-9829-db37ea7ed85d
+	{
+		margin: 7.5px;
+width: 50px;
+	}
+	.widgetSearch .widgetSearch-onlyDepte0685dda-9469-408d-9829-db37ea7ed85d
+	{
+		display: inline-block;
+		color: #333;
+		
+		
+		 padding-top: 10px;
+	}
+	#ysnSearchOnlyDepte0685dda-9469-408d-9829-db37ea7ed85d
+	{
+		position: relative;
+		top: .125em;
+	}
+
+
+
+
+
+
+
+
+
+	//Updates search icons href to have the correct queryString
+	function searchBtnApplyQuery() {
+		document.getElementById("btnSearchIcon").href = "/Search?searchPhrase=" + document.getElementById("searchFielde0685dda-9469-408d-9829-db37ea7ed85d").value;
+	}
+
+
+
+
+	 
+
+	 
+
+			 
+
+
+	
+
+    How Do I...  			    Your Government  			    Services  			    Doing Business  			
+
+
+
+	
+		(function () {
+			function setupMenu() {
+				const menuID = 'mainNavMenu';
+				const menuType = MAIN_MENU;
+
+				//setup menu manager properties for main menu
+				if (!menuManager.mobileMainNav && true)
+					menuManager.adjustMainItemsWidth('#' + menuID);
+				menuManager.isMainMenuEditable = false;
+				menuManager.mainMenuMaxSubMenuLevels = 4;
+				menuManager.setMOMMode(2, menuType);
+
+				//Init main menu
+				const setupDraggable = menuManager.isMainMenuEditable;
+				const urlToGetHiddenMenus = '/Pages/MenuMain/HiddenMainSubMenus?pageID=1&moduleID=&themeID=39&menuContainerID=mainNav';
+
+				menuManager.setupMenu(menuID, 'mainNav', menuType, setupDraggable, urlToGetHiddenMenus);
+				menuManager.mainMenuInit = true;
+				menuManager.mainMenuTextResizer = false;
+				if (1.00 > 0)
+					menuManager.mainMenuTextResizerRatio = 1.00;
+				if (window.isResponsiveEnabled)
+					menuManager.mainMenuReady.resolve();
+
+			}
+
+			if (document.readyState === "complete"
+				|| document.readyState === "loaded"
+				|| document.readyState === "interactive") {
+				setupMenu();
+				return;
+			}
+
+			document.addEventListener("DOMContentLoaded", setupMenu);
+		})();
+	
+
+
+	
+				                
+
+
+
+	
+	
+				                
+
+
+
+	
+	
+				                
+
+
+
+	
+	
+				                
+
+
+
+	
+
+
+
+
+	
+				                
+
+						
+	
+	
+		
+    
+
+
+
+
+
+	
+			
+		
+								
+	
+	
+		
+					
+						
+
+
+	
+						
+					
+		
+	
+	
+
+	
+
+	
+
+
+
+
+	//Render slideshow if info advacned items contain one.
+	$(document).ready(function (e) {
+		$('#divInfoAdv43cbca43-4d7f-4197-a9aa-6ae98fab5089 .InfoAdvanced.widgetItem').each(function () {
+			renderSlideshowIfApplicable($(this));		
+		});
+	});
+
+	 
+
+	 
+
+			 
+
+
+	
+
+
+
+
+
+
+
+		
+		
+			
+			
+		
+			
+				$(window).on("load", function () {
+					$.when(window.Pages.rwdSetupComplete)
+						.done(function () {
+							renderExternalBannerSlideshow('banner1',
+								{"BannerOptionID":124,"ThemeID":39,"SlotName":"banner1","Name":"Default","IsDefault":true,"BannerMode":2,"SlideShowSlideTiming":"5","SlideshowTransition":0,"SlideShowTransitionTiming":"1","ImageScale":true,"ImageAlignment":1,"ImageScroll":true,"MuteSound":true,"VideoType":0,"Status":40,"SlideshowControlsPosition":0,"SlideshowControlsAlignment":0,"SlideshowBannerControlsColorScheme":0,"DisplayVideoPauseButton":false,"VideoPauseButtonAlignment":1,"VideoPauseButtonControlsAlignment":0,"VideoPauseButtonStyle":"#FFFFFF","VideoPauseButtonBackgroundStyle":"#000000","VideoPauseButtonAlignmentClass":"alignRight viewport","DisplaySlideshowPauseButton":true,"SlideshowControlsColor":"#FFFFFF","SlideshowControlsBackgroundColor":"#000000","SlideshowPauseButtonClass":"isHidden","BannerImages":[{"BannerImageID":520,"BannerOptionID":124,"FileName":"/ImageRepository/Document?documentID=7483","Height":875,"Width":2600,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":1,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":""},{"BannerImageID":521,"BannerOptionID":124,"FileName":"/ImageRepository/Document?documentID=6680","Height":807,"Width":2600,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":2,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":""},{"BannerImageID":522,"BannerOptionID":124,"FileName":"/ImageRepository/Document?documentID=6678","Height":822,"Width":2600,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":3,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":""},{"BannerImageID":523,"BannerOptionID":124,"FileName":"/ImageRepository/Document?documentID=3859","Height":650,"Width":2600,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":4,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":""},{"BannerImageID":531,"BannerOptionID":124,"FileName":"/ImageRepository/Document?documentID=11586","Height":652,"Width":2600,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":5,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":""}],"BannerVideos":[],"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/"},
+								'/App_Themes/2023 - Home/Images/',
+								'Rotating');
+						});
+				});
+			
+
+
+
+	
+				                
+
+						
+	
+	
+		
+
+
+
+
+
+
+	
+		
+				
+	
+	
+		
+				
+					
+
+
+	
+		
+			Payments & FeesOnline Payment Options
+		
+	
+
+		.fancyButton456.fancyButton:link,.fancyButton456.fancyButton:visited, .fancyButton456div.fancyButton{
+	background-image: url('/ImageRepository/Document?documentID=9073');
+	background-repeat: no-repeat;
+	background-position: center 10px ;
+background-size: 140px;
+-webkit-transition: .2s ease-in-out;
+-moz-transition: .2s ease-in-out;
+-o-transition: .2s ease-in-out;
+transition: .2s ease-in-out;}
+.fancyButton456.fancyButton:hover,.fancyButton456.fancyButton:focus,.fancyButton456.fancyButton:active,.fancyButton456.fancyButton.hover{
+	background-image: url('/ImageRepository/Document?documentID=9072');
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+.fancyButton456.fancyButton:link > span,.fancyButton456.fancyButton:visited > span, .fancyButton456div.fancyButton > span{
+}
+.fancyButton456.fancyButton:hover > span,.fancyButton456.fancyButton:focus > span,.fancyButton456.fancyButton:active > span,.fancyButton456.fancyButton.hover > span{
+}
+.fancyButton456.fancyButton .text{
+	padding-top: 9.5em;
+	text-decoration: none;
+	padding-top: 9.5em;
+	background-image: url('/ImageRepository/Document?documentID=9078');
+	background-repeat: no-repeat;
+	background-position: center 51px ;
+background-size: 55px;
+-webkit-transition: .2s ease-in-out;
+-moz-transition: .2s ease-in-out;
+-o-transition: .2s ease-in-out;
+transition: .2s ease-in-out;
+}
+.fancyButton456.fancyButton:hover .text,.fancyButton456.fancyButton:focus .text,.fancyButton456.fancyButton:active .text,.fancyButton456.fancyButton.hover .text{
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: center 41px ;
+
+
+}
+.fancyButton456.fancyButton .textStyle1{
+	color: rgb(29, 72, 104);
+	font-size: 1.1em;
+	font-family: Open Sans;
+	font-weight: 600;
+	text-decoration: none;
+
+}
+.fancyButton456.fancyButton:hover .textStyle1, .fancyButton456.fancyButton.hover .textStyle1{
+	text-decoration: underline;
+
+}
+.fancyButton456.fancyButton .textStyle2{
+	font-size: .95em;
+	text-decoration: none;
+display: block;
+color: transparent;
+transition: all .3s ease-in-out;}
+.fancyButton456.fancyButton:hover .textStyle2, .fancyButton456.fancyButton.hover .textStyle2{
+	text-decoration: none;
+color: #383838;}
+
+
+ 
+
+
+	
+		
+			Career OpportunitiesEmployment & Internships
+		
+	
+
+		.fancyButton458.fancyButton:link,.fancyButton458.fancyButton:visited, .fancyButton458div.fancyButton{
+	background-image: url('/ImageRepository/Document?documentID=9073');
+	background-repeat: no-repeat;
+	background-position: center 10px ;
+background-size: 140px;
+-webkit-transition: .2s ease-in-out;
+-moz-transition: .2s ease-in-out;
+-o-transition: .2s ease-in-out;
+transition: .2s ease-in-out;}
+.fancyButton458.fancyButton:hover,.fancyButton458.fancyButton:focus,.fancyButton458.fancyButton:active,.fancyButton458.fancyButton.hover{
+	background-image: url('/ImageRepository/Document?documentID=9083');
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+.fancyButton458.fancyButton:link > span,.fancyButton458.fancyButton:visited > span, .fancyButton458div.fancyButton > span{
+}
+.fancyButton458.fancyButton:hover > span,.fancyButton458.fancyButton:focus > span,.fancyButton458.fancyButton:active > span,.fancyButton458.fancyButton.hover > span{
+}
+.fancyButton458.fancyButton .text{
+	padding-top: 9.5em;
+	text-decoration: none;
+	padding-top: 9.5em;
+	background-image: url('/ImageRepository/Document?documentID=9074');
+	background-repeat: no-repeat;
+	background-position: center 53px ;
+background-size: 55px;
+-webkit-transition: .2s ease-in-out;
+-moz-transition: .2s ease-in-out;
+-o-transition: .2s ease-in-out;
+transition: .2s ease-in-out;
+}
+.fancyButton458.fancyButton:hover .text,.fancyButton458.fancyButton:focus .text,.fancyButton458.fancyButton:active .text,.fancyButton458.fancyButton.hover .text{
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: center 43px ;
+
+
+}
+.fancyButton458.fancyButton .textStyle1{
+	color: rgb(29, 72, 104);
+	font-size: 1.1em;
+	font-family: Open Sans;
+	font-weight: 600;
+	text-decoration: none;
+
+}
+.fancyButton458.fancyButton:hover .textStyle1, .fancyButton458.fancyButton.hover .textStyle1{
+	text-decoration: underline;
+
+}
+.fancyButton458.fancyButton .textStyle2{
+	font-size: .95em;
+	text-decoration: none;
+display: block;
+color: transparent;
+transition: all .3s ease-in-out;}
+.fancyButton458.fancyButton:hover .textStyle2, .fancyButton458.fancyButton.hover .textStyle2{
+	text-decoration: none;
+color: #383838;}
+
+
+ 
+
+
+	
+		
+			Drivers License/PassportsCheck if Appointment is Required
+		
+	
+
+		.fancyButton457.fancyButton:link,.fancyButton457.fancyButton:visited, .fancyButton457div.fancyButton{
+	background-image: url('/ImageRepository/Document?documentID=9073');
+	background-repeat: no-repeat;
+	background-position: center 10px ;
+background-size: 140px;
+-webkit-transition: .2s ease-in-out;
+-moz-transition: .2s ease-in-out;
+-o-transition: .2s ease-in-out;
+transition: .2s ease-in-out;}
+.fancyButton457.fancyButton:hover,.fancyButton457.fancyButton:focus,.fancyButton457.fancyButton:active,.fancyButton457.fancyButton.hover{
+	background-image: url('/ImageRepository/Document?documentID=9079');
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+.fancyButton457.fancyButton:link > span,.fancyButton457.fancyButton:visited > span, .fancyButton457div.fancyButton > span{
+}
+.fancyButton457.fancyButton:hover > span,.fancyButton457.fancyButton:focus > span,.fancyButton457.fancyButton:active > span,.fancyButton457.fancyButton.hover > span{
+}
+.fancyButton457.fancyButton .text{
+	padding-top: 9.5em;
+	text-decoration: none;
+	padding-top: 9.5em;
+	background-image: url('/ImageRepository/Document?documentID=9071');
+	background-repeat: no-repeat;
+	background-position: center 52px ;
+background-size: 55px;
+-webkit-transition: .2s ease-in-out;
+-moz-transition: .2s ease-in-out;
+-o-transition: .2s ease-in-out;
+transition: .2s ease-in-out;
+}
+.fancyButton457.fancyButton:hover .text,.fancyButton457.fancyButton:focus .text,.fancyButton457.fancyButton:active .text,.fancyButton457.fancyButton.hover .text{
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: center 42px ;
+
+
+}
+.fancyButton457.fancyButton .textStyle1{
+	color: rgb(29, 72, 104);
+	font-size: 1.1em;
+	font-family: Open Sans;
+	font-weight: 600;
+	text-decoration: none;
+
+}
+.fancyButton457.fancyButton:hover .textStyle1, .fancyButton457.fancyButton.hover .textStyle1{
+	text-decoration: underline;
+
+}
+.fancyButton457.fancyButton .textStyle2{
+	font-size: .95em;
+	text-decoration: none;
+display: block;
+color: transparent;
+transition: all .3s ease-in-out;}
+.fancyButton457.fancyButton:hover .textStyle2, .fancyButton457.fancyButton.hover .textStyle2{
+	text-decoration: none;
+color: #383838;}
+
+
+ 
+				
+			
+		
+	
+			
+
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+
+
+
+
+
+
+	
+		
+				
+	
+	
+		
+				
+					
+
+
+	
+		
+			Mapping GIS Applications
+		
+	
+
+		.fancyButton459.fancyButton:link,.fancyButton459.fancyButton:visited, .fancyButton459div.fancyButton{
+	background-image: url('/ImageRepository/Document?documentID=9073');
+	background-repeat: no-repeat;
+	background-position: center 10px ;
+background-size: 140px;
+-webkit-transition: .2s ease-in-out;
+-moz-transition: .2s ease-in-out;
+-o-transition: .2s ease-in-out;
+transition: .2s ease-in-out;}
+.fancyButton459.fancyButton:hover,.fancyButton459.fancyButton:focus,.fancyButton459.fancyButton:active,.fancyButton459.fancyButton.hover{
+	background-image: url('/ImageRepository/Document?documentID=9072');
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+.fancyButton459.fancyButton:link > span,.fancyButton459.fancyButton:visited > span, .fancyButton459div.fancyButton > span{
+}
+.fancyButton459.fancyButton:hover > span,.fancyButton459.fancyButton:focus > span,.fancyButton459.fancyButton:active > span,.fancyButton459.fancyButton.hover > span{
+}
+.fancyButton459.fancyButton .text{
+	padding-top: 9.5em;
+	text-decoration: none;
+	padding-top: 9.5em;
+	background-image: url('/ImageRepository/Document?documentID=9075');
+	background-repeat: no-repeat;
+	background-position: center 50px ;
+background-size: 55px;
+-webkit-transition: .2s ease-in-out;
+-moz-transition: .2s ease-in-out;
+-o-transition: .2s ease-in-out;
+transition: .2s ease-in-out;
+}
+.fancyButton459.fancyButton:hover .text,.fancyButton459.fancyButton:focus .text,.fancyButton459.fancyButton:active .text,.fancyButton459.fancyButton.hover .text{
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: center 40px ;
+
+
+}
+.fancyButton459.fancyButton .textStyle1{
+	color: rgb(29, 72, 104);
+	font-size: 1.1em;
+	font-family: Open Sans;
+	font-weight: 600;
+	text-decoration: none;
+
+}
+.fancyButton459.fancyButton:hover .textStyle1, .fancyButton459.fancyButton.hover .textStyle1{
+	text-decoration: underline;
+
+}
+.fancyButton459.fancyButton .textStyle2{
+	font-size: .95em;
+	text-decoration: none;
+display: block;
+color: transparent;
+transition: all .3s ease-in-out;}
+.fancyButton459.fancyButton:hover .textStyle2, .fancyButton459.fancyButton.hover .textStyle2{
+	text-decoration: none;
+color: #383838;}
+
+
+ 
+
+
+	
+		
+			Property TaxesPay Property Taxes
+		
+	
+
+		.fancyButton460.fancyButton:link,.fancyButton460.fancyButton:visited, .fancyButton460div.fancyButton{
+	background-image: url('/ImageRepository/Document?documentID=9073');
+	background-repeat: no-repeat;
+	background-position: center 10px ;
+background-size: 140px;
+-webkit-transition: .2s ease-in-out;
+-moz-transition: .2s ease-in-out;
+-o-transition: .2s ease-in-out;
+transition: .2s ease-in-out;}
+.fancyButton460.fancyButton:hover,.fancyButton460.fancyButton:focus,.fancyButton460.fancyButton:active,.fancyButton460.fancyButton.hover{
+	background-image: url('/ImageRepository/Document?documentID=9079');
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+.fancyButton460.fancyButton:link > span,.fancyButton460.fancyButton:visited > span, .fancyButton460div.fancyButton > span{
+}
+.fancyButton460.fancyButton:hover > span,.fancyButton460.fancyButton:focus > span,.fancyButton460.fancyButton:active > span,.fancyButton460.fancyButton.hover > span{
+}
+.fancyButton460.fancyButton .text{
+	padding-top: 9.5em;
+	text-decoration: none;
+	padding-top: 9.5em;
+	background-image: url('/ImageRepository/Document?documentID=9077');
+	background-repeat: no-repeat;
+	background-position: center 51px ;
+background-size: 55px;
+-webkit-transition: .2s ease-in-out;
+-moz-transition: .2s ease-in-out;
+-o-transition: .2s ease-in-out;
+transition: .2s ease-in-out;
+}
+.fancyButton460.fancyButton:hover .text,.fancyButton460.fancyButton:focus .text,.fancyButton460.fancyButton:active .text,.fancyButton460.fancyButton.hover .text{
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: center 41px ;
+
+
+}
+.fancyButton460.fancyButton .textStyle1{
+	color: rgb(29, 72, 104);
+	font-size: 1.1em;
+	font-family: Open Sans;
+	font-weight: 600;
+	text-decoration: none;
+
+}
+.fancyButton460.fancyButton:hover .textStyle1, .fancyButton460.fancyButton.hover .textStyle1{
+	text-decoration: underline;
+
+}
+.fancyButton460.fancyButton .textStyle2{
+	font-size: .95em;
+	text-decoration: none;
+display: block;
+color: transparent;
+transition: all .3s ease-in-out;}
+.fancyButton460.fancyButton:hover .textStyle2, .fancyButton460.fancyButton.hover .textStyle2{
+	text-decoration: none;
+color: #383838;}
+
+
+ 
+
+
+	
+		
+			Parks & RecreationOutdoor Recreation
+		
+	
+
+		.fancyButton461.fancyButton:link,.fancyButton461.fancyButton:visited, .fancyButton461div.fancyButton{
+	background-image: url('/ImageRepository/Document?documentID=9073');
+	background-repeat: no-repeat;
+	background-position: center 10px ;
+background-size: 140px;
+-webkit-transition: .2s ease-in-out;
+-moz-transition: .2s ease-in-out;
+-o-transition: .2s ease-in-out;
+transition: .2s ease-in-out;}
+.fancyButton461.fancyButton:hover,.fancyButton461.fancyButton:focus,.fancyButton461.fancyButton:active,.fancyButton461.fancyButton.hover{
+	background-image: url('/ImageRepository/Document?documentID=9083');
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+.fancyButton461.fancyButton:link > span,.fancyButton461.fancyButton:visited > span, .fancyButton461div.fancyButton > span{
+}
+.fancyButton461.fancyButton:hover > span,.fancyButton461.fancyButton:focus > span,.fancyButton461.fancyButton:active > span,.fancyButton461.fancyButton.hover > span{
+}
+.fancyButton461.fancyButton .text{
+	padding-top: 9.5em;
+	text-decoration: none;
+	padding-top: 9.5em;
+	background-image: url('/ImageRepository/Document?documentID=9076');
+	background-repeat: no-repeat;
+	background-position: center 51px ;
+background-size: 55px;
+-webkit-transition: .2s ease-in-out;
+-moz-transition: .2s ease-in-out;
+-o-transition: .2s ease-in-out;
+transition: .2s ease-in-out;
+}
+.fancyButton461.fancyButton:hover .text,.fancyButton461.fancyButton:focus .text,.fancyButton461.fancyButton:active .text,.fancyButton461.fancyButton.hover .text{
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: center 41px ;
+
+
+}
+.fancyButton461.fancyButton .textStyle1{
+	color: rgb(29, 72, 104);
+	font-size: 1.1em;
+	font-family: Open Sans;
+	font-weight: 600;
+	text-decoration: none;
+
+}
+.fancyButton461.fancyButton:hover .textStyle1, .fancyButton461.fancyButton.hover .textStyle1{
+	text-decoration: underline;
+
+}
+.fancyButton461.fancyButton .textStyle2{
+	font-size: .95em;
+	text-decoration: none;
+display: block;
+color: transparent;
+transition: all .3s ease-in-out;}
+.fancyButton461.fancyButton:hover .textStyle2, .fancyButton461.fancyButton.hover .textStyle2{
+	text-decoration: none;
+color: #383838;}
+
+
+ 
+				
+			
+		
+	
+			
+
+
+
+	 
+
+	 
+
+			 
+
+
+	
+
+
+
+
+
+$('#breadCrumbs').hide();
+	
+	
+		
+
+	
+	
+	
+	
+	
+	
+	
+
+			
+		
+			
+
+						
+	
+	
+		
+
+	
+
+	$(document).ready(function (e) {		
+	    renderSlideshowIfApplicable($('#divEditor' + '746e68fa-bcf9-42ae-a539-7edb2a5c4e49'));
+	});
+
+
+
+	 
+
+	 
+
+			 
+
+
+		
+
+	
+
+	
+	
+
+	
+
+
+
+
+
+	
+				                
+
+						
+	
+	
+		
+    
+
+
+
+
+
+	
+			
+		
+								
+	
+	
+		
+					
+						
+
+
+	What Can We Help You Find?
+
+
+	Popular Resources & Topics
+						
+					
+		
+	
+	
+
+	
+
+	
+
+
+
+
+	//Render slideshow if info advacned items contain one.
+	$(document).ready(function (e) {
+		$('#divInfoAdvb9f010f6-1d5e-40e9-a5dd-a62dec457e92 .InfoAdvanced.widgetItem').each(function () {
+			renderSlideshowIfApplicable($(this));		
+		});
+	});
+
+	 
+
+	 
+	
+	
+		
+	
+
+
+
+
+
+
+
+
+	
+			
+		
+						
+	
+	
+        
+				
+					
+
+
+
+
+    
+        Contact Us
+        
+    
+
+
+
+
+    
+        Meeting Agendas and Minutes
+        
+    
+					
+				
+				
+					
+
+
+
+
+    
+        Economic Development
+        
+    
+
+
+
+
+    
+        Obtain a Permit
+        
+    
+					
+				
+				
+					
+
+
+
+
+    
+        Veteran Services
+        
+    
+
+
+
+
+    
+        Health & Human Services
+        
+    
+					
+				
+				
+					
+
+
+
+
+    
+        Election and Voter Information
+        
+    
+
+
+
+
+    
+        Sheriff's Office
+        
+    
+					
+				
+		
+        
+	
+	
+	
+	
+		/QuickLinks.aspx
+	
+
+	
+
+
+	 
+
+	 
+
+			 
+
+
+	
+
+
+	
+				                
+
+						
+	
+	
+		
+    
+
+
+
+
+
+	
+			
+		
+								
+	
+	
+		
+					
+						
+
+
+	News & Spotlights
+
+
+	Stay Up To Date
+						
+					
+		
+	
+	
+
+	
+
+	
+
+
+
+
+	//Render slideshow if info advacned items contain one.
+	$(document).ready(function (e) {
+		$('#divInfoAdv407e1640-fb2c-41a5-883f-f209f74d8b5e .InfoAdvanced.widgetItem').each(function () {
+			renderSlideshowIfApplicable($(this));		
+		});
+	});
+
+	 
+
+	 
+	
+	
+		
+
+		
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+			
+
+
+
+
+
+	
+		
+						
+								
+						
+									Information about the upcoming Nov. 3 election 
+	
+Access your sample ballot, find your polling place, vote by mail. Learn about the upcoming Nov. 3 election.						Read on...
+	
+
+						
+						
+						
+								
+						
+									Public accuracy test of voting equipment Oct. 28, 29 
+	
+The public is invited to attend public accuracy tests Oct. 28 and 29 of the equipment that will be used in the Nov. 3 election.						Read on...
+	
+
+						
+						
+						
+								
+						
+									Public hearing Oct. 20 on fee schedule 
+	
+Sherburne County commissioners will hold a public hearing Oct. 20 at 9 a.m. to set the 2026 fee schedule.						Read on...
+	
+
+						
+						
+						
+								
+						
+									Sherburne farmers can apply for FSA loans for drought 
+	
+A federal drought declaration means Sherburne County farmers can apply for Farm Service Agency emergency loan assistance.						Read on...
+	
+
+						
+						
+						
+								
+						
+									E-Bike and E-Scooter Safety 
+	
+The rise in the use of E-bikes and similar modes of transportation on streets, sidewalks and trails comes with rules regarding what can be used, where and with what safety precautions in mind.						Read on...
+	
+
+						
+						
+						
+								
+						
+									Two Inlets at Bdé He?áka - Omashkooz Zaaga’igaans Regional Park Construction 
+	
+Two Inlets at Bdé He?áka - Omashkooz Zaaga’igaans Regional Park is undergoing an exciting first phase of park development and is under construction and closed for the remainder of the Summer.						Read on...
+	
+
+						
+						
+						
+								
+						
+									Seeking input on Hazard Mitigation Plan 
+	
+Sherburne County residents, community leaders, business owners, area agencies and organizations now have an opportunity to share how severe weather events impact their property and lives.						Read on...
+	
+
+						
+						
+						
+								
+						
+									Highway 169 and County Road 4 construction updates 
+	
+Click here to see the most updated information on the U.S. Highway 169 and Sherburne County Road 4 construction project.						Read on...
+	
+
+						
+						
+
+		
+	
+
+
+	// <!--
+	window.$ = window.$ || window.parent.$;
+
+	$(window).on('load', function () {
+		//Wait for the DOM to load completely before executing carousel logic since its all based on carousel width which wont come out correct until the DOM has loaded. Vishal
+		if(!window.carouselsToInit){
+			window.carouselsToInit = new Array();
+		}
+		var widgetNewsFlashdae7b30e6e28461ea3be2b22908f8e87 = function()
+		{
+			var widgetWindow = $('#widgetNewsFlashdae7b30e-6e28-461e-a3be-2b22908f8e87').find('.cpWindow')[0];
+			if(widgetWindow){
+				if(widgetWindow.clientWidth != 0){
+					window.setTimeout(function(){
+						$('#widgetNewsFlashdae7b30e-6e28-461e-a3be-2b22908f8e87').adaptiveCarousel({
+							minSlideWidth: 200,
+							maxSlideWidth: 350,
+							gutterWidth: 40,
+							circular: true,
+							teaser: false,
+							transitionTiming: 500,
+							noImageRequired: false
+							});
+					}, 250);
+					var index = window.carouselsToInit.indexOf(widgetNewsFlashdae7b30e6e28461ea3be2b22908f8e87);
+					if (index > -1) {
+						window.carouselsToInit.splice(index, 1);
+					}
+				}
+			}
+		}
+		var indexCarouselsToInit = window.carouselsToInit.indexOf(widgetNewsFlashdae7b30e6e28461ea3be2b22908f8e87);
+		if (indexCarouselsToInit === -1) {
+			window.carouselsToInit.push(widgetNewsFlashdae7b30e6e28461ea3be2b22908f8e87);
+		}
+
+		if (window.carouselsToInit) {
+			window.carouselsToInit.forEach(function (carouselToInit) { carouselToInit(); });
+		}
+
+		if (window.Pages.onResizeHandlers){
+			window.Pages.onResizeHandlers.forEach(function(car){car();});
+		}
+	});
+
+	if (Modernizr.touch) {
+		var $pages = typeof window.Pages == 'undefined' ? window.parent.Pages : window.Pages;
+		$.when($pages.rwdReady).done(function () {
+			//only for responsive sites
+			if (typeof($$) !== 'undefined') {
+				$$('#widgetNewsFlashdae7b30e-6e28-461e-a3be-2b22908f8e87').on('swipeRight', function (e, a) {
+					$(this).adaptiveCarousel("moveBack");
+				});
+				$$('#widgetNewsFlashdae7b30e-6e28-461e-a3be-2b22908f8e87').on('swipeLeft', function (e) {
+					$(this).adaptiveCarousel("moveForward");
+				});
+			}
+		});
+	}
+	// -->
+
+
+		View All News
+			
+	
+	
+	
+		/CivicAlerts.aspx
+	
+
+	
+
+
+
+
+
+
+
+
+
+	 
+
+	 
+
+			 
+
+
+	
+
+
+	
+				                
+
+						
+	
+	
+		
+    
+
+
+
+
+
+	
+			
+		
+								
+	
+	
+		
+					
+						
+
+
+	Upcoming Events
+
+
+	Get Connected
+						
+					
+		
+	
+	
+
+	
+
+	
+
+
+
+
+	//Render slideshow if info advacned items contain one.
+	$(document).ready(function (e) {
+		$('#divInfoAdv16ac729c-c59c-4d96-a342-e062095bc2b0 .InfoAdvanced.widgetItem').each(function () {
+			renderSlideshowIfApplicable($(this));		
+		});
+	});
+
+	 
+
+	 
+	
+	
+		
+
+	
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+				
+					
+
+
+
+
+
+
+
+
+	
+
+
+
+
+				
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		Tue, Oct. 20  
+		
+					County Board Meeting
+
+		
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		Tue, Nov. 3  
+		
+					County Board Meeting
+
+		
+	
+					
+				
+				
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		Tue, Nov. 17  
+		
+					County Board Meeting
+
+		
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		Tue, Dec. 1  
+		
+					County Board Meeting
+
+		
+	
+					
+				
+
+
+									
+		        View All Events
+					
+	
+		
+	
+	
+		/Calendar.aspx
+	
+
+
+
+	 
+
+	 
+
+			 
+
+
+	
+
+
+	
+				                
+
+						
+	
+	
+		
+    
+
+
+
+
+
+	
+			
+		
+								
+	
+	
+		
+					
+						
+
+
+	
+
+
+	Mission: "To provide accessible and cost-effective services to support quality of life for the Sherburne County community."
+						
+					
+		
+	
+	
+
+	
+
+	
+
+
+
+
+	//Render slideshow if info advacned items contain one.
+	$(document).ready(function (e) {
+		$('#divInfoAdv795ac2f1-b8cc-422a-8cfb-489133f24dea .InfoAdvanced.widgetItem').each(function () {
+			renderSlideshowIfApplicable($(this));		
+		});
+	});
+
+	 
+
+	 
+
+							
+	
+	
+		
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+    
+
+
+
+
+
+	
+			
+		
+					Contact Us
+								
+	
+	
+		
+					
+						
+
+
+	Sherburne County Government Center
+
+
+	13880 Business Center Drive NW
+
+
+	Suite 100
+
+
+	Elk River, MN 55330-4668
+
+
+	Phone: 763-765-3000
+
+
+	Facebook
+
+
+	Contact Us
+						
+					
+		
+	
+	
+
+	
+
+	
+
+
+
+
+	//Render slideshow if info advacned items contain one.
+	$(document).ready(function (e) {
+		$('#divInfoAdvd04d9b96-9595-4cb7-a246-62790770b95d .InfoAdvanced.widgetItem').each(function () {
+			renderSlideshowIfApplicable($(this));		
+		});
+	});
+
+	 
+
+	 
+
+							
+	
+	
+		
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+	
+
+
+
+
+
+
+
+
+	
+			
+		
+					Quick Links
+						
+	
+	
+        
+				
+					
+
+
+
+
+    
+        Obtain a Permit
+        
+    
+
+
+
+
+    
+        County Ordinances
+        
+    
+
+
+
+
+    
+        Elections Information
+        
+    
+
+
+
+
+    
+        Licenses
+        
+    
+
+
+
+
+    
+        Immunizations
+        
+    
+
+
+
+
+    
+        Emergency Preparedness
+        
+    
+
+
+
+
+    
+        Veterans Services
+        
+    
+
+
+
+
+    
+        Strategic Plan/Mission Statement
+        
+    
+					
+				
+		
+        
+	
+	
+	
+	
+		/QuickLinks.aspx
+	
+
+	
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+	
+
+
+
+
+
+
+
+
+	
+			
+		
+					Site Links
+						
+	
+	
+        
+				
+					
+
+
+
+
+    
+        Home
+        
+    
+
+
+
+
+    
+        Give Us Your Feedback
+        
+    
+
+
+
+
+    
+        Employee Access
+        
+    
+
+
+
+
+    
+        Site Map
+        
+    
+
+
+
+
+    
+        Accessibility
+        
+    
+
+
+
+
+    
+        Copyright Notices
+        
+    
+
+
+
+
+    
+        Privacy Policy
+        
+    
+					
+				
+		
+        
+	
+	
+	
+	
+		/QuickLinks.aspx
+	
+
+	
+
+
+	 
+
+	 
+
+			 
+
+
+	
+
+
+	
+				                
+
+						
+	
+	
+		
+ 
+	
+	
+		
+
+    
+    /* CP icon */
+    .cpBylineIconTS {
+        color: #fff;
+    }
+    /* CP Text */
+    .cpBylineTextTS,
+    .cpBylineTextTS a:link {
+        color: #fff;
+    }
+
+    .cpBylineTS {
+        text-align: center;
+    }
+    
+    .cpBylineIconTS {
+        fill: currentColor;
+        width: 39px;
+        height: 26px;
+        display: inline;
+        vertical-align: middle;
+    }
+    
+
+    
+    
+        
+        
+    
+    Government Websites by CivicPlus®
+    
+	
+
+	
+
+	 
+
+	 
+
+			 
+
+
+	
+
+
+
+
+
+
+		
+		
+			
+			
+		
+			
+				$(window).on("load", function () {
+					$.when(window.Pages.rwdSetupComplete)
+						.done(function () {
+							renderExternalBannerSlideshow('banner2',
+								{"BannerOptionID":125,"ThemeID":39,"SlotName":"banner2","Name":"Default","IsDefault":true,"BannerMode":2,"SlideShowSlideTiming":"5","SlideshowTransition":0,"SlideShowTransitionTiming":"1","ImageScale":false,"ImageAlignment":2,"ImageScroll":false,"MuteSound":true,"VideoType":0,"Status":40,"SlideshowControlsPosition":0,"SlideshowControlsAlignment":0,"SlideshowBannerControlsColorScheme":0,"DisplayVideoPauseButton":false,"VideoPauseButtonAlignment":1,"VideoPauseButtonControlsAlignment":0,"VideoPauseButtonStyle":"#FFFFFF","VideoPauseButtonBackgroundStyle":"#000000","VideoPauseButtonAlignmentClass":"alignRight viewport","DisplaySlideshowPauseButton":true,"SlideshowControlsColor":"#FFFFFF","SlideshowControlsBackgroundColor":"#000000","SlideshowPauseButtonClass":"isHidden","BannerImages":[{"BannerImageID":391,"BannerOptionID":125,"FileName":"/ImageRepository/Document?documentID=9065","Height":1100,"Width":2200,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":1,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":""},{"BannerImageID":392,"BannerOptionID":125,"FileName":"/ImageRepository/Document?documentID=9064","Height":1100,"Width":2200,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":4,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":""}],"BannerVideos":[{"BannerVideoID":8,"BannerOptionID":125,"VideoFileName":"","ImageFileName":"EmptyBannerBkg202311210856215399.png","IsLink":false,"LinkAddress":null,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","VideoFileID":"00000000-0000-0000-0000-000000000000","ImageFileID":"00000000-0000-0000-0000-000000000000","VideoWidth":0,"VideoHeight":0,"ImageWidth":0,"ImageHeight":0,"LinkedVideoUrl":"","RecordStatus":0,"AltText":null}],"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/"},
+								'/App_Themes/2023 - Home/Images/',
+								'Rotating');
+						});
+				});
+			
+
+
+
+
+
+            
+        
+    
+
+
+
+
+	
+		
+			Loading
+			
+				
+					
+				
+			
+		
+		
+			
+				
+				Loading
+			
+		
+		
+			Do Not Show Again
+			Close
+		
+	
+
+
+
+
+
+
+
+		$(document).ready(function () {
+			var filter = {
+				targetId: '1',
+				targetType: 1
+			}
+
+			new SplashModalRender().triggerRender(filter);
+		});
+
+
+
+	
+	
+	
+	
+
+
+
+	
+
+
+
+
+
+
+    
+    
+
+
+
+
+
+
+  function getValueTS(elem, attr) {
+    var val = elem.css(attr);
+    if (val === undefined) return undefined;
+    var num = parseInt(val, 10);
+    if (num === NaN) return undefined;
+    return num;
+  }
+
+  function clampTS(number, min, max) {
+    return Math.min(Math.max(number, min), max);
+  }
+
+  function isPageEditingTS() {
+    return (
+      $("#doneEditing").length > 0 || // In live edit
+      typeof DesignCenter !== "undefined" // In theme manager
+    );
+  }
+
+  var bgColorRegexTS = new RegExp("rgba\((\d+), (\d+), (\d+), (\d*\.?\d*)\)");
+  function isTransparentTS(elem) {
+    var bg = elem.css('background-color');
+    if (typeof bg !== "string") return false;
+    if (bg === "transparent") return true;
+    if (!bg.startsWith('rgba(')) return false;
+    var matchState = bg.match(bgColorRegexTS);
+    if (!matchState || matchState.length !== 5) return false;
+    var alpha = parseFloat(matchState[4], 10);
+    if (!(alpha >= 0 && alpha < 1)) return false;
+    return true;
+  }
+
+  function iterateLeftpads(cb) {
+    var containersTS = $("[class^='siteWrap'],[class*=' siteWrap']");
+    for (var i = 0; i < containersTS.length; i++) {
+      var containerTS = containersTS[i];
+      // Skip the body container and anything with data-skip-leftpad
+      if (
+        containerTS.id !== "bodyContainerTS" &&
+        containerTS.getAttribute('data-skip-leftpad') === null
+      ) {
+        cb(containerTS);
+      }
+    }
+  }
+
+  function iterateRightpads(cb) {
+    var containersTS = $("[class^='siteWrap'],[class*=' siteWrap']");
+    for (var i = 0; i < containersTS.length; i++) {
+      var containerTS = containersTS[i];
+      // Skip the body container and anything with data-skip-rightpad
+      if (
+        containerTS.id !== "bodyContainerTS" &&
+        containerTS.getAttribute('data-skip-rightpad') === null
+      ) {
+        cb(containerTS);
+      }
+    }
+  }
+
+  var anchor = $("#divToolbars");
+  var bodyContainerTS = $("#bodyContainerTS");
+
+  // Outer banner padding (push banner down)
+  var outerSizingTS = $("#bannerContainerTS");
+  // Inner banner padding (push banner content down) - Transparent header OR on attaching headers
+  var innerSizingTS = $("#bannerSizingTS");
+
+  var forceUnfixClassTS = "forceUnfixTS";
+
+  var fixedTopTS = $(".fixedTopTS");
+  var fixedBottomTS = $(".fixedBottomTS");
+  var fixedLeftTS = $(".fixedLeftTS");
+  var fixedRightTS = $(".fixedRightTS");
+
+  var initialTopTS;
+  var topAttachTS;
+  if (fixedTopTS && fixedTopTS.length === 1) {
+    initialTopTS = getValueTS(fixedTopTS, 'top');
+    var attachment = fixedTopTS.attr('data-attach');
+    if (attachment) topAttachTS = $("#" + attachment);
+    if (!topAttachTS || topAttachTS.length !== 1) topAttachTS = undefined;
+  }
+
+  function resizeAdjustmentTS() {
+    var editing = isPageEditingTS();
+
+    // Fixed top script
+    (function () {
+      if (!fixedTopTS || fixedTopTS.length !== 1 || initialTopTS === undefined) return;
+
+      if (editing) {
+        fixedTopTS[0].classList.add(forceUnfixClassTS);
+      } else {
+        fixedTopTS[0].classList.remove(forceUnfixClassTS);
+      }
+
+      var topPosition = fixedTopTS.css('position');
+      if (topPosition === 'fixed') {
+        if (topAttachTS) {
+          scrollAdjustmentTS();
+        } else {
+          var anchorHeight = anchor.outerHeight() - 1;
+          fixedTopTS.css('top', anchorHeight + initialTopTS);
+        }
+      } else {
+        fixedTopTS.css('top', initialTopTS);
+      }
+
+      if (topPosition === 'fixed' || topPosition === 'absolute') {
+        // Bump the banner content down
+        if (isTransparentTS(fixedTopTS)) {
+          innerSizingTS.css('padding-top', initialTopTS + fixedTopTS.outerHeight());
+          outerSizingTS.css('padding-top', '');
+
+          try {
+            window.Pages.onResizeHandlersExecute();
+          } catch (e) { }
+        } else {
+          outerSizingTS.css('padding-top', fixedTopTS.outerHeight() - 1);
+          innerSizingTS.css('padding-top', '');
+        }
+      } else {
+        innerSizingTS.css('padding-top', '');
+        outerSizingTS.css('padding-top', '');
+      }
+    })();
+
+    // Fixed bottom script
+    (function () {
+      if (!fixedBottomTS || fixedBottomTS.length === 0) return;
+
+      // If the widget has gone narrow, force unfix
+      if (editing || fixedBottomTS.outerHeight() > 200) {
+        fixedBottomTS[0].classList.add(forceUnfixClassTS);
+      } else {
+        fixedBottomTS[0].classList.remove(forceUnfixClassTS);
+      }
+
+      if (fixedBottomTS.css('position') === 'fixed') {
+        bodyContainerTS.css('padding-bottom', fixedBottomTS.outerHeight());
+      } else {
+        bodyContainerTS.css('padding-bottom', '');
+      }
+    })();
+
+    // Fixed left script
+    (function () {
+      if (!fixedLeftTS || fixedLeftTS.length === 0) return;
+
+      if (editing) {
+        fixedLeftTS[0].classList.add(forceUnfixClassTS);
+      } else {
+        fixedLeftTS[0].classList.remove(forceUnfixClassTS);
+      }
+
+      if (fixedLeftTS.css('position') === 'fixed') {
+        var anchorHeight = anchor.outerHeight() - 1;
+        fixedLeftTS.css('top', anchorHeight);
+        var leftBoundingTS = fixedLeftTS[0].getBoundingClientRect();
+        iterateLeftpads(function (containerTS) {
+          var containerBoundingTS = containerTS.getBoundingClientRect();
+          if (containerBoundingTS.left <= leftBoundingTS.right) {
+            $(containerTS).css('padding-left', leftBoundingTS.width + 16);
+          } else {
+            $(containerTS).css('padding-left', '');
+          }
+        });
+      } else {
+        fixedLeftTS.css('top', '');
+        iterateLeftpads(function (containerTS) {
+          $(containerTS).css('padding-left', '');
+        });
+      }
+    })();
+
+    // Fixed right script
+    (function () {
+      if (!fixedRightTS || fixedRightTS.length === 0) return;
+
+      if (editing) {
+        fixedRightTS[0].classList.add(forceUnfixClassTS);
+      } else {
+        fixedRightTS[0].classList.remove(forceUnfixClassTS);
+      }
+
+      if (fixedRightTS.css('position') === 'fixed') {
+        var anchorHeight = anchor.outerHeight() - 1;
+        fixedRightTS.css('top', anchorHeight);
+        var rightBoundingTS = fixedRightTS[0].getBoundingClientRect();
+        iterateRightpads(function (containerTS) {
+          var containerBoundingTS = containerTS.getBoundingClientRect();
+          if (containerBoundingTS.right >= rightBoundingTS.left) {
+            $(containerTS).css('padding-right', rightBoundingTS.width + 16);
+          }
+        });
+      } else {
+        fixedRightTS.css('top', '');
+        iterateRightpads(function (containerTS) {
+          $(containerTS).css('padding-right', '');
+        });
+      }
+    })();
+  }
+
+  function scrollAdjustmentTS() {
+    if (!fixedTopTS || fixedTopTS.length !== 1 || !topAttachTS || topAttachTS.length !== 1) return;
+    var topPosition = fixedTopTS.css('position');
+    if (topPosition === 'fixed' || topPosition === 'absolute') {
+      var anchorBounding = anchor[0].getBoundingClientRect();
+      var attachBounding = topAttachTS[0].getBoundingClientRect();
+      var scrollTop = $(window).scrollTop();
+
+      fixedTopTS.css('top', Math.max(anchorBounding.bottom - 1, attachBounding.bottom));
+    } else {
+      fixedTopTS.css('top', initialTopTS);
+    }
+  }
+
+  $(window).load(function () {
+    setTimeout(function () {
+      try {
+        resizeAdjustmentTS();
+      } catch (e) {
+        console.error(e);
+      }
+    }, 350);
+
+    $(window).scroll(function () {
+      try {
+        scrollAdjustmentTS();
+      } catch (e) {
+        console.error(e);
+      }
+    });
+
+    var adjustTimeoutTS;
+    $(window).resize(function () {
+      clearTimeout(adjustTimeoutTS);
+      adjustTimeoutTS = setTimeout(function () {
+        try {
+          resizeAdjustmentTS();
+        } catch (e) {
+          console.error(e);
+        }
+      }, 350);
+    });
+
+    $.when(window.Pages.angularToolbarComplete).done(function () {
+      try {
+        resizeAdjustmentTS();
+      } catch (e) {
+        console.error(e);
+      }
+    });
+  });
+
+
+ 
+ 
+function moveBannerToOuterWrap() { 
+    if ($(".fixedBannerTS").length) { 
+        if ($("#bannerDivbanner2").length) { 
+            $("#bannerDivbanner2").appendTo("#outer-wrap"); 
+        } else { 
+            setTimeout(function() { 
+                moveBannerToOuterWrap(); 
+            }, 500); 
+        } 
+    }
+} 
+moveBannerToOuterWrap(); 
+ 
+
+
+
+
+
+
+
+
+
+
+    window._monsido = window._monsido || {
+        token: "58PNGyhOcJqdjbBNySmRpA",
+        statistics: {
+            enabled: true,
+            cookieLessTracking: false,
+            documentTracking: {
+                enabled: false,
+                documentCls: "monsido_download",
+                documentIgnoreCls: "monsido_ignore_download",
+                documentExt: [".pdf",".doc",".txt",".xls",".ppt",".docx",".xlsx",".pptx"],
+            },
+        },
+        pageCorrect: {
+            enabled: true,
+        },
+    };
+
+
+
+
+
+
+
+    window.ResidentAgentWidget.load({
+        agentId: '45932454-ed5d-4d53-b8e1-79963581ad14',
+        apiUrl: 'https://residentagent-api-production.azurewebsites.net'
+    });
+
+
+
+    
+        $(function () {
+            document.cookie = "responsiveGhost=0; path=/";
+        });
+        $(window).on("load", function () {
+            $('body').addClass('doneLoading').removeClass('hideContent');
+
+            if ($('#404Content').length > 0)
+                $('div#bodyWrapper').css('padding', '0px');
+        });
+    
+
+    
+        
+            body.hideContent {
+                opacity: 1 !important;
+            }
+        
+    
+
+        
+
+	
+
+		
+			Arrow Left
+			
+		
+
+		
+			Arrow Right
+			
+		
+
+	
+
+    loadCSS('//fonts.googleapis.com/css?family=Bebas+Neue:regular|Fira+Sans:200italic,500,500italic,600,600italic,700,700italic,800,800italic,italic,regular|Open+Sans:500,600,700,800,italic,regular|Oswald:500,600,700,regular|');
+    
+
+    []
+        
+            
+                
+                    Slideshow Left Arrow
+                    
+                        
+                    
+                
+                
+                    Slideshow Right Arrow
+                    
+                        
+                    
+                
+            
+        
+    
+	
+	
+
+    
+
+

@@ -1,0 +1,2905 @@
+
+
+
+
+
+	
+
+				(function(w,d,s,l,i){w.GAMeasurementID='G-HTPT2YGYV6';w[l]=w[l]||[];w[l].push({'gtm.start':
+				new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+				j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+				'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+				})(window,document,'script','cpDataLayerGA4','GTM-K73C5PS');
+				
+				
+					var enableTelemetry = 'false'
+					var aiConfig = {
+					instrumentationKey: '1cde048e-3185-4906-aa46-c92a7312b60f'						
+					}
+					var appInsights = window.appInsights || function (a) { function b(a) { c[a] = function () { var b = arguments; c.queue.push(function () { c[a].apply(c, b) }) } } var c = { config: a }, d = document, e = window; setTimeout(function () { var b = d.createElement('script'); b.src = a.url || 'https://js.monitor.azure.com/scripts/a/ai.0.js', d.getElementsByTagName('script')[0].parentNode.appendChild(b) }); try { c.cookie = d.cookie } catch (a) { } c.queue = []; for (var f = ['Event', 'Exception', 'Metric', 'PageView', 'Trace', 'Dependency']; f.length;)b('track' + f.pop()); if (b('setAuthenticatedUserContext'), b('clearAuthenticatedUserContext'), b('startTrackEvent'), b('stopTrackEvent'), b('startTrackPage'), b('stopTrackPage'), b('flush'), !a.disableExceptionTracking) { f = 'onerror', b('_' + f); var g = e[f]; e[f] = function (a, b, d, e, h) { var i = g && g(a, b, d, e, h); return !0 !== i && c['_' + f](a, b, d, e, h), i } } return c }(aiConfig);
+					window.appInsights = appInsights, appInsights.queue && 0 === appInsights.queue.length;
+					// Add telemetry initializer
+					appInsights.queue.push(function() {
+						appInsights.context.addTelemetryInitializer(function(envelope) {
+							var telemetryItem = envelope.data.baseData;
+							// To check the telemetry item’s type:
+							if (!false)
+							{
+								//If the telemetry is not enabled, we still want to capture Google map custom event, so only allow that
+								if (envelope.name.indexOf('.Event') == -1)
+									return false;
+							}
+						});
+					});						
+					appInsights.trackPageView();
+				
+	
+		function populateAntiForgery(token) {
+			var input = document.createElement("input");
+			input.name = "__RequestVerificationToken";
+			input.type = "hidden";
+			input.value = token;
+			var absPat = /^https?:\/\/|^\/\//i;
+			var forms = document.getElementsByTagName("form");
+			for (var i = 0; i < forms.length; i++) {
+				if (forms[i].method == "post" &&
+					!forms[i].querySelector('[name="__RequestVerificationToken"]') &&
+					!absPat.test(forms[i].getAttribute("action"))) {
+					forms[i].appendChild(input.cloneNode());
+				}
+			}
+		}
+
+		function getAntiForgeryToken(callback, error) {
+			var xhr = new XMLHttpRequest();
+			xhr.open("GET", "/antiforgery");
+			xhr.addEventListener("load", function() {
+				try {
+					if (this.status !== 200) {
+						throw Error("Invalid status. Could not retrieve antiforgery token.");
+					}
+					var obj = JSON.parse(this.responseText);
+					callback(obj.token);
+				} catch (e) {
+					typeof error === "function" && error(e);
+				}
+			});
+			xhr.send();
+		}
+
+		getAntiForgeryToken(function(token) {
+			if (document.readyState === "complete"
+				|| document.readyState === "loaded" 
+				|| document.readyState === "interactive") {
+				populateAntiForgery(token);
+				return;
+			}
+			document.addEventListener("DOMContentLoaded", function() {
+				populateAntiForgery(token);
+			}, false);
+		}, console.error);
+	
+			
+
+	
+		window.departmentHeader = {};
+		window.pageSectionTracker = {};
+		window.isResponsiveEnabled = true;
+		window.isRemoveSetHeights= false;
+		if (window.isRemoveSetHeights) {
+			document.documentElement.className += ' removeSetHeights';
+		}
+		window.mainMenuMediaQuery = 'screen and (max-width: 40em)';
+		window.isMobileBrowserIncludingTablets = false;
+		window.fixedResponsiveMenu = false;
+		window.fullWidthResponsiveMenu = false;
+		window.responsiveMenuHeight = '';
+		window.responsiveMenuFontSize = '';
+		window.isContentAdvisor = false;
+		(function () {
+			window.setSizeCookie = function () {
+				document.cookie = "dpi=" + window.devicePixelRatio + "; path=/";
+				document.cookie = "viewportWidth=" + window.innerWidth + "; path=/";
+				document.cookie = "viewportHeight=" + window.innerHeight + "; path=/";
+				if (screen && screen.width && screen.height) {
+					document.cookie = "screenWidth=" + screen.width + "; path=/";
+					document.cookie = "screenHeight=" + screen.height + "; path=/";
+				}
+				document.cookie = "responsiveGhost=1; path=/";
+			};
+
+			setSizeCookie();
+		}());
+	
+		
+
+	
+	
+	
+
+
+
+
+	
+	
+	
+	
+		Elections & Voting | Sibley County, MN
+
+		
+			
+	
+	
+
+	
+	
+	
+	
+	<!--
+	var intCountryCode = 840;
+	var order = '';
+//-->
+	
+		
+
+	
+	
+		window.Pages = window.Pages || {};
+		// FrontEnd RWD initialization
+		window.Pages.rwdReady = $.Deferred();
+		window.Pages.toolBarDeferred = $.Deferred();
+		window.Pages.rwdSetupComplete = $.Deferred();
+		window.Pages.megaMenuLoaded = $.Deferred();
+		window.Pages.angularToolbarComplete = $.Deferred();
+		window.Pages.frontEndToolbarComplete = $.Deferred();
+	
+	
+	
+	
+	
+	
+	
+
+
+
+
+	
+	
+	
+	
+
+	
+		setEditorVariables(false, 840);
+		function getPrintPreviewType() { return 0; } function printPreview() {pPreview(getPrintPreviewType()); }
+	
+	
+
+
+
+    jQuery(document).click(function (event) {
+	var target = jQuery(event.target);
+	if (target.attr('src') && target.parents('.image').length && target.parents('.widget').length) {
+		var text = target.attr('title');
+		
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Image',
+				eventAction: 'Image - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.is('button') || target.hasClass('button') || target.parents().hasClass('button')) {
+		var text = "";
+		if (target.parents('.button')[0]) {
+			text = target.parents('.button').first().text();
+		} else if (target.text().length) {
+			text = target.text();
+		} else if (target.attr('title').length) {
+			text = target.attr('title');
+		}
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Button',
+				eventAction: 'Button - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetCustomHtml').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Custom Html',
+				eventAction: 'Custom Html Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.editor').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Editor',
+				eventAction: 'Editor Link Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.GraphicLinks').length) {
+		var text = "";
+		var targetGraphicLink = target;
+		if (target.hasClass('widgetGraphicLinksLink')) {
+			targetGraphicLink = jQuery(target.children()[0]);
+		}
+		if (targetGraphicLink.hasClass('text')) {
+			text = targetGraphicLink.text();
+		} else if (targetGraphicLink.attr('src').length) {
+			if (targetGraphicLink.attr('alt').length) {
+				text = targetGraphicLink.attr('alt');
+			} else {
+				text = targetGraphicLink.attr('src');
+			}
+		} else {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Graphic Links',
+				eventAction: 'Graphic Link - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.InfoAdvanced').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Info Advanced',
+				eventAction: 'Info Advanced Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.list').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'List',
+				eventAction: 'List Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.megaMenuItem').length || target.parents('.topMenuItem').length) {
+		var megaMenuText = jQuery('.topMenuItem.mouseover').find('span').text();
+		var breadCrumbs = [];
+		jQuery('.breadCrumbs > li').each(function () {
+			 breadCrumbs.push(this.textContent);
+		});
+		var pageTitle = breadCrumbs.join('>');
+		var subTitleText = target.parents('.megaMenuItem').children('.widgetTitle').children().text();
+		var text = "";
+		if (pageTitle) {
+			text += pageTitle + " | ";
+		} else {
+			text += document.title + ' - ';
+		}
+		if (target.text() == "" && megaMenuText == "") {
+			text += "N/A";
+		} else if (target.text().length && megaMenuText.length) {
+			if (megaMenuText == target.text()) {
+				text += megaMenuText;
+			} else {
+				text += megaMenuText + " - " + subTitleText + " - " + target.text();
+			}
+		} else if (target.text() == "") {
+			text += megaMenuText;
+		} else {
+			text += target.text();
+		}
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Mega Menu',
+				eventAction: 'Mega Menu : ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetNewsFlash').length && target.parents('.widgetItem').length) {
+		var text = jQuery(target.parents('.widgetItem')[0]).find('.widgetTitle').children().text();
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'News Flash',
+				eventAction: 'News Flash - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.hasClass('widgetQuickLinksLink') || target.find('.widgetQuickLinksLink').length) {
+		var text = target.text();
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Quick Links',
+				eventAction: 'Quick Links - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.attr('src') && target.parents('.cpSlideshow').length) {
+		var text = target.attr('title');
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Slideshow',
+				eventAction: 'Slideshow - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetText').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Text',
+				eventAction: 'Text Link Clicked',
+				eventLabel: window.location.href
+			});
+	}
+});
+	
+	
+		
+		
+			
+				
+			
+		
+	
+	
+		
+	
+	
+		
+			
+		
+	
+
+    
+
+Skip to Main Content
+
+    
+
+        
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+        
+                
+                    
+
+
+
+
+
+    
+        Create a Website Account - Manage notification subscriptions, save form progress and more.   
+        
+	        Website Sign In
+        
+    
+
+
+    $(document).ready(function () {
+        $('#signedOutToolbarCreateProfileButton').click(function (event) {
+            event.preventDefault();
+            window.location.href = '/MyAccount/ProfileCreate?from=url&url=/&dn=' + window.location.origin;
+        });
+
+			
+				$('#loggedOutToolbarSignInButton').click(function (event) {
+					event.preventDefault();
+					window.location.href = '/MyAccount/?from=url&url=' + encodeURIComponent(window.location.href.replace(window.location.origin, '')) + '&dn=' + window.location.host;
+				});
+			
+
+		if ('False' == 'True') {
+            $('#loggedOutToolbarSignInButton').hide();
+		}
+    })
+
+
+
+                
+            
+                
+                
+
+
+
+
+
+    County Government  			    Departments  			    Services  			    How Do I...  			
+
+
+
+	
+		(function () {
+			function setupMenu() {
+				const menuID = 'mainNavMenu';
+				const menuType = MAIN_MENU;
+
+				//setup menu manager properties for main menu
+				if (!menuManager.mobileMainNav && true)
+					menuManager.adjustMainItemsWidth('#' + menuID);
+				menuManager.isMainMenuEditable = false;
+				menuManager.mainMenuMaxSubMenuLevels = 4;
+				menuManager.setMOMMode(2, menuType);
+
+				//Init main menu
+				const setupDraggable = menuManager.isMainMenuEditable;
+				const urlToGetHiddenMenus = '/Pages/MenuMain/HiddenMainSubMenus?pageID=1&moduleID=&themeID=1&menuContainerID=mainNav';
+
+				menuManager.setupMenu(menuID, 'mainNav', menuType, setupDraggable, urlToGetHiddenMenus);
+				menuManager.mainMenuInit = true;
+				menuManager.mainMenuTextResizer = false;
+				if (1.00 > 0)
+					menuManager.mainMenuTextResizerRatio = 1.00;
+				if (window.isResponsiveEnabled)
+					menuManager.mainMenuReady.resolve();
+
+			}
+
+			if (document.readyState === "complete"
+				|| document.readyState === "loaded"
+				|| document.readyState === "interactive") {
+				setupMenu();
+				return;
+			}
+
+			document.addEventListener("DOMContentLoaded", setupMenu);
+		})();
+	
+
+
+	
+				                
+
+
+
+	
+	
+				                
+
+
+
+	
+	
+				                
+
+
+
+	
+	
+				                
+
+
+
+	
+
+
+
+
+
+
+
+				
+	
+				                
+
+						
+	
+	
+		
+
+
+
+
+
+
+	
+		
+				
+	
+	
+		
+				
+					
+
+ 
+
+
+ 
+
+
+ 
+
+				
+			
+		
+	
+			
+
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+
+	
+	
+	
+	
+
+		$(document).ready(function () {
+			try {
+				// Minimum characters required before performing a search/autocomplete
+				var minPrefixLength = 3;
+				var autoCompleteDebounceDelay = 500;
+				var searchFieldSelector = "#searchField" + 'e74b2377-8562-4bdc-9963-52a5db5f4b77';
+				var checkboxSelector = "#ysnSearchOnlyDept" + 'e74b2377-8562-4bdc-9963-52a5db5f4b77';
+				var buttonSelector = ".widgetSearchButton" + 'e74b2377-8562-4bdc-9963-52a5db5f4b77';
+				var autoCompleteCache = {};
+				var autoCompleteCacheKeys = [];
+				var autoCompleteCacheLimit = 25;
+				var currentAutoCompleteRequest = null;
+				var currentAutoCompleteRequestKey = null;
+				var autoCompleteDebounceTimer = null;
+				var autoCompleteDebounceKey = null;
+				var pendingAutoCompleteResponses = [];
+
+				function normalizeAutoCompleteTerm(term) {
+					return $.trim((term || "") + "").replace(/\s+/g, " ");
+				}
+
+				function shouldSearch(term) {
+					return normalizeAutoCompleteTerm(term).length >= minPrefixLength;
+				}
+
+				function getAutoCompleteUrl() {
+					return '/Search/AutoComplete' + ($(checkboxSelector).is(':checked') || false? '?departmentId=0' : '');
+				}
+
+				function getAutoCompleteCacheKey(requestUrl, term) {
+					return requestUrl + "|" + term.toLowerCase();
+				}
+
+				function cacheAutoCompleteResult(cacheKey, data) {
+					if (!Object.prototype.hasOwnProperty.call(autoCompleteCache, cacheKey)) {
+						autoCompleteCacheKeys.push(cacheKey);
+						if (autoCompleteCacheKeys.length > autoCompleteCacheLimit) {
+							delete autoCompleteCache[autoCompleteCacheKeys.shift()];
+						}
+					}
+					autoCompleteCache[cacheKey] = data;
+				}
+
+				function respondToPendingAutoComplete(data) {
+					var responses = pendingAutoCompleteResponses;
+					pendingAutoCompleteResponses = [];
+					for (var i = 0; i < responses.length; i++) {
+						responses[i](data);
+					}
+				}
+
+				function cancelPendingAutoComplete() {
+					clearTimeout(autoCompleteDebounceTimer);
+					autoCompleteDebounceKey = null;
+					if (currentAutoCompleteRequest != null) {
+						currentAutoCompleteRequest.abort();
+						currentAutoCompleteRequest = null;
+					}
+					currentAutoCompleteRequestKey = null;
+					respondToPendingAutoComplete([]);
+				}
+
+				function createWidgetAutoCompleteSource(options) {
+					return function (request, response) {
+						var term = normalizeAutoCompleteTerm(request.term);
+						if (!options.shouldSearch(term)) {
+							response([]);
+							return;
+						}
+
+						var requestUrl = options.url();
+						var cacheKey = getAutoCompleteCacheKey(requestUrl, term);
+						if (Object.prototype.hasOwnProperty.call(autoCompleteCache, cacheKey)) {
+							response(autoCompleteCache[cacheKey]);
+							if (options.success) {
+								options.success(autoCompleteCache[cacheKey]);
+							}
+							return;
+						}
+
+						if (currentAutoCompleteRequestKey === cacheKey || autoCompleteDebounceKey === cacheKey) {
+							pendingAutoCompleteResponses.push(response);
+							return;
+						}
+
+						cancelPendingAutoComplete();
+						autoCompleteDebounceKey = cacheKey;
+						pendingAutoCompleteResponses.push(response);
+						autoCompleteDebounceTimer = setTimeout(function () {
+							autoCompleteDebounceKey = null;
+							currentAutoCompleteRequestKey = cacheKey;
+							currentAutoCompleteRequest = $.ajax({
+								url: requestUrl,
+								dataType: "json",
+								timeout: options.timeout,
+								data: {
+									term: term,
+								},
+								success: function (data) {
+									if (currentAutoCompleteRequestKey === cacheKey) {
+										cacheAutoCompleteResult(cacheKey, data);
+										respondToPendingAutoComplete(data);
+										if (options.success) {
+											options.success(data);
+										}
+									}
+								},
+								error: function (xmlhttprequest, textstatus, message) {
+									if (textstatus === "abort") {
+										return;
+									}
+
+									if (options.error) {
+										options.error(xmlhttprequest, textstatus, message);
+									}
+
+									respondToPendingAutoComplete([]);
+								},
+								complete: function (xmlhttprequest) {
+									if (currentAutoCompleteRequest === xmlhttprequest) {
+										currentAutoCompleteRequest = null;
+										currentAutoCompleteRequestKey = null;
+									}
+								}
+							});
+						}, options.delay);
+					};
+				}
+
+				// click handler for search buttons
+				$(buttonSelector).click(function (e) {
+					e.preventDefault();
+					var $btn = $(this);
+					var $field = $btn.siblings(".widgetSearchBox");
+					var term = $field.val() + "";
+					if (!shouldSearch(term)) {
+						// do nothing until user types enough characters
+						$field.focus();
+						return;
+					}
+
+					if ($(checkboxSelector).is(':checked') || false)
+					{
+						doWidgetSearch($.trim(term), Number(0));
+					}
+					else {
+						doWidgetSearch($.trim(term), 0);
+					}
+				});
+
+				// enter key handler for the search field
+				$(searchFieldSelector).keypress(function (e) {
+					var code = e.which || e.keyCode;
+					if (code === 13) {
+						e.preventDefault();
+						var $this = $(this);
+						var term = $this.val() + "";
+						if (!shouldSearch(term)) {
+							// do nothing until user types enough characters
+							$this.focus();
+							return false;
+						}
+
+						if ($(checkboxSelector).is(':checked') || false) {
+							doWidgetSearch($.trim(term), Number(0));
+						} else {
+							doWidgetSearch($.trim(term), 0);
+						}
+						return false;
+					}
+					return true;
+				});
+
+				// autocomplete: set minLength and guard source
+				if (true) {
+					var $searchField = $(searchFieldSelector).autocomplete({
+						minLength: minPrefixLength,
+						source: createWidgetAutoCompleteSource({
+							delay: autoCompleteDebounceDelay,
+							timeout: 10000,
+							shouldSearch: shouldSearch,
+							url: getAutoCompleteUrl,
+							success: function () {
+								$('.autoCompleteError').remove();
+							},
+							error: function (xmlhttprequest, textstatus, message) {
+								if (textstatus === "timeout") {
+									if ($(searchFieldSelector).siblings('.autoCompleteError').length == 0)
+										$('<span class="autoCompleteError"><p class="alert error">Search autocomplete is currently not responding. Please try again later.</p></span>').insertAfter($(searchFieldSelector));
+								}
+							}
+						}),
+						html: true,
+						delay: 0,
+						select: function (event, ui) {
+							$(this).val(ui.item.value);
+							$(this).next().click();
+						}
+					});
+
+					$searchField.data("ui-autocomplete")._renderItem = function (ul, item) {
+						return $("<li class=\"itemList\"></li>")
+							.data("ui-autocomplete-item", item)
+							.append("<a>" + item.label + "</a>")
+							.appendTo(ul);
+					};
+				}
+
+				// keep searchBtnApplyQuery consistent with prefix rule
+				window.searchBtnApplyQuery = function() {
+					var $field = $(searchFieldSelector);
+					var term = $field.val() + "";
+					if (shouldSearch(term)) {
+						// update href for the icon/button (if present)
+						var btn = document.getElementById("btnSearchIcon");
+						if (btn) btn.href = "/Search?searchPhrase=" + encodeURIComponent($.trim(term));
+					} else {
+						var btn = document.getElementById("btnSearchIcon");
+						if (btn) btn.href = "#";
+					}
+				};
+			}
+			catch(e) {} //we're going to eat this error. Autocomplete won't work but we dont wan't to break anything else on the page.
+		});
+	
+
+	
+				
+		
+			
+						
+
+			Search
+		
+
+	
+
+
+
+	  
+		.widgetSearch ::-webkit-input-placeholder {
+		color: #1A264F;
+	  }
+		.widgetSearch :-moz-placeholder { /* Firefox 18- */
+	   color: #1A264F;
+	}
+		.widgetSearch ::-moz-placeholder {  /* Firefox 19+ */
+	   color: #1A264F;
+	}
+	.widgetSearch :-ms-input-placeholder {
+	   color: #1A264F;
+	}
+	
+
+	.widgetSearch .widgetBody .widgetSearchBoxe74b2377-8562-4bdc-9963-52a5db5f4b77
+	{
+		color: #1A264F;
+		background: #fff;
+height: 40px;
+padding-left: 1em;
+border: 0 none;
+border-bottom: 2px solid rgba(60, 84, 139, 1);
+font-family: Lato;
+font-size: 14px;
+	}
+	.widgetSearch .widgetBody .widgetSearchButtone74b2377-8562-4bdc-9963-52a5db5f4b77
+	{
+		
+	}
+	.widgetSearch .widgetSearch-onlyDepte74b2377-8562-4bdc-9963-52a5db5f4b77
+	{
+		display: inline-block;
+		color: #333;
+		
+		
+		 padding-top: 10px;
+	}
+	#ysnSearchOnlyDepte74b2377-8562-4bdc-9963-52a5db5f4b77
+	{
+		position: relative;
+		top: .125em;
+	}
+
+
+
+
+
+
+
+
+
+	//Updates search icons href to have the correct queryString
+	function searchBtnApplyQuery() {
+		document.getElementById("btnSearchIcon").href = "/Search?searchPhrase=" + document.getElementById("searchFielde74b2377-8562-4bdc-9963-52a5db5f4b77").value;
+	}
+
+
+
+
+	 
+
+	 
+
+			 
+
+
+	
+
+
+
+
+	
+				                
+
+
+
+	
+
+
+
+
+
+
+
+		
+		
+			
+			
+		
+			
+				$(window).on("load", function () {
+					$.when(window.Pages.rwdSetupComplete)
+						.done(function () {
+							renderExternalBannerSlideshow('banner1',
+								{"BannerOptionID":2,"ThemeID":1,"SlotName":"banner1","Name":"Default","IsDefault":true,"BannerMode":2,"SlideShowSlideTiming":null,"SlideshowTransition":0,"SlideShowTransitionTiming":null,"ImageScale":true,"ImageAlignment":1,"ImageScroll":true,"MuteSound":true,"VideoType":0,"Status":40,"SlideshowControlsPosition":0,"SlideshowControlsAlignment":0,"SlideshowBannerControlsColorScheme":0,"DisplayVideoPauseButton":false,"VideoPauseButtonAlignment":1,"VideoPauseButtonControlsAlignment":0,"VideoPauseButtonStyle":"#FFFFFF","VideoPauseButtonBackgroundStyle":"#000000","VideoPauseButtonAlignmentClass":"alignRight viewport","DisplaySlideshowPauseButton":true,"SlideshowControlsColor":"#FFFFFF","SlideshowControlsBackgroundColor":"#000000","SlideshowPauseButtonClass":"isHidden","BannerImages":[{"BannerImageID":92,"BannerOptionID":2,"FileName":"/ImageRepository/Document?documentID=111","Height":430,"Width":2200,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":1,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":""},{"BannerImageID":93,"BannerOptionID":2,"FileName":"/ImageRepository/Document?documentID=110","Height":430,"Width":2200,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":2,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":""},{"BannerImageID":94,"BannerOptionID":2,"FileName":"/ImageRepository/Document?documentID=109","Height":430,"Width":2200,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":3,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":""}],"BannerVideos":[],"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/"},
+								'/App_Themes/Interior/Images/',
+								'Rotating');
+						});
+				});
+			
+
+
+
+
+
+
+		
+			HomeDepartmentsAuditor-TreasurerElections & Voting
+		
+
+	   
+    
+
+	
+	
+		
+
+	
+	
+	
+	
+	
+	
+	
+
+				
+
+Elections & Voting		
+	
+		
+			
+
+						
+	
+	
+		
+
+	    
+
+
+        The Office of the Sibley County Auditor-Treasurer is responsible for administering all federal, state, and local elections for Sibley County and maintains the Statewide Voter Registration System. The office is a resource to cities, townships, and school districts in the election process.Visit How Elections Work on the Secretary of State's website for more info.The next election in Sibley County is the State General on November 3rd.  Visit the Important 2026 Election Dates page for additional information.Absentee voting for all of Sibley County is administered by the Auditor-Treasurer's Office at the Courthouse in Gaylord.  Learn more about voting early in person or by mail for Sibley County Elections.  Are you a new resident to Sibley County or a new voter?  Please take a look at our local Voter Information Guide for everything you need to get registered and vote! https://sibleycounty.gov/587/Register-to-Vote 
+    
+
+
+	$(document).ready(function (e) {		
+	    renderSlideshowIfApplicable($('#divEditor' + 'cede7cc3-a372-40a4-b3d1-08c11fe2070d'));
+	});
+
+
+
+	 
+
+	 
+	
+	
+		
+
+	
+
+		
+					
+							2026 Sibley County Election Information
+
+					
+				
+
+
+
+
+	
+			
+		
+			
+
+        
+                    Campaign Financial Reports
+
+	
+		
+					2026 Campaign Financial Report - D Kompelien
+					
+					2026 Campaign Financial Reports - D Widmer
+					
+					2026 Campaign Financial Reports - K Becker
+					
+					2026 Campaign Financial Reports - W Nagel
+					
+
+		
+	
+                    
+
+
+
+
+    $(document).ready(function () {
+        //Remove section heading when it is empty and live edit is off.
+        if ('false' === 'false') {
+            var jqh3Selector = $('#widgetRelDoc' + '08272ca3-fe2b-4a3b-9064-529a528d0a26').find('div.widgetBody div.row div.relatedDocumentsSection h3.widgetTitle');
+    		if (jqh3Selector.val() == "") {
+    			jqh3Selector
+                    .filter(function () {
+                        return $.trim($(this).text()) === ''
+                    })
+                    .remove();
+            }
+        }
+    });
+
+		
+
+
+
+	
+
+
+
+    var documentsToInsert = [];
+    var foldersToInsert = [];
+
+    $(document).ready(function () {
+        var hasEditRights = false;        
+        if (window.File && window.FileList && window.FileReader && hasEditRights) {
+            var RelatedDocumentsWidget = 5;
+            makeWidgetAreaDroppable('08272ca3-fe2b-4a3b-9064-529a528d0a26', $('#widgetRelDoc' + '08272ca3-fe2b-4a3b-9064-529a528d0a26'), RelatedDocumentsWidget, true, RelatedDocumentsCallback);
+        }
+
+		if(hasEditRights)
+    		browserVersionNotCompatibleWithDragDropTextUpdate($('#addFile' + '08272ca3-fe2b-4a3b-9064-529a528d0a26'), 'Add a new file');
+    });
+
+    function RelatedDocumentsCallback(widgetID, response)
+    {
+        if (window.ContentCollectionInstance.IsWorkingCopy) {
+        	$('#widgetRelDoc' + widgetID).replaceWith(response);            
+            contentUpdated();
+            attachRelatedDocumentsHandlers();            
+        }
+        else {
+            ContentCollectionInstance.reloadContent();
+        }      
+    }
+
+
+				
+					
+							2024 Sibley County Election Information
+
+					
+				
+
+
+
+
+	
+			
+		
+			
+
+        
+                    Abstracts
+
+	
+		
+					Certified State Abstract of Votes for 2024 General Election
+					
+					Certified State Abstract of Write-In Votes for 2024 General Election
+					
+					Certified County Abstract of Votes for 2024 General Election
+					
+					Certified County Abstract of Write-In Votes for 2024 General Election
+					
+					Certified State Abstract of Votes for 2024 Primary Election
+					
+					Certified County Abstract of Votes for 2024 Presidential Nomination Primary Election
+					
+					Certified County Write-In Abstract for 2024 Presidential Nomination Primary Election
+					
+
+		
+	
+                    
+        
+                    Campaign Financial Reports
+
+	
+		
+					2024 Campaign Financial Report - L Grochow
+					
+					2024 Campaign Financial Report - J Kreger
+					
+					2024 Campaign Financial Report - K Hennen
+					
+					2024 Campaign Financial Report-Cert of Filing-L Evenson
+					
+					2024 Campaign Financial Report-Cert of Filing-W Grams
+					
+					2024 Campaign Financial Report-Cert of Filing-J Kreger
+					
+					2024 Campaign Financial Report-Cert of Filing-L Grochow
+					
+					2024 Campaign Financial Report-Cert of Filing-R Nielsen
+					
+					2024 Campaign Financial Report-Cert of Filing-K Hennen
+					
+
+		
+	
+                    
+
+
+
+
+    $(document).ready(function () {
+        //Remove section heading when it is empty and live edit is off.
+        if ('false' === 'false') {
+            var jqh3Selector = $('#widgetRelDoc' + 'a2638863-bfbb-4287-88e4-3fc85665baa5').find('div.widgetBody div.row div.relatedDocumentsSection h3.widgetTitle');
+    		if (jqh3Selector.val() == "") {
+    			jqh3Selector
+                    .filter(function () {
+                        return $.trim($(this).text()) === ''
+                    })
+                    .remove();
+            }
+        }
+    });
+
+		
+
+
+
+	
+
+
+
+    var documentsToInsert = [];
+    var foldersToInsert = [];
+
+    $(document).ready(function () {
+        var hasEditRights = false;        
+        if (window.File && window.FileList && window.FileReader && hasEditRights) {
+            var RelatedDocumentsWidget = 5;
+            makeWidgetAreaDroppable('a2638863-bfbb-4287-88e4-3fc85665baa5', $('#widgetRelDoc' + 'a2638863-bfbb-4287-88e4-3fc85665baa5'), RelatedDocumentsWidget, true, RelatedDocumentsCallback);
+        }
+
+		if(hasEditRights)
+    		browserVersionNotCompatibleWithDragDropTextUpdate($('#addFile' + 'a2638863-bfbb-4287-88e4-3fc85665baa5'), 'Add a new file');
+    });
+
+    function RelatedDocumentsCallback(widgetID, response)
+    {
+        if (window.ContentCollectionInstance.IsWorkingCopy) {
+        	$('#widgetRelDoc' + widgetID).replaceWith(response);            
+            contentUpdated();
+            attachRelatedDocumentsHandlers();            
+        }
+        else {
+            ContentCollectionInstance.reloadContent();
+        }      
+    }
+
+
+				
+					
+							2022 Sibley County Election Information
+
+					
+				
+
+
+
+
+	
+			
+		
+			
+
+        
+                    Abstracts
+
+	
+		
+					Certified County Abstract of Votes for 2022 General Election
+					
+					Certified County Write In Abstract for 2022 General Election
+					
+					Certified State Abstract of Votes for 2022 General Election
+					
+					Certified State Write In Abstract for 2022 General Election
+					
+					Certified County Abstract of Votes for 2022 Primary Election
+					
+					Certified State Abstract of Votes for 2022 Primary Election
+					
+
+		
+	
+                    
+        
+                    Financial Reports
+
+	
+		
+					2022 Campaign Financial Report-Cert of Filing-D Lannoye
+					
+					2022 Campaign Financial Report-Cert of Filing-D Abraham
+					
+					2022 Campaign Financial Report-Cert of Filing-K Thies
+					
+					2022 Campaign Financial Report-Cert of Filing-P Wiemann
+					
+					2022 Campaign Financial Report-Cert of Filing-P Nienaber
+					
+					2022 Campaign Financial Report-Cert of Filing-P Koch
+					
+					2022 Campaign Financial Report-Cert of Filing-M Peterson
+					
+					2022 Campaign Financial Report-Cert of Filing-M Lieske
+					
+					2022 Campaign Financial Report-Cert of Filing-M Brandt
+					
+					2022 Campaign Financial Report-Cert of Filing-L Grochow
+					
+					2022 Campaign Financial Report-Cert of Filing-K Dietz
+					
+					2022 Campaign Financial Report-Cert of Filing-S Saxton
+					
+					2022 Campaign Financial Report-Cert of Filing-A Grochow
+					
+					2022 Campaign Financial Report-Cert of Filing-C Lilienthal
+					
+					2022 Campaign Financial Report-Cert of Filing-J Kreger
+					
+					2022 Campaign Financial Report-Cert of Filing-J Soeffker
+					
+					2022 Campaign Financial Report-Cert of Filing-N Heinz
+					
+					2022 Campaign Financial Report-M Lieske
+					
+					2022 Campaign Financial Report-M Brandt
+					
+					2022 Campaign Financial Report-L Grochow
+					
+					2022 Campaign Financial Report-A Grochow
+					
+					2022 Campaign Financial Reports-C Lilienthal
+					
+					2022 Campaign Financial Report-P Koch
+					
+					2022 Campaign Financial Report-F Latzke
+					
+
+		
+	
+                    
+
+
+
+
+    $(document).ready(function () {
+        //Remove section heading when it is empty and live edit is off.
+        if ('false' === 'false') {
+            var jqh3Selector = $('#widgetRelDoc' + '2c80cf71-dea5-436f-ab27-631eb00b75f9').find('div.widgetBody div.row div.relatedDocumentsSection h3.widgetTitle');
+    		if (jqh3Selector.val() == "") {
+    			jqh3Selector
+                    .filter(function () {
+                        return $.trim($(this).text()) === ''
+                    })
+                    .remove();
+            }
+        }
+    });
+
+		
+
+
+
+	
+
+
+
+    var documentsToInsert = [];
+    var foldersToInsert = [];
+
+    $(document).ready(function () {
+        var hasEditRights = false;        
+        if (window.File && window.FileList && window.FileReader && hasEditRights) {
+            var RelatedDocumentsWidget = 5;
+            makeWidgetAreaDroppable('2c80cf71-dea5-436f-ab27-631eb00b75f9', $('#widgetRelDoc' + '2c80cf71-dea5-436f-ab27-631eb00b75f9'), RelatedDocumentsWidget, true, RelatedDocumentsCallback);
+        }
+
+		if(hasEditRights)
+    		browserVersionNotCompatibleWithDragDropTextUpdate($('#addFile' + '2c80cf71-dea5-436f-ab27-631eb00b75f9'), 'Add a new file');
+    });
+
+    function RelatedDocumentsCallback(widgetID, response)
+    {
+        if (window.ContentCollectionInstance.IsWorkingCopy) {
+        	$('#widgetRelDoc' + widgetID).replaceWith(response);            
+            contentUpdated();
+            attachRelatedDocumentsHandlers();            
+        }
+        else {
+            ContentCollectionInstance.reloadContent();
+        }      
+    }
+
+
+				
+					
+							2020 Sibley County Election Information
+
+					
+				
+
+
+
+
+	
+			
+		
+			
+
+        
+        
+	
+		
+					2020 Campaign Financial Reports for Publishing_Redacted
+					
+					Certified Abstract of Votes for 2020 General Election (PDF)
+					
+					Certified Abstract of Write In Votes for 2020 General Election (PDF)
+					
+					Certified Abstracts of Votes for 2020 Primary Election (PDF)
+					
+					Certified County Abstract of 2020 Presidential Nomination Primary Election (PDF)
+					
+
+		
+	
+                    
+
+
+
+
+    $(document).ready(function () {
+        //Remove section heading when it is empty and live edit is off.
+        if ('false' === 'false') {
+            var jqh3Selector = $('#widgetRelDoc' + '90d6871d-b4d9-4877-aa3b-ee348bebfc9b').find('div.widgetBody div.row div.relatedDocumentsSection h3.widgetTitle');
+    		if (jqh3Selector.val() == "") {
+    			jqh3Selector
+                    .filter(function () {
+                        return $.trim($(this).text()) === ''
+                    })
+                    .remove();
+            }
+        }
+    });
+
+		
+
+
+
+	
+
+
+
+    var documentsToInsert = [];
+    var foldersToInsert = [];
+
+    $(document).ready(function () {
+        var hasEditRights = false;        
+        if (window.File && window.FileList && window.FileReader && hasEditRights) {
+            var RelatedDocumentsWidget = 5;
+            makeWidgetAreaDroppable('90d6871d-b4d9-4877-aa3b-ee348bebfc9b', $('#widgetRelDoc' + '90d6871d-b4d9-4877-aa3b-ee348bebfc9b'), RelatedDocumentsWidget, true, RelatedDocumentsCallback);
+        }
+
+		if(hasEditRights)
+    		browserVersionNotCompatibleWithDragDropTextUpdate($('#addFile' + '90d6871d-b4d9-4877-aa3b-ee348bebfc9b'), 'Add a new file');
+    });
+
+    function RelatedDocumentsCallback(widgetID, response)
+    {
+        if (window.ContentCollectionInstance.IsWorkingCopy) {
+        	$('#widgetRelDoc' + widgetID).replaceWith(response);            
+            contentUpdated();
+            attachRelatedDocumentsHandlers();            
+        }
+        else {
+            ContentCollectionInstance.reloadContent();
+        }      
+    }
+
+
+				
+					
+	
+	
+
+		//If responsive not enabled, execute this after a timeout
+		if(!isResponsiveEnabled)
+		{
+			window.setTimeout(function(){
+				var tabbedWidgetID = 'divTabbedc0994268-d3de-4b55-9a35-b0bfd812e06c';
+				typeof setTabbedWidgetsTabHeight === "function" && setTabbedWidgetsTabHeight(tabbedWidgetID);
+			}, 1500);
+		}
+
+		function reinitCarousels() {
+			if (window.carouselsToInit) {
+				for (var i = 0; i < window.carouselsToInit.length; i++) {
+					carouselsToInit[i]();
+				}
+			}
+		}
+		function sizeTabbedContent(element){
+			if(window.Pages){
+				if(window.Pages.onResizeHandlers){
+					var setTabbedInterval = setInterval(function () {
+						window.Pages.onResizeHandlers.forEach(function(car){car();});
+					}, 25)
+
+
+					setTimeout(function () {
+						clearInterval(setTabbedInterval);
+						if ($.cookie("enableLiveEdit") === "true") {
+							setInterval(function () {
+								window.Pages.onResizeHandlers.forEach(function(car){car();});
+							}, 2000);
+						}
+					}, 2500);
+					element.onclick="window.setTimeout(function(){reinitCarousels();},2);"
+				}
+			}
+		}
+
+		function adjustTab(e) {
+			e.preventDefault();
+			window.setTimeout(function(){
+				reinitCarousels();
+			}, 2);
+			sizeTabbedContent(this);
+		}
+
+		var tabButtons = document.querySelectorAll("#divTabbedc0994268-d3de-4b55-9a35-b0bfd812e06c .tabButton");
+
+		tabButtons.forEach(function (tabButton) {
+			tabButton.addEventListener("click", adjustTab);
+		});
+
+	
+
+
+
+	 
+
+	 
+
+			 
+
+
+		
+
+	
+
+	
+	
+
+	
+
+	
+				                
+
+						
+	
+	
+		
+
+
+
+
+
+
+
+
+
+	
+			
+					Contact Us
+							
+						
+		
+
+				Elections
+
+					Email Elections
+					
+
+
+				
+					Physical Address
+View Map					
+					400 Court Avenue
+					Gaylord, MN 55334
+
+				
+				
+
+					
+							$(document).ready(function () {
+								var mode = 2;
+								loadGoogleMapsScript(mode, 'loadMaps');
+							});
+					
+					
+						
+						
+							
+							
+								400 Court Avenue  Gaylord MN 55334
+							
+						
+						Directions
+					
+					
+
+				
+					Mailing Address
+					P.O. Box 51
+					Gaylord, MN 55334
+				
+				
+
+				Phone: 507-237-4070 
+													
+
+
+				Directory
+				
+
+		
+									
+	
+
+	 
+
+	 
+
+			 
+						
+	
+	
+		
+	
+
+
+
+
+
+
+
+
+	
+			
+		
+					Quick Links
+						
+	
+	
+        
+				
+					
+
+
+
+
+    
+        Secretary of State - Minnesota
+        
+    
+
+
+
+
+    
+        2026 Sibley County Polling Places (PDF)
+        
+    
+
+
+
+
+    
+        Election Day Voting
+        
+    
+					
+				
+		
+        View All
+        
+	
+	
+	
+	
+		/QuickLinks.aspx
+	
+
+	
+
+
+	 
+
+	 
+
+			 
+						
+	
+	
+		
+
+
+
+
+
+
+
+
+
+	
+		    
+        
+                    FAQs
+                                
+    
+	
+		
+					
+					
+						
+
+
+        
+            Who is eligible to vote?
+        
+
+
+        
+            How do I register to vote?
+        
+
+
+        
+            Why should I pre-register to vote?
+        
+						
+					
+		
+        View All
+        	
+		
+	
+    
+        /FAQ.aspx
+    
+
+	
+
+
+
+	function handleExpandCollapse(e) {
+		const element = e.currentTarget;
+		const answer = document.getElementById(element.getAttribute("aria-controls")).parentElement;
+		const expandArrow = element.getElementsByClassName("widgetFAQ--arrow")[0];
+		if (answer.classList.contains("hidden")) {
+			expandArrow.classList.add('widgetFAQ--arrow-expanded');
+			expandArrow.classList.remove('widgetFAQ--arrow-collapsed');
+			answer.classList.remove("hidden");
+			element.setAttribute("aria-expanded", "true");
+		} else {
+			expandArrow.classList.add('widgetFAQ--arrow-collapsed');
+			expandArrow.classList.remove('widgetFAQ--arrow-expanded');
+			answer.classList.add("hidden");
+			element.setAttribute("aria-expanded", "false");
+		}
+		e.preventDefault();
+		e.stopImmediatePropagation();
+		e.stopPropagation();
+	}
+    document.querySelectorAll(".widgetFAQ--question a").forEach(element => {
+        // When the link is clicked, expand or collapse the answer
+		element.addEventListener("click", handleExpandCollapse);
+	});
+
+
+
+	 
+
+	 
+
+			 
+
+
+	
+
+
+	
+				                
+
+
+
+	
+
+
+
+
+
+
+	
+	
+		
+			Election Results
+		
+			
+	
+		
+			Vote Early in Person or By Mail 
+		
+			
+	
+		
+			Mail Ballot Precincts
+		
+			
+	
+		
+			Check My Voter Registration
+		
+			
+	
+		
+			Track My Absentee or Mail Ballot
+		
+			
+	
+		
+			What's On My Ballot?
+		
+			
+	
+		
+			Redistricting
+		
+			
+	
+		
+			Election Judges
+		
+			
+	
+		
+			Filing for Office 
+		
+			
+	
+		
+			Important 2026 Election Dates
+		
+			
+
+	
+
+
+	
+		(function () {
+			function setupSecondaryMenuProperties() {
+				//setup menu manager properties for secondary menu
+				menuManager.isSideMenuEditable = false;
+				menuManager.sideMenuMaxSubMenuLevels = 4;
+				menuManager.sideMenuHasCustomLinks = false;
+			}
+
+			if (document.readyState === "loading") {
+				document.addEventListener("DOMContentLoaded", setupSecondaryMenuProperties, { once: true });
+				return;
+			}
+
+			setupSecondaryMenuProperties();
+		})();
+	
+
+	
+		(function () {
+			function setupAccordionSecondaryNav() {
+				var $menuContainer = $('#secondaryNav');
+
+				$menuContainer.find('*[id^="SideItem"]').each(function () {
+					var ids = $('[id="' + this.id + '"]');
+					if (ids.length > 1)
+						$.each(ids, function (index, value) {
+							value.id = value.id + '_' + index;
+						});
+				});
+
+				$menuContainer.find('.hasAccordionChildren .openAccordionNav').off('click.secondaryNav').on('click.secondaryNav', function (e) {
+					e.preventDefault();
+					showHideAccordionMenuForSecondaryNav($(this));
+				});
+
+				$menuContainer.find(".grippy").each(function () {
+					menuManager.setupDraggableElement($(this), SIDE_MENU, '#secondaryNav');
+				});
+
+				$menuContainer.find("li").each(function () {
+					menuManager.setupDroppableAccordionElement($(this), SIDE_MENU);
+				});
+			}
+
+			if (document.readyState === "loading") {
+				document.addEventListener("DOMContentLoaded", setupAccordionSecondaryNav, { once: true });
+				return;
+			}
+
+			setupAccordionSecondaryNav();
+		})();
+	
+
+
+
+	
+				                
+
+
+
+	
+
+
+
+
+	
+				                
+
+						
+	
+	
+		
+
+
+
+
+
+
+	
+		
+				
+	
+	
+		
+				
+					
+
+
+	
+		
+			Agendas & Minutes
+		
+	
+
+		.fancyButton56.fancyButton:link,.fancyButton56.fancyButton:visited, .fancyButton56div.fancyButton{
+	background-color: #1a264f;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	padding-right: 1em;
+	padding-left: 1em;
+	background-repeat: no-repeat;
+	background-position: left top;
+border-radius: 3px;
+transition: all 0.3s ease-in-out;}
+.fancyButton56.fancyButton:hover,.fancyButton56.fancyButton:focus,.fancyButton56.fancyButton:active,.fancyButton56.fancyButton.hover{
+	background-color: #3c548b;
+	background-repeat: repeat;
+	background-position: left top;
+}
+.fancyButton56.fancyButton:link > span,.fancyButton56.fancyButton:visited > span, .fancyButton56div.fancyButton > span{
+}
+.fancyButton56.fancyButton:hover > span,.fancyButton56.fancyButton:focus > span,.fancyButton56.fancyButton:active > span,.fancyButton56.fancyButton.hover > span{
+}
+.fancyButton56.fancyButton .text{
+	color: #fff;
+	font-size: 1.05em;
+	font-family: "Lato";
+	text-align: center;
+	padding-top: 40px;
+	padding-right: .75em;
+	padding-left: .75em;
+	font-style: normal;
+	text-decoration: none;
+	padding-top: 40px;
+	padding-right: .75em;
+	padding-left: .75em;
+	background-image: url('/ImageRepository/Document?documentID=94');
+	background-repeat: no-repeat;
+	background-position: center 18px ;
+	border-top: 3px solid #fff;
+	border-left: 3px solid #fff;
+	border-right: 3px solid #fff;
+	border-bottom: 3px solid #fff;
+height: 153px;
+border-radius: 3px;
+transition: all 0.5s ease-in-out;line-height: 1.2;}
+.fancyButton56.fancyButton:hover .text,.fancyButton56.fancyButton:focus .text,.fancyButton56.fancyButton:active .text,.fancyButton56.fancyButton.hover .text{
+	color: #ffffff;
+	text-decoration: underline;
+	border-top: 3px solid #ffffff;
+	border-left: 3px solid #ffffff;
+	border-right: 3px solid #ffffff;
+	border-bottom: 3px solid #ffffff;
+
+
+}
+
+
+ 
+
+
+	
+		
+			Employment
+		
+	
+
+		.fancyButton66.fancyButton:link,.fancyButton66.fancyButton:visited, .fancyButton66div.fancyButton{
+	background-color: #1a264f;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	padding-right: 1em;
+	padding-left: 1em;
+	background-repeat: no-repeat;
+	background-position: left top;
+border-radius: 3px;
+transition: all 0.3s ease-in-out;}
+.fancyButton66.fancyButton:hover,.fancyButton66.fancyButton:focus,.fancyButton66.fancyButton:active,.fancyButton66.fancyButton.hover{
+	background-color: #3c548b;
+	background-repeat: repeat;
+	background-position: left top;
+}
+.fancyButton66.fancyButton:link > span,.fancyButton66.fancyButton:visited > span, .fancyButton66div.fancyButton > span{
+}
+.fancyButton66.fancyButton:hover > span,.fancyButton66.fancyButton:focus > span,.fancyButton66.fancyButton:active > span,.fancyButton66.fancyButton.hover > span{
+}
+.fancyButton66.fancyButton .text{
+	color: #fff;
+	font-size: 1.05em;
+	font-family: "Lato";
+	text-align: center;
+	padding-top: 40px;
+	padding-right: .75em;
+	padding-left: .75em;
+	font-style: normal;
+	text-decoration: none;
+	padding-top: 40px;
+	padding-right: .75em;
+	padding-left: .75em;
+	background-image: url('/ImageRepository/Document?documentID=95');
+	background-repeat: no-repeat;
+	background-position: center 18px ;
+	border-top: 3px solid #fff;
+	border-left: 3px solid #fff;
+	border-right: 3px solid #fff;
+	border-bottom: 3px solid #fff;
+height: 153px;
+border-radius: 3px;
+transition: all 0.5s ease-in-out;line-height: 1.2;}
+.fancyButton66.fancyButton:hover .text,.fancyButton66.fancyButton:focus .text,.fancyButton66.fancyButton:active .text,.fancyButton66.fancyButton.hover .text{
+	color: #ffffff;
+	text-decoration: underline;
+	border-top: 3px solid #ffffff;
+	border-left: 3px solid #ffffff;
+	border-right: 3px solid #ffffff;
+	border-bottom: 3px solid #ffffff;
+
+
+}
+.fancyButton66.fancyButton .textStyle1{
+	color: #ffffff;
+	font-size: 1.05em;
+	font-weight: 300;
+	text-decoration: none;
+line-height: 1.2;}
+.fancyButton66.fancyButton:hover .textStyle1, .fancyButton66.fancyButton.hover .textStyle1{
+	color: #ffffff;
+	text-decoration: underline;
+
+}
+
+
+ 
+				
+			
+		
+	
+			
+
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+
+
+
+
+
+
+	
+		
+				
+	
+	
+		
+				
+					
+
+
+	
+		
+			Notify Me®
+		
+	
+
+		.fancyButton67.fancyButton:link,.fancyButton67.fancyButton:visited, .fancyButton67div.fancyButton{
+	background-color: #1a264f;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	padding-right: 1em;
+	padding-left: 1em;
+	background-repeat: no-repeat;
+	background-position: left top;
+border-radius: 3px;
+transition: all 0.3s ease-in-out;}
+.fancyButton67.fancyButton:hover,.fancyButton67.fancyButton:focus,.fancyButton67.fancyButton:active,.fancyButton67.fancyButton.hover{
+	background-color: #3c548b;
+	background-repeat: repeat;
+	background-position: left top;
+}
+.fancyButton67.fancyButton:link > span,.fancyButton67.fancyButton:visited > span, .fancyButton67div.fancyButton > span{
+}
+.fancyButton67.fancyButton:hover > span,.fancyButton67.fancyButton:focus > span,.fancyButton67.fancyButton:active > span,.fancyButton67.fancyButton.hover > span{
+}
+.fancyButton67.fancyButton .text{
+	color: #fff;
+	font-size: 1.05em;
+	font-family: "Lato";
+	text-align: center;
+	padding-top: 40px;
+	padding-right: .75em;
+	padding-left: .75em;
+	font-style: normal;
+	text-decoration: none;
+	padding-top: 40px;
+	padding-right: .75em;
+	padding-left: .75em;
+	background-image: url('/ImageRepository/Document?documentID=97');
+	background-repeat: no-repeat;
+	background-position: center 18px ;
+	border-top: 3px solid #fff;
+	border-left: 3px solid #fff;
+	border-right: 3px solid #fff;
+	border-bottom: 3px solid #fff;
+height: 153px;
+border-radius: 3px;
+transition: all 0.5s ease-in-out;line-height: 1.2;}
+.fancyButton67.fancyButton:hover .text,.fancyButton67.fancyButton:focus .text,.fancyButton67.fancyButton:active .text,.fancyButton67.fancyButton.hover .text{
+	color: #ffffff;
+	text-decoration: underline;
+	border-top: 3px solid #ffffff;
+	border-left: 3px solid #ffffff;
+	border-right: 3px solid #ffffff;
+	border-bottom: 3px solid #ffffff;
+
+
+}
+
+
+ 
+
+
+	
+		
+			Elections & Voting
+		
+	
+
+		.fancyButton68.fancyButton:link,.fancyButton68.fancyButton:visited, .fancyButton68div.fancyButton{
+	background-color: #1a264f;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	padding-right: 1em;
+	padding-left: 1em;
+	background-repeat: no-repeat;
+	background-position: left top;
+border-radius: 3px;
+transition: all 0.3s ease-in-out;}
+.fancyButton68.fancyButton:hover,.fancyButton68.fancyButton:focus,.fancyButton68.fancyButton:active,.fancyButton68.fancyButton.hover{
+	background-color: #3c548b;
+	background-repeat: repeat;
+	background-position: left top;
+}
+.fancyButton68.fancyButton:link > span,.fancyButton68.fancyButton:visited > span, .fancyButton68div.fancyButton > span{
+}
+.fancyButton68.fancyButton:hover > span,.fancyButton68.fancyButton:focus > span,.fancyButton68.fancyButton:active > span,.fancyButton68.fancyButton.hover > span{
+}
+.fancyButton68.fancyButton .text{
+	color: #fff;
+	font-size: 1.05em;
+	font-family: "Lato";
+	text-align: center;
+	padding-top: 40px;
+	padding-right: .75em;
+	padding-left: .75em;
+	font-style: normal;
+	text-decoration: none;
+	padding-top: 40px;
+	padding-right: .75em;
+	padding-left: .75em;
+	background-image: url('/ImageRepository/Document?documentID=98');
+	background-repeat: no-repeat;
+	background-position: center 18px ;
+	border-top: 3px solid #fff;
+	border-left: 3px solid #fff;
+	border-right: 3px solid #fff;
+	border-bottom: 3px solid #fff;
+height: 153px;
+border-radius: 3px;
+transition: all 0.5s ease-in-out;line-height: 1.2;}
+.fancyButton68.fancyButton:hover .text,.fancyButton68.fancyButton:focus .text,.fancyButton68.fancyButton:active .text,.fancyButton68.fancyButton.hover .text{
+	color: #ffffff;
+	text-decoration: underline;
+	border-top: 3px solid #ffffff;
+	border-left: 3px solid #ffffff;
+	border-right: 3px solid #ffffff;
+	border-bottom: 3px solid #ffffff;
+
+
+}
+.fancyButton68.fancyButton .textStyle1{
+	color: rgb(255, 255, 255);
+	font-size: 1.05em;
+	font-weight: 300;
+	text-decoration: none;
+line-height: 1.2;}
+.fancyButton68.fancyButton:hover .textStyle1, .fancyButton68.fancyButton.hover .textStyle1{
+	color: rgb(255, 255, 255);
+	text-decoration: underline;
+
+}
+.fancyButton68.fancyButton .textStyle2{
+	font-size: 1.05em;
+	font-weight: 300;
+	text-decoration: none;
+line-height: 1.2;}
+.fancyButton68.fancyButton:hover .textStyle2, .fancyButton68.fancyButton.hover .textStyle2{
+	text-decoration: underline;
+
+}
+.fancyButton68.fancyButton .textStyle3{
+	font-size: 1.05em;
+	font-weight: 300;
+	text-decoration: none;
+line-height: 1.2;}
+.fancyButton68.fancyButton:hover .textStyle3, .fancyButton68.fancyButton.hover .textStyle3{
+	text-decoration: underline;
+
+}
+.fancyButton68.fancyButton .textStyle4{
+	font-size: 1.05em;
+	font-weight: 300;
+	text-decoration: underline;
+line-height: 1.2;}
+.fancyButton68.fancyButton:hover .textStyle4, .fancyButton68.fancyButton.hover .textStyle4{
+	text-decoration: underline;
+
+}
+
+
+ 
+				
+			
+		
+	
+			
+
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+
+
+
+
+
+
+	
+		
+				
+	
+	
+		
+				
+					
+
+
+	
+		
+			Property Tax
+		
+	
+
+		.fancyButton69.fancyButton:link,.fancyButton69.fancyButton:visited, .fancyButton69div.fancyButton{
+	background-color: #1a264f;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	padding-right: 1em;
+	padding-left: 1em;
+	background-repeat: no-repeat;
+	background-position: left top;
+border-radius: 3px;
+transition: all 0.3s ease-in-out;}
+.fancyButton69.fancyButton:hover,.fancyButton69.fancyButton:focus,.fancyButton69.fancyButton:active,.fancyButton69.fancyButton.hover{
+	background-color: #3c548b;
+	background-repeat: repeat;
+	background-position: left top;
+}
+.fancyButton69.fancyButton:link > span,.fancyButton69.fancyButton:visited > span, .fancyButton69div.fancyButton > span{
+}
+.fancyButton69.fancyButton:hover > span,.fancyButton69.fancyButton:focus > span,.fancyButton69.fancyButton:active > span,.fancyButton69.fancyButton.hover > span{
+}
+.fancyButton69.fancyButton .text{
+	color: #fff;
+	font-size: 1.05em;
+	font-family: "Lato";
+	text-align: center;
+	padding-top: 40px;
+	padding-right: .75em;
+	padding-left: .75em;
+	font-style: normal;
+	text-decoration: none;
+	padding-top: 40px;
+	padding-right: .75em;
+	padding-left: .75em;
+	background-image: url('/ImageRepository/Document?documentID=115');
+	background-repeat: no-repeat;
+	background-position: center 18px ;
+	border-top: 3px solid #fff;
+	border-left: 3px solid #fff;
+	border-right: 3px solid #fff;
+	border-bottom: 3px solid #fff;
+height: 153px;
+border-radius: 3px;
+transition: all 0.5s ease-in-out;line-height: 1.2;}
+.fancyButton69.fancyButton:hover .text,.fancyButton69.fancyButton:focus .text,.fancyButton69.fancyButton:active .text,.fancyButton69.fancyButton.hover .text{
+	color: #ffffff;
+	text-decoration: underline;
+	border-top: 3px solid #ffffff;
+	border-left: 3px solid #ffffff;
+	border-right: 3px solid #ffffff;
+	border-bottom: 3px solid #ffffff;
+
+
+}
+.fancyButton69.fancyButton .textStyle1{
+	color: #ffffff;
+	font-size: 1.05em;
+	font-weight: 300;
+	text-decoration: none;
+line-height: 1.2;}
+.fancyButton69.fancyButton:hover .textStyle1, .fancyButton69.fancyButton.hover .textStyle1{
+	color: #ffffff;
+	text-decoration: underline;
+
+}
+.fancyButton69.fancyButton .textStyle2{
+	color: #ffffff;
+	font-size: 1.05em;
+	font-weight: 300;
+	text-decoration: none;
+line-height: 1.2;}
+.fancyButton69.fancyButton:hover .textStyle2, .fancyButton69.fancyButton.hover .textStyle2{
+	color: #ffffff;
+	text-decoration: underline;
+
+}
+.fancyButton69.fancyButton .textStyle3{
+	color: #ffffff;
+	font-size: 1.05em;
+	font-weight: 300;
+	text-decoration: none;
+line-height: 1.2;}
+.fancyButton69.fancyButton:hover .textStyle3, .fancyButton69.fancyButton.hover .textStyle3{
+	color: #ffffff;
+	text-decoration: underline;
+
+}
+.fancyButton69.fancyButton .textStyle4{
+	color: #ffffff;
+	font-size: 1.05em;
+	font-weight: 300;
+	text-decoration: none;
+line-height: 1.2;}
+.fancyButton69.fancyButton:hover .textStyle4, .fancyButton69.fancyButton.hover .textStyle4{
+	color: #ffffff;
+	text-decoration: underline;
+
+}
+.fancyButton69.fancyButton .textStyle5{
+	font-size: 1.05em;
+	font-weight: 300;
+	text-decoration: none;
+line-height: 1.2;}
+.fancyButton69.fancyButton:hover .textStyle5, .fancyButton69.fancyButton.hover .textStyle5{
+	text-decoration: underline;
+
+}
+
+
+ 
+
+
+	
+		
+			Licenses & Permits
+		
+	
+
+		.fancyButton70.fancyButton:link,.fancyButton70.fancyButton:visited, .fancyButton70div.fancyButton{
+	background-color: #1a264f;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	padding-right: 1em;
+	padding-left: 1em;
+	background-repeat: no-repeat;
+	background-position: left top;
+border-radius: 3px;
+transition: all 0.3s ease-in-out;}
+.fancyButton70.fancyButton:hover,.fancyButton70.fancyButton:focus,.fancyButton70.fancyButton:active,.fancyButton70.fancyButton.hover{
+	background-color: #3c548b;
+	background-repeat: repeat;
+	background-position: left top;
+}
+.fancyButton70.fancyButton:link > span,.fancyButton70.fancyButton:visited > span, .fancyButton70div.fancyButton > span{
+}
+.fancyButton70.fancyButton:hover > span,.fancyButton70.fancyButton:focus > span,.fancyButton70.fancyButton:active > span,.fancyButton70.fancyButton.hover > span{
+}
+.fancyButton70.fancyButton .text{
+	color: #fff;
+	font-size: 1.05em;
+	font-family: "Lato";
+	text-align: center;
+	padding-top: 40px;
+	padding-right: .75em;
+	padding-left: .75em;
+	font-style: normal;
+	text-decoration: none;
+	padding-top: 40px;
+	padding-right: .75em;
+	padding-left: .75em;
+	background-image: url('/ImageRepository/Document?documentID=114');
+	background-repeat: no-repeat;
+	background-position: center 18px ;
+	border-top: 3px solid #fff;
+	border-left: 3px solid #fff;
+	border-right: 3px solid #fff;
+	border-bottom: 3px solid #fff;
+height: 153px;
+border-radius: 3px;
+transition: all 0.5s ease-in-out;line-height: 1.2;}
+.fancyButton70.fancyButton:hover .text,.fancyButton70.fancyButton:focus .text,.fancyButton70.fancyButton:active .text,.fancyButton70.fancyButton.hover .text{
+	color: #ffffff;
+	text-decoration: underline;
+	border-top: 3px solid #ffffff;
+	border-left: 3px solid #ffffff;
+	border-right: 3px solid #ffffff;
+	border-bottom: 3px solid #ffffff;
+
+
+}
+.fancyButton70.fancyButton .textStyle1{
+	color: #ffffff;
+	font-size: 1.05em;
+	font-weight: 300;
+	text-decoration: none;
+line-height: 1.2;}
+.fancyButton70.fancyButton:hover .textStyle1, .fancyButton70.fancyButton.hover .textStyle1{
+	color: #ffffff;
+	text-decoration: underline;
+
+}
+.fancyButton70.fancyButton .textStyle2{
+	color: #ffffff;
+	font-size: 1.05em;
+	font-weight: 300;
+	text-decoration: none;
+line-height: 1.2;}
+.fancyButton70.fancyButton:hover .textStyle2, .fancyButton70.fancyButton.hover .textStyle2{
+	color: #ffffff;
+	text-decoration: underline;
+
+}
+
+
+ 
+				
+			
+		
+	
+			
+
+
+
+	 
+
+	 
+
+			 
+
+
+	
+
+
+	
+				                
+
+						
+	
+	
+		
+    
+
+
+
+
+
+	
+			
+		
+								
+	
+	
+		
+					
+						
+
+
+	
+						
+					
+		
+	
+	
+
+	
+
+	
+
+
+
+
+	//Render slideshow if info advacned items contain one.
+	$(document).ready(function (e) {
+		$('#divInfoAdvf47ab361-93c9-4d7c-9a18-58963db367de .InfoAdvanced.widgetItem').each(function () {
+			renderSlideshowIfApplicable($(this));		
+		});
+	});
+
+	 
+
+	 
+
+							
+	
+	
+		
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+    
+
+
+
+    @media  (min-width: 62em) {
+.widgetOptionSet27 .cpGrid .autoWidths.center {
+text-align: right;
+}
+}
+
+
+
+	
+			
+		
+					Contact Us
+								
+	
+	
+		
+					
+						
+
+
+	Sibley CountyGaylord, MN 55334Phone: 507-237-7800Email Us
+						
+					
+		
+	
+	
+
+	
+
+	
+
+
+
+
+	//Render slideshow if info advacned items contain one.
+	$(document).ready(function (e) {
+		$('#divInfoAdv5461e007-236e-4f78-9a37-27d7611d12e4 .InfoAdvanced.widgetItem').each(function () {
+			renderSlideshowIfApplicable($(this));		
+		});
+	});
+
+	 
+
+	 
+
+							
+	
+	
+		
+	
+
+
+
+
+
+
+
+
+	
+			
+		
+					Quick Links
+						
+	
+	
+        
+				
+					
+
+
+
+
+    
+        License Center
+        
+    
+
+
+
+
+    
+        Sheriff's Office
+        
+    
+
+
+
+
+    
+        Public Health and Human Services
+        
+    
+
+
+
+
+    
+        Public Works
+        
+    
+
+
+
+
+    
+        Employee Portal (New Intranet)
+        
+    
+					
+				
+		
+        
+	
+	
+	
+	
+		/QuickLinks.aspx
+	
+
+	
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+	
+
+
+
+
+
+
+
+
+	
+			
+		
+					Helpful Links
+						
+	
+	
+        
+				
+					
+
+
+
+
+    
+        Contact Us
+        
+    
+
+
+
+
+    
+        Site Map
+        
+    
+
+
+
+
+    
+        Accessibility
+        
+    
+
+
+
+
+    
+        Copyright Notices
+        
+    
+
+
+
+
+    
+        Privacy Policy
+        
+    
+					
+				
+		
+        
+	
+	
+	
+	
+		/QuickLinks.aspx
+	
+
+	
+
+
+	 
+
+	 
+
+			 
+
+
+	
+
+
+	
+				                
+
+						
+	
+	
+		
+ 
+	
+	
+		
+
+
+  .cpBylineTS {
+    text-align: center;
+  }
+  
+  .cpBylineIconTS {
+    fill: currentColor;
+    width: 39px;
+    height: 26px;
+    display: inline;
+    vertical-align: middle;
+  }
+
+
+
+  Government Websites by CivicPlus®
+
+
+	
+
+	
+
+	 
+
+	 
+
+			 
+
+
+	
+
+
+
+
+            
+        
+    
+
+
+
+
+	
+		
+			Loading
+			
+				
+					
+				
+			
+		
+		
+			
+				
+				Loading
+			
+		
+		
+			Do Not Show Again
+			Close
+		
+	
+
+
+
+
+
+
+
+		$(document).ready(function () {
+			var filter = {
+				targetId: '209',
+				targetType: 1
+			}
+
+			new SplashModalRender().triggerRender(filter);
+		});
+
+
+
+	
+	
+	
+	
+
+
+
+	
+
+
+
+
+
+
+    
+    !function(){var b=function(){window.__AudioEyeSiteHash = "8b93a9a35a91ef5302fe443d6ca68161"; var a=document.createElement("script");a.src="https://wsmcdn.audioeye.com/aem.js";a.type="text/javascript";a.setAttribute("async","");document.getElementsByTagName("body")[0].appendChild(a)};"complete"!==document.readyState?window.addEventListener?window.addEventListener("load",b):window.attachEvent&&window.attachEvent("onload",b):b()}();
+
+
+    
+        $(function () {
+            document.cookie = "responsiveGhost=0; path=/";
+        });
+        $(window).on("load", function () {
+            $('body').addClass('doneLoading').removeClass('hideContent');
+
+            if ($('#404Content').length > 0)
+                $('div#bodyWrapper').css('padding', '0px');
+        });
+    
+
+    
+        
+            body.hideContent {
+                opacity: 1 !important;
+            }
+        
+    
+
+        
+
+	
+
+		
+			Arrow Left
+			
+		
+
+		
+			Arrow Right
+			
+		
+
+	
+
+    loadCSS('//fonts.googleapis.com/css?family=Abril+Fatface:regular|Fira+Sans:600,700,regular|Lato:300,300italic,700,700italic,900,900italic,italic,regular|Montserrat:200,300,600,600italic,700,700italic,800,900,italic,regular|');
+    
+
+    []
+        
+            
+                
+                    Slideshow Left Arrow
+                    
+                        
+                    
+                
+                
+                    Slideshow Right Arrow
+                    
+                        
+                    
+                
+            
+        
+    
+	
+	
+
+    
+
+

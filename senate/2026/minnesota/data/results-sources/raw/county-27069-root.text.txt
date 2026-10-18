@@ -1,0 +1,928 @@
+
+
+
+
+	
+
+
+
+
+
+//----- Check href of all <a...> tags, if it matchs page url and immediate parent is <LI>,
+//		append "active" to className of all ancestor <LI> tags until the parent of the <LI>
+//		tag is not <UL> or the parent of the <UL> is not another <LI> tag.
+var functionRef = function setClassActive()
+{
+	var e;
+	try
+	{
+		var pattern = new RegExp("http[s]?://.*?/(.*)[?#]?","");
+		var tags = document.getElementsByTagName("A");
+		if (tags)
+		{
+			for (var i=0;i<tags.length;i++)
+			{
+				var el = tags[i];
+				var resultsTag = el.href.match(pattern);
+				var resultsPage = location.href.match(pattern);
+				if (!resultsTag || !resultsPage) continue;
+				if (resultsTag[1] != resultsPage[1]) continue;
+	
+				// go up li tree marking this and all parent class=active
+				var li = el.parentNode;
+				while (li && li.tagName == 'LI')
+				{
+					if (li.className != '') 
+						li.className += ' ';
+					li.className += 'active';
+					var ul = li.parentNode;
+					if (!ul || ul.tagName != 'UL') break;
+					li = ul.parentNode;
+				}
+				//let's catch all links e.g. topnav, leftnav, quick links, etc
+				//break;	//found url match, quit checking tags
+			}
+		}
+	}
+	catch (e) {}
+}
+//----- Activate topnavActive once page loads
+if (typeof addEventListener != 'undefined') addEventListener('load', functionRef, false);	//standards browser
+else if (typeof attachEvent != 'undefined') attachEvent("onload", functionRef);				//IE early versions
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	
+	
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+
+
+
+
+
+	   
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	 
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+	
+
+	
+
+
+
+
+
+	var defaultCalendarColor = "#3788d8";
+	var ImportCals = ["7",];
+	var calendarProps = {'6' : { 'color' : '' , 'name' : 'calendar-list-options' },
+'7' : { 'color' : '#3787d8' , 'name' : 'Master' },
+};
+	var RZCalendarTimezone = "";
+
+
+
+	
+	
+
+	
+	
+
+
+
+
+
+
+
+
+if (typeof(RZ) == 'undefined') RZ = {};
+if (!RZ.link) RZ.link = new Object();
+RZ.pagetype = 'template'
+RZ.baseurlprefix = ''
+RZ.baseurlpath = ''
+RZ.protocolRelativeRevizeBaseUrl='//webgen1.revize.com'
+
+RZ.pagetemplatename = 'index'
+RZ.pagetemplateid = '22'
+RZ.pagemodule = ''
+RZ.pagemoduleid = ''
+RZ.pagerecordid = '';
+
+RZ.pageid = 'index';
+RZ.pageparentid = '';
+RZ.pagesectionid = '0';
+RZ.pagesectionname = '';
+RZ.pagesectionlevel = '0';
+RZ.pagesectionfolder = '';
+RZ.pagesectionfilter = 'sectionid=0';
+RZ.pagelinkfilter = 'linklevel=0 and linksectionid=0';
+RZ.pagelinklevel = '0';
+RZ.pagelinkid = '-1';
+RZ.pageidfield = '';
+
+RZ.isnewrecord = false;
+RZ.editmodule = '';
+RZ.editrecordid = '';
+RZ.editrecordversion = '';
+RZ.editversion = '';
+RZ.editaction = '';
+
+RZ.page_roles = ''
+RZ.page_users = '1f5f7520bf39aaff03ff74a4bd83e0b25f591bb7cbd6fe9c1fd8e731b98ade5d|c45b474120348aa1799ddce0c0cd9e4b6730bc1f84fef16ed9b227dd99866652|aec11bf5181b230c8e613155470850552b32427bd71e4c45213515cd1ee32c57|b5b35031cebd9264b06a709043f833b52ef34e4bec619ec63971435907511fe9|80f5693b5727802ff0848d61b01847769b4ba25269b52b3f95a5974dfbca7afa|6c63ab23ee68f04d5e2617bc5e10c19ebb6207751c3f2ee9c23dfcd07e659ea9|47f78e5b77f90ec9f66021492d3909fa00b7c11a80371835672052c378a89384'
+RZ.page_key = 'index[]'
+RZ.parent_key = ''
+RZ.inherit_key = 'index[]'
+RZ.workflowname = ''
+RZ.permissions_options = ''
+RZ.permissions_module = 'webspace_page_permissions'
+RZ.webspace = 'kittsoncntymn'
+RZ.webspacedesc = "Adventure";
+
+RZ.featurespattern = '(EZ)';
+null
+
+RZ.webspacelinksurl = ''
+RZ.webspacelinksurl = './webspace/links.html'
+RZ.workflowlist = ''
+RZ.revizeserverurl = 'https://webgen1.revize.com/revize/kittsoncntymn';
+
+if (!RZ.nextseq) RZ.nextseq = {linknames:{},modules:{}};
+
+RZ.webspace_config = new Object();
+RZ.webspace_config.admin_email = "noreply@co.walla-walla.wa.us";
+RZ.webspace_config.calendar_options = "max_events=4";
+RZ.webspace_config.form_captcha = "yes";
+RZ.webspace_config.form_server = "revizeserver";
+RZ.webspace_config.form_technology = "jsp";
+RZ.webspace_config.formwizard_ftp_password = "";
+RZ.webspace_config.formwizard_ftp_port = "";
+RZ.webspace_config.formwizard_ftp_server = "";
+RZ.webspace_config.formwizard_ftp_user = "";
+RZ.webspace_config.formwizard_setup = "yes";
+RZ.webspace_config.formwizard_smtp_password = "xxx";
+RZ.webspace_config.formwizard_smtp_server = "xxx";
+RZ.webspace_config.formwizard_smtp_user = "xxx";
+RZ.webspace_config.google_analytics = "";
+RZ.webspace_config.home_pageid = "0";
+RZ.webspace_config.home_sectionid = "0";
+RZ.webspace_config.home_template = "home,index,sitemap";
+RZ.webspace_config.icon_email = "<img src=\"/revize/images/email_icon_yellow.gif\" width=\"16\" border=\"0\" height=\"17\" title=\"Request email notification when page changes\" alt=\"Request email notification when page changes\" style=\"\" />";
+RZ.webspace_config.image_maxheight = "3000";
+RZ.webspace_config.image_maxwidth = "3000";
+RZ.webspace_config.image_setup = "yes";
+RZ.webspace_config.livesite_url = "";
+RZ.webspace_config.menu_links_module = "links";
+RZ.webspace_config.menu_newsection = "";
+RZ.webspace_config.menu_nexturl = "webspace_menu-editform.jsp";
+RZ.webspace_config.menu_sections_module = "sections";
+RZ.webspace_config.menu_system = "custom";
+RZ.webspace_config.menu_version = "1.00";
+RZ.webspace_config.new_menu_manager_enabled = "yes";
+RZ.webspace_config.notify_return_url = "enotify/index.php";
+RZ.webspace_config.rte_setup = "yes";
+RZ.webspace_config.to_email = "";
+RZ.webspace_config.use_folders = "1";
+RZ.webspace_config.use_new_buttons = "yes";
+
+RZ.isauthenticationactive = true
+RZ.warning = ""
+RZ.adminwinmsg = null
+
+RZ.channels = 'revize,fileschannel';
+RZ.jsversion = 1.2
+
+
+
+
+
+
+	Skip to main content
+	
+	
+
+
+
+
+	
+	
+		
+			
+				
+
+
+
+
+	
+	
+	   
+	 
+
+			
+			
+                
+                    
+                    
+                
+			
+			
+			
+				
+
+
+ 
+
+	Home
+	Government
+		
+			Boards & Committees
+				
+					County Board
+					Kittson County Extension Committee
+					Kittson County Township / City Officers
+				
+			
+			Agendas & Minutes
+			County Finances
+				
+					Budgets
+					Financial Statements
+					Truth in Taxation
+				
+			
+			Ordinances
+			Important Documents
+		
+	
+	Departments
+		
+			Assessors
+			County Administrator
+			Court Administration
+			Driver's License & Motor Vehicle
+			Elections
+			Emergency Management
+			Environmental Services
+			Financial Service
+			Highway Department
+			Information Technology
+			Recorder
+			Sheriff
+			Social Services
+			Taxpayer Services
+			Veteran Services
+			Zoning
+		
+	
+	Community
+		
+			University of Minnesota Extension
+			Kittson County SWCD
+			Two Rivers Watershed District
+			Kittson County Trailblazers
+			Kittson County Veterans Memorial
+				
+					Memorial Pics
+				
+			
+			GIS
+			Community Events
+		
+	
+	How Do I?
+		
+			Apply For
+				
+					Passports
+					Adult Services
+					Child Support Services
+					Childcare Assistance Program
+					Children's Services
+					Driver's License & Motor Vehicle
+					Employment Opportunities
+					Financial Assistance / Food Support
+					Homestead Credit
+					Medical Programs
+					Veteran Services
+				
+			
+			Contact
+				
+					Department Personnel
+				
+			
+			Submit
+				
+					A Concern
+					Assessment Valuation / Classification Appeal
+					Property Tax Payment
+				
+			
+		
+	
+
+
+
+
+
+
+
+
+			
+				
+					
+						RZ.module = 'revize_topnav';
+						RZ.nexturl = "/revize/plugins/menus/webspace_menu-editlist.jsp?pageid=index&"
+								   + "linksfilter=linkplacement=topnav and linkparentid=0&"
+								   + "numberoflevels=3&"
+								   + "linkoptions=url,template,file&"
+								   + "linknewsection=*all*";
+						RZ.img = '<span class="rzBtn">Edit Top Nav</span>';
+						RZ.caption = '';
+						RZ.set="links.linkplacement=topnav";
+						RZ.options = '';
+						if (typeof RZaction != 'undefined') RZaction('editlist');
+					
+					
+						RZ.module = 'alert';
+						RZ.recordid = '';
+						RZ.nexturl = "/revize/webgen_includes/adventure/editforms/alert-editform.jsp?pageid=top-alert";
+						RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = '';
+						RZ.img = '<span class="rzBtn">Edit Alert</span>';
+						RZ.set = 'alert.pageid=top-alert';
+						RZ.options = '';
+						if (typeof RZaction != 'undefined') RZaction('editform');
+					
+				
+			
+			
+			
+			    
+			
+		
+	
+
+
+	
+		
+			RZ.module = 'slider';
+			RZ.nexturl = "/revize/webgen_includes/adventure/editforms/slider-editlist.jsp?pageid=index";
+			RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = '';
+			RZ.img = '<span class="rzBtn">Edit Slider</span>';
+			RZ.caption = '';
+			RZ.options = '';
+			if (typeof RZaction != 'undefined') RZaction('editlist');
+		 
+		
+			
+				RZ.module = 'global';
+				RZ.recordid = '';
+				RZ.nexturl = "/revize/webgen_includes/adventure/optionspanel/global_styles-editform.jsp";
+				RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = '';
+				RZ.img = '<span class="rzBtn">Edit Global Styles</span>';
+				RZ.set = 'global.pageid=index';
+				RZ.options = '';
+				if (typeof RZaction != 'undefined') RZaction('editform');
+			
+			
+				RZ.module = 'freeform';
+				RZ.recordid = '';
+				RZ.nexturl = "/revize/webgen_includes/adventure/editforms/metadata-editform.jsp";
+				RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = '';
+				RZ.img = '<span class="rzBtn">Edit Metadata</span';
+				RZ.set = "freeform.pageid=index";
+				RZ.options = '';
+				if (typeof RZaction != 'undefined') RZaction('editform');
+			
+			 
+			
+				RZ.nexturl = '';
+				RZ.img = '<img src="images/edit/permissions.jpg" alt="Permissions" border="0" />';
+				RZ.options = '';
+				if (typeof RZaction != 'undefined') RZaction('permissions');
+			
+	
+
+    
+        
+            Search
+            
+            Go
+        
+    
+
+if (typeof RZlistbegin != 'undefined') RZlistbegin(1)
+
+
+if (typeof RZlinktemplate != 'undefined') RZlinktemplate('slider','','')
+if (typeof RZ.nextseq != 'undefined') RZ.nextseq.modules['slider_1']={field:'seq_no',seq:'2.00'};
+
+
+	
+		
+	
+
+	
+	    
+	        
+	        
+	            
+				
+					
+						RZ.module = 'generic';
+						RZ.recordid = '';
+						RZ.nexturl = "/revize/webgen_includes/adventure/editforms/text-editform.jsp";
+						RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = '';
+						RZ.img = '<span class="rzBtn">Edit Tagline</span>';
+						RZ.set = 'pageid=index-quick-header';
+						RZ.options = '';
+						if (typeof RZaction != 'undefined') RZaction('editform');
+					
+					
+						RZ.module = 'links';
+						RZ.nexturl = "/revize/plugins/menus/webspace_menu-editlist.jsp?pageid=index-quicks&"
+								   + "linksfilter=linkplacement=header-nav-1&"
+								   + "numberoflevels=1&"
+								   + "linkoptions=url,file&"
+								   + "linknewsection=*all*";
+						RZ.img = '<span class="rzBtn">Edit Links</span>';
+						RZ.caption = '';
+						RZ.set="links.linkplacement=index-quicks";
+						RZ.options = '';
+						if (typeof RZaction != 'undefined') RZaction('editlist');
+					
+				
+	                
+			
+						
+							
+							Taxpayer Portal
+					
+						
+							
+							Employment
+					
+						
+							
+							How do I?
+					
+	                
+	            
+	            
+	                
+						
+							
+								RZ.module = 'generic';
+								RZ.recordid = '';
+								RZ.nexturl = "/revize/webgen_includes/adventure/editforms/text_long-editform.jsp";
+								RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = '';
+								RZ.img = '<span class="rzBtn">Edit Section</span>';
+								RZ.set = 'pageid=index-quick-blurb';
+								RZ.options = '';
+								if (typeof RZaction != 'undefined') RZaction('editform');
+							
+							
+								RZ.module = 'imagelink';
+								RZ.recordid = '';
+								RZ.nexturl = "/revize/webgen_includes/adventure/editforms/socials-editlist.jsp?pageid=index-socials";
+								RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = '';
+								RZ.img = '<span class="rzBtn">Edit Socials</span>';
+								RZ.set = '';
+								RZ.options = '';
+								if (typeof RZaction != 'undefined') RZaction('editlist');
+							
+						
+						Kittson County Courthouse
+                        410 5th St. SHallock, MN218-843-2670
+                        
+				
+							
+						
+                        
+	                
+	            
+	        
+	    
+	    
+	
+
+
+
+	
+		
+			RZ.module = 'alert';
+			RZ.recordid = '';
+			RZ.nexturl = "/revize/webgen_includes/adventure/editforms/alert-editform.jsp?pageid=index";
+			RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = '';
+			RZ.img = '<span class="rzBtn">Edit Alert</span>';
+			RZ.set = 'pageid=index';
+			RZ.options = '';
+			if (typeof RZaction != 'undefined') RZaction('editform');
+		
+	
+	
+
+
+
+
+    
+        
+            
+                
+					
+						
+							RZ.module = 'generic';
+							RZ.recordid = '';
+							RZ.nexturl = "/revize/webgen_includes/adventure/editforms/calendar-editform.jsp";
+							RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = '';
+							RZ.img = '<span class="rzBtn">Edit Calendar</span>';
+							RZ.set = 'pageid=index-calendar';
+							RZ.options = '';
+							if (typeof RZaction != 'undefined') RZaction('editform');
+						
+					
+                    Event Calendar
+                    
+						
+                        
+                    
+                    See all events
+                    
+                
+            
+            
+                
+					
+						
+							RZ.module = 'news';
+							RZ.recordid = '';
+							RZ.nexturl = "/revize/webgen_includes/adventure/editforms/news-editlist.jsp?pageid=news-main";
+							RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = '';
+							RZ.img = '<span class="rzBtn">Edit News</span>';
+							RZ.set = '';
+							RZ.options = '';
+							if (typeof RZaction != 'undefined') RZaction('editlist');
+						
+						
+							RZ.module = 'generic';
+							RZ.recordid = '';
+							RZ.nexturl = "/revize/webgen_includes/adventure/editforms/text-editform.jsp";
+							RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = '';
+							RZ.img = '<span class="rzBtn">Edit Header</span>';
+							RZ.set = 'pageid=index-news';
+							RZ.options = '';
+							if (typeof RZaction != 'undefined') RZaction('editform');
+						
+					
+                    Latest News
+                    
+						
+				
+					Household Hazardous Waste + Medication Collection Event
+					June 15
+				
+		
+				
+					Update on Temporary DMV Closure, 6/11/26
+					June 11
+				
+		
+				
+					2026-2027 Kittson County and Tribal Child Care Fund Plan
+					September 25
+				
+		
+                    
+                    See all news
+                
+            
+        
+    
+	
+
+
+
+
+    			
+				
+					RZ.module = 'generic';
+					RZ.recordid = '';
+					RZ.nexturl = "/revize/webgen_includes/adventure/editforms/text_link-editform.jsp";
+					RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = '';
+					RZ.img = '<span class="rzBtn">Edit Call to Action</span>';
+					RZ.set = 'pageid=call-to-action';
+					RZ.options = '';
+					if (typeof RZaction != 'undefined') RZaction('editform');
+				
+					
+    
+
+
+	
+    
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pagelanguage: 'en',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE},
+                'google-translate');
+        }
+    
+
+
+    
+        
+            Afrikaans
+            Albanian
+            Arabic
+            Armenian
+            Azerbaijani
+            Basque
+            Belarusian
+            Bengali
+            Bosnian
+            Bulgarian
+            Catalan
+            Cebuano
+            Chinese (Simplified)
+            Chinese (Traditional)
+            Croatian
+            Czech
+            Danish
+            Dutch
+            English
+            Esperanto
+            Estonian
+            Filipino
+            Finnish
+            French
+            Galician
+            Georgian
+            German
+            Greek
+            Gujarati
+            Haitian Creole
+            Hausa
+            Hebrew
+            Hindi
+            Hmong
+            Hungarian
+            Icelandic
+            Igbo
+            Indonesian
+            Irish
+            Italian
+            Japanese
+            Javanese
+            Kannada
+            Khmer
+            Korean
+            Lao
+            Latin
+            Latvian
+            Lithuanian
+            Macedonian
+            Malay
+            Maltese
+            Maori
+            Marathi
+            Mongolian
+            Nepali
+            Norwegian
+            Persian
+            Polish
+            Portuguese
+            Punjabi
+            Romanian
+            Russian
+            Serbian
+            Slovak
+            Slovenian
+            Somali
+            Spanish
+            Swahili
+            Swedish
+            Tamil
+            Telugu
+            Thai
+            Turkish
+            Ukrainian
+            Urdu
+            Vietnamese
+            Welsh
+            Yiddish
+            Yoruba
+            Zulu
+        
+    
+
+
+		
+
+	
+		
+			
+				
+					Share this page
+					×
+				
+				
+					
+						Copy and paste this code into your website.
+						<a href="http://www.co.kittson.mn.us/">Your Link Name</a>
+					
+					
+						Share this page on your favorite Social network
+						
+							
+								
+									 Facebook
+								
+							
+							
+								
+									 Twitter
+								
+							
+							
+								
+									 Reddit
+								
+							
+						
+					
+					Close
+				
+			
+		
+	
+	
+
+    
+        
+            
+                
+					
+						
+							RZ.module = 'links';
+							RZ.nexturl = "/revize/plugins/menus/webspace_menu-editlist.jsp?pageid=footer-links&"
+									   + "linksfilter=linkplacement=footer-links&"
+									   + "numberoflevels=1&"
+									   + "linkoptions=url,file&"
+									   + "linknewsection=*all*";
+							RZ.img = '<span class="rzBtn">Edit Links</span>';
+							RZ.caption = '';
+							RZ.set="links.linkplacement=footer-links";
+							RZ.options = '';
+							if (typeof RZaction != 'undefined') RZaction('editlist');
+						
+					                    
+			
+						Social Services
+					
+						Highway Department
+					
+						Community
+					
+                    
+                
+                
+					
+						
+							RZ.module = 'generic';
+							RZ.recordid = '';
+							RZ.nexturl = "/revize/webgen_includes/adventure/editforms/text_long-editform.jsp";
+							RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = '';
+							RZ.img = '<span class="rzBtn">Edit Section</span>';
+							RZ.set = 'pageid=footer-blurb';
+							RZ.options = '';
+							if (typeof RZaction != 'undefined') RZaction('editform');
+						
+						
+							RZ.module = 'imagelink';
+							RZ.recordid = '';
+							RZ.nexturl = "/revize/webgen_includes/adventure/editforms/socials-editlist.jsp?pageid=footer-socials";
+							RZ.popupwidth = ''; RZ.popupheight = ''; RZ.popupscroll = '';
+							RZ.img = '<span class="rzBtn">Edit Socials</span>';
+							RZ.set = '';
+							RZ.options = '';
+							if (typeof RZaction != 'undefined') RZaction('editlist');
+						
+					                    
+			
+						
+					                  
+					
+					Our Location
+                    410 5th St. S.Hallock, MN 56728 218-843-2670
+                
+            
+        
+    
+    
+        
+            
+                © 2026    
+            
+            
+                Powered by revize., the Government Website Experts | Login
+            
+        
+    
+
+
+
+
+
+	
+
+
+
+  
+    
+	  
+		  
+			
+			
+		  
+      
+	  
+		 
+		 
+		 
+		 
+	  
+      
+        Close
+        Read More
+      
+    
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,5610 @@
+
+
+
+
+
+	
+
+				(function(w,d,s,l,i){w.GAMeasurementID='G-SP7ETG2T6C';w[l]=w[l]||[];w[l].push({'gtm.start':
+				new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+				j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+				'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+				})(window,document,'script','cpDataLayerGA4','GTM-K73C5PS');
+				
+				
+					var enableTelemetry = 'false'
+					var aiConfig = {
+					instrumentationKey: '1cde048e-3185-4906-aa46-c92a7312b60f'						
+					}
+					var appInsights = window.appInsights || function (a) { function b(a) { c[a] = function () { var b = arguments; c.queue.push(function () { c[a].apply(c, b) }) } } var c = { config: a }, d = document, e = window; setTimeout(function () { var b = d.createElement('script'); b.src = a.url || 'https://js.monitor.azure.com/scripts/a/ai.0.js', d.getElementsByTagName('script')[0].parentNode.appendChild(b) }); try { c.cookie = d.cookie } catch (a) { } c.queue = []; for (var f = ['Event', 'Exception', 'Metric', 'PageView', 'Trace', 'Dependency']; f.length;)b('track' + f.pop()); if (b('setAuthenticatedUserContext'), b('clearAuthenticatedUserContext'), b('startTrackEvent'), b('stopTrackEvent'), b('startTrackPage'), b('stopTrackPage'), b('flush'), !a.disableExceptionTracking) { f = 'onerror', b('_' + f); var g = e[f]; e[f] = function (a, b, d, e, h) { var i = g && g(a, b, d, e, h); return !0 !== i && c['_' + f](a, b, d, e, h), i } } return c }(aiConfig);
+					window.appInsights = appInsights, appInsights.queue && 0 === appInsights.queue.length;
+					// Add telemetry initializer
+					appInsights.queue.push(function() {
+						appInsights.context.addTelemetryInitializer(function(envelope) {
+							var telemetryItem = envelope.data.baseData;
+							// To check the telemetry item’s type:
+							if (!false)
+							{
+								//If the telemetry is not enabled, we still want to capture Google map custom event, so only allow that
+								if (envelope.name.indexOf('.Event') == -1)
+									return false;
+							}
+						});
+					});						
+					appInsights.trackPageView();
+				
+	
+		function populateAntiForgery(token) {
+			var input = document.createElement("input");
+			input.name = "__RequestVerificationToken";
+			input.type = "hidden";
+			input.value = token;
+			var absPat = /^https?:\/\/|^\/\//i;
+			var forms = document.getElementsByTagName("form");
+			for (var i = 0; i < forms.length; i++) {
+				if (forms[i].method == "post" &&
+					!forms[i].querySelector('[name="__RequestVerificationToken"]') &&
+					!absPat.test(forms[i].getAttribute("action"))) {
+					forms[i].appendChild(input.cloneNode());
+				}
+			}
+		}
+
+		function getAntiForgeryToken(callback, error) {
+			var xhr = new XMLHttpRequest();
+			xhr.open("GET", "/antiforgery");
+			xhr.addEventListener("load", function() {
+				try {
+					if (this.status !== 200) {
+						throw Error("Invalid status. Could not retrieve antiforgery token.");
+					}
+					var obj = JSON.parse(this.responseText);
+					callback(obj.token);
+				} catch (e) {
+					typeof error === "function" && error(e);
+				}
+			});
+			xhr.send();
+		}
+
+		getAntiForgeryToken(function(token) {
+			if (document.readyState === "complete"
+				|| document.readyState === "loaded" 
+				|| document.readyState === "interactive") {
+				populateAntiForgery(token);
+				return;
+			}
+			document.addEventListener("DOMContentLoaded", function() {
+				populateAntiForgery(token);
+			}, false);
+		}, console.error);
+	
+			
+
+	
+		window.departmentHeader = {};
+		window.pageSectionTracker = {};
+		window.isResponsiveEnabled = true;
+		window.isRemoveSetHeights= false;
+		if (window.isRemoveSetHeights) {
+			document.documentElement.className += ' removeSetHeights';
+		}
+		window.mainMenuMediaQuery = 'screen and (max-width: 40em)';
+		window.isMobileBrowserIncludingTablets = false;
+		window.fixedResponsiveMenu = false;
+		window.fullWidthResponsiveMenu = false;
+		window.responsiveMenuHeight = '';
+		window.responsiveMenuFontSize = '';
+		window.isContentAdvisor = false;
+		(function () {
+			window.setSizeCookie = function () {
+				document.cookie = "dpi=" + window.devicePixelRatio + "; path=/";
+				document.cookie = "viewportWidth=" + window.innerWidth + "; path=/";
+				document.cookie = "viewportHeight=" + window.innerHeight + "; path=/";
+				if (screen && screen.width && screen.height) {
+					document.cookie = "screenWidth=" + screen.width + "; path=/";
+					document.cookie = "screenHeight=" + screen.height + "; path=/";
+				}
+				document.cookie = "responsiveGhost=1; path=/";
+			};
+
+			setSizeCookie();
+		}());
+	
+		
+
+	
+	
+	
+
+	
+	
+	
+	
+		Wright County, MN - Official Website | Official Website
+
+		
+		
+			
+	
+	
+
+	
+	
+	
+	
+	<!--
+	var intCountryCode = 840;
+	var order = '';
+//-->
+	
+		
+
+	
+	
+		window.Pages = window.Pages || {};
+		// FrontEnd RWD initialization
+		window.Pages.rwdReady = $.Deferred();
+		window.Pages.toolBarDeferred = $.Deferred();
+		window.Pages.rwdSetupComplete = $.Deferred();
+		window.Pages.megaMenuLoaded = $.Deferred();
+		window.Pages.angularToolbarComplete = $.Deferred();
+		window.Pages.frontEndToolbarComplete = $.Deferred();
+	
+	
+	
+	
+	
+	
+	
+
+
+
+
+	
+	
+	
+	
+
+	
+		setEditorVariables(false, 840);
+		function getPrintPreviewType() { return 0; } function printPreview() {pPreview(getPrintPreviewType()); }
+	
+	
+
+
+
+    jQuery(document).click(function (event) {
+	var target = jQuery(event.target);
+	if (target.attr('src') && target.parents('.image').length && target.parents('.widget').length) {
+		var text = target.attr('title');
+		
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Image',
+				eventAction: 'Image - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.is('button') || target.hasClass('button') || target.parents().hasClass('button')) {
+		var text = "";
+		if (target.parents('.button')[0]) {
+			text = target.parents('.button').first().text();
+		} else if (target.text().length) {
+			text = target.text();
+		} else if (target.attr('title').length) {
+			text = target.attr('title');
+		}
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Button',
+				eventAction: 'Button - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetCustomHtml').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Custom Html',
+				eventAction: 'Custom Html Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.editor').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Editor',
+				eventAction: 'Editor Link Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.GraphicLinks').length) {
+		var text = "";
+		var targetGraphicLink = target;
+		if (target.hasClass('widgetGraphicLinksLink')) {
+			targetGraphicLink = jQuery(target.children()[0]);
+		}
+		if (targetGraphicLink.hasClass('text')) {
+			text = targetGraphicLink.text();
+		} else if (targetGraphicLink.attr('src').length) {
+			if (targetGraphicLink.attr('alt').length) {
+				text = targetGraphicLink.attr('alt');
+			} else {
+				text = targetGraphicLink.attr('src');
+			}
+		} else {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Graphic Links',
+				eventAction: 'Graphic Link - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.InfoAdvanced').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Info Advanced',
+				eventAction: 'Info Advanced Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.list').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'List',
+				eventAction: 'List Clicked',
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.megaMenuItem').length || target.parents('.topMenuItem').length) {
+		var megaMenuText = jQuery('.topMenuItem.mouseover').find('span').text();
+		var breadCrumbs = [];
+		jQuery('.breadCrumbs > li').each(function () {
+			 breadCrumbs.push(this.textContent);
+		});
+		var pageTitle = breadCrumbs.join('>');
+		var subTitleText = target.parents('.megaMenuItem').children('.widgetTitle').children().text();
+		var text = "";
+		if (pageTitle) {
+			text += pageTitle + " | ";
+		} else {
+			text += document.title + ' - ';
+		}
+		if (target.text() == "" && megaMenuText == "") {
+			text += "N/A";
+		} else if (target.text().length && megaMenuText.length) {
+			if (megaMenuText == target.text()) {
+				text += megaMenuText;
+			} else {
+				text += megaMenuText + " - " + subTitleText + " - " + target.text();
+			}
+		} else if (target.text() == "") {
+			text += megaMenuText;
+		} else {
+			text += target.text();
+		}
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Mega Menu',
+				eventAction: 'Mega Menu : ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetNewsFlash').length && target.parents('.widgetItem').length) {
+		var text = jQuery(target.parents('.widgetItem')[0]).find('.widgetTitle').children().text();
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'News Flash',
+				eventAction: 'News Flash - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.hasClass('widgetQuickLinksLink') || target.find('.widgetQuickLinksLink').length) {
+		var text = target.text();
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Quick Links',
+				eventAction: 'Quick Links - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.attr('src') && target.parents('.cpSlideshow').length) {
+		var text = target.attr('title');
+		if (!text.length) {
+			text = "N/A";
+		}
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Slideshow',
+				eventAction: 'Slideshow - ' + text,
+				eventLabel: window.location.href
+			});
+	}
+	if (target.parents('.widgetText').length) {
+		ga('send',
+			{
+				hitType: 'event',
+				eventCategory: 'Text',
+				eventAction: 'Text Link Clicked',
+				eventLabel: window.location.href
+			});
+	}
+});
+	
+	
+		
+		
+			
+				
+			
+		
+	
+	
+		
+	
+	
+		
+			
+		
+	
+
+    
+
+Skip to Main Content
+
+    
+
+        
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+        
+                
+                    
+
+
+
+                
+            
+                
+                
+
+
+
+
+
+
+
+				
+
+    Government  			    Departments  			    Residents  			    Business  			    How Do I...  			
+
+
+
+	
+		(function () {
+			function setupMenu() {
+				const menuID = 'mainNavMenu';
+				const menuType = MAIN_MENU;
+
+				//setup menu manager properties for main menu
+				if (!menuManager.mobileMainNav && true)
+					menuManager.adjustMainItemsWidth('#' + menuID);
+				menuManager.isMainMenuEditable = false;
+				menuManager.mainMenuMaxSubMenuLevels = 4;
+				menuManager.setMOMMode(2, menuType);
+
+				//Init main menu
+				const setupDraggable = menuManager.isMainMenuEditable;
+				const urlToGetHiddenMenus = '/Pages/MenuMain/HiddenMainSubMenus?pageID=1&moduleID=&themeID=22&menuContainerID=mainNav';
+
+				menuManager.setupMenu(menuID, 'mainNav', menuType, setupDraggable, urlToGetHiddenMenus);
+				menuManager.mainMenuInit = true;
+				menuManager.mainMenuTextResizer = false;
+				if (1.00 > 0)
+					menuManager.mainMenuTextResizerRatio = 1.00;
+				if (window.isResponsiveEnabled)
+					menuManager.mainMenuReady.resolve();
+
+			}
+
+			if (document.readyState === "complete"
+				|| document.readyState === "loaded"
+				|| document.readyState === "interactive") {
+				setupMenu();
+				return;
+			}
+
+			document.addEventListener("DOMContentLoaded", setupMenu);
+		})();
+	
+
+
+	
+				                
+
+
+
+	
+	
+				                
+
+
+
+	
+	
+				                
+
+
+
+	
+	
+				                
+
+
+
+	
+	
+				                
+
+
+
+	
+
+
+
+
+	
+				                
+
+						
+	
+	
+		
+    
+
+
+
+
+
+	
+			
+		
+								
+	
+	
+		
+					
+						
+
+
+	
+						
+					
+		
+	
+	
+
+	
+
+	
+
+
+
+
+	//Render slideshow if info advacned items contain one.
+	$(document).ready(function (e) {
+		$('#divInfoAdv05dadef2-8583-45c1-9a57-4f577618bf17 .InfoAdvanced.widgetItem').each(function () {
+			renderSlideshowIfApplicable($(this));		
+		});
+	});
+
+	 
+
+	 
+	
+	
+		
+
+	
+	
+	
+	
+
+		$(document).ready(function () {
+			try {
+				// Minimum characters required before performing a search/autocomplete
+				var minPrefixLength = 3;
+				var autoCompleteDebounceDelay = 500;
+				var searchFieldSelector = "#searchField" + '751bf31d-f6b7-400e-874e-0c9c99a13a18';
+				var checkboxSelector = "#ysnSearchOnlyDept" + '751bf31d-f6b7-400e-874e-0c9c99a13a18';
+				var buttonSelector = ".widgetSearchButton" + '751bf31d-f6b7-400e-874e-0c9c99a13a18';
+				var autoCompleteCache = {};
+				var autoCompleteCacheKeys = [];
+				var autoCompleteCacheLimit = 25;
+				var currentAutoCompleteRequest = null;
+				var currentAutoCompleteRequestKey = null;
+				var autoCompleteDebounceTimer = null;
+				var autoCompleteDebounceKey = null;
+				var pendingAutoCompleteResponses = [];
+
+				function normalizeAutoCompleteTerm(term) {
+					return $.trim((term || "") + "").replace(/\s+/g, " ");
+				}
+
+				function shouldSearch(term) {
+					return normalizeAutoCompleteTerm(term).length >= minPrefixLength;
+				}
+
+				function getAutoCompleteUrl() {
+					return '/Search/AutoComplete' + ($(checkboxSelector).is(':checked') || false? '?departmentId=0' : '');
+				}
+
+				function getAutoCompleteCacheKey(requestUrl, term) {
+					return requestUrl + "|" + term.toLowerCase();
+				}
+
+				function cacheAutoCompleteResult(cacheKey, data) {
+					if (!Object.prototype.hasOwnProperty.call(autoCompleteCache, cacheKey)) {
+						autoCompleteCacheKeys.push(cacheKey);
+						if (autoCompleteCacheKeys.length > autoCompleteCacheLimit) {
+							delete autoCompleteCache[autoCompleteCacheKeys.shift()];
+						}
+					}
+					autoCompleteCache[cacheKey] = data;
+				}
+
+				function respondToPendingAutoComplete(data) {
+					var responses = pendingAutoCompleteResponses;
+					pendingAutoCompleteResponses = [];
+					for (var i = 0; i < responses.length; i++) {
+						responses[i](data);
+					}
+				}
+
+				function cancelPendingAutoComplete() {
+					clearTimeout(autoCompleteDebounceTimer);
+					autoCompleteDebounceKey = null;
+					if (currentAutoCompleteRequest != null) {
+						currentAutoCompleteRequest.abort();
+						currentAutoCompleteRequest = null;
+					}
+					currentAutoCompleteRequestKey = null;
+					respondToPendingAutoComplete([]);
+				}
+
+				function createWidgetAutoCompleteSource(options) {
+					return function (request, response) {
+						var term = normalizeAutoCompleteTerm(request.term);
+						if (!options.shouldSearch(term)) {
+							response([]);
+							return;
+						}
+
+						var requestUrl = options.url();
+						var cacheKey = getAutoCompleteCacheKey(requestUrl, term);
+						if (Object.prototype.hasOwnProperty.call(autoCompleteCache, cacheKey)) {
+							response(autoCompleteCache[cacheKey]);
+							if (options.success) {
+								options.success(autoCompleteCache[cacheKey]);
+							}
+							return;
+						}
+
+						if (currentAutoCompleteRequestKey === cacheKey || autoCompleteDebounceKey === cacheKey) {
+							pendingAutoCompleteResponses.push(response);
+							return;
+						}
+
+						cancelPendingAutoComplete();
+						autoCompleteDebounceKey = cacheKey;
+						pendingAutoCompleteResponses.push(response);
+						autoCompleteDebounceTimer = setTimeout(function () {
+							autoCompleteDebounceKey = null;
+							currentAutoCompleteRequestKey = cacheKey;
+							currentAutoCompleteRequest = $.ajax({
+								url: requestUrl,
+								dataType: "json",
+								timeout: options.timeout,
+								data: {
+									term: term,
+								},
+								success: function (data) {
+									if (currentAutoCompleteRequestKey === cacheKey) {
+										cacheAutoCompleteResult(cacheKey, data);
+										respondToPendingAutoComplete(data);
+										if (options.success) {
+											options.success(data);
+										}
+									}
+								},
+								error: function (xmlhttprequest, textstatus, message) {
+									if (textstatus === "abort") {
+										return;
+									}
+
+									if (options.error) {
+										options.error(xmlhttprequest, textstatus, message);
+									}
+
+									respondToPendingAutoComplete([]);
+								},
+								complete: function (xmlhttprequest) {
+									if (currentAutoCompleteRequest === xmlhttprequest) {
+										currentAutoCompleteRequest = null;
+										currentAutoCompleteRequestKey = null;
+									}
+								}
+							});
+						}, options.delay);
+					};
+				}
+
+				// click handler for search buttons
+				$(buttonSelector).click(function (e) {
+					e.preventDefault();
+					var $btn = $(this);
+					var $field = $btn.siblings(".widgetSearchBox");
+					var term = $field.val() + "";
+					if (!shouldSearch(term)) {
+						// do nothing until user types enough characters
+						$field.focus();
+						return;
+					}
+
+					if ($(checkboxSelector).is(':checked') || false)
+					{
+						doWidgetSearch($.trim(term), Number(0));
+					}
+					else {
+						doWidgetSearch($.trim(term), 0);
+					}
+				});
+
+				// enter key handler for the search field
+				$(searchFieldSelector).keypress(function (e) {
+					var code = e.which || e.keyCode;
+					if (code === 13) {
+						e.preventDefault();
+						var $this = $(this);
+						var term = $this.val() + "";
+						if (!shouldSearch(term)) {
+							// do nothing until user types enough characters
+							$this.focus();
+							return false;
+						}
+
+						if ($(checkboxSelector).is(':checked') || false) {
+							doWidgetSearch($.trim(term), Number(0));
+						} else {
+							doWidgetSearch($.trim(term), 0);
+						}
+						return false;
+					}
+					return true;
+				});
+
+				// autocomplete: set minLength and guard source
+				if (true) {
+					var $searchField = $(searchFieldSelector).autocomplete({
+						minLength: minPrefixLength,
+						source: createWidgetAutoCompleteSource({
+							delay: autoCompleteDebounceDelay,
+							timeout: 10000,
+							shouldSearch: shouldSearch,
+							url: getAutoCompleteUrl,
+							success: function () {
+								$('.autoCompleteError').remove();
+							},
+							error: function (xmlhttprequest, textstatus, message) {
+								if (textstatus === "timeout") {
+									if ($(searchFieldSelector).siblings('.autoCompleteError').length == 0)
+										$('<span class="autoCompleteError"><p class="alert error">Search autocomplete is currently not responding. Please try again later.</p></span>').insertAfter($(searchFieldSelector));
+								}
+							}
+						}),
+						html: true,
+						delay: 0,
+						select: function (event, ui) {
+							$(this).val(ui.item.value);
+							$(this).next().click();
+						}
+					});
+
+					$searchField.data("ui-autocomplete")._renderItem = function (ul, item) {
+						return $("<li class=\"itemList\"></li>")
+							.data("ui-autocomplete-item", item)
+							.append("<a>" + item.label + "</a>")
+							.appendTo(ul);
+					};
+				}
+
+				// keep searchBtnApplyQuery consistent with prefix rule
+				window.searchBtnApplyQuery = function() {
+					var $field = $(searchFieldSelector);
+					var term = $field.val() + "";
+					if (shouldSearch(term)) {
+						// update href for the icon/button (if present)
+						var btn = document.getElementById("btnSearchIcon");
+						if (btn) btn.href = "/Search?searchPhrase=" + encodeURIComponent($.trim(term));
+					} else {
+						var btn = document.getElementById("btnSearchIcon");
+						if (btn) btn.href = "#";
+					}
+				};
+			}
+			catch(e) {} //we're going to eat this error. Autocomplete won't work but we dont wan't to break anything else on the page.
+		});
+	
+
+	
+				
+		
+			
+						
+
+			Search
+		
+
+	
+
+
+
+	  
+		.widgetSearch ::-webkit-input-placeholder {
+		color: #000000;
+	  }
+		.widgetSearch :-moz-placeholder { /* Firefox 18- */
+	   color: #000000;
+	}
+		.widgetSearch ::-moz-placeholder {  /* Firefox 19+ */
+	   color: #000000;
+	}
+	.widgetSearch :-ms-input-placeholder {
+	   color: #000000;
+	}
+	
+
+	.widgetSearch .widgetBody .widgetSearchBox751bf31d-f6b7-400e-874e-0c9c99a13a18
+	{
+		color: #000000;
+		background-color: rgba(255, 255, 255, 0.96);
+border: solid 8px rgba(255, 255, 255, 0.42);  
+background-clip: padding-box; border-radius: 50px; font: normal normal normal 16px/26px Poppins; padding: 1.25em 1em 1.25em 2.5em; transition: all .3s ease-in-out; 
+	}
+	.widgetSearch .widgetBody .widgetSearchButton751bf31d-f6b7-400e-874e-0c9c99a13a18
+	{
+		margin: 16px; transition: all .3s ease-in-out;
+	}
+	.widgetSearch .widgetSearch-onlyDept751bf31d-f6b7-400e-874e-0c9c99a13a18
+	{
+		display: inline-block;
+		color: #333;
+		
+		
+		 padding-top: 10px;
+	}
+	#ysnSearchOnlyDept751bf31d-f6b7-400e-874e-0c9c99a13a18
+	{
+		position: relative;
+		top: .125em;
+	}
+
+
+
+
+
+
+
+
+
+	//Updates search icons href to have the correct queryString
+	function searchBtnApplyQuery() {
+		document.getElementById("btnSearchIcon").href = "/Search?searchPhrase=" + document.getElementById("searchField751bf31d-f6b7-400e-874e-0c9c99a13a18").value;
+	}
+
+
+
+
+	 
+
+	 
+
+			 
+
+
+	
+
+
+
+
+
+
+
+		
+		
+			
+			
+		
+			
+				$(window).on("load", function () {
+					$.when(window.Pages.rwdSetupComplete)
+						.done(function () {
+							renderExternalBannerSlideshow('banner1',
+								{"BannerOptionID":61,"ThemeID":22,"SlotName":"banner1","Name":"Default","IsDefault":true,"BannerMode":2,"SlideShowSlideTiming":"5","SlideshowTransition":0,"SlideShowTransitionTiming":"1","ImageScale":true,"ImageAlignment":1,"ImageScroll":true,"MuteSound":true,"VideoType":0,"Status":40,"SlideshowControlsPosition":0,"SlideshowControlsAlignment":0,"SlideshowBannerControlsColorScheme":0,"DisplayVideoPauseButton":false,"VideoPauseButtonAlignment":1,"VideoPauseButtonControlsAlignment":0,"VideoPauseButtonStyle":"#FFFFFF","VideoPauseButtonBackgroundStyle":"#000000","VideoPauseButtonAlignmentClass":"alignRight viewport","DisplaySlideshowPauseButton":true,"SlideshowControlsColor":"#FFFFFF","SlideshowControlsBackgroundColor":"#000000","SlideshowPauseButtonClass":"isHidden","BannerImages":[{"BannerImageID":157,"BannerOptionID":61,"FileName":"/ImageRepository/Document?documentID=23762","Height":571,"Width":2200,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":1,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":""},{"BannerImageID":158,"BannerOptionID":61,"FileName":"/ImageRepository/Document?documentID=23763","Height":571,"Width":2200,"StartingOn":null,"StoppingOn":null,"IsLink":false,"LinkAddress":null,"Sequence":2,"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/","AltText":""}],"BannerVideos":[],"RecordStatus":0,"ModifiedBy":0,"ModifiedOn":"\/Date(-62135575200000)\/"},
+								'/App_Themes/2021 - Home/Images/',
+								'Rotating');
+						});
+				});
+			
+
+
+
+
+
+
+$('#breadCrumbs').hide();
+	
+	
+		
+
+	
+	
+	
+	
+	
+	
+	
+
+			
+		
+			
+
+						
+	
+	
+		
+
+
+
+
+
+
+	
+		
+			Popular Links
+				
+	
+	
+		
+				
+					
+
+
+	
+		
+			Make an Appointment
+		
+	
+
+		.fancyButton624.fancyButton:link,.fancyButton624.fancyButton:visited, .fancyButton624div.fancyButton{
+	-webkit-border-top-left-radius: 33px;
+	-moz-border-top-left-radius: 33px;
+	-khtml-border-top-left-radius: 33px;
+	border-top-left-radius: 33px;
+	-webkit-border-top-right-radius: 33px;
+	-moz-border-top-right-radius: 33px;
+	-khtml-border-top-right-radius: 33px;
+	border-top-right-radius: 33px;
+	-webkit-border-bottom-left-radius: 33px;
+	-moz-border-bottom-left-radius: 33px;
+	-khtml-border-bottom-left-radius: 33px;
+	border-bottom-left-radius: 33px;
+	-webkit-border-bottom-right-radius: 33px;
+	-moz-border-bottom-right-radius: 33px;
+	-khtml-border-bottom-right-radius: 33px;
+	border-bottom-right-radius: 33px;
+	background-image: url('/ImageRepository/Document?documentID=23780');
+	background-repeat: no-repeat;
+	background-position: center center;
+min-height: 199px;
+position: relative;
+overflow: hidden;
+background-size: cover;
+}
+
+.fancyButton624 > span > span {
+min-height: 199px;
+}
+.fancyButton624.fancyButton:hover,.fancyButton624.fancyButton:focus,.fancyButton624.fancyButton:active,.fancyButton624.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+.fancyButton624.fancyButton:link > span,.fancyButton624.fancyButton:visited > span, .fancyButton624div.fancyButton > span{
+}
+.fancyButton624.fancyButton:hover > span,.fancyButton624.fancyButton:focus > span,.fancyButton624.fancyButton:active > span,.fancyButton624.fancyButton.hover > span{
+}
+.fancyButton624.fancyButton .text{
+	color: #ffffff;
+	font-size: 1em;
+	font-family: "Poppins";
+	text-align: left;
+	padding-top: 1.25em;
+	padding-bottom: 1.25em;
+	padding-right: 1.25em;
+	padding-left: 1.25em;
+	font-weight: 500;
+	text-decoration: none;
+	padding-top: 1.25em;
+	padding-bottom: 1.25em;
+	padding-right: 1.25em;
+	padding-left: 1.25em;
+	background-repeat: no-repeat;
+	background-position: left top;
+transition: all .3s ease-in-out;
+background: transparent linear-gradient(180deg, rgba(12, 12, 11, 0) 0%, rgba(0, 0, 0, 0.85) 100%) 0% 0% no-repeat padding-box;z-index: 1;
+line-height: 1.2;
+vertical-align: bottom;
+text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+}
+.fancyButton624.fancyButton:hover .text,.fancyButton624.fancyButton:focus .text,.fancyButton624.fancyButton:active .text,.fancyButton624.fancyButton.hover .text{
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+.fancyButton624.fancyButton .textStyle1{
+	color: #ffffff;
+	font-size: 1em;
+	font-weight: 500;
+	text-decoration: none;
+position:relative;
+font-weight:400;
+display:block;
+max-height: 0px;
+color:transparent;
+padding-top: .2em;
+transition: all .3s ease-in-out;
+text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.0);
+
+}
+.fancyButton624.fancyButton:hover .textStyle1, .fancyButton624.fancyButton.hover .textStyle1{
+	text-decoration: underline;
+}
+.fancyButton624.fancyButton:hover .textStyle1,
+.fancyButton624.fancyButton:focus .textStyle1,
+.fancyButton624.fancyButton:active .textStyle1
+{
+color: #fff;
+max-height: 100%;
+text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+}
+.fancyButton624.fancyButton .textStyle2{
+	color: #ffffff;
+	font-size: 1.25em;
+	font-weight: 600;
+	text-decoration: none;
+z-index: 1;
+line-height: 1.2;
+vertical-align: bottom;}
+.fancyButton624.fancyButton:hover .textStyle2, .fancyButton624.fancyButton.hover .textStyle2{
+	text-decoration: underline;
+
+}
+
+
+ 
+
+
+	
+		
+			Birth and Death Certificates
+		
+	
+
+		.fancyButton625.fancyButton:link,.fancyButton625.fancyButton:visited, .fancyButton625div.fancyButton{
+	-webkit-border-top-left-radius: 33px;
+	-moz-border-top-left-radius: 33px;
+	-khtml-border-top-left-radius: 33px;
+	border-top-left-radius: 33px;
+	-webkit-border-top-right-radius: 33px;
+	-moz-border-top-right-radius: 33px;
+	-khtml-border-top-right-radius: 33px;
+	border-top-right-radius: 33px;
+	-webkit-border-bottom-left-radius: 33px;
+	-moz-border-bottom-left-radius: 33px;
+	-khtml-border-bottom-left-radius: 33px;
+	border-bottom-left-radius: 33px;
+	-webkit-border-bottom-right-radius: 33px;
+	-moz-border-bottom-right-radius: 33px;
+	-khtml-border-bottom-right-radius: 33px;
+	border-bottom-right-radius: 33px;
+	background-image: url('/ImageRepository/Document?documentID=23782');
+	background-repeat: no-repeat;
+	background-position: center center;
+min-height: 199px;
+position: relative;
+overflow: hidden;
+background-size: cover;
+}
+
+.fancyButton625 > span > span {
+min-height: 199px;
+}
+.fancyButton625.fancyButton:hover,.fancyButton625.fancyButton:focus,.fancyButton625.fancyButton:active,.fancyButton625.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+.fancyButton625.fancyButton:link > span,.fancyButton625.fancyButton:visited > span, .fancyButton625div.fancyButton > span{
+}
+.fancyButton625.fancyButton:hover > span,.fancyButton625.fancyButton:focus > span,.fancyButton625.fancyButton:active > span,.fancyButton625.fancyButton.hover > span{
+}
+.fancyButton625.fancyButton .text{
+	color: #ffffff;
+	font-size: 1em;
+	font-family: "Poppins";
+	text-align: left;
+	padding-top: 1.25em;
+	padding-bottom: 1.25em;
+	padding-right: 1.25em;
+	padding-left: 1.25em;
+	font-weight: 500;
+	text-decoration: none;
+	padding-top: 1.25em;
+	padding-bottom: 1.25em;
+	padding-right: 1.25em;
+	padding-left: 1.25em;
+	background-repeat: no-repeat;
+	background-position: left top;
+transition: all .3s ease-in-out;
+background: transparent linear-gradient(180deg, rgba(12, 12, 11, 0) 0%, rgba(0, 0, 0, 0.85) 100%) 0% 0% no-repeat padding-box;z-index: 1;
+line-height: 1.2;
+vertical-align: bottom;
+text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+}
+.fancyButton625.fancyButton:hover .text,.fancyButton625.fancyButton:focus .text,.fancyButton625.fancyButton:active .text,.fancyButton625.fancyButton.hover .text{
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+.fancyButton625.fancyButton .textStyle1{
+	color: #ffffff;
+	font-size: 1em;
+	font-weight: 500;
+	text-decoration: none;
+position:relative;
+font-weight:400;
+display:block;
+max-height: 0px;
+color:transparent;
+padding-top: .2em;
+transition: all .3s ease-in-out;
+text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.0);
+
+}
+.fancyButton625.fancyButton:hover .textStyle1, .fancyButton625.fancyButton.hover .textStyle1{
+	text-decoration: underline;
+}
+.fancyButton625.fancyButton:hover .textStyle1,
+.fancyButton625.fancyButton:focus .textStyle1,
+.fancyButton625.fancyButton:active .textStyle1
+{
+color: #fff;
+max-height: 100%;
+text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+}
+.fancyButton625.fancyButton .textStyle2{
+	color: #ffffff;
+	font-size: 1.25em;
+	font-weight: 600;
+	text-decoration: none;
+z-index: 1;
+line-height: 1.2;
+vertical-align: bottom;}
+.fancyButton625.fancyButton:hover .textStyle2, .fancyButton625.fancyButton.hover .textStyle2{
+	text-decoration: underline;
+
+}
+
+
+ 
+
+
+	
+		
+			Parks and Recreation
+		
+	
+
+		.fancyButton626.fancyButton:link,.fancyButton626.fancyButton:visited, .fancyButton626div.fancyButton{
+	-webkit-border-top-left-radius: 33px;
+	-moz-border-top-left-radius: 33px;
+	-khtml-border-top-left-radius: 33px;
+	border-top-left-radius: 33px;
+	-webkit-border-top-right-radius: 33px;
+	-moz-border-top-right-radius: 33px;
+	-khtml-border-top-right-radius: 33px;
+	border-top-right-radius: 33px;
+	-webkit-border-bottom-left-radius: 33px;
+	-moz-border-bottom-left-radius: 33px;
+	-khtml-border-bottom-left-radius: 33px;
+	border-bottom-left-radius: 33px;
+	-webkit-border-bottom-right-radius: 33px;
+	-moz-border-bottom-right-radius: 33px;
+	-khtml-border-bottom-right-radius: 33px;
+	border-bottom-right-radius: 33px;
+	background-image: url('/ImageRepository/Document?documentID=23784');
+	background-repeat: no-repeat;
+	background-position: center center;
+min-height: 199px;
+position: relative;
+overflow: hidden;
+background-size: cover;
+}
+
+.fancyButton626 > span > span {
+min-height: 199px;
+}
+.fancyButton626.fancyButton:hover,.fancyButton626.fancyButton:focus,.fancyButton626.fancyButton:active,.fancyButton626.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+.fancyButton626.fancyButton:link > span,.fancyButton626.fancyButton:visited > span, .fancyButton626div.fancyButton > span{
+}
+.fancyButton626.fancyButton:hover > span,.fancyButton626.fancyButton:focus > span,.fancyButton626.fancyButton:active > span,.fancyButton626.fancyButton.hover > span{
+}
+.fancyButton626.fancyButton .text{
+	color: #ffffff;
+	font-size: 1em;
+	font-family: "Poppins";
+	text-align: left;
+	padding-top: 1.25em;
+	padding-bottom: 1.25em;
+	padding-right: 1.25em;
+	padding-left: 1.25em;
+	font-weight: 500;
+	text-decoration: none;
+	padding-top: 1.25em;
+	padding-bottom: 1.25em;
+	padding-right: 1.25em;
+	padding-left: 1.25em;
+	background-repeat: no-repeat;
+	background-position: left top;
+transition: all .3s ease-in-out;
+background: transparent linear-gradient(180deg, rgba(12, 12, 11, 0) 0%, rgba(0, 0, 0, 0.85) 100%) 0% 0% no-repeat padding-box;z-index: 1;
+line-height: 1.2;
+vertical-align: bottom;
+text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+}
+.fancyButton626.fancyButton:hover .text,.fancyButton626.fancyButton:focus .text,.fancyButton626.fancyButton:active .text,.fancyButton626.fancyButton.hover .text{
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+.fancyButton626.fancyButton .textStyle1{
+	color: #ffffff;
+	font-size: 1em;
+	font-weight: 500;
+	text-decoration: none;
+position:relative;
+font-weight:400;
+display:block;
+max-height: 0px;
+color:transparent;
+padding-top: .2em;
+transition: all .3s ease-in-out;
+text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.0);
+
+}
+.fancyButton626.fancyButton:hover .textStyle1, .fancyButton626.fancyButton.hover .textStyle1{
+	text-decoration: underline;
+}
+.fancyButton626.fancyButton:hover .textStyle1,
+.fancyButton626.fancyButton:focus .textStyle1,
+.fancyButton626.fancyButton:active .textStyle1
+{
+color: #fff;
+max-height: 100%;
+text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+}
+.fancyButton626.fancyButton .textStyle2{
+	color: #ffffff;
+	font-size: 1.25em;
+	font-weight: 600;
+	text-decoration: none;
+z-index: 1;
+line-height: 1.2;
+vertical-align: bottom;}
+.fancyButton626.fancyButton:hover .textStyle2, .fancyButton626.fancyButton.hover .textStyle2{
+	text-decoration: underline;
+
+}
+
+
+ 
+
+
+	
+		
+			Property Resources
+		
+	
+
+		.fancyButton627.fancyButton:link,.fancyButton627.fancyButton:visited, .fancyButton627div.fancyButton{
+	-webkit-border-top-left-radius: 33px;
+	-moz-border-top-left-radius: 33px;
+	-khtml-border-top-left-radius: 33px;
+	border-top-left-radius: 33px;
+	-webkit-border-top-right-radius: 33px;
+	-moz-border-top-right-radius: 33px;
+	-khtml-border-top-right-radius: 33px;
+	border-top-right-radius: 33px;
+	-webkit-border-bottom-left-radius: 33px;
+	-moz-border-bottom-left-radius: 33px;
+	-khtml-border-bottom-left-radius: 33px;
+	border-bottom-left-radius: 33px;
+	-webkit-border-bottom-right-radius: 33px;
+	-moz-border-bottom-right-radius: 33px;
+	-khtml-border-bottom-right-radius: 33px;
+	border-bottom-right-radius: 33px;
+	background-image: url('/ImageRepository/Document?documentID=23781');
+	background-repeat: no-repeat;
+	background-position: center center;
+min-height: 199px;
+position: relative;
+overflow: hidden;
+background-size: cover;
+}
+
+.fancyButton627 > span > span {
+min-height: 199px;
+}
+.fancyButton627.fancyButton:hover,.fancyButton627.fancyButton:focus,.fancyButton627.fancyButton:active,.fancyButton627.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+.fancyButton627.fancyButton:link > span,.fancyButton627.fancyButton:visited > span, .fancyButton627div.fancyButton > span{
+}
+.fancyButton627.fancyButton:hover > span,.fancyButton627.fancyButton:focus > span,.fancyButton627.fancyButton:active > span,.fancyButton627.fancyButton.hover > span{
+}
+.fancyButton627.fancyButton .text{
+	color: #ffffff;
+	font-size: 1em;
+	font-family: "Poppins";
+	text-align: left;
+	padding-top: 1.25em;
+	padding-bottom: 1.25em;
+	padding-right: 1.25em;
+	padding-left: 1.25em;
+	font-weight: 500;
+	text-decoration: none;
+	padding-top: 1.25em;
+	padding-bottom: 1.25em;
+	padding-right: 1.25em;
+	padding-left: 1.25em;
+	background-repeat: no-repeat;
+	background-position: left top;
+transition: all .3s ease-in-out;
+background: transparent linear-gradient(180deg, rgba(12, 12, 11, 0) 0%, rgba(0, 0, 0, 0.85) 100%) 0% 0% no-repeat padding-box;z-index: 1;
+line-height: 1.2;
+vertical-align: bottom;
+text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+}
+.fancyButton627.fancyButton:hover .text,.fancyButton627.fancyButton:focus .text,.fancyButton627.fancyButton:active .text,.fancyButton627.fancyButton.hover .text{
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+.fancyButton627.fancyButton .textStyle1{
+	color: #ffffff;
+	font-size: 1em;
+	font-weight: 500;
+	text-decoration: none;
+position:relative;
+font-weight:400;
+display:block;
+max-height: 0px;
+color:transparent;
+padding-top: .2em;
+transition: all .3s ease-in-out;
+text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.0);
+
+}
+.fancyButton627.fancyButton:hover .textStyle1, .fancyButton627.fancyButton.hover .textStyle1{
+	text-decoration: underline;
+}
+.fancyButton627.fancyButton:hover .textStyle1,
+.fancyButton627.fancyButton:focus .textStyle1,
+.fancyButton627.fancyButton:active .textStyle1
+{
+color: #fff;
+max-height: 100%;
+text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+}
+.fancyButton627.fancyButton .textStyle2{
+	color: #ffffff;
+	font-size: 1.25em;
+	font-weight: 600;
+	text-decoration: none;
+z-index: 1;
+line-height: 1.2;
+vertical-align: bottom;}
+.fancyButton627.fancyButton:hover .textStyle2, .fancyButton627.fancyButton.hover .textStyle2{
+	text-decoration: underline;
+
+}
+
+
+ 
+
+
+	
+		
+			Marriage Applications, Licenses & Certificates
+		
+	
+
+		.fancyButton628.fancyButton:link,.fancyButton628.fancyButton:visited, .fancyButton628div.fancyButton{
+	-webkit-border-top-left-radius: 33px;
+	-moz-border-top-left-radius: 33px;
+	-khtml-border-top-left-radius: 33px;
+	border-top-left-radius: 33px;
+	-webkit-border-top-right-radius: 33px;
+	-moz-border-top-right-radius: 33px;
+	-khtml-border-top-right-radius: 33px;
+	border-top-right-radius: 33px;
+	-webkit-border-bottom-left-radius: 33px;
+	-moz-border-bottom-left-radius: 33px;
+	-khtml-border-bottom-left-radius: 33px;
+	border-bottom-left-radius: 33px;
+	-webkit-border-bottom-right-radius: 33px;
+	-moz-border-bottom-right-radius: 33px;
+	-khtml-border-bottom-right-radius: 33px;
+	border-bottom-right-radius: 33px;
+	background-image: url('/ImageRepository/Document?documentID=23783');
+	background-repeat: no-repeat;
+	background-position: center center;
+min-height: 199px;
+position: relative;
+overflow: hidden;
+background-size: cover;
+}
+
+.fancyButton628 > span > span {
+min-height: 199px;
+}
+.fancyButton628.fancyButton:hover,.fancyButton628.fancyButton:focus,.fancyButton628.fancyButton:active,.fancyButton628.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+.fancyButton628.fancyButton:link > span,.fancyButton628.fancyButton:visited > span, .fancyButton628div.fancyButton > span{
+}
+.fancyButton628.fancyButton:hover > span,.fancyButton628.fancyButton:focus > span,.fancyButton628.fancyButton:active > span,.fancyButton628.fancyButton.hover > span{
+}
+.fancyButton628.fancyButton .text{
+	color: #ffffff;
+	font-size: 1em;
+	font-family: "Poppins";
+	text-align: left;
+	padding-top: 1.25em;
+	padding-bottom: 1.25em;
+	padding-right: 1.25em;
+	padding-left: 1.25em;
+	font-weight: 500;
+	text-decoration: none;
+	padding-top: 1.25em;
+	padding-bottom: 1.25em;
+	padding-right: 1.25em;
+	padding-left: 1.25em;
+	background-repeat: no-repeat;
+	background-position: left top;
+transition: all .3s ease-in-out;
+background: transparent linear-gradient(180deg, rgba(12, 12, 11, 0) 0%, rgba(0, 0, 0, 0.85) 100%) 0% 0% no-repeat padding-box;z-index: 1;
+line-height: 1.2;
+vertical-align: bottom;
+text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+}
+.fancyButton628.fancyButton:hover .text,.fancyButton628.fancyButton:focus .text,.fancyButton628.fancyButton:active .text,.fancyButton628.fancyButton.hover .text{
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+.fancyButton628.fancyButton .textStyle1{
+	color: #ffffff;
+	font-size: 1em;
+	font-weight: 500;
+	text-decoration: none;
+position:relative;
+font-weight:400;
+display:block;
+max-height: 0px;
+color:transparent;
+padding-top: .2em;
+transition: all .3s ease-in-out;
+text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.0);
+
+}
+.fancyButton628.fancyButton:hover .textStyle1, .fancyButton628.fancyButton.hover .textStyle1{
+	text-decoration: underline;
+}
+.fancyButton628.fancyButton:hover .textStyle1,
+.fancyButton628.fancyButton:focus .textStyle1,
+.fancyButton628.fancyButton:active .textStyle1
+{
+color: #fff;
+max-height: 100%;
+text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+}
+.fancyButton628.fancyButton .textStyle2{
+	color: #ffffff;
+	font-size: 1.25em;
+	font-weight: 600;
+	text-decoration: none;
+z-index: 1;
+line-height: 1.2;
+vertical-align: bottom;}
+.fancyButton628.fancyButton:hover .textStyle2, .fancyButton628.fancyButton.hover .textStyle2{
+	text-decoration: underline;
+
+}
+
+
+ 
+
+
+	
+		
+			GIS Mapping
+		
+	
+
+		.fancyButton629.fancyButton:link,.fancyButton629.fancyButton:visited, .fancyButton629div.fancyButton{
+	-webkit-border-top-left-radius: 33px;
+	-moz-border-top-left-radius: 33px;
+	-khtml-border-top-left-radius: 33px;
+	border-top-left-radius: 33px;
+	-webkit-border-top-right-radius: 33px;
+	-moz-border-top-right-radius: 33px;
+	-khtml-border-top-right-radius: 33px;
+	border-top-right-radius: 33px;
+	-webkit-border-bottom-left-radius: 33px;
+	-moz-border-bottom-left-radius: 33px;
+	-khtml-border-bottom-left-radius: 33px;
+	border-bottom-left-radius: 33px;
+	-webkit-border-bottom-right-radius: 33px;
+	-moz-border-bottom-right-radius: 33px;
+	-khtml-border-bottom-right-radius: 33px;
+	border-bottom-right-radius: 33px;
+	background-image: url('/ImageRepository/Document?documentID=29923');
+	background-repeat: no-repeat;
+	background-position: center center;
+min-height: 199px;
+position: relative;
+overflow: hidden;
+background-size: cover;
+}
+
+.fancyButton629 > span > span {
+min-height: 199px;
+}
+.fancyButton629.fancyButton:hover,.fancyButton629.fancyButton:focus,.fancyButton629.fancyButton:active,.fancyButton629.fancyButton.hover{
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+.fancyButton629.fancyButton:link > span,.fancyButton629.fancyButton:visited > span, .fancyButton629div.fancyButton > span{
+}
+.fancyButton629.fancyButton:hover > span,.fancyButton629.fancyButton:focus > span,.fancyButton629.fancyButton:active > span,.fancyButton629.fancyButton.hover > span{
+}
+.fancyButton629.fancyButton .text{
+	color: #ffffff;
+	font-size: 1em;
+	font-family: "Poppins";
+	text-align: left;
+	padding-top: 1.25em;
+	padding-bottom: 1.25em;
+	padding-right: 1.25em;
+	padding-left: 1.25em;
+	font-weight: 500;
+	text-decoration: none;
+	padding-top: 1.25em;
+	padding-bottom: 1.25em;
+	padding-right: 1.25em;
+	padding-left: 1.25em;
+	background-repeat: no-repeat;
+	background-position: left top;
+transition: all .3s ease-in-out;
+background: transparent linear-gradient(180deg, rgba(12, 12, 11, 0) 0%, rgba(0, 0, 0, 0.85) 100%) 0% 0% no-repeat padding-box;z-index: 1;
+line-height: 1.2;
+vertical-align: bottom;
+text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+}
+.fancyButton629.fancyButton:hover .text,.fancyButton629.fancyButton:focus .text,.fancyButton629.fancyButton:active .text,.fancyButton629.fancyButton.hover .text{
+	text-decoration: none;
+	background-repeat: no-repeat;
+	background-position: left top;
+
+
+}
+.fancyButton629.fancyButton .textStyle1{
+	color: #ffffff;
+	font-size: 1em;
+	font-weight: 500;
+	text-decoration: none;
+position:relative;
+font-weight:400;
+display:block;
+max-height: 0px;
+color:transparent;
+padding-top: .2em;
+transition: all .3s ease-in-out;
+text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.0);
+
+}
+.fancyButton629.fancyButton:hover .textStyle1, .fancyButton629.fancyButton.hover .textStyle1{
+	font-size: 1.25em;
+	font-family: Poppins;
+	font-weight: 600;
+	text-decoration: underline;
+}
+.fancyButton629.fancyButton:hover .textStyle1,
+.fancyButton629.fancyButton:focus .textStyle1,
+.fancyButton629.fancyButton:active .textStyle1
+{
+color: #fff;
+max-height: 100%;
+text-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+}
+.fancyButton629.fancyButton .textStyle2{
+	color: #ffffff;
+	font-size: 1.25em;
+	font-weight: 600;
+	text-decoration: none;
+z-index: 1;
+line-height: 1.2;
+vertical-align: bottom;}
+.fancyButton629.fancyButton:hover .textStyle2, .fancyButton629.fancyButton.hover .textStyle2{
+	text-decoration: underline;
+
+}
+
+
+ 
+				
+			
+		
+	
+			
+
+
+
+	 
+
+	 
+
+			 
+						
+	
+	
+		
+
+	
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+			
+							Meetings & Events
+
+			
+					
+	
+				
+					
+
+
+
+
+
+
+
+
+	
+
+
+
+
+				
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		Tue, Oct. 20  
+		
+					Wright County Board Meeting
+
+		
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		Thu, Oct. 22  
+		
+					Planning Commission Meeting
+
+		
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		Tue, Nov. 3  
+		
+					Wright County Board Meeting
+
+		
+	
+					
+				
+				
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		Fri, Nov. 6  
+		
+					November 6, 2026 Board of Adjustment Meeting
+
+		
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		Mon, Nov. 9  
+		
+					Public Health Task Force Meeting
+
+		
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		Tue, Nov. 10  
+		
+					Wright County Board Workshop
+
+		
+	
+					
+				
+				
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		Tue, Nov. 10  
+		
+					Wright County Committee of the Whole - Elected Officials Salaries
+
+		
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		Tue, Nov. 10  
+		
+					Mental Health Advisory Council Meeting
+
+		
+	
+					
+				
+				
+					
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		Tue, Nov. 17  
+		
+					Wright County Board Meeting
+
+		
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		Tue, Nov. 17  
+		
+					HHS Advisory Committee Meeting
+
+		
+	
+					
+				
+
+
+									
+		        View All Events
+					
+	
+		
+	
+	
+		/Calendar.aspx
+	
+
+
+
+	 
+
+	 
+
+			 
+
+
+		
+
+	
+
+	
+	
+
+	
+
+
+
+
+
+	
+				                
+
+						
+	
+	
+		
+
+		
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+				
+			
+						News & Highlights
+											
+		
+	
+
+
+
+
+
+	
+		
+						
+						
+									Early Voting Now Open for General Election 
+	
+Early in-person voting is now open at the Wright County Government Center and five Wright County cities.						Read on...
+	
+
+						
+						
+						
+						
+									CP Holiday Train Coming to Wright County Dec. 16 
+	
+The 28th Annual CP Holiday Train will be making stops in Loretto, Buffalo, Annandale and Kimball on Wednesday, Dec. 16						Read on...
+	
+
+						
+						
+						
+						
+									Assessor Announces Important Homestead Notice 
+	
+The Wright County Assessor's Office has announced an important property tax homestead notice that will affect 2027 property taxes and eligibility for a property tax refund						Read on...
+	
+
+						
+						
+						
+						
+									Sheriff's Office Releases Weekly Arrest Report 
+	
+The Wright County Sheriff’s Office has released its weekly Arrest Report for the period of Oct. 5-11						Read on...
+	
+
+						
+						
+						
+						
+									Second Half Property Taxes Due Oct. 15 
+	
+Wright County Taxpayer Services is reminding property owners that second-half property taxes are due by Thursday, Oct. 15 and there are a variety of ways to pay your taxes						Read on...
+	
+
+						
+						
+						
+						
+									DNR Youth Deer Hunt Coming Oct. 15-18 
+	
+The Minnesota Department of Natural Resources has announced a special youth deer hunt weekend Oct. 15-18 – coinciding with MEA weekend.						Read on...
+	
+
+						
+						
+						
+						
+									Open House in Otsego Oct. 22 for CSAH 39 Project 
+	
+The Wright County Highway Department will be hosting an Open House from 5 p.m. to 7 p.m. Thursday, Oct. 22 dealing with the CSAH 39 project between Nashua Avenue and Odean Avenue in the City of Otsego						Read on...
+	
+
+						
+						
+						
+						
+									Sheriff's Office Releases Weekly Arrest Report 
+	
+The Wright County Sheriff’s Office has released its weekly Arrest Report for the period of Sept. 28-Oct. 4						Read on...
+	
+
+						
+						
+						
+						
+									Red Cross Blood Drive Coming Thursday 
+	
+The American Red Cross will be hosting a blood drive from 9 a.m. to 3 p.m. Thursday, Oct. 8 in Conference Rooms 1103 and 1104 at the Wright County Government Center and there are still spots available for those who wish to donate						Read on...
+	
+
+						
+						
+						
+						
+									Utility Crossing in Monticello to Detour CSAH 39 Traffic 
+	
+Construction of the new outlet for County Ditch 33 is starting and the contractor anticipates completing the utility crossing of CSAH 39 on the east side of Monticello the week of October 12.						Read on...
+	
+
+						
+						
+						
+						
+									USDA Offering Emergency Loans for Wright County Farmers 
+	
+The United States Department of Agriculture has issued a drought-related natural disaster designation for 12 Minnesota counties, including Wright County.						Read on...
+	
+
+						
+						
+						
+						
+									CSAH 7 at Hwy. 24 in Clearwater to Close Oct. 6 
+	
+Beginning Tuesday, Oct. 6, CSAH 7 at Hwy. 24 will be closed. Traffic north and southbound along State Highway 24 will be maintained throughout the duration of the project.						Read on...
+	
+
+						
+						
+						
+						
+									U of M Extension Offering Four-Week Lawn Care Program 
+	
+University of Minnesota Extension is offering a four-week course at the Wright County Government Center for new homeowners or those new to gardening designed to teach how homeowners can landscape in the fall						Read on...
+	
+
+						
+						
+						
+						
+									County Board Proclaims Oct. 4-10 4-H Week in Wright County 
+	
+The Wright County Board of Commissioners proclaimed Oct. 4-10 as National 4-H Week in Wright County.						Read on...
+	
+
+						
+						
+						
+						
+									Sheriff's Office Releases Weekly Arrest Report 
+	
+The Wright County Sheriff’s Office has released its weekly Arrest Report for the period of Sept. 21-27						Read on...
+	
+
+						
+						
+						
+						
+									Emmer Attends I-94 West Corridor Coalition Meeting 
+	
+On Thursday, Sept. 24, the I-94 West Corridor Coalition hosted Congressman Tom Emmer at the Wright County Government Campus to discuss the current expansion of I-94 and future projects seeking federal funding						Read on...
+	
+
+						
+						
+						
+						
+									Hwy 25/Co. Rd. 113 Roundabout Opens Today 
+	
+MnDOT and the Wright County Highway Department have announced that the roundabout at the intersection of Hwy. 25 and C. Rd. 113 north of Buffalo will be open to east-west traffic on Co. Rd. 113 by end of day today (Sept. 25)						Read on...
+	
+
+						
+						
+						
+						
+									Online Tax Forfeit Parcel Auction is Live 
+	
+The Wright County tax forfeiture auctions are now live. Parcels are available to be bid on via our online auction host, Public Surplus.						Read on...
+	
+
+						
+						
+						
+						
+									Board Approves Preliminary 2027 Budget, Levy 
+	
+At its Sept. 15 meeting, the Wright County Board of Commissioners set its preliminary 2027 budget and levy with a proposed levy increase of 6.54 percent						Read on...
+	
+
+						
+						
+						
+						
+									Sheriff's Office Releases Weekly Arrest Report 
+	
+The Wright County Sheriff’s Office has released its weekly Arrest Report for the period of Sept. 14-20						Read on...
+	
+
+						
+						
+						
+						
+									Early Voting for General Election Now Open 
+	
+Starting today (Sept. 18), early voting has opened at the Wright County Government Center for the Nov. 3 general election						Read on...
+	
+
+						
+						
+						
+						
+									DNR Accepting Submissions for License Plate Contest 
+	
+The Minnesota Department of Natural Resources is accepting submissions for its license plate design contest. Submissions will be accepted now through Oct. 31.						Read on...
+	
+
+						
+						
+						
+						
+									County Board Continued to Wednesday 
+	
+The Wright County Board of Commissioners meeting today (Sept. 15) will be continued to 11 a.m. Wednesday, Sept. 16						Read on...
+	
+
+						
+						
+						
+						
+									Recycling Facility Now Open 
+	
+Beginning today (Sept. 15), the Wright County Hazardous Waste Facility on CSAH 37 in Monticello Township will be open for business.						Read on...
+	
+
+						
+						
+						
+						
+									Montissippi Playground Grand Opening Cancelled 
+	
+A Message from Wright County Parks & Recreation:
+Due to inclement weather that will last throughout today (Sept. 14), the grand opening for the Montissippi Park playground has been cancelled.						Read on...
+	
+
+						
+						
+						
+						
+									Sheriff's Office Releases Weekly Arrest Report 
+	
+The Wright County Sheriff’s Office has released its weekly Arrest Report for the period of Sept. 7-13						Read on...
+	
+
+						
+						
+						
+						
+									Remembering 9/11 
+	
+Today, on the 25th anniversary of the Sept. 11 attacks on New York and Washington D.C., more than 50 members of the Wright County community, led by law enforcement officers, firefighters and first responders, replicated the walk made by heroes that day						Read on...
+	
+
+						
+						
+						
+						
+									P&Z Warning of Email Scam 
+	
+Wright County's Planning & Zoning Department is warning residents about fraudulent emails that have been sent to people in the county requesting payment related to a Planning Commission or Board of Adjustment public hearing						Read on...
+	
+
+						
+						
+						
+						
+									Montissippi Park, Playground Re-Opening Coming Sept. 14 
+	
+Wright County Parks & Recreation is inviting people to join them at 6 p.m. Monday, Sept. 14 for the grand re-opening of the new playground at Montissippi County Park						Read on...
+	
+
+						
+						
+						
+						
+									WCSO Provides Update on Murder in Monticello 
+	
+The Wright County Sheriff's Office has provided an update on the Sept. 3 murder in Monticello - identifying the deceased and the suspect arrested in connection with the stabbing						Read on...
+	
+
+						
+						
+						
+						
+									Sheriff's Office Releases Weekly Arrest Report 
+	
+The Wright County Sheriff’s Office has released its weekly Arrest Report for the period of Aug. 30-Sept. 6						Read on...
+	
+
+						
+						
+						
+						
+									MnDOT to Close One Lane of CSAH 19 Sept. 8-12 
+	
+MnDOT will implement a single-lane closure on northbound CSAH 19 in Albertville from Tuesday, Sept. 8 through Saturday, Sept. 12. This work is necessary to complete trail and ADA (American with Disabilities Act) improvements under the I-94 bridge.						Read on...
+	
+
+						
+						
+						
+						
+									Sheriff's Office Apprehends Suspect in Monticello Stabbing 
+	
+At 7:30 a.m. today (Sept. 3), the Wright County Sheriff's Office responded to a stabbing that left a 57-year-old Monticello man dead. The suspect was later apprehended in Cass County.						Read on...
+	
+
+						
+						
+						
+						
+									Transition of HHW Facility Begins Sept. 3 
+	
+The permanent Wright County Household Hazardous Waste Facility will open for business Tuesday, Sept. 15. In the meantime, county staff will be transitioning from the temporary site in Maple Lake, which will close at end of day Thursday, Sept. 3.						Read on...
+	
+
+						
+						
+						
+						
+									CSAH 18 Project Open to Traffic at STMA Middle School West 
+	
+Traffic on CSAH 18 (50th Street) next to St. Michael-Albertville Middle School West has opened to traffic - coinciding with the start of the school year						Read on...
+	
+
+						
+						
+						
+						
+									Sheriff's Office Releases Weekly Arrest Report 
+	
+The Wright County Sheriff’s Office has released its weekly Arrest Report for the period of Aug. 24-30						Read on...
+	
+
+						
+						
+						
+						
+									Wright County GIS Wins Prestigious Award 
+	
+Wright County GIS (Geographic Information System) made a presentation to the Wright County Board of Commissioners at its Aug. 25 meeting to tell the commissioners about receiving a SAG Award - not the acting award by an award for excellence in GIS						Read on...
+	
+
+						
+						
+						
+						
+									State Reviewing Child Support Guidelines 
+	
+The Department of Children, Youth and Families Child Support Division is reviewing the Minnesota child support guidelines, which help set child support amounts.						Read on...
+	
+
+						
+						
+						
+						
+									County Board Pushes Back On Zoning Issue 
+	
+At its Aug. 25 meeting, the Wright County Board of Commissioners discussed a planned land use that it has no ability to contend - and it has nothing to do with data centers.						Read on...
+	
+
+						
+						
+						
+						
+									CSAH 35/CSAH 8 Roundabout Completed 
+	
+The Wright County Highway Department has announced that work on the roundabout at CSAH 35 and CSAH 8 in Chatham Township has been completed and the intersection has reopened to traffic						Read on...
+	
+
+						
+						
+						
+						
+									Sheriff's Office Releases Weekly Arrest Report 
+	
+The Wright County Sheriff’s Office has released its weekly Arrest Report for the period of Aug. 17-23						Read on...
+	
+
+						
+						
+						
+						
+									Tax Forfeit Parcels Available for Viewing 
+	
+Wright County Taxpayer Services has announced that tax forfeit parcels that will go on auction starting Sept. 21 are available for viewing through the tax forfeit parcel portal						Read on...
+	
+
+						
+						
+						
+						
+									Updates on Hwy. 25 Construction 
+	
+The Minnesota Department of Transportation has provided a pair of updates on the Hwy. 25 project between Monticello and Buffalo - one on the south end of the construction and one on the north end						Read on...
+	
+
+						
+						
+						
+						
+									Collinwood Park Beach Closed for Water Testing 
+	
+Wright County Parks & Recreation has announced that the Collinwood Park Beach is closed as staff deals with a algal bloom thought to be blue-green algae						Read on...
+	
+
+						
+						
+						
+						
+									Sheriff's Office Releases Weekly Arrest Report 
+	
+The Wright County Sheriff’s Office has released its weekly Arrest Report for the period of Aug. 10-16						Read on...
+	
+
+						
+						
+						
+						
+									Eastbound I-94 Ramp at CSAH 18 to Close Monday 
+	
+The Minnesota Department of Transportation has announced that the eastbound I-94 loop ramp at CSAH 18 (Fenning Avenue) in Monticello will close for reconstruction, which is expected to remain closed until late-September						Read on...
+	
+
+						
+						
+						
+						
+									Minnesota Voters Turned Out in Record Numbers in Primary 
+	
+Minnesota shattered the existing record for voter turnout for a primary election, with more than 1.1 million votes being cast - almost 175,000 more than the previous record						Read on...
+	
+
+						
+						
+						
+						
+									CSAH 7 at Hwy. 24 to Close Monday 
+	
+The Wright County Highway Department has announced that beginning Monday, Aug. 17, CSAH 7 at Hwy. 24 in the City of Clearwater will be closed.						Read on...
+	
+
+						
+						
+						
+						
+									Charges Filed Against Mother in Rockford Fatality Accident 
+	
+Wright County Attorney Brian Lutes has filed a criminal complaint against the mother of an unlicensed 15-year-old girl who was driving at the time of accident in Rockford that killed one woman and seriously injured another.						Read on...
+	
+
+						
+						
+						
+						
+									Four Commissioner Candidates Move On 
+	
+Tuesday was Primary Election Day and there were two contested Wright County Commissioner races that narrowed the field of candidates down to two in District 1 and District 4						Read on...
+	
+
+						
+						
+						
+						
+									Sheriff's Office Releases Weekly Arrest Report 
+	
+The Wright County Sheriff’s Office has released its weekly Arrest Report for the period of Aug. 3-9						Read on...
+	
+
+						
+						
+						
+						
+									P & Z Warning of Scam Emails Being Sent Out 
+	
+Wright County Planning & Zoning has been made aware that some individuals may be receiving fraudulent emails requesting payment related to a Planning Commission or Board of Adjustment public hearing.						Read on...
+	
+
+						
+						
+						
+						
+									Parks & Rec Releases Fall Program Guide 
+	
+Wright County Parks & Recreation has released its Fall Program Guide for events from September to December						Read on...
+	
+
+						
+						
+						
+						
+									CSAH 37, Co. Rd. 137 in Otsego, Albertville to Re-Open Monday 
+	
+The contractor plans to reopen Co. Rd. 137/CSAH 37 in Otsego and Albertville, including the bridge, the I-94 ramps and 62nd Street by the end of the day Monday, Aug. 10						Read on...
+	
+
+						
+						
+						
+						
+									Collinwood Park Beach Re-Opens 
+	
+Wright County Parks & Recreation has announced that the beach at Collinwood Regional Park and Campground has reopened						Read on...
+	
+
+						
+						
+						
+						
+									Hwy. 55 Study Group to Conduct Public Meeting Aug. 17 
+	
+The Hwy. 55 Medina to Corcoran Study team invites community members to attend a public meeting from 4:30 p.m. to 6:30 p.m. Monday, Aug. 17 at the Hamel Community Building to share feedback on improvements that can be made in the Hwy. 55 corridor						Read on...
+	
+
+						
+						
+						
+						
+									Traveling Vietnam Memorial Wall Coming to Minnesota 
+	
+The traveling replica of the the Vietnam Veterans Memorial Wall is making its only Minnesota appearance in 2026 in White Bear Lake Aug. 6-9						Read on...
+	
+
+						
+						
+						
+						
+									Road Work on CSAH 11 in Silver Creek Township Starts Monday 
+	
+Beginning Monday, August 10, the Wright County Highway Department will close a section of CSAH 11 to replace a failing centerline culvert, approximately 1,000 feet south of CSAH 39 in Silver Creek Township, on CSAH 11.						Read on...
+	
+
+						
+						
+						
+						
+									Farmers Market Week Aug. 2-8 
+	
+Aug. 2-8 is Farmers Market Week in Minnesota and the Minnesota Department of Agriculture has created an interactive map to locate farmers markets as well as other helpful links						Read on...
+	
+
+						
+						
+						
+						
+									Sheriff's Office Releases Weekly Arrest Report 
+	
+The Wright County Sheriff’s Office has released its weekly Arrest Report for the period of July 27-Aug. 2						Read on...
+	
+
+						
+						
+						
+						
+									A Statement from County Attorney Brian Lutes 
+	
+Wright County Attorney Brian Lutes has released a statement regarding Matthew Lyrek, who was convicted of 11 counts July 29 in connection with pointing a loaded weapon at Sheriff's deputies in 2024 while they attempted to make an arrest in Montrose						Read on...
+	
+
+						
+						
+						
+						
+									Collinwood Park Beach Closed for Water Testing 
+	
+The swimming beach at Collinwood Regional Park & Campground is temporarily closed due to water quality testing.						Read on...
+	
+
+						
+						
+						
+						
+									DNR Announces Numerous Changes for 2026 Firearm Deer Hunting 
+	
+The Minnesota Department of Natural Resources has announced several new changes for the 2026 firearm deer hunting season.						Read on...
+	
+
+						
+						
+						
+						
+									Night to Unite Coming Aug. 4 
+	
+Next Tuesday (Aug. 4) is the Night to Unite (formerly known as National Night Out). In its 42nd year, the Night to Unite is an effort to increase the communication between communities and first responders – particularly law enforcement.						Read on...
+	
+
+						
+						
+						
+						
+									Sheriff's Office Releases Weekly Arrest Report 
+	
+The Wright County Sheriff’s Office has released its weekly Arrest Report for the period of July 20-26						Read on...
+	
+
+						
+						
+						
+						
+									CSAH 14 To Close At Hwy. 12 July 28 
+	
+The Wright County Highway Department has announced that traffic on CSAH 14 at the intersection with Hwy. 12 will be closed starting Tuesday, July 28						Read on...
+	
+
+						
+						
+						
+						
+									Early In-Person Voting Now Open 
+	
+Starting today (July 24) and through Monday, Aug. 10, early in-person voting for the 2026 primary election is open at the Government Center and five cities in Wright County						Read on...
+	
+
+						
+						
+						
+						
+									Temporary Signal Scheduled on CSAH 25 Project in Monticello 
+	
+A temporary traffic signal will be installed at the intersection of CSAH 37 and Co. Rd. 117 (Edmonson Avenue NE) to help traffic flow better on the Hwy. 25 project						Read on...
+	
+
+						
+						
+						
+						
+									Sheriff's Office Releases Weekly Arrest Report 
+	
+The Wright County Sheriff’s Office has released its weekly Arrest Report for the period of July 13-19						Read on...
+	
+
+						
+						
+						
+						
+									Clearwater/Pleasant, Schroeder Park Beaches Open 
+	
+The swimming beaches at Clearwater/Pleasant County Park and Schroeder County Park & Campground have reopened following Thursday's proactive treatment to help prevent swimmer's itch						Read on...
+	
+
+						
+						
+						
+						
+									Project Update for CSAH 37/Co. Rd. 137 
+	
+The Wright County Highway Department has announced that starting Monday, July 20, Co. Rd. 137 and the I-94 westbound ramps to/from Co. Rd. 137 will reopen for local traffic while 62nd Street at Co. Rd. 137 will close in Otsego and Albertville.						Read on...
+	
+
+						
+						
+						
+						
+									Public Accuracy Test of Voting Tabulators Set for July 21 
+	
+Wright County Finance Director Lindsey Meyer has announced that the public accuracy test of ballot scanners and vote tabulators will be conducted at 9 a.m. Tuesday, July 21 in the Wright County Government Center in Buffalo						Read on...
+	
+
+						
+						
+						
+						
+									Lutes Comments on Felony Charges for Hit-and-Run Driver 
+	
+Wright County Attorney Brian Lutes has released a statement regarding the felony charges filed against Denise Lagou in connection with a hit-and-run incident in Monticello that left an 84-year-old man injured and his dog dead						Read on...
+	
+
+						
+						
+						
+						
+									Two County Park Beaches Closed July 16 
+	
+The swimming beaches at Clearwater/Pleasant County Park and Schroeder County Park & Campground will be closed on Thursday, July 16 while we complete a proactive treatment to help prevent swimmer's itch.						Read on...
+	
+
+						
+						
+						
+						
+									Arrest Made in Monticello Hit-and-Run 
+	
+The Wright County Sheriff's Office has arrested a 62-year-old St. Cloud in connection to a hit-and-run incident July 10 in Monticello						Read on...
+	
+
+						
+						
+						
+						
+									Sheriff's Office Releases Weekly Arrest Report 
+	
+The Wright County Sheriff’s Office has released its weekly Arrest Report for the period of July 6-12						Read on...
+	
+
+						
+						
+						
+						
+									Parks & Rec Offering Two-Day Survival Camp July 27-28 
+	
+Wright County Parks & Rec is offering a day camp for kids ages 11-13 called Camp Survivor - based on the TV show Survivor. The camp helps kids improve survival skills by building shelters, solving puzzles, physical challenges and highlighting teamwork						Read on...
+	
+
+						
+						
+						
+						
+									County Fair Coming July 22-26 
+	
+The Wright County Fair is just three weeks away (July 22-26) and we have links to all the information you will need in advance of the fair						Read on...
+	
+
+						
+						
+						
+						
+									Early Voting for State Primary Open 
+	
+Early/absentee voting for the August primary election opens Friday, June 26						Read on...
+	
+
+						
+						
+						
+						
+									CSAH 14 To Close At Hwy. 12 July 7 
+	
+Beginning Tuesday, July 7, CSAH 14 at Hwy. 12 in Franklin Township will be closed for the construction of a roundabout						Read on...
+	
+
+						
+						
+						
+						
+									Sheriff's Office Releases Weekly Arrest Report 
+	
+The Wright County Sheriff’s Office has released its weekly Arrest Report for the period of June 30-July 5						Read on...
+	
+
+						
+						
+						
+						
+									Co. Rd. 113 to Close As Part of Hwy. 25 Project 
+	
+The Wright County Highway Department has announced the closure of Co. Rd. 113 in Buffalo Township as part of the Hwy. 25 construction project						Read on...
+	
+
+						
+						
+						
+						
+									County Offices, Facilities Closed Friday 
+	
+All Wright County offices and facilities will be closed Friday, July 3 in observance of the Independence Day holiday.						Read on...
+	
+
+						
+						
+						
+						
+									Sheriff's Office Releases Weekly Arrest Report 
+	
+The Wright County Sheriff’s Office has released its weekly Arrest Report for the period of June 22-28						Read on...
+	
+
+						
+						
+						
+						
+									Hwy. 24, I-94 Project in Clearwater Begins July 7 
+	
+The Minnesota Department of Transportation will begin a two-year improvement project to reconstruct the Hwy. 24 and I-94 interchange in Clearwater on Tuesday, July 7.						Read on...
+	
+
+						
+						
+						
+						
+									Wright County Seeking Data Center Workgroup Members 
+	
+Wright County is seeking interested residents, stakeholders, and subject matter experts to serve on a newly established Data Center Moratorium Workgroup.						Read on...
+	
+
+						
+						
+						
+						
+									Tax Forfeited Parcels Available for Over-the-Count Sales June 23 
+	
+Wright County tax forfeited parcels will be available for sale over the counter starting at 8 a.m. Tuesday, June 23						Read on...
+	
+
+						
+						
+						
+						
+									Sheriff's Office Releases Weekly Arrest Report 
+	
+The Wright County Sheriff’s Office has released its weekly Arrest Report for the period of June 15-21						Read on...
+	
+
+						
+						
+						
+						
+									County Offices, Facilities Closed Friday 
+	
+All Wright County offices and facilities will be closed Friday, June 19 in observance of the Juneteenth holiday						Read on...
+	
+
+						
+						
+						
+						
+									Performing in the Park Camp Coming Aug.3-5 
+	
+Wright County 4-H is partnering with Wright County Parks & Recreation to host a three-day performing arts camp Aug. 3-5 at Bertram Chain of Lakes Park in Monticello						Read on...
+	
+
+						
+						
+						
+						
+									Sheriff's Office Releases Weekly Arrest Report 
+	
+The Wright County Sheriff’s Office has released its weekly Arrest Report for the period of June 8-14						Read on...
+	
+
+						
+						
+						
+						
+									County Growth Continues At Steady Pace 
+	
+In between Census periods, the population estimates from the State Demographer become the official numbers for any given year. The latest estimates are out and Wright County's growth continues at a significant rate						Read on...
+	
+
+						
+						
+						
+						
+									Novotny Honored for Service to Wright County 
+	
+At the June 8 meeting of the Otsego City Council, Wright County Commissioner Jeanne Holland and the council expressed their gratitude for the work State Representative Paul Novotny has done on behalf of Wright County						Read on...
+	
+
+						
+						
+						
+						
+									WCSO Bids Farewell to Retiring K9 Officer 
+	
+Last week, Wright County Sheriff’s Office K9 Officer Chase served on his last shift – completing 10 years of service to the residents of the county alongside his partner Sergeant Daniel Cotten.						Read on...
+	
+
+						
+						
+						
+						
+									Closure on CSAH 18 in Albertville Begins June 15 
+	
+The Wright County Highway Department has announced that beginning Monday, June 15, CSAH 18 will be closed from CSAH 19 to Main Avenue in Albertville						Read on...
+	
+
+						
+						
+						
+						
+									Sheriff's Office Releases Weekly Arrest Report 
+	
+The Wright County Sheriff’s Office has released its weekly Arrest Report for the period of June 1-7						Read on...
+	
+
+						
+						
+						
+						
+									WCSO Hosting K9 Patrol Trials June 14 
+	
+The Wright County Sheriff’s Office is partnering with the United States Police K9 Association Region 12 as they host this year’s K9 Patrol Trials, including a free public demonstration at 6 p.m. Sunday, June 14 at the Delano Municipal Baseball Field.						Read on...
+	
+
+						
+						
+						
+						
+									Youngrens Named 2026 Wright County Farm Family of the Year 
+	
+Two generations of the Youngren family - Scott and Kim Youngren and Dylan and Kennedy Youngren - were honored at the June 2 meeting of the Wright County Board of Commissioners after being selected 2026 Farm Family of the Year in Wright County						Read on...
+	
+
+						
+						
+						
+						
+									Sheriff's Office Open House Coming June 12 
+	
+The Wright County Sheriff’s Office will be hosting its annual Open House from 10 a.m. to 1 p.m. Friday, June 12 next to the Law Enforcement Center (3810 Braddock Ave. NE, Buffalo).						Read on...
+	
+
+						
+						
+						
+						
+									Candidate Filing for County Elections Now Closed 
+	
+Candidate filing has closed for seven election races in Wright County - with two county commissioner seats being forced to advance in the Aug. 11 primary because there are more than two candidates for both seats						Read on...
+	
+
+						
+						
+						
+						
+									WCSO: Drowning In Pleasant Lake 
+	
+At 8:18 p.m. Monday, June 1, deputies from the Wright County Sheriff's Office were dispatched to Pleasant Lake in Corinna Township for a possible drowning in the lake. Deputies on the scene found an 18-year-old man from Watkins had drowned						Read on...
+	
+
+						
+						
+						
+						
+									County Board Meetings Under New Livestream Platform 
+	
+Beginning with the June 2 county board meeting, Wright County Board meetings will be livestreamed on a platform that can be accessed directly from the county website						Read on...
+	
+
+						
+						
+						
+						
+									DNR Fishing License System Down Starting June 2 
+	
+The Minnesota DNR's fishing licensing system will go down for a week starting Tuesday, June 2 and running through Monday, June 8. During that time, anglers don't need to have a license to fish Minnesota lakes and rivers						Read on...
+	
+
+						
+						
+						
+						
+									Sheriff's Office Releases Weekly Arrest Report 
+	
+The Wright County Sheriff’s Office has released its weekly Arrest Report for the period of May 25-31						Read on...
+	
+
+						
+						
+						
+						
+									Hwy. 25 Detour Route Changing June 2 
+	
+The Minnesota Department of Transportation has announced that the Hey. 25 detour route between Monticello and Buffalo will change effective Tuesday, June 2						Read on...
+	
+
+						
+						
+						
+						
+									CSAH 36 Construction In St. Michael Begins June 1 
+	
+The Wright County Highway Department has announced that, beginning Monday, June 1, traffic on Ogren Avenue will be diverted as part of the most recent phase of the CSAH 36 project						Read on...
+	
+
+						
+						
+						
+						
+									Highway Department Announces Overlay, Sealcoating Schedule 
+	
+The 2026 pavement preservation contracts are scheduled to begin on Monday, June 1, 2026.  The work includes approximately 23 miles of mill/overlay and 28 miles of pavement rejuvenation and sealcoat.						Read on...
+	
+
+						
+						
+						
+						
+									Sheriff's Office Releases Weekly Arrest Report 
+	
+The Wright County Sheriff’s Office has released its weekly Arrest Report for the period of May 18-24						Read on...
+	
+
+						
+						
+						
+						
+									County Board Approves Data Center Moratorium 
+	
+At its May 19 meeting, the Wright County Board of Commissioners unanimously approved instituting a moratorium on acceptance of proposals for data centers in the county's 18 townships						Read on...
+	
+
+						
+						
+						
+						
+									Eastbound I-94 ramps at CSAH 37 to Close May 26 
+	
+Beginning Tuesday, May 26, the I-94 eastbound ramps to and from CSAH 37 in Albertville will be closed. The westbound ramps will remain closed as well, except for a temporary bypass to 62nd Street and the area west of Lymon Avenue.						Read on...
+	
+
+						
+						
+						
+						
+									County Offices, Facilities Closed Monday 
+	
+All Wright County offices and facilities will be closed Monday, May 25 in observance of the Memorial Day holiday						Read on...
+	
+
+						
+						
+						
+						
+									A Listing of Memorial Day Events in Wright County 
+	
+Several Wright County communities will conduct Memorial Day programs to honor the men and women who lost their lives in service to their country on Monday, May 25						Read on...
+	
+
+						
+						
+						
+						
+									Sheriff's Office Releases Weekly Arrest Report 
+	
+The Wright County Sheriff’s Office has released its weekly Arrest Report for the period of May 11-17						Read on...
+	
+
+						
+						
+						
+						
+									Candidate Filing Opens Tuesday 
+	
+Candidate filing for elected offices for the 2026 election cycle will open Tuesday, May 19 and will close Tuesday, June 2						Read on...
+	
+
+						
+						
+						
+						
+									Ney Park 30th Anniversary Celebration Coming Saturday 
+	
+Wright County Parks & Recreation will host a celebration for the 30th anniversary of the Robert Ney Nature Center from 10 a.m. to 2 p.m. Saturday (May 16)						Read on...
+	
+
+						
+						
+						
+						
+									Board Proclaims May as Child Foster Care Awareness Month 
+	
+The Wright County Board proclaimed May as Child Foster Care Awareness Month and honored a Monticello couple that has taken in numerous foster children over the years						Read on...
+	
+
+						
+						
+						
+						
+									County is Hiring Election Judges for Coming Election Season 
+	
+Wright County is hiring election judges to serve as temporary absentee voting clerks, and absentee ballot board members. These positions play a vital role in administering the 2026 Primary Election and the 2026 General Election.						Read on...
+	
+
+						
+						
+						
+						
+									Sheriff's Office Releases Weekly Arrest Report 
+	
+The Wright County Sheriff’s Office has released its weekly Arrest Report for the period of May 4-10						Read on...
+	
+
+						
+						
+						
+						
+									Red Cross Blood Drive Coming May 14 
+	
+The American Red Cross will be conducting a blood drive from 9 a.m. to 3 p.m. Thursday, May 14 on the First Floor of the Wright County Government Center (3650 Braddock Ave. NE, Buffalo)						Read on...
+	
+
+						
+						
+						
+						
+									Administration Releases Data Center Statement 
+	
+The Wright County Board of Commissioners is scheduling a public hearing for its May 19 board meeting to discuss of a potential county emergency moratorium to regarding data centers. This moratorium would have no impact on data centers in cities.						Read on...
+	
+
+						
+						
+						
+						
+									CP to Close Railroad Crossing on CSAH 6 Tuesday 
+	
+Canadian Pacific Railroad has informed the Wright County Highway Department that they will close CSAH 6 at the railroad crossing south of Hwy. 55 in Corinna Township Sunday May 17 through Wednesday, May 20						Read on...
+	
+
+						
+						
+						
+						
+									Ney Nature Center Hosting 30th Anniversary Event May 16 
+	
+The Robert Ney Nature Center north of Maple Lake will be hosting a 30th anniversary celebration Saturday, May 16						Read on...
+	
+
+						
+						
+						
+						
+									CSAH 35/8 Intersection Project Begins Monday 
+	
+Beginning Monday, May 11,, the Wright County Highway Department will be closing the intersection of CSAH 35 and CSAH 8						Read on...
+	
+
+						
+						
+						
+						
+									First-Half Property Taxes Due May 15 
+	
+Wright County Taxpayer Services is reminding property owners that first-half property taxes are due Friday, May 15 and there are different options you can use to make payments						Read on...
+	
+
+						
+						
+						
+						
+									Sheriff's Office Releases Weekly Arrest Report 
+	
+The Wright County Sheriff’s Office has released its weekly Arrest Report for the period of April 27 to May 3						Read on...
+	
+
+						
+						
+						
+						
+									Hwy. 25 to Close Monday in Buffalo for Railroad Track Repair 
+	
+The Minnesota Department of Transportation has announced an emergency closure of Hwy. 25 in Buffalo for repair work by Canadian-Pacific Railroad at the tracks located south of Hwy. 55. The closure is expected to begin Monday (May 4) and end Friday (May 8)						Read on...
+	
+
+						
+						
+						
+						
+									Board Proclaims May 3-9 Correctional Officers Week 
+	
+The Wright County Board of Commissioners has proclaimed May 3-9 as Correctional Officers and Employees Week in Wright County - honoring the men and women that do the unsung work of overseeing inmates in jails and prisons throughout the country						Read on...
+	
+
+						
+						
+						
+						
+									CSAH 36 Construction Begins Monday 
+	
+Beginning Monday, May 4, CSAH 36 will be closed to westbound traffic. Eastbound traffic will remain open.						Read on...
+	
+
+						
+						
+						
+						
+									Sheriff's Office Releases Weekly Arrest Report 
+	
+The Wright County Sheriff’s Office has released its weekly Arrest Report for the period of April 20-26						Read on...
+	
+
+						
+						
+						
+						
+									Various Payment Methods Available for Property Taxes 
+	
+First-half property taxes are due Friday, May 15. Wright County Taxpayer Services is reminding property owners that there are multiple ways to pay your taxes - by mail, online, in-person or using the outside drop box at the Government Center						Read on...
+	
+
+						
+						
+						
+						
+									BNSF Railroad To Do Track Repair in Cokato April 28-29 
+	
+BNSF Railroad has informed the Wright County Highway Department that it will be closing CSAH 3 at the railroad crossing south of Hwy. 12 in the City of Cokato on Tuesday, April 28 to complete the removal of the second track.						Read on...
+	
+
+						
+						
+						
+						
+									Diedrick Announces She Won't Seek Second Commissioner Term 
+	
+District 1 County Commissioner Tina Diedrick has released a statement announcing that she won't be seeking re-election later this year						Read on...
+	
+
+						
+						
+						
+						
+									Phase 2 of CSAH 37/Co. Rd 137 Project Begins April 30 
+	
+Beginning Thursday, April 30, County Road 137 will be closed as work continues on the CSAH 37/Co. Rd. 137 improvement project						Read on...
+	
+
+						
+						
+						
+						
+									Wright County In Red Flag Warning 
+	
+The National Weather Service has issued a Red Flag Warning for 54 counties in Minnesota, including Wright County. This warning asks that residents not have fires today (April 22) because the ingredients are in place for fires to spread quickly						Read on...
+	
+
+						
+						
+						
+						
+									April 20-24 Proclaimed Work Zone Awareness Week 
+	
+The Wright County Board of Commissioners proclaimed April 20-24 as Work Zone Awareness Week at Tuesday's board meeting						Read on...
+	
+
+						
+						
+						
+						
+									Weed Spraying Begins May 1 
+	
+The Wright County Highway Department has announced that roadside spraying in county right-of-way will begin Friday, May 1, as well as letting homeowners that wish to do their own elimination of noxious weeds and brush how to avoid county spraying						Read on...
+	
+
+						
+						
+						
+						
+									Sheriff's Office Releases Weekly Arrest Report 
+	
+The Wright County Sheriff’s Office has released its weekly Arrest Report for the period of April 13-19						Read on...
+	
+
+						
+						
+						
+						
+									CSAH 37 Open House Coming April 28 
+	
+The Wright County Highway Department will be hosting an open house from 4:30 p.m. to 6 p.m. Tuesday, April 28 to discuss the CSAH 37 project between Hwy. 25 and Co. Rd. 118						Read on...
+	
+
+						
+						
+						
+						
+									First Half Property Tax Payments Due May 15 
+	
+Wright County Taxpayers Services is reminding property owners that first-half property tax payments are due May 15. The notices were mailed in late-March. If property owners haven't received their tax statements, they need to contact the department						Read on...
+	
+
+						
+						
+						
+						
+									Spring Weight Restrictions To Be Lifted Monday 
+	
+Spring load restrictions on Wright County highways and roads that have been in place since March 3 will be lifted at 12:01 a.m. Monday, April 20						Read on...
+	
+
+						
+						
+						
+						
+									MnDOT Announces Start of Hwy. 25 Project 
+	
+The Minnesota Department of Transportation has announced the start of Phase 1 of the Hwy. 25 project between Monticello and Buffalo. This first phase of road closures will begin Tuesday, April 21						Read on...
+	
+
+						
+						
+						
+						
+									Wondering What's Under Construction? 
+	
+Wright County GIS has an interactive Highway Construction Viewer interactive map of all MnDOT, county and city road projects in Wright County taking place in 2026						Read on...
+	
+
+						
+						
+						
+						
+									April 13-17 Is Severe Weather Awareness Week 
+	
+The Minnesota Department of Public Safety and the U.S. Department of Homeland Security are jointly taking part in Severe Weather Awareness Week from April 13-17.						Read on...
+	
+
+						
+						
+						
+						
+									Sheriff's Office Releases Weekly Arrest Report 
+	
+The Wright County Sheriff’s Office has released its weekly Arrest Report for the period of April 6-12						Read on...
+	
+
+						
+						
+						
+						
+									Hwy. 25 Project Between Monticello, Buffalo Begins Monday 
+	
+The Minnesota Department of Transportation has announced that the Hwy. 25 project will begin Monday, April 13 with preparation work and a detour to thru traffic will begin Tuesday, April 21						Read on...
+	
+
+						
+						
+						
+						
+									Lutes Releases Statement on Status of Delong Case 
+	
+Wright County Attorney Brian Lutes has released a statement regarding the status of prosecuting David Delong, who murdered Amber Czech in Cokato on Nov. 11, 2025						Read on...
+	
+
+						
+						
+						
+						
+									Drug Takeback Day Coming April 25 
+	
+Wright County Health & Human Services and MEADA are partnering with Coborn's and Harvest Bank for a Takeback Day for expired/unused medication from 10 a.m. to 2 p.m. Saturday, April 25						Read on...
+	
+
+						
+						
+						
+						
+									Sheriff's Office Releases Weekly Arrest Report 
+	
+The Wright County Sheriff’s Office has released its weekly Arrest Report for the period of March 30-April 5						Read on...
+	
+
+						
+						
+						
+						
+									I-94 Construction Between Monticello and Albertville Starts April 7 
+	
+The I-94 Gap Project between Monticello and Albertville will begin its final phase Tuesday, April 7.						Read on...
+	
+
+						
+						
+						
+						
+									Sheriff's Office Releases Weekly Arrest Report 
+	
+The Wright County Sheriff’s Office has released its weekly Arrest Report for the period of March 23-29						Read on...
+	
+
+						
+						
+						
+						
+									MnDOT Announces Date for Work, Detour on Hwy. 25 Project 
+	
+An update has been provided to MnDOT by the construction manager on the Hwy. 25 project between Buffalo and Monticello						Read on...
+	
+
+						
+						
+						
+						
+									DVS Reports Scam Using Its Name 
+	
+Minnesota Driver and Vehicle Services (DVS) is warning people of a scam being perpetrated that sends text messages claiming to be DVS employees						Read on...
+	
+
+						
+						
+						
+						
+									Wright SWCD Conducting Annual Tree Sale Through April 13 
+	
+The Wright Soil & Water Conservation District is conducting its annual Tree Sale Program through Monday, April 13						Read on...
+	
+
+						
+						
+						
+						
+									Hwy. 25 Construction Between Monticello, Buffalo to Begin April 13 
+	
+The Minnesota Department of Transportation has announced the starting date for the Hwy. 25 construction between Monticello and Buffalo. The project begins Monday, April 13 and will include a full closure to thru traffic						Read on...
+	
+
+						
+						
+						
+						
+									Section of CSAH 39 in Monticello to Close Monday 
+	
+Beginning Monday, March 30, a section CSAH 39 will be closed between 7th Street and Chelsea Road in the City of Monticello as part of the city’s CSAH 39 West Utility Extension project						Read on...
+	
+
+						
+						
+						
+						
+									Property Tax Statements Coming Soon 
+	
+Wright County Taxpayer Services has been informed by the vendor that prints property tax statements that those statements have been delivered to the United States Postal Service and will start arriving in mailboxes soon						Read on...
+	
+
+						
+						
+						
+						
+									Recycling Center Offering Free Spring Cleaning Items 
+	
+The Wright County Household Hazardous Waste & Recycling site (5538 85th St. NW, Maple Lake), has a variety of free items available, including paints, cleaners, pool chemicals, adhesives, and stains						Read on...
+	
+
+						
+						
+						
+						
+									Robin Hood Academy Archery Classes Coming in April 
+	
+Wright County Parks & Recreation is accepting registration for the Robin Hood Academy, an archery basics class for children in Grades 4-8. The afterschool program will be conducted April 2, 9 and 16						Read on...
+	
+
+						
+						
+						
+						
+									Sheriff's Office Releases Weekly Arrest Report 
+	
+The Wright County Sheriff’s Office has released its weekly Arrest Report for the period of March 16-22						Read on...
+	
+
+						
+						
+						
+						
+									Wright County Hosts a Pair of Important Infrastructure Meetings 
+	
+In the span of four days, Wright County hosted a pair of important events - the annual meeting of the Central Mississippi Regional Partnership and Congressman Tom Emmer bringing a pair of transportation heavy hitters to see the I-94 Gap Project						Read on...
+	
+
+						
+						
+						
+						
+									Taxpayer Services Warning of Third-Party Passport Scam 
+	
+Wright County Taxpayer Services is warning people about a third-party vendor scam that is happening when those seeking a new passport are filling out applications online and pay fees that the scammer keeps						Read on...
+	
+
+						
+						
+						
+						
+									Board Honors Gene Janikula 
+	
+At Tuesday's meeting of the Wright County Board of Commissioners, March 17, 2026 was proclaimed Gene Janikula Day in Wright County, honoring the longtime Woodland Township Supervisor for 61 years of service to his township and residents of Wright County						Read on...
+	
+
+						
+						
+						
+						
+									Parks & Rec Seeking Public Input on Beebe Lake Improvement Project 
+	
+Wright County Parks & Recreation is seeking public input via an online survey dealing with proposed site improvements at Beebe Lake County Park						Read on...
+	
+
+						
+						
+						
+						
+									Sheriff's Office Releases Weekly Arrest Report 
+	
+The Wright County Sheriff’s Office has released its weekly Arrest Report for the period of March 9-15						Read on...
+	
+
+						
+						
+						
+						
+									Xcel Releases Followup Statement 
+	
+Xcel Energy has released a statement regarding an oil leak at the Monticello nuclear power plant and its reaching the Mississippi River						Read on...
+	
+
+						
+						
+						
+						
+									Township Election Results Are In 
+	
+Fifteen of Wright County's 18 townships had elections Tuesday, March 10. The results for most of them are in and the three townships yet to report as of 10:30 a.m. Wednesday, March 11 did not have contested elections						Read on...
+	
+
+						
+						
+						
+						
+									Xcel Releases Statement Concerning Oil Leak 
+	
+Xcel Energy has released a statement regarding a leak of approximately 200 gallons of oil at the Monticello nuclear power plant that got into the water used for cooling						Read on...
+	
+
+						
+						
+						
+						
+									Master Gardener Program Coming March 21 
+	
+University of Minnesota Extension has announced a master gardener program coming to Maple Lake High School from 8 a.m. to 3:30 p.m. Saturday, March 21						Read on...
+	
+
+						
+						
+						
+						
+									Highway Department Preparing for Massive Storm 
+	
+The Wright County Highway Department is going to have a long weekend as a storm that is expected to bring more than a foot of snow is on its way to Wright County in a 24-hour period between sundown Saturday into Sunday afternoon						Read on...
+	
+
+						
+						
+						
+						
+									Parks & Rec Looking for Summer Employees 
+	
+Wright County Parks & Recreation is looking for a pair of summer employees - a seasonal recreation program assistant and a seasonal parks maintenance position						Read on...
+	
+
+						
+						
+						
+						
+									Voting Hours for Township Elections 
+	
+Today (March 10) is Election Day for 15 of Wright County's 18 townships. To see the hours for for voting, follow the link on this page						Read on...
+	
+
+						
+						
+						
+						
+									Sheriff's Office Releases Weekly Arrest Report 
+	
+The Wright County Sheriff’s Office has released its weekly Arrest Report for the period of March 2-8						Read on...
+	
+
+						
+						
+						
+						
+									Parks & Rec Releases Spring/Summer Programming Guide 
+	
+Wright County Parks & Recreation has released its Spring and Summer Programming Guide. It lists all the events being planned from March until August and includes programs for children, adults and families.						Read on...
+	
+
+						
+						
+						
+						
+									Township Elections Coming Tuesday 
+	
+Township Election Day is Tuesday, March 10 for 15 of Wright County’s 18 townships (Clearwater, Silver Creek and Southside Townships conduct elections in November). The Government Center will be open from 10 a.m. to noon Saturday, March 7 for early voting						Read on...
+	
+
+						
+						
+						
+						
+									Parks & Rec To Host Beebe Lake Park Improvement Open House 
+	
+Wright County Parks & Recreation will be hosting the Beebe Lake Park Improvements Open House at 6 p.m. Monday, March 9 at the Parks & Recreation offices (3500 Braddock Ave. NE, Buffalo).						Read on...
+	
+
+						
+						
+						
+						
+									Parks & Rec Offering Buckthorn Hiking Stick Event March 8 
+	
+Wright County Parks & Recreation is offering a Buckthorn Hiking Stick event from 1 p.m. to 2:30 p.m. Sunday, March 8 at Robert Ney Nature Center in Maple Lake.						Read on...
+	
+
+						
+						
+						
+						
+									Sheriff's Office Releases Weekly Arrest Report 
+	
+The Wright County Sheriff’s Office has released its weekly Arrest Report for the period of Feb. 23-March 1						Read on...
+	
+
+						
+						
+						
+						
+									Parks & Rec Hosting Owl Pellet Class March 5 
+	
+Join Wright County Parks & Recreation from 6:30 p.m. to 8:30 p.m. Thursday, March 5 for a hands-on exploration of owl pellets and uncover the secrets of these fascinating nighttime hunters!						Read on...
+	
+
+						
+						
+						
+						
+									Fish Houses Need to Be Removed March 2 
+	
+The Minnesota Department of Natural Resources is reminding those with fish houses on all lakes south of Duluth need to be off the ice by 11:59 p.m. tonight (Monday, March 2).						Read on...
+	
+
+						
+						
+						
+						
+									Campground Reservations for 2026 Open Monday 
+	
+Wright County Parks & Recreation has announced that campground reservations for the 2026 camping season will open at 8 a.m. Monday, March 2 for Wright County residents and 10 a.m. for all others. There are some changes those interested should see now						Read on...
+	
+
+						
+						
+						
+						
+									Tax Forfeit Parcel Auction Opens Monday 
+	
+Wright County's tax forfeit parcel auction web portal has gone live and bidding will begin Monday, March 2						Read on...
+	
+
+						
+						
+						
+						
+									Spring Load Restrictions Start March 3 
+	
+The Minnesota Department of Transportation and the Wright County Highway Department have announced that spring weight restrictions for vehicles will take effect at 12:01 a.m. Tuesday, March 3						Read on...
+	
+
+						
+						
+						
+						
+									HHS Has New Services Access Portal 
+	
+Wright County Health & Human Services has created an online access portal to assist people in need of commonly requested services, such as food, housing and mental health resources						Read on...
+	
+
+						
+						
+						
+						
+									4-H Hosting a Cloverbud Event March 22 
+	
+Wright County 4-H will host a Cloverbud youth event from 1 p.m. to 4 p.m. Sunday March 22 at Zion Lutheran Church in Buffalo						Read on...
+	
+
+						
+						
+						
+						
+									Name a Snowplow Winners Announced 
+	
+The Minnesota Department of Transportation has announced the winners of the 2025-26 Name a Snowplow Contest - the sixth year of Minnesotans submitted humorous or clever names for one plow in each of MnDOT's eight districts						Read on...
+	
+
+						
+						
+						
+						
+									Sheriff's Office Releases Weekly Arrest Report 
+	
+The Wright County Sheriff’s Office has released its weekly Arrest Report for the period of Feb. 17-22						Read on...
+	
+
+						
+						
+						
+						
+									MnDOT Announces Second Hwy. 25 Project in 2027 
+	
+The Minnesota Department of Transportation will shut down Hwy. 25 between Monticello and Buffalo this summer, but plans have been announced for shutting down the I-94 bridge in Monticello on Hwy. 25 in 2027						Read on...
+	
+
+						
+						
+						
+						
+									Wright County Farm Family of the Year Nominations Open 
+	
+University of Minnesota Extension's Farm Family Recognition Program has opened nominations for the 2026 Wright County Farm Family of the Year						Read on...
+	
+
+						
+						
+						
+						
+									Highway Department Releases 2026 Spring Load Restriction Map 
+	
+With warmer-than-normal temperatures expected over the next week, the Wright County Highway has released its spring load restriction map. The restrictions are likely going to begin in late-February or early-March						Read on...
+	
+
+						
+						
+						
+						
+									Sheriff's Office Releases Weekly Arrest Report 
+	
+The Wright County Sheriff’s Office has released its weekly Arrest Report for the period of Feb. 9-15						Read on...
+	
+
+						
+						
+						
+						
+									Master Gardening Program Coming to Maple Lake March 21 
+	
+University of Minnesota Extension will be hosting a gardening day Saturday, March 21 at Maple Lake High School with U of M master gardeners on hand to answer questions and offer advice						Read on...
+	
+
+						
+						
+						
+						
+									County Offices and Facilities Closed Monday 
+	
+All Wright County offices and facilities will be closed Monday, Feb. 16 in observance of the President’s Day holiday						Read on...
+	
+
+						
+						
+						
+						
+									DOR Warning of Tax Filing Scams 
+	
+The Minnesota Department of Revenue is warning tax filers of scams being used by identify thieves that have become more commonplace in recent years, including suspicious emails, texts and phone calls						Read on...
+	
+
+						
+						
+						
+						
+									Sheriff's Office Releases Weekly Arrest Report 
+	
+The Wright County Sheriff’s Office has released its weekly Arrest Report for the period of Feb. 2-8						Read on...
+	
+
+						
+						
+						
+						
+									Parks & Rec Looking for Summer Employees 
+	
+Wright County Parks & Recreation is looking for summer seasonal employees and are accepting applications						Read on...
+	
+
+						
+						
+						
+						
+									Highway Department Releases Five-Year Plan Project Map 
+	
+The Wright County Highway Department has released its Five-Year Plan for construction projects on the horizon for 2026-2030						Read on...
+	
+
+						
+						
+						
+						
+									MnDOT Has Released Finalists for Name a Snowplow Contest 
+	
+For the sixth year, the Minnesota Department of Transportation is conducting its Name a Snowplow contest						Read on...
+	
+
+						
+						
+						
+						
+									Campsite Reservations Open March 2 
+	
+Wright County Parks & Recreation has announced that campground reservations will open Monday, March 2 and is providing some advance tips to assist those looking to book campsites before they run out						Read on...
+	
+
+						
+						
+						
+						
+									Tax Forfeit Parcel Auction Is Open 
+	
+The latest Wright County tax forfeit parcel auction is now open and will remain open through Feb. 1						Read on...
+	
+
+						
+						
+						
+						
+									Sheriff's Office Releases Weekly Arrest Report 
+	
+The Wright County Sheriff’s Office has released its weekly Arrest Report for the period of Jan. 26-Feb. 1						Read on...
+	
+
+						
+						
+						
+						
+									HHS To Close for Two Hours Feb. 4 
+	
+Wright County’s Health & Human Services will be closed from 1 p.m. to 3 p.m. Wednesday, Feb. 4 for all-staff training						Read on...
+	
+
+						
+						
+						
+						
+									Caucus Night Coming Feb. 3 
+	
+Minnesota Precinct Caucus Night for all of Minnesota's political parties will be Tuesday, Feb. 3						Read on...
+	
+
+						
+						
+						
+						
+									Open House for CSAH 19/30th Street Project Coming Feb. 3 
+	
+The Wright County Highway Department is notifying those interested that there will be an Open House for the CSAH 19/30th Street NE intersection project in St. Michael from 4:30 p.m. to 6 p.m. Tuesday, Feb. 3						Read on...
+	
+
+						
+						
+						
+						
+									Lantern Ski Event Coming Jan. 31 
+	
+Wright County Parks & Recreation has announced that a lantern ski event at Ney Park originally scheduled for Jan. 24 but postponed due to frigid temperatures will be conducted from 6 p.m. to 9 p.m. Saturday, Jan. 31						Read on...
+	
+
+						
+						
+						
+						
+									Sheriff's Office Releases Weekly Arrest Report 
+	
+The Wright County Sheriff’s Office has released its weekly Arrest Report for the period of Jan. 19-25						Read on...
+	
+
+						
+						
+						
+						
+									Board Proclaims Princess Kay of the Milky Way Day in Wright County 
+	
+At Tuesday's meeting of the Wright County Board, the commissioners proclaimed Jan. 20, 2026 as Malorie Thorson Princess Kay of the Milky Way Day in Wright County, honoring the Waverly native who won the prestigious honor in August at the State Fair						Read on...
+	
+
+						
+						
+						
+						
+									Sheriff's Office Releases Weekly Arrest Report 
+	
+The Wright County Sheriff’s Office has released its weekly Arrest Report for the period of Jan. 12-18						Read on...
+	
+
+						
+						
+						
+						
+									County Offices and Facilities Closed Monday 
+	
+All Wright County offices and facilities will be closed Monday, Jan. 19 in observance of the Martin Luther King Jr. holiday						Read on...
+	
+
+						
+						
+						
+						
+									Open House for Rockford Trail Project Coming Jan. 26 
+	
+Wright County Parks & Recreation, in cooperation with the City of Rockford, are working on the design of the Crow River Regional Trail (CRRT) within the city and will host an Open House from 5 p.m. to 6:30 p.m. Monday, Jan. 26 at Riverside Park						Read on...
+	
+
+						
+						
+						
+						
+									Sheriff's Office Releases Weekly Arrest Report 
+	
+The Wright County Sheriff’s Office has released its weekly Arrest Report for the period of Jan. 5-11						Read on...
+	
+
+						
+						
+						
+						
+									Deringer Announces He Won't Be Seeking a Third Term 
+	
+Wright County Sheriff Sean Deringer announced today (Jan. 9) that he will be not seeking a third term as sheriff						Read on...
+	
+
+						
+						
+						
+						
+									Lutes Announces Bid For Second Full Term 
+	
+Wright County Attorney Brian Lutes has announced his intent to run for election to a second full term as county attorney in 2026						Read on...
+	
+
+						
+						
+						
+						
+									Highway Department Releases Brine-Making Video 
+	
+The Wright County Highway Department has released a video outlining the process of making its own brine to apply on roads during snow/ice events - saving thousands of dollars with each storm.						Read on...
+	
+
+						
+						
+						
+						
+									Sheriff's Office Releases Weekly Arrest Report 
+	
+The Wright County Sheriff’s Office has released its weekly Arrest Report for the period of Dec. 29-Jan. 4						Read on...
+	
+
+						
+						
+						
+						
+									Highway Department Fighting Uphill Battle With Snow, Ice 
+	
+After two of the mildest winters in history in terms of snow and ice storms, 2025 ended with a bang - leaving Highway Department plow drivers working long hours as the storms (big and small) just keep on coming						Read on...
+	
+
+						
+						
+						
+						
+									County Offices, Facilities Closed Thursday 
+	
+All Wright County offices and facilities will be closed Thursday, Jan. 1 in observance of the New Year's Day holiday						Read on...
+	
+
+						
+						
+						
+						
+									Parks & Rec Hosting New Year's Eve Hike at Ney Park 
+	
+Wright County Parks & Recreation will host a free nighttime hike at Ney Park on New Year's Eve						Read on...
+	
+
+						
+						
+						
+						
+									Sheriff's Office Releases Weekly Arrest Report 
+	
+The Wright County Sheriff’s Office has released its weekly Arrest Report for the period of Dec. 22-28						Read on...
+	
+
+						
+						
+						
+						
+									Festival of Trees In Final Two Weeks 
+	
+The Wright County Historical Society's Festival of Trees, which had its best single-day attendance number ever on Dec. 20, runs through Saturday, Jan. 3						Read on...
+	
+
+						
+						
+						
+						
+									Storm Coming Sunday, Monday That Could Be Significant 
+	
+A storm that is expected to start in the early hours of Sunday (Dec. 28) and extend into Monday (Dec. 29) that is expected to include rain, freezing rain and the potential to 6 to 8 inches of snow before it clears out Monday						Read on...
+	
+
+						
+						
+						
+						
+									NORAD Tracking Santa Christmas Eve 
+	
+						Read on...
+	
+
+						
+						
+						
+						
+									Offices, Facilities to Close Early Dec. 24 
+	
+All Wright County offices and facilities will close at noon, Wednesday, Dec. 24 and remain closed Thursday, Dec. 25 in observance of the Christmas holiday						Read on...
+	
+
+						
+						
+						
+						
+									Sheriff's Office Releases Weekly Arrest Report 
+	
+The Wright County Sheriff’s Office has released its weekly Arrest Report for the period of Dec. 15-21						Read on...
+	
+
+						
+						
+						
+						
+									MnDOT Opens Name A Snowplow Contest 
+	
+The Minnesota Department of Transportation is no accepting submissions for the 6th Annual "Name a Snowplow" contest. Voting runs through Friday, Dec. 19						Read on...
+	
+
+						
+						
+						
+						
+									Lutes Gets Grand Jury Indictment of Delong 
+	
+Wright County Attorney Brian Lutes convened a grand jury Friday, Dec. 5 and returned indictments for first- and second-degree murder against David Delong related to the Nov. 11 death of Amber Czech						Read on...
+	
+
+						
+						
+						
+						
+									Ney Nature Center Open This Weekend for Rentals 
+	
+The Robert Ney Nature Center will be open this weekend (Dec. 20-21) for ski and snowshoe rentals - as well as several county parks that are open for cross country skiing earlier than expected						Read on...
+	
+
+						
+						
+						
+						
+									Sheriff's Office Releases Weekly Arrest Report 
+	
+The Wright County Sheriff’s Office has released its weekly Arrest Report for the period of Dec. 9-14						Read on...
+	
+
+						
+						
+						
+						
+									Festival of Trees Now Open 
+	
+The Wright County Historical Society is hosting the 19th Annual Festival of Trees, which opened Monday, Dec. 2 and continues through Saturday, Jan. 3						Read on...
+	
+
+						
+						
+						
+						
+									Sheriff's Office Releases Weekly Arrest Report 
+	
+The Wright County Sheriff’s Office has released its weekly Arrest Report for the period of Dec. 1-7						Read on...
+	
+
+						
+						
+						
+						
+									Highway Department Preparing for Unpredictable Winter Storm 
+	
+The Wright County Highway Department is preparing for a storm that is set to hit after noon today (Dec. 9) - with the potential for freezing rain in some areas before turning over to all snow tonight into Wednesday morning						Read on...
+	
+
+						
+						
+						
+						
+									Sheriff's Office Releases Weekly Arrest Report 
+	
+The Wright County Sheriff’s Office has released its weekly Arrest Report for the period of Nov. 24-30						Read on...
+	
+
+						
+						
+						
+						
+									Parks & Rec Releases Winter 2026 Schedule 
+	
+Wright County Parks & Recreation has released its program guide for the winter months of early 2026						Read on...
+	
+
+						
+						
+						
+						
+									Officer Involved Shooting in Monticello 
+	
+The Wright County Sheriff's Office has released a statement regarding an officer-involved shooting Nov. 25 in Monticello						Read on...
+	
+
+						
+						
+						
+						
+									HHW Facility Accepting Old, Unused Christmas Lights for Recycling 
+	
+The Wright County Household Hazardous Waste Facility is accepting old and unused Christmas lights for recycling at the temporary HHW site in Maple Lake and at the Planning & Zoning Department on the first floor of the Government Center						Read on...
+	
+
+						
+						
+						
+						
+									Sheriff's Office Releases Weekly Arrest Report 
+	
+The Wright County Sheriff’s Office has released its weekly Arrest Report for the period of Nov. 17-23						Read on...
+	
+
+						
+						
+						
+						
+									County Offices, Facilities Closed Thursday and Friday 
+	
+All Wright County offices and facilities will be closed Thursday, Nov. 27 and Friday, Nov. 28 in observance of the Thanksgiving holiday						Read on...
+	
+
+						
+						
+						
+						
+									Assessor's Office Releases Homestead Notice 
+	
+The Wright County Assessor's Office has released a property tax homestead notice laying out the eligibility requirements for those applying for a homestead application						Read on...
+	
+
+						
+						
+						
+						
+									County Board Calls Out DOC Commisioner 
+	
+The Wright County Board questioned the actions of  Minnesota Department of Corrections Commissioner						Read on...
+	
+
+						
+						
+						
+						
+									Virtual Open House Available for CSAH 18/19 Project 
+	
+Members of the public who want to get a deeper look at the CSAH 18/19 project in Albertville can visit a virtual open house webpage until late December						Read on...
+	
+
+						
+						
+						
+						
+									Sheriff's Office Releases Weekly Arrest Report 
+	
+The Wright County Sheriff’s Office has released its weekly Arrest Report for the period of Nov. 10-16						Read on...
+	
+
+						
+						
+						
+						
+									County Attorney Releases Statement, Charging Documents 
+	
+Wright County Attorney Brian Lutes has released a statement regarding the court filing of 2nd degree murder charges against David Bruce Delong in connection to the Nov. 11 murder of one of his co-workers in Cokato						Read on...
+	
+
+						
+						
+						
+						
+									Parks & Rec Releases Winter Program Guide 
+	
+Wright County Parks & Recreation has released its 2026 Winter Program Guide, highlight the programs and special events for all ages during the coming winter months						Read on...
+	
+
+						
+						
+						
+						
+									Sheriff's Office Releases Weekly Arrest Report 
+	
+The Wright County Sheriff’s Office has released its weekly Arrest Report for the period of Nov. 3-9. Click here to see the full Arrest Report						Read on...
+	
+
+						
+						
+						
+						
+									Offices, Facilities Closed Tuesday 
+	
+All Wright County offices and facilities will be closed Tuesday, Nov. 11 in observance of the Veterans Day holiday						Read on...
+	
+
+						
+						
+						
+						
+									MnDOT Finalizing 2025 Portion of I-94 Construction 
+	
+The Minnesota Department of Transportation has announced the schedule for finalizing the 2025 portion of the I-94 gap project between Monticello and Albertville						Read on...
+	
+
+						
+						
+						
+						
+									Unofficial Election Results 
+	
+The  unofficial election results are in for the vacated Senate District 29 seat and four school district ballot questions						Read on...
+	
+
+						
+						
+						
+						
+									Sheriff's Office Releases Weekly Arrest Report 
+	
+The Wright County Sheriff’s Office has released its weekly Arrest Report for the period of Oct. 27 to Nov. 2						Read on...
+	
+
+						
+						
+						
+						
+									Registration Open for Photos with Santa 
+	
+Wright County Parks & Recreation has opened the registration portal for families to sign up for the popular Photos with Santa program Saturday, Dec. 6 at Bertram Chain of Lakes Regional Park						Read on...
+	
+
+						
+						
+						
+						
+									Government Center Open Expanded Hours for Early Voting 
+	
+The Wright County Government Center will be open additional hours for early voting Saturday (Nov. 1) and Monday (Nov. 3)						Read on...
+	
+
+						
+						
+						
+						
+									Schedule Update for CSAH 37/Co. Rd. 137 Roundabout Project 
+	
+The Wright County Highway Department has provided a schedule update on the CSAH 37/Co. Rd. 137 project in Otsego and Albertville						Read on...
+	
+
+						
+						
+						
+						
+									Facilities Department Honored by Wright County 4-H 
+	
+The Wright County Facilities Department was honored at the Oct. 21 meeting of the Wright County Board, being awarded the Friend of 4-H Supporter Award for its work making improvements to the stage in the 4-H building and adding a ramp for the disabled						Read on...
+	
+
+						
+						
+						
+						
+									Sheriff's Office Releases Weekly Arrest Report 
+	
+The Wright County Sheriff’s Office has released its weekly Arrest Report for the period of Oct. 20-26						Read on...
+	
+
+						
+						
+						
+						
+									Wright County Awarded DEED Grant 
+	
+Wright County has been awarded a grant of $867,500 from the Minnesota Department of Employment and Economic Development for the demolition of the old Government Center in downtown Buffalo						Read on...
+	
+
+						
+						
+						
+						
+									BNSF Railroad to Conduct Track Repair Oct. 23-24 north of Delano 
+	
+						Read on...
+	
+
+						
+						
+						
+						
+									Sheriff's Office Releases Weekly Arrest Report 
+	
+The Wright County Sheriff’s Office has released its weekly Arrest Report for the period of Oct. 13-19						Read on...
+	
+
+						
+						
+
+		
+	
+
+
+	// <!--
+	window.$ = window.$ || window.parent.$;
+
+	$(window).on('load', function () {
+		//Wait for the DOM to load completely before executing carousel logic since its all based on carousel width which wont come out correct until the DOM has loaded. Vishal
+		if(!window.carouselsToInit){
+			window.carouselsToInit = new Array();
+		}
+		var widgetNewsFlashadcda0ee8b6e454e8e853873e2af3f06 = function()
+		{
+			var widgetWindow = $('#widgetNewsFlashadcda0ee-8b6e-454e-8e85-3873e2af3f06').find('.cpWindow')[0];
+			if(widgetWindow){
+				if(widgetWindow.clientWidth != 0){
+					window.setTimeout(function(){
+						$('#widgetNewsFlashadcda0ee-8b6e-454e-8e85-3873e2af3f06').adaptiveCarousel({
+							minSlideWidth: 250,
+							maxSlideWidth: 430,
+							gutterWidth: 40,
+							circular: true,
+							teaser: false,
+							transitionTiming: 500,
+							noImageRequired: false
+							});
+					}, 250);
+					var index = window.carouselsToInit.indexOf(widgetNewsFlashadcda0ee8b6e454e8e853873e2af3f06);
+					if (index > -1) {
+						window.carouselsToInit.splice(index, 1);
+					}
+				}
+			}
+		}
+		var indexCarouselsToInit = window.carouselsToInit.indexOf(widgetNewsFlashadcda0ee8b6e454e8e853873e2af3f06);
+		if (indexCarouselsToInit === -1) {
+			window.carouselsToInit.push(widgetNewsFlashadcda0ee8b6e454e8e853873e2af3f06);
+		}
+
+		if (window.carouselsToInit) {
+			window.carouselsToInit.forEach(function (carouselToInit) { carouselToInit(); });
+		}
+
+		if (window.Pages.onResizeHandlers){
+			window.Pages.onResizeHandlers.forEach(function(car){car();});
+		}
+	});
+
+	if (Modernizr.touch) {
+		var $pages = typeof window.Pages == 'undefined' ? window.parent.Pages : window.Pages;
+		$.when($pages.rwdReady).done(function () {
+			//only for responsive sites
+			if (typeof($$) !== 'undefined') {
+				$$('#widgetNewsFlashadcda0ee-8b6e-454e-8e85-3873e2af3f06').on('swipeRight', function (e, a) {
+					$(this).adaptiveCarousel("moveBack");
+				});
+				$$('#widgetNewsFlashadcda0ee-8b6e-454e-8e85-3873e2af3f06').on('swipeLeft', function (e) {
+					$(this).adaptiveCarousel("moveForward");
+				});
+			}
+		});
+	}
+	// -->
+
+
+		View All News
+			
+	
+	
+	
+		/CivicAlerts.aspx
+	
+
+	
+
+
+
+
+
+
+
+
+
+	 
+
+	 
+
+			 
+
+
+	
+
+
+	
+				                
+
+						
+	
+	
+		
+
+
+	 
+
+	 
+
+			 
+
+
+	
+
+
+	
+				                
+
+						
+	
+	
+		
+    
+
+
+
+
+
+	
+			
+		
+								
+	
+	
+		
+					
+						
+
+
+	
+						
+					
+		
+	
+	
+
+	
+
+	
+
+
+
+
+	//Render slideshow if info advacned items contain one.
+	$(document).ready(function (e) {
+		$('#divInfoAdv7a1cc131-7467-4a8d-a138-040164141dba .InfoAdvanced.widgetItem').each(function () {
+			renderSlideshowIfApplicable($(this));		
+		});
+	});
+
+	 
+
+	 
+
+							
+	
+	
+		
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+    
+
+
+
+
+
+	
+			
+		
+					Contact Us
+								
+	
+	
+		
+					
+						
+
+
+	3650 Braddock Avenue NEBuffalo, MN 55313Ph: 763-682-3900 or800-362-3667Phone DirectoryContact UsWright County Employee of the Month Nomination
+						
+					
+		
+	
+	
+
+	
+
+	
+
+
+
+
+	//Render slideshow if info advacned items contain one.
+	$(document).ready(function (e) {
+		$('#divInfoAdvb93a2efc-efbd-46c0-a348-715773431316 .InfoAdvanced.widgetItem').each(function () {
+			renderSlideshowIfApplicable($(this));		
+		});
+	});
+
+	 
+
+	 
+
+							
+	
+	
+		
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+	
+
+
+
+
+
+
+
+
+	
+			
+		
+					Quick Links
+						
+	
+	
+        
+				
+					
+
+
+
+
+    
+        Associations
+        
+    
+
+
+
+
+    
+        Sheriff’s Jail Roster
+        
+    
+
+
+
+
+    
+        Employee of the Month Nomination
+        
+    
+
+
+
+
+    
+        Employees
+        
+    
+
+
+
+
+    
+        Surplus Equipment Auctions
+        
+    
+
+
+
+
+    
+        Elections
+        
+    
+
+
+
+
+    
+        Historical Links
+        
+    
+					
+				
+		
+        
+	
+	
+	
+	
+		/QuickLinks.aspx
+	
+
+	
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+
+
+
+
+
+
+
+
+
+	
+		    
+        
+                    FAQs
+                                
+    
+	
+		
+					
+					
+						
+
+
+        
+            What hours are the Wright County offices open?
+        
+
+
+        
+            Where can I find County Buildings?
+        
+
+
+        
+            Where can I park when I visit the Government Center?
+        
+
+
+        
+            How can I find tax information for my property?
+        
+
+
+        
+            Can I pay my property taxes online?
+        
+						
+					
+		
+        	
+		
+	
+    
+        /FAQ.aspx
+    
+
+	
+
+
+
+	function handleExpandCollapse(e) {
+		const element = e.currentTarget;
+		const answer = document.getElementById(element.getAttribute("aria-controls")).parentElement;
+		const expandArrow = element.getElementsByClassName("widgetFAQ--arrow")[0];
+		if (answer.classList.contains("hidden")) {
+			expandArrow.classList.add('widgetFAQ--arrow-expanded');
+			expandArrow.classList.remove('widgetFAQ--arrow-collapsed');
+			answer.classList.remove("hidden");
+			element.setAttribute("aria-expanded", "true");
+		} else {
+			expandArrow.classList.add('widgetFAQ--arrow-collapsed');
+			expandArrow.classList.remove('widgetFAQ--arrow-expanded');
+			answer.classList.add("hidden");
+			element.setAttribute("aria-expanded", "false");
+		}
+		e.preventDefault();
+		e.stopImmediatePropagation();
+		e.stopPropagation();
+	}
+    document.querySelectorAll(".widgetFAQ--question a").forEach(element => {
+        // When the link is clicked, expand or collapse the answer
+		element.addEventListener("click", handleExpandCollapse);
+	});
+
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+	
+
+
+
+
+
+
+
+
+	
+			
+		
+					Site Links
+						
+	
+	
+        
+				
+					
+
+
+
+
+    
+        Home
+        
+    
+
+
+
+
+    
+        Site Map
+        
+    
+
+
+
+
+    
+        Accessibility
+        
+    
+
+
+
+
+    
+        Copyright Notices
+        
+    
+					
+				
+		
+        
+	
+	
+	
+	
+		/QuickLinks.aspx
+	
+
+	
+
+
+	 
+
+	 
+
+			 
+
+
+	
+
+
+	
+				                
+
+						
+	
+	
+		
+ 
+	
+	
+		
+  /* CP icon */
+  .cpBylineIconTS {
+    color: #fff;
+  }
+  /* CP Text */
+  .cpBylineTextTS,
+  .cpBylineTextTS a:link {
+    color: #fff;
+  }
+
+  .cpBylineTS {
+    text-align: center;
+  }
+  
+  .cpBylineIconTS {
+    fill: currentColor;
+    width: 39px;
+    height: 26px;
+    display: inline;
+    vertical-align: middle;
+  }
+
+
+
+  
+    
+    
+  
+  Government Websites by CivicPlus®
+
+
+	
+
+	
+
+	 
+
+	 
+
+			 
+
+
+	
+
+
+	
+				                
+
+						
+	
+	
+		
+
+
+
+
+
+
+	
+		
+				
+	
+	
+		
+				
+					
+
+
+	
+		
+			Online Payments
+		
+	
+
+		.fancyButton592.fancyButton:link,.fancyButton592.fancyButton:visited, .fancyButton592div.fancyButton{
+	background-color: #376090;
+	padding-top: 10px;
+	padding-bottom: 20px;
+	background-repeat: no-repeat;
+	background-position: left top;
+transition: all .3s ease-in-out;}
+.fancyButton592.fancyButton:hover,.fancyButton592.fancyButton:focus,.fancyButton592.fancyButton:active,.fancyButton592.fancyButton.hover{
+	background-color: #ffffff;
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+.fancyButton592.fancyButton:link > span,.fancyButton592.fancyButton:visited > span, .fancyButton592div.fancyButton > span{
+}
+.fancyButton592.fancyButton:hover > span,.fancyButton592.fancyButton:focus > span,.fancyButton592.fancyButton:active > span,.fancyButton592.fancyButton.hover > span{
+}
+.fancyButton592.fancyButton .text{
+	color: #ffffff;
+	font-size: 1em;
+	font-family: "Poppins";
+	padding-top: 70px;
+	font-weight: 500;
+	text-decoration: none;
+	padding-top: 70px;
+	background-image: url('/ImageRepository/Document?documentID=23729');
+	background-repeat: no-repeat;
+	background-position: center top;
+transition: all .3s ease-in-out;
+background-size: 65px;
+}
+.fancyButton592.fancyButton:hover .text,.fancyButton592.fancyButton:focus .text,.fancyButton592.fancyButton:active .text,.fancyButton592.fancyButton.hover .text{
+	color: #376090;
+	text-decoration: underline;
+	background-image: url('/ImageRepository/Document?documentID=23728');
+	background-repeat: no-repeat;
+	background-position: center top;
+
+
+}
+
+
+ 
+
+
+	
+		
+			Jobs
+		
+	
+
+		.fancyButton594.fancyButton:link,.fancyButton594.fancyButton:visited, .fancyButton594div.fancyButton{
+	background-color: #376090;
+	padding-top: 10px;
+	padding-bottom: 20px;
+	background-repeat: no-repeat;
+	background-position: left top;
+transition: all .3s ease-in-out;}
+.fancyButton594.fancyButton:hover,.fancyButton594.fancyButton:focus,.fancyButton594.fancyButton:active,.fancyButton594.fancyButton.hover{
+	background-color: #ffffff;
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+.fancyButton594.fancyButton:link > span,.fancyButton594.fancyButton:visited > span, .fancyButton594div.fancyButton > span{
+}
+.fancyButton594.fancyButton:hover > span,.fancyButton594.fancyButton:focus > span,.fancyButton594.fancyButton:active > span,.fancyButton594.fancyButton.hover > span{
+}
+.fancyButton594.fancyButton .text{
+	color: #ffffff;
+	font-size: 1em;
+	font-family: "Poppins";
+	padding-top: 70px;
+	font-weight: 500;
+	text-decoration: none;
+	padding-top: 70px;
+	background-image: url('/ImageRepository/Document?documentID=23731');
+	background-repeat: no-repeat;
+	background-position: center top;
+transition: all .3s ease-in-out;
+background-size: 65px;
+}
+.fancyButton594.fancyButton:hover .text,.fancyButton594.fancyButton:focus .text,.fancyButton594.fancyButton:active .text,.fancyButton594.fancyButton.hover .text{
+	color: #376090;
+	text-decoration: underline;
+	background-image: url('/ImageRepository/Document?documentID=23730');
+	background-repeat: no-repeat;
+	background-position: center top;
+
+
+}
+
+
+ 
+				
+			
+		
+	
+			
+
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+
+
+
+
+
+
+	
+		
+				
+	
+	
+		
+				
+					
+
+
+	
+		
+			Drivers Licenses
+		
+	
+
+		.fancyButton595.fancyButton:link,.fancyButton595.fancyButton:visited, .fancyButton595div.fancyButton{
+	background-color: #376090;
+	padding-top: 10px;
+	padding-bottom: 20px;
+	background-repeat: no-repeat;
+	background-position: left top;
+transition: all .3s ease-in-out;}
+.fancyButton595.fancyButton:hover,.fancyButton595.fancyButton:focus,.fancyButton595.fancyButton:active,.fancyButton595.fancyButton.hover{
+	background-color: #ffffff;
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+.fancyButton595.fancyButton:link > span,.fancyButton595.fancyButton:visited > span, .fancyButton595div.fancyButton > span{
+}
+.fancyButton595.fancyButton:hover > span,.fancyButton595.fancyButton:focus > span,.fancyButton595.fancyButton:active > span,.fancyButton595.fancyButton.hover > span{
+}
+.fancyButton595.fancyButton .text{
+	color: #ffffff;
+	font-size: 1em;
+	font-family: "Poppins";
+	padding-top: 70px;
+	font-weight: 500;
+	text-decoration: none;
+	padding-top: 70px;
+	background-image: url('/ImageRepository/Document?documentID=23735');
+	background-repeat: no-repeat;
+	background-position: center top;
+transition: all .3s ease-in-out;
+background-size: 65px;
+}
+.fancyButton595.fancyButton:hover .text,.fancyButton595.fancyButton:focus .text,.fancyButton595.fancyButton:active .text,.fancyButton595.fancyButton.hover .text{
+	color: #376090;
+	text-decoration: underline;
+	background-image: url('/ImageRepository/Document?documentID=23734');
+	background-repeat: no-repeat;
+	background-position: center top;
+
+
+}
+
+
+ 
+
+
+	
+		
+			Notifications
+		
+	
+
+		.fancyButton596.fancyButton:link,.fancyButton596.fancyButton:visited, .fancyButton596div.fancyButton{
+	background-color: #376090;
+	padding-top: 10px;
+	padding-bottom: 20px;
+	background-repeat: no-repeat;
+	background-position: left top;
+transition: all .3s ease-in-out;}
+.fancyButton596.fancyButton:hover,.fancyButton596.fancyButton:focus,.fancyButton596.fancyButton:active,.fancyButton596.fancyButton.hover{
+	background-color: #ffffff;
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+.fancyButton596.fancyButton:link > span,.fancyButton596.fancyButton:visited > span, .fancyButton596div.fancyButton > span{
+}
+.fancyButton596.fancyButton:hover > span,.fancyButton596.fancyButton:focus > span,.fancyButton596.fancyButton:active > span,.fancyButton596.fancyButton.hover > span{
+}
+.fancyButton596.fancyButton .text{
+	color: #ffffff;
+	font-size: 1em;
+	font-family: "Poppins";
+	padding-top: 70px;
+	font-weight: 500;
+	text-decoration: none;
+	padding-top: 70px;
+	background-image: url('/ImageRepository/Document?documentID=23741');
+	background-repeat: no-repeat;
+	background-position: center top;
+transition: all .3s ease-in-out;
+background-size: 65px;
+}
+.fancyButton596.fancyButton:hover .text,.fancyButton596.fancyButton:focus .text,.fancyButton596.fancyButton:active .text,.fancyButton596.fancyButton.hover .text{
+	color: #376090;
+	text-decoration: underline;
+	background-image: url('/ImageRepository/Document?documentID=23740');
+	background-repeat: no-repeat;
+	background-position: center top;
+
+
+}
+
+
+ 
+				
+			
+		
+	
+			
+
+
+
+	 
+
+	 
+
+							
+	
+	
+		
+
+
+
+
+
+
+	
+		
+				
+	
+	
+		
+				
+					
+
+
+	
+		
+			Facilities
+		
+	
+
+		.fancyButton597.fancyButton:link,.fancyButton597.fancyButton:visited, .fancyButton597div.fancyButton{
+	background-color: #376090;
+	padding-top: 10px;
+	padding-bottom: 20px;
+	background-repeat: no-repeat;
+	background-position: left top;
+transition: all .3s ease-in-out;}
+.fancyButton597.fancyButton:hover,.fancyButton597.fancyButton:focus,.fancyButton597.fancyButton:active,.fancyButton597.fancyButton.hover{
+	background-color: #ffffff;
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+.fancyButton597.fancyButton:link > span,.fancyButton597.fancyButton:visited > span, .fancyButton597div.fancyButton > span{
+}
+.fancyButton597.fancyButton:hover > span,.fancyButton597.fancyButton:focus > span,.fancyButton597.fancyButton:active > span,.fancyButton597.fancyButton.hover > span{
+}
+.fancyButton597.fancyButton .text{
+	color: #ffffff;
+	font-size: 1em;
+	font-family: "Poppins";
+	padding-top: 70px;
+	font-weight: 500;
+	text-decoration: none;
+	padding-top: 70px;
+	background-image: url('/ImageRepository/Document?documentID=23737');
+	background-repeat: no-repeat;
+	background-position: center 15px ;
+transition: all .3s ease-in-out;
+background-size: 40px;
+}
+.fancyButton597.fancyButton:hover .text,.fancyButton597.fancyButton:focus .text,.fancyButton597.fancyButton:active .text,.fancyButton597.fancyButton.hover .text{
+	color: #376090;
+	text-decoration: underline;
+	background-image: url('/ImageRepository/Document?documentID=23736');
+	background-repeat: no-repeat;
+	background-position: center 15px ;
+
+
+}
+
+
+ 
+				
+			
+		
+	
+			
+
+
+
+	 
+
+	 
+
+			 
+
+
+	
+
+
+
+
+            
+        
+    
+
+
+
+
+	
+		
+			Loading
+			
+				
+					
+				
+			
+		
+		
+			
+				
+				Loading
+			
+		
+		
+			Do Not Show Again
+			Close
+		
+	
+
+
+
+
+
+
+
+		$(document).ready(function () {
+			var filter = {
+				targetId: '1',
+				targetType: 1
+			}
+
+			new SplashModalRender().triggerRender(filter);
+		});
+
+
+
+	
+	
+	
+	
+
+
+
+	
+
+
+
+
+
+
+    
+    
+
+
+  #google-translate-container {
+    float: right;
+    padding: 3px 5px 0px 0px;
+    position: fixed; 
+    bottom: 16px; 
+    right: 10px; 
+    z-index: 5;
+  }
+  
+  .goog-te-combo, .goog-te-banner *, .goog-te-ftab *, .goog-te-menu *, .goog-te-menu2 *, .goog-te-balloon * {
+    font-family: arial;
+    font-size: 10pt;
+    background-image: url("https://www.gstatic.com/images/branding/product/2x/translate_24dp.png");
+    background-position: 5px 5px;
+    background-size: 18px;
+    background-repeat: no-repeat;
+    text-indent: 16px;
+    background-color: #fff;
+    color: #000 !important;
+  }
+  
+  .goog-logo-link {
+    display: none !important;
+  }
+  
+  .goog-te-gadget {
+    color: transparent !important;
+  }
+  
+  .goog-te-gadget .goog-te-combo {
+    margin: 2px 0 !important;
+    border-radius: 15px !important;
+    }
+  
+  .goog-te-combo{
+    border: 1px solid !important;
+    border-color: #bcc9d7 #96a3b1 #96a3b1 #bcc9d7 !important;
+    border-radius: 50px !important;
+    height:31px !important;
+    padding: 0 1px 0 .25rem !important;
+                width: 156px;
+  }
+
+  #launcher-wrapper {
+    bottom: 50px !important;
+  }
+
+
+
+
+  
+  
+
+
+
+
+  function googleTranslateElementInit() {
+    var el = document.getElementById("google_translate_element");
+    if (el && el.innerHTML.trim() !== "") {
+        return;
+    }
+
+    new google.translate.TranslateElement({ pageLanguage: "en" }, "google_translate_element");
+    // begin accessibility compliance
+    $('img.goog-te-gadget-icon').attr('alt','Google Translate');
+    $('div#goog-gt-tt div.logo img').attr('alt','translate');
+    $('div#goog-gt-tt .original-text').css('text-align','left');
+    $('.goog-te-gadget-simple .goog-te-menu-value span').css('color','#000000');
+    $('.goog-te-combo').attr('aria-label','google translate languages');
+    $('svg.goog-te-spinner').attr('title','Google Translate Spinner');
+    $('.goog-te-gadget-simple .goog-te-menu-value span').css('color','#000000');
+  }
+
+  $(function() {
+    $.getScript("//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit");
+  });
+
+
+
+
+
+
+
+
+  function getValueTS(elem, attr) {
+    const val = elem.css(attr);
+    if (val === undefined) return undefined;
+    const num = parseInt(val, 10);
+    if (num === NaN) return undefined;
+    return num;
+  }
+
+  function clampTS(number, min, max) {
+    return Math.min(Math.max(number, min), max);
+  }
+
+  function isPageEditingTS() {
+    return (
+      $("#doneEditing").length > 0 || // In live edit
+      typeof DesignCenter !== "undefined" // In theme manager
+    );
+  }
+
+  const bgColorRegexTS = /rgba\((\d+), (\d+), (\d+), (\d*\.?\d*)\)/;
+  function isTransparentTS(elem) {
+    const bg = elem.css('background-color');
+    if (typeof bg !== "string" || !bg.startsWith('rgba(')) return false;
+    const matchState = bg.match(bgColorRegexTS);
+    if (!matchState || matchState.length !== 5) return false;
+    const alpha = parseFloat(matchState[4], 10);
+    if (!(alpha >= 0 && alpha < 1)) return false;
+    return true;
+  }
+
+  function iterateLeftpads(cb) {
+    const containersTS = $("[class^='siteWrap'],[class*=' siteWrap']");
+    for (let i = 0; i < containersTS.length; i++) {
+      const containerTS = containersTS[i];
+      // Skip the body container and anything with data-skip-leftpad
+      if (
+        containerTS.id !== "bodyContainerTS" &&
+        containerTS.getAttribute('data-skip-leftpad') === null
+      ) {
+        cb(containerTS);
+      }
+    }
+  }
+
+  const anchor = $("#divToolbars");
+
+  // Outer banner padding (push banner down)
+  const outerSizingTS = $("#bannerContainerTS");
+  // Inner banner padding (push banner content down) - Transparent header OR on attaching headers
+  const innerSizingTS = $("#bannerSizingTS");
+  const bodyContainerTS = $("#bodyContainerTS");
+
+  const forceUnfixClassTS = "forceUnfixTS";
+
+  const fixedTopTS = $(".fixedTopTS");
+  const fixedBottomTS = $(".fixedBottomTS");
+  const fixedLeftTS = $(".fixedLeftTS");
+
+  var initialTopTS;
+  var topAttachTS;
+  if (fixedTopTS && fixedTopTS.length === 1) {
+    initialTopTS = getValueTS(fixedTopTS, 'top');
+    const attachment = fixedTopTS.attr('data-attach');
+    if (attachment) topAttachTS = $("#" + attachment);
+    if (!topAttachTS || topAttachTS.length !== 1) topAttachTS = undefined;
+  }
+
+  function resizeAdjustmentTS() {
+    const editing = isPageEditingTS();
+
+    // Fixed top script
+    (function () {
+      if (!fixedTopTS || fixedTopTS.length !== 1 || initialTopTS === undefined) return;
+
+      if (editing) {
+        fixedTopTS[0].classList.add(forceUnfixClassTS);
+      } else {
+        fixedTopTS[0].classList.remove(forceUnfixClassTS);
+      }
+
+      const topPosition = fixedTopTS.css('position');
+      if (topPosition === 'fixed') {
+        if (topAttachTS) {
+          scrollAdjustmentTS();
+        } else {
+          const anchorHeight = anchor.outerHeight() - 1;
+          fixedTopTS.css('top', anchorHeight + initialTopTS);
+        }
+      } else {
+        fixedTopTS.css('top', initialTopTS);
+      }
+
+      if (topPosition === 'fixed' || topPosition === 'absolute') {
+        // Bump the banner content down
+        if (isTransparentTS(fixedTopTS)) {
+          innerSizingTS.css('padding-top', initialTopTS + fixedTopTS.outerHeight() - 1);
+          outerSizingTS.css('padding-top', '');
+
+          try {
+            window.Pages.onResizeHandlersExecute();
+          } catch (e) { }
+        } else {
+          outerSizingTS.css('padding-top', fixedTopTS.outerHeight() - 1);
+          innerSizingTS.css('padding-top', '');
+        }
+      } else {
+        innerSizingTS.css('padding-top', '');
+        outerSizingTS.css('padding-top', '');
+      }
+    })();
+
+    // Fixed bottom script
+    (function () {
+      if (!fixedBottomTS || fixedBottomTS.length === 0) return;
+
+      // If the widget has gone narrow, force unfix
+      if (editing || fixedBottomTS.outerHeight() > 200) {
+        fixedBottomTS[0].classList.add(forceUnfixClassTS);
+      } else {
+        fixedBottomTS[0].classList.remove(forceUnfixClassTS);
+      }
+
+      if (fixedBottomTS.css('position') === 'fixed') {
+        bodyContainerTS.css('padding-bottom', fixedBottomTS.outerHeight());
+      } else {
+        bodyContainerTS.css('padding-bottom', '');
+      }
+    })();
+
+    // Fixed left script
+    (function () {
+      if (!fixedLeftTS || fixedLeftTS.length === 0) return;
+
+      if (editing) {
+        fixedLeftTS[0].classList.add(forceUnfixClassTS);
+      } else {
+        fixedLeftTS[0].classList.remove(forceUnfixClassTS);
+      }
+
+      if (fixedLeftTS.css('position') === 'fixed') {
+        const anchorHeight = anchor.outerHeight() - 1;
+        fixedLeftTS.css('top', anchorHeight);
+        const leftBoundingTS = fixedLeftTS[0].getBoundingClientRect();
+        iterateLeftpads(function (containerTS) {
+          const containerBoundingTS = containerTS.getBoundingClientRect();
+          if (containerBoundingTS.left <= leftBoundingTS.right) {
+            $(containerTS).css('padding-left', leftBoundingTS.width + 16);
+          }
+        });
+      } else {
+        fixedLeftTS.css('top', '');
+        iterateLeftpads(function (containerTS) {
+          $(containerTS).css('padding-left', '');
+        });
+      }
+    })();
+  }
+
+  function scrollAdjustmentTS() {
+    if (!fixedTopTS || fixedTopTS.length !== 1 || !topAttachTS || topAttachTS.length !== 1) return;
+    const topPosition = fixedTopTS.css('position');
+    if (topPosition === 'fixed' || topPosition === 'absolute') {
+      const anchorBounding = anchor[0].getBoundingClientRect();
+      const attachBounding = topAttachTS[0].getBoundingClientRect();
+      const scrollTop = $(window).scrollTop();
+
+      fixedTopTS.css('top', Math.max(anchorBounding.bottom - 1, attachBounding.bottom));
+    } else {
+      fixedTopTS.css('top', initialTopTS);
+    }
+  }
+
+  $(window).load(function () {
+    setTimeout(function () {
+      resizeAdjustmentTS();
+    }, 350);
+
+    $(window).scroll(function () {
+      scrollAdjustmentTS();
+    });
+
+    var adjustTimeoutTS;
+    $(window).resize(function () {
+      clearTimeout(adjustTimeoutTS);
+      adjustTimeoutTS = setTimeout(function () {
+        resizeAdjustmentTS();
+      }, 350);
+    });
+
+    $.when(window.Pages.angularToolbarComplete).done(function () {
+      resizeAdjustmentTS();
+    });
+  });
+
+
+
+!function(){var b=function(){window.__AudioEyeSiteHash = "b5396246ab4d08977af6ff89ad01e995"; var a=document.createElement("script");a.src="https://wsmcdn.audioeye.com/aem.js";a.type="text/javascript";a.setAttribute("async","");document.getElementsByTagName("body")[0].appendChild(a)};"complete"!==document.readyState?window.addEventListener?window.addEventListener("load",b):window.attachEvent&&window.attachEvent("onload",b):b()}();
+
+
+    
+        $(function () {
+            document.cookie = "responsiveGhost=0; path=/";
+        });
+        $(window).on("load", function () {
+            $('body').addClass('doneLoading').removeClass('hideContent');
+
+            if ($('#404Content').length > 0)
+                $('div#bodyWrapper').css('padding', '0px');
+        });
+    
+
+    
+        
+            body.hideContent {
+                opacity: 1 !important;
+            }
+        
+    
+
+        
+
+	
+
+		
+			Arrow Left
+			
+		
+
+		
+			Arrow Right
+			
+		
+
+	
+
+    loadCSS('//fonts.googleapis.com/css?family=Montserrat:700,regular|Poppins:100,100italic,200,200italic,300,300italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic,italic,regular|');
+    
+
+    []
+        
+            
+                
+                    Slideshow Left Arrow
+                    
+                        
+                    
+                
+                
+                    Slideshow Right Arrow
+                    
+                        
+                    
+                
+            
+        
+    
+	
+	
+
+    
+
+

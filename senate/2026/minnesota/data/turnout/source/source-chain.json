@@ -1,0 +1,44 @@
+{
+  "chains": [
+    {
+      "year": 2024,
+      "authority": "https://www.sos.mn.gov/elections-voting/election-results",
+      "general_index": "https://www.sos.mn.gov/elections-voting/election-results/2024/2024-general-election-results/",
+      "precinct_index": "https://www.sos.mn.gov/elections-voting/election-results/2024/2024-general-election-results/2024-precinct-results-spreadsheet/",
+      "download_url": "https://www.sos.mn.gov/media/yt3llxwd/2024-general-federal-state-results-by-precinct-official.xlsx",
+      "download_evidence_id": "sos-2024-precinct-original",
+      "download_original_sha256": "13adf003bfabf1a19e4c47dc7fe100d8862cd22186b1f6ae0f52a721a5b57459",
+      "chain_evidence": "Official year index links precinct page; research web parser resolves actual spreadsheet media link. Direct precinct landing captures can be Radware challenges; successful media bytes independently ZIP/CRC verified.",
+      "source_status": "Workbook Notes: certified 2024-11-21; House 54A recount update 2024-12-02; voter statistics certified by county canvassing boards"
+    },
+    {
+      "year": 2022,
+      "authority": "https://www.sos.mn.gov/elections-voting/election-results",
+      "general_index": "https://www.sos.mn.gov/elections-voting/election-results/2022/2022-general-election-results/",
+      "precinct_index": "https://www.sos.mn.gov/elections-voting/election-results/2022/2022-general-election-results/2022-precinct-results-spreadsheet/",
+      "download_url": "https://www.sos.mn.gov/media/5176/2022-general-federal-state-results-by-precinct-official.xlsx",
+      "download_evidence_id": "sos-2022-precinct-original",
+      "download_original_sha256": "0e94533f1b34372186d013b18e5fb9f3373b7c819dcef69f5eadbf686050812f",
+      "chain_evidence": "Official year index links precinct page; research web parser resolves actual spreadsheet media link. Direct precinct landing captures can be Radware challenges; successful media bytes independently ZIP/CRC verified.",
+      "source_status": "Workbook Notes: certified 2022-11-29; House 3A/3B recount update 2022-12-15; voter statistics certified by county canvassing boards"
+    },
+    {
+      "year": 2020,
+      "authority": "https://www.sos.mn.gov/elections-voting/election-results",
+      "general_index": "https://www.sos.mn.gov/elections-voting/election-results/2020/2020-general-election-results/",
+      "precinct_index": "https://www.sos.mn.gov/elections-voting/election-results/2020/2020-general-election-results/2020-precinct-results-spreadsheet/",
+      "download_url": "https://sos.mn.gov/media/4373/2020-general-federal-state-results-by-precinct-official.xlsx",
+      "download_evidence_id": "sos-2020-precinct-original",
+      "download_original_sha256": "ea2b7a7c9c8203f56f44d94dede6b2df398eb1f590bf35e527431fba6021517a",
+      "chain_evidence": "Official year index links precinct page; research web parser resolves actual spreadsheet media link. Direct precinct landing captures can be Radware challenges; successful media bytes independently ZIP/CRC verified.",
+      "source_status": "Workbook Notes: certified 2020-11-24; House 6A/19A/38B recount update 2020-12-11; voter statistics certified by county canvassing boards"
+    }
+  ],
+  "parser_observation_scope": "Saved research web parser text is an interpreted access observation, not original HTTP response bytes. Original successful downloads and challenge HTML are separately retained with hashes.",
+  "independent_control_evidence": {
+    "2024": "Shared original successful year-results HTML; own actual statistics HTML and raw XLSX",
+    "2022": "Shared original successful year-results HTML; official statistics seen through research web parser; raw workbook controls",
+    "2020": "Original independent canvass PDF (all87 candidates/statistics reconciled); official year-results/statistics seen through research web parser"
+  },
+  "full_intermediate_redirect_gap": "Earlier shared and first own acquisition retained requested/final URLs but not every intermediate response. Later non-www probes record complete redirect traces."
+}

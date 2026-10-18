@@ -1,0 +1,1106 @@
+
+
+
+  
+    eCFR :: 49 CFR Part 71 -- Standard Time Zone Boundaries
+  
+
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+    
+    
+
+    
+    
+
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  {
+  "imports": {
+    "application": "https://assets.ecfr.gov/assets/application-86b2ef01ce0161a6b677a38cf0878ff806df3be48e36def17153a52db0f13493.js",
+    "jquery": "https://code.jquery.com/jquery-4.0.0.min.js",
+    "@hotwired/turbo-rails": "https://assets.ecfr.gov/assets/turbo.min-55ce4457048caf8de296e9f0588ba3face6ce35d5488a4468af82a06bb24c159.js",
+    "@hotwired/stimulus": "https://assets.ecfr.gov/assets/@hotwired--stimulus-d7988e16a93333941ba2b5aae02a3b7131f9ec809f9619a876aa2180ab9b0767.js",
+    "@hotwired/stimulus-loading": "https://assets.ecfr.gov/assets/stimulus-loading-3576ce92b149ad5d6959438c6f291e2426c86df3b874c525b30faad51b0d96b3.js",
+    "@lodash/debounce": "https://ga.jspm.io/npm:lodash.debounce@4.0.8/index.js",
+    "stimulus-autocomplete": "https://assets.ecfr.gov/assets/stimulus-autocomplete-8dec7f228b22a09ff8de84bde25790e34d2a18c951f6b0c60551402dde3f8641.js",
+    "stimulus-use": "https://assets.ecfr.gov/assets/ecfr-stimulus-use-1bd5af38b3bb45d04813e34ff0d30010885bcfb4234c71257145e66b29fb4cd7.js",
+    "controllers/parallel_table_of_authorities_controller": "https://assets.ecfr.gov/assets/controllers/parallel_table_of_authorities_controller-894bb52a6370034a7d400a9fdaf40817c7756cc54a143384078ad77b63c7536b.js",
+    "controllers/agencies_controller": "https://assets.ecfr.gov/assets/controllers/agencies_controller-0e1896b75104d957cd3e00b44dfb84b0f670440ce130364ebb72512fa80f0de8.js",
+    "controllers/agency_index_controller": "https://assets.ecfr.gov/assets/controllers/agency_index_controller-f35c634983f1d93d99f7f3596dff1a71ae0f2092a7dd746da2b1bfb491560207.js",
+    "controllers/application": "https://assets.ecfr.gov/assets/controllers/application-c37741df0c4784168d57faf81c44612b887c7c64c9dd62d7f91448d50d5b1bac.js",
+    "controllers/changes_controller": "https://assets.ecfr.gov/assets/controllers/changes_controller-8d9275f5dba6826d20dd3852ddd8c707f4a016ea8218a78a34bfbdfe8fe02c1b.js",
+    "controllers/compare_controller": "https://assets.ecfr.gov/assets/controllers/compare_controller-11fa379a5818337d4a30d035e4fd65b5afbb0ed310fe7f59b80e3d8dc68bc82c.js",
+    "controllers/element_controller": "https://assets.ecfr.gov/assets/controllers/element_controller-9cd6b110089c5cc7c054678591f58f1c263e2eb70ae23f93ac2bdd80621bf26f.js",
+    "controllers/form_controller": "https://assets.ecfr.gov/assets/controllers/form_controller-667b0a649468d61ec446d684b744aa557b4cf9c271fe8d404afbcfce7f50b545.js",
+    "controllers": "https://assets.ecfr.gov/assets/controllers/index-67f80bb27e0720011d4d24fd86f0cfd94726e1b2fc7ba89b2ecb83d5871ab63f.js",
+    "controllers/index_navigation_controller": "https://assets.ecfr.gov/assets/controllers/index_navigation_controller-5fb66e45908158a368099343d23512c09306c50ccdd43bd285dda4c9da8e693b.js",
+    "controllers/modal_controller": "https://assets.ecfr.gov/assets/controllers/modal_controller-aaece04be93ae08720df3c80a888deea12959a2592176d31fb95d0bd148a27c3.js",
+    "controllers/placeholder_controller": "https://assets.ecfr.gov/assets/controllers/placeholder_controller-df3112a8983692459b804063a5765de3504653a034861e87fa38de54c054eeee.js",
+    "controllers/recent_changes_controller": "https://assets.ecfr.gov/assets/controllers/recent_changes_controller-e5e35ac28b2b2c0b981183620f9061384f277b661496859186903575c8f70ddd.js",
+    "controllers/subject_index_controller": "https://assets.ecfr.gov/assets/controllers/subject_index_controller-a2abc502ea5b6d097597aade101bf6f1eca9c84e4157714f8d358e88fe3475c4.js",
+    "controllers/subject_index_thesaurus_controller": "https://assets.ecfr.gov/assets/controllers/subject_index_thesaurus_controller-8e54fe344ead02dc5cac1a40d6d7585478c380713e22ead89e5cb54b0274563b.js",
+    "controllers/suggestions_controller": "https://assets.ecfr.gov/assets/controllers/suggestions_controller-023374d146e2c5dae0443ffcb5707732e1461e8ca2cf53db72f77dfa0e2b02eb.js",
+    "controllers/timeline_controller": "https://assets.ecfr.gov/assets/controllers/timeline_controller-2bdd5bf0f9ecaa9f40683d58a2773d699fc4e21fd9c49bd2f19f0f902ba16b43.js",
+    "subject_index/authorities_assembler": "https://assets.ecfr.gov/assets/subject_index/authorities_assembler-94c1e9b47697be35d9726520827fbf8e6504f246b9510bb93a650f0230e214c4.js",
+    "subject_index/authorities_store": "https://assets.ecfr.gov/assets/subject_index/authorities_store-d897979771014931d47f39433b54001f3b675198ec760c223f54281895e81d14.js",
+    "subject_index/hash_state": "https://assets.ecfr.gov/assets/subject_index/hash_state-958baa328c6a30cc03d0c0e0b4973663cb5f40f2d7db1346c6107086bf789752.js",
+    "subject_index/index_helpers": "https://assets.ecfr.gov/assets/subject_index/index_helpers-85e3f7b0e5876a6a9c7ec42dc587dad1745e653d6ed0c995bb4f89e8c0c94c60.js",
+    "subject_index/reference_tooltips": "https://assets.ecfr.gov/assets/subject_index/reference_tooltips-cfed86552d37414895ed7889918a9eece18b6fc96aa01c68bf02f196469b2bba.js",
+    "subject_index/thesaurus_store": "https://assets.ecfr.gov/assets/subject_index/thesaurus_store-395fbab0f45e57cc57584309ba5ac5798a8777ed6076e34e9e8e826457f46dd9.js",
+    "subject_index/timing": "https://assets.ecfr.gov/assets/subject_index/timing-616175d95780eb6f0e59a4853e32362962cb4fec04ccf47a01037dacc5177590.js",
+    "subject_index/topic_item_template": "https://assets.ecfr.gov/assets/subject_index/topic_item_template-bb47160e101819b1a2ee3323b939bbc1e7bdaa3e0f9050ae5c5da98771236e11.js",
+    "subject_index/topic_suggestions": "https://assets.ecfr.gov/assets/subject_index/topic_suggestions-2547e4c5d32bafbb01cf08cb7ffb2e56e9b4cdd94253d3140403ea19c243e04c.js",
+    "subject_index/topics_assembler": "https://assets.ecfr.gov/assets/subject_index/topics_assembler-a2d10c71d5ed77cc42c80f8cb00b1ee64942174ddb5d72521a0e6ca684ef05bf.js",
+    "subject_index/topics_store": "https://assets.ecfr.gov/assets/subject_index/topics_store-3b1fc229102cc651e30b476f52462a71b845a2d29958c45700817674a95244c8.js",
+    "agency_index/store": "https://assets.ecfr.gov/assets/agency_index/store-85f0d4c3d04610a342e6cf2f494440c4bc05e33fc0b7d5bd5708b4d69fe22a5a.js"
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import "application"
+
+  
+
+  
+  
+    
+	
+
+  
+  
+
+  
+
+
+
+  
+
+    
+      Site Feedback
+      
+  
+    
+      
+        You are using an unsupported browser
+        
+        ×
+        
+        
+      
+      
+        
+          You are using an unsupported browser. This web site is designed for the current versions of
+          Microsoft Edge, Google Chrome, Mozilla Firefox, or Safari.
+        
+      
+    
+  
+
+
+      
+  
+    
+      
+        
+          ×
+        
+        Site Feedback
+      
+      
+        
+          The Office of the Federal Register publishes documents on behalf of Federal agencies but does not have any authority over their programs. We recommend you directly contact the agency associated with the content in question.
+        
+        
+        
+          
+            
+              If you have comments or suggestions on how to improve the www.ecfr.gov website or have questions about using www.ecfr.gov, please choose the 'Website Feedback' button below.
+            
+            
+              
+                
+                Website Feedback
+            
+          
+          
+            
+              If you would like to comment on the current content, please use the 'Content Feedback' button below for instructions on contacting the issuing agency
+            
+            
+              
+                
+                Content Feedback
+            
+          
+        
+        If you have questions for the Agency that issued the current document please contact the agency directly.
+      
+    
+  
+
+
+      
+  
+    
+      
+        ×
+      
+      Website Feedback
+    
+
+    
+      
+        * Your Name
+        * Email
+        Attachment
+        * How can we help you?
+
+        * I am requesting technical help or providing website feedback
+          
+            This contact form is only for website help or website suggestions. If you have questions or comments regarding a published document please
+            contact the publishing agency. Comments or questions about document content can not be answered by OFR staff. Please do not provide confidential
+            information or personal data.
+          
+        
+          
+        
+    
+  
+
+
+
+    
+
+    
+      
+        
+          
+  
+    
+      
+        
+          ☰
+        
+      
+    
+
+    
+      
+        
+          
+            
+        
+
+        
+          
+            
+            Home
+        
+
+        
+          
+            
+            Browse
+            
+          
+
+          
+            
+              
+                 Titles
+            
+            
+              
+                 Agencies
+            
+          
+        
+
+        
+          
+            
+            CFR Updates
+            
+          
+
+          
+            
+              
+                 Recent Changes
+            
+
+            
+              
+                 Issue Summaries
+            
+
+            
+              
+                 Corrections
+            
+          
+        
+
+        
+          
+            
+            Finding Aids
+            
+          
+
+          
+            
+              
+                 Parallel Table of Authorities
+            
+
+            
+              
+                 Subject Index
+            
+
+            
+              
+                 Agency-prepared Indexes
+            
+
+          
+        
+
+        
+          
+            
+            Reader Aids
+            
+          
+
+          
+            
+              Reader Aids Home
+            
+              
+                Using the eCFR Point-in-Time System
+              
+              
+                Understanding the eCFR
+              
+              
+                Government Policy and OFR Procedures
+              
+              
+                Developer Resources
+              
+              
+                Recent Site Updates
+              
+          
+        
+
+        
+          
+            
+            My eCFR
+            
+          
+
+          
+            
+              My Subscriptions
+            
+            
+              Sign Out
+            
+          
+
+          
+            
+              Sign In / Sign Up
+            
+          
+        
+
+    
+      
+        
+
+          
+
+        
+
+        
+          
+
+        
+        
+    
+  
+
+
+
+
+
+  
+    
+      
+        
+          
+            eCFR
+            The Electronic Code of Federal Regulations
+          
+        
+      
+    
+  
+
+
+
+        
+      
+    
+
+    
+      
+      
+        
+          
+            
+            Enhanced Content :: FR ReferenceEnhanced content is provided to the user to provide additional context.
+              
+Enhanced Content :: FR Reference          
+        
+      
+
+      
+        
+            
+  Title 49
+
+        
+      
+
+
+          
+  
+    
+
+      
+
+      
+        This content is from the eCFR and is authoritative but unofficial.
+      
+
+    
+  
+
+
+  
+  
+    
+
+      
+
+      
+        Displaying title 49, up to date as of 10/15/2026. Title 49 was last amended 10/13/2026.
+      
+
+        
+          view historical versions
+        
+    
+  
+
+
+  
+  
+    
+        
+          
+        
+
+      
+
+      
+        A drafting site is available for use when drafting amendatory language
+      
+
+        
+          switch to drafting site
+        
+    
+  
+
+
+
+
+
+
+
+      
+        
+          
+  
+
+    
+
+      
+
+      
+
+        
+          
+            
+              Navigate by entering citations or phrases
+              (eg:
+                1 CFR 1.1
+                49 CFR 172.101
+                Organization and Purpose
+                1/1.1
+                Regulation Y
+                FAR).
+            
+            
+              Choosing an item from
+              citations and headings
+              will bring you directly to the content. Choosing an item from
+              full text search results
+              will bring you to those results. Pressing enter in the search box
+              will also bring you to search results.
+            
+            
+              Background and more details are available in the
+              
+                Search & Navigation
+              
+              guide.
+            
+          
+        
+
+        
+          
+            
+            
+            
+
+            
+              
+
+              
+                
+                    
+                
+              
+            
+
+            
+        
+
+      
+    
+
+    
+      
+      
+      
+
+      
+        
+        
+
+          
+              
+          
+        
+      
+  
+
+
+          
+
+
+
+
+  
+    
+  
+    
+      
+        
+        
+
+          
+              
+          
+        
+      
+    
+  
+
+
+  
+
+
+
+  
+    
+      
+        
+    
+        Title 49 —Transportation
+    
+    
+         Subtitle A —Office of the Secretary of Transportation
+    
+    
+        Part 71
+
+    
+
+
+      
+
+      
+        
+  
+      Previous
+  
+
+  
+      Next
+  
+
+  
+    Top
+  
+
+
+      
+    
+
+
+
+
+  
+    
+      
+        
+
+  
+    
+  
+
+  
+
+Table of ContentsEnhanced Content - Table of Contents      
+        Part 71Standard Time Zone Boundaries71.1 – 71.14§ 71.1Limits defined; exceptions authorized for certain rail operating purposes only.§ 71.2Annual advancement of standard time.§ 71.3Atlantic zone.§ 71.4Eastern zone.§ 71.5Boundary line between eastern and central zones.§ 71.6Central zone.§ 71.7Boundary line between central and mountain zones.§ 71.8Mountain zone.§ 71.9Boundary line between mountain and Pacific zones.§ 71.10Pacific zone.§ 71.11Alaska zone.§ 71.12Hawaii-Aleutian zone.§ 71.13Samoa zone.§ 71.14Chamorro Zone.
+      
+Enhanced Content - Table of Contents
+
+  
+DetailsEnhanced Content - Details    
+      URL
+      
+        https://www.ecfr.gov/current/title-49/part-71
+        
+      
+
+        Citation
+        
+          49 CFR Part 71
+          
+        
+
+
+
+        
+          Agency
+          
+        
+          Office of Secretary of Transportation, Department of Transportation
+    
+
+    
+
+    
+        
+      
+        Part 71
+        
+            
+              Authority:
+              
+                Secs. 1-4, 40 Stat. 450, as amended; sec. 1, 41 Stat. 1446, as amended; secs. 2-7, 80 Stat. 107, as amended; 100 Stat. 764; Act of Mar. 19, 1918, as amended by the Uniform Time Act of 1966 and Pub. L. 97-449, 15 U.S.C. 260-267; Pub. L. 99-359; Pub. L. 106-564, 15 U.S.C. 263, 114 Stat. 2811; 49 CFR 1.59(a), unless otherwise noted.
+
+
+              
+            
+            
+              Source:
+              
+                Amdt. 71-11, 35 FR 12318, Aug. 1, 1970, unless otherwise noted.
+
+
+              
+            
+        
+      
+  
+
+    
+Enhanced Content - Details
+
+  
+Print/PDFEnhanced Content - Print      
+        Generate PDF
+
+        
+          
+        
+      
+      
+        This content is from the eCFR and may include recent changes applied to the CFR.
+        The official, published CFR, is updated annually and available below under
+        "Published Edition". You can learn more about the process
+        here.
+      
+Enhanced Content - Print
+
+  
+Display OptionsEnhanced Content - Display Options    
+      
+        
+      
+      
+Enhanced Content - Display Options
+
+  
+SubscribeEnhanced Content - Subscribe    Subscribe to: 49 CFR Part 71
+
+    
+      
+            
+            
+            
+
+        
+          Via Email:
+          
+        
+
+        
+          
+
+        
+    
+Enhanced Content - Subscribe
+
+  
+
+    
+TimelineEnhanced Content - Timeline
+        
+      
+        No changes found for this content after 1/03/2017.
+      
+
+Enhanced Content - Timeline
+
+  
+Go to DateEnhanced Content - Go to Date    
+
+      Date
+
+
+
+
+
+
+      
+
+Enhanced Content - Go to Date
+
+  
+
+Compare DatesEnhanced Content - Compare Dates      
+
+        Compare
+
+
+
+
+
+
+        to
+
+
+
+
+
+
+        
+        
+
+        
+
+      
+        
+          Show changes as:red/greenpurple/orange
+
+          Show strike-through for removed contentyesno
+      
+Enhanced Content - Compare Dates
+
+  
+
+  
+Published EditionEnhanced Content - Published Edition    
+      View the most recent official publication:
+    
+
+    
+        
+          View Title 49 on govinfo.gov
+        
+        
+          View the PDF for 49 CFR Part 71
+        
+    
+
+    
+      These links go to the official, published CFR, which is updated annually. As a
+      result, it may not include the most recent changes applied to the CFR.
+      Learn more.
+    
+Enhanced Content - Published Edition
+
+  
+
+  
+Developer ToolsEnhanced Content - Developer Tools
+      
+        
+          
+        
+        
+      
+
+    
+      Information and documentation can be found in our
+      developer resources.
+    
+Enhanced Content - Developer Tools
+
+
+      
+
+      
+        eCFR ContentThe Code of Federal Regulations (CFR) is the official legal print publication containing the codification of the general and permanent rules published in the Federal Register by the departments and agencies of the Federal Government. The Electronic Code of Federal Regulations (eCFR) is a continuously updated online version of the CFR. It is not an official legal edition of the CFR. Learn more about the eCFR, its status, and the editorial process.
+            Enhanced Content
+               View
+              table of contents
+              for this page.
+
+          
+PART 71—STANDARD TIME ZONE BOUNDARIES
+
+
+Authority:Secs. 1-4, 40 Stat. 450, as amended; sec. 1, 41 Stat. 1446, as amended; secs. 2-7, 80 Stat. 107, as amended; 100 Stat. 764; Act of Mar. 19, 1918, as amended by the Uniform Time Act of 1966 and Pub. L. 97-449, 15 U.S.C. 260-267; Pub. L. 99-359; Pub. L. 106-564, 15 U.S.C. 263, 114 Stat. 2811; 49 CFR 1.59(a), unless otherwise noted.
+
+
+Source:Amdt. 71-11, 35 FR 12318, Aug. 1, 1970, unless otherwise noted.
+
+
+§ 71.1 Limits defined; exceptions authorized for certain rail operating purposes only.
+
+(a) This part prescribes the geographic limits of each of the nine standard time zones established by section 1 of the Standard Time Act, as amended by section 4 of the Uniform Time Act of 1966 (15 U.S.C. 261). The Uniform Time Act also contains lists of operating exceptions granted for specified rail carriers, whose operations cross the time zone boundaries prescribed by this part. (15 U.S.C. 265).
+
+
+(b) Any rail carrier whose operations cross a time zone boundary prescribed by this part may apply for an operating exception to the General Counsel, Department of Transportation, Washington, DC 20590. However, each rail carrier for which an operating exception is granted shall, in its advertisements, time cards, station bulletin boards, and other publications, show arrival and departure times in terms of the standard time for the place concerned.
+
+(c) The time zones established by the Standard Time Zone Act, as amended by the Uniform Time Act of 1966, are Atlantic, eastern, central, mountain, Pacific, Alaska, Hawaii-Aleutian, Samoa, and Chamorro.
+[Amdt. 71-11, 35 FR 12318, Aug. 1, 1970, as amended by Amdt. 71-21, 52 FR 41631, Nov. 18, 1986; 78 FR 15884, Mar. 13, 2013]
+
+
+
+
+§ 71.2 Annual advancement of standard time.
+
+(a) The Uniform Time Act of 1966 (15 U.S.C. 260a(a)), as amended, requires that the standard time of each State observing Daylight Saving Time shall be advanced 1 hour beginning at 2 a.m. on the second Sunday in March of each year and ending at 2 a.m. on the first Sunday in November. This advanced time shall be the standard time of each zone during such period. The Act authorizes any State to exempt itself from this requirement. States in two or more time zones may exempt either the entire State or may exempt the entire area of the State lying within either time zone.
+
+(b) Section 3(b) of the Uniform Time Act of 1966 (15 U.S.C. 260a(b)) provides that “it is the express intent of Congress * * * to supersede any and all laws of the States or political subdivisions thereof insofar as they may now or hereafter provide for advances in time or changeover dates different from those specified in [section 3(a) of that Act]”, which are those specified in paragraph (a) of this section.
+[Amdt. 71-11, 35 FR 12318, Aug. 1, 1970, as amended by Amdt. 71-21, 52 FR 41631, Nov. 18, 1986; 78 FR 15885, Mar. 13, 2013]
+
+
+
+
+§ 71.3 Atlantic zone.
+The first zone, the Atlantic standard time zone, includes that part of the United States that is between 52°30″ W. longitude and 67°30″ W. longitude and that part of the Commonwealth of Puerto Rico that is west of 67°30″ W. longitude, but does not include any part of the State of Maine.
+
+
+
+§ 71.4 Eastern zone.
+The second zone, the eastern standard time zone, includes that part of the United States that is west of 67°30″ W. longitude and east of the boundary line described in § 71.5, and includes all of the State of Maine, but does not include any part of the Commonwealth of Puerto Rico.
+
+
+
+§ 71.5 Boundary line between eastern and central zones.
+
+(a) Minnesota-Michigan-Wisconsin.  From the junction of the western boundary of the State of Michigan with the boundary between the United States and Canada northerly and easterly along the west line of Gogebic County to the west line of Ontonagon County; thence south along the west line of Ontonagon County to the north line of Gogebic County; thence southerly and easterly along the north line of Gogebic County to the west line of Iron County; thence north along the west line of Iron County to the north line of Iron County; thence east along the north line of Iron County to the east line of Iron County; thence south along the east line of Iron County to the north line of Dickinson County; thence east along the north line of Dickinson County to the east line of Dickinson County; thence south along the east line of Dickinson County to the north line of Menominee County; thence east along the north line of Menominee County to the east line of Menominee County; thence southerly and easterly along the east line of Menominee County to Lake Michigan; thence east to the western boundary of the State of Michigan; thence southerly and easterly along the western boundary of the State of Michigan to a point in the middle of Lake Michigan opposite the main channel of Green Bay; thence southerly along the western boundary of the State of Michigan to its junction with the southern boundary thereof and the northern boundary of the State of Indiana.
+
+
+(b) Indiana-Illinois.  From the junction of the western boundary of the State of Michigan with the northern boundary of the State of Indiana easterly along the northern boundary of the State of Indiana to the east line of LaPorte County; thence southerly along the east line of LaPorte County to the north line of Starke County; thence east along the north line of Starke County to the west line of Marshall County; thence south along the west line of Marshall County; thence west along the north line of Pulaski County to the east line of Jasper County; thence south along the east line of Jasper County to the south line of Jasper County; thence west along the south lines of Jasper and Newton Counties to the western boundary of the State of Indiana; thence south along the western boundary of the State of Indiana to the north line of Gibson County; thence easterly and northerly along the north line of Gibson County to the west line of Pike County; thence south along the west line of Pike County to the north line of Warrick County; thence east along the north line of Warrick and Spencer Counties to the west line of Perry County; thence easterly and southerly along the north and east line of Perry County to the Indiana-Kentucky boundary.
+
+
+(c) Kentucky.  From the junction of the east line of Perry County, Ind., with the Indiana-Kentucky boundary easterly along that boundary to the west line of Meade County, Ky.; thence southeasterly and southwesterly along the west lines of Meade and Hardin Counties to the southwest corner of Hardin County; thence along the south lines of Hardin and Larue Counties to the northwest corner of Taylor County; thence southeasterly along the west (southwest) lines of Taylor County and northeasterly along the east (southeast) line of Taylor County to the west line of Casey County; and thence southerly along the west and south lines of Casey and Pulaski Counties to the intersection with the western boundary of Wayne County; and then south along the western boundary of Wayne County to the Kentucky-Tennessee boundary.
+
+
+(d) Tennessee.  From the junction of the west line of McCreary County, Ky., with the Kentucky-Tennessee boundary westerly along that boundary to the west line of Scott County, Tenn.; thence southerly along the west line of Scott County, the north and west lines of Morgan County, and the north line of Roane County to the north line of Rhea County; thence northwesterly along the north line of Rhea County; and thence southwesterly along the west lines of Rhea and Hamilton Counties to the Tennessee-Georgia boundary.
+
+
+(e) Georgia-Alabama.  From the junction of the west line of Hamilton County, Tenn., with the Tennessee-Georgia boundary westerly along that boundary to its junction with the Alabama-Georgia boundary; thence southerly along that boundary and the Florida-Georgia boundary to the southwest corner of the State of Georgia.
+
+
+(f) Florida.  From the southwest corner of the State of Georgia to the midpoint of the Apalachicola River on the downstream side of Jim Woodruff Dam; thence southerly along the middle of the main channel of the Apalachicola River to its intersection with the Jackson River; thence westerly along the center of the Jackson River to its intersection with the Intracoastal Waterway; thence westerly along the center of the Intracoastal Waterway to the west line of Gulf County; thence southerly along the west line of Gulf County to the Gulf of Mexico.
+
+
+(g) [Reserved]
+
+(h) Municipalities on boundary line.  All municipalities located upon the zone boundary line described in this section are in the central standard time zone.
+[Amdt. 71-11, 35 FR 12318, Aug. 1, 1970, as amended by Amdt. 71-12, 37 FR 11972, June 16, 1972; Amdt. 71-13, 38 FR 9229, Apr. 12, 1973; Amdt. 71-14, 38 FR 13725, May 25, 1973; Amdt. 77-13, 42 FR 56610, Oct. 27, 1977; Amdt. 91-17, 56 FR 52003, Oct. 17, 1991; 65 FR 50158, Aug. 17, 2000; 71 FR 3245, Jan. 20, 2006; 72 FR 6177, Feb. 9, 2007; 72 FR 54377, Sept. 25, 2007]
+
+
+
+
+§ 71.6 Central zone.
+
+(a) Central zone in general.  The third zone, the central standard time zone, includes that part of the United States that is west of the boundary line between the eastern and central standard time zones described in § 71.5 and east of the boundary line between the central and mountain standard time zones described in § 71.7.
+
+(b) Specified rail carrier exemptions.  The boundary line described in § 71.7 will not apply to the list of rail carriers in this subsection. These carriers will have the following changing points between the central and mountain time zones. The Chicago, Rock Island and Gulf Railway Company and the Chicago, Rock Island and Pacific Railway Company may use Tucumcari, New Mexico, as the point at which they change from central to mountain time and vice versa; the Colorado Southern and Fort Worth and Denver City Railway Companies may use Sixela, New Mexico, as such changing point; the Atchison, Topeka and Santa Fe Railway Company and other branches of the Santa Fe system may use Clovis, New Mexico, as such changing point, and those railways running into or through El Paso, Texas, may use El Paso as such point.
+[78 FR 15885, Mar. 13, 2013]
+
+
+
+
+§ 71.7 Boundary line between central and mountain zones.
+
+(a) Montana-North Dakota.  Beginning at the junction of the Montana-North Dakota boundary with the boundary of the United States and Canada southerly along the Montana-North Dakota boundary to the Missouri River; thence southerly and easterly along the middle of that river to the midpoint of the confluence of the Missouri and Yellowstone Rivers; thence southerly and easterly along the middle of the Yellowstone River to the north boundary of T. 150 N., R. 104 W.; thence east to the northwest corner of T. 150 N., R. 102 W.; thence south to the southwest corner of T. 149 N., R. 102 W.; thence east to the northwest corner of T. 148 N., R. 102 W.; thence south to the northwest corner of 147 N., R. 102 W.; thence east to the southwest corner of T. 148 N., R. 101 W.; thence south to the middle of the Little Missouri; thence easterly and northerly along the middle of that river to the midpoint of its confluence with the Missouri River; thence southerly and easterly along the middle of the Missouri River to the midpoint of its confluence with the western land boundary of Mercer County; thence south along the western county line of Mercer County to the southwest boundary; thence east and south along the southwestern county boundary of Morton County to the intersection with the boundary with Sioux County; thence west and south along the northern boundary of Sioux County to the center of State Highway 31; thence south along the center of State Highway 31 to the State border with South Dakota; thence east along the southern boundary of Sioux County in the middle of the Missouri River.
+
+
+(b) South Dakota. From the junction of the North Dakota-South Dakota boundary with the Missouri River southerly along the main channel of that river to the crossing of the original Chicago & North Western Railway near Pierre; thence southwesterly to the northern boundary of Jones County at the northeast corner of the NE 1, Sec. 6, T. 2 N., R. 30 E.; thence west along the northern boundary of Jones County; thence south along the western boundaries of Jones, Mellette and Todd Counties to the South Dakota-Nebraska boundary.
+
+
+(c) Nebraska.  From the junction of the west line of Tripp County, South Dakota with the South Dakota-Nebraska boundary west along that boundary to the west line of R. 30 W.; thence south along the range line between Rs. 30 and 31 W. to the southwest corner of sec. 19, T. 33 N., R. 30 W.; thence easterly along section lines to the northeast corner of sec. 29, T. 33 N., R. 30 W.; thence southerly along section lines with their offsets to the northeast corner of sec. 17, T. 32 N., R. 30 W.; thence westerly along section lines to the northwest corner of sec. 18, T. 32 N., R. 30 W.; thence southerly along the range line to the southwest corner of T. 31 N., R. 30 W.; thence easterly along the township line to the northeast corner of T. 30 N., R. 30 W.; thence southerly along the range line to the southwest corner of T. 29 N., R. 29 W.; thence westerly along the township line to the northwest corner of sec. 4, T. 28 N., R. 30 W.; thence southerly along section lines to the southwest corner of sec. 33, T. 28 N., R. 30 W.; thence easterly along the township line to the northeast corner of sec. 4, T. 27 N., R. 30 W.; thence southerly along section lines to the southwest corner of sec. 22, T. 26 N., R. 30 W.; thence easterly along section lines to the southeast corner of sec. 24, T. 26 N., R. 30 W.; thence southerly along the range line to the north line of Thomas County; thence westerly along the north line of Thomas County to the west line of Thomas County; thence south along the west line of Thomas County to the north line of McPherson County; thence west along the north line of McPherson County to the west line of McPherson County; thence south along the west line of McPherson County to the north line of Keith County; thence east along the north line of Keith County to the west line of Lincoln County; thence south along the west line of Lincoln County to the north line of Hayes County; thence west along the north lines of Hayes County to the west line of Hayes County; thence south along the west line of Hayes and Hitchcock Counties to the Nebraska-Kansas boundary.
+
+
+(d) Kansas-Colorado.  From the junction of the west line of Hitchcock County, Nebraska, with the Nebraska-Kansas boundary westerly along that boundary to the northwest corner of the State of Kansas; thence southerly along Kansas-Colorado boundary to the north line of Sherman County, Kansas; thence easterly along the north line of Sherman County to the east line of Sherman County; thence southerly along the east line of Sherman County to the north line of Logan County; thence westerly along the north line of Logan County to the east line of Wallace County; thence southerly along the east line of Wallace County to the north line Wichita County; thence westerly along the north line of Wichita County; thence westerly along the north line of Wichita County to the east line of Greeley County; thence southerly along the east lines of Greeley County and Hamilton Counties; thence westerly along the south line of Hamilton County to the Kansas-Colorado boundary; thence southerly along the Kansas Colorado boundary to the junction of that boundary with the north boundary of the State of Oklahoma.
+
+
+(e) Oklahoma-Texas-New Mexico.  From the junction of the Kansas-Colorado boundary with the northern boundary of the State of Oklahoma westerly along the Colorado-Oklahoma boundary to the northwest corner of the State of Oklahoma; thence southerly along the west boundary of the State of Oklahoma and the west boundary of the State of Texas to the southeast corner of the State of New Mexico; thence westerly along the Texas-New Mexico boundary to the east line of Hudspeth County, Tex.; thence southerly along the east line of Hudspeth County, Tex., to the boundary between the United States and Mexico.
+
+
+(f) [Reserved]
+
+(g) Municipalities on boundary line.  All municipalities located upon the zone boundary line described in this section are in the mountain standard time zone, except Murdo, S. Dak., which is in the central standard time zone.
+[Amdt. 71-11, 35 FR 12318, Aug. 1, 1970, as amended by Amdt. 71-14, 38 FR 13725, May 25, 1973; Amdt. 71-16, 43 FR 42763, Sept. 21, 1978; 55 FR 30914, July 30, 1990; 57 FR 48339, Oct. 23, 1992; 68 FR 43336, July 22, 2003; 68 FR 49373, Aug. 18, 2003; 68 FR 61372, Oct. 28, 2003; 75 FR 60007, Sept. 29, 2010; 78 FR 15885, Mar. 13, 2013]
+
+
+
+
+§ 71.8 Mountain zone.
+The fourth zone, the mountain standard time zone, includes that part of the United States that is west of the boundary line between the central and mountain standard time zones described in § 71.7 and east of the boundary line between the mountain and Pacific standard time zones described in § 71.9.
+
+
+
+§ 71.9 Boundary line between mountain and Pacific zones.
+
+(a) Montana-Idaho-Oregon.  From the junction of the Idaho-Montana boundary with the boundary between the United States and Canada southerly along the Idaho-Montana boundary to the boundary line between Idaho County, Idaho, and Lemhi County, Idaho; thence southwesterly along the boundary line between those two counties to the main channel of the Salmon River; thence westerly along the main channel of the Salmon River to the Idaho-Oregon boundary; thence southerly along that boundary to the boundary line between Baker County, Oreg., and Malheur County, Oreg.; thence westerly along the north line of Malheur County to the northwest corner of Malheur County; thence southerly along the west line of Malheur County to the southwest corner of T. 35 S., R. 37 E.; thence east to the Idaho-Oregon boundary; thence south along that boundary to the southwest corner of the State of Idaho; thence easterly along the Idaho-Nevada boundary to the northeast corner of the State of Nevada.
+
+
+(b) Utah-Nevada-Arizona-California.  From the northeast corner of the State of Nevada southerly along the Utah-Nevada boundary to the junction with the northern border of the City of West Wendover, Nevada. Then westward along the northern, western, and southern boundaries of the City of West Wendover back to the Utah-Nevada boundary. Then southerly along the Utah-Nevada boundary, the Nevada-Arizona boundary, and the Arizona-California boundary to the boundary between the United States and Mexico.
+
+
+(c) [Reserved]
+
+(d) Municipalities on boundary line.  All municipalities located upon the zone boundary line described in this section are in the mountain standard time zone.
+[Amdt. 71-11, 35 FR 12318, Aug. 1, 1970, as amended by Amdt. 71-14, 38 FR 13725, May 25, 1973; 64 FR 56707, Oct. 21, 1999; 78 FR 15885, Mar. 13, 2013]
+
+
+
+
+§ 71.10 Pacific zone.
+The fifth zone, the Pacific standard time zone, includes that part of the continental United States that is west of the boundary line between the mountain and Pacific standard time zones described in § 71.9, but does not include any part of the State of Alaska.
+(Act of March 19, 1918, as amended by the Uniform Time Act of 1966 and Pub. L. 97-449, 15 U.S.C. 260-264; 49 CFR 1.59(a)).
+
+[Amdt. 71-19, 48 FR 43281, Sept. 22, 1983]
+
+
+
+
+§ 71.11 Alaska zone.
+The sixth zone, the Alaska standard time zone, includes the entire State of Alaska, except as provided in § 71.12 of this title.
+(Act of March 19, 1918, as amended by the Uniform Time Act of 1966 and Pub. L. 97-449, 15 U.S.C. 260-264; 49 CFR 1.59(a)).
+
+[Amdt. 71-19, 48 FR 43281, Sept. 22, 1983, as amended by Amdt. 71-20, 48 FR 55289, Dec. 12, 1983]
+
+
+
+
+§ 71.12 Hawaii-Aleutian zone.
+The seventh zone, the Hawaii-Aleutian standard time zone, includes the entire State of Hawaii and, in the State of Alaska, that part of the Aleutian Islands that is west of 169 degrees 30 minutes west longitude.
+(Act of March 19, 1918, as amended by the Uniform Time Act of 1966 and Pub. L. 97-449, 15 U.S.C. 260-264; 49 CFR 1.59(a)).
+
+[Amdt. 71-19, 48 FR 43281, Sept. 22, 1983, as amended by Amdt. 71-20, 48 FR 55289, Dec. 12, 1983]
+
+
+
+
+§ 71.13 Samoa zone.
+The eighth zone, the Samoa standard time zone, includes that part of the United States that is between 169 degrees 30 minutes west longitude and 172 degrees 30 minutes west longitude, but does not include any part of the States of Hawaii and Alaska.
+(Act of March 19, 1918, as amended by the Uniform Time Act of 1966 and Pub. L. 97-449, 15 U.S.C. 260-264; 49 CFR 1.59(a)).
+
+[Amdt. 71-19, 48 FR 43281, Sept. 22, 1983, as amended by Amdt. 71-20, 48 FR 55289, Dec. 12, 1983]
+
+
+
+
+§ 71.14 Chamorro Zone.
+The ninth zone, the Chamorro standard time zone, includes the Island of Guam and the Commonwealth of the Northern Mariana Islands.
+[68 FR 49712, Aug. 19, 2003]
+
+
+
+{"origins":[{"level":"part","identifier":"71","label_level":"Part 71","hierarchy":{"title":"49","subtitle":"A","part":"71"},"current":true,"authority":["Secs. 1-4, 40 Stat. 450, as amended; sec. 1, 41 Stat. 1446, as amended; secs. 2-7, 80 Stat. 107, as amended; 100 Stat. 764; Act of Mar. 19, 1918, as amended by the Uniform Time Act of 1966 and Pub. L. 97-449, \u003ca href=\"https://www.govinfo.gov/link/uscode/15/260\" class=\"usc external\" target=\"_blank\" rel=\"noopener noreferrer\"\u003e15 U.S.C. 260-267\u003c/a\u003e; Pub. L. 99-359; \u003ca href=\"https://www.govinfo.gov/link/plaw/106/public/564\" class=\"publ external\" target=\"_blank\" rel=\"noopener noreferrer\"\u003ePub. L. 106-564\u003c/a\u003e, \u003ca href=\"https://www.govinfo.gov/link/uscode/15/263\" class=\"usc external\" target=\"_blank\" rel=\"noopener noreferrer\"\u003e15 U.S.C. 263\u003c/a\u003e, 114 Stat. 2811; \u003ca href=\"/current/title-49/section-1.59#p-1.59(a)\" class=\"cfr external\"\u003e49 CFR 1.59(a)\u003c/a\u003e, unless otherwise noted.\n"],"source":["Amdt. 71-11, \u003ca href=\"https://www.federalregister.gov/citation/35-FR-12318\" class=\"fr-reference\" data-reference=\"35 FR 12318\"\u003e35 FR 12318\u003c/a\u003e, Aug. 1, 1970, unless otherwise noted.\n"],"link":"/current/title-49/part-71","title":"Part 71"}]}
+
+eCFR Content      
+    
+  
+
+
+        
+      
+    
+
+    
+  
+    
+      
+        
+          Pages
+          
+            Home
+            Titles
+            Search
+            Recent Changes
+            Corrections
+          
+        
+
+        
+          Reader Aids
+          
+              
+                Using the eCFR Point-in-Time System
+              
+              
+                Understanding the eCFR
+              
+              
+                Government Policy and OFR Procedures
+              
+              
+                Developer Resources
+              
+              
+                Recent Site Updates
+              
+          
+        
+        
+          Information
+          
+            About This Site
+            Legal Status
+            Privacy
+            Accessibility
+            FOIA
+            No Fear Act
+            Continuity Information
+          
+        
+
+        
+          My eCFR
+          
+            
+              My Subscriptions
+            
+            
+              Sign In / Sign Up
+            
+          
+        
+
+
+      
+    
+  
+
+
+
