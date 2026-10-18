@@ -1,0 +1,11 @@
+# South Carolina research dispatch
+
+Coordinator `d0fc3534-1613-4883-b48b-21a233fcfd9e`; workspace `wks_b290f45007010740`; shared main checkout `/Users/tqbf/codebase/snn`. The [common brief](../RESEARCH_BRIEF.md) governs this stack.
+
+Actual turnout worker **`46dcb766-b312-4aaf-ac85-921179115c95`** launched after the Minnesota maps worker actually finished. Independent partisanship awaits the next actual free slot; its actual ID will be recorded at launch. At most two research workers run across the batch; workers cannot delegate or change Git. Four actual question workers are required, with official-results and maps following independently reviewed exact priority acceptance and actual slot availability.
+
+Read the [primary-source preparation](data/coordinator-source-preflight.md) and retained original/query evidence, independently. All46counties and actual source-native precinct/method identities remain in state arithmetic.2024president is the primary volume baseline because there is no2024Senate general;2020Graham–Harrison is sameClassII Senate,2022Scott–Matthews otherClassIII Senate and2022governor separate midterm context. The provisional17-county ranking is unaccepted. The signedNARA/FEC seven-slate presidential scope includesTerry5,352 omitted from the retainedHouseClerk six-row presentation; do not force an incompletecontrol. Returned source TOTAL_VOTES/TOTAL_BALLOTS/under/over pseudo-options and combined/method hierarchy views remain distinct.2020method gaps in26precinct contexts are not zeros or an allocation license.
+
+Finish notifications will be enabled. No polling or extra coordinators. The coordinator independently reviews native/candidate/method/source controls, full descending order and minimum80 before second-pair dispatch; all remainder counties are retained. Current legal/physical boundaries and live feeds require primary verification. The coordinator alone stages reviewed state paths and queue/dispatch updates, commits on main, pushes and verifies the remote. This preparation is not a completed state package.
+
+Fresh profile discovery returned no configured profiles. Provider inspection confirmed `codex/gpt-6.1-sol`, `full-access`, `xhigh`; actual launch has `notifyOnFinish:true`. No status polling. Exclusive turnout ownership: `turnout.md`, `data/county-turnout.csv`, `data/turnout/**`; no Git or delegation.
