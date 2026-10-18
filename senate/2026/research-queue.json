@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "requested_date": "2026-10-17",
-  "updated_at_utc": "2026-10-18T18:21:49.403879+00:00",
+  "updated_at_utc": "2026-10-18T18:30:25.611627+00:00",
   "scope": "35 states in the repository 2026 U.S. Senate race index",
   "coordinator_agent_id": "d0fc3534-1613-4883-b48b-21a233fcfd9e",
   "workspace_id": "wks_b290f45007010740",
@@ -703,22 +703,40 @@
       "election": "Regular",
       "seat_class": "II",
       "priority": 9,
-      "status": "first-wave-active",
+      "status": "second-wave-active",
       "workers": {
         "turnout": {
           "agent_id": "c7f7c9ac-1527-4919-8602-26a6a45b9d97",
-          "status": "running",
+          "status": "complete-reviewed",
           "launched_at_utc": "2026-10-18T18:03:52.749478+00:00"
         },
         "partisanship": {
           "agent_id": "d272caf4-db4f-4c84-8950-c5e0fabe93e7",
+          "status": "active"
+        },
+        "official_results": {
+          "agent_id": "cbbfbe8d-c95c-44e1-9f59-593e0b6b2576",
           "status": "active"
         }
       },
       "validation": null,
       "gaps": [],
       "published_commits": [],
-      "coordinator_preparation": "Actual first pair active. Retained complete320 native labels and primary-vintage disputes; provisional143-unit priority awaits independent peer/coordinator review."
+      "coordinator_preparation": "Turnout actuallyfinished;143historical dispatch accepted after23roster7360record original/peer review. Partisanship completes targets/QA; official-resultsactualcbbfbe8d launched, mapswaitsforactualslot.",
+      "priority_geography": {
+        "basis": "2024 official linked president_3 original; reported four printed tickets plus generic Write-Ins numeric subtotals, with all original blanks preserved.",
+        "count": 143,
+        "votes": 662624,
+        "statewide_votes": 826189,
+        "share": 0.8020247183150586,
+        "native_units": 320,
+        "native_source_rosters": 23,
+        "source_scoped_records": 7360,
+        "contract_sha256": "11c042966c67a50e496ad6f839afd8e3c8b28afe6e2761c6cda1aa51f7ce90fc",
+        "acceptance": "new-hampshire/data/coordinator-priority-acceptance.json",
+        "dispatch_keys": "new-hampshire/data/coordinator-priority-keys.txt",
+        "reconciliation": "Independent23roster7360record34880field original-cell review plus full reciprocal peer agreement. No current geography approval."
+      }
     },
     {
       "state": "Minnesota",
@@ -1118,19 +1136,16 @@
   "batch_status": "in_progress",
   "coordinator_preparation_audit": {
     "status": "pass",
-    "checked_at_utc": "2026-10-18T17:54:12.032515+00:00",
+    "checked_at_utc": "2026-10-18T18:28:32.899741+00:00",
     "scope": "Still-queued states only; retained public news/preflight responses, not completed question packages or accepted feeds",
-    "states": 26,
-    "response_captures": 468,
+    "states": 25,
+    "response_captures": 461,
     "http_status_counts": {
-      "200": 378,
-      "403": 84,
-      "429": 1,
-      "402": 1,
-      "503": 1,
+      "200": 379,
+      "403": 77,
       "transport_failure": 1,
       "500": 1,
-      "404": 1
+      "404": 3
     },
     "checks": "Unique IDs; original/stored SHA-256; exact ordered-part reconstruction where needed; raw byte counts; UTC/headers or retained transport failures; strict per-stored-object bounds and no orphan response assets.",
     "additional_content_checks": "Independent primary preflight scripts for NH,MN,SC,FL,NE,SD,ID retain source-specific controls; MS visual originals preserve mismatches and separate special-election stages. No question package is inferred complete."
