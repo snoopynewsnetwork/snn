@@ -5,7 +5,7 @@ Coordinator: `d0fc3534-1613-4883-b48b-21a233fcfd9e`. Shared main checkout, works
 | Question | Actual Paseo agent ID | Owned paths | Status |
 | --- | --- | --- | --- |
 | Turnout | `9b1a22e8-9948-43b6-933d-bd9e99a27695` | `turnout.md`, `data/county-turnout.csv`, `data/turnout/` | Complete; coordinator integration |
-| Partisanship/targets | `2846254a-c87f-449c-ba54-5f6873adaebd` | `county-partisanship.md`, `data/county-baselines.csv`, `data/baselines/` | Complete; final coordinator review |
+| Partisanship/targets | `2846254a-c87f-449c-ba54-5f6873adaebd` | `county-partisanship.md`, `data/county-baselines.csv`, `data/baselines/` | Complete; independently reviewed |
 | Official results | `28bf26bf-fbc1-4f13-8319-fddb49eafac0` | `official-results.md`, `data/official-results-sources.csv`, `data/results-sources/` | Active after final county recheck |
 | Precinct maps | `62ee3df8-b73a-43fd-92c9-e7f42297686d` | `precinct-maps.md`, `maps/` | Active with accepted all254/exact34 contract |
 

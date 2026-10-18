@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "requested_date": "2026-10-17",
-  "updated_at_utc": "2026-10-18T03:31:00.571387+00:00",
+  "updated_at_utc": "2026-10-18T03:43:20.742609+00:00",
   "scope": "35 states in the repository 2026 U.S. Senate race index",
   "coordinator_agent_id": "d0fc3534-1613-4883-b48b-21a233fcfd9e",
   "workspace_id": "wks_b290f45007010740",
@@ -412,7 +412,7 @@
       "election": "Regular",
       "seat_class": "II",
       "priority": 5,
-      "status": "partisanship-and-official-results-active",
+      "status": "official-results-and-maps-active",
       "workers": {
         "turnout": {
           "agent_id": "9b1a22e8-9948-43b6-933d-bd9e99a27695",
@@ -420,7 +420,7 @@
         },
         "partisanship": {
           "agent_id": "2846254a-c87f-449c-ba54-5f6873adaebd",
-          "status": "complete-awaiting-final-review"
+          "status": "complete-reviewed"
         },
         "official_results": {
           "agent_id": "28bf26bf-fbc1-4f13-8319-fddb49eafac0",
@@ -434,11 +434,13 @@
       },
       "validation": {
         "status": "pass",
-        "scope": "county baseline/priority only; first-wave report/finer-layer/target completion continues",
+        "scope": "First-wave historical county/priority/target and retained current zero-setup identity checks only; complete source/map package and publication review pending",
         "checks": "texas/data/coordinator-baseline-reconciliation.json",
         "coordinator_targets": "Independent source-based recomputation passed 21 state scenarios, 5,334 county rows and 5,334 selected-county requirements across seven preference/volume mixes; all-candidate vs pair cushions distinct; no forecast inferred.",
         "target_checks": "texas/data/coordinator-target-checks.json",
-        "turnout": "Complete: all254 counties, 6,604 primary cells/26 controls, 57,404 peer fields, 302,233 source-native derivative rows, 31,702 derivative identities, 4,276 original identities, 5,493 vendor rows, Harris1,584 candidate/ballot/method controls; 486 owned assets under strict cap with exact ordered Harris gzip parts. Final county coordinator reconciliation reran/pass."
+        "turnout": "Final offline reconstruction/source/486 owned asset checks passed;254 counties/6604primary candidate cells,302233 finer-source rows and4276 original-unit identities remain source-scoped.",
+        "partisanship": "Final read-only validator passed 80 owned assets and223 original/source references; coordinator independently recomputed21 statewide/5334county/5334selected targets plus17 fixed-counted synthetic remainder cases, final denominators andedge statuses.",
+        "coordinator_setup": "Independent raw-hash/name audit passes254 counties/1778 zeroSenatecells; MID is ordinal notFIPS (only1 accidental match), Harris1224vsstate1225, hidden Tarrant/ElPaso testflags and Bexarzero/Bellwrongdate exclusions. Separate source completion denominators retained; not live admission."
       },
       "gaps": [
         "Finer OE files have explicit native-county/filename conflicts, duplicate candidate keys, method nonadditivity and partial coverage; originals/source rows preserved without reassignment/deduplication.",
@@ -460,7 +462,7 @@
         "dispatch_keys": "texas/data/turnout/priority-set.json",
         "ordered_keys": "texas/data/coordinator-priority-keys.txt",
         "ordered_keys_sha256": "a5d39344328ab3c0f76809439c6af42c09a59d81f76b9b756e5b538a63ac5be5",
-        "reconciliation": "Coordinator passed 254 counties/1,016 baseline rows/6,604 candidate cells/26 state controls/4,064 summary cells/full order/exact34. Independent peer54,616-field pass. Acceptance limited to county counts/priority; finer source-native layers remain qualified."
+        "reconciliation": "Coordinator passed254 counties/1016baseline rows/6604candidate cells/26statecontrols/4064summarycells/fullorder/exact34. Final peer57410field checks. Acceptance limited to county counts/priority; finer source-native layers remain qualified."
       }
     },
     {
@@ -475,7 +477,7 @@
       "validation": null,
       "gaps": [],
       "published_commits": [],
-      "coordinator_preparation": "18 retained responses including actual NPR/AP June Senate state/county JSON; reproducible 99-county candidate reconciliation and 1,659-state vs 1,658-county reporting discrepancy retained. Primary display omits sub-1% candidates and is not certified all-candidate or November data. No question agent or accepted priority set."
+      "coordinator_preparation": "25 retained responses including original SOS2024/2022/2020 canvasses. Independent coordinator primary preflight reconciles99counties\u00d73contests/2475numericcolumns; provisional41county80% remains unaccepted pending actual workers. NPR/AP June99county displayed checks and reporting1659vs1658 retained. No question agents yet."
     },
     {
       "state": "Kansas",
@@ -489,7 +491,7 @@
       "validation": null,
       "gaps": [],
       "published_commits": [],
-      "coordinator_preparation": "Regional source captures, local-news and strategy drafts prepared; historical widget and current official ballot-deadline conflict checks. State stack remains queued."
+      "coordinator_preparation": "19 retained responses including actual NPR/AP AugustSenate state/countyJSON; all105 displayed candidate/county sums exact, Democratic reporting4137vsstate4149 and Republican4149withCrawford56/57 retained. Historical/noncertified/nonNovember scope plus regional/ballotdeadline caveats. No question agents or accepted priority."
     },
     {
       "state": "Georgia",
@@ -503,7 +505,7 @@
       "validation": null,
       "gaps": [],
       "published_commits": [],
-      "coordinator_preparation": "Regional source captures, local-news and strategy drafts prepared; historical primary/runoff, AP overlap and access gaps retained. State stack remains queued."
+      "coordinator_preparation": "27 retained regional/authority responses; added Columbus/Albany/Macon routes, WTVM inactive Alabama election, WALB empty test display and shared AP layouts verified offline. News/strategy preparation only; no question agents or accepted priority."
     },
     {
       "state": "New Hampshire",
@@ -517,7 +519,7 @@
       "validation": null,
       "gaps": [],
       "published_commits": [],
-      "coordinator_preparation": "13 newsroom/authority captures and news/strategy drafts prepared; town/ward, historical database and unofficial volunteer source distinctions retained. Stack remains queued."
+      "coordinator_preparation": "21 retained responses plus WMUR actual local widget (8 September primary items;2 Senate displayed sums exact;318/318 flags), Conway/Monadnock/blockedSeacoast routes. Town/ward/volunteer distinctions remain explicit. Preparation only; no question agents or accepted priority."
     },
     {
       "state": "Minnesota",
@@ -917,17 +919,25 @@
   "batch_status": "running",
   "coordinator_preparation_audit": {
     "status": "pass",
-    "checked_at_utc": "2026-10-18T03:11:55.784915+00:00",
+    "checked_at_utc": "2026-10-18T03:43:04.167816+00:00",
     "scope": "Still-queued states only; retained public news/preflight responses, not completed question packages or accepted feeds",
     "states": 29,
-    "response_captures": 337,
+    "response_captures": 364,
     "http_status_counts": {
-      "200": 253,
-      "403": 82,
+      "200": 274,
+      "403": 86,
+      "429": 1,
+      "402": 1,
       "500": 1,
       "404": 1
     },
     "checks": "Unique IDs, original/stored SHA-256, raw byte counts, UTC/headers, strict per-asset bounds and no orphan response assets.",
     "additional_content_checks": "Texas and Iowa retained actual newsroom JSON passed their separate offline count/coverage inspectors; these are historical products, not November approval."
-  }
+  },
+  "coordinator_next_actions": [
+    "Keep only Texas official-results28bf26bf-fbc1-4f13-8319-fddb49eafac0 andmaps62ee3df8-b73a-43fd-92c9-e7f42297686d active. Do not poll running agents.",
+    "On actual completion notification, launch Iowa turnout in freed slot with profiles/provider discovery and notifyOnFinish:true; then Iowa partisanship in next free slot. Prepared prompts /tmp/snn-iowa-{turnout,partisanship}-prompt.txt; create actual dispatch records.",
+    "Complete Texas source/map integration, meaningful offline/visual/repository checks, scoped commit/push origin main and remote verification. Retain actual package hash in queue checkpoint.",
+    "Continue every remaining queued state in priority order, four actual state-specific Paseo workers each. Michigan stays intact."
+  ]
 }
