@@ -18,3 +18,5 @@ The maps worker actually finished with a frozen 1252-asset package; coordinator 
 All four workers have actually finished. Maps independently passes native ZIP/SHP/SHX/DBF, seven service-ID audits, all 468 municipal coordinate derivatives and 1252 asset hashes. Official-results is frozen for coordinator review. Both Minnesota first-pair workers now occupy the two research slots.
 
 Final independent official-source, map, historical target and whole-package checks pass. All four assignments are reviewed; staged scope/byte/whitespace review and direct main publication follow. Minnesota’s two actual first-pair workers continue independently.
+
+Published after complete review as `7ad7bb89aeb509847bb593ba6cd249db9bdeb355`; origin/main verified exactly at that commit. The4680 staged blobs matched reviewed bytes, strict object bounds and whitespace/scope checks. Future court/source/geographic gaps remain documented.
