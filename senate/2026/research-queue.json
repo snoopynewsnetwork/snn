@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "requested_date": "2026-10-17",
-  "updated_at_utc": "2026-10-18T04:10:36.311150+00:00",
+  "updated_at_utc": "2026-10-18T04:25:40.724444+00:00",
   "scope": "35 states in the repository 2026 U.S. Senate race index",
   "coordinator_agent_id": "d0fc3534-1613-4883-b48b-21a233fcfd9e",
   "workspace_id": "wks_b290f45007010740",
@@ -477,23 +477,48 @@
       "election": "Regular",
       "seat_class": "II",
       "priority": 6,
-      "status": "first-wave-active",
+      "status": "second-wave-active",
       "workers": {
         "turnout": {
           "agent_id": "b5a3a82f-3a5c-4e9f-a266-e454c448c846",
-          "status": "running",
+          "status": "complete-reviewed",
           "launched_at_utc": "2026-10-18T03:55:50.457407+00:00"
         },
         "partisanship": {
           "agent_id": "4bcbf52f-1952-4e27-b0e5-9e5bf55c67cb",
-          "status": "running",
+          "status": "complete-reviewed",
           "launched_at_utc": "2026-10-18T03:58:04.219008+00:00"
+        },
+        "official_results": {
+          "agent_id": "a100d306-3574-4231-b534-4f9d69605645",
+          "status": "running",
+          "launched_at_utc": "2026-10-18T04:22:45.102021+00:00"
+        },
+        "precinct_maps": {
+          "agent_id": "23869917-a710-48f6-b185-60f45b27888b",
+          "status": "running",
+          "launched_at_utc": "2026-10-18T04:23:46.271689+00:00"
         }
       },
-      "validation": null,
-      "gaps": [],
+      "validation": {
+        "status": "pass",
+        "scope": "Independent coordinator first-wave counts/priority/targets/historicalXML/native contract only; worker final metadata/assets QA and second wave remain pending",
+        "checks": "iowa/data/coordinator-baseline-reconciliation.json",
+        "targets": "iowa/data/coordinator-target-checks.json",
+        "historical_XML": "iowa/data/coordinator-historical-clarity-checks.json",
+        "native_contract": "iowa/data/coordinator-native-contract-checks.json",
+        "coverage": "99counties/297primarycontests/2475Totalcells/7484fullcandidate-methodcells; exact41 priority; all13558constituentobjects/99rosters conserved.36state/3564county/3564selected/3960separate-otherrows checked.",
+        "first_wave_assets": "Metadata-only circular acceptance hashes removed; all sourceobjects unchanged. Final native/count/peer/534source/17freshPDF checks rerun;625turnout/275baselineassets. Final peer metadata hash supplied to both active secondwave workers."
+      },
+      "gaps": [
+        "Generic Write-in marks have no established named-valid allocation.",
+        "2024 canvass vs turnout report ED/absentee differ +7/-7, sameTotal; Des Moines scope retained.",
+        "Lucas2024 XML turnout omits two trailing-space Chariton labels; candidate/status7 vs turnout5, ballots2733 vs4676; no allocation.",
+        "2020 statistical age bins exceed printed statewide registered total by2; source disagreement retained.",
+        "No current November source/cadence/outstanding votes/geographic approval/collector/calibrated forecast inferred from historical evidence."
+      ],
       "published_commits": [],
-      "coordinator_preparation": "Independent coordinator primary/Census review passed99 counties/297contests/2475Total cells; all7484candidate-method/header cells, complete99order/exact41 priority and method/state balances match. Workers finalizing reports/QA and fresh historical2024 linked-app native discovery; no secondwave slot yet.",
+      "coordinator_preparation": "Only official-results and maps active. Final repaired prioritySHA579b22b8d4f35f12d085ef8402a1bcab14e135a1577daf3ddc4f7d3f66460822 supplied; all13558objects unchanged. Coordinator finalfirstwaveassetintegration continues while secondwave researches.",
       "priority_geography": {
         "basis": "2024 president seven named-ticket columns plus generic Write-in marks; under/over excluded, named-valid write-in classification unavailable",
         "count": 41,
@@ -506,7 +531,9 @@
         "ordered_keys": "iowa/data/coordinator-priority-keys.txt",
         "ordered_keys_sha256": "e015514b8718b35e9599389cddde2451e5cd598115ef4d6468016a7858271f95",
         "reconciliation": "iowa/data/coordinator-baseline-reconciliation.json",
-        "acceptance_scope": "County counts/order and exact research priority accepted; native contract still open during fresh2024historical Clarity exploration, no current geography approval."
+        "acceptance_scope": "County counts/order and exact research priority accepted with all13558 source-scoped historical constituent objects conserved; no cross-context/cross-year/current geographic approval.",
+        "contract_sha256": "579b22b8d4f35f12d085ef8402a1bcab14e135a1577daf3ddc4f7d3f66460822",
+        "contract_bytes": 9106895
       }
     },
     {
@@ -949,13 +976,13 @@
   "batch_status": "running",
   "coordinator_preparation_audit": {
     "status": "pass",
-    "checked_at_utc": "2026-10-18T03:53:52.725802+00:00",
+    "checked_at_utc": "2026-10-18T04:19:56.442776+00:00",
     "scope": "Still-queued states only; retained public news/preflight responses, not completed question packages or accepted feeds",
-    "states": 29,
-    "response_captures": 368,
+    "states": 28,
+    "response_captures": 352,
     "http_status_counts": {
-      "200": 278,
-      "403": 86,
+      "200": 267,
+      "403": 81,
       "429": 1,
       "402": 1,
       "500": 1,
@@ -965,10 +992,9 @@
     "additional_content_checks": "Texas and Iowa retained actual newsroom JSON passed their separate offline count/coverage inspectors; these are historical products, not November approval."
   },
   "coordinator_next_actions": [
-    "Texas package1ffe97dec3bdf4aa8ca4fb173c00a9a93ae9b98f is published and remote verified; record this durable checkpoint.",
-    "Only Iowa first pair is active: turnout b5a3a82f-3a5c-4e9f-a266-e454c448c846 and partisanship4bcbf52f-1952-4e27-b0e5-9e5bf55c67cb. Do not poll running agents.",
-    "County controls agree; retain newly accessible2024 historical Clarity exploration before freezing native contract. Reconcile final source-native artifacts and exact41 priority before second-wave dispatch in freed slots.",
-    "Continue all28 later states in priority order."
+    "Only Iowa official-results a100d306-3574-4231-b534-4f9d69605645 and maps23869917-a710-48f6-b185-60f45b27888b are active. Do not poll.",
+    "Review final625turnout+275baselineasset hashes and remaining firstwave source/method/statistical gaps; repaired nativecontract stable, no object changes.",
+    "Integrate/publish Iowa after full official/map review, then launch Kansas firstpair in actual freed slots; continue all28laterstates."
   ],
   "coordinator_prompt_preparation": {
     "scope": "Unlaunched future first-wave prompts only; no agent IDs or completed packages implied",
