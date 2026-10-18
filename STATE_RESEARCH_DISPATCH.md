@@ -45,3 +45,5 @@ Texas’s four-question package passed integration review, including all 254 cou
 
 
 Mississippi remains in its first pair. Explicit Pike county-source reconciliation and bounded original-page checks pass, but complete statewide native/source agreement is still open. Current candidate/absentee-method publications remain separate from historical identity and geographic approval. No additional researchers have been launched.
+
+Both 2018 Mississippi stages now agree across 164 original county views and 492 candidate values, including accepted physical TOTAL-column locators. The November 6 and November 27 county sums match their separate certificates. Direct original-page review resolved the two competing digit readings; raw discovery aids and correction history remain. All 21 later states remain queued, with bounded source preparation and no extra workers.
