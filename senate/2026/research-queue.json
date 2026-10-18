@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "requested_date": "2026-10-17",
-  "updated_at_utc": "2026-10-18T17:54:12.032668+00:00",
+  "updated_at_utc": "2026-10-18T18:19:48.596877+00:00",
   "scope": "35 states in the repository 2026 U.S. Senate race index",
   "coordinator_agent_id": "d0fc3534-1613-4883-b48b-21a233fcfd9e",
   "workspace_id": "wks_b290f45007010740",
@@ -629,58 +629,58 @@
       "election": "Regular",
       "seat_class": "II",
       "priority": 8,
-      "status": "second-wave-active",
+      "status": "reviewed-ready-to-publish",
       "workers": {
         "turnout": {
           "agent_id": "80927f11-a268-4c0c-9f08-57fe524ef20a",
-          "status": "finished",
+          "status": "complete-reviewed",
           "launched_at_utc": "2026-10-18T16:55:39.928460+00:00",
           "finished_at_utc": "2026-10-18T17:36:35.586663+00:00"
         },
         "partisanship": {
           "agent_id": "9081a355-f2cc-4c66-8b2e-dbdf11066aa7",
-          "status": "finished",
+          "status": "complete-reviewed",
           "launched_at_utc": "2026-10-18T17:01:55.914235+00:00",
           "finished_at_utc": "2026-10-18T17:35:41.663728+00:00"
         },
         "official_results": {
           "agent_id": "4595f414-1cdb-4b0e-9d3f-2b046ee81867",
-          "status": "running",
+          "status": "complete-reviewed",
           "launched_at_utc": "2026-10-18T17:35:41.663728+00:00"
         },
         "precinct_maps": {
           "agent_id": "ff101187-bfee-43d2-ab6c-99c5c9e5edad",
-          "status": "running",
-          "launched_at_utc": "2026-10-18T17:36:35.586663+00:00"
+          "status": "complete-reviewed",
+          "launched_at_utc": "2026-10-18T17:36:35.586663+00:00",
+          "finished_at_utc": "2026-10-18T18:03:52.749478+00:00"
         }
       },
       "validation": {
-        "stage": "first-wave-independent-review-passed",
-        "native_review": "senate/2026/georgia/data/coordinator-native-contract-review.json",
-        "target_review": "senate/2026/georgia/data/coordinator-target-review.json",
-        "counts": {
-          "state_scenarios": 50,
-          "county_targets": 7950,
-          "native_targets": 5402,
-          "method_targets": 27968,
-          "live_cases": 13
-        },
-        "remaining": "Independent official-source and binary/map asset reviews after actual worker completion; repository checks and publication.",
-        "frozen_first_wave_assets": {
-          "owned_assets": 1797,
-          "review": "senate/2026/georgia/data/coordinator-first-wave-asset-review.json"
-        },
-        "baseline_original_check": {
-          "county_rows": 795,
-          "native_rows": 2701,
-          "method_rows": 13984,
-          "field_comparisons": 94392,
-          "review": "senate/2026/georgia/data/coordinator-baseline-source-review.json"
-        }
+        "status": "pass_with_explicit_source_gaps",
+        "scope": "Integrated four-question historical/current-source package",
+        "review": "georgia/research-review.md",
+        "checks": "georgia/data/coordinator-validation.json",
+        "original_source_positions": 76400,
+        "county_stage_controls": 795,
+        "worker_asset_hashes": 3932,
+        "integrated_relative_links": 1455,
+        "turnout": "159 counties;2701native identities;44full-candidate top-membership proved without imputing858writeins; exactfullorder/sharesunknown",
+        "targets": "Independent piecewise breakpoint review:50state/7950county/5402native/27968methodtargets;13synthetic counted-fixed cases",
+        "official_results": "417receipts/880shared originals/160inventory rows; all159currentrootredirectstubs excluded; six originalXLSX exports independentlyparsed; noNovembercountadmission",
+        "maps": "2724originalshapes/1775333vertices/27unassigned;1934priorityshapes;12complete localGIS1044features;30PDFs152pages;full originalgeometry/attribute conservation",
+        "repository": "npm run check passed; staged scope restricted to Georgia plus queue/root/NH dispatch; all4034index blobs equal reviewed bytes and below40MB; git diff --cached --check passed."
       },
-      "gaps": [],
+      "gaps": [
+        "858 qualified2024 presidential write-ins lack complete same-vintage county/native/method allocation; proved44membership but exactfullorder/sharesremainunknown.",
+        "40native candidate JSONnulls and22416methodnulls remain; Fulton different-vintage export supplies18alternative votes without substitution.",
+        "636older county app observations have no native/usable ballot-registration context; no invented zero.",
+        "Current117electionlist lacksNovembergeneral; all159currentcountyroots are200redirect/setupstubs, not counts. NovemberIDs/cadence/remainingvotes unapproved.",
+        "27state shapes unassigned; current/historical local boundary changes, geometry omissions and all reporting crosswalks remain qualified.",
+        "Complete later candidate withdrawal register/futureorders and regionalNovember/NYTcountaccess remain gaps.",
+        "No implemented livecollector,2026turnoutprojection,geographic voteallocation or calibratedNeedle."
+      ],
       "published_commits": [],
-      "coordinator_preparation": "Both first-wave workers actually finished. Frozen historical contract formally accepted after independent original/native review. Actual official-results and maps workers now active; no extra worker/coordinator. Full-candidate top44 membership proven; named-four dispatch order and source gaps preserved.",
+      "coordinator_preparation": "All four actual workers finished, independent originals/targets/maps/whole-package and repository checks pass; direct publication in progress.",
       "accepted_contract": {
         "path": "senate/2026/georgia/data/turnout/priority-set.json",
         "sha256": "1f589d2785d985af2eb33de50adad5a398924ab55f9343deaf79ac5c7378d97a",
@@ -699,12 +699,22 @@
       "election": "Regular",
       "seat_class": "II",
       "priority": 9,
-      "status": "queued",
-      "workers": {},
+      "status": "first-wave-active",
+      "workers": {
+        "turnout": {
+          "agent_id": "c7f7c9ac-1527-4919-8602-26a6a45b9d97",
+          "status": "running",
+          "launched_at_utc": "2026-10-18T18:03:52.749478+00:00"
+        },
+        "partisanship": {
+          "agent_id": "d272caf4-db4f-4c84-8950-c5e0fabe93e7",
+          "status": "active"
+        }
+      },
       "validation": null,
       "gaps": [],
       "published_commits": [],
-      "coordinator_preparation": "40retainedresponses. ActualarchivedSOS2024BIFF320native rows/all7Clerkcontrols exact;actualNARA2page4slatecontrols withamended/dateprintdefect retained. Four2022BIFFvintages320nativeeach+finalPDF10countycontrols exact;candidateheader reversal andearliervintageconflicts retained. Actual2020SenatePDFstatecontrols exact. News/WMUR historicalwidget retained; noagents/acceptedpriority/currentcrosswalk."
+      "coordinator_preparation": "Actual first pair active. Retained complete320 native labels and primary-vintage disputes; provisional143-unit priority awaits independent peer/coordinator review."
     },
     {
       "state": "Minnesota",
@@ -819,7 +829,7 @@
       "validation": null,
       "gaps": [],
       "published_commits": [],
-      "coordinator_preparation": "Actual2024certifiedabstract andnative-turnoutXLSX retained, plus2022/2020officialabstractapps. Sparsecolumn-address native registration/ballots scope to verify; no acceptedpriority or currentgeometry."
+      "coordinator_preparation": "Original2024native-turnout3183county/precinct rows/all64 independently streamed, million cached#VALUE! tail retained outside geography. MissingMontezumaCDEF andblankInactive fields preserved; relocationfootnote/Weldspacealias explicit. Certifiedabstract and2022/2020apps retained; no candidatepriority accepted."
     },
     {
       "state": "Delaware",
@@ -862,7 +872,7 @@
       "validation": null,
       "gaps": [],
       "published_commits": [],
-      "coordinator_preparation": "State-specific regional newsroom and strategy drafts plus bounded primary captures prepared; question agents not yet launched, no completed package claimed.",
+      "coordinator_preparation": "OfficialPD43+ original2024Senate municipal/precinct CSVs recovered200; all351parents/2394native identities and1755native-to-municipal fields reconcile statecolumns. AllOthers/Blanks/TBC andtown/wardhierarchy retained; no acceptedpriority/currentmapapproval.",
       "state_specific_notes": "Use native towns/cities/wards/precincts, not only 14 county summaries. Reconcile all 351 municipalities and current native units to statewide totals; verify the current roster. Any county-derived table retains explicit nonoverlapping municipal aggregation."
     },
     {
@@ -877,7 +887,7 @@
       "validation": null,
       "gaps": [],
       "published_commits": [],
-      "coordinator_preparation": "State-specific newsroom and strategy preparation written with retained primary captures; question agents not launched and no completed package claimed.",
+      "coordinator_preparation": "Actual2024/2020Senate county-certifiedPDFs,2024president/turnout and2022turnout recovered; all21county vectors/vintage andnative authority extraction await independent question workers.2026state-night countpolicy sayscountychannels; periodicreports separate. No acceptedpriority.",
       "state_specific_notes": "No 2022 U.S. Senate contest; use an actual statewide midterm comparator. Distinguish 2024 other-seat Senate from 2020 same-seat Senate, county authority/method overlap and old June vendor/periodic-report links."
     },
     {
@@ -1122,9 +1132,9 @@
     "additional_content_checks": "Independent primary preflight scripts for NH,MN,SC,FL,NE,SD,ID retain source-specific controls; MS visual originals preserve mismatches and separate special-election stages. No question package is inferred complete."
   },
   "coordinator_next_actions": [
-    "Review Georgia targets and current official/map evidence; launch maps only after actual turnout finish, keeping at most two research workers.",
-    "Publish reviewed Georgia package incrementally, then continue all26 later queued state stacks.",
-    "Retain Michigan and all seven newly published states; report completion only after all34 queue states published."
+    "Complete independent Georgia map/source review and publish full package after actual source finish.",
+    "Launch New Hampshire partisanship after next actual worker finish; keep at most two research workers.",
+    "Reconcile New Hampshire full native hierarchy/priority before its official/maps dispatch, then continue all25 later states in order."
   ],
   "coordinator_prompt_preparation": {
     "scope": "Unlaunched future first-wave prompts only; no agent IDs or completed packages implied",
