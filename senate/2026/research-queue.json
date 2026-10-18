@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "requested_date": "2026-10-17",
-  "updated_at_utc": "2026-10-18T21:16:39.614829+00:00",
+  "updated_at_utc": "2026-10-18T21:18:29.321401+00:00",
   "scope": "35 states in the repository 2026 U.S. Senate race index",
   "coordinator_agent_id": "d0fc3534-1613-4883-b48b-21a233fcfd9e",
   "workspace_id": "wks_b290f45007010740",
@@ -859,11 +859,11 @@
       "election": "Regular",
       "seat_class": "II",
       "priority": 11,
-      "status": "reviewed-ready-to-publish",
+      "status": "published",
       "workers": {
         "turnout": {
           "agent_id": "46dcb766-b312-4aaf-ac85-921179115c95",
-          "status": "completed",
+          "status": "complete-reviewed",
           "launched_at_utc": "2026-10-18T19:53:14.553482+00:00",
           "completed_at_utc": "2026-10-18T20:47:24.502772+00:00",
           "report_sha256": "053087a84e260ecb87cf496d4c708c23103d665a36743ab77fd0e4eafc17429d",
@@ -871,7 +871,7 @@
         },
         "partisanship": {
           "agent_id": "2a77ed30-c478-46c3-8980-817b50d4e679",
-          "status": "completed",
+          "status": "complete-reviewed",
           "launched_at_utc": "2026-10-18T19:59:14.587016+00:00",
           "completed_at_utc": "2026-10-18T20:44:48.480255+00:00",
           "report_sha256": "69c0e0e897cdbde46787701a76ce1e6a529afc7320c058a0289d45a39cd19469",
@@ -879,7 +879,7 @@
         },
         "official_results": {
           "agent_id": "5706e865-3e96-4b3d-856d-8e213f5af3e1",
-          "status": "completed",
+          "status": "complete-reviewed",
           "launched_at_utc": "2026-10-18T20:44:48.480255+00:00",
           "completed_at_utc": "2026-10-18T21:12:12.185784+00:00",
           "report_sha256": "45f018dfd3913c9c327207b13baa7666b57d86388e81275a0865d6902b7dcc21",
@@ -887,7 +887,7 @@
         },
         "precinct_maps": {
           "agent_id": "200516a7-31bf-4393-8e62-90c19e6f5f63",
-          "status": "completed",
+          "status": "complete-reviewed",
           "launched_at_utc": "2026-10-18T20:47:24.502772+00:00",
           "completed_at_utc": "2026-10-18T21:10:49.168528+00:00",
           "report_sha256": "ba9b40a0cb7260d3b68d86be6018a3ff982971cd2e42be79889b54755fa13afc",
@@ -908,8 +908,10 @@
         "Source-specific methods/registration/vintages/partyandClerk omissions retained.",
         "Two invalid geometries/791overlappairs/18invalidpairskips preserved; localaccessgaps qualified."
       ],
-      "published_commits": [],
-      "coordinator_preparation": "Allfour actualworkersfinished; final source/map manifest, fulloriginal, links and repository integration underway. FLfirstpair occupyingonly2researchslots.",
+      "published_commits": [
+        "794a7aedff3e005ac9f555864f0c11e32de8b320"
+      ],
+      "coordinator_preparation": "Published reviewed fullfourquestion package794a7aed; originmain exactverified. All46/exact17/fullsourcecontexts and qualifieddownloaded maps retained; noNovproductionadmission.",
       "coordinator_reviews": {
         "historical_native": "data/coordinator-native-review.json",
         "targets": "data/coordinator-target-review.json",
@@ -928,7 +930,9 @@
         "candidate_votes": 2061601,
         "state_total": 2548140,
         "scope": "Historical dispatch only; all46 retained, no current physical/reporting crosswalk approval."
-      }
+      },
+      "published_at_utc": "2026-10-18T21:18:29.321401+00:00",
+      "remote_verified": true
     },
     {
       "state": "Florida",
@@ -1308,7 +1312,7 @@
       ]
     }
   ],
-  "batch_status": "in-progress:10newstatespublished;SCintegration-review;FLfirstpairactive;22laterstatesqueued",
+  "batch_status": "in-progress:11newstatespublished;FLfirstpairactive;22laterstatesqueued",
   "coordinator_preparation_audit": {
     "status": "pass",
     "checked_at_utc": "2026-10-18T20:46:57.269813+00:00",
@@ -1328,9 +1332,9 @@
     "additional_content_checks": "Independent primary preflight scripts for NH,MN,SC,FL,NE,SD,ID retain source-specific controls; MS visual originals preserve mismatches and separate special-election stages. No question package is inferred complete."
   },
   "coordinator_next_actions": [
-    "FinishSCwholepackage review,stageonlySC+queue/dispatch,commit/pushmainandverify.",
-    "ReconcileFLfirstpair actualprimarycounty/native candidate/method fields and exact80before secondwave; atmost2activeworkers.",
-    "Continueall34 queuedstatepackages incrementally."
+    "Reconcile completeFLfirstpair officialcounty/natives/sourcefields before external acceptance andsecondwave.",
+    "Dispatch FLofficial/maps onlyon actualfinish slots, atmost2activeworkers.",
+    "Continueallremaining22queuedstates inpriorityorder andpublishincrementally; retainMI."
   ],
   "coordinator_prompt_preparation": {
     "scope": "Unlaunched future first-wave prompts only; no agent IDs or completed packages implied",
