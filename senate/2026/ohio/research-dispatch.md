@@ -4,11 +4,15 @@ Coordinator: `d0fc3534-1613-4883-b48b-21a233fcfd9e`. Shared main checkout; coord
 
 | Question | Actual Paseo agent ID | Owned paths | Status |
 | --- | --- | --- | --- |
-| Turnout | `a1ac032c-caf9-4c81-bdd2-18ed4e83a720` | `turnout.md`, `data/county-turnout.csv`, `data/turnout/` | Running |
-| Partisanship/targets | `c6985d52-505a-4f74-ba3c-c6ee389f24cd` | `county-partisanship.md`, `data/county-baselines.csv`, `data/baselines/` | Running |
-| Official results | Not yet launched | `official-results.md`, `data/official-results-sources.csv`, `data/results-sources/` | After exact priority reconciliation |
-| Precinct maps | Not yet launched | `precinct-maps.md`, `maps/` | After exact priority reconciliation |
+| Turnout | `a1ac032c-caf9-4c81-bdd2-18ed4e83a720` | `turnout.md`, `data/county-turnout.csv`, `data/turnout/` | Complete; integration pending |
+| Partisanship/targets | `c6985d52-505a-4f74-ba3c-c6ee389f24cd` | `county-partisanship.md`, `data/county-baselines.csv`, `data/baselines/` | Complete; integration pending |
+| Official results | `557ad6d5-5ec1-400c-9659-6dd81a437522` | `official-results.md`, `data/official-results-sources.csv`, `data/results-sources/` | Running after exact priority reconciliation |
+| Precinct maps | `993b040f-7ca6-4604-8c35-8e0b4aaf5780` | `precinct-maps.md`, `maps/` | Running after exact priority reconciliation |
 
 Profiles were checked: none configured. The previously discovered `codex/gpt-6.1-sol`, `full-access`, `xhigh` configuration is used. These two assignments began after both remaining Alaska workers finished; Alaska is in coordinator integration review, preserving queue launch order and the two-worker cap.
 
-Ohio has a 2026 Senate special election. Certified 2024 Senate all-candidate votes supply the primary volume ranking, with president/ballots cross-checks and 2022 Senate as recent midterm/same-seat comparison. All 88 counties remain in arithmetic; the exact 80% set is pending calculation and reconciliation. No 2020 Senate contest is invented. Coordinator newsroom/strategy drafts are preparation and require integration with the worker findings.
+Ohio has a 2026 Senate special election. Certified 2024 Senate all-candidate votes supply the primary volume ranking, with president/ballots cross-checks and 2022 Senate as recent midterm/same-seat comparison. All 88 counties remain in arithmetic; the exact 32-county 80% set has been reconciled: 4,581,738 / 5,704,620 = 80.31626997%, with the first 31 reaching only 4,542,798. The coordinator independently matched 264 county/contest totals and all 2,464 candidate cells, all 88 FIPS/order and the exact minimal threshold. Worker checks additionally matched 1,936 county fields and all 17,811 native unit identities. Final first-wave reports/QA are finishing; results/maps await free slots. No 2020 Senate contest is invented. Coordinator newsroom/strategy drafts are preparation and require integration with the worker findings.
+
+The completed partisanship question passed 60,881 worker checks. Official results launched in its freed slot after accepted reconciliation, while turnout completes final report/provenance QA. Maps will launch only when a research slot is free. Profiles were checked again (none); compact provider discovery verified the same Codex model/full-access configuration.
+
+Turnout then finished deterministic reconstruction, statewide/county/native-unit checks and provenance. Maps launched in its freed slot. Official results and maps are the only two active research workers. All four question-agent IDs above are actual Paseo children; no grandchildren.

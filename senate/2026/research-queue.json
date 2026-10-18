@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "requested_date": "2026-10-17",
-  "updated_at_utc": "2026-10-18T01:10:52.766109+00:00",
+  "updated_at_utc": "2026-10-18T01:44:16.172402+00:00",
   "scope": "35 states in the repository 2026 U.S. Senate race index",
   "coordinator_agent_id": "d0fc3534-1613-4883-b48b-21a233fcfd9e",
   "workspace_id": "wks_b290f45007010740",
@@ -205,30 +205,116 @@
       "election": "Special",
       "seat_class": "III",
       "priority": 3,
-      "status": "researching-baselines",
+      "status": "official-results-and-maps-active",
       "workers": {
         "turnout": {
           "agent_id": "a1ac032c-caf9-4c81-bdd2-18ed4e83a720",
-          "status": "running"
+          "status": "complete-awaiting-integration"
         },
         "partisanship": {
           "agent_id": "c6985d52-505a-4f74-ba3c-c6ee389f24cd",
+          "status": "complete-awaiting-integration"
+        },
+        "official_results": {
+          "agent_id": "557ad6d5-5ec1-400c-9659-6dd81a437522",
+          "status": "running"
+        },
+        "precinct_maps": {
+          "agent_id": "993b040f-7ca6-4604-8c35-8e0b4aaf5780",
           "status": "running"
         }
       },
-      "validation": null,
-      "gaps": [],
+      "validation": {
+        "scope": "pre-dispatch baselines; final first-wave QA ongoing",
+        "status": "pass",
+        "checks": "ohio/data/coordinator-baseline-reconciliation.json",
+        "partisanship": "60,881 worker checks passed; final report/evidence written; coordinator integration pending.",
+        "turnout": "Deterministic reconstruction, all 17,811 native units, 2,464 candidate cells, statewide controls, source/artifact hashes and links passed; coordinator final integration pending."
+      },
+      "gaps": [
+        "Precinct write-in allocation unavailable: 2024 Senate 640, 2024 president 2,771 and 2022 Senate 1,739; all included in county certified summaries.",
+        "Voting-method and under/over fields absent in retained source; remain blank rather than inferred from residuals.",
+        "Historical source archive returned 403; original certified workbooks recovered via Wayback with separate publisher/capture/retrieval provenance.",
+        "No validated 2026 reporting-unit or boundary crosswalk; November live source setup remains to verify."
+      ],
       "published_commits": [],
       "coordinator_preparation": "Dated newsroom captures and news/strategy drafts prepared; both actual baseline workers now active. Exact2024Senate priority set pending reconciliation.",
-      "provisional_worker_milestone": {
-        "status": "not reconciled; first wave still active",
-        "basis": "2024 Senate all seven candidates",
+      "priority_geography": {
+        "basis": "2024 Senate all seven certified candidates, including named write-ins",
+        "count": 32,
+        "votes": 4581738,
         "statewide_votes": 5704620,
-        "top15_votes": 3525320,
-        "priority_count": 32,
-        "priority_votes": 4581738,
-        "first31_votes": 4542798,
-        "source": "Turnout worker recovered certified official summary and full precinct workbooks via Wayback; native-unit reconciliation pending."
+        "share": 0.8031626997065536,
+        "county_fips": [
+          "39049",
+          "39035",
+          "39061",
+          "39153",
+          "39113",
+          "39095",
+          "39151",
+          "39017",
+          "39093",
+          "39165",
+          "39041",
+          "39085",
+          "39025",
+          "39099",
+          "39103",
+          "39155",
+          "39089",
+          "39057",
+          "39045",
+          "39133",
+          "39173",
+          "39023",
+          "39109",
+          "39139",
+          "39055",
+          "39169",
+          "39029",
+          "39003",
+          "39007",
+          "39157",
+          "39043",
+          "39119"
+        ],
+        "county_names": [
+          "Franklin",
+          "Cuyahoga",
+          "Hamilton",
+          "Summit",
+          "Montgomery",
+          "Lucas",
+          "Stark",
+          "Butler",
+          "Lorain",
+          "Warren",
+          "Delaware",
+          "Lake",
+          "Clermont",
+          "Mahoning",
+          "Medina",
+          "Trumbull",
+          "Licking",
+          "Greene",
+          "Fairfield",
+          "Portage",
+          "Wood",
+          "Clark",
+          "Miami",
+          "Richland",
+          "Geauga",
+          "Wayne",
+          "Columbiana",
+          "Allen",
+          "Ashtabula",
+          "Tuscarawas",
+          "Erie",
+          "Muskingum"
+        ],
+        "dispatch_keys": "ohio/data/turnout/priority-set.json",
+        "reconciliation": "Coordinator independently passed 264 county/contest totals, 2,464 candidate cells, all 88 FIPS/order and exact minimal threshold; worker cross-comparison additionally passed 1,936 county fields and 17,811 native unit identities. First-wave reports/QA finishing; second wave awaits free slots."
       }
     },
     {
@@ -428,7 +514,7 @@
       "validation": null,
       "gaps": [],
       "published_commits": [],
-      "coordinator_preparation": "Initial dated newsroom/authority captures in progress; no state workers launched."
+      "coordinator_preparation": "State-specific regional newsroom and strategy drafts plus bounded primary captures prepared; question agents not yet launched, no completed package claimed."
     },
     {
       "state": "Delaware",
@@ -442,7 +528,7 @@
       "validation": null,
       "gaps": [],
       "published_commits": [],
-      "coordinator_preparation": "Initial dated newsroom/authority captures in progress; no state workers launched."
+      "coordinator_preparation": "State-specific regional newsroom and strategy drafts plus bounded primary captures prepared; question agents not yet launched, no completed package claimed."
     },
     {
       "state": "Illinois",
@@ -456,7 +542,7 @@
       "validation": null,
       "gaps": [],
       "published_commits": [],
-      "coordinator_preparation": "Initial dated newsroom/authority captures in progress; no state workers launched.",
+      "coordinator_preparation": "State-specific regional newsroom and strategy drafts plus bounded primary captures prepared; question agents not yet launched, no completed package claimed.",
       "state_specific_notes": "Preserve separate election authorities and overlap: Chicago versus suburban Cook and other municipal boards in the current official jurisdiction inventory. County totals must include nonoverlapping authorities; do not add full Cook totals to Chicago again. Verify the actual jurisdiction count from primary authority rather than assuming 102 county feeds."
     },
     {
@@ -471,7 +557,7 @@
       "validation": null,
       "gaps": [],
       "published_commits": [],
-      "coordinator_preparation": "Initial dated newsroom/authority captures in progress; no state workers launched.",
+      "coordinator_preparation": "State-specific regional newsroom and strategy drafts plus bounded primary captures prepared; question agents not yet launched, no completed package claimed.",
       "state_specific_notes": "Use native towns/cities/wards/precincts, not only 14 county summaries. Reconcile all 351 municipalities and current native units to statewide totals; verify the current roster. Any county-derived table retains explicit nonoverlapping municipal aggregation."
     },
     {
