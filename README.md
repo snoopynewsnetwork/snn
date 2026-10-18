@@ -40,6 +40,14 @@ memory and is cleared on reload or when you lock editing. Keep `.dev.vars`
 private; it is excluded from Git. Local storage lives under `.wrangler/state`
 and is separate from production.
 
+The **Light**, **Dark**, and **Spooky** buttons switch the whole site's appearance.
+**Follow system** is on by default: it follows the device's light/dark setting,
+automatically uses Spooky on October 31 in the visitor's local time, and returns
+to the device setting on November 1. Choosing a theme turns off Follow system and
+saves that choice across visits; turn Follow system back on to restore automatic
+behavior. Open tabs update when the system setting or local date changes. Spooky
+animations respect the device's reduced-motion preference.
+
 ```sh
 npm run check
 npm test
@@ -50,6 +58,8 @@ The integration test runs the real local Workers runtime with isolated SQLite
 storage, checks authorization and input validation, and verifies that a note
 survives a complete runtime restart. Smoke checks create and remove a temporary
 reporting note.
+Theme tests cover system changes, saved overrides, Halloween date boundaries,
+cross-tab synchronization, and unavailable browser storage.
 
 ### Deploy
 
