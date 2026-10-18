@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "requested_date": "2026-10-17",
-  "updated_at_utc": "2026-10-18T02:20:07.211960+00:00",
+  "updated_at_utc": "2026-10-18T02:24:03.980704+00:00",
   "scope": "35 states in the repository 2026 U.S. Senate race index",
   "coordinator_agent_id": "d0fc3534-1613-4883-b48b-21a233fcfd9e",
   "workspace_id": "wks_b290f45007010740",
@@ -348,10 +348,35 @@
           "status": "running"
         }
       },
-      "validation": null,
-      "gaps": [],
+      "validation": {
+        "scope": "baseline geography and priority accepted; first-wave final work ongoing",
+        "status": "pass",
+        "checks": "maine/data/coordinator-baseline-reconciliation.json",
+        "coordinator": "2,052 native rows, 9,241 candidate cells, 26 statewide controls; 3,584 shared Senate numeric comparisons, exact 512 keys/names/source rows and 164 priority key bytes/hash. No geographic allocation. Independent coordinator cached-cell comparison also localized all archived/current 2024 disjoint changes to Alfred with unchanged ballots; other changed rows are York/state footers."
+      },
+      "gaps": [
+        "Current corrected SOS and Legislature-archived 2024 workbooks differ only at Alfred among disjoint native units; archive matches House Clerk totals. Exact differences localized; cause/publication chronology unresolved. NARA supports current named presidential totals.",
+        "2022 Governor raw T3 ND Twp county code PEN occurs in HAN section; native code and printed-section sums preserved separately; two unlabeled Cranberry Isles rows retained.",
+        "Distinct 2024 Senate512/president513, 2022 governor510 and 2020 Senate517 raw reporting rows; name matching is not a cross-year or November boundary crosswalk.",
+        "Current 2025-amended RCV first-choice denominator includes blank/overvote/excluded-candidate ballots; later continuing/exhausted counts must remain distinct.",
+        "No live collector, calibrated forecast or approved November geographic crosswalk claimed."
+      ],
       "published_commits": [],
-      "coordinator_preparation": "Both actual first-wave workers active; exact 164 native-unit preliminary priority including STATE UOCAVA awaits independent final-schema reconciliation. Current corrected SOS / House Clerk differences preserved, not forced to agree."
+      "coordinator_preparation": "Both actual first-wave workers active; exact 164 native-unit preliminary priority including STATE UOCAVA awaits independent final-schema reconciliation. Current corrected SOS / House Clerk differences preserved, not forced to agree.",
+      "priority_geography": {
+        "basis": "Corrected official 2024 Senate initial all-candidate tally; native municipal/composite units plus separate STATE UOCAVA",
+        "count": 164,
+        "votes": 658029,
+        "statewide_votes": 821072,
+        "share": 0.8014266714733909,
+        "top15_votes": 215627,
+        "previous_votes": 656778,
+        "dispatch_keys": "maine/data/turnout/priority-set.json",
+        "ordered_keys": "maine/data/turnout/priority-keys.txt",
+        "ordered_keys_sha256": "086b400b77792d763e93a5083c9ec8c92c71e44016743fc4e7f54bb2008db407",
+        "administrative_priority": "STATE UOCAVA rank 22, 6,434 votes; no county or polygon invented",
+        "reconciliation": "Independent worker OOXML extraction and coordinator cross-assignment checks passed; exact minimum threshold and crossing Pownal 1,251 verified. Second wave waits for a research slot."
+      }
     },
     {
       "state": "Texas",
