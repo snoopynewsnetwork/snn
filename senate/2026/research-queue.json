@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "requested_date": "2026-10-17",
-  "updated_at_utc": "2026-10-18T02:17:31.470105+00:00",
+  "updated_at_utc": "2026-10-18T02:20:07.211960+00:00",
   "scope": "35 states in the repository 2026 U.S. Senate race index",
   "coordinator_agent_id": "d0fc3534-1613-4883-b48b-21a233fcfd9e",
   "workspace_id": "wks_b290f45007010740",
@@ -205,7 +205,7 @@
       "election": "Special",
       "seat_class": "III",
       "priority": 3,
-      "status": "reviewed-ready-to-publish",
+      "status": "published",
       "workers": {
         "turnout": {
           "agent_id": "a1ac032c-caf9-4c81-bdd2-18ed4e83a720",
@@ -234,7 +234,7 @@
         "official_results": "89 authorities, 32 priority counties deeply inspected, 223 requests; 2,464 candidate cells/28 state controls, 510 Delaware and 2,901 Cuyahoga precinct comparisons; explicit one-vote source difference.",
         "precinct_maps": "801 HTTP hashes, 32 ZIP inventories, 60 derivative datasets, 17,811 native identities and 1,092 links; 20 counties nonempty GIS, 205 PDFs/466 pages plus two images and separately labeled Census.",
         "coordinator": "Cross-assignment complete coverage/priority order and all native fields, 3,476 artifact hashes, 15 newsroom snapshots, Tuscarawas exact raster copy, relative links and strict asset bounds; representative visual inspection.",
-        "repository": "npm run check passed; 3,657 staged paths confined to Ohio plus queue/dispatch records; whitespace passed with immutable primary captures preserved; largest object 36,883,764 bytes. Remote verification follows publication."
+        "repository": "npm run check, staged scope, whitespace and strict object-size checks passed; origin/main verified exactly at package commit f5cc934ab668470e43c634c64be1e62984e2c272."
       },
       "gaps": [
         "No genuine November production feed/IDs or measured count-release/correction cadence; current state XML/JSON/workbook are mock setup, despite JSON isElectionOfficial=true.",
@@ -246,8 +246,10 @@
         "Cuyahoga single Brown vote and generic-write-in scopes unresolved; Franklin later audit amendments distinct from selected original baseline; Wayne mislabeled local file excluded.",
         "NYT/newsroom November access, source clocks, later rule/court changes and some county access remain verification gates; no live collector or calibrated Needle implemented."
       ],
-      "published_commits": [],
-      "coordinator_preparation": "All four assignments integrated; current rules/source schemas, correction vintages, downloaded maps and newsroom/strategy findings reviewed. Ready for scoped publication while Maine first-wave workers run.",
+      "published_commits": [
+        "f5cc934ab668470e43c634c64be1e62984e2c272"
+      ],
+      "coordinator_preparation": "All four assignments and coordinator news/strategy integration reviewed and published. Maine first-wave workers active; exact native priority under coordinator reconciliation.",
       "priority_geography": {
         "basis": "2024 Senate all seven certified candidates, including named write-ins",
         "count": 32,
@@ -324,7 +326,9 @@
         ],
         "dispatch_keys": "ohio/data/turnout/priority-set.json",
         "reconciliation": "Coordinator matched all 88 FIPS/ordered ranks, 264 county/contest totals, 2,464 candidate cells and exact minimal threshold. Both independent workers also matched 1,936 county fields and all 17,811 native unit identities; final source/map coverage checks passed."
-      }
+      },
+      "published_at_utc": "2026-10-18T02:20:07.211847+00:00",
+      "remote_verified": true
     },
     {
       "state": "Maine",

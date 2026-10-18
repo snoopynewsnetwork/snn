@@ -36,8 +36,9 @@ its all-100-county package and exact 38-county map/source priority set passed
 integration review and were published in `e224131` (remote verified). Alaska's
 four-question package passed integration review, including its 41 native groups,
 28-district priority set and downloaded precinct maps, and was published in
-`9672f51` (remote verified). Ohio's first-wave geography is reconciled across all 88 counties and its exact
-32-county priority set. All four Ohio questions have finished and are in integration review.
-Maine turnout and partisanship are active; 30 subsequent stacks remain queued. Coordinator newsroom preparation is underway
+`9672f51` (remote verified). Ohio's all-88-county package and exact 32-county priority set were published in
+`f5cc934` (remote verified), including reviewed official sources, downloaded
+maps and explicit remaining access/geographic gaps. Maine turnout and
+partisanship are active; 30 subsequent stacks remain queued. Coordinator newsroom preparation is underway
 for upcoming states. Consult the queue for actual IDs, checks, gaps and published
 commit hashes. Publication is incremental; the full batch remains in progress.
