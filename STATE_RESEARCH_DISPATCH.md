@@ -33,7 +33,7 @@ in the queue, and published commit IDs as packages finish.
 
 Michigan remains complete. North Carolina's four question agents have finished;
 its all-100-county package and exact 38-county map/source priority set passed
-integration review and are ready for publication. Alaska's two baseline workers
+integration review and were published in `e224131` (remote verified). Alaska's two baseline workers
 are running. The remaining 32 state stacks are queued, with coordinator newsroom
 preparation begun for several upcoming states. Consult the queue for actual IDs,
 checks, gaps and published commit hashes. Publication is incremental; the full
