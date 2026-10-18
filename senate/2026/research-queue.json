@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "requested_date": "2026-10-17",
-  "updated_at_utc": "2026-10-18T18:30:25.611627+00:00",
+  "updated_at_utc": "2026-10-18T18:48:49.586249+00:00",
   "scope": "35 states in the repository 2026 U.S. Senate race index",
   "coordinator_agent_id": "d0fc3534-1613-4883-b48b-21a233fcfd9e",
   "workspace_id": "wks_b290f45007010740",
@@ -712,17 +712,27 @@
         },
         "partisanship": {
           "agent_id": "d272caf4-db4f-4c84-8950-c5e0fabe93e7",
-          "status": "active"
+          "status": "complete-reviewed"
         },
         "official_results": {
           "agent_id": "cbbfbe8d-c95c-44e1-9f59-593e0b6b2576",
           "status": "active"
+        },
+        "precinct_maps": {
+          "agent_id": "69ff6f43-df0d-4192-9b34-cffcede484be",
+          "status": "active"
         }
       },
-      "validation": null,
+      "validation": {
+        "status": "first-wave-pass-full-integration-pending",
+        "review": "new-hampshire/data/coordinator-native-contract-review.json",
+        "targets": "new-hampshire/data/coordinator-target-review.json",
+        "final_first_wave_assets": "new-hampshire/data/coordinator-first-wave-asset-review.json",
+        "scope": "Historical143dispatch accepted; currentclerk/source/map investigations active, no completedpublicationclaim."
+      },
       "gaps": [],
       "published_commits": [],
-      "coordinator_preparation": "Turnout actuallyfinished;143historical dispatch accepted after23roster7360record original/peer review. Partisanship completes targets/QA; official-resultsactualcbbfbe8d launched, mapswaitsforactualslot.",
+      "coordinator_preparation": "Both firstpairworkers actuallyfinished. Independent23roster7360record34880field source review,16state5120native160county20synthetic target review and335asset hashes pass. Actualsecondwave cbbfbe8d/69ff6f43 active.",
       "priority_geography": {
         "basis": "2024 official linked president_3 original; reported four printed tickets plus generic Write-Ins numeric subtotals, with all original blanks preserved.",
         "count": 143,
@@ -1136,16 +1146,17 @@
   "batch_status": "in_progress",
   "coordinator_preparation_audit": {
     "status": "pass",
-    "checked_at_utc": "2026-10-18T18:28:32.899741+00:00",
+    "checked_at_utc": "2026-10-18T18:48:49.586072+00:00",
     "scope": "Still-queued states only; retained public news/preflight responses, not completed question packages or accepted feeds",
     "states": 25,
-    "response_captures": 461,
+    "response_captures": 490,
     "http_status_counts": {
-      "200": 379,
-      "403": 77,
+      "200": 406,
+      "403": 78,
       "transport_failure": 1,
       "500": 1,
-      "404": 3
+      "404": 3,
+      "401": 1
     },
     "checks": "Unique IDs; original/stored SHA-256; exact ordered-part reconstruction where needed; raw byte counts; UTC/headers or retained transport failures; strict per-stored-object bounds and no orphan response assets.",
     "additional_content_checks": "Independent primary preflight scripts for NH,MN,SC,FL,NE,SD,ID retain source-specific controls; MS visual originals preserve mismatches and separate special-election stages. No question package is inferred complete."
