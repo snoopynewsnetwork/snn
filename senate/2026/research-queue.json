@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "requested_date": "2026-10-17",
-  "updated_at_utc": "2026-10-18T01:09:53.336703+00:00",
+  "updated_at_utc": "2026-10-18T01:10:52.766109+00:00",
   "scope": "35 states in the repository 2026 U.S. Senate race index",
   "coordinator_agent_id": "d0fc3534-1613-4883-b48b-21a233fcfd9e",
   "workspace_id": "wks_b290f45007010740",
@@ -113,7 +113,7 @@
       "election": "Regular",
       "seat_class": "II",
       "priority": 2,
-      "status": "reviewed-ready-to-publish",
+      "status": "published",
       "workers": {
         "turnout": {
           "agent_id": "e5f1a02a-c51f-47c4-a351-04785cbc0d28",
@@ -140,7 +140,8 @@
         "partisanship": "7,059 calculation checks, retained source/CVR hashes, 533 independent candidate/HD comparisons",
         "official_results": "41 groups, 1,568 unit records, 29 statewide candidate checks, 263 dependency hashes and 123 archive links",
         "precinct_maps": "7,038 checks; 28 official PDFs/256 priority physical precincts, two 402-feature GIS snapshots and 56 district/vintage extracts",
-        "coordinator": "533 candidate cells, 82 HD totals, 16 pair scenarios/656 unit targets, 861 RCV cells, three turnout scenarios/123 contributions, whole-state cross-assignment coverage, map hashes, relative links, bounds and representative visual inspection"
+        "coordinator": "533 candidate cells, 82 HD totals, 16 pair scenarios/656 unit targets, 861 RCV cells, three turnout scenarios/123 contributions, whole-state cross-assignment coverage, map hashes, relative links, bounds and representative visual inspection",
+        "repository": "npm run check passed; staged scope/whitespace/file-size checks passed; origin/main verified at package commit."
       },
       "gaps": [
         "2022 RCV scope omits 250 ballots, localized to five absent precincts plus partial Levelock; cause and later ranks unknown.",
@@ -151,8 +152,10 @@
         "Geometry self-intersections/overlaps and current-versus-baseline differences are retained; no votes allocated.",
         "NYT and some combined statistics downloads inaccessible; manual fallback documented."
       ],
-      "published_commits": [],
-      "coordinator_preparation": "All four workers and coordinator news/strategy integration reviewed. Publication checks in progress; Ohio first pair active.",
+      "published_commits": [
+        "9672f51f2a83ca10fe9a015b45555b25aba9bd3b"
+      ],
+      "coordinator_preparation": "All four question assignments and coordinator news/strategy integration reviewed and published; Ohio first pair active.",
       "priority_geography": {
         "basis": "2024 president certified all eight candidates; native HD1\u201340 plus HD99 administrative",
         "count": 28,
@@ -191,7 +194,9 @@
         ],
         "dispatch_keys": "alaska/data/turnout/priority-set.json",
         "reconciliation": "Independent reconciliation passed 533 candidate/HD cells and 82 same-election HD totals, exact ordered dispatch keys and minimal 80% crossing; no cross-year join."
-      }
+      },
+      "published_at_utc": "2026-10-18T01:10:52.765720+00:00",
+      "remote_verified": true
     },
     {
       "state": "Ohio",
