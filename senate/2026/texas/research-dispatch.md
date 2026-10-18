@@ -5,9 +5,9 @@ Coordinator: `d0fc3534-1613-4883-b48b-21a233fcfd9e`. Shared main checkout, works
 | Question | Actual Paseo agent ID | Owned paths | Status |
 | --- | --- | --- | --- |
 | Turnout | `9b1a22e8-9948-43b6-933d-bd9e99a27695` | `turnout.md`, `data/county-turnout.csv`, `data/turnout/` | Complete; coordinator integration |
-| Partisanship/targets | `2846254a-c87f-449c-ba54-5f6873adaebd` | `county-partisanship.md`, `data/county-baselines.csv`, `data/baselines/` | Active |
+| Partisanship/targets | `2846254a-c87f-449c-ba54-5f6873adaebd` | `county-partisanship.md`, `data/county-baselines.csv`, `data/baselines/` | Complete; final coordinator review |
 | Official results | `28bf26bf-fbc1-4f13-8319-fddb49eafac0` | `official-results.md`, `data/official-results-sources.csv`, `data/results-sources/` | Active after final county recheck |
-| Precinct maps | Not launched | `precinct-maps.md`, `maps/` | Awaiting reconciled exact priority geography |
+| Precinct maps | `62ee3df8-b73a-43fd-92c9-e7f42297686d` | `precinct-maps.md`, `maps/` | Active with accepted all254/exact34 contract |
 
 Profiles were checked: none configured. Compact provider discovery reconfirmed `codex/gpt-6.1-sol`, `full-access`, `xhigh`. Turnout launched after Maine maps completed; Maine official results remains active, preserving the two-worker cap.
 
@@ -34,3 +34,9 @@ keys were independently rechecked first. Partisanship and official results are
 the only active research workers. Maps awaits the next slot. Harris's oversized
 gzip is retained in exact ordered byte parts, each below the cap; derivative
 source-unit agreement does not establish geographic or 2026 approval.
+
+Partisanship completed and its asynchronous finish notification arrived. Profiles
+(none) and compact provider discovery were rechecked; actual maps worker
+`62ee3df8-b73a-43fd-92c9-e7f42297686d` launched with finish notification enabled.
+Only maps and official results are active. Both final first-wave outputs remain
+read-only to workers; coordinator reviews and publishes the completed package.
