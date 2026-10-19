@@ -1,0 +1,11 @@
+"""Direct full-original source-specific readings, not OCR residual repair."""
+from record_native_review import record
+from own_page_geometry import geometry,evidence
+
+def main():
+ gg={p:geometry('itawamba',p,628,1883,[224,440],{'Ty Pinkins':(1162,1222),'Roger F. Wicker':(1222,1280)},candidate_header_grid=True) for p in [3,4,5]}
+ record('itawamba',[(3,['American Legion','Armory','Banner-Pineville','Bounds','Cardsville','Carolina','Centerville','Clay','Courthouse','Dorsey','Evergreen'],[151,70,39,20,12,33,31,49,21,43,100],[955,421,524,155,159,225,328,694,189,575,294],None),(4,['Fairview-Pleasanton','Fawn Grove','Friendship','Friendship 1D','Friendship-4D','Friendship-5D','Greenwood','Icdc','James Creek','Kirkville','Mantachie'],[14,26,15,5,2,5,106,128,3,36,39],[120,421,124,87,95,84,278,477,178,629,590],None),(5,['Mantachie-3D','Ratliff','Ryan','Salem-Copeland','Tilden','Tremont','TOTAL']+['']*4,[13,11,33,23,55,31,1114]+[None]*4,[150,187,273,401,366,358,9337]+[None]*4,7)],page_overrides=gg);evidence('itawamba',[3,4,5])
+ gg={p:geometry('neshoba',p,632,1906,[229,447],{'Ty Pinkins':(1168,1228),'Roger F. Wicker':(1228,1284)}) for p in [2,3,4]}
+ record('neshoba',[(2,['Arlington','Burnside','Center','County Line','Deemer','Dixon','East Neshoba','Fairview','Forestdale','Fork','Fusky'],[15,205,44,16,31,137,174,44,77,12,8],[320,152,288,345,254,312,114,86,362,226,342],None),(3,['Hays','Herbert','Hope','House','Mcdonald','North Bend','Northeast\nPhiladelphia','Northwest\nPhiladelphia','Pearl River','Southeast\nPhiladelphia','Tucker - District\nThree'],[46,10,46,25,90,26,170,868,182,199,65],[267,237,251,441,832,427,1157,244,140,762,454],None),(4,['Zephyrhill','TOTAL']+['']*9,[49,2539]+[None]*9,[232,8245]+[None]*9,2)],page_overrides=gg);evidence('neshoba',[2,3,4])
+ record('tippah',[(3,['Blue Mountain','Brownfield','Chalybeate','Chapman','Dry Creek','Dumas','FALKNER','Mitchell','New Hope','North Falkner','North Ripley'],[289,7,40,35,15,31,67,11,28,38,257],[542,119,532,449,274,490,620,177,404,170,833],None),(4,['Palmer','Peoples','Pine Grove','Ripley','Shady Grove','Southwest Ripley','Spout Springs','Threeforks','Tiplersville','Walnut','TOTAL'],[33,50,6,214,3,242,6,16,97,65,1550],[381,372,218,558,131,599,178,256,181,443,7927],11)])
+if __name__=='__main__':main()

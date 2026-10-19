@@ -1,0 +1,8 @@
+"""Independent original Senate/header readings: Chickasaw, Tate, Humphreys."""
+from record_native_review import record
+
+def main():
+ record('chickasaw',[(2,['Anchor 001','Buena Vista 002','East Okolona 004','Egypt 003','North Houlka 005','North Okolona 006','Northwest Houston\n007','Pearsall 009','Pleasant Grove\nThorn 008','South Houlka 011','Southeast Houston\n010'],[120,292,506,173,153,231,479,76,52,100,222],[506,105,80,134,123,224,223,255,505,333,887],None),(3,['Sparta 012','Van Vleet 013','West Okolona 014','Woodland 015','TOTAL']+['']*6,[49,88,389,93,3023]+[None]*6,[161,183,283,119,4121]+[None]*6,5)],physical_pages=[2,3])
+ record('tate',[(2,['Arkabutla','Coldwater 3','Evansville','Flag Lake','Independence','Looxahoma','Palestine','Poagville 4','Poagville 5','Senatobia 1','Senatobia 2'],[107,635,35,18,362,269,15,121,64,601,285],[350,507,142,231,1250,528,323,719,181,1420,877],None),(3,['Senatobia 3','Senatobia 4','Sherrod','Strayhorn 2','Taylor','Thyatira','Tyro','Wyatte','TOTAL','',''],[310,188,50,27,184,56,124,47,3498,None,None],[103,668,768,371,225,251,161,150,9225,None,None],9)],physical_pages=[2,3])
+ record('humphreys',[(3,['Belzoni - 4010','Belzoni North - 1bn\n1020','Belzoni North - 2bn\n2020','Belzoni South - 3bs\n3010','Belzoni South - 5bs\n5010','Fourmile North - 1fn\n1010','Gooden Lake North -\n2gn 2030','Isola North - 2in\n2010','Lake City South - 3ls\n3030','Louise South - 5ls\n5030','Midnight South - 5ms\n5020'],[497,478,166,189,200,2,7,356,7,258,37],[202,163,10,18,13,34,44,153,67,106,47],None),(4,['Putnam South - 4ps\n4030','Silver City South -\n3ss 3020','TOTAL']+['']*8,[27,131,2355]+[None]*8,[108,110,1075]+[None]*8,3)])
+if __name__=='__main__':main()
