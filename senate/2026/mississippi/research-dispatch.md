@@ -276,3 +276,10 @@ The worker's complete1042020+70stage2018 log is preserved losslessly and verifie
 ## Greene2018 original header exception
 
 Fresh complete original PDF3 renders show Mclain in physicalc1 of both Greene stages. The frozen peer16 and later78 derivative has McLain. All132 votes/nulls, roles, source hashes/pages/physical columns/FIPS agree; six candidate-position literal labels remain explicit unequal case fields rather than whitespace aliases or geographic normalization. Original-only coordinator pages, worker transcripts and initial peer comparison are retained by hash. The baseline worker received the primary evidence for an independent reread; no old witness or count is changed. This later exception qualifies earlier all-header comparison claims, while no source chronology/current ID/native887 acceptance follows. Worker direct2018 coverage is reported20stage grids, still bounded.
+
+
+## Leflore2018 exact residual and rejected stale freeze
+
+Fresh complete coordinator original LefloreNov6 PDF2/3 renders independently confirm all18Espy source cells sum5,853, while the printed TOTAL atPDF3physical8 is5,863. Direct original readings of the other three special vectors close185/2,199/493. All four native vectors, actual printed controls, full-original raster receipts and the unallocated−10difference remain explicit. The separate regularClassI rows are excluded; no native digit is changed or residual allocated to achieve county closure. This source exception does not change the2024native887proposal or imply a current/source-geography join.
+
+The producer's rejected98views-v1 artifact is retained exactly. Coordinator verification of its pinned lossless ledger finds94actualsource objects, matching its stale counts and contradicting the98version name. It cannot satisfy98-stage coverage or predecessor continuity. The reported later98v2 is not reviewed here. A failed builder must not promote stale derivatives; original history and rejected bytes remain. Full independent historical/native-method/current-geography and887dispatch acceptance stay open.

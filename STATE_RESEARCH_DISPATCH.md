@@ -218,3 +218,6 @@ Wyoming source preparation now checks432/439/480 actual native result rows for20
 
 
 Fresh coordinator Greene2018 originals confirm literalMclain in both stage PDF3c1 headers, differing from six older peerMcLain fields. Exact earlier snapshots and the six label differences remain; all votes agree. The source evidence was sent for independent rereading without approving887/current geography. Wyoming's additional432-row2024presidential source comparison closes all23county six-field controls, with generic2,695 kept separate from named eligibility.
+
+
+Mississippi fresh original Leflore2018 special readings retain an exact unallocated10 difference:18Espy native cells sum5,853 versus printed5,863; other three source vectors close. A misnamed98v1 freeze is explicitly rejected because its actual ledger has94source objects. Later corrected versions require separate review; neither discrepancy alters the unaccepted887proposal. Tennessee preparation now checks73,764 disjoint candidate positions against all95county/PDF controls for four historical contests, including complementary named write-in blocks; no new workers or priority acceptance.
