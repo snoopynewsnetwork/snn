@@ -80,3 +80,19 @@ source selection verifies the unchanged worker locators in the election-return
 books. Nebraska official-results/maps remain the only two active researchers.
 South Dakota official-results/maps await those actual finish slots;19later states
 remain queued. No current geography, genuine counts or probability is admitted.
+
+
+## Nebraska maps finished; South Dakota official-results launched
+
+Nebraska maps `8d56ecec-bd22-4967-8fd6-1e3619446b0e` actually finished its
+frozen535-owned-entry package, all765 priorities/1,326 observations preserved.
+Its exact603 entries with qualified county/municipal resources and162 Census-
+only entries remain distinct, with no current crosswalk approved. Coordinator
+independent map review remains pending.
+
+That actual finish slot launched South Dakota official-results
+`e82a2e02-f3d9-425e-ae6f-44a7efafcee0`, after fresh Research-profile/provider
+discovery. It receives the externally accepted source-only304/691/66 contract
+and certified-membership qualification. Nebraska official-results6b84b5dd and
+South Dakota official-resultse82a2e02 are the only active researchers. South
+Dakota maps awaits an actual finish slot; no extra worker was created.
