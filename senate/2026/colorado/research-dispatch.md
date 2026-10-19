@@ -86,3 +86,24 @@ representations and18 unvalued-cell omissions explicitly retained. Its129-file
 seal leaves current geography and coordinator acceptance false. The baseline
 continues its own calculators/report/QA. This actual release launched Idaho
 officiala4924a48; those are the only two active researchers.
+
+
+## Both first-pair assignments complete; external acceptance sealed
+
+Baseline451afcad actually finished its107-owned-file package with802,638 offline
+checks and917,624 frozen reciprocal checks. The coordinator's independent source
+review passes261,529 checks and its breakpoint/source-volume/selected/live review
+1,178,902 checks over36 scenarios,1,152county and57,816native targets. Both
+producer seals pass exact membership and hashes.
+
+The external acceptance data/coordinator-priority-acceptance.json authorizes
+only the exact1,992-source-observation historical research dispatch: all3,199
+observations,64full parents,45priority parents,1,207remainder,26complete companion
+bodies and13,174full object references remain. Parent remainder arrays are
+explicit coordinator derivations from source full/priority/global remainder
+arrays, not falsely attributed original fields. No current geography, live IDs,
+counted November votes, exact remaining pool or probability is approved.
+
+The actual baseline finish launched Idaho maps9b10706d. Idaho officiala4924a48
+is the sole other active researcher. Colorado official/maps prompts are prepared
+and will launch after actual slot releases; no additional agent exists yet.
