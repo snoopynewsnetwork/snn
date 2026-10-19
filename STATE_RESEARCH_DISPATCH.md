@@ -161,3 +161,10 @@ Fresh complete Issaquena2018 originals independently show five separately ruled 
 
 
 Issaquena2018 now also has an independent original-derived two-stage native witness. All36 numeric and30 unused/null fields match the fresh coordinator original readings, with unprinted source-party/ID fields left unknown. The exact prior complete county ledger survives losslessly. Its new working version changes only the Nov6 physical column4→6 metadata plus explicit scope/history; all492 candidate/raw/page fields and the other163 county-stage readings remain unchanged. The older peer extraction ordinal4 is a qualified metadata difference, not a false claim of physical-column agreement. This bounded repair closes no whole2018 native/method, current-geography or887dispatch gate.
+
+
+## Independent twenty-five-publication historical scope
+
+Mississippi's immutable75-publication2020 witness retains1,415 native across versions,75 TOTALs,368 unused columns,4,473 numeric and1,104 null positions, plus the separately classified Harrison administrative column. Only57 selected county publications /1,142 native enter selected-82 coverage. Continuity preserves the explicit original Kemper spelling correction and its evidence rather than silently normalizing old witnesses.
+
+The independent original replay now agrees at1,452 candidate positions across25 publications /351 native across versions; its selected-82 scope is only21 publications /300 native. The earlier23-publication prose count279 is corrected to313 because both separate Jasper17-column publications had been omitted from that prose sum. Exact source rows and votes remain unchanged. Fresh coordinator full Montgomery original pages also confirm48 numeric and18 null fields, alongside the printed UnofficialRecapitulation title and Page1/2 footers. Official-index provenance and count agreement do not upgrade that source status. Native887 and all remaining historical/method/current-geography gates stay open; the same two workers continue.
