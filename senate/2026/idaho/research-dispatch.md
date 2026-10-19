@@ -168,3 +168,14 @@ slot, fresh Research-profile/provider discovery launched Idaho official-results
 Colorado baseline451afcad is the sole other actual active researcher. Idaho maps
 waits a real released slot. First-pair frozen files remain unchanged; authority
 is external and path-only in question-worker outputs.
+
+
+## Actual precinct-maps launch
+
+Colorado baseline451afcad actually finished its sealed package. In that released
+slot, fresh Research-profile/provider discovery launched Idaho maps
+`9b10706d-ee73-4779-a7b5-385cfc0013cd`. Idaho officiala4924a48 is the only
+other active researcher. Both received complete historical528/985/all44 source
+authority, immutable companion references and exact gaps; no producer flags
+changed. Colorado's first pair now separately passes coordinator review, with
+its second-wave prompts waiting actual slots.
