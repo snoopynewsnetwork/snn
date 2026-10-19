@@ -32,12 +32,13 @@ in the queue, and published commit IDs as packages finish.
 
 ## Progress
 
-**Fifteen new state packages plus retained Michigan are published.** Exact
+**Sixteen new state packages plus retained Michigan are published.** Exact
 reviewed state commits: North Carolina e2241313, Alaska9672f51f, Ohiof5cc934a,
 Mainee0fe91ed, Texas1ffe97de, Iowa47e6a682, Kansas9de81d5c, Georgia9c8ad26f,
 NewHampshire7ad7bb89, Minnesota4e4cfc92, SouthCarolina794a7aed,
 Florida4b03078e, Mississippi78c905c3, Nebraska158fc262 and
-**SouthDakota1cffd920e6f02ca23bf17924d1cd2a48a786a99b**. Each state passed
+SouthDakota1cffd920e6f02ca23bf17924d1cd2a48a786a99b and
+**Idaho744627cb01b431acdccd3d03e5c5aab07297cc1e**. Each state passed
 its independent source/native/target/map/whole-package and repository review;
 each push was remotely verified. Their source, geography and live-readiness
 qualifications remain explicit rather than converted into current approval.
@@ -48,9 +49,10 @@ membership robustness remains unproved. Its exact1,508-file state tree includes
 preservation, with all stored objects below40MB. No genuine November count
 sequence, current geographic join or calibrated probability is admitted.
 
-All four Idaho question workers have actually finished and passed independent
-source, target, official, map and whole-state review. Its complete historical
-package is prepared for scoped publication. Colorado official
+Idaho is published at744627cb01b431acdccd3d03e5c5aab07297cc1e after all four
+actual workers and independent source/target/official/map/whole-state review.
+The exact2,941-file state tree passed strict object/hash/whitespace and repository
+checks; remote main was independently verified. Colorado official
 `a3b6cf9c-a1de-47fa-b472-ce7491c1f082` and maps
 `356c1a4e-e6b9-4804-82bf-fc1ef28b5516` are the only active workers.
 Both actual launches followed released Idaho slots and fresh profile/provider
@@ -604,3 +606,19 @@ worker bytes and the source-only304 qualification remain unchanged.
 Fifteen newly researched packages plus retained Michigan are now published.
 Idaho baselines and Colorado turnout remain the two active researchers; the
 queued Idaho stage-attribution repair waits for an actual free slot.
+
+
+## Idaho reviewed publication and Colorado continuation
+
+Idaho744627cb01b431acdccd3d03e5c5aab07297cc1e is committed and pushed;
+remote main matches exactly. Its full528/985/44historical source contract,
+all source/native/admin/nullable fields and qualified current/map evidence
+remain unchanged. The whole manifest lists2,940 files excluding only itself,
+542,613,548 stored bytes, maximum28,742,444; all four producer seals pass.
+Boundary conflicts/net3, sparse2020nulls, LisaMarie46/67unknownstage, dated
+map sources and unapproved current/geographic/live joins remain explicit.
+
+Actual Colorado officiala3b6cf9c and maps356c1a4e are the only two active
+researchers. Seventeen later states remain queued; no new worker, status
+poll or premature November feed/geometry approval was created. Publication
+continues incrementally through all34 new state stacks.
