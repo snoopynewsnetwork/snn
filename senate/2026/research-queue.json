@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "requested_date": "2026-10-17",
-  "updated_at_utc": "2026-10-19T23:24:23.745026+00:00",
+  "updated_at_utc": "2026-10-19T23:36:40.262931+00:00",
   "scope": "35 states in the repository 2026 U.S. Senate race index",
   "coordinator_agent_id": "d0fc3534-1613-4883-b48b-21a233fcfd9e",
   "workspace_id": "wks_b290f45007010740",
@@ -4792,11 +4792,11 @@
       "election": "Regular",
       "seat_class": "II",
       "priority": 16,
-      "status": "official-complete-maps-active-pending-final-integration",
+      "status": "reviewed-ready-for-scoped-publication",
       "workers": {
         "turnout": {
           "agent_id": "1a2e39d9-26b7-4e1e-b465-bb0f41dbc02e",
-          "status": "complete-frozen-repaired-pending-coordinator-review",
+          "status": "complete-reviewed",
           "launched_at_utc": "2026-10-19T22:08:47.279329+00:00",
           "launch_timestamp_scope": "Coordinator record after successful actual create_agent response; not exact provider start",
           "provider": "codex/gpt-6.1-sol",
@@ -4887,7 +4887,7 @@
         },
         "partisanship": {
           "agent_id": "0eb74f9e-f473-403c-adee-715808064b55",
-          "status": "complete-frozen-pending-coordinator-review",
+          "status": "complete-reviewed",
           "launched_at_utc": "2026-10-19T22:27:27.951890+00:00",
           "launch_timestamp_scope": "Coordinator record after actual successful create_agent response, not exact provider start",
           "provider": "codex/gpt-6.1-sol",
@@ -4917,7 +4917,7 @@
         },
         "official_results": {
           "agent_id": "a4924a48-6ff5-454b-9dc6-5d4381398e7a",
-          "status": "complete-frozen-pending-coordinator-final-review",
+          "status": "complete-reviewed",
           "launched_at_utc": "2026-10-19T23:01:04.025453+00:00",
           "launch_timestamp_scope": "Coordinator record after actual successful create response, not exact provider start",
           "provider": "codex/gpt-6.1-sol",
@@ -4951,7 +4951,7 @@
         },
         "precinct_maps": {
           "agent_id": "9b10706d-ee73-4779-a7b5-385cfc0013cd",
-          "status": "active",
+          "status": "complete-reviewed",
           "launched_at_utc": "2026-10-19T23:14:28.388336+00:00",
           "launch_timestamp_scope": "Coordinator record after actual successful create response, not exact provider start",
           "provider": "codex/gpt-6.1-sol",
@@ -4972,11 +4972,19 @@
             "trailing_newline_scope": "Retained text adds final newline to transmitted full prompt"
           },
           "released_by_actual_finish": "451afcad-e3df-4c1d-b304-f195592df4fe",
-          "latest_substantive_milestone": "Cassia signedJan15,2026 map/24-row roster/39-page legal/24-record ZIP and17319XY verified; Bonner road/address documents excluded; selected Franklin full67MB atlas being losslessly split; final package pending"
+          "latest_substantive_milestone": "Cassia signedJan15,2026 map/24-row roster/39-page legal/24-record ZIP and17319XY verified; Bonner road/address documents excluded; selected Franklin full67MB atlas being losslessly split; final package pending",
+          "actual_finish_event_received": true,
+          "final_manifest": {
+            "path": "maps/manifest.json",
+            "bytes": 308729,
+            "sha256": "b47655e01297dba9922d5ef64816182ea29543e738b2f110db72e33ee42eabe2"
+          },
+          "owned_entries": 1632,
+          "complete_immutable_external_references": 204
         }
       },
       "validation": {
-        "status": "first_pair_pass_source_only_historical_acceptance",
+        "status": "pass_complete_four_question_historical_research_with_explicit_source_limits",
         "original_cell_checks": 380448,
         "independent_target_checks": 951622,
         "source_review": "idaho/data/coordinator-first-pair-original-review.json",
@@ -4984,7 +4992,7 @@
         "turnout_seal_review": "idaho/data/coordinator-turnout-final-seal-review.json",
         "baseline_sealed_asset_checks": 134,
         "turnout_sealed_owned_files": 86,
-        "second_wave_complete": false,
+        "second_wave_complete": true,
         "official_original_replay": {
           "path": "idaho/data/coordinator-official-original-review.json",
           "bytes": 58215,
@@ -4994,11 +5002,56 @@
           "complete_export_rows": 419099,
           "explicit_original_cells": 3131500,
           "scope": "Independent coordinator original/source-law replay; bounded May primary only, current joins and genuine November returns unapproved; final worker seal still pending"
+        },
+        "whole_state": "idaho/data/coordinator-validation.json",
+        "whole_state_assets": "idaho/data/coordinator-asset-manifest.json",
+        "whole_state_files_excluding_manifest": 2940,
+        "whole_state_stored_bytes": 542613548,
+        "maximum_stored_object": 28742444,
+        "repository_check": "npm run check passed:seed/build,TypeScript noEmit,public app syntax",
+        "official_final_checks": 56574833,
+        "official_original_rows": 419099,
+        "official_original_cells": 3131500,
+        "map_local_links": 4148,
+        "map_native_features": 976,
+        "map_original_XY": 749523,
+        "map_Cassia_records": 24,
+        "map_Cassia_XY": 17319,
+        "coordinator_map_invalid": 1,
+        "coordinator_map_positive_pairs": 241,
+        "whole_state_manifest_pin": {
+          "path": "idaho/data/coordinator-asset-manifest.json",
+          "bytes": 573803,
+          "sha256": "6e28aaf7d93260f1a2c6673e894b76e91e0a2923bc1734d40b676f7dea55281b"
+        },
+        "whole_state_validation_pin": {
+          "path": "idaho/data/coordinator-validation.json",
+          "bytes": 5366,
+          "sha256": "e97ea1115fb75ec51280552143a8091f3ae7489d8ce10f5e7f1892c7d4275d31"
+        },
+        "official_review_pin": {
+          "path": "idaho/data/coordinator-finished-official-review.json",
+          "bytes": 1330,
+          "sha256": "3b994820bf776332ee19e01ec7964ae1bcdf5aeb6c34830fdc2ee2c8e08b9346"
+        },
+        "map_review_pin": {
+          "path": "idaho/data/coordinator-finished-maps-review.json",
+          "bytes": 14993,
+          "sha256": "94f66ac73a31cfb063c768ff8f28066b312e8f0701ca27216ec60227ab347c2b"
         }
       },
-      "gaps": [],
+      "gaps": [
+        "Seven Boundary2024 race/statistics literal conflicts and net3ballot disagreement remain unallocated; all-zero Bingham/BONNEVILLE27 statistics-only observation stays separate.",
+        "Original2020 candidate nulls8Senate/42president and statistics nulls32/35/33/9 remain unknown despite known-sum closure; administrative/appendix objects and dated tie/ABS representations preserved.",
+        "LisaMarie2022 statisticsHTML46 versus general governor67 is unexplained publication/scope disagreement with HTML stageunknown; distinct primary22/21/6712 stays separate.",
+        "All44 current data publications are May2026 primary; public state jurisdiction does not listNovember2026. Primary UUID/native/export IDs, completion and UTC clocks are not approved November returns or joins.",
+        "TwinFallsLD24 four-choice original is bounded sample evidence, not full signed statewide/later eligible-write-in/court exhaustion; operative law/code/status/enacted sources retain distinct scopes.",
+        "976state map features differ985reporting observations/986statistics; every528priority has acquired qualified shared geography, zero approved child polygon matches. Source/vintage/CRS/finer identity and incidental-document limits preserved.",
+        "Invalid Roseberry894 and241state/34Cassia positive-area intersections are unrepaired source diagnostics, not legal overlap/gap/sliver certification. Franklin2026filename/scan vsinternal2022map dates retained.",
+        "No genuine changing November count sequence, approved current geography/choice IDs, measured publication cadence, exact remaining Senate pool, running collector, turnout forecast or calibrated probability."
+      ],
       "published_commits": [],
-      "coordinator_preparation": "Original2024sparseOOXML controls parsed bycelladdress;985prescontexts vs986stats+44footers, valid905057 vsunder/over12409. Actual2022ZIP and2020sixworkbooks/all44countyabstracts recovered; stats-onlyBingham/BONNEVILLE27 and3ballotgap retained. No acceptedpriority.",
+      "coordinator_preparation": "Allfour actual workers complete and independently reviewed. Exact frozen528/985/44 source-only historical dispatch and complete dependencies preserved; whole-state audit and repository checks pass. Scoped publication next; Colorado second pair only active.",
       "historical_native_original_preparation": {
         "status": "bounded_original_source_preparation_only",
         "path": "data/coordinator-historical-native-preflight.json",
@@ -5094,7 +5147,7 @@
         "acceptance": "senate/2026/idaho/data/coordinator-priority-acceptance.json",
         "acceptance_bytes": 1589261,
         "acceptance_sha256": "d5e03689f4f627e5bcc6bb3a35060ccc32d88d61cade7f836a117f25f50a7320",
-        "scope": "Complete historical source-native528 order over985/44 with20completecompanion bodies and3946/194historicalnative/adminobjects; no current/legal/feed/probability approval",
+        "scope": "Complete historical source-native528 order over985/44 with29completecompanions(20turnout+9baseline),3946historicalnative/194administrative objects; no current/legal/feed/probability approval",
         "priority_count": 528,
         "all_native_units": 985,
         "all_county_parents": 44,
@@ -5106,13 +5159,13 @@
           "path": "/tmp/snn-idaho-official-results-prompt.txt",
           "bytes": 8405,
           "sha256": "1eb61621e95e6cb6f69647f766f261dc13b4fbf686b3dbd759cfca4c36b5c0cd",
-          "status": "prepared_only_no_agent_yet"
+          "status": "actual-assignment-launched-and-finished-see-workers"
         },
         "precinct-maps": {
           "path": "/tmp/snn-idaho-precinct-maps-prompt.txt",
           "bytes": 7623,
           "sha256": "2a6e4e10ccd29eafc31a453bc0b63a7c18c3306c6601b4aea0fd0c5c36e875e6",
-          "status": "prepared_only_no_agent_yet"
+          "status": "actual-assignment-launched-and-finished-see-workers"
         }
       }
     },
@@ -5123,7 +5176,7 @@
       "election": "Regular",
       "seat_class": "II",
       "priority": 17,
-      "status": "historical-first-pair-accepted-official-active-maps-awaiting-slot",
+      "status": "historical-first-pair-accepted-second-wave-active",
       "workers": {
         "turnout": {
           "agent_id": "ab649b9b-13a0-445e-9af2-9b022a78404d",
@@ -5217,6 +5270,29 @@
             "sha256": "be1598d3f8adae32e904a12264d3520f528c2cf13928e9eeedde23291c01ba70"
           },
           "released_by_actual_finish": "a4924a48-6ff5-454b-9dc6-5d4381398e7a"
+        },
+        "precinct_maps": {
+          "agent_id": "356c1a4e-e6b9-4804-82bf-fc1ef28b5516",
+          "status": "active",
+          "launched_at_utc": "2026-10-19T23:30:19.265888+00:00",
+          "launch_timestamp_scope": "Coordinator record after successful actual create_agent response; not exact provider start",
+          "provider": "codex/gpt-6.1-sol",
+          "settings": {
+            "modeId": "auto-review",
+            "thinkingOptionId": "high"
+          },
+          "selected_fresh_profile": {
+            "id": "agent_profile_mvfmd7wg_u16123g52jn",
+            "name": "Research",
+            "notes": "When reading existing code, reading existing papers, or generally researching BEFORE devising a plan."
+          },
+          "notifyOnFinish": true,
+          "launch_prompt": {
+            "path": "/tmp/snn-colorado-precinct-maps-launched-prompt.txt",
+            "bytes": 7196,
+            "sha256": "f10a9ada3515d9d8bfcfb99731de3a7a3f8e4e24f6fb8d28789158fa1b7816e9"
+          },
+          "released_by_actual_finish": "9b10706d-ee73-4779-a7b5-385cfc0013cd"
         }
       },
       "validation": {
@@ -5307,7 +5383,7 @@
           "path": "/tmp/snn-colorado-precinct-maps-prompt.txt",
           "bytes": 6674,
           "sha256": "b9c9105ec49538bb28933cd76d3a325ee8df84fa0e1d6428889fba4fcb42af9a",
-          "status": "prepared_only_no_actual_agent_yet"
+          "status": "launched-as-356c1a4e-e6b9-4804-82bf-fc1ef28b5516"
         }
       },
       "coordinator_current_news_review": {
@@ -5354,6 +5430,13 @@
         "2022PDF_literal_heading_year_conflict_retained": true,
         "formal_priority_accepted": false,
         "current_geography_approved": false
+      },
+      "coordinator_current_news_review": {
+        "path": "data/news/coordinator-oct19-recheck/review.json",
+        "bytes": 231101,
+        "sha256": "4e5fd3a071fd4e8c44667bf9e1e18aa37145d28b09785c96ec5ffafc9d0128e1",
+        "immutable_complete_observations": 13,
+        "November_feed_admitted": false
       }
     },
     {
@@ -5925,7 +6008,7 @@
       ]
     }
   ],
-  "batch_status": "in-progress:15newstatespublished-plus-retainedMichigan;IDmaps-and-COofficial-only-active;17laterstatesqueued",
+  "batch_status": "in-progress:15newstatespublished-plus-retainedMichigan;IDcomplete-reviewed-ready-to-publish;COsecondpair-only-active;17laterstatesqueued",
   "coordinator_preparation_audit": {
     "status": "pass",
     "checked_at_utc": "2026-10-19T19:35:57.007950+00:00",
