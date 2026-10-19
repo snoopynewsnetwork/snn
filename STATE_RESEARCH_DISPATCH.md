@@ -258,3 +258,10 @@ West Virginia queued preparation now retains nine actual catalogued reportZIPs/c
 
 
 The Lincoln2024primary reading is now corrected after the worker's independent original reread:15,898ballots equals the printed contest totals. Coordinator verification proves exactly three panel fields changed, with all earlier generated/source bytes retained and candidate counts unchanged; no residual allocation or887approval follows. A bounded actual SOSparent-linked chart review confirms current U.S.Senateplurality guidance separately from historical special/runoff rules and full future legal review.
+
+
+## Complete historical named-source grids with explicit marks
+
+Mississippi's immutable164stage witness now retains all actual2018special/runoff named-candidate grids:3,545native observations across separate stages,164TOTAL,842unused,three administrative columns,11,126numeric/2,530unusednull and six literalX candidate positions. Original/raw/render/field/control and qualified continuity checks pass. Leflore special nativeEspy5,853versusprinted5,863 remains−10unallocated, all-vectors-close=false, and rejected stale98v1 stays excluded. Complete one-producer named-source coverage does not imply full independent replay or method/ballot/registration coverage.
+
+Fresh coordinator complete-original point review confirms RankinMullinsX/X as numericalnull, HarrisonInvalidAddresses9999explicit administrative0s in both stages, and Hinds' distinct special/runoffTOTALs with unprinted template nulls. The bounded94position review is separate from all newly added glyphs. Independent Sunflower two-stage replay passes132positions against immutable142v2. Worker-reported independent scopes now44actual2020publications/621native and43of164historicalstage grids remain distinct from larger baseline witnesses. Same two workers continue targets/printed-control review; native887v1 and current geography remain unaccepted.
