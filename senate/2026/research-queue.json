@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "requested_date": "2026-10-17",
-  "updated_at_utc": "2026-10-19T03:32:42.265347+00:00",
+  "updated_at_utc": "2026-10-19T04:04:04.422418+00:00",
   "scope": "35 states in the repository 2026 U.S. Senate race index",
   "coordinator_agent_id": "d0fc3534-1613-4883-b48b-21a233fcfd9e",
   "workspace_id": "wks_b290f45007010740",
@@ -1181,6 +1181,69 @@
         "Hinds_new_worker_presidential_unused_null_positions": 9,
         "all_prior_ten_view_ledgers_unchanged": true,
         "formal_dispatch_accepted": false
+      },
+      "independent_2020_publication_TOTAL_replay": {
+        "path": "data/coordinator-2020-publication-original-replay-review.json",
+        "bytes": 86422,
+        "sha256": "40982f7acc51c60a5550e1cdf62048629cd004c8c682eebe3de7398e9b2ab4aa",
+        "status": "pass_bounded_104_publication_312_printed_TOTALs_only",
+        "source_publications": 104,
+        "county_parents": 82,
+        "amended_alternatives": 22,
+        "candidate_fields": 312,
+        "original_visual_vectors": 54,
+        "two_PSM_original_OCR_vectors": 50,
+        "worker_corrected_TOTAL_ordinals": 10,
+        "other_locator_hints_unaccepted": 94,
+        "historical_native_complete": false,
+        "formal_dispatch_accepted": false
+      },
+      "bounded_original_allfield_snapshot_reviews": [
+        {
+          "path": "data/coordinator-allfield-25views-snapshot-review.json",
+          "bytes": 26197,
+          "sha256": "5cea1579e30ebbbe7a57625ce3b4d596e4c4f04c71d641e4d589a4db8cd9ce21",
+          "version": "25views",
+          "formal_dispatch_accepted": false
+        },
+        {
+          "path": "data/coordinator-allfield-35views-snapshot-review.json",
+          "bytes": 34779,
+          "sha256": "7c5471aa2873dd404d1b2b1e74b0c05b9bb470ab286f481a771ac4e626eea592",
+          "version": "35views",
+          "formal_dispatch_accepted": false
+        }
+      ],
+      "independent_original_presidential_replays": [
+        {
+          "path": "data/coordinator-presidential-six-source-replay-review.json",
+          "bytes": 15789,
+          "sha256": "58f7dbbf66bb4ccbc1da3c48fa47b052e8b50ba22c699f8cfc9a0ecef3ca797d",
+          "scope": "six-source",
+          "formal_dispatch_accepted": false
+        },
+        {
+          "path": "data/coordinator-presidential-batch2-replay-review.json",
+          "bytes": 14321,
+          "sha256": "518ddffd8a1a68b42f423da78217cbd8ca87714ce5227a37aaeefb05c769ea45",
+          "scope": "batch2",
+          "formal_dispatch_accepted": false
+        }
+      ],
+      "latest_bounded_allfield_coverage": {
+        "snapshot_version": "35views",
+        "source_snapshot_sha256": "3093119b93877c9403f6ea12956037622bea5c7acf2c6e44e87739cfd1c0a90f",
+        "preferred_source_views": 35,
+        "actual_source_pages": 74,
+        "preferred_native_constituents": 616,
+        "numeric_positions": 7282,
+        "unused_null_positions": 1672,
+        "remaining_preferred_views": 47,
+        "remaining_presidential_native_constituents": 1120,
+        "new_original_replay_six_source_positions": 1584,
+        "new_original_replay_batch2_positions": 1188,
+        "separate_render_qualifications_preserved": true,
+        "formal_dispatch_accepted": false
       }
     },
     {
@@ -1235,6 +1298,38 @@
         "public_CSV_native_precinct_recovery": false,
         "dispatch_accepted": false,
         "qualification": "All93 actual historical native URLs recovered after76 retained transport failures.91 complete entities native-to-county candidate sums exact. Douglas and Lancaster archive originals explicitly length-truncated at1MiB; each retains118 native headers, last candidate child incomplete. Actual county totals allmatch final canvass. Separate January all-race CSV matches final selected Senate controls; November11 statewide CSV remains lower despite1326/1326 counters. No current geography or statewide-native completeness claim."
+      },
+      "coordinator_lancaster_original_recovery": {
+        "path": "data/coordinator-lancaster-native-preflight.json",
+        "bytes": 295795,
+        "sha256": "54a532976018dbe01636ca3cd79bfb7b115c3d9de6201b07dd7680a13aef28d6",
+        "status": "pass_bounded_complete_original_with_source_method_controls",
+        "actual_PDF_pages": 1431,
+        "raw_source_bytes": 3451028,
+        "raw_source_sha256": "6a6a627c2f34d7286ef9bce0e150db83021fbd46735f2451eb1ff98c865b4bec",
+        "Senate2_native_contexts": 198,
+        "Senate6_native_contexts": 198,
+        "presidential_contexts": 199,
+        "presidential_only_observation": "New or Former Resident",
+        "presidential_only_ballots": 1,
+        "Senate_zero_invented": false,
+        "current_direct403_and_old_archive_truncation_preserved": true
+      },
+      "coordinator_actual_native_source_portfolio": {
+        "path": "data/coordinator-native-source-portfolio-preflight.json",
+        "bytes": 28912,
+        "sha256": "2d922aaf62059ef7d5598ec287ad98ca2047d8a3e30b6d583a9953700db8f1f6",
+        "status": "preparation_only_no_identity_or_dispatch_approval",
+        "county_partitions": 93,
+        "selected_Senate2_source_native_contexts": 1326,
+        "named_candidate_controls": [
+          585103,
+          349902
+        ],
+        "named_denominator": 935005,
+        "partition_sources": "91 complete state archivedHTML + complete actual DouglasBIFF + complete actual LancasterPDF",
+        "unit_ID_equivalence_join": false,
+        "formal_dispatch_accepted": false
       }
     },
     {
@@ -1563,17 +1658,17 @@
   "batch_status": "in-progress:12newstatespublished;MSfirstpairactive;21laterstatesqueued",
   "coordinator_preparation_audit": {
     "status": "pass",
-    "checked_at_utc": "2026-10-19T03:28:03.643298+00:00",
+    "checked_at_utc": "2026-10-19T04:02:18.220316+00:00",
     "scope": "Still-queued states only; retained public news/preflight responses, not completed question packages or accepted feeds",
     "states": 21,
-    "response_captures": 748,
-    "stored_objects": 678,
-    "verified_original_entities": 670,
-    "stored_bytes": 532919367,
+    "response_captures": 750,
+    "stored_objects": 680,
+    "verified_original_entities": 672,
+    "stored_bytes": 535696859,
     "retained_transport_failures": 78,
     "split_original_entities": 3,
     "http_status_counts": {
-      "200": 557,
+      "200": 559,
       "403": 93,
       "503": 3,
       "transport_failure": 78,
@@ -1583,7 +1678,7 @@
       "206": 3
     },
     "checks": "Unique IDs; original/stored SHA-256; exact ordered-part reconstruction where needed; raw byte counts; UTC/headers or retained transport failures; strict per-stored-object bounds and no orphan response assets.",
-    "additional_content_checks": "Oklahoma complete2024 plus2022regular/unexpired and2020 certification originals preserve all77 counties per contest and35568 candidate positions; scopes stay separate. Louisiana complete2024/2022/2020 public XLSX+CSV controls cover64parishes each. Montana complete2018/2020/2022/2024 workbooks verify9876 selected positions and896 independent PDF county cells. Oregon complete2020/2022 candidate abstracts verify576 county cells;2022 reconstructed from3 contiguous206 ranges,500 partials retained. Actual public Download forms additionally supplied complete2020/2022 native ZIP streams, retained once as3/4 exact gzip parts at most32M; both ZIP CRCs and72 member hashes pass, filename inventories only. No completed question packages or accepted feeds are inferred. Nebraska actual Douglas BIFF originals preserve1167 selected native contest contexts; independent historical HTML recovery verifies93 county vectors/186 cells plus895 native headers in91 complete entities, with Douglas/Lancaster archive length truncations explicitly retained. No precinct joins, completed question packages or accepted feeds follow."
+    "additional_content_checks": "Oklahoma complete2024 plus2022regular/unexpired and2020 certification originals preserve all77 counties per contest and35568 candidate positions; scopes stay separate. Louisiana complete2024/2022/2020 public XLSX+CSV controls cover64parishes each. Montana complete2018/2020/2022/2024 workbooks verify9876 selected positions and896 independent PDF county cells. Oregon complete2020/2022 candidate abstracts verify576 county cells;2022 reconstructed from3 contiguous206 ranges,500 partials retained. Actual public Download forms additionally supplied complete2020/2022 native ZIP streams, retained once as3/4 exact gzip parts at most32M; both ZIP CRCs and72 member hashes pass, filename inventories only. No completed question packages or accepted feeds are inferred. Nebraska complete actual1431-page Lancaster finalPDF archive now retains595 selected candidate/method contexts, including one presidential-only resident observation. Separate source portfolio uses91 complete archived countyHTML plus DouglasBIFF and LancasterPDF; all1326 selected two-year Senate source-native vectors close93 county controls and935005 named votes without an ID join. Source previews and method/ballot scopes preserved; no worker acceptance inferred."
   },
   "coordinator_next_actions": [
     "Independently reconcile complete Mississippi first-pair originals/native/fields/order before historical acceptance.",
