@@ -221,3 +221,6 @@ Fresh coordinator Greene2018 originals confirm literalMclain in both stage PDF3c
 
 
 Mississippi fresh original Leflore2018 special readings retain an exact unallocated10 difference:18Espy native cells sum5,853 versus printed5,863; other three source vectors close. A misnamed98v1 freeze is explicitly rejected because its actual ledger has94source objects. Later corrected versions require separate review; neither discrepancy alters the unaccepted887proposal. Tennessee preparation now checks73,764 disjoint candidate positions against all95county/PDF controls for four historical contests, including complementary named write-in blocks; no new workers or priority acceptance.
+
+
+The corrected Mississippi98views-v2 witness now verifies98actualstage grids/1,504native observations, leaving66native stage grids outside scope. Its controls explicitly keep LefloreEspy native5,853 versus printed5,863 unallocated and all-vectors-close=false. Exactly six Greene case fields are qualified against earlier snapshots; the stale misnamed98v1 remains excluded. The same two researchers continue, with no historical-method/current-geography/native887 dispatch approval.
