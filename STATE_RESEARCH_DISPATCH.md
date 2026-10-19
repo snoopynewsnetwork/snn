@@ -32,17 +32,29 @@ in the queue, and published commit IDs as packages finish.
 
 ## Progress
 
-Michigan remains complete. North Carolina's four question agents have finished;
-its all-100-county package and exact 38-county map/source priority set passed
-integration review and were published in `e224131` (remote verified). Alaska's
-four-question package passed integration review, including its 41 native groups,
-28-district priority set and downloaded precinct maps, and was published in
-`9672f51` (remote verified). Ohio's all-88-county package and exact 32-county priority set were published in
-`f5cc934` (remote verified), including reviewed official sources, downloaded
-maps and explicit remaining access/geographic gaps. Maine's four-question package, including all 512 native identities, the exact
-164-unit priority set and downloaded maps, was published in `e0fe91e` (remote
-verified) after integration and repository checks.
-Texas’s four-question package passed integration review, including all 254 counties, the exact 34-county priority and downloaded maps, and was published in `1ffe97d` (remote verified). Iowa’s all-99-county package, exact 41-county priority and downloaded maps passed complete integration and repository checks and were published in `47e6a68` (remote verified). Kansas’s all105-county package,exact23 priority and downloaded reference maps passed complete integration/repository checks and were published in `9de81d5` (remote verified). Georgia’s turnout and partisanship workers have actually finished. Its formally accepted historical scope retains all 159 counties and 2,701 native identities; the top 44 full-candidate membership is proved without allocating 858 write-ins. Georgia’s all159-county package, proved44 full-candidate priority membership and downloaded maps passed complete source, arithmetic, map-binary, whole-package and repository checks and were published in `9c8ad26f` (remote verified). New Hampshire’s all320-leaf package, exact143 historical priority and downloaded ward/municipal references passed independent original/source/target/map/whole-package and repository checks and were published in `7ad7bb89` (remote verified). Minnesota’s all87-county package, exact24 historical priority, full12,316native constituents and downloaded maps passed original/source/target/map/whole-package/repository review and were published in `4e4cfc92` (remote exact verified). South Carolina’s all46-county package, exact17 historical priority and downloaded maps passed complete original/source/target/native-byte/frozen-manifest/link/repository review and were published in `794a7aed` (remote exact verified). Florida's four-question package, all67 counties, exact22 historical priority and23,532native contexts passed full original/source/native/target/map-binary/frozen-manifest/link/repository review and was published in `4b03078e` (remote exact verified). Its current November setup and all geography/cadence/remainder/calibration gaps remain explicit. Mississippi turnout and partisanship have actually finished their reviewed frozen packages. Its historical887native-unit dispatch is accepted; all four workers finished and its complete reviewed package was published in`78c905c3`(remoteexactverified). Nebraska's four-question package, qualified named-canvass765 dispatch/all1,326/all93 parents, complete downloaded references and independent source/target/map/legal/whole-state review was published in158fc262a42eefb640fd4e67bd8133eb308d9f7a (remoteexactverified). South Dakota turnoutad252512 and partisanshipe6c0d1f7 have actually finished; independent review accepts its source-only304 historical dispatch with certified membership unproved. Nebraska maps8d56ecec has actually finished. South Dakota official-resultse82a2e02 and mapsd38ec512 are the only active researchers after actual finish-slot launches and fresh Research-profile discovery. Florida maps completed as the same actual ID on a discovered `codex/gpt-6-astra` capacity fallback after two6.1Sol failures; no extra worker was introduced. Fourteen newstate packages plus retainedMichigan are published. South Dakota's second pair is active, with19later states queued. Publication is incremental; the full34-state batch remains in progress.
+**Fifteen new state packages plus retained Michigan are published.** Exact
+reviewed state commits: North Carolina e2241313, Alaska9672f51f, Ohiof5cc934a,
+Mainee0fe91ed, Texas1ffe97de, Iowa47e6a682, Kansas9de81d5c, Georgia9c8ad26f,
+NewHampshire7ad7bb89, Minnesota4e4cfc92, SouthCarolina794a7aed,
+Florida4b03078e, Mississippi78c905c3, Nebraska158fc262 and
+**SouthDakota1cffd920e6f02ca23bf17924d1cd2a48a786a99b**. Each state passed
+its independent source/native/target/map/whole-package and repository review;
+each push was remotely verified. Their source, geography and live-readiness
+qualifications remain explicit rather than converted into current approval.
+
+South Dakota's source-only304/all691/66-parent package is complete; certified
+membership robustness remains unproved. Its exact1,508-file state tree includes
+29 county maps,134 native features,96 Census-only priorities and full source
+preservation, with all stored objects below40MB. No genuine November count
+sequence, current geographic join or calibrated probability is admitted.
+
+Idaho partisanship `0eb74f9e-f473-403c-adee-715808064b55` and Colorado
+turnout `ab649b9b-13a0-445e-9af2-9b022a78404d` are the only active researchers.
+Idaho turnout completed its resumed561,023-field reciprocal review. A subsequent
+narrow source-stage attribution correction remains queued until a real slot
+opens; no third researcher or premature528 acceptance is created. Colorado's
+independent peer awaits an actual finish slot. Seventeen later states remain
+queued. Publication continues incrementally through the full34-state batch.
 
 
 The following earlier Mississippi checkpoints retain their original pending scopes; the current accepted historical dispatch and actual second-wave IDs are recorded above and at the end.
@@ -576,3 +588,18 @@ primary-stage evidence. No source votes or required priority change follows.
 The coordinator will resume the SAME turnout ID only in a free actual slot;
 no third worker or premature Idaho acceptance is created. South Dakota's
 complete reviewed package is sealed for publication.
+
+
+## South Dakota remote publication verified
+
+Commit `1cffd920e6f02ca23bf17924d1cd2a48a786a99b` publishes the complete
+reviewed South Dakota package. The push exited0 and origin/main was independently
+read at that exact hash. All1,508 state index paths/bytes matched the whole
+manifest before commit, with only four explicit coordinator metadata extras;
+text whitespace checks passed. The whole-state manifest excludes only itself
+and pins1,507 files/415,656,843 bytes, maximum33,160,051 below40MB. Frozen
+worker bytes and the source-only304 qualification remain unchanged.
+
+Fifteen newly researched packages plus retained Michigan are now published.
+Idaho baselines and Colorado turnout remain the two active researchers; the
+queued Idaho stage-attribution repair waits for an actual free slot.
