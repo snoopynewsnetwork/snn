@@ -651,3 +651,18 @@ offline command replay pass. The complete historical1,992/all3,199/1,207/64
 scope remains unchanged; current/geographic/live approval remains false.
 The complete integrated state package is ready for explicit publication.
 Delaware turnoutf5a17f09 and partisanship4724b2aa are the only active researchers.
+
+
+## Colorado publication verified
+
+Colorado `f92a04a2696b8e54bc4dc739c3e5a69b3da3218f` is committed and pushed;
+origin/main independently matches exactly. All1,826statefiles including whole
+manifest self are tracked, every stagedblob matched its frozenSHA256 and every
+storedobject is strictly below40MB. Whole manifest lists1,825files/700,735,990B,
+maximum38,393,311B. Two exact semantic-inert frozen-script trailing blanks are
+documented without changing producer pins; all other checkedtext passes.
+
+Seventeen new state packages plus retainedMichigan are published. Delaware
+turnoutf5a17f09 and partisanship4724b2aa are the only active researchers;16later
+states remain queued. Source-native historical dispatch/current-geographic/live
+approval distinctions stay explicit. The full34state batch continues.
