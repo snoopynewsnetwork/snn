@@ -197,3 +197,8 @@ Kentucky queued preparation now verifies all120 literal county vectors for2024 p
 
 
 The later Mississippi 2018 witness now checks40 separate stage grids and480 native observations, with1,554 numeric,620 unused/null and four literalX candidate positions. Fresh complete Claiborne runoff originals show13 printed native columns, two markedX in both Senate rows. Their numerical values stay null; the other eleven numeric columns close3,095/453 without implying zeroes for marked cells. The prior28 witness reproduces exactly. Another124 stage-native grids and historical-method/current-geography/native887 gates remain open.
+
+
+The latest Mississippi2018 source witness now covers50 separate stage grids/666native observations,2,144numeric756unusednull4literalX plus one separately printed administrative column. Fresh JeffDavis runoff originalPDF3 confirms PURGEDVOTERS0/0 outside native and blank counts; the earlier40 proof remains exact. Independent Smith two-stage replay passes132source positions against its immutable peer. Another114stage-native grids and method/current-geography/native887 gates remain open.
+
+Kentucky's exact observed county-recap archive queries additionally recover complete Estill/Lyon2020 official PDFs,110,519/114,882bytes and3/2pages. Five complete original pages were visually inspected; both image-only text layers are empty and no native numeric transcript is inferred. Handwritten method/summary overlaps, blanks and zeros remain source-specific work. The full queued-source acquisition audit now verifies842 observations across21states,764 complete/error entities and772 stored references; no extra research worker or priority is admitted.
