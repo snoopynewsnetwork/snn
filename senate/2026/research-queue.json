@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "requested_date": "2026-10-17",
-  "updated_at_utc": "2026-10-19T20:45:02.686995+00:00",
+  "updated_at_utc": "2026-10-19T20:55:01.505863+00:00",
   "scope": "35 states in the repository 2026 U.S. Senate race index",
   "coordinator_agent_id": "d0fc3534-1613-4883-b48b-21a233fcfd9e",
   "workspace_id": "wks_b290f45007010740",
@@ -1037,7 +1037,7 @@
       "election": "Regular",
       "seat_class": "II",
       "priority": 13,
-      "status": "reviewed-ready-bounded-publication",
+      "status": "assets-remote-final-integration-ready",
       "workers": {
         "turnout": {
           "agent_id": "5d6e201c-4b06-46e7-9976-ae38ebf52676",
@@ -3941,8 +3941,11 @@
         "planned_raw_file_batch_budget": 750000000,
         "source": "https://docs.github.com/en/get-started/using-git/troubleshooting-the-2-gb-push-limit",
         "fullstate_integration_required_before_asset_publication": true,
-        "state_asset_publication_started": false,
-        "fullstate_integration_passed": true
+        "state_asset_publication_started": true,
+        "fullstate_integration_passed": true,
+        "asset_batches_remote_verified": 5,
+        "asset_files_remote_verified": 28526,
+        "asset_raw_bytes_remote_verified": 3482862989
       },
       "bounded_preliminary_map_original_binary_review": {
         "path": "data/coordinator-map-preliminary-originals-v1-review.json",
@@ -4009,7 +4012,19 @@
         "sha256": "d8e081c1ca356f91381c28d0d0e0d0cdae6782a9fe6339f209c13846d5d8fc32"
       },
       "all_four_reviewed": true,
-      "repository_check": "npm run check passed35race records,TypeScript,publicapp syntax"
+      "repository_check": "npm run check passed35race records,TypeScript,publicapp syntax",
+      "reviewed_asset_publication_commits": [
+        "3186f32611cd4fd36023b5017c593b7c37c5b68b",
+        "7e984a122eb0f7b23ff4d7e5012bec3762e7653d",
+        "be67b4fdbd2ff84d81b4abb327057ceec486a6df",
+        "a59e9f7b0ef6da540c10d5473ebcb2de686fa359",
+        "0fe772367c1356d1990698a75769971e021b68ce"
+      ],
+      "frozen_source_whitespace_exception": {
+        "path": "data/coordinator-frozen-whitespace-exceptions.json",
+        "source": "data/baselines/record_2018_controls.py:139",
+        "scope": "One semantic-inert trailing blank afterclosing triplequote preserved toretain exactfrozen hashes"
+      }
     },
     {
       "state": "Nebraska",
@@ -4217,6 +4232,15 @@
         "formal_dispatch_accepted": false,
         "full_field_peer_agreement_pending": true,
         "parent_FIPS_mapping_reconciliation_pending": "Madison119/McPherson117; source-directed peer correction underway"
+      },
+      "coordinator_current_news_refresh": {
+        "path": "data/news/current-results-structured-review-oct19.json",
+        "captures": 239,
+        "new_observations": 6,
+        "old233_rows_unchanged": true,
+        "WOWT_inactive_setup": "2809/60244/fivezeros",
+        "current_official_ID_admission": false,
+        "counts_admitted": false
       }
     },
     {
