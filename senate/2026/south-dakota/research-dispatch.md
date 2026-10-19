@@ -46,3 +46,19 @@ South Dakota turnout `ad252512-9d56-42ca-adf2-f81a21cbe63e` and partisanship
 All 691 published native rows and 66 certified county controls must remain, with
 the unofficial source's 194-vote gap qualified. Nebraska's second pair awaits
 reviewed acceptance and available slots; no current identity approval follows.
+
+
+## Actual South Dakota first-pair finishes; Nebraska second pair
+
+South Dakota turnout `ad252512-9d56-42ca-adf2-f81a21cbe63e` and partisanship
+`e6c0d1f7-5022-447d-9308-07988d70dad5` actually finished and froze their owned
+packages. The source-only304-unit order preserves691native/66parents and the
+unallocated194-vote public/certified gap; final coordinator review/acceptance
+remain pending. No certified native membership approval follows.
+
+In those actual finish slots, fresh Research-profile/provider discovery preceded
+Nebraska official-results `6b84b5dd-096f-45b4-a5bd-5bfa66c13dd8` and maps
+`8d56ecec-bd22-4967-8fd6-1e3619446b0e`. They are the only active researchers.
+Both receive the exact accepted765-native/all1,326/93parent historical contract
+and its eligible-write-in/current-geography qualifications. No replacement
+coordinator or extra worker was created.

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "requested_date": "2026-10-17",
-  "updated_at_utc": "2026-10-19T21:12:25.202294+00:00",
+  "updated_at_utc": "2026-10-19T21:25:42.888881+00:00",
   "scope": "35 states in the repository 2026 U.S. Senate race index",
   "coordinator_agent_id": "d0fc3534-1613-4883-b48b-21a233fcfd9e",
   "workspace_id": "wks_b290f45007010740",
@@ -4060,7 +4060,7 @@
       "election": "Regular",
       "seat_class": "II",
       "priority": 14,
-      "status": "first-pair-reviewed-second-pair-awaiting-slots",
+      "status": "second-pair-active",
       "workers": {
         "turnout": {
           "agent_id": "012d3597-6f6c-4ff1-a3d7-a488176243ba",
@@ -4116,6 +4116,58 @@
           },
           "actual_turnout_peer": "012d3597-6f6c-4ff1-a3d7-a488176243ba",
           "actual_finish_event_received": true
+        },
+        "official_results": {
+          "agent_id": "6b84b5dd-096f-45b4-a5bd-5bfa66c13dd8",
+          "status": "active",
+          "launched_at_utc": "2026-10-19T21:25:42.888881+00:00",
+          "launch_timestamp_scope": "Recovery record after successful actual create_agent return, not exact provider start time",
+          "provider": "codex/gpt-6.1-sol",
+          "settings": {
+            "modeId": "auto-review",
+            "thinkingOptionId": "high"
+          },
+          "selected_fresh_profile": {
+            "id": "agent_profile_mvfmd7wg_u16123g52jn",
+            "name": "Research",
+            "provider": "codex",
+            "model": "gpt-6.1-sol",
+            "modeId": "auto-review",
+            "thinkingOptionId": "high",
+            "notes": "When reading existing code, reading existing papers, or generally researching BEFORE devising a plan."
+          },
+          "notifyOnFinish": true,
+          "launch_prompt": {
+            "path": "/tmp/snn-nebraska-official-results-prompt.txt",
+            "bytes": 9072,
+            "sha256": "f9717f7f6c99f592ada21200851e870fe58d61da74d9160d6772598b50378e97"
+          }
+        },
+        "precinct_maps": {
+          "agent_id": "8d56ecec-bd22-4967-8fd6-1e3619446b0e",
+          "status": "active",
+          "launched_at_utc": "2026-10-19T21:25:42.888881+00:00",
+          "launch_timestamp_scope": "Recovery record after successful actual create_agent return, not exact provider start time",
+          "provider": "codex/gpt-6.1-sol",
+          "settings": {
+            "modeId": "auto-review",
+            "thinkingOptionId": "high"
+          },
+          "selected_fresh_profile": {
+            "id": "agent_profile_mvfmd7wg_u16123g52jn",
+            "name": "Research",
+            "provider": "codex",
+            "model": "gpt-6.1-sol",
+            "modeId": "auto-review",
+            "thinkingOptionId": "high",
+            "notes": "When reading existing code, reading existing papers, or generally researching BEFORE devising a plan."
+          },
+          "notifyOnFinish": true,
+          "launch_prompt": {
+            "path": "/tmp/snn-nebraska-precinct-maps-launched-prompt.txt",
+            "bytes": 11183,
+            "sha256": "18a87d029b6c6c3a241cbe136e0be855fdbf861843d1d892e0509315a1b993c7"
+          }
         }
       },
       "validation": {
@@ -4302,6 +4354,18 @@
         "all_parent_count": 93,
         "eligible_writein_membership_robustness_established": false,
         "current_geography_approved": false
+      },
+      "coordinator_map_preparation": {
+        "path": "data/coordinator-map-native-preparation-review.json",
+        "bytes": 193332,
+        "sha256": "d1aa6ebaaa419c80f16650387042b0c135b9bad2b58534a76e0b2ebdd551477b",
+        "observations": 38,
+        "complete_native_Douglas2026": 234,
+        "complete_native_Lancaster": 222,
+        "Census2020_features": 1402,
+        "Census_counties": 93,
+        "approved_reporting_geometry_matches": 0,
+        "maps_question_complete": false
       }
     },
     {
@@ -4311,11 +4375,11 @@
       "election": "Regular",
       "seat_class": "II",
       "priority": 15,
-      "status": "first-pair-active",
+      "status": "first-pair-finished-review-pending",
       "workers": {
         "turnout": {
           "agent_id": "ad252512-9d56-42ca-adf2-f81a21cbe63e",
-          "status": "active",
+          "status": "complete-frozen-pending-coordinator-review",
           "launched_at_utc": "2026-10-19T21:05:40.055253+00:00",
           "launch_timestamp_scope": "Coordinator recovery record after successful actual create_agent return; not exact provider start time",
           "provider": "codex/gpt-6.1-sol",
@@ -4337,11 +4401,12 @@
             "path": "/tmp/snn-south-dakota-turnout-prompt.txt",
             "bytes": 10319,
             "sha256": "6225c4347dbf85a2c7bc280eecfe7f477593de062bfd347645002e45ba8babec"
-          }
+          },
+          "actual_finish_event_received": true
         },
         "partisanship": {
           "agent_id": "e6c0d1f7-5022-447d-9308-07988d70dad5",
-          "status": "active",
+          "status": "complete-frozen-pending-coordinator-review",
           "launched_at_utc": "2026-10-19T21:05:40.055253+00:00",
           "launch_timestamp_scope": "Coordinator recovery record after successful actual create_agent return; not exact provider start time",
           "provider": "codex/gpt-6.1-sol",
@@ -4363,7 +4428,8 @@
             "path": "/tmp/snn-south-dakota-partisanship-launched-prompt.txt",
             "bytes": 12090,
             "sha256": "47f7b2c94bc95725f79d6afb21f9245682c152694a985597b63a6275770175e5"
-          }
+          },
+          "actual_finish_event_received": true
         }
       },
       "validation": null,
@@ -4402,6 +4468,39 @@
         "download_generation_clock_is_source_update_clock": false,
         "formal_dispatch_accepted": false,
         "current_geo_approved": false
+      },
+      "coordinator_initial_native_review": {
+        "path": "data/coordinator-initial-public-native-review.json",
+        "bytes": 98352,
+        "sha256": "3aa6b3aa241e9708f8574a5ccad2101830f3ad331f92bd48389dbd7ab430f4f4",
+        "source_native_counts": [
+          691,
+          687,
+          693
+        ],
+        "public2024_denominator": 428728,
+        "signed2024_denominator": 428922,
+        "minimum_source80": 304,
+        "preceding303": 342947,
+        "votes304": 343402,
+        "priority_parent_count": 39,
+        "certified_minimum_or_membership_robustness_proven": false,
+        "formal_dispatch_accepted": false
+      },
+      "final_first_pair_contract": {
+        "path": "data/turnout/priority-set.json",
+        "bytes": 2955655,
+        "sha256": "a1c97454c68c1f30bdb6b7755cd826326e7380318eae74b6452465ee23e9c275",
+        "formal_acceptance": false,
+        "certified_membership_robustness_established": false
+      },
+      "coordinator_current_news_recheck": {
+        "path": "data/news/coordinator-oct19-recheck/review.json",
+        "bytes": 4187,
+        "sha256": "8764f94dbe94dc6341e11a8d51c22fadf4c88dd5f9299ad411f74afaf04ae55d",
+        "separate_new_observations": 6,
+        "old35ledger_unchanged": true,
+        "current_counts_admitted": false
       }
     },
     {
