@@ -487,3 +487,18 @@ unknown eligible write-ins/current geometry remain explicit. No genuine
 November count or calibrated probability is admitted. Fourteen new state
 packages plus retainedMichigan are now published. South Dakota's actual two
 second-wave workers continue;19 later states remain queued.
+
+
+## South Dakota official-results finished; Idaho turnout launched
+
+South Dakota official-results `e82a2e02-f3d9-425e-ae6f-44a7efafcee0` actually
+finished its frozen526-owned-entry package. The source-only304 dispatch remains
+qualified; new original Lincoln and Hanson ballots are bounded publication
+samples. Current65-sheet/654-native setup omits Charles Mix and remains zero,
+with656 Senate and673 global counts distinct. Coordinator review is pending.
+
+That actual finish slot launched Idaho turnout
+`1a2e39d9-26b7-4e1e-b465-bb0f41dbc02e`, after fresh Research-profile/provider
+discovery. South Dakota maps `d38ec512-6066-448b-ab15-c0b74c50f1e7` and Idaho
+turnout are the only active researchers. Idaho partisanship awaits the next
+actual finish slot. No extra worker or current geographic approval was created.
