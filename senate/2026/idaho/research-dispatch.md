@@ -100,7 +100,7 @@ current geography or premature Idaho acceptance was created.
 
 ## Idaho reciprocal turnout finished; Colorado turnout launched
 
-Idaho turnout1a2e39d9 actually finished its resumed reciprocal phase with561,023
+Idaho turnout 1a2e39d9 actually finished its resumed reciprocal phase with561,023
 checks/81owned hashes and explicit representation differences. In that actual
 released slot, fresh Research-profile/provider inspection launched Colorado
 turnout `ab649b9b-13a0-445e-9af2-9b022a78404d`. Idaho partisanship
@@ -114,3 +114,18 @@ primary-stage evidence. No source votes or required priority change follows.
 The coordinator will resume the SAME turnout ID only in a free actual slot;
 no third worker or premature Idaho acceptance is created. South Dakota's
 complete reviewed package is sealed for publication.
+
+
+## Idaho baseline finish and narrow turnout repair
+
+Idaho partisanship 0eb74f9e actually finished: all 44 counties, complete 4,931
+source-native contest observations, 160 scenarios/63,518 unit targets and 14 fixed-
+counted examples. Its 335,650-check validation and 134 sealed-asset checks pass.
+The unexplained LisaMarie46/67 publication difference and current-source limits
+remain explicit. Coordinator independent breakpoint/selected/full-field/live
+review separately passes 951,622 checks; original-source acceptance remains open.
+
+That actual released slot resumed the SAME turnout 1a2e39d9 for only its queued
+unsupported-primary-attribution correction, with prior bytes preserved. Colorado
+turnout ab649b9b is the sole other active researcher. No third worker, finished-peer
+contact or premature acceptance was created.

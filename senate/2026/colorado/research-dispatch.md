@@ -44,3 +44,18 @@ primary-stage evidence. No source votes or required priority change follows.
 The coordinator will resume the SAME turnout ID only in a free actual slot;
 no third worker or premature Idaho acceptance is created. South Dakota's
 complete reviewed package is sealed for publication.
+
+
+## Original native milestone; peer still pending
+
+Turnout independently reconciles 3,199 presidential contexts through 64 county
+controls: source 3,192,745, top 15 39,005, minimum 80% at 1,992/2,554,233 after
+1,991/2,553,363; Summit 2081359007 contributes 870. This is provisional.
+An original OOXML finding separates Montezuma's annotated shared-string counts
+from missing plain-numeric values; no candidate priority changes. Coordinator
+will independently preserve the correction to earlier preflight interpretation.
+
+Idaho baseline has actually finished; its released slot is occupied by SAME
+Idaho turnout for a narrow attribution repair. Colorado turnout remains the sole
+other active researcher. The independent Colorado peer awaits the next real
+finish slot and will be named only after successful actual creation.
