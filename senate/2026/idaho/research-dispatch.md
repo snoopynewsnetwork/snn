@@ -78,3 +78,39 @@ researcher. Its turnout peer ended a bounded extraction/report turn with peer
 QA pending, and will resume as the SAME actual ID when original peer evidence
 is stable. The newly released maps slot is available; no extra agent was
 created merely to fill it and no pending peer gate was self-approved.
+
+
+## South Dakota complete review; Idaho reciprocal phase
+
+All four South Dakota questions pass independent original/source/target/map and
+whole-package review with the source-only304 qualification. Two invalid native
+features, seven true curves,108 positive-area pairs and96 Census-only entries
+remain unrepaired and explicit. Every frozen worker artifact is unchanged.
+The complete state package is ready for explicit staging/publication; remote
+publication is not claimed until commit/push verification.
+
+Idaho partisanship0eb74f9e sent actual originals-first stable extraction. In the
+actual released South Dakota maps slot, the coordinator resumed the SAME turnout
+agent1a2e39d9 for bounded reciprocal QA. They are the only active researchers.
+The final dispatch tie presentation is descending candidate votes then lexical
+full source-position key; six earlier peer tie-pairs remain as dated differences,
+without changing the unique528 membership or any counts. No extra worker,
+current geography or premature Idaho acceptance was created.
+
+
+## Idaho reciprocal turnout finished; Colorado turnout launched
+
+Idaho turnout1a2e39d9 actually finished its resumed reciprocal phase with561,023
+checks/81owned hashes and explicit representation differences. In that actual
+released slot, fresh Research-profile/provider inspection launched Colorado
+turnout `ab649b9b-13a0-445e-9af2-9b022a78404d`. Idaho partisanship
+`0eb74f9e-f473-403c-adee-715808064b55` remains active; these are the only two
+researchers. Colorado peer awaits another actual finish slot.
+
+A subsequent substantive Idaho baseline finding leaves one narrow turnout
+report/SCHEMA attribution repair queued: LisaMarie46 on2022statisticsHTML versus
+general-workbook67 is unexplained publication/scope disagreement, without
+primary-stage evidence. No source votes or required priority change follows.
+The coordinator will resume the SAME turnout ID only in a free actual slot;
+no third worker or premature Idaho acceptance is created. South Dakota's
+complete reviewed package is sealed for publication.
