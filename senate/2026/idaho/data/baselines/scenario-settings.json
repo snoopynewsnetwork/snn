@@ -1,0 +1,40 @@
+{
+  "volume_basis": "county all named candidate votes in declared contest; multiply each county by preference anchor county pair participation",
+  "native_mix": "2024 native rows within each county retain their 2024 all-candidate proportions; historical county volume replaces parent only. No cross-year precinct join.",
+  "settings": [
+    {
+      "id": "priority_repeat_2024",
+      "volume_contest": "2024-president",
+      "label": "priority historical repeat"
+    },
+    {
+      "id": "historical_low_2022",
+      "volume_contest": "2022-senate-III",
+      "label": "observed low volume and county mix"
+    },
+    {
+      "id": "historical_base_2020",
+      "volume_contest": "2020-senate-II",
+      "label": "observed intermediate volume and county mix"
+    },
+    {
+      "id": "historical_high_2024",
+      "volume_contest": "2024-president",
+      "label": "observed high volume and county mix"
+    }
+  ],
+  "current_opposition_anchors": "2024 Harris/Trump shares and participation transported as explicit hypothetical proxy to each named opposition/Risch pair; two other printed candidates each receive half of residual candidate volume. This split is arbitrary, not inferred.",
+  "anchor_observed_county_repeat": "additional setting uses each preference anchors own observed county all-candidate volumes",
+  "historical_preferences": [
+    "2024-president",
+    "2020-senate-II",
+    "2020-president",
+    "2022-senate-III",
+    "2022-governor",
+    "2020-Fleming-Risch",
+    "2022-Cleveland-Crapo",
+    "current-Achilles-Risch",
+    "current-Fleming-Risch",
+    "current-Loesby-Risch"
+  ]
+}

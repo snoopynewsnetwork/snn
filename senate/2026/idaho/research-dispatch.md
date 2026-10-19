@@ -202,3 +202,37 @@ rebuild products. All primary/current-source limitations remain explicit. Its
 actual released slot launched Colorado officiala3b6cf9c after fresh discovery.
 Idaho maps9b10706d is the only other active researcher; final Idaho integration
 awaits its actual finish and coordinator review.
+
+
+## All four Idaho workers actually finished
+
+Maps9b10706d actually finished its1,632-owned-entry seal with204 immutable
+external references, full528/985/44hierarchy,976 native features and qualified
+county publications. Its actual released slot launched Colorado maps356c1a4e
+after fresh discovery. Colorado officiala3b6cf9c is the only other active
+researcher. All Idaho workers are now finished; coordinator alone performs
+final independent map/source/whole-state review and publication.
+
+
+## Final independent coordinator integration review
+
+All four actual question workers are finished and independently reviewed.
+Coordinator original/source replay passes380,448 first-pair checks and951,622
+independent target checks. Official original replay checks419,099 export rows
+and3,131,500 explicit cells; final sealed validation passes56,574,833 checks
+and9 derived products reproduce byte-identically. Map seal/native/Cassia
+binary and bounded original-image review pass:976 state features,749,523
+original positions,24 Cassia records/17,319positions,500 complete acquired
+HTTP observations,150 PDFs/335 pages and exact528/985/44hierarchy.
+
+Whole-state membership, all four producer seals, Python syntax, relative links,
+strict40MB object bounds and repository build/type checks pass. One untracked
+coordinator bytecode cache was precisely pinned and removed; no worker/source
+artifact changed. The source-only528 dispatch is accepted for historical
+research. Current/legal/eligible-write-in completeness, result/geometry joins,
+genuine November returns, measured cadence, exact remaining votes and calibrated
+probability remain unapproved. The coordinator alone publishes; the durable
+root queue records the verified publication commit after the actual push.
+
+Colorado officiala3b6cf9c and maps356c1a4e are the only active researchers.
+Seventeen later states remain queued, with no extra worker or status polling.

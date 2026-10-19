@@ -117,3 +117,12 @@ on the exact accepted1,992/all3,199/64-parent complete historical contract.
 Idaho maps9b10706d remains the sole other active researcher. Colorado maps
 waits another actual released slot. No first-pair worker was restarted, and
 no current geography or live-return approval was added.
+
+
+## Actual precinct-maps launch
+
+After Idaho maps9b10706d actually finished, fresh Research-profile/provider
+discovery launched Colorado maps `356c1a4e-e6b9-4804-82bf-fc1ef28b5516`.
+Colorado official `a3b6cf9c-a1de-47fa-b472-ce7491c1f082` remains the only
+other active worker. Both work exclusively on their question paths using
+external historical authority; no first-pair producer flags changed.

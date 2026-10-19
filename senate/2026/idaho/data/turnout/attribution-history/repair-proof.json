@@ -1,0 +1,441 @@
+{
+  "status": "pass_narrow_interpretation_repair_all_election_semantics_unchanged",
+  "prior_witness": "pre-repair-witness.json",
+  "prior_archive_sha256": "1e327db11f72ce27198a0236a0960978b86a3c31604a483d46d914fed449c22f",
+  "exact_old_new_claim_changes": [
+    {
+      "path": "turnout.md",
+      "kind": "interpretation_only",
+      "old": "The same HTML also displays a **primary** write-in table (Lisa Marie46); it is not November governor's67.",
+      "new": "The same HTML’s table0, headed **Write-In Totals**, reports **Lisa Marie46**, whereas the general county/precinct governor originals print **Lisa Marie (W/I) IND67**. This is an **unexplained publication/scope disagreement**; the HTML table’s stage is unestablished. The [separately primary-linked governor write-in PDF](https://archive.sos.idaho.gov/elections/data/results/2022/Primary/WriteIn_Governor.pdf) prints Ryan Cole22, David Reilly21 and Shelby Rognstad6,712, a distinct field that does not assign a stage to Lisa Marie46. Both source vectors and all table literals remain intact, with no allocation or vote correction. [Exact scope evidence and original-body pins](data/turnout/source/2022-writein-scope-disagreement.json).",
+      "prior_sha256": "b6e00d0be2a9dd86a89e22bd705bed4bd087bd07636a4e9ddd88a72ea8a33c67",
+      "new_sha256": "b5178cc4eb0968ec6a4fa18c7cad12157860f2b5715c11711bb99f59a5f901ca",
+      "exact_unified_diff": "--- prior/turnout.md\n+++ repaired/turnout.md\n@@ -91,7 +91,7 @@\n \n Nulls remain unknown even when known sums close:2020 has **eight Senate** and **42 president candidate blanks**. Native2020 statistics have32 cutoff,35 day,33 total-registration and9 ballot nulls. Boise has three separate `90 Absentee` rows; source-position identities preserve them. Their known field sums and footers reconcile to county controls without filling zeros. Full original selected-workbook rows preserve unrelated cells/headers without deriving every unrelated contest. [Native2020 statistics checks](data/turnout/stats2020-reconciliation.json).\n \n-The 2020 county statistical controls report **878,527 ballots**, **995,087 cutoff +87,330 day =1,082,417 total registered**, rate **81.1634517935%**. The actual [2022 general statistical tables](https://voteidaho.gov/election-results/2022-election-stats/) report **599,493 ballots**, **1,003,978 cutoff +44,285 day =1,048,263 total registered**, rate **57.1891786699%**. County method controls separately report **129,210 absentee** and **61,048 early ballots**; printed dashes remain null/raw `-`, and no residual is labeled Election Day. Candidate-method allocations are unavailable. The same HTML also displays a **primary** write-in table (Lisa Marie46); it is not November governor's67. [Raw general method/stat extract](data/turnout/stats2022.json.gz), [field availability](data/turnout/source/field-availability.json), [literal method identities](data/turnout/method-label-inventory.json).\n+The 2020 county statistical controls report **878,527 ballots**, **995,087 cutoff +87,330 day =1,082,417 total registered**, rate **81.1634517935%**. The actual [2022 general statistical tables](https://voteidaho.gov/election-results/2022-election-stats/) report **599,493 ballots**, **1,003,978 cutoff +44,285 day =1,048,263 total registered**, rate **57.1891786699%**. County method controls separately report **129,210 absentee** and **61,048 early ballots**; printed dashes remain null/raw `-`, and no residual is labeled Election Day. Candidate-method allocations are unavailable. The same HTML’s table0, headed **Write-In Totals**, reports **Lisa Marie46**, whereas the general county/precinct governor originals print **Lisa Marie (W/I) IND67**. This is an **unexplained publication/scope disagreement**; the HTML table’s stage is unestablished. The [separately primary-linked governor write-in PDF](https://archive.sos.idaho.gov/elections/data/results/2022/Primary/WriteIn_Governor.pdf) prints Ryan Cole22, David Reilly21 and Shelby Rognstad6,712, a distinct field that does not assign a stage to Lisa Marie46. Both source vectors and all table literals remain intact, with no allocation or vote correction. [Exact scope evidence and original-body pins](data/turnout/source/2022-writein-scope-disagreement.json). [Raw general method/stat extract](data/turnout/stats2022.json.gz), [field availability](data/turnout/source/field-availability.json), [literal method identities](data/turnout/method-label-inventory.json).\n \n For scale only, 2022 Senate candidate volume is **65.2876006705%** of2024 presidential candidate volume; its ballots are **65.3420442544%** of2024 ballots. They measure different contests/electorates, not a2026 turnout forecast. The2020 Senate ballot-minus-candidate gap18,700 and2022 Senate gap8,603 are unexplained noncandidate residuals, not measured undervotes/blank ballots. Governor2022's corresponding gap is6,869.\n \n@@ -188,3 +188,5 @@\n Other representational differences remain explicit. Historical peer county parents use the workbook’s short county name; turnout uses the Census county/FIPS parent while retaining the same raw heading/cell. Candidate `F:<offset>` or column keys are local source locators, not globally interchangeable candidate IDs. Turnout flags the literal abbreviation ABS as a search aid at2024 row12547 and2022 Senate rows1124/1125 and governor rows1126/1127; the peer leaves these five flags unspecified. Both preserve the identical literal labels and neither treats lexical flags as an operational method partition. Turnout separately inventories statistics appendix headings2020 row1147 `Statewide` and1151 `Ada County`; the peer does not make separate statistical objects for these all-four-null headings, but retains their identical pinned original bytes. They are not extra precincts or Washington votes. The peer’s separate2020 county-workbook statewide statistics record also carries literal county=`TOTAL`, role=`state_control`; this is an administrative control label, never a45th county or Washington child. These are documented presentation/coverage differences, not normalized-away source discrepancies.\n \n The existing Twin Falls LD24 sample claim remains based only on its pinned original primary PDF and viewed first page. No peer-derived roster, current choice IDs, geometry approval or statewide/later eligible-write-in exhaustion is imported. Peer source-field reconciliation is complete at the pinned extraction snapshot; any subsequent peer calculator/report is a distinct artifact. **No coordinator acceptance is claimed.**\n+\n+The later narrow attribution review corrects only the unsupported stage assigned to HTML Lisa Marie46. The preceding561,023-field/19-group results remain true for their pinned historical peer bodies; they do not assert byte equality with the peer’s later final handoff. The [prior sealed output witness](data/turnout/attribution-history/pre-repair-witness.json) and [exact interpretation-change proof](data/turnout/attribution-history/repair-proof.json) preserve the old/new claims and unchanged election semantics. Coordinator acceptance remains pending.\n"
+    },
+    {
+      "path": "data/turnout/finalize.py",
+      "kind": "report_generator_interpretation_only",
+      "old": "The same HTML also displays a **primary** write-in table (Lisa Marie46); it is not November governor's67.",
+      "new": "The same HTML’s table0, headed **Write-In Totals**, reports **Lisa Marie46**, whereas the general county/precinct governor originals print **Lisa Marie (W/I) IND67**. This is an **unexplained publication/scope disagreement**; the HTML table’s stage is unestablished. The [separately primary-linked governor write-in PDF](https://archive.sos.idaho.gov/elections/data/results/2022/Primary/WriteIn_Governor.pdf) prints Ryan Cole22, David Reilly21 and Shelby Rognstad6,712, a distinct field that does not assign a stage to Lisa Marie46. Both source vectors and all table literals remain intact, with no allocation or vote correction. [Exact scope evidence and original-body pins](data/turnout/source/2022-writein-scope-disagreement.json).",
+      "prior_sha256": "1b37b9f5fd5e8d6249b98ae798315bcf2a2f7224dc26c9bfe9af48704d6475bb",
+      "new_sha256": "163570ae8d0b14fc9bd672379f1461c9d322a2b3b36ae0432e24a0c7ebdf56f3",
+      "exact_unified_diff": "--- prior/data/turnout/finalize.py\n+++ repaired/data/turnout/finalize.py\n@@ -91,7 +91,7 @@\n \n Nulls remain unknown even when known sums close:2020 has **eight Senate** and **42 president candidate blanks**. Native2020 statistics have32 cutoff,35 day,33 total-registration and9 ballot nulls. Boise has three separate `90 Absentee` rows; source-position identities preserve them. Their known field sums and footers reconcile to county controls without filling zeros. Full original selected-workbook rows preserve unrelated cells/headers without deriving every unrelated contest. [Native2020 statistics checks](data/turnout/stats2020-reconciliation.json).\n \n-The 2020 county statistical controls report **878,527 ballots**, **995,087 cutoff +87,330 day =1,082,417 total registered**, rate **{pct(878527,1082417)}**. The actual [2022 general statistical tables](https://voteidaho.gov/election-results/2022-election-stats/) report **599,493 ballots**, **1,003,978 cutoff +44,285 day =1,048,263 total registered**, rate **{pct(599493,1048263)}**. County method controls separately report **129,210 absentee** and **61,048 early ballots**; printed dashes remain null/raw `-`, and no residual is labeled Election Day. Candidate-method allocations are unavailable. The same HTML also displays a **primary** write-in table (Lisa Marie46); it is not November governor's67. [Raw general method/stat extract](data/turnout/stats2022.json.gz), [field availability](data/turnout/source/field-availability.json), [literal method identities](data/turnout/method-label-inventory.json).\n+The 2020 county statistical controls report **878,527 ballots**, **995,087 cutoff +87,330 day =1,082,417 total registered**, rate **{pct(878527,1082417)}**. The actual [2022 general statistical tables](https://voteidaho.gov/election-results/2022-election-stats/) report **599,493 ballots**, **1,003,978 cutoff +44,285 day =1,048,263 total registered**, rate **{pct(599493,1048263)}**. County method controls separately report **129,210 absentee** and **61,048 early ballots**; printed dashes remain null/raw `-`, and no residual is labeled Election Day. Candidate-method allocations are unavailable. The same HTML’s table0, headed **Write-In Totals**, reports **Lisa Marie46**, whereas the general county/precinct governor originals print **Lisa Marie (W/I) IND67**. This is an **unexplained publication/scope disagreement**; the HTML table’s stage is unestablished. The [separately primary-linked governor write-in PDF](https://archive.sos.idaho.gov/elections/data/results/2022/Primary/WriteIn_Governor.pdf) prints Ryan Cole22, David Reilly21 and Shelby Rognstad6,712, a distinct field that does not assign a stage to Lisa Marie46. Both source vectors and all table literals remain intact, with no allocation or vote correction. [Exact scope evidence and original-body pins](data/turnout/source/2022-writein-scope-disagreement.json). [Raw general method/stat extract](data/turnout/stats2022.json.gz), [field availability](data/turnout/source/field-availability.json), [literal method identities](data/turnout/method-label-inventory.json).\n \n For scale only, 2022 Senate candidate volume is **{pct(590890,905057)}** of2024 presidential candidate volume; its ballots are **{pct(599493,917469)}** of2024 ballots. They measure different contests/electorates, not a2026 turnout forecast. The2020 Senate ballot-minus-candidate gap18,700 and2022 Senate gap8,603 are unexplained noncandidate residuals, not measured undervotes/blank ballots. Governor2022's corresponding gap is6,869.\n \n"
+    },
+    {
+      "path": "data/turnout/source/SCHEMA.md",
+      "kind": "interpretation_only",
+      "old": "The public 2022 statistics HTML has a separate **primary** write-in table: its Lisa Marie 46 is not the general governor workbook's 67.",
+      "new": "The public2022 statistics HTML table0 is headed `Write-In Totals` and reports Lisa Marie46. Its election stage is unestablished; the difference from general governor `Lisa Marie (W/I)` IND67 remains an unexplained publication/scope disagreement. The separately primary-linked `Primary/WriteIn_Governor.pdf` instead prints Ryan Cole22, David Reilly21 and Shelby Rognstad6712. That distinct primary vector is not merged with either Lisa Marie publication. `2022-writein-scope-disagreement.json` pins the reused original bodies and complete HTML table0/general county vectors; raw labels, rows, dashes and counts are unchanged.",
+      "prior_sha256": "9367e73954d3df150585746fb85b448ef4ea66071f43c7a642abb107eb73a2ca",
+      "new_sha256": "11d60f1283ba5aeb81c63a8df5acdac620256d1cace735a6f426429c7fa40e46",
+      "exact_unified_diff": "--- prior/data/turnout/source/SCHEMA.md\n+++ repaired/data/turnout/source/SCHEMA.md\n@@ -22,7 +22,7 @@\n \n 2020 county Federal names/parties are rows 6/5, precinct Federal rows 5/4. Senate columns I–L; president B–H. Raw native `Joseph R. Biden ` includes trailing whitespace, retained in candidate positions. The explicit `.strip()` comparison to the county header is only a within-document control comparison. Native candidate blanks remain null: eight Senate cells and 42 president cells. Known sums close to county controls; this never fills the unknown cells with zero. Precinct `Amend & Stats` fields D–G are cutoff/day/total registration/ballots, H printed rate. Native stats retain 32/35/33/9 nulls respectively. Boise's three separate `90 Absentee` source rows survive by source position. No duplicate-label deduplication is applied.\n \n-2022 county Senate names/parties are rows 6/5, precinct rows 4/3, B–F. Governor county names/parties rows 7/6, precinct rows 5/4, B–G. There are 999 native contexts per selected contest and complete selected candidate cells. `Lisa Marie (W/I)` retains IND as printed. The public 2022 statistics HTML has a separate **primary** write-in table: its Lisa Marie 46 is not the general governor workbook's 67. Only explicitly headed general registration/method tables are assigned to the November comparator. A method table `-` stays null with the raw literal retained; it is not silently converted to zero. Published early total 61,048 equals the sum of numeric early entries, but does not define each dashed county's operational method. Absentee/early are county ballot controls, not candidate-method allocations. No residual is labeled Election Day without primary support.\n+2022 county Senate names/parties are rows 6/5, precinct rows 4/3, B–F. Governor county names/parties rows 7/6, precinct rows 5/4, B–G. There are 999 native contexts per selected contest and complete selected candidate cells. `Lisa Marie (W/I)` retains IND as printed. The public2022 statistics HTML table0 is headed `Write-In Totals` and reports Lisa Marie46. Its election stage is unestablished; the difference from general governor `Lisa Marie (W/I)` IND67 remains an unexplained publication/scope disagreement. The separately primary-linked `Primary/WriteIn_Governor.pdf` instead prints Ryan Cole22, David Reilly21 and Shelby Rognstad6712. That distinct primary vector is not merged with either Lisa Marie publication. `2022-writein-scope-disagreement.json` pins the reused original bodies and complete HTML table0/general county vectors; raw labels, rows, dashes and counts are unchanged. Only explicitly headed general registration/method tables are assigned to the November comparator. A method table `-` stays null with the raw literal retained; it is not silently converted to zero. Published early total 61,048 equals the sum of numeric early entries, but does not define each dashed county's operational method. Absentee/early are county ballot controls, not candidate-method allocations. No residual is labeled Election Day without primary support.\n \n ## Identities and nonadditive hierarchy\n \n@@ -47,3 +47,5 @@\n `independent-control-check.json` compares independent extraction with the coordinator's read-only preflights after extraction; this is not peer agreement. The actual independently launched peer’s shared raw fields and canonical source-position reconstruction are now checked by `compare_peer.py`; exact peer bodies and pre-peer own bodies remain in `peer-qa/`. The earlier peer literal-label tie order differs at twelve tied ranks and is retained explicitly. See `peer-qa/comparison.json`; coordinator acceptance remains pending. `validation.json` records meaningful offline checks and precise outstanding gates. `asset-manifest.json` covers every owned file, including report, county CSV and validation, except the manifest itself (self-hashing is impossible); run `--verify-assets` after manifest creation. Every owned object is strictly below40,000,000 bytes. Gzip files reconstruct their original bytes directly; no truncation/simplification/split reconstruction is used.\n \n For the bounded peer seal, run `compare_peer.py`, then `seal_peer.py` after the original build/report steps and before `validate.py`/`asset_manifest.py`/`--verify-assets`. The comparator only reads immutable peer snapshots and retained originals. `seal_peer.py` checks unchanged original data hashes against the pre-peer witness and updates report/contract QA metadata, never original values or the canonical order.\n+\n+For the narrow2022 attribution repair, `repair_attribution.py` runs after any original build/peer seal steps and before validation/manifest generation. It uses only the dated pre-repair witness and existing pinned originals. Applying this repair alone does not rerun election extraction. Earlier561023-field peer comparison and19-group validation bodies remain dated witnesses, not assertions that the peer’s later final artifacts are byte-identical. The active validation adds a separate interpretation-repair check.\n"
+    },
+    {
+      "path": "data/turnout/build.py",
+      "kind": "comment_only_no_extraction_change",
+      "old": "# 2022 public general statistics HTML tables (do not confuse primary write-in table).",
+      "new": "# 2022 statistical registration/method tables; separate Write-In Totals table0 has unexplained stage/scope (Lisa Marie46 versus general67).",
+      "prior_sha256": "26932aca3fc77c35139601bcc251a20826ebc517c6a8c569931d5399c012324f",
+      "new_sha256": "2ebe7e77b742b435bce9af3b6ba9c51f472c3e34cb1ae50ecfa48af90291f456",
+      "exact_unified_diff": "--- prior/data/turnout/build.py\n+++ repaired/data/turnout/build.py\n@@ -199,7 +199,7 @@\n    if ss[c][col]!=expected or foot!=expected:stats20_differences.append(dict(county=c,column=col,native_known_sum=ss[c][col],native_footer=foot,separate_county_control=expected))\n  gz(D/'native-2020-stats.json.gz',native20stats);gz(D/'administrative-2020-stats.json.gz',admin20stats)\n  js(D/'stats2020-reconciliation.json',dict(native_rows=len(native20stats),counties=44,null_cells_by_field={field:sum(r[field]is None for r in native20stats)for field in ['cutoff','election_day','registered','ballots']},differences=stats20_differences,duplicate_literal_labels=[dict(county=c,label=p,count=n)for(c,p),n in Counter((r['county'],r['literal_precinct'])for r in native20stats).items()if n>1],nulls_are_not_zero=True))\n- # 2022 public general statistics HTML tables (do not confuse primary write-in table).\n+ # 2022 statistical registration/method tables; separate Write-In Totals table0 has unexplained stage/scope (Lisa Marie46 versus general67).\n  t=Table();t.feed(gzip.decompress((D/'source/stats2022.gz').read_bytes()).decode());gz(D/'source/stats2022-tables.json.gz',t.tables)\n  general=next(tab for tab in t.tables if tab[0][1]=='Registered Voters at Cutoff');methods=next(tab for tab in t.tables if tab[0][1]=='Total Ballots Cast');stats22=[]\n  for ix,row in enumerate(general[1:],2):\n"
+    }
+  ],
+  "new_contract_fields_only": [
+    "source_scope_attribution_review",
+    "source_object_paths.writein2022_scope_disagreement"
+  ],
+  "all_preexisting_contract_fields_exact_equal": true,
+  "byte_identical_existing_objects": [
+    {
+      "path": "data/county-turnout.csv",
+      "bytes": 8358,
+      "sha256": "67c8110ea25b600f0b92758c92b381b4e7481b0a949783ed2b515b7c45737c8b"
+    },
+    {
+      "path": "data/turnout/acquire.py",
+      "bytes": 1139,
+      "sha256": "7f7f5c4cfea3cb6410f5d8c78cd131f4a50597b0f893bdf8fda4fefb03ffcd14"
+    },
+    {
+      "path": "data/turnout/administrative-2020-stats.json.gz",
+      "bytes": 4084,
+      "sha256": "a6340eddb33ef3401cbfd0794f91e2dc192c3909768ca1d8bf659ecc2b6c1640"
+    },
+    {
+      "path": "data/turnout/administrative-2024-stats.csv",
+      "bytes": 6344,
+      "sha256": "5bd6619a7814245923470edd7717231daacb7a8da608f1af049a994beceda501"
+    },
+    {
+      "path": "data/turnout/asset_manifest.py",
+      "bytes": 1125,
+      "sha256": "4d9921c883e528803379f952e8602024b168b43c973b8ce01d133e057c87a777"
+    },
+    {
+      "path": "data/turnout/compare_peer.py",
+      "bytes": 23349,
+      "sha256": "6ba174c4332d54b10f720ec4235375713b2fd6e7581a64593cc92281ea8abcc6"
+    },
+    {
+      "path": "data/turnout/county-candidate-2024.csv",
+      "bytes": 35947,
+      "sha256": "b6d1b626909b8d03764bb2778f50eff63b5170b2e04c628c3ebbaabc828200b2"
+    },
+    {
+      "path": "data/turnout/historical-administrative-controls.json.gz",
+      "bytes": 6276,
+      "sha256": "75d5599c1d00a8dc357f5e082f8d1bd57dfd5dac62b3607f49cba2a661166a9e"
+    },
+    {
+      "path": "data/turnout/historical-candidate-positions.json.gz",
+      "bytes": 300994,
+      "sha256": "9aaf7a1b58285bf4d117e8f9b12fa9e0d3470265b1983ffe3d8e0df54a51db16"
+    },
+    {
+      "path": "data/turnout/historical-county-candidate-controls.csv",
+      "bytes": 161478,
+      "sha256": "0cdf1a61def6c3399396e0655c6bbf04acdac014112cf2461fc4580e546ab42c"
+    },
+    {
+      "path": "data/turnout/historical-native.json.gz",
+      "bytes": 100192,
+      "sha256": "132bf258c76df716787bdb1383453abed2490f5ef1ade273f2b8d80d114d1dec"
+    },
+    {
+      "path": "data/turnout/historical-reconciliation.json",
+      "bytes": 18815,
+      "sha256": "b5252d47b00eaa7fd133f21003133c3487aa6a459689f42f71d8105ce7fb6018"
+    },
+    {
+      "path": "data/turnout/independent-control-check.json",
+      "bytes": 4664,
+      "sha256": "f387dba0cf2bb10282abf6b357e99ec01fe5b37a724b6c0ce2b324c324eda349"
+    },
+    {
+      "path": "data/turnout/literal-stats-race-comparisons.csv",
+      "bytes": 73183,
+      "sha256": "7f4deb6c23f35ac48582e79cb752e478514a7ab253a6b158535fb806c6eeef6d"
+    },
+    {
+      "path": "data/turnout/method-label-inventory.json",
+      "bytes": 139223,
+      "sha256": "2caa1be2b01f24696a8f0c82a1eca6bab00934defbec19ec9aa7d9d20aec1fa3"
+    },
+    {
+      "path": "data/turnout/native-2020-stats.json.gz",
+      "bytes": 60719,
+      "sha256": "3a3c7c4fed977673020c6ed4498924146510a822435b20753ec385782c384d5c"
+    },
+    {
+      "path": "data/turnout/native-2024-candidate-positions.csv",
+      "bytes": 2023882,
+      "sha256": "2358b5a193410783519b96ed4fd188785e73884fbe974dc69108c3e7deb045dd"
+    },
+    {
+      "path": "data/turnout/native-2024-president.csv",
+      "bytes": 194106,
+      "sha256": "fa7a79f6c6eef57748e9297050934ac2501be7e874e8f4e30c28e43097f29e22"
+    },
+    {
+      "path": "data/turnout/native-2024-stats.csv",
+      "bytes": 133536,
+      "sha256": "49a25f8ef6b69e7bfcc863cd18b3882cabdd93aab0e95e786917d7aaee806db2"
+    },
+    {
+      "path": "data/turnout/native-order.csv",
+      "bytes": 228348,
+      "sha256": "ecb54de945465b5aea34d0284aada974c4dae98ada26ea6a749ae5706536f2da"
+    },
+    {
+      "path": "data/turnout/native-rankings.json",
+      "bytes": 2033107,
+      "sha256": "63acc753818ec13ed3e8b628ff3535195349242f03c6bf7b8f9997fc0fb022bf"
+    },
+    {
+      "path": "data/turnout/pdf_checks.py",
+      "bytes": 6234,
+      "sha256": "d555387edf1e1cabd4a573c8358c2f5a892eecde54342e8d78c70b81b4f6b8f8"
+    },
+    {
+      "path": "data/turnout/peer-qa/comparison.json",
+      "bytes": 12707,
+      "sha256": "c0006d748763e10362278e9720be965d1cf7eddf180ae3530babd9300ec0892d"
+    },
+    {
+      "path": "data/turnout/peer-qa/peer-snapshot/extract.py",
+      "bytes": 14133,
+      "sha256": "4f166d15da8aecb35a0833298f90c168db49ed8d506cabd997c94aa8b15c0599"
+    },
+    {
+      "path": "data/turnout/peer-qa/peer-snapshot/independent-extraction-summary.json",
+      "bytes": 947,
+      "sha256": "25473a2457ba484c5b53318ee92a004a6661781e979918ee29ea6b07340d1e05"
+    },
+    {
+      "path": "data/turnout/peer-qa/peer-snapshot/native-priority-order.csv",
+      "bytes": 148602,
+      "sha256": "936cd6e1f479c7bdf046224630c50ecc5ade4ecddd5951e11385f618d6c38032"
+    },
+    {
+      "path": "data/turnout/peer-qa/peer-snapshot/source/2024-statistics-disagreements.json",
+      "bytes": 4572,
+      "sha256": "2e2373c5149f2d3404008be8295448010d44995db7bc056a823550e4dceba6a8"
+    },
+    {
+      "path": "data/turnout/peer-qa/peer-snapshot/source/acquisition.json",
+      "bytes": 22370,
+      "sha256": "8fe6bb8bf59b395e55ca18e4ef5858f771735b74bfa89e20dc1f438e9d5a01e4"
+    },
+    {
+      "path": "data/turnout/peer-qa/peer-snapshot/source/archive-members.json",
+      "bytes": 13172,
+      "sha256": "22251ac6f1f4303e1646e7c4b43d367213de95e0e61eea33c0bfe2cffc9b02b3"
+    },
+    {
+      "path": "data/turnout/peer-qa/peer-snapshot/source/candidate-positions.json.gz",
+      "bytes": 1210441,
+      "sha256": "02a0e9328ba0e0aee599ef0310307a5e088ee2e6eaab9fa8acb00681997e6d6e"
+    },
+    {
+      "path": "data/turnout/peer-qa/peer-snapshot/source/controls.json.gz",
+      "bytes": 69021,
+      "sha256": "03922131a14050a87243eceeb9706a37c4ad607eaaa81d0c2b7988d207285100"
+    },
+    {
+      "path": "data/turnout/peer-qa/peer-snapshot/source/historical-reconciliation.json",
+      "bytes": 83323,
+      "sha256": "436fa720f12a262ab58b07eb4bcfb3a5f3e96b6b4e85ddfff4859338b1073727"
+    },
+    {
+      "path": "data/turnout/peer-qa/peer-snapshot/source/native-units.json.gz",
+      "bytes": 432193,
+      "sha256": "597687cff76b4acd420eee1852d1a2de539e3195d9d8850909c0b6116c4bdc2a"
+    },
+    {
+      "path": "data/turnout/peer-qa/peer-snapshot/source/reused-originals.json",
+      "bytes": 11200,
+      "sha256": "ff6868b5003d28b5632b5420e2241570879d3ee7d4158502fc559c58da19807b"
+    },
+    {
+      "path": "data/turnout/peer-qa/peer-snapshot/source/statistics-positions.json.gz",
+      "bytes": 233781,
+      "sha256": "2a53be30046cf85de47df97c939b42a7d3a6b7e70684739f3637c4d7ea7c1ce0"
+    },
+    {
+      "path": "data/turnout/peer-qa/peer-snapshot-manifest.json",
+      "bytes": 3235,
+      "sha256": "cbb4bd1e3a28c1860f611428d8caa1f8f183f1054a8545272650294ccdea176f"
+    },
+    {
+      "path": "data/turnout/peer-qa/pre-peer-owned-20261019T223005Z.tar.gz",
+      "bytes": 5613304,
+      "sha256": "a6df37de992eba4a2d6c3cd0e1be3301ccd93fc6e9f55cdebc77aa53770ca39c"
+    },
+    {
+      "path": "data/turnout/peer-qa/pre-peer-witness.json",
+      "bytes": 11226,
+      "sha256": "252e54c301277cea18cc62d710001afb5fe5116bc1fe1cf7c09caebb91ae0c83"
+    },
+    {
+      "path": "data/turnout/peer-qa/source-position-map.json.gz",
+      "bytes": 51848,
+      "sha256": "0a550cd257f921a72a1f39283aec71ad9d87a7dcf27c2712d3894b7a2e0a0517"
+    },
+    {
+      "path": "data/turnout/rankings.json",
+      "bytes": 148870,
+      "sha256": "246d82860f8774b886f594f1616c3183b60b518c70359a1eb5468a00a2d02c01"
+    },
+    {
+      "path": "data/turnout/seal_peer.py",
+      "bytes": 9738,
+      "sha256": "88e55b2663a8afe06e900c2ed76b6cdee887ab8983b99487e48716d77710a19a"
+    },
+    {
+      "path": "data/turnout/source/2024-races-rows.json.gz",
+      "bytes": 2707546,
+      "sha256": "7c4605422b43ad18a6161b7ebf79fa1ef4db3849d0b22646337ead5417dbabcb"
+    },
+    {
+      "path": "data/turnout/source/2024-stats-rows.json.gz",
+      "bytes": 73929,
+      "sha256": "9cccb8adf2081dfbaaea3f193199b7a9716c202dfe7320f88302f04987977f03"
+    },
+    {
+      "path": "data/turnout/source/archive-members.json",
+      "bytes": 13172,
+      "sha256": "0127958d209b03b21494a9a8ba4a52128b87c52bd116d1246d879e6c18355f86"
+    },
+    {
+      "path": "data/turnout/source/calendar2026.gz",
+      "bytes": 151372,
+      "sha256": "a8b5304032f65e4951fb025dca8fc6b9f9966a9f1ea8141d53d2651719c58ee6"
+    },
+    {
+      "path": "data/turnout/source/calendar2026.txt",
+      "bytes": 28889,
+      "sha256": "37691148e54c1c3a940b5279a1d15879c93b50c97aeba43abffb2600ee96fc76"
+    },
+    {
+      "path": "data/turnout/source/canvass2024-page29.png",
+      "bytes": 181358,
+      "sha256": "7fc6d0982c534cc06e1849ba72f9cfd7faa3a2a5299b04819a6379c553dbd093"
+    },
+    {
+      "path": "data/turnout/source/canvass2024-page303.png",
+      "bytes": 298353,
+      "sha256": "091a9c7ebf04ff1b013dc144ccbeaaaadbe363c656a851fcb2d06c1a87a7c4e2"
+    },
+    {
+      "path": "data/turnout/source/canvass2024.txt",
+      "bytes": 1513406,
+      "sha256": "f8f8da052f86edc4d600bbe428a66d6edac2b48a55d7bd07e762d56980c34372"
+    },
+    {
+      "path": "data/turnout/source/classII.gz",
+      "bytes": 4826,
+      "sha256": "a9453056cd75de8a698886729ab5382e9de474dbbec9ebc17a2a6d5edf7319e1"
+    },
+    {
+      "path": "data/turnout/source/classIII.gz",
+      "bytes": 4721,
+      "sha256": "f82705c5d138d71cb5828418e5a715bf4ca85118269397e4330d985eb0e9143a"
+    },
+    {
+      "path": "data/turnout/source/fec-pres-2024.txt",
+      "bytes": 34913,
+      "sha256": "906ad3b6ab44bf0da023c2eca529c521fd5b017c37373b759d39bfb3f5fcac62"
+    },
+    {
+      "path": "data/turnout/source/field-availability.json",
+      "bytes": 3736,
+      "sha256": "a634885e870ed184cc861a0070c7a226a1edea4c968f783cd758165ec6c20acb"
+    },
+    {
+      "path": "data/turnout/source/fips2020.gz",
+      "bytes": 31361,
+      "sha256": "bcb240df1d84eb88c83b19f5b5c39b6905afaca0277821c206a047196a70cce8"
+    },
+    {
+      "path": "data/turnout/source/historical-workbook-rows.json.gz",
+      "bytes": 743976,
+      "sha256": "1cf5490a8b826a963419e267630a620454bf1d8135e59d6bb73f2e2114eb4a08"
+    },
+    {
+      "path": "data/turnout/source/hours-law.gz",
+      "bytes": 18325,
+      "sha256": "b17fc99b9588e64bfa54e3f996382af1b70dd6ee6c2144ce50d0fddf6ad734a6"
+    },
+    {
+      "path": "data/turnout/source/house-clerk-2024.txt",
+      "bytes": 717010,
+      "sha256": "4fa7f4e40b263e28cdb527c424ad2739ec87c0f038762eb4ad6b31a32914b7c9"
+    },
+    {
+      "path": "data/turnout/source/pdf-primary-controls.json",
+      "bytes": 1352,
+      "sha256": "2050fd495725ac11d6cd8aa5143a444a1fc28efbede358d633e110c0421688ab"
+    },
+    {
+      "path": "data/turnout/source/printed-2024-positions.json.gz",
+      "bytes": 100377,
+      "sha256": "32c4eab5913e639f63b42e2903495971bb65b69ffe629183a68500fc1b537d45"
+    },
+    {
+      "path": "data/turnout/source/requests.json",
+      "bytes": 13469,
+      "sha256": "81cfbc64e289e221028ce2423d9537b2910470bd65491b70ece4737b812b76ea"
+    },
+    {
+      "path": "data/turnout/source/results-current.gz",
+      "bytes": 41597,
+      "sha256": "676edced28f52d2fbb5f9bde9c7606669caebb475d5d7199481a420bea812491"
+    },
+    {
+      "path": "data/turnout/source/reused-national-originals.json",
+      "bytes": 1978,
+      "sha256": "0fe96eda78b99597329779f6d900913faac2fb5b41192c5d93a56e98f173aa4e"
+    },
+    {
+      "path": "data/turnout/source/reused-originals.json",
+      "bytes": 9189,
+      "sha256": "b6963d2fabc6afcd7fde4595667fb30f8b33bc33c5da6090174fd949cd764917"
+    },
+    {
+      "path": "data/turnout/source/senate-classes.gz",
+      "bytes": 4668,
+      "sha256": "9f57d476b2c460171a421194ecf80c079d33304dd74bddb52b13107f2a066f02"
+    },
+    {
+      "path": "data/turnout/source/source-observations.json",
+      "bytes": 13116,
+      "sha256": "65f9d22be8ca20292a6d3e2fd1b41891fc3eba96dcdccf56f881e0259e9754ce"
+    },
+    {
+      "path": "data/turnout/source/stats2022-tables.json.gz",
+      "bytes": 2160,
+      "sha256": "5cfb520f05e35df205f43d7b401b091c099c2427e3be994948bf457d2d6a449b"
+    },
+    {
+      "path": "data/turnout/source/stats2022.gz",
+      "bytes": 25831,
+      "sha256": "0af5d331dd111191c5f2b37dacec4105417b027e6c535d33d3d1cbd3daef07ab"
+    },
+    {
+      "path": "data/turnout/source/timezone-govinfo.gz",
+      "bytes": 164755,
+      "sha256": "49f9a13355ceed578f2a0d23556885de7550ca92f5d816e82dac47390990e5a7"
+    },
+    {
+      "path": "data/turnout/source/timezone-govinfo.txt",
+      "bytes": 10363,
+      "sha256": "9b0e21e972c9861577d7bca78933ff9bd2b24e25bfe622c1598701c68ced75ab"
+    },
+    {
+      "path": "data/turnout/source/timezone-law.gz",
+      "bytes": 3179,
+      "sha256": "2856f28509bb3e3c1d98c386777c59441321b2dc48c519d165fc467a2205d7cb"
+    },
+    {
+      "path": "data/turnout/source/winner-law.gz",
+      "bytes": 18088,
+      "sha256": "614f7580bf8f6696887bd22e62f87e8a962648bb517e4d54f82d2f2bc6ba3725"
+    },
+    {
+      "path": "data/turnout/stats2020-reconciliation.json",
+      "bytes": 335,
+      "sha256": "3b8e78f28dc967c26aeebd4ad2b42a37a2b17b45112f01038964277d074140b2"
+    },
+    {
+      "path": "data/turnout/stats2022.json.gz",
+      "bytes": 2858,
+      "sha256": "0ee0ae32ee179bd8e86fecc8cb985100527a5f8ac7b53ca2a6163048cd3ac434"
+    },
+    {
+      "path": "data/turnout/summary.json",
+      "bytes": 318237,
+      "sha256": "4056bc9c3cab10308ba01f0244d45e53b2d0b4dd5129a27881af7c936185b604"
+    }
+  ],
+  "byte_identical_existing_count": 74,
+  "unchanged_core": {
+    "named2024": 905057,
+    "native2024": 985,
+    "all44_parents": true,
+    "top15": 65391,
+    "minimum528_votes": 724515,
+    "preceding527_votes": 723753,
+    "crossing": "Osburn",
+    "crossing_votes": 762,
+    "remainder457_votes": 180542,
+    "general2022_governor_LisaMarie": 67,
+    "countyCSV_sha256": "67c8110ea25b600f0b92758c92b381b4e7481b0a949783ed2b515b7c45737c8b",
+    "nativeOrderCSV_sha256": "ecb54de945465b5aea34d0284aada974c4dae98ada26ea6a749ae5706536f2da"
+  },
+  "raw_originals_or_peer_snapshots_modified": false,
+  "existing561023_peer_field_comparison_unchanged": true,
+  "existing19_group_validation_retained_in_prior_archive": true,
+  "HTML46_stage": null,
+  "source_disagreement": "publication/scope unknown; no primary attribution",
+  "coordinator_acceptance": false
+}

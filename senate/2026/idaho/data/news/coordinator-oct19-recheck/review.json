@@ -1,0 +1,98 @@
+{
+  "status": "pass_bounded_current_sources_not_Idaho_November_count_admission",
+  "immutable_acquisition": {
+    "path": "data/news/coordinator-oct19-recheck/acquisition-complete-v1.json",
+    "bytes": 181782,
+    "sha256": "f3eb8bc5ed8e1b08492ddcd081c57f18c726136628b5848871c72db5ef77cb63"
+  },
+  "prior16_observations": {
+    "path": "data/news/manifest.json",
+    "bytes": 30714,
+    "sha256": "b9e9be64d93db5e0067f3aec849977baaf8530675b3ec36abe4e79aa56541023"
+  },
+  "prior_original_ledger_unchanged": true,
+  "new_complete_observations": 13,
+  "statuses": {
+    "ktvb-home": 200,
+    "kifi-results": 200,
+    "kmvt-results": 200,
+    "kxly-home": 200,
+    "nyt-elections": 403,
+    "sos-on-ballot": 200,
+    "sos-candidate-filing": 200,
+    "sos-general-information": 200,
+    "sos-filed-candidates": 200,
+    "ktvb-current-linked-guide": 403,
+    "kifi-election-public-js": 200,
+    "sos-filed-candidates-main-js": 200,
+    "kifi-actual-full-refresh": 200
+  },
+  "KMVT_complete_selected_objects": {
+    "selectedElection": [
+      {
+        "id": null
+      }
+    ],
+    "globalSettings": [],
+    "electionData": []
+  },
+  "KMVT_displayTestData": [
+    "true"
+  ],
+  "KIFI_actual_public_refresh": {
+    "parent": "kifi-results",
+    "constructor": "npgElection.ajaxUrl + action=npg_refresh + mode=full + actual public nonce",
+    "complete_response": {
+      "path": "data/news/coordinator-oct19-recheck/complete-kifi-returned-html.json.gz",
+      "bytes": 3768,
+      "sha256": "09a5fb4cbb91eb518ea754dd9cc07ee9172612719e2c818e68dd30bd72fa18d9"
+    },
+    "report_time_literal": "2026-08-19 09:42:35 am",
+    "source_timezone": null,
+    "all26_returned_race_names": [
+      "REP - WY US Senate",
+      "DEM - WY US Senate",
+      "DEM - WY US House District",
+      "REP- WY US House District",
+      "REP - WY Governor",
+      "REP - WY Secretary of State",
+      "REP - WY State House District 18",
+      "DEM - WY Superintendent",
+      "REP - WY Superintendent",
+      "REP  - WY Treasurer",
+      "REP - Lincoln County Assessor",
+      "REP - Lincoln County Attorney",
+      "REP - Lincoln County Commissioner",
+      "REP - Lincoln County Sheriff",
+      "REP - Lincoln County Treasurer",
+      "REP - Teton County Commissioner",
+      "DEM - Teton County Commissioner",
+      "REP -  Teton County Coroner",
+      "DEM - Teton County Coroner",
+      "Afton Town Council 4-Year",
+      "Afton Town Council 2-Year",
+      "Alpine Mayor",
+      "Alpine Town Council 4-Year",
+      "Jackson Town Council",
+      "Star Valley Ranch Mayor",
+      "Star Valley Ranch Town Council 4-Year"
+    ],
+    "configured_full_refresh_milliseconds": 60000,
+    "configured_ticker_and_featured_refresh_milliseconds": 300000,
+    "observed_publication_cadence": false,
+    "Idaho_November_2026_returns": false,
+    "supplier_not_established": true
+  },
+  "official_ballot_and_candidate_pages": {
+    "election": "2026-11-03",
+    "general_information": "https://voteidaho.gov/idaho-general-election/",
+    "filing_page": "https://voteidaho.gov/candidate-filing/",
+    "actual_public_candidate_search": "https://run.voteidaho.gov/search",
+    "full_complete_JS_bundle_retained": true,
+    "public_shell_does_not_establish_final_candidate_roster": true,
+    "primary_observed_links_only_no_private_API_or_authentication_attempt": true
+  },
+  "current_results_index_review": "Separate immutable map preparation retains fresh actual May-primary results parent; no November admission.",
+  "all_genuine_November_counts_and_cadence_approval": false,
+  "qualification": "All complete responses/errors remain source-scoped. KTVB linked guide403 and NYT403; KMVT selection null/test-enabled; KIFI public response August Wyoming primary/local races. HTTP200, a refresh timer, current filing shell and navigation are not Idaho November votes or a stable eligible-candidate/result-ID universe."
+}

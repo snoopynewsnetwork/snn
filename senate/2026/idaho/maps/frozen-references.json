@@ -1,0 +1,1026 @@
+{
+  "authority_path": "data/coordinator-priority-acceptance.json",
+  "policy": "Authority path only; every other frozen dependency is an individual complete immutable body. No optional preparation manifest/review, appendable news ledger or producer mutation required.",
+  "references": [
+    {
+      "path": "../new-hampshire/data/turnout/source/fec-pres-2024.body.gz",
+      "bytes": 308231,
+      "sha256": "bfbf41bfd28d176627050856506c5928c7c8388bb6d7a1873248681ddcfe1313"
+    },
+    {
+      "path": "../new-hampshire/data/turnout/source/fec-pres-2024.headers.txt",
+      "bytes": 2185,
+      "sha256": "be55be6f19085f1153aab9d4aaedf9713092701e7808c72e8e6b77c3abd2fb9e"
+    },
+    {
+      "path": "../new-hampshire/data/turnout/source/fec-pres-2024.json",
+      "bytes": 17827,
+      "sha256": "7120f05f775beeca9d30c16d26c065236cd526f08502b0d6a1ca94486791a20d"
+    },
+    {
+      "path": "../new-hampshire/data/turnout/source/house-clerk-2024.body.gz",
+      "bytes": 555842,
+      "sha256": "2713caa45483eca95548622e24d299a85c0c7d6f7ae3a2a8006a14e08efbef8f"
+    },
+    {
+      "path": "../new-hampshire/data/turnout/source/house-clerk-2024.headers.txt",
+      "bytes": 301,
+      "sha256": "d4848f378fb1c8d0cb2d1cdcec2b896156060be0aa8d91e89d3527f983dbf355"
+    },
+    {
+      "path": "../new-hampshire/data/turnout/source/house-clerk-2024.json",
+      "bytes": 12979,
+      "sha256": "adeb681b90f2b345b74336e8eb600def214f88b28742069f3950b1a493c7b3b1"
+    },
+    {
+      "path": "county-partisanship.md",
+      "bytes": 32504,
+      "sha256": "530c8d6d71b025e589b88264e312eae19b88d2cf678d802b1deef9c0375c73eb"
+    },
+    {
+      "path": "data/baselines/acquire.py",
+      "bytes": 2417,
+      "sha256": "e9c50356ff2ccfc781f888045cfceed797bd500cb698e6dc56df558ccf36d3f6"
+    },
+    {
+      "path": "data/baselines/acquire_references.py",
+      "bytes": 1538,
+      "sha256": "417aa007ae87834d936c2598c192fb814b6e595d1c071cffdfe849314bb3a016"
+    },
+    {
+      "path": "data/baselines/asset-manifest.json",
+      "bytes": 26348,
+      "sha256": "b6a4f79292e15df63b2ee0c34c2247de2a44d1bc49a6f6c2f7dfd24dfadcba1b"
+    },
+    {
+      "path": "data/baselines/asset_manifest.py",
+      "bytes": 2499,
+      "sha256": "317db5d4135987bff2207725aadc854fa81bc6620d0f61c473c63132338861a6"
+    },
+    {
+      "path": "data/baselines/calculate.py",
+      "bytes": 14359,
+      "sha256": "e18dcdf5b5056ea17057fcb52b625d1acf08dba1fbc83e73a46b0219a69f3462"
+    },
+    {
+      "path": "data/baselines/complete-candidate-baselines.csv.gz",
+      "bytes": 353167,
+      "sha256": "6dfcc496ab632cbf3fbbea9d245c51026cdf5184ba195b372eebc7d2c9359496"
+    },
+    {
+      "path": "data/baselines/extract.py",
+      "bytes": 14133,
+      "sha256": "4f166d15da8aecb35a0833298f90c168db49ed8d506cabd997c94aa8b15c0599"
+    },
+    {
+      "path": "data/baselines/handoff.json",
+      "bytes": 7446,
+      "sha256": "3aa6f6b13024e15fd61a24ae21e86b6f0130b2b1d4c11b9fde258584c9cb8c0c"
+    },
+    {
+      "path": "data/baselines/independent-extraction-summary.json",
+      "bytes": 947,
+      "sha256": "6a6bad2a5e53c052348ddc0958d1514437a5f37a14dc75e89384477fb77bc774"
+    },
+    {
+      "path": "data/baselines/live-synthetic-inputs.json",
+      "bytes": 7453,
+      "sha256": "b8eb919b5d39966fa2d3047876e350208e52e3ddd62058dd09fdc90b4ef1c0c8"
+    },
+    {
+      "path": "data/baselines/live-synthetic-results.json",
+      "bytes": 25673,
+      "sha256": "3922b1b906ae6c30124d0364e8742976d97efa814d0940193af4ea2500e7f94a"
+    },
+    {
+      "path": "data/baselines/live_remainder.py",
+      "bytes": 7564,
+      "sha256": "410984e1802aa0d6c81e411cf5435da575d4f0a5f21421711273e5f45089da08"
+    },
+    {
+      "path": "data/baselines/make_handoff.py",
+      "bytes": 2585,
+      "sha256": "e7ad35f4af8a7f68930bb2300d8c9feb365432aa0bbaf26b91e22dbe84d296a3"
+    },
+    {
+      "path": "data/baselines/native-baselines.csv.gz",
+      "bytes": 836460,
+      "sha256": "783c8b953c2dcd8ec9824c120d2e68b97091494fe3d0662b652c8c96b1d66477"
+    },
+    {
+      "path": "data/baselines/native-priority-order.csv",
+      "bytes": 178297,
+      "sha256": "3a08d687534aa3764bc86d811542fa3aa6de4bee00f15dbdaf6940e67dd18b18"
+    },
+    {
+      "path": "data/baselines/priority-contract.json",
+      "bytes": 361801,
+      "sha256": "612e678581e9aa463788e9d491fb70e8f8c735e72042982bef7e8242fb3ebbc9"
+    },
+    {
+      "path": "data/baselines/qa/peer-comparison.json",
+      "bytes": 9790,
+      "sha256": "3ccae10da7ab4df92fcea4d2148e197de653285ea1e9ae3cdf1613611f4ea0a4"
+    },
+    {
+      "path": "data/baselines/qa/pre-peer/extract.py",
+      "bytes": 14133,
+      "sha256": "4f166d15da8aecb35a0833298f90c168db49ed8d506cabd997c94aa8b15c0599"
+    },
+    {
+      "path": "data/baselines/qa/pre-peer/independent-extraction-summary.json",
+      "bytes": 947,
+      "sha256": "25473a2457ba484c5b53318ee92a004a6661781e979918ee29ea6b07340d1e05"
+    },
+    {
+      "path": "data/baselines/qa/pre-peer/native-priority-order.csv",
+      "bytes": 148602,
+      "sha256": "936cd6e1f479c7bdf046224630c50ecc5ade4ecddd5951e11385f618d6c38032"
+    },
+    {
+      "path": "data/baselines/qa/pre-peer/witness.json",
+      "bytes": 720,
+      "sha256": "ca9b2955f0b3dfb3baff21818a6bc1575d6ae065ec4134c8a684c751b0887893"
+    },
+    {
+      "path": "data/baselines/qa/source-position-map.json.gz",
+      "bytes": 112755,
+      "sha256": "15908f3dd9d70789297e7b52c4f02fe67fe253777b3fb05487692f946a681929"
+    },
+    {
+      "path": "data/baselines/reconcile_peer.py",
+      "bytes": 11842,
+      "sha256": "6e6094b0846fdf397fc567a6e1a6bb1c34242b62f43544caa27d3c565537f2da"
+    },
+    {
+      "path": "data/baselines/render_report.py",
+      "bytes": 29782,
+      "sha256": "5a44c389e0355ffa4df02b3b996688f1ba012ab4b400e78f0334bd9e6ce749b8"
+    },
+    {
+      "path": "data/baselines/reproduce.py",
+      "bytes": 618,
+      "sha256": "e88d6274d6d7104c6b7a917cdc86fd6fc0ef780934f50f5e3f7e8543e2fd4649"
+    },
+    {
+      "path": "data/baselines/scenario-settings.json",
+      "bytes": 1603,
+      "sha256": "34cb00157ef76348d67deaafbf84492efaa319715626a93355f3bebbaa820460"
+    },
+    {
+      "path": "data/baselines/source/2022-statistics-tables.json",
+      "bytes": 38358,
+      "sha256": "76cca796568ab16d20bdb10fff0272a47feaa69c0b0444b744217965184c7d78"
+    },
+    {
+      "path": "data/baselines/source/2022-writein-scope-disagreement.json",
+      "bytes": 4510,
+      "sha256": "4155c33a36bb8be8dd6c314dacced2bc0e67c10d393663c008185d9be86f71d5"
+    },
+    {
+      "path": "data/baselines/source/2024-canvass-text.txt.gz",
+      "bytes": 147779,
+      "sha256": "ff6f8e8f9f93c1b4cec3fb568d5b7867c3bdbbc7d2fdb528fc06de4d888e8095"
+    },
+    {
+      "path": "data/baselines/source/2024-pdf-reconciliation.json",
+      "bytes": 658957,
+      "sha256": "48d2ea53e8f1c970f0230c30fb75d06e45a5b5e0ba1da8fbf4243812170d4f39"
+    },
+    {
+      "path": "data/baselines/source/2024-statistics-disagreements.json",
+      "bytes": 4572,
+      "sha256": "2e2373c5149f2d3404008be8295448010d44995db7bc056a823550e4dceba6a8"
+    },
+    {
+      "path": "data/baselines/source/SCHEMA.md",
+      "bytes": 17578,
+      "sha256": "11b64d8975fe91298cd2c3f6b561d0f7270e409d49756d94f6ae443f5bf61785"
+    },
+    {
+      "path": "data/baselines/source/acquisition.json",
+      "bytes": 22370,
+      "sha256": "8fe6bb8bf59b395e55ca18e4ef5858f771735b74bfa89e20dc1f438e9d5a01e4"
+    },
+    {
+      "path": "data/baselines/source/additional-reused-originals.json",
+      "bytes": 11789,
+      "sha256": "267e4df7d24b812f21b708032ef146e47039b7d014d95bfe63c670954a73e37e"
+    },
+    {
+      "path": "data/baselines/source/archive-members.json",
+      "bytes": 13172,
+      "sha256": "22251ac6f1f4303e1646e7c4b43d367213de95e0e61eea33c0bfe2cffc9b02b3"
+    },
+    {
+      "path": "data/baselines/source/ballot-independent-review.json",
+      "bytes": 21289,
+      "sha256": "24a2e9a84f78126740df55a6aaff3954691ac452aac595a9afeb385cb57798dc"
+    },
+    {
+      "path": "data/baselines/source/ballot-page1.png",
+      "bytes": 283794,
+      "sha256": "ebf732a0e5403088471e50cab7a84825709689ecde7de2c30bdcec7428122a43"
+    },
+    {
+      "path": "data/baselines/source/candidate-positions.json.gz",
+      "bytes": 1210441,
+      "sha256": "02a0e9328ba0e0aee599ef0310307a5e088ee2e6eaab9fa8acb00681997e6d6e"
+    },
+    {
+      "path": "data/baselines/source/controls.json.gz",
+      "bytes": 69021,
+      "sha256": "03922131a14050a87243eceeb9706a37c4ad607eaaa81d0c2b7988d207285100"
+    },
+    {
+      "path": "data/baselines/source/county-fips.json",
+      "bytes": 1262,
+      "sha256": "7260e8350d0f3a9af7202c37ce2f32a5c09763232760b4fc90ace2dd158dcde4"
+    },
+    {
+      "path": "data/baselines/source/fec-pres-2024-text.json.gz",
+      "bytes": 7693,
+      "sha256": "21a1ce636e0e2a3b7a307e9624ba70c493d1adc3cdf13356a5bd0fff8955b633"
+    },
+    {
+      "path": "data/baselines/source/historical-reconciliation.json",
+      "bytes": 83323,
+      "sha256": "436fa720f12a262ab58b07eb4bcfb3a5f3e96b6b4e85ddfff4859338b1073727"
+    },
+    {
+      "path": "data/baselines/source/house-clerk-2024-text.json.gz",
+      "bytes": 64052,
+      "sha256": "5f316b118013d6af63055efcc56d0b671e0e839fd187e0753528cc437706149c"
+    },
+    {
+      "path": "data/baselines/source/http/actual-2022-primary-governor-writeins.gz",
+      "bytes": 89112,
+      "sha256": "d9b61a3a0d639417b8ace97ffbbc09c752ddd7147489438cd95a0ca44301c380"
+    },
+    {
+      "path": "data/baselines/source/http/ballot-info-68d0dfe69016.gz",
+      "bytes": 22147,
+      "sha256": "92318b04f5ecec064d0263566e07ce9a32a73047e20da791384fcdae2ad3bb5b"
+    },
+    {
+      "path": "data/baselines/source/http/calendar-2026-b99375459dc0.gz",
+      "bytes": 151372,
+      "sha256": "a8b5304032f65e4951fb025dca8fc6b9f9966a9f1ea8141d53d2651719c58ee6"
+    },
+    {
+      "path": "data/baselines/source/http/casting-ballot-360c70926be4.gz",
+      "bytes": 31048,
+      "sha256": "c815c082df0d4d1e7dfaa272c8d0e9c9fe9db99b1c6a98611745822706a9075d"
+    },
+    {
+      "path": "data/baselines/source/http/certificate-2026-54d4dfece6c9.gz",
+      "bytes": 24636,
+      "sha256": "78c325f1d4581a6415e4a65a00a0cca87facc7b0f26701fec95975680f2f6da8"
+    },
+    {
+      "path": "data/baselines/source/http/general-2026-947e1c08d24e.gz",
+      "bytes": 44392,
+      "sha256": "977d6dcb456573ae279b96c023e085c8e9c66d98d6dca4dffa2631a796dfa025"
+    },
+    {
+      "path": "data/baselines/source/http/law-34-1101-d7a6607e0e05.gz",
+      "bytes": 18325,
+      "sha256": "b17fc99b9588e64bfa54e3f996382af1b70dd6ee6c2144ce50d0fddf6ad734a6"
+    },
+    {
+      "path": "data/baselines/source/http/law-34-1215-7541cfc92f2b.gz",
+      "bytes": 18088,
+      "sha256": "614f7580bf8f6696887bd22e62f87e8a962648bb517e4d54f82d2f2bc6ba3725"
+    },
+    {
+      "path": "data/baselines/source/http/law-34-1216-847b2729c0e3.gz",
+      "bytes": 18075,
+      "sha256": "5c671610168ae9d1afb8fb62008667904d6004b247181d6af977d771aea3726a"
+    },
+    {
+      "path": "data/baselines/source/http/results-2020-11b9e90c691f.gz",
+      "bytes": 51887,
+      "sha256": "5316537d106924cba7cba9fae40cc3e8720cce0fa871e36c8184f5a7096d63b2"
+    },
+    {
+      "path": "data/baselines/source/http/results-index-ab68cfd9f6db.gz",
+      "bytes": 41598,
+      "sha256": "6860ba80fac38f2b1f7480436217e5acf53b8784af7c8992a3600d23c6fc34f2"
+    },
+    {
+      "path": "data/baselines/source/http/stats-2022-457f30ee005d.gz",
+      "bytes": 25832,
+      "sha256": "255d805cf408abee06f3f28b5349eb9e26784eab15297838061114d61c3c99c8"
+    },
+    {
+      "path": "data/baselines/source/http/timezone-4ced711c95c9.gz",
+      "bytes": 3179,
+      "sha256": "2856f28509bb3e3c1d98c386777c59441321b2dc48c519d165fc467a2205d7cb"
+    },
+    {
+      "path": "data/baselines/source/independent-reference-receipts.json",
+      "bytes": 3712,
+      "sha256": "326a51607ea3566e7191a2907ecf87b1534e61bf4c578472677d38622ac3d4eb"
+    },
+    {
+      "path": "data/baselines/source/law-34-1101-text.json",
+      "bytes": 788,
+      "sha256": "fcf6a07d73b9b61726778d5d66b9c412ea97c4828cf8dd66d4cbe3fa25541483"
+    },
+    {
+      "path": "data/baselines/source/law-34-1215-text.json",
+      "bytes": 474,
+      "sha256": "79abdba98caa71e1f3b2bf449dc66ba0735df4a04aacde5ec64ce6c1ff3b8e3f"
+    },
+    {
+      "path": "data/baselines/source/law-34-1216-text.json",
+      "bytes": 374,
+      "sha256": "57a733de8f3f2ed985d43594c646dd8729c0e6ac312ecd5fcc7dd06296160229"
+    },
+    {
+      "path": "data/baselines/source/national-control-reconciliation.json",
+      "bytes": 2974,
+      "sha256": "854e6332593443275724e1766700997d889afd058d2b86662cc5135d584810f0"
+    },
+    {
+      "path": "data/baselines/source/native-units.json.gz",
+      "bytes": 432193,
+      "sha256": "597687cff76b4acd420eee1852d1a2de539e3195d9d8850909c0b6116c4bdc2a"
+    },
+    {
+      "path": "data/baselines/source/reused-originals.json",
+      "bytes": 11200,
+      "sha256": "ff6868b5003d28b5632b5420e2241570879d3ee7d4158502fc559c58da19807b"
+    },
+    {
+      "path": "data/baselines/source/statistics-positions.json.gz",
+      "bytes": 233781,
+      "sha256": "2a53be30046cf85de47df97c939b42a7d3a6b7e70684739f3637c4d7ea7c1ce0"
+    },
+    {
+      "path": "data/baselines/state-scenarios.csv",
+      "bytes": 73307,
+      "sha256": "474b97e9fba8cee0bc5afc3e4f0360c81d108370162e565012ec5ffa43f0345e"
+    },
+    {
+      "path": "data/baselines/supplement.py",
+      "bytes": 11063,
+      "sha256": "27c9dbdbca420343e7c5a6735dcbf4e0e949fc80277f83071db27907d8bdc8b2"
+    },
+    {
+      "path": "data/baselines/unit-targets.csv.gz",
+      "bytes": 8836075,
+      "sha256": "8317ff88a2974c01d82625f9113e8bdf83618028ce4491fb8388bc30b0c84faa"
+    },
+    {
+      "path": "data/baselines/validate.py",
+      "bytes": 15811,
+      "sha256": "027ba58371ef35f6bda5e393b7e89247304850a77d09ab9b467766601ca8c488"
+    },
+    {
+      "path": "data/baselines/validation.json",
+      "bytes": 5181,
+      "sha256": "4c41d010b1acc673752954693334a550026a0dd422645c844f6269c1359c11a9"
+    },
+    {
+      "path": "data/coordinator-first-pair-original-review.json",
+      "bytes": 7920,
+      "sha256": "3c1aab028bd2abe0448a641624efd6a70bc45f0d38ea02e3011734b191269d6d"
+    },
+    {
+      "path": "data/coordinator-first-pair-target-review.json",
+      "bytes": 4667,
+      "sha256": "62c6b6560d24115dee55255e2eb7d6738a21c5e6e4a72fbbc75659682fc2d567"
+    },
+    {
+      "path": "data/coordinator-initial-native-order-review.json",
+      "bytes": 2353603,
+      "sha256": "22f7b909065515021649277b73d2aea1079632af6fb147ac69b99969b2ee4ddd"
+    },
+    {
+      "path": "data/coordinator-map-preparation/sos-map-data-parent-9d87df0c66e3.gz",
+      "bytes": 26921,
+      "sha256": "72e95506e12172e7b73da8cb0a9c39e8f4ac6ee0b3b4fa0c718a3a3f7fb96236"
+    },
+    {
+      "path": "data/coordinator-map-preparation/state-precinct-Hub-page-19ed08926730.gz",
+      "bytes": 7371,
+      "sha256": "de46b46ad6d1a5392ed254cbd6ea487e643378307bf7a0e490b1445653b36cb3"
+    },
+    {
+      "path": "data/coordinator-map-preparation/state-precinct-count-pre-49afaaae5c0e.gz",
+      "bytes": 33,
+      "sha256": "02a6f9a40f43169095331524d0972ca95181c5285aa5605b039d3b067bed692e"
+    },
+    {
+      "path": "data/coordinator-map-preparation/state-precinct-ids-pre-ca766111b757.gz",
+      "bytes": 1875,
+      "sha256": "8fc68243b0f138918e2ed0967e586576cd6fd6d0991a9932665e5f492a412bb1"
+    },
+    {
+      "path": "data/coordinator-map-preparation/state-precinct-item-metadata-6dd3f6b2425a.gz",
+      "bytes": 2130,
+      "sha256": "b3b603f2643e61688157ae2720c128196d3d92fd5346ecf22be71c2f56cd359f"
+    },
+    {
+      "path": "data/coordinator-map-preparation/state-precinct-layer-metadata-5eee488995a1.gz",
+      "bytes": 6448,
+      "sha256": "83f197a5de1eca5fa90b7bb83f083258c8d2fc9f3c2d21b3ec10cc4350cde6bb"
+    },
+    {
+      "path": "data/coordinator-map-preparation/state-precinct-native-page01-86b816ec5a54.gz",
+      "bytes": 1450178,
+      "sha256": "9e17fa37bba09679abcddf2cda962dce7d2036216ffef7ea955af2215b989f4d"
+    },
+    {
+      "path": "data/coordinator-map-preparation/state-precinct-native-page02-d47532521ff2.gz",
+      "bytes": 145165,
+      "sha256": "9f12f18a12519612bf9c3c47a2be9da7f623521eb064c87be759dfc8f73fa643"
+    },
+    {
+      "path": "data/coordinator-map-preparation/state-precinct-native-page03-f83d7b6aa547.gz",
+      "bytes": 334867,
+      "sha256": "3121cf8a5215be54c602886a68888ce71ed9c5ea17561e70e579a707451e9360"
+    },
+    {
+      "path": "data/coordinator-map-preparation/state-precinct-native-page04-a77a90194e08.gz",
+      "bytes": 634150,
+      "sha256": "2b69dfea3ae212bb45c6b0c9003cd63e8b153fd3c6f1a80ff59d212d8dff6285"
+    },
+    {
+      "path": "data/coordinator-map-preparation/state-precinct-native-page05-198b4491b79b.gz",
+      "bytes": 299457,
+      "sha256": "920c9ed8c728cffe69b1c844eedc52bc6827c948533a924b7f23ad0f22e4e337"
+    },
+    {
+      "path": "data/coordinator-map-preparation/state-precinct-native-page06-f403081a2a26.gz",
+      "bytes": 364751,
+      "sha256": "2e398bf48cbcc30cc79e24d8c2b5017036c416a0ba6b3ffc39bca9d4893c9262"
+    },
+    {
+      "path": "data/coordinator-map-preparation/state-precinct-native-page07-316692526f0a.gz",
+      "bytes": 70382,
+      "sha256": "aa296568fa6976dd620a0ce83e59d2e0f57dbb03dfabfecac6ede374c0465173"
+    },
+    {
+      "path": "data/coordinator-map-preparation/state-precinct-native-page08-e092340513f5.gz",
+      "bytes": 33498,
+      "sha256": "1006dedb68b35666a23fcadca3795cbb6f6f59144d750e37ef3733719f0a8823"
+    },
+    {
+      "path": "data/coordinator-map-preparation/state-precinct-native-page09-c37a098d3bd6.gz",
+      "bytes": 30660,
+      "sha256": "40ab1f1631d5eb86e64c68a08f35ed369d4717d4a5693bf4b50235bd8691bc9c"
+    },
+    {
+      "path": "data/coordinator-map-preparation/state-precinct-native-page10-d5347dc5024b.gz",
+      "bytes": 163797,
+      "sha256": "24448a1830b5916d637b2a20b0a9f84f46ef198eb48a94705b0dc3e229333543"
+    },
+    {
+      "path": "data/coordinator-map-preparation/state-precinct-native-page11-f8d00b3584b9.gz",
+      "bytes": 998591,
+      "sha256": "8a37d4d7bd0ee903283faae25c453bc3f28df6dcab1ab4ae0a77f517eac4930a"
+    },
+    {
+      "path": "data/coordinator-map-preparation/state-precinct-native-page12-630b4ec8617a.gz",
+      "bytes": 631787,
+      "sha256": "5f16d94d63b6113e1006693e509ede9c3b82d3a9d9f4e4bc0c907c83bac8f56a"
+    },
+    {
+      "path": "data/coordinator-map-preparation/state-precinct-native-page13-c1f3e452bcf1.gz",
+      "bytes": 191387,
+      "sha256": "d269fedb8c198c9e0582b1233d4d8563dc50ed2976bf9b38cb8f6fd55f42a9c1"
+    },
+    {
+      "path": "data/coordinator-map-preparation/state-precinct-native-page14-15456d94011f.gz",
+      "bytes": 216407,
+      "sha256": "f6c3452e77863dd48d2dfb9f73c1eaba1a87d40483e551921c0ec02477d371ec"
+    },
+    {
+      "path": "data/coordinator-map-preparation/state-precinct-native-page15-9c039b7244b4.gz",
+      "bytes": 695109,
+      "sha256": "d3b97b1bddb17bc397ebc3c307eb2f815e917cef09f84b2adcefafad5a39a634"
+    },
+    {
+      "path": "data/coordinator-map-preparation/state-precinct-native-page16-a9bc2cd21121.gz",
+      "bytes": 176412,
+      "sha256": "118b196260c04208299d128aacb0c1c836280e44d63119da59ffea0d82b06539"
+    },
+    {
+      "path": "data/coordinator-map-preparation/state-precinct-native-page17-5db3e43aadfc.gz",
+      "bytes": 536614,
+      "sha256": "a2880db6c903a78dab23837bb3f63f1d9f77148395d0a68dc4b97626f2284ae5"
+    },
+    {
+      "path": "data/coordinator-map-preparation/state-precinct-native-page18-a0064a588bdc.gz",
+      "bytes": 232900,
+      "sha256": "dde6b530b7861e919d2e9ccb46e36f2b1b380c4cc7d1e7d7889c5ae905eb3793"
+    },
+    {
+      "path": "data/coordinator-map-preparation/state-precinct-native-page19-96d5c715a555.gz",
+      "bytes": 326072,
+      "sha256": "d9622b7a98a2b7af33a02b8b049993fad0d9be17a67b0e75773e99f2f0a54a1b"
+    },
+    {
+      "path": "data/coordinator-map-preparation/state-precinct-native-page20-87c07b3d7b74.gz",
+      "bytes": 16453,
+      "sha256": "72c3907f31e30b68c0017c4dc6cbfc1a09eb999d0a5643ae383661dd0c3ca4e2"
+    },
+    {
+      "path": "data/coordinator-turnout-final-seal-review.json",
+      "bytes": 627,
+      "sha256": "11da8703e768cf5051540899b5f3674352dfa05736358e179fc09da374266f2f"
+    },
+    {
+      "path": "data/county-baselines.csv",
+      "bytes": 267361,
+      "sha256": "34f859308852c92461b844b19d53a8b9c040ad5bffa96f198e3ee31412077cae"
+    },
+    {
+      "path": "data/county-turnout.csv",
+      "bytes": 8358,
+      "sha256": "67c8110ea25b600f0b92758c92b381b4e7481b0a949783ed2b515b7c45737c8b"
+    },
+    {
+      "path": "data/news/coordinator-oct19-recheck/TwinFalls-linked-LD24-ballot-9e89d002a415.gz",
+      "bytes": 587972,
+      "sha256": "cebacbe431194b074452425f0cf503da6a8a5c8819ac353b8f916b7404e30e08"
+    },
+    {
+      "path": "data/news/coordinator-oct19-recheck/acquisition-ballot-stage-v3.json",
+      "bytes": 212659,
+      "sha256": "c8f4f6d1a2baeb524ceba601802547371bc62b5dd705fd2290bf2550e78b13d9"
+    },
+    {
+      "path": "data/news/coordinator-oct19-recheck/current-ballot-original-review.json",
+      "bytes": 4322,
+      "sha256": "13b69165fd173b6c6a677e7742a99bd582abbadec0a71392e6d3f73883f3e3de"
+    },
+    {
+      "path": "data/news/sos-2020-general-abstracts-zip.html.gz",
+      "bytes": 6185861,
+      "sha256": "69685d6f98cdd5cd752211fffb4586c688c87d430c72503a467b584c4afc20dc"
+    },
+    {
+      "path": "data/news/sos-2020-general-canvass-zip.html.gz",
+      "bytes": 1850601,
+      "sha256": "ea9daf5c08bc58e27667ec7bc4b42d8e86d6c73f684d15d03d4f2c2e18385342"
+    },
+    {
+      "path": "data/news/sos-2022-general-canvass-zip.html.gz",
+      "bytes": 621473,
+      "sha256": "c073b454f8fcda2d5eb29a1060c42d0e71d80700998cd8a99190d5ed012ff3cb"
+    },
+    {
+      "path": "data/news/sos-2024-all-races-xlsx.html.gz",
+      "bytes": 2276072,
+      "sha256": "3968038ada02abd3b41d4c62390674090f21151e419447397243e4ee08a49375"
+    },
+    {
+      "path": "data/news/sos-2024-canvass.html.gz",
+      "bytes": 484840,
+      "sha256": "db736a8436d1207eb8df3bfd834beb5c5094eb7eb412759125ff7ee6a0934c69"
+    },
+    {
+      "path": "data/news/sos-2024-turnout-xlsx.html.gz",
+      "bytes": 68126,
+      "sha256": "c09c2d15f46aa0f80e9f7f23752e6db58d0539ac951d271043ff159c827e6ad7"
+    },
+    {
+      "path": "data/news/sos-results.html.gz",
+      "bytes": 41600,
+      "sha256": "1c458def6b0b13267b1e9431f85c47034291fb31e9fe5d899fa1ebfdecb8524b"
+    },
+    {
+      "path": "data/turnout/acquire.py",
+      "bytes": 1139,
+      "sha256": "7f7f5c4cfea3cb6410f5d8c78cd131f4a50597b0f893bdf8fda4fefb03ffcd14"
+    },
+    {
+      "path": "data/turnout/administrative-2020-stats.json.gz",
+      "bytes": 4084,
+      "sha256": "a6340eddb33ef3401cbfd0794f91e2dc192c3909768ca1d8bf659ecc2b6c1640"
+    },
+    {
+      "path": "data/turnout/administrative-2024-stats.csv",
+      "bytes": 6344,
+      "sha256": "5bd6619a7814245923470edd7717231daacb7a8da608f1af049a994beceda501"
+    },
+    {
+      "path": "data/turnout/asset-manifest.json",
+      "bytes": 15763,
+      "sha256": "9156711ab14e58d838aba99029a0b9e3baa47acff5acec38b822070973e4531c"
+    },
+    {
+      "path": "data/turnout/asset_manifest.py",
+      "bytes": 1125,
+      "sha256": "4d9921c883e528803379f952e8602024b168b43c973b8ce01d133e057c87a777"
+    },
+    {
+      "path": "data/turnout/attribution-history/pre-attribution-repair-20261019T224736Z.tar.gz",
+      "bytes": 13124179,
+      "sha256": "1e327db11f72ce27198a0236a0960978b86a3c31604a483d46d914fed449c22f"
+    },
+    {
+      "path": "data/turnout/attribution-history/pre-repair-witness.json",
+      "bytes": 14909,
+      "sha256": "e227f1a99b16661f3a71ac64a125ed301964eee84780ee09fa3f699c6dd4712f"
+    },
+    {
+      "path": "data/turnout/attribution-history/repair-proof.json",
+      "bytes": 34375,
+      "sha256": "288c169ee525e5b80294de13b336080886f2a6c4285d281e46462bec0c161cb7"
+    },
+    {
+      "path": "data/turnout/build.py",
+      "bytes": 31129,
+      "sha256": "2ebe7e77b742b435bce9af3b6ba9c51f472c3e34cb1ae50ecfa48af90291f456"
+    },
+    {
+      "path": "data/turnout/compare_peer.py",
+      "bytes": 23349,
+      "sha256": "6ba174c4332d54b10f720ec4235375713b2fd6e7581a64593cc92281ea8abcc6"
+    },
+    {
+      "path": "data/turnout/county-candidate-2024.csv",
+      "bytes": 35947,
+      "sha256": "b6d1b626909b8d03764bb2778f50eff63b5170b2e04c628c3ebbaabc828200b2"
+    },
+    {
+      "path": "data/turnout/finalize.py",
+      "bytes": 26454,
+      "sha256": "163570ae8d0b14fc9bd672379f1461c9d322a2b3b36ae0432e24a0c7ebdf56f3"
+    },
+    {
+      "path": "data/turnout/historical-administrative-controls.json.gz",
+      "bytes": 6276,
+      "sha256": "75d5599c1d00a8dc357f5e082f8d1bd57dfd5dac62b3607f49cba2a661166a9e"
+    },
+    {
+      "path": "data/turnout/historical-candidate-positions.json.gz",
+      "bytes": 300994,
+      "sha256": "9aaf7a1b58285bf4d117e8f9b12fa9e0d3470265b1983ffe3d8e0df54a51db16"
+    },
+    {
+      "path": "data/turnout/historical-county-candidate-controls.csv",
+      "bytes": 161478,
+      "sha256": "0cdf1a61def6c3399396e0655c6bbf04acdac014112cf2461fc4580e546ab42c"
+    },
+    {
+      "path": "data/turnout/historical-native.json.gz",
+      "bytes": 100192,
+      "sha256": "132bf258c76df716787bdb1383453abed2490f5ef1ade273f2b8d80d114d1dec"
+    },
+    {
+      "path": "data/turnout/historical-reconciliation.json",
+      "bytes": 18815,
+      "sha256": "b5252d47b00eaa7fd133f21003133c3487aa6a459689f42f71d8105ce7fb6018"
+    },
+    {
+      "path": "data/turnout/independent-control-check.json",
+      "bytes": 4664,
+      "sha256": "f387dba0cf2bb10282abf6b357e99ec01fe5b37a724b6c0ce2b324c324eda349"
+    },
+    {
+      "path": "data/turnout/literal-stats-race-comparisons.csv",
+      "bytes": 73183,
+      "sha256": "7f4deb6c23f35ac48582e79cb752e478514a7ab253a6b158535fb806c6eeef6d"
+    },
+    {
+      "path": "data/turnout/method-label-inventory.json",
+      "bytes": 139223,
+      "sha256": "2caa1be2b01f24696a8f0c82a1eca6bab00934defbec19ec9aa7d9d20aec1fa3"
+    },
+    {
+      "path": "data/turnout/native-2020-stats.json.gz",
+      "bytes": 60719,
+      "sha256": "3a3c7c4fed977673020c6ed4498924146510a822435b20753ec385782c384d5c"
+    },
+    {
+      "path": "data/turnout/native-2024-candidate-positions.csv",
+      "bytes": 2023882,
+      "sha256": "2358b5a193410783519b96ed4fd188785e73884fbe974dc69108c3e7deb045dd"
+    },
+    {
+      "path": "data/turnout/native-2024-president.csv",
+      "bytes": 194106,
+      "sha256": "fa7a79f6c6eef57748e9297050934ac2501be7e874e8f4e30c28e43097f29e22"
+    },
+    {
+      "path": "data/turnout/native-2024-stats.csv",
+      "bytes": 133536,
+      "sha256": "49a25f8ef6b69e7bfcc863cd18b3882cabdd93aab0e95e786917d7aaee806db2"
+    },
+    {
+      "path": "data/turnout/native-order.csv",
+      "bytes": 228348,
+      "sha256": "ecb54de945465b5aea34d0284aada974c4dae98ada26ea6a749ae5706536f2da"
+    },
+    {
+      "path": "data/turnout/native-rankings.json",
+      "bytes": 2033107,
+      "sha256": "63acc753818ec13ed3e8b628ff3535195349242f03c6bf7b8f9997fc0fb022bf"
+    },
+    {
+      "path": "data/turnout/pdf_checks.py",
+      "bytes": 6234,
+      "sha256": "d555387edf1e1cabd4a573c8358c2f5a892eecde54342e8d78c70b81b4f6b8f8"
+    },
+    {
+      "path": "data/turnout/peer-qa/comparison.json",
+      "bytes": 12707,
+      "sha256": "c0006d748763e10362278e9720be965d1cf7eddf180ae3530babd9300ec0892d"
+    },
+    {
+      "path": "data/turnout/peer-qa/peer-snapshot-manifest.json",
+      "bytes": 3235,
+      "sha256": "cbb4bd1e3a28c1860f611428d8caa1f8f183f1054a8545272650294ccdea176f"
+    },
+    {
+      "path": "data/turnout/peer-qa/peer-snapshot/extract.py",
+      "bytes": 14133,
+      "sha256": "4f166d15da8aecb35a0833298f90c168db49ed8d506cabd997c94aa8b15c0599"
+    },
+    {
+      "path": "data/turnout/peer-qa/peer-snapshot/independent-extraction-summary.json",
+      "bytes": 947,
+      "sha256": "25473a2457ba484c5b53318ee92a004a6661781e979918ee29ea6b07340d1e05"
+    },
+    {
+      "path": "data/turnout/peer-qa/peer-snapshot/native-priority-order.csv",
+      "bytes": 148602,
+      "sha256": "936cd6e1f479c7bdf046224630c50ecc5ade4ecddd5951e11385f618d6c38032"
+    },
+    {
+      "path": "data/turnout/peer-qa/peer-snapshot/source/2024-statistics-disagreements.json",
+      "bytes": 4572,
+      "sha256": "2e2373c5149f2d3404008be8295448010d44995db7bc056a823550e4dceba6a8"
+    },
+    {
+      "path": "data/turnout/peer-qa/peer-snapshot/source/acquisition.json",
+      "bytes": 22370,
+      "sha256": "8fe6bb8bf59b395e55ca18e4ef5858f771735b74bfa89e20dc1f438e9d5a01e4"
+    },
+    {
+      "path": "data/turnout/peer-qa/peer-snapshot/source/archive-members.json",
+      "bytes": 13172,
+      "sha256": "22251ac6f1f4303e1646e7c4b43d367213de95e0e61eea33c0bfe2cffc9b02b3"
+    },
+    {
+      "path": "data/turnout/peer-qa/peer-snapshot/source/candidate-positions.json.gz",
+      "bytes": 1210441,
+      "sha256": "02a0e9328ba0e0aee599ef0310307a5e088ee2e6eaab9fa8acb00681997e6d6e"
+    },
+    {
+      "path": "data/turnout/peer-qa/peer-snapshot/source/controls.json.gz",
+      "bytes": 69021,
+      "sha256": "03922131a14050a87243eceeb9706a37c4ad607eaaa81d0c2b7988d207285100"
+    },
+    {
+      "path": "data/turnout/peer-qa/peer-snapshot/source/historical-reconciliation.json",
+      "bytes": 83323,
+      "sha256": "436fa720f12a262ab58b07eb4bcfb3a5f3e96b6b4e85ddfff4859338b1073727"
+    },
+    {
+      "path": "data/turnout/peer-qa/peer-snapshot/source/native-units.json.gz",
+      "bytes": 432193,
+      "sha256": "597687cff76b4acd420eee1852d1a2de539e3195d9d8850909c0b6116c4bdc2a"
+    },
+    {
+      "path": "data/turnout/peer-qa/peer-snapshot/source/reused-originals.json",
+      "bytes": 11200,
+      "sha256": "ff6868b5003d28b5632b5420e2241570879d3ee7d4158502fc559c58da19807b"
+    },
+    {
+      "path": "data/turnout/peer-qa/peer-snapshot/source/statistics-positions.json.gz",
+      "bytes": 233781,
+      "sha256": "2a53be30046cf85de47df97c939b42a7d3a6b7e70684739f3637c4d7ea7c1ce0"
+    },
+    {
+      "path": "data/turnout/peer-qa/pre-peer-owned-20261019T223005Z.tar.gz",
+      "bytes": 5613304,
+      "sha256": "a6df37de992eba4a2d6c3cd0e1be3301ccd93fc6e9f55cdebc77aa53770ca39c"
+    },
+    {
+      "path": "data/turnout/peer-qa/pre-peer-witness.json",
+      "bytes": 11226,
+      "sha256": "252e54c301277cea18cc62d710001afb5fe5116bc1fe1cf7c09caebb91ae0c83"
+    },
+    {
+      "path": "data/turnout/peer-qa/source-position-map.json.gz",
+      "bytes": 51848,
+      "sha256": "0a550cd257f921a72a1f39283aec71ad9d87a7dcf27c2712d3894b7a2e0a0517"
+    },
+    {
+      "path": "data/turnout/priority-set.json",
+      "bytes": 1668713,
+      "sha256": "9bf413132cd591ac110ac1d88bc6d52f818679f6b28b33a0ca77e30c4d1e6676"
+    },
+    {
+      "path": "data/turnout/rankings.json",
+      "bytes": 148870,
+      "sha256": "246d82860f8774b886f594f1616c3183b60b518c70359a1eb5468a00a2d02c01"
+    },
+    {
+      "path": "data/turnout/repair_attribution.py",
+      "bytes": 11376,
+      "sha256": "086559fd64f172cfc198bfea0006c6da3a3fb04ebb7980d98a717f96d0240a85"
+    },
+    {
+      "path": "data/turnout/seal_peer.py",
+      "bytes": 9738,
+      "sha256": "88e55b2663a8afe06e900c2ed76b6cdee887ab8983b99487e48716d77710a19a"
+    },
+    {
+      "path": "data/turnout/source/2022-writein-scope-disagreement.json",
+      "bytes": 36659,
+      "sha256": "9a50fa70b03946f3980f24bd81495c0004b7c8a8743247a4a64ba17d038e32b6"
+    },
+    {
+      "path": "data/turnout/source/2024-races-rows.json.gz",
+      "bytes": 2707546,
+      "sha256": "7c4605422b43ad18a6161b7ebf79fa1ef4db3849d0b22646337ead5417dbabcb"
+    },
+    {
+      "path": "data/turnout/source/2024-stats-rows.json.gz",
+      "bytes": 73929,
+      "sha256": "9cccb8adf2081dfbaaea3f193199b7a9716c202dfe7320f88302f04987977f03"
+    },
+    {
+      "path": "data/turnout/source/SCHEMA.md",
+      "bytes": 12911,
+      "sha256": "11d60f1283ba5aeb81c63a8df5acdac620256d1cace735a6f426429c7fa40e46"
+    },
+    {
+      "path": "data/turnout/source/archive-members.json",
+      "bytes": 13172,
+      "sha256": "0127958d209b03b21494a9a8ba4a52128b87c52bd116d1246d879e6c18355f86"
+    },
+    {
+      "path": "data/turnout/source/calendar2026.gz",
+      "bytes": 151372,
+      "sha256": "a8b5304032f65e4951fb025dca8fc6b9f9966a9f1ea8141d53d2651719c58ee6"
+    },
+    {
+      "path": "data/turnout/source/calendar2026.txt",
+      "bytes": 28889,
+      "sha256": "37691148e54c1c3a940b5279a1d15879c93b50c97aeba43abffb2600ee96fc76"
+    },
+    {
+      "path": "data/turnout/source/canvass2024-page29.png",
+      "bytes": 181358,
+      "sha256": "7fc6d0982c534cc06e1849ba72f9cfd7faa3a2a5299b04819a6379c553dbd093"
+    },
+    {
+      "path": "data/turnout/source/canvass2024-page303.png",
+      "bytes": 298353,
+      "sha256": "091a9c7ebf04ff1b013dc144ccbeaaaadbe363c656a851fcb2d06c1a87a7c4e2"
+    },
+    {
+      "path": "data/turnout/source/canvass2024.txt",
+      "bytes": 1513406,
+      "sha256": "f8f8da052f86edc4d600bbe428a66d6edac2b48a55d7bd07e762d56980c34372"
+    },
+    {
+      "path": "data/turnout/source/classII.gz",
+      "bytes": 4826,
+      "sha256": "a9453056cd75de8a698886729ab5382e9de474dbbec9ebc17a2a6d5edf7319e1"
+    },
+    {
+      "path": "data/turnout/source/classIII.gz",
+      "bytes": 4721,
+      "sha256": "f82705c5d138d71cb5828418e5a715bf4ca85118269397e4330d985eb0e9143a"
+    },
+    {
+      "path": "data/turnout/source/fec-pres-2024.txt",
+      "bytes": 34913,
+      "sha256": "906ad3b6ab44bf0da023c2eca529c521fd5b017c37373b759d39bfb3f5fcac62"
+    },
+    {
+      "path": "data/turnout/source/field-availability.json",
+      "bytes": 3736,
+      "sha256": "a634885e870ed184cc861a0070c7a226a1edea4c968f783cd758165ec6c20acb"
+    },
+    {
+      "path": "data/turnout/source/fips2020.gz",
+      "bytes": 31361,
+      "sha256": "bcb240df1d84eb88c83b19f5b5c39b6905afaca0277821c206a047196a70cce8"
+    },
+    {
+      "path": "data/turnout/source/historical-workbook-rows.json.gz",
+      "bytes": 743976,
+      "sha256": "1cf5490a8b826a963419e267630a620454bf1d8135e59d6bb73f2e2114eb4a08"
+    },
+    {
+      "path": "data/turnout/source/hours-law.gz",
+      "bytes": 18325,
+      "sha256": "b17fc99b9588e64bfa54e3f996382af1b70dd6ee6c2144ce50d0fddf6ad734a6"
+    },
+    {
+      "path": "data/turnout/source/house-clerk-2024.txt",
+      "bytes": 717010,
+      "sha256": "4fa7f4e40b263e28cdb527c424ad2739ec87c0f038762eb4ad6b31a32914b7c9"
+    },
+    {
+      "path": "data/turnout/source/pdf-primary-controls.json",
+      "bytes": 1352,
+      "sha256": "2050fd495725ac11d6cd8aa5143a444a1fc28efbede358d633e110c0421688ab"
+    },
+    {
+      "path": "data/turnout/source/printed-2024-positions.json.gz",
+      "bytes": 100377,
+      "sha256": "32c4eab5913e639f63b42e2903495971bb65b69ffe629183a68500fc1b537d45"
+    },
+    {
+      "path": "data/turnout/source/requests.json",
+      "bytes": 13469,
+      "sha256": "81cfbc64e289e221028ce2423d9537b2910470bd65491b70ece4737b812b76ea"
+    },
+    {
+      "path": "data/turnout/source/results-current.gz",
+      "bytes": 41597,
+      "sha256": "676edced28f52d2fbb5f9bde9c7606669caebb475d5d7199481a420bea812491"
+    },
+    {
+      "path": "data/turnout/source/reused-national-originals.json",
+      "bytes": 1978,
+      "sha256": "0fe96eda78b99597329779f6d900913faac2fb5b41192c5d93a56e98f173aa4e"
+    },
+    {
+      "path": "data/turnout/source/reused-originals.json",
+      "bytes": 9189,
+      "sha256": "b6963d2fabc6afcd7fde4595667fb30f8b33bc33c5da6090174fd949cd764917"
+    },
+    {
+      "path": "data/turnout/source/senate-classes.gz",
+      "bytes": 4668,
+      "sha256": "9f57d476b2c460171a421194ecf80c079d33304dd74bddb52b13107f2a066f02"
+    },
+    {
+      "path": "data/turnout/source/source-observations.json",
+      "bytes": 13116,
+      "sha256": "65f9d22be8ca20292a6d3e2fd1b41891fc3eba96dcdccf56f881e0259e9754ce"
+    },
+    {
+      "path": "data/turnout/source/stats2022-tables.json.gz",
+      "bytes": 2160,
+      "sha256": "5cfb520f05e35df205f43d7b401b091c099c2427e3be994948bf457d2d6a449b"
+    },
+    {
+      "path": "data/turnout/source/stats2022.gz",
+      "bytes": 25831,
+      "sha256": "0af5d331dd111191c5f2b37dacec4105417b027e6c535d33d3d1cbd3daef07ab"
+    },
+    {
+      "path": "data/turnout/source/timezone-govinfo.gz",
+      "bytes": 164755,
+      "sha256": "49f9a13355ceed578f2a0d23556885de7550ca92f5d816e82dac47390990e5a7"
+    },
+    {
+      "path": "data/turnout/source/timezone-govinfo.txt",
+      "bytes": 10363,
+      "sha256": "9b0e21e972c9861577d7bca78933ff9bd2b24e25bfe622c1598701c68ced75ab"
+    },
+    {
+      "path": "data/turnout/source/timezone-law.gz",
+      "bytes": 3179,
+      "sha256": "2856f28509bb3e3c1d98c386777c59441321b2dc48c519d165fc467a2205d7cb"
+    },
+    {
+      "path": "data/turnout/source/winner-law.gz",
+      "bytes": 18088,
+      "sha256": "614f7580bf8f6696887bd22e62f87e8a962648bb517e4d54f82d2f2bc6ba3725"
+    },
+    {
+      "path": "data/turnout/stats2020-reconciliation.json",
+      "bytes": 335,
+      "sha256": "3b8e78f28dc967c26aeebd4ad2b42a37a2b17b45112f01038964277d074140b2"
+    },
+    {
+      "path": "data/turnout/stats2022.json.gz",
+      "bytes": 2858,
+      "sha256": "0ee0ae32ee179bd8e86fecc8cb985100527a5f8ac7b53ca2a6163048cd3ac434"
+    },
+    {
+      "path": "data/turnout/summary.json",
+      "bytes": 318237,
+      "sha256": "4056bc9c3cab10308ba01f0244d45e53b2d0b4dd5129a27881af7c936185b604"
+    },
+    {
+      "path": "data/turnout/validate.py",
+      "bytes": 23052,
+      "sha256": "7af1ad52e969a3bf7724dde9271e41238cb7be7691c5bfcc9f69458c16739d12"
+    },
+    {
+      "path": "data/turnout/validation.json",
+      "bytes": 5993,
+      "sha256": "dd28f437626b9933ca7dfd6373dee41cc5e7a5fea153d38a53e4f29557940691"
+    },
+    {
+      "path": "turnout.md",
+      "bytes": 29452,
+      "sha256": "b5178cc4eb0968ec6a4fa18c7cad12157860f2b5715c11711bb99f59a5f901ca"
+    }
+  ]
+}

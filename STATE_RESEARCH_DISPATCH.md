@@ -48,13 +48,13 @@ membership robustness remains unproved. Its exact1,508-file state tree includes
 preservation, with all stored objects below40MB. No genuine November count
 sequence, current geographic join or calibrated probability is admitted.
 
-Idaho officiala4924a48 has actually finished its sealed1,011-entry package;
-coordinator original replay passes all419,099 export rows/3,131,500 cells.
-Idaho maps `9b10706d-ee73-4779-a7b5-385cfc0013cd` remains active. In the
-actual released slot, fresh profile/provider discovery launched Colorado official
-`a3b6cf9c-a1de-47fa-b472-ce7491c1f082`. These are the only active workers.
-Colorado's complete historical1,992/3,199/64-parent dispatch is reviewed and
-externally accepted; its maps assignment awaits another actual released slot.
+All four Idaho question workers have actually finished and passed independent
+source, target, official, map and whole-state review. Its complete historical
+package is prepared for scoped publication. Colorado official
+`a3b6cf9c-a1de-47fa-b472-ce7491c1f082` and maps
+`356c1a4e-e6b9-4804-82bf-fc1ef28b5516` are the only active workers.
+Both actual launches followed released Idaho slots and fresh profile/provider
+inspection on the accepted complete1,992/3,199/64-parent historical dispatch.
 Seventeen later states remain queued. Publication continues through the full34-state batch.
 
 

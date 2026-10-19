@@ -1,0 +1,21 @@
+{
+  "status": "pass_read_only_final_commands",
+  "commands": [
+    {
+      "command": "python3 -B -S senate/2026/idaho/data/results-sources/validate.py --sealed",
+      "exit_code": 0,
+      "total_checks_including_seal": 56574833
+    },
+    {
+      "command": "python3 -B -S senate/2026/idaho/data/results-sources/rebuild.py --check",
+      "exit_code": 0,
+      "byte_identical_products": 9
+    }
+  ],
+  "manifest_after_read_only_commands": {
+    "path": "data/results-sources/manifest.json",
+    "bytes": 332483,
+    "sha256": "60b9968c1a4a2b4cc8594d988aca319beb030b6ceb9375dde7e52d605205a4db"
+  },
+  "qualified_scope": "Acquired historical/public primary evidence, exact frozen conservation and current original law/ballot witnesses; no November operational approval"
+}
