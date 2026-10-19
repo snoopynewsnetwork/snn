@@ -60,3 +60,6 @@ Mississippi’s proposed primary scope is now the independently verified 887-nat
 
 
 The immutable Mississippi 887-native proposal now passes bounded cross-file review, including all 84 source orders and parent/child arrays across 77 priority parent authorities. Native target arithmetic passes an independent piecewise solver and all 156,240 unit rows. These milestones leave the original-field/method gate and dispatch acceptance open; the same two workers continue.
+
+
+The bounded Mississippi original Pike vendor-profile audit now passes all 525 fields across 25 variable-length profiles and 42 actual pages. Independent OCR supplies 483 agreements; 42 separate original-image readings resolve unparsed/misread glyphs without residual fitting. Nineteen count vectors match the original summary/statistics panels; Total Votes Cast and Contest Totals remain distinct and the profile blank is not upgraded to an unprinted county control. This and Union’s separate 380-field review do not close statewide presidential/historical-native/method gates or authorize the proposed 887-native dispatch.
