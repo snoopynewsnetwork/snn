@@ -210,3 +210,8 @@ Wyoming preparation additionally recovers the actual linked2022general precinct 
 
 
 Mississippi's later2018 source witness passes58 distinct stage grids/794native observations, with106 grids still unreviewed. Independent Quitman/Noxubee original two-stage comparisons pass132positions together. A separate immutable ten-stage reciprocal checks528positions/114native with component-key versus FIPS-prefix representations explicit. The2020 reciprocal41 extension preserves all76 earlier38v2 bodies plus six new ones and recomputes2,475positions, retaining the prior comparison-metadata history rather than relabelling mutable bodies. Same two researchers; native887and fullhistorical/method/current-geography acceptance remain open.
+
+
+Mississippi bounded review now passes78 original2018 stage grids/1,128 native observations, leaving86 stage grids outside the witness. Its independent2020 replay reaches43 distinct publications/601 alternative-scope native observations/2,607 candidate positions; Coahoma original/amended stay separate. The twelve-stage reciprocal preserves ten earlier bodies plus two Yalobusha derivatives. The retained full104+70 worker replay log and exact execution script are verified as a prior26-check event, distinct from later work. No native887/history/method/current-geography approval follows.
+
+Wyoming source preparation now checks432/439/480 actual native result rows for2024Senate/2022governor/2020Senate and all23 county PDF controls each year. Raw typed date-formatted labels, formula caches and three ballot disagreements remain explicit. All original workbooks are unchanged; later agents must independently reconcile source identities and fields. No additional workers launched.
