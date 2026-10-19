@@ -62,3 +62,21 @@ Nebraska official-results `6b84b5dd-096f-45b4-a5bd-5bfa66c13dd8` and maps
 Both receive the exact accepted765-native/all1,326/93parent historical contract
 and its eligible-write-in/current-geography qualifications. No replacement
 coordinator or extra worker was created.
+
+
+## South Dakota public-source historical dispatch reviewed
+
+Independent original/native/manifest/target review accepts exactly304 historical
+public-source observations /343,402 of428,728 votes after303=342,947. The full
+691 observations,66 parents,39 priority parents and387 remainder remain. The
+signed428,922 control and194 unallocated votes are separate: certified minimum
+or membership robustness is unproved. The external acceptance preserves frozen
+worker bytes and source-specific679/65 versus687/66 historical observations.
+
+All198 signed county vectors and distinct archive turnout/registration controls,
+42 independent targets, all17,756 unit/selected rows each and15 live fixtures
+pass. The initial coordinator locator check used the wrong PDF family; corrected
+source selection verifies the unchanged worker locators in the election-return
+books. Nebraska official-results/maps remain the only two active researchers.
+South Dakota official-results/maps await those actual finish slots;19later states
+remain queued. No current geography, genuine counts or probability is admitted.
