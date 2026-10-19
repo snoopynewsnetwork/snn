@@ -1,0 +1,40 @@
+{
+  "method": "static PNG viewing via view_image; no browser session",
+  "automated": {
+    "pdf_pages": 114,
+    "census_county_previews": 64,
+    "native_service_previews": 4
+  },
+  "actually_viewed": {
+    "whole_pdf_pages": 12,
+    "contact_sheets": [
+      "qa/whole-page-contact-1.png",
+      "qa/whole-page-contact-2.png",
+      "qa/whole-page-contact-3.png"
+    ],
+    "dense_crop": "qa/arapahoe-dense-crop.png",
+    "native_and_census_previews": [
+      "adams-native",
+      "douglas-native",
+      "fremont-native",
+      "archuleta-native",
+      "census-denver",
+      "census-summit"
+    ],
+    "native_contact_sheets": [
+      "qa/native-contact-1.png",
+      "qa/native-contact-2.png"
+    ]
+  },
+  "findings": [
+    "Selected whole pages render complete borders, title blocks, insets and map content without observed clipping of the original page. Dense original maps retain legible labels at crop resolution.",
+    "Mesa page2 is table of contents; pages4 and70 are actual precinct maps and were separately viewed.",
+    "ElPaso one-precinct example prints updated January10,2024 and literal precinct5121821001. No relationship to a historical source key is inferred.",
+    "Park2012 and LaPlataJuly2025 printed dates are visible.",
+    "Adams preview visibly omits49truecurve source objects; subtitle and source audit explicitly qualify this. Other native layers are linear previews of their complete source features.",
+    "CensusDenver/Summit are historical county examples, not2024/current matches.",
+    "SOScontact roster page1 renders contacts despite source structure-tree warnings."
+  ],
+  "limits": "Contact sheets display reduced whole pages; not every printed label was inspected. Remaining102PDFpages and62Censuscountyimages were automatically rendered but not individually viewed. Four native service previews were viewed, but no legal/current topology or ID match is certified. No browser execution or interaction claimed.",
+  "source_originals_changed": false
+}

@@ -1,0 +1,30 @@
+{
+  "status": "pass_coordinator_final_read_only_commands",
+  "commands": [
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 python3 -B senate/2026/colorado/data/results-sources/validate.py --sealed",
+      "exit_code": 0,
+      "checks": 1346861,
+      "result": "714owned/82external exact pins,complete original/source checks"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 python3 -B senate/2026/colorado/maps/scripts/validate.py",
+      "exit_code": 0,
+      "checks": 2701008,
+      "result": "749owned/64external exact pins,22negative fixtures"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 python3 -B senate/2026/colorado/data/results-sources/replay_check.py",
+      "exit_code": 0,
+      "checks": null,
+      "result": "17byte-identical derived files; complete Denver,106224936-byte split original and full object reconstruction"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 python3 -B senate/2026/colorado/maps/scripts/build.py --check",
+      "exit_code": 0,
+      "checks": null,
+      "result": "Exact deterministic offline replay;22PDFs114pages/527servicefeatures/3108Census/all3199inventory. Source MuPDF structure-tree warnings emitted and preserved by worker logs; originals unchanged."
+    }
+  ],
+  "worker_files_written": false
+}

@@ -1,0 +1,117 @@
+{
+  "status": "original_turnout_preflight_priority_unaccepted",
+  "native_records": 3183,
+  "counties": 64,
+  "missing_numeric_fields_by_county": {
+    "Adams": {
+      "D": 2
+    },
+    "Arapahoe": {
+      "D": 2
+    },
+    "Boulder": {
+      "D": 2
+    },
+    "Eagle": {
+      "D": 1
+    },
+    "El Paso": {
+      "D": 1
+    },
+    "Jefferson": {
+      "D": 2
+    },
+    "Larimer": {
+      "D": 3
+    },
+    "Montezuma": {
+      "C": 2,
+      "D": 2,
+      "E": 2,
+      "F": 2
+    },
+    "Pueblo": {
+      "D": 2
+    },
+    "Weld ": {
+      "D": 3
+    }
+  },
+  "active_inactive_total_source_imbalances": [],
+  "state_known_numeric_sums": {
+    "C": 4071643,
+    "D": 508310,
+    "E": 4579953,
+    "F": 3239261
+  },
+  "other_source_rows": [
+    {
+      "row": 1,
+      "cells": {
+        "A": {
+          "type": "s",
+          "value": "County"
+        },
+        "B": {
+          "type": "s",
+          "value": "Precinct"
+        },
+        "C": {
+          "type": "s",
+          "value": "Active Voters"
+        },
+        "D": {
+          "type": "s",
+          "value": "Inactive Voters"
+        },
+        "E": {
+          "type": "s",
+          "value": "Total Voters"
+        },
+        "F": {
+          "type": "s",
+          "value": "Ballots Cast"
+        },
+        "G": {
+          "type": "s",
+          "value": "Total Voter Turnout"
+        }
+      }
+    },
+    {
+      "row": 3185,
+      "cells": {
+        "A": {
+          "type": "s",
+          "value": "*=Due to an error where voters received a ballot that was missing a school district question, voters were moved to precinct 7 in order to rectify the issue and provide them a ballot with the question.  As a result, at the end of the election, this resulted in a discrepancy in the number of voters who voted in precinct 6 vs the number of voters who appear to live in precinct 6.  For more information, please contact the Montezuma County Clerk & Recorder."
+        }
+      }
+    },
+    {
+      "row": 3186,
+      "cells": {
+        "A": {
+          "type": "s",
+          "value": "End of worksheet"
+        }
+      }
+    }
+  ],
+  "cached_tail": {
+    "rows": 1043548,
+    "minimum_row": 3546,
+    "maximum_row": 1047093,
+    "raw_cell_patterns": {
+      "{\"G\": {\"type\": \"e\", \"value\": \"#VALUE!\"}}": 1043548
+    }
+  },
+  "scope": [
+    "Precinct IDs are source strings, not FIPS/current reporting approval.",
+    "Original XLSX retains whole cached-error tail; only county+precinct rows are actual turnout records, no deletion of originalbytes.",
+    "Blank/missing numeric cells are unknown, not zeros; known sums do not certify fullstatecontrols.",
+    "Printed Montezuma relocation footnote is source evidence, not authority to reallocate votes or repair unit denominators.",
+    "2024 president,2020 same-ClassII Hickenlooper-Gardner,2022 other-ClassIII Bennet-ODea/midterm remain separate.",
+    "Need independently recovered candidate/native controls and exact priority; turnout numbers are not valid candidate votes."
+  ]
+}
+ballots_above_registration_count 0

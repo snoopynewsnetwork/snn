@@ -1,0 +1,36 @@
+[
+  {
+    "stage": "initial conservation replay",
+    "failure": "supplemental-originals asset is not local to baseline/source; missing baseline/source/turnout-2022.body.gz",
+    "resolution": "resolve immutable originals from published reused-originals path rooted at data/baselines; whole hash required; no producer edits",
+    "source_change": false
+  },
+  {
+    "stage": "validator preparation",
+    "failure": "SyntaxError unmatched parenthesis in51ID negative fixture",
+    "resolution": "corrected syntax before any validation/seal claim",
+    "source_change": false
+  },
+  {
+    "stage": "renderer source diagnostics",
+    "failure": "MuPDF invalid marked-content/clip nesting in several source PDFs and broken structure-tree warnings in the SOS clerk roster",
+    "resolution": "retain originals byte-identical and warnings in pdf-assets.json/build-log; static rendering and selected images succeed; no source repair",
+    "source_change": false
+  },
+  {
+    "stage": "code history qualification",
+    "note": "Prior failing code snapshots reconstructed from exact authored failing lines and current otherwise-equivalent scripts; not represented as immutable original captured-file hashes",
+    "paths": [
+      "qa/history/initial-conservation-reconstructed.py.gz",
+      "qa/history/initial-validator-syntax-reconstructed.py.gz"
+    ]
+  },
+  {
+    "stage": "offline preseal binary audit comparison",
+    "failure": "Python tuple probe values differ from JSON array values despite identical complete JSON recursive semantics; initial strict Python dictionary comparison failed",
+    "diagnostic": "full audit semantics and all actual binary audit records equal; only in-memory constructor_probe tuple/list representation differed",
+    "resolution": "normalize constructor probe to its JSON-native array representation; no source/geometry/audit body change",
+    "source_change": false,
+    "prior_code": "qa/history/geometry-pre-json-normalization.py.gz"
+  }
+]

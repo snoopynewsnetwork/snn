@@ -1,0 +1,24 @@
+{
+  "status": "pass_exact_frozen_script_whitespace_exceptions",
+  "scope": "Two semantic-inert trailing blanks in externally accepted immutable producer scripts. Preserve all source/acceptance/manifest pins rather than mutate frozen producer bodies. All other checked text must pass.",
+  "exceptions": [
+    {
+      "path": "data/baselines/calculate.py",
+      "bytes": 20092,
+      "sha256": "37b8ba3469c2c151018d21584c375842fb328fc3d3f77cf48be31f0319fb22b0",
+      "line": 32,
+      "literal_line": " ",
+      "AST_equal_after_trailing_space_removal": true,
+      "worker_file_changed": false
+    },
+    {
+      "path": "data/turnout/reproduce_preflight.py",
+      "bytes": 1703,
+      "sha256": "982d96b267114f8b5ebbc9051701f8993bee623a27651c4434c9b61e7d40dbf1",
+      "line": 9,
+      "literal_line": " for key in ['D','DATA']: ",
+      "AST_equal_after_trailing_space_removal": true,
+      "worker_file_changed": false
+    }
+  ]
+}

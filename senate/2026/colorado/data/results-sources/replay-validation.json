@@ -1,0 +1,46 @@
+{
+  "schema": "CO-offline-deterministic-replay-v1",
+  "result": "PASS",
+  "replayed_steps": [
+    "inspect_sources.py",
+    "extract_documents.py",
+    "extract_directory.py",
+    "build.py",
+    "render_report.py"
+  ],
+  "byte_identical_derived_files": {
+    "data/results-sources/observed-pages.json.gz": "1446b0de3442f6bb7425017071f4c2a65368773face36d3d70cc646d45f0c1a5",
+    "data/results-sources/document-extracts.json.gz": "202ccae50d5bc8f617de57abe306b137771647709c12e9d71d3ade0979772e31",
+    "data/results-sources/directory-contacts.json": "186c02aedb76a42b397b9d1c41d3f17bcdb9af17d50307ddd1ee6e41030660d5",
+    "data/results-sources/historical-conservation.json.gz": "08f3b8d1df9594c41883419e07a0e270bbfa3267b8501308444f2b3a64456929",
+    "data/results-sources/historical-original-receipts.json": "9a524520dbac412b030d5bea157a67950547a92e42358485dd30255fbf034b73",
+    "data/results-sources/response-objects.json.gz": "d72c7e450766da45d02de498e947219e740df2db6b8fa22854ccfba2c77f832d",
+    "data/results-sources/response-schemas.json.gz": "55a479b0e9bdd953e890eabc94020192da6e08d53b1a3bec29ae70644b80c600",
+    "data/results-sources/aggregate-exports.json": "405a09d720c12c3f2a3eef9490083577b6ec6518a4bf0316c3efd8d84a3a2d45",
+    "data/results-sources/all64-primary-monitoring.json": "532286f640fb61d0c88bb2215d369bb6d6a0dc9afba77ba7d19abff618f62aa8",
+    "data/results-sources/priority-parent-primary-packets.json.gz": "ad84685adae4c8453493285f9b80557b7bb2cbe2e0c050a64d0da3429699edb7",
+    "data/results-sources/authority-contact-observations.json": "40ba679612eff04c8081c6a5afd7d66bf32af8a3bdadda820ae09ba4a51bf12e",
+    "data/results-sources/priority-parent-investigations.json.gz": "b3f8e2591ee48bf744a88d3a0e698145858171123353662602b73f552be23218",
+    "data/results-sources/priority-investigations.jsonl.gz": "4019263d4941c73276ed22fcab58b642ca663557f2f1a83e88cf095969547a26",
+    "data/results-sources/all64-hierarchy-and-remainder.json.gz": "f4f31013664646cae86d78f7e207009306dd7039f23e0834e9333b1fd9692358",
+    "data/results-sources/immutable-external-files.json": "dfef9cd68c3a0d65204f43afac4fa82eaace0e9393306d36af9c6fcbbec70108",
+    "official-results.md": "9d39b2e7529dd1ad5f7e60596f87dbb1c44ed7de934d9661152ab775d58a993a",
+    "data/official-results-sources.csv": "67aff24c098a68fd0e54e45f6bfe209550fa0aa3577e7f33d812891d3944ac18"
+  },
+  "complete_raw_reconstructions": [
+    {
+      "receipt": "denver-november-payload",
+      "bytes": 37123,
+      "raw_sha256": "a0eb8bfbf58e86b616ad7999c07b4ac770b6c916621ca01c0ad946c3a4a6c529"
+    },
+    {
+      "receipt": "county-lincoln-follow-3",
+      "bytes": 106224936,
+      "raw_sha256": "b2eb98e04453a69714b6312a709743d8a7b5f9082502bfe12bded57de90107c2"
+    }
+  ],
+  "complete_recursive_object_reconstruction": true,
+  "network_calls": 0,
+  "current_admission": false,
+  "qualification": "deterministic research replay, not coordinator acceptance or live calibration"
+}
