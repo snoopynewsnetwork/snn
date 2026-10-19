@@ -61,3 +61,19 @@ South Dakota turnout `ad252512-9d56-42ca-adf2-f81a21cbe63e` and partisanship
 All 691 published native rows and 66 certified county controls must remain, with
 the unofficial source's 194-vote gap qualified. Nebraska's second pair awaits
 reviewed acceptance and available slots; no current identity approval follows.
+
+
+## Qualified historical acceptance
+
+Both actual first-pair workers finished and are frozen. The external
+[data/coordinator-priority-acceptance.json](data/coordinator-priority-acceptance.json)
+accepts exactly 765 source-native observations / 748,190 of 935,005 named
+canvass votes, preserving all 1,326 observations and 93 parents. Fifty-eight
+parents contain selected observations. The eligible write-in universe and
+membership robustness remain unproved; the observed-generic sensitivity changes
+one member. No current geographic or result-ID approval follows.
+
+Independent original native/method/registration and target checks pass; see
+[research-review.md](research-review.md). The official-results and maps pair
+await available actual finish slots. South Dakota's first pair are the only
+two active researchers. No Nebraska second-wave agent has been launched yet.
