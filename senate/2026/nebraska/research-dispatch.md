@@ -42,3 +42,22 @@ The turnout worker reports independent raw HTML/BIFF/PDF extraction closing all9
 Mississippi official-results actually finished its1,329-entry owned package, reporting47read-only checks/zero failures, all82authorities/77priority parents/887shared-parent priority records/849remainder and complete original dependencies. Coordinator final original/schema/manifest review is pending. CurrentNovember counts and current native/geometry identities remain unapproved.
 
 Nebraska partisanship`bf15a495-7e21-44b4-abd9-d8d7f83bb88e` actually launched in that freed slot after fresh Research-profile/provider discovery, joining turnout`012d3597-6f6c-4ff1-a3d7-a488176243ba`. They are the only two active researchers. Both received actual peer IDs and explicit native-primary steering; early765native prefix/1,326full order is provisional,20county prefix sensitivity only. All four Mississippi workers are finished, with frozen sources unchanged; publication review continues concurrently.
+
+
+## Nebraska first pair finished; South Dakota first pair launched
+
+Nebraska turnout `012d3597-6f6c-4ff1-a3d7-a488176243ba` and partisanship
+`bf15a495-7e21-44b4-abd9-d8d7f83bb88e` actually finished their frozen packages.
+The independently reconciled 765-unit prefix covers 748,190 of 935,005 named
+canvass votes across 1,326 native units; coordinator review and formal historical
+acceptance remain pending. The eligible write-in universe and membership
+robustness are unproved: the partial observed-generic scenario changes one
+member. Lancaster registration differs by 164; source disagreements remain
+unallocated.
+
+In those actual finish slots, fresh Research-profile/provider discovery preceded
+South Dakota turnout `ad252512-9d56-42ca-adf2-f81a21cbe63e` and partisanship
+`e6c0d1f7-5022-447d-9308-07988d70dad5`. They are the only two active researchers.
+All 691 published native rows and 66 certified county controls must remain, with
+the unofficial source's 194-vote gap qualified. Nebraska's second pair awaits
+reviewed acceptance and available slots; no current identity approval follows.
