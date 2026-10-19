@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "requested_date": "2026-10-17",
-  "updated_at_utc": "2026-10-19T02:50:57+00:00",
+  "updated_at_utc": "2026-10-19T03:05:14.271514+00:00",
   "scope": "35 states in the repository 2026 U.S. Senate race index",
   "coordinator_agent_id": "d0fc3534-1613-4883-b48b-21a233fcfd9e",
   "workspace_id": "wks_b290f45007010740",
@@ -1103,7 +1103,32 @@
         "pike_coordinator_review": "data/coordinator-pike-profile-review.json",
         "review_bytes": 138914,
         "review_sha256": "27e62766abc3bdc160479849c92dc38594243b553f965bff83ea2250d921beea",
-        "remaining_gate": "Statewide all-candidate, presidential, historical-native and method scopes remain open. Original vendor views are nonadditive to preferred SEMS; no dispatch/current geographic approval."
+        "remaining_gate": "Statewide all-candidate, presidential, historical-native and method scopes remain open. Original vendor views are nonadditive to preferred SEMS; no dispatch/current geographic approval.",
+        "independent_peer_original_proof": {
+          "path": "data/coordinator-pike-profile-peer-review.json",
+          "bytes": 421503,
+          "sha256": "56f30e0536cf249ba9d6376b1fc4a09d0fb18a2b8831aeedf4bd3b90cbd8ff54",
+          "field_positions": 525,
+          "separate_reading_window_pairs": 525,
+          "exact_box_agreement_claimed": false
+        }
+      },
+      "provisional_presidential_workbench_qa": {
+        "status": "diagnostic_only_no_aid_numeric_acceptance",
+        "path": "data/coordinator-presidential-aid-leads-v1.json",
+        "bytes": 542944,
+        "sha256": "983f1aa65b8c561b46a7ce742d2b435e3367bf8220534a312aa0d3b4867908a7",
+        "aid_positions": 18980,
+        "existing_bounded_original_comparisons": 891,
+        "diagnostic_mismatch_or_unresolved_positions": 125,
+        "by_source": {
+          "Tunica": 77,
+          "Kemper": 48
+        },
+        "nonunused_unresolved": 182,
+        "unresolved_original_cells": 150,
+        "wrong_target_party_or_blank": 32,
+        "scope": "Source targeting leads only; no new count, geographic/ordinal join, residual allocation or gate acceptance."
       }
     },
     {
@@ -1119,7 +1144,25 @@
       "gaps": [],
       "published_commits": [],
       "state_specific_notes": "Keep 2024 Senate regular Fischer\u2013Osborn (independent) separate from the 2024 special Ricketts\u2013Love contest. Verify the actual 2026 ballot, independent challenger, withdrawals and party labels. Coordinator found November zero official setup while the county portal still selects May primary. Regional stations show Iowa/historical/test configurations. See data/news.",
-      "coordinator_preparation": "Original2024/2022/2020canvasses retained; independent93county vectors reconcile2024same-II special,other-I Fischer\u2013Osborn and2020sameII. RawByPetition/qualifiedwritein/scatter identities distinct. Native/completeness/priority await question workers."
+      "coordinator_preparation": "Original2024/2022/2020canvasses retained; independent93county vectors reconcile2024same-II special,other-I Fischer\u2013Osborn and2020sameII. RawByPetition/qualifiedwritein/scatter identities distinct. Native/completeness/priority await question workers.",
+      "coordinator_primary_native_preparation": {
+        "status": "bounded_Douglas_originals_recovered_not_state_native_complete",
+        "audit_path": "data/coordinator-douglas-native-preflight.json",
+        "bytes": 109780,
+        "sha256": "c168dc6e6641a130bbd22242841832ce8fa81e90ca65e4a3ba385eae400ca787",
+        "linked_detail_workbooks": 3,
+        "separate_summary_PDFs": 3,
+        "selected_native_contest_contexts": 1167,
+        "native_labels_by_year": {
+          "2024": 233,
+          "2022": 231,
+          "2020": 237
+        },
+        "native_footer_count_controls": 36,
+        "local_summary_candidate_controls": 21,
+        "state_canvass_candidate_controls": 10,
+        "scope": "Source ballot-volume residuals retained(-1/-4/-10); no native method allocation/current identity/statewide native completeness/priority acceptance. Additional actual seven countyPDFs retained; Lancaster native original403 gap."
+      }
     },
     {
       "state": "South Dakota",
@@ -1447,18 +1490,18 @@
   "batch_status": "in-progress:12newstatespublished;MSfirstpairactive;21laterstatesqueued",
   "coordinator_preparation_audit": {
     "status": "pass",
-    "checked_at_utc": "2026-10-19T00:53:43.946919+00:00",
+    "checked_at_utc": "2026-10-19T03:04:08.547060+00:00",
     "scope": "Still-queued states only; retained public news/preflight responses, not completed question packages or accepted feeds",
     "states": 21,
-    "response_captures": 542,
-    "stored_objects": 548,
-    "verified_original_entities": 540,
-    "stored_bytes": 524280767,
+    "response_captures": 565,
+    "stored_objects": 571,
+    "verified_original_entities": 563,
+    "stored_bytes": 531757150,
     "retained_transport_failures": 2,
     "split_original_entities": 3,
     "http_status_counts": {
-      "200": 431,
-      "403": 91,
+      "200": 452,
+      "403": 93,
       "transport_failure": 2,
       "404": 10,
       "500": 3,
@@ -1467,7 +1510,7 @@
       "503": 1
     },
     "checks": "Unique IDs; original/stored SHA-256; exact ordered-part reconstruction where needed; raw byte counts; UTC/headers or retained transport failures; strict per-stored-object bounds and no orphan response assets.",
-    "additional_content_checks": "Oklahoma complete2024 plus2022regular/unexpired and2020 certification originals preserve all77 counties per contest and35568 candidate positions; scopes stay separate. Louisiana complete2024/2022/2020 public XLSX+CSV controls cover64parishes each. Montana complete2018/2020/2022/2024 workbooks verify9876 selected positions and896 independent PDF county cells. Oregon complete2020/2022 candidate abstracts verify576 county cells;2022 reconstructed from3 contiguous206 ranges,500 partials retained. Actual public Download forms additionally supplied complete2020/2022 native ZIP streams, retained once as3/4 exact gzip parts at most32M; both ZIP CRCs and72 member hashes pass, filename inventories only. No completed question packages or accepted feeds are inferred."
+    "additional_content_checks": "Oklahoma complete2024 plus2022regular/unexpired and2020 certification originals preserve all77 counties per contest and35568 candidate positions; scopes stay separate. Louisiana complete2024/2022/2020 public XLSX+CSV controls cover64parishes each. Montana complete2018/2020/2022/2024 workbooks verify9876 selected positions and896 independent PDF county cells. Oregon complete2020/2022 candidate abstracts verify576 county cells;2022 reconstructed from3 contiguous206 ranges,500 partials retained. Actual public Download forms additionally supplied complete2020/2022 native ZIP streams, retained once as3/4 exact gzip parts at most32M; both ZIP CRCs and72 member hashes pass, filename inventories only. No completed question packages or accepted feeds are inferred. Nebraska actual official Douglas archive supplies complete2024/2022/2020BIFF originals and summaries; selected1167native contest contexts,36footer/21localPDF/10statecandidate controls pass, source ballot-volume differences retained. Seven other actualcounty2024PDF originals recovered; no statewide native completeness."
   },
   "coordinator_next_actions": [
     "Independently reconcile complete Mississippi first-pair originals/native/fields/order before historical acceptance.",
