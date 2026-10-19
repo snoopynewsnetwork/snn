@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "requested_date": "2026-10-17",
-  "updated_at_utc": "2026-10-19T21:25:42.888881+00:00",
+  "updated_at_utc": "2026-10-19T21:38:34.207762+00:00",
   "scope": "35 states in the repository 2026 U.S. Senate race index",
   "coordinator_agent_id": "d0fc3534-1613-4883-b48b-21a233fcfd9e",
   "workspace_id": "wks_b290f45007010740",
@@ -4375,7 +4375,7 @@
       "election": "Regular",
       "seat_class": "II",
       "priority": 15,
-      "status": "first-pair-finished-review-pending",
+      "status": "first-pair-reviewed-second-pair-awaiting-slots",
       "workers": {
         "turnout": {
           "agent_id": "ad252512-9d56-42ca-adf2-f81a21cbe63e",
@@ -4432,7 +4432,26 @@
           "actual_finish_event_received": true
         }
       },
-      "validation": null,
+      "validation": {
+        "coordinator_review": {
+          "path": "data/coordinator-finished-first-pair-review.json",
+          "bytes": 59545,
+          "sha256": "9897588366bcec83e5fcdc98e4beea6e973b2bd691910b85812eac3def581079"
+        },
+        "original_native_review": {
+          "path": "data/coordinator-initial-public-native-review.json",
+          "bytes": 98352,
+          "sha256": "3aa6b3aa241e9708f8574a5ccad2101830f3ad331f92bd48389dbd7ab430f4f4"
+        },
+        "source_only_acceptance": {
+          "path": "data/coordinator-priority-acceptance.json",
+          "bytes": 196527,
+          "sha256": "63a4b7b5203bf6b57f64e023dfbd1395904980de702fb6fe2bd7a32d25befde6"
+        },
+        "checks": "Exact frozen manifest memberships/bytes/references; all198 signed candidate vectors/594 fields and2028 archive turnout-registration numeric fields; all691/687/693 public source native rows and full691 order; independent42 targets/213072 formulas/17756 unit and selected rows each;15 live fixtures. Producer readonly18759 baseline/1611 turnout checks pass.",
+        "certified_native_minimum_or_membership_approved": false,
+        "current_geography_approved": false
+      },
       "gaps": [],
       "published_commits": [],
       "state_specific_notes": "Coordinator tested the actual state-linked November setup CSV: Senate race 14412, Mike Rounds REP and Brian L Bengs IND, all zero; the page explicitly says Testing In Progress. Verify the final ballot and use named opposition targets. Do not carry Bengs's 2022 Democratic nomination into his current identity. The statewide 673-unit denominator differs from the Senate 656 denominator and needs inspection. See data/news.",
@@ -4491,7 +4510,7 @@
         "path": "data/turnout/priority-set.json",
         "bytes": 2955655,
         "sha256": "a1c97454c68c1f30bdb6b7755cd826326e7380318eae74b6452465ee23e9c275",
-        "formal_acceptance": false,
+        "formal_acceptance": "historical_public_source_dispatch_only",
         "certified_membership_robustness_established": false
       },
       "coordinator_current_news_recheck": {
@@ -4501,6 +4520,40 @@
         "separate_new_observations": 6,
         "old35ledger_unchanged": true,
         "current_counts_admitted": false
+      },
+      "historical_priority_acceptance": {
+        "path": {
+          "path": "data/coordinator-priority-acceptance.json",
+          "bytes": 196527,
+          "sha256": "63a4b7b5203bf6b57f64e023dfbd1395904980de702fb6fe2bd7a32d25befde6"
+        },
+        "primary_scope": "304 actual public2024 presidential source-native observations, not county21 sensitivity",
+        "all_native": 691,
+        "all_parents": 66,
+        "priority_parents": 39,
+        "remainder": 387,
+        "votes304": 343402,
+        "prefix303": 342947,
+        "source_denominator": 428728,
+        "signed_denominator": 428922,
+        "signed_membership_robustness_proven": false,
+        "current_geography_approved": false
+      },
+      "prepared_second_wave_prompts": {
+        "official-results": {
+          "path": "/tmp/snn-south-dakota-official-results-prompt.txt",
+          "bytes": 10037,
+          "sha256": "5acd2361d5cff87b269d8dce2b353925983e914fefef93b590721e2f0e764af6",
+          "actual_launch": false,
+          "fresh_profile_required_at_launch": true
+        },
+        "precinct-maps": {
+          "path": "/tmp/snn-south-dakota-precinct-maps-prompt.txt",
+          "bytes": 10550,
+          "sha256": "1cddb82f56fca40fd937bd4ae63846f6a19e45eb65c223e22080a0b4eacde75e",
+          "actual_launch": false,
+          "fresh_profile_required_at_launch": true
+        }
       }
     },
     {
