@@ -66,3 +66,10 @@ The bounded Mississippi original Pike vendor-profile audit now passes all 525 fi
 
 
 Mississippi’s independent Pike reciprocal proof now agrees at all 525 positions while keeping distinct reading windows. The provisional presidential aid remains unaccepted and supplies concrete Tunica/Kemper source-grid leads; statewide gates remain open. Queued-state preparation now retains565 bounded observations across21 states. Nebraska’s actual Douglas archive supplies three native workbooks and summaries with1167 selected contest contexts and exact candidate controls, while separate source ballot-volume differences remain explicit. No additional workers are launched.
+
+
+## Bounded Mississippi ten-view and Nebraska archive checkpoint
+
+The Mississippi original Tunica/Perry presidential review passes 270 positions. The immutable ten-view witness passes eight byte pins and coverage arithmetic for 110 preferred native constituents; presidential fields remain unreviewed for 1,626 other constituents. Nebraska preparation recovered all 93 actual historical native HTML URLs. The 91 complete entities supply 895 native headers with exact candidate rollups. Douglas and Lancaster originals are explicitly archive-truncated and remain partial. All 93 county vectors match retained canvass controls. Preparation now retains 748 bounded observations across 21 queued states, including prior transport failures. Only the same two Mississippi first-pair workers remain active; no feeds or additional dispatches are approved.
+
+The subsequent immutable sixteen-view Mississippi milestone passes bounded coverage checks for 290 native constituents, retaining all earlier witnesses. Hinds Senate reuse is verified against the exact prior source, page, raster and physical positions. Presidential fields remain unreviewed for 1,446 preferred native constituents, and no additional dispatch is authorized.

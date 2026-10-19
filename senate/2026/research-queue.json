@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "requested_date": "2026-10-17",
-  "updated_at_utc": "2026-10-19T03:05:14.271514+00:00",
+  "updated_at_utc": "2026-10-19T03:32:42.265347+00:00",
   "scope": "35 states in the repository 2026 U.S. Senate race index",
   "coordinator_agent_id": "d0fc3534-1613-4883-b48b-21a233fcfd9e",
   "workspace_id": "wks_b290f45007010740",
@@ -1129,6 +1129,58 @@
         "unresolved_original_cells": 150,
         "wrong_target_party_or_blank": 32,
         "scope": "Source targeting leads only; no new count, geographic/ordinal join, residual allocation or gate acceptance."
+      },
+      "bounded_direct_presidential_review": {
+        "path": "data/coordinator-direct-presidential-two-source-review.json",
+        "bytes": 13650,
+        "sha256": "4d75474d00fef5221450ba37b7d0a53051b13777ed4b560bacff85abdcffe044",
+        "status": "pass_bounded_original_Tunica_Perry_only",
+        "native_columns": 28,
+        "numeric_candidate_positions": 270,
+        "printed_TOTALs": 2,
+        "Tunica_Harris_unallocated_source_difference": -1,
+        "complete_statewide_presidential": false
+      },
+      "bounded_tenview_allfield_snapshot_review": {
+        "path": "data/coordinator-allfield-tenview-snapshot-review.json",
+        "bytes": 21331,
+        "sha256": "3224be585f37b53be3a1a4d8a41aee6dae0ede55b5cfb4081c4dfba56d2ee174",
+        "status": "pass_eight_frozen_pins_and_coverage_arithmetic_only",
+        "snapshot": {
+          "path": "data/baselines/source/native-allfield-10views/snapshot.json",
+          "bytes": 5206,
+          "sha256": "ca68221a306e86a4566bdb2187cf74edbfdfba125bf36ae1a05e450f6699252c"
+        },
+        "preferred_native_constituents": 110,
+        "native_presidential_scopes_unreviewed": 1626,
+        "source_views": 10,
+        "unreviewed_preferred_parent_views": 72,
+        "numeric_positions_including_TOTAL_and_parallel": 1441,
+        "unused_null_positions": 495,
+        "flat_CSV_positions_checked": 847,
+        "fresh_coordinator_original_Issaquena_numeric_positions": 66,
+        "all_new_glyphs_independently_coordinator_reviewed": false,
+        "formal_dispatch_accepted": false
+      },
+      "bounded_sixteenview_allfield_snapshot_review": {
+        "path": "data/coordinator-allfield-sixteenview-snapshot-review.json",
+        "bytes": 19071,
+        "sha256": "3d899b7cebe0988b5e0426fc52e0f464b1953427e99081d263ca101649f0ab6a",
+        "status": "pass_frozen_pins_coverage_and_exact_same_source_Senate_reuse_only",
+        "source_snapshot_sha256": "698283c2081970d5388b1270123172a11bfc3282ffd3593cd50949f879a3b194",
+        "source_views": 16,
+        "actual_pages": 36,
+        "preferred_native_constituents": 290,
+        "native_presidential_scopes_unreviewed": 1446,
+        "unreviewed_preferred_parent_views": 66,
+        "numeric_positions": 3487,
+        "unused_null_positions": 869,
+        "flat_CSV_positions": 3267,
+        "Hinds_prior_same_source_Senate_numeric_or_null_positions": 220,
+        "Hinds_new_worker_presidential_numeric_positions": 981,
+        "Hinds_new_worker_presidential_unused_null_positions": 9,
+        "all_prior_ten_view_ledgers_unchanged": true,
+        "formal_dispatch_accepted": false
       }
     },
     {
@@ -1162,6 +1214,27 @@
         "local_summary_candidate_controls": 21,
         "state_canvass_candidate_controls": 10,
         "scope": "Source ballot-volume residuals retained(-1/-4/-10); no native method allocation/current identity/statewide native completeness/priority acceptance. Additional actual seven countyPDFs retained; Lancaster native original403 gap."
+      },
+      "coordinator_archived_native_preparation": {
+        "path": "data/coordinator-2024-archived-native-preflight.json",
+        "bytes": 2839026,
+        "sha256": "75cb62dd0f1433603f4bcd31d46c5fdb01f08e706e014514451c8852a8a402d7",
+        "status": "pass_bounded_historical_controls_with_two_archive_truncations",
+        "county_controls": 93,
+        "county_candidate_cells": 186,
+        "complete_native_HTML_entities": 91,
+        "complete_native_headers": 895,
+        "partial_archive_counties": [
+          "Douglas",
+          "Lancaster"
+        ],
+        "partial_retained_native_headers": 236,
+        "expected_source_native_headers_all93": 1326,
+        "source_IDs_are_FIPS": false,
+        "public_CSV_entities": 2,
+        "public_CSV_native_precinct_recovery": false,
+        "dispatch_accepted": false,
+        "qualification": "All93 actual historical native URLs recovered after76 retained transport failures.91 complete entities native-to-county candidate sums exact. Douglas and Lancaster archive originals explicitly length-truncated at1MiB; each retains118 native headers, last candidate child incomplete. Actual county totals allmatch final canvass. Separate January all-race CSV matches final selected Senate controls; November11 statewide CSV remains lower despite1326/1326 counters. No current geography or statewide-native completeness claim."
       }
     },
     {
@@ -1490,27 +1563,27 @@
   "batch_status": "in-progress:12newstatespublished;MSfirstpairactive;21laterstatesqueued",
   "coordinator_preparation_audit": {
     "status": "pass",
-    "checked_at_utc": "2026-10-19T03:04:08.547060+00:00",
+    "checked_at_utc": "2026-10-19T03:28:03.643298+00:00",
     "scope": "Still-queued states only; retained public news/preflight responses, not completed question packages or accepted feeds",
     "states": 21,
-    "response_captures": 565,
-    "stored_objects": 571,
-    "verified_original_entities": 563,
-    "stored_bytes": 531757150,
-    "retained_transport_failures": 2,
+    "response_captures": 748,
+    "stored_objects": 678,
+    "verified_original_entities": 670,
+    "stored_bytes": 532919367,
+    "retained_transport_failures": 78,
     "split_original_entities": 3,
     "http_status_counts": {
-      "200": 452,
+      "200": 557,
       "403": 93,
-      "transport_failure": 2,
+      "503": 3,
+      "transport_failure": 78,
       "404": 10,
       "500": 3,
       "401": 1,
-      "206": 3,
-      "503": 1
+      "206": 3
     },
     "checks": "Unique IDs; original/stored SHA-256; exact ordered-part reconstruction where needed; raw byte counts; UTC/headers or retained transport failures; strict per-stored-object bounds and no orphan response assets.",
-    "additional_content_checks": "Oklahoma complete2024 plus2022regular/unexpired and2020 certification originals preserve all77 counties per contest and35568 candidate positions; scopes stay separate. Louisiana complete2024/2022/2020 public XLSX+CSV controls cover64parishes each. Montana complete2018/2020/2022/2024 workbooks verify9876 selected positions and896 independent PDF county cells. Oregon complete2020/2022 candidate abstracts verify576 county cells;2022 reconstructed from3 contiguous206 ranges,500 partials retained. Actual public Download forms additionally supplied complete2020/2022 native ZIP streams, retained once as3/4 exact gzip parts at most32M; both ZIP CRCs and72 member hashes pass, filename inventories only. No completed question packages or accepted feeds are inferred. Nebraska actual official Douglas archive supplies complete2024/2022/2020BIFF originals and summaries; selected1167native contest contexts,36footer/21localPDF/10statecandidate controls pass, source ballot-volume differences retained. Seven other actualcounty2024PDF originals recovered; no statewide native completeness."
+    "additional_content_checks": "Oklahoma complete2024 plus2022regular/unexpired and2020 certification originals preserve all77 counties per contest and35568 candidate positions; scopes stay separate. Louisiana complete2024/2022/2020 public XLSX+CSV controls cover64parishes each. Montana complete2018/2020/2022/2024 workbooks verify9876 selected positions and896 independent PDF county cells. Oregon complete2020/2022 candidate abstracts verify576 county cells;2022 reconstructed from3 contiguous206 ranges,500 partials retained. Actual public Download forms additionally supplied complete2020/2022 native ZIP streams, retained once as3/4 exact gzip parts at most32M; both ZIP CRCs and72 member hashes pass, filename inventories only. No completed question packages or accepted feeds are inferred. Nebraska actual Douglas BIFF originals preserve1167 selected native contest contexts; independent historical HTML recovery verifies93 county vectors/186 cells plus895 native headers in91 complete entities, with Douglas/Lancaster archive length truncations explicitly retained. No precinct joins, completed question packages or accepted feeds follow."
   },
   "coordinator_next_actions": [
     "Independently reconcile complete Mississippi first-pair originals/native/fields/order before historical acceptance.",
