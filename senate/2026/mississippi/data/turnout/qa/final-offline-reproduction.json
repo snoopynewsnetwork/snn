@@ -1,0 +1,49 @@
+{
+  "schema": "offline_reproduction_completion_v1",
+  "command": "PYTHONDONTWRITEBYTECODE=1 python senate/2026/mississippi/data/turnout/build_all.py",
+  "process_exit_code": 0,
+  "completed_log": {
+    "path": "data/turnout/qa/reproduction-final-scope-v3-2026-10-19.log",
+    "bytes": 46771,
+    "sha256": "06c1ecd27412fc193eefb9fe7fcb951bee045ce6f268648d040d38180f238a04"
+  },
+  "final_line": "{\"status\": \"pass_offline_qa_qualified_pending_coordinator_acceptance\", \"checks\": 117, \"failed_or_pending_checks\": []}",
+  "output_pins": {
+    "builder": {
+      "path": "data/turnout/build_all.py",
+      "bytes": 20480,
+      "sha256": "057b90e00ad905deee4fb9048d1029608472bb6402e6fdc686a8fd1c89d42e72"
+    },
+    "report": {
+      "path": "turnout.md",
+      "bytes": 134503,
+      "sha256": "a72a5590e6f2bc34c9aa53f5d3bf639673f2cf1d248e37ddff4adaf9e2889628"
+    },
+    "county_csv": {
+      "path": "data/county-turnout.csv",
+      "bytes": 13643,
+      "sha256": "14c5d0e6071bc7344f5f0784bb2f2c724dc20be529f4c343115d25bb1b216420"
+    },
+    "native_priority_contract": {
+      "path": "data/turnout/priority-set.json",
+      "bytes": 13065430,
+      "sha256": "782ca7899236ba06e53effee549c4e6845f936c9b4ceea3fecc8828dd9a08c32"
+    },
+    "complete_2024_all11_source_dependency": {
+      "path": "data/turnout/source/2024-preferred-all11-source-fields-v1.json.gz",
+      "bytes": 96203,
+      "sha256": "d066e45bebca7ba66163989165a430164f5b84cef61d9e2cda7e4bc4e1d23b6b"
+    },
+    "complete_historical_native_dependencies": {
+      "path": "data/turnout/historical-native-complete-dependencies.json",
+      "bytes": 216211,
+      "sha256": "a4ea86ef031ff6fee3ee1f60520c5f0bf87730673d208fff4563a99d732daa20"
+    },
+    "source_schema": {
+      "path": "data/turnout/source/SCHEMA.md",
+      "bytes": 97704,
+      "sha256": "26ab16cd333cf087476a336e37fc072958cc068fd98366074aac1038fb988e46"
+    }
+  },
+  "qualified_scope": "Complete 2024 preferred named candidate source fields and native order; exact frozen 2020/2018 canonical source dependencies; bounded own historical native replay. No current 2026 geographic or coordinator acceptance."
+}
