@@ -69,3 +69,15 @@ A fresh coordinator review of Issaquena PDF 1 independently confirms 66 numeric 
 The later immutable sixteen-view witness preserves the earlier ten-view bytes and semantics. Eight exact file pins and 3,267 flat CSV positions pass, with 290 preferred native constituents across 36 actual pages. There are 3,487 numeric and 869 unused/null candidate positions, including separate TOTAL and Kemper parallel roles. Hinds adds 981 original-read presidential numeric positions and nine unused blanks. Its 220 Senate numeric/null positions explicitly reuse the worker’s prior own readings from the exact same raw source hash, pages, render hashes and physical header bounds; the coordinator checked that reuse without a cross-year or geographic join.
 
 This is source and coverage verification, not blanket independent coordinator glyph review. Presidential fields remain unreviewed for 1,446 preferred constituents across 66 parent views. The proposed 887-unit dispatch, historical-native, method and current-geography gates remain open. All earlier immutable witnesses are retained.
+
+
+## Independent 2020 publication TOTAL replay
+
+The new turnout replay independently agrees with all 104 previously frozen county publication vectors at 312 candidate values, source hashes and actual PDF pages. Its reading basis remains explicit: 54 original-image visual vectors and 50 two-PSM original-pixel OCR vectors. Ten printed TOTAL-column ordinals were independently corrected; 94 other locator hints remain unaccepted. Selecting explicitly amended publications otherwise original matches every county CSV and the amended statewide vector, while the original mixed-publication sum and three changed county publications remain qualified. This is county TOTAL agreement, not complete historical native or method acceptance.
+
+
+## Further immutable original-field milestones
+
+The 25-view and 35-view snapshots pass their exact pins, source-vector arithmetic, flat CSV positions and explicit same-publication Senate reuse checks. The latest bounded witness covers 616 preferred native constituents across 74 actual pages, with 7,282 numeric and 1,672 unused/null candidate positions. Presidential fields remain unreviewed for 1,120 preferred constituents across 47 parent views. Earlier snapshots and the proposed native 887-unit priority remain unchanged.
+
+The independent Hinds/five-small-source replay agrees at 1,584 positions across 148 native constituents; the seven-source second batch agrees at 1,188 positions across 96 native constituents. Values, roles, source hashes, pages and whitespace-folded literal headers agree after original extraction. The first group preserves 28 visual OCR corrections; the second preserves 37. Independent raster/deskew/height differences remain explicit, so shared header-grid references do not certify identical raster pixels or numeric crop polygons. These are bounded source agreements. Whole-state presidential, historical-native, method, current-geography and dispatch acceptance remain open.
