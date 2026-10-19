@@ -54,3 +54,6 @@ Mississippi’s frozen 60-view Senate milestone retains 1,373 native constituent
 
 
 Mississippi’s frozen 84-packet two-Senate-field inventory and reciprocal review now pass 4,642 positions across 211 pages, with Tunica’s unallocated one-vote gap, alternative packets, Kemper parallels,58 accepted-box differences and optional-ID qualifications preserved. Its complete 104-publication 2020 county TOTAL audit matches all 82 selected CSV county controls while explicitly retaining three changed county publications and the original-state mismatch; historical native/presidential/method gates remain open. Only the same two researchers are active. Queued-state preparation retains 542 bounded responses across 21 states, including complete Oregon 2020/2022 public-form ZIP originals stored once as seven bounded gzip parts;72 ZIP member hashes/CRCs pass, without candidate-extraction or accepted-priority claims.
+
+
+Mississippi’s proposed primary scope is now the independently verified 887-native-unit prefix over 1,736 preferred source constituents; the 41-county set remains only a separate sensitivity. The source/certified denominator distinction and unallocated Tunica vote remain explicit, with no dispatch acceptance yet. Capacity recovery resumed the same turnout agent on a freshly inspected fallback model; the two-worker limit is unchanged.
