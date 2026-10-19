@@ -59,3 +59,30 @@ Idaho baseline has actually finished; its released slot is occupied by SAME
 Idaho turnout for a narrow attribution repair. Colorado turnout remains the sole
 other active researcher. The independent Colorado peer awaits the next real
 finish slot and will be named only after successful actual creation.
+
+
+## Actual independent baseline and same-turnout reciprocal launch
+
+After Idaho's actual repair finish, fresh profile/provider discovery launched
+partisanship `451afcad-e3df-4c1d-b304-f195592df4fe`. It independently extracted
+original bytes before reading turnout derivatives. Turnoutab649b9b separately
+ended its bounded original/report turn, explicitly peer-pending. Once the actual
+baseline stable-source milestone arrived, the coordinator resumed that SAME
+turnout ID in the free slot for reciprocal QA. These are the only two active
+researchers. Complete source objects and final contracts remain unaccepted.
+
+Coordinator original replay confirms the8 annotated Montezuma cells and preserves
+prior interpretation bytes. Annotated-inclusive source totals are active4,074,612,
+knowninactive508,668,total4,583,280,ballots3,241,155. Blank fields remain unknown;
+no candidate votes,1992 membership or current geographic identity changes.
+
+
+## Turnout reciprocal turn actually finished
+
+SAME turnoutab649b9b completed bounded reciprocal QA against42 captured stable
+peer bodies/references. Complete3year source fields, candidate/SSR objects,
+statistics annotations, orders and all64 maps agree, with195 control-key/null
+representations and18 unvalued-cell omissions explicitly retained. Its129-file
+seal leaves current geography and coordinator acceptance false. The baseline
+continues its own calculators/report/QA. This actual release launched Idaho
+officiala4924a48; those are the only two active researchers.

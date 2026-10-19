@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "requested_date": "2026-10-17",
-  "updated_at_utc": "2026-10-19T22:48:24.416699+00:00",
+  "updated_at_utc": "2026-10-19T23:01:04.025453+00:00",
   "scope": "35 states in the repository 2026 U.S. Senate race index",
   "coordinator_agent_id": "d0fc3534-1613-4883-b48b-21a233fcfd9e",
   "workspace_id": "wks_b290f45007010740",
@@ -4792,11 +4792,11 @@
       "election": "Regular",
       "seat_class": "II",
       "priority": 16,
-      "status": "partisanship-complete-turnout-narrow-stage-repair-active",
+      "status": "official-results-active-historical528-accepted",
       "workers": {
         "turnout": {
           "agent_id": "1a2e39d9-26b7-4e1e-b465-bb0f41dbc02e",
-          "status": "active-narrow-stage-attribution-repair",
+          "status": "complete-frozen-repaired-pending-coordinator-review",
           "launched_at_utc": "2026-10-19T22:08:47.279329+00:00",
           "launch_timestamp_scope": "Coordinator record after successful actual create_agent response; not exact provider start",
           "provider": "codex/gpt-6.1-sol",
@@ -4817,7 +4817,7 @@
           },
           "released_by_actual_finish": "e82a2e02-f3d9-425e-ae6f-44a7efafcee0",
           "actual_finish_event_received": true,
-          "full_question_complete": false,
+          "full_question_complete": true,
           "independent_peer_complete": true,
           "bounded_finish_pins": [
             {
@@ -4877,7 +4877,13 @@
             }
           ],
           "stage_repair_resume_recorded_at_utc": "2026-10-19T22:48:24.416699+00:00",
-          "stage_repair_released_by_actual_finish": "0eb74f9e-f473-403c-adee-715808064b55"
+          "stage_repair_released_by_actual_finish": "0eb74f9e-f473-403c-adee-715808064b55",
+          "actual_stage_repair_finish_event_received": true,
+          "final_repaired_contract": {
+            "path": "data/turnout/priority-set.json",
+            "bytes": 1668713,
+            "sha256": "9bf413132cd591ac110ac1d88bc6d52f818679f6b28b33a0ca77e30c4d1e6676"
+          }
         },
         "partisanship": {
           "agent_id": "0eb74f9e-f473-403c-adee-715808064b55",
@@ -4908,9 +4914,43 @@
             "bytes": 7446,
             "sha256": "3aa6f6b13024e15fd61a24ae21e86b6f0130b2b1d4c11b9fde258584c9cb8c0c"
           }
+        },
+        "official_results": {
+          "agent_id": "a4924a48-6ff5-454b-9dc6-5d4381398e7a",
+          "status": "active",
+          "launched_at_utc": "2026-10-19T23:01:04.025453+00:00",
+          "launch_timestamp_scope": "Coordinator record after actual successful create response, not exact provider start",
+          "provider": "codex/gpt-6.1-sol",
+          "settings": {
+            "modeId": "auto-review",
+            "thinkingOptionId": "high"
+          },
+          "selected_fresh_profile": {
+            "id": "agent_profile_mvfmd7wg_u16123g52jn",
+            "name": "Research",
+            "notes": "When reading existing code, reading existing papers, or generally researching BEFORE devising a plan."
+          },
+          "notifyOnFinish": true,
+          "launch_prompt": {
+            "path": "/tmp/snn-idaho-official-results-launched-prompt.txt",
+            "bytes": 8962,
+            "sha256": "1e30a0ade36833581c44b9c2d7fbdb252613b4fb7f1523e4f2474b41ac8001f8",
+            "trailing_newline_scope": "Retained text adds final newline to the transmitted full prompt"
+          },
+          "released_by_actual_finish": "ab649b9b-13a0-445e-9af2-9b022a78404d"
         }
       },
-      "validation": null,
+      "validation": {
+        "status": "first_pair_pass_source_only_historical_acceptance",
+        "original_cell_checks": 380448,
+        "independent_target_checks": 951622,
+        "source_review": "idaho/data/coordinator-first-pair-original-review.json",
+        "target_review": "idaho/data/coordinator-first-pair-target-review.json",
+        "turnout_seal_review": "idaho/data/coordinator-turnout-final-seal-review.json",
+        "baseline_sealed_asset_checks": 134,
+        "turnout_sealed_owned_files": 86,
+        "second_wave_complete": false
+      },
       "gaps": [],
       "published_commits": [],
       "coordinator_preparation": "Original2024sparseOOXML controls parsed bycelladdress;985prescontexts vs986stats+44footers, valid905057 vsunder/over12409. Actual2022ZIP and2020sixworkbooks/all44countyabstracts recovered; stats-onlyBingham/BONNEVILLE27 and3ballotgap retained. No acceptedpriority.",
@@ -4966,7 +5006,7 @@
         {
           "worker": "turnout",
           "agent_id": "1a2e39d9-26b7-4e1e-b465-bb0f41dbc02e",
-          "status": "same-agent-active-after-actual-baseline-finish",
+          "status": "completed-same-agent-all-election-semantics-unchanged",
           "issue": "Unsupported primary attribution for LisaMarie46 in2022statsHTML; actual general governor workbook67. Retain unexplained publication/scope disagreement, not invented stage attribution. No required Senate/presidential priority change.",
           "cannot_trigger_while_two_workers_active": true,
           "prepared_prompt": {
@@ -4974,7 +5014,12 @@
             "bytes": 2626,
             "sha256": "b984f94c5a35b5e46f8721ae7cdb6b938f82627b9bb4542b23cffc2948963de8"
           },
-          "resume_recorded_at_utc": "2026-10-19T22:48:24.416699+00:00"
+          "resume_recorded_at_utc": "2026-10-19T22:48:24.416699+00:00",
+          "final_proof": {
+            "path": "data/turnout/attribution-history/repair-proof.json",
+            "bytes": 34375,
+            "sha256": "288c169ee525e5b80294de13b336080886f2a6c4285d281e46462bec0c161cb7"
+          }
         }
       ],
       "coordinator_target_review": {
@@ -4986,6 +5031,44 @@
         "unit_targets": 63518,
         "live_cases": 14,
         "priority_accepted": false
+      },
+      "coordinator_original_review": {
+        "path": "data/coordinator-first-pair-original-review.json",
+        "bytes": 7920,
+        "sha256": "3c1aab028bd2abe0448a641624efd6a70bc45f0d38ea02e3011734b191269d6d"
+      },
+      "coordinator_final_turnout_seal_review": {
+        "path": "data/coordinator-turnout-final-seal-review.json",
+        "bytes": 627,
+        "sha256": "11da8703e768cf5051540899b5f3674352dfa05736358e179fc09da374266f2f"
+      },
+      "accepted_contract": {
+        "path": "senate/2026/idaho/data/turnout/priority-set.json",
+        "bytes": 1668713,
+        "sha256": "9bf413132cd591ac110ac1d88bc6d52f818679f6b28b33a0ca77e30c4d1e6676",
+        "acceptance": "senate/2026/idaho/data/coordinator-priority-acceptance.json",
+        "acceptance_bytes": 1589261,
+        "acceptance_sha256": "d5e03689f4f627e5bcc6bb3a35060ccc32d88d61cade7f836a117f25f50a7320",
+        "scope": "Complete historical source-native528 order over985/44 with20completecompanion bodies and3946/194historicalnative/adminobjects; no current/legal/feed/probability approval",
+        "priority_count": 528,
+        "all_native_units": 985,
+        "all_county_parents": 44,
+        "priority_county_parents": 32,
+        "remainder_units": 457
+      },
+      "second_wave_prepared_prompts": {
+        "official-results": {
+          "path": "/tmp/snn-idaho-official-results-prompt.txt",
+          "bytes": 8405,
+          "sha256": "1eb61621e95e6cb6f69647f766f261dc13b4fbf686b3dbd759cfca4c36b5c0cd",
+          "status": "prepared_only_no_agent_yet"
+        },
+        "precinct-maps": {
+          "path": "/tmp/snn-idaho-precinct-maps-prompt.txt",
+          "bytes": 7623,
+          "sha256": "2a6e4e10ccd29eafc31a453bc0b63a7c18c3306c6601b4aea0fd0c5c36e875e6",
+          "status": "prepared_only_no_agent_yet"
+        }
       }
     },
     {
@@ -4995,11 +5078,11 @@
       "election": "Regular",
       "seat_class": "II",
       "priority": 17,
-      "status": "turnout-active-peer-slot-pending",
+      "status": "baseline-active-turnout-reciprocal-complete-pending-coordinator",
       "workers": {
         "turnout": {
           "agent_id": "ab649b9b-13a0-445e-9af2-9b022a78404d",
-          "status": "active",
+          "status": "complete-frozen-reciprocal-review-pending-coordinator",
           "launched_at_utc": "2026-10-19T22:39:14.030695+00:00",
           "launch_timestamp_scope": "Coordinator record after actual successful create_agent response; not exact provider start",
           "provider": "codex/gpt-6.1-sol",
@@ -5018,7 +5101,48 @@
             "bytes": 10310,
             "sha256": "bc0c262fec7a20b9c5876397f1a859b40d6db6cab8ad4dad2f9a1f912e7424a0"
           },
-          "released_by_actual_finish": "1a2e39d9-26b7-4e1e-b465-bb0f41dbc02e"
+          "released_by_actual_finish": "1a2e39d9-26b7-4e1e-b465-bb0f41dbc02e",
+          "actual_bounded_finish_event_received": true,
+          "full_question_complete": true,
+          "resumed_after_original_first_stable_peer_milestone": true,
+          "resume_recorded_at_utc": "2026-10-19T22:55:22.468677+00:00",
+          "only_other_active_worker": "451afcad-e3df-4c1d-b304-f195592df4fe",
+          "actual_reciprocal_finish_event_received": true,
+          "independent_peer_complete": true,
+          "final_contract": {
+            "path": "data/turnout/priority-set.json",
+            "bytes": 6319325,
+            "sha256": "defa4fd873faffd60157def7cc99a6cb58a08b5a7c55ad04620c4d0efb53712a"
+          },
+          "final_peer_agreement": {
+            "path": "data/turnout/peer-agreement.json",
+            "bytes": 3426,
+            "sha256": "3c1206a22bb14b1911e113d00388d1580bd302387256f3efb50830306f70b1f3"
+          }
+        },
+        "partisanship": {
+          "agent_id": "451afcad-e3df-4c1d-b304-f195592df4fe",
+          "status": "active",
+          "launched_at_utc": "2026-10-19T22:55:22.468677+00:00",
+          "launch_timestamp_scope": "Coordinator record after actual successful create response; not exact provider start",
+          "provider": "codex/gpt-6.1-sol",
+          "settings": {
+            "modeId": "auto-review",
+            "thinkingOptionId": "high"
+          },
+          "selected_fresh_profile": {
+            "id": "agent_profile_mvfmd7wg_u16123g52jn",
+            "name": "Research",
+            "notes": "When reading existing code, reading existing papers, or generally researching BEFORE devising a plan."
+          },
+          "launch_prompt": {
+            "path": "/tmp/snn-colorado-partisanship-launched-prompt.txt",
+            "bytes": 13616,
+            "sha256": "9f9ba147dbfb1146a5e6f506c6ab02441032344e1ae2827cfcbd0a23bfd9dc54"
+          },
+          "actual_turnout_peer": "ab649b9b-13a0-445e-9af2-9b022a78404d",
+          "released_by_actual_finish": "1a2e39d9-26b7-4e1e-b465-bb0f41dbc02e",
+          "notifyOnFinish": true
         }
       },
       "validation": null,
@@ -5050,13 +5174,25 @@
         "remainder_count": 1207,
         "remainder_votes": 638512,
         "tie_rule": "descending source candidate votes then literal CO|year|contest_id|county_literal|native_id_literal ascending",
-        "actual_peer_launched": false,
-        "coordinator_acceptance": false
+        "actual_peer_launched": true,
+        "coordinator_acceptance": false,
+        "reciprocal_original_counts_and_orders_agree": true
       },
       "new_source_finding": {
-        "scope": "Actual worker original OOXML discovery; independent coordinator review pending",
+        "scope": "Actual original independent coordinator replay PASS",
         "issue": "Montezuma original rows2632/2633 CDEF shared strings contain annotated counts, not missing source values; numeric-only lane remains separate",
-        "candidate_order_changes": false
+        "candidate_order_changes": false,
+        "review": {
+          "path": "data/coordinator-annotated-turnout-review.json",
+          "bytes": 735842,
+          "sha256": "4ad3e3588719d69414a1fc4ccfbc52f6c2d200236d17db4cd17a6ba39bb29d2d"
+        },
+        "annotated_inclusive_source_totals": {
+          "active": 4074612,
+          "inactive_known": 508668,
+          "total": 4583280,
+          "ballots": 3241155
+        }
       }
     },
     {
@@ -5666,7 +5802,7 @@
       ]
     }
   ],
-  "batch_status": "in-progress:15newstatespublished-plus-retainedMichigan;IDturnout-narrow-repair-and-COturnoutactive;17laterstatesqueued",
+  "batch_status": "in-progress:15newstatespublished-plus-retainedMichigan;IDofficial-and-CObaselineactive;17laterstatesqueued",
   "coordinator_preparation_audit": {
     "status": "pass",
     "checked_at_utc": "2026-10-19T19:35:57.007950+00:00",
@@ -5692,7 +5828,7 @@
     "checks": "Unique IDs; original/stored SHA-256; exact ordered-part reconstruction where needed; raw byte counts; UTC/headers or retained transport failures; strict per-stored-object bounds and no orphan response assets.",
     "additional_content_checks": "Oklahoma complete2024 plus2022regular/unexpired and2020 certification originals preserve all77 counties per contest and35568 candidate positions; scopes stay separate. Louisiana complete2024/2022/2020 public XLSX+CSV controls cover64parishes each. Montana complete2018/2020/2022/2024 workbooks verify9876 selected positions and896 independent PDF county cells. Oregon complete2020/2022 candidate abstracts verify576 county cells;2022 reconstructed from3 contiguous206 ranges,500 partials retained. Actual public Download forms additionally supplied complete2020/2022 native ZIP streams, retained once as3/4 exact gzip parts at most32M; both ZIP CRCs and72 member hashes pass, filename inventories only. No completed question packages or accepted feeds are inferred. Nebraska source portfolio preserves91 complete archived stateHTML plus complete DouglasBIFF/Lancaster1431pagePDF, closing93county/1326 selected native namedSenate controls without an ID join. SouthDakota exact observed2024 public precinct-export POST supplies691 native rows/66correctly labelled county sheets with complete OOXML/ZIPCRC/memberhashes; source totals428728 remain194 below signed428922 across24counties, unallocated. A separate statewide XLSX has literal candidate-header conflict; no relabel from counts or current-feed admission. Idaho historical2020/2022preparation additionally retainsfourcompleteOOXMLworkbooks/22770selectedcandidatepositions:974native2020and999native2022percontest,50blank2020candidatecellsremainnull;allknownnative/44county/footercontrolsclose,andpostcountyappendicesstaynonadditive. Deterministicofflinepreflightdoesnotapprovepriority/currentgeography. Colorado actual published historicalCSVdownloads nowretain3199/3232/3205native source rows and99514nativecandidatepositions for2024Pres/2022Sen/2020Sen;1984independentofficialcandidatecomparisons pass. SourceTOTAL_BALLOTS duplicatescandidatecounts ratherthanactualadministrativeballots;flags/pseudocandidates/16stats-unmatchedzerocandidatekeys remainliteral. NoNovemberfeedorpriorityapproval. Delaware actual archive/report anchors supply complete2020Senate/president and2022House HTML/CSVs,22256 method positions across436/439/516sourceED contexts.2020unprintedEarlyVoting fields3500remainnull.2020president-onlyED0218has1Bidenmachinevote andnoSenate table; other2pres-onlykeysall0. Complete official write-in sheets retain17Presrows336 and2House rows18 separately, blankmethodcellsnull/noEDallocation;2022literal2020heading conflictsprinted2022date/clock. Illinois actual public historical search-form POSTs and literal county/Federal/Statewide/ByOffice anchors retain86747raw2020/2022SenateCSVrows/1040964rawfields/108authoritieseach. Native printedcandidate sums match statewideHTML;additionalnamed18/34 andgeneric2530/1911 remain separate. Actual2024statewide27namedrows total5633310 versusnativeprinted3total5592368;additionalnamed40942/nativegeneric57411 leave16469scopegap unallocated. Literal minorcandidate percentage defects and source variants retained; no guessedcontestIDs/nativevalidWIallocation/currentjoin. Massachusetts publicPD43formqueries andliteralview/downloadanchors additionallyretain2020Senate/2022Governor/2024President all351municipal/nativeCSVs,2173/2390/2394nativecontexts and61808sourcecandidate/controlpositions. Eachnative-to-municipal/stateCSVcolumncloses;separate2022GovernorcountyHTMLrows differfromsamepagefooter/bothCSVs[-3189,+90,-39,-12,-13,-3163]. AllOthers,Blanks,CSVpartyandHTMLWriteInmetadata remainseparate;nomethodcolumn/crossyearcurrentjoin/priorityapproval. NewMexicoactualindexedofficialElectionStatscontestpages andliteraldownloadlinks supply2020Sen1959/2022Gov2196/2024Pres2202nativecontexts plusprevious2024Sen2201;33VoterPrivacyaggregatesinEACH,notphysicalprecinctcount. All33county/statecontrolsclose,50179originalcandidate/controlpositions/10441maskedfields retained;nozeroimputation. Otero18Pres91/273/364 absentSenatenotzero. Originalcanvasses3moreexplicit403s,notrecoveredbodies;knownresidualsandlegacyheadlinecountsnotgeographyapproval. Oregon actual indexed Wasco2024 original is complete525495bytes/46pages;12presidential native blocks retain96choice and36Total/Overvote/Undervote positions, close8countyabstractcolumns,13527ballots/19064registration/8overvotes/128undervotes. Signed image-onlypage1directoriginalread;11otherblocks originaltextlayer, representativerenderschecked. GenericWrite-in51/Misc51 numericagreement doesnotprovevalidnamedWI. Emptyliteralphraseformquerynotabsence; noall36native/currentjoin/priorityapproval. FurtherOregonpubliccatalogform/page/bookmarkresponses retainwrong-filter/first-page/criteria-reset scopes,notabsence;thirdpartyURLleadREADME yieldednoofficiallinks/noimportedvotes. RhodeIslandactual2020/2022long-shortZIPprefixesagree16573/24973records;rootselected7647candidate rows114705total-plus14methodfields matchprimaryHTML.2020Pres504/Sen465 sourcecodes39Presidential-only,2022Gov454;noSenate0/physicaljoin. Nestedresults differ4829/2712positions andsetupzero.2020linked2016descriptiongroup3unlabelled,HTMLmatchingvectorEmergency;2022EarlyVoting separate. Courtesydata/BOEcertification/currenthierarchy/priorityremainworker-gated. Kentucky retained complete certifications additionally verify3480county candidatecells+29footer controls for120counties each2024Pres/2022Sen/2020Sen, paired presidential tickets counted once. Actual exactCDXlinks repairEstill/Lyon2020recap originals:110519/114882rawbytes,3/2pages,image-only/no numerictextacceptance;fivefullpagesrendered/read,overlappingmethod/summary andblank/zero fieldsremainindependenttranscriptionwork. Wyomingactualofficialindex additionallysuppliescomplete2022general precinct ZIP728465B/raw86694fc9c4cb405d100a2f43aa81de84945b6858cd55b793b4436461791aca36;threeworkbooks include23county source tabs. Detailednative/ballot/control extractionstillinprogress,notacceptedfromacquisition. WestVirginia actual parent-linked public client/config and all55 published child county IDs/versions verify precise file constructors. MainJS original is byte-identical to retained publishedFlorida original and reused read-only with separateWVreceipt. Six direct child requests403 and two exact namespace catalogs200empty remain bounded access gaps; no native vectors acquired. CompleteKanawha2024county original747pages supplies184source-native labels/3128selectedcandidatefields/552statisticsfields,13namedcountycontrols exact; Senate generic124 is separate from statewide15namedwriteins. Mercer actualparent supplies5complete2024/2020summary/precinct/writeinPDFs, raw/image-only limits retained, no native numeric acceptance. Nine actualcataloguedWV2018/2024reportZIPs pass completeCRCs;880XMLcandidatecountyfields+3190duplicatedXLSvote-type/totalfields match appcontrols. Originaltypes/rows/dates retained; singleElectionDaybucket semantics unresolved.2018summaryCSVballots560041/reg1155290 differ XMLturnout597149/1245827, source-specificfields not forcedbalance;2024candidate-registrationzeros separate from1209977admin. Nebraska actual SOSSeptember11certification parent andcompleteonepagePDF nowretained as2newHTTP200observations;previousfinal24pagecandidatePDFreusedbyteexact,firstpagefreshlyviewed. FiveSenatenames/sourcepartiesmatchtheprevioussetupwhileID148remainssharedcontest/searchID;ByPetitionOsbornnotDemocratic,allothersretained.No signedinstrument/laterscope/currentID/countadmissionorworkerlaunch."
   },
-  "coordinator_next_actions": "Idaho baseline actually finished; SAME turnout1a2e39d9 now performs narrow source-stage interpretation repair in that released slot. Colorado turnout is the only other active researcher; actual peer awaits next finish. Independently review final first pair, accept complete source contract externally, then dispatch official/maps within cap; continue17 laterstates.",
+  "coordinator_next_actions": "Actual Colorado turnout reciprocal finish launched Idaho officiala4924a48 after fresh profile/provider discovery. Only other actual researcher is Colorado baseline451afcad. Idaho maps prompt waits next actual slot; Colorado final baseline/coordinator acceptance still pending. Continue17laterstates.",
   "coordinator_prompt_preparation": {
     "scope": "Unlaunched future first-wave prompts only; no agent IDs or completed packages implied",
     "config": "/tmp/snn-future-state-context.json",

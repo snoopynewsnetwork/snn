@@ -129,3 +129,42 @@ That actual released slot resumed the SAME turnout 1a2e39d9 for only its queued
 unsupported-primary-attribution correction, with prior bytes preserved. Colorado
 turnout ab649b9b is the sole other active researcher. No third worker, finished-peer
 contact or premature acceptance was created.
+
+
+## Narrow attribution repair finished; final coordinator review
+
+The SAME turnout agent actually completed the narrow HTML46 attribution repair,
+with all82 prior bodies frozen and74 preexisting objects byte-identical. All
+preexisting contract fields, votes, canonical order and528 membership are exact;
+HTML stage stays unknown against general67 and the separate primary field.
+Final20 QA groups/86 owned hashes pass. Independent coordinator original-cell
+review separately passes380,448 checks, and the target review951,622. Formal
+external acceptance remains pending while its complete contract/dependencies
+are sealed. No worker acceptance/current-geography flag changes.
+
+Colorado baseline451afcad and resumed turnoutab649b9b are now the only active
+researchers. Idaho official/maps will launch after acceptance in actual free
+slots; no finished first-pair worker is contacted or restarted.
+
+
+## External historical acceptance sealed
+
+The coordinator independently accepts the exact source-only528 order over985
+observations/all44 parents,32priority parents and457remainder. Acceptance is
+external at data/coordinator-priority-acceptance.json; all producer flags remain
+false. Its complete contract, every root field,20complete source companions and
+3946/194historical native/administrative objects remain pinned with full recursive
+semantics. The first-pair original/math/seal reviews pass. No vote-only projection,
+current identity, eligible-write-in exhaustion, genuine feed or probability is
+approved. Official-source/maps prompts are prepared but actual launches await
+real released slots; Colorado's two first-pair researchers remain active.
+
+
+## Actual official-results launch
+
+Colorado turnoutab649b9b actually finished its reciprocal turn. In that released
+slot, fresh Research-profile/provider discovery launched Idaho official-results
+`a4924a48-6ff5-454b-9dc6-5d4381398e7a` on the accepted complete528/985 scope.
+Colorado baseline451afcad is the sole other actual active researcher. Idaho maps
+waits a real released slot. First-pair frozen files remain unchanged; authority
+is external and path-only in question-worker outputs.
