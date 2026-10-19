@@ -92,3 +92,13 @@ South Dakota queued preparation recovered an actual observed historical public p
 ## Recovered Mississippi source witness checkpoint
 
 The existing coordinator recovered its already staged metadata without replacing either Mississippi worker or altering untracked research. Immutable baseline coverage now reaches all 82 preferred SEMS source packets / 1,736 native constituents. The independent turnout presidential replay separately reaches 60 preferred packets / 1,272 native constituents, leaving 464 across 22 parents plus two alternative publications. All newer bounded pin/source/role comparisons pass with raster and crop qualifications retained; no formal 887-unit acceptance follows. The same two-worker cap and sole coordinator Git ownership remain in force. Queued preparation and the prior 761-observation audit are preserved.
+
+
+## Further bounded historical-original preparation
+
+Mississippi’s independent original presidential replay now covers63 preferred views/1,332native, with404native across19parents still outside it. A fresh bounded original Alcorn2020 reread separately confirms54 Senate numeric fields and12unused blanks without a cross-year identity join. Both actual workers remain active and the887proposal remains unaccepted.
+
+Idaho queued preparation now preserves four complete original2020/2022 statewide county/precinct workbooks and22,770 selected candidate positions. It separates974native2020rows and999native2022rows per contest from overlapping county and appendix controls; fifty2020candidate blanks remain null despite known-sum closure. Literal inconsistent final control labels and raw source parties remain retained. No additional worker or priority has been admitted; the761-observation network preparation audit is unchanged.
+
+
+Mississippi’s next bounded review now retains68 independently original-replayed preferred presidential packets /1,456native, leaving14/280 plus two alternatives. Its immutable2020 eleven-publication witness covers118native across separate vintages; only eight selected82 publications /85native are within that historical scope. Coordinator map preparation recovered thirteen MARIS2023-labelled county archives and a separate statewide2020 Census reference, with precise receipt-collision history and one recovered transport failure. Archive structure checks do not approve reporting identity or current boundaries. The same two researchers and unaccepted887proposal remain unchanged.
