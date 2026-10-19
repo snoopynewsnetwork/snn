@@ -1,0 +1,112 @@
+[
+  {
+    "name": "no_positive_pool",
+    "units": [
+      {
+        "key": "x",
+        "pair_volume": 0,
+        "a_share": 0.5
+      }
+    ],
+    "result": {
+      "status": "no_positive_pool",
+      "pair_total": 0,
+      "baseline_net": 0.0,
+      "target_net": 0.0,
+      "unbounded_shift": null,
+      "bounded_shift": null
+    }
+  },
+  {
+    "name": "negative_shift_already_winning",
+    "units": [
+      {
+        "key": "x",
+        "pair_volume": 100,
+        "a_share": 0.7
+      }
+    ],
+    "result": {
+      "pair_total": 100,
+      "baseline_net": 39.99999999999999,
+      "target_net": 0.0,
+      "unbounded_shift": -0.19999999999999996,
+      "unbounded_shift_share_pp": -19.999999999999996,
+      "unbounded_target_has_clipping": false,
+      "bounds": [
+        -1,
+        1
+      ],
+      "baseline_already_at_or_above_target": true,
+      "status": "already_winning_baseline",
+      "bounded_shift": -0.2,
+      "bounded_shift_share_pp": -20.0,
+      "achieved_net": -1.1102230246251565e-14,
+      "clipped_units": 0
+    }
+  },
+  {
+    "name": "clipping_requires_bounded_solution",
+    "units": [
+      {
+        "key": "x",
+        "pair_volume": 20,
+        "a_share": 0.95
+      },
+      {
+        "key": "y",
+        "pair_volume": 80,
+        "a_share": 0.1
+      }
+    ],
+    "result": {
+      "pair_total": 100,
+      "baseline_net": -46.0,
+      "target_net": 0.0,
+      "unbounded_shift": 0.23,
+      "unbounded_shift_share_pp": 23.0,
+      "unbounded_target_has_clipping": true,
+      "bounds": [
+        -1,
+        1
+      ],
+      "baseline_already_at_or_above_target": false,
+      "status": "feasible",
+      "bounded_shift": 0.2749999999999999,
+      "bounded_shift_share_pp": 27.499999999999993,
+      "achieved_net": -1.7763568394002505e-14,
+      "clipped_units": 1
+    }
+  },
+  {
+    "name": "unachievable_limited_shift",
+    "units": [
+      {
+        "key": "x",
+        "pair_volume": 100,
+        "a_share": 0.1
+      }
+    ],
+    "bounds": [
+      -0.1,
+      0.1
+    ],
+    "result": {
+      "pair_total": 100,
+      "baseline_net": -80.0,
+      "target_net": 0.0,
+      "unbounded_shift": 0.4,
+      "unbounded_shift_share_pp": 40.0,
+      "unbounded_target_has_clipping": false,
+      "bounds": [
+        -0.1,
+        0.1
+      ],
+      "baseline_already_at_or_above_target": false,
+      "status": "impossible_with_shift_bounds",
+      "bounded_shift": null,
+      "feasible_net_min": -100.0,
+      "feasible_net_max": -60.0
+    }
+  }
+]

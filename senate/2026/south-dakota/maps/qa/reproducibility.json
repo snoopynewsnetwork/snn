@@ -1,0 +1,81 @@
+{
+  "status": "pass_exact_offline_replay_and_reconstruction",
+  "commands": [
+    {
+      "command": [
+        "python",
+        "-B",
+        "maps/scripts/audit_dependencies.py"
+      ],
+      "stdout": "exact pins 279 full recursive objects 2150 original streams 29\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "maps/scripts/geometry.py"
+      ],
+      "stdout": "Census 785 505985 GIS [('minnehaha', 81, 6), ('pennington', 53, 1)]\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "maps/scripts/pdf_previews.py"
+      ],
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "maps/scripts/investigate.py",
+        "--inventory-only"
+      ],
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "maps/scripts/build.py"
+      ],
+      "stdout": "{'priorities': 304, 'full_inventory': 691, 'remainder': 387, 'parents': 66, 'priority_parents': 39, 'county_PDF_map_originals': 29, 'county_map_parents': 18, 'priority_entries_with_qualified_county_map_assets': 208, 'priority_entries_with_Census_only_map_assets': 96, 'original_receipts': 244, 'owned_GET_receipts': 132, 'native_features': 134, 'true_curve_features': 7, 'Census_features': 785, 'Census_positions': 505985, 'approved_leaf_matches': 0}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "maps/scripts/atlas.py"
+      ],
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "maps/scripts/write_report.py"
+      ],
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "unchanged_owned_files": 589,
+  "all_measured_bytes_identical": true,
+  "scoped_receipt_exclusions": [
+    "maps/asset-manifest.json",
+    "maps/qa/reproducibility.json",
+    "maps/qa/validation.json"
+  ],
+  "receipt_exclusions_reason": "Finalization receipts are not rebuilt by derivative commands; all are included by the exact owned manifest except that manifest itself.",
+  "reconstructed_original_PDF_exact": true,
+  "reconstructed_full_nested_unit_exact": true,
+  "network_requests": 0,
+  "frozen_or_peer_writers_executed": 0
+}

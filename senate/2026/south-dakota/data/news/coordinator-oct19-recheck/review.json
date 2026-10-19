@@ -1,0 +1,130 @@
+{
+  "status": "bounded_current_source_recheck_not_genuine_count_admission",
+  "old35_receipts_unchanged": true,
+  "old_ledger_bytes": 80423,
+  "old_ledger_sha256": "c4629206bc8dc077ddb57a0f0c9703d5d10c5b1fa6abd5971511c43b1e067b61",
+  "new_observations": 6,
+  "observations": [
+    {
+      "id": "dakota-results",
+      "HTTP_status": 200,
+      "retrieved_at_utc": "2026-10-19T21:23:02.619900+00:00",
+      "current_November_counts_admitted": false,
+      "raw_bytes": 65282,
+      "raw_sha256": "d6125c3b65d77ce0583e5acd91194b9863b6119e8ecb9c19e98e30b0cdffed0d",
+      "selectedElection_objects": [
+        {
+          "id": null
+        }
+      ],
+      "displayTestData_literals": [
+        "true"
+      ],
+      "complete_parsed_embedded_objects": {
+        "path": "data/news/coordinator-oct19-recheck/dakota-complete-embedded-selected-objects.json.gz",
+        "bytes": 97,
+        "sha256": "71aab9f607cd608e5fd543d20336c23951c7b7b722c202eb4bfcf20e6d31d56a"
+      }
+    },
+    {
+      "id": "kelo-home",
+      "HTTP_status": 403,
+      "retrieved_at_utc": "2026-10-19T21:23:02.620447+00:00",
+      "current_November_counts_admitted": false,
+      "raw_bytes": 6516,
+      "raw_sha256": "0028f0f456f6fa029a17eeddf5b282d58c80bed858ee6386133d7b4a67994e01"
+    },
+    {
+      "id": "newscenter1-home",
+      "HTTP_status": 200,
+      "retrieved_at_utc": "2026-10-19T21:23:02.620687+00:00",
+      "current_November_counts_admitted": false,
+      "raw_bytes": 526749,
+      "raw_sha256": "fb5f9b63dca6c7ab8bc70d3fe5bc57627e9118f6c8a4d9689c323876d8b7039c"
+    },
+    {
+      "id": "nyt-elections",
+      "HTTP_status": 403,
+      "retrieved_at_utc": "2026-10-19T21:23:02.620888+00:00",
+      "current_November_counts_admitted": false,
+      "raw_bytes": 771,
+      "raw_sha256": "027d344079c414a2c354aa09e975d5a918b912e9a9d43316e1e1975b29b8db16"
+    },
+    {
+      "id": "sos-media",
+      "HTTP_status": 200,
+      "retrieved_at_utc": "2026-10-19T21:23:02.722889+00:00",
+      "current_November_counts_admitted": false,
+      "raw_bytes": 27122,
+      "raw_sha256": "04e827da8bfbbb770fc212eae1199b7b5e87366927c3fe55b17e43d48986b452",
+      "testing_in_progress_present": true,
+      "November_date_present": true,
+      "publisher_clock_literal_matches": [
+        "                        <div class=\"last-updated\"><span>Results last updated:</span><span>10/15/2026 12:24 PM CT</span></div>\r"
+      ]
+    },
+    {
+      "id": "sos-linked-statewide-CSV",
+      "HTTP_status": 200,
+      "retrieved_at_utc": "2026-10-19T21:23:02.727151+00:00",
+      "current_November_counts_admitted": false,
+      "raw_bytes": 2245,
+      "raw_sha256": "32d1015c6edcddbae7327576c4c9f249f47b0ac6d472b90cd4d040f93ab65514",
+      "raw_CSV_rows": 19,
+      "literal_header": [
+        "RaceID",
+        "RaceName",
+        "PartyCode",
+        "AreaType",
+        "AreaNum",
+        "OfficeSeqNo",
+        "BallotOrder",
+        "CandidateID",
+        "CandidateName",
+        "CurrentDateTime",
+        "VoteFor",
+        "CandidateVotes",
+        "CandidatePercentage",
+        "PrecinctsReporting"
+      ],
+      "complete_Senate_rows": [
+        [
+          "14412",
+          "United States Senator",
+          "REP",
+          "",
+          "",
+          "110",
+          "",
+          "24967",
+          "Mike  Rounds ",
+          "10/19/2026 9:22:39 PM",
+          "1",
+          "0",
+          "0",
+          "=\"0/656\"",
+          ""
+        ],
+        [
+          "14412",
+          "United States Senator",
+          "IND",
+          "",
+          "",
+          "110",
+          "",
+          "24887",
+          "Brian L Bengs ",
+          "10/19/2026 9:22:39 PM",
+          "1",
+          "0",
+          "0",
+          "=\"0/656\"",
+          ""
+        ]
+      ],
+      "source_generation_clock_is_vote_update": false
+    }
+  ],
+  "qualification": "Independent six-source October19 GET observations; complete bodies/errors retained separately from the old source ledger. Raw HTTP status, setup/test flags and generated clocks are not vote updates, completed contest identity, legal ballot eligibility or a measured live cadence. Newsroom and official overlapping data are never added."
+}

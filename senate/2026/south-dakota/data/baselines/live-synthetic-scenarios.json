@@ -1,0 +1,837 @@
+[
+  {
+    "name": "unknown_pool",
+    "input": {
+      "a": "Brian L Bengs",
+      "b": "Mike Rounds",
+      "counted": {
+        "Brian L Bengs": 20,
+        "Mike Rounds": 30
+      },
+      "remaining": [
+        {
+          "key": "unknown",
+          "remaining_total": null,
+          "a_pair_share": 0.5
+        }
+      ],
+      "target_pair_margin": 0.0
+    },
+    "result": {
+      "status": "unknown_remaining_pool",
+      "counted_fixed": {
+        "Brian L Bengs": 20,
+        "Mike Rounds": 30
+      }
+    },
+    "selected_result": null
+  },
+  {
+    "name": "unknown_preference",
+    "input": {
+      "a": "Brian L Bengs",
+      "b": "Mike Rounds",
+      "counted": {
+        "Brian L Bengs": 20,
+        "Mike Rounds": 30
+      },
+      "remaining": [
+        {
+          "key": "unknown",
+          "remaining_total": 100,
+          "a_pair_share": null
+        }
+      ],
+      "target_pair_margin": 0.0
+    },
+    "result": {
+      "status": "unknown_remaining_preference",
+      "counted_fixed": {
+        "Brian L Bengs": 20,
+        "Mike Rounds": 30
+      }
+    },
+    "selected_result": null
+  },
+  {
+    "name": "no_pool_tie",
+    "input": {
+      "a": "Brian L Bengs",
+      "b": "Mike Rounds",
+      "counted": {
+        "Brian L Bengs": 20,
+        "Mike Rounds": 20
+      },
+      "remaining": [],
+      "target_pair_margin": 0.0
+    },
+    "result": {
+      "status": "tied_no_pair_pool",
+      "counted_fixed": {
+        "Brian L Bengs": 20,
+        "Mike Rounds": 20
+      },
+      "remaining_contributions": [],
+      "remaining_pair_pool": 0.0,
+      "remaining_all_candidate_pool": 0,
+      "required_remaining_a_pair_share": null,
+      "display_clipped_required_share": null,
+      "target_pair_margin": 0.0,
+      "target_net_uses_FINAL_pair_denominator": 0.0,
+      "final_candidate_votes": {
+        "Brian L Bengs": 20,
+        "Mike Rounds": 20
+      },
+      "final_pair_denominator": 40.0,
+      "final_all_candidate_denominator": 40,
+      "final_a_minus_b_net": 0,
+      "final_pair_margin_pp": 0.0,
+      "final_all_candidate_margin_pp": 0.0,
+      "plurality_winners": [
+        "Brian L Bengs",
+        "Mike Rounds"
+      ],
+      "unique_plurality_winner": null,
+      "any_preference_clipped": false,
+      "probability": null
+    },
+    "selected_result": null
+  },
+  {
+    "name": "no_pool_secured",
+    "input": {
+      "a": "Brian L Bengs",
+      "b": "Mike Rounds",
+      "counted": {
+        "Brian L Bengs": 21,
+        "Mike Rounds": 20
+      },
+      "remaining": [],
+      "target_pair_margin": 0.0
+    },
+    "result": {
+      "status": "secured_no_pair_pool",
+      "counted_fixed": {
+        "Brian L Bengs": 21,
+        "Mike Rounds": 20
+      },
+      "remaining_contributions": [],
+      "remaining_pair_pool": 0.0,
+      "remaining_all_candidate_pool": 0,
+      "required_remaining_a_pair_share": null,
+      "display_clipped_required_share": null,
+      "target_pair_margin": 0.0,
+      "target_net_uses_FINAL_pair_denominator": 0.0,
+      "final_candidate_votes": {
+        "Brian L Bengs": 21,
+        "Mike Rounds": 20
+      },
+      "final_pair_denominator": 41.0,
+      "final_all_candidate_denominator": 41,
+      "final_a_minus_b_net": 1,
+      "final_pair_margin_pp": 2.4390243902439024,
+      "final_all_candidate_margin_pp": 2.4390243902439024,
+      "plurality_winners": [
+        "Brian L Bengs"
+      ],
+      "unique_plurality_winner": "Brian L Bengs",
+      "any_preference_clipped": false,
+      "probability": null
+    },
+    "selected_result": null
+  },
+  {
+    "name": "no_pool_lost",
+    "input": {
+      "a": "Brian L Bengs",
+      "b": "Mike Rounds",
+      "counted": {
+        "Brian L Bengs": 19,
+        "Mike Rounds": 20
+      },
+      "remaining": [],
+      "target_pair_margin": 0.0
+    },
+    "result": {
+      "status": "impossible_no_pair_pool",
+      "counted_fixed": {
+        "Brian L Bengs": 19,
+        "Mike Rounds": 20
+      },
+      "remaining_contributions": [],
+      "remaining_pair_pool": 0.0,
+      "remaining_all_candidate_pool": 0,
+      "required_remaining_a_pair_share": null,
+      "display_clipped_required_share": null,
+      "target_pair_margin": 0.0,
+      "target_net_uses_FINAL_pair_denominator": 0.0,
+      "final_candidate_votes": {
+        "Brian L Bengs": 19,
+        "Mike Rounds": 20
+      },
+      "final_pair_denominator": 39.0,
+      "final_all_candidate_denominator": 39,
+      "final_a_minus_b_net": -1,
+      "final_pair_margin_pp": -2.5641025641025643,
+      "final_all_candidate_margin_pp": -2.5641025641025643,
+      "plurality_winners": [
+        "Mike Rounds"
+      ],
+      "unique_plurality_winner": "Mike Rounds",
+      "any_preference_clipped": false,
+      "probability": null
+    },
+    "selected_result": null
+  },
+  {
+    "name": "negative_pool",
+    "input": {
+      "a": "Brian L Bengs",
+      "b": "Mike Rounds",
+      "counted": {
+        "Brian L Bengs": 20,
+        "Mike Rounds": 30
+      },
+      "remaining": [
+        {
+          "key": "negative",
+          "remaining_total": -1,
+          "a_pair_share": 0.5
+        }
+      ],
+      "target_pair_margin": 0.0
+    },
+    "result": {
+      "status": "invalid_negative_or_nonfinite_remaining",
+      "counted_fixed": {
+        "Brian L Bengs": 20,
+        "Mike Rounds": 30
+      }
+    },
+    "selected_result": null
+  },
+  {
+    "name": "negative_counted",
+    "input": {
+      "a": "Brian L Bengs",
+      "b": "Mike Rounds",
+      "counted": {
+        "Brian L Bengs": -1,
+        "Mike Rounds": 30
+      },
+      "remaining": [],
+      "target_pair_margin": 0.0
+    },
+    "result": {
+      "status": "invalid_negative_or_nonfinite_counted"
+    },
+    "selected_result": null
+  },
+  {
+    "name": "impossible",
+    "input": {
+      "a": "Brian L Bengs",
+      "b": "Mike Rounds",
+      "counted": {
+        "Brian L Bengs": 20,
+        "Mike Rounds": 150
+      },
+      "remaining": [
+        {
+          "key": "u",
+          "remaining_total": 100,
+          "a_pair_share": 0.8
+        }
+      ],
+      "target_pair_margin": 0.0
+    },
+    "result": {
+      "status": "impossible",
+      "counted_fixed": {
+        "Brian L Bengs": 20,
+        "Mike Rounds": 150
+      },
+      "remaining_contributions": [
+        {
+          "key": "u",
+          "remaining_total": 100,
+          "pair_pool": 100,
+          "requested_a_pair_share": 0.8,
+          "clipped_a_pair_share": 0.8,
+          "was_clipped": false,
+          "gains": {
+            "Brian L Bengs": 80.0,
+            "Mike Rounds": 19.999999999999996
+          }
+        }
+      ],
+      "remaining_pair_pool": 100.0,
+      "remaining_all_candidate_pool": 100,
+      "required_remaining_a_pair_share": 1.15,
+      "display_clipped_required_share": 1.0,
+      "target_pair_margin": 0.0,
+      "target_net_uses_FINAL_pair_denominator": 0.0,
+      "final_candidate_votes": {
+        "Brian L Bengs": 100.0,
+        "Mike Rounds": 170.0
+      },
+      "final_pair_denominator": 270.0,
+      "final_all_candidate_denominator": 270.0,
+      "final_a_minus_b_net": -70.0,
+      "final_pair_margin_pp": -25.925925925925927,
+      "final_all_candidate_margin_pp": -25.925925925925927,
+      "plurality_winners": [
+        "Mike Rounds"
+      ],
+      "unique_plurality_winner": "Mike Rounds",
+      "any_preference_clipped": false,
+      "probability": null
+    },
+    "selected_result": {
+      "status": "impossible",
+      "selected_key": "u",
+      "required_share": 1.15,
+      "display_clipped_share": 1.0,
+      "counted_net_fixed": -130,
+      "other_remaining_net_fixed": 0,
+      "selected_pair_pool": 100,
+      "final_pair_denominator": 270.0,
+      "target_net": 0.0
+    }
+  },
+  {
+    "name": "secured",
+    "input": {
+      "a": "Brian L Bengs",
+      "b": "Mike Rounds",
+      "counted": {
+        "Brian L Bengs": 150,
+        "Mike Rounds": 20
+      },
+      "remaining": [
+        {
+          "key": "u",
+          "remaining_total": 100,
+          "a_pair_share": 0.2
+        }
+      ],
+      "target_pair_margin": 0.0
+    },
+    "result": {
+      "status": "secured_even_at_zero",
+      "counted_fixed": {
+        "Brian L Bengs": 150,
+        "Mike Rounds": 20
+      },
+      "remaining_contributions": [
+        {
+          "key": "u",
+          "remaining_total": 100,
+          "pair_pool": 100,
+          "requested_a_pair_share": 0.2,
+          "clipped_a_pair_share": 0.2,
+          "was_clipped": false,
+          "gains": {
+            "Brian L Bengs": 20.0,
+            "Mike Rounds": 80.0
+          }
+        }
+      ],
+      "remaining_pair_pool": 100.0,
+      "remaining_all_candidate_pool": 100,
+      "required_remaining_a_pair_share": -0.15,
+      "display_clipped_required_share": 0.0,
+      "target_pair_margin": 0.0,
+      "target_net_uses_FINAL_pair_denominator": 0.0,
+      "final_candidate_votes": {
+        "Brian L Bengs": 170.0,
+        "Mike Rounds": 100.0
+      },
+      "final_pair_denominator": 270.0,
+      "final_all_candidate_denominator": 270.0,
+      "final_a_minus_b_net": 70.0,
+      "final_pair_margin_pp": 25.925925925925927,
+      "final_all_candidate_margin_pp": 25.925925925925927,
+      "plurality_winners": [
+        "Brian L Bengs"
+      ],
+      "unique_plurality_winner": "Brian L Bengs",
+      "any_preference_clipped": false,
+      "probability": null
+    },
+    "selected_result": {
+      "status": "secured_even_at_zero",
+      "selected_key": "u",
+      "required_share": -0.15,
+      "display_clipped_share": 0.0,
+      "counted_net_fixed": 130,
+      "other_remaining_net_fixed": 0,
+      "selected_pair_pool": 100,
+      "final_pair_denominator": 270.0,
+      "target_net": 0.0
+    }
+  },
+  {
+    "name": "clip_high",
+    "input": {
+      "a": "Brian L Bengs",
+      "b": "Mike Rounds",
+      "counted": {
+        "Brian L Bengs": 20,
+        "Mike Rounds": 30
+      },
+      "remaining": [
+        {
+          "key": "u",
+          "remaining_total": 100,
+          "a_pair_share": 1.2
+        }
+      ],
+      "target_pair_margin": 0.0
+    },
+    "result": {
+      "status": "feasible",
+      "counted_fixed": {
+        "Brian L Bengs": 20,
+        "Mike Rounds": 30
+      },
+      "remaining_contributions": [
+        {
+          "key": "u",
+          "remaining_total": 100,
+          "pair_pool": 100,
+          "requested_a_pair_share": 1.2,
+          "clipped_a_pair_share": 1.0,
+          "was_clipped": true,
+          "gains": {
+            "Brian L Bengs": 100.0,
+            "Mike Rounds": 0.0
+          }
+        }
+      ],
+      "remaining_pair_pool": 100.0,
+      "remaining_all_candidate_pool": 100,
+      "required_remaining_a_pair_share": 0.55,
+      "display_clipped_required_share": 0.55,
+      "target_pair_margin": 0.0,
+      "target_net_uses_FINAL_pair_denominator": 0.0,
+      "final_candidate_votes": {
+        "Brian L Bengs": 120.0,
+        "Mike Rounds": 30.0
+      },
+      "final_pair_denominator": 150.0,
+      "final_all_candidate_denominator": 150.0,
+      "final_a_minus_b_net": 90.0,
+      "final_pair_margin_pp": 60.0,
+      "final_all_candidate_margin_pp": 60.0,
+      "plurality_winners": [
+        "Brian L Bengs"
+      ],
+      "unique_plurality_winner": "Brian L Bengs",
+      "any_preference_clipped": true,
+      "probability": null
+    },
+    "selected_result": {
+      "status": "feasible",
+      "selected_key": "u",
+      "required_share": 0.55,
+      "display_clipped_share": 0.55,
+      "counted_net_fixed": -10,
+      "other_remaining_net_fixed": 0,
+      "selected_pair_pool": 100,
+      "final_pair_denominator": 150.0,
+      "target_net": 0.0
+    }
+  },
+  {
+    "name": "clip_low",
+    "input": {
+      "a": "Brian L Bengs",
+      "b": "Mike Rounds",
+      "counted": {
+        "Brian L Bengs": 20,
+        "Mike Rounds": 30
+      },
+      "remaining": [
+        {
+          "key": "u",
+          "remaining_total": 100,
+          "a_pair_share": -0.2
+        }
+      ],
+      "target_pair_margin": 0.0
+    },
+    "result": {
+      "status": "feasible",
+      "counted_fixed": {
+        "Brian L Bengs": 20,
+        "Mike Rounds": 30
+      },
+      "remaining_contributions": [
+        {
+          "key": "u",
+          "remaining_total": 100,
+          "pair_pool": 100,
+          "requested_a_pair_share": -0.2,
+          "clipped_a_pair_share": 0.0,
+          "was_clipped": true,
+          "gains": {
+            "Brian L Bengs": 0.0,
+            "Mike Rounds": 100.0
+          }
+        }
+      ],
+      "remaining_pair_pool": 100.0,
+      "remaining_all_candidate_pool": 100,
+      "required_remaining_a_pair_share": 0.55,
+      "display_clipped_required_share": 0.55,
+      "target_pair_margin": 0.0,
+      "target_net_uses_FINAL_pair_denominator": 0.0,
+      "final_candidate_votes": {
+        "Brian L Bengs": 20.0,
+        "Mike Rounds": 130.0
+      },
+      "final_pair_denominator": 150.0,
+      "final_all_candidate_denominator": 150.0,
+      "final_a_minus_b_net": -110.0,
+      "final_pair_margin_pp": -73.33333333333333,
+      "final_all_candidate_margin_pp": -73.33333333333333,
+      "plurality_winners": [
+        "Mike Rounds"
+      ],
+      "unique_plurality_winner": "Mike Rounds",
+      "any_preference_clipped": true,
+      "probability": null
+    },
+    "selected_result": {
+      "status": "feasible",
+      "selected_key": "u",
+      "required_share": 0.55,
+      "display_clipped_share": 0.55,
+      "counted_net_fixed": -10,
+      "other_remaining_net_fixed": 0,
+      "selected_pair_pool": 100,
+      "final_pair_denominator": 150.0,
+      "target_net": 0.0
+    }
+  },
+  {
+    "name": "FINAL_denominator_Aplus1",
+    "input": {
+      "a": "Brian L Bengs",
+      "b": "Mike Rounds",
+      "counted": {
+        "Brian L Bengs": 400,
+        "Mike Rounds": 500
+      },
+      "remaining": [
+        {
+          "key": "u",
+          "remaining_total": 100,
+          "a_pair_share": 0.9
+        }
+      ],
+      "target_pair_margin": 0.01
+    },
+    "result": {
+      "status": "impossible",
+      "counted_fixed": {
+        "Brian L Bengs": 400,
+        "Mike Rounds": 500
+      },
+      "remaining_contributions": [
+        {
+          "key": "u",
+          "remaining_total": 100,
+          "pair_pool": 100,
+          "requested_a_pair_share": 0.9,
+          "clipped_a_pair_share": 0.9,
+          "was_clipped": false,
+          "gains": {
+            "Brian L Bengs": 90.0,
+            "Mike Rounds": 9.999999999999998
+          }
+        }
+      ],
+      "remaining_pair_pool": 100.0,
+      "remaining_all_candidate_pool": 100,
+      "required_remaining_a_pair_share": 1.05,
+      "display_clipped_required_share": 1.0,
+      "target_pair_margin": 0.01,
+      "target_net_uses_FINAL_pair_denominator": 10.0,
+      "final_candidate_votes": {
+        "Brian L Bengs": 490.0,
+        "Mike Rounds": 510.0
+      },
+      "final_pair_denominator": 1000.0,
+      "final_all_candidate_denominator": 1000.0,
+      "final_a_minus_b_net": -20.0,
+      "final_pair_margin_pp": -2.0,
+      "final_all_candidate_margin_pp": -2.0,
+      "plurality_winners": [
+        "Mike Rounds"
+      ],
+      "unique_plurality_winner": "Mike Rounds",
+      "any_preference_clipped": false,
+      "probability": null
+    },
+    "selected_result": {
+      "status": "impossible",
+      "selected_key": "u",
+      "required_share": 1.05,
+      "display_clipped_share": 1.0,
+      "counted_net_fixed": -100,
+      "other_remaining_net_fixed": 0,
+      "selected_pair_pool": 100,
+      "final_pair_denominator": 1000.0,
+      "target_net": 10.0
+    }
+  },
+  {
+    "name": "third_candidate_beats_pair_winner",
+    "input": {
+      "a": "Brian L Bengs",
+      "b": "Mike Rounds",
+      "counted": {
+        "Brian L Bengs": 20,
+        "Mike Rounds": 10,
+        "Illustrative third candidate": 200
+      },
+      "remaining": [
+        {
+          "key": "u",
+          "remaining_total": 100,
+          "a_pair_share": 0.6,
+          "other_shares": {
+            "Illustrative third candidate": 0.2
+          }
+        }
+      ],
+      "target_pair_margin": 0.0
+    },
+    "result": {
+      "status": "feasible",
+      "counted_fixed": {
+        "Brian L Bengs": 20,
+        "Mike Rounds": 10,
+        "Illustrative third candidate": 200
+      },
+      "remaining_contributions": [
+        {
+          "key": "u",
+          "remaining_total": 100,
+          "pair_pool": 80.0,
+          "requested_a_pair_share": 0.6,
+          "clipped_a_pair_share": 0.6,
+          "was_clipped": false,
+          "gains": {
+            "Brian L Bengs": 48.0,
+            "Mike Rounds": 32.0,
+            "Illustrative third candidate": 20.0
+          }
+        }
+      ],
+      "remaining_pair_pool": 80.0,
+      "remaining_all_candidate_pool": 100,
+      "required_remaining_a_pair_share": 0.4375,
+      "display_clipped_required_share": 0.4375,
+      "target_pair_margin": 0.0,
+      "target_net_uses_FINAL_pair_denominator": 0.0,
+      "final_candidate_votes": {
+        "Brian L Bengs": 68.0,
+        "Mike Rounds": 42.0,
+        "Illustrative third candidate": 220.0
+      },
+      "final_pair_denominator": 110.0,
+      "final_all_candidate_denominator": 330.0,
+      "final_a_minus_b_net": 26.0,
+      "final_pair_margin_pp": 23.636363636363637,
+      "final_all_candidate_margin_pp": 7.878787878787879,
+      "plurality_winners": [
+        "Illustrative third candidate"
+      ],
+      "unique_plurality_winner": "Illustrative third candidate",
+      "any_preference_clipped": false,
+      "probability": null
+    },
+    "selected_result": {
+      "status": "feasible",
+      "selected_key": "u",
+      "required_share": 0.4375,
+      "display_clipped_share": 0.4375,
+      "counted_net_fixed": 10,
+      "other_remaining_net_fixed": 0,
+      "selected_pair_pool": 80.0,
+      "final_pair_denominator": 110.0,
+      "target_net": 0.0
+    }
+  },
+  {
+    "name": "others_fixed_selected_target",
+    "input": {
+      "a": "Brian L Bengs",
+      "b": "Mike Rounds",
+      "counted": {
+        "Brian L Bengs": 100,
+        "Mike Rounds": 120
+      },
+      "remaining": [
+        {
+          "key": "selected",
+          "remaining_total": 100,
+          "a_pair_share": 0.5
+        },
+        {
+          "key": "elsewhere",
+          "remaining_total": 200,
+          "a_pair_share": 0.6
+        }
+      ],
+      "target_pair_margin": 0.01
+    },
+    "result": {
+      "status": "feasible",
+      "counted_fixed": {
+        "Brian L Bengs": 100,
+        "Mike Rounds": 120
+      },
+      "remaining_contributions": [
+        {
+          "key": "selected",
+          "remaining_total": 100,
+          "pair_pool": 100,
+          "requested_a_pair_share": 0.5,
+          "clipped_a_pair_share": 0.5,
+          "was_clipped": false,
+          "gains": {
+            "Brian L Bengs": 50.0,
+            "Mike Rounds": 50.0
+          }
+        },
+        {
+          "key": "elsewhere",
+          "remaining_total": 200,
+          "pair_pool": 200,
+          "requested_a_pair_share": 0.6,
+          "clipped_a_pair_share": 0.6,
+          "was_clipped": false,
+          "gains": {
+            "Brian L Bengs": 120.0,
+            "Mike Rounds": 80.0
+          }
+        }
+      ],
+      "remaining_pair_pool": 300.0,
+      "remaining_all_candidate_pool": 300,
+      "required_remaining_a_pair_share": 0.5419999999999999,
+      "display_clipped_required_share": 0.5419999999999999,
+      "target_pair_margin": 0.01,
+      "target_net_uses_FINAL_pair_denominator": 5.2,
+      "final_candidate_votes": {
+        "Brian L Bengs": 270.0,
+        "Mike Rounds": 250.0
+      },
+      "final_pair_denominator": 520.0,
+      "final_all_candidate_denominator": 520.0,
+      "final_a_minus_b_net": 20.0,
+      "final_pair_margin_pp": 3.8461538461538463,
+      "final_all_candidate_margin_pp": 3.8461538461538463,
+      "plurality_winners": [
+        "Brian L Bengs"
+      ],
+      "unique_plurality_winner": "Brian L Bengs",
+      "any_preference_clipped": false,
+      "probability": null
+    },
+    "selected_result": {
+      "status": "feasible",
+      "selected_key": "selected",
+      "required_share": 0.426,
+      "display_clipped_share": 0.426,
+      "counted_net_fixed": -20,
+      "other_remaining_net_fixed": 40.0,
+      "selected_pair_pool": 100,
+      "final_pair_denominator": 520.0,
+      "target_net": 5.2
+    }
+  },
+  {
+    "name": "zero_pair_pool_positive_other_pool",
+    "input": {
+      "a": "Brian L Bengs",
+      "b": "Mike Rounds",
+      "counted": {
+        "Brian L Bengs": 20,
+        "Mike Rounds": 30,
+        "Illustrative third candidate": 0
+      },
+      "remaining": [
+        {
+          "key": "u",
+          "remaining_total": 100,
+          "a_pair_share": null,
+          "other_shares": {
+            "Illustrative third candidate": 1
+          }
+        }
+      ],
+      "target_pair_margin": 0.0
+    },
+    "result": {
+      "status": "impossible_no_pair_pool",
+      "counted_fixed": {
+        "Brian L Bengs": 20,
+        "Mike Rounds": 30,
+        "Illustrative third candidate": 0
+      },
+      "remaining_contributions": [
+        {
+          "key": "u",
+          "remaining_total": 100,
+          "pair_pool": 0,
+          "requested_a_pair_share": 0.0,
+          "clipped_a_pair_share": 0.0,
+          "was_clipped": false,
+          "gains": {
+            "Brian L Bengs": 0.0,
+            "Mike Rounds": 0.0,
+            "Illustrative third candidate": 100
+          }
+        }
+      ],
+      "remaining_pair_pool": 0.0,
+      "remaining_all_candidate_pool": 100,
+      "required_remaining_a_pair_share": null,
+      "display_clipped_required_share": null,
+      "target_pair_margin": 0.0,
+      "target_net_uses_FINAL_pair_denominator": 0.0,
+      "final_candidate_votes": {
+        "Brian L Bengs": 20.0,
+        "Mike Rounds": 30.0,
+        "Illustrative third candidate": 100
+      },
+      "final_pair_denominator": 50.0,
+      "final_all_candidate_denominator": 150.0,
+      "final_a_minus_b_net": -10.0,
+      "final_pair_margin_pp": -20.0,
+      "final_all_candidate_margin_pp": -6.666666666666667,
+      "plurality_winners": [
+        "Illustrative third candidate"
+      ],
+      "unique_plurality_winner": "Illustrative third candidate",
+      "any_preference_clipped": false,
+      "probability": null
+    },
+    "selected_result": {
+      "status": "no_positive_pool",
+      "selected_key": "u",
+      "required_share": null,
+      "display_clipped_share": null,
+      "counted_net_fixed": -10,
+      "other_remaining_net_fixed": 0,
+      "selected_pair_pool": 0,
+      "final_pair_denominator": 50.0,
+      "target_net": 0.0
+    }
+  }
+]

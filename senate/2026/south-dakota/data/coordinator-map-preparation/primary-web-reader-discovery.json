@@ -1,0 +1,25 @@
+{
+  "schema": "separate-primary-web-reader-discovery-v1",
+  "recording_scope": "Human-visible tool observations, not originalHTTP acquisition receipts. Exact source capture times/headers were not supplied by web reader. Raw direct parent errors remain in acquisition ledger.",
+  "observations": [
+    {
+      "source_url": "https://minnehahacounty.gov/dept/au/election/precinct_info/precinct_info.php",
+      "raw_direct_status": 403,
+      "observed_primary_hrefs": [
+        "https://minnehahacounty.maps.arcgis.com/apps/webappviewer/index.html?id=83db20af25c2402a8390082f51baa059",
+        "https://minnehahacounty.gov/dept/au/election/precinct_info/AllCountyPrecincts_UA.pdf",
+        "https://minnehahacounty.gov/dept/au/election/precinct_info/AllCityPrecincts_UA.pdf"
+      ],
+      "qualification": "Originalmapbook bodies and app/config/webmap were independently acquired; blocked parent original did not provide those links."
+    },
+    {
+      "source_url": "https://www.lincolncountysd.gov/159/Elections",
+      "raw_direct_status": 404,
+      "observed_primary_hrefs": [
+        "https://www.lincolncountysd.gov/DocumentCenter/View/982/Lincoln-County-Precincts-2026-PDF",
+        "https://www.lincolncountysd.gov/161/Interactive-Property-Maps"
+      ],
+      "qualification": "The linked982 PDF was readable in primary web reader but direct acquisition returned404empty. No original body claimed or PDF map inferred; publication is polling-place roster."
+    }
+  ]
+}

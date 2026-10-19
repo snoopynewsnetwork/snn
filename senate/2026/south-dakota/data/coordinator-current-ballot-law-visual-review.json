@@ -1,0 +1,83 @@
+{
+  "status": "pass_bounded_fresh_original_visual_and_operative_law_reading",
+  "ballots": [
+    {
+      "source_id": "lincoln-ballot",
+      "original_receipt": {
+        "path": "data/results-sources/raw/lincoln-ballot.receipt.json",
+        "bytes": 2042,
+        "sha256": "3880f9d7aa27b7d87afd403376264518c7d9396dee4525fe6699816a64b698c1"
+      },
+      "original_raw_bytes": 120975,
+      "original_raw_sha256": "67e503745b532a71bf07077fb0d5e93767317dc349f03ec02b1fcec509385f15",
+      "original_requested_URL": "https://www.lincolncountysd.gov/DocumentCenter/View/1989/Sample-Ballot-2026-PDF",
+      "complete_original_page": 1,
+      "render": {
+        "path": "data/coordinator-qa/current-ballot-originals/lincoln-ballot-page1.png",
+        "bytes": 501087,
+        "sha256": "4a9b3cf9bcb755d3fcf1fa2935d6aef1a8a09c4fcad52eefd767094597291d01"
+      },
+      "actually_visually_inspected": true,
+      "printed_date": "November 3, 2026",
+      "printed_Senate_choices": [
+        [
+          "Mike Rounds",
+          "Republican Party"
+        ],
+        [
+          "Brian L Bengs",
+          "Independent"
+        ]
+      ],
+      "qualification": "Bounded county publication/sample ballot, not exhaustive statewide/later signed instrument proof. Earlier first-pair Lincoln404 receipt remains unchanged."
+    },
+    {
+      "source_id": "hanson-ballot",
+      "original_receipt": {
+        "path": "data/results-sources/raw/hanson-ballot.receipt.json",
+        "bytes": 1855,
+        "sha256": "674ae8234eeeab3604fca8a7934128a92b253626dbbcb33f4f7868c038e79ab6"
+      },
+      "original_raw_bytes": 176689,
+      "original_raw_sha256": "fb0cf2b4c440d563a1f8c886bc4f044222dda8d9733cb1ec0dec0d6b38746ff8",
+      "original_requested_URL": "https://www.hansoncountysd.gov/wp-content/uploads/2026/09/Ballot.pdf",
+      "complete_original_page": 1,
+      "render": {
+        "path": "data/coordinator-qa/current-ballot-originals/hanson-ballot-page1.png",
+        "bytes": 408606,
+        "sha256": "dcad74cb29142daa8d040924967555d720c7163b39dfeb045ee29f9b87b19238"
+      },
+      "actually_visually_inspected": true,
+      "printed_date": "November 3, 2026",
+      "printed_Senate_choices": [
+        [
+          "Mike Rounds",
+          "Republican Party"
+        ],
+        [
+          "Brian L Bengs",
+          "Independent"
+        ]
+      ],
+      "qualification": "Bounded county publication/sample ballot, not exhaustive statewide/later signed instrument proof. Earlier first-pair Lincoln404 receipt remains unchanged."
+    }
+  ],
+  "render_command": "pdftoppm -f 1 -l 1 -scale-to 2000 -singlefile -png ORIGINAL.pdf OUTPUT",
+  "original_bytes_reused_not_duplicated": true,
+  "law_source_receipt": {
+    "path": "data/results-sources/raw/sessionlaw-ch73-json.receipt.json",
+    "bytes": 3610,
+    "sha256": "bd5f417cfdb097db16ed4fd6733236b7eaa0af7f78ffc607b44a521224c1e8f4"
+  },
+  "law_source_actual_object": {
+    "SessionLawId": 33903,
+    "DocumentId": 306614,
+    "Chapter": 73,
+    "year": 2026
+  },
+  "operative_original_reading": "Chapter73 signedMarch26,2026 declares emergency effectiveness upon approval. Section4 amends12-19-43 to permit a directed board to process during regular business hours the day before election, while prohibiting manual or automatic counting that day. Election-day automatic tabulation may precede poll close with no printed/displayed totals until close; manual counting remains after close. Dec1,2025 manual is an earlier source vintage; no publication cadence inferred.",
+  "law_underscores_and_overstrikes_retained_in_original": true,
+  "web_reader_note": "Fresh primary web reader resolves Lincoln PDF. Legislature API and linked document reader unavailable; exact complete independently hashed original API JSON/Html retained by HTTP200 capture and read directly. This is not evidence of later docket exhaustiveness.",
+  "all_original_contract_and_worker_flags_unchanged": true,
+  "current_leaf_join_or_returns_approved": false
+}

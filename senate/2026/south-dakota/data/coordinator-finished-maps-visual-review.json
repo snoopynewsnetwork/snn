@@ -1,0 +1,56 @@
+{
+  "status": "pass_bounded_original_map_visual_review",
+  "complete_pages_actually_viewed": 3,
+  "observations": [
+    {
+      "source_id": "map-46013-005-network",
+      "original_raw_bytes": 1671978,
+      "original_raw_sha256": "c208f390b4971c9fcaf9113d70341d24d46e942dcf13341d306955d05174ee21",
+      "source_URL": "https://brown.sd.us/sites/default/files/2026-04/Brown%2024x32%20Voting%20Precincts%20Map%20-%20Effective%2010.14.25.pdf",
+      "complete_original_page": 1,
+      "render": {
+        "path": "data/coordinator-qa/map-originals/Brown-complete-original-page1.png",
+        "bytes": 1004647,
+        "sha256": "46608c4f9dbaa61d95f143eee6731bccd6198fbb2dc54a9227db7d8be79f1edf"
+      },
+      "actually_visually_inspected": true,
+      "observation": "Printed LAST UPDATED10/20/2025 differs from URL effective10/14/25. Both are preserved, no legal effective-date inference."
+    },
+    {
+      "source_id": "map-46115-019-network",
+      "original_raw_bytes": 499490,
+      "original_raw_sha256": "60e0bfd1a5863fbc525026a5dcc818719d3369b41493ae093006aa720541945e",
+      "source_URL": "https://spinkcounty-sd.org/maps/voting_precincts.pdf",
+      "complete_original_page": 1,
+      "render": {
+        "path": "data/coordinator-qa/map-originals/Spink-complete-original-page1.png",
+        "bytes": 1298719,
+        "sha256": "d7e128d3536a83c7dc672019a7e513258d7f87c3ccecebe571b1e555fd15642f"
+      },
+      "actually_visually_inspected": true,
+      "observation": "Footer Date: February,2006. Historical source, not current reporting approval."
+    },
+    {
+      "source_id": "map-46135-023-network",
+      "original_raw_bytes": 610091,
+      "original_raw_sha256": "8b1030cc34cd1ee76118ab3506368b1218d41ea182c677d2f12b2c123177bc7a",
+      "source_URL": "https://intuviosolutions.blob.core.windows.net/templator-uploads/Uploads/documents/25/Yankton%20County%20Precinct%20Map.pdf",
+      "complete_original_page": 1,
+      "render": {
+        "path": "data/coordinator-qa/map-originals/Yankton-complete-original-page1.png",
+        "bytes": 3429222,
+        "sha256": "037405ff86d4f6c10d5774e8c469b4f39bbc28492f741686eba57a44decd0812"
+      },
+      "actually_visually_inspected": true,
+      "observation": "Highway map revised1980; highlighted precinct overlay undated. Base-map revision does not date overlay."
+    }
+  ],
+  "render_command": "pdftoppm -f 1 -l 1 -scale-to 2400 -singlefile -png ORIGINAL.pdf OUTPUT",
+  "native_geometry_binary_review": {
+    "path": "data/coordinator-finished-maps-review.json",
+    "bytes": 4490,
+    "sha256": "25d996044d27d87060174a050571c09bb35f2e29507cf0b74dae00e73669398c"
+  },
+  "all_originals_reused_once": true,
+  "qualification": "Separate bounded coordinator visual review; worker retained43 originals/193pages and explicitly narrower actual-view scope. No unseen page/browser render claimed, no current match or legal geography approval."
+}

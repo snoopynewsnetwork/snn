@@ -1,0 +1,731 @@
+{
+  "schema_version": 1,
+  "base": "senate/2026/south-dakota",
+  "owned_paths": [
+    {
+      "path": "data/county-turnout.csv",
+      "bytes": 358085,
+      "sha256": "3666bfd26139c4f8e73b1e0f82c618919c047716b2dc0b67c68dbbdc2f62a4e9"
+    },
+    {
+      "path": "data/turnout/acquire.py",
+      "bytes": 3460,
+      "sha256": "5b001e50b16620d8881f40f2ad071989c526ecbd1c7eec235ad291cf1974081b"
+    },
+    {
+      "path": "data/turnout/acquire_historical_native.py",
+      "bytes": 2977,
+      "sha256": "50a3783f3540c6eec116c3eeb65f1a679d3ec2859ad0115c963aa619f3b32fa9"
+    },
+    {
+      "path": "data/turnout/build_turnout.py",
+      "bytes": 33302,
+      "sha256": "d030877a79321e2e2fb0961cd9477c80bfbfaa4fb28a32353233dd617bf58224"
+    },
+    {
+      "path": "data/turnout/candidate-header-presentation.json",
+      "bytes": 1462,
+      "sha256": "d5d41de4c130111bffc0120c8012cb424403f1c391408924b9b027283035e8ec"
+    },
+    {
+      "path": "data/turnout/certified-controls.json",
+      "bytes": 62609,
+      "sha256": "d84fac4b95f14217198c1f5e3656c926bbb1f3cc145fba3d0f0edc3766c2c375"
+    },
+    {
+      "path": "data/turnout/compare_peer.py",
+      "bytes": 6823,
+      "sha256": "db40f8413b77f8f63e04d2b03bd64a411cfe65b57ce7770de2923b463feffe94"
+    },
+    {
+      "path": "data/turnout/county-fips.json",
+      "bytes": 1904,
+      "sha256": "a8f0880a9cec84f1b8dfe2fda1fd4404004ffad2045e57bb9c167c0d4985cc3e"
+    },
+    {
+      "path": "data/turnout/county-original-inventory.json",
+      "bytes": 1982,
+      "sha256": "d18bc4953c5236372f73554592bc8bdd89828fb03e81935bd31eda54c14bc686"
+    },
+    {
+      "path": "data/turnout/county-sensitivities.csv",
+      "bytes": 50733,
+      "sha256": "45ece72f901eb51b09fc7bf1c59d762bad2d587e45b3e70aeda274e877320427"
+    },
+    {
+      "path": "data/turnout/current-candidate-scope.json",
+      "bytes": 2713,
+      "sha256": "2e310ac4001df6cfc452404b2352104c9dbe00a0ef00c67d27dec191c5dde1e7"
+    },
+    {
+      "path": "data/turnout/extract.py",
+      "bytes": 16436,
+      "sha256": "b733644b06656da9b757f440e4fb622179760a31c4681e8dc2b0aae6a48b3598"
+    },
+    {
+      "path": "data/turnout/extract_historical_native.py",
+      "bytes": 2904,
+      "sha256": "0f9898e7e4f81b20f610baab97b490a95d7a8e4325fff74bf86e137b2567721c"
+    },
+    {
+      "path": "data/turnout/extracts/native2020-public-complete-OOXML.json.gz",
+      "bytes": 42789,
+      "sha256": "4770193de70e58da53d795b9e3e646f40cbfc89d8afc622528cfd64b7baff466"
+    },
+    {
+      "path": "data/turnout/extracts/native2022-original-Senate-page-bboxes.json.gz",
+      "bytes": 63504,
+      "sha256": "a591cafd33764c919ec83fa7e16b25942d5009a73fde81e1da2d9052d7abfcc3"
+    },
+    {
+      "path": "data/turnout/extracts/native2022-public-complete-OOXML.json.gz",
+      "bytes": 50995,
+      "sha256": "3061c3d501d66d9887bdc426e7897f73b2ee4f8324a98d014ac1de1e333f3a28"
+    },
+    {
+      "path": "data/turnout/extracts/native2024-complete-OOXML.json.gz",
+      "bytes": 58463,
+      "sha256": "63c401f4b1220898f7f55671064e4a7b61ea3a69840af27de44beaa612e5ff6f"
+    },
+    {
+      "path": "data/turnout/extracts/preflight-2020-general-canvass.txt",
+      "bytes": 80955,
+      "sha256": "46a98b7393b59d7de86e301d42b4805e9b51e03f40a221a2599e4dd31c9e7f72"
+    },
+    {
+      "path": "data/turnout/extracts/preflight-complete-OOXML.json.gz",
+      "bytes": 139864,
+      "sha256": "d671139e716de67ae2573b977eb9dc8dc423ad3c5c0ced34e91d80138db4fc21"
+    },
+    {
+      "path": "data/turnout/extracts/preflight-native-positions.jsonl.gz",
+      "bytes": 16351,
+      "sha256": "feaf92ddc7c4154cd908ff4feb944ce4be1d729ffd9a0eeaf193a09dff25b170"
+    },
+    {
+      "path": "data/turnout/extracts/returns-2020-archive.txt.gz",
+      "bytes": 26019,
+      "sha256": "66067e84dd939d148798e3c5f5b787cd497429d961cde6104bd0d930756e6b1d"
+    },
+    {
+      "path": "data/turnout/extracts/returns-2020.txt.gz",
+      "bytes": 26019,
+      "sha256": "66067e84dd939d148798e3c5f5b787cd497429d961cde6104bd0d930756e6b1d"
+    },
+    {
+      "path": "data/turnout/extracts/returns-2022-archive.txt.gz",
+      "bytes": 33794,
+      "sha256": "d302e9cf2641c9ae9c2648c77f64c5de6f62e296f1111c30d19dc41c3016141a"
+    },
+    {
+      "path": "data/turnout/extracts/returns-2022.txt.gz",
+      "bytes": 33794,
+      "sha256": "d302e9cf2641c9ae9c2648c77f64c5de6f62e296f1111c30d19dc41c3016141a"
+    },
+    {
+      "path": "data/turnout/extracts/returns-2024-archive.txt.gz",
+      "bytes": 31161,
+      "sha256": "8ab389047be2bdc6ff8d14dfdc885347de3f0b0e10d58127e9ec212c2972baef"
+    },
+    {
+      "path": "data/turnout/extracts/returns-2024.txt.gz",
+      "bytes": 31161,
+      "sha256": "8ab389047be2bdc6ff8d14dfdc885347de3f0b0e10d58127e9ec212c2972baef"
+    },
+    {
+      "path": "data/turnout/extracts/sos-2020-general-canvass.txt.gz",
+      "bytes": 12319,
+      "sha256": "c9e8873634f0175e266ba548f68210d3c09017e3959c5a8ac4ddf327d23e0664"
+    },
+    {
+      "path": "data/turnout/extracts/sos-2020-general-county-canvass.txt.gz",
+      "bytes": 148696,
+      "sha256": "251c20b8c229409ec920276e2f70d501873449b731cb8dc217f81fd46a8da46c"
+    },
+    {
+      "path": "data/turnout/extracts/sos-2022-general-canvass.txt.gz",
+      "bytes": 17470,
+      "sha256": "5da0311e270f17a8353d327cccc6a2314c775d8eb3df4649a8537754b7635af6"
+    },
+    {
+      "path": "data/turnout/extracts/sos-2022-general-recount.txt.gz",
+      "bytes": 627,
+      "sha256": "8751f617e561a451088382aef19d9cb37a43ec5bd1e8f0041a6e1f00a49cf39d"
+    },
+    {
+      "path": "data/turnout/extracts/sos-2022-precinct-canvass.txt.gz",
+      "bytes": 150998,
+      "sha256": "fa65b9743a138d938fe750fce32bc60c9ba7ced7e9e1b2ae25174577bf05a38f"
+    },
+    {
+      "path": "data/turnout/extracts/sos-2024-county-clay-faulk.txt.gz",
+      "bytes": 27224,
+      "sha256": "3bc570f127b780b03b2595fa3038ec46ace9b44c5721d2d4db3ef77030fa10e6"
+    },
+    {
+      "path": "data/turnout/extracts/sos-2024-county-grant-lyman.txt.gz",
+      "bytes": 41124,
+      "sha256": "153408521122c5d19bda474b311fdbe8f0fcdde4bc53083a99269206cc2762d4"
+    },
+    {
+      "path": "data/turnout/extracts/sos-2024-county-marshall-ziebach.txt.gz",
+      "bytes": 76301,
+      "sha256": "9c65b523e2456e7624163a5758cb439d902e53613418a2279cef281d11aaec33"
+    },
+    {
+      "path": "data/turnout/extracts/sos-2024-general-canvass.txt.gz",
+      "bytes": 13295,
+      "sha256": "47a1c1219eeb3417529ad4dc90d0c08703aaaef189e6d16ba500c3cbdda1aa49"
+    },
+    {
+      "path": "data/turnout/extracts/sos-2024-general-county-aurora-clark.txt.gz",
+      "bytes": 24970,
+      "sha256": "bdd0bbdc99b453dc0894013e024b91e6a41009b936f636e49da1a36840402cbb"
+    },
+    {
+      "path": "data/turnout/extracts/sos-2024-public-aurora-export-postback-684-OOXML.json.gz",
+      "bytes": 6910,
+      "sha256": "5238bcc8b8bedbce2940c5d3978851b9ef81532132fc0fd9d76949f4177f5d2c"
+    },
+    {
+      "path": "data/turnout/extracts/sos-2024-public-statewide-export-postback-684-OOXML.json.gz",
+      "bytes": 48133,
+      "sha256": "b795c902777520dadbfd808e5ece7d3babe2046b69d7bc7789ba055ce6ccff2d"
+    },
+    {
+      "path": "data/turnout/historical-public-native-reconciliation.json",
+      "bytes": 121854,
+      "sha256": "7d020801702775b0b2de9c8cd48f08ca807ff4b76b5944f8948faa0b444534a1"
+    },
+    {
+      "path": "data/turnout/native-2020-public.csv",
+      "bytes": 186295,
+      "sha256": "517d57716553219323305c56b68772d6654d5d1e78d2ef6e6bd046556e1ad1b2"
+    },
+    {
+      "path": "data/turnout/native-2022-public.csv",
+      "bytes": 188938,
+      "sha256": "a5dfc14ef6f477bc5cbcd69782e8c12df170f49d9bd6c62e41f9852fbf9594b3"
+    },
+    {
+      "path": "data/turnout/native-2022-reconciliation.json",
+      "bytes": 5245,
+      "sha256": "8b3b453d09bd2d5571647d8ba39be5dcc82ec805f98fbbdfd3cbc5c8b466d9e9"
+    },
+    {
+      "path": "data/turnout/native-2022.csv",
+      "bytes": 158377,
+      "sha256": "e972717617b448080551c625574179ecf1e740761eaf6654b66fbba68b686725"
+    },
+    {
+      "path": "data/turnout/native-2024-parent-reconciliation.json",
+      "bytes": 65170,
+      "sha256": "78f9b2749f0e7d00dbab5d8b6ab91bc3c8ad90405d34583e08e5fa882b8997be"
+    },
+    {
+      "path": "data/turnout/native-2024.csv",
+      "bytes": 333366,
+      "sha256": "123b8db00faaabb3a0b9d200c8541679ac275f8d8fa763aca968daf16c06ceea"
+    },
+    {
+      "path": "data/turnout/peer-agreement.json",
+      "bytes": 71795,
+      "sha256": "d4dd296b60433b13e902e547904bdf565b373fbdb3e4de92d045dfefbd03c361"
+    },
+    {
+      "path": "data/turnout/preflight-execution.json",
+      "bytes": 601,
+      "sha256": "173efd2e4a1673496f260dd9ad7cd09e680b0dc0637f8def2e6962ab917940bb"
+    },
+    {
+      "path": "data/turnout/preflight-independent-check.json",
+      "bytes": 600,
+      "sha256": "8f2dcbe1743eaad3b46dabe87cbd02f3f0882643a7937c9d98a4791cf4e003cf"
+    },
+    {
+      "path": "data/turnout/preflight-native-reproduction.json",
+      "bytes": 113320,
+      "sha256": "00c5c0791f4e393c9dd1841455d4bb2b2e24525002ccfb297ecb47a27a9a1de2"
+    },
+    {
+      "path": "data/turnout/preflight-primary-reproduction.json",
+      "bytes": 52879,
+      "sha256": "096b221d8c9f02047a763f082d2f06c7db4cb06a1ec264ef45445f7b93b7f402"
+    },
+    {
+      "path": "data/turnout/priority-set.json",
+      "bytes": 2955655,
+      "sha256": "a1c97454c68c1f30bdb6b7755cd826326e7380318eae74b6452465ee23e9c275"
+    },
+    {
+      "path": "data/turnout/reproduce_preflight.py",
+      "bytes": 1913,
+      "sha256": "728f28141f43199fd7ef8ae2aa7d77730b218f2dba7c601d6708e68fdd6187c0"
+    },
+    {
+      "path": "data/turnout/sensitivities.json",
+      "bytes": 487316,
+      "sha256": "bec44d71737d4519f2733f5bb0795073021bc5ae447e1e1be1f72f70418036d9"
+    },
+    {
+      "path": "data/turnout/source/2024-pres-ballot.body.gz",
+      "bytes": 13827,
+      "sha256": "fc31a98c51ed3ddf649acdf9d706a8aa949c903b7fec931d280b7e809887ad2d"
+    },
+    {
+      "path": "data/turnout/source/2024-pres-ballot.failed-request.json",
+      "bytes": 658,
+      "sha256": "ba3abd3e1ec50ac05a01e2e69da327642283275b621ae177932ac0a8f3d06c77"
+    },
+    {
+      "path": "data/turnout/source/2024-pres-ballot.receipt.json",
+      "bytes": 1795,
+      "sha256": "db28a346621bd6b794b63f3fe83daa65519efa00d629854528064ebd7c66778f"
+    },
+    {
+      "path": "data/turnout/source/2024-terminology.body.gz",
+      "bytes": 10174,
+      "sha256": "2b1376d47850e3e180a07296da1a25fc46c4f57504bbe985494a7a7f259fee1b"
+    },
+    {
+      "path": "data/turnout/source/2024-terminology.failed-request.json",
+      "bytes": 555,
+      "sha256": "e08b93c1cd142d2c7dd40a27446855808bce374422fa31db0a1b84cedded85a5"
+    },
+    {
+      "path": "data/turnout/source/2024-terminology.receipt.json",
+      "bytes": 1132,
+      "sha256": "582b126d52be71ef4c06e847f1a7d64289e4442d0dfd29822876b08340b4cdaf"
+    },
+    {
+      "path": "data/turnout/source/2026-candidates.body.gz",
+      "bytes": 55958,
+      "sha256": "c2fb6f1b81f60fc5532d335f42e764e5f5cc264168d76abdcf950ced730b2865"
+    },
+    {
+      "path": "data/turnout/source/2026-candidates.failed-request.json",
+      "bytes": 515,
+      "sha256": "f392388cb753a0f06bd2e9056db9ae29f2524c1fe16e71c3f76fd0a668680b9d"
+    },
+    {
+      "path": "data/turnout/source/2026-candidates.receipt.json",
+      "bytes": 1836,
+      "sha256": "0ab8eedc716673cf4e177cd42e0b24526ecd8ce222170203655cc1d0a965cd55"
+    },
+    {
+      "path": "data/turnout/source/2026-offices.body.gz",
+      "bytes": 19267,
+      "sha256": "03c27ec6f457ec18cec1083349e46c8348a0fc064b787c1e5a6398b8a42683df"
+    },
+    {
+      "path": "data/turnout/source/2026-offices.failed-request.json",
+      "bytes": 692,
+      "sha256": "5396d6a6a94b412e774fccf65be16b7a97582406bf434625b56091744deb2260"
+    },
+    {
+      "path": "data/turnout/source/2026-offices.receipt.json",
+      "bytes": 1800,
+      "sha256": "68ccd2a1250ef67709b22c4903ccea2e3d363df380b1c80557eb801eb65d367a"
+    },
+    {
+      "path": "data/turnout/source/SCHEMA.md",
+      "bytes": 11772,
+      "sha256": "7eadb6b98289843896b2eab13665ac13a30f3d176aa34ce66f4e1f1b8cf3d59f"
+    },
+    {
+      "path": "data/turnout/source/census-counties2020.body.gz",
+      "bytes": 31361,
+      "sha256": "bcb240df1d84eb88c83b19f5b5c39b6905afaca0277821c206a047196a70cce8"
+    },
+    {
+      "path": "data/turnout/source/census-counties2020.receipt.json",
+      "bytes": 2111,
+      "sha256": "755c97c31a59b3a1784e3a3817dc805dd93a21e935a3d56779572e8c99aeaba9"
+    },
+    {
+      "path": "data/turnout/source/census-sd-counties.body.gz",
+      "bytes": 2351,
+      "sha256": "6ff10635dc5c9cfb640a6be68aa656238fa86696228293114e49a9a97921f90c"
+    },
+    {
+      "path": "data/turnout/source/census-sd-counties.failed-request.json",
+      "bytes": 569,
+      "sha256": "db1077528c95b526cc250944537a21a8d05fa0673f7ab68e205e6b9eaa3c694d"
+    },
+    {
+      "path": "data/turnout/source/census-sd-counties.receipt.json",
+      "bytes": 1778,
+      "sha256": "2b4b75607aa1ee58da86ebac2889b3d78715fc9c078ec4f5f8820047a067d517"
+    },
+    {
+      "path": "data/turnout/source/enr-2020-observed-history-link.body.gz",
+      "bytes": 11837,
+      "sha256": "c3bf6cffc9a1decb3e79c3301e9f021d83d43f81d6397a31195d5f109167666b"
+    },
+    {
+      "path": "data/turnout/source/enr-2020-observed-history-link.receipt.json",
+      "bytes": 1112,
+      "sha256": "9079ff550e97d915b6ad65dc91008e5be7510a6ca35cae5c89b8d1f17aa25de0"
+    },
+    {
+      "path": "data/turnout/source/enr-2022-observed-history-link.body.gz",
+      "bytes": 11862,
+      "sha256": "ed7ab2e60862a02f961d971e9fe0beacb0a81380ec88799174c69853f38e1df1"
+    },
+    {
+      "path": "data/turnout/source/enr-2022-observed-history-link.receipt.json",
+      "bytes": 1136,
+      "sha256": "ddea87a7672ec97a80d890673d89fef73f46feb0743012694fcc7b35819a3f9c"
+    },
+    {
+      "path": "data/turnout/source/official-returns-index.body.gz",
+      "bytes": 18466,
+      "sha256": "dd8f195d42616a94ef9b487b1da864e6436579de64fc7c7651d402c4cac09ca5"
+    },
+    {
+      "path": "data/turnout/source/official-returns-index.failed-request.json",
+      "bytes": 624,
+      "sha256": "22b80b0fbd2c6be39fac4eb2833c115a0e689911e6b0163ccfbad4eda55254fa"
+    },
+    {
+      "path": "data/turnout/source/official-returns-index.receipt.json",
+      "bytes": 1746,
+      "sha256": "cd65ca0aeb70d238e443aa63b572d8446e5ef7e5d30fc4360acf8556f2845dc6"
+    },
+    {
+      "path": "data/turnout/source/previews/2022-brown-senate.png",
+      "bytes": 76113,
+      "sha256": "99ef7bab60f25ec364d5f38816bfe670d0030d6f740974b0c7eaff1ca49783ef"
+    },
+    {
+      "path": "data/turnout/source/previews/2022-oglala-senate.png",
+      "bytes": 68618,
+      "sha256": "5134a359480d9d71779cabb557dfe7d57c19c6b8f613aa23c4d7de3c541ede08"
+    },
+    {
+      "path": "data/turnout/source/previews/2024-marshall-presidential-canvass.png",
+      "bytes": 939042,
+      "sha256": "e69ad994a95425ab27d0691cc4a482b3f9842d18fe74b46d52eb74186ab7c31e"
+    },
+    {
+      "path": "data/turnout/source/previews/2024-state-presidential-footer.png",
+      "bytes": 63160,
+      "sha256": "f29fb8ab04318f628d015d652a3bc7f6462360db36761f8c0c835d510201f4cc"
+    },
+    {
+      "path": "data/turnout/source/public-native-senate-2020-parent.body.gz",
+      "bytes": 16327,
+      "sha256": "ba0d1ff30633cd14ab53ed0413637b8ce1244336df475e0fc4059f8644b7b8b7"
+    },
+    {
+      "path": "data/turnout/source/public-native-senate-2020-parent.receipt.json",
+      "bytes": 1203,
+      "sha256": "28ee9c6beee091a43f84f381d2770272bc6eaa9105d92076e09e5078eb9f475b"
+    },
+    {
+      "path": "data/turnout/source/public-native-senate-2020.body.gz",
+      "bytes": 68445,
+      "sha256": "cf5ec6bc7da923af77c68e3b6152e113a4b8e9226e34b7c67176a9a60cdeeed0"
+    },
+    {
+      "path": "data/turnout/source/public-native-senate-2020.receipt.json",
+      "bytes": 13288,
+      "sha256": "2858eb148c082d30a001768cfdc6c50a8a310cda083a1654a99948f6a9c34424"
+    },
+    {
+      "path": "data/turnout/source/public-native-senate-2022-parent.body.gz",
+      "bytes": 22168,
+      "sha256": "8a65730ca9bd6e2a2482a5a62149a22b2d837b1b731b06aa3922c20c095b7ef0"
+    },
+    {
+      "path": "data/turnout/source/public-native-senate-2022-parent.receipt.json",
+      "bytes": 1204,
+      "sha256": "1c8c39887ba982847a01c18c042626c4d942581384b63cbe8bf386e0130297c9"
+    },
+    {
+      "path": "data/turnout/source/public-native-senate-2022.body.gz",
+      "bytes": 72556,
+      "sha256": "bc13ee1f8983248c5ebec9f72387d3a123b659f12517a9b862168505acdb2c67"
+    },
+    {
+      "path": "data/turnout/source/public-native-senate-2022.receipt.json",
+      "bytes": 19753,
+      "sha256": "6884cf3d211fe37be47850593739b199030d3748ec0eef6a8967a4a33f43cdd4"
+    },
+    {
+      "path": "data/turnout/source/returns-2020-archive.body.gz",
+      "bytes": 1114651,
+      "sha256": "233ac4c226cb2236592a4273b4dd9f2d298dd8eec40b3c86f482062dc17df5aa"
+    },
+    {
+      "path": "data/turnout/source/returns-2020-archive.receipt.json",
+      "bytes": 1818,
+      "sha256": "12703d2eae1069c306b37182cb21b923010969f41b2c75956e8f46ff30d7ce3c"
+    },
+    {
+      "path": "data/turnout/source/returns-2020.body.gz",
+      "bytes": 675,
+      "sha256": "5de820e0a564118ce17302c98cb945f0c61250bda1574f4fdd4389d9dd9fc631"
+    },
+    {
+      "path": "data/turnout/source/returns-2020.failed-request.json",
+      "bytes": 548,
+      "sha256": "d85273d3f9c352d542f0d2ee37c1b496cc97d34b10a42966f4f1df4de51ff1b2"
+    },
+    {
+      "path": "data/turnout/source/returns-2020.receipt.json",
+      "bytes": 1653,
+      "sha256": "99c97b9fcb96385cfc3dcb64bc994b0595daa877fbb0f88edbdeafeca6608fed"
+    },
+    {
+      "path": "data/turnout/source/returns-2022-archive.body.gz",
+      "bytes": 1365515,
+      "sha256": "cad16d89756f39d757117d190b58a9825572944239f4cfc8dc941fd6e98fce95"
+    },
+    {
+      "path": "data/turnout/source/returns-2022-archive.receipt.json",
+      "bytes": 1833,
+      "sha256": "fcb53c00ed36d11348767210944fc54f32ad1ef46e51e3b6b6782c3677823a19"
+    },
+    {
+      "path": "data/turnout/source/returns-2022.body.gz",
+      "bytes": 675,
+      "sha256": "5de820e0a564118ce17302c98cb945f0c61250bda1574f4fdd4389d9dd9fc631"
+    },
+    {
+      "path": "data/turnout/source/returns-2022.failed-request.json",
+      "bytes": 554,
+      "sha256": "d26742f3e7520f6011dfffa436761b39cabd5a2efa08cca8fc314300fc4dea3d"
+    },
+    {
+      "path": "data/turnout/source/returns-2022.receipt.json",
+      "bytes": 1662,
+      "sha256": "c49dfd2be42308fdb1844a4e12a95cbb9a2b3e5596a8ca1c9cfe56965f2b3f41"
+    },
+    {
+      "path": "data/turnout/source/returns-2024-archive.body.gz",
+      "bytes": 1436216,
+      "sha256": "a4ef45f52e504b53e0d10bd14106ca23af6c519bc0681d4b02e3eed29e76c59a"
+    },
+    {
+      "path": "data/turnout/source/returns-2024-archive.receipt.json",
+      "bytes": 1879,
+      "sha256": "624bae747731293742a7fd6cf8a06d0bc610e70b05013f324ab3ecc89467ad52"
+    },
+    {
+      "path": "data/turnout/source/returns-2024.body.gz",
+      "bytes": 675,
+      "sha256": "5de820e0a564118ce17302c98cb945f0c61250bda1574f4fdd4389d9dd9fc631"
+    },
+    {
+      "path": "data/turnout/source/returns-2024.failed-request.json",
+      "bytes": 626,
+      "sha256": "567334b7cb8e9fac35df3f3c3a7a2067419d9c12023b8ebeaeb6d7fb46afc168"
+    },
+    {
+      "path": "data/turnout/source/returns-2024.receipt.json",
+      "bytes": 1733,
+      "sha256": "7bd9a8f3e1954a82060d3af6828c0445ead2311b0a8160608d19a5b9958ea415"
+    },
+    {
+      "path": "data/turnout/source/source-references.json",
+      "bytes": 83426,
+      "sha256": "05771a8b981b87ea1b3a115622795aea933491b8804cd4d4fe1df4a3eebbf5ae"
+    },
+    {
+      "path": "data/turnout/source/visual-audit.json",
+      "bytes": 1889,
+      "sha256": "65205d21b11e4a4ac4608db89416abbd7fe23516a34e0bbacd926b1929e78c05"
+    },
+    {
+      "path": "data/turnout/source-method-controls.json",
+      "bytes": 2832,
+      "sha256": "a982be3ef39e0694ef7f23339b5dbd50523d5a45223a7a2763071c46c7c7b991"
+    },
+    {
+      "path": "data/turnout/turnout-registration-controls.json",
+      "bytes": 168744,
+      "sha256": "7ab17de31a483abf82d00c1d9e1607a58bc96f7d8746fc92fd5830a8ce4150fa"
+    },
+    {
+      "path": "data/turnout/validate_turnout.py",
+      "bytes": 16266,
+      "sha256": "7c95eca1e90d5f1a54a75f00ca58be06f35c3f8f32131d94892bbdc48fd83a43"
+    },
+    {
+      "path": "data/turnout/validation.json",
+      "bytes": 148694,
+      "sha256": "c49bf45e32734a931625783c798e51a0858926ed2ae7cd58b113ae2004fd6fc4"
+    },
+    {
+      "path": "turnout.md",
+      "bytes": 60455,
+      "sha256": "ce5e8fbd6a080c9c3ad2c66508d720a7ad231ecbb4423f859ce43df89ab5c6f3"
+    }
+  ],
+  "reused_read_only_objects": [
+    {
+      "path": "data/news/sos-results-media.html.gz",
+      "bytes": 9117,
+      "sha256": "425a449bf737d32e1b66612fd1ffa5bd0ba0823a4172b9bafffa874dd9b4c085"
+    },
+    {
+      "path": "data/news/sos-statewide-export.html.gz",
+      "bytes": 712,
+      "sha256": "3d2edaa2449333f0ca852d6a3b56a91abe9740a4762e55b2dbe6e0fdb2a777a7"
+    },
+    {
+      "path": "data/news/sos-election-history.html.gz",
+      "bytes": 17923,
+      "sha256": "793292c469c0cdfb588aed92762814d4e5ff0a63804268a95f7694afe7969b40"
+    },
+    {
+      "path": "data/news/sos-2024-history.html.gz",
+      "bytes": 19673,
+      "sha256": "0ba2f370542f8654ce9f7e51beae923526149bdd2973842c44b17079910898f0"
+    },
+    {
+      "path": "data/news/sos-2024-general-canvass.html.gz",
+      "bytes": 768583,
+      "sha256": "a7cde6d6bccd780a6c86a89389944493f3442dfd8ee7eeee5e4bcd1354439a9c"
+    },
+    {
+      "path": "data/news/sos-2024-general-county-aurora-clark.html.gz",
+      "bytes": 12767122,
+      "sha256": "3a7a4d7dcceed79225eacd6e2406c43a6cd5e4efaab914b44d3b3d09174bccea"
+    },
+    {
+      "path": "data/news/sos-2022-history.html.gz",
+      "bytes": 21650,
+      "sha256": "60f62d25cb26c83ccb41375cf09481bba7155932bf9c83c626c770b03f8afecf"
+    },
+    {
+      "path": "data/news/sos-2024-county-clay-faulk.html.gz",
+      "bytes": 11439140,
+      "sha256": "b4c5e7ce5d1746283ed0601c561be2720caa44f6bd29e71557327c18f866582e"
+    },
+    {
+      "path": "data/news/sos-2024-county-grant-lyman.html.gz",
+      "bytes": 20190658,
+      "sha256": "5d4e2a74f0e6cfcd564a856b75e17684475669a2c1704d45b4576f8aacec76e7"
+    },
+    {
+      "path": "data/news/sos-2024-county-marshall-ziebach.html.gz",
+      "bytes": 33160051,
+      "sha256": "1b43b475a604a5aae54ef2033358f70c238f76acde2f7db491498eeae3e49e8d"
+    },
+    {
+      "path": "data/news/sos-2022-general-canvass.html.gz",
+      "bytes": 879474,
+      "sha256": "bf6d3598a0a8c6465de7f35f69dd570b60de90d17d2b60bed0698f52e50bc2fc"
+    },
+    {
+      "path": "data/news/sos-2022-precinct-canvass.html.gz",
+      "bytes": 4527687,
+      "sha256": "63cb5a5762e2f5636c8bcbde9f921a59a83ae2bafbb4ec0116cdbc480521795f"
+    },
+    {
+      "path": "data/news/sos-2022-general-recount.html.gz",
+      "bytes": 603176,
+      "sha256": "d30482147cf4f4489326124a580d33c9f10950b1a5f463f388bf60325c81e357"
+    },
+    {
+      "path": "data/news/sos-2020-history-retry.html.gz",
+      "bytes": 23355,
+      "sha256": "ba28f1de344bd00383f2fce697e12817348e029b5b5cdb9128ada09b3273608f"
+    },
+    {
+      "path": "data/news/sos-2020-general-canvass.html.gz",
+      "bytes": 770223,
+      "sha256": "59b37e2ffc84f4b5260d6c06917a9f84fb90960128b158d74ef5a60447382551"
+    },
+    {
+      "path": "data/news/sos-2020-general-county-canvass.html.gz.part01",
+      "bytes": 32000000,
+      "sha256": "da0606b3e3bd5d4bcc63e878275ee715806bd53f4267a0a6ad4ff702664e6ba7"
+    },
+    {
+      "path": "data/news/sos-2020-general-county-canvass.html.gz.part02",
+      "bytes": 32000000,
+      "sha256": "4299b2f88319ebed399ae55daf3b66c71c4c14cb2e3f883dc03f362f6a2881ec"
+    },
+    {
+      "path": "data/news/sos-2020-general-county-canvass.html.gz.part03",
+      "bytes": 32000000,
+      "sha256": "996e6bf6e970564f25b97a969de367cea97cff6654a8d2a2c3a0077c3821219f"
+    },
+    {
+      "path": "data/news/sos-2020-general-county-canvass.html.gz.part04",
+      "bytes": 6882528,
+      "sha256": "6f7b6c53db2d466a4446453d0e13fba2e702155dd5852f2f51ecb618a205ade5"
+    },
+    {
+      "path": "data/news/sos-general-candidate-list.html.gz",
+      "bytes": 55957,
+      "sha256": "a7842cba34d773c9740562dec56790b23bc9370cdf2ab41a9d91c90496a12248"
+    },
+    {
+      "path": "data/news/sos-bengs-validation.html.gz",
+      "bytes": 209733,
+      "sha256": "6740223f3c637b69427dd1a23321dec6b1469856ba7241d9523a29efad28432e"
+    },
+    {
+      "path": "data/news/sos-2024-observed-enr-election-684.html.gz",
+      "bytes": 11717,
+      "sha256": "8645e17f8130d3e307ecae3ad8ceacab1a2b225ff0e7627aa2865255e61d0a92"
+    },
+    {
+      "path": "data/news/sos-2024-observed-client-candidates-684.html.gz",
+      "bytes": 6241,
+      "sha256": "70634c9b041b82e72779237fede8cfaa97c1a0f61cf53d8767586691b8bd7cc2"
+    },
+    {
+      "path": "data/news/sos-2024-observed-media-election-684.html.gz",
+      "bytes": 9338,
+      "sha256": "9cd5dab1f676f4eea55aee60cc2b1994f85350bd0df08c4349db94f66b6cfa71"
+    },
+    {
+      "path": "data/news/sos-2024-observed-export-election-684.html.gz",
+      "bytes": 11256,
+      "sha256": "afbd6eff22ebc5632e3ceab962920950f33b97f080a91e478ca17bd3e67e55e4"
+    },
+    {
+      "path": "data/news/sos-2024-observed-statewide-election-684.html.gz",
+      "bytes": 15113,
+      "sha256": "1ad9bbfdd26182968765658beda8534545b62172cd0da9fe75f19c07d275079f"
+    },
+    {
+      "path": "data/news/sos-2024-public-statewide-export-postback-684-parent-form.html.gz",
+      "bytes": 11242,
+      "sha256": "fd713d66ae0c962652e7f2bf98d59805d734017afcebe927f50ab5b0257cb57d"
+    },
+    {
+      "path": "data/news/sos-2024-public-statewide-export-postback-684.html.gz",
+      "bytes": 27047,
+      "sha256": "1805dfda9063fd01d96c57224c439d95bbcd905f769d2c342016813b09dce493"
+    },
+    {
+      "path": "data/news/sos-2024-public-aurora-export-postback-684-parent-form.html.gz",
+      "bytes": 11234,
+      "sha256": "2b1bcebd70d07b2d259915125f8efe07f5d73802b50fff4adc1e4b093800d903"
+    },
+    {
+      "path": "data/news/sos-2024-public-aurora-export-postback-684.html.gz",
+      "bytes": 15957,
+      "sha256": "560c4e137abbde356e7cbeb8c412a4f8bbf120d868e8c8d5026d3f4848775708"
+    },
+    {
+      "path": "data/news/sos-2024-public-presidential-precinct-export-684-parent-form.html.gz",
+      "bytes": 15118,
+      "sha256": "183548fbe934dc7ee8fcabc20ae308bbd77569a47bbee3ca5dcc4fd718bc793c"
+    },
+    {
+      "path": "data/news/sos-2024-public-presidential-precinct-export-684.html.gz",
+      "bytes": 77121,
+      "sha256": "511fcc7fa8331c840d07d52ee99de2786b134571d41e082048b3e7140212c5bd"
+    }
+  ],
+  "self_hash_rule": "asset-manifest.json excludes itself; every other owned file is pinned. Validation written first to avoid circular hash.",
+  "no_duplicate_large_originals": true,
+  "stored_object_limit_exclusive": 40000000
+}
