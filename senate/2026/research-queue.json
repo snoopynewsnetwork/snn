@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "requested_date": "2026-10-17",
-  "updated_at_utc": "2026-10-19T21:05:40.055253+00:00",
+  "updated_at_utc": "2026-10-19T21:12:25.202294+00:00",
   "scope": "35 states in the repository 2026 U.S. Senate race index",
   "coordinator_agent_id": "d0fc3534-1613-4883-b48b-21a233fcfd9e",
   "workspace_id": "wks_b290f45007010740",
@@ -4060,11 +4060,11 @@
       "election": "Regular",
       "seat_class": "II",
       "priority": 14,
-      "status": "first-pair-finished-review-pending",
+      "status": "first-pair-reviewed-second-pair-awaiting-slots",
       "workers": {
         "turnout": {
           "agent_id": "012d3597-6f6c-4ff1-a3d7-a488176243ba",
-          "status": "complete-frozen-pending-coordinator-review",
+          "status": "complete-reviewed-frozen",
           "launched_at_utc": "2026-10-19T20:31:04.488295+00:00",
           "launch_timestamp_scope": "Recorded after successful actual create_agent return",
           "provider": "codex/gpt-6.1-sol",
@@ -4091,7 +4091,7 @@
         },
         "partisanship": {
           "agent_id": "bf15a495-7e21-44b4-abd9-d8d7f83bb88e",
-          "status": "complete-frozen-pending-coordinator-review",
+          "status": "complete-reviewed-frozen",
           "launched_at_utc": "2026-10-19T20:38:06.209368+00:00",
           "launch_timestamp_scope": "Recorded after successful actual create_agent return",
           "provider": "codex/gpt-6.1-sol",
@@ -4118,7 +4118,12 @@
           "actual_finish_event_received": true
         }
       },
-      "validation": null,
+      "validation": {
+        "status": "first_pair_review_pass_with_explicit_source_limits",
+        "review": "nebraska/research-review.md",
+        "producer_free_checks": "nebraska/data/coordinator-finished-first-pair-review.json",
+        "four_question_package_complete": false
+      },
       "gaps": [],
       "published_commits": [],
       "state_specific_notes": "Keep 2024 Senate regular Fischer\u2013Osborn (independent) separate from the 2024 special Ricketts\u2013Love contest. Verify the actual 2026 ballot, independent challenger, withdrawals and party labels. Coordinator found November zero official setup while the county portal still selects May primary. Regional stations show Iowa/historical/test configurations. See data/news.",
@@ -4258,11 +4263,12 @@
         "priority765": 748190,
         "crossing": "Lancaster10D-1PDF685/545",
         "county20_scope": "sensitivity_only",
-        "formal_dispatch_accepted": false,
+        "formal_dispatch_accepted": true,
         "full_field_peer_agreement_pending": false,
         "parent_FIPS_mapping_reconciliation_pending": false,
         "parent_FIPS_mapping": "Madison31119/McPherson31117 independently Census-original verified",
-        "eligible_writein_membership_robustness_established": false
+        "eligible_writein_membership_robustness_established": false,
+        "acceptance_scope": "named-canvass historical research only; not all-eligible membership"
       },
       "coordinator_current_news_refresh": {
         "path": "data/news/current-results-structured-review-oct19.json",
@@ -4284,6 +4290,18 @@
         "partial_scenario_membership_changes": true,
         "Lancaster_registration_local_minus_state": 164,
         "formal_acceptance": false
+      },
+      "historical_priority_acceptance": {
+        "path": "nebraska/data/coordinator-priority-acceptance.json",
+        "bytes": 394627,
+        "sha256": "8052dd61ac55db4c38c7ba78bead30dbad0f0cc321883afaa754cd67009b0a5f",
+        "status": "accepted_historical_named_canvass_dispatch_only",
+        "full_native": 1326,
+        "priority": 765,
+        "priority_parent_count": 58,
+        "all_parent_count": 93,
+        "eligible_writein_membership_robustness_established": false,
+        "current_geography_approved": false
       }
     },
     {
