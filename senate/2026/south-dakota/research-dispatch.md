@@ -127,3 +127,41 @@ That actual finish slot launched Idaho turnout
 discovery. South Dakota maps `d38ec512-6066-448b-ab15-c0b74c50f1e7` and Idaho
 turnout are the only active researchers. Idaho partisanship awaits the next
 actual finish slot. No extra worker or current geographic approval was created.
+
+
+## Idaho bounded turnout turn released; independent baseline launched
+
+Idaho turnout `1a2e39d9-26b7-4e1e-b465-bb0f41dbc02e` completed its original
+extraction, report and16-group offline QA, then actually ended its turn with
+independent peer agreement explicitly pending. Full-question completion and
+coordinator acceptance are not claimed. Its frozen source-native985/528 order
+retains all44 parents and457 remainder; county sensitivities stay separate.
+
+That actual released slot launched Idaho partisanship
+`0eb74f9e-f473-403c-adee-715808064b55`, after fresh Research-profile/provider
+discovery. It independently extracts original bytes before reading the frozen
+turnout derivatives. The coordinator will resume the SAME turnout agent for
+bounded reciprocal QA after stable peer evidence and an available slot. South
+Dakota maps `d38ec512-6066-448b-ab15-c0b74c50f1e7` is the only other active
+researcher; no third worker or replacement question-agent was created.
+
+A separate original Idaho OOXML replay confirms528/724,515 after527/723,753,
+Osburn762 without a cutoff tie. A newly retained actual Twin Falls LD24 November
+sample prints AchillesIND/FlemingIND/LoesbyLIB/RischREP; its bounded official
+scope does not exhaust statewide/later write-ins or approve IDs/geography.
+
+
+## South Dakota all four finished; integration review
+
+South Dakota maps `d38ec512-6066-448b-ab15-c0b74c50f1e7` actually finished
+and froze its591-entry package. All304 priorities/691 observations/66 parents
+remain;208 priorities have qualified county maps and96 have Census-only
+references. Geometry/vintage/current-crosswalk limits remain explicit. All four
+state workers are finished; coordinator maps and final publication review now
+proceed. Certified membership robustness remains unproved.
+
+Idaho partisanship `0eb74f9e-f473-403c-adee-715808064b55` is the only active
+researcher. Its turnout peer ended a bounded extraction/report turn with peer
+QA pending, and will resume as the SAME actual ID when original peer evidence
+is stable. The newly released maps slot is available; no extra agent was
+created merely to fill it and no pending peer gate was self-approved.
