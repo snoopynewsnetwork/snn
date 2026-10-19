@@ -227,3 +227,6 @@ The corrected Mississippi98views-v2 witness now verifies98actualstage grids/1,50
 
 
 Independent Mississippi turnout Leflore2018 original replay also agrees with the exact unallocated10 difference at all88 candidate/null source positions. Perry's two distinct original stages agree132positions; its exact earlier JSON/CSV differ only in36 visible header line breaks, with counts/roles/raw hashes/physical positions unchanged. These are bounded source comparisons and do not grant887/full-history/method/current-geography acceptance.
+
+
+Mississippi immutable110-stage source witness now verifies1,752 native observations across separate elections, with54 stage-native grids still outside scope. The known Leflore−10, Greene original-case transition, fourX fields and administrative row remain explicit, and rejected98v1 stays excluded. Existing unlaunched first-pair prompts for all21laterstates/42files were inventoried read-only with hashes; no global regeneration, new launch or acceptance occurred.
