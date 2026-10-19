@@ -179,3 +179,26 @@ other active researcher. Both received complete historical528/985/all44 source
 authority, immutable companion references and exact gaps; no producer flags
 changed. Colorado's first pair now separately passes coordinator review, with
 its second-wave prompts waiting actual slots.
+
+
+## Independent official-original replay before final seal
+
+The coordinator separately replays all45 acquired primary JSON entities and33
+priority-parent/state original XLSX exports:419,099 original rows and3,131,500
+explicit cells match every saved value/type/style/formula/null. Original current
+code/bill text confirms9-day county and21-day state canvass windows, requested
+free recount scope, expired2020 processing language and the distinct S1356
+July2026/January2027 sections. This is a bounded original-source review, not
+November admission. Both second-wave workers remain active; neither has sent
+an actual finish. Cassia map/legal/ZIP originals are acquired; incidental Bonner
+road/address documents are explicitly excluded from precinct-map coverage.
+
+
+## Idaho official actually finished; Colorado official launched
+
+Idaho officiala4924a48 actually finished:56,574,833 final read-only checks,
+1,011 owned entries/173 complete immutable external references,9 byte-identical
+rebuild products. All primary/current-source limitations remain explicit. Its
+actual released slot launched Colorado officiala3b6cf9c after fresh discovery.
+Idaho maps9b10706d is the only other active researcher; final Idaho integration
+awaits its actual finish and coordinator review.

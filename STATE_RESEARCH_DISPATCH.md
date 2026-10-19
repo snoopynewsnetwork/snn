@@ -48,13 +48,14 @@ membership robustness remains unproved. Its exact1,508-file state tree includes
 preservation, with all stored objects below40MB. No genuine November count
 sequence, current geographic join or calibrated probability is admitted.
 
-Idaho's two second-wave researchers are active: official sources
-`a4924a48-6ff5-454b-9dc6-5d4381398e7a` and maps
-`9b10706d-ee73-4779-a7b5-385cfc0013cd`. These are the only active workers.
-Colorado's complete first pair is reviewed and its historical1,992/3,199/64-parent
-dispatch externally accepted, with all source fields and qualifications retained.
-Its official/maps prompts await actual released slots. Seventeen later states
-remain queued. Publication continues incrementally through the full34-state batch.
+Idaho officiala4924a48 has actually finished its sealed1,011-entry package;
+coordinator original replay passes all419,099 export rows/3,131,500 cells.
+Idaho maps `9b10706d-ee73-4779-a7b5-385cfc0013cd` remains active. In the
+actual released slot, fresh profile/provider discovery launched Colorado official
+`a3b6cf9c-a1de-47fa-b472-ce7491c1f082`. These are the only active workers.
+Colorado's complete historical1,992/3,199/64-parent dispatch is reviewed and
+externally accepted; its maps assignment awaits another actual released slot.
+Seventeen later states remain queued. Publication continues through the full34-state batch.
 
 
 The following earlier Mississippi checkpoints retain their original pending scopes; the current accepted historical dispatch and actual second-wave IDs are recorded above and at the end.

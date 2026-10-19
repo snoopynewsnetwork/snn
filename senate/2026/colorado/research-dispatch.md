@@ -107,3 +107,13 @@ counted November votes, exact remaining pool or probability is approved.
 The actual baseline finish launched Idaho maps9b10706d. Idaho officiala4924a48
 is the sole other active researcher. Colorado official/maps prompts are prepared
 and will launch after actual slot releases; no additional agent exists yet.
+
+
+## Actual official-results launch
+
+After Idaho officiala4924a48 actually finished, fresh Research-profile/provider
+discovery launched Colorado official `a3b6cf9c-a1de-47fa-b472-ce7491c1f082`
+on the exact accepted1,992/all3,199/64-parent complete historical contract.
+Idaho maps9b10706d remains the sole other active researcher. Colorado maps
+waits another actual released slot. No first-pair worker was restarted, and
+no current geography or live-return approval was added.
