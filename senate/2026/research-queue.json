@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "requested_date": "2026-10-17",
-  "updated_at_utc": "2026-10-19T14:01:26.874276+00:00",
+  "updated_at_utc": "2026-10-19T14:16:01.077311+00:00",
   "scope": "35 states in the repository 2026 U.S. Senate race index",
   "coordinator_agent_id": "d0fc3534-1613-4883-b48b-21a233fcfd9e",
   "workspace_id": "wks_b290f45007010740",
@@ -1431,6 +1431,34 @@
           "sha256": "3f809b22c5a53a7c5802563438f698aabbc60eb0eee5503126133b6834d2d5e6",
           "scope": "batch22",
           "formal_dispatch_accepted": false
+        },
+        {
+          "path": "data/coordinator-presidential-batch23-replay-review.json",
+          "bytes": 4715,
+          "sha256": "ce72c6e05c86fa5462970b02623935bc09d0e81b35df37d5a04021c412007da9",
+          "scope": "batch23",
+          "formal_dispatch_accepted": false
+        },
+        {
+          "path": "data/coordinator-presidential-batch24-replay-review.json",
+          "bytes": 4728,
+          "sha256": "248dae76f44727c85b5871ba2924ad8c275318f6d21803364b6bf03767e910e9",
+          "scope": "batch24",
+          "formal_dispatch_accepted": false
+        },
+        {
+          "path": "data/coordinator-presidential-batch25-replay-review.json",
+          "bytes": 3308,
+          "sha256": "fa928738fc7a3a72ebb03d6bd443e1174aee63f318db6ce834264a1e945672d1",
+          "scope": "batch25",
+          "formal_dispatch_accepted": false
+        },
+        {
+          "path": "data/coordinator-presidential-batch26-replay-review.json",
+          "bytes": 4021,
+          "sha256": "5692334b8bf727bd7c6f2a9d761d363163db435bc450c7e17e46b6bd3c5b95e6",
+          "scope": "batch26",
+          "formal_dispatch_accepted": false
         }
       ],
       "latest_bounded_allfield_coverage": {
@@ -1443,10 +1471,10 @@
         "unused_null_positions": 4807,
         "remaining_preferred_views": 0,
         "remaining_presidential_native_constituents": 0,
-        "latest_independent_turnout_bounded_preferred_views": 71,
-        "latest_independent_turnout_bounded_native_constituents": 1527,
-        "latest_independent_turnout_unreviewed_preferred_views": 11,
-        "latest_independent_turnout_unreviewed_native_constituents": 209,
+        "latest_independent_turnout_bounded_preferred_views": 75,
+        "latest_independent_turnout_bounded_native_constituents": 1590,
+        "latest_independent_turnout_unreviewed_preferred_views": 7,
+        "latest_independent_turnout_unreviewed_native_constituents": 146,
         "nonadditive_alternative_source_views_outside_turnout_preferred_scope": 2,
         "separate_render_qualifications_preserved": true,
         "all_baseline_glyphs_freshly_coordinator_read": false,
@@ -1558,6 +1586,23 @@
             "selected82_reviewed_native_constituents": 299
           },
           "formal_dispatch_accepted": false
+        },
+        {
+          "path": "data/coordinator-historical-native-2020-40views-v1-review.json",
+          "bytes": 56968,
+          "sha256": "05244357749af36aaf65e9228684d6745dbacb05b76f4a964d133a6a62c30d33",
+          "counts": {
+            "native_constituents": 549,
+            "numeric_positions": 1767,
+            "TOTAL_columns": 40,
+            "unused_columns": 214,
+            "unused_null_positions": 642,
+            "reviewed_source_publications": 40,
+            "total_source_publications": 104,
+            "reviewed_selected82_publications": 27,
+            "selected82_reviewed_native_constituents": 362
+          },
+          "formal_dispatch_accepted": false
         }
       ],
       "bounded_map_authority_preparation": {
@@ -1606,17 +1651,34 @@
           "7views-v1",
           "11views-v1",
           "22views-v1",
-          "34views-v1"
+          "34views-v1",
+          "40views-v1"
         ],
         "prior_source_ledgers_semantically_unchanged": [
           7,
           11,
-          22
+          22,
+          34
         ],
-        "newest_publications": 34,
-        "selected82_publications": 22,
-        "selected82_native_constituents": 299,
+        "newest_publications": 40,
+        "selected82_publications": 27,
+        "selected82_native_constituents": 362,
         "scope": "Exact lossless snapshot comparison preserves every earlier source ledger; this does not establish full independent historical-native/method coverage or cross-publication geographic identity."
+      },
+      "bounded_primary_receipt_rule_preparation": {
+        "path": "data/coordinator-receipt-rule-primary-preparation.json",
+        "bytes": 10779,
+        "sha256": "8e4a35fb1e5b6d15d7af9f326bd89d6615100049ed0bbcd9689ce7944a08b843",
+        "status": "bounded_primary_court_and_current_SOS_guidance_only",
+        "request_observations": 7,
+        "HTTP200": 7,
+        "Fifth_Circuit_actual_remand_disposition_date": "2026-09-09",
+        "Fifth_Circuit_actual_Document": "255-1",
+        "SOS_ordinary_mail_postmark_printed": "2026-11-03",
+        "SOS_ordinary_mail_receipt_printed": "2026-11-10",
+        "complete_later_lower_court_docket_verified": false,
+        "formal_dispatch_accepted": false,
+        "current_vote_feed_admitted": false
       }
     },
     {
@@ -1823,7 +1885,31 @@
       "validation": null,
       "gaps": [],
       "published_commits": [],
-      "coordinator_preparation": "Actual2024 report HTML/stateCSV/separate officialwriteinPDF retained. Source headline533/533 and observedSenate530EDtables are distinct scopes to reconcile; county/RD/ED/other views overlap. Actual question/native/validcandidate checks and priority pending."
+      "coordinator_preparation": "Actual2024 report HTML/stateCSV/separate officialwriteinPDF retained. Source headline533/533 and observedSenate530EDtables are distinct scopes to reconcile; county/RD/ED/other views overlap. Actual question/native/validcandidate checks and priority pending. Additional actualarchive2020/2022reportCSV/native partitions andcompletewriteinPDFs nowretain22256sourcepositions, noearlyvotingnativezeroimputation, presidential-only2020ED0218oneBidenvote withSenateabsence, and2022writeinheadingyearconflict. Firstpairindependentcount/native/validcandidate/prioritychecksremainpending.",
+      "historical_native_source_preparation": {
+        "status": "bounded_original_source_method_controls_only",
+        "report_preflight": {
+          "path": "data/coordinator-historical-report-preflight.json",
+          "bytes": 18014868,
+          "sha256": "0579e9178666be4f43613e7dbac0c2b46dbdc3220c8867a13f33320928eb511d"
+        },
+        "writein_original_readings": {
+          "path": "data/coordinator-historical-writein-readings.json",
+          "bytes": 6834,
+          "sha256": "b50dcee4033ca751fb0a7bd28dfd51169c3b3cf5ae47be9cac491ccdf5daba62"
+        },
+        "candidate_method_positions_including_unprinted": 22256,
+        "2020_Senate_ED_contexts": 436,
+        "2020_president_ED_contexts": 439,
+        "2022_House_ED_contexts": 516,
+        "unprinted2020native_earlyvoting_fields_null": 3500,
+        "2020_president_only_ED0218_Biden_machine_votes": 1,
+        "2020presidential_writein_source_sum": 336,
+        "2022House_writein_source_sum": 18,
+        "2022PDF_literal_heading_year_conflict_retained": true,
+        "formal_priority_accepted": false,
+        "current_geography_approved": false
+      }
     },
     {
       "state": "Illinois",
@@ -2094,17 +2180,17 @@
   "batch_status": "in-progress:12newstatespublished;MSfirstpairactive;21laterstatesqueued",
   "coordinator_preparation_audit": {
     "status": "pass",
-    "checked_at_utc": "2026-10-19T13:51:33.112898+00:00",
+    "checked_at_utc": "2026-10-19T14:15:17.658824+00:00",
     "scope": "Still-queued states only; retained public news/preflight responses, not completed question packages or accepted feeds",
     "states": 21,
-    "response_captures": 774,
-    "stored_objects": 704,
-    "verified_original_entities": 696,
-    "stored_bytes": 536267594,
+    "response_captures": 780,
+    "stored_objects": 710,
+    "verified_original_entities": 702,
+    "stored_bytes": 536739259,
     "retained_transport_failures": 78,
     "split_original_entities": 3,
     "http_status_counts": {
-      "200": 583,
+      "200": 589,
       "403": 93,
       "503": 3,
       "transport_failure": 78,
@@ -2114,7 +2200,7 @@
       "206": 3
     },
     "checks": "Unique IDs; original/stored SHA-256; exact ordered-part reconstruction where needed; raw byte counts; UTC/headers or retained transport failures; strict per-stored-object bounds and no orphan response assets.",
-    "additional_content_checks": "Oklahoma complete2024 plus2022regular/unexpired and2020 certification originals preserve all77 counties per contest and35568 candidate positions; scopes stay separate. Louisiana complete2024/2022/2020 public XLSX+CSV controls cover64parishes each. Montana complete2018/2020/2022/2024 workbooks verify9876 selected positions and896 independent PDF county cells. Oregon complete2020/2022 candidate abstracts verify576 county cells;2022 reconstructed from3 contiguous206 ranges,500 partials retained. Actual public Download forms additionally supplied complete2020/2022 native ZIP streams, retained once as3/4 exact gzip parts at most32M; both ZIP CRCs and72 member hashes pass, filename inventories only. No completed question packages or accepted feeds are inferred. Nebraska source portfolio preserves91 complete archived stateHTML plus complete DouglasBIFF/Lancaster1431pagePDF, closing93county/1326 selected native namedSenate controls without an ID join. SouthDakota exact observed2024 public precinct-export POST supplies691 native rows/66correctly labelled county sheets with complete OOXML/ZIPCRC/memberhashes; source totals428728 remain194 below signed428922 across24counties, unallocated. A separate statewide XLSX has literal candidate-header conflict; no relabel from counts or current-feed admission. Idaho historical2020/2022preparation additionally retainsfourcompleteOOXMLworkbooks/22770selectedcandidatepositions:974native2020and999native2022percontest,50blank2020candidatecellsremainnull;allknownnative/44county/footercontrolsclose,andpostcountyappendicesstaynonadditive. Deterministicofflinepreflightdoesnotapprovepriority/currentgeography. Colorado actual published historicalCSVdownloads nowretain3199/3232/3205native source rows and99514nativecandidatepositions for2024Pres/2022Sen/2020Sen;1984independentofficialcandidatecomparisons pass. SourceTOTAL_BALLOTS duplicatescandidatecounts ratherthanactualadministrativeballots;flags/pseudocandidates/16stats-unmatchedzerocandidatekeys remainliteral. NoNovemberfeedorpriorityapproval."
+    "additional_content_checks": "Oklahoma complete2024 plus2022regular/unexpired and2020 certification originals preserve all77 counties per contest and35568 candidate positions; scopes stay separate. Louisiana complete2024/2022/2020 public XLSX+CSV controls cover64parishes each. Montana complete2018/2020/2022/2024 workbooks verify9876 selected positions and896 independent PDF county cells. Oregon complete2020/2022 candidate abstracts verify576 county cells;2022 reconstructed from3 contiguous206 ranges,500 partials retained. Actual public Download forms additionally supplied complete2020/2022 native ZIP streams, retained once as3/4 exact gzip parts at most32M; both ZIP CRCs and72 member hashes pass, filename inventories only. No completed question packages or accepted feeds are inferred. Nebraska source portfolio preserves91 complete archived stateHTML plus complete DouglasBIFF/Lancaster1431pagePDF, closing93county/1326 selected native namedSenate controls without an ID join. SouthDakota exact observed2024 public precinct-export POST supplies691 native rows/66correctly labelled county sheets with complete OOXML/ZIPCRC/memberhashes; source totals428728 remain194 below signed428922 across24counties, unallocated. A separate statewide XLSX has literal candidate-header conflict; no relabel from counts or current-feed admission. Idaho historical2020/2022preparation additionally retainsfourcompleteOOXMLworkbooks/22770selectedcandidatepositions:974native2020and999native2022percontest,50blank2020candidatecellsremainnull;allknownnative/44county/footercontrolsclose,andpostcountyappendicesstaynonadditive. Deterministicofflinepreflightdoesnotapprovepriority/currentgeography. Colorado actual published historicalCSVdownloads nowretain3199/3232/3205native source rows and99514nativecandidatepositions for2024Pres/2022Sen/2020Sen;1984independentofficialcandidatecomparisons pass. SourceTOTAL_BALLOTS duplicatescandidatecounts ratherthanactualadministrativeballots;flags/pseudocandidates/16stats-unmatchedzerocandidatekeys remainliteral. NoNovemberfeedorpriorityapproval. Delaware actual archive/report anchors supply complete2020Senate/president and2022House HTML/CSVs,22256 method positions across436/439/516sourceED contexts.2020unprintedEarlyVoting fields3500remainnull.2020president-onlyED0218has1Bidenmachinevote andnoSenate table; other2pres-onlykeysall0. Complete official write-in sheets retain17Presrows336 and2House rows18 separately, blankmethodcellsnull/noEDallocation;2022literal2020heading conflictsprinted2022date/clock."
   },
   "coordinator_next_actions": [
     "Independently reconcile complete Mississippi first-pair originals/native/fields/order before historical acceptance.",
