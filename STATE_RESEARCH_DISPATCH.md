@@ -305,3 +305,6 @@ Official-results`9eaf3c11-70ff-4f00-9f9e-73771ea0ccf8` and maps`390d4486-f5fb-4d
 
 
 Mississippi's two actual second-wave workers have begun complete source/authority/native-map acquisition with frozen historical inputs verified. Coordinator current newsroom recheck retains68observations; WTVA's new correct-date inactivezeroNovember setup remains excluded, with separate test flags and transformation/publication clocks. Its reviewed first-pair evidence exceeds the documented2GiBsingle-push bound even before maps/results assets, so eventual complete-state publication will use explicit bounded asset commits/pushes followed by final package metadata; no partial state publication is claimed. All21laterstates remain queued and only the same two researchers are active.
+
+
+Mississippi preliminary independent map-original review now verifies14ZIParchives/2,054records/1,715,047XYpositions,203complete county-servicefeatures and25Lamar embedded records, retaining true curves and an empty feature. A working topology-adapter failure was identified and narrowly sent back; later frozen input no longer skips the2,279linear features for that exception. Native originals remain unchanged and no current/legaljoin follows. The same actual official/maps workers continue; final manifest/visual/legal-source reviews remain pending.
