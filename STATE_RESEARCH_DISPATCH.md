@@ -42,7 +42,7 @@ four-question package passed integration review, including its 41 native groups,
 maps and explicit remaining access/geographic gaps. Maine's four-question package, including all 512 native identities, the exact
 164-unit priority set and downloaded maps, was published in `e0fe91e` (remote
 verified) after integration and repository checks.
-Texas’s four-question package passed integration review, including all 254 counties, the exact 34-county priority and downloaded maps, and was published in `1ffe97d` (remote verified). Iowa’s all-99-county package, exact 41-county priority and downloaded maps passed complete integration and repository checks and were published in `47e6a68` (remote verified). Kansas’s all105-county package,exact23 priority and downloaded reference maps passed complete integration/repository checks and were published in `9de81d5` (remote verified). Georgia’s turnout and partisanship workers have actually finished. Its formally accepted historical scope retains all 159 counties and 2,701 native identities; the top 44 full-candidate membership is proved without allocating 858 write-ins. Georgia’s all159-county package, proved44 full-candidate priority membership and downloaded maps passed complete source, arithmetic, map-binary, whole-package and repository checks and were published in `9c8ad26f` (remote verified). New Hampshire’s all320-leaf package, exact143 historical priority and downloaded ward/municipal references passed independent original/source/target/map/whole-package and repository checks and were published in `7ad7bb89` (remote verified). Minnesota’s all87-county package, exact24 historical priority, full12,316native constituents and downloaded maps passed original/source/target/map/whole-package/repository review and were published in `4e4cfc92` (remote exact verified). South Carolina’s all46-county package, exact17 historical priority and downloaded maps passed complete original/source/target/native-byte/frozen-manifest/link/repository review and were published in `794a7aed` (remote exact verified). Florida's four-question package, all67 counties, exact22 historical priority and23,532native contexts passed full original/source/native/target/map-binary/frozen-manifest/link/repository review and was published in `4b03078e` (remote exact verified). Its current November setup and all geography/cadence/remainder/calibration gaps remain explicit. Mississippi turnout and partisanship have actually finished their reviewed frozen packages. Its historical887native-unit dispatch is accepted; all four workers finished and its complete reviewed package was published in`78c905c3`(remoteexactverified). Nebraska first-pair workers012d3597/bf15a495 have finished and their qualified named-canvass765dispatch is accepted. South Dakota turnoutad252512 and partisanshipe6c0d1f7 are the only active researchers after actual finish-slot launches and fresh Research-profile discovery. Florida maps completed as the same actual ID on a discovered `codex/gpt-6-astra` capacity fallback after two6.1Sol failures; no extra worker was introduced. Nebraska awaits second-wave slots; South Dakota first pair is active and19later states remain queued. Publication is incremental; the full34-state batch remains in progress.
+Texas’s four-question package passed integration review, including all 254 counties, the exact 34-county priority and downloaded maps, and was published in `1ffe97d` (remote verified). Iowa’s all-99-county package, exact 41-county priority and downloaded maps passed complete integration and repository checks and were published in `47e6a68` (remote verified). Kansas’s all105-county package,exact23 priority and downloaded reference maps passed complete integration/repository checks and were published in `9de81d5` (remote verified). Georgia’s turnout and partisanship workers have actually finished. Its formally accepted historical scope retains all 159 counties and 2,701 native identities; the top 44 full-candidate membership is proved without allocating 858 write-ins. Georgia’s all159-county package, proved44 full-candidate priority membership and downloaded maps passed complete source, arithmetic, map-binary, whole-package and repository checks and were published in `9c8ad26f` (remote verified). New Hampshire’s all320-leaf package, exact143 historical priority and downloaded ward/municipal references passed independent original/source/target/map/whole-package and repository checks and were published in `7ad7bb89` (remote verified). Minnesota’s all87-county package, exact24 historical priority, full12,316native constituents and downloaded maps passed original/source/target/map/whole-package/repository review and were published in `4e4cfc92` (remote exact verified). South Carolina’s all46-county package, exact17 historical priority and downloaded maps passed complete original/source/target/native-byte/frozen-manifest/link/repository review and were published in `794a7aed` (remote exact verified). Florida's four-question package, all67 counties, exact22 historical priority and23,532native contexts passed full original/source/native/target/map-binary/frozen-manifest/link/repository review and was published in `4b03078e` (remote exact verified). Its current November setup and all geography/cadence/remainder/calibration gaps remain explicit. Mississippi turnout and partisanship have actually finished their reviewed frozen packages. Its historical887native-unit dispatch is accepted; all four workers finished and its complete reviewed package was published in`78c905c3`(remoteexactverified). Nebraska first-pair workers012d3597/bf15a495 have finished and their qualified named-canvass765dispatch is accepted. South Dakota turnoutad252512 and partisanshipe6c0d1f7 have actually finished; coordinator final review is in progress. Nebraska official-results6b84b5dd and maps8d56ecec are the only active researchers after actual finish-slot launches and fresh Research-profile discovery. Florida maps completed as the same actual ID on a discovered `codex/gpt-6-astra` capacity fallback after two6.1Sol failures; no extra worker was introduced. Nebraska's second pair is active; South Dakota first pair awaits coordinator acceptance and19later states remain queued. Publication is incremental; the full34-state batch remains in progress.
 
 
 The following earlier Mississippi checkpoints retain their original pending scopes; the current accepted historical dispatch and actual second-wave IDs are recorded above and at the end.
@@ -378,3 +378,39 @@ member. All source ballot/registration discrepancies and unknowns remain.
 Nebraska official-results/maps await actual finish slots; South Dakota's two
 actual first-pair researchers are the only active workers. No additional agent,
 current geography, feed or probability approval is implied.
+
+
+## Bounded Nebraska map preparation and South Dakota native replay
+
+Coordinator preparation follows actual county-linked app/config/webmap chains
+to complete Douglas234 and Lancaster222 native feature snapshots, with bounded
+50-ID pages, exact pre/post metadata/count/IDs and unchanged original attributes
+and geometry. These newer layers are distinct from historical233/198 reporting
+contexts. A complete Census2020 VTD archive retains1,402features/all93counties as
+a qualified fallback, with no approved reporting crosswalk. The maps assignment
+has not launched; all38coordinator request observations retain exact originals
+and errors separately.
+
+South Dakota's same two first-pair workers continue. Independent coordinator
+original OOXML replay reproduces691/687/693public native rows for2024/2022/2020,
+all66source county footers, literal candidate headers and exact24county194vote
+2024gap/21county41vote2020gap. The2024public-source304prefix reaches343,402
+after303=342,947. This is not certified native minimum or membership robustness;
+the signed denominator remains separate and no missing votes are allocated.
+No formal South Dakota dispatch or current geography approval exists.
+
+
+## Actual South Dakota first-pair finishes; Nebraska second pair
+
+South Dakota turnout `ad252512-9d56-42ca-adf2-f81a21cbe63e` and partisanship
+`e6c0d1f7-5022-447d-9308-07988d70dad5` actually finished and froze their owned
+packages. The source-only304-unit order preserves691native/66parents and the
+unallocated194-vote public/certified gap; final coordinator review/acceptance
+remain pending. No certified native membership approval follows.
+
+In those actual finish slots, fresh Research-profile/provider discovery preceded
+Nebraska official-results `6b84b5dd-096f-45b4-a5bd-5bfa66c13dd8` and maps
+`8d56ecec-bd22-4967-8fd6-1e3619446b0e`. They are the only active researchers.
+Both receive the exact accepted765-native/all1,326/93parent historical contract
+and its eligible-write-in/current-geography qualifications. No replacement
+coordinator or extra worker was created.
