@@ -57,3 +57,26 @@ No results entered yet.
 - [FEC 2026 election calendar](https://www.fec.gov/documents/5910/2026pdates.pdf): election scope and general election date.
 - [Mississippi election office](https://www.sos.ms.gov/index.php/elections-voting): ballot access, election schedule, and official results.
 - [FEC Mississippi Senate election data](https://www.fec.gov/data/elections/senate/MS/2026/): candidate filings and campaign finance.
+
+## Election-night research
+
+The four-question research package was reviewed October 19, 2026. It preserves
+all 82 county parents and the complete historical source-native inventories.
+The accepted historical priority is **887 of 1,736 preferred 2024 Senate
+reporting observations**, totaling 972,656 votes after 886 total 972,157.
+County concentration is a separate sensitivity. Source votes total 1,215,400;
+the signed control is one higher, with the Tunica vote left unallocated.
+
+- [Turnout and full native priority](turnout.md) · [county compatibility CSV](data/county-turnout.csv)
+- [Historical baselines and conditional win targets](county-partisanship.md) · [county CSV](data/county-baselines.csv)
+- [Official publication chains](official-results.md) · [state/all-county inventory](data/official-results-sources.csv)
+- [Downloaded map references](precinct-maps.md) · [887-entry offline index](maps/index.html) · [full inventory](maps/inventory.html)
+- [Local news and NYT backstops](local-news-results.md) · [live collection strategy](live-polling-strategy.md)
+- [Review and remaining gaps](research-review.md) · [actual worker dispatch](research-dispatch.md) · [package checks](data/coordinator-checks.json)
+
+The maps are qualified shared references, with zero approved current entry-level
+joins. No genuine November count feed, exact remaining Senate pool, implemented
+collector or calibrated probability model is established. Candidate sample and
+setup names, historical method fields, source discrepancies and later legal
+coverage limits remain explicit. This research does not populate the campaign,
+polling or current-results tracker above with inferred data.
