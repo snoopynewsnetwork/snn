@@ -57,3 +57,6 @@ Mississippi’s frozen 84-packet two-Senate-field inventory and reciprocal revie
 
 
 Mississippi’s proposed primary scope is now the independently verified 887-native-unit prefix over 1,736 preferred source constituents; the 41-county set remains only a separate sensitivity. The source/certified denominator distinction and unallocated Tunica vote remain explicit, with no dispatch acceptance yet. Capacity recovery resumed the same turnout agent on a freshly inspected fallback model; the two-worker limit is unchanged.
+
+
+The immutable Mississippi 887-native proposal now passes bounded cross-file review, including all 84 source orders and parent/child arrays across 77 priority parent authorities. Native target arithmetic passes an independent piecewise solver and all 156,240 unit rows. These milestones leave the original-field/method gate and dispatch acceptance open; the same two workers continue.
