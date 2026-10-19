@@ -1,0 +1,48 @@
+sos-2024-county-pike-updated 1 0
+sos-2024-county-pike-updated 2 10
+Traceback (most recent call last):
+  File "/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/site-packages/PIL/ImageFile.py", line 663, in _save
+    fh = fp.fileno()
+         ^^^^^^^^^
+AttributeError: '_idat' object has no attribute 'fileno'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/tqbf/codebase/snn/senate/2026/mississippi/data/baselines/extract_native.py", line 92, in <module>
+    for result in pool.map(lambda r:run(r,a.limit),rr):print(result,flush=True)
+  File "/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/concurrent/futures/_base.py", line 619, in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/concurrent/futures/_base.py", line 317, in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tqbf/codebase/snn/senate/2026/mississippi/data/baselines/extract_native.py", line 92, in <lambda>
+    for result in pool.map(lambda r:run(r,a.limit),rr):print(result,flush=True)
+                                    ^^^^^^^^^^^^^^
+  File "/Users/tqbf/codebase/snn/senate/2026/mississippi/data/baselines/extract_native.py", line 86, in run
+    rec=page_extract(key,page,r['raw_sha256']);path.write_bytes(gzip.compress(json.dumps(rec,ensure_ascii=False).encode(),mtime=0));print(key,page,len(rec['fields']),flush=True)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tqbf/codebase/snn/senate/2026/mississippi/data/baselines/extract_native.py", line 62, in page_extract
+    headers.append(dict(source_column=j,bounds=[l,header_start,r,header_end],ocr_label=ocr(crop,6).strip()))
+                                                                                       ^^^^^^^^^^^
+  File "/Users/tqbf/codebase/snn/senate/2026/mississippi/data/baselines/extract_native.py", line 12, in ocr
+    b=io.BytesIO();im.save(b,format='PNG');cmd=['tesseract','stdin','stdout','--psm',str(psm)]
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/site-packages/PIL/Image.py", line 2711, in save
+    save_handler(self, fp, filename)
+  File "/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/site-packages/PIL/PngImagePlugin.py", line 1522, in _save
+    ImageFile._save(
+  File "/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/site-packages/PIL/ImageFile.py", line 667, in _save
+    _encode_tile(im, fp, tile, bufsize, None, exc)
+  File "/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/site-packages/PIL/ImageFile.py", line 685, in _encode_tile
+    encoder.setimage(im.im, extents)
+ValueError: cannot write empty image

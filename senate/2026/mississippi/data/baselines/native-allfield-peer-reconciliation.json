@@ -1,0 +1,37 @@
+{
+  "status": "pass_two_bounded_original_source_views_11candidate_fields",
+  "peer_reference_path": "data/coordinator-qa/native-allfield-two-views/native-allfield-readings.json.gz",
+  "peer_stored_sha256": "86a0b21dae2707d8fe9fd60a74e79857f0c092f3efb1493d201da101838cd010",
+  "peer_original_sha256": "13f37c2b7c662231c2561c191b6e13f07da227f0020b4516baf9d62d081516b0",
+  "sources": [
+    {
+      "source_id": "sos-2024-county-alcorn",
+      "raw_sha256": "e44a72556b2371270616146d8701b662957d5a596b20be6fbe7d47e8f3e985e4",
+      "candidate_fields": 11,
+      "counts": {
+        "numeric_including_TOTAL": 198,
+        "unused_null": 44
+      },
+      "own_ledger_path": "data/baselines/alcorn-readings.json",
+      "own_ledger_sha256": "2e0c601dcd677e1a5801c24487bf073e9e4c28694c5b70d79d40e24d198e335b",
+      "all_values_and_physical_boxes_agree": true
+    },
+    {
+      "source_id": "sos-2024-county-coahoma-updated",
+      "raw_sha256": "12be50887df1118cd6aacbbc22aa867f8704beba617ce077492e9daf296b57ee",
+      "candidate_fields": 11,
+      "counts": {
+        "numeric_including_TOTAL": 209,
+        "unused_null": 33
+      },
+      "own_ledger_path": "data/baselines/coahoma-updated-readings.json",
+      "own_ledger_sha256": "956a149518ba86773fdd7bc3a18e591d8830e206c92b8077e2f9e71c8b4345d1",
+      "all_values_and_physical_boxes_agree": true
+    }
+  ],
+  "numeric_positions_including_TOTAL": 407,
+  "unused_null_positions": 77,
+  "compared_positions": 484,
+  "all_primary_county_controls": "Validated independently in validate.py, all22 named candidate vectors",
+  "qualification": "Read-only comparison AFTER own original visual readings; geometry only was shared. No peer vote copied into own ledger, no scope extrapolation to other counties/nativefields/currentgeography."
+}

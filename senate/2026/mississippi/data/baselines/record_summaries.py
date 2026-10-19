@@ -1,0 +1,20 @@
+"""Append complete original-page visual readings; no peer numeric import."""
+from sources import *
+def main():
+ p=OUT/'canvass-readings.json';x=json.loads(p.read_text());readings=x['readings']
+ def add(county,page,methods,pres,sen,pg,sg,opps,sopps=None,**kw):
+  r=dict(source_id='sos-2024-county-'+county,page=page,method_labels=methods,president=dict(candidates=pres,generic_write_in_marks=pg,overvotes=None,undervotes=None,contest_opportunities=opps),senate=dict(candidates=sen,generic_write_in_marks=sg,overvotes=None,undervotes=None,contest_opportunities=sopps if sopps is not None else opps),timezone=None,**kw)
+  readings[:]=[z for z in readings if z['source_id']!=r['source_id']];readings.append(r);return r
+ add('tunica',3,['TOTAL'],[[1837],[3],[1],[2],[799],[1],[3],[21],[1]],[[1798],[827]],[4],[3],[2745],reported_precincts='12 of 12',status_literal='Official Results',clock_literal='11/15/2024 3:18 PM')['president']['total_votes_cast']=[2672]
+ readings[-1]['senate']['total_votes_cast']=[2628]
+ add('union',12,['TOTAL','Election Day','Absentee','Affidavit','Voter ID Affidavit','5 Day Absentee','Resolution'],[[1807,1498,292,17,0,0,0],[12,12,0,0,0,0,0],[17,13,3,1,0,0,0],[12,10,2,0,0,0,0],[10559,9148,1350,61,0,0,0],[4,3,1,0,0,0,0],[6,5,0,1,0,0,0],[52,49,3,0,0,0,0],[9,8,1,0,0,0,0]],[[1779,1490,279,10,0,0,0],[10484,9118,1301,65,0,0,0]],[18,17,1,0,0,0,0],[84,60,24,0,0,0,0],[12533,10796,1657,80,0,0,0],reported_precincts='20 of 20',status_literal='Official Results',clock_literal='11/14/2024 4:52 PM')
+ add('winston',7,['TOTAL'],[[3392],[8],[12],[8],[4922],[6],[1],[31],[4]],[[3439],[4937]],[9],[17],[8459],reported_precincts=None,status_literal='Official',clock_literal='11/14/2024 6:09 PM',source_note='Generic page note refers to possible runoff across offices; not a Senate outcome rule.')
+ r=add('lauderdale',3,['TOTAL','Election Day','Absentee','Affidavit','5 Day Absentee','Resolution'],[[10677,8976,1443,244,12,2],[42,39,3,0,0,0],[26,23,2,1,0,0],[18,15,3,0,0,0],[16487,14420,1843,212,9,3],[13,10,2,0,0,1],[14,14,0,0,0,0],[114,97,14,3,0,0],[16,15,1,0,0,0]],[[10139,8559,1336,230,12,2],[16873,14769,1886,210,8,0]],[45,42,3,0,0,0],[79,64,14,1,0,0],[27597,23766,3337,467,21,6],[27593,23766,3337,467,21,2],reported_precincts='37 of 37',status_literal='Official Results',clock_literal='11/14/2024 12:00 PM')
+ r['president'].update(overvotes=[61,46,12,3,0,0],undervotes=[84,69,11,4,0,0]);r['senate'].update(overvotes=[10,5,5,0,0,0],undervotes=[492,369,96,26,1,0])
+ r=add('pike',13,['TOTAL'],[[6091],[17],[15],[11],[6504],[9],[7],[52],[9]],[[5898],[6719]],[31],[30],[12824],reported_precincts='25 of 25',status_literal='Certified Results',clock_literal='11/15/2024 3:05 PM',vintage_scope='Original 56-page packet; not spliced into updated source. Senate named12617, generic30; updated named15335 is a separate publication.')
+ r['president']['total_votes_cast']=[12746];r['senate']['total_votes_cast']=[12647]
+ r=add('quitman',6,['total','scanned','manual'],[[1725,1719,6],[9,9,0],[2,2,0],[5,5,0],[902,900,2],[8,8,0],[10,10,0],[15,15,0],[1,1,0]],[[1629,1624,5],[952,949,3]],[7,7,0],[4,4,0],[2737,2729,8],reported_precincts=None,status_literal='Unofficial 2024 General Election Tally Report',clock_literal='Thursday, November 14, 2024, 2:25:17 PM CST',column_dimension='Source scan/manual processing, not voting methods. Reordered total first for common vector schema; original printed order scanned/manual/total preserved here.',original_printed_column_order=['scanned','manual','total'])
+ r['timezone']='CST';r['president'].update(overvotes=[27,27,0],undervotes=[26,26,0]);r['senate'].update(overvotes=[2,2,0],undervotes=[150,150,0]);r['separate_voting_method_panel']=dict(method_labels=['Absentee','Precinct'],ballots=[183,2556],total_ballots=2739,qualification='Different panel/universe from Senate/President2737. No unexplained two-ballot allocation.')
+ for r in readings:r['evidence']=f'qa/{r["source_id"]}-summary-review-p{r["page"]}.png';r['raw_sha256']=sha(original(r['source_id']))
+ save(p,x)
+if __name__=='__main__':main()

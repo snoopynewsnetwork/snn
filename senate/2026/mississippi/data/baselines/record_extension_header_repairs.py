@@ -1,0 +1,13 @@
+"""Independent visual readings of131 original header crops, seven atlases."""
+import json
+from sources import OUT,save
+TEXT={
+1:'Miller',2:'Twin Lakes Baptist\nChurch',3:'Advance',4:'Bay Central',5:'Bayou View',6:'East Biloxi',7:'East Handsboro',8:'East Long Beach',9:'East Miss City',10:'Gulfport # 13',11:'Gulfport # 14',12:'Gulfport # 16',13:'Gulfport # 3',14:'Gulfport # 8',15:'Howard Creek',16:'Ladner',17:'Long Beach # 5',18:'Lyman',19:'Magnolia Grove',20:'New Hope',
+21:'New Popps Ferry',22:'North Bay',23:'North Bel-Aire',24:'Outside Long Beach',25:'Peace',26:'Pineville',27:'Poplar Head',28:'Riceville',29:'Saucier',30:'South Bel-Aire',31:'Stonewall',32:'Vidalia',33:'W Pass Christian',34:'West Handsboro',35:'West Lizana',36:'West Long Beach',37:'West Mississippi City',38:'West North Gpt',39:'West Orange Grove',40:'TOTAL',
+46:'Brandon Central',47:'Briar Hill',48:'Castlewoods West',49:'City Hall',50:'Clear Branch',51:'Crest Park',52:'Crossroads',53:'Dry Creek',54:'East Crossgates',55:'East Steen Creek',56:'Highlands/Patrick\nFarms',57:'Johns',58:'Leesburg',59:'Oakdale',60:'Pisgah',61:'South Pearson',62:'West Steen Creek',64:'Eatonville',65:'Hattiesburg Cultural\nCenter',70:'Tupelo 5',
+81:'Canton South Liberty\nBaptist Church',82:'Canton St. Paul\nMethodist Church',83:'Cedar Grove Baptist\nChurch',84:'Colonial Heights\nBaptist Church',85:'Couparle United\nMethodist Church',86:'Fairview MB Church',87:'Farmhaven Fire\nStation',88:'Fellowship Bible\nChurch',89:'Greater Mt Levi Full\nGospel',90:'Jimmie M. Goodloe\nElem School',93:'FIRST ASSEMBLY OF\nGOD',94:'GEORGE HARRISON',95:'GLADE',96:'L T ELLIS CENTER',97:'SPRINGHILL/\nMAULDIN',98:'UNION',
+101:'105 - Five',102:'127 - Bailey',103:'206 - Six',104:'235 - Daleville',105:'240 - Kewanee',106:'254 - Russell',107:'303 - Three',108:'313 - Thirteen',109:'530 - Clarkdale',110:'549 - Odom',116:'East Columbus Gym',117:'Kiln East',118:'TOTAL',128:'Calhoun City #1',129:'Calhoun City #4',131:'Spanish Fort First\nDistrict'}
+def main():
+    rows=json.loads((OUT/'replay-extension-label-comparison.json').read_text())['disagreements'];assert len(rows)==131
+    save(OUT/'replay-extension-header-repairs.json',dict(qualification='Independent original expanded header crops read, all131 positions. Empty template headers retained as empty strings; scattered rule/stamp artifacts are not native labels.',readings=[{k:r[k] for k in ['source_id','page','source_column','header_bounds']}|dict(label_literal=TEXT.get(i,''),prior_own_ocr=r['own_ocr'],basis='Independent original expanded header crop visual reading; literal wrapping retained.',evidence=f'qa/replay-extension-original-headers-{(i-1)//20+1}.png',review_card=i) for i,r in enumerate(rows,1)]))
+if __name__=='__main__':main()

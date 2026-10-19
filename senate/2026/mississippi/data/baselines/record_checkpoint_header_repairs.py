@@ -1,0 +1,19 @@
+"""Independent reading of162 expanded original header crops, nine atlases.
+
+Lincoln's original literal is Forrestry (double r), not a standardized place
+name. It is retained as a concrete source-bound peer label disagreement.
+"""
+import json
+from sources import OUT,save
+TEXT={1:'1 Acona',2:'Beat 4 Thornton (A-\nZ)',3:'Beat 5 Cruger (A-Z)',4:'Beat 5 Lexington (A-\nZ)',8:'Cascilla',9:'Charleston Beat #1',10:'Charleston Beat #2',11:'Sumner Beat #2',13:'Sidon',14:'South Itta Bena',18:'Sallis',19:'South Central',20:'Williamsville',21:'Box 2 Grenada Co\nOffice',22:'Futheyville 1st\nPentecost',23:'Box 3 City\nAuditorium',24:'Anchor 001',25:'Buena Vista 002',26:'East Okolona 004',27:'Northwest Houston\n007',34:'Arkabutla',35:'Coldwater 3',36:'Evansville',37:'Looxahoma',38:'Poagville 4',39:'Poagville 5',42:'Belzoni South - 3bs\n3010',43:'Belzoni South - 5bs\n5010',44:'Fourmile North - 1fn\n1010',45:'Gooden Lake North -\n2gn 2030',46:'Lake City South - 3ls\n3030',47:'Louise South - 5ls\n5030',48:'Putnam South - 4ps\n4030',49:'Silver City South -\n3ss 3020',50:'American Legion',51:'Armory',52:'Banner-Pineville',53:'Bounds',54:'Cardsville',55:'Carolina',56:'Centerville',57:'Clay',58:'Courthouse',59:'Dorsey',60:'Evergreen',61:'Fairview-Pleasanton',62:'Greenwood',63:'Icdc',64:'James Creek',65:'Mantachie',66:'Mantachie-3D',67:'Ratliff',68:'Tremont',69:'TOTAL',74:'Pearl River',75:'Tucker - District\nThree',87:'Alexander',88:'Big Springs',89:'Brignal / Rogers\nCircle',90:'Forrestry',91:'Heucks Retreat',92:'Johnson Grove',93:'Lipsey',94:'Norfield',95:'Old Brook',96:'Old Red Star',97:'Vaughn',98:'West Lincoln',99:'TOTAL',102:'Beat 4/Clifton',103:'Beat 4/Forkville',104:'Beat 4/Ludlow',105:'Beat 5/Langs Mill',106:'Beat 5/Salem',107:'Beat 5/Steele',111:'Mendenhall 1',112:'Mendenhall 3',113:'Merit',114:'Oak Grove',115:'Pearl',116:'Saratoga',117:'Sumrall',118:'TOTAL',126:'2 Slayden',127:'3 Barton',128:'5 Bethlehem',129:'5 Cornersville',130:'Boyle',131:'District 3 Road Barn',132:'East Central\nCleveland',133:'East Cleveland',134:'Merigold',135:'Morrison Chapel\nChurch',136:'Mound Bayou',139:'Amite River',140:'Ariel',141:'East Centreville',142:'East Liberty',143:'Liberty',144:'New Zion',145:'Oneil',146:'Smithdale',147:'South Liberty',148:'Street',149:'Vance Park',150:'Walls',151:'Zion Hill',152:'TOTAL'}
+def main():
+    x=json.loads((OUT/'replay-60views-label-comparison.json').read_text());rows=x['disagreements'];assert len(rows)==162;out=[]
+    for i,r in enumerate(rows,1):
+        out.append({k:r[k] for k in ['source_id','page','source_column','header_bounds']}|dict(label_literal=TEXT.get(i,''),prior_own_ocr=r['own_ocr'],basis='Independent expanded unaltered original source-header crop visual reading; wraps/spelling retained, blank template headers not native identities.',evidence='qa/lincoln-forestry-original-header.png' if i==90 else f'qa/replay-60views-original-headers-{(i-1)//20+1}.png',review_card=i))
+    save(OUT/'replay-60views-header-repairs.json',dict(readings=out,qualification='Original literal header reading. LincolnForrestry is an explicit double-r source spelling; frozen peerForestry discrepancy preserved, not silently normalized.'))
+    diffs=[];norm=lambda t:' '.join(t.replace('-\n','-').replace('/\n','/').split())
+    for r,o in zip(rows,out):
+        if norm(r['peer_label'])!=norm(o['label_literal']):diffs.append(dict(source_id=r['source_id'],page=r['page'],source_column=r['source_column'],header_bounds=r['header_bounds'],own_original_literal=o['label_literal'],frozen_peer_literal=r['peer_label'],evidence=o['evidence']))
+    save(OUT/'replay-60views-original-label-disagreements.json',dict(disagreements=diffs,qualification='Concrete original-source literal disagreements remain explicit; no candidate vote differences or name-only geometry join.'))
+    print('162 original headers read;',len(diffs),'literal peer differences',diffs)
+if __name__=='__main__':main()

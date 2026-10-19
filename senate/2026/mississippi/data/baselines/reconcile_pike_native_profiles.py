@@ -1,0 +1,16 @@
+"""Read-only reciprocal Pike profile audit after all525 own original glyph reads."""
+import csv,gzip,io,json
+from sources import OUT,BASE,save,sha
+from reconcile_union_native_profiles import MAP
+FIELDS=MAP|{'pres_total_votes_cast':'president_total_votes_cast','sen_total_votes_cast':'senate_total_votes_cast'}
+def main():
+    ownpath=OUT/'pike-native-profile-fields.csv';ownraw=ownpath.read_bytes();own=list(csv.DictReader(io.StringIO(ownraw.decode())));ref=OUT/'source/peer-pike-profile-fields-reference.csv.gz'
+    if not ref.exists():ref.write_bytes(gzip.compress((BASE/'data/turnout/native-profile-fields.csv').read_bytes(),mtime=0))
+    raw=gzip.decompress(ref.read_bytes());peer=[r for r in csv.DictReader(io.StringIO(raw.decode())) if r['source_id']=='sos-2024-county-pike'];index={(r['printed_native_id'],r['source_field']):r for r in peer};assert len(index)==len(peer)==len(own)==525;diffs=[];labels=[];boxes=[]
+    for r in own:
+        p=index[(r['vendor_profile_code'],FIELDS[r['field']])];assert r['raw_sha256']==p['source_raw_sha256'];assert r['source_page']==p['source_page'];assert p['role']=='native_vendor_profile_source_view' and p['source_method_literal']=='TOTAL';assert p['parent_county_fips']=='28113'
+        if float(r['value'])!=float(p['value']):diffs.append(dict(profile=r['vendor_profile_code'],page=r['source_page'],field=r['field'],own=r['value'],peer=p['value']))
+        if ' '.join(r['native_label_literal'].split())!=' '.join(p['label_literal'].split()):labels.append(dict(profile=r['vendor_profile_code'],own=r['native_label_literal'],peer=p['label_literal']))
+        boxes.append(dict(profile=r['vendor_profile_code'],page=r['source_page'],field=r['field'],own_original_row_box_pixels=json.loads(r['original_reading_box_pixels']),own_render_size=json.loads(r['render_size']),own_coordinate_system='Original fitz2.4 color render pixels, complete source label and TOTAL reading box',peer_source_position=json.loads(p['source_position']),peer_coordinate_system=p['coordinate_system'],qualification='Independently selected source reading windows in different rasters; exact numerical coordinates are not claimed equal or used as a current identity crosswalk'))
+    save(OUT/'pike-native-profile-peer-reconciliation.json',dict(qualification='525 fields compared only after own original525numeric glyphs and25headers review. Same raw original/source pages/printed profile codes/required field identities and literal labels; independently selected physical reading windows retained separately. No SEMS/current unit equivalence, source-vintage merge or statewide acceptance follows.',own_path=str(ownpath.relative_to(BASE)),own_bytes=len(ownraw),own_sha256=sha(ownraw),peer_original_path='data/turnout/native-profile-fields.csv',peer_snapshot_path=str(ref.relative_to(BASE)),peer_original_bytes=len(raw),peer_original_sha256=sha(raw),peer_stored_sha256=sha(ref.read_bytes()),source_views=25,actual_profile_section_pages=42,field_positions=525,value_differences=diffs,label_differences=labels,physical_reading_windows=boxes,source_hashes_pages_and_printed_codes_agree=True,current_geography_approved=False));assert not diffs and not labels,(diffs,labels);print('PASS:525 original Pike profile values/pages/IDs/labels/source hashes; physical reading windows separate')
+if __name__=='__main__':main()

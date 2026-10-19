@@ -1,0 +1,36 @@
+{
+  "qualification": "Complete preferred82 historical named-Senate source-native partition only, with explicit1215400 denominator. Certified1215401 universe remains separate; Tunica1unallocated source discrepancy is not assigned to a native unit or rescaled. These deterministic pair scenarios are not legal plurality thresholds, calibrated probabilities or2026turnout projections.",
+  "input_ledger": "data/baselines/native-2024-senate-reviewed-84views.json",
+  "input_ledger_sha256": "fbc0f8caedc6be263b13a433c74f36df373720d290d8aa8674b0d2d9c91e09a7",
+  "source_native_units": 1736,
+  "state_counties": 82,
+  "state_groups": 90,
+  "unit_target_rows": 156240,
+  "county_contribution_rows": 7380,
+  "historical_native_pair_votes": 1215400,
+  "certified_county_pair_votes": 1215401,
+  "source_disagreement": {
+    "Ty Pinkins": -1,
+    "Roger F. Wicker": 0
+  },
+  "native_weight_assumption": "Actual2024 source-native pair / actual same-source parent pair; no original alternatives, TOTALs, unused or Kemper parallel observations additive. Other-year county volumes are explicitly conditional mixes over2024source units, not observed historical native volumes.",
+  "historical_preference_anchors": [
+    "2024-senate",
+    "2024-president",
+    "2020-senate",
+    "2018-special",
+    "2018-runoff"
+  ],
+  "preference_scope": "2024Senate uses source-native actual preference; other anchors use historical county preference uniformly within its2024source-native parent, explicitly conditional and not inferred native history.",
+  "named_others_scope": "Each anchor actual historical state named outsider pool held fixed, identities retained in candidate-votes.csv. Generic marks unresolved. Special/runoff electorates/stages remain distinct.",
+  "clipping": "q=clip(q0+shift,0,1); feasible bounded uniform state shift solved by monotone bisection. Unbounded shift, clipped units, selected impossible/already-above/no-positive statuses retained separately.",
+  "formula": "For fixed weights local tie shift=(B-A)/(2*(A+B)); A+1pair margin adds0.005share=0.5percentagepoints. Selected q=(unit_pair+state_target_net-fixed_all_other_net)/(2*unit_pair).",
+  "stored_path": "data/baselines/native-source-unit-targets.csv.gz",
+  "stored_bytes": 28716252,
+  "stored_sha256": "f06a195302d561b5ec20694f0b5f51068d38d5f75c3ba98ef141fff8ef2f5ae0",
+  "original_csv_bytes": 191251385,
+  "original_csv_sha256": "9b1d85c91dd0468bd2d9c4a058effe2167ed7e5eb4b65398f1bebfb30e8513bd",
+  "compression": "Lossless gzip; exact ordered-byte CSV by gzip decompression. No truncation or allocation.",
+  "complete_all_candidate_native_question": false,
+  "current2026_identity_approved": false
+}
