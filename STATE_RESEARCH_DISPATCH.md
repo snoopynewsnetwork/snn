@@ -230,3 +230,12 @@ Independent Mississippi turnout Leflore2018 original replay also agrees with the
 
 
 Mississippi immutable110-stage source witness now verifies1,752 native observations across separate elections, with54 stage-native grids still outside scope. The known Leflore−10, Greene original-case transition, fourX fields and administrative row remain explicit, and rejected98v1 stays excluded. Existing unlaunched first-pair prompts for all21laterstates/42files were inventoried read-only with hashes; no global regeneration, new launch or acceptance occurred.
+
+
+## Further original stages and publisher-route preparation
+
+Mississippi's immutable130stage witness now passes bounded source/field/control/continuity checks for2,218native observations across separate historical stages;34stage grids remain. Independent Coahoma/Kemper/Winston two-stage replays each pass132positions, with exactly six Winston source-header corrections preserved alongside complete prior bytes. The full1042020+118stage worker offline receipt and eleven archived bodies verify its28bounded-check result. Leflore's unallocated ten-vote native/control difference and rejected stale98v1 remain explicit; no native887dispatch or current-geography approval follows.
+
+The working named-coverage audit references complete preferred82original readings, while a separately captured rebuild contract remains an incomplete embedded payload and does not match that audit's expected hash. Final stable integration is still required. The same two first-pair workers continue; no additional researcher is launched.
+
+Queued West Virginia preparation verifies the actual public client/config and55publisher-supplied historical county route records. Its complete client original is reused read-only from an exact published Florida body with a separate WVreceipt. Six direct child requests403 and two exact namespace catalogs200empty remain bounded access gaps; no county-native results are acquired. The queued-state audit now verifies854observations across21states, including78transport failures, three split originals and one exact shared-original reference. All42existing future first-pair prompt files remain unlaunched, with only the two WVprompts appended for this source finding.
