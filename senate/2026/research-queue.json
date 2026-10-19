@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "requested_date": "2026-10-17",
-  "updated_at_utc": "2026-10-19T15:47:25.909167+00:00",
+  "updated_at_utc": "2026-10-19T15:55:49.953873+00:00",
   "scope": "35 states in the repository 2026 U.S. Senate race index",
   "coordinator_agent_id": "d0fc3534-1613-4883-b48b-21a233fcfd9e",
   "workspace_id": "wks_b290f45007010740",
@@ -1962,6 +1962,25 @@
         "prior_twelve_review_preserved": true,
         "position_hints_exact_immutable50_whitelist": true,
         "formal_dispatch_accepted": false
+      },
+      "bounded_Kemper_2020_literal_header_original_exception": {
+        "path": "data/coordinator-kemper-2020-original-header-review.json",
+        "bytes": 3280,
+        "sha256": "c28cae19bb9c414c315b369cef9fdf15b79e6c5fa8d4196923666813649accf2",
+        "source_raw_sha256": "f0f5318f6b5c42efb0ca68c5c70a97f19c243a134c113bce2819e9f5b809ced6",
+        "actual_PDFpage": 2,
+        "physical_column": 9,
+        "original_read": "Lynville",
+        "frozen55_derivative_literal": "Lynnville",
+        "numeric_values_agree": [
+          133,
+          180,
+          2
+        ],
+        "older_immutable_witnesses_preserved": true,
+        "worker_later_versioned_original_reread_requested": true,
+        "current_identity_approved": false,
+        "formal_dispatch_accepted": false
       }
     },
     {
@@ -2310,8 +2329,45 @@
       "validation": null,
       "gaps": [],
       "published_commits": [],
-      "coordinator_preparation": "State-specific newsroom and strategy preparation written with retained primary captures; question agents not launched and no completed package claimed.",
-      "state_specific_notes": "No 2022 U.S. Senate contest; use actual certified statewide midterm such as governor. 2024 Senate is other seat, 2020 same-seat. SOS index mixes 2021 generic text with current primary/runoff/municipal links; verify actual November election ID."
+      "coordinator_preparation": "State-specific newsroom and strategy preparation written with retained primary captures; question agents not launched and no completed package claimed. AdditionalactualElectionStats2020Sen13251/2022Gov11090/2024Pres14877pages yield literalnativeCSVlinks1959/2196/2202rows including33privacyaggregateseach;existingSen2024has2201rows. All33county/statecontrolsclose,50179sourcepositions/10441maskedfields retainedwithoutallocation;candidateonlymasks316/668/9408/30. Otero18 appearsPres91/273/364 but absentSenate, not0. Actualembedded3canvassoriginalsremain403;sourcecompletion/method/uniformballot/currentgeo/prioritygatesopen.",
+      "state_specific_notes": "No 2022 U.S. Senate contest; use actual certified statewide midterm such as governor. 2024 Senate is other seat, 2020 same-seat. SOS index mixes 2021 generic text with current primary/runoff/municipal links; verify actual November election ID.",
+      "historical_native_source_preparation": {
+        "status": "bounded_original_native_source_controls_with_explicit_privacy_and_canvass_access_gaps",
+        "path": "data/coordinator-historical-native-preflight.json",
+        "bytes": 20387783,
+        "sha256": "207f5d91e5234282b0cc3d3917b7cee9aaafe56f25ce865ba6df6ed9e15b342f",
+        "native_source_rows": {
+          "2020Senate": 1959,
+          "2022Governor": 2196,
+          "2024President": 2202,
+          "2024Senate": 2201
+        },
+        "VoterPrivacy_aggregate_rows_each": 33,
+        "candidate_masks": {
+          "2020Senate": 316,
+          "2022Governor": 668,
+          "2024President": 9408,
+          "2024Senate": 30
+        },
+        "all_candidate_control_positions_including_masks": 50179,
+        "all_masked_candidate_control_fields": 10441,
+        "county_controls_each": 33,
+        "actual_linked_original_canvass403_observations": 3,
+        "Otero18_president_only_source_vector": [
+          91,
+          273,
+          0,
+          0,
+          0,
+          0,
+          0,
+          364,
+          364
+        ],
+        "absent_Senate_values_inferred_zero": false,
+        "formal_priority_accepted": false,
+        "current_geography_approved": false
+      }
     },
     {
       "state": "Oregon",
@@ -2522,18 +2578,18 @@
   "batch_status": "in-progress:12newstatespublished;MSfirstpairactive;21laterstatesqueued",
   "coordinator_preparation_audit": {
     "status": "pass",
-    "checked_at_utc": "2026-10-19T15:44:47.844947+00:00",
+    "checked_at_utc": "2026-10-19T15:54:52.218641+00:00",
     "scope": "Still-queued states only; retained public news/preflight responses, not completed question packages or accepted feeds",
     "states": 21,
-    "response_captures": 803,
-    "stored_objects": 733,
-    "verified_original_entities": 725,
-    "stored_bytes": 538515523,
+    "response_captures": 815,
+    "stored_objects": 745,
+    "verified_original_entities": 737,
+    "stored_bytes": 538672005,
     "retained_transport_failures": 78,
     "split_original_entities": 3,
     "http_status_counts": {
-      "200": 612,
-      "403": 93,
+      "200": 621,
+      "403": 96,
       "503": 3,
       "transport_failure": 78,
       "404": 10,
@@ -2542,7 +2598,7 @@
       "206": 3
     },
     "checks": "Unique IDs; original/stored SHA-256; exact ordered-part reconstruction where needed; raw byte counts; UTC/headers or retained transport failures; strict per-stored-object bounds and no orphan response assets.",
-    "additional_content_checks": "Oklahoma complete2024 plus2022regular/unexpired and2020 certification originals preserve all77 counties per contest and35568 candidate positions; scopes stay separate. Louisiana complete2024/2022/2020 public XLSX+CSV controls cover64parishes each. Montana complete2018/2020/2022/2024 workbooks verify9876 selected positions and896 independent PDF county cells. Oregon complete2020/2022 candidate abstracts verify576 county cells;2022 reconstructed from3 contiguous206 ranges,500 partials retained. Actual public Download forms additionally supplied complete2020/2022 native ZIP streams, retained once as3/4 exact gzip parts at most32M; both ZIP CRCs and72 member hashes pass, filename inventories only. No completed question packages or accepted feeds are inferred. Nebraska source portfolio preserves91 complete archived stateHTML plus complete DouglasBIFF/Lancaster1431pagePDF, closing93county/1326 selected native namedSenate controls without an ID join. SouthDakota exact observed2024 public precinct-export POST supplies691 native rows/66correctly labelled county sheets with complete OOXML/ZIPCRC/memberhashes; source totals428728 remain194 below signed428922 across24counties, unallocated. A separate statewide XLSX has literal candidate-header conflict; no relabel from counts or current-feed admission. Idaho historical2020/2022preparation additionally retainsfourcompleteOOXMLworkbooks/22770selectedcandidatepositions:974native2020and999native2022percontest,50blank2020candidatecellsremainnull;allknownnative/44county/footercontrolsclose,andpostcountyappendicesstaynonadditive. Deterministicofflinepreflightdoesnotapprovepriority/currentgeography. Colorado actual published historicalCSVdownloads nowretain3199/3232/3205native source rows and99514nativecandidatepositions for2024Pres/2022Sen/2020Sen;1984independentofficialcandidatecomparisons pass. SourceTOTAL_BALLOTS duplicatescandidatecounts ratherthanactualadministrativeballots;flags/pseudocandidates/16stats-unmatchedzerocandidatekeys remainliteral. NoNovemberfeedorpriorityapproval. Delaware actual archive/report anchors supply complete2020Senate/president and2022House HTML/CSVs,22256 method positions across436/439/516sourceED contexts.2020unprintedEarlyVoting fields3500remainnull.2020president-onlyED0218has1Bidenmachinevote andnoSenate table; other2pres-onlykeysall0. Complete official write-in sheets retain17Presrows336 and2House rows18 separately, blankmethodcellsnull/noEDallocation;2022literal2020heading conflictsprinted2022date/clock. Illinois actual public historical search-form POSTs and literal county/Federal/Statewide/ByOffice anchors retain86747raw2020/2022SenateCSVrows/1040964rawfields/108authoritieseach. Native printedcandidate sums match statewideHTML;additionalnamed18/34 andgeneric2530/1911 remain separate. Actual2024statewide27namedrows total5633310 versusnativeprinted3total5592368;additionalnamed40942/nativegeneric57411 leave16469scopegap unallocated. Literal minorcandidate percentage defects and source variants retained; no guessedcontestIDs/nativevalidWIallocation/currentjoin. Massachusetts publicPD43formqueries andliteralview/downloadanchors additionallyretain2020Senate/2022Governor/2024President all351municipal/nativeCSVs,2173/2390/2394nativecontexts and61808sourcecandidate/controlpositions. Eachnative-to-municipal/stateCSVcolumncloses;separate2022GovernorcountyHTMLrows differfromsamepagefooter/bothCSVs[-3189,+90,-39,-12,-13,-3163]. AllOthers,Blanks,CSVpartyandHTMLWriteInmetadata remainseparate;nomethodcolumn/crossyearcurrentjoin/priorityapproval."
+    "additional_content_checks": "Oklahoma complete2024 plus2022regular/unexpired and2020 certification originals preserve all77 counties per contest and35568 candidate positions; scopes stay separate. Louisiana complete2024/2022/2020 public XLSX+CSV controls cover64parishes each. Montana complete2018/2020/2022/2024 workbooks verify9876 selected positions and896 independent PDF county cells. Oregon complete2020/2022 candidate abstracts verify576 county cells;2022 reconstructed from3 contiguous206 ranges,500 partials retained. Actual public Download forms additionally supplied complete2020/2022 native ZIP streams, retained once as3/4 exact gzip parts at most32M; both ZIP CRCs and72 member hashes pass, filename inventories only. No completed question packages or accepted feeds are inferred. Nebraska source portfolio preserves91 complete archived stateHTML plus complete DouglasBIFF/Lancaster1431pagePDF, closing93county/1326 selected native namedSenate controls without an ID join. SouthDakota exact observed2024 public precinct-export POST supplies691 native rows/66correctly labelled county sheets with complete OOXML/ZIPCRC/memberhashes; source totals428728 remain194 below signed428922 across24counties, unallocated. A separate statewide XLSX has literal candidate-header conflict; no relabel from counts or current-feed admission. Idaho historical2020/2022preparation additionally retainsfourcompleteOOXMLworkbooks/22770selectedcandidatepositions:974native2020and999native2022percontest,50blank2020candidatecellsremainnull;allknownnative/44county/footercontrolsclose,andpostcountyappendicesstaynonadditive. Deterministicofflinepreflightdoesnotapprovepriority/currentgeography. Colorado actual published historicalCSVdownloads nowretain3199/3232/3205native source rows and99514nativecandidatepositions for2024Pres/2022Sen/2020Sen;1984independentofficialcandidatecomparisons pass. SourceTOTAL_BALLOTS duplicatescandidatecounts ratherthanactualadministrativeballots;flags/pseudocandidates/16stats-unmatchedzerocandidatekeys remainliteral. NoNovemberfeedorpriorityapproval. Delaware actual archive/report anchors supply complete2020Senate/president and2022House HTML/CSVs,22256 method positions across436/439/516sourceED contexts.2020unprintedEarlyVoting fields3500remainnull.2020president-onlyED0218has1Bidenmachinevote andnoSenate table; other2pres-onlykeysall0. Complete official write-in sheets retain17Presrows336 and2House rows18 separately, blankmethodcellsnull/noEDallocation;2022literal2020heading conflictsprinted2022date/clock. Illinois actual public historical search-form POSTs and literal county/Federal/Statewide/ByOffice anchors retain86747raw2020/2022SenateCSVrows/1040964rawfields/108authoritieseach. Native printedcandidate sums match statewideHTML;additionalnamed18/34 andgeneric2530/1911 remain separate. Actual2024statewide27namedrows total5633310 versusnativeprinted3total5592368;additionalnamed40942/nativegeneric57411 leave16469scopegap unallocated. Literal minorcandidate percentage defects and source variants retained; no guessedcontestIDs/nativevalidWIallocation/currentjoin. Massachusetts publicPD43formqueries andliteralview/downloadanchors additionallyretain2020Senate/2022Governor/2024President all351municipal/nativeCSVs,2173/2390/2394nativecontexts and61808sourcecandidate/controlpositions. Eachnative-to-municipal/stateCSVcolumncloses;separate2022GovernorcountyHTMLrows differfromsamepagefooter/bothCSVs[-3189,+90,-39,-12,-13,-3163]. AllOthers,Blanks,CSVpartyandHTMLWriteInmetadata remainseparate;nomethodcolumn/crossyearcurrentjoin/priorityapproval. NewMexicoactualindexedofficialElectionStatscontestpages andliteraldownloadlinks supply2020Sen1959/2022Gov2196/2024Pres2202nativecontexts plusprevious2024Sen2201;33VoterPrivacyaggregatesinEACH,notphysicalprecinctcount. All33county/statecontrolsclose,50179originalcandidate/controlpositions/10441maskedfields retained;nozeroimputation. Otero18Pres91/273/364 absentSenatenotzero. Originalcanvasses3moreexplicit403s,notrecoveredbodies;knownresidualsandlegacyheadlinecountsnotgeographyapproval."
   },
   "coordinator_next_actions": [
     "Independently reconcile complete Mississippi first-pair originals/native/fields/order before historical acceptance.",
