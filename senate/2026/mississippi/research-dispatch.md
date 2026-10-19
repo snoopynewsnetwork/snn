@@ -424,3 +424,17 @@ Nebraska turnout`012d3597-6f6c-4ff1-a3d7-a488176243ba` actually launched in this
 ## Final maps independent review
 
 The frozen321-entry maps package now passes coordinator exact membership/hash/size/AST/no-cache/link checks and full401canonical-reference resolution, including every104/164historical object. The887ordered entries/all1,736native/all82parents retain exact source-object pointers and shared parent references with zero approved current entry-level matches. Independent direct native-ring construction imports neither producer geometry code nor its PyShp adapter: all2,279linear observations/221same-source positive-area pairs agree, preserving two invalid observations, two true curves and one empty feature. Full original ZIP/SHP/SHX/DBF/JSON checks and failed-adapter fingerprints also pass. Four overview contacts were freshly viewed; browser unavailability stays explicit. Official-results remains active while Nebraska turnout uses the freed slot.
+
+
+## Actual official-results finish and Nebraska peer launch
+
+Mississippi official-results actually finished its1,329-entry owned package, reporting47read-only checks/zero failures, all82authorities/77priority parents/887shared-parent priority records/849remainder and complete original dependencies. Coordinator final original/schema/manifest review is pending. CurrentNovember counts and current native/geometry identities remain unapproved.
+
+Nebraska partisanship`bf15a495-7e21-44b4-abd9-d8d7f83bb88e` actually launched in that freed slot after fresh Research-profile/provider discovery, joining turnout`012d3597-6f6c-4ff1-a3d7-a488176243ba`. They are the only two active researchers. Both received actual peer IDs and explicit native-primary steering; early765native prefix/1,326full order is provisional,20county prefix sensitivity only. All four Mississippi workers are finished, with frozen sources unchanged; publication review continues concurrently.
+
+
+## Complete Mississippi integration; bounded publication next
+
+All four actual question workers are finished and frozen. Coordinator final official review passes1,329owned files/487complete outcomes/406dependencies/352originals/full887+849objects, actual82directory records/408commissioners, both76-link primary indexes, independent Pike/Rankin original controls and executed47checkreadonlyreplay. Complete primary cure/calendar/remand and four additional original sample pages were freshly read; later legal/source limits remain explicit. The whole-state integration audit verifies27,257exclusive worker entries, all4exactmanifests,4,516relative links, AST/no-cache and strict40MBbounds. Repositorycheckpasses35races/TypeScript/appsyntax. One old coordinatornews bytecode cache was pinned/removed without changing research or worker artifacts.
+
+Mississippi is reviewed and ready for explicit bounded asset commits/pushes, not yet fully published. Final publication metadata waits for every reviewed state asset to be remote. Nebraska's actual first pair012d3597/bf15a495 are the only active researchers; early native765/full1,326proposal is unaccepted, and a Madison/McPherson parent-FIPS discrepancy is under original-source peer reconciliation. No currentNovember feed/geometry/probability approval follows.

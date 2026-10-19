@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "requested_date": "2026-10-17",
-  "updated_at_utc": "2026-10-19T20:34:15.563532+00:00",
+  "updated_at_utc": "2026-10-19T20:45:02.686995+00:00",
   "scope": "35 states in the repository 2026 U.S. Senate race index",
   "coordinator_agent_id": "d0fc3534-1613-4883-b48b-21a233fcfd9e",
   "workspace_id": "wks_b290f45007010740",
@@ -1037,7 +1037,7 @@
       "election": "Regular",
       "seat_class": "II",
       "priority": 13,
-      "status": "official-active-maps-review",
+      "status": "reviewed-ready-bounded-publication",
       "workers": {
         "turnout": {
           "agent_id": "5d6e201c-4b06-46e7-9976-ae38ebf52676",
@@ -1100,7 +1100,7 @@
         },
         "official_results": {
           "agent_id": "9eaf3c11-70ff-4f00-9f9e-73771ea0ccf8",
-          "status": "active",
+          "status": "finished",
           "launched_at_utc": "2026-10-19T20:07:25.277966+00:00",
           "launch_timestamp_scope": "Recorded immediately after successful actual create_agent returns, not a claimed provider-internal start clock",
           "provider": "codex/gpt-6.1-sol",
@@ -1143,6 +1143,23 @@
             "Pike_historical_reported25_of25_but_complete0_partial25_preserved": true,
             "coordinator_final_legal_source_review_pending": true,
             "current_November_counts_admitted": false
+          },
+          "actual_finish_notification_received": true,
+          "coordinator_final_review_pending": false,
+          "frozen_final_report": {
+            "path": "official-results.md",
+            "bytes": 29069,
+            "sha256": "4c656e970bd3ec2515d3c5e95919103af65702dbe74a206798ea9f52e69c2123"
+          },
+          "frozen_final_manifest": {
+            "path": "data/results-sources/asset-manifest.json",
+            "bytes": 278562,
+            "sha256": "76043c056687f7e19f3950e19c8212531481444f45612a100684424392d4a05e"
+          },
+          "frozen_final_validation": {
+            "path": "data/results-sources/validation.json",
+            "bytes": 8367,
+            "sha256": "8dc07903c1d840824fc6919f9521ccbfa655af0ce50832853cc9de270c06cd18"
           }
         },
         "precinct_maps": {
@@ -3924,7 +3941,8 @@
         "planned_raw_file_batch_budget": 750000000,
         "source": "https://docs.github.com/en/get-started/using-git/troubleshooting-the-2-gb-push-limit",
         "fullstate_integration_required_before_asset_publication": true,
-        "state_asset_publication_started": false
+        "state_asset_publication_started": false,
+        "fullstate_integration_passed": true
       },
       "bounded_preliminary_map_original_binary_review": {
         "path": "data/coordinator-map-preliminary-originals-v1-review.json",
@@ -3973,7 +3991,25 @@
         "source_pair_positive_area_diagnostics": 221,
         "browser_render_unavailable_qualified": true,
         "current_entry_level_matches_approved": 0
-      }
+      },
+      "all_four_actual_finish_notifications_received": true,
+      "finished_official_owned_review": {
+        "path": "data/coordinator-finished-official-review.json",
+        "bytes": 5301,
+        "sha256": "62613eb78160adc5238d3be5fd7ab52fe2af5169ad46f039481568fe0d3bf672"
+      },
+      "integrated_state_review": {
+        "path": "data/coordinator-checks.json",
+        "bytes": 3005,
+        "sha256": "2350c26d4a809c641586f90f058165785e181682385bcb8bd31372b274f295a3"
+      },
+      "current_legal_original_review": {
+        "path": "data/coordinator-current-cure-calendar-remand-original-review.json",
+        "bytes": 10161,
+        "sha256": "d8e081c1ca356f91381c28d0d0e0d0cdae6782a9fe6339f209c13846d5d8fc32"
+      },
+      "all_four_reviewed": true,
+      "repository_check": "npm run check passed35race records,TypeScript,publicapp syntax"
     },
     {
       "state": "Nebraska",
@@ -3982,7 +4018,7 @@
       "election": "Regular",
       "seat_class": "II",
       "priority": 14,
-      "status": "first-pair-turnout-active",
+      "status": "first-pair-active",
       "workers": {
         "turnout": {
           "agent_id": "012d3597-6f6c-4ff1-a3d7-a488176243ba",
@@ -4009,6 +4045,33 @@
             "bytes": 13787,
             "sha256": "484bd0a0371b231c55126c3b82dc04b03258ac4b42bfabef2ffc384b116c4a51"
           }
+        },
+        "partisanship": {
+          "agent_id": "bf15a495-7e21-44b4-abd9-d8d7f83bb88e",
+          "status": "active",
+          "launched_at_utc": "2026-10-19T20:38:06.209368+00:00",
+          "launch_timestamp_scope": "Recorded after successful actual create_agent return",
+          "provider": "codex/gpt-6.1-sol",
+          "settings": {
+            "modeId": "auto-review",
+            "thinkingOptionId": "high"
+          },
+          "selected_fresh_profile": {
+            "id": "agent_profile_mvfmd7wg_u16123g52jn",
+            "name": "Research",
+            "provider": "codex",
+            "model": "gpt-6.1-sol",
+            "modeId": "auto-review",
+            "thinkingOptionId": "high",
+            "notes": "When reading existing code, reading existing papers, or generally researching BEFORE devising a plan."
+          },
+          "notifyOnFinish": true,
+          "launch_prompt": {
+            "path": "/tmp/snn-nebraska-partisanship-launched-prompt.txt",
+            "bytes": 15937,
+            "sha256": "7df3c0a7d03c52d5491de5fc609c650fee58b2f61e3b90feeb48bc20dfa2c1ba"
+          },
+          "actual_turnout_peer": "012d3597-6f6c-4ff1-a3d7-a488176243ba"
         }
       },
       "validation": null,
@@ -4141,6 +4204,19 @@
         "unique_candidate_IDs_established": false,
         "current_counts_admitted": false,
         "actual_worker_launched": true
+      },
+      "provisional_native_priority": {
+        "full_native": 1326,
+        "priority": 765,
+        "source_named_denominator": 935005,
+        "top15": 26773,
+        "preceding764": 747645,
+        "priority765": 748190,
+        "crossing": "Lancaster10D-1PDF685/545",
+        "county20_scope": "sensitivity_only",
+        "formal_dispatch_accepted": false,
+        "full_field_peer_agreement_pending": true,
+        "parent_FIPS_mapping_reconciliation_pending": "Madison119/McPherson117; source-directed peer correction underway"
       }
     },
     {
@@ -4883,9 +4959,9 @@
     "additional_content_checks": "Oklahoma complete2024 plus2022regular/unexpired and2020 certification originals preserve all77 counties per contest and35568 candidate positions; scopes stay separate. Louisiana complete2024/2022/2020 public XLSX+CSV controls cover64parishes each. Montana complete2018/2020/2022/2024 workbooks verify9876 selected positions and896 independent PDF county cells. Oregon complete2020/2022 candidate abstracts verify576 county cells;2022 reconstructed from3 contiguous206 ranges,500 partials retained. Actual public Download forms additionally supplied complete2020/2022 native ZIP streams, retained once as3/4 exact gzip parts at most32M; both ZIP CRCs and72 member hashes pass, filename inventories only. No completed question packages or accepted feeds are inferred. Nebraska source portfolio preserves91 complete archived stateHTML plus complete DouglasBIFF/Lancaster1431pagePDF, closing93county/1326 selected native namedSenate controls without an ID join. SouthDakota exact observed2024 public precinct-export POST supplies691 native rows/66correctly labelled county sheets with complete OOXML/ZIPCRC/memberhashes; source totals428728 remain194 below signed428922 across24counties, unallocated. A separate statewide XLSX has literal candidate-header conflict; no relabel from counts or current-feed admission. Idaho historical2020/2022preparation additionally retainsfourcompleteOOXMLworkbooks/22770selectedcandidatepositions:974native2020and999native2022percontest,50blank2020candidatecellsremainnull;allknownnative/44county/footercontrolsclose,andpostcountyappendicesstaynonadditive. Deterministicofflinepreflightdoesnotapprovepriority/currentgeography. Colorado actual published historicalCSVdownloads nowretain3199/3232/3205native source rows and99514nativecandidatepositions for2024Pres/2022Sen/2020Sen;1984independentofficialcandidatecomparisons pass. SourceTOTAL_BALLOTS duplicatescandidatecounts ratherthanactualadministrativeballots;flags/pseudocandidates/16stats-unmatchedzerocandidatekeys remainliteral. NoNovemberfeedorpriorityapproval. Delaware actual archive/report anchors supply complete2020Senate/president and2022House HTML/CSVs,22256 method positions across436/439/516sourceED contexts.2020unprintedEarlyVoting fields3500remainnull.2020president-onlyED0218has1Bidenmachinevote andnoSenate table; other2pres-onlykeysall0. Complete official write-in sheets retain17Presrows336 and2House rows18 separately, blankmethodcellsnull/noEDallocation;2022literal2020heading conflictsprinted2022date/clock. Illinois actual public historical search-form POSTs and literal county/Federal/Statewide/ByOffice anchors retain86747raw2020/2022SenateCSVrows/1040964rawfields/108authoritieseach. Native printedcandidate sums match statewideHTML;additionalnamed18/34 andgeneric2530/1911 remain separate. Actual2024statewide27namedrows total5633310 versusnativeprinted3total5592368;additionalnamed40942/nativegeneric57411 leave16469scopegap unallocated. Literal minorcandidate percentage defects and source variants retained; no guessedcontestIDs/nativevalidWIallocation/currentjoin. Massachusetts publicPD43formqueries andliteralview/downloadanchors additionallyretain2020Senate/2022Governor/2024President all351municipal/nativeCSVs,2173/2390/2394nativecontexts and61808sourcecandidate/controlpositions. Eachnative-to-municipal/stateCSVcolumncloses;separate2022GovernorcountyHTMLrows differfromsamepagefooter/bothCSVs[-3189,+90,-39,-12,-13,-3163]. AllOthers,Blanks,CSVpartyandHTMLWriteInmetadata remainseparate;nomethodcolumn/crossyearcurrentjoin/priorityapproval. NewMexicoactualindexedofficialElectionStatscontestpages andliteraldownloadlinks supply2020Sen1959/2022Gov2196/2024Pres2202nativecontexts plusprevious2024Sen2201;33VoterPrivacyaggregatesinEACH,notphysicalprecinctcount. All33county/statecontrolsclose,50179originalcandidate/controlpositions/10441maskedfields retained;nozeroimputation. Otero18Pres91/273/364 absentSenatenotzero. Originalcanvasses3moreexplicit403s,notrecoveredbodies;knownresidualsandlegacyheadlinecountsnotgeographyapproval. Oregon actual indexed Wasco2024 original is complete525495bytes/46pages;12presidential native blocks retain96choice and36Total/Overvote/Undervote positions, close8countyabstractcolumns,13527ballots/19064registration/8overvotes/128undervotes. Signed image-onlypage1directoriginalread;11otherblocks originaltextlayer, representativerenderschecked. GenericWrite-in51/Misc51 numericagreement doesnotprovevalidnamedWI. Emptyliteralphraseformquerynotabsence; noall36native/currentjoin/priorityapproval. FurtherOregonpubliccatalogform/page/bookmarkresponses retainwrong-filter/first-page/criteria-reset scopes,notabsence;thirdpartyURLleadREADME yieldednoofficiallinks/noimportedvotes. RhodeIslandactual2020/2022long-shortZIPprefixesagree16573/24973records;rootselected7647candidate rows114705total-plus14methodfields matchprimaryHTML.2020Pres504/Sen465 sourcecodes39Presidential-only,2022Gov454;noSenate0/physicaljoin. Nestedresults differ4829/2712positions andsetupzero.2020linked2016descriptiongroup3unlabelled,HTMLmatchingvectorEmergency;2022EarlyVoting separate. Courtesydata/BOEcertification/currenthierarchy/priorityremainworker-gated. Kentucky retained complete certifications additionally verify3480county candidatecells+29footer controls for120counties each2024Pres/2022Sen/2020Sen, paired presidential tickets counted once. Actual exactCDXlinks repairEstill/Lyon2020recap originals:110519/114882rawbytes,3/2pages,image-only/no numerictextacceptance;fivefullpagesrendered/read,overlappingmethod/summary andblank/zero fieldsremainindependenttranscriptionwork. Wyomingactualofficialindex additionallysuppliescomplete2022general precinct ZIP728465B/raw86694fc9c4cb405d100a2f43aa81de84945b6858cd55b793b4436461791aca36;threeworkbooks include23county source tabs. Detailednative/ballot/control extractionstillinprogress,notacceptedfromacquisition. WestVirginia actual parent-linked public client/config and all55 published child county IDs/versions verify precise file constructors. MainJS original is byte-identical to retained publishedFlorida original and reused read-only with separateWVreceipt. Six direct child requests403 and two exact namespace catalogs200empty remain bounded access gaps; no native vectors acquired. CompleteKanawha2024county original747pages supplies184source-native labels/3128selectedcandidatefields/552statisticsfields,13namedcountycontrols exact; Senate generic124 is separate from statewide15namedwriteins. Mercer actualparent supplies5complete2024/2020summary/precinct/writeinPDFs, raw/image-only limits retained, no native numeric acceptance. Nine actualcataloguedWV2018/2024reportZIPs pass completeCRCs;880XMLcandidatecountyfields+3190duplicatedXLSvote-type/totalfields match appcontrols. Originaltypes/rows/dates retained; singleElectionDaybucket semantics unresolved.2018summaryCSVballots560041/reg1155290 differ XMLturnout597149/1245827, source-specificfields not forcedbalance;2024candidate-registrationzeros separate from1209977admin. Nebraska actual SOSSeptember11certification parent andcompleteonepagePDF nowretained as2newHTTP200observations;previousfinal24pagecandidatePDFreusedbyteexact,firstpagefreshlyviewed. FiveSenatenames/sourcepartiesmatchtheprevioussetupwhileID148remainssharedcontest/searchID;ByPetitionOsbornnotDemocratic,allothersretained.No signedinstrument/laterscope/currentID/countadmissionorworkerlaunch."
   },
   "coordinator_next_actions": [
-    "Review frozen Mississippi maps; finish official-results review on its actual handoff.",
-    "The only active researchers are Mississippi official-results and Nebraska turnout. Launch Nebraska partisanship in the next actual finish slot; no polling.",
-    "Publish the reviewed Mississippi package in explicit bounded asset pushes, then final publication metadata. Continue all remaining queued states."
+    "Independently final-review frozen Mississippi official-results and whole state, then publish all reviewed assets in bounded explicit state-only pushes before final publication metadata.",
+    "Nebraska actual first pair012d3597 andbf15a495 are the only two active researchers; native1326 scope/765proposal remains unaccepted pending full independent fields.",
+    "Continue remaining20 laterqueued state stacks; no status polling or third researcher."
   ],
   "coordinator_prompt_preparation": {
     "scope": "Unlaunched future first-wave prompts only; no agent IDs or completed packages implied",
