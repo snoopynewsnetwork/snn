@@ -48,14 +48,13 @@ membership robustness remains unproved. Its exact1,508-file state tree includes
 preservation, with all stored objects below40MB. No genuine November count
 sequence, current geographic join or calibrated probability is admitted.
 
-Idaho partisanship `0eb74f9e-f473-403c-adee-715808064b55` actually finished
-its sealed original/calculator package. In that released slot the SAME turnout
-agent `1a2e39d9-26b7-4e1e-b465-bb0f41dbc02e` resumed its narrow source-stage
-attribution correction. Colorado turnout `ab649b9b-13a0-445e-9af2-9b022a78404d`
-is the only other active researcher; its actual independent peer awaits another
-finish slot. Independent Idaho arithmetic passes 951,622 checks, with no 528-unit
-acceptance yet. Seventeen later states remain queued. Publication continues
-incrementally through the full34-state batch.
+Idaho's complete first pair and source-only 528-observation dispatch are accepted.
+Its official-source worker `a4924a48-6ff5-454b-9dc6-5d4381398e7a` launched in
+Colorado turnout's actual reciprocal-finish slot. Colorado baseline
+`451afcad-e3df-4c1d-b304-f195592df4fe` is the only other active researcher.
+Idaho maps waits another actual free slot; Colorado's final baseline and external
+acceptance remain pending. Seventeen later states are queued. Publication
+continues incrementally through the full34-state batch.
 
 
 The following earlier Mississippi checkpoints retain their original pending scopes; the current accepted historical dispatch and actual second-wave IDs are recorded above and at the end.
