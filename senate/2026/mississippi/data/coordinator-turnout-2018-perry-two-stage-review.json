@@ -1,0 +1,120 @@
+{
+  "status": "pass_bounded_independent_original2018_two_stage_source_replay",
+  "county": "perry",
+  "frozen_worker_bodies": [
+    {
+      "original": {
+        "path": "data/turnout/2018-perry-two-stage-native-original-readings.json",
+        "bytes": 121163,
+        "sha256": "7fbd2c9ffb82d721aa7852c15c55f6ab5a4f1db7222110832f3f7d35af8f280c"
+      },
+      "lossless_copy": {
+        "path": "data/coordinator-qa/turnout-2018-two-stage-replays/2018-perry-two-stage-native-original-readings.json.gz",
+        "bytes": 3540,
+        "sha256": "8ffaab6a7d6f9ca8d428ba8aac0c9c11528c2f7dfa9a58cd974fbc5b7152425e"
+      }
+    },
+    {
+      "original": {
+        "path": "data/turnout/2018-perry-two-stage-native-original-cells.csv",
+        "bytes": 49393,
+        "sha256": "96cfb631213c2d5f4b7f2e5083e6734b0c92ef4540005571a98aabcb6ca92c56"
+      },
+      "lossless_copy": {
+        "path": "data/coordinator-qa/turnout-2018-two-stage-replays/2018-perry-two-stage-native-original-cells.csv.gz",
+        "bytes": 1941,
+        "sha256": "e89b36f295948b3c935c4b9d8d7ac00651ddc5797191e91e4d928d7eaea99673"
+      }
+    },
+    {
+      "original": {
+        "path": "data/turnout/2018-perry-native-peer-reconciliation.json",
+        "bytes": 1169,
+        "sha256": "c0c313579576d058f4f2bb6d62604fe98d76db07c248759600c45202be05edf9"
+      },
+      "lossless_copy": {
+        "path": "data/coordinator-qa/turnout-2018-two-stage-replays/2018-perry-native-peer-reconciliation.json.gz",
+        "bytes": 671,
+        "sha256": "496ecf7749ef30a225cd9402e05a53f3a5d755c748b1cab337e21dbb366746c7"
+      }
+    }
+  ],
+  "immutable_peer_snapshot": {
+    "path": "data/baselines/source/native-2018-78views-v1/snapshot.json",
+    "bytes": 1872,
+    "sha256": "4df50caded4d9a1cdfd46081422e36002439b10aea28cfab1fb6dcf00f34621c"
+  },
+  "source_findings": [
+    {
+      "source_id": "sos-2018-county-perry",
+      "raw_original_sha256": "6bede982ff1deed01eb49ba8457c72ec5b0780b7c2128deef0298ba9c48c2bf4",
+      "raw_original_bytes": 1726359,
+      "stored_original": {
+        "path": "data/turnout/source/sos-2018-county-perry.body.gz",
+        "bytes": 1076080,
+        "sha256": "fd2a33fba49c58cdeeaf1925cea4089e925cbe835fee7b0ca53b35c994fac657"
+      },
+      "native_constituents": 15,
+      "physical_TOTAL": {
+        "actual_PDFpage": 3,
+        "column": 5
+      },
+      "source_candidate_sums_and_TOTALs": {
+        "Tobey Bernard Bartee": 42,
+        "Mike Espy": 960,
+        "Cindy Hyde-Smith": 1803,
+        "Chris McDaniel": 1193
+      }
+    },
+    {
+      "source_id": "sos-2018-runoff-county-perry",
+      "raw_original_sha256": "00041e24f838e4d70a7f09bb12baf36d2efe4adf285f3a4e59454de14e805998",
+      "raw_original_bytes": 507238,
+      "stored_original": {
+        "path": "data/turnout/source/sos-2018-runoff-county-perry.body.gz",
+        "bytes": 335722,
+        "sha256": "f5b8d9d7fbf0928cf47dadacd61d9659d182b1d1cb04f95f1e606ceb580af660"
+      },
+      "native_constituents": 15,
+      "physical_TOTAL": {
+        "actual_PDFpage": 3,
+        "column": 5
+      },
+      "source_candidate_sums_and_TOTALs": {
+        "Mike Espy": 1059,
+        "Cindy Hyde-Smith": 2754
+      }
+    }
+  ],
+  "original_worker_raster_pins": [
+    {
+      "path": "data/turnout/qa/2018-native-original-probe/sos-2018-county-perry/p0002-original.png",
+      "bytes": 230248,
+      "sha256": "cbf02c4fbd3dd60f27e4adbfd14218c0001ac608049d30c111fa2cf39b48b9f6"
+    },
+    {
+      "path": "data/turnout/qa/2018-native-original-probe/sos-2018-county-perry/p0003-original.png",
+      "bytes": 200500,
+      "sha256": "ef1613b8d39ffec26a72caf9b2baaa8f3fb042fc16281d813522949665fbf864"
+    },
+    {
+      "path": "data/turnout/qa/2018-native-original-probe/sos-2018-runoff-county-perry/p0002-original.png",
+      "bytes": 168292,
+      "sha256": "2f8769de71ae3d9dd0d5f8b43ecb11d73abbb7e8ecefe64dced69202335d82bd"
+    },
+    {
+      "path": "data/turnout/qa/2018-native-original-probe/sos-2018-runoff-county-perry/p0003-original.png",
+      "bytes": 146415,
+      "sha256": "38ba629d90b6228915da235fd329ea136f9fc47eccd85a6e258fed22828d5726"
+    }
+  ],
+  "compared_positions": 132,
+  "counts": {
+    "numeric_positions": 96,
+    "unused_null_positions": 36
+  },
+  "whitespace_only_header_representations": [],
+  "qualification": "All original-reading and flat source fields recompute against immutable peer evidence after the worker original transcript: candidate values/roles/original hash/page/physical column/FIPS and whitespace-folded literal headers. Whole source rasters survive by hash, not pixel/reading-window/parsedID identity. This is not fresh coordinator visual reading of all new glyphs, shared current geography, same cross-stage electorate or whole164-stage historical-method/native887 approval. Source native fields are never replaced by county controls or another year/stage.",
+  "formal_native887_dispatch_accepted": false,
+  "current_geography_approved": false
+}

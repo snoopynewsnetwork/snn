@@ -1,0 +1,99 @@
+{
+  "status": "pass_bounded_independent_complete_original_manual_grid_replay",
+  "batch": "batch31",
+  "frozen_input_pins": [
+    {
+      "path": "data/coordinator-qa/presidential-batch31-replay/batch31-presidential-original-readings.json.gz",
+      "bytes": 5338,
+      "sha256": "027d5c8f88f3f4c5c2f7add6ef6eeb1408c1ba8fc60d8b8201e6795ca56ae46c"
+    },
+    {
+      "path": "data/coordinator-qa/presidential-batch31-replay/batch31-presidential-original-cells.csv.gz",
+      "bytes": 2700,
+      "sha256": "391166cb95bcd7f785b75126285ea8d013508f9379f5f51237cbb0116776be3c"
+    }
+  ],
+  "immutable_peer_snapshot_pin": {
+    "path": "data/baselines/source/native-allfield-82views/snapshot.json",
+    "bytes": 5216,
+    "sha256": "94576fcfa4b7b245e2d5baa9e8366e4489594804f41694ea04a9f6315e46b336"
+  },
+  "source_views": 1,
+  "native_constituents": 28,
+  "candidate_positions": 297,
+  "position_role_counts": {
+    "source_native_reporting_constituent": 252,
+    "source_TOTAL": 9,
+    "unused_template_column": 36
+  },
+  "complete_original_manual_grid_numeric_positions": 261,
+  "direct_observation_unused_null_positions": 36,
+  "missing_original_aid_positions_including_unused": 297,
+  "provisional_OCR_disagreements_visually_superseded": 0,
+  "source_results": [
+    {
+      "source_id": "sos-2024-county-itawamba",
+      "raw_sha256": "75405106d64f0f6ae075b5fb1c9f13eafffd8b5c1102e4440a1026f37986dc3e",
+      "native_constituents": 28,
+      "position_roles": {
+        "source_native_reporting_constituent": 252,
+        "source_TOTAL": 9,
+        "unused_template_column": 36
+      },
+      "native_sums_and_printed_TOTALs": {
+        "Kamala D. Harris": 1027,
+        "Chase Oliver": 16,
+        "Jill Stein": 7,
+        "Randall Terry": 7,
+        "Donald J. Trump": 9523,
+        "Shiva Ayyadurai": 2,
+        "Claudia De la Cruz": 5,
+        "Robert F. Kennedy Jr.": 29,
+        "Peter Sonski": 5
+      },
+      "missing_original_aid_positions_including_unused": 297,
+      "provisional_OCR_disagreements_visually_superseded": 0
+    }
+  ],
+  "whole_original_render_pins": [
+    {
+      "path": "data/turnout/qa/batch31-presidential-original-review/sos-2024-county-itawamba-p03-original.png",
+      "bytes": 619572,
+      "sha256": "aec0083594401f34d7668641b6b31e1ebe4c3723de03899a0c2eac25c2aeb3bc"
+    },
+    {
+      "path": "data/turnout/qa/batch31-presidential-original-review/sos-2024-county-itawamba-p04-original.png",
+      "bytes": 615535,
+      "sha256": "666e900b4613878530aed927985368c217b37e3792cac4278642c2b1267e96c8"
+    },
+    {
+      "path": "data/turnout/qa/batch31-presidential-original-review/sos-2024-county-itawamba-p05-original.png",
+      "bytes": 585248,
+      "sha256": "80233ea9a0b498d7f9e42a2bf6dc074148922ec2c6457c89ef1ac49ac5f65d1c"
+    }
+  ],
+  "separate_render_differences": [
+    {
+      "source_id": "sos-2024-county-itawamba",
+      "actual_PDFpage": 5,
+      "turnout_render_path": "data/turnout/qa/batch31-presidential-original-review/sos-2024-county-itawamba-p05-original.png",
+      "turnout_sha256": "80233ea9a0b498d7f9e42a2bf6dc074148922ec2c6457c89ef1ac49ac5f65d1c",
+      "turnout_size": [
+        1950,
+        1513
+      ],
+      "peer_render_path": "data/baselines/extracts/reviewed-replay/sos-2024-county-itawamba/p0005-original.png",
+      "peer_sha256": "1c067bd6a5a9edb8afa46107e6d54ff521e31561104595da2f36aef972aeb9ef",
+      "peer_size": [
+        1951,
+        1513
+      ],
+      "turnout_applied_deskew_ccw": 0,
+      "peer_stated_deskew_ccw": -4.440892098500626e-16
+    }
+  ],
+  "qualification": "All nine candidate rows and source columns use direct whole-original grid readings. Missing OCR aid and observed unused blanks remain distinct from literal numeric zeros; no missing numeric polygon is invented. Raw PDF and raster pins, exact source roles, candidate vectors, flat positions and whitespace-only literal labels agree the immutable independent peer only after original extraction. This bounded source/basis audit is not a fresh coordinator visual reading of every glyph, a cross-publication/geographic join, whole historical-method completion or dispatch approval.",
+  "formal_dispatch_accepted": false,
+  "historical_native_complete": false,
+  "current2026_geography_approved": false
+}

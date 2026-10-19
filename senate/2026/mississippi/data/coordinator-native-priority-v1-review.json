@@ -1,0 +1,89 @@
+{
+  "status": "pass_bounded_immutable_v1_887_native_proposal_no_dispatch_acceptance",
+  "proposal_snapshot_manifest": {
+    "path": "data/baselines/source/native-priority-v1/snapshot.json",
+    "bytes": 3543,
+    "sha256": "752159fb2a3493b0489e6e6b3ee284183b137c8af63b8073bb12862f737709c4"
+  },
+  "worker_frozen_file_pins": [
+    {
+      "original_path": "data/baselines/native-priority-contract.json",
+      "original_bytes": 274638,
+      "original_sha256": "f91449c715a9a67b40acfb920afbc7f8c43de3fd0a6e54df254d19212063a487",
+      "frozen_path": "data/baselines/source/native-priority-v1/native-priority-contract.json.gz",
+      "stored_bytes": 22684,
+      "stored_sha256": "57c6c727da4ca43fa8e82322b2bbadcad23dd880e766e99c603dcfaf75a4d6a2",
+      "reconstruction": "Exact ordered original bytes by lossless gzip decompression; no normalization"
+    },
+    {
+      "original_path": "data/baselines/native-source-orders.json",
+      "original_bytes": 4086972,
+      "original_sha256": "d75a7eeea61c15ca1777e77ac36943b2e8e8b89f221d70a0de8d2ae88f359566",
+      "frozen_path": "data/baselines/source/native-priority-v1/native-source-orders.json.gz",
+      "stored_bytes": 366705,
+      "stored_sha256": "fc0ff46e89e29631ca128874d5c4ba533fa876bfebb42aff17e25eedd87b6278",
+      "reconstruction": "Exact ordered original bytes by lossless gzip decompression; no normalization"
+    },
+    {
+      "original_path": "data/baselines/native-full-order.csv",
+      "original_bytes": 603684,
+      "original_sha256": "0b795946fd78e79528068928bc2f3bec5653dc42315c0e257296c1f22d89d1ae",
+      "frozen_path": "data/baselines/source/native-priority-v1/native-full-order.csv.gz",
+      "stored_bytes": 141020,
+      "stored_sha256": "898be64639ff2002d17a5a5c2b4ee531c242ac6b4bf4bf1b8f9dd31101e4dcab",
+      "reconstruction": "Exact ordered original bytes by lossless gzip decompression; no normalization"
+    },
+    {
+      "original_path": "data/baselines/native-order-peer-reconciliation.json",
+      "original_bytes": 40955,
+      "original_sha256": "88005cdec0fe23200861bb99890430da75a074928f6eddd3d783a33b1592e66f",
+      "frozen_path": "data/baselines/source/native-priority-v1/native-order-peer-reconciliation.json.gz",
+      "stored_bytes": 2537,
+      "stored_sha256": "5fe9f2e91dcc7107382199bf772937a6f2572bc088ad951c67b4b7b70d3ef556",
+      "reconstruction": "Exact ordered original bytes by lossless gzip decompression; no normalization"
+    }
+  ],
+  "independent_replay_input": {
+    "path": "data/coordinator-qa/native-replay-84views/native-2024-senate-reviewed-84views.json.gz",
+    "bytes": 147464,
+    "sha256": "1fda2c1b906ee949b7a26c14ea5c7cf7fd5c0c04085403037c973db02cd58f82"
+  },
+  "source_views": 84,
+  "preferred_native_units": 1736,
+  "ordered_unit_positions": 3515,
+  "candidate_positions": 7030,
+  "primary_ordered_keys": 887,
+  "nonpriority_keys": 849,
+  "all_parent_maps": 82,
+  "parents_with_priority_children": 77,
+  "parent_county_sensitivity_not_dispatch": {
+    "counties": 82,
+    "minimum80_count": 41,
+    "crossing_county": "Newton",
+    "top15_votes": 653846,
+    "named_pair_denominator": 1215401,
+    "qualification": "Separate county sensitivity, never substitute for887-native source priority."
+  },
+  "source_denominator": 1215400,
+  "separate_certified_denominator": 1215401,
+  "unallocated_difference": {
+    "county": "Tunica",
+    "candidate": "Ty Pinkins",
+    "native_minus_certified": -1,
+    "allocation": null
+  },
+  "upper_bound_proof": {
+    "no_placement_inferred": true,
+    "largest_possible886_upper_bound_votes": 972158,
+    "native_integer_threshold": 972320,
+    "certified_integer_threshold": 972321,
+    "maximum_published_Tunica_unit_votes": 394,
+    "maximum_with_unallocated1_upper_bound": 395,
+    "prefix_cutoff_unit_votes": 499,
+    "minimum_cardinality887_under_both_denominators": true,
+    "qualification": "Only an arithmetic upper bound; unknown vote stays unallocated. Explicit literal-key sort chooses one descending prefix, not a claim of unique possible80%-covering set or geography approval."
+  },
+  "optional_ID_metadata_scope": "Frozen84 optional-ID metadata retained. Working peer order adds43 parsed IDs from unchanged literal headers in Claiborne/JeffDavis/Perry; distinct metadata version is recorded in native-order-peer-reconciliation.json, never claimed byte-for-byte old-ID agreement.",
+  "coordinator_dispatch_acceptance": false,
+  "scope": "The coherent immutable v1 four-file proposal matches independent frozen source readings and coordinator full order, including exact887 arrays,849 remainder, all82 parent/all-child/priority-child maps and3515 order positions.77 parent authorities contain at least one priority child; this does not make the county41 sensitivity the dispatch. This bounded review creates no acceptance authority or second-wave authorization. Remaining original all-candidate/method/historical native gates and current geographic/reporting approval remain separate."
+}

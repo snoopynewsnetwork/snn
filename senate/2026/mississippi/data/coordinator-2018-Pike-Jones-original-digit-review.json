@@ -1,0 +1,53 @@
+{
+  "status": "pass_two_bounded_fresh_original_candidate_digit_reviews",
+  "readings": [
+    {
+      "source_id": "sos-2018-county-pike",
+      "actual_PDFpage": 2,
+      "physical_column": 11,
+      "candidate": "Mike Espy",
+      "original_reading": 168,
+      "initial_failed_reading": 158,
+      "complete_original_render": {
+        "path": "data/coordinator-qa/2018-additional-original-digits/pike-p2-original.png",
+        "bytes": 192737,
+        "sha256": "f471542c9fee38300fb60e90cda414d2e3f1bdb8a9ef9cbce54baf525dc43157"
+      },
+      "correction_history": {
+        "path": "data/baselines/source/2018-pike-original-reading-correction.json",
+        "bytes": 3066,
+        "sha256": "e68a121a08822d846cb5623cfb12a17daa41d8ea9227962546ed642164e42c86"
+      }
+    },
+    {
+      "source_id": "sos-2018-runoff-county-jones",
+      "actual_PDFpage": 5,
+      "physical_column": 2,
+      "candidate": "Mike Espy",
+      "original_reading": 182,
+      "initial_failed_reading": 152,
+      "complete_original_render": {
+        "path": "data/coordinator-qa/2018-additional-original-digits/jones-p5-original.png",
+        "bytes": 170550,
+        "sha256": "737f3c6b14b97a0258b047ae267eae668d5d5630d442f17f560ced0e0ebc776e"
+      },
+      "correction_history": {
+        "path": "data/baselines/source/2018-jones-original-reading-correction.json",
+        "bytes": 3716,
+        "sha256": "2462cf6ab9253b44d9ebf52a79c83783952664a628839d850ecce0e97b816164"
+      }
+    }
+  ],
+  "exact_source_snapshot": {
+    "path": "data/baselines/source/native-2018-146views-v1/snapshot.json",
+    "bytes": 1880,
+    "sha256": "9f577befab221f3b00253d21bd92bf8e64a9c7f44f7edbaf0798a1c40b084148"
+  },
+  "render_receipts": {
+    "path": "data/coordinator-qa/2018-additional-original-digits/render-receipts.json",
+    "bytes": 8451,
+    "sha256": "fec6cf7269f143e05ca31722371a5bce51c4806a0b970ad8562ceb0bc86bc7bc"
+  },
+  "qualification": "Coordinator independently rendered and visually read both complete exact-original source pages. Pike special physicalp2c11 Espy168 and Jones runoff physicalp5c2 Espy182 are visible in the original rows; failed158/152builder bytes and original evidence are retained. RegularClassI/judicial rows are separate, not accepted candidate fields. No county residual is allocated, nor whole-stage/current-geography/native887 acceptance inferred.",
+  "formal_native887_dispatch_accepted": false
+}

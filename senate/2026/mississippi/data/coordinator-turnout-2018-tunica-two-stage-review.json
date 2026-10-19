@@ -1,0 +1,183 @@
+{
+  "status": "pass_bounded_independent_original2018_two_stage_source_replay",
+  "county": "tunica",
+  "frozen_worker_bodies": [
+    {
+      "original": {
+        "path": "data/turnout/2018-tunica-two-stage-native-original-readings.json",
+        "bytes": 120736,
+        "sha256": "6b20d094c622d90979431bf9abda6a073ae34055fd62baad05dbf55ba58b131e"
+      },
+      "lossless_copy": {
+        "path": "data/coordinator-qa/turnout-2018-two-stage-replays/2018-tunica-two-stage-native-original-readings.json.gz",
+        "bytes": 3383,
+        "sha256": "395fa488bd919ab450675cd551947b120e7ea4c1f7ccc02c7f2280344f838f7d"
+      }
+    },
+    {
+      "original": {
+        "path": "data/turnout/2018-tunica-two-stage-native-original-cells.csv",
+        "bytes": 48874,
+        "sha256": "092d020c25ee0cffb45c28d11a855514c5c64bffff3f02aed794a097c134d005"
+      },
+      "lossless_copy": {
+        "path": "data/coordinator-qa/turnout-2018-two-stage-replays/2018-tunica-two-stage-native-original-cells.csv.gz",
+        "bytes": 1768,
+        "sha256": "68ee248036c5d684c948af6f61aa686c7e61eca7b90eccb7c4584222c72527f3"
+      }
+    },
+    {
+      "original": {
+        "path": "data/turnout/2018-tunica-native-peer-reconciliation.json",
+        "bytes": 4793,
+        "sha256": "55ef39c1cdd71ad7122b2dc6f947b02570f5de645fac2b9cf1ac923acb1b725a"
+      },
+      "lossless_copy": {
+        "path": "data/coordinator-qa/turnout-2018-two-stage-replays/2018-tunica-native-peer-reconciliation.json.gz",
+        "bytes": 1470,
+        "sha256": "a9ae9be4d7479f225dce24dfc9c17b8c5b1624d4c914764f072a716d8dc50b94"
+      }
+    }
+  ],
+  "immutable_peer_snapshot": {
+    "path": "data/baselines/source/native-2018-78views-v1/snapshot.json",
+    "bytes": 1872,
+    "sha256": "4df50caded4d9a1cdfd46081422e36002439b10aea28cfab1fb6dcf00f34621c"
+  },
+  "source_findings": [
+    {
+      "source_id": "sos-2018-county-tunica",
+      "raw_original_sha256": "6081941aa1f3d34dd696d08439e1f1721a5d897d7a7cc3372ee8a2a840d85982",
+      "raw_original_bytes": 1313445,
+      "stored_original": {
+        "path": "data/turnout/source/sos-2018-county-tunica.body.gz",
+        "bytes": 874898,
+        "sha256": "37ea48c0c23bc3f41cb3e368557225ba6e1a596e8d3ab4b48e7065aecc53484b"
+      },
+      "native_constituents": 12,
+      "physical_TOTAL": {
+        "actual_PDFpage": 3,
+        "column": 2
+      },
+      "source_candidate_sums_and_TOTALs": {
+        "Tobey Bernard Bartee": 88,
+        "Mike Espy": 1725,
+        "Cindy Hyde-Smith": 586,
+        "Chris McDaniel": 143
+      },
+      "literal_header_differences_confirmed_from_original": [
+        {
+          "source_id": "sos-2018-county-tunica",
+          "source_pdf_page": 2,
+          "physical_source_column": 2,
+          "candidate": "Tobey Bernard Bartee",
+          "original_literal": "Mhoon Landing",
+          "peer_derivative_literal": "Moon Landing",
+          "votes": 2
+        },
+        {
+          "source_id": "sos-2018-county-tunica",
+          "source_pdf_page": 2,
+          "physical_source_column": 2,
+          "candidate": "Mike Espy",
+          "original_literal": "Mhoon Landing",
+          "peer_derivative_literal": "Moon Landing",
+          "votes": 7
+        },
+        {
+          "source_id": "sos-2018-county-tunica",
+          "source_pdf_page": 2,
+          "physical_source_column": 2,
+          "candidate": "Cindy Hyde-Smith",
+          "original_literal": "Mhoon Landing",
+          "peer_derivative_literal": "Moon Landing",
+          "votes": 42
+        },
+        {
+          "source_id": "sos-2018-county-tunica",
+          "source_pdf_page": 2,
+          "physical_source_column": 2,
+          "candidate": "Chris McDaniel",
+          "original_literal": "Mhoon Landing",
+          "peer_derivative_literal": "Moon Landing",
+          "votes": 9
+        }
+      ]
+    },
+    {
+      "source_id": "sos-2018-runoff-county-tunica",
+      "raw_original_sha256": "1fb4c51d73fd0021b222ec1a741a2fa979c028cf21389c9cd4fcaf5d872f30bb",
+      "raw_original_bytes": 825290,
+      "stored_original": {
+        "path": "data/turnout/source/sos-2018-runoff-county-tunica.body.gz",
+        "bytes": 501791,
+        "sha256": "526de1394d55e4f8560f87e24cd759d2aef74a84f9409cd8a45ae40cf4361465"
+      },
+      "native_constituents": 12,
+      "physical_TOTAL": {
+        "actual_PDFpage": 3,
+        "column": 2
+      },
+      "source_candidate_sums_and_TOTALs": {
+        "Mike Espy": 1937,
+        "Cindy Hyde-Smith": 578
+      },
+      "literal_header_differences_confirmed_from_original": [
+        {
+          "source_id": "sos-2018-runoff-county-tunica",
+          "source_pdf_page": 2,
+          "physical_source_column": 2,
+          "candidate": "Mike Espy",
+          "original_literal": "Mhoon Landing",
+          "peer_derivative_literal": "Moon Landing",
+          "votes": 9
+        },
+        {
+          "source_id": "sos-2018-runoff-county-tunica",
+          "source_pdf_page": 2,
+          "physical_source_column": 2,
+          "candidate": "Cindy Hyde-Smith",
+          "original_literal": "Mhoon Landing",
+          "peer_derivative_literal": "Moon Landing",
+          "votes": 45
+        }
+      ]
+    }
+  ],
+  "original_worker_raster_pins": [
+    {
+      "path": "data/turnout/qa/2018-native-original-probe/sos-2018-county-tunica/p0002-original.png",
+      "bytes": 252679,
+      "sha256": "3bc6b6f0b63d79c343b0fd0108525e208e529182b8f0fbb1c5c7a3b3001defc3"
+    },
+    {
+      "path": "data/turnout/qa/2018-native-original-probe/sos-2018-county-tunica/p0003-original.png",
+      "bytes": 218468,
+      "sha256": "39ce7f31021db6db5eb8b57d7bc6ad44fb22b2610c9b72844d5b6f4af4324b63"
+    },
+    {
+      "path": "data/turnout/qa/2018-native-original-probe/sos-2018-runoff-county-tunica/p0002-original.png",
+      "bytes": 196145,
+      "sha256": "2711a1e8f431cccd4bc2a6fe325d3f9649bcdd3b24e6d51036e64e6d30677b82"
+    },
+    {
+      "path": "data/turnout/qa/2018-native-original-probe/sos-2018-runoff-county-tunica/p0003-original.png",
+      "bytes": 163664,
+      "sha256": "a56e8c3c2a0ad9879d3d2a680500d0be1fbfbce70dc6219585576466b84f12f5"
+    }
+  ],
+  "compared_positions": 132,
+  "counts": {
+    "numeric_positions": 78,
+    "unused_null_positions": 54
+  },
+  "whitespace_only_header_representations": [],
+  "qualification": "All original-reading and flat source fields recompute against immutable peer evidence after the worker original transcript: candidate values/roles/original hash/page/physical column/FIPS and literal headers with six explicit original MhoonLanding versus older derivative MoonLanding spelling differences. These are not whitespace aliases or normalized geographic identities; later142v2 corrects only those two source-header objects with prior bytes retained. Whole source rasters survive by hash, not pixel/reading-window/parsedID identity. This is not fresh coordinator visual reading of all new glyphs, shared current geography, same cross-stage electorate or whole164-stage historical-method/native887 approval. Source native fields are never replaced by county controls or another year/stage.",
+  "formal_native887_dispatch_accepted": false,
+  "current_geography_approved": false,
+  "original_header_exception_review": {
+    "path": "data/coordinator-tunica-2018-original-header-review.json",
+    "bytes": 1889,
+    "sha256": "d2e05658764aa1d42894344a3320ec89d855bddd36c84d29db51490c5bcdb77b"
+  }
+}

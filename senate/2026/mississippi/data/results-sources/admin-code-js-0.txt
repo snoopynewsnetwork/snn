@@ -1,0 +1,993 @@
+﻿var countVar = 0;
+var currentPage = 0;
+var dispNum = 0;
+var searchResult = '';
+
+var agencySearchBull = '';
+var ruleSummaryBull = '';
+var orderByBull = '';
+var startDateBull = '';
+var endDateBull = '';
+var filingIDateBull = '';
+var orderDirection = '';
+var typeDate = '';
+var filingType = '';
+
+
+function GetQueryVariable(variable) {
+    var query = window.location.search.substring(1);
+    //alert(query);
+    var vars = query.split('&');
+    for (var i = 0; i < vars.length; i++) {
+        var pair = vars[i].split('=');
+        if (pair[0] == variable) { return pair[1]; }
+    } return (false);
+}
+function CheckPage() {
+    var tmpSite = GetQueryVariable('current_page');//current_page --> determines which search is being loaded. code or bulletin
+    if (tmpSite) {
+        ShowBulletinSearch();
+    }
+    else {
+        ShowCodeSearch();
+    }      
+}
+
+function ShowCodeSearch() {
+    var tmpHtml = '';
+
+    tmpHtml += '<div class="container" style="width:99%;">';
+    tmpHtml += '<div class="row">';
+    tmpHtml += '<div class="cell" style="vertical-align:middle;"> <img src="msSeal.png" ></div>';
+    tmpHtml += '<div class="cell">';
+    tmpHtml += '<div class="container">';
+    tmpHtml += '<div class="row"><div class="cell" >MISSISSIPPI ADMINISTRATIVE CODE</div></div>';
+    tmpHtml += '<div class="row" style="width:97%;"><div class="cell" >Welcome to the Mississippi Administrative Code. The Mississippi Secretary of State&#39;s Office is the official registrar for the rules of all state agencies and the publisher of the Mississippi Administrative Code. This service allows you to conduct a search in the Mississippi Administrative Code of all effective rules of state agencies, boards, and commissions. </div></div>';
+    tmpHtml += '</div>';
+    tmpHtml += '</div>';
+    tmpHtml += '</div>';
+    tmpHtml += '</div>';
+    tmpHtml += '<div class="container" style="width:99%;background-color: #DAECF4;border-style: solid;border-width:2px 1px 1px 1px;border-color:red  #94C0D2 #94C0D2 #94C0D2;">';
+    tmpHtml += '<div class="row" >&nbsp;</div>';
+    tmpHtml += '</div><br />';
+
+    tmpHtml += '<div class="container" id="cSearchCriteria" style=" width:650px;border:solid;border-radius:5px; border-color: #94c0D2; padding:3px;">';
+    tmpHtml += '<div class="row"  style="font-weight:bold;background-color: #DAECF4;color: #003F59;border-style: solid; border-width: 1px; border-radius:5px; border-color: #94C0D2;" >';
+    tmpHtml += '<div class="fCell" style="width:200px;">&nbsp;</div>';
+    tmpHtml += '<div class="fCell" >Administrative Code Search</div>';
+    tmpHtml += '</div>';
+    tmpHtml += '<div class="row" style="height:10px;"><div class="fCell" style="height:10px;">&nbsp;</div></div>';
+    tmpHtml += '<div class="row" style="display:none;">';
+    tmpHtml += '<div class="fCell" style="font-weight:bold">Subject Search: &nbsp;&nbsp;</div>';
+    tmpHtml += '<div class="fCell"><select id="cSubjectSearch" style="width:450px;" >';
+    var subjectSplit = document.getElementById('subjectDelim').value.split('^');
+    var subjectSplit2 = [];
+    tmpHtml += '<option value=""></opton>'
+    for (var i = 0; i < subjectSplit.length; i++) {
+        subjectSplit2 = subjectSplit[i].split('~');
+        tmpHtml += '<option value="' + subjectSplit2[1] + ' ">' + subjectSplit2[1] + '</option>';
+
+    }
+    tmpHtml += '</select></div>';
+    tmpHtml += '</div>';
+    tmpHtml += '<div class="row" style="height:10px;"><div class="fCell" style="height:10px;">&nbsp;</div></div>';
+    tmpHtml += '<div class="row">';
+    tmpHtml += '<div class="fCell" style="font-weight:bold">Agency Search:&nbsp;&nbsp;</div>';
+    tmpHtml += '<div class="fCell"><select id="cAgencySearch" style="width:500px;" >';
+    var agencySplit = document.getElementById('agenciesDelim').value.split('^');
+    var agencySplit2 = [];
+    for (var i = 0; i < agencySplit.length; i++) {
+        agencySplit2 = agencySplit[i].split('~');
+        if (agencySplit2[2].trim() == '') {
+            tmpHtml += '<option value=""></option>';
+        }
+        else if (agencySplit2[1].trim() == '') {
+            //do nothing
+        }
+        else {
+            tmpHtml += '<option value="' + agencySplit2[0] + ' ">Title ' + agencySplit2[1] + ' - ' + agencySplit2[2] + '</option>';
+        }
+
+    }
+    tmpHtml += '</select></div>';
+    tmpHtml += '</div>';
+    tmpHtml += '<div class="row" style="height:10px; display:none;"><div class="fCell" style="height:10px;">&nbsp;</div></div>';
+    tmpHtml += '<div class="row" style=" width:740px;display:none;">';
+    tmpHtml += '<div class="fCell" style="font-weight:bold">Part Range:&nbsp;&nbsp;</div> ';
+    tmpHtml += '<div class="fCell"><input type="text" id="cPartS" /></div> ';
+    tmpHtml += '<div class="fCell" style="font-weight:bold">&nbsp;&nbsp;To&nbsp;&nbsp;</div> ';
+    tmpHtml += '<div class="fCell"><input type="text" id="cPartE" /></div> ';
+    tmpHtml += '</div>';
+    tmpHtml += '<div class="row" style="height:10px;display:none;"><div class="fCell" style="height:10px;">&nbsp;</div></div>';
+    tmpHtml += '<div class="row" style="display:none;">';
+    tmpHtml += '<div class="fCell" style="font-weight:bold">Search Rule Summaries: &nbsp;&nbsp;</div> ';
+    tmpHtml += '<div class="fCell"><input type="text" id="cRuleSummary" /></div> ';
+    tmpHtml += '</div>';
+    tmpHtml += '<div class="row" style="height:10px;display:none;"><div class="fCell" style="height:10px;">&nbsp;</div></div>';
+    tmpHtml += '<div class="row" style="display:none;">';
+    tmpHtml += '<div class="fCell" style="font-weight:bold">Order By:&nbsp;&nbsp;</div> ';
+    tmpHtml += '<div class="fCell">';
+    tmpHtml += '<select id="codeOrder" >';
+    tmpHtml += '<option value="CodeID">System Number</option>';
+    tmpHtml += '<option value="Name">Agency Name</option>';
+    tmpHtml += '<option value="Subject">Subject</option>';
+    tmpHtml += '<option value="TitleNo">Title Number</option>';
+    tmpHtml += '<option value="PartNo">Part Number</option>';
+    tmpHtml += '<option value="EffectiveDate">Effective Date</option>';
+    tmpHtml += '<option value="LastAmended">Last Amended</option>';
+    tmpHtml += '</select></div> ';
+    tmpHtml += '<div class="fCell" style="font-weight:bold">&nbsp;&nbsp;<input type="radio" id="cOrderAsc" name="cOrder" value="Ascending" checked="checked" />Ascending&nbsp;&nbsp;</div> ';
+    tmpHtml += '<div class="fCell" style="font-weight:bold">&nbsp;<input type="radio" id="cOrderDesc" name="cOrder" value="Descending"/>Descending&nbsp;</div> ';
+    tmpHtml += '</div>';
+    tmpHtml += '<div class="row" style="height:10px;display:none;"><div class="fCell" style="height:10px;">&nbsp;</div></div>';
+    tmpHtml += '<div class="row" style="display:none;">';
+    tmpHtml += '<div class="fCell" style="font-weight:bold">Search Date:&nbsp;&nbsp;</div> ';
+    tmpHtml += '<div class="fCell"><input type="text" id="cDateS" style="width:100px;" /></div>';
+    tmpHtml += '<div class="fCell" style="font-weight:bold">&nbsp;To&nbsp;</div> ';
+    tmpHtml += '<div class="fCell"><input type="text" id="cDateE" style="width:100px;" /></div>';
+    tmpHtml += '<div class="fCell" style="font-weight:bold">&nbsp;&nbsp;<input type="radio" id="cDateLast" name="cDate" value="LastAmended" checked="checked" />Last Amended&nbsp;&nbsp;</div> ';
+    tmpHtml += '<div class="fCell" style="font-weight:bold"><input type="radio" id="cDateEffective" name="cDate" value="EffectiveDate" />Effective Date&nbsp;</div> ';
+    tmpHtml += '</div>';
+    tmpHtml += '<div class="row" style="height:10px;"><div class="fCell" style="height:10px;">&nbsp;</div></div>';
+    tmpHtml += '<div class="row">';
+    tmpHtml += '<div class="fCell" style="width:100px;">&nbsp;</div> ';
+    tmpHtml += '<div class="fCell"><input type="button" class="btnStyle" value="Search" onclick="DoCodeSearch();" style="width: 215px; height:25px; border-style: solid;border-width:1px;border-radius:5px; font-weight: bold;" /></div> ';
+    tmpHtml += '<div class="fCell">&nbsp;&nbsp;&nbsp;</div>';
+    tmpHtml += '<div class="fCell"><input type="button" class="btnStyle" onclick="ShowCodeSearch();" value="Reset" style="width: 215px; height:25px; border-style: solid;border-width:1px;border-radius:5px; font-weight: bold;" /> </div> ';
+    tmpHtml += '</div>';
+    tmpHtml += '</div>';
+    document.getElementById('codeSearchSection').innerHTML = tmpHtml;
+    document.getElementById('codeSearchSection').style.display = 'block';       
+    document.getElementById('bulletinSearchSection').style.display = 'none';
+    document.getElementById('messageSection').style.display = 'none';
+    document.getElementById('codeResultsSection').style.display = 'none';
+    document.getElementById('bulletinResultsSection').style.display = 'none';
+    document.getElementById('printBulletinSection').style.display = 'none';
+    document.getElementById('printCodeSection').style.display = 'none';
+    calendar.set('cDateS');
+    calendar.set('cDateE'); 
+    
+}
+
+
+function DoCodeSearch() {
+    currentPage = 0;
+    countVar = 0;
+    var tmpOrderDirection = '';
+    var tmpTypeDate = '';
+    /*
+    if (document.getElementById('cOrderAsc').checked) {
+        tmpOrderDirection = 'Ascending';
+    }
+    else {
+        tmpOrderDirection = 'Descending';
+    }
+
+    if (document.getElementById('cDateLast').checked) {
+        tmpTypeDate = '0';
+    }
+    else {
+        tmpTypeDate = '1';
+    }
+    */
+    if (document.getElementById('cAgencySearch').value > '') {
+        AdminSearchService.CodeSearch('', document.getElementById('cAgencySearch').value, '', '', '', 'PartNo', 'Ascending', '', '', '0', CodeResultsSuccess);
+    }
+    else {
+        //alert('pick agency');
+        tmpHtml = 'Please select an agency.';
+        document.getElementById('messageSection').innerHTML = tmpHtml;
+        document.getElementById('messageSection').style.display = 'block';
+    }
+}
+
+function CodeResultsSuccess(result) {
+
+        var countSplit = result.split('|');
+        countVar = countSplit[1];
+        if (countVar != 0) {
+            searchResult = countSplit[0];
+            DisplayCodeSearch();
+        }
+        else {
+            tmpHtml = 'No results found';
+            document.getElementById('messageSection').innerHTML = tmpHtml;
+            document.getElementById('messageSection').style.display = 'block';
+        }
+}
+
+function DisplayCodeSearch() {
+    splitData = searchResult.split('^');
+    var splitData2 = []; 
+    var tmpHtml = '';
+    var started = false;
+
+    tmpHtml += '<div class="container" style="width:100%;height:50px; min-width:800px;">';
+    tmpHtml += '<div class="row">';
+    tmpHtml += '<div class="cell" style="vertical-align:middle;" ><img src="msSeal.png" > </div>';
+    tmpHtml += '<div class="cell">';
+    tmpHtml += '<div class="container" style="min-width:800px;">';
+    tmpHtml += '<div class="row">MISSISSIPPI ADMINISTRATIVE CODE</div>';
+    tmpHtml += '<div class="row">Welcome to the Mississippi Administrative Code. The Mississippi Secretatry of State&#39;s Office is the official registrar for the rules of all state agencies and the publisher of the Mississippi Administrative Code. This service allows you to conduct a search in the Mississippi Administrative Code of all effective rules of state agencies, boards, and commissions. </div>';
+    tmpHtml += '</div>';
+    tmpHtml += '</div>';
+    tmpHtml += '</div>';
+    tmpHtml += '</div>';
+    tmpHtml += '<div class="container" style="width:99%;background-color: #DAECF4;border-style: solid;border-width:2px 1px 1px 1px;border-color:red  #94C0D2 #94C0D2 #94C0D2;">';
+    tmpHtml += '<div class="row" >&nbsp;</div>';
+    tmpHtml += '</div><br />';
+
+
+    tmpHtml += ' <div class="container" style="width:99%; min-width:800px;  ">';
+    tmpHtml += '<div class="row">';
+  //  tmpHtml += '<div class="fCell" style="width:93%;">&nbsp; </div>';
+    tmpHtml += '<div class="fCell" style="width:99%; text-align:right;">';
+    tmpHtml += '<input type="button" class="btnStyleG" id="printBtn" value="Printable" onclick="PrintPageCode();" style="height:20px;width:90px; border-style: solid;border-width:1px;border-radius:5px;" />';
+    tmpHtml += '</div>';
+    tmpHtml += '</div>';
+    tmpHtml += '</div>';
+
+    //tmpHtml += '<div class="container" style="border:solid;border-radius:5px; border-color: #94c0D2;width:99%; padding:3px;" >';
+    //tmpHtml += '<div class="row" style="font-weight:bold;background-color: #DAECF4;color: #003F59;border-style: solid; border-width: 1px; border-radius:5px; border-color: #94C0D2; height:10px; " >';
+    //tmpHtml += '<div class="fCell" style="width:750px;">&nbsp;</div>';
+    //tmpHtml += '<div class="fCell" style="width:950px;">Administrative Code Results</div>';
+   
+    //tmpHtml += '</div>';
+    //tmpHtml += '</div>';
+
+    tmpHtml += '<div class="container" style="border:solid;border-radius:5px; border-color: #94c0D2;width:99%; padding:3px;min-width:800px;" >';
+    tmpHtml += '<div class="row" style="font-weight:bold;background-color: #DAECF4;color: #003F59;border-style: solid; border-width: 1px; border-radius:5px; border-color: #94C0D2; height:15px; " >';
+    tmpHtml += '<div class="cell" style="width:12%;">&nbsp;<span id="pagePrev" style="cursor:pointer; display:';
+    if (currentPage > 0 ) {
+        tmpHtml += 'inline;"';
+    }
+    else {
+        tmpHtml += 'none;"';
+    }
+    tmpHtml += ' onclick="ClickPrevCode();">&lt;&lt; Previous</span>';
+    tmpHtml += '</div>';
+    tmpHtml += '<div class="cell" style="width:15%;">&nbsp;<span id="currentPage"> ';
+    tmpHtml += ((currentPage * 25) + 1).toString();
+    tmpHtml += ' - ';
+    if (((currentPage + 1) * 25) >= countVar) {
+        tmpHtml += countVar;
+    }
+    else {
+        tmpHtml += ((currentPage + 1) * 25).toString();
+    }
+    tmpHtml += ' of ';
+    tmpHtml += countVar;
+    tmpHtml += '</span></div>';
+    tmpHtml += '<div class="cell" style="width:8%;">&nbsp;<span id="pageNext" style="cursor:pointer; display: ';
+    if (((currentPage + 1) * 25) < countVar) {
+        tmpHtml += 'inline;"';
+    }
+    else {
+        tmpHtml += 'none;"';
+    }
+    tmpHtml += ' onclick="ClickNextCode();">Next &gt;&gt; </span></div>';
+    tmpHtml += '<div class="cell" style="width:60%;text-align:right;" ><input type="button" class="btnStyleG" onclick="ShowCodeSearch();" value="Back to Search" style="height:26px;width:125px; border-style: solid;border-width:1px;border-radius:5px;" /></div>';
+    tmpHtml += '</div>';
+    tmpHtml += '</div>';
+
+    var pageMax = 0;
+    if (((currentPage + 1) * 25) <= countVar) {
+        pageMax = (currentPage + 1) * 25;
+    }
+    else {
+        pageMax = countVar;
+    }
+    for (var i = (currentPage * 25); i < pageMax; i++) {
+        splitData2 = splitData[i].split('~');
+        //the started is to make sure the header row and the bottom row do not repeat on each individual box.
+        if (!started) {
+            started = true;
+        }
+        else {
+            tmpHtml += '<div class="container" style="border:solid;border-radius:5px; border-color: #94c0D2;width:99%; padding:3px; min-width:800px;" >';
+            tmpHtml += '<div class="row" style="font-weight:bold;background-color: #DAECF4;color: #003F59;border-style: solid; border-width: 1px; border-radius:5px; border-color: #94C0D2; height:15px; min-width:800px; " >';
+            tmpHtml += '<div class="fCell" style="width:250px;">&nbsp;</div>';
+            tmpHtml += '<div class="fCell" style="width:350px;">&nbsp;</div>';
+            tmpHtml += '<div class="fCell" style="width:126px;">&nbsp;</div>';
+            tmpHtml += '</div>';
+            tmpHtml += '</div>';
+        }
+        tmpHtml += '<div class="container" style="border:solid;border-radius:5px; border-color: #94c0D2;width:99%; padding:3px; min-width:750px;" >';
+        tmpHtml += '<div class="row">';
+        tmpHtml += '<div class="cell" style="width:70%; min-width:700px;">';
+        tmpHtml += '<div class="container" >';
+        tmpHtml += '<div class="row" style="height:10px;"><div class="fCell" style="height:10px;">&nbsp;</div></div>';
+        tmpHtml += '<div class="row">';
+        tmpHtml += '<div class="fCell" style="font-weight:bold">Agency:&nbsp;</div>';
+        tmpHtml += '<div class="fCell">' + splitData2[0] + '</div>';
+        tmpHtml += '</div>';
+        tmpHtml += '<div class="row" style="height:10px;"><div class="fCell" style="height:10px;">&nbsp;</div></div>';
+        tmpHtml += '<div class="row">';
+        tmpHtml += '<div class="fCell" style="font-weight:bold">Part Number:&nbsp;</div>';
+        tmpHtml += '<div class="fCell">' + splitData2[1] + '</div>';
+        tmpHtml += '</div>';
+        tmpHtml += '<div class="row" style="height:10px;"><div class="fCell" style="height:10px;">&nbsp;</div></div>';
+        tmpHtml += '<div class="row">';
+        if (splitData2[2].trim() == '1/1/0001') {
+            tmpHtml += '<div class="fCell" style="font-weight:bold">Last Amended:&nbsp;</div>';
+            tmpHtml += '<div class="fCell">&nbsp;&nbsp;&nbsp;</div>';
+        }
+        else {
+            tmpHtml += '<div class="fCell" style="font-weight:bold">Last Amended:&nbsp;</div>';
+            tmpHtml += '<div class="fCell">' + splitData2[2] + '&nbsp;</div>';
+        }
+        if (splitData2[3].trim() == '1/1/0001') {
+            tmpHtml += '<div class="fCell" style="font-weight:bold">Effective Date:&nbsp;</div>';
+            tmpHtml += '<div class="fCell">&nbsp;&nbsp;&nbsp;</div>';
+            tmpHtml += '</div>';
+        }
+        else {
+            tmpHtml += '<div class="fCell" style="font-weight:bold">Effective Date:&nbsp;</div>';
+            tmpHtml += '<div class="fCell">' + splitData2[3] + '&nbsp;</div>';
+            tmpHtml += '</div>';
+        }
+        tmpHtml += '<div class="row" style="height:10px;"><div class="fCell" style="height:10px;">&nbsp;</div></div>';
+        tmpHtml += '<div class="row">';
+        tmpHtml += '<div class="fCell" style="font-weight:bold">Rule:&nbsp;</div>';
+        tmpHtml += '<div class="fCell">' + splitData2[4] + '</div>';
+        tmpHtml += '</div>';
+        tmpHtml += '<div class="row" style="height:10px;"><div class="fCell" style="height:10px;">&nbsp;</div></div>';
+        tmpHtml += '<div class="row">';
+        tmpHtml += '<div class="fCell" style="font-weight:bold">Summary:&nbsp;<span>' + splitData2[5] + '</span></div>';
+        tmpHtml += '</div>';
+        tmpHtml += '<div class="row" style="height:10px;"><div class="fCell" style="height:10px;">&nbsp;</div></div>';
+        tmpHtml += '<div class="row">';
+        tmpHtml += '<div class="fCell" style="font-weight:bold">System Number:&nbsp;</div>';
+        tmpHtml += '<div class="fCell">' + splitData2[6] + '</div>';
+        tmpHtml += '</div>';
+       // tmpHtml += ' <div class="row" style="height:10px;"><div class="fCell" style="height:10px;">&nbsp;</div></div>';
+        tmpHtml += '</div>';
+        tmpHtml += '</div>';
+        tmpHtml += '<div class="cell" style="text-align:center; vertical-align:middle; border-left:solid; border-width:3px; border-color:#94C0D2; width:15%;  min-width:75px; ">';
+        if (splitData2[7] != "Not Found") {
+            tmpHtml += '<input type="button"  onclick="window.open(\'ACCode/' + splitData2[7] + '\');" style="border-style:solid; border-width:2px; border-radius:4px; font-weight:bold; color:#003F59; border-color:#94C0D2; background-color:transparent; cursor:pointer; padding:3px;" value="Part" />';
+        }
+        
+        tmpHtml += '</div>';
+        tmpHtml += '</div>';
+        tmpHtml += '</div>';
+            
+    }
+    tmpHtml += '<div class="container" style="border:solid;border-radius:5px; border-color: #94c0D2;width:99%; padding:3px;min-width:800px;" >';
+    tmpHtml += '<div class="row" style="font-weight:bold;background-color: #DAECF4;color: #003F59;border-style: solid; border-width: 1px; border-radius:5px; border-color: #94C0D2; height:15px; " >';
+    tmpHtml += '<div class="cell" style="width:12%;">&nbsp;<span id="pagePrev" style="cursor:pointer; display:';
+    if (currentPage > 0) {
+        tmpHtml += 'inline;"';
+    }
+    else {
+        tmpHtml += 'none;"';
+    }
+    tmpHtml += ' onclick="ClickPrevCode();">&lt;&lt; Previous</span>';
+    tmpHtml += '</div>';
+    tmpHtml += '<div class="cell" style="width:15%;">&nbsp;<span id="currentPage"> ';
+    tmpHtml += ((currentPage * 25) + 1).toString();
+    tmpHtml += ' - ';
+    if (((currentPage + 1) * 25) >= countVar) {
+        tmpHtml += countVar;
+    }
+    else {
+        tmpHtml += ((currentPage + 1) * 25).toString();
+    }
+    tmpHtml += ' of ';
+    tmpHtml += countVar;
+    tmpHtml += '</span></div>';
+    tmpHtml += '<div class="cell" style="width:8%;">&nbsp;<span id="pageNext" style="cursor:pointer; display: ';
+    if (((currentPage + 1) * 25) < countVar) {
+        tmpHtml += 'inline;"';
+    }
+    else {
+        tmpHtml += 'none;"';
+    }
+    tmpHtml += ' onclick="ClickNextCode();">Next &gt;&gt; </span></div>';
+    tmpHtml += '<div class="cell" style="width:60%;text-align:right;" ><input type="button" class="btnStyleG" onclick="ShowCodeSearch();" value="Back to Search" style="height:26px;width:125px; border-style: solid;border-width:1px;border-radius:5px;" /></div>';
+    tmpHtml += '</div>';
+    tmpHtml += '</div>';
+
+document.getElementById('codeResultsSection').innerHTML = tmpHtml;
+document.getElementById('codeSearchSection').style.display = 'none';
+document.getElementById('bulletinSearchSection').style.display = 'none';
+document.getElementById('messageSection').style.display = 'none';
+document.getElementById('codeResultsSection').style.display = 'block';
+document.getElementById('bulletinResultsSection').style.display = 'none';
+document.getElementById('printBulletinSection').style.display = 'none';
+document.getElementById('printCodeSection').style.display = 'none';
+
+}
+
+function ClickNextCode() {
+    currentPage += 1;
+    DisplayCodeSearch();
+}
+
+function ClickPrevCode() {
+    currentPage -= 1;
+    DisplayCodeSearch();
+}
+
+function PrintPageCode(result) {
+    document.getElementById('codeResultsSection').style.display = 'none';
+    document.getElementById('printCodeSection').innerHTML = 'Processing printable page. Please wait.<br /> <img src="wait.gif" width="250px" />';
+    document.getElementById('printCodeSection').style.display = 'block';
+    tmpHtml = '';
+    tmpHtml += '<div class="container" style="width:99%; min-width:800px;">';
+    tmpHtml += '<div class="row" style=" min-width:800px;" >';
+    tmpHtml += '<div class="fCell" style="width:77%;">&nbsp;</div>';
+    tmpHtml += '<div class="fCell" style="width:126px;"><input type="button" class="btnStyleG" id="printPPage" onclick="window.print();" value="Print Page" style="height:26px;width:125px; border-style: solid;border-width:1px;border-radius:5px;" /></div>';
+    tmpHtml += '<div class="fCell" style="width:1%;">&nbsp;</div>';
+    tmpHtml += '<div class="fCell" style="width:126px;"><input type="button" class="btnStyleG" id="printSRC" onclick="DisplayCodeSearch();" value="Back to Results" style="height:26px;width:125px; border-style: solid;border-width:1px;border-radius:5px;" /></div>';
+    tmpHtml += '<div class="fCell" style="width:1%;">&nbsp;</div>';
+    tmpHtml += '<div class="fCell" style="width:126px;"><input type="button" class="btnStyleG" id="printBTS" onclick="ShowCodeSearch();" value="Back to Search" style="height:26px;width:125px; border-style: solid;border-width:1px;border-radius:5px;" /></div>';
+    tmpHtml += '</div></div>'
+    splitData = searchResult.split('|');
+    var numFound = splitData[1];
+    splitData2 = splitData[0].split('^');
+
+        tmpHtml += '<div class="container" id="printableCodePage" style="width:99%; border:solid;border-radius:5px; border-color: #94c0D2;width:99%; padding:3px; min-width:800px;"> ';
+        tmpHtml += ' <div class="row" style="font-weight:bold;background-color: #DAECF4;color: #003F59;border-style: solid; border-width: 1px; border-radius:5px; border-color: #94C0D2; height:15px; ">';
+        tmpHtml += '<div class="cell" style="width:24%;">Agency</div>';
+        tmpHtml += '<div class="cell" style="width:5%;">Part</div>';
+        tmpHtml += '<div class="cell" style="width:39%; text-align:center;">Rule</div>';
+        tmpHtml += '<div class="cell" style="width:16%;">Effective Date</div>';
+        tmpHtml += '<div class="cell" style="width:16%;">Last Amended</div>';
+        tmpHtml += '</div>';
+        tmpHtml += '</div>';
+        tmpHtml += '<div class="container" style="width:99%; border:solid;border-radius:5px; border-color: #94c0D2;width:99%; padding:3px; " >';
+        tmpHtml += '<div class="row">';
+        tmpHtml += '<div class="cell">';
+
+        var colorToggle = ['', ' style="background-color:#DAECF4;"'];
+        var buttonColorToggle = ['background-color:transparent;', ' background-color:#DAECF4;'];
+        for (var i = 0; i < splitData2.length; i++) {
+            var splitData3 = splitData2[i].split('~');
+            tmpHtml += '<div class="container" style="width:100%; border-style: solid; border-width:0px 0px 1px 0px;border-color: #94C0D2;min-width:800px;">';
+            tmpHtml += '<div class="row"' + colorToggle[i % 2] + ' >';
+            tmpHtml += '<div class="fCell" style="width:24%;">' + splitData3[0] + '</div>';
+            tmpHtml += '<div class="fCell" style="width:5%;"> ' + splitData3[1] + '</div>';
+            tmpHtml += '<div class="fCell" style="width:39%">' + splitData3[4] + '</div>';
+            tmpHtml += '<div class="fCell" style="width:16%;">' + splitData3[3] + '</div>';
+            tmpHtml += '<div class="fCell" style="width:16%;" >' + splitData3[2] + '</div>';
+            tmpHtml += '</div>';
+            tmpHtml += '</div>';
+
+        }
+        tmpHtml += '</div></div></div>';
+
+
+    document.getElementById('printCodeSection').innerHTML = tmpHtml;
+    document.getElementById('printCodeSection').style.display = 'block';
+    document.getElementById('codeSearchSection').style.display = 'none';
+    document.getElementById('bulletinSearchSection').style.display = 'none';
+    document.getElementById('messageSection').style.display = 'none';
+    document.getElementById('codeResultsSection').style.display = 'none';
+    document.getElementById('bulletinResultsSection').style.display = 'none';
+}
+
+function ShowBulletinSearch() {
+    var tmpHtml = '';
+
+    tmpHtml += '<div class="container" style="width:100%;height:50px; min-width:800px;">';
+    tmpHtml += '<div class="row">';
+    tmpHtml += '<div class="cell" style="vertical-align:middle;"><img src="msSeal.png" > </div>';
+    tmpHtml += '<div class="cell">';
+    tmpHtml += '<div class="container" style="min-width:800px;">';
+    tmpHtml += '<div class="row">MISSISSIPPI ADMINISTRATIVE BULLETIN</div>';
+    tmpHtml += '<div class="row">Welcome to the Mississippi Administrative Bulletin. The Mississippi Secretary of State&#39;s Office is the official registrar for the rules of all state agencies and the publisher of the Mississippi Administrative Bulletin. This service allows you to conduct a search in the Mississippi Administrative Bulletin of the rules of state agencies, boards, and commissions which have been proposed for public comment and adopted but not yet effective. </div>';
+    tmpHtml += '</div>';
+    tmpHtml += '</div>';
+    tmpHtml += '</div>';
+    tmpHtml += '</div>';
+    tmpHtml += '<div class="container" style="width:99%;background-color: #DAECF4;border-style: solid;border-width:2px 1px 1px 1px;border-color:red  #94C0D2 #94C0D2 #94C0D2;">';
+    tmpHtml += '<div class="row" >&nbsp;</div>';
+    tmpHtml += '</div><br />';
+
+    tmpHtml += '<div class="container"style=" width:600px;border:solid;border-radius:5px; border-color: #94c0D2; padding:3px;" >';
+    tmpHtml += '<div class="row" style="font-weight:bold;background-color: #DAECF4;color: #003F59;border-style: solid; border-width: 1px; border-radius:5px; border-color: #94C0D2;" >';
+    tmpHtml += '<div class="fCell" style="width:200px;">&nbsp;</div>';
+    tmpHtml += '<div class="fCell">Administrative Bulletin Search</div>';
+    tmpHtml += '</div>';
+    tmpHtml += '<div class="row" style="height:10px;"><div class="fCell" style="height:10px;">&nbsp;</div></div>';
+    tmpHtml += '<div class="row">';
+    tmpHtml += '<div class="fCell" style="font-weight:bold">Agency Search:&nbsp;&nbsp;</div> ';
+    tmpHtml += '<div class="fCell"><select id="bAgencySearch" style="width:450px;">';
+    var agencySplit = document.getElementById('agenciesDelim').value.split('^');
+    var agencySplit2 = [];
+    for (var i = 0; i < agencySplit.length; i++) {
+        agencySplit2 = agencySplit[i].split('~');
+        if (agencySplit2[2].trim() == '') {
+            tmpHtml += '<option value=""></option>';
+        }
+        else if (agencySplit2[1].trim() == '') {
+            //do nothing
+        }
+        else {
+            tmpHtml += '<option value="' + agencySplit2[0] + ' ">Title ' + agencySplit2[1] + ' - ' + agencySplit2[2] + '</option>';
+        }
+
+    }
+    tmpHtml += '</select></div>';
+    tmpHtml += '</div>';
+    tmpHtml += '<div class="row" style="height:10px;"><div class="fCell" style="height:10px;">&nbsp;</div></div>';
+    tmpHtml += '<div class="row">';
+    tmpHtml += '<div class="fCell" style="font-weight:bold">Search Rule Summaries:&nbsp;&nbsp;</div> ';
+    tmpHtml += '<div class="fCell"><input type="text" id="bRuleSummary"/></div>';
+    tmpHtml += '<div class="fCell" style="font-size:14px; color:red;">&nbsp;&nbsp;*Does not search rule text*</div> ';
+    tmpHtml += '</div>';
+    tmpHtml += '<div class="row" style="height:10px;"><div class="fCell" style="height:10px;">&nbsp;</div></div>';
+    tmpHtml += '<div class="row">';
+    tmpHtml += '<div class="fCell" style="font-weight:bold">Order By:&nbsp;&nbsp;</div> ';
+    tmpHtml += '<div class="fCell">';
+    tmpHtml += '<select id="bulletinOrder" >';
+    tmpHtml += ' <option value="FilingID">System Number</option>';
+    tmpHtml += '<option value="Name">Agency Name</option>';
+    tmpHtml += '<option value="TitleNo">Title Number</option>';
+    tmpHtml += '<option value="ProposedDate">Proposed Date</option>';
+    tmpHtml += '<option value="EffectiveDate">Effective Date</option>';
+    tmpHtml += '<option value="FinalDate">Final Date</option>';
+    tmpHtml += '<option value="WithDrawalDate">Withdrawal Date</option>';
+    tmpHtml += '</select></div> ';
+    tmpHtml += '<div class="fCell" style="font-weight:bold">&nbsp;&nbsp;<input type="radio" id="bOrderAsc" name="bOrderD" value="Ascending" />Ascending&nbsp;&nbsp;</div> ';
+    tmpHtml += '<div class="fCell" style="font-weight:bold">&nbsp;&nbsp;<input type="radio" id="bOrderDes" name="bOrderD" value="Descending" checked="checked"  />Descending&nbsp;</div> ';
+    tmpHtml += '</div>';
+    tmpHtml += '<div class="row" style="height:10px;"><div class="fCell" style="height:10px;">&nbsp;</div></div>';
+    tmpHtml += '<div class="row">';
+    tmpHtml += '<div class="fCell" style="font-weight:bold">Filing Type:&nbsp;&nbsp;</div>';
+    tmpHtml += '<div class="fCell" style="font-weight:bold">&nbsp;&nbsp;<input type="radio" id="bFilingAll" name="bFiling" value="0" checked="checked" />All&nbsp;&nbsp;</div>';
+    tmpHtml += '<div class="fCell" style="font-weight:bold">&nbsp;&nbsp;<input type="radio" id="bFilingFinal" name="bFiling" value="5" />Final&nbsp;&nbsp;</div>';
+    tmpHtml += '<div class="fCell" style="font-weight:bold">&nbsp;&nbsp;<input type="radio" id="bFilingProposed" name="bFiling" value="10" />Proposed</div>';
+    tmpHtml += '</div>';
+    tmpHtml += '<div class="row" style="height:10px;"><div class="fCell" style="height:10px;">&nbsp;</div></div>';
+    tmpHtml += '<div class="row">';
+    tmpHtml += '<div class="fCell" style="font-weight:bold">Search Date:&nbsp;&nbsp;</div> ';
+    tmpHtml += '<div class="fCell"><input type="text" id="bDateS" /></div>';
+    tmpHtml += '<div class="fCell" style="font-weight:bold">&nbsp;To&nbsp;</div> ';
+    tmpHtml += '<div class="fCell"><input type="text" id="bDateE" /></div>  ';
+    tmpHtml += '</div>';
+    tmpHtml += '<div class="row" style="height:10px;"><div class="fCell" style="height:10px;">&nbsp;</div></div>';
+    tmpHtml += '<div class="row">';
+    tmpHtml += '<div class="fCell" style="font-weight:bold"><input type="radio" id="bDateFinal" name="bDate" value="FinalDate" checked="checked" />Final Date&nbsp;&nbsp;</div>';
+    tmpHtml += '<div class="fCell" style="font-weight:bold"><input type="radio" id="bDateProposed" name="bDate" value="ProposedDate"/>Proposed Date&nbsp;&nbsp;</div>';
+    tmpHtml += '<div class="fCell" style="font-weight:bold"><input type="radio" id="bDateEffective" name="bDate" value="EffectiveDate" />Effective Date&nbsp;&nbsp;</div>';
+    tmpHtml += '<div class="fCell" style="font-weight:bold"><input type="radio" id="bDateWithdrawal" name="bDate" value="WithDrawalDate"  />Withdrawal Date</div>';
+    tmpHtml += '</div>';
+    tmpHtml += '<div class="row" style="height:10px;"><div class="fCell" style="height:10px;">&nbsp;</div></div>';
+    tmpHtml += '<div class="row">';
+    tmpHtml += '<div class="fCell">&nbsp;</div> ';
+    tmpHtml += '<div class="fCell"><input type="button" class="btnStyle" value="Search" onclick="DoBulletinSearch();" style="width: 215px; height:25px; border-style: solid;border-width:1px;border-radius:5px; font-weight: bold;" /></div>';
+    tmpHtml += '<div class="fCell">&nbsp;&nbsp;&nbsp;</div>';
+    tmpHtml += '<div class="fCell"><input type="button" class="btnStyle" onclick="ShowBulletinSearch();"  value="Reset" style="width: 215px; height:25px; border-style: solid;border-width:1px;border-radius:5px; font-weight: bold;" /> </div> ';
+    tmpHtml += '</div>';
+    tmpHtml += '</div>';
+    document.getElementById('bulletinSearchSection').innerHTML = tmpHtml;
+    document.getElementById('codeSearchSection').style.display = 'none';
+    document.getElementById('bulletinSearchSection').style.display = 'block';
+    document.getElementById('messageSection').style.display = 'none';
+    document.getElementById('codeResultsSection').style.display = 'none';
+    document.getElementById('bulletinResultsSection').style.display = 'none';
+    document.getElementById('printBulletinSection').style.display = 'none';
+    document.getElementById('printCodeSection').style.display = 'none';
+    calendar.set('bDateS');
+    calendar.set('bDateE');
+}
+
+function DoBulletinSearch() {
+    currentPage = 0;
+    countVar = 0;
+    dispNum = 25;
+
+    if (document.getElementById('bOrderAsc').checked) {
+        orderDirection = 'Ascending';
+    }
+    else {
+        orderDirection = 'Descending';
+    }
+
+    if (document.getElementById('bDateFinal').checked) {
+        typeDate = '0';
+    }
+    else if (document.getElementById('bDateProposed').checked) {
+        typeDate = '1';
+    }
+    else if (document.getElementById('bDateEffective').checked) {
+        typeDate = '2';
+    }
+    else {
+        typeDate = '3';
+    }
+    if (document.getElementById('bFilingFinal').checked) {
+        filingType = '5';
+    }
+    else if (document.getElementById('bFilingProposed').checked) {
+        filingType = '10';
+    }
+    else {
+        filingType = '0';
+    }
+    //set global variables 
+    agencySearchBull = document.getElementById('bAgencySearch').value;
+    ruleSummaryBull = document.getElementById('bRuleSummary').value;
+    orderByBull = document.getElementById('bulletinOrder').value;
+    startDateBull = document.getElementById('bDateS').value;
+    endDateBull = document.getElementById('bDateE').value;
+
+    AdminSearchService.BulletinSearch(agencySearchBull,ruleSummaryBull, orderByBull, orderDirection, filingType ,startDateBull,
+        endDateBull, typeDate, currentPage.toString(), dispNum.toString(), BulletinResultsSuccess);
+    
+
+}
+
+function BulletinResultsSuccess(result) {
+        var countSplit = result.split('|');
+        countVar = countSplit[1];
+        if (countVar != 0 ){
+            searchResult = countSplit[0];
+            DisplayBulletinSearch();
+        }
+        else {
+            tmpHtml = 'No results found';
+            document.getElementById('messageSection').innerHTML = tmpHtml;
+            document.getElementById('messageSection').style.display = 'block';
+        }
+       
+        
+}
+function DisplayBulletinSearch() {
+    var started = false;
+    tmpHtml = '';
+
+    tmpHtml += '<div class="container" style="width:100%;height:50px; min-width:800px;">';
+    tmpHtml += '<div class="row">';
+    tmpHtml += '<div class="cell" style="vertical-align:middle;"><img src="msSeal.png" > </div>';
+    tmpHtml += '<div class="cell">';
+    tmpHtml += '<div class="container" style="min-width:800px;">';
+    tmpHtml += '<div class="row"><div class="cell">MISSISSIPPI ADMINISTRATIVE BULLETIN</div></div>';
+    tmpHtml += '<div class="row"><div class="cell" >Welcome to the Mississippi Administrative Bulletin. The Mississippi Secretatry of State&#39;s Office is the official registrar for the rules of all state agencies and the publisher of the Mississippi Administrative Bulletin. This service allows you to conduct a search in the Mississippi Administrative Bulletin of the rules of state agencies, boards, and commissions which have been proposedfor public comment and adopted but not yet effective. </div></div>';
+    tmpHtml += '</div>';
+    tmpHtml += '</div>';
+    tmpHtml += '</div>';
+    tmpHtml += '</div>';
+    tmpHtml += '<div class="container" style="width:99%;background-color: #DAECF4;border-style: solid;border-width:2px 1px 1px 1px;border-color:red  #94C0D2 #94C0D2 #94C0D2;">';
+    tmpHtml += '<div class="row" >&nbsp;</div>';
+    tmpHtml += '</div><br />';
+
+    //tmpHtml += '<div class="container" style="border:solid;border-radius:5px; border-color: #94c0D2;width:99%; padding:3px;" >';
+    //tmpHtml += '<div class="row" style="font-weight:bold;background-color: #DAECF4;color: #003F59;border-style: solid; border-width: 1px; border-radius:5px; border-color: #94C0D2; height:30px; " >';
+    //tmpHtml += '<div class="fCell" style="width:250px;">&nbsp;</div>';
+    //tmpHtml += '<div class="fCell" style="width:350px;">Administrative Bulletin Results</div>';
+    //tmpHtml += '<div class="fCell" style="width:126px;"><input type="button" class="btnStyleG" onclick="ShowBulletinSearch();" value="Back to Search" style="height:26px;width:125px; border-style: solid;border-width:1px;border-radius:5px;" /></div>';
+    //tmpHtml += '</div>';
+    //tmpHtml += '</div>';
+
+    tmpHtml += ' <div class="container" style="width:99%; min-width:800px;  ">';
+    tmpHtml += '<div class="row">';
+    //  tmpHtml += '<div class="fCell" style="width:93%;">&nbsp; </div>';
+    tmpHtml += '<div class="fCell" style="width:99%; text-align:right;">';
+    tmpHtml += '<input type="button" class="btnStyleG" id="printBtn" value="Printable" onclick="PrintPageBulletin();" style="height:20px;width:90px; border-style: solid;border-width:1px;border-radius:5px;" />';
+    tmpHtml += '</div>';
+    tmpHtml += '</div>';
+    tmpHtml += '</div>';
+
+    tmpHtml += '<div class="container" style="border:solid;border-radius:5px; border-color: #94c0D2;width:99%;border-width:2px; min-width:800px; " >';
+    tmpHtml += '<div class="row" style="font-weight:bold;background-color: #DAECF4;color: #003F59;border-style: solid;height:15px; " >';
+    tmpHtml += '<div class="cell" style="min-width:110px;">&nbsp;<span id="pagePrev" style="cursor:pointer; display:';
+    if (currentPage > 0) {
+        tmpHtml += 'inline;"';
+    }
+    else {
+        tmpHtml += 'none;"';
+    }
+    tmpHtml += ' onclick="ClickPrevBulletin();">&lt;&lt; Previous</span>';
+    tmpHtml += '</div>';
+    tmpHtml += '<div class="cell" style="min-width:200px;">&nbsp;<span id="currentPage"> ';
+    tmpHtml += ((currentPage * dispNum) + 1).toString();
+    tmpHtml += ' - ';
+    if (((currentPage + 1) * dispNum) >= countVar) {
+        tmpHtml += countVar;
+    }
+    else {
+        tmpHtml += ((currentPage + 1) * dispNum).toString();
+    }
+    tmpHtml += ' of ';
+    tmpHtml += countVar;
+    tmpHtml += '</span></div>';
+    tmpHtml += '<div class="cell" style="min-width:150px;">&nbsp;<span id="pageNext" style="cursor:pointer; display: ';
+    if (((currentPage + 1) * dispNum) < countVar) {
+        tmpHtml += 'inline;"';
+    }
+    else {
+        tmpHtml += 'none;"';
+    }
+    tmpHtml += ' onclick="ClickNextBulletin();">Next &gt;&gt; </span></div>';
+    tmpHtml += '<div class="cell" style="min-width:140px;">';
+    if (dispNum == 25) {
+        tmpHtml += '<span style="color:#DAECF4; background-color:#003F59;">25</span>&nbsp;&nbsp;&nbsp;';
+        tmpHtml += '<span style="color:#003F59;background-color:#DAECF4; cursor:pointer;" onclick="NewNumberToDisplay(50);">50</span>';
+    }
+    else {
+        tmpHtml += '<span style="color:#003F59;background-color:#DAECF4; cursor:pointer;" onclick="NewNumberToDisplay(25);">25</span>&nbsp;&nbsp;&nbsp;';
+        tmpHtml += '<span style="color:#DAECF4; background-color:#003F59;">50</span>';
+    }
+    tmpHtml += '</div>';
+  //  tmpHtml += '<div class="fCell" style="width:1120px;max-width:800px;" >&nbsp;</div>';
+    tmpHtml += '<div class="cell" style="text-align:right;width:40%;min-width:347px"><input type="button" class="btnStyleG" onclick="ShowBulletinSearch();" value="Back to Search" style="height:26px;width:125px; border-style: solid;border-width:1px;border-radius:5px;" /></div>';
+    tmpHtml += '</div>';
+    tmpHtml += '</div>';
+
+    var pageMax = 0;
+    if (((currentPage + 1) * dispNum) <= countVar) {
+        pageMax = (currentPage + 1) * dispNum;
+    }
+    else {
+        pageMax = countVar;
+    }
+    var dispAmount = dispNum;
+    if (parseInt(countVar) < dispNum) {
+        dispAmount = parseInt(countVar);
+    }
+    var splitData = searchResult.split('^');
+    if (dispAmount > splitData.length) {
+        dispAmount = splitData.length;
+    }
+    for (var i = 0 ; i < dispAmount; i++) {
+        splitData2 = splitData[i].split('~');
+        if (!started) {
+            started = true;
+        }
+        else {
+            tmpHtml += '<div class="container" style="border:solid;border-radius:5px; border-color: #94c0D2;width:99%;border-width:2px;min-width:800px; " >';
+            tmpHtml += '<div class="row" style="font-weight:bold;background-color: #DAECF4;color: #003F59; height:15px; " >';
+            tmpHtml += '<div class="fCell" style="width:947px;">&nbsp;</div>';
+            tmpHtml += '</div>';
+            tmpHtml += '</div>';
+        }
+        tmpHtml += '<div class="container" style="width:99%;min-width:800px; ">';
+        tmpHtml += '<div class="row" style="width:100%;min-width:800px; " >';
+        tmpHtml += '<div class="cell" style="border:solid;border-radius:5px 0px 0px 5px; border-width:2px 1px 2px 2px; border-color: #94c0D2; vertical-align:top;width:88%;" > ';
+        tmpHtml += '<div class="container"  style=" padding:10px;min-width:800px; "> ';
+        tmpHtml += '<div class="row">';
+        tmpHtml += '<div class="fCell" style="font-weight:bold">Agency:&nbsp;</div>';
+        tmpHtml += '<div class="fCell" style="text-decoration:underline;">' + splitData2[0] + '</div>';
+        tmpHtml += '</div>';
+        tmpHtml += '<div class="row" style="height:10px;"><div class="fCell" style="height:10px;">&nbsp;</div></div>';
+        tmpHtml += '<div class="row">';
+        tmpHtml += '<div class="fCell" style="font-weight:bold">Compilation:&nbsp;</div>';
+        tmpHtml += '<div class="fCell">';
+        if (splitData2[1] == 'False') {
+            tmpHtml += 'No';
+        }
+        else {
+            tmpHtml += 'Yes';
+        }
+        tmpHtml += '</div>';
+        tmpHtml += '</div>';
+        tmpHtml += '<div class="row" style="height:10px;"><div class="fCell" style="height:10px;">&nbsp;</div></div>';
+        tmpHtml += '<div class="row">';
+        if (splitData2[2].trim() == '1/1/0001') {
+            tmpHtml += '<div class="fCell" style="font-weight:bold">Proposed Date:&nbsp;</div>';
+            tmpHtml += '<div class="fCell">&nbsp;</div>';
+        }
+        else {
+            tmpHtml += '<div class="fCell" style="font-weight:bold">Proposed Date:&nbsp;</div>';
+            tmpHtml += '<div class="fCell">' + splitData2[2] + '</div>';
+        }
+
+        if (splitData2[3].trim() == '1/1/0001') {
+            tmpHtml += '<div class="fCell" style="font-weight:bold">&nbsp;&nbsp;Final Date:&nbsp;</div>';
+            tmpHtml += '<div class="fCell">&nbsp;</div>';
+            tmpHtml += '</div>';
+        }
+        else {
+            tmpHtml += '<div class="fCell" style="font-weight:bold">&nbsp;&nbsp;Final Date:&nbsp;</div>';
+            tmpHtml += '<div class="fCell">' + splitData2[3] + '</div>';
+            tmpHtml += '</div>';
+        }
+        tmpHtml += '<div class="row" style="height:10px;"><div class="fCell" style="height:10px;">&nbsp;</div></div>';
+        tmpHtml += '<div class="row">';
+        if (splitData2[4].trim() == '1/1/0001') {
+            tmpHtml += '<div class="fCell" style="font-weight:bold">Effective Date:&nbsp;</div>';
+            tmpHtml += '<div class="fCell">&nbsp;</div>';
+        }
+        else {
+            tmpHtml += '<div class="fCell" style="font-weight:bold">Effective Date:&nbsp;</div>';
+            tmpHtml += '<div class="fCell">' + splitData2[4] + '</div>';
+        }
+        if (splitData2[5].trim() == '1/1/0001') {
+            tmpHtml += '<div class="fCell" style="font-weight:bold">&nbsp;&nbsp;Withdrawal Date:&nbsp;</div>';
+            tmpHtml += '<div class="fCell">&nbsp;</div>';
+            tmpHtml += '</div>';
+        }
+        else {
+            tmpHtml += '<div class="fCell" style="font-weight:bold">&nbsp;&nbsp;Withdrawal Date:&nbsp;</div>';
+            tmpHtml += '<div class="fCell">' + splitData2[5] + '</div>';
+            tmpHtml += '</div>';
+        }
+        tmpHtml += '<div class="row" style="height:10px;"><div class="fCell" style="height:10px;">&nbsp;</div></div>';
+        tmpHtml += '<div class="row">';
+        tmpHtml += '<div class="fCell" style="font-weight:bold"><strong>Rule:</strong><span>&nbsp;' + splitData2[6] + '</span></div>';
+        tmpHtml += '</div>';
+        tmpHtml += '<div class="row" style="height:10px;"><div class="fCell" style="height:10px;">&nbsp;</div></div>';
+        tmpHtml += '<div class="row">';
+        tmpHtml += '<div class="fCell" ><strong>Summary:&nbsp;</strong><span>' + splitData2[7] + '</span></div>';
+        tmpHtml += '</div>';
+        tmpHtml += '<div class="row" style="height:10px;"><div class="fCell" style="height:10px;">&nbsp;</div></div>';
+        tmpHtml += '<div class="row">';
+        tmpHtml += '<div class="fCell" style="font-weight:bold">System Number:&nbsp;</div>';
+        tmpHtml += '<div class="fCell">' + splitData2[8] + '</div>';
+        tmpHtml += '</div>';
+        tmpHtml += '</div> ';
+        tmpHtml += '</div> ';
+        tmpHtml += '<div class="cell" style="border:solid;border-radius:0px 5px 5px 0px; border-width:2px 2px 2px 1px; border-color: #94c0D2; vertical-align:middle; text-align:center; width:10%; "> ';
+        tmpHtml += '<div class="container" style= "width:auto-fill;" > ';
+        tmpHtml += '<div class="row">';
+        tmpHtml += '<div class="cell" style="padding-left:60px" >';
+        if (splitData2[9] != "Not Found") {
+            tmpHtml += '<input type="button" onclick="window.open(\'ACProposed/' + splitData2[9] + '\');" style="border-style:solid; border-width:2px; border-radius:4px; font-weight:bold; color:#003F59; border-color:#94C0D2; background-color:transparent;cursor:pointer; padding:3px;" value="Notice" /><br />';
+        }
+        tmpHtml += '</div>';
+        tmpHtml += '</div>';
+        tmpHtml += '<div class="row">';
+        tmpHtml += '<div class="cell"  style="padding-left:65px" >';
+        if (splitData2[10] != "Not Found") {
+            tmpHtml += '<input type="button" onclick="window.open(\'ACProposed/' + splitData2[10] + '\');" style="border-style:solid; border-width:2px; border-radius:4px; font-weight:bold; color:#003F59; border-color:#94C0D2; background-color:transparent; cursor:pointer; padding:3px;" value="EIS" />';
+        }
+        tmpHtml += '</div>';
+        tmpHtml += '</div>';
+        tmpHtml += '<div class="row">';
+        tmpHtml += '<div class="cell"  style="padding-left:60px" >';
+        if (splitData2[11] != "Not Found") {
+            tmpHtml += ' <input type="button" onclick="window.open(\'ACProposed/' + splitData2[11] + '\');" style="border-style:solid; border-width:2px; border-radius:4px; font-weight:bold; color:#003F59; border-color:#94C0D2; background-color:transparent; cursor:pointer; padding:3px;" value="Full Text" />';
+        }
+        tmpHtml += '</div>';
+        tmpHtml += '</div>';
+        tmpHtml += '</div>';
+        tmpHtml += '</div>';
+        tmpHtml += '</div>';
+        tmpHtml += '</div>';
+
+    }
+    tmpHtml += '<div class="container" style="border:solid;border-radius:5px; border-color: #94c0D2;width:99%;border-width:2px; min-width:800px; " >';
+    tmpHtml += '<div class="row" style="font-weight:bold;background-color: #DAECF4;color: #003F59; height:15px; " >';
+    tmpHtml += '<div class="cell" style="min-width:110px;">&nbsp;<span id="pagePrev" style="cursor:pointer; display:';
+    if (currentPage > 0) {
+        tmpHtml += 'inline;"';
+    }
+    else {
+        tmpHtml += 'none;"';
+    }
+    tmpHtml += ' onclick="ClickPrevBulletin();">&lt;&lt; Previous</span>';
+    tmpHtml += '</div>';
+    tmpHtml += '<div class="cell" style="min-width:200px;">&nbsp;<span id="currentPage"> ';
+    tmpHtml += ((currentPage * dispNum) + 1).toString();
+    tmpHtml += ' - ';
+    if (((currentPage + 1) * dispNum) >= countVar) {
+        tmpHtml += countVar;
+    }
+    else {
+        tmpHtml += ((currentPage + 1) * dispNum).toString();
+    }
+    tmpHtml += ' of ';
+    tmpHtml += countVar;
+    tmpHtml += '</span></div>';
+    tmpHtml += '<div class="cell" style="min-width:150px;">&nbsp;<span id="pageNext" style="cursor:pointer; display: ';
+    if (((currentPage + 1) * dispNum) < countVar) {
+        tmpHtml += 'inline;"';
+    }
+    else {
+        tmpHtml += 'none;"';
+    }
+    tmpHtml += ' onclick="ClickNextBulletin();">Next &gt;&gt; </span></div>';
+    tmpHtml += '<div class="cell" style="min-width:140px;">';
+    if (dispNum == 25) {
+        tmpHtml += '<span style="color:#DAECF4; background-color:#003F59;">25</span>&nbsp;&nbsp;&nbsp;';
+        tmpHtml += '<span style="color:#003F59;background-color:#DAECF4; cursor:pointer;" onclick="NewNumberToDisplay(50);">50</span>';
+    }
+    else {
+        tmpHtml += '<span style="color:#003F59;background-color:#DAECF4; cursor:pointer;" onclick="NewNumberToDisplay(25);">25</span>&nbsp;&nbsp;&nbsp;';
+        tmpHtml += '<span style="color:#DAECF4; background-color:#003F59;">50</span>';
+    }
+    tmpHtml += '</div>';
+    //  tmpHtml += '<div class="fCell" style="width:1120px;max-width:800px;" >&nbsp;</div>';
+    tmpHtml += '<div class="cell" style="text-align:right;width:40%; min-width:347px"><input type="button" class="btnStyleG" onclick="ShowBulletinSearch();" value="Back to Search" style="height:26px;width:125px; border-style: solid;border-width:1px;border-radius:5px;" /></div>';
+    tmpHtml += '</div>';
+    tmpHtml += '</div>';
+
+    document.getElementById('bulletinResultsSection').innerHTML = tmpHtml;
+    document.getElementById('codeSearchSection').style.display = 'none';
+    document.getElementById('bulletinSearchSection').style.display = 'none';
+    document.getElementById('messageSection').style.display = 'none';
+    document.getElementById('codeResultsSection').style.display = 'none';
+    document.getElementById('bulletinResultsSection').style.display = 'block';
+    document.getElementById('printBulletinSection').style.display = 'none';
+    document.getElementById('printCodeSection').style.display = 'none';
+}
+
+function NewNumberToDisplay(tmpNum) {
+    currentPage = 0;
+    dispNum = tmpNum;
+    AdminSearchService.BulletinSearch(agencySearchBull, ruleSummaryBull, orderByBull, orderDirection, filingType, startDateBull,
+        endDateBull, typeDate, currentPage.toString(), dispNum.toString(), BulletinResultsSuccess);
+}
+
+function ClickNextBulletin() {
+    currentPage += 1;
+    AdminSearchService.BulletinSearch(agencySearchBull, ruleSummaryBull, orderByBull, orderDirection, filingType, startDateBull,
+        endDateBull, typeDate, currentPage.toString(), dispNum.toString(), BulletinResultsSuccess);
+}
+
+function ClickPrevBulletin() {
+    currentPage -= 1;
+    AdminSearchService.BulletinSearch(agencySearchBull, ruleSummaryBull, orderByBull, orderDirection, filingType, startDateBull,
+        endDateBull, typeDate, currentPage.toString(), dispNum.toString(), BulletinResultsSuccess);
+}
+
+function PrintPageBulletin() {
+    document.getElementById('bulletinResultsSection').style.display = 'none';
+    document.getElementById('printBulletinSection').innerHTML = 'Processing printable page. Please wait.<br /> <img src="wait.gif" width="250px" />';
+    document.getElementById('printBulletinSection').style.display = 'block';
+    AdminSearchService.BulletinSearchPrint(agencySearchBull, ruleSummaryBull, orderByBull, orderDirection, filingType, startDateBull,
+        endDateBull, typeDate, PrintPageBulletinSuccess);
+}
+
+function PrintPageBulletinSuccess(result) {
+    tmpHtml = '';
+    tmpHtml += '<div class="container" style="width:99%;">';
+    tmpHtml += '<div class="row" >';
+    tmpHtml += '<div class="fCell" style="width:77%;">&nbsp;</div>';
+    tmpHtml += '<div class="fCell" style="width:126px;"><input type="button" class="btnStyleG" id="printPPB" onclick="window.print();" value="Print Page" style="height:26px;width:125px; border-style: solid;border-width:1px;border-radius:5px;" /></div>';
+    tmpHtml += '<div class="fCell" style="width:20px;">&nbsp;</div>';
+    tmpHtml += '<div class="fCell" style="width:126px;"><input type="button" class="btnStyleG" id="printSRB" onclick="DisplayBulletinSearch();" value="Back to Results" style="height:26px;width:125px; border-style: solid;border-width:1px;border-radius:5px;" /></div>';
+    tmpHtml += '<div class="fCell" style="width:20px;">&nbsp;</div>';
+    tmpHtml += '<div class="fCell" style="width:126px;"><input type="button" class="btnStyleG" id="printBTSB" onclick="ShowBulletinSearch();" value="Back to Search" style="height:26px;width:125px; border-style: solid;border-width:1px;border-radius:5px;" /></div>';
+    tmpHtml += '</div></div>'
+    splitData = result.split('|');
+    var numFound = splitData[1];
+    splitData2 = splitData[0].split('^');
+
+    tmpHtml += '<div class="container" id="printableCodePage" style="width:99%; border:solid;border-radius:5px; border-color: #94c0D2;width:99%; padding:3px; min-width:800px;"  > ';
+    tmpHtml += ' <div class="row" style="font-weight:bold;background-color: #DAECF4;color: #003F59;border-style: solid; border-width: 1px; border-radius:5px; border-color: #94C0D2; height:15px; min-width:800px; ">';
+    tmpHtml += '<div class="cell" style="width:7%;">Filing ID</div>';
+    tmpHtml += '<div class="cell" style="width:12%;">Proposed Date</div>';
+    tmpHtml += '<div class="cell" style="width:12%;">Final Date</div>';
+    tmpHtml += '<div class="cell" style="width:12%;">Effective Date</div>';
+    tmpHtml += '<div class="cell" style="width:24%; text-align:center;">Rule</div>';
+    tmpHtml += '<div class="cell" style="width:33%; text-align:center;">Summary</div>';
+    tmpHtml += '</div>';
+    tmpHtml += '</div>';
+    tmpHtml += '<div class="container" style="width:99%; border:solid;border-radius:5px; border-color: #94c0D2;width:99%; padding:3px; " >';
+    tmpHtml += '<div class="row">';
+    tmpHtml += '<div class="cell">';
+
+    var colorToggle = ['', ' style="background-color:#DAECF4;"'];
+    var buttonColorToggle = ['background-color:transparent;', ' background-color:#DAECF4;'];
+    for (var i = 0; i < splitData2.length; i++) {
+        var splitData3 = splitData2[i].split('~');
+        tmpHtml += '<div class="container" style="width:100%; border-style: solid; border-width:0px 0px 1px 0px;border-color: #94C0D2;min-width:800px;">';
+        tmpHtml += '<div class="rowBulletinPrint"' + colorToggle[i % 2] + ' >';
+        tmpHtml += '<div class="fCellBulletinPrint" style="width:7%;">' + splitData3[8] + '</div>';
+        tmpHtml += '<div class="fCellBulletinPrint" style="width:12%;"> ' + splitData3[2] + '</div>';
+        tmpHtml += '<div class="fCellBulletinPrint" style="width:12%">' + splitData3[3] + '</div>';
+        tmpHtml += '<div class="fCellBulletinPrint" style="width:12%;">' + splitData3[4] + '</div>';
+        tmpHtml += '<div class="fCellBulletinPrint" style="width:24%;" ><b><u>' + splitData3[0] + '</u></b><br />' + splitData3[6] + '</div>';
+      //  tmpHtml += '<div class="fCell" > &nbsp;&nbsp;&nbsp;</div>';
+        tmpHtml += '<div class="fCellBulletinPrint" style="width:33%;" >' + splitData3[7] + '</div>';
+        tmpHtml += '</div>';
+        tmpHtml += '</div>';
+
+    }
+    tmpHtml += '</div></div></div>';
+
+
+
+    document.getElementById('printBulletinSection').innerHTML = tmpHtml;
+    document.getElementById('printBulletinSection').style.display = 'block';
+    document.getElementById('printCodeSection').style.display = 'none';
+    document.getElementById('codeSearchSection').style.display = 'none';
+    document.getElementById('bulletinSearchSection').style.display = 'none';
+    document.getElementById('messageSection').style.display = 'none';
+    document.getElementById('codeResultsSection').style.display = 'none';
+    document.getElementById('bulletinResultsSection').style.display = 'none';
+}

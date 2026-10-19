@@ -1,0 +1,120 @@
+{
+  "status": "pass_bounded_independent_original2018_two_stage_source_replay",
+  "county": "kemper",
+  "frozen_worker_bodies": [
+    {
+      "original": {
+        "path": "data/turnout/2018-kemper-two-stage-native-original-readings.json",
+        "bytes": 120819,
+        "sha256": "f5e0ebd85ec2a91fe7f6dfb7cca8b6999ff069158b23f2436ff28098f506c073"
+      },
+      "lossless_copy": {
+        "path": "data/coordinator-qa/turnout-2018-two-stage-replays/2018-kemper-two-stage-native-original-readings.json.gz",
+        "bytes": 3416,
+        "sha256": "cace1bff306074610098f47710bbe46257020edd051b3b9a44866a13a33d4241"
+      }
+    },
+    {
+      "original": {
+        "path": "data/turnout/2018-kemper-two-stage-native-original-cells.csv",
+        "bytes": 48987,
+        "sha256": "4312674cc6a11d1dd0a8387f56b7253a4b37da95a71dc24e545086e439b24fb4"
+      },
+      "lossless_copy": {
+        "path": "data/coordinator-qa/turnout-2018-two-stage-replays/2018-kemper-two-stage-native-original-cells.csv.gz",
+        "bytes": 1814,
+        "sha256": "1fd69bf8122ef8cb714ef4f72bb9cdeb92da7f4894c5a876dc43943f53279c69"
+      }
+    },
+    {
+      "original": {
+        "path": "data/turnout/2018-kemper-native-peer-reconciliation.json",
+        "bytes": 1175,
+        "sha256": "b0511eb25a17b8d7508bd2dd5edbeda522ae28b0c20a216a70f3ab9f727e38ae"
+      },
+      "lossless_copy": {
+        "path": "data/coordinator-qa/turnout-2018-two-stage-replays/2018-kemper-native-peer-reconciliation.json.gz",
+        "bytes": 675,
+        "sha256": "6e44e8f49945097e0129d45c688e95664a3387fadecfbd9952d23757d4eb3929"
+      }
+    }
+  ],
+  "immutable_peer_snapshot": {
+    "path": "data/baselines/source/native-2018-78views-v1/snapshot.json",
+    "bytes": 1872,
+    "sha256": "4df50caded4d9a1cdfd46081422e36002439b10aea28cfab1fb6dcf00f34621c"
+  },
+  "source_findings": [
+    {
+      "source_id": "sos-2018-county-kemper",
+      "raw_original_sha256": "432380cca28ae5cd872c9fe11ca5604ab1617bae7bfff894c5c3564a63eabc8d",
+      "raw_original_bytes": 869135,
+      "stored_original": {
+        "path": "data/turnout/source/sos-2018-county-kemper.body.gz",
+        "bytes": 540632,
+        "sha256": "8c62f690852ec8c8267c6be294b7d74450b3b76f501c548d8fedcf6c3c294a29"
+      },
+      "native_constituents": 14,
+      "physical_TOTAL": {
+        "actual_PDFpage": 3,
+        "column": 4
+      },
+      "source_candidate_sums_and_TOTALs": {
+        "Tobey Bernard Bartee": 93,
+        "Mike Espy": 1853,
+        "Cindy Hyde-Smith": 1086,
+        "Chris McDaniel": 389
+      }
+    },
+    {
+      "source_id": "sos-2018-runoff-county-kemper",
+      "raw_original_sha256": "f4eef72e35f734c6c212f9a9799681478fbdd28732072350256ffdd3a6eabe8f",
+      "raw_original_bytes": 462756,
+      "stored_original": {
+        "path": "data/turnout/source/sos-2018-runoff-county-kemper.body.gz",
+        "bytes": 301819,
+        "sha256": "4033052f60be35f72549dc8c98ca96bb8699e2159b1aaac6c45745d3c8b0ec73"
+      },
+      "native_constituents": 14,
+      "physical_TOTAL": {
+        "actual_PDFpage": 3,
+        "column": 4
+      },
+      "source_candidate_sums_and_TOTALs": {
+        "Mike Espy": 2207,
+        "Cindy Hyde-Smith": 1270
+      }
+    }
+  ],
+  "original_worker_raster_pins": [
+    {
+      "path": "data/turnout/qa/2018-native-original-probe/sos-2018-county-kemper/p0002-original.png",
+      "bytes": 212973,
+      "sha256": "ce81182b458b856db2b7333a78ace30dbf62f355a32bda8c041f2f646304ca56"
+    },
+    {
+      "path": "data/turnout/qa/2018-native-original-probe/sos-2018-county-kemper/p0003-original.png",
+      "bytes": 183564,
+      "sha256": "76d1fab5f30a4cf82473ee993d8139f612bd9ed43e5d4e3654b3edcd2b31f73b"
+    },
+    {
+      "path": "data/turnout/qa/2018-native-original-probe/sos-2018-runoff-county-kemper/p0002-original.png",
+      "bytes": 122348,
+      "sha256": "31f78d89634ea5a464eb818658fc02218931a12d55b7610038a04f727df46e30"
+    },
+    {
+      "path": "data/turnout/qa/2018-native-original-probe/sos-2018-runoff-county-kemper/p0003-original.png",
+      "bytes": 106768,
+      "sha256": "aad41bf24400baddc8f684ff9320fb9fc229a36564663f942d5ea0ab9cb7cb30"
+    }
+  ],
+  "compared_positions": 132,
+  "counts": {
+    "numeric_positions": 90,
+    "unused_null_positions": 42
+  },
+  "whitespace_only_header_representations": [],
+  "qualification": "All original-reading and flat source fields recompute against immutable peer evidence after the worker original transcript: candidate values/roles/original hash/page/physical column/FIPS and whitespace-folded literal headers. Whole source rasters survive by hash, not pixel/reading-window/parsedID identity. This is not fresh coordinator visual reading of all new glyphs, shared current geography, same cross-stage electorate or whole164-stage historical-method/native887 approval. Source native fields are never replaced by county controls or another year/stage.",
+  "formal_native887_dispatch_accepted": false,
+  "current_geography_approved": false
+}

@@ -1,0 +1,107 @@
+{
+  "status": "pass_finished_turnout_full_frozen_contract_and_exact_historical_dependencies",
+  "owned_manifest": {
+    "path": "data/turnout/asset-manifest.json",
+    "bytes": 3543047,
+    "sha256": "4681e60b69fda456f8ff87d73c5a82a3c1a79e5210059fb9e7bc04f9a6c1d280"
+  },
+  "validation": {
+    "path": "data/turnout/validation.json",
+    "bytes": 286075,
+    "sha256": "2e21d3303a06ea531f8e17d2870ea2002cff50e9b47d9fd1a582b9f2fe8da071"
+  },
+  "final_owned_checks": 117,
+  "owned_entries": 13203,
+  "listed_owned_bytes": 1338521763,
+  "maximum_stored_owned_bytes": 13065430,
+  "read_only_shared_original_references": 152,
+  "every_owned_hash_size_AST_and_membership_verified": true,
+  "manifest_excludes_only_itself": true,
+  "report": {
+    "path": "turnout.md",
+    "bytes": 134503,
+    "sha256": "a72a5590e6f2bc34c9aa53f5d3bf639673f2cf1d248e37ddff4adaf9e2889628"
+  },
+  "county_CSV": {
+    "path": "data/county-turnout.csv",
+    "bytes": 13643,
+    "sha256": "14c5d0e6071bc7344f5f0784bb2f2c724dc20be529f4c343115d25bb1b216420"
+  },
+  "complete_priority_contract": {
+    "path": "data/turnout/priority-set.json",
+    "bytes": 13065430,
+    "sha256": "782ca7899236ba06e53effee549c4e6845f936c9b4ceea3fecc8828dd9a08c32"
+  },
+  "complete2024_named_dependency": {
+    "path": "data/turnout/source/2024-preferred-all11-source-fields-v1.json.gz",
+    "bytes": 96203,
+    "sha256": "d066e45bebca7ba66163989165a430164f5b84cef61d9e2cda7e4bc4e1d23b6b"
+  },
+  "source_columns": 2321,
+  "preferred2024_columns": 2266,
+  "preferred2024_candidate_fields": 24926,
+  "complete_historical_dependency": {
+    "path": "data/turnout/historical-native-complete-dependencies.json",
+    "bytes": 216211,
+    "sha256": "a4ea86ef031ff6fee3ee1f60520c5f0bf87730673d208fff4563a99d732daa20"
+  },
+  "historical_sources": {
+    "2020": {
+      "canonical_snapshot": {
+        "path": "data/baselines/source/native-2020-104views-v1/snapshot.json",
+        "bytes": 3193,
+        "sha256": "1ff6e98fd18f70ec473ce0b5adac5e082f4f1900a7d03d6090e9181150a71568"
+      },
+      "complete_source_objects_reconstructed": 104,
+      "candidate_or_null_positions": 8316,
+      "source_native_observations": 2131,
+      "literal_marks": {},
+      "source_partitions": {
+        "all104_in_coverage_index_order": 104,
+        "selected82_amended_where_explicit_in_index_order": 82,
+        "nonadditive_alternative22_in_index_order": 22
+      },
+      "full_source_objects_exact": true,
+      "own_direct_scope_still_bounded": true
+    },
+    "2018": {
+      "canonical_snapshot": {
+        "path": "data/baselines/source/native-2018-164views-v1/snapshot.json",
+        "bytes": 1881,
+        "sha256": "90e14d7f6f34992c39b3d9370e954cc2d56ad7a58147103eaa0607bc139288d0"
+      },
+      "complete_source_objects_reconstructed": 164,
+      "candidate_or_null_positions": 13662,
+      "source_native_observations": 3545,
+      "literal_marks": {
+        "X": 6
+      },
+      "source_partitions": {
+        "all164_in_original_ledger_order": 164,
+        "Nov6_special82_in_ledger_order": 82,
+        "Nov27_runoff82_in_ledger_order": 82
+      },
+      "full_source_objects_exact": true,
+      "own_direct_scope_still_bounded": true
+    }
+  },
+  "independent_complete_v2_proposal": {
+    "path": "data/baselines/source/native-priority-v2/snapshot.json",
+    "bytes": 3275,
+    "sha256": "a0432f1e47245c7b934a2328ebda95d3d96566c58cd3f71901406d060efc85ec"
+  },
+  "preferred_native_order": 1736,
+  "priority_native": 887,
+  "priority_parents": 77,
+  "all_parent_counties": 82,
+  "remainder_native": 849,
+  "completed_offline_reproduction_receipt": {
+    "path": "data/turnout/qa/final-offline-reproduction.json",
+    "bytes": 2149,
+    "sha256": "d5d13fd229fb7900166dc0886ab3222a6fe1d149e1b00fb6d4daececaa38f3f7"
+  },
+  "original_worker_build_reexecuted_by_coordinator": false,
+  "qualification": "Independent readonly final hash/size/AST/membership audit verifies frozen turnout report/CSV/full13MBcontract and every owned asset; archived117check full offline replay receipt and final log verify exit0. Preferred2266columns/24926named-or-null fields match both canonical dependency and independent complete v2proposal; all2321alternative-role columns remain. Full historical104/164source objects are reconstructed by exact frozen component bytes and every object canonical hash/page/raworiginalreceipt matches; all source/admin/X/null/alternative partitions remain without promoting bounded44/104and43/164original replay to whole independent native reading. No mutating worker rebuild, source repair/currentgeo or formal887approval is implied by this audit.",
+  "formal_native887_dispatch_accepted": false,
+  "current_geography_approved": false
+}

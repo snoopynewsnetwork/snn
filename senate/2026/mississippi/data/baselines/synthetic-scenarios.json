@@ -1,0 +1,530 @@
+{
+  "qualification": "Synthetic conditional arithmetic, no calibrated probabilities or 2026 turnout assumptions",
+  "live": [
+    {
+      "input": {
+        "id": "unknown",
+        "A": "Colom",
+        "B": "Hyde-Smith",
+        "counted": {
+          "Colom": 100,
+          "Hyde-Smith": 120,
+          "Pinkins": 15
+        },
+        "remaining": null
+      },
+      "output": {
+        "status": "unknown_remaining_pool",
+        "counted_fixed": {
+          "Colom": 100,
+          "Hyde-Smith": 120,
+          "Pinkins": 15
+        }
+      }
+    },
+    {
+      "input": {
+        "id": "no-pool",
+        "A": "Colom",
+        "B": "Hyde-Smith",
+        "counted": {
+          "Colom": 100,
+          "Hyde-Smith": 120,
+          "Pinkins": 15
+        },
+        "remaining": []
+      },
+      "output": {
+        "status": "no_pool_final",
+        "outcome_scope": "Conditional on supplied candidate universe; unresolved valid write-ins not inferred absent",
+        "counted_fixed": {
+          "Colom": 100,
+          "Hyde-Smith": 120,
+          "Pinkins": 15
+        },
+        "remaining_pool": 0,
+        "final_votes": {
+          "Colom": 100,
+          "Hyde-Smith": 120,
+          "Pinkins": 15
+        },
+        "final_all_candidate_denominator": 235,
+        "final_pair_denominator": 220,
+        "A_minus_B_votes": -20,
+        "A_minus_B_pair_margin_pp": -9.090909090909092,
+        "A_minus_B_all_candidate_margin_pp": -8.51063829787234,
+        "plurality_leader": "Hyde-Smith",
+        "tied_leaders": [
+          "Hyde-Smith"
+        ],
+        "A_strict_plurality": false,
+        "A_cushion_vs_each_rival": {
+          "Hyde-Smith": -20,
+          "Pinkins": 85
+        },
+        "clipped_forecast_units": [],
+        "selected_unit_targets": []
+      }
+    },
+    {
+      "input": {
+        "id": "empty-counted-no-pool",
+        "A": "Colom",
+        "B": "Hyde-Smith",
+        "counted": {
+          "Colom": 0,
+          "Hyde-Smith": 0,
+          "Pinkins": 0
+        },
+        "remaining": []
+      },
+      "output": {
+        "status": "no_pool_final",
+        "outcome_scope": "Conditional on supplied candidate universe; unresolved valid write-ins not inferred absent",
+        "counted_fixed": {
+          "Colom": 0,
+          "Hyde-Smith": 0,
+          "Pinkins": 0
+        },
+        "remaining_pool": 0,
+        "final_votes": {
+          "Colom": 0,
+          "Hyde-Smith": 0,
+          "Pinkins": 0
+        },
+        "final_all_candidate_denominator": 0,
+        "final_pair_denominator": 0,
+        "A_minus_B_votes": 0,
+        "A_minus_B_pair_margin_pp": null,
+        "A_minus_B_all_candidate_margin_pp": null,
+        "plurality_leader": null,
+        "tied_leaders": [
+          "Colom",
+          "Hyde-Smith",
+          "Pinkins"
+        ],
+        "A_strict_plurality": false,
+        "A_cushion_vs_each_rival": {
+          "Hyde-Smith": 0,
+          "Pinkins": 0
+        },
+        "clipped_forecast_units": [],
+        "selected_unit_targets": []
+      }
+    },
+    {
+      "input": {
+        "id": "negative-pool",
+        "A": "Colom",
+        "B": "Hyde-Smith",
+        "counted": {
+          "Colom": 100,
+          "Hyde-Smith": 120,
+          "Pinkins": 15
+        },
+        "remaining": [
+          {
+            "unit": "synthetic",
+            "pool": -1,
+            "shares": {
+              "Colom": 0.5,
+              "Hyde-Smith": 0.4,
+              "Pinkins": 0.1
+            }
+          }
+        ]
+      },
+      "output": {
+        "status": "invalid_negative_pool",
+        "unit": "synthetic"
+      }
+    },
+    {
+      "input": {
+        "id": "third-candidate-leads-despite-pair-win",
+        "A": "Colom",
+        "B": "Hyde-Smith",
+        "counted": {
+          "Colom": 100,
+          "Hyde-Smith": 80,
+          "Pinkins": 200
+        },
+        "remaining": [
+          {
+            "unit": "synthetic",
+            "pool": 100,
+            "shares": {
+              "Colom": 0.6,
+              "Hyde-Smith": 0.3,
+              "Pinkins": 0.1
+            }
+          }
+        ]
+      },
+      "output": {
+        "status": "conditional_arithmetic",
+        "outcome_scope": "Conditional on supplied candidate universe; unresolved valid write-ins not inferred absent",
+        "counted_fixed": {
+          "Colom": 100,
+          "Hyde-Smith": 80,
+          "Pinkins": 200
+        },
+        "remaining_pool": 100,
+        "final_votes": {
+          "Colom": 160.0,
+          "Hyde-Smith": 110.0,
+          "Pinkins": 210.0
+        },
+        "final_all_candidate_denominator": 480.0,
+        "final_pair_denominator": 270.0,
+        "A_minus_B_votes": 50.0,
+        "A_minus_B_pair_margin_pp": 18.51851851851852,
+        "A_minus_B_all_candidate_margin_pp": 10.416666666666666,
+        "plurality_leader": "Pinkins",
+        "tied_leaders": [
+          "Pinkins"
+        ],
+        "A_strict_plurality": false,
+        "A_cushion_vs_each_rival": {
+          "Hyde-Smith": 50.0,
+          "Pinkins": -50.0
+        },
+        "clipped_forecast_units": [],
+        "selected_unit_targets": [
+          {
+            "unit": "synthetic",
+            "remaining_pair_pool": 89.99999999999999,
+            "fixed_A_elsewhere": 100.0,
+            "fixed_B_elsewhere": 80.0,
+            "all_other_remaining_assumption": "input forecast shares unchanged; counted candidates fixed",
+            "pair_tie_required_A_share": 0.3888888888888889,
+            "pair_tie_status": "feasible",
+            "A_plus_1_final_pair_margin_required_A_share": 0.4038888888888889,
+            "A_plus_1_status": "feasible",
+            "strict_plurality_requires_share_greater_than": 1.2222222222222223,
+            "plurality_status": "impossible_strict",
+            "other_rival_share_thresholds": {
+              "Pinkins": 1.2222222222222223
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input": {
+        "id": "clipped-preferences",
+        "A": "Colom",
+        "B": "Hyde-Smith",
+        "counted": {
+          "Colom": 100,
+          "Hyde-Smith": 120,
+          "Pinkins": 15
+        },
+        "remaining": [
+          {
+            "unit": "synthetic",
+            "pool": 10,
+            "shares": {
+              "Colom": 1.2,
+              "Hyde-Smith": -0.2,
+              "Pinkins": 0
+            }
+          }
+        ]
+      },
+      "output": {
+        "status": "conditional_arithmetic",
+        "outcome_scope": "Conditional on supplied candidate universe; unresolved valid write-ins not inferred absent",
+        "counted_fixed": {
+          "Colom": 100,
+          "Hyde-Smith": 120,
+          "Pinkins": 15
+        },
+        "remaining_pool": 10,
+        "final_votes": {
+          "Colom": 110.0,
+          "Hyde-Smith": 120.0,
+          "Pinkins": 15.0
+        },
+        "final_all_candidate_denominator": 245.0,
+        "final_pair_denominator": 230.0,
+        "A_minus_B_votes": -10.0,
+        "A_minus_B_pair_margin_pp": -4.3478260869565215,
+        "A_minus_B_all_candidate_margin_pp": -4.081632653061225,
+        "plurality_leader": "Hyde-Smith",
+        "tied_leaders": [
+          "Hyde-Smith"
+        ],
+        "A_strict_plurality": false,
+        "A_cushion_vs_each_rival": {
+          "Hyde-Smith": -10.0,
+          "Pinkins": 95.0
+        },
+        "clipped_forecast_units": [
+          "synthetic"
+        ],
+        "selected_unit_targets": [
+          {
+            "unit": "synthetic",
+            "remaining_pair_pool": 10.0,
+            "fixed_A_elsewhere": 100.0,
+            "fixed_B_elsewhere": 120.0,
+            "all_other_remaining_assumption": "input forecast shares unchanged; counted candidates fixed",
+            "pair_tie_required_A_share": 1.5,
+            "pair_tie_status": "impossible",
+            "A_plus_1_final_pair_margin_required_A_share": 1.6149999999999998,
+            "A_plus_1_status": "impossible",
+            "strict_plurality_requires_share_greater_than": 1.5,
+            "plurality_status": "impossible_strict",
+            "other_rival_share_thresholds": {
+              "Pinkins": -8.5
+            }
+          }
+        ]
+      }
+    },
+    {
+      "input": {
+        "id": "Independent-Pinkins-named-pair",
+        "A": "Pinkins",
+        "B": "Hyde-Smith",
+        "counted": {
+          "Colom": 100,
+          "Hyde-Smith": 120,
+          "Pinkins": 15
+        },
+        "remaining": [
+          {
+            "unit": "synthetic",
+            "pool": 300,
+            "shares": {
+              "Colom": 0.1,
+              "Hyde-Smith": 0.2,
+              "Pinkins": 0.7
+            }
+          }
+        ]
+      },
+      "output": {
+        "status": "conditional_arithmetic",
+        "outcome_scope": "Conditional on supplied candidate universe; unresolved valid write-ins not inferred absent",
+        "counted_fixed": {
+          "Colom": 100,
+          "Hyde-Smith": 120,
+          "Pinkins": 15
+        },
+        "remaining_pool": 300,
+        "final_votes": {
+          "Colom": 130.0,
+          "Hyde-Smith": 180.0,
+          "Pinkins": 225.0
+        },
+        "final_all_candidate_denominator": 535.0,
+        "final_pair_denominator": 405.0,
+        "A_minus_B_votes": 45.0,
+        "A_minus_B_pair_margin_pp": 11.11111111111111,
+        "A_minus_B_all_candidate_margin_pp": 8.411214953271028,
+        "plurality_leader": "Pinkins",
+        "tied_leaders": [
+          "Pinkins"
+        ],
+        "A_strict_plurality": true,
+        "A_cushion_vs_each_rival": {
+          "Colom": 95.0,
+          "Hyde-Smith": 45.0
+        },
+        "clipped_forecast_units": [],
+        "selected_unit_targets": [
+          {
+            "unit": "synthetic",
+            "remaining_pair_pool": 270.0,
+            "fixed_A_elsewhere": 15.0,
+            "fixed_B_elsewhere": 120.0,
+            "all_other_remaining_assumption": "input forecast shares unchanged; counted candidates fixed",
+            "pair_tie_required_A_share": 0.6944444444444444,
+            "pair_tie_status": "feasible",
+            "A_plus_1_final_pair_margin_required_A_share": 0.7019444444444445,
+            "A_plus_1_status": "feasible",
+            "strict_plurality_requires_share_greater_than": 0.6944444444444444,
+            "plurality_status": "feasible_strict",
+            "other_rival_share_thresholds": {
+              "Colom": 0.42592592592592593
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "pair": [
+    {
+      "input": {
+        "id": "secured",
+        "counted_A": 200,
+        "counted_B": 10,
+        "pool": 20,
+        "target_margin": 0
+      },
+      "output": {
+        "status": "already_above_target_at_zero_share",
+        "required_share": -4.25,
+        "clipped_display_share": 0.0,
+        "final_pair_denominator": 230,
+        "target_net": 0
+      }
+    },
+    {
+      "input": {
+        "id": "impossible",
+        "counted_A": 10,
+        "counted_B": 200,
+        "pool": 20,
+        "target_margin": 0
+      },
+      "output": {
+        "status": "impossible",
+        "required_share": 5.25,
+        "clipped_display_share": 1.0,
+        "final_pair_denominator": 230,
+        "target_net": 0
+      }
+    },
+    {
+      "input": {
+        "id": "tie-threshold",
+        "counted_A": 100,
+        "counted_B": 120,
+        "pool": 100,
+        "target_margin": 0
+      },
+      "output": {
+        "status": "feasible",
+        "required_share": 0.6,
+        "clipped_display_share": 0.6,
+        "final_pair_denominator": 320,
+        "target_net": 0
+      }
+    },
+    {
+      "input": {
+        "id": "final-denominator-A+1",
+        "counted_A": 100,
+        "counted_B": 120,
+        "pool": 100,
+        "target_margin": 0.01
+      },
+      "output": {
+        "status": "feasible",
+        "required_share": 0.616,
+        "clipped_display_share": 0.616,
+        "final_pair_denominator": 320,
+        "target_net": 3.2
+      }
+    },
+    {
+      "input": {
+        "id": "no-pool",
+        "counted_A": 100,
+        "counted_B": 120,
+        "pool": 0,
+        "target_margin": 0
+      },
+      "output": {
+        "status": "no_positive_pool",
+        "required_share": null,
+        "counted_lead": -20,
+        "target_net": 0,
+        "secured": false,
+        "impossible": true,
+        "exact_tie": false
+      }
+    },
+    {
+      "input": {
+        "id": "negative",
+        "counted_A": 100,
+        "counted_B": 120,
+        "pool": -1,
+        "target_margin": 0
+      },
+      "output": {
+        "status": "invalid_negative_pool",
+        "required_share": null
+      }
+    },
+    {
+      "input": {
+        "id": "unknown",
+        "counted_A": 100,
+        "counted_B": 120,
+        "pool": null,
+        "target_margin": 0
+      },
+      "output": {
+        "status": "unknown_pool",
+        "required_share": null
+      }
+    }
+  ],
+  "bounded": [
+    {
+      "input": {
+        "weights": [
+          10,
+          90
+        ],
+        "shares": [
+          0.99,
+          0.1
+        ],
+        "target": 1
+      },
+      "output": {
+        "status": "feasible_bounded",
+        "baseline_net": -62.2,
+        "target_net": 1,
+        "unbounded_shift": 0.316,
+        "bounded_shift": 0.35,
+        "unbounded_feasible": false,
+        "clipped_units": 1,
+        "shares": [
+          1.0,
+          0.44999999999999996
+        ],
+        "achieved_net": 0.9999999999999929,
+        "baseline_already_above_target": false
+      }
+    },
+    {
+      "input": {
+        "weights": [
+          0
+        ],
+        "shares": [
+          0.3
+        ],
+        "target": 0
+      },
+      "output": {
+        "status": "no_positive_pool",
+        "unbounded_shift": null,
+        "bounded_shift": null
+      }
+    },
+    {
+      "input": {
+        "weights": [
+          10
+        ],
+        "shares": [
+          0.3
+        ],
+        "target": 11
+      },
+      "output": {
+        "status": "impossible",
+        "unbounded_shift": null,
+        "bounded_shift": null
+      }
+    }
+  ]
+}

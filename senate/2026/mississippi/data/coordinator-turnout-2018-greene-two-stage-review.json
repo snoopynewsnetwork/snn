@@ -1,0 +1,189 @@
+{
+  "status": "pass_bounded_independent_original2018_two_stage_source_replay",
+  "county": "greene",
+  "frozen_worker_bodies": [
+    {
+      "original": {
+        "path": "data/turnout/2018-greene-two-stage-native-original-readings.json",
+        "bytes": 120377,
+        "sha256": "4c6a37474e3c84dbc8bbcd1646bcf44f09b95175354a82e8edc55f350027f91d"
+      },
+      "lossless_copy": {
+        "path": "data/coordinator-qa/turnout-2018-two-stage-replays/2018-greene-two-stage-native-original-readings.json.gz",
+        "bytes": 3355,
+        "sha256": "b8f074fbc214a8e97c42321151e3e684db2a72ed4bcc9c6fa79c8072333ff4f6"
+      }
+    },
+    {
+      "original": {
+        "path": "data/turnout/2018-greene-two-stage-native-original-cells.csv",
+        "bytes": 48518,
+        "sha256": "4ed1253b3084b890b8be609e586d1e08ec5db83aeeefb73efbf23072f1e12707"
+      },
+      "lossless_copy": {
+        "path": "data/coordinator-qa/turnout-2018-two-stage-replays/2018-greene-two-stage-native-original-cells.csv.gz",
+        "bytes": 1739,
+        "sha256": "259cf87c77fe439512d5fa4b81f20fe9d6187b793879ac2b9de28b0c3fdabecf"
+      }
+    },
+    {
+      "original": {
+        "path": "data/turnout/2018-greene-native-peer-reconciliation.json",
+        "bytes": 4426,
+        "sha256": "7c9b8616c372898f1c62748720e43f815008131fd0d580e7c48c9518b8abfc16"
+      },
+      "lossless_copy": {
+        "path": "data/coordinator-qa/turnout-2018-two-stage-replays/2018-greene-native-peer-reconciliation.json.gz",
+        "bytes": 1328,
+        "sha256": "0b16342fae9fbe06bb2fe4640515ea1d190a2a3c80212974963a024510e3dc66"
+      }
+    }
+  ],
+  "immutable_peer_snapshot": {
+    "path": "data/baselines/source/native-2018-16views-v1/snapshot.json",
+    "bytes": 1797,
+    "sha256": "de741e84c37957905d0bc77f46df7b7eaf984520241b1b97b3bbf8be9266118e"
+  },
+  "source_findings": [
+    {
+      "source_id": "sos-2018-county-greene",
+      "raw_original_sha256": "6c3efa490eb2281d84daf9bfa4dfd4b911f275a814f173d687f162cf493b0147",
+      "raw_original_bytes": 1187227,
+      "stored_original": {
+        "path": "data/turnout/source/sos-2018-county-greene.body.gz",
+        "bytes": 811193,
+        "sha256": "18e7ce74a59df88cdb436d677620a7453d684fbba7f630de45d1b7ca522258d5"
+      },
+      "native_constituents": 13,
+      "physical_TOTAL": {
+        "actual_PDFpage": 3,
+        "column": 3
+      },
+      "source_candidate_sums_and_TOTALs": {
+        "Tobey Bernard Bartee": 64,
+        "Mike Espy": 729,
+        "Cindy Hyde-Smith": 1425,
+        "Chris McDaniel": 1438
+      },
+      "literal_header_differences_confirmed_from_original": [
+        {
+          "source_id": "sos-2018-county-greene",
+          "page": 3,
+          "physical_column": 1,
+          "candidate": "Tobey Bernard Bartee",
+          "own_original_literal": "Mclain",
+          "peer_derivative_literal": "McLain",
+          "value": 5,
+          "role": "source_native_reporting_constituent"
+        },
+        {
+          "source_id": "sos-2018-county-greene",
+          "page": 3,
+          "physical_column": 1,
+          "candidate": "Mike Espy",
+          "own_original_literal": "Mclain",
+          "peer_derivative_literal": "McLain",
+          "value": 122,
+          "role": "source_native_reporting_constituent"
+        },
+        {
+          "source_id": "sos-2018-county-greene",
+          "page": 3,
+          "physical_column": 1,
+          "candidate": "Cindy Hyde-Smith",
+          "own_original_literal": "Mclain",
+          "peer_derivative_literal": "McLain",
+          "value": 53,
+          "role": "source_native_reporting_constituent"
+        },
+        {
+          "source_id": "sos-2018-county-greene",
+          "page": 3,
+          "physical_column": 1,
+          "candidate": "Chris McDaniel",
+          "own_original_literal": "Mclain",
+          "peer_derivative_literal": "McLain",
+          "value": 47,
+          "role": "source_native_reporting_constituent"
+        }
+      ]
+    },
+    {
+      "source_id": "sos-2018-runoff-county-greene",
+      "raw_original_sha256": "6f4a179ea512df3b3a21eb9e19f1b83055792db5feb7852ba6085b2e2a94facb",
+      "raw_original_bytes": 486271,
+      "stored_original": {
+        "path": "data/turnout/source/sos-2018-runoff-county-greene.body.gz",
+        "bytes": 315774,
+        "sha256": "e0e7489269d3bf960a40d703f347e50dc2fd314cc43498a0f516f91f60b06765"
+      },
+      "native_constituents": 13,
+      "physical_TOTAL": {
+        "actual_PDFpage": 3,
+        "column": 3
+      },
+      "source_candidate_sums_and_TOTALs": {
+        "Mike Espy": 661,
+        "Cindy Hyde-Smith": 2422
+      },
+      "literal_header_differences_confirmed_from_original": [
+        {
+          "source_id": "sos-2018-runoff-county-greene",
+          "page": 3,
+          "physical_column": 1,
+          "candidate": "Mike Espy",
+          "own_original_literal": "Mclain",
+          "peer_derivative_literal": "McLain",
+          "value": 126,
+          "role": "source_native_reporting_constituent"
+        },
+        {
+          "source_id": "sos-2018-runoff-county-greene",
+          "page": 3,
+          "physical_column": 1,
+          "candidate": "Cindy Hyde-Smith",
+          "own_original_literal": "Mclain",
+          "peer_derivative_literal": "McLain",
+          "value": 84,
+          "role": "source_native_reporting_constituent"
+        }
+      ]
+    }
+  ],
+  "original_worker_raster_pins": [
+    {
+      "path": "data/turnout/qa/2018-native-original-probe/sos-2018-county-greene/p0002-original.png",
+      "bytes": 239896,
+      "sha256": "d1346b7c0b7efac1796ff3d73e4e7b384dd932dd4bff70b3fd9f1b261da97517"
+    },
+    {
+      "path": "data/turnout/qa/2018-native-original-probe/sos-2018-county-greene/p0003-original.png",
+      "bytes": 213109,
+      "sha256": "5077a65b40c89b8dfd56a174bf7af392521275994d05bf00c2fee875692faf21"
+    },
+    {
+      "path": "data/turnout/qa/2018-native-original-probe/sos-2018-runoff-county-greene/p0002-original.png",
+      "bytes": 154131,
+      "sha256": "3e04c242aba58342b7e5c76f66b13c4b809356257b194cc4112fad580d1e7e98"
+    },
+    {
+      "path": "data/turnout/qa/2018-native-original-probe/sos-2018-runoff-county-greene/p0003-original.png",
+      "bytes": 132059,
+      "sha256": "c004ef5dd7e31f02746eddfef94177855de4871eb8ded42e0747a699dd5975cb"
+    }
+  ],
+  "compared_positions": 132,
+  "counts": {
+    "numeric_positions": 84,
+    "unused_null_positions": 48
+  },
+  "whitespace_only_header_representations": [],
+  "qualification": "All original-reading and flat source fields recompute against immutable peer evidence after the worker original transcript: candidate values/roles/original hash/page/physical column/FIPS and literal headers with six explicit original Mclain versus older derivative McLain case differences. These are not whitespace aliases or normalized geographic identities. Whole source rasters survive by hash, not pixel/reading-window/parsedID identity. This is not fresh coordinator visual reading of all new glyphs, shared current geography, same cross-stage electorate or whole164-stage historical-method/native887 approval. Source native fields are never replaced by county controls or another year/stage.",
+  "formal_native887_dispatch_accepted": false,
+  "current_geography_approved": false,
+  "original_header_exception_review": {
+    "path": "data/coordinator-greene-2018-original-header-review.json",
+    "bytes": 2558,
+    "sha256": "7818f767f8bbdce9007339e71d9f184e5379f405addfd5be26d23dd806f4941a"
+  }
+}

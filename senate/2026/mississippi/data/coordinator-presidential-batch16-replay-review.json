@@ -1,0 +1,116 @@
+{
+  "status": "pass_bounded_independent_original_presidential_batch_source_positions",
+  "batch": "batch16",
+  "frozen_input_pins": [
+    {
+      "path": "data/coordinator-qa/presidential-batch16-replay/batch16-presidential-original-readings.json.gz",
+      "bytes": 6231,
+      "sha256": "885776e02bb7799f42e3ae2145e8f61045c9ff518fdf5d3661a977376d9c9e8b"
+    },
+    {
+      "path": "data/coordinator-qa/presidential-batch16-replay/batch16-presidential-original-cells.csv.gz",
+      "bytes": 2672,
+      "sha256": "64050cb6985755d5586a1703ff97a64ad55f498fbfb767e57b9d9da652c6eabf"
+    }
+  ],
+  "immutable_peer_snapshot_pin": {
+    "path": "data/baselines/source/native-allfield-82views/snapshot.json",
+    "bytes": 5216,
+    "sha256": "94576fcfa4b7b245e2d5baa9e8366e4489594804f41694ea04a9f6315e46b336"
+  },
+  "source_views": 1,
+  "native_constituents": 18,
+  "candidate_positions": 198,
+  "position_role_counts": {
+    "source_native_reporting_constituent": 162,
+    "source_TOTAL": 9,
+    "unused_template_column": 27
+  },
+  "reading_basis_position_counts": {
+    "direct_visual_full_original_page_after_OCR_error": 26,
+    "first_independent_original_cell_OCR_source_read_pending_reciprocal": 106,
+    "second_independent_original_digit_region_OCR_source_read_pending_reciprocal": 36,
+    "direct_original_cell_visual_read": 3,
+    "unprinted_unused_template_position_not_numeric_zero": 27
+  },
+  "direct_visual_OCR_error_corrections": 26,
+  "source_results": [
+    {
+      "source_id": "sos-2024-county-lafayette",
+      "source_raw_sha256": "81b743ca03cabba900d2cbdca85d8b0aabbe17b3252af807aae76298ec42b0de",
+      "native_constituents": 18,
+      "source_position_role_counts": {
+        "source_native_reporting_constituent": 162,
+        "source_TOTAL": 9,
+        "unused_template_column": 27
+      },
+      "native_sums_and_printed_TOTALs": {
+        "Kamala D. Harris": 8956,
+        "Chase Oliver": 81,
+        "Jill Stein": 94,
+        "Randall Terry": 20,
+        "Donald J. Trump": 14050,
+        "Shiva Ayyadurai": 6,
+        "Claudia De la Cruz": 25,
+        "Robert F. Kennedy Jr.": 143,
+        "Peter Sonski": 34
+      },
+      "original_visual_corrections": 26
+    }
+  ],
+  "whole_original_render_pins": [
+    {
+      "path": "data/turnout/qa/batch16-presidential-original-review/sos-2024-county-lafayette-p02-original.png",
+      "bytes": 199002,
+      "sha256": "994c89ba4dbe0e5e52c2e3134100c3fbf102969d5ce72febd4ce5b58e43f4f57"
+    },
+    {
+      "path": "data/turnout/qa/batch16-presidential-original-review/sos-2024-county-lafayette-p03-original.png",
+      "bytes": 185599,
+      "sha256": "80f6519394ecacfca65850784f232ef005febba7ac040a38050cfd12742d25c4"
+    }
+  ],
+  "separate_render_differences": [
+    {
+      "source_id": "sos-2024-county-lafayette",
+      "actual_PDF_page": 2,
+      "turnout_render_path": "data/turnout/qa/batch16-presidential-original-review/sos-2024-county-lafayette-p02-original.png",
+      "turnout_sha256": "994c89ba4dbe0e5e52c2e3134100c3fbf102969d5ce72febd4ce5b58e43f4f57",
+      "turnout_size": [
+        1975,
+        1538
+      ],
+      "peer_render_path": "data/baselines/extracts/reviewed-replay/sos-2024-county-lafayette/p0002-original.png",
+      "peer_sha256": "cd8e2093929088272e1ff424b69558c48a935f3fbe7ca81452f02ade0bd0cd53",
+      "peer_size": [
+        1975,
+        1538
+      ],
+      "turnout_applied_deskew_ccw": 0,
+      "peer_stated_deskew_ccw": -0.2000000000000004
+    },
+    {
+      "source_id": "sos-2024-county-lafayette",
+      "actual_PDF_page": 3,
+      "turnout_render_path": "data/turnout/qa/batch16-presidential-original-review/sos-2024-county-lafayette-p03-original.png",
+      "turnout_sha256": "80f6519394ecacfca65850784f232ef005febba7ac040a38050cfd12742d25c4",
+      "turnout_size": [
+        1977,
+        1538
+      ],
+      "peer_render_path": "data/baselines/extracts/reviewed-replay/sos-2024-county-lafayette/p0003-original.png",
+      "peer_sha256": "42c792d672fbe90f2108d82f5d3f10e4008e22c8a2ca4d2d0234435f39252a7b",
+      "peer_size": [
+        1977,
+        1538
+      ],
+      "turnout_applied_deskew_ccw": 0,
+      "peer_stated_deskew_ccw": -0.2000000000000004
+    }
+  ],
+  "qualification": "Every bounded original source value,role,page and whitespace-folded literal header agrees after independent extraction with the exact immutable peer source view. Original OCR and direct visual corrections remain separate reading bases; complete source PDFs and raster hashes are checked. Header bounds are source-grid references, not accepted numeric polygons. Independent render pipelines may have different raster pixels, height or deskew, all explicitly recorded; exact raster/crop equivalence is not asserted. No peer vote import, residual allocation, cross-year/name identity join or whole-state/historical-native/method/current-geography approval follows.",
+  "whole_state_presidential_complete": false,
+  "historical_native_complete": false,
+  "formal_dispatch_accepted": false,
+  "current2026_geography_approved": false
+}

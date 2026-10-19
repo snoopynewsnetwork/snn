@@ -1,0 +1,120 @@
+{
+  "status": "pass_bounded_independent_original2018_two_stage_source_replay",
+  "county": "montgomery",
+  "frozen_worker_bodies": [
+    {
+      "original": {
+        "path": "data/turnout/2018-montgomery-two-stage-native-original-readings.json",
+        "bytes": 123120,
+        "sha256": "7ebc7a126b50b35773a25599c34fe5b5639ee7550636c2e43dc5f7a27bc3ea84"
+      },
+      "lossless_copy": {
+        "path": "data/coordinator-qa/turnout-2018-two-stage-replays/2018-montgomery-two-stage-native-original-readings.json.gz",
+        "bytes": 3435,
+        "sha256": "6ed85388894df13ec95655c1eb0a6942455accad95f907f0908206ad9eb29a0f"
+      }
+    },
+    {
+      "original": {
+        "path": "data/turnout/2018-montgomery-two-stage-native-original-cells.csv",
+        "bytes": 51280,
+        "sha256": "4a72540c244af3c3ca83d0c236c037e8237b6fd9cb8ddb8388be2e68204e26d5"
+      },
+      "lossless_copy": {
+        "path": "data/coordinator-qa/turnout-2018-two-stage-replays/2018-montgomery-two-stage-native-original-cells.csv.gz",
+        "bytes": 1834,
+        "sha256": "0c9b1add39ad76c75234a4ffe9cd4b247b4016ed8801caeb5f85b519bfca4a91"
+      }
+    },
+    {
+      "original": {
+        "path": "data/turnout/2018-montgomery-native-peer-reconciliation.json",
+        "bytes": 1169,
+        "sha256": "0c0d04daf86e0998c68be66c72ac376e1f2ff13e02d581e508d06cf54c9ff67d"
+      },
+      "lossless_copy": {
+        "path": "data/coordinator-qa/turnout-2018-two-stage-replays/2018-montgomery-native-peer-reconciliation.json.gz",
+        "bytes": 658,
+        "sha256": "aa1af63d31fdef52923a0ce90fce8c934e7d8f91e585581c750f1c6b34a138c9"
+      }
+    }
+  ],
+  "immutable_peer_snapshot": {
+    "path": "data/baselines/source/native-2018-46views-v1/snapshot.json",
+    "bytes": 1868,
+    "sha256": "6953faa5be1b8acfdaa5a61c52c0c6e53ced89a96dd0e17866831ad9c296127c"
+  },
+  "source_findings": [
+    {
+      "source_id": "sos-2018-county-montgomery",
+      "raw_original_sha256": "1f0e56fe47e9aa73cffd2a1306bd32d0a2fabc48cb4e45aad270009f067fdf10",
+      "raw_original_bytes": 1062923,
+      "stored_original": {
+        "path": "data/turnout/source/sos-2018-county-montgomery.body.gz",
+        "bytes": 677589,
+        "sha256": "0b60ea51d9da743d0938676e8f4503ad528a86daa6266e70ffbcbe9cfe568a8c"
+      },
+      "native_constituents": 15,
+      "physical_TOTAL": {
+        "actual_PDFpage": 3,
+        "column": 5
+      },
+      "source_candidate_sums_and_TOTALs": {
+        "Tobey Bernard Bartee": 55,
+        "Mike Espy": 1582,
+        "Cindy Hyde-Smith": 1846,
+        "Chris McDaniel": 415
+      }
+    },
+    {
+      "source_id": "sos-2018-runoff-county-montgomery",
+      "raw_original_sha256": "6f687714d2ce6549824e2b42951b03d3c7233cb5bd39982e7d9d82b87422b9af",
+      "raw_original_bytes": 504777,
+      "stored_original": {
+        "path": "data/turnout/source/sos-2018-runoff-county-montgomery.body.gz",
+        "bytes": 330596,
+        "sha256": "5a945fa09144488490bea766837d0117ade09a2857bc19479c0e2b4cd8533474"
+      },
+      "native_constituents": 15,
+      "physical_TOTAL": {
+        "actual_PDFpage": 3,
+        "column": 5
+      },
+      "source_candidate_sums_and_TOTALs": {
+        "Mike Espy": 1709,
+        "Cindy Hyde-Smith": 2036
+      }
+    }
+  ],
+  "original_worker_raster_pins": [
+    {
+      "path": "data/turnout/qa/2018-native-original-probe/sos-2018-county-montgomery/p0002-original.png",
+      "bytes": 214287,
+      "sha256": "208dd88f75df32bb80218ac4c013c13637770298e2ba81ecf78b9e0f38ea016e"
+    },
+    {
+      "path": "data/turnout/qa/2018-native-original-probe/sos-2018-county-montgomery/p0003-original.png",
+      "bytes": 189876,
+      "sha256": "a33cd43ff4c76d623e530491b43a0aba9622b6abf289c8d0a7259f39d2e6d3e8"
+    },
+    {
+      "path": "data/turnout/qa/2018-native-original-probe/sos-2018-runoff-county-montgomery/p0002-original.png",
+      "bytes": 141838,
+      "sha256": "cb988a3355d8d1a3c3c6dc8fa8b4936365eeb9d192eed0f9c674361344314c0e"
+    },
+    {
+      "path": "data/turnout/qa/2018-native-original-probe/sos-2018-runoff-county-montgomery/p0003-original.png",
+      "bytes": 130213,
+      "sha256": "ce12b6413b3989220a06918840af8577f52af5b5604bbcb528c4dbd0794bf145"
+    }
+  ],
+  "compared_positions": 132,
+  "counts": {
+    "numeric_positions": 96,
+    "unused_null_positions": 36
+  },
+  "whitespace_only_header_representations": [],
+  "qualification": "All original-reading and flat source fields recompute against immutable peer evidence after the worker original transcript: candidate values/roles/original hash/page/physical column/FIPS and whitespace-folded literal headers. Whole source rasters survive by hash, not pixel/reading-window/parsedID identity. This is not fresh coordinator visual reading of all new glyphs, shared current geography, same cross-stage electorate or whole164-stage historical-method/native887 approval. Source native fields are never replaced by county controls or another year/stage.",
+  "formal_native887_dispatch_accepted": false,
+  "current_geography_approved": false
+}

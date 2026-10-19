@@ -1,0 +1,120 @@
+{
+  "status": "pass_bounded_independent_original2018_two_stage_source_replay",
+  "county": "sunflower",
+  "frozen_worker_bodies": [
+    {
+      "original": {
+        "path": "data/turnout/2018-sunflower-two-stage-native-original-readings.json",
+        "bytes": 123431,
+        "sha256": "4e5e4f87e0ad75e97b63d927bab466b7813ab286a8a0eeeee77605e4632718ce"
+      },
+      "lossless_copy": {
+        "path": "data/coordinator-qa/turnout-2018-two-stage-replays/2018-sunflower-two-stage-native-original-readings.json.gz",
+        "bytes": 3524,
+        "sha256": "a08292df60fb9c27c6d42ac1eafb50c5265c5e453c2e709693e6d819d08215af"
+      }
+    },
+    {
+      "original": {
+        "path": "data/turnout/2018-sunflower-two-stage-native-original-cells.csv",
+        "bytes": 51674,
+        "sha256": "a3ec45bcd6d942cc9ff4e1dc6285bb90c00474912db90700f1989836b1d92070"
+      },
+      "lossless_copy": {
+        "path": "data/coordinator-qa/turnout-2018-two-stage-replays/2018-sunflower-two-stage-native-original-cells.csv.gz",
+        "bytes": 1932,
+        "sha256": "7383ae9f70af7c84f355ab77bad2133997afae739e14258645ad5fd00bd9b2c8"
+      }
+    },
+    {
+      "original": {
+        "path": "data/turnout/2018-sunflower-native-peer-reconciliation.json",
+        "bytes": 1194,
+        "sha256": "0d97ec0b0d5b9b8170f65a7908b95d44c0c8cfdc1ae4915684a0c1acc305af3a"
+      },
+      "lossless_copy": {
+        "path": "data/coordinator-qa/turnout-2018-two-stage-replays/2018-sunflower-native-peer-reconciliation.json.gz",
+        "bytes": 677,
+        "sha256": "0b369f6af26cd08c4f1a4e532569e9379e071e2ba81ea1ec50d7e09444f06326"
+      }
+    }
+  ],
+  "immutable_peer_snapshot": {
+    "path": "data/baselines/source/native-2018-142views-v2/snapshot.json",
+    "bytes": 1880,
+    "sha256": "9fba26e5f69b1e844b62e1b262b48701daf0ddef3cf747c83d610d12202036fe"
+  },
+  "source_findings": [
+    {
+      "source_id": "sos-2018-county-sunflower",
+      "raw_original_sha256": "325fa3adb795d299dedaf85adf4b594739c3674cb6d6d76f98c411dd56d3e0a2",
+      "raw_original_bytes": 1166564,
+      "stored_original": {
+        "path": "data/turnout/source/sos-2018-county-sunflower.body.gz",
+        "bytes": 825993,
+        "sha256": "f2b767bd3255b40c44dff6006584759d470684bc73b1400d3f489ad590ea63af"
+      },
+      "native_constituents": 17,
+      "physical_TOTAL": {
+        "actual_PDFpage": 3,
+        "column": 7
+      },
+      "source_candidate_sums_and_TOTALs": {
+        "Tobey Bernard Bartee": 100,
+        "Mike Espy": 5090,
+        "Cindy Hyde-Smith": 1904,
+        "Chris McDaniel": 374
+      }
+    },
+    {
+      "source_id": "sos-2018-runoff-county-sunflower",
+      "raw_original_sha256": "d8dc584bc72656ead56293eed048bc7d2974413ddcab549604a4e52788e2070a",
+      "raw_original_bytes": 586618,
+      "stored_original": {
+        "path": "data/turnout/source/sos-2018-runoff-county-sunflower.body.gz",
+        "bytes": 407014,
+        "sha256": "bc18f2611fa70042e89137835aa3c7d25070c0280020ebea5552ed66ae4436fe"
+      },
+      "native_constituents": 17,
+      "physical_TOTAL": {
+        "actual_PDFpage": 3,
+        "column": 7
+      },
+      "source_candidate_sums_and_TOTALs": {
+        "Mike Espy": 5301,
+        "Cindy Hyde-Smith": 2034
+      }
+    }
+  ],
+  "original_worker_raster_pins": [
+    {
+      "path": "data/turnout/qa/2018-native-original-probe/sos-2018-county-sunflower/p0002-original.png",
+      "bytes": 258408,
+      "sha256": "062c9494be7d6dd6e0f36a0e1d4d1bd2ceab3b982c57e87b4ec688601b8580c2"
+    },
+    {
+      "path": "data/turnout/qa/2018-native-original-probe/sos-2018-county-sunflower/p0003-original.png",
+      "bytes": 229985,
+      "sha256": "c12650ea8e799e4c1b40e8e1c82b9040c399e42c39ce80914f160e7d1ebd35c7"
+    },
+    {
+      "path": "data/turnout/qa/2018-native-original-probe/sos-2018-runoff-county-sunflower/p0002-original.png",
+      "bytes": 185219,
+      "sha256": "14edf9c5cc46c4e4b7729745a8abe2afc7487d8baffd265b4728da4119330890"
+    },
+    {
+      "path": "data/turnout/qa/2018-native-original-probe/sos-2018-runoff-county-sunflower/p0003-original.png",
+      "bytes": 163568,
+      "sha256": "eb4fe7213ae8502b4ae2f026f596359d0e470cdeeb8fd2202cca10a956e10ab8"
+    }
+  ],
+  "compared_positions": 132,
+  "counts": {
+    "numeric_positions": 108,
+    "unused_null_positions": 24
+  },
+  "whitespace_only_header_representations": [],
+  "qualification": "All original-reading and flat source fields recompute against immutable peer evidence after the worker original transcript: candidate values/roles/original hash/page/physical column/FIPS and whitespace-folded literal headers. Whole source rasters survive by hash, not pixel/reading-window/parsedID identity. This is not fresh coordinator visual reading of all new glyphs, shared current geography, same cross-stage electorate or whole164-stage historical-method/native887 approval. Source native fields are never replaced by county controls or another year/stage.",
+  "formal_native887_dispatch_accepted": false,
+  "current_geography_approved": false
+}

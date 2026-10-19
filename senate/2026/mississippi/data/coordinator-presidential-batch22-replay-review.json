@@ -1,0 +1,79 @@
+{
+  "status": "pass_bounded_independent_original_presidential_batch_source_positions",
+  "batch": "batch22",
+  "frozen_input_pins": [
+    {
+      "path": "data/coordinator-qa/presidential-batch22-replay/batch22-presidential-original-readings.json.gz",
+      "bytes": 5904,
+      "sha256": "25d629b9ff8b193248c07f968b43f1a654670d80acd7aa86fcd83fd7332e358a"
+    },
+    {
+      "path": "data/coordinator-qa/presidential-batch22-replay/batch22-presidential-original-cells.csv.gz",
+      "bytes": 2369,
+      "sha256": "d51f5a2911b0bd93dba8617c10ebd98360cf15c680d4ad966b2571d1e8bdc8dd"
+    }
+  ],
+  "immutable_peer_snapshot_pin": {
+    "path": "data/baselines/source/native-allfield-82views/snapshot.json",
+    "bytes": 5216,
+    "sha256": "94576fcfa4b7b245e2d5baa9e8366e4489594804f41694ea04a9f6315e46b336"
+  },
+  "source_views": 1,
+  "native_constituents": 21,
+  "candidate_positions": 198,
+  "position_role_counts": {
+    "source_native_reporting_constituent": 189,
+    "source_TOTAL": 9
+  },
+  "reading_basis_position_counts": {
+    "first_independent_original_cell_OCR_source_read_pending_reciprocal": 148,
+    "direct_original_cell_visual_read": 37,
+    "direct_visual_full_original_page_after_OCR_error": 4,
+    "direct_visual_full_original_page_missing_aid_position": 9
+  },
+  "direct_visual_OCR_error_corrections": 4,
+  "source_results": [
+    {
+      "source_id": "sos-2024-county-tippah",
+      "source_raw_sha256": "424330beaaaec9ca3f1b4ad28322c6c3c774dd901aa343d9e8953c1763e876dd",
+      "native_constituents": 21,
+      "source_position_role_counts": {
+        "source_native_reporting_constituent": 189,
+        "source_TOTAL": 9
+      },
+      "native_sums_and_printed_TOTALs": {
+        "Kamala D. Harris": 1547,
+        "Chase Oliver": 11,
+        "Jill Stein": 5,
+        "Randall Terry": 9,
+        "Donald J. Trump": 7984,
+        "Shiva Ayyadurai": 4,
+        "Claudia De la Cruz": 4,
+        "Robert F. Kennedy Jr.": 27,
+        "Peter Sonski": 0
+      },
+      "original_visual_corrections": 13
+    }
+  ],
+  "whole_original_render_pins": [
+    {
+      "path": "data/turnout/qa/batch22-presidential-original-review/sos-2024-county-tippah-p03-original.png",
+      "bytes": 283970,
+      "sha256": "e6756731425f6524c8403582dccfc0a91e7d2953a6ee5bd7a46a28d25ed4384f"
+    },
+    {
+      "path": "data/turnout/qa/batch22-presidential-original-review/sos-2024-county-tippah-p04-original.png",
+      "bytes": 284402,
+      "sha256": "d0e61523e949248ddf9f3a2e599b4de83f9a8e9c9cc2d64e3b85db9d917863b8"
+    }
+  ],
+  "separate_render_differences": [],
+  "qualification": "Every bounded original source value,role,page and whitespace-folded literal header agrees after independent extraction with the exact immutable peer source view. Original OCR and direct visual corrections remain separate reading bases; complete source PDFs and raster hashes are checked. Header bounds are source-grid references, not accepted numeric polygons. Independent render pipelines may have different raster pixels, height or deskew, all explicitly recorded; exact raster/crop equivalence is not asserted. No peer vote import, residual allocation, cross-year/name identity join or whole-state/historical-native/method/current-geography approval follows.",
+  "whole_state_presidential_complete": false,
+  "historical_native_complete": false,
+  "formal_dispatch_accepted": false,
+  "current2026_geography_approved": false,
+  "direct_visual_missing_aid_position_readings": 9,
+  "direct_visual_readings_total": 13,
+  "missing_aid_position_qualification": "These positions had no original numeric aid crop or OCR value; explicit nulls and full-page direct visual basis are retained. No aid polygon was fabricated."
+}

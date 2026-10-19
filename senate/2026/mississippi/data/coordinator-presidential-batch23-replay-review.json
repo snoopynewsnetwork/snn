@@ -1,0 +1,112 @@
+{
+  "status": "pass_bounded_independent_complete_original_manual_grid_replay",
+  "batch": "batch23",
+  "frozen_input_pins": [
+    {
+      "path": "data/coordinator-qa/presidential-batch23-replay/batch23-presidential-original-readings.json.gz",
+      "bytes": 5648,
+      "sha256": "8d630cf8cccc213947cd2f9f26299e88a36f16f9f8c2947dbac14ae1df292a43"
+    },
+    {
+      "path": "data/coordinator-qa/presidential-batch23-replay/batch23-presidential-original-cells.csv.gz",
+      "bytes": 2381,
+      "sha256": "7be789a2c7ac5327b93c52f1319998a10af6c747c89aa35104d18076317871e1"
+    }
+  ],
+  "immutable_peer_snapshot_pin": {
+    "path": "data/baselines/source/native-allfield-82views/snapshot.json",
+    "bytes": 5216,
+    "sha256": "94576fcfa4b7b245e2d5baa9e8366e4489594804f41694ea04a9f6315e46b336"
+  },
+  "source_views": 1,
+  "native_constituents": 18,
+  "candidate_positions": 198,
+  "position_role_counts": {
+    "source_native_reporting_constituent": 162,
+    "source_TOTAL": 9,
+    "unused_template_column": 27
+  },
+  "complete_original_manual_grid_numeric_positions": 171,
+  "direct_observation_unused_null_positions": 27,
+  "missing_original_aid_positions_including_unused": 18,
+  "provisional_OCR_disagreements_visually_superseded": 106,
+  "source_results": [
+    {
+      "source_id": "sos-2024-county-leflore",
+      "raw_sha256": "783ddca11e32f25b1fc33e4f3e7ba1ecd5b91c6c43d016acb4440844caa75f13",
+      "native_constituents": 18,
+      "position_roles": {
+        "source_native_reporting_constituent": 162,
+        "source_TOTAL": 9,
+        "unused_template_column": 27
+      },
+      "native_sums_and_printed_TOTALs": {
+        "Kamala D. Harris": 6476,
+        "Chase Oliver": 18,
+        "Jill Stein": 12,
+        "Randall Terry": 9,
+        "Donald J. Trump": 2854,
+        "Shiva Ayyadurai": 2,
+        "Claudia De la Cruz": 5,
+        "Robert F. Kennedy Jr.": 41,
+        "Peter Sonski": 4
+      },
+      "missing_original_aid_positions_including_unused": 18,
+      "provisional_OCR_disagreements_visually_superseded": 106
+    }
+  ],
+  "whole_original_render_pins": [
+    {
+      "path": "data/turnout/qa/batch23-presidential-original-review/sos-2024-county-leflore-p05-original.png",
+      "bytes": 473502,
+      "sha256": "1bc7cdc9d8dd0ed74bf31afb76fc4736e25c54c7bc9fb2b4bf94545f3d6a0660"
+    },
+    {
+      "path": "data/turnout/qa/batch23-presidential-original-review/sos-2024-county-leflore-p06-original.png",
+      "bytes": 527548,
+      "sha256": "ae670f48968983eafb1a9b8519bcd84a619af1c808c1d7368760fe874b9145a4"
+    }
+  ],
+  "separate_render_differences": [
+    {
+      "source_id": "sos-2024-county-leflore",
+      "actual_PDFpage": 5,
+      "turnout_render_path": "data/turnout/qa/batch23-presidential-original-review/sos-2024-county-leflore-p05-original.png",
+      "turnout_sha256": "1bc7cdc9d8dd0ed74bf31afb76fc4736e25c54c7bc9fb2b4bf94545f3d6a0660",
+      "turnout_size": [
+        2520,
+        1530
+      ],
+      "peer_render_path": "data/baselines/extracts/reviewed-replay/sos-2024-county-leflore/p0005-original.png",
+      "peer_sha256": "2a1a906d51e1df58121a99aee2468ef236fb6e2733e15f1a7dd5a71fd2c92c95",
+      "peer_size": [
+        2520,
+        1530
+      ],
+      "turnout_applied_deskew_ccw": 0,
+      "peer_stated_deskew_ccw": 0.5999999999999994
+    },
+    {
+      "source_id": "sos-2024-county-leflore",
+      "actual_PDFpage": 6,
+      "turnout_render_path": "data/turnout/qa/batch23-presidential-original-review/sos-2024-county-leflore-p06-original.png",
+      "turnout_sha256": "ae670f48968983eafb1a9b8519bcd84a619af1c808c1d7368760fe874b9145a4",
+      "turnout_size": [
+        2722,
+        1653
+      ],
+      "peer_render_path": "data/baselines/extracts/reviewed-replay/sos-2024-county-leflore/p0006-original.png",
+      "peer_sha256": "e52d9c2a2a8f7d665e1c535eb96bbcb2bc3d814be1f7c488ea6bbdd770ee25c9",
+      "peer_size": [
+        2722,
+        1653
+      ],
+      "turnout_applied_deskew_ccw": 0,
+      "peer_stated_deskew_ccw": 0.75
+    }
+  ],
+  "qualification": "All nine candidate rows and source columns use direct whole-original grid readings. Missing OCR aid and observed unused blanks remain distinct from literal numeric zeros; no missing numeric polygon is invented. Raw PDF and raster pins, exact source roles, candidate vectors, flat positions and whitespace-only literal labels agree the immutable independent peer only after original extraction. This bounded source/basis audit is not a fresh coordinator visual reading of every glyph, a cross-publication/geographic join, whole historical-method completion or dispatch approval.",
+  "formal_dispatch_accepted": false,
+  "historical_native_complete": false,
+  "current2026_geography_approved": false
+}

@@ -1,0 +1,120 @@
+{
+  "status": "pass_bounded_independent_original2018_two_stage_source_replay",
+  "county": "coahoma",
+  "frozen_worker_bodies": [
+    {
+      "original": {
+        "path": "data/turnout/2018-coahoma-two-stage-native-original-readings.json",
+        "bytes": 121951,
+        "sha256": "7638928e3341f0291065fe92baca8875ff1bd50e4d7b20a010182f1023717236"
+      },
+      "lossless_copy": {
+        "path": "data/coordinator-qa/turnout-2018-two-stage-replays/2018-coahoma-two-stage-native-original-readings.json.gz",
+        "bytes": 3479,
+        "sha256": "b209ad0df0b3cd67f7e0a5a4c7a5ea0f813777473a508d6fe94cef0cd5107f8b"
+      }
+    },
+    {
+      "original": {
+        "path": "data/turnout/2018-coahoma-two-stage-native-original-cells.csv",
+        "bytes": 50213,
+        "sha256": "c5a5c7f5cfb3c2ae1f15cd0dd71e2b713a451d659a9283be6049afbfd7c51449"
+      },
+      "lossless_copy": {
+        "path": "data/coordinator-qa/turnout-2018-two-stage-replays/2018-coahoma-two-stage-native-original-cells.csv.gz",
+        "bytes": 1889,
+        "sha256": "08dd4e4f81332b0decdfb5a057e9c88d77d34d85dd07a4ba03391ba534bcc53e"
+      }
+    },
+    {
+      "original": {
+        "path": "data/turnout/2018-coahoma-native-peer-reconciliation.json",
+        "bytes": 1181,
+        "sha256": "5ba0b05833b3037179c84be46b7e12caeb89b00109c060fb27aed5a87dbb58c5"
+      },
+      "lossless_copy": {
+        "path": "data/coordinator-qa/turnout-2018-two-stage-replays/2018-coahoma-native-peer-reconciliation.json.gz",
+        "bytes": 678,
+        "sha256": "b70be797f37a1599242b4621203d6c1d0bc19d23dd228473d0d56d5a3ea91bcb"
+      }
+    }
+  ],
+  "immutable_peer_snapshot": {
+    "path": "data/baselines/source/native-2018-78views-v1/snapshot.json",
+    "bytes": 1872,
+    "sha256": "4df50caded4d9a1cdfd46081422e36002439b10aea28cfab1fb6dcf00f34621c"
+  },
+  "source_findings": [
+    {
+      "source_id": "sos-2018-county-coahoma",
+      "raw_original_sha256": "a5437cc16a10e8e685bd9fd671229083fd59965844c5e48241dc66b477fd6fe9",
+      "raw_original_bytes": 1135774,
+      "stored_original": {
+        "path": "data/turnout/source/sos-2018-county-coahoma.body.gz",
+        "bytes": 749851,
+        "sha256": "1032e563d0fd5ad74b62e944b283307b7074253d1ecc5755784e33c2739c3087"
+      },
+      "native_constituents": 18,
+      "physical_TOTAL": {
+        "actual_PDFpage": 3,
+        "column": 8
+      },
+      "source_candidate_sums_and_TOTALs": {
+        "Tobey Bernard Bartee": 74,
+        "Mike Espy": 4576,
+        "Cindy Hyde-Smith": 1509,
+        "Chris McDaniel": 468
+      }
+    },
+    {
+      "source_id": "sos-2018-runoff-county-coahoma",
+      "raw_original_sha256": "0cdff900bbb5a7bbe112f9fd051571a7be36616c0273b272f19e3a14028084d4",
+      "raw_original_bytes": 551914,
+      "stored_original": {
+        "path": "data/turnout/source/sos-2018-runoff-county-coahoma.body.gz",
+        "bytes": 364005,
+        "sha256": "b2a23da1b5f2643851f4612557bfcb110cb9291abbb79d19646f55fd9f984786"
+      },
+      "native_constituents": 18,
+      "physical_TOTAL": {
+        "actual_PDFpage": 3,
+        "column": 8
+      },
+      "source_candidate_sums_and_TOTALs": {
+        "Mike Espy": 5111,
+        "Cindy Hyde-Smith": 1748
+      }
+    }
+  ],
+  "original_worker_raster_pins": [
+    {
+      "path": "data/turnout/qa/2018-native-original-probe/sos-2018-county-coahoma/p0002-original.png",
+      "bytes": 214007,
+      "sha256": "54dbbe6e5e538e1d097903a01482c662c2d4746419310d4ea80da9dee278699c"
+    },
+    {
+      "path": "data/turnout/qa/2018-native-original-probe/sos-2018-county-coahoma/p0003-original.png",
+      "bytes": 205485,
+      "sha256": "70fa1dcfe55e2d2c708b3171f0a40a5a01366e89451f4f7ae9d38359a838392a"
+    },
+    {
+      "path": "data/turnout/qa/2018-native-original-probe/sos-2018-runoff-county-coahoma/p0002-original.png",
+      "bytes": 171334,
+      "sha256": "0bb5ebdd2804c95167cf70f20a077a6c48f582e0b6f4082059d82681e6bf5198"
+    },
+    {
+      "path": "data/turnout/qa/2018-native-original-probe/sos-2018-runoff-county-coahoma/p0003-original.png",
+      "bytes": 156167,
+      "sha256": "1a93d50c662c4a559e225db657b544dd8f173622d562a9c6d63a8a0d273682ef"
+    }
+  ],
+  "compared_positions": 132,
+  "counts": {
+    "numeric_positions": 114,
+    "unused_null_positions": 18
+  },
+  "whitespace_only_header_representations": [],
+  "qualification": "All original-reading and flat source fields recompute against immutable peer evidence after the worker original transcript: candidate values/roles/original hash/page/physical column/FIPS and whitespace-folded literal headers. Whole source rasters survive by hash, not pixel/reading-window/parsedID identity. This is not fresh coordinator visual reading of all new glyphs, shared current geography, same cross-stage electorate or whole164-stage historical-method/native887 approval. Source native fields are never replaced by county controls or another year/stage.",
+  "formal_native887_dispatch_accepted": false,
+  "current_geography_approved": false
+}

@@ -1,0 +1,38 @@
+var AdminSearchService=function() {
+AdminSearchService.initializeBase(this);
+this._timeout = 0;
+this._userContext = null;
+this._succeeded = null;
+this._failed = null;
+}
+AdminSearchService.prototype={
+_get_path:function() {
+ var p = this.get_path();
+ if (p) return p;
+ else return AdminSearchService._staticInstance.get_path();},
+CodeSearch:function(tmpSubject,tmpAgency,tmpPartRange1,tmpPartRange2,tmpRuleSum,tmpOrder,tmpOrderDirec,tmpSearchDate1,tmpSearchDate2,tmpDateType,succeededCallback, failedCallback, userContext) {
+return this._invoke(this._get_path(), 'CodeSearch',false,{tmpSubject:tmpSubject,tmpAgency:tmpAgency,tmpPartRange1:tmpPartRange1,tmpPartRange2:tmpPartRange2,tmpRuleSum:tmpRuleSum,tmpOrder:tmpOrder,tmpOrderDirec:tmpOrderDirec,tmpSearchDate1:tmpSearchDate1,tmpSearchDate2:tmpSearchDate2,tmpDateType:tmpDateType},succeededCallback,failedCallback,userContext); },
+BulletinSearch:function(tmpAgency,tmpRuleSum,tmpOrder,tmpOrderDirec,tmpTypeF,tmpSearchDate1,tmpSearchDate2,tmpDateType,pageNum,numberToDisplay,succeededCallback, failedCallback, userContext) {
+return this._invoke(this._get_path(), 'BulletinSearch',false,{tmpAgency:tmpAgency,tmpRuleSum:tmpRuleSum,tmpOrder:tmpOrder,tmpOrderDirec:tmpOrderDirec,tmpTypeF:tmpTypeF,tmpSearchDate1:tmpSearchDate1,tmpSearchDate2:tmpSearchDate2,tmpDateType:tmpDateType,pageNum:pageNum,numberToDisplay:numberToDisplay},succeededCallback,failedCallback,userContext); },
+BulletinSearchPrint:function(tmpAgency,tmpRuleSum,tmpOrder,tmpOrderDirec,tmpTypeF,tmpSearchDate1,tmpSearchDate2,tmpDateType,succeededCallback, failedCallback, userContext) {
+return this._invoke(this._get_path(), 'BulletinSearchPrint',false,{tmpAgency:tmpAgency,tmpRuleSum:tmpRuleSum,tmpOrder:tmpOrder,tmpOrderDirec:tmpOrderDirec,tmpTypeF:tmpTypeF,tmpSearchDate1:tmpSearchDate1,tmpSearchDate2:tmpSearchDate2,tmpDateType:tmpDateType},succeededCallback,failedCallback,userContext); }}
+AdminSearchService.registerClass('AdminSearchService',Sys.Net.WebServiceProxy);
+AdminSearchService._staticInstance = new AdminSearchService();
+AdminSearchService.set_path = function(value) { AdminSearchService._staticInstance.set_path(value); }
+AdminSearchService.get_path = function() { return AdminSearchService._staticInstance.get_path(); }
+AdminSearchService.set_timeout = function(value) { AdminSearchService._staticInstance.set_timeout(value); }
+AdminSearchService.get_timeout = function() { return AdminSearchService._staticInstance.get_timeout(); }
+AdminSearchService.set_defaultUserContext = function(value) { AdminSearchService._staticInstance.set_defaultUserContext(value); }
+AdminSearchService.get_defaultUserContext = function() { return AdminSearchService._staticInstance.get_defaultUserContext(); }
+AdminSearchService.set_defaultSucceededCallback = function(value) { AdminSearchService._staticInstance.set_defaultSucceededCallback(value); }
+AdminSearchService.get_defaultSucceededCallback = function() { return AdminSearchService._staticInstance.get_defaultSucceededCallback(); }
+AdminSearchService.set_defaultFailedCallback = function(value) { AdminSearchService._staticInstance.set_defaultFailedCallback(value); }
+AdminSearchService.get_defaultFailedCallback = function() { return AdminSearchService._staticInstance.get_defaultFailedCallback(); }
+AdminSearchService.set_enableJsonp = function(value) { AdminSearchService._staticInstance.set_enableJsonp(value); }
+AdminSearchService.get_enableJsonp = function() { return AdminSearchService._staticInstance.get_enableJsonp(); }
+AdminSearchService.set_jsonpCallbackParameter = function(value) { AdminSearchService._staticInstance.set_jsonpCallbackParameter(value); }
+AdminSearchService.get_jsonpCallbackParameter = function() { return AdminSearchService._staticInstance.get_jsonpCallbackParameter(); }
+AdminSearchService.set_path("/adminsearch/AdminSearchService.asmx");
+AdminSearchService.CodeSearch= function(tmpSubject,tmpAgency,tmpPartRange1,tmpPartRange2,tmpRuleSum,tmpOrder,tmpOrderDirec,tmpSearchDate1,tmpSearchDate2,tmpDateType,onSuccess,onFailed,userContext) {AdminSearchService._staticInstance.CodeSearch(tmpSubject,tmpAgency,tmpPartRange1,tmpPartRange2,tmpRuleSum,tmpOrder,tmpOrderDirec,tmpSearchDate1,tmpSearchDate2,tmpDateType,onSuccess,onFailed,userContext); }
+AdminSearchService.BulletinSearch= function(tmpAgency,tmpRuleSum,tmpOrder,tmpOrderDirec,tmpTypeF,tmpSearchDate1,tmpSearchDate2,tmpDateType,pageNum,numberToDisplay,onSuccess,onFailed,userContext) {AdminSearchService._staticInstance.BulletinSearch(tmpAgency,tmpRuleSum,tmpOrder,tmpOrderDirec,tmpTypeF,tmpSearchDate1,tmpSearchDate2,tmpDateType,pageNum,numberToDisplay,onSuccess,onFailed,userContext); }
+AdminSearchService.BulletinSearchPrint= function(tmpAgency,tmpRuleSum,tmpOrder,tmpOrderDirec,tmpTypeF,tmpSearchDate1,tmpSearchDate2,tmpDateType,onSuccess,onFailed,userContext) {AdminSearchService._staticInstance.BulletinSearchPrint(tmpAgency,tmpRuleSum,tmpOrder,tmpOrderDirec,tmpTypeF,tmpSearchDate1,tmpSearchDate2,tmpDateType,onSuccess,onFailed,userContext); }

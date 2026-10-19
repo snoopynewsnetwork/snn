@@ -1,0 +1,89 @@
+{
+  "status": "pass_bounded_independent_original_replay_with_explicit_unallocated_source_control_difference",
+  "source_id": "sos-2018-county-leflore",
+  "frozen_transcripts": [
+    {
+      "original": {
+        "path": "data/turnout/2018-leflore-Nov6-native-original-readings.json",
+        "bytes": 71910,
+        "sha256": "4bb18489e4e893a102e732d804746c5ca37649d635a3da6c1a340f702b71670c"
+      },
+      "lossless_copy": {
+        "path": "data/coordinator-qa/leflore-2018-independent-replay/2018-leflore-Nov6-native-original-readings.json.gz",
+        "bytes": 2421,
+        "sha256": "fddc541dc7e7b67fc43047d7b0262e4a2346c2ad348a62d1c8ebc966e34c218a"
+      }
+    },
+    {
+      "original": {
+        "path": "data/turnout/2018-leflore-Nov6-native-original-cells.csv",
+        "bytes": 30971,
+        "sha256": "b9edfb055d16c64c1052ab677b484b73aa8fee1afde27cb95a005265b5f5c33b"
+      },
+      "lossless_copy": {
+        "path": "data/coordinator-qa/leflore-2018-independent-replay/2018-leflore-Nov6-native-original-cells.csv.gz",
+        "bytes": 1285,
+        "sha256": "3df59f9f5864fc49ab1436efac71ca37cc130b73af8de39d089e87c3892334d4"
+      }
+    }
+  ],
+  "immutable_peer_snapshot": {
+    "path": "data/baselines/source/native-2018-98views-v2/snapshot.json",
+    "bytes": 1873,
+    "sha256": "2ac5c3d1c708fbb0245a58b8ad89c01b533f589e9fdaeec5cba0effab58e9eaf"
+  },
+  "peer_flat_source": {
+    "original_path": "data/baselines/native-2018-original-candidate-votes.csv",
+    "original_bytes": 2360139,
+    "original_sha256": "af8b0df95587656cce68b4e4ba1b54915df6806b2c53b95628d6dc4736229e2f",
+    "stored_path": "data/baselines/source/native-2018-98views-v2/native-2018-original-candidate-votes.csv.gz",
+    "stored_bytes": 130835,
+    "stored_sha256": "1fa18655c259b21d98050dad133ca687184f3e74c82627c321917a6b34318abf"
+  },
+  "independent_coordinator_original_reading": {
+    "path": "data/coordinator-leflore-2018-original-native-residual-review.json",
+    "bytes": 3571,
+    "sha256": "863345d822dccebbe11b430f1aa12c7cc2002edeb10e7144c9a09db5a4ffa5bd"
+  },
+  "own_original_raster_pins": [
+    {
+      "path": "data/turnout/qa/2018-leflore-direct-original/p0002-original-4x.png",
+      "bytes": 381764,
+      "sha256": "fd03f90cb32b896c4e146d2806dc0855dcb4dca1ea28983c653e3fc4a4dae7be"
+    },
+    {
+      "path": "data/turnout/qa/2018-leflore-direct-original/p0003-original-4x.png",
+      "bytes": 376071,
+      "sha256": "7819e46a2b30eda63894cc36b95ae5fd59781f65d42e91fa3e41fc07965cbd13"
+    }
+  ],
+  "native_constituents": 18,
+  "compared_candidate_positions": 88,
+  "counts": {
+    "numeric_positions": 76,
+    "unused_null_positions": 12
+  },
+  "native_candidate_sums": {
+    "Tobey Bernard Bartee": 185,
+    "Mike Espy": 5853,
+    "Cindy Hyde-Smith": 2199,
+    "Chris McDaniel": 493
+  },
+  "printed_TOTALs": {
+    "Tobey Bernard Bartee": 185,
+    "Mike Espy": 5863,
+    "Cindy Hyde-Smith": 2199,
+    "Chris McDaniel": 493
+  },
+  "native_minus_printed_TOTAL": {
+    "Tobey Bernard Bartee": 0,
+    "Mike Espy": -10,
+    "Cindy Hyde-Smith": 0,
+    "Chris McDaniel": 0
+  },
+  "all_vectors_close": false,
+  "whitespace_only_source_header_representations": [],
+  "qualification": "All88 raw-source/page/physical-column/value/role/FIPS/whitespace-literal-header positions agree the independently read transcript and immutable98v2 source. Coordinator freshly read all four native vectors from its separately rendered complete originals after the discrepancy was known. Espy5853native versus5863printed remains unallocated10. Other three vectors close; closure is not a reason to edit source numbers. Different raster/reading windows and historical/current geographic identities are not asserted equal. This closes no whole historical-native-method or native887 dispatch gate.",
+  "formal_native887_dispatch_accepted": false,
+  "current_geography_approved": false
+}

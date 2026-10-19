@@ -1,0 +1,78 @@
+{
+  "status": "pass_bounded_original2018_native_fields_and_metadata_only_physical_repair",
+  "independent_original_review": {
+    "path": "data/coordinator-issaquena-2018-physical-column-review.json",
+    "bytes": 7204,
+    "sha256": "9fb0346d32220c5cb7371490cef25f7da244b54e1011fdc31cb1a4940c08d124"
+  },
+  "frozen_worker_inputs": [
+    {
+      "original_path": "data/baselines/native-2018-original-readings.json",
+      "original_bytes": 64713,
+      "original_sha256": "2d2f47a433fbe806090c4757306990189efca1a119a36e9486f19826681cf59c",
+      "lossless_copy": {
+        "path": "data/coordinator-qa/issaquena-2018-physical-columns/independent-native-2018-original-readings.json.gz",
+        "bytes": 3096,
+        "sha256": "7bdaaeb32fd6f7cbbc6f8201f1ee81bef9444eaaaba49ef33da7cbfea3e5fd62"
+      }
+    },
+    {
+      "original_path": "data/baselines/native-2018-original-candidate-votes.csv",
+      "original_bytes": 26195,
+      "original_sha256": "00cb4aadac1cc3d423e2264dec1f3cca86b9f3398977433186e1b2f182eb9918",
+      "lossless_copy": {
+        "path": "data/coordinator-qa/issaquena-2018-physical-columns/independent-native-2018-original-candidate-votes.csv.gz",
+        "bytes": 1788,
+        "sha256": "787605ef5fcf893b014571e0117f4e46750acddf19ea59f81f2ee23668924af6"
+      }
+    },
+    {
+      "original_path": "data/baselines/county-2018-readings.json",
+      "original_bytes": 240251,
+      "original_sha256": "a62cff675c4d39269567f639642f1f3dc0e41ad2dc68879d599177e085fc7092",
+      "lossless_copy": {
+        "path": "data/coordinator-qa/issaquena-2018-physical-columns/independent-county-2018-readings.json.gz",
+        "bytes": 22695,
+        "sha256": "6305dc22f4a8adaa9c2d09fb88631f61ab212b0dda9c4f6ccbbd3263bc38925e"
+      }
+    }
+  ],
+  "prior_worker_ledger_pin": {
+    "path": "data/baselines/source/2018-physical-column-corrections-v1/prior-ledger-pin.json",
+    "bytes": 549,
+    "sha256": "c31fbd80062a3347bff8fa486ccac584c8ad02cb1fa620757b07fb25a6ad18bd"
+  },
+  "prior_lossless_ledger_stored_pin": {
+    "path": "data/baselines/source/2018-physical-column-corrections-v1/prior-county-2018-readings.json.gz",
+    "bytes": 22108,
+    "sha256": "83f9f44a49b65654f85e7ae77174b767abd46f8bcb8c5ed775d22dcc03227edc"
+  },
+  "all164_county_candidate_values_checked": 492,
+  "other_county_readings_exactly_unchanged": 163,
+  "physical_TOTAL_column": 6,
+  "prior_Nov6_merged_machine_ordinal": 4,
+  "worker_native_counts": {
+    "numeric_positions": 36,
+    "unused_null_positions": 30,
+    "source_views": 2,
+    "native_constituents_across_separate_stages": 10,
+    "TOTAL_columns": 2,
+    "unused_columns": 10
+  },
+  "worker_original_raster_pins": [
+    {
+      "path": "data/baselines/qa/historical-native-originals/sos-2018-county-issaquena/p0002-original.png",
+      "bytes": 305342,
+      "sha256": "8ae3e2dd3141bfdffc505d878d88450387a3a278b5ff6efbea9f05b1bc569cd0"
+    },
+    {
+      "path": "data/baselines/qa/historical-native-originals/sos-2018-runoff-county-issaquena/p0002-original.png",
+      "bytes": 229955,
+      "sha256": "27f9f4dbfe0d54b39d9d6424411bb949b6f9d0071105fa9b2859c3fde946a95d"
+    }
+  ],
+  "qualification": "All36 original numeric and30 unused/null native source positions match the fresh coordinator original-page transcript, and flat fields reconstruct every source role/header/window. Party and printed-ID fields unprinted beside these selected rows remain null/blank rather than inferred. The exact prior complete county ledger is losslessly preserved; only one Nov6 reading gains physical6 plus explicit source-column scope/history, with all492 values/raw/page fields and other163 readings unchanged. The older peer CSV still using4 is a known metadata difference, not a false ordinal agreement. Both stage partitions remain separate, rasters/windows are separately retained, and no cross-stage/current identity, complete2018native/method or native887 approval follows.",
+  "whole2018_native_complete": false,
+  "current_geography_approved": false,
+  "formal_native887_dispatch_accepted": false
+}

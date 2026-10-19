@@ -1,0 +1,54 @@
+{
+  "status": "pass_407_numeric_and_77_unused_null_positions_two_bounded_source_views",
+  "snapshot_pins": [
+    {
+      "source_path": "data/turnout/native-allfield-readings.json",
+      "snapshot_path": "data/coordinator-qa/native-allfield-two-views/native-allfield-readings.json.gz",
+      "original_bytes": 91165,
+      "original_sha256": "13f37c2b7c662231c2561c191b6e13f07da227f0020b4516baf9d62d081516b0",
+      "stored_bytes": 6123,
+      "stored_sha256": "86a0b21dae2707d8fe9fd60a74e79857f0c092f3efb1493d201da101838cd010"
+    },
+    {
+      "source_path": "data/turnout/native-allfield-controls.json",
+      "snapshot_path": "data/coordinator-qa/native-allfield-two-views/native-allfield-controls.json.gz",
+      "original_bytes": 2734,
+      "original_sha256": "29ed6e1d518a45eb56345ad407446cf3884f5b9f73fe677d4ccb4a6c4033a362",
+      "stored_bytes": 542,
+      "stored_sha256": "3fe164c1ff802625ffd6d61a389d6cf5e513c225836b4b0ffe2e5ff853d451e8"
+    },
+    {
+      "source_path": "data/turnout/native-allfield-peer-reconciliation.json",
+      "snapshot_path": "data/coordinator-qa/native-allfield-two-views/native-allfield-peer-reconciliation.json.gz",
+      "original_bytes": 2204,
+      "original_sha256": "06fca24de36412c87b13557953f30dadbd8d281d59c9ad297620fbde2f089057",
+      "stored_bytes": 645,
+      "stored_sha256": "325fa6ba41847cac259574a600adc229ec84e1cd27eff49898f7ef1c91eff1c1"
+    }
+  ],
+  "comparisons": [
+    {
+      "source_id": "sos-2024-county-alcorn",
+      "raw_sha256": "e44a72556b2371270616146d8701b662957d5a596b20be6fbe7d47e8f3e985e4",
+      "native_constituents": 17,
+      "named_candidate_fields": 11,
+      "numeric_positions_including_TOTAL": 198,
+      "unused_null_positions": 44,
+      "prior_independent_original_review": "coordinator-alcorn-native-review.json",
+      "all11_vectors_close_printed_TOTAL_and_primary_county_controls": true
+    },
+    {
+      "source_id": "sos-2024-county-coahoma-updated",
+      "raw_sha256": "12be50887df1118cd6aacbbc22aa867f8704beba617ce077492e9daf296b57ee",
+      "native_constituents": 18,
+      "named_candidate_fields": 11,
+      "numeric_positions_including_TOTAL": 209,
+      "unused_null_positions": 33,
+      "prior_independent_original_review": "coordinator-coahoma-native-review.json",
+      "all11_vectors_close_printed_TOTAL_and_primary_county_controls": true
+    }
+  ],
+  "numeric_positions_including_TOTAL": 407,
+  "unused_null_positions": 77,
+  "scope": "The independently typed coordinator full-original readings for Alcorn and Coahoma Updated match the frozen turnout ledger at all484 explicit candidate positions, including407 numeric cells and77 unused/null cells. Each of22 candidate vectors closes its printed source TOTAL and primary county control. This includes the corrected Alcorn Sonski Bethel1/Wenasoga1 readings; the earlier compensating0/2 witness remains unchanged. Target boxes are checked as physical positions in the retained source render, not current reporting IDs or geographic joins. Only two original source views are covered; statewide native and presidential completion remain open."
+}

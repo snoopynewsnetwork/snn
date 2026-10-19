@@ -1,0 +1,94 @@
+{
+  "status": "pass_bounded_independent_complete_original_manual_grid_replay",
+  "batch": "batch26",
+  "frozen_input_pins": [
+    {
+      "path": "data/coordinator-qa/presidential-batch26-replay/batch26-presidential-original-readings.json.gz",
+      "bytes": 4821,
+      "sha256": "ab4a2a31ffe2d42c000b57880068c4b26f1a53fe47d457e99dab38f91f0a06fd"
+    },
+    {
+      "path": "data/coordinator-qa/presidential-batch26-replay/batch26-presidential-original-cells.csv.gz",
+      "bytes": 2026,
+      "sha256": "9595ef6acf3b85e596256e11146fa13b52edada43a337ae373bebc6904a4ffe2"
+    }
+  ],
+  "immutable_peer_snapshot_pin": {
+    "path": "data/baselines/source/native-allfield-82views/snapshot.json",
+    "bytes": 5216,
+    "sha256": "94576fcfa4b7b245e2d5baa9e8366e4489594804f41694ea04a9f6315e46b336"
+  },
+  "source_views": 1,
+  "native_constituents": 14,
+  "candidate_positions": 198,
+  "position_role_counts": {
+    "source_native_reporting_constituent": 126,
+    "source_TOTAL": 9,
+    "unused_template_column": 63
+  },
+  "complete_original_manual_grid_numeric_positions": 135,
+  "direct_observation_unused_null_positions": 63,
+  "missing_original_aid_positions_including_unused": 99,
+  "provisional_OCR_disagreements_visually_superseded": 1,
+  "source_results": [
+    {
+      "source_id": "sos-2024-county-franklin",
+      "raw_sha256": "ed3a774d2206e52187371c8f3cca343bb23f7660b42adcf498d01bf48356b589",
+      "native_constituents": 14,
+      "position_roles": {
+        "source_native_reporting_constituent": 126,
+        "source_TOTAL": 9,
+        "unused_template_column": 63
+      },
+      "native_sums_and_printed_TOTALs": {
+        "Kamala D. Harris": 1213,
+        "Chase Oliver": 2,
+        "Jill Stein": 2,
+        "Randall Terry": 1,
+        "Donald J. Trump": 2831,
+        "Shiva Ayyadurai": 1,
+        "Claudia De la Cruz": 1,
+        "Robert F. Kennedy Jr.": 13,
+        "Peter Sonski": 2
+      },
+      "missing_original_aid_positions_including_unused": 99,
+      "provisional_OCR_disagreements_visually_superseded": 1
+    }
+  ],
+  "whole_original_render_pins": [
+    {
+      "path": "data/turnout/qa/batch26-presidential-original-review/sos-2024-county-franklin-p02-original.png",
+      "bytes": 661482,
+      "sha256": "01fa8fabbf6905ce702b3a19d44465be5b9da7561d6ab2c40d1b3bfe2bbaf77c"
+    },
+    {
+      "path": "data/turnout/qa/batch26-presidential-original-review/sos-2024-county-franklin-p03-original.png",
+      "bytes": 604675,
+      "sha256": "023f7c32b2c1563e385c895abcd9b6f8782532871e8b7a54c7416109c3c16ab5"
+    }
+  ],
+  "separate_render_differences": [
+    {
+      "source_id": "sos-2024-county-franklin",
+      "actual_PDFpage": 2,
+      "turnout_render_path": "data/turnout/qa/batch26-presidential-original-review/sos-2024-county-franklin-p02-original.png",
+      "turnout_sha256": "01fa8fabbf6905ce702b3a19d44465be5b9da7561d6ab2c40d1b3bfe2bbaf77c",
+      "turnout_size": [
+        1973,
+        1525
+      ],
+      "peer_render_path": "data/baselines/extracts/reviewed-replay/sos-2024-county-franklin/p0002-original.png",
+      "peer_sha256": "a3360d1e518178fcccecb01ecfc5e3b395d5bc300f8ec4b5fed8463600395c89",
+      "peer_size": [
+        1973,
+        1526
+      ],
+      "turnout_applied_deskew_ccw": 0,
+      "peer_stated_deskew_ccw": -4.440892098500626e-16
+    }
+  ],
+  "qualification": "All nine candidate rows and source columns use direct whole-original grid readings. Missing OCR aid and observed unused blanks remain distinct from literal numeric zeros; no missing numeric polygon is invented. Raw PDF and raster pins, exact source roles, candidate vectors, flat positions and whitespace-only literal labels agree the immutable independent peer only after original extraction. This bounded source/basis audit is not a fresh coordinator visual reading of every glyph, a cross-publication/geographic join, whole historical-method completion or dispatch approval.",
+  "formal_dispatch_accepted": false,
+  "historical_native_complete": false,
+  "current2026_geography_approved": false
+}

@@ -1,0 +1,31 @@
+{
+  "status": "confirmed_rejected_misnamed_historical_native_witness",
+  "producer_rejection_manifest": {
+    "path": "data/baselines/source/native-2018-witness-rejections.json",
+    "bytes": 621,
+    "sha256": "245d9bd68faf2f20d1b5d796beb729043302d19c1cd1150acb5a5182e72f75f0"
+  },
+  "findings": [
+    {
+      "rejected_snapshot": {
+        "path": "data/baselines/source/native-2018-98views-v1/snapshot.json",
+        "bytes": 1873,
+        "sha256": "11f7336269ea75ab21dc23e5e00d8d5a8e358616c1c161966a26c4bd9e340023"
+      },
+      "declared_version": "98views-v1",
+      "actual_source_objects": 94,
+      "exact_ledger_pin": {
+        "original_path": "data/baselines/native-2018-original-readings.json",
+        "original_bytes": 1358557,
+        "original_sha256": "c36145ab8a99eb07c3a0482732b2d83703b81a0c2a0af24f80f2b3bda23dd6e6",
+        "stored_path": "data/baselines/source/native-2018-98views-v1/native-2018-original-readings.json.gz",
+        "stored_bytes": 80131,
+        "stored_sha256": "1b25a880be47f189ef527bdcd473fa8dc39f64f73fc97fdaab564b55637c616f"
+      },
+      "rejected_for_claimed98_stage_coverage": true,
+      "accepted_as98": false
+    }
+  ],
+  "qualification": "Exact pinned snapshot and lossless ledger prove actual94 source objects despite declared98views-v1. This rejected body is retained for history and must not satisfy98-stage coverage or continuity. Corrected source/count/exception handling requires a new independently checked version; no votes are repaired and no later scope is accepted here.",
+  "formal_native887_dispatch_accepted": false
+}

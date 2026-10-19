@@ -1,0 +1,139 @@
+{
+  "status": "pass_bounded_independent_original_presidential_batch_source_positions",
+  "batch": "batch18",
+  "frozen_input_pins": [
+    {
+      "path": "data/coordinator-qa/presidential-batch18-replay/batch18-presidential-original-readings.json.gz",
+      "bytes": 8028,
+      "sha256": "b8c2de3f0a44b51384f61f3ccd6ab0928f63e853985e28a9977bdd3b0406f3e7"
+    },
+    {
+      "path": "data/coordinator-qa/presidential-batch18-replay/batch18-presidential-original-cells.csv.gz",
+      "bytes": 3370,
+      "sha256": "fcab8414f18c0281cf77145f68b8502991e634b73af4f54c7ad6ec9f644692a1"
+    }
+  ],
+  "immutable_peer_snapshot_pin": {
+    "path": "data/baselines/source/native-allfield-82views/snapshot.json",
+    "bytes": 5216,
+    "sha256": "94576fcfa4b7b245e2d5baa9e8366e4489594804f41694ea04a9f6315e46b336"
+  },
+  "source_views": 1,
+  "native_constituents": 30,
+  "candidate_positions": 297,
+  "position_role_counts": {
+    "source_native_reporting_constituent": 270,
+    "source_TOTAL": 9,
+    "unused_template_column": 18
+  },
+  "reading_basis_position_counts": {
+    "first_independent_original_cell_OCR_source_read_pending_reciprocal": 212,
+    "second_independent_original_digit_region_OCR_source_read_pending_reciprocal": 19,
+    "direct_visual_full_original_page_after_OCR_error": 23,
+    "direct_original_cell_visual_read": 25,
+    "unprinted_unused_template_position_not_numeric_zero": 18
+  },
+  "direct_visual_OCR_error_corrections": 23,
+  "source_results": [
+    {
+      "source_id": "sos-2024-county-bolivar",
+      "source_raw_sha256": "4efa7e7bdd90db3a41962c14bdd079935426918337b99799feea8736ca743a59",
+      "native_constituents": 30,
+      "source_position_role_counts": {
+        "source_native_reporting_constituent": 270,
+        "source_TOTAL": 9,
+        "unused_template_column": 18
+      },
+      "native_sums_and_printed_TOTALs": {
+        "Kamala D. Harris": 6419,
+        "Chase Oliver": 9,
+        "Jill Stein": 12,
+        "Randall Terry": 4,
+        "Donald J. Trump": 3943,
+        "Shiva Ayyadurai": 3,
+        "Claudia De la Cruz": 9,
+        "Robert F. Kennedy Jr.": 30,
+        "Peter Sonski": 6
+      },
+      "original_visual_corrections": 23
+    }
+  ],
+  "whole_original_render_pins": [
+    {
+      "path": "data/turnout/qa/batch18-presidential-original-review/sos-2024-county-bolivar-p06-original.png",
+      "bytes": 265712,
+      "sha256": "9a0f42fcec08fe540840220a140baebea7e773812dd491232c14b10a114bb7d5"
+    },
+    {
+      "path": "data/turnout/qa/batch18-presidential-original-review/sos-2024-county-bolivar-p07-original.png",
+      "bytes": 258170,
+      "sha256": "bb2f4f9da1ef7b87474a20db5cf4101f7f2b32414e3c3fb49e34db5a7685fb70"
+    },
+    {
+      "path": "data/turnout/qa/batch18-presidential-original-review/sos-2024-county-bolivar-p08-original.png",
+      "bytes": 235976,
+      "sha256": "ed97e0ce8581701948ac02867f4394a96dd6133495306fedc02a6b4e2c1cffc9"
+    }
+  ],
+  "separate_render_differences": [
+    {
+      "source_id": "sos-2024-county-bolivar",
+      "actual_PDF_page": 6,
+      "turnout_render_path": "data/turnout/qa/batch18-presidential-original-review/sos-2024-county-bolivar-p06-original.png",
+      "turnout_sha256": "9a0f42fcec08fe540840220a140baebea7e773812dd491232c14b10a114bb7d5",
+      "turnout_size": [
+        2139,
+        1653
+      ],
+      "peer_render_path": "data/baselines/extracts/reviewed-replay/sos-2024-county-bolivar/p0006-original.png",
+      "peer_sha256": "82d2c4de7dc3811154a336b5f8974ff335bf9a7f5245263a383a34348a06805c",
+      "peer_size": [
+        2140,
+        1653
+      ],
+      "turnout_applied_deskew_ccw": 0,
+      "peer_stated_deskew_ccw": 0.75
+    },
+    {
+      "source_id": "sos-2024-county-bolivar",
+      "actual_PDF_page": 7,
+      "turnout_render_path": "data/turnout/qa/batch18-presidential-original-review/sos-2024-county-bolivar-p07-original.png",
+      "turnout_sha256": "bb2f4f9da1ef7b87474a20db5cf4101f7f2b32414e3c3fb49e34db5a7685fb70",
+      "turnout_size": [
+        2139,
+        1653
+      ],
+      "peer_render_path": "data/baselines/extracts/reviewed-replay/sos-2024-county-bolivar/p0007-original.png",
+      "peer_sha256": "269eb8203af0d762462a603b710ce3ad5c8bdbdbb455148dfb972aed493172c6",
+      "peer_size": [
+        2140,
+        1653
+      ],
+      "turnout_applied_deskew_ccw": 0,
+      "peer_stated_deskew_ccw": 0.5
+    },
+    {
+      "source_id": "sos-2024-county-bolivar",
+      "actual_PDF_page": 8,
+      "turnout_render_path": "data/turnout/qa/batch18-presidential-original-review/sos-2024-county-bolivar-p08-original.png",
+      "turnout_sha256": "ed97e0ce8581701948ac02867f4394a96dd6133495306fedc02a6b4e2c1cffc9",
+      "turnout_size": [
+        2139,
+        1653
+      ],
+      "peer_render_path": "data/baselines/extracts/reviewed-replay/sos-2024-county-bolivar/p0008-original.png",
+      "peer_sha256": "7207613340dd750e9955d46313b4ba9bf4142baae1a058a1cc98a0308a24f379",
+      "peer_size": [
+        2140,
+        1653
+      ],
+      "turnout_applied_deskew_ccw": 0,
+      "peer_stated_deskew_ccw": 0.0
+    }
+  ],
+  "qualification": "Every bounded original source value,role,page and whitespace-folded literal header agrees after independent extraction with the exact immutable peer source view. Original OCR and direct visual corrections remain separate reading bases; complete source PDFs and raster hashes are checked. Header bounds are source-grid references, not accepted numeric polygons. Independent render pipelines may have different raster pixels, height or deskew, all explicitly recorded; exact raster/crop equivalence is not asserted. No peer vote import, residual allocation, cross-year/name identity join or whole-state/historical-native/method/current-geography approval follows.",
+  "whole_state_presidential_complete": false,
+  "historical_native_complete": false,
+  "formal_dispatch_accepted": false,
+  "current2026_geography_approved": false
+}

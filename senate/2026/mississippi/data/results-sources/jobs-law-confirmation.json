@@ -1,0 +1,41 @@
+[
+  {
+    "id": "hb859-history-current-curl",
+    "url": "https://billstatus.ls.state.ms.us/2026/pdf/history/HB/HB0859.xml",
+    "parent": "hb859-history-current",
+    "relation": "system curl with default certificate verification after urllib SSL failure",
+    "transport": "system_curl_default_certificate_verification"
+  },
+  {
+    "id": "hb859-current-pdf-curl",
+    "url": "https://billstatus.ls.state.ms.us/documents/2026/pdf/HB/0800-0899/HB0859SG.pdf",
+    "parent": "hb859-current-pdf",
+    "relation": "system curl with default certificate verification after urllib SSL failure",
+    "transport": "system_curl_default_certificate_verification"
+  },
+  {
+    "id": "hb859-current-html-curl",
+    "url": "https://billstatus.ls.state.ms.us/documents/2026/html/HB/0800-0899/HB0859SG.htm",
+    "parent": "hb859-current-html",
+    "relation": "system curl with default certificate verification after urllib SSL failure",
+    "transport": "system_curl_default_certificate_verification"
+  },
+  {
+    "id": "admin-rule-current-linked-confirmation",
+    "url": "https://www.sos.ms.gov/adminsearch/ACCode/00000731c.pdf",
+    "parent": "admin-code-current-secretary-query",
+    "relation": {
+      "constructor": "ACCode/ + splitData2[7]",
+      "ordered_fields": [
+        "SECRETARY OF STATE",
+        "17",
+        "10/5/2020",
+        "11/3/2020",
+        "Part 17: Absentee Voting",
+        "",
+        "731",
+        "00000731c.pdf"
+      ]
+    }
+  }
+]

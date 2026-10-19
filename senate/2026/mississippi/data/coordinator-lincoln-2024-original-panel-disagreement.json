@@ -1,0 +1,104 @@
+{
+  "status": "original_source_difference_requires_owned_worker_reread",
+  "source_id": "sos-2024-county-lincoln",
+  "raw_original_sha256": "c16d7285b6091019529a897ffbbfa8fb7c608258194dbe9210c65491d1b5e987",
+  "initial_worker_reading": {
+    "path": "data/turnout/2024-lincoln-original-panel-readings.json",
+    "bytes": 4526,
+    "sha256": "19ee436308c67bef8ffa4b393c6bb5d87cb029bae73c437dc3324f184ca4b55d"
+  },
+  "initial_worker_body_lossless": {
+    "path": "data/coordinator-qa/lincoln-2024-original-panels/initial-worker-readings.json.gz",
+    "bytes": 1669,
+    "sha256": "a56e32391e11ab1bd4eb8fbc7184a914ae0ea56964e42e1f01e346efeb76b0d3"
+  },
+  "coordinator_original_render_receipts": {
+    "path": "data/coordinator-qa/lincoln-2024-original-panels/render-receipts.json",
+    "bytes": 1171,
+    "sha256": "f982c7af060d059397da767732d88d5927a7405ad3bc339015b9ceaf438c098c"
+  },
+  "coordinator_complete_original_renders": [
+    {
+      "path": "data/coordinator-qa/lincoln-2024-original-panels/p9-original.png",
+      "bytes": 416623,
+      "sha256": "15b964a3197fcb89ae218ce14192bd0ec93d01c7898aa5218939a568f8965ea4"
+    },
+    {
+      "path": "data/coordinator-qa/lincoln-2024-original-panels/p10-original.png",
+      "bytes": 571595,
+      "sha256": "d70e27068aba964d9f195ebdd842792c91ca05e9659ae698e5343872d2fa5247"
+    }
+  ],
+  "expanded_original_statistics": {
+    "path": "data/coordinator-qa/lincoln-2024-original-panels/p9-original-statistics-expanded.png",
+    "bytes": 144674,
+    "sha256": "176948662a8c9b5193535cecf658d4943c942ebc8e04b853a31138d48cdd8790"
+  },
+  "expanded_original_renderer": [
+    "pdftoppm",
+    "-f",
+    "9",
+    "-l",
+    "9",
+    "-scale-to",
+    "7000",
+    "-x",
+    "100",
+    "-y",
+    "850",
+    "-W",
+    "1900",
+    "-H",
+    "700",
+    "-png",
+    "-singlefile",
+    "<exact originalPDF>",
+    "<stem>"
+  ],
+  "statistics_original_direct_reading": {
+    "actual_PDFpage": 9,
+    "registered_voters_printed": 0,
+    "ballots_cast_printed": 15898,
+    "turnout_literal": "0.00%",
+    "precincts_literal": "30 of30",
+    "header_clock": "Nov.15,2024 9:18AM",
+    "footer_clock": "11/13/2024 4:20PM",
+    "zone": null,
+    "source_status": "Unofficial"
+  },
+  "initial_worker_ballots_reading": 15909,
+  "original_minus_worker_ballots": -11,
+  "original_summary_direct_reading": {
+    "actual_PDFpage": 10,
+    "Senate_named": [
+      4080,
+      11599
+    ],
+    "Senate_generic": 47,
+    "Senate_contest": 15898,
+    "presidential_named": [
+      4262,
+      26,
+      12,
+      11,
+      11432,
+      3,
+      6,
+      40,
+      10
+    ],
+    "presidential_generic": 27,
+    "presidential_contest": 15898,
+    "header_clock": "Nov.15,2024 9:19AM",
+    "footer_clock": "11/13/2024 4:20PM",
+    "zone": null,
+    "source_status": "Unofficial"
+  },
+  "source_arithmetic": {
+    "Senate_unallocated_after_named_and_generic": 172,
+    "presidential_unallocated_after_named_and_generic": 69,
+    "ballots_minus_contest": 0
+  },
+  "qualification": "Coordinator freshly rendered exact raw originalPDF9/10 and directly viewed complete pages plus enlarged original statistics region. Ballots glyph15,898 differs from initial worker15,909. Original ballots and both contest totals agree; an11ballot residual is not supported. All named/generic source counts remain separate and unchanged; residual172/69 cannot be allocated to unprinted under/over/blank/method fields. This source finding requests independent owned correction with prior bytes retained; no shared/worker files edited, county ranking/native887/currentgeo approval unchanged.",
+  "formal_native887_dispatch_accepted": false
+}

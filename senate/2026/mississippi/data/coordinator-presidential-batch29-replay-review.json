@@ -1,0 +1,99 @@
+{
+  "status": "pass_bounded_independent_complete_original_manual_grid_replay",
+  "batch": "batch29",
+  "frozen_input_pins": [
+    {
+      "path": "data/coordinator-qa/presidential-batch29-replay/batch29-presidential-original-readings.json.gz",
+      "bytes": 5141,
+      "sha256": "7f47ec0504e1ee7054e30dd1d230f6b1b1c6c062e0951ba84e483660187dfe4e"
+    },
+    {
+      "path": "data/coordinator-qa/presidential-batch29-replay/batch29-presidential-original-cells.csv.gz",
+      "bytes": 2432,
+      "sha256": "c940cba07341dc72289abdf53df18d7f5a65f61983ca311496adc735356b2248"
+    }
+  ],
+  "immutable_peer_snapshot_pin": {
+    "path": "data/baselines/source/native-allfield-82views/snapshot.json",
+    "bytes": 5216,
+    "sha256": "94576fcfa4b7b245e2d5baa9e8366e4489594804f41694ea04a9f6315e46b336"
+  },
+  "source_views": 1,
+  "native_constituents": 22,
+  "candidate_positions": 297,
+  "position_role_counts": {
+    "source_native_reporting_constituent": 198,
+    "source_TOTAL": 9,
+    "unused_template_column": 90
+  },
+  "complete_original_manual_grid_numeric_positions": 207,
+  "direct_observation_unused_null_positions": 90,
+  "missing_original_aid_positions_including_unused": 297,
+  "provisional_OCR_disagreements_visually_superseded": 0,
+  "source_results": [
+    {
+      "source_id": "sos-2024-county-amite",
+      "raw_sha256": "57a22626de72ea24af2fe631ea9fbe5821da6786cb9bb67dddd7846a6025eec8",
+      "native_constituents": 22,
+      "position_roles": {
+        "source_native_reporting_constituent": 198,
+        "source_TOTAL": 9,
+        "unused_template_column": 90
+      },
+      "native_sums_and_printed_TOTALs": {
+        "Kamala D. Harris": 2246,
+        "Chase Oliver": 17,
+        "Jill Stein": 11,
+        "Randall Terry": 11,
+        "Donald J. Trump": 4484,
+        "Shiva Ayyadurai": 7,
+        "Claudia De la Cruz": 8,
+        "Robert F. Kennedy Jr.": 23,
+        "Peter Sonski": 8
+      },
+      "missing_original_aid_positions_including_unused": 297,
+      "provisional_OCR_disagreements_visually_superseded": 0
+    }
+  ],
+  "whole_original_render_pins": [
+    {
+      "path": "data/turnout/qa/batch29-presidential-original-review/sos-2024-county-amite-p02-original.png",
+      "bytes": 528089,
+      "sha256": "f451a1ada66470ecce27f1d87c903bcd68382e0a24e3c06f49b43626e0a5887d"
+    },
+    {
+      "path": "data/turnout/qa/batch29-presidential-original-review/sos-2024-county-amite-p03-original.png",
+      "bytes": 534484,
+      "sha256": "b47a7fad1e37341be6cf68975a851368178dcb764cc195e5494b674e206b15c8"
+    },
+    {
+      "path": "data/turnout/qa/batch29-presidential-original-review/sos-2024-county-amite-p04-original.png",
+      "bytes": 469658,
+      "sha256": "304df38fa436aebe04a5bc34523ff499b08ade97c9ee4eae31d1a13533f44e5b"
+    }
+  ],
+  "separate_render_differences": [
+    {
+      "source_id": "sos-2024-county-amite",
+      "actual_PDFpage": 4,
+      "turnout_render_path": "data/turnout/qa/batch29-presidential-original-review/sos-2024-county-amite-p04-original.png",
+      "turnout_sha256": "304df38fa436aebe04a5bc34523ff499b08ade97c9ee4eae31d1a13533f44e5b",
+      "turnout_size": [
+        1943,
+        1518
+      ],
+      "peer_render_path": "data/baselines/extracts/reviewed-replay/sos-2024-county-amite/p0004-original.png",
+      "peer_sha256": "3f09ea474bd98b3b4e63778f78c95d41b1439e9456bf366018f0414b64351058",
+      "peer_size": [
+        1944,
+        1518
+      ],
+      "turnout_applied_deskew_ccw": 0,
+      "peer_stated_deskew_ccw": 0
+    }
+  ],
+  "qualification": "All nine candidate rows and source columns use direct whole-original grid readings. Missing OCR aid and observed unused blanks remain distinct from literal numeric zeros; no missing numeric polygon is invented. Raw PDF and raster pins, exact source roles, candidate vectors, flat positions and whitespace-only literal labels agree the immutable independent peer only after original extraction. This bounded source/basis audit is not a fresh coordinator visual reading of every glyph, a cross-publication/geographic join, whole historical-method completion or dispatch approval.",
+  "formal_dispatch_accepted": false,
+  "historical_native_complete": false,
+  "current2026_geography_approved": false
+}

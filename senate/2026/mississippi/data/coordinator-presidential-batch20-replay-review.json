@@ -1,0 +1,162 @@
+{
+  "status": "pass_bounded_independent_original_presidential_batch_source_positions",
+  "batch": "batch20",
+  "frozen_input_pins": [
+    {
+      "path": "data/coordinator-qa/presidential-batch20-replay/batch20-presidential-original-readings.json.gz",
+      "bytes": 10805,
+      "sha256": "68b5a10e06af2df9681fc5388c3dbb81637c42ee5712598fcbd46854aaf4ae60"
+    },
+    {
+      "path": "data/coordinator-qa/presidential-batch20-replay/batch20-presidential-original-cells.csv.gz",
+      "bytes": 4647,
+      "sha256": "9c959d68bf93438aade5be0557c07cc25f8cb3ea1df07079fda97c8b1808e6d5"
+    }
+  ],
+  "immutable_peer_snapshot_pin": {
+    "path": "data/baselines/source/native-allfield-82views/snapshot.json",
+    "bytes": 5216,
+    "sha256": "94576fcfa4b7b245e2d5baa9e8366e4489594804f41694ea04a9f6315e46b336"
+  },
+  "source_views": 1,
+  "native_constituents": 37,
+  "candidate_positions": 396,
+  "position_role_counts": {
+    "source_native_reporting_constituent": 333,
+    "source_TOTAL": 9,
+    "unused_template_column": 54
+  },
+  "reading_basis_position_counts": {
+    "second_independent_original_digit_region_OCR_source_read_pending_reciprocal": 95,
+    "direct_visual_full_original_page_after_OCR_error": 61,
+    "first_independent_original_cell_OCR_source_read_pending_reciprocal": 180,
+    "direct_original_cell_visual_read": 6,
+    "unprinted_unused_template_position_not_numeric_zero": 54
+  },
+  "direct_visual_OCR_error_corrections": 61,
+  "source_results": [
+    {
+      "source_id": "sos-2024-county-lauderdale",
+      "source_raw_sha256": "1b81c7beca3c435552cc5b99dd0fb1a2b2b5b7bed9a27969dae8d3403a941050",
+      "native_constituents": 37,
+      "source_position_role_counts": {
+        "source_native_reporting_constituent": 333,
+        "source_TOTAL": 9,
+        "unused_template_column": 54
+      },
+      "native_sums_and_printed_TOTALs": {
+        "Kamala D. Harris": 10677,
+        "Chase Oliver": 42,
+        "Jill Stein": 26,
+        "Randall Terry": 18,
+        "Donald J. Trump": 16487,
+        "Shiva Ayyadurai": 13,
+        "Claudia De la Cruz": 14,
+        "Robert F. Kennedy Jr.": 114,
+        "Peter Sonski": 16
+      },
+      "original_visual_corrections": 61
+    }
+  ],
+  "whole_original_render_pins": [
+    {
+      "path": "data/turnout/qa/batch20-presidential-original-review/sos-2024-county-lauderdale-p07-original.png",
+      "bytes": 211984,
+      "sha256": "f598827bbb33a5f1c24e20d0308653d8fd08e70b3d4ca3acfecaa12eb86d8b04"
+    },
+    {
+      "path": "data/turnout/qa/batch20-presidential-original-review/sos-2024-county-lauderdale-p08-original.png",
+      "bytes": 209456,
+      "sha256": "da35334643042ac8654585ef06aa6a301b0fdfe386bad50d8e9d7b3f871c53f9"
+    },
+    {
+      "path": "data/turnout/qa/batch20-presidential-original-review/sos-2024-county-lauderdale-p09-original.png",
+      "bytes": 212416,
+      "sha256": "3a7a9706b02ed2cf6b2fa5e7ab7ffdd65e07c0c0da04df6fb5b80f4baa525b95"
+    },
+    {
+      "path": "data/turnout/qa/batch20-presidential-original-review/sos-2024-county-lauderdale-p10-original.png",
+      "bytes": 188616,
+      "sha256": "8b7aa8081d1f9021cdafc8d9107736d7c8fb6323b1550f94d2cd6a8855bf98ab"
+    }
+  ],
+  "separate_render_differences": [
+    {
+      "source_id": "sos-2024-county-lauderdale",
+      "actual_PDF_page": 7,
+      "turnout_render_path": "data/turnout/qa/batch20-presidential-original-review/sos-2024-county-lauderdale-p07-original.png",
+      "turnout_sha256": "f598827bbb33a5f1c24e20d0308653d8fd08e70b3d4ca3acfecaa12eb86d8b04",
+      "turnout_size": [
+        2139,
+        1653
+      ],
+      "peer_render_path": "data/baselines/extracts/reviewed-replay/sos-2024-county-lauderdale/p0007-original.png",
+      "peer_sha256": "ed5142c196796ecfb6a922378d534f5c5ef8a94dfe916a12e9af73cfbc0fe93a",
+      "peer_size": [
+        2140,
+        1653
+      ],
+      "turnout_applied_deskew_ccw": 0,
+      "peer_stated_deskew_ccw": -0.25
+    },
+    {
+      "source_id": "sos-2024-county-lauderdale",
+      "actual_PDF_page": 8,
+      "turnout_render_path": "data/turnout/qa/batch20-presidential-original-review/sos-2024-county-lauderdale-p08-original.png",
+      "turnout_sha256": "da35334643042ac8654585ef06aa6a301b0fdfe386bad50d8e9d7b3f871c53f9",
+      "turnout_size": [
+        2139,
+        1653
+      ],
+      "peer_render_path": "data/baselines/extracts/reviewed-replay/sos-2024-county-lauderdale/p0008-original.png",
+      "peer_sha256": "a34baccd23806b724a6c70ca24ed9a444fc61fe56d3b4ff8f9873f056efab262",
+      "peer_size": [
+        2140,
+        1653
+      ],
+      "turnout_applied_deskew_ccw": 0,
+      "peer_stated_deskew_ccw": 0.25
+    },
+    {
+      "source_id": "sos-2024-county-lauderdale",
+      "actual_PDF_page": 9,
+      "turnout_render_path": "data/turnout/qa/batch20-presidential-original-review/sos-2024-county-lauderdale-p09-original.png",
+      "turnout_sha256": "3a7a9706b02ed2cf6b2fa5e7ab7ffdd65e07c0c0da04df6fb5b80f4baa525b95",
+      "turnout_size": [
+        2139,
+        1653
+      ],
+      "peer_render_path": "data/baselines/extracts/reviewed-replay/sos-2024-county-lauderdale/p0009-original.png",
+      "peer_sha256": "391adf8976f23d023d59b558d1bc9d4fbcfc37858000991b215ca82d8e338820",
+      "peer_size": [
+        2140,
+        1653
+      ],
+      "turnout_applied_deskew_ccw": 0,
+      "peer_stated_deskew_ccw": -0.25
+    },
+    {
+      "source_id": "sos-2024-county-lauderdale",
+      "actual_PDF_page": 10,
+      "turnout_render_path": "data/turnout/qa/batch20-presidential-original-review/sos-2024-county-lauderdale-p10-original.png",
+      "turnout_sha256": "8b7aa8081d1f9021cdafc8d9107736d7c8fb6323b1550f94d2cd6a8855bf98ab",
+      "turnout_size": [
+        2139,
+        1653
+      ],
+      "peer_render_path": "data/baselines/extracts/reviewed-replay/sos-2024-county-lauderdale/p0010-original.png",
+      "peer_sha256": "fa6d6c083601755c25881a651e8a6927769517eb7a24fbca66c558d69280e3dc",
+      "peer_size": [
+        2140,
+        1653
+      ],
+      "turnout_applied_deskew_ccw": 0,
+      "peer_stated_deskew_ccw": 0.0
+    }
+  ],
+  "qualification": "Every bounded original source value,role,page and whitespace-folded literal header agrees after independent extraction with the exact immutable peer source view. Original OCR and direct visual corrections remain separate reading bases; complete source PDFs and raster hashes are checked. Header bounds are source-grid references, not accepted numeric polygons. Independent render pipelines may have different raster pixels, height or deskew, all explicitly recorded; exact raster/crop equivalence is not asserted. No peer vote import, residual allocation, cross-year/name identity join or whole-state/historical-native/method/current-geography approval follows.",
+  "whole_state_presidential_complete": false,
+  "historical_native_complete": false,
+  "formal_dispatch_accepted": false,
+  "current2026_geography_approved": false
+}

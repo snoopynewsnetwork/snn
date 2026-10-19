@@ -1,0 +1,631 @@
+{
+  "status": "pass_immutable_eight_pins_and_bounded_coverage_arithmetic",
+  "snapshot_pin": {
+    "path": "data/baselines/source/native-allfield-10views/snapshot.json",
+    "bytes": 5206,
+    "sha256": "ca68221a306e86a4566bdb2187cf74edbfdfba125bf36ae1a05e450f6699252c"
+  },
+  "lossless_file_pins": [
+    {
+      "original_path": "data/baselines/alcorn-readings.json",
+      "original_bytes": 16678,
+      "original_sha256": "2e0c601dcd677e1a5801c24487bf073e9e4c28694c5b70d79d40e24d198e335b",
+      "frozen_path": "data/baselines/source/native-allfield-10views/alcorn-readings.json.gz",
+      "stored_bytes": 2217,
+      "stored_sha256": "e27845904adb68f42d2b2bcc5221d6a1abc538d5bab7a609c91d49009e11bc80",
+      "reconstruction": "gzip.decompress stored bytes equals exact complete original file bytes"
+    },
+    {
+      "original_path": "data/baselines/coahoma-updated-readings.json",
+      "original_bytes": 16042,
+      "original_sha256": "956a149518ba86773fdd7bc3a18e591d8830e206c92b8077e2f9e71c8b4345d1",
+      "frozen_path": "data/baselines/source/native-allfield-10views/coahoma-updated-readings.json.gz",
+      "stored_bytes": 1831,
+      "stored_sha256": "31af780e51301f9e74e221e21b27b055fbe67c2c5bc0e958c0456bb5215f89f6",
+      "reconstruction": "gzip.decompress stored bytes equals exact complete original file bytes"
+    },
+    {
+      "original_path": "data/baselines/native-source-exception-readings.json",
+      "original_bytes": 31430,
+      "original_sha256": "975d5f8cd2539b0e562787618332155fe121c50c9b727d6d15e47cdfc05200a4",
+      "frozen_path": "data/baselines/source/native-allfield-10views/native-source-exception-readings.json.gz",
+      "stored_bytes": 2830,
+      "stored_sha256": "91dd03331f99736669b76189091ebd7b58c93747b885b5f13a1a6678b9db11ee",
+      "reconstruction": "gzip.decompress stored bytes equals exact complete original file bytes"
+    },
+    {
+      "original_path": "data/baselines/winston-native-allfield-readings.json",
+      "original_bytes": 19339,
+      "original_sha256": "9cccc2e38cfa2c349d2e65efc25183c157965c7d57fc48e3fdf13effabe6bfe7",
+      "frozen_path": "data/baselines/source/native-allfield-10views/winston-native-allfield-readings.json.gz",
+      "stored_bytes": 2012,
+      "stored_sha256": "2caa42d5ac097c715ced14ed13e35e883afd273587559103371c4779be24191c",
+      "reconstruction": "gzip.decompress stored bytes equals exact complete original file bytes"
+    },
+    {
+      "original_path": "data/baselines/native-allfield-additional-readings.json",
+      "original_bytes": 60082,
+      "original_sha256": "826b7c8c191f3773dd95317bb3a8feba2b1dde60c8b56def26aedbfa5918e0d3",
+      "frozen_path": "data/baselines/source/native-allfield-10views/native-allfield-additional-readings.json.gz",
+      "stored_bytes": 4354,
+      "stored_sha256": "73ccd11c73b9034d0bebf98489cb311069e7bd31da7b206ef68aa6ceb87c3a66",
+      "reconstruction": "gzip.decompress stored bytes equals exact complete original file bytes"
+    },
+    {
+      "original_path": "data/baselines/native-allfield-coverage.json",
+      "original_bytes": 37289,
+      "original_sha256": "6da16b8d7b19b063e18a55f912ad58518460df9763d91ebb6d151e2539ed1389",
+      "frozen_path": "data/baselines/source/native-allfield-10views/native-allfield-coverage.json.gz",
+      "stored_bytes": 3380,
+      "stored_sha256": "7792160b059ce7eb958989dbe0df4d0714cda49fa62fd891bee8db4849271064",
+      "reconstruction": "gzip.decompress stored bytes equals exact complete original file bytes"
+    },
+    {
+      "original_path": "data/baselines/native-allfield-additional-candidate-votes.csv",
+      "original_bytes": 357831,
+      "original_sha256": "bc0eb13b65277a0c3b3c573c0d38c2630b44193e6d06dab73b8ff833116584ac",
+      "frozen_path": "data/baselines/source/native-allfield-10views/native-allfield-additional-candidate-votes.csv.gz",
+      "stored_bytes": 8342,
+      "stored_sha256": "0642be5ec99b22e2dff59ea3993078df754536b44899b95c87a4094f63298a21",
+      "reconstruction": "gzip.decompress stored bytes equals exact complete original file bytes"
+    },
+    {
+      "original_path": "data/baselines/winston-native-allfield-candidate-votes.csv",
+      "original_bytes": 119901,
+      "original_sha256": "fe3fcb507533f32a1fe4872983635953588a5664cbb487d079287dfd0c87ee21",
+      "frozen_path": "data/baselines/source/native-allfield-10views/winston-native-allfield-candidate-votes.csv.gz",
+      "stored_bytes": 4247,
+      "stored_sha256": "615ea071cf10d05f923c1f078e4503820d3f32d255e4b0913157d4482e065d0a",
+      "reconstruction": "gzip.decompress stored bytes equals exact complete original file bytes"
+    }
+  ],
+  "recomputed_counts": {
+    "source_pages": 16,
+    "native_constituents": 110,
+    "source_TOTAL_columns": 10,
+    "unused_blank_columns": 45,
+    "nonadditive_parallel_columns": 11,
+    "numeric_positions": 1441,
+    "unused_null_positions": 495,
+    "source_views": 10,
+    "preferred_unreviewed_county_views": 72,
+    "preferred_unreviewed_native_constituents": 1626
+  },
+  "source_checks": [
+    {
+      "source_id": "sos-2024-county-alcorn",
+      "raw_sha256": "e44a72556b2371270616146d8701b662957d5a596b20be6fbe7d47e8f3e985e4",
+      "source_pages": 2,
+      "native_constituents": 17,
+      "source_TOTAL_columns": 1,
+      "unused_blank_columns": 4,
+      "nonadditive_parallel_columns": 0,
+      "numeric_positions": 198,
+      "unused_null_positions": 44,
+      "recomputed_native_candidate_sums": {
+        "Kamala D. Harris": 2328,
+        "Chase Oliver": 26,
+        "Jill Stein": 12,
+        "Randall Terry": 11,
+        "Donald J. Trump": 12657,
+        "Shiva Ayyadurai": 3,
+        "Claudia De la Cruz": 3,
+        "Robert F. Kennedy Jr.": 58,
+        "Peter Sonski": 14,
+        "Ty Pinkins": 2280,
+        "Roger F. Wicker": 12576
+      },
+      "recomputed_printed_TOTAL": {
+        "Kamala D. Harris": 2328,
+        "Chase Oliver": 26,
+        "Jill Stein": 12,
+        "Randall Terry": 11,
+        "Donald J. Trump": 12657,
+        "Shiva Ayyadurai": 3,
+        "Claudia De la Cruz": 3,
+        "Robert F. Kennedy Jr.": 58,
+        "Peter Sonski": 14,
+        "Ty Pinkins": 2280,
+        "Roger F. Wicker": 12576
+      }
+    },
+    {
+      "source_id": "sos-2024-county-coahoma-updated",
+      "raw_sha256": "12be50887df1118cd6aacbbc22aa867f8704beba617ce077492e9daf296b57ee",
+      "source_pages": 2,
+      "native_constituents": 18,
+      "source_TOTAL_columns": 1,
+      "unused_blank_columns": 3,
+      "nonadditive_parallel_columns": 0,
+      "numeric_positions": 209,
+      "unused_null_positions": 33,
+      "recomputed_native_candidate_sums": {
+        "Kamala D. Harris": 4711,
+        "Chase Oliver": 7,
+        "Jill Stein": 5,
+        "Randall Terry": 6,
+        "Donald J. Trump": 2008,
+        "Shiva Ayyadurai": 5,
+        "Claudia De la Cruz": 7,
+        "Robert F. Kennedy Jr.": 39,
+        "Peter Sonski": 2,
+        "Ty Pinkins": 4533,
+        "Roger F. Wicker": 2146
+      },
+      "recomputed_printed_TOTAL": {
+        "Kamala D. Harris": 4711,
+        "Chase Oliver": 7,
+        "Jill Stein": 5,
+        "Randall Terry": 6,
+        "Donald J. Trump": 2008,
+        "Shiva Ayyadurai": 5,
+        "Claudia De la Cruz": 7,
+        "Robert F. Kennedy Jr.": 39,
+        "Peter Sonski": 2,
+        "Ty Pinkins": 4533,
+        "Roger F. Wicker": 2146
+      }
+    },
+    {
+      "source_id": "sos-2024-county-tunica",
+      "raw_sha256": "9f4fe3e9237f9673eb9cf142229b15ba77908b330abcc04fbe06c9195cf8c9f4",
+      "source_pages": 2,
+      "native_constituents": 12,
+      "source_TOTAL_columns": 1,
+      "unused_blank_columns": 9,
+      "nonadditive_parallel_columns": 0,
+      "numeric_positions": 143,
+      "unused_null_positions": 99,
+      "recomputed_native_candidate_sums": {
+        "Kamala D. Harris": 1836,
+        "Chase Oliver": 3,
+        "Jill Stein": 1,
+        "Randall Terry": 2,
+        "Donald J. Trump": 799,
+        "Shiva Ayyadurai": 1,
+        "Claudia De la Cruz": 3,
+        "Robert F. Kennedy Jr.": 21,
+        "Peter Sonski": 1,
+        "Ty Pinkins": 1797,
+        "Roger F. Wicker": 827
+      },
+      "recomputed_printed_TOTAL": {
+        "Kamala D. Harris": 1836,
+        "Chase Oliver": 3,
+        "Jill Stein": 1,
+        "Randall Terry": 2,
+        "Donald J. Trump": 799,
+        "Shiva Ayyadurai": 1,
+        "Claudia De la Cruz": 3,
+        "Robert F. Kennedy Jr.": 21,
+        "Peter Sonski": 1,
+        "Ty Pinkins": 1797,
+        "Roger F. Wicker": 827
+      }
+    },
+    {
+      "source_id": "sos-2024-county-kemper",
+      "raw_sha256": "fa174d181b4297ff1a5d5ca7d290c125953e6972d8f66d2f2f219b39317da5b0",
+      "source_pages": 3,
+      "native_constituents": 14,
+      "source_TOTAL_columns": 1,
+      "unused_blank_columns": 7,
+      "nonadditive_parallel_columns": 11,
+      "numeric_positions": 286,
+      "unused_null_positions": 77,
+      "recomputed_native_candidate_sums": {
+        "Kamala D. Harris": 2381,
+        "Chase Oliver": 5,
+        "Jill Stein": 1,
+        "Randall Terry": 1,
+        "Donald J. Trump": 1691,
+        "Shiva Ayyadurai": 2,
+        "Claudia De la Cruz": 1,
+        "Robert F. Kennedy Jr.": 3,
+        "Peter Sonski": 1,
+        "Ty Pinkins": 2234,
+        "Roger F. Wicker": 1824
+      },
+      "recomputed_printed_TOTAL": {
+        "Kamala D. Harris": 2381,
+        "Chase Oliver": 5,
+        "Jill Stein": 1,
+        "Randall Terry": 1,
+        "Donald J. Trump": 1691,
+        "Shiva Ayyadurai": 2,
+        "Claudia De la Cruz": 1,
+        "Robert F. Kennedy Jr.": 3,
+        "Peter Sonski": 1,
+        "Ty Pinkins": 2234,
+        "Roger F. Wicker": 1824
+      }
+    },
+    {
+      "source_id": "sos-2024-county-winston",
+      "raw_sha256": "56b6a7334ad658849e46a1fb1457764255ec485eef0bcd25c009c1f44883de16",
+      "source_pages": 2,
+      "native_constituents": 12,
+      "source_TOTAL_columns": 1,
+      "unused_blank_columns": 9,
+      "nonadditive_parallel_columns": 0,
+      "numeric_positions": 143,
+      "unused_null_positions": 99,
+      "recomputed_native_candidate_sums": {
+        "Kamala D. Harris": 3392,
+        "Chase Oliver": 8,
+        "Jill Stein": 12,
+        "Randall Terry": 8,
+        "Donald J. Trump": 4922,
+        "Shiva Ayyadurai": 6,
+        "Claudia De la Cruz": 1,
+        "Robert F. Kennedy Jr.": 31,
+        "Peter Sonski": 4,
+        "Ty Pinkins": 3439,
+        "Roger F. Wicker": 4937
+      },
+      "recomputed_printed_TOTAL": {
+        "Kamala D. Harris": 3392,
+        "Chase Oliver": 8,
+        "Jill Stein": 12,
+        "Randall Terry": 8,
+        "Donald J. Trump": 4922,
+        "Shiva Ayyadurai": 6,
+        "Claudia De la Cruz": 1,
+        "Robert F. Kennedy Jr.": 31,
+        "Peter Sonski": 4,
+        "Ty Pinkins": 3439,
+        "Roger F. Wicker": 4937
+      }
+    },
+    {
+      "source_id": "sos-2024-county-benton",
+      "raw_sha256": "4afe1a659e2211e277a9a68562c870a9efd443d511954a908dedaf8e0f633e4e",
+      "source_pages": 1,
+      "native_constituents": 5,
+      "source_TOTAL_columns": 1,
+      "unused_blank_columns": 5,
+      "nonadditive_parallel_columns": 0,
+      "numeric_positions": 66,
+      "unused_null_positions": 55,
+      "recomputed_native_candidate_sums": {
+        "Kamala D. Harris": 1318,
+        "Chase Oliver": 5,
+        "Jill Stein": 4,
+        "Randall Terry": 1,
+        "Donald J. Trump": 2535,
+        "Shiva Ayyadurai": 3,
+        "Claudia De la Cruz": 1,
+        "Robert F. Kennedy Jr.": 13,
+        "Peter Sonski": 0,
+        "Ty Pinkins": 1280,
+        "Roger F. Wicker": 2522
+      },
+      "recomputed_printed_TOTAL": {
+        "Kamala D. Harris": 1318,
+        "Chase Oliver": 5,
+        "Jill Stein": 4,
+        "Randall Terry": 1,
+        "Donald J. Trump": 2535,
+        "Shiva Ayyadurai": 3,
+        "Claudia De la Cruz": 1,
+        "Robert F. Kennedy Jr.": 13,
+        "Peter Sonski": 0,
+        "Ty Pinkins": 1280,
+        "Roger F. Wicker": 2522
+      }
+    },
+    {
+      "source_id": "sos-2024-county-noxubee",
+      "raw_sha256": "5af5e89d67009d132d5439fa691e21bd6eb9ba9cdf11afdc8c1871043fbd9c56",
+      "source_pages": 1,
+      "native_constituents": 8,
+      "source_TOTAL_columns": 1,
+      "unused_blank_columns": 2,
+      "nonadditive_parallel_columns": 0,
+      "numeric_positions": 99,
+      "unused_null_positions": 22,
+      "recomputed_native_candidate_sums": {
+        "Kamala D. Harris": 3269,
+        "Chase Oliver": 5,
+        "Jill Stein": 2,
+        "Randall Terry": 5,
+        "Donald J. Trump": 1151,
+        "Shiva Ayyadurai": 3,
+        "Claudia De la Cruz": 3,
+        "Robert F. Kennedy Jr.": 10,
+        "Peter Sonski": 1,
+        "Ty Pinkins": 2975,
+        "Roger F. Wicker": 1312
+      },
+      "recomputed_printed_TOTAL": {
+        "Kamala D. Harris": 3269,
+        "Chase Oliver": 5,
+        "Jill Stein": 2,
+        "Randall Terry": 5,
+        "Donald J. Trump": 1151,
+        "Shiva Ayyadurai": 3,
+        "Claudia De la Cruz": 3,
+        "Robert F. Kennedy Jr.": 10,
+        "Peter Sonski": 1,
+        "Ty Pinkins": 2975,
+        "Roger F. Wicker": 1312
+      }
+    },
+    {
+      "source_id": "sos-2024-county-issaquena",
+      "raw_sha256": "e7dafc438048389f25e5dfcded827157fee3beff9ce2aff6a01f2659d86c2ced",
+      "source_pages": 1,
+      "native_constituents": 5,
+      "source_TOTAL_columns": 1,
+      "unused_blank_columns": 5,
+      "nonadditive_parallel_columns": 0,
+      "numeric_positions": 66,
+      "unused_null_positions": 55,
+      "recomputed_native_candidate_sums": {
+        "Kamala D. Harris": 287,
+        "Chase Oliver": 5,
+        "Jill Stein": 7,
+        "Randall Terry": 5,
+        "Donald J. Trump": 296,
+        "Shiva Ayyadurai": 5,
+        "Claudia De la Cruz": 6,
+        "Robert F. Kennedy Jr.": 6,
+        "Peter Sonski": 5,
+        "Ty Pinkins": 291,
+        "Roger F. Wicker": 304
+      },
+      "recomputed_printed_TOTAL": {
+        "Kamala D. Harris": 287,
+        "Chase Oliver": 5,
+        "Jill Stein": 7,
+        "Randall Terry": 5,
+        "Donald J. Trump": 296,
+        "Shiva Ayyadurai": 5,
+        "Claudia De la Cruz": 6,
+        "Robert F. Kennedy Jr.": 6,
+        "Peter Sonski": 5,
+        "Ty Pinkins": 291,
+        "Roger F. Wicker": 304
+      }
+    },
+    {
+      "source_id": "sos-2024-county-wilkinson",
+      "raw_sha256": "da0e281f524cc65b7b8eb0e346f4dca7e1c98bb78340cf82d7a8530a0ba47389",
+      "source_pages": 1,
+      "native_constituents": 9,
+      "source_TOTAL_columns": 1,
+      "unused_blank_columns": 1,
+      "nonadditive_parallel_columns": 0,
+      "numeric_positions": 110,
+      "unused_null_positions": 11,
+      "recomputed_native_candidate_sums": {
+        "Kamala D. Harris": 1817,
+        "Chase Oliver": 8,
+        "Jill Stein": 1,
+        "Randall Terry": 3,
+        "Donald J. Trump": 1075,
+        "Shiva Ayyadurai": 1,
+        "Claudia De la Cruz": 6,
+        "Robert F. Kennedy Jr.": 20,
+        "Peter Sonski": 0,
+        "Ty Pinkins": 1710,
+        "Roger F. Wicker": 1136
+      },
+      "recomputed_printed_TOTAL": {
+        "Kamala D. Harris": 1817,
+        "Chase Oliver": 8,
+        "Jill Stein": 1,
+        "Randall Terry": 3,
+        "Donald J. Trump": 1075,
+        "Shiva Ayyadurai": 1,
+        "Claudia De la Cruz": 6,
+        "Robert F. Kennedy Jr.": 20,
+        "Peter Sonski": 0,
+        "Ty Pinkins": 1710,
+        "Roger F. Wicker": 1136
+      }
+    },
+    {
+      "source_id": "sos-2024-county-calhoun",
+      "raw_sha256": "847bc748fdc16e64f6834f20737cb2fe8fbb0a09021857583fa2c6f1f7cf29e7",
+      "source_pages": 1,
+      "native_constituents": 10,
+      "source_TOTAL_columns": 1,
+      "unused_blank_columns": 0,
+      "nonadditive_parallel_columns": 0,
+      "numeric_positions": 121,
+      "recomputed_native_candidate_sums": {
+        "Kamala D. Harris": 1547,
+        "Chase Oliver": 9,
+        "Jill Stein": 0,
+        "Randall Terry": 7,
+        "Donald J. Trump": 4443,
+        "Shiva Ayyadurai": 3,
+        "Claudia De la Cruz": 5,
+        "Robert F. Kennedy Jr.": 20,
+        "Peter Sonski": 0,
+        "Ty Pinkins": 1512,
+        "Roger F. Wicker": 4402
+      },
+      "recomputed_printed_TOTAL": {
+        "Kamala D. Harris": 1547,
+        "Chase Oliver": 9,
+        "Jill Stein": 0,
+        "Randall Terry": 7,
+        "Donald J. Trump": 4443,
+        "Shiva Ayyadurai": 3,
+        "Claudia De la Cruz": 5,
+        "Robert F. Kennedy Jr.": 20,
+        "Peter Sonski": 0,
+        "Ty Pinkins": 1512,
+        "Roger F. Wicker": 4402
+      }
+    }
+  ],
+  "exact_flat_CSV_positions_checked": 847,
+  "fresh_coordinator_Issaquena_original_review": {
+    "source_and_render": {
+      "source": {
+        "id": "sos-2024-county-issaquena",
+        "url": "https://www.sos.ms.gov/elections/electionresults/2024General/County Results/Issaquena.pdf",
+        "final_url": "https://www.sos.ms.gov/elections/electionresults/2024General/County%20Results/Issaquena.pdf",
+        "retrieved_at_utc": "2026-10-18T22:08:14.785043+00:00",
+        "status": 200,
+        "headers": {
+          "Date": "Sun, 18 Oct 2026 22:08:15 GMT",
+          "Content-Type": "application/pdf",
+          "Content-Length": "627289",
+          "Connection": "keep-alive",
+          "Last-Modified": "Fri, 07 Feb 2025 22:24:06 GMT",
+          "Accept-Ranges": "bytes",
+          "ETag": "\"d180410af79db1:0\"",
+          "Strict-Transport-Security": "max-age=2592000",
+          "cf-cache-status": "DYNAMIC",
+          "set-cookie": "__cf_bm=ILngQN8QbO7DB0ByQA_ZTzSvroj_QhG562Efy9Vl9ZQ-1792361294.9077444-1.0.1.1-LwO3dJyUUz9PChlVPkRfDBrdPyUiAD4Zlc1c_gxVDebow1gSHHNbFJ4HYjw13DeuVfYkO0fFQew4Th9_AuDd6yrhRDVGYFAnJd.aDsVt9ayj.p6.IpxJF8JU9Ih_SqWS; HttpOnly; SameSite=None; Secure; Path=/; Domain=www.sos.ms.gov; Expires=Sun, 18 Oct 2026 22:38:15 GMT",
+          "Server": "cloudflare",
+          "CF-RAY": "a4cadc4d2bdcff59-ORD",
+          "alt-svc": "h3=\":443\"; ma=86400"
+        },
+        "redirects": [],
+        "raw_sha256": "e7dafc438048389f25e5dfcded827157fee3beff9ce2aff6a01f2659d86c2ced",
+        "stored_sha256": "4e1a62019dea7f1eb5a8c9a08c2f3e92b966c1425507467ab89b1d5c2449fd56",
+        "bytes": 627289,
+        "stored_bytes": 553235,
+        "path": "data/turnout/source/sos-2024-county-issaquena.body.gz",
+        "storage": "owned",
+        "parent_source_id": "sos-2024-county-recap-index",
+        "reference_manifest": "data/turnout/source/acquisition.json",
+        "verified_original_bytes": 627289,
+        "verified_stored_bytes": 553235
+      },
+      "render": {
+        "path": "data/coordinator-qa/issaquena-allfield-review/original-p1.png",
+        "bytes": 1020173,
+        "sha256": "b79ead31dbafe24d40bfe68c557a073176cc625ff583d3ddb820341f527c04ab"
+      },
+      "render_parameters": "Poppler pdftoppm actualPDF1,180dpi,complete page,no changes"
+    },
+    "candidate_order": [
+      "Kamala D. Harris",
+      "Chase Oliver",
+      "Jill Stein",
+      "Randall Terry",
+      "Donald J. Trump",
+      "Shiva Ayyadurai",
+      "Claudia De la Cruz",
+      "Robert F. Kennedy Jr.",
+      "Peter Sonski",
+      "Ty Pinkins",
+      "Roger F. Wicker"
+    ],
+    "independent_numeric_readings": [
+      [
+        13,
+        53,
+        105,
+        75,
+        41,
+        287
+      ],
+      [
+        1,
+        1,
+        1,
+        1,
+        1,
+        5
+      ],
+      [
+        1,
+        3,
+        1,
+        1,
+        1,
+        7
+      ],
+      [
+        1,
+        1,
+        1,
+        1,
+        1,
+        5
+      ],
+      [
+        83,
+        61,
+        12,
+        58,
+        82,
+        296
+      ],
+      [
+        1,
+        1,
+        1,
+        1,
+        1,
+        5
+      ],
+      [
+        1,
+        1,
+        2,
+        1,
+        1,
+        6
+      ],
+      [
+        1,
+        1,
+        2,
+        1,
+        1,
+        6
+      ],
+      [
+        1,
+        1,
+        1,
+        1,
+        1,
+        5
+      ],
+      [
+        74,
+        44,
+        111,
+        49,
+        13,
+        291
+      ],
+      [
+        60,
+        84,
+        10,
+        86,
+        64,
+        304
+      ]
+    ],
+    "native_columns": 5,
+    "physical_TOTAL_columns": 1,
+    "numeric_positions": 66,
+    "unused_null_positions": 55,
+    "actual_pdf_page": 1,
+    "printed_footer_page": 2,
+    "literal_headers": [
+      "Addie Voting Precinct",
+      "Grace Voting Precinct",
+      "Mayersville\nCourthouse",
+      "Tallula Community\nCenter",
+      "Valley Park\nCommunity Center",
+      "TOTAL"
+    ]
+  },
+  "scope": "Eight exact frozen files and the ten-view coverage arithmetic pass. The coordinator freshly read all66 numeric Issaquena positions and55 unused nulls from complete originalPDF1, including printed minor-candidate1 glyphs; no inferred zeros or repairs. Prior coordinator original Alcorn/Coahoma and Tunica/Kemper reviews remain separate evidence. Arithmetic closure alone is not independent visual acceptance of every remaining new glyph.110 preferred native constituents are covered by worker all11 ledgers;1626 native scopes across72 parents remain explicitly unreviewed. Vendor profiles, parallel Kemper observations, whole historical native/method coverage and current reporting/geographic equivalence remain separate. No formal dispatch acceptance is made.",
+  "formal_dispatch_accepted": false,
+  "complete_statewide_presidential": false,
+  "historical_native_complete": false,
+  "current2026_geography_approved": false
+}

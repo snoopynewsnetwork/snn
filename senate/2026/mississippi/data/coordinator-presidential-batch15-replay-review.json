@@ -1,0 +1,84 @@
+{
+  "status": "pass_bounded_independent_original_presidential_batch_source_positions",
+  "batch": "batch15",
+  "frozen_input_pins": [
+    {
+      "path": "data/coordinator-qa/presidential-batch15-replay/batch15-presidential-original-readings.json.gz",
+      "bytes": 7840,
+      "sha256": "8248e646974619c404c617eda1bfcd18912ee9b40e53a4ad852eed0d70234981"
+    },
+    {
+      "path": "data/coordinator-qa/presidential-batch15-replay/batch15-presidential-original-cells.csv.gz",
+      "bytes": 3220,
+      "sha256": "89d0b3dcf2193411a5fd352126ebc3573e4bf3957eff9d6a59586942b1de7373"
+    }
+  ],
+  "immutable_peer_snapshot_pin": {
+    "path": "data/baselines/source/native-allfield-82views/snapshot.json",
+    "bytes": 5216,
+    "sha256": "94576fcfa4b7b245e2d5baa9e8366e4489594804f41694ea04a9f6315e46b336"
+  },
+  "source_views": 1,
+  "native_constituents": 23,
+  "candidate_positions": 297,
+  "position_role_counts": {
+    "source_native_reporting_constituent": 207,
+    "source_TOTAL": 9,
+    "unused_template_column": 81
+  },
+  "reading_basis_position_counts": {
+    "direct_visual_full_original_page_after_OCR_error": 23,
+    "second_independent_original_digit_region_OCR_source_read_pending_reciprocal": 33,
+    "first_independent_original_cell_OCR_source_read_pending_reciprocal": 159,
+    "direct_original_cell_visual_read": 1,
+    "unprinted_unused_template_position_not_numeric_zero": 81
+  },
+  "direct_visual_OCR_error_corrections": 23,
+  "source_results": [
+    {
+      "source_id": "sos-2024-county-yazoo",
+      "source_raw_sha256": "ce6b69eab2f2a9a27c46d8e73d0d9d53f288b6462dd72195d6c72ce0c2ec7352",
+      "native_constituents": 23,
+      "source_position_role_counts": {
+        "source_native_reporting_constituent": 207,
+        "source_TOTAL": 9,
+        "unused_template_column": 81
+      },
+      "native_sums_and_printed_TOTALs": {
+        "Kamala D. Harris": 4342,
+        "Chase Oliver": 9,
+        "Jill Stein": 6,
+        "Randall Terry": 11,
+        "Donald J. Trump": 4558,
+        "Shiva Ayyadurai": 5,
+        "Claudia De la Cruz": 7,
+        "Robert F. Kennedy Jr.": 31,
+        "Peter Sonski": 2
+      },
+      "original_visual_corrections": 23
+    }
+  ],
+  "whole_original_render_pins": [
+    {
+      "path": "data/turnout/qa/batch15-presidential-original-review/sos-2024-county-yazoo-p04-original.png",
+      "bytes": 172547,
+      "sha256": "8eb35b26a4b6f594b6881abf6aae6d3f2429a5d7cea8dcb1d2bf477724f54aeb"
+    },
+    {
+      "path": "data/turnout/qa/batch15-presidential-original-review/sos-2024-county-yazoo-p05-original.png",
+      "bytes": 178392,
+      "sha256": "d584a6ed7d56e1c87854c9a6bcc9e68a541faf1621a219ff8a99669e2dc0333f"
+    },
+    {
+      "path": "data/turnout/qa/batch15-presidential-original-review/sos-2024-county-yazoo-p06-original.png",
+      "bytes": 144336,
+      "sha256": "6d0b844b6e16a1c342467d91252d788329ed75d3b56d270390e3999471444e9d"
+    }
+  ],
+  "separate_render_differences": [],
+  "qualification": "Every bounded original source value,role,page and whitespace-folded literal header agrees after independent extraction with the exact immutable peer source view. Original OCR and direct visual corrections remain separate reading bases; complete source PDFs and raster hashes are checked. Header bounds are source-grid references, not accepted numeric polygons. Independent render pipelines may have different raster pixels, height or deskew, all explicitly recorded; exact raster/crop equivalence is not asserted. No peer vote import, residual allocation, cross-year/name identity join or whole-state/historical-native/method/current-geography approval follows.",
+  "whole_state_presidential_complete": false,
+  "historical_native_complete": false,
+  "formal_dispatch_accepted": false,
+  "current2026_geography_approved": false
+}

@@ -1,0 +1,139 @@
+{
+  "status": "pass_bounded_independent_original_presidential_batch_source_positions",
+  "batch": "batch17",
+  "frozen_input_pins": [
+    {
+      "path": "data/coordinator-qa/presidential-batch17-replay/batch17-presidential-original-readings.json.gz",
+      "bytes": 7929,
+      "sha256": "77c56f7c87a9d620dde0544a1fc99bbfe5320ec2ba7727a617acf9ca1bc08d92"
+    },
+    {
+      "path": "data/coordinator-qa/presidential-batch17-replay/batch17-presidential-original-cells.csv.gz",
+      "bytes": 3223,
+      "sha256": "3c8b4e4adb37fac287bf1b0639c633b2213742037b3b999946bbe7a31f24e8da"
+    }
+  ],
+  "immutable_peer_snapshot_pin": {
+    "path": "data/baselines/source/native-allfield-82views/snapshot.json",
+    "bytes": 5216,
+    "sha256": "94576fcfa4b7b245e2d5baa9e8366e4489594804f41694ea04a9f6315e46b336"
+  },
+  "source_views": 1,
+  "native_constituents": 23,
+  "candidate_positions": 297,
+  "position_role_counts": {
+    "source_native_reporting_constituent": 207,
+    "source_TOTAL": 9,
+    "unused_template_column": 81
+  },
+  "reading_basis_position_counts": {
+    "first_independent_original_cell_OCR_source_read_pending_reciprocal": 81,
+    "second_independent_original_digit_region_OCR_source_read_pending_reciprocal": 62,
+    "direct_visual_full_original_page_after_OCR_error": 61,
+    "direct_original_cell_visual_read": 12,
+    "unprinted_unused_template_position_not_numeric_zero": 81
+  },
+  "direct_visual_OCR_error_corrections": 61,
+  "source_results": [
+    {
+      "source_id": "sos-2024-county-clarke",
+      "source_raw_sha256": "034c24fbe8b7690e995b0f60fcf4bda4c607ccce5b754ce31c10208c8ab6dc3e",
+      "native_constituents": 23,
+      "source_position_role_counts": {
+        "source_native_reporting_constituent": 207,
+        "source_TOTAL": 9,
+        "unused_template_column": 81
+      },
+      "native_sums_and_printed_TOTALs": {
+        "Kamala D. Harris": 2430,
+        "Chase Oliver": 10,
+        "Jill Stein": 5,
+        "Randall Terry": 4,
+        "Donald J. Trump": 5093,
+        "Shiva Ayyadurai": 1,
+        "Claudia De la Cruz": 2,
+        "Robert F. Kennedy Jr.": 23,
+        "Peter Sonski": 3
+      },
+      "original_visual_corrections": 61
+    }
+  ],
+  "whole_original_render_pins": [
+    {
+      "path": "data/turnout/qa/batch17-presidential-original-review/sos-2024-county-clarke-p02-original.png",
+      "bytes": 240024,
+      "sha256": "4f60371ae6fd99d6800ed676678c60eccee28b8a7b268aacf2dcefad930797b5"
+    },
+    {
+      "path": "data/turnout/qa/batch17-presidential-original-review/sos-2024-county-clarke-p03-original.png",
+      "bytes": 279836,
+      "sha256": "8d81d0b2b13cf0ab1a125a25434c32adaa4a1930d706ab625840cb9435fe7108"
+    },
+    {
+      "path": "data/turnout/qa/batch17-presidential-original-review/sos-2024-county-clarke-p04-original.png",
+      "bytes": 209374,
+      "sha256": "ffe88b81d6e58628b3b5bdfd0ec6e02dacd34ac172fda995584497d22008bb28"
+    }
+  ],
+  "separate_render_differences": [
+    {
+      "source_id": "sos-2024-county-clarke",
+      "actual_PDF_page": 2,
+      "turnout_render_path": "data/turnout/qa/batch17-presidential-original-review/sos-2024-county-clarke-p02-original.png",
+      "turnout_sha256": "4f60371ae6fd99d6800ed676678c60eccee28b8a7b268aacf2dcefad930797b5",
+      "turnout_size": [
+        1980,
+        1535
+      ],
+      "peer_render_path": "data/baselines/extracts/reviewed-replay/sos-2024-county-clarke/p0002-original.png",
+      "peer_sha256": "d8d04057bcef392f13fc9ddd82f8e367b66a3f0c510c768708eca90681eb9392",
+      "peer_size": [
+        1980,
+        1535
+      ],
+      "turnout_applied_deskew_ccw": 0,
+      "peer_stated_deskew_ccw": -0.8000000000000003
+    },
+    {
+      "source_id": "sos-2024-county-clarke",
+      "actual_PDF_page": 3,
+      "turnout_render_path": "data/turnout/qa/batch17-presidential-original-review/sos-2024-county-clarke-p03-original.png",
+      "turnout_sha256": "8d81d0b2b13cf0ab1a125a25434c32adaa4a1930d706ab625840cb9435fe7108",
+      "turnout_size": [
+        2139,
+        1658
+      ],
+      "peer_render_path": "data/baselines/extracts/reviewed-replay/sos-2024-county-clarke/p0003-original.png",
+      "peer_sha256": "d71e71e84ecfbe680ff8ad566b9ad0d099e1333b41ac96eb40d5404972c30242",
+      "peer_size": [
+        2139,
+        1658
+      ],
+      "turnout_applied_deskew_ccw": 0,
+      "peer_stated_deskew_ccw": -1.0
+    },
+    {
+      "source_id": "sos-2024-county-clarke",
+      "actual_PDF_page": 4,
+      "turnout_render_path": "data/turnout/qa/batch17-presidential-original-review/sos-2024-county-clarke-p04-original.png",
+      "turnout_sha256": "ffe88b81d6e58628b3b5bdfd0ec6e02dacd34ac172fda995584497d22008bb28",
+      "turnout_size": [
+        1980,
+        1535
+      ],
+      "peer_render_path": "data/baselines/extracts/reviewed-replay/sos-2024-county-clarke/p0004-original.png",
+      "peer_sha256": "dea57ad54fee7fddabf9be7d9b51b1ec011495dde7e573fab1e1e54b6efc792c",
+      "peer_size": [
+        1980,
+        1535
+      ],
+      "turnout_applied_deskew_ccw": 0,
+      "peer_stated_deskew_ccw": -0.8000000000000003
+    }
+  ],
+  "qualification": "Every bounded original source value,role,page and whitespace-folded literal header agrees after independent extraction with the exact immutable peer source view. Original OCR and direct visual corrections remain separate reading bases; complete source PDFs and raster hashes are checked. Header bounds are source-grid references, not accepted numeric polygons. Independent render pipelines may have different raster pixels, height or deskew, all explicitly recorded; exact raster/crop equivalence is not asserted. No peer vote import, residual allocation, cross-year/name identity join or whole-state/historical-native/method/current-geography approval follows.",
+  "whole_state_presidential_complete": false,
+  "historical_native_complete": false,
+  "formal_dispatch_accepted": false,
+  "current2026_geography_approved": false
+}

@@ -1,0 +1,139 @@
+{
+  "status": "pass_bounded_independent_original_presidential_batch_source_positions",
+  "batch": "batch19",
+  "frozen_input_pins": [
+    {
+      "path": "data/coordinator-qa/presidential-batch19-replay/batch19-presidential-original-readings.json.gz",
+      "bytes": 8197,
+      "sha256": "21a023022b724f301dabafe372ef7d73cdc95d019b97e553bd6ce4fcf247ce71"
+    },
+    {
+      "path": "data/coordinator-qa/presidential-batch19-replay/batch19-presidential-original-cells.csv.gz",
+      "bytes": 3594,
+      "sha256": "b1b996efdbc8c8436333f0301895a82647727984b4ff36f7c09991453c467e2d"
+    }
+  ],
+  "immutable_peer_snapshot_pin": {
+    "path": "data/baselines/source/native-allfield-82views/snapshot.json",
+    "bytes": 5216,
+    "sha256": "94576fcfa4b7b245e2d5baa9e8366e4489594804f41694ea04a9f6315e46b336"
+  },
+  "source_views": 1,
+  "native_constituents": 30,
+  "candidate_positions": 297,
+  "position_role_counts": {
+    "source_native_reporting_constituent": 270,
+    "source_TOTAL": 9,
+    "unused_template_column": 18
+  },
+  "reading_basis_position_counts": {
+    "first_independent_original_cell_OCR_source_read_pending_reciprocal": 133,
+    "direct_visual_full_original_page_after_OCR_error": 49,
+    "second_independent_original_digit_region_OCR_source_read_pending_reciprocal": 23,
+    "direct_original_cell_visual_read": 74,
+    "unprinted_unused_template_position_not_numeric_zero": 18
+  },
+  "direct_visual_OCR_error_corrections": 49,
+  "source_results": [
+    {
+      "source_id": "sos-2024-county-lincoln",
+      "source_raw_sha256": "c16d7285b6091019529a897ffbbfa8fb7c608258194dbe9210c65491d1b5e987",
+      "native_constituents": 30,
+      "source_position_role_counts": {
+        "source_native_reporting_constituent": 270,
+        "source_TOTAL": 9,
+        "unused_template_column": 18
+      },
+      "native_sums_and_printed_TOTALs": {
+        "Kamala D. Harris": 4262,
+        "Chase Oliver": 26,
+        "Jill Stein": 12,
+        "Randall Terry": 11,
+        "Donald J. Trump": 11432,
+        "Shiva Ayyadurai": 3,
+        "Claudia De la Cruz": 6,
+        "Robert F. Kennedy Jr.": 40,
+        "Peter Sonski": 10
+      },
+      "original_visual_corrections": 49
+    }
+  ],
+  "whole_original_render_pins": [
+    {
+      "path": "data/turnout/qa/batch19-presidential-original-review/sos-2024-county-lincoln-p03-original.png",
+      "bytes": 196715,
+      "sha256": "2cbb56f48d071a6c4530470ef82e272a0be9a2c63e21fc5b61710b9459188e90"
+    },
+    {
+      "path": "data/turnout/qa/batch19-presidential-original-review/sos-2024-county-lincoln-p04-original.png",
+      "bytes": 197453,
+      "sha256": "6d754007695be4a323c6e6a935b6bd6536776ee24a27346f49a130c8e8eb6c4c"
+    },
+    {
+      "path": "data/turnout/qa/batch19-presidential-original-review/sos-2024-county-lincoln-p05-original.png",
+      "bytes": 187534,
+      "sha256": "ed57065452bb002bac9aed48836b7de7beff203ab529b76fba4d69637776a11c"
+    }
+  ],
+  "separate_render_differences": [
+    {
+      "source_id": "sos-2024-county-lincoln",
+      "actual_PDF_page": 3,
+      "turnout_render_path": "data/turnout/qa/batch19-presidential-original-review/sos-2024-county-lincoln-p03-original.png",
+      "turnout_sha256": "2cbb56f48d071a6c4530470ef82e272a0be9a2c63e21fc5b61710b9459188e90",
+      "turnout_size": [
+        2139,
+        1653
+      ],
+      "peer_render_path": "data/baselines/extracts/reviewed-replay/sos-2024-county-lincoln/p0003-original.png",
+      "peer_sha256": "720f1fc8f2c4a704744ed4d8fcd4dde278591327ab5ff17218f714dc0919a956",
+      "peer_size": [
+        2140,
+        1653
+      ],
+      "turnout_applied_deskew_ccw": 0,
+      "peer_stated_deskew_ccw": 0.25
+    },
+    {
+      "source_id": "sos-2024-county-lincoln",
+      "actual_PDF_page": 4,
+      "turnout_render_path": "data/turnout/qa/batch19-presidential-original-review/sos-2024-county-lincoln-p04-original.png",
+      "turnout_sha256": "6d754007695be4a323c6e6a935b6bd6536776ee24a27346f49a130c8e8eb6c4c",
+      "turnout_size": [
+        2139,
+        1653
+      ],
+      "peer_render_path": "data/baselines/extracts/reviewed-replay/sos-2024-county-lincoln/p0004-original.png",
+      "peer_sha256": "0c504cc310b9b785399c3a6b6ee8fe290891fb3ab74df986d19a0d47e4d41616",
+      "peer_size": [
+        2140,
+        1653
+      ],
+      "turnout_applied_deskew_ccw": 0,
+      "peer_stated_deskew_ccw": 0.25
+    },
+    {
+      "source_id": "sos-2024-county-lincoln",
+      "actual_PDF_page": 5,
+      "turnout_render_path": "data/turnout/qa/batch19-presidential-original-review/sos-2024-county-lincoln-p05-original.png",
+      "turnout_sha256": "ed57065452bb002bac9aed48836b7de7beff203ab529b76fba4d69637776a11c",
+      "turnout_size": [
+        2139,
+        1653
+      ],
+      "peer_render_path": "data/baselines/extracts/reviewed-replay/sos-2024-county-lincoln/p0005-original.png",
+      "peer_sha256": "25ac316a96b3d7a5087af7684235b199533ffc6de29da66a806f201c784455b7",
+      "peer_size": [
+        2140,
+        1653
+      ],
+      "turnout_applied_deskew_ccw": 0,
+      "peer_stated_deskew_ccw": 0.25
+    }
+  ],
+  "qualification": "Every bounded original source value,role,page and whitespace-folded literal header agrees after independent extraction with the exact immutable peer source view. Original OCR and direct visual corrections remain separate reading bases; complete source PDFs and raster hashes are checked. Header bounds are source-grid references, not accepted numeric polygons. Independent render pipelines may have different raster pixels, height or deskew, all explicitly recorded; exact raster/crop equivalence is not asserted. No peer vote import, residual allocation, cross-year/name identity join or whole-state/historical-native/method/current-geography approval follows.",
+  "whole_state_presidential_complete": false,
+  "historical_native_complete": false,
+  "formal_dispatch_accepted": false,
+  "current2026_geography_approved": false
+}

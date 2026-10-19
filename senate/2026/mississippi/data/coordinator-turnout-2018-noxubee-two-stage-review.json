@@ -1,0 +1,110 @@
+{
+  "status": "pass_bounded_independent_original2018_two_stage_source_replay",
+  "county": "noxubee",
+  "frozen_worker_bodies": [
+    {
+      "original": {
+        "path": "data/turnout/2018-noxubee-two-stage-native-original-readings.json",
+        "bytes": 62809,
+        "sha256": "ba18a991e045ade5f5a392a500cb3afd061d23dba276defb9ac5c8fac2d3f44c"
+      },
+      "lossless_copy": {
+        "path": "data/coordinator-qa/turnout-2018-two-stage-replays/2018-noxubee-two-stage-native-original-readings.json.gz",
+        "bytes": 2430,
+        "sha256": "70f3a84d28990f18284e1cfdd759a704913835ec63e2e5e8d2dd81719b7791b6"
+      }
+    },
+    {
+      "original": {
+        "path": "data/turnout/2018-noxubee-two-stage-native-original-cells.csv",
+        "bytes": 25107,
+        "sha256": "068f4925a86219e020cc18772838a266ba8aae42de5566e1edc560b8ac4c2af5"
+      },
+      "lossless_copy": {
+        "path": "data/coordinator-qa/turnout-2018-two-stage-replays/2018-noxubee-two-stage-native-original-cells.csv.gz",
+        "bytes": 1229,
+        "sha256": "e68790df3ea0de03333ea60d39559db58028a4d99b72dca21f4d59bcb0e742f6"
+      }
+    },
+    {
+      "original": {
+        "path": "data/turnout/2018-noxubee-native-peer-reconciliation.json",
+        "bytes": 1179,
+        "sha256": "651c277abd9f45a3f5f2b5d892048e2cb3bd5593074b9a9160a052a112183568"
+      },
+      "lossless_copy": {
+        "path": "data/coordinator-qa/turnout-2018-two-stage-replays/2018-noxubee-native-peer-reconciliation.json.gz",
+        "bytes": 673,
+        "sha256": "266533bbbdca983e08f13279f8a997f9bb41e4bac3ace9972437ab2550d57df2"
+      }
+    }
+  ],
+  "immutable_peer_snapshot": {
+    "path": "data/baselines/source/native-2018-16views-v1/snapshot.json",
+    "bytes": 1797,
+    "sha256": "de741e84c37957905d0bc77f46df7b7eaf984520241b1b97b3bbf8be9266118e"
+  },
+  "source_findings": [
+    {
+      "source_id": "sos-2018-county-noxubee",
+      "raw_original_sha256": "56099eeadee6fb8057a35ee3d4e2610855b6d5ba1a33a1e81b83a578a089cbd7",
+      "raw_original_bytes": 1634187,
+      "stored_original": {
+        "path": "data/turnout/source/sos-2018-county-noxubee.body.gz",
+        "bytes": 984311,
+        "sha256": "ef779d5f0b482c088bbb3ce849a93db04145d20185d865e73af5731a2d3e8d31"
+      },
+      "native_constituents": 8,
+      "physical_TOTAL": {
+        "actual_PDFpage": 2,
+        "column": 9
+      },
+      "source_candidate_sums_and_TOTALs": {
+        "Tobey Bernard Bartee": 103,
+        "Mike Espy": 2799,
+        "Cindy Hyde-Smith": 891,
+        "Chris McDaniel": 180
+      }
+    },
+    {
+      "source_id": "sos-2018-runoff-county-noxubee",
+      "raw_original_sha256": "e854a76a779d0388ccf2171112bfc3484e3cbf455b7340c206d544793520f76e",
+      "raw_original_bytes": 1178095,
+      "stored_original": {
+        "path": "data/turnout/source/sos-2018-runoff-county-noxubee.body.gz",
+        "bytes": 661948,
+        "sha256": "50623e44cd80998dbbbea1a39f84664d6079b598b9c056a5850fbe7403089ea8"
+      },
+      "native_constituents": 8,
+      "physical_TOTAL": {
+        "actual_PDFpage": 2,
+        "column": 9
+      },
+      "source_candidate_sums_and_TOTALs": {
+        "Mike Espy": 3217,
+        "Cindy Hyde-Smith": 900
+      }
+    }
+  ],
+  "original_worker_raster_pins": [
+    {
+      "path": "data/turnout/qa/2018-native-original-probe/sos-2018-county-noxubee/p0002-original.png",
+      "bytes": 258117,
+      "sha256": "b94b80efe7b5e526813ab26467a0d5711d79aa4d3474335b5664af685a0a798a"
+    },
+    {
+      "path": "data/turnout/qa/2018-native-original-probe/sos-2018-runoff-county-noxubee/p0002-original.png",
+      "bytes": 136565,
+      "sha256": "f36bd32b6adeae420efdcf3a58bfad22c3092452531bbbf5084e93846a32ebe9"
+    }
+  ],
+  "compared_positions": 66,
+  "counts": {
+    "numeric_positions": 54,
+    "unused_null_positions": 12
+  },
+  "whitespace_only_header_representations": [],
+  "qualification": "All original-reading and flat source fields recompute against immutable peer evidence after the worker original transcript: candidate values/roles/original hash/page/physical column/FIPS and whitespace-folded literal headers. Whole source rasters survive by hash, not pixel/reading-window/parsedID identity. This is not fresh coordinator visual reading of all new glyphs, shared current geography, same cross-stage electorate or whole164-stage historical-method/native887 approval. Source native fields are never replaced by county controls or another year/stage.",
+  "formal_native887_dispatch_accepted": false,
+  "current_geography_approved": false
+}

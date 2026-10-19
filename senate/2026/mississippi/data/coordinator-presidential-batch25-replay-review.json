@@ -1,0 +1,75 @@
+{
+  "status": "pass_bounded_independent_complete_original_manual_grid_replay",
+  "batch": "batch25",
+  "frozen_input_pins": [
+    {
+      "path": "data/coordinator-qa/presidential-batch25-replay/batch25-presidential-original-readings.json.gz",
+      "bytes": 5712,
+      "sha256": "39fd55f2e177ea443c642f0f7b4937b62f6334123871a075c4602168fc210b98"
+    },
+    {
+      "path": "data/coordinator-qa/presidential-batch25-replay/batch25-presidential-original-cells.csv.gz",
+      "bytes": 2348,
+      "sha256": "358907488e75fb84154407e6155d77ff17e12dccd13288ab7541fcfaffe06399"
+    }
+  ],
+  "immutable_peer_snapshot_pin": {
+    "path": "data/baselines/source/native-allfield-82views/snapshot.json",
+    "bytes": 5216,
+    "sha256": "94576fcfa4b7b245e2d5baa9e8366e4489594804f41694ea04a9f6315e46b336"
+  },
+  "source_views": 1,
+  "native_constituents": 17,
+  "candidate_positions": 198,
+  "position_role_counts": {
+    "source_native_reporting_constituent": 153,
+    "source_TOTAL": 9,
+    "unused_template_column": 36
+  },
+  "complete_original_manual_grid_numeric_positions": 162,
+  "direct_observation_unused_null_positions": 36,
+  "missing_original_aid_positions_including_unused": 30,
+  "provisional_OCR_disagreements_visually_superseded": 19,
+  "source_results": [
+    {
+      "source_id": "sos-2024-county-jeff-davis",
+      "raw_sha256": "fe823b01cf880cbab6ca13322afbd8bf020fa472ed3c4dbd57456383a14a5c74",
+      "native_constituents": 17,
+      "position_roles": {
+        "source_native_reporting_constituent": 153,
+        "source_TOTAL": 9,
+        "unused_template_column": 36
+      },
+      "native_sums_and_printed_TOTALs": {
+        "Kamala D. Harris": 3041,
+        "Chase Oliver": 3,
+        "Jill Stein": 4,
+        "Randall Terry": 4,
+        "Donald J. Trump": 2302,
+        "Shiva Ayyadurai": 4,
+        "Claudia De la Cruz": 2,
+        "Robert F. Kennedy Jr.": 16,
+        "Peter Sonski": 2
+      },
+      "missing_original_aid_positions_including_unused": 30,
+      "provisional_OCR_disagreements_visually_superseded": 19
+    }
+  ],
+  "whole_original_render_pins": [
+    {
+      "path": "data/turnout/qa/batch25-presidential-original-review/sos-2024-county-jeff-davis-p02-original.png",
+      "bytes": 534679,
+      "sha256": "43f572ac5a19faab0a949ef3690cb33b40e367a4bdaf9bb341aaf5ffe8db44ab"
+    },
+    {
+      "path": "data/turnout/qa/batch25-presidential-original-review/sos-2024-county-jeff-davis-p03-original.png",
+      "bytes": 499588,
+      "sha256": "1d6f287122590ed66e1e2c180d8ccd9dd029cee9508096799c2a17e6b8501ff3"
+    }
+  ],
+  "separate_render_differences": [],
+  "qualification": "All nine candidate rows and source columns use direct whole-original grid readings. Missing OCR aid and observed unused blanks remain distinct from literal numeric zeros; no missing numeric polygon is invented. Raw PDF and raster pins, exact source roles, candidate vectors, flat positions and whitespace-only literal labels agree the immutable independent peer only after original extraction. This bounded source/basis audit is not a fresh coordinator visual reading of every glyph, a cross-publication/geographic join, whole historical-method completion or dispatch approval.",
+  "formal_dispatch_accepted": false,
+  "historical_native_complete": false,
+  "current2026_geography_approved": false
+}

@@ -1,0 +1,109 @@
+{
+  "status": "pass_bounded_independent_original2018_two_stage_source_replay",
+  "county": "quitman",
+  "frozen_worker_bodies": [
+    {
+      "original": {
+        "path": "data/turnout/2018-quitman-two-stage-native-original-readings.json",
+        "bytes": 63067,
+        "sha256": "95b74a97b21a50fbe7f59474ca68810536af283b2a4b48142f7ffadf407f61dc"
+      },
+      "lossless_copy": {
+        "path": "data/coordinator-qa/turnout-2018-two-stage-replays/2018-quitman-two-stage-native-original-readings.json.gz",
+        "bytes": 2394,
+        "sha256": "1cf39ca4a2bd0ee41dfc3a471847130dbd31a8ebd3680dd7bf07e1c4f6c79be4"
+      }
+    },
+    {
+      "original": {
+        "path": "data/turnout/2018-quitman-two-stage-native-original-cells.csv",
+        "bytes": 25405,
+        "sha256": "974435c798ab3e9659d04f5d4cfeb56c5acc8f08c395d43b7398629ec1e47915"
+      },
+      "lossless_copy": {
+        "path": "data/coordinator-qa/turnout-2018-two-stage-replays/2018-quitman-two-stage-native-original-cells.csv.gz",
+        "bytes": 1212,
+        "sha256": "60f25cdd655f819069bde15a6358f083dbe545752095c84374ca1de3cb94cbff"
+      }
+    },
+    {
+      "original": {
+        "path": "data/turnout/2018-quitman-native-peer-reconciliation.json",
+        "bytes": 1180,
+        "sha256": "c3b20b1544e60938f74e54349cdd1c4257575583959bc170ea8fb503795ad4a6"
+      },
+      "lossless_copy": {
+        "path": "data/coordinator-qa/turnout-2018-two-stage-replays/2018-quitman-native-peer-reconciliation.json.gz",
+        "bytes": 677,
+        "sha256": "32529f892876ae241ebd826877831842e1e5d2702e308fabd26540d2c887762d"
+      }
+    }
+  ],
+  "immutable_peer_snapshot": {
+    "path": "data/baselines/source/native-2018-50views-v1/snapshot.json",
+    "bytes": 1868,
+    "sha256": "fe9fad0f7dd37358adab3f8c12866c8c4bd5d1c5bc7b0d90f8a13ad2e534ec20"
+  },
+  "source_findings": [
+    {
+      "source_id": "sos-2018-county-quitman",
+      "raw_original_sha256": "0954723f0a3b879b50082a7a5d3a828b5cda878b869d37a1b0b6883d891d22a1",
+      "raw_original_bytes": 785835,
+      "stored_original": {
+        "path": "data/turnout/source/sos-2018-county-quitman.body.gz",
+        "bytes": 576848,
+        "sha256": "b75a4a34dd5f16280df27cf17a244d3d20e6d24f79cb4f9ba8235ec2e62ecfe2"
+      },
+      "native_constituents": 10,
+      "physical_TOTAL": {
+        "actual_PDFpage": 2,
+        "column": 11
+      },
+      "source_candidate_sums_and_TOTALs": {
+        "Tobey Bernard Bartee": 55,
+        "Mike Espy": 1643,
+        "Cindy Hyde-Smith": 601,
+        "Chris McDaniel": 141
+      }
+    },
+    {
+      "source_id": "sos-2018-runoff-county-quitman",
+      "raw_original_sha256": "b08ef916ffe45d0cbdf484ab7ff6ef07196d3d4681e483ef1df83358c782c8df",
+      "raw_original_bytes": 442435,
+      "stored_original": {
+        "path": "data/turnout/source/sos-2018-runoff-county-quitman.body.gz",
+        "bytes": 290018,
+        "sha256": "c3d4c7977342cff6327a3e5c77837e9782fee8567772db579d8fe347841e3ff4"
+      },
+      "native_constituents": 10,
+      "physical_TOTAL": {
+        "actual_PDFpage": 2,
+        "column": 11
+      },
+      "source_candidate_sums_and_TOTALs": {
+        "Mike Espy": 1788,
+        "Cindy Hyde-Smith": 684
+      }
+    }
+  ],
+  "original_worker_raster_pins": [
+    {
+      "path": "data/turnout/qa/2018-native-original-probe/sos-2018-county-quitman/p0002-original.png",
+      "bytes": 283959,
+      "sha256": "cc2c69cd8a34eb3a3cafe81107375e94783ccd1668ae444cccbc05149e651584"
+    },
+    {
+      "path": "data/turnout/qa/2018-native-original-probe/sos-2018-runoff-county-quitman/p0002-original.png",
+      "bytes": 165215,
+      "sha256": "d0a7594c9e3a13428102eb97f8026e25bc4933eb77e7619c4bfef8f7c2cb0f89"
+    }
+  ],
+  "compared_positions": 66,
+  "counts": {
+    "numeric_positions": 66
+  },
+  "whitespace_only_header_representations": [],
+  "qualification": "All original-reading and flat source fields recompute against immutable peer evidence after the worker original transcript: candidate values/roles/original hash/page/physical column/FIPS and whitespace-folded literal headers. Whole source rasters survive by hash, not pixel/reading-window/parsedID identity. This is not fresh coordinator visual reading of all new glyphs, shared current geography, same cross-stage electorate or whole164-stage historical-method/native887 approval. Source native fields are never replaced by county controls or another year/stage.",
+  "formal_native887_dispatch_accepted": false,
+  "current_geography_approved": false
+}

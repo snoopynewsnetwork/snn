@@ -1,0 +1,120 @@
+{
+  "status": "pass_bounded_independent_original2018_two_stage_source_replay",
+  "county": "yalobusha",
+  "frozen_worker_bodies": [
+    {
+      "original": {
+        "path": "data/turnout/2018-yalobusha-two-stage-native-original-readings.json",
+        "bytes": 122201,
+        "sha256": "b01a5b54889509d3911f640c2060e06b0d90a9ff5490b715ddae34d9a17545c2"
+      },
+      "lossless_copy": {
+        "path": "data/coordinator-qa/turnout-2018-two-stage-replays/2018-yalobusha-two-stage-native-original-readings.json.gz",
+        "bytes": 3371,
+        "sha256": "a7a928e9f17be66cec9c18e290c3fc42c5c1aabef3a830e796191f50b7c91007"
+      }
+    },
+    {
+      "original": {
+        "path": "data/turnout/2018-yalobusha-two-stage-native-original-cells.csv",
+        "bytes": 50279,
+        "sha256": "84839020286fa6576025d34b12718c2c5f61d3c46c97203fe9c5eadf5089c27d"
+      },
+      "lossless_copy": {
+        "path": "data/coordinator-qa/turnout-2018-two-stage-replays/2018-yalobusha-two-stage-native-original-cells.csv.gz",
+        "bytes": 1778,
+        "sha256": "f9f3dee065dcd8a55cb6c84f5a410d5b7b506a42e52cf8119311da74c4f9be97"
+      }
+    },
+    {
+      "original": {
+        "path": "data/turnout/2018-yalobusha-native-peer-reconciliation.json",
+        "bytes": 1193,
+        "sha256": "debfd1f3a3e3b7d245c383f2c4c2380e0bd9c0e00bb156e5e1b5fca8ec17bf8b"
+      },
+      "lossless_copy": {
+        "path": "data/coordinator-qa/turnout-2018-two-stage-replays/2018-yalobusha-native-peer-reconciliation.json.gz",
+        "bytes": 676,
+        "sha256": "42ac8b6393a7b82fa13be32e38f8e56fd0026559dcc31c9de4fa733b61bb3ee1"
+      }
+    }
+  ],
+  "immutable_peer_snapshot": {
+    "path": "data/baselines/source/native-2018-58views-v1/snapshot.json",
+    "bytes": 1868,
+    "sha256": "bb19c64e7b9b57ca93397d443888499220e70623f21df65ef13c86232ecf3e0a"
+  },
+  "source_findings": [
+    {
+      "source_id": "sos-2018-county-yalobusha",
+      "raw_original_sha256": "f7f36a0e7848a2bb1346051df0a69e619d4889efc297e04414bf49ffccbaeced",
+      "raw_original_bytes": 1547415,
+      "stored_original": {
+        "path": "data/turnout/source/sos-2018-county-yalobusha.body.gz",
+        "bytes": 928217,
+        "sha256": "62ae035b7208b0f1bfa443a9f246e08c6f274ad19042efcb73925a4f01bc597e"
+      },
+      "native_constituents": 11,
+      "physical_TOTAL": {
+        "actual_PDFpage": 3,
+        "column": 1
+      },
+      "source_candidate_sums_and_TOTALs": {
+        "Tobey Bernard Bartee": 75,
+        "Mike Espy": 2028,
+        "Cindy Hyde-Smith": 2004,
+        "Chris McDaniel": 561
+      }
+    },
+    {
+      "source_id": "sos-2018-runoff-county-yalobusha",
+      "raw_original_sha256": "911f11276c3717937ed601d2476fa018c9c7115d050db6ddd8cc6495c0400525",
+      "raw_original_bytes": 1339158,
+      "stored_original": {
+        "path": "data/turnout/source/sos-2018-runoff-county-yalobusha.body.gz",
+        "bytes": 755795,
+        "sha256": "d01676213aad03e04d2b80ae40625595ba06ebc9b95e43dd53e1895497911a6f"
+      },
+      "native_constituents": 11,
+      "physical_TOTAL": {
+        "actual_PDFpage": 3,
+        "column": 1
+      },
+      "source_candidate_sums_and_TOTALs": {
+        "Mike Espy": 2184,
+        "Cindy Hyde-Smith": 2281
+      }
+    }
+  ],
+  "original_worker_raster_pins": [
+    {
+      "path": "data/turnout/qa/2018-native-original-probe/sos-2018-county-yalobusha/p0002-original.png",
+      "bytes": 213266,
+      "sha256": "5ae2cf6ad91cf6a261b1c0c6d546bca7a9a042cf0b361510b14be287d10a8b2a"
+    },
+    {
+      "path": "data/turnout/qa/2018-native-original-probe/sos-2018-county-yalobusha/p0003-original.png",
+      "bytes": 164677,
+      "sha256": "bc4741976f9d394e2d2caf17854ab7affe1ba016d2cca09d1d555fdc5320b6d8"
+    },
+    {
+      "path": "data/turnout/qa/2018-native-original-probe/sos-2018-runoff-county-yalobusha/p0002-original.png",
+      "bytes": 138260,
+      "sha256": "880ec6a6659f8c33241d38995685d7fd3326163f15e9f9acb82be550667a5c13"
+    },
+    {
+      "path": "data/turnout/qa/2018-native-original-probe/sos-2018-runoff-county-yalobusha/p0003-original.png",
+      "bytes": 112206,
+      "sha256": "fabab054834bc66d4a86c8be1863596b4ece8efaa3426871916d563ddf49f29e"
+    }
+  ],
+  "compared_positions": 132,
+  "counts": {
+    "numeric_positions": 72,
+    "unused_null_positions": 60
+  },
+  "whitespace_only_header_representations": [],
+  "qualification": "All original-reading and flat source fields recompute against immutable peer evidence after the worker original transcript: candidate values/roles/original hash/page/physical column/FIPS and whitespace-folded literal headers. Whole source rasters survive by hash, not pixel/reading-window/parsedID identity. This is not fresh coordinator visual reading of all new glyphs, shared current geography, same cross-stage electorate or whole164-stage historical-method/native887 approval. Source native fields are never replaced by county controls or another year/stage.",
+  "formal_native887_dispatch_accepted": false,
+  "current_geography_approved": false
+}

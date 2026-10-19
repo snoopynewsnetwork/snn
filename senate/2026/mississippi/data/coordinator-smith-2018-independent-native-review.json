@@ -1,0 +1,117 @@
+{
+  "status": "pass_bounded_independent_Smith2018_two_stage_source_fields",
+  "frozen_worker_bodies": [
+    {
+      "original": {
+        "path": "data/turnout/2018-smith-two-stage-native-original-readings.json",
+        "bytes": 120967,
+        "sha256": "2ee1f9a93e4cce769e27f40a7108ad032cfe38673746b29613ce65985e9f4216"
+      },
+      "lossless_copy": {
+        "path": "data/coordinator-qa/smith-2018-independent-replay/2018-smith-two-stage-native-original-readings.json.gz",
+        "bytes": 3517,
+        "sha256": "534aab8dc61dd1f3d0e6803e22003bbd54a51b38e26e23eb6fef231001bb8e66"
+      }
+    },
+    {
+      "original": {
+        "path": "data/turnout/2018-smith-two-stage-native-original-cells.csv",
+        "bytes": 49236,
+        "sha256": "26cffaa5ea34ceeb989d82ff79e0990a048267d76de892dd355d6f5015f938b8"
+      },
+      "lossless_copy": {
+        "path": "data/coordinator-qa/smith-2018-independent-replay/2018-smith-two-stage-native-original-cells.csv.gz",
+        "bytes": 1920,
+        "sha256": "0e82513ccb908d9458a7784b4ccf58bbec7e2c111ef0e0144497bf8a9e11f857"
+      }
+    },
+    {
+      "original": {
+        "path": "data/turnout/2018-smith-native-peer-reconciliation.json",
+        "bytes": 1230,
+        "sha256": "b06115a3b1614e57955d133338b6db977960e16c368046de0ef690a18e03ac0b"
+      },
+      "lossless_copy": {
+        "path": "data/coordinator-qa/smith-2018-independent-replay/2018-smith-native-peer-reconciliation.json.gz",
+        "bytes": 697,
+        "sha256": "2a0f8dfeb6c3719984a988e4a221afec017bca828f2c7130280257e683d1ec91"
+      }
+    }
+  ],
+  "immutable_peer40_snapshot": {
+    "path": "data/baselines/source/native-2018-40views-v1/snapshot.json",
+    "bytes": 1834,
+    "sha256": "59d10972abc73a936ddf6c77d62258b6a9d7d62298cc46bd570ae6c1ad83895f"
+  },
+  "source_findings": [
+    {
+      "source_id": "sos-2018-county-smith",
+      "stored_original": {
+        "path": "data/turnout/source/sos-2018-county-smith.body.gz",
+        "bytes": 708687,
+        "sha256": "145bb549b3c9f41b5fa09a91fc04dad6cfdbcda6a7f667cc20a4c7d40770c541"
+      },
+      "raw_original_sha256": "39081c6afa320b6e63f72c4b042dc4ca3d9ba0cf5690dc484d58a86976e2a6dc",
+      "raw_original_bytes": 1093332,
+      "native_constituents": 18,
+      "physical_TOTAL": {
+        "actual_PDFpage": 3,
+        "column": 8
+      },
+      "source_candidate_sums_and_TOTALs": {
+        "Tobey Bernard Bartee": 43,
+        "Mike Espy": 1370,
+        "Cindy Hyde-Smith": 2706,
+        "Chris McDaniel": 1905
+      }
+    },
+    {
+      "source_id": "sos-2018-runoff-county-smith",
+      "stored_original": {
+        "path": "data/turnout/source/sos-2018-runoff-county-smith.body.gz",
+        "bytes": 307859,
+        "sha256": "83ebebf98d76f8a3272efa8a8662ba85120250ffbdf68ad77051d253f8bb6fc3"
+      },
+      "raw_original_sha256": "931145c54a70da84d7f03bb52cb5fa1c15fe438c20daae31eca8663f2a44176e",
+      "raw_original_bytes": 469882,
+      "native_constituents": 18,
+      "physical_TOTAL": {
+        "actual_PDFpage": 3,
+        "column": 8
+      },
+      "source_candidate_sums_and_TOTALs": {
+        "Mike Espy": 1496,
+        "Cindy Hyde-Smith": 4180
+      }
+    }
+  ],
+  "worker_original_raster_pins": [
+    {
+      "path": "data/turnout/qa/2018-native-original-probe/sos-2018-county-smith/p0002-original.png",
+      "bytes": 227643,
+      "sha256": "44dd881738b94053c4a1dab3a397f7e6581d819dd25f5babb16c51eb717d1d19"
+    },
+    {
+      "path": "data/turnout/qa/2018-native-original-probe/sos-2018-county-smith/p0003-original.png",
+      "bytes": 210526,
+      "sha256": "a8d17d8aadd129e0a68bf7f6f70a8f9056ec021f3fee5e527d9f66152cbbf6f0"
+    },
+    {
+      "path": "data/turnout/qa/2018-native-original-probe/sos-2018-runoff-county-smith/p0002-original.png",
+      "bytes": 117827,
+      "sha256": "37b536fbf69dc3822004b0bb2d6ffbeb7946fd8b24c6f27450ce60c005255642"
+    },
+    {
+      "path": "data/turnout/qa/2018-native-original-probe/sos-2018-runoff-county-smith/p0003-original.png",
+      "bytes": 116284,
+      "sha256": "0fa23925e904937f123f8af5638c0a612c6c6f52bacb5e7192adeb6fff6a39e2"
+    }
+  ],
+  "compared_positions": 132,
+  "numeric_positions": 114,
+  "unused_null_positions": 18,
+  "source_native_observations_across_stages": 36,
+  "qualification": "Every original-reading source hash/page/physical-column/candidate value/role/literal-header/FIPS field agrees the frozen independent40-stage source CSV. Worker full-original rasters survive by hash. This is a recomputed source/pin comparison, not fresh coordinator reading of all Smith glyphs or equal raster/numeric polygon/parsedID/current geography. Special four-candidate and runoff two-candidate electorates remain distinct; separately printed ClassI office is excluded. Earlier Franklin corrected-source and old witness bodies remain separate. Not whole164-stage history/method or native887 acceptance.",
+  "formal_native887_dispatch_accepted": false,
+  "current_geography_approved": false
+}

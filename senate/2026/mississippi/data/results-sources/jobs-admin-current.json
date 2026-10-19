@@ -1,0 +1,39 @@
+[
+  {
+    "id": "admin-code-current-secretary-query",
+    "url": "https://www.sos.ms.gov/adminsearch/AdminSearchService.asmx/CodeSearch",
+    "method": "POST",
+    "json": {
+      "tmpSubject": "",
+      "tmpAgency": "54",
+      "tmpPartRange1": "",
+      "tmpPartRange2": "",
+      "tmpRuleSum": "",
+      "tmpOrder": "PartNo",
+      "tmpOrderDirec": "Ascending",
+      "tmpSearchDate1": "",
+      "tmpSearchDate2": "",
+      "tmpDateType": "0"
+    },
+    "parent": "admin-code-js-0 and admin-code-js-1",
+    "relation": "exact public CodeSearch constructor arguments with actual agency54 selection from app payload; read-only lookup"
+  },
+  {
+    "id": "hb859-history-current",
+    "url": "https://billstatus.ls.state.ms.us/2026/pdf/history/HB/HB0859.xml",
+    "parent": "exact reviewed official history links; independent fresh capture",
+    "timeout": 20
+  },
+  {
+    "id": "hb859-current-pdf",
+    "url": "https://billstatus.ls.state.ms.us/documents/2026/pdf/HB/0800-0899/HB0859SG.pdf",
+    "parent": "exact reviewed official history links; independent fresh capture",
+    "timeout": 20
+  },
+  {
+    "id": "hb859-current-html",
+    "url": "https://billstatus.ls.state.ms.us/documents/2026/html/HB/0800-0899/HB0859SG.htm",
+    "parent": "exact reviewed official history links; independent fresh capture",
+    "timeout": 20
+  }
+]

@@ -1,0 +1,112 @@
+{
+  "status": "pass_bounded_independent_complete_original_manual_grid_replay",
+  "batch": "batch24",
+  "frozen_input_pins": [
+    {
+      "path": "data/coordinator-qa/presidential-batch24-replay/batch24-presidential-original-readings.json.gz",
+      "bytes": 3950,
+      "sha256": "c238c59c154bd4e34ca99af08b8becf04b03b6d7e7f1af78a86e3d0ac1b5434f"
+    },
+    {
+      "path": "data/coordinator-qa/presidential-batch24-replay/batch24-presidential-original-cells.csv.gz",
+      "bytes": 1821,
+      "sha256": "1b3fef9f7f54003ad3635ff918a0b0cd7bc4b336fe82055bdf3a65eabeb572a7"
+    }
+  ],
+  "immutable_peer_snapshot_pin": {
+    "path": "data/baselines/source/native-allfield-82views/snapshot.json",
+    "bytes": 5216,
+    "sha256": "94576fcfa4b7b245e2d5baa9e8366e4489594804f41694ea04a9f6315e46b336"
+  },
+  "source_views": 1,
+  "native_constituents": 14,
+  "candidate_positions": 198,
+  "position_role_counts": {
+    "source_native_reporting_constituent": 126,
+    "source_TOTAL": 9,
+    "unused_template_column": 63
+  },
+  "complete_original_manual_grid_numeric_positions": 135,
+  "direct_observation_unused_null_positions": 63,
+  "missing_original_aid_positions_including_unused": 198,
+  "provisional_OCR_disagreements_visually_superseded": 0,
+  "source_results": [
+    {
+      "source_id": "sos-2024-county-webster",
+      "raw_sha256": "4a964fc6a9dad2fd5d0264990e6cee5892bca3535bd8fcb51f5872cf268c3e02",
+      "native_constituents": 14,
+      "position_roles": {
+        "source_native_reporting_constituent": 126,
+        "source_TOTAL": 9,
+        "unused_template_column": 63
+      },
+      "native_sums_and_printed_TOTALs": {
+        "Kamala D. Harris": 872,
+        "Chase Oliver": 5,
+        "Jill Stein": 5,
+        "Randall Terry": 4,
+        "Donald J. Trump": 4195,
+        "Shiva Ayyadurai": 2,
+        "Claudia De la Cruz": 1,
+        "Robert F. Kennedy Jr.": 9,
+        "Peter Sonski": 2
+      },
+      "missing_original_aid_positions_including_unused": 198,
+      "provisional_OCR_disagreements_visually_superseded": 0
+    }
+  ],
+  "whole_original_render_pins": [
+    {
+      "path": "data/turnout/qa/batch24-presidential-original-review/sos-2024-county-webster-p02-original.png",
+      "bytes": 380650,
+      "sha256": "b893bb812556f4c15a2fd399d7a51b6c5f4f606f21f05d29e4d3686e8a52ec45"
+    },
+    {
+      "path": "data/turnout/qa/batch24-presidential-original-review/sos-2024-county-webster-p03-original.png",
+      "bytes": 349737,
+      "sha256": "8315548580798eb888dfe2db998726cc4fd3e011f3a699572b7d296f8370e6b6"
+    }
+  ],
+  "separate_render_differences": [
+    {
+      "source_id": "sos-2024-county-webster",
+      "actual_PDFpage": 2,
+      "turnout_render_path": "data/turnout/qa/batch24-presidential-original-review/sos-2024-county-webster-p02-original.png",
+      "turnout_sha256": "b893bb812556f4c15a2fd399d7a51b6c5f4f606f21f05d29e4d3686e8a52ec45",
+      "turnout_size": [
+        1980,
+        1534
+      ],
+      "peer_render_path": "data/baselines/extracts/reviewed-replay/sos-2024-county-webster/p0002-original.png",
+      "peer_sha256": "7082e6fd6cb815257b502184257240af3791822182e4ecf584fefe7e25648816",
+      "peer_size": [
+        1980,
+        1534
+      ],
+      "turnout_applied_deskew_ccw": 0,
+      "peer_stated_deskew_ccw": -0.2000000000000004
+    },
+    {
+      "source_id": "sos-2024-county-webster",
+      "actual_PDFpage": 3,
+      "turnout_render_path": "data/turnout/qa/batch24-presidential-original-review/sos-2024-county-webster-p03-original.png",
+      "turnout_sha256": "8315548580798eb888dfe2db998726cc4fd3e011f3a699572b7d296f8370e6b6",
+      "turnout_size": [
+        1980,
+        1534
+      ],
+      "peer_render_path": "data/baselines/extracts/reviewed-replay/sos-2024-county-webster/p0003-original.png",
+      "peer_sha256": "c150d5a5ee89d52ac4c74a6773177a2a6319aab3af4d387f59a4c9a77294c816",
+      "peer_size": [
+        1980,
+        1534
+      ],
+      "turnout_applied_deskew_ccw": 0,
+      "peer_stated_deskew_ccw": -4.440892098500626e-16
+    }
+  ],
+  "qualification": "All nine candidate rows and source columns use direct whole-original grid readings. Missing OCR aid and observed unused blanks remain distinct from literal numeric zeros; no missing numeric polygon is invented. Raw PDF and raster pins, exact source roles, candidate vectors, flat positions and whitespace-only literal labels agree the immutable independent peer only after original extraction. This bounded source/basis audit is not a fresh coordinator visual reading of every glyph, a cross-publication/geographic join, whole historical-method completion or dispatch approval.",
+  "formal_dispatch_accepted": false,
+  "historical_native_complete": false,
+  "current2026_geography_approved": false
+}

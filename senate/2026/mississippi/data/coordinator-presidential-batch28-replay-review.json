@@ -1,0 +1,94 @@
+{
+  "status": "pass_bounded_independent_complete_original_manual_grid_replay",
+  "batch": "batch28",
+  "frozen_input_pins": [
+    {
+      "path": "data/coordinator-qa/presidential-batch28-replay/batch28-presidential-original-readings.json.gz",
+      "bytes": 4502,
+      "sha256": "4a7e2a133b774a363028db53cceed674869ae25295c5873d4a3b13dc9e93004b"
+    },
+    {
+      "path": "data/coordinator-qa/presidential-batch28-replay/batch28-presidential-original-cells.csv.gz",
+      "bytes": 1995,
+      "sha256": "052ac63fef85fc7b3596f4857fd6315ae9b7e52cd96bfd9deac7f72ea65b5095"
+    }
+  ],
+  "immutable_peer_snapshot_pin": {
+    "path": "data/baselines/source/native-allfield-82views/snapshot.json",
+    "bytes": 5216,
+    "sha256": "94576fcfa4b7b245e2d5baa9e8366e4489594804f41694ea04a9f6315e46b336"
+  },
+  "source_views": 1,
+  "native_constituents": 12,
+  "candidate_positions": 198,
+  "position_role_counts": {
+    "source_native_reporting_constituent": 108,
+    "source_TOTAL": 9,
+    "unused_template_column": 81
+  },
+  "complete_original_manual_grid_numeric_positions": 117,
+  "direct_observation_unused_null_positions": 81,
+  "missing_original_aid_positions_including_unused": 143,
+  "provisional_OCR_disagreements_visually_superseded": 24,
+  "source_results": [
+    {
+      "source_id": "sos-2024-county-choctaw",
+      "raw_sha256": "22eb2ab5f713759f46c687ae9e39f431a9672399b4b38f513a7cccffd2e0aaf6",
+      "native_constituents": 12,
+      "position_roles": {
+        "source_native_reporting_constituent": 108,
+        "source_TOTAL": 9,
+        "unused_template_column": 81
+      },
+      "native_sums_and_printed_TOTALs": {
+        "Kamala D. Harris": 965,
+        "Chase Oliver": 7,
+        "Jill Stein": 7,
+        "Randall Terry": 4,
+        "Donald J. Trump": 2881,
+        "Shiva Ayyadurai": 4,
+        "Claudia De la Cruz": 0,
+        "Robert F. Kennedy Jr.": 21,
+        "Peter Sonski": 1
+      },
+      "missing_original_aid_positions_including_unused": 143,
+      "provisional_OCR_disagreements_visually_superseded": 24
+    }
+  ],
+  "whole_original_render_pins": [
+    {
+      "path": "data/turnout/qa/batch28-presidential-original-review/sos-2024-county-choctaw-p02-original.png",
+      "bytes": 524623,
+      "sha256": "9bb66ccbd4efbaaf081fa8038af07e71e3d1e4ce961c0bee23ddfd16caf8d5c2"
+    },
+    {
+      "path": "data/turnout/qa/batch28-presidential-original-review/sos-2024-county-choctaw-p03-original.png",
+      "bytes": 450517,
+      "sha256": "5abbf8ebfd6470728677986fdc6a3f709327f091030d6867eb1f1491b3fe4296"
+    }
+  ],
+  "separate_render_differences": [
+    {
+      "source_id": "sos-2024-county-choctaw",
+      "actual_PDFpage": 3,
+      "turnout_render_path": "data/turnout/qa/batch28-presidential-original-review/sos-2024-county-choctaw-p03-original.png",
+      "turnout_sha256": "5abbf8ebfd6470728677986fdc6a3f709327f091030d6867eb1f1491b3fe4296",
+      "turnout_size": [
+        1983,
+        1525
+      ],
+      "peer_render_path": "data/baselines/extracts/reviewed-replay/sos-2024-county-choctaw/p0003-original.png",
+      "peer_sha256": "255c1b27342e4aa930cb0e734729a6640d29b3af94bc8b2daf70328f5f78dc8e",
+      "peer_size": [
+        1983,
+        1526
+      ],
+      "turnout_applied_deskew_ccw": 0,
+      "peer_stated_deskew_ccw": 0
+    }
+  ],
+  "qualification": "All nine candidate rows and source columns use direct whole-original grid readings. Missing OCR aid and observed unused blanks remain distinct from literal numeric zeros; no missing numeric polygon is invented. Raw PDF and raster pins, exact source roles, candidate vectors, flat positions and whitespace-only literal labels agree the immutable independent peer only after original extraction. This bounded source/basis audit is not a fresh coordinator visual reading of every glyph, a cross-publication/geographic join, whole historical-method completion or dispatch approval.",
+  "formal_dispatch_accepted": false,
+  "historical_native_complete": false,
+  "current2026_geography_approved": false
+}

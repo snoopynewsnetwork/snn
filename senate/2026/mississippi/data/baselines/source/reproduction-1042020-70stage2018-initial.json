@@ -1,0 +1,52 @@
+{
+  "exit_code": 0,
+  "command": "PYTHONDONTWRITEBYTECODE=1 python senate/2026/mississippi/data/baselines/reproduce.py",
+  "log": {
+    "path": "data/baselines/qa/reproduction-104views-2018seventy.log",
+    "bytes": 32566,
+    "sha256": "bfef8aacbf412801c833378f4721e7954f53b2ae870d4bd64f54c2e9fcd0ff9a"
+  },
+  "reproducer": {
+    "path": "data/baselines/reproduce.py",
+    "bytes": 3963,
+    "sha256": "3cefb439a8ff034cc7b87e3245d35689b9e4b8e2202d4c80ed9c15911c7c5267"
+  },
+  "original_native_input_witnesses": [
+    {
+      "path": "data/baselines/source/native-2020-104views-v1/snapshot.json",
+      "bytes": 3193,
+      "sha256": "1ff6e98fd18f70ec473ce0b5adac5e082f4f1900a7d03d6090e9181150a71568"
+    },
+    {
+      "path": "data/baselines/source/native-2018-70views-v1/snapshot.json",
+      "bytes": 1870,
+      "sha256": "cbb77e1f40c68e9ce74086af95a13fdf414843cf91772226a31e5b77e802dc7b"
+    }
+  ],
+  "bounded_peer_witnesses": [
+    {
+      "path": "data/baselines/source/native-2018-peer-10views-v1/snapshot.json",
+      "bytes": 5583,
+      "sha256": "15d16b6616189bf08a0fb4d807ebacb2f2ff64669b8fabc3ac31eba4c790d470"
+    },
+    {
+      "path": "data/baselines/source/native-2020-peer-41views-v3/snapshot.json",
+      "bytes": 38996,
+      "sha256": "11a6bc9555e055aa6e94ff2ab4f7f3aead02db890d6c81b0a686ed30ce92e2ab"
+    }
+  ],
+  "native2020_arithmetic": {
+    "settings": {
+      "path": "data/baselines/native-2020-calculator-settings.json",
+      "bytes": 101088,
+      "sha256": "63fd7ac8a3dce87a900657822b466be1cfe1dc6ce6e99ad021e617118c862c9b"
+    },
+    "independent_validation": {
+      "path": "data/baselines/native-2020-target-validation.json",
+      "bytes": 9469,
+      "sha256": "a73e675e61a784f3ab2cb488fb4f206b32244a8976e6ae73db1882a4a5833ecd"
+    }
+  },
+  "main_checks": 26,
+  "qualification": "Full offline reproduction through104 separate2020 three-Senate-candidate publication grids and70 separate2018county-stage native grids, including actual2020 native target arithmetic and bounded peer witnesses. All26 bounded main checks pass; broader vendor/native-method/history/current-geography/full-question gates remain open. Later original transcripts are separate scopes, not retroactive inputs to this run."
+}

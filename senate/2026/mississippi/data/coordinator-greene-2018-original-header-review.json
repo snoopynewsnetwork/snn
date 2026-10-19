@@ -1,0 +1,54 @@
+{
+  "status": "confirmed_literal_original_header_exception_after_known_disagreement",
+  "source_readings": [
+    {
+      "source_id": "sos-2018-county-greene",
+      "raw_PDF_sha256": "6c3efa490eb2281d84daf9bfa4dfd4b911f275a814f173d687f162cf493b0147",
+      "actual_PDFpage": 3,
+      "original_png": "data/coordinator-qa/greene-2018-original-header/sos-2018-county-greene.png",
+      "png_bytes": 752576,
+      "png_sha256": "bd4f12e7a3ea1a9c8f7ac998ca1287ac222b51592b0422992ef6647c839e6911",
+      "command": "pdftoppm -f 3 -l 3 -scale-to 3300 -singlefile -png",
+      "physical_source_column": 1,
+      "literal_original_header": "Mclain"
+    },
+    {
+      "source_id": "sos-2018-runoff-county-greene",
+      "raw_PDF_sha256": "6f4a179ea512df3b3a21eb9e19f1b83055792db5feb7852ba6085b2e2a94facb",
+      "actual_PDFpage": 3,
+      "original_png": "data/coordinator-qa/greene-2018-original-header/sos-2018-runoff-county-greene.png",
+      "png_bytes": 474717,
+      "png_sha256": "bf88fd148c8059019d908db176fb6e1712c0e6ae81534d716dd551c73f223569",
+      "command": "pdftoppm -f 3 -l 3 -scale-to 3300 -singlefile -png",
+      "physical_source_column": 1,
+      "literal_original_header": "Mclain"
+    }
+  ],
+  "affected_named_candidate_positions": 6,
+  "older_derivative_literal": "McLain",
+  "source_literal": "Mclain",
+  "original_stage_candidate_values": {
+    "sos-2018-county-greene": {
+      "Tobey Bernard Bartee": 5,
+      "Mike Espy": 122,
+      "Cindy Hyde-Smith": 53,
+      "Chris McDaniel": 47
+    },
+    "sos-2018-runoff-county-greene": {
+      "Mike Espy": 126,
+      "Cindy Hyde-Smith": 84
+    }
+  },
+  "frozen_independent_transcript": {
+    "path": "data/coordinator-qa/greene-2018-original-header/2018-greene-two-stage-native-original-readings.json.gz",
+    "bytes": 3355,
+    "sha256": "b8f074fbc214a8e97c42321151e3e684db2a72ed4bcc9c6fa79c8072333ff4f6"
+  },
+  "frozen_prior_comparison": {
+    "path": "data/coordinator-qa/greene-2018-original-header/2018-greene-native-peer-reconciliation.json.gz",
+    "bytes": 1328,
+    "sha256": "0b16342fae9fbe06bb2fe4640515ea1d190a2a3c80212974963a024510e3dc66"
+  },
+  "qualification": "Coordinator independently freshly rendered both actual source PDFpage3 originals and directly read complete pages after the exception was known. Both physicalc1 headers print Mclain. Older immutable peer McLain readings remain explicit case differences. No votes, source-version chronology, cross-stage/current identities or whole-native-method approval are changed.",
+  "formal_native887_dispatch_accepted": false
+}

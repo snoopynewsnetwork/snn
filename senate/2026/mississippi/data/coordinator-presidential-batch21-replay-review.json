@@ -1,0 +1,115 @@
+{
+  "status": "pass_bounded_independent_original_presidential_batch_source_positions",
+  "batch": "batch21",
+  "frozen_input_pins": [
+    {
+      "path": "data/coordinator-qa/presidential-batch21-replay/batch21-presidential-original-readings.json.gz",
+      "bytes": 6097,
+      "sha256": "904f665e8fd8ef7b128693af95fb791fcd37423da8f0db5f201a44d417c185d7"
+    },
+    {
+      "path": "data/coordinator-qa/presidential-batch21-replay/batch21-presidential-original-cells.csv.gz",
+      "bytes": 2406,
+      "sha256": "ca74e47ae658924d8418fbe9b27fbda8c80f351fb9c9dd577b3ca846a1262e07"
+    }
+  ],
+  "immutable_peer_snapshot_pin": {
+    "path": "data/baselines/source/native-allfield-82views/snapshot.json",
+    "bytes": 5216,
+    "sha256": "94576fcfa4b7b245e2d5baa9e8366e4489594804f41694ea04a9f6315e46b336"
+  },
+  "source_views": 1,
+  "native_constituents": 13,
+  "candidate_positions": 198,
+  "position_role_counts": {
+    "source_native_reporting_constituent": 117,
+    "source_TOTAL": 9,
+    "unused_template_column": 72
+  },
+  "reading_basis_position_counts": {
+    "direct_visual_full_original_page_after_OCR_error": 30,
+    "direct_original_cell_visual_read": 71,
+    "first_independent_original_cell_OCR_source_read_pending_reciprocal": 25,
+    "unprinted_unused_template_position_not_numeric_zero": 72
+  },
+  "direct_visual_OCR_error_corrections": 30,
+  "source_results": [
+    {
+      "source_id": "sos-2024-county-grenada",
+      "source_raw_sha256": "86c5bb13658b564e2b7bce3288f81551948c8e877b6c15f9e6d8d5faf57dbbd1",
+      "native_constituents": 13,
+      "source_position_role_counts": {
+        "source_native_reporting_constituent": 117,
+        "source_TOTAL": 9,
+        "unused_template_column": 72
+      },
+      "native_sums_and_printed_TOTALs": {
+        "Kamala D. Harris": 4060,
+        "Chase Oliver": 8,
+        "Jill Stein": 11,
+        "Randall Terry": 2,
+        "Donald J. Trump": 5651,
+        "Shiva Ayyadurai": 2,
+        "Claudia De la Cruz": 4,
+        "Robert F. Kennedy Jr.": 28,
+        "Peter Sonski": 0
+      },
+      "original_visual_corrections": 30
+    }
+  ],
+  "whole_original_render_pins": [
+    {
+      "path": "data/turnout/qa/batch21-presidential-original-review/sos-2024-county-grenada-p03-original.png",
+      "bytes": 2616361,
+      "sha256": "2175bae45337ba85ffab691f74244262059c74e60c2f7be93bb1efc1830c7608"
+    },
+    {
+      "path": "data/turnout/qa/batch21-presidential-original-review/sos-2024-county-grenada-p04-original.png",
+      "bytes": 2310558,
+      "sha256": "4b21b359da98c67a73a9ebce571cdb3bf85637f9181136a94d805091b47333a0"
+    }
+  ],
+  "separate_render_differences": [
+    {
+      "source_id": "sos-2024-county-grenada",
+      "actual_PDF_page": 3,
+      "turnout_render_path": "data/turnout/qa/batch21-presidential-original-review/sos-2024-county-grenada-p03-original.png",
+      "turnout_sha256": "2175bae45337ba85ffab691f74244262059c74e60c2f7be93bb1efc1830c7608",
+      "turnout_size": [
+        13418,
+        10374
+      ],
+      "peer_render_path": "data/baselines/extracts/reviewed-replay/sos-2024-county-grenada/p0003-original.png",
+      "peer_sha256": "8e163b24c67621ca9615193b3c42a195e92648e7cac31f2f8060a7171866f50c",
+      "peer_size": [
+        13419,
+        10374
+      ],
+      "turnout_applied_deskew_ccw": 0,
+      "peer_stated_deskew_ccw": 0.0
+    },
+    {
+      "source_id": "sos-2024-county-grenada",
+      "actual_PDF_page": 4,
+      "turnout_render_path": "data/turnout/qa/batch21-presidential-original-review/sos-2024-county-grenada-p04-original.png",
+      "turnout_sha256": "4b21b359da98c67a73a9ebce571cdb3bf85637f9181136a94d805091b47333a0",
+      "turnout_size": [
+        13464,
+        10432
+      ],
+      "peer_render_path": "data/baselines/extracts/reviewed-replay/sos-2024-county-grenada/p0004-original.png",
+      "peer_sha256": "c708b354a42b2fa76dd0c1b9b44e7722abfab80323e0f3b058da7fc5fc0dc1b5",
+      "peer_size": [
+        3301,
+        2553
+      ],
+      "turnout_applied_deskew_ccw": 0.1999999999999995,
+      "peer_stated_deskew_ccw": 0.1999999999999995
+    }
+  ],
+  "qualification": "Every bounded original source value,role,page and whitespace-folded literal header agrees after independent extraction with the exact immutable peer source view. Original OCR and direct visual corrections remain separate reading bases; complete source PDFs and raster hashes are checked. Header bounds are source-grid references, not accepted numeric polygons. Independent render pipelines may have different raster pixels, height or deskew, all explicitly recorded; exact raster/crop equivalence is not asserted. No peer vote import, residual allocation, cross-year/name identity join or whole-state/historical-native/method/current-geography approval follows.",
+  "whole_state_presidential_complete": false,
+  "historical_native_complete": false,
+  "formal_dispatch_accepted": false,
+  "current2026_geography_approved": false
+}

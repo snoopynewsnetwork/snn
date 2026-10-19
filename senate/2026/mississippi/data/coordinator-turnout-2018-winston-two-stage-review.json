@@ -1,0 +1,120 @@
+{
+  "status": "pass_bounded_independent_original2018_two_stage_source_replay",
+  "county": "winston",
+  "frozen_worker_bodies": [
+    {
+      "original": {
+        "path": "data/turnout/2018-winston-two-stage-native-original-readings.json",
+        "bytes": 121004,
+        "sha256": "9d92d60ddcf17e93633299ebc887b62d23cb9016726e85bed3f343f5cd1f0e3d"
+      },
+      "lossless_copy": {
+        "path": "data/coordinator-qa/turnout-2018-two-stage-replays/2018-winston-two-stage-native-original-readings.json.gz",
+        "bytes": 3394,
+        "sha256": "c2f4869a70071e1633c26cedbf8fec55739d94ded553e2e0f838f4b736008050"
+      }
+    },
+    {
+      "original": {
+        "path": "data/turnout/2018-winston-two-stage-native-original-cells.csv",
+        "bytes": 49107,
+        "sha256": "63b3f3794b948e726bb4342441446239e05eab3007627ea99c2b3650b9941ffb"
+      },
+      "lossless_copy": {
+        "path": "data/coordinator-qa/turnout-2018-two-stage-replays/2018-winston-two-stage-native-original-cells.csv.gz",
+        "bytes": 1783,
+        "sha256": "88d177dd5b04d0d720aa1588592da01228e2fa972a721e7708c2b9d00b44b959"
+      }
+    },
+    {
+      "original": {
+        "path": "data/turnout/2018-winston-native-peer-reconciliation.json",
+        "bytes": 1181,
+        "sha256": "3ddd4d5a763259e8840bf5189cd9c3961bf5b1b7dace7c013dbf6ae70dca99bf"
+      },
+      "lossless_copy": {
+        "path": "data/coordinator-qa/turnout-2018-two-stage-replays/2018-winston-native-peer-reconciliation.json.gz",
+        "bytes": 671,
+        "sha256": "6eabef001e11e51b44135221443995dc9502dcdfe6f39708bd3a5a55b769561e"
+      }
+    }
+  ],
+  "immutable_peer_snapshot": {
+    "path": "data/baselines/source/native-2018-78views-v1/snapshot.json",
+    "bytes": 1872,
+    "sha256": "4df50caded4d9a1cdfd46081422e36002439b10aea28cfab1fb6dcf00f34621c"
+  },
+  "source_findings": [
+    {
+      "source_id": "sos-2018-county-winston",
+      "raw_original_sha256": "b0337bd8b540566fafca3f732c19dad02ee297de13ec1db83459c3b79b770fb6",
+      "raw_original_bytes": 849867,
+      "stored_original": {
+        "path": "data/turnout/source/sos-2018-county-winston.body.gz",
+        "bytes": 559602,
+        "sha256": "27c344d9190b09cb303d8012686920d5f71c960fc7e00b988cb446489e4adeab"
+      },
+      "native_constituents": 12,
+      "physical_TOTAL": {
+        "actual_PDFpage": 3,
+        "column": 2
+      },
+      "source_candidate_sums_and_TOTALs": {
+        "Tobey Bernard Bartee": 107,
+        "Mike Espy": 2996,
+        "Cindy Hyde-Smith": 3039,
+        "Chris McDaniel": 855
+      }
+    },
+    {
+      "source_id": "sos-2018-runoff-county-winston",
+      "raw_original_sha256": "b05f6763a89242b45f3a712579731f9286bfa2120f06123c055d49e32e8d280e",
+      "raw_original_bytes": 731790,
+      "stored_original": {
+        "path": "data/turnout/source/sos-2018-runoff-county-winston.body.gz",
+        "bytes": 463756,
+        "sha256": "c0cd332701322a013d6ea3250d85025362eded637516742e9048fbdde2f2567a"
+      },
+      "native_constituents": 12,
+      "physical_TOTAL": {
+        "actual_PDFpage": 3,
+        "column": 2
+      },
+      "source_candidate_sums_and_TOTALs": {
+        "Mike Espy": 3247,
+        "Cindy Hyde-Smith": 3559
+      }
+    }
+  ],
+  "original_worker_raster_pins": [
+    {
+      "path": "data/turnout/qa/2018-native-original-probe/sos-2018-county-winston/p0002-original.png",
+      "bytes": 239613,
+      "sha256": "93974aba585ba7eabd07a3a9adc331943a76aeddfd4df1e5b06a55c1ddd6e8f2"
+    },
+    {
+      "path": "data/turnout/qa/2018-native-original-probe/sos-2018-county-winston/p0003-original.png",
+      "bytes": 192517,
+      "sha256": "f49f9a326fcf2d9f6eb2e8710b8bc6957311db1a57dec3e55636cd88fd116bf3"
+    },
+    {
+      "path": "data/turnout/qa/2018-native-original-probe/sos-2018-runoff-county-winston/p0002-original.png",
+      "bytes": 137683,
+      "sha256": "209075c62d9721e67d9cb140423b27a5d62a6646bfbb68130aada40b4493df3c"
+    },
+    {
+      "path": "data/turnout/qa/2018-native-original-probe/sos-2018-runoff-county-winston/p0003-original.png",
+      "bytes": 117487,
+      "sha256": "32b789922cfa6cf36b1740a0fc44ac3387c8baee099fca4afe89007bb420ab95"
+    }
+  ],
+  "compared_positions": 132,
+  "counts": {
+    "numeric_positions": 78,
+    "unused_null_positions": 54
+  },
+  "whitespace_only_header_representations": [],
+  "qualification": "All original-reading and flat source fields recompute against immutable peer evidence after the worker original transcript: candidate values/roles/original hash/page/physical column/FIPS and whitespace-folded literal headers. Whole source rasters survive by hash, not pixel/reading-window/parsedID identity. This is not fresh coordinator visual reading of all new glyphs, shared current geography, same cross-stage electorate or whole164-stage historical-method/native887 approval. Source native fields are never replaced by county controls or another year/stage.",
+  "formal_native887_dispatch_accepted": false,
+  "current_geography_approved": false
+}

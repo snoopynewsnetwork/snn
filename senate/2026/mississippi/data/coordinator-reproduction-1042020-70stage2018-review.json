@@ -1,0 +1,102 @@
+{
+  "status": "pass_bounded_worker_reproduction_receipt_and_exact_execution_script_accounting",
+  "receipt": {
+    "original": {
+      "path": "data/baselines/source/reproduction-1042020-70stage2018.json",
+      "bytes": 3027,
+      "sha256": "26341d217b6e080c6ccd096b3ce39f4f6c93e01a3dc2037177c5dfc2372dc74f"
+    },
+    "lossless_copy": {
+      "path": "data/coordinator-qa/reproduction-104-70/reproduction-1042020-70stage2018.json.gz",
+      "bytes": 1319,
+      "sha256": "fbc013b0a158474328cf6ba6d605c0bc3f485dc65a4691ab405dd0c9ba5368e2"
+    }
+  },
+  "worker_log": {
+    "original": {
+      "path": "data/baselines/qa/reproduction-104views-2018seventy.log",
+      "bytes": 32566,
+      "sha256": "bfef8aacbf412801c833378f4721e7954f53b2ae870d4bd64f54c2e9fcd0ff9a"
+    },
+    "lossless_copy": {
+      "path": "data/coordinator-qa/reproduction-104-70/reproduction-104views-2018seventy.log.gz",
+      "bytes": 8131,
+      "sha256": "91071a7932f064f3c376123fba7a3737de8eaa39948871aa704ff9b954f09327"
+    }
+  },
+  "exact_execution_reproducer": {
+    "original": {
+      "path": "data/baselines/source/reproduction-1042020-70stage2018-execution-reproducer.py.txt",
+      "bytes": 3963,
+      "sha256": "3cefb439a8ff034cc7b87e3245d35689b9e4b8e2202d4c80ed9c15911c7c5267"
+    },
+    "lossless_copy": {
+      "path": "data/coordinator-qa/reproduction-104-70/reproduction-1042020-70stage2018-execution-reproducer.py.txt.gz",
+      "bytes": 1218,
+      "sha256": "2390cfcc7972fe7c7d86b025a2749123805c7bb0b37ed405a33f48b493711265"
+    }
+  },
+  "later_observed_reproducer": {
+    "original": {
+      "path": "data/baselines/reproduce.py",
+      "bytes": 4037,
+      "sha256": "ec2a9d86c403e1d96e7e9f64113027049143d86b45c19a6ddf169f75d2911015"
+    },
+    "lossless_copy": {
+      "path": "data/coordinator-qa/reproduction-104-70/reproduce.py.gz",
+      "bytes": 1232,
+      "sha256": "f6cee7a050eb975514684a4667a1a71c3cd6dfb11d751b49be199f6af85ceb06"
+    }
+  },
+  "initial_receipt": {
+    "original": {
+      "path": "data/baselines/source/reproduction-1042020-70stage2018-initial.json",
+      "bytes": 2237,
+      "sha256": "d6f3af3ff4cf8ba950b22a5ba45db9a98a4aa3c3417ca18ffcdd045095b53d91"
+    },
+    "lossless_copy": {
+      "path": "data/coordinator-qa/reproduction-104-70/reproduction-1042020-70stage2018-initial.json.gz",
+      "bytes": 1033,
+      "sha256": "ecb24a4e2f3e16a5c8a74a68fd1126fbf963ae157cd2b0896f8b61912777e5bc"
+    }
+  },
+  "checked_input_pins": [
+    {
+      "path": "data/baselines/source/native-2020-104views-v1/snapshot.json",
+      "bytes": 3193,
+      "sha256": "1ff6e98fd18f70ec473ce0b5adac5e082f4f1900a7d03d6090e9181150a71568"
+    },
+    {
+      "path": "data/baselines/source/native-2018-70views-v1/snapshot.json",
+      "bytes": 1870,
+      "sha256": "cbb77e1f40c68e9ce74086af95a13fdf414843cf91772226a31e5b77e802dc7b"
+    },
+    {
+      "path": "data/baselines/source/native-2018-peer-10views-v1/snapshot.json",
+      "bytes": 5583,
+      "sha256": "15d16b6616189bf08a0fb4d807ebacb2f2ff64669b8fabc3ac31eba4c790d470"
+    },
+    {
+      "path": "data/baselines/source/native-2020-peer-41views-v3/snapshot.json",
+      "bytes": 38996,
+      "sha256": "11a6bc9555e055aa6e94ff2ab4f7f3aead02db890d6c81b0a686ed30ce92e2ab"
+    },
+    {
+      "path": "data/baselines/native-2020-calculator-settings.json",
+      "bytes": 101088,
+      "sha256": "63fd7ac8a3dce87a900657822b466be1cfe1dc6ce6e99ad021e617118c862c9b"
+    },
+    {
+      "path": "data/baselines/native-2020-target-validation.json",
+      "bytes": 9469,
+      "sha256": "a73e675e61a784f3ab2cb488fb4f206b32244a8976e6ae73db1882a4a5833ecd"
+    }
+  ],
+  "recorded_final_bounded_checks": 26,
+  "recorded_final_asset_count": 11420,
+  "reported_worker_exit_code": 0,
+  "later_observed_reproducer_difference": "One later reconcile_2018_native_peer_v2.py list member and one record_2018_header_evidence.py call. Removing these two exact additions reproduces pinned execution bytes. This observed later script is frozen separately; mutable working-script identity is not asserted.",
+  "qualification": "The coordinator verifies the complete retained log, receipt, source witnesses, arithmetic input pins and exact archived execution script. This does not independently execute the mutating worker build, establish completeness beyond104 original2020 and70 distinct2018 native stages, or approve current geography/methods/native887 dispatch. Later78-stage and12-stage reciprocal witnesses remain distinct from this earlier run.",
+  "coordinator_executed_worker_reproduction": false,
+  "formal_native887_dispatch_accepted": false
+}
