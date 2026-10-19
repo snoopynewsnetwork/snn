@@ -345,3 +345,22 @@ Five explicit reviewed state-only asset commits are remoteexactverified:3186f326
 ## Mississippi publication complete
 
 Mississippi's reviewed four-question package is published in78c905c3002d3bb2e0e038213711ade376687d3e; origin/mainexactverified. Allfive bounded asset commits are remote and everycurrent statefile is tracked, with strict40MBobjectbounds. Exact887historical/native priority/all1,736preferred/all82parents/fullhistorical104/164objects and allsource/map/legal/currentunknown qualifications remain. One exact semantic-inert source-script trailingblank is documented while preservingfrozen hashes. No genuineNovember source/count/crosswalk/collector/probability approval is implied. Nebraska's existing twoactual firstpair workers continue;20laterstates remain queued. Thirteennew statepackages plus retainedMichigan are now published; full34state batch continues.
+
+
+## Nebraska first pair finished; South Dakota first pair launched
+
+Nebraska turnout `012d3597-6f6c-4ff1-a3d7-a488176243ba` and partisanship
+`bf15a495-7e21-44b4-abd9-d8d7f83bb88e` actually finished their frozen packages.
+The independently reconciled 765-unit prefix covers 748,190 of 935,005 named
+canvass votes across 1,326 native units; coordinator review and formal historical
+acceptance remain pending. The eligible write-in universe and membership
+robustness are unproved: the partial observed-generic scenario changes one
+member. Lancaster registration differs by 164; source disagreements remain
+unallocated.
+
+In those actual finish slots, fresh Research-profile/provider discovery preceded
+South Dakota turnout `ad252512-9d56-42ca-adf2-f81a21cbe63e` and partisanship
+`e6c0d1f7-5022-447d-9308-07988d70dad5`. They are the only two active researchers.
+All 691 published native rows and 66 certified county controls must remain, with
+the unofficial source's 194-vote gap qualified. Nebraska's second pair awaits
+reviewed acceptance and available slots; no current identity approval follows.
