@@ -1,0 +1,120 @@
+{
+  "status": "source_setup_preflight_not_live_admission",
+  "source_chain": {
+    "sos-enr": {
+      "url": "https://electionresults.nebraska.gov/",
+      "raw_sha256": "0f1c2a5c1f423120682b0deacc1aec9bc09348678f116fdd37960ce75f160678",
+      "stored_sha256": "68d15037b5947fa687729bf231d6778c8b174dcb9be21f5ef05ad09e11f217e8",
+      "status": 200,
+      "asset": "data/news/sos-enr.html.gz"
+    },
+    "sos-enr-linked-bundle": {
+      "url": "https://neresultswebservice.azurewebsites.us/Scripts/script.bundle.js",
+      "raw_sha256": "212ce415a636e456a9463b92c7945eff421d33cf68c0cb3e913c75f661f48b87",
+      "stored_sha256": "b98a842e368e1e4627a33954a7f4af01cd56ca80d6a47bda0e168f857dd80552",
+      "status": 200,
+      "asset": "data/news/sos-enr-linked-bundle.html.gz"
+    },
+    "sos-enr-observed-candidates": {
+      "url": "https://neresultswebservice.azurewebsites.us/ResultsAjax.svc/GetCandidates?ElectionType=General&ElectionID=0",
+      "raw_sha256": "aeab00fc64a3da653ad04a27b2f653aa644b55e271f4ca04a5270eace6494d64",
+      "stored_sha256": "01ec94f2476ea42b581cef8459ce0ac62a217a25d5e76adf008208a2136ac508",
+      "status": 200,
+      "asset": "data/news/sos-enr-observed-candidates.html.gz"
+    },
+    "sos-enr-statewide": {
+      "url": "https://electionresults.nebraska.gov/resultsSW.aspx?type=SW&map=CTY",
+      "raw_sha256": "976e36b2b434657d3e5ee1fbd700ba0a0b79a86bced1afaf410983b5da81ea92",
+      "stored_sha256": "8b87bd43cf36a07e981a4ed9dc71e2eb339f3115bdde3cb64b6eeb320bc5e92b",
+      "status": 200,
+      "asset": "data/news/sos-enr-statewide.html.gz"
+    }
+  },
+  "all_catalog_positions": 625,
+  "senate_catalog_rows": [
+    {
+      "source_position_1based": 200,
+      "__type": "CandidateData:#NEResultsWebService",
+      "ID": 148,
+      "Party": "America First",
+      "desc": "For United States Senator - 6  Year Term",
+      "label": "Chuck  Conboy  For United States Senator - 6  Year Term",
+      "name": "Chuck  Conboy "
+    },
+    {
+      "source_position_1based": 201,
+      "__type": "CandidateData:#NEResultsWebService",
+      "ID": 148,
+      "Party": "By Petition",
+      "desc": "For United States Senator - 6  Year Term",
+      "label": "Dan  Osborn  For United States Senator - 6  Year Term",
+      "name": "Dan  Osborn "
+    },
+    {
+      "source_position_1based": 202,
+      "__type": "CandidateData:#NEResultsWebService",
+      "ID": 148,
+      "Party": "Legal Marijuana Now",
+      "desc": "For United States Senator - 6  Year Term",
+      "label": "Mike  Marvin  For United States Senator - 6  Year Term",
+      "name": "Mike  Marvin "
+    },
+    {
+      "source_position_1based": 203,
+      "__type": "CandidateData:#NEResultsWebService",
+      "ID": 148,
+      "Party": "Republican",
+      "desc": "For United States Senator - 6  Year Term",
+      "label": "Pete  Ricketts  For United States Senator - 6  Year Term",
+      "name": "Pete  Ricketts "
+    },
+    {
+      "source_position_1based": 204,
+      "__type": "CandidateData:#NEResultsWebService",
+      "ID": 148,
+      "Party": "Nebraska Working People",
+      "desc": "For United States Senator - 6  Year Term",
+      "label": "Robin  Richards  For United States Senator - 6  Year Term",
+      "name": "Robin  Richards "
+    }
+  ],
+  "identity_scope": "ID148 repeats across all five choices and is a contest/search ID, not five unique candidate IDs. Raw names/party strings remain literal. No signed final-ballot/withdrawal or valid write-in universe inferred.",
+  "candidate_scenario_scope": "Current setup contains no Democratic-labeled Senate candidate. Dan Osborn is By Petition, never relabel Democratic. Historical 2024 Love-Ricketts same-seat and Osborn-Fischer other-seat contests remain separate.",
+  "current_count_admission": false,
+  "final_primary_candidate_publication": {
+    "source_id": "sos-final-general-candidate-pdf",
+    "url": "https://sos.nebraska.gov/sites/default/files/doc/elections/2026/Final_Statewide_General_Candidate_Filing_List_9.11.26.pdf",
+    "raw_sha256": "d27a071715896b8c82b8cce8d48200b4207ba10c44f1778f56f92c4efcd7cf96",
+    "date_literal": "9/11/2026",
+    "election_literal": "November 3, 2026 General Election",
+    "page": 1,
+    "term_years": 6,
+    "vote_for": 1,
+    "party_name_rows": [
+      {
+        "name": "Pete Ricketts",
+        "party": "Republican"
+      },
+      {
+        "name": "Mike Marvin",
+        "party": "Legal Marijuana NOW"
+      },
+      {
+        "name": "Robin Richards",
+        "party": "Nebraska Working People"
+      },
+      {
+        "name": "Chuck Conboy",
+        "party": "America First"
+      },
+      {
+        "name": "Dan Osborn",
+        "party": "By Petition"
+      }
+    ],
+    "preview_path": "data/news/previews/final-general-candidate-list-01.png",
+    "preview_sha256": "ba2c791a671bad0a2520c376e641c75560bcb7715f77ad99e4c12becd2bf9a4c",
+    "visual_review": "Complete page1 independently read; five Senate rows before first House section. Final filing publication corroborates setup names/parties, no unique ENR candidate IDs or later withdrawal scope inferred.",
+    "reproduction": "gzip-decompress retained original; pdftotext -layout; pdftoppm -f 1 -l 1 -r 130 -png."
+  }
+}

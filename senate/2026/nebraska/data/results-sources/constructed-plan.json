@@ -1,0 +1,30 @@
+[
+  {
+    "id": "state-current-county-json",
+    "url": "https://neresultswebservice.azurewebsites.us/ResultsAjax.svc/GetMapData?type=SW&category=CTY&raceID=13224&osn=102&county=0&party=0",
+    "parent": "code-0",
+    "basis": "Exact BuildCounty constructor; state-1 onclick BuildCounty SW/13224/102/blank, General forces party0, county0; no guessed race ID",
+    "stage": "state-current"
+  },
+  {
+    "id": "clarity-portal-cass-web-config",
+    "url": "https://results.enr.clarityelections.com/NE/Cass/126289/web.345435/web.json",
+    "parent": "code-2",
+    "basis": "Actual ENRWebConfigService get() http.get(`./${FileName.WebConfig}`), WebConfig=web.json, document base in portal-cass",
+    "stage": "vendor-config"
+  },
+  {
+    "id": "clarity-portal-sarpy-web-config",
+    "url": "https://results.enr.clarityelections.com/NE/Sarpy/126282/web.345435/web.json",
+    "parent": "code-3",
+    "basis": "Actual ENRWebConfigService get() http.get(`./${FileName.WebConfig}`), WebConfig=web.json, document base in portal-sarpy",
+    "stage": "vendor-config"
+  },
+  {
+    "id": "clarity-cass-extra-235-web-config",
+    "url": "https://results.enr.clarityelections.com/NE/Cass/122843/web.345435/web.json",
+    "parent": "code-4",
+    "basis": "Actual ENRWebConfigService get() http.get(`./${FileName.WebConfig}`), WebConfig=web.json, document base in cass-extra-235",
+    "stage": "vendor-config"
+  }
+]

@@ -96,3 +96,19 @@ discovery. It receives the externally accepted source-only304/691/66 contract
 and certified-membership qualification. Nebraska official-results6b84b5dd and
 South Dakota official-resultse82a2e02 are the only active researchers. South
 Dakota maps awaits an actual finish slot; no extra worker was created.
+
+
+## Nebraska all four finished; South Dakota second pair active
+
+Nebraska official-results `6b84b5dd-096f-45b4-a5bd-5bfa66c13dd8` actually
+finished its frozen1,036-owned-asset package, all93 authorities/58 parent chains
+and current zero/setup schema qualified. All four Nebraska workers are finished;
+coordinator final source/integration/publication review continues. No genuine
+November votes, current crosswalk or eligible-write-in universe is approved.
+
+That actual finish slot launched South Dakota maps
+`d38ec512-6066-448b-ab15-c0b74c50f1e7` after fresh Research-profile/provider
+discovery. Its actual official-results peer is
+`e82a2e02-f3d9-425e-ae6f-44a7efafcee0`. They are the only active researchers.
+The exact source-only304/all691/66-parent dispatch and certified-membership
+qualification remain. Nineteen later states await actual finish slots.

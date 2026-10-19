@@ -1,0 +1,1506 @@
+{
+  "status": "pass_frozen_first_pair_named_historical_scope_only",
+  "checks": {
+    "frozen_assets": {
+      "turnout": {
+        "owned_entries": 138,
+        "reference_entries": 157,
+        "exact_membership": true,
+        "explicit_exclusions": [
+          "data/turnout/asset-manifest.json",
+          "data/turnout/validation.json"
+        ],
+        "manifest": {
+          "path": "data/turnout/asset-manifest.json",
+          "bytes": 93051,
+          "sha256": "fce4e8e5aa12f4e7a994b1b36e97e7e730fd209dcd4d5e9f3ce335e3267415e1"
+        },
+        "validation": {
+          "path": "data/turnout/validation.json",
+          "bytes": 2646,
+          "sha256": "378382de3c680a158ebe72f63357804b9380fb682ed216a7e24088792769c8cf"
+        }
+      },
+      "baselines": {
+        "owned_entries": 108,
+        "reference_entries": 161,
+        "exact_membership": true,
+        "explicit_exclusions": [
+          "data/baselines/asset-manifest.json"
+        ],
+        "manifest": {
+          "path": "data/baselines/asset-manifest.json",
+          "bytes": 77282,
+          "sha256": "d83085cc4a266415e7ea58ae1abce8234cd9e7162bfba1b077d29c0cf2a917b2"
+        },
+        "validation": {
+          "path": "data/baselines/validation.json",
+          "bytes": 1962,
+          "sha256": "51db61ab640646fc63e74308ea4c8af28bcef56a8a9348f30e2ac820e9b04911"
+        }
+      }
+    },
+    "original_canvass_tables": {
+      "tables": 11,
+      "county_vectors": 1023,
+      "original_numeric_fields": 5734,
+      "source_receipts": [
+        {
+          "id": "sos-2024-canvass",
+          "url": "https://sos.nebraska.gov/sites/default/files/doc/elections/2024/2024%20General%20Canvass%20Book.pdf",
+          "retrieved_at_utc": "2026-10-18T17:12:40.920530+00:00",
+          "status": 200,
+          "final_url": "https://sos.nebraska.gov/sites/default/files/doc/elections/2024/2024%20General%20Canvass%20Book.pdf",
+          "raw_sha256": "4887fb1caab820ab737adaaff9b73ee601e37a707fb0002d8901fd674e8efbe9",
+          "asset": "sos-2024-canvass.html.gz",
+          "stored_sha256": "650d52262e590e7c2ad3b5b84ca44d8b3d9a04379df2200f0f2eed1b37f088b0",
+          "bytes": 3223182,
+          "headers": {
+            "Connection": "keep-alive",
+            "Content-Length": "3223182",
+            "Content-Type": "application/pdf",
+            "Etag": "\"677eb953-312e8e\"",
+            "Last-Modified": "Wed, 08 Jan 2025 17:43:47 GMT",
+            "Server": "nginx",
+            "Strict-Transport-Security": "max-age=31622400; includeSubDomains; preload",
+            "X-Pantheon-Styx-Hostname": "styx-us-a-fbbcf58dd-2f4hm",
+            "X-Styx-Req-Id": "ebe2036c-cb13-11f1-a623-1a38853170de",
+            "Age": "0",
+            "Accept-Ranges": "bytes",
+            "Via": "1.1 varnish, 1.1 varnish",
+            "Date": "Sun, 18 Oct 2026 17:12:41 GMT",
+            "X-Served-By": "cache-chi-kmdw8640027-CHI, cache-chi-kmdw8640058-CHI",
+            "X-Cache": "HIT, MISS",
+            "X-Cache-Hits": "0, 0",
+            "X-Timer": "S1792343561.069417,VS0,VE106"
+          }
+        },
+        {
+          "id": "sos-2022-canvass",
+          "url": "https://sos.nebraska.gov/sites/default/files/doc/elections/2022/2022%20General%20Canvass%20Book.pdf",
+          "retrieved_at_utc": "2026-10-18T17:21:40.342513+00:00",
+          "status": 200,
+          "final_url": "https://sos.nebraska.gov/sites/default/files/doc/elections/2022/2022%20General%20Canvass%20Book.pdf",
+          "raw_sha256": "bf1634f18964b1ab616a474c5f185680058bbb6a8856431c79ab2a04930b6e53",
+          "asset": "sos-2022-canvass.html.gz",
+          "stored_sha256": "3cebf671d259c0af744480c829c1dbdee616bc0b9acfd7659f7a4077e569cfbc",
+          "bytes": 3776921,
+          "headers": {
+            "Connection": "keep-alive",
+            "Content-Length": "3776921",
+            "Content-Type": "application/pdf",
+            "Etag": "\"67787954-39a199\"",
+            "Last-Modified": "Fri, 03 Jan 2025 23:57:08 GMT",
+            "Server": "nginx",
+            "Strict-Transport-Security": "max-age=31622400; includeSubDomains; preload",
+            "X-Pantheon-Styx-Hostname": "styx-us-a-fbbcf58dd-frfdv",
+            "X-Styx-Req-Id": "61d1fe75-cb18-11f1-b3a9-da47de4c34d2",
+            "Age": "0",
+            "Accept-Ranges": "bytes",
+            "Via": "1.1 varnish, 1.1 varnish",
+            "Date": "Sun, 18 Oct 2026 17:21:40 GMT",
+            "X-Served-By": "cache-chi-klot8100144-CHI, cache-chi-kmdw8640045-CHI",
+            "X-Cache": "MISS, MISS",
+            "X-Cache-Hits": "0, 0",
+            "X-Timer": "S1792344101.587629,VS0,VE201"
+          }
+        },
+        {
+          "id": "sos-2020-canvass",
+          "url": "https://sos.nebraska.gov/sites/default/files/doc/elections/2020/2020-General-Canvass-Book.pdf",
+          "retrieved_at_utc": "2026-10-18T17:21:40.923326+00:00",
+          "status": 200,
+          "final_url": "https://sos.nebraska.gov/sites/default/files/doc/elections/2020/2020-General-Canvass-Book.pdf",
+          "raw_sha256": "b7bc0ddd49b317b7a01e3e0b9de60b35ede727d0915d8e64b7b081e455c66e87",
+          "asset": "sos-2020-canvass.html.gz",
+          "stored_sha256": "3a3feb670862640e4b4fef8cda1412b01a77668da42a53a6870100a91d599686",
+          "bytes": 3837870,
+          "headers": {
+            "Connection": "keep-alive",
+            "Content-Length": "3837870",
+            "Content-Type": "application/pdf",
+            "Etag": "\"67787954-3a8fae\"",
+            "Last-Modified": "Fri, 03 Jan 2025 23:57:08 GMT",
+            "Server": "nginx",
+            "Strict-Transport-Security": "max-age=31622400; includeSubDomains; preload",
+            "X-Pantheon-Styx-Hostname": "styx-us-a-fbbcf58dd-zgfwj",
+            "X-Styx-Req-Id": "621c062a-cb18-11f1-ad72-ea891266a158",
+            "Age": "0",
+            "Accept-Ranges": "bytes",
+            "Via": "1.1 varnish, 1.1 varnish",
+            "Date": "Sun, 18 Oct 2026 17:21:41 GMT",
+            "X-Served-By": "cache-chi-kmdw8640086-CHI, cache-chi-kmdw8640038-CHI",
+            "X-Cache": "MISS, MISS",
+            "X-Cache-Hits": "0, 0",
+            "X-Timer": "S1792344101.072633,VS0,VE177"
+          }
+        }
+      ],
+      "independent_baseline_and_turnout_match": true
+    },
+    "full_native_contract": {
+      "full": 1326,
+      "priority": 765,
+      "remainder": 561,
+      "parents": 93,
+      "priority_parents": 58,
+      "all_parent_child_arrays_exact": true,
+      "complete_alternatives": 329,
+      "additional_native_PDF_contexts": 14,
+      "resident_unavailable": 2,
+      "school_attachments": 2
+    },
+    "reciprocal_final_pins": [
+      {
+        "path": "data/turnout/peer-agreement.json",
+        "bytes": 3192,
+        "sha256": "761ea9418b00448e74735c278c30b064111bfb34a24b36356d4ed864ea180dea"
+      },
+      {
+        "path": "data/baselines/peer-reconciliation.json",
+        "bytes": 173597,
+        "sha256": "80b75eac20041d4c0eecd9e111742544a5b50167e295f2b1e6703e27df9cd6a3"
+      }
+    ],
+    "independent_targets": {
+      "historical_state_groups": 46,
+      "historical_unit_rows": 11676,
+      "five_choice_state_groups": 54,
+      "five_choice_unit_rows": 27216,
+      "formula_checks": 388920,
+      "solver": "Original-source weights/preferences; exact saturation-breakpoint integration, no producer imports/bisection",
+      "maximum_shift_fraction_error": 5.134781488891349e-16,
+      "maximum_net_vote_error": 9.299583325628191e-10
+    },
+    "independent_live": {
+      "synthetic_cases": 16,
+      "numeric_or_status_cases": 16,
+      "non_unknown_equation_cases": 13,
+      "counted_fixed": true,
+      "final_denominator_verified": true,
+      "no_probability": true
+    },
+    "qualified_source_gaps": {
+      "registration_differences": [
+        {
+          "county": "Nemaha",
+          "source_id": "sos-2024-county-nemaha-indexed-official",
+          "page": 1,
+          "local_registered": 4465,
+          "state_canvass_registered": 4469,
+          "difference": -4,
+          "raw_line": "Registered Voters - Total                             4,465",
+          "scope": "Local county summary versus separate state canvass; common status/snapshot date unproved"
+        },
+        {
+          "county": "Clay",
+          "source_id": "sos-2024-county-clay-indexed-official",
+          "page": 1,
+          "local_registered": 4179,
+          "state_canvass_registered": 4167,
+          "difference": 12,
+          "raw_line": "Registered Voters - Total                   4,179",
+          "scope": "Local county summary versus separate state canvass; common status/snapshot date unproved"
+        },
+        {
+          "county": "Nance",
+          "source_id": "sos-2024-county-nance-indexed-official",
+          "page": 1,
+          "local_registered": 2407,
+          "state_canvass_registered": 2404,
+          "difference": 3,
+          "raw_line": "Registered Voters - Total                2,407",
+          "scope": "Local county summary versus separate state canvass; common status/snapshot date unproved"
+        },
+        {
+          "county": "Gosper",
+          "source_id": "sos-2024-county-gosper-indexed-official",
+          "page": 1,
+          "local_registered": 1431,
+          "state_canvass_registered": 1432,
+          "difference": -1,
+          "raw_line": "Registered Voters - Total                1,431",
+          "scope": "Local county summary versus separate state canvass; common status/snapshot date unproved"
+        },
+        {
+          "county": "Lancaster",
+          "source_id": "county-lancaster-2024-final-precinct-pdf-actual-archive",
+          "local_registered": 206570,
+          "state_canvass_registered": 206406,
+          "difference": 164,
+          "scope": "Sum199native statistics, resident registered0; no unproved cross-source equality imposed"
+        },
+        {
+          "county": "Deuel",
+          "source_id": "sos-2024-county-deuel-indexed-unofficial",
+          "page": 1,
+          "local_registered": 1412,
+          "state_canvass_registered": 1411,
+          "difference": 1,
+          "scope": "Original rotated fullpage manually read,1412; unofficial summary versus state canvass"
+        }
+      ],
+      "generic_nine_counties": 1117,
+      "generic_selected431": 1078,
+      "generic_unavailable895": true,
+      "eligible_writein_universe_complete": false,
+      "eligible_priority_robustness_proven": false,
+      "partial_scenario_membership_swap": {
+        "denominator": 936083,
+        "prefix": {
+          "count": 765,
+          "votes": 749234,
+          "preceding": 748688,
+          "crossing": "NE:2024-special:lancaster-pdf:page-419"
+        },
+        "removed": [
+          "NE:2024-special:html:39:0003"
+        ],
+        "added": [
+          "NE:2024-special:lancaster-pdf:page-419"
+        ]
+      },
+      "current_geography_approved": false,
+      "source_volume_disagreements_unallocated": true
+    }
+  },
+  "frozen_owned_entries": [
+    {
+      "path": "county-partisanship.md",
+      "bytes": 34070,
+      "sha256": "a143634331fefebdea8051f890ba6accd10806f376eda166a5bbd16603784ad8"
+    },
+    {
+      "path": "data/baselines/acquire.py",
+      "bytes": 3468,
+      "sha256": "dfa230a66e4eb0921f8f9c733083483569341de705ad3abb2b99b08b3e0538bc"
+    },
+    {
+      "path": "data/baselines/audit_assets.py",
+      "bytes": 3259,
+      "sha256": "484fff320a9ba668eb50765c48ce7948778a02143da946a9ff0c53bcb6140b17"
+    },
+    {
+      "path": "data/baselines/build.py",
+      "bytes": 12737,
+      "sha256": "02b6d1000be31925ccaaa27650960a480435dea6e5ce605708cd90bee28c31d2"
+    },
+    {
+      "path": "data/baselines/calculator.py",
+      "bytes": 10488,
+      "sha256": "baea648d37df0100e008ac6c7e1ca1511c2933b2e383c785c0667f5964b8eb0d"
+    },
+    {
+      "path": "data/baselines/candidate-universe.json",
+      "bytes": 222784,
+      "sha256": "3b257f9ca9fa1bbc4c1918b53475ec797e295b257feec60298c02788d320ccde"
+    },
+    {
+      "path": "data/baselines/county-candidates.csv",
+      "bytes": 179892,
+      "sha256": "d3fc284fe011a1b771fa88e01263b24e0cbf7c94c2ab150e66e9894322956edf"
+    },
+    {
+      "path": "data/baselines/extra_controls.py",
+      "bytes": 3238,
+      "sha256": "b471cc4543f5cef373b1e19bf3f7c3de38f14bfd9ab0fd80acc56bde91711c30"
+    },
+    {
+      "path": "data/baselines/extract.py",
+      "bytes": 23134,
+      "sha256": "90802123908a92dc5a6bf82a3dc7f7b52f20e5b1fd75a76de744b240deac459b"
+    },
+    {
+      "path": "data/baselines/extracts/administrative-partial-alternatives.jsonl.gz",
+      "bytes": 58515,
+      "sha256": "b713ce3023e7c2597ae556ed059bca89a9cdba366ad0f211ce219c4854947a3f"
+    },
+    {
+      "path": "data/baselines/extracts/canvass-2020-pages.jsonl.gz",
+      "bytes": 47834,
+      "sha256": "e5619641767994651aca21bebd3c03177bf96cc1a163ece8b7d1fb42e8dba669"
+    },
+    {
+      "path": "data/baselines/extracts/canvass-2022-pages.jsonl.gz",
+      "bytes": 51198,
+      "sha256": "77f70361283e8ba6bf6ab94ad3d622e5f66350c97dd668bce279443dea7b7718"
+    },
+    {
+      "path": "data/baselines/extracts/canvass-2024-pages.jsonl.gz",
+      "bytes": 48839,
+      "sha256": "76c0ab43bb97990763b056b1a3bfc6986c7841dced9202b10644c7192582f0ce"
+    },
+    {
+      "path": "data/baselines/extracts/canvass-original-rows.jsonl.gz",
+      "bytes": 45394,
+      "sha256": "fd7b00e5a0280988b756a2b7d14c05d58d42bac8a67bd81d31e4110ed8d46216"
+    },
+    {
+      "path": "data/baselines/extracts/current-catalog-original.json",
+      "bytes": 194609,
+      "sha256": "b22055d4d57561d983e4183a3e3e1ea9c194c5caa9b790fdfd07560c785c4719"
+    },
+    {
+      "path": "data/baselines/extracts/current-final-list-pages.jsonl.gz",
+      "bytes": 19567,
+      "sha256": "59fc29fcfa8cc56ac153c8cfd649a8ed3be4b25260b8244e6a2ad604fd03e174"
+    },
+    {
+      "path": "data/baselines/extracts/current-final-roster.json",
+      "bytes": 4179,
+      "sha256": "58df944f5d1eb5c418546e812986841ac081b44c87df1e48135aaa46c137f248"
+    },
+    {
+      "path": "data/baselines/extracts/douglas-2020-summary-pages.jsonl.gz",
+      "bytes": 4378,
+      "sha256": "fc723ce5b2dfd44f705820a38031bf52349d6b94a11742d3e0251da8ef01f1da"
+    },
+    {
+      "path": "data/baselines/extracts/douglas-2022-summary-pages.jsonl.gz",
+      "bytes": 4534,
+      "sha256": "2f7dd5d9925091b40c3e24b6afacd8d6d0b2e90052c74d9012a8950a251dd177"
+    },
+    {
+      "path": "data/baselines/extracts/douglas-2024-summary-pages.jsonl.gz",
+      "bytes": 4897,
+      "sha256": "b08cca87ad9242daa2544cabfb21d7e59eab01d2b6034288dba7211161d34b17"
+    },
+    {
+      "path": "data/baselines/extracts/douglas-native-contexts.jsonl.gz",
+      "bytes": 40450,
+      "sha256": "9e9f30fe69ec7b41dc57d9770419a1b773fe27cc70110f7687798bea60cad63c"
+    },
+    {
+      "path": "data/baselines/extracts/douglas-original-rows.jsonl.gz",
+      "bytes": 58320,
+      "sha256": "cbdb34526910d8e7461e62385f9955fde21d0dd574d48d95c9ee666d81feb01e"
+    },
+    {
+      "path": "data/baselines/extracts/douglas-summary-controls.json",
+      "bytes": 4393,
+      "sha256": "ff8e9239f3cad9e3c88fe36bc849efb621f240b553fe32964bd45ff2235b9fbd"
+    },
+    {
+      "path": "data/baselines/extracts/douglas-workbooks.json",
+      "bytes": 31313,
+      "sha256": "1a7c89ebb9c73ed973d5da7df1e3b9e02cfd89c21b99f5b30ce108aa749847d7"
+    },
+    {
+      "path": "data/baselines/extracts/extra-clay-pages.jsonl.gz",
+      "bytes": 3042,
+      "sha256": "fe14f36a29fb39db4ac3e9de59df169e45a1d8e4b659af0019e6e47235376c59"
+    },
+    {
+      "path": "data/baselines/extracts/extra-deuel-ocr.jsonl.gz",
+      "bytes": 1539,
+      "sha256": "678e2271834bbb6f2c77732d2856e334e543950fb3eaa0f0267116318bda2b96"
+    },
+    {
+      "path": "data/baselines/extracts/extra-garfield-ocr.jsonl.gz",
+      "bytes": 2027,
+      "sha256": "cdb7c13b08dfdc6addf3b3f79839db0f880d2f18a0ed0c71c537954cad430c76"
+    },
+    {
+      "path": "data/baselines/extracts/extra-gosper-pages.jsonl.gz",
+      "bytes": 3301,
+      "sha256": "e9e43310f9702538755919cdfa4e2f0b3171337c78afac834f9240cb8fd0fb1d"
+    },
+    {
+      "path": "data/baselines/extracts/extra-nance-pages.jsonl.gz",
+      "bytes": 4108,
+      "sha256": "1b4e54520bd2a24bf6801573726356618c284b65825cdc80ea5c7a3ded80d32f"
+    },
+    {
+      "path": "data/baselines/extracts/extra-nemaha-pages.jsonl.gz",
+      "bytes": 4286,
+      "sha256": "1716b1f25e88ee9e9a2d26939e8f1b702964f22b5442c7003e82e08496276acd"
+    },
+    {
+      "path": "data/baselines/extracts/extra-source-metadata.json",
+      "bytes": 1981,
+      "sha256": "fc8e1cbac0a19919a6c642917cd23ccb3d4a8e717ec3512aff95ff997c685dd9"
+    },
+    {
+      "path": "data/baselines/extracts/extra-text-summary-contexts.jsonl.gz",
+      "bytes": 2542,
+      "sha256": "fbc984e87199d02b8414c05dd958ee6c66ebc3f715d354c9d4e9b41cda80f997"
+    },
+    {
+      "path": "data/baselines/extracts/extra-york-ocr.jsonl.gz",
+      "bytes": 5441,
+      "sha256": "22af3e7e4015dfaa54afb87f1f5313d3c1f437b0c6f25509df22113ca2e55f61"
+    },
+    {
+      "path": "data/baselines/extracts/historical-Senate-export-rows.jsonl.gz",
+      "bytes": 854,
+      "sha256": "b378dd28c8eb18e595d1df6b18b60710083b5dec9f36c52a560416002d8c2ba6"
+    },
+    {
+      "path": "data/baselines/extracts/historical-lists-2-pages.jsonl.gz",
+      "bytes": 24339,
+      "sha256": "3dec471df3ccbc46942a76d2e927b5de279d7bc92007508f86448bdd4b5fb5ab"
+    },
+    {
+      "path": "data/baselines/extracts/historical-lists-3-pages.jsonl.gz",
+      "bytes": 25499,
+      "sha256": "ee1095337b68a86e7ac0e08eae4677d8206820e0da7537a8ecb14d4ad3bc7997"
+    },
+    {
+      "path": "data/baselines/extracts/historical-lists-4-pages.jsonl.gz",
+      "bytes": 23840,
+      "sha256": "c418487ec8b3dc8be745f7834e94c6d2207f2e73df7455134f10c9cc030f1a95"
+    },
+    {
+      "path": "data/baselines/extracts/html-coverage.json",
+      "bytes": 34049,
+      "sha256": "3993f962737570e5247fdea5962a5be39135b42dec02f951409b1a2195fe7d17"
+    },
+    {
+      "path": "data/baselines/extracts/html-original-contexts.jsonl.gz",
+      "bytes": 249394,
+      "sha256": "f2cbcba2bd7054c138bfe0de5c2f9ab492640e59c2cbe75c5b30091aca34bebe"
+    },
+    {
+      "path": "data/baselines/extracts/independent-controls.json",
+      "bytes": 955,
+      "sha256": "7b275eac7fef0dc13fdb99f980ecbd48000891d23ee98d3a6bfd536b85ce151a"
+    },
+    {
+      "path": "data/baselines/extracts/independent-scan-contexts.jsonl.gz",
+      "bytes": 6344,
+      "sha256": "d7e9c1f0a9e225d56628f2c53d1d2ea2c67116f934d3c6b1c7ddecdb170ab4bf"
+    },
+    {
+      "path": "data/baselines/extracts/lancaster-native-contexts.jsonl.gz",
+      "bytes": 75108,
+      "sha256": "f0333e3b927c063c6e83d5da94ab46c87e0eb7d61bdd2f0d31007631b51b8393"
+    },
+    {
+      "path": "data/baselines/extracts/lancaster-pages.jsonl.gz",
+      "bytes": 297359,
+      "sha256": "a318b9385208224db5387f545568f86cca8ab76eef0d308fd7916c92d819a04d"
+    },
+    {
+      "path": "data/baselines/extracts/lancaster-statistics.json",
+      "bytes": 200006,
+      "sha256": "a58ec7b28cd03d8af21c1a1579f2365faffbca598333bd35c0d9d456005d38da"
+    },
+    {
+      "path": "data/baselines/extracts/native-special.jsonl.gz",
+      "bytes": 62711,
+      "sha256": "883499ceccca31a0f958afa32779cf2c55f3bf8f0b611cc1e088bc2ee0d58c50"
+    },
+    {
+      "path": "data/baselines/extracts/presidential-only-resident.json",
+      "bytes": 2745,
+      "sha256": "45bf931ed4e85b85f939686ae7be70917b211d7d1ac9ed164f51ab2cefaa78b7"
+    },
+    {
+      "path": "data/baselines/extracts/registration-source-disagreements.json",
+      "bytes": 2328,
+      "sha256": "f500cb8bde8284cc533b712e4543e4a31f6129db7a7528c59a22dc7f76f52e82"
+    },
+    {
+      "path": "data/baselines/extracts/scan-unresolved.json",
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "path": "data/baselines/extracts/state-controls.json",
+      "bytes": 102591,
+      "sha256": "c79cec1e7a08d472095b249b3db813c89626ff12b6c9483275540698a2a2a024"
+    },
+    {
+      "path": "data/baselines/native-baselines.csv",
+      "bytes": 156601,
+      "sha256": "b97b8b2226b700c5146d6f7457c9b762fbc55670f726438e6e640ef6d54311e7"
+    },
+    {
+      "path": "data/baselines/peer-reconciliation.json",
+      "bytes": 173597,
+      "sha256": "80b75eac20041d4c0eecd9e111742544a5b50167e295f2b1e6703e27df9cd6a3"
+    },
+    {
+      "path": "data/baselines/reconcile_peer.py",
+      "bytes": 12757,
+      "sha256": "cd2fbf531c16fff7c73fb3f56794a39b2cfba02b56cae1205f5f22eeb4be3c9b"
+    },
+    {
+      "path": "data/baselines/reproduce.py",
+      "bytes": 541,
+      "sha256": "bb5b49d95e30345e804795b948b8e796689fd83ec7ad1f0cb06dc0a5bd0ba341"
+    },
+    {
+      "path": "data/baselines/scan_parse.py",
+      "bytes": 3569,
+      "sha256": "7e957c3c53802932684515ae38f3586ed3f88896d318adc18bb1a5584c28428a"
+    },
+    {
+      "path": "data/baselines/scenarios/current-five-choice-units.jsonl.gz",
+      "bytes": 4796087,
+      "sha256": "ccdf951f2a1043877d1e230e1df4dad0327d06de411bb944db7f0e4db6928dc0"
+    },
+    {
+      "path": "data/baselines/scenarios/current-five-choice.json",
+      "bytes": 126348,
+      "sha256": "e37584e4b221fdbb4774059ab80df4cd80f9e4dec987371bae3e381b791300d0"
+    },
+    {
+      "path": "data/baselines/scenarios/live-clip_high.json",
+      "bytes": 477,
+      "sha256": "f7458ac848f28cd1bf4c63cc19ed92c610546848678dcb934f8b8633b05e9c29"
+    },
+    {
+      "path": "data/baselines/scenarios/live-clip_low.json",
+      "bytes": 478,
+      "sha256": "4ad4001c6b863c0d42ad5bb6d3d7d8c7e5712961704f77daba940f3fa5293551"
+    },
+    {
+      "path": "data/baselines/scenarios/live-impossible.json",
+      "bytes": 477,
+      "sha256": "a640528318d077c757687f39ac618f905c5944c691c72f1da6e8a4a942cc822e"
+    },
+    {
+      "path": "data/baselines/scenarios/live-negative_pool.json",
+      "bytes": 477,
+      "sha256": "fd987864f538caa57ca499fe938ad1345bbbf97517879577b737e7f7ceccbe37"
+    },
+    {
+      "path": "data/baselines/scenarios/live-no_pool_secured.json",
+      "bytes": 476,
+      "sha256": "34122d06587920215de4dacc0511ee5e556ce099abe784203517e4177e1d28ed"
+    },
+    {
+      "path": "data/baselines/scenarios/live-no_pool_tie.json",
+      "bytes": 476,
+      "sha256": "b1e4cb47958adad05546784308070eed6eaf61ae98d0af777b436604b0697837"
+    },
+    {
+      "path": "data/baselines/scenarios/live-nonzero_other_remaining_final_denominator.json",
+      "bytes": 481,
+      "sha256": "c7eb13d371789d4344817e3b111772341368dbaa0984f3170d0aa069e42afc3c"
+    },
+    {
+      "path": "data/baselines/scenarios/live-ordinary.json",
+      "bytes": 478,
+      "sha256": "3a977f80c76119f6e991e27b56357ba680619e73af8f214739c23b1564b27b7f"
+    },
+    {
+      "path": "data/baselines/scenarios/live-results.json",
+      "bytes": 34989,
+      "sha256": "5dd3c2c30d675489b40599e62ef78de1a5e60c1d44d92713674653b10fbe5bae"
+    },
+    {
+      "path": "data/baselines/scenarios/live-secured.json",
+      "bytes": 478,
+      "sha256": "f60c3198b981809352a9024cdbe1ac3824354ea1f2c8481a0d0cd917d165581f"
+    },
+    {
+      "path": "data/baselines/scenarios/live-selected_no_pool.json",
+      "bytes": 707,
+      "sha256": "8af05861b206217ee8d38977ecef7ef10c27a2055763f4383f11db9b0839d204"
+    },
+    {
+      "path": "data/baselines/scenarios/live-selected_unit.json",
+      "bytes": 708,
+      "sha256": "3010e6038085adec933661b7b1f99397bd103557ca45b09365a9184ed7e3291e"
+    },
+    {
+      "path": "data/baselines/scenarios/live-third_candidate_wins_despite_pair_lead.json",
+      "bytes": 482,
+      "sha256": "1dba6a08945606cabe4bb27b8ef4fc495e77d20acc0bdf98649e111d9b8033c2"
+    },
+    {
+      "path": "data/baselines/scenarios/live-unknown_other_pool.json",
+      "bytes": 408,
+      "sha256": "bcebadfff01373455037259add3bcbadf555a000c09d55a1ea229b15c6ce9fbe"
+    },
+    {
+      "path": "data/baselines/scenarios/live-unknown_pool.json",
+      "bytes": 479,
+      "sha256": "e114bbf9e1e2a8d15dc979e69d353ca55bc9786289a69ffc4cd591e628bc8a40"
+    },
+    {
+      "path": "data/baselines/scenarios/live-unknown_preference.json",
+      "bytes": 478,
+      "sha256": "89ec3e02efbc52fc3e5298b4e648967145d4d55cc42e8bcac23a34b91f06a17e"
+    },
+    {
+      "path": "data/baselines/scenarios/live-unknown_unit.json",
+      "bytes": 623,
+      "sha256": "98572cd3abf4d39963de9bdff40545a40ceff40da44c9ab1bfd58dc103d03bf4"
+    },
+    {
+      "path": "data/baselines/scenarios/state-targets.csv",
+      "bytes": 31652,
+      "sha256": "7dd5bfd4dd5ad712824eb6ce94e262f215c7731bb76f541afdb2a06d7ebf5363"
+    },
+    {
+      "path": "data/baselines/scenarios/state-targets.json",
+      "bytes": 67719,
+      "sha256": "f91f7813ffebeefe942941ec25e8bbc12e9683cd354a2ed5c1e31b616a75c113"
+    },
+    {
+      "path": "data/baselines/scenarios/target-edge-cases.json",
+      "bytes": 7623,
+      "sha256": "a98b0695f6fa1127951fe22f7d0e52d5d2acba79a4f69fb011219b41cce1c984"
+    },
+    {
+      "path": "data/baselines/scenarios/unit-targets.jsonl.gz",
+      "bytes": 2071367,
+      "sha256": "7d82a4e15d318f5e0166f7afd949ce4f28b1ccb996165c00d3dc4215a97613e5"
+    },
+    {
+      "path": "data/baselines/settings.json",
+      "bytes": 2808,
+      "sha256": "07df1b9a74cce5b6302ee52eae40f81a144c54a48f70c24940c2eac08c02fa9f"
+    },
+    {
+      "path": "data/baselines/source/SCHEMA.md",
+      "bytes": 13110,
+      "sha256": "20d975ecd4e5de03d79a6058f09d7d703b37c108d7a4d5d5a087a1ee783586e8"
+    },
+    {
+      "path": "data/baselines/source/acquisition-attempt-note.md",
+      "bytes": 756,
+      "sha256": "dea5f16e67492945f9b70d7b68ea4053fdaf51c108bd89ceed0639c0b51ed321"
+    },
+    {
+      "path": "data/baselines/source/acquisition.json",
+      "bytes": 24920,
+      "sha256": "66fbe7a9fb279209acac2c4af0d96ba454cc61718a0b3a09b78433cdf5720385"
+    },
+    {
+      "path": "data/baselines/source/canvass-rule.gz",
+      "bytes": 6066,
+      "sha256": "b77ff230b2db1e26b2fd5dae8baf951177f2cae25ffa2537b225ab237a0a8324"
+    },
+    {
+      "path": "data/baselines/source/census-original-reference.json",
+      "bytes": 20644,
+      "sha256": "bd00e347261f23caefd765a6c3ffa6cd817fd1c8657a3187f886831dda82d87d"
+    },
+    {
+      "path": "data/baselines/source/certification-parent.gz",
+      "bytes": 9880,
+      "sha256": "f649e236fd0e2ee64ae7750da1bacbd32eca77409480bb450bb26e44db745b79"
+    },
+    {
+      "path": "data/baselines/source/coordinator-primary-preflight.json",
+      "bytes": 83310,
+      "sha256": "4366db851d00d228baf9650bc1d33707f3cf2caddba579acdd4a626aaef2e616"
+    },
+    {
+      "path": "data/baselines/source/elections-parent.gz",
+      "bytes": 12895,
+      "sha256": "18e16b44caba10391941f43f249622fea590fe061943f3cae39dac19c22ba50c"
+    },
+    {
+      "path": "data/baselines/source/extra-original-references.json",
+      "bytes": 9134,
+      "sha256": "b603b8226a729718a4f0de27fa6645375db1ee3858a37c481132993e54db7a66"
+    },
+    {
+      "path": "data/baselines/source/historical-lists-2-3bba26721003.gz",
+      "bytes": 160761,
+      "sha256": "2acbc50766e44b2c3a5765a44725b0eb257a39ec023c7e6b195507af79849b41"
+    },
+    {
+      "path": "data/baselines/source/historical-lists-3-0643511d5cdb.gz",
+      "bytes": 162780,
+      "sha256": "03d4009e5dfbf693b79e22dfdabb1bbf8d10a02b500a8c646b80700b824f65a4"
+    },
+    {
+      "path": "data/baselines/source/historical-lists-4-512e95cb9ffd.gz",
+      "bytes": 166339,
+      "sha256": "e8d6d006fdb413ed2eef01baf4c774697b992b91dfbd0921e163f75161849e11"
+    },
+    {
+      "path": "data/baselines/source/preflight-reproduction.json",
+      "bytes": 197,
+      "sha256": "540b1e680a6c2b4aed52b6ef8c0cddfe45a668b14ebc2ede1f1421b1c39a83f4"
+    },
+    {
+      "path": "data/baselines/source/previews/deuel-page1.png",
+      "bytes": 34698,
+      "sha256": "8c5d1e14f89aacb0ed9ee38429d764c43c1e5a40a5f353a3dbf6accaabcdf6e5"
+    },
+    {
+      "path": "data/baselines/source/previews/deuel-page2.png",
+      "bytes": 92906,
+      "sha256": "db1580e74df41644c2a7162fbdf2bb18d16bf5710d2925dacf7544625b7cadfc"
+    },
+    {
+      "path": "data/baselines/source/previews/final-candidates-page1.png",
+      "bytes": 295425,
+      "sha256": "211f69b1fc211f892e7a1d0ec794dc291df3b921fa1fd162052cdc3631bfcc35"
+    },
+    {
+      "path": "data/baselines/source/previous-elections.gz",
+      "bytes": 12290,
+      "sha256": "0470adfb038bd8976adc4ad88eda6d8563c34b564920190cb29b8ff21c3d5a15"
+    },
+    {
+      "path": "data/baselines/source/reused-originals.json",
+      "bytes": 539914,
+      "sha256": "8ee446e4e225e2b8e1690993ca7a65bfa2267759888496642a6def8ef58c2954"
+    },
+    {
+      "path": "data/baselines/source/scan-manual-labels.json",
+      "bytes": 462,
+      "sha256": "08750234da50e0a6f27c47eaa082a06130de36770f1808fd9c564f01a4602733"
+    },
+    {
+      "path": "data/baselines/source/scan-manual-repairs.json",
+      "bytes": 18162,
+      "sha256": "d81579b7c6baa071a988ee93289e7ea716e3b49c615cda3bce9668e45e067765"
+    },
+    {
+      "path": "data/baselines/source/shared-news-ledger-observed.json",
+      "bytes": 715425,
+      "sha256": "952c98be8d60b78fbfdc720af65827f81e7bbce837b8a80067b05a43f3861962"
+    },
+    {
+      "path": "data/baselines/source/writein-filing-rule.gz",
+      "bytes": 6026,
+      "sha256": "a1679d491cbd3acb0de6f99bfefba9bb77827b8f5a7db575bd48e040a353b3dd"
+    },
+    {
+      "path": "data/baselines/source/writein-rule.gz",
+      "bytes": 5265,
+      "sha256": "60d505409d0def8808e08c7f809a5ce8b7b0fdcd0aeb0fd0349eef2107804e46"
+    },
+    {
+      "path": "data/baselines/unit-contributions.csv",
+      "bytes": 370709,
+      "sha256": "4be3027379e4ba1ffab30d4ce26904868f83275813b59b99302a89ed1ee3267b"
+    },
+    {
+      "path": "data/baselines/universe-peer-QA.json",
+      "bytes": 1128,
+      "sha256": "8509775e23683871aa5ad9b5dfca3e0db3f7b82065caccc308ab85d29fbcaceb"
+    },
+    {
+      "path": "data/baselines/universe.py",
+      "bytes": 14350,
+      "sha256": "7c10ab0e37bdff4ffd06ec613a0b9937d80471ad4f49a943911247f266a9e8be"
+    },
+    {
+      "path": "data/baselines/validate.py",
+      "bytes": 11387,
+      "sha256": "b2719f6d37926b1674adb2b08c6f1c2b8258c7ba6f110d76cf4b2c95096a6978"
+    },
+    {
+      "path": "data/baselines/validation.json",
+      "bytes": 1962,
+      "sha256": "51db61ab640646fc63e74308ea4c8af28bcef56a8a9348f30e2ac820e9b04911"
+    },
+    {
+      "path": "data/baselines/write_report.py",
+      "bytes": 25950,
+      "sha256": "54969270899d2aa776fd228f7a10676805b7208ff310a4d3a04349f2ac9a5e6f"
+    },
+    {
+      "path": "data/county-baselines.csv",
+      "bytes": 37105,
+      "sha256": "4dabc46b437ca49648c0ab59f4064638904821987e6f10e9e25f1f40ccc8a602"
+    },
+    {
+      "path": "data/county-turnout.csv",
+      "bytes": 31708,
+      "sha256": "c63acd9f52e8db5d4fc6de9790e96ecabd9430e9aa75872a3a8e937466dbd8f2"
+    },
+    {
+      "path": "data/turnout/acquire.py",
+      "bytes": 1556,
+      "sha256": "0386bb2938235753a7ec225dfdd96698cdc4cc25fab67e321254d5037bf80b30"
+    },
+    {
+      "path": "data/turnout/build.py",
+      "bytes": 20573,
+      "sha256": "a67a9ef3da2724f123cdc3edc2f51261242bc7c45ef45970a5a41f90b99c91b5"
+    },
+    {
+      "path": "data/turnout/extract.py",
+      "bytes": 19226,
+      "sha256": "585648c592e1b997867dc0a03827cd85c63f672201c543345caa88dfdda5692c"
+    },
+    {
+      "path": "data/turnout/extracts/additional-summary-contexts.jsonl.gz",
+      "bytes": 2898,
+      "sha256": "bcbc873e41c0d654630150a59c2913832d5c0c202bb028d7eeb27c6d18d2d53f"
+    },
+    {
+      "path": "data/turnout/extracts/additional-summary-controls.json",
+      "bytes": 2116,
+      "sha256": "d91f961bea80d3ec749ab1014258a1297cb46ddab22145280789f1260fefb1fb"
+    },
+    {
+      "path": "data/turnout/extracts/additional-summary-statistics.json",
+      "bytes": 6161,
+      "sha256": "22cd83c0a741d67fae6fc768e5826800cd2bea8951177951c69ac391cdbc75d8"
+    },
+    {
+      "path": "data/turnout/extracts/candidate-universe.json",
+      "bytes": 19180,
+      "sha256": "18e853b58799f7e6f34f867d72cc086bb8e7d50f48ba391fd3bc4c3e92e3310a"
+    },
+    {
+      "path": "data/turnout/extracts/canvass-2020.txt.gz",
+      "bytes": 47294,
+      "sha256": "26be5b88d4604814168ee60b34dcafec05f33c0cffd8cdb5e4fc19617744e178"
+    },
+    {
+      "path": "data/turnout/extracts/canvass-2022.txt.gz",
+      "bytes": 50599,
+      "sha256": "93f74b10bf48b1bec60e2d6ef058f70d4e8b0028c23f6a4b0357e00a894e9449"
+    },
+    {
+      "path": "data/turnout/extracts/canvass-2024.txt.gz",
+      "bytes": 48312,
+      "sha256": "fcb6dc52f1e847648d61237ba4e3144f6ccb19e6225f8ee2bedf04d5b1fb4de8"
+    },
+    {
+      "path": "data/turnout/extracts/canvass-source-rows.jsonl.gz",
+      "bytes": 40566,
+      "sha256": "354bb1f69954cbe28cb746e6f216f6b385f949e95e6c441d37fae44377d5b54e"
+    },
+    {
+      "path": "data/turnout/extracts/county-douglas-2020-summary-pdf.pdfinfo.txt",
+      "bytes": 498,
+      "sha256": "ca6341f07a327d93195ab3ac9539fa0112e0f5be117cabc6071ebbd24babf42b"
+    },
+    {
+      "path": "data/turnout/extracts/county-douglas-2020-summary-pdf.txt.gz",
+      "bytes": 4277,
+      "sha256": "4bf65c0410033705da6f193e48c8a2e1de75e3a40ac3ba61f598c7384433fc0e"
+    },
+    {
+      "path": "data/turnout/extracts/county-douglas-2022-summary-pdf.pdfinfo.txt",
+      "bytes": 498,
+      "sha256": "743808c2b66f57de6e9784dee1ecc595c3afbbb8582d8eb87a1414d3e24c60f7"
+    },
+    {
+      "path": "data/turnout/extracts/county-douglas-2022-summary-pdf.txt.gz",
+      "bytes": 4422,
+      "sha256": "5827bc4f4d651799eab9b9156a455fe3d8ea07070e94b90ba9ee46906e4c30af"
+    },
+    {
+      "path": "data/turnout/extracts/county-douglas-2024-summary-pdf.pdfinfo.txt",
+      "bytes": 493,
+      "sha256": "0356e5ab1d3d2aaba5c3e394fd34a36e6beda2605a24834fb8903a0d8fff60c9"
+    },
+    {
+      "path": "data/turnout/extracts/county-douglas-2024-summary-pdf.txt.gz",
+      "bytes": 4778,
+      "sha256": "cb9eccbca50f7cb54dd01c4e7361db52009a0c83ac23056decc4279658d4c3bf"
+    },
+    {
+      "path": "data/turnout/extracts/county-lancaster-2024-final-precinct-pdf-actual-archive.pdfinfo.txt",
+      "bytes": 496,
+      "sha256": "9accdcf64240a6b1010030d6d0514588818349bfa61381246b242603d54a6988"
+    },
+    {
+      "path": "data/turnout/extracts/county-lancaster-2024-final-precinct-pdf-actual-archive.txt.gz",
+      "bytes": 290600,
+      "sha256": "f7740745f93d58ebc24ac1bc39d740074d0be127cb59dca2c925923e601a514b"
+    },
+    {
+      "path": "data/turnout/extracts/current-catalog-complete.json",
+      "bytes": 184596,
+      "sha256": "ac59f9ef43f0d42c47ed305327af7035b40613389cdf45a727cd13b502c33c6d"
+    },
+    {
+      "path": "data/turnout/extracts/current-certification-pdf.txt.gz",
+      "bytes": 736,
+      "sha256": "4848dca0ed9fd1ebe416415a4b2b89d6f07bb66184a54919474369cdd7aa1602"
+    },
+    {
+      "path": "data/turnout/extracts/deuel-selected-psm3.jsonl.gz",
+      "bytes": 921,
+      "sha256": "3aaf7dd4b058abac6248cdd1301501147e5e2d801151d9300fb652b864ac8a29"
+    },
+    {
+      "path": "data/turnout/extracts/douglas-controls.json",
+      "bytes": 40977,
+      "sha256": "e5fb226761bf1d7659a089256cb28cebf5e64826bd7e4e555e45eb8106bd6b7e"
+    },
+    {
+      "path": "data/turnout/extracts/douglas-native.jsonl.gz",
+      "bytes": 47329,
+      "sha256": "3409326158e84226b0e6ef9ca7072e62c9617c0b86a76c75364ade88e0d2c574"
+    },
+    {
+      "path": "data/turnout/extracts/douglas-original-positions.jsonl.gz",
+      "bytes": 58160,
+      "sha256": "f6f622cfb4057a61ef9d59e18a675624c5aa44a78fd4a96aa2c7c55d9104d50b"
+    },
+    {
+      "path": "data/turnout/extracts/garfield-selected-psm3.jsonl.gz",
+      "bytes": 1556,
+      "sha256": "8d8bce64064a398b7d8b5da8f6e01709992eed71a8ba3761fdb3936d6329c485"
+    },
+    {
+      "path": "data/turnout/extracts/historical-2024-candidates.txt.gz",
+      "bytes": 24011,
+      "sha256": "4d81b69532ec4cda7ca4c6d2c6704e83c14e6a55a5d5bbcf5fdd1ee05346c2bd"
+    },
+    {
+      "path": "data/turnout/extracts/historical-html-all-positions.jsonl.gz",
+      "bytes": 545989,
+      "sha256": "ba208f6c1a8557ca93c4b7638f4707151072997f2d096aad4d941e1184e19919"
+    },
+    {
+      "path": "data/turnout/extracts/historical-html-coverage.json",
+      "bytes": 50268,
+      "sha256": "2a0d80865121f978292e2e5c58c5e42b82226f6c7c01b41ee45bb16243f49db4"
+    },
+    {
+      "path": "data/turnout/extracts/historical-html-native.jsonl.gz",
+      "bytes": 36554,
+      "sha256": "5ac77a56153b09216930545f953c39032402dfedd1bfbf187886a7e144dcf8b5"
+    },
+    {
+      "path": "data/turnout/extracts/historical-lists-2.txt.gz",
+      "bytes": 24010,
+      "sha256": "7369a8cbc35933fd29bdb2ac53994d54a956fd4822a4a0f777ffc3f5dc3da5a2"
+    },
+    {
+      "path": "data/turnout/extracts/historical-lists-3.txt.gz",
+      "bytes": 25170,
+      "sha256": "1620b43043f33f957492a3fc209ee19d9f073ca810881fe9c130b5c20c9260c3"
+    },
+    {
+      "path": "data/turnout/extracts/historical-lists-4.txt.gz",
+      "bytes": 23498,
+      "sha256": "e00a1bda6eab08b8a848f8c0c9e72026b84b2713614cb6b3f738fd9cadaf6592"
+    },
+    {
+      "path": "data/turnout/extracts/historical-turnout-positions.jsonl.gz",
+      "bytes": 14425,
+      "sha256": "4cb05a3111943206c64e7b694f3e90be1282593f93fd57f8b33df17484f2a55d"
+    },
+    {
+      "path": "data/turnout/extracts/lancaster-controls.json",
+      "bytes": 2997,
+      "sha256": "5817dfe23db135da8957433eb521c9a39c7b97a23c3c623d60b62769c91c4acc"
+    },
+    {
+      "path": "data/turnout/extracts/lancaster-native-methods.jsonl.gz",
+      "bytes": 108301,
+      "sha256": "4c15049105b7895ea25b4a49fda0fc22b26da2c5f34ad7b212e3af17726661dc"
+    },
+    {
+      "path": "data/turnout/extracts/lancaster-statistics.json",
+      "bytes": 333733,
+      "sha256": "456afaf88d8465d4b8984212b62b6c9257d4c1d06aa7f4f0db2ec7c9d2d67efe"
+    },
+    {
+      "path": "data/turnout/extracts/local-volume-reconciliation.json",
+      "bytes": 14322,
+      "sha256": "c643856102ff1229f9cf3d1f3d5c89eed80698ba38faf35373b197a288988f62"
+    },
+    {
+      "path": "data/turnout/extracts/scan-coverage.json",
+      "bytes": 1010,
+      "sha256": "c3d3d1dc01b0e5165c467df6c2d015e6bb98380e27488f0bc6bd114086c93d8d"
+    },
+    {
+      "path": "data/turnout/extracts/scan-verified-contexts.jsonl.gz",
+      "bytes": 2989,
+      "sha256": "80dabb15a8e657b87a33ac51fb26145541a36f1fd2cce583f7443c3393713bcf"
+    },
+    {
+      "path": "data/turnout/extracts/scan-verified-controls.json",
+      "bytes": 2574,
+      "sha256": "e8c0d4d13eb17a37f09d76f2d78e4dd8acdc29698be2aa8d6cd61d77098b8a29"
+    },
+    {
+      "path": "data/turnout/extracts/scan-verified-statistics.json",
+      "bytes": 5450,
+      "sha256": "9e92a9c9dbf22625d901e0c463794b6dc452b2978d769268d0e8c14f996891cc"
+    },
+    {
+      "path": "data/turnout/extracts/selected-native-disjoint.jsonl.gz",
+      "bytes": 74748,
+      "sha256": "377ef238cff62fd8e656903be7a148b8e39a5d188e6a8e46afe84cef855696d5"
+    },
+    {
+      "path": "data/turnout/extracts/sos-2020-canvass.pdfinfo.txt",
+      "bytes": 561,
+      "sha256": "31683e97707911447f010dbcd48a265ee729b43bfafe0b6102ea724864cbed29"
+    },
+    {
+      "path": "data/turnout/extracts/sos-2020-canvass.txt.gz",
+      "bytes": 47294,
+      "sha256": "26be5b88d4604814168ee60b34dcafec05f33c0cffd8cdb5e4fc19617744e178"
+    },
+    {
+      "path": "data/turnout/extracts/sos-2022-canvass.pdfinfo.txt",
+      "bytes": 567,
+      "sha256": "194b07b7b993d8643fb4fff101824b3a60e57927de1140fc6238f460d3427cfd"
+    },
+    {
+      "path": "data/turnout/extracts/sos-2022-canvass.txt.gz",
+      "bytes": 50599,
+      "sha256": "93f74b10bf48b1bec60e2d6ef058f70d4e8b0028c23f6a4b0357e00a894e9449"
+    },
+    {
+      "path": "data/turnout/extracts/sos-2024-canvass.pdfinfo.txt",
+      "bytes": 567,
+      "sha256": "37b7a33e0f8eeea3b2def1ccd04d60c33e26ef7c6d9741c7cbd763b6913826f8"
+    },
+    {
+      "path": "data/turnout/extracts/sos-2024-canvass.txt.gz",
+      "bytes": 48312,
+      "sha256": "fcb6dc52f1e847648d61237ba4e3144f6ccb19e6225f8ee2bedf04d5b1fb4de8"
+    },
+    {
+      "path": "data/turnout/extracts/sos-2024-county-clay-indexed-official.pdfinfo.txt",
+      "bytes": 517,
+      "sha256": "cb802bbc1fea78a3bcd4f35c32f0ded860afbf79b0ef130cfef1552745125306"
+    },
+    {
+      "path": "data/turnout/extracts/sos-2024-county-clay-indexed-official.txt.gz",
+      "bytes": 2901,
+      "sha256": "88425bba12d5b5a60c644389e7a80ac06c8609c5c9ee165972ccdef90e336253"
+    },
+    {
+      "path": "data/turnout/extracts/sos-2024-county-deuel-indexed-unofficial.ocr-pages.jsonl.gz",
+      "bytes": 4521,
+      "sha256": "1323f81ed460560fb808d3881a12d39dc3aa58a236bd7cb603695d7d8e39a2c8"
+    },
+    {
+      "path": "data/turnout/extracts/sos-2024-county-garfield-indexed-official.ocr-pages.jsonl.gz",
+      "bytes": 3209,
+      "sha256": "7c7eb33961ae70c8265c8cdb05633b3ffadf645a3311b7cf3616f7eecae562d1"
+    },
+    {
+      "path": "data/turnout/extracts/sos-2024-county-gosper-indexed-official.pdfinfo.txt",
+      "bytes": 499,
+      "sha256": "f88e8a2316cb40e2e37dfd7750dcb61fb5f27ee7484859c624bfd156a4196561"
+    },
+    {
+      "path": "data/turnout/extracts/sos-2024-county-gosper-indexed-official.txt.gz",
+      "bytes": 3203,
+      "sha256": "e14bdd00b73e991b00b785851888cc7bea200e6021249b21ecba14aad7781442"
+    },
+    {
+      "path": "data/turnout/extracts/sos-2024-county-nance-indexed-official.pdfinfo.txt",
+      "bytes": 476,
+      "sha256": "a3fc582fbf4483033677cf128004160ffa39c9bf8879252b7418c8f4de10e3f1"
+    },
+    {
+      "path": "data/turnout/extracts/sos-2024-county-nance-indexed-official.txt.gz",
+      "bytes": 3997,
+      "sha256": "7dc98308bb98ffd691af3c1a9dbdf6e229f223f6dd133a5ce268f063c46bde7d"
+    },
+    {
+      "path": "data/turnout/extracts/sos-2024-county-nemaha-indexed-official.pdfinfo.txt",
+      "bytes": 500,
+      "sha256": "a2a1fd72d6408149292481c677bd381006a9660107bb0d8b2ccb1825d719bf4a"
+    },
+    {
+      "path": "data/turnout/extracts/sos-2024-county-nemaha-indexed-official.txt.gz",
+      "bytes": 4131,
+      "sha256": "793d1f99e53bc03877aaf8f621c598d9f9bc457079fa4d4b91e2e32c0cf2ce44"
+    },
+    {
+      "path": "data/turnout/extracts/sos-2024-county-york-indexed-official.ocr-pages.jsonl.gz",
+      "bytes": 13245,
+      "sha256": "b53f78105c10b897e1f9b28644a954867b38cfaaee47e501e4c8c3089f425b16"
+    },
+    {
+      "path": "data/turnout/extracts/sos-2024-observed-public-all-csv-archive.rows.jsonl.gz",
+      "bytes": 20345,
+      "sha256": "ef489fc2e976317fe848fa7c1de7949662852ba0ad6f57c88ecfe858134bd0d9"
+    },
+    {
+      "path": "data/turnout/extracts/sos-2024-observed-public-statewide-csv-archive.rows.jsonl.gz",
+      "bytes": 438,
+      "sha256": "fbfffcff1befdc62cf5b188d8f049d1eb4d430da92f6f29c3dd202f5143aa7eb"
+    },
+    {
+      "path": "data/turnout/extracts/sos-2026-general-certification-notice-pdf.pdfinfo.txt",
+      "bytes": 582,
+      "sha256": "771da060c689828444986e1695a4743b055de51dd6776781da6c3483cfba7143"
+    },
+    {
+      "path": "data/turnout/extracts/sos-2026-general-certification-notice-pdf.txt.gz",
+      "bytes": 736,
+      "sha256": "4848dca0ed9fd1ebe416415a4b2b89d6f07bb66184a54919474369cdd7aa1602"
+    },
+    {
+      "path": "data/turnout/extracts/sos-final-general-candidate-pdf.pdfinfo.txt",
+      "bytes": 590,
+      "sha256": "b2ef2ffa41a9bc12efe4d5ae9223e536480ebb7eeee710976dccb804c6cf8cee"
+    },
+    {
+      "path": "data/turnout/extracts/sos-final-general-candidate-pdf.txt.gz",
+      "bytes": 19386,
+      "sha256": "703d6ea7c4a3e2dcb959f0925db6238d3816e9d48b560dad23cdba47ad1e8e17"
+    },
+    {
+      "path": "data/turnout/extracts/state-controls.json",
+      "bytes": 511381,
+      "sha256": "5d46cab008f943781433583588b2b1188acf587ff0e1bb8dfd513310a6fdd0fa"
+    },
+    {
+      "path": "data/turnout/extracts/york-selected-psm3.jsonl.gz",
+      "bytes": 3175,
+      "sha256": "40379abe28d66271ff432a94b700b4445043e4e98e7b7e780de22b795793b759"
+    },
+    {
+      "path": "data/turnout/local_fields.py",
+      "bytes": 8824,
+      "sha256": "03ea724ba46d3529eedbbc37f5c18b3bcda1de15ef0b0602927f8dd1d13e3e53"
+    },
+    {
+      "path": "data/turnout/native-full-order.md",
+      "bytes": 118952,
+      "sha256": "8902a36ba166ea745ab7edf7eb8ee4f76293c4f02d789f81778407f9ca5e9bf9"
+    },
+    {
+      "path": "data/turnout/native-turnout.csv",
+      "bytes": 223851,
+      "sha256": "ea0746dd249112297127bb808c41508d7a44f979509e606d9e602fd453cba1ba"
+    },
+    {
+      "path": "data/turnout/ocr_scans.py",
+      "bytes": 1904,
+      "sha256": "3dfc3efa98e3d575448291a3180e152f36edb051d2bf6607ac9307825139fcdd"
+    },
+    {
+      "path": "data/turnout/ocr_selected.py",
+      "bytes": 1819,
+      "sha256": "bce62e95c82bbc11651c45e0c83fa99688e97042b3fd094a16ed2c4bfa76f2df"
+    },
+    {
+      "path": "data/turnout/peer-agreement.json",
+      "bytes": 3192,
+      "sha256": "761ea9418b00448e74735c278c30b064111bfb34a24b36356d4ed864ea180dea"
+    },
+    {
+      "path": "data/turnout/peer_audit.py",
+      "bytes": 7723,
+      "sha256": "89aa9cb6228100216a2b4d786063dcfea698f063dacb64291193f12656b357a5"
+    },
+    {
+      "path": "data/turnout/priority-set.json",
+      "bytes": 3889923,
+      "sha256": "125fef1c2e13ff4e0464ac5e75e82ec54c9ea5e675b42da7586c4ccfd90d5891"
+    },
+    {
+      "path": "data/turnout/provenance.py",
+      "bytes": 5076,
+      "sha256": "073e8b8802349885d0dc77eb9aeaf9ff5841e8490d19984ded56ea83a2dafa39"
+    },
+    {
+      "path": "data/turnout/report.py",
+      "bytes": 23040,
+      "sha256": "b8af5f25b121cdc0fc02ba29dd0000d872581d7813f0a9e13520d0ae9e25edf5"
+    },
+    {
+      "path": "data/turnout/scan_transcription.py",
+      "bytes": 11772,
+      "sha256": "01d031f1cf14df2aaabffea9f4834ff33abb7ec22ec628f17a85d40b8d142b50"
+    },
+    {
+      "path": "data/turnout/sensitivity.json",
+      "bytes": 424520,
+      "sha256": "93a7d934562b9b40d339c25da82c11331a6adcec7e76fede7bf66057dbcd92e8"
+    },
+    {
+      "path": "data/turnout/source/SCHEMA.md",
+      "bytes": 14044,
+      "sha256": "d0729ccff96579c339cc86a31b9885df6b3354f48516ae7e47fc586cb7bd1c0c"
+    },
+    {
+      "path": "data/turnout/source/census-county-codes.body.gz",
+      "bytes": 31361,
+      "sha256": "bcb240df1d84eb88c83b19f5b5c39b6905afaca0277821c206a047196a70cce8"
+    },
+    {
+      "path": "data/turnout/source/census-county-codes.receipt.json",
+      "bytes": 2187,
+      "sha256": "213195b4e5929c0a8d9076fbfe5bc6e1e83e74e804844e58b4c94866632972c7"
+    },
+    {
+      "path": "data/turnout/source/current-certification-parent.body.gz",
+      "bytes": 9880,
+      "sha256": "f649e236fd0e2ee64ae7750da1bacbd32eca77409480bb450bb26e44db745b79"
+    },
+    {
+      "path": "data/turnout/source/current-certification-parent.receipt.json",
+      "bytes": 2813,
+      "sha256": "264edaf0e715ec59d96adb65da56589663c2e8524efdbbfcf66f5d21a08f9461"
+    },
+    {
+      "path": "data/turnout/source/current-certification-pdf.body.gz",
+      "bytes": 149932,
+      "sha256": "dcc5e6a94e5972eab21f0f2a5085dbc233a06ef6a39f38eae1446b809360a1ba"
+    },
+    {
+      "path": "data/turnout/source/current-certification-pdf.receipt.json",
+      "bytes": 1765,
+      "sha256": "00c481e95747713fc501a1f7d4c0e5b2ae0b459dc182879fbaf00676a280ef34"
+    },
+    {
+      "path": "data/turnout/source/current-elections-parent.body.gz",
+      "bytes": 12895,
+      "sha256": "18e16b44caba10391941f43f249622fea590fe061943f3cae39dac19c22ba50c"
+    },
+    {
+      "path": "data/turnout/source/current-elections-parent.receipt.json",
+      "bytes": 2672,
+      "sha256": "a3c68b36aeb8481cbd942f0b9e924306a645c84a319f0acf86853a37e0daf1c0"
+    },
+    {
+      "path": "data/turnout/source/current-final-list.body.gz",
+      "bytes": 109134,
+      "sha256": "f98101d36c6acce016177a968362f6b85c96abae8c92e49191a2936f61cd7975"
+    },
+    {
+      "path": "data/turnout/source/current-final-list.receipt.json",
+      "bytes": 1681,
+      "sha256": "299e7ddd2f5c1c314822b22d7c15dfc70982c194f046cf3fbb7c8766324d507f"
+    },
+    {
+      "path": "data/turnout/source/deuel-page1.png",
+      "bytes": 34698,
+      "sha256": "34f2ce72a92979f5dee3afc2c369e59fcd146d1c69f7640fb7de3152a9165101"
+    },
+    {
+      "path": "data/turnout/source/deuel-page2.png",
+      "bytes": 92906,
+      "sha256": "fcaa3d18b59abe4926a30dee25c9b5650a9d3cca1359dec83d8ec486289511c9"
+    },
+    {
+      "path": "data/turnout/source/final-list-page1.png",
+      "bytes": 190252,
+      "sha256": "b8d1209afbf2d524d6bdb95587ca380ef5e9a3c2760b3d80e10af17615bc94a3"
+    },
+    {
+      "path": "data/turnout/source/garfield-page1.png",
+      "bytes": 83610,
+      "sha256": "8e644a6af70aae2ed164f6857de4137fb0b376b98141b30956d451bf46dade59"
+    },
+    {
+      "path": "data/turnout/source/garfield-page13.png",
+      "bytes": 133862,
+      "sha256": "e43225ae354edbfcfaceb801c4c16611d987059eaec7c14bd5444d11247fb25f"
+    },
+    {
+      "path": "data/turnout/source/garfield-page14.png",
+      "bytes": 67163,
+      "sha256": "c638be9c52a1514870a22807452d3fd25f75bbfad4bdc1b65b73e946ffabf317"
+    },
+    {
+      "path": "data/turnout/source/garfield-page6.png",
+      "bytes": 85062,
+      "sha256": "6d689f67ed288fc837b38ce2534d1c1b123cedbdc141f0188ee3816b2afb1cc9"
+    },
+    {
+      "path": "data/turnout/source/historical-2024-candidates.body.gz",
+      "bytes": 162315,
+      "sha256": "e5a07157c596b095c11ac4a6064d286228b3c2181260ab5a9b8817c9a2722d56"
+    },
+    {
+      "path": "data/turnout/source/historical-2024-candidates.receipt.json",
+      "bytes": 1611,
+      "sha256": "cd8a5d76c07a55ac0600267b422823329fd26364c79a091609c9512bb224d887"
+    },
+    {
+      "path": "data/turnout/source/historical-2024-parent.body.gz",
+      "bytes": 10071,
+      "sha256": "7268ddbb7f205250d8909fe4ddcac5ee0d19e7e4caab3996f1807ebd92d29b86"
+    },
+    {
+      "path": "data/turnout/source/historical-2024-parent.receipt.json",
+      "bytes": 2713,
+      "sha256": "df12a6eb8f074d5d0db6f05386d4c9cf898a2f6ca69d22994725bbc4b8a61fb8"
+    },
+    {
+      "path": "data/turnout/source/historical-2024-sample.body.gz",
+      "bytes": 143471,
+      "sha256": "b215b27f6e4a9d1eb92f8c5fd0e7a4b8dfd5224f4daf819122fa92eeac490a62"
+    },
+    {
+      "path": "data/turnout/source/historical-2024-sample.receipt.json",
+      "bytes": 1675,
+      "sha256": "bc9ec4d2301ddbe72d1b0ad2d6ff56c5be9fbb6edfc6a452639e2a33443304d3"
+    },
+    {
+      "path": "data/turnout/source/peer-primary-original-references.json",
+      "bytes": 6339,
+      "sha256": "e9ea0452035d7f1fdd04ba63eac22dcdf332d0360e1cf6dac845236af5c3b1f5"
+    },
+    {
+      "path": "data/turnout/source/peer-universe-QA.json",
+      "bytes": 1128,
+      "sha256": "8509775e23683871aa5ad9b5dfca3e0db3f7b82065caccc308ab85d29fbcaceb"
+    },
+    {
+      "path": "data/turnout/source/primary-preflight-check.json",
+      "bytes": 365,
+      "sha256": "997a2576ae56992fa6e386c0bc1e122eb479f53cf79164a1847e3ef235478824"
+    },
+    {
+      "path": "data/turnout/source/primary-preflight-reproduction.json",
+      "bytes": 83310,
+      "sha256": "4366db851d00d228baf9650bc1d33707f3cf2caddba579acdd4a626aaef2e616"
+    },
+    {
+      "path": "data/turnout/source/reused-originals.json",
+      "bytes": 491985,
+      "sha256": "6294116361770d7930b7c18c4cf422aef5ab8db8e39b81454aa6229da04b2d0e"
+    },
+    {
+      "path": "data/turnout/source/shared-news-ledger.json",
+      "bytes": 698891,
+      "sha256": "68bdb26cf3d27abd85f82250e663a645e2df0611e6cf1280571ea3249c4a5014"
+    },
+    {
+      "path": "data/turnout/source/sos-2024-county-deuel-indexed-unofficial-page1.png",
+      "bytes": 52843,
+      "sha256": "c49890dea2154749b6932e62a5e1faad5961a6035f704507729ae6b8d74327c3"
+    },
+    {
+      "path": "data/turnout/source/sos-2024-county-garfield-indexed-official-page1.png",
+      "bytes": 73171,
+      "sha256": "c0cc1ecceba08202e94be2777f76ca41224b906a8aabb2b97a174aa35873cbc1"
+    },
+    {
+      "path": "data/turnout/source/sos-2024-county-york-indexed-official-page1.png",
+      "bytes": 128562,
+      "sha256": "21d7c8a725f23bc8a9bee12cd421d42cf389a9fcda13ffdcfffdacb53415ae6a"
+    },
+    {
+      "path": "data/turnout/source/source-index.json",
+      "bytes": 950838,
+      "sha256": "b89703cf7783638f3c0ab8945c6c3c0b4b7f61db11c0f4b2bb09d44a4eb35330"
+    },
+    {
+      "path": "data/turnout/source/writein-aggregation.body.gz",
+      "bytes": 5161,
+      "sha256": "2463e859b2e85b5d791b871207886c84acf1be869add7ed73e862734cfa233b6"
+    },
+    {
+      "path": "data/turnout/source/writein-aggregation.receipt.json",
+      "bytes": 2889,
+      "sha256": "fe7e207abfb527bde1d640318a2ff04bba52765d269cadc5cf71302635a696e8"
+    },
+    {
+      "path": "data/turnout/source/writein-filing.body.gz",
+      "bytes": 6027,
+      "sha256": "dbcab048257c5cb03f730ebfe52520cf894959aed97a6c9d437966d25a8ffce0"
+    },
+    {
+      "path": "data/turnout/source/writein-filing.receipt.json",
+      "bytes": 2876,
+      "sha256": "50c119641c0d737031ecac992c68e7c6a6bb204b2880567db51de5ea4e010121"
+    },
+    {
+      "path": "data/turnout/source/writein-validity.body.gz",
+      "bytes": 5265,
+      "sha256": "09bab6a34ef0d3d07ccea78a691b23552af72a50f444bdc5f69cafef7cd1e957"
+    },
+    {
+      "path": "data/turnout/source/writein-validity.receipt.json",
+      "bytes": 2883,
+      "sha256": "834b29a6de9159ae143f01ef6708cea41e720b1a4d648d4a81f2020d8aab6986"
+    },
+    {
+      "path": "data/turnout/source/york-page1.png",
+      "bytes": 155539,
+      "sha256": "ea0ac3beb215d4017106c183eca0809eec26b0367b298cf884e1432dac5e9f37"
+    },
+    {
+      "path": "data/turnout/source/york-page18.png",
+      "bytes": 145704,
+      "sha256": "1efc71ea7b1450674a7cc35892e9047a7213f6f18393c4da27697ac3f744366d"
+    },
+    {
+      "path": "data/turnout/source/york-page25.png",
+      "bytes": 148059,
+      "sha256": "4e62ce2675df4c192d28c0617dbd1380f726a8df0a7c509d960e5122d7724391"
+    },
+    {
+      "path": "data/turnout/source/york-page32.png",
+      "bytes": 150811,
+      "sha256": "71223214976de107de739bc9338b237454c3dc5d6f62e1aab07f692445f70705"
+    },
+    {
+      "path": "data/turnout/source/york-page41.png",
+      "bytes": 140994,
+      "sha256": "882ebdf8dc0510c173b43f9fc1e39fa2747c21915ededcbdd1eafd64beb6de85"
+    },
+    {
+      "path": "data/turnout/source/york-page50.png",
+      "bytes": 147514,
+      "sha256": "2642bc305d83186f1041bd6bc1bcba6051d0e31df4d60d0649590de58a4daa1b"
+    },
+    {
+      "path": "data/turnout/source/york-page57.png",
+      "bytes": 138280,
+      "sha256": "0adf5c7ea24a6ede1d70ee83176eee06100530ad69254eb338b3ee6bdf2e5660"
+    },
+    {
+      "path": "data/turnout/source/york-page63.png",
+      "bytes": 161911,
+      "sha256": "f6b562f27b419644aa87d58241dbf36517a5990a485409cfe356d17d191909ad"
+    },
+    {
+      "path": "data/turnout/source/york-page69.png",
+      "bytes": 172698,
+      "sha256": "452c47d22508f71297f4616785006d77467d5bda962083cb64564c9a0ed33d3f"
+    },
+    {
+      "path": "data/turnout/source/york-page75.png",
+      "bytes": 153496,
+      "sha256": "60d37dc907434cf504fd79a8805041f22edef8c25ee918d4ad90b41a9cab4349"
+    },
+    {
+      "path": "data/turnout/source/york-page82.png",
+      "bytes": 136608,
+      "sha256": "b0638cd37e9db16687a6b1c416b13189bd851ee6f66aa0dda7cc9fc0f318eac9"
+    },
+    {
+      "path": "data/turnout/source/york-page89.png",
+      "bytes": 84742,
+      "sha256": "f8ac95e1934c8682f5d6728afc16bb6d3cec77c58bc636ae7304819da1d742f8"
+    },
+    {
+      "path": "data/turnout/source/york-page9.png",
+      "bytes": 153686,
+      "sha256": "b2d2aea9cb88cb2c21282caf0bd734d399adc72cddd45ab006571e5ddd0d5004"
+    },
+    {
+      "path": "data/turnout/source_io.py",
+      "bytes": 4032,
+      "sha256": "c92848ab9845e45829b7e315ae2562c1bda722f0c3dbcd2efe949d3d55e756d2"
+    },
+    {
+      "path": "data/turnout/universe.py",
+      "bytes": 8371,
+      "sha256": "4c97fbd4621f6ac90bec391ee79f6101168930a079ae87bdca0c56b83d7438c1"
+    },
+    {
+      "path": "data/turnout/validate.py",
+      "bytes": 14949,
+      "sha256": "e5ae038eb54c238559beff34b8eb703f7e821b032814bf79f0cb05f519965058"
+    },
+    {
+      "path": "turnout.md",
+      "bytes": 23807,
+      "sha256": "9e57168903e816df6628559df7cec114ba5c5dbbd8042d37fc8b47ed9e41229f"
+    }
+  ],
+  "review_input_contract": {
+    "path": "data/turnout/priority-set.json",
+    "bytes": 3889923,
+    "sha256": "125fef1c2e13ff4e0464ac5e75e82ec54c9ea5e675b42da7586c4ccfd90d5891"
+  },
+  "formal_dispatch_acceptance": false,
+  "qualification": "This review accepts no eligible-writein completeness, current geography, later legal/candidate universe, live counts or probability. Source discrepancies stay explicit. Turnout validation/self manifest are separately pinned external exclusions; baseline manifest self only."
+}

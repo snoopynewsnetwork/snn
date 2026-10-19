@@ -1,0 +1,21 @@
+{
+  "schema": "NE-official-reproducibility-proof-v1",
+  "status": "pass_byte_identical_offline_rebuild",
+  "all_owned_existing_artifacts_unchanged": 1035,
+  "scripts_executed": [
+    "freeze_inputs.py",
+    "inspect.py",
+    "replay_history.py",
+    "build.py",
+    "report.py",
+    "validate.py"
+  ],
+  "mutable_aggregate_reads_blocked": [
+    "data/news/manifest.json",
+    "data/coordinator-current-official-setup-review.json",
+    "data/coordinator-map-preparation-review.json"
+  ],
+  "no_network": true,
+  "no_frozen_mutation": true,
+  "qualification": "This proof does not hash itself or the final manifest. The final manifest includes this proof. Full offline original replay, semantic references and source checks pass; no current admission or geography approval."
+}

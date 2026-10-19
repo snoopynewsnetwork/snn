@@ -1,0 +1,256 @@
+[
+  {
+    "name": "clipping",
+    "rows": [
+      {
+        "key": "high",
+        "T": 90,
+        "q": 0.99
+      },
+      {
+        "key": "low",
+        "T": 10,
+        "q": 0.01
+      }
+    ],
+    "margin": 0,
+    "output": {
+      "status": "solved",
+      "pair_volume": 100,
+      "baseline_net": 78.4,
+      "baseline_already_A_leading": true,
+      "target_margin_fraction": 0,
+      "target_pair_margin_pp": 0,
+      "target_net": 0,
+      "unbounded_shift_share_pp": -39.2,
+      "bounded_shift_share_pp": -43.44444444444445,
+      "unbounded_would_clip": 1,
+      "bounded_clipped": 1,
+      "achieved_net": -1.5987211554602254e-14,
+      "rows": [
+        {
+          "key": "high",
+          "T": 90,
+          "q": 0.99,
+          "q_requested": 0.99,
+          "weight": 0.9,
+          "target_share": 0.5555555555555555,
+          "target_margin": 0.11111111111111094,
+          "target_net": 9.999999999999984,
+          "baseline_net": 88.2,
+          "target_gain": -78.20000000000002,
+          "share_change_pp": -43.44444444444445,
+          "margin_change_pp": -86.8888888888889,
+          "net_gain_for_one_share_pp": 1.8,
+          "net_gain_for_one_share_pp_after_clipping": 1.8000000000000016,
+          "baseline_anchor_clipped": false,
+          "unbounded_target_share": 0.598,
+          "uniform_target_clipped": false,
+          "selected_only_required_share_unbounded": 0.5544444444444444,
+          "selected_only_required_share_display": 0.5544444444444444,
+          "selected_only_status": "feasible",
+          "selected_only_other_units_net": -9.799999999999997,
+          "selected_only_other_units_assumption": "all other units fixed at this scenario historical baseline q,T",
+          "selected_only_share_change_pp": -43.55555555555556
+        },
+        {
+          "key": "low",
+          "T": 10,
+          "q": 0.01,
+          "q_requested": 0.01,
+          "weight": 0.1,
+          "target_share": 0.0,
+          "target_margin": -1.0,
+          "target_net": -10.0,
+          "baseline_net": -9.8,
+          "target_gain": -0.2,
+          "share_change_pp": -1.0,
+          "margin_change_pp": -2.0,
+          "net_gain_for_one_share_pp": 0.2,
+          "net_gain_for_one_share_pp_after_clipping": 0.2,
+          "baseline_anchor_clipped": false,
+          "unbounded_target_share": -0.382,
+          "uniform_target_clipped": true,
+          "selected_only_required_share_unbounded": -3.91,
+          "selected_only_required_share_display": 0.0,
+          "selected_only_status": "secured_under_fixed_assumptions",
+          "selected_only_other_units_net": 88.2,
+          "selected_only_other_units_assumption": "all other units fixed at this scenario historical baseline q,T",
+          "selected_only_share_change_pp": -392.0
+        }
+      ],
+      "legal_outcome_qualification": "named-pair scenario only; retain every other candidate and compare all individual candidate totals"
+    }
+  },
+  {
+    "name": "already_winning",
+    "rows": [
+      {
+        "key": "one",
+        "T": 100,
+        "q": 0.7
+      }
+    ],
+    "margin": 0,
+    "output": {
+      "status": "solved",
+      "pair_volume": 100,
+      "baseline_net": 39.99999999999999,
+      "baseline_already_A_leading": true,
+      "target_margin_fraction": 0,
+      "target_pair_margin_pp": 0,
+      "target_net": 0,
+      "unbounded_shift_share_pp": -19.999999999999996,
+      "bounded_shift_share_pp": -20.0,
+      "unbounded_would_clip": 0,
+      "bounded_clipped": 0,
+      "achieved_net": -1.1102230246251565e-14,
+      "rows": [
+        {
+          "key": "one",
+          "T": 100,
+          "q": 0.7,
+          "q_requested": 0.7,
+          "weight": 1.0,
+          "target_share": 0.49999999999999994,
+          "target_margin": -1.1102230246251565e-16,
+          "target_net": -1.1102230246251565e-14,
+          "baseline_net": 39.99999999999999,
+          "target_gain": -40.0,
+          "share_change_pp": -20.0,
+          "margin_change_pp": -40.0,
+          "net_gain_for_one_share_pp": 2.0,
+          "net_gain_for_one_share_pp_after_clipping": 2.0000000000000018,
+          "baseline_anchor_clipped": false,
+          "unbounded_target_share": 0.5,
+          "uniform_target_clipped": false,
+          "selected_only_required_share_unbounded": 0.5,
+          "selected_only_required_share_display": 0.5,
+          "selected_only_status": "feasible",
+          "selected_only_other_units_net": 0.0,
+          "selected_only_other_units_assumption": "all other units fixed at this scenario historical baseline q,T",
+          "selected_only_share_change_pp": -19.999999999999996
+        }
+      ],
+      "legal_outcome_qualification": "named-pair scenario only; retain every other candidate and compare all individual candidate totals"
+    }
+  },
+  {
+    "name": "no_positive",
+    "rows": [
+      {
+        "key": "zero",
+        "T": 0,
+        "q": null
+      }
+    ],
+    "margin": 0,
+    "output": {
+      "status": "no_positive_pool",
+      "pair_volume": 0,
+      "unbounded_shift_share_pp": null,
+      "bounded_shift_share_pp": null,
+      "rows": []
+    }
+  },
+  {
+    "name": "unknown_anchor",
+    "rows": [
+      {
+        "key": "unknown",
+        "T": 100,
+        "q": null
+      }
+    ],
+    "margin": 0,
+    "output": {
+      "status": "unknown_preference_anchor"
+    }
+  },
+  {
+    "name": "negative",
+    "rows": [
+      {
+        "key": "negative",
+        "T": -10,
+        "q": 0.5
+      }
+    ],
+    "margin": 0,
+    "output": {
+      "status": "invalid_negative_or_unknown_volume"
+    }
+  },
+  {
+    "name": "impossible_margin",
+    "rows": [
+      {
+        "key": "one",
+        "T": 100,
+        "q": 0.4
+      }
+    ],
+    "margin": 1.1,
+    "output": {
+      "status": "impossible_target_margin",
+      "requested_margin": 1.1,
+      "pair_volume": 100,
+      "unbounded_shift_share_pp": null,
+      "bounded_shift_share_pp": null,
+      "rows": []
+    }
+  },
+  {
+    "name": "clip_anchor",
+    "rows": [
+      {
+        "key": "outside",
+        "T": 100,
+        "q": 1.5
+      }
+    ],
+    "margin": 0,
+    "output": {
+      "status": "solved",
+      "pair_volume": 100,
+      "baseline_net": 100.0,
+      "baseline_already_A_leading": true,
+      "target_margin_fraction": 0,
+      "target_pair_margin_pp": 0,
+      "target_net": 0,
+      "unbounded_shift_share_pp": -50.0,
+      "bounded_shift_share_pp": -50.0,
+      "unbounded_would_clip": 0,
+      "bounded_clipped": 0,
+      "achieved_net": 0.0,
+      "rows": [
+        {
+          "key": "outside",
+          "T": 100,
+          "q": 1.0,
+          "q_requested": 1.5,
+          "weight": 1.0,
+          "target_share": 0.5,
+          "target_margin": 0.0,
+          "target_net": 0.0,
+          "baseline_net": 100.0,
+          "target_gain": -100.0,
+          "share_change_pp": -50.0,
+          "margin_change_pp": -100.0,
+          "net_gain_for_one_share_pp": 2.0,
+          "net_gain_for_one_share_pp_after_clipping": 0.0,
+          "baseline_anchor_clipped": true,
+          "unbounded_target_share": 0.5,
+          "uniform_target_clipped": false,
+          "selected_only_required_share_unbounded": 0.5,
+          "selected_only_required_share_display": 0.5,
+          "selected_only_status": "feasible",
+          "selected_only_other_units_net": 0.0,
+          "selected_only_other_units_assumption": "all other units fixed at this scenario historical baseline q,T",
+          "selected_only_share_change_pp": -50.0
+        }
+      ],
+      "legal_outcome_qualification": "named-pair scenario only; retain every other candidate and compare all individual candidate totals"
+    }
+  }
+]

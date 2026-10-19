@@ -1,0 +1,373 @@
+{
+  "schema": "NE-official-parent-investigation-v1",
+  "parent_key": "NE:county:31135",
+  "county": "Perkins",
+  "county_fips": "31135",
+  "priority_parent": true,
+  "complete_historical_parent_ref": {
+    "file": {
+      "path": "data/turnout/priority-set.json",
+      "bytes": 3889923,
+      "sha256": "125fef1c2e13ff4e0464ac5e75e82ec54c9ea5e675b42da7586c4ccfd90d5891"
+    },
+    "json_pointer": "/all93_parents/67",
+    "recursive_all_fields": true,
+    "semantic_sha256": "a12d043814682d7947fec920d795668f2820bdcffeb5e08e8ee9269cdd691cd6",
+    "scalar_leaves": 9
+  },
+  "directory_complete_fields": {
+    "parent_key": "NE:county:31135",
+    "county": "Perkins",
+    "county_fips": "31135",
+    "priority_parent": true,
+    "directory_source_id": "sos-directory-retry1",
+    "directory_node_attributes": {
+      "class": "col-sm-6",
+      "id": "perkins"
+    },
+    "directory_text": "County: Perkins (74) Name: James Brueggeman Address: 200 Lincoln Ave., Ste. 210, PO Box 156 City: Grant Zip Code: 69140 Phone Number: (308) 352-7560 Fax Number: (308) 352-7562 Email Address: jbrueggeman@perkinscounty.ne.gov Website: perkinscounty.ne.gov/webpages/election/election.html",
+    "directory_fields_original_html": "<div class=\"col-sm-6\" id=\"perkins\"><strong>County: </strong>Perkins (74)<br><strong>Name: </strong>James Brueggeman<br><strong>Address: </strong>200 Lincoln Ave., Ste. 210, PO Box 156<br><strong>City: </strong>Grant<br><strong>Zip Code: </strong>69140<br><strong>Phone Number: </strong>(308) 352-7560<br><strong>Fax Number: </strong>(308) 352-7562<br><strong>Email Address: </strong><a href=\"mailto:jbrueggeman@perkinscounty.ne.gov\">jbrueggeman@perkinscounty.ne.gov</a><br><strong>Website: </strong><a href=\"https://perkinscounty.ne.gov/webpages/election/election.html\" target=\"_blank\" rel=\"noopener noreferrer\">perkinscounty.ne.gov/webpages/election/election.html</a><br>&nbsp;</div>",
+    "directory_website_links": [
+      {
+        "attributes": {
+          "href": "https://perkinscounty.ne.gov/webpages/election/election.html",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        },
+        "text": "perkinscounty.ne.gov/webpages/election/election.html",
+        "url": "https://perkinscounty.ne.gov/webpages/election/election.html"
+      }
+    ],
+    "county_portal_row": {
+      "cells": [
+        "Perkins",
+        "Official Results",
+        "5/24/2026 5:40 PM"
+      ],
+      "attributes": {
+        "class": "datagrid-item-alternating"
+      },
+      "links": [
+        {
+          "attributes": {
+            "href": "election_files/Perkins/2026_Primary_official_results.pdf"
+          },
+          "text": "Official Results",
+          "url": "https://countyelectionresults.nebraska.gov/election_files/Perkins/2026_Primary_official_results.pdf"
+        }
+      ]
+    },
+    "portal_missing_row_is_not_zero": false
+  },
+  "local_publication_chain": [
+    {
+      "source_id": "county-perkins-landing",
+      "receipt": "receipts/county-perkins-landing.json",
+      "requested_url": "https://perkinscounty.ne.gov/webpages/election/election.html",
+      "final_url": "https://perkinscounty.ne.gov/webpages/election/election.html",
+      "status": 503,
+      "stage": "directory-landing",
+      "published_result_links": [],
+      "source_status_clock_correction_excerpts": [],
+      "PDF_observation": null,
+      "source_timezone": null,
+      "measured_cadence": null
+    },
+    {
+      "source_id": "current-native-perkins",
+      "receipt": "receipts/current-native-perkins.json",
+      "requested_url": "https://neresultswebservice.azurewebsites.us/ResultsAjax.svc/GetMapData?type=SW&category=PREC&raceID=13224&osn=102&county=74&party=0",
+      "final_url": "https://neresultswebservice.azurewebsites.us/ResultsAjax.svc/GetMapData?type=SW&category=PREC&raceID=13224&osn=102&county=74&party=0",
+      "status": 200,
+      "stage": "current-native",
+      "published_result_links": [],
+      "source_status_clock_correction_excerpts": [],
+      "PDF_observation": null,
+      "source_timezone": null,
+      "measured_cadence": null
+    },
+    {
+      "source_id": "portal-perkins",
+      "receipt": "receipts/portal-perkins.json",
+      "requested_url": "https://countyelectionresults.nebraska.gov/election_files/Perkins/2026_Primary_official_results.pdf",
+      "final_url": "https://countyelectionresults.nebraska.gov/election_files/Perkins/2026_Primary_official_results.pdf",
+      "status": 200,
+      "stage": "portal-document",
+      "published_result_links": [],
+      "source_status_clock_correction_excerpts": [],
+      "PDF_observation": {
+        "pages": 16,
+        "text_layer_pages": 16,
+        "methods_literal": [
+          "Overvotes",
+          "TOTAL",
+          "Undervotes"
+        ],
+        "senate_pages": [
+          2,
+          5,
+          8,
+          11
+        ],
+        "first_page": "Summary                                    Results                        Report                                                                                              OFFICIAL            RESULTS\n\nPrimary                           Election\n\nMay                12,            2026                                                                                                                                                              Perkins\n\n\n  STATISTICS\n\n\n\n\nRegistered              Voters         -   Total                                                                          1,848\n\n\n\nRegistered              Voters        -\n                                           Republican                 Party                                               1,407\n\n\n\nRegistered              Voters         -   Democratic                  Party                                                184\n\n\n\nRegistered              Voters        -\n                                           Libertarian                Party                                                     16\n\n\n\nRegistered              Voters         -   Legal         Marijuana             NOW       Party                                    6\n\n\n\n\nRegistered              Voters         -   Nonpartisan                                                                      235\n\n\n\nBallots          Cast     -\n                              Total                                                                                         586                      426       160       o\n\n\n\n\nBallots          Cast     -\n                              Republican              Party                                                                 496                      376       120       o\n\n\n\n\nBallots          Cast         Democratic                  Party                                                                 54                    29        25       o\n                          -\n\n\n\n\nBallots          Cast         Libertarian            Party                                                                        o                        o         o   o\n                          -\n\n\n\n\nBallots          Cast         Legal         Marijuana                 NOW      Party                                              o                        o         o   o\n                          -\n\n\n\n\nBallots          Cast         Nonpartisan                                                                                       36                    21        15       o\n                          -\n\n\n\n\nBallots          Cast         Blank                                                                                                                        o             o\n                          -\n\n\n\n\nVoter      Turnout            -   Total                                                                                31.71%\n\n\n\nVoter      Turnout            -\n                                  Republican                Party                                                      35.25%\n\n\n\nVoter      Turnout            -   Democratic                Party                                                      29.35%\n\n\n\nVoter      Turnout            -\n                                  Libertarian              Party                                                        0.00%\n\n\n\nVoter      Turnout            -\n                                  Legal         Marijuana              NOW       Party                                  0.00%\n\n\n\n                                                                  '\n\n\nVoter      Turnout            -   Nonpartisan                                                                          15.32%\n\n\n\n\n                                                                                                                                      1\n        Perkins                   County                Election                 Summary              -\n                                                                                                          05/22/2026                      :13   PM                           Page   1\n                                                                                                                                                                                        of   16\n\n        Report          generated                  with           Electionware              Copyright··       2007-2020\n"
+      },
+      "source_timezone": null,
+      "measured_cadence": null
+    }
+  ],
+  "current_state_source": {
+    "source_id": "state-current-county-json",
+    "full_original_row_references": [
+      {
+        "source_row_0based": 335,
+        "fields": {
+          "__type": "MapData:#NEResultsWebService",
+          "AreaNum": "",
+          "AreaType": null,
+          "BallotOrder": 1,
+          "CandidateID": "3012",
+          "CountyID": "74",
+          "CountyName": "Perkins",
+          "CurrentDateTime": null,
+          "IsReported": false,
+          "OfficeSeqNo": "102",
+          "PartyCode": "REP",
+          "PartyName": "Republican",
+          "PrecinctName": null,
+          "PrecinctsPartial": 0,
+          "PrecinctsReporting": 0,
+          "RaceID": 13224,
+          "RaceName": "For United States Senator - 6  Year Term",
+          "RecountPercent": 0,
+          "RecountVotes": 0,
+          "StatePrecinctID": null,
+          "TotalPrecincts": 2,
+          "VoteFor": 1,
+          "Winner": false,
+          "calcCandidate": "Pete  Ricketts ",
+          "calcCandidatePercentage": 0,
+          "calcCandidateVotes": 0
+        }
+      },
+      {
+        "source_row_0based": 336,
+        "fields": {
+          "__type": "MapData:#NEResultsWebService",
+          "AreaNum": "",
+          "AreaType": null,
+          "BallotOrder": 2,
+          "CandidateID": "3249",
+          "CountyID": "74",
+          "CountyName": "Perkins",
+          "CurrentDateTime": null,
+          "IsReported": false,
+          "OfficeSeqNo": "102",
+          "PartyCode": "LMN",
+          "PartyName": "Legal Marijuana Now",
+          "PrecinctName": null,
+          "PrecinctsPartial": 0,
+          "PrecinctsReporting": 0,
+          "RaceID": 13224,
+          "RaceName": "For United States Senator - 6  Year Term",
+          "RecountPercent": 0,
+          "RecountVotes": 0,
+          "StatePrecinctID": null,
+          "TotalPrecincts": 2,
+          "VoteFor": 1,
+          "Winner": false,
+          "calcCandidate": "Mike  Marvin ",
+          "calcCandidatePercentage": 0,
+          "calcCandidateVotes": 0
+        }
+      },
+      {
+        "source_row_0based": 337,
+        "fields": {
+          "__type": "MapData:#NEResultsWebService",
+          "AreaNum": "",
+          "AreaType": null,
+          "BallotOrder": 3,
+          "CandidateID": "3434",
+          "CountyID": "74",
+          "CountyName": "Perkins",
+          "CurrentDateTime": null,
+          "IsReported": false,
+          "OfficeSeqNo": "102",
+          "PartyCode": "NWP",
+          "PartyName": "Nebraska Working People",
+          "PrecinctName": null,
+          "PrecinctsPartial": 0,
+          "PrecinctsReporting": 0,
+          "RaceID": 13224,
+          "RaceName": "For United States Senator - 6  Year Term",
+          "RecountPercent": 0,
+          "RecountVotes": 0,
+          "StatePrecinctID": null,
+          "TotalPrecincts": 2,
+          "VoteFor": 1,
+          "Winner": false,
+          "calcCandidate": "Robin  Richards ",
+          "calcCandidatePercentage": 0,
+          "calcCandidateVotes": 0
+        }
+      },
+      {
+        "source_row_0based": 338,
+        "fields": {
+          "__type": "MapData:#NEResultsWebService",
+          "AreaNum": "",
+          "AreaType": null,
+          "BallotOrder": 4,
+          "CandidateID": "3429",
+          "CountyID": "74",
+          "CountyName": "Perkins",
+          "CurrentDateTime": null,
+          "IsReported": false,
+          "OfficeSeqNo": "102",
+          "PartyCode": "AFP",
+          "PartyName": "America First",
+          "PrecinctName": null,
+          "PrecinctsPartial": 0,
+          "PrecinctsReporting": 0,
+          "RaceID": 13224,
+          "RaceName": "For United States Senator - 6  Year Term",
+          "RecountPercent": 0,
+          "RecountVotes": 0,
+          "StatePrecinctID": null,
+          "TotalPrecincts": 2,
+          "VoteFor": 1,
+          "Winner": false,
+          "calcCandidate": "Chuck  Conboy ",
+          "calcCandidatePercentage": 0,
+          "calcCandidateVotes": 0
+        }
+      },
+      {
+        "source_row_0based": 339,
+        "fields": {
+          "__type": "MapData:#NEResultsWebService",
+          "AreaNum": "",
+          "AreaType": null,
+          "BallotOrder": 5,
+          "CandidateID": "3365",
+          "CountyID": "74",
+          "CountyName": "Perkins",
+          "CurrentDateTime": null,
+          "IsReported": false,
+          "OfficeSeqNo": "102",
+          "PartyCode": "PET",
+          "PartyName": "By Petition",
+          "PrecinctName": null,
+          "PrecinctsPartial": 0,
+          "PrecinctsReporting": 0,
+          "RaceID": 13224,
+          "RaceName": "For United States Senator - 6  Year Term",
+          "RecountPercent": 0,
+          "RecountVotes": 0,
+          "StatePrecinctID": null,
+          "TotalPrecincts": 2,
+          "VoteFor": 1,
+          "Winner": false,
+          "calcCandidate": "Dan  Osborn ",
+          "calcCandidatePercentage": 0,
+          "calcCandidateVotes": 0
+        }
+      }
+    ],
+    "county_id_literal": "74",
+    "county_TotalPrecincts": 2,
+    "candidate_rows": 5,
+    "all_zero_unreported": true,
+    "current_native": {
+      "source_id": "current-native-perkins",
+      "receipt": "receipts/current-native-perkins.json",
+      "constructor_parent": "code-1",
+      "rows": 15,
+      "contexts": 3,
+      "nonadministrative_contexts": 2,
+      "administrative_ids": [
+        "_TOT"
+      ],
+      "source_fields": [
+        "__type",
+        "AreaNum",
+        "AreaType",
+        "BallotOrder",
+        "CandidateID",
+        "CountyID",
+        "CountyName",
+        "CurrentDateTime",
+        "IsReported",
+        "OfficeSeqNo",
+        "PartyCode",
+        "PartyName",
+        "PrecinctName",
+        "PrecinctsPartial",
+        "PrecinctsReporting",
+        "RaceID",
+        "RaceName",
+        "RecountPercent",
+        "RecountVotes",
+        "StatePrecinctID",
+        "TotalPrecincts",
+        "VoteFor",
+        "Winner",
+        "calcCandidate",
+        "calcCandidatePercentage",
+        "calcCandidateVotes"
+      ],
+      "method_split": null,
+      "source_update_time": null,
+      "source_time_timezone": null,
+      "TotalPrecincts_values": [
+        1322
+      ],
+      "TotalPrecincts_scope": "Global1322 in native response, not local precinct count",
+      "all_zero_unreported": true,
+      "complete_native_contexts": [
+        {
+          "StatePrecinctID": "_TOT",
+          "PrecinctName": "Countywide",
+          "row_positions": [
+            0,
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "StatePrecinctID": "0001",
+          "PrecinctName": "District 1",
+          "row_positions": [
+            5,
+            6,
+            7,
+            8,
+            9
+          ]
+        },
+        {
+          "StatePrecinctID": "0002",
+          "PrecinctName": "District 2",
+          "row_positions": [
+            10,
+            11,
+            12,
+            13,
+            14
+          ]
+        }
+      ],
+      "current_to_historical_join": null,
+      "current_to_map_join": null
+    }
+  },
+  "publication_scope": "Individual county authority requests plus actually investigated shared state parent. This is not independent validation of every historic child as a current feed.",
+  "finer_reporting_ID_limitation": "Historical 2 selected-portfolio contexts; current state source has 2 nonadministrative contexts plus _TOT. Native IDs and labels belong to different publications/vintages; no per-child equivalence is demonstrated.",
+  "remaining_Senate_votes": null,
+  "current_geography_approved": false,
+  "measured_cadence": null,
+  "correction_chronology": "Only explicit source wording/differing version observations retained; decreases never repaired or allocated.",
+  "additional_notes": []
+}

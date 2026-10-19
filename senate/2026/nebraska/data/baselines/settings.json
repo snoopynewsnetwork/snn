@@ -1,0 +1,73 @@
+{
+  "anchors": {
+    "senate2024special": {
+      "A": "Preston Love Jr.",
+      "A_identity": "Democratic",
+      "B": "Pete Ricketts",
+      "B_identity": "Republican"
+    },
+    "senate2024regular": {
+      "A": "Dan Osborn",
+      "A_identity": "By Petition (named independent)",
+      "B": "Deb Fischer",
+      "B_identity": "Republican"
+    },
+    "president2024": {
+      "A": "Kamala D. Harris & Tim Walz",
+      "A_identity": "Democratic",
+      "B": "Donald J. Trump & JD Vance",
+      "B_identity": "Republican"
+    },
+    "governor2022": {
+      "A": "Carol Blood & Al Davis",
+      "A_identity": "Democratic",
+      "B": "Jim Pillen & Joe Kelly",
+      "B_identity": "Republican"
+    },
+    "senate2020": {
+      "A": "Chris Janicek",
+      "A_identity": "Democratic",
+      "B": "Ben Sasse",
+      "B_identity": "Republican"
+    }
+  },
+  "historical_volume_sensitivity": [
+    {
+      "mix": "low_2022_voting_mix",
+      "ballot_anchor_year": 2022,
+      "actual_state_total_voting": 682716,
+      "pair_volume": 661341.2472660316,
+      "formula": "T_c = historical Total Voting(year,c) * (2024special Love_c+Ricketts_c) / 2024 Total Voting(c)",
+      "native_formula": "T_u = 2024special pair_u * T_c / 2024special pair_c; derived sensitivity weights, not observed older native turnout or a cross-year geography match",
+      "forecast": false
+    },
+    {
+      "mix": "base_2024_voting_mix",
+      "ballot_anchor_year": 2024,
+      "actual_state_total_voting": 965236,
+      "pair_volume": 935005.0,
+      "formula": "T_c = historical Total Voting(year,c) * (2024special Love_c+Ricketts_c) / 2024 Total Voting(c)",
+      "native_formula": "T_u = 2024special pair_u * T_c / 2024special pair_c; derived sensitivity weights, not observed older native turnout or a cross-year geography match",
+      "forecast": false
+    },
+    {
+      "mix": "high_2020_voting_mix",
+      "ballot_anchor_year": 2020,
+      "actual_state_total_voting": 966920,
+      "pair_volume": 936614.9822995432,
+      "formula": "T_c = historical Total Voting(year,c) * (2024special Love_c+Ricketts_c) / 2024 Total Voting(c)",
+      "native_formula": "T_u = 2024special pair_u * T_c / 2024special pair_c; derived sensitivity weights, not observed older native turnout or a cross-year geography match",
+      "forecast": false
+    }
+  ],
+  "native_preferences": "Only special2024 complete statewide; other native comparators available in separate local extracts, never silently imputed statewide",
+  "target_margin_fractions": [
+    0,
+    0.01
+  ],
+  "selected_only_assumption": "all every other unit at explicit scenario baseline q,T, including nonpriority units",
+  "unknown_special_generic_writeins": null,
+  "nonpriority_included": true,
+  "probability_calibrated": false,
+  "actual_2026_turnout_projection": false
+}
