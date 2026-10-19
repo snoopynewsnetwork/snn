@@ -224,3 +224,6 @@ Mississippi fresh original Leflore2018 special readings retain an exact unalloca
 
 
 The corrected Mississippi98views-v2 witness now verifies98actualstage grids/1,504native observations, leaving66native stage grids outside scope. Its controls explicitly keep LefloreEspy native5,853 versus printed5,863 unallocated and all-vectors-close=false. Exactly six Greene case fields are qualified against earlier snapshots; the stale misnamed98v1 remains excluded. The same two researchers continue, with no historical-method/current-geography/native887 dispatch approval.
+
+
+Independent Mississippi turnout Leflore2018 original replay also agrees with the exact unallocated10 difference at all88 candidate/null source positions. Perry's two distinct original stages agree132positions; its exact earlier JSON/CSV differ only in36 visible header line breaks, with counts/roles/raw hashes/physical positions unchanged. These are bounded source comparisons and do not grant887/full-history/method/current-geography acceptance.
