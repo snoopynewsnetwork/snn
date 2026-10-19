@@ -55,3 +55,17 @@ Coordinator independent Poppler rendering and fresh OCR now pass all 525 require
 
 
 The second original Pike extraction now independently agrees on all 525 field values, source pages, printed codes and literal labels. All 525 fitz2.4 versus fitz3.5 reading-window pairs remain separately preserved; exact pixel-box agreement is not claimed. The [reciprocal coordinator check](data/coordinator-pike-profile-peer-review.json) pins the unchanged earlier original review and all three stable independent-worker artifacts. Separately, the new presidential workbench is diagnostic only: comparison of 891 existing bounded original positions gives 77 Tunica and 48 Kemper mismatch/unresolved leads, with no new value adopted from the aid. Its 182 unresolved nonunused positions comprise 150 unresolved original cells and 32 party/blank wrong-target crops. This identifies original grid work still required and does not close the statewide gate.
+
+
+## Bounded direct presidential and immutable all-field coverage review
+
+The fresh original Tunica/Perry presidential review passes 270 numeric positions across 28 native columns and two TOTALs. Tunica Harris remains one vote below county CSV without allocation. The immutable ten-view all-eleven-field snapshot passes all eight lossless file pins, coverage arithmetic for 16 pages and 110 native constituents, and 847 flat CSV positions. It preserves 10 TOTALs, 45 unused columns and 11 non-additive Kemper parallels, giving 1,441 numeric and 495 unused/null positions.
+
+A fresh coordinator review of Issaquena PDF 1 independently confirms 66 numeric cells and 55 unused/nulls, including literal minor-candidate ones and the printed footer Page 2. Arithmetic closure is not blanket independent glyph acceptance: presidential fields remain unreviewed for 1,626 preferred native constituents across 72 parents. These bounded reviews do not authorize the 887-unit proposal or close historical-native, method or current-geography gates. The same two first-pair workers continue; no new worker is launched.
+
+
+## Immutable sixteen-view coverage checkpoint
+
+The later immutable sixteen-view witness preserves the earlier ten-view bytes and semantics. Eight exact file pins and 3,267 flat CSV positions pass, with 290 preferred native constituents across 36 actual pages. There are 3,487 numeric and 869 unused/null candidate positions, including separate TOTAL and Kemper parallel roles. Hinds adds 981 original-read presidential numeric positions and nine unused blanks. Its 220 Senate numeric/null positions explicitly reuse the worker’s prior own readings from the exact same raw source hash, pages, render hashes and physical header bounds; the coordinator checked that reuse without a cross-year or geographic join.
+
+This is source and coverage verification, not blanket independent coordinator glyph review. Presidential fields remain unreviewed for 1,446 preferred constituents across 66 parent views. The proposed 887-unit dispatch, historical-native, method and current-geography gates remain open. All earlier immutable witnesses are retained.
