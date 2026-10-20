@@ -195,3 +195,12 @@ unit fields omitted from batch spatial-reference objects; both complete forms
 remain and the returned WKID values agree. The initial stricter checker
 assumption and correction are retained separately. This is raw-source integrity,
 not a topology, legal-boundary, current-crosswalk or finished-map-package claim.
+
+The separate [Census original audit](data/coordinator-census-map-original-review.json)
+passes1,214,750 independent checks across seven complete ZIP members,6,361
+records and all21 county codes. Manual binary parsing verifies SHP/SHX offsets,
+parts/bboxes, every raw DBF cell and the complete derivative's coordinate bits.
+There are1,151,117 XY positions, comprising2,302,234 individual coordinate
+values; the initial guard's mistaken unit and correction are retained. No
+coordinate, ring, source field or vote was changed. Census2020 VTDs remain
+historical context, with no result-label or current legal crosswalk approved.
