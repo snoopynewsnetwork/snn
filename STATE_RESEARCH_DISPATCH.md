@@ -44,12 +44,11 @@ and repository review, with its push independently verified. Historical source
 qualifications remain explicit; current geography and live readiness are separate.
 
 The only active researchers are Illinois official-results
-`0ce74399-fe2e-42a8-9428-650729a9137c` and maps
-`d02ee332-ee45-4f77-8eb1-e3364aa3bc41`. All four Delaware workers have
-finished; Delaware is published after final independent integration review. Illinois
-first-pair source/scenario/seal review and complete historical dispatch
-acceptance pass. Massachusetts is the next unlaunched first pair;15 later
-states remain queued. No extra workers or finished producer restarts exist.
+`0ce74399-fe2e-42a8-9428-650729a9137c` and Massachusetts turnout
+`eb66a7f4-a730-4f4d-8382-35941613a2ff`. Illinois maps has actually finished and
+awaits independent final review. Massachusetts baseline awaits a real released
+slot;14 later states remain queued. No extra workers or finished producer
+restarts exist. Delaware is published after full independent integration.
 
 Illinois's historical printed-known threshold is5,540/4,474,312 of5,592,368,
 following5,539/4,473,789; top15=29,572. Complete10,062 source groups,108 source
@@ -800,3 +799,17 @@ No producer changed, no current leaf/November/live approval follows.
 Eighteen new state packages plus retainedMichigan are published. Illinois
 official0ce74399 and mapsd02ee332 are the sole active researchers;Massachusetts
 is next queued firstpair. All34newstate stacks remain the fullbatch objective.
+
+
+## Illinois maps finished; actual Massachusetts turnout launched
+
+Illinois maps `d02ee332-ee45-4f77-8eb1-e3364aa3bc41` actually finished its
+1,006-entry seal, complete5,540/10,062/4,522/108hierarchy and original-source
+Census/authority/atlas audits. Coordinator independent review follows, with
+no current/legal leaf matches or native write-in allocation approved.
+
+That actual released slot launched Massachusetts turnout
+`eb66a7f4-a730-4f4d-8382-35941613a2ff` after fresh profiles/all four notes and
+provider inspection. Illinois official `0ce74399-fe2e-42a8-9428-650729a9137c`
+is the only other active researcher. Massachusetts baseline awaits a real slot
+and independent original extraction;14 later states remain queued.
