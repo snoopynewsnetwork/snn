@@ -1,6 +1,6 @@
 # Arkansas first-pair review
 
-Reviewed 2026-10-20. Both actual first-pair workers finished and passed their sealed read-only audits. This component is historical measurement and conditional arithmetic, not a completed four-question state package. [Same-turnout captured-final-peer continuation](data/coordinator-launches/prepared-turnout-reciprocal-prompt.txt) is prepared for an actual released slot; no worker was restarted while Virginia's two researchers were active.
+Reviewed 2026-10-20. Both actual first-pair workers finished and passed their sealed read-only audits. This component is historical measurement and conditional arithmetic, not a completed four-question state package. The same original turnout worker completed bounded captured-final-peer verification, independently reviewed below. The complete frozen authority is ready for original official-results and map workers after actual slot releases; neither has launched yet.
 
 ## Complete original sources
 
