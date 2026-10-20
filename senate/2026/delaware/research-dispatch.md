@@ -64,3 +64,17 @@ changingNovembercounts, exactremainder or probability is approved.
 Delaware official/maps prompts are prepared only, awaiting actual slot releases.
 Illinois turnouta2a3b1cf and baselinea7b49f02 remain the only active researchers.
 No finished worker restart, extra agent or producer flag/source mutation.
+
+
+## Optional coordinator original map preparation
+
+Department Maps -> literal FirstMap Hub/public JS dataset constructor yields
+actual ElectionDistrict FeatureServer0. Complete531 native features/all6attrs,
+533rings/169,245 native positions pass <=50-ID batches and exact pre/post
+metadata/count/IDsets. Five acquired original PDF pages were actually viewed;
+District11 explicitly spans NewCastleandKent, and distinct07-08/08-07 original
+maps both printMar8,2023. Hub2010description/template2022/serverNovember2023
+update are retained separately. No result-key orientation, legal effectiveness
+or historical/current leaf join is approved. Individual immutable originals
+and receipts may be independently reused; optional coordinator proof is not
+a required worker build dependency. No second-wave worker has launched yet.
