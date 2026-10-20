@@ -2,13 +2,15 @@
 
 [All 2026 Senate races](../README.md)
 
-## Historical first-pair research
+## Election-night research
 
-- [Turnout and exact native coverage](turnout.md): all 75 parents and 2,841 original 2024 presidential reporting units. Top 15 supply 3.38478163%; 1,056 reach 80.01997166%.
-- [Partisanship and conditional targets](county-partisanship.md): all required contests, distinct API/FullData publications and a named Libertarian opposition scenario for 2020.
-- [Independent coordinator review](research-review.md) and [actual dispatch](research-dispatch.md).
+- [Turnout and exact source-native scope](turnout.md): all 75 parents and 2,841 original 2024 presidential reporting units. Top 15 supply **3.38478163%**; **1,056** reach **80.01997166%**. All 1,785 remainder records remain.
+- [Partisanship and conditional targets](county-partisanship.md): all required contests, separate API/FullData publications and a named Libertarian opposition scenario for 2020.
+- [Official channels and counting rules](official-results.md): all 75 authorities, 68 priority-parent investigations and complete current examples, retained as unadmitted pre-election/demo setup.
+- [Downloaded precinct assets](precinct-maps.md) and [offline atlas](maps/index.html): all 75 parents, 2,928 separate native GIS features, complete historical observations and explicit unmatched geography.
+- [Newsroom backstops](local-news-results.md), [proposed collection strategy](live-polling-strategy.md), [independent review](research-review.md), [actual dispatch](research-dispatch.md) and [whole-package checks](data/coordinator-validation.json).
 
-This is the reviewed first pair. The same turnout worker completed bounded reciprocal review; [complete historical source authority](data/coordinator-priority-acceptance.json) passed exhaustive replay. Original official-results/maps assignments await actual released slots. [Newsroom sources](local-news-results.md) and the [proposed collection strategy](live-polling-strategy.md) retain separate setup/access qualifications. Historical numerical agreement does not approve current geography, eligible write-ins, November feeds, remaining ballots or calibrated probabilities. The race tracker below remains unchanged.
+All four original assignments are finished and independently reviewed. The [complete historical source authority](data/coordinator-priority-acceptance.json) preserves all original bodies and histories. Stone's actual November specimen shows Hallie Shoffner (Democratic), Senator Tom Cotton (Republican), and Jeff Wadlin (Libertarian), vote for one; later statewide signed-roster and eligible-write-in exhaustion are unproved. Current positive setup values are excluded from November counts. Historical source agreement does not approve current geography, operational IDs, eligible write-ins, live cadence, remaining ballots or calibrated probabilities. The race tracker below remains unchanged.
 
 ## Seat details
 

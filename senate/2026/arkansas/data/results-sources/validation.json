@@ -1,0 +1,234 @@
+{
+  "status": "pass",
+  "graph": {
+    "fixed_whole_files": 1399,
+    "producer_members": 1378,
+    "historical_resolvers": 1418,
+    "complete_archives": 5,
+    "complete_roots": 18,
+    "complete_companions": 773,
+    "recursive_objects": 2185390,
+    "whole_partitions": 15,
+    "opaque_invalid_histories": 5,
+    "full_native": 2841,
+    "priority_native": 1056,
+    "remainder_native": 1785,
+    "full_parents": 75,
+    "priority_parents": 68
+  },
+  "originals": {
+    "whole_originals": 490,
+    "whole_json_originals": 477,
+    "all_original_values": 9097616,
+    "nulls": 23638,
+    "workbook_data_rows": 69355,
+    "candidate_rows": 19887,
+    "typed_cells": 198870,
+    "native_vectors": 2841
+  },
+  "responses": {
+    "requests": 451,
+    "response_hops": 501,
+    "whole_response_entities": 496,
+    "explicit_unavailable_hops": 5
+  },
+  "scope": {
+    "full_native": 2841,
+    "priority": 1056,
+    "remainder": 1785,
+    "full_parents": 75,
+    "priority_parents": 68,
+    "inventory_rows": 77
+  },
+  "negative": {
+    "positive_complete_packet": "pass",
+    "negative_count": 25,
+    "cases": [
+      {
+        "fixture": "truncated-whole-original.json.gz",
+        "raw_bytes": 9549912,
+        "raw_sha256": "5b09300420537f9f1e899b8aef38c7346a44ab0b11f0daa6ad47fd60da0c0a38",
+        "expected": "reject",
+        "actual": "reject"
+      },
+      {
+        "fixture": "truncated-whole-companion.json.gz",
+        "raw_bytes": 9549044,
+        "raw_sha256": "2f85aa353bcf2880d4c1e9465eca073d0690354636bd627c7abd752312284277",
+        "expected": "reject",
+        "actual": "reject"
+      },
+      {
+        "fixture": "missing-native.json.gz",
+        "raw_bytes": 9548472,
+        "raw_sha256": "45a6f99444f1184987552847db6ae20f388020627a86d2b00fe7433cb5d96659",
+        "expected": "reject",
+        "actual": "reject"
+      },
+      {
+        "fixture": "missing-administrative-context.json.gz",
+        "raw_bytes": 9549801,
+        "raw_sha256": "79c71f2a0c2e8d7d7a299432602589ba4aeb33ee5c839f1c434968dc5709fff1",
+        "expected": "reject",
+        "actual": "reject"
+      },
+      {
+        "fixture": "changed-raw-position.json.gz",
+        "raw_bytes": 9549916,
+        "raw_sha256": "eb712b4525ede77ef337aae46cd76810d32ca04d846ae51b48894704bc384966",
+        "expected": "reject",
+        "actual": "reject"
+      },
+      {
+        "fixture": "missing-method-mask.json.gz",
+        "raw_bytes": 9549900,
+        "raw_sha256": "86825ea39b86e0adf43d64ee3afb912346382f5f881b874e7571103a1e0d58ff",
+        "expected": "reject",
+        "actual": "reject"
+      },
+      {
+        "fixture": "numeric-native-id-alias.json.gz",
+        "raw_bytes": 9549912,
+        "raw_sha256": "94dbb82490fdfe7840647df3b79e28ea3093def6b0e04f0a01f601b521f939bd",
+        "expected": "reject",
+        "actual": "reject"
+      },
+      {
+        "fixture": "changed-native-count.json.gz",
+        "raw_bytes": 9549916,
+        "raw_sha256": "1357d91a908431e61d2982039df580c41fce1148432dbeeb03dcaaf77f87a50e",
+        "expected": "reject",
+        "actual": "reject"
+      },
+      {
+        "fixture": "invented-CRS.json.gz",
+        "raw_bytes": 9549923,
+        "raw_sha256": "a9da872813c2ce955170073fbd88b6ac9f5242b61120b3145132c15a27592330",
+        "expected": "reject",
+        "actual": "reject"
+      },
+      {
+        "fixture": "current-vintage-substitution.json.gz",
+        "raw_bytes": 9549903,
+        "raw_sha256": "86816b1381e6cb83f0917047b419a2f01d31c686e8d2ff4f22c8b24953619036",
+        "expected": "reject",
+        "actual": "reject"
+      },
+      {
+        "fixture": "changed-full-order.json.gz",
+        "raw_bytes": 9549916,
+        "raw_sha256": "3a6ce45ed33dff45be31f76a132b0c9c3e97813c3077ed0f3bbb8b8c2df34e84",
+        "expected": "reject",
+        "actual": "reject"
+      },
+      {
+        "fixture": "wrong-80-crossing.json.gz",
+        "raw_bytes": 9549877,
+        "raw_sha256": "ab49250fa3c2eaa16966a3d1b650e366521e9a2023df557d80d2fcd6e033f4f5",
+        "expected": "reject",
+        "actual": "reject"
+      },
+      {
+        "fixture": "county-substitute.json.gz",
+        "raw_bytes": 10531610,
+        "raw_sha256": "087148b17a8c7d05114a48b1fcac4d5b0b9ed9318c6214520db238be8de7d6b0",
+        "expected": "reject",
+        "actual": "reject"
+      },
+      {
+        "fixture": "residual-allocation.json.gz",
+        "raw_bytes": 9549915,
+        "raw_sha256": "62707653238c0817fc46dbbe80be262c612ce30e692775264fe1c41f41d175e7",
+        "expected": "reject",
+        "actual": "reject"
+      },
+      {
+        "fixture": "null-to-zero.json.gz",
+        "raw_bytes": 9549913,
+        "raw_sha256": "837160fb6b0cd381c882e3ebc6223f2c642866d59ef79053acc2efa1a15b442e",
+        "expected": "reject",
+        "actual": "reject"
+      },
+      {
+        "fixture": "party-relabel.json.gz",
+        "raw_bytes": 9549923,
+        "raw_sha256": "aba8b6e4732671c6e9174de9062ed311e9d06ff27c008c72364d2ba94c8e88ca",
+        "expected": "reject",
+        "actual": "reject"
+      },
+      {
+        "fixture": "missing-candidate.json.gz",
+        "raw_bytes": 9549880,
+        "raw_sha256": "1eba90c219e172d7b271bd3edbba58d1968abbd6701a05869779eaa7eee0e173",
+        "expected": "reject",
+        "actual": "reject"
+      },
+      {
+        "fixture": "truncated-header.json.gz",
+        "raw_bytes": 9549902,
+        "raw_sha256": "25bc6c3b43e35b7a57c096e4ec5e53911ea2e48dc1b21d7dcf72d0539d7951e5",
+        "expected": "reject",
+        "actual": "reject"
+      },
+      {
+        "fixture": "changed-original-cell.json.gz",
+        "raw_bytes": 9549916,
+        "raw_sha256": "4782eb72f6eb0b1e23293920e3dd0e2333811c9259339069d09738d6ff831699",
+        "expected": "reject",
+        "actual": "reject"
+      },
+      {
+        "fixture": "missing-source-receipt-field.json.gz",
+        "raw_bytes": 9549779,
+        "raw_sha256": "56f226cae1c33f90cce7fbd083b9852c2d5e117c0fd6e6908cf9e724fa47d411",
+        "expected": "reject",
+        "actual": "reject"
+      },
+      {
+        "fixture": "changed-parent-child-array.json.gz",
+        "raw_bytes": 9549658,
+        "raw_sha256": "a58667b69e78d9fa6dce3cd98c1b0b1b24745b7df503c0fbb1aefc5573a04f35",
+        "expected": "reject",
+        "actual": "reject"
+      },
+      {
+        "fixture": "current-match-invented.json.gz",
+        "raw_bytes": 9549929,
+        "raw_sha256": "8dada8888cea4224cf2ca2d711ef2eccf309d0d1075fe45cc76ffccf10567e97",
+        "expected": "reject",
+        "actual": "reject"
+      },
+      {
+        "fixture": "current-admission.json.gz",
+        "raw_bytes": 9549915,
+        "raw_sha256": "8e20ed59d82e25a5413e0fa7f4790cec2592d08ca042f0dc1907d4bc0ee49339",
+        "expected": "reject",
+        "actual": "reject"
+      },
+      {
+        "fixture": "native80-legal-admission.json.gz",
+        "raw_bytes": 9549915,
+        "raw_sha256": "daf098aff42511d026806a8568d3672d0ea461ab3b12b4aab31e26aecb8009ce",
+        "expected": "reject",
+        "actual": "reject"
+      },
+      {
+        "fixture": "duplicate-json-keys.json.gz",
+        "raw_bytes": 43,
+        "raw_sha256": "23c1dd3b76e69a4afd8a3b4376dba0b1188625791fd34712f21b22f5233f2036",
+        "expected": "reject",
+        "actual": "reject"
+      }
+    ],
+    "full_packet_scope": "entire historical contract, complete original county body, full original receipt/companion, exact typed workbook/header/candidate cells and qualifications"
+  },
+  "local_links": 19,
+  "owned_file_count": 1086,
+  "offline_output_count": 87,
+  "guard_exercised": {
+    "external_write_denials": 1,
+    "helper_read_denials": 1,
+    "network_denials": 1,
+    "non_pdftotext_process_denials": 1
+  }
+}

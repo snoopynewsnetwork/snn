@@ -1,0 +1,66 @@
+{
+  "status": "pass",
+  "actual_final_sealed_commands": [
+    {
+      "role": "official",
+      "actual_command": [
+        "python3",
+        "-B",
+        "-S",
+        "senate/2026/arkansas/data/results-sources/validate.py",
+        "--sealed"
+      ],
+      "started_utc": "2026-10-20T21:24:08.387255+00:00",
+      "finished_utc": "2026-10-20T21:25:13.410789+00:00",
+      "exit": 0,
+      "scope": "Coordinator read-only sealed audit; durable local completion logging survives notification/tool interruption.",
+      "outputs": {
+        "stdout": {
+          "path": "data/coordinator-final-command-history/official.stdout.gz",
+          "raw_bytes": 1065,
+          "raw_sha256": "86e60b09484ee2b18d3c59fdc169a397c546528d7926b028606c9882c5a2933a",
+          "stored_bytes": 510,
+          "stored_sha256": "6e5c81f43f1085c978af9ca3e0465c179ab46e58e019dfe4944d3137957e433d"
+        },
+        "stderr": {
+          "path": "data/coordinator-final-command-history/official.stderr.gz",
+          "raw_bytes": 0,
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stored_bytes": 20,
+          "stored_sha256": "f1b651238a58fe290baec6c5e32f3bdb1943dd2bd582f02569231f7a757c7837"
+        }
+      }
+    },
+    {
+      "role": "maps",
+      "actual_command": [
+        "python3",
+        "-B",
+        "senate/2026/arkansas/maps/scripts/validate.py",
+        "--sealed"
+      ],
+      "started_utc": "2026-10-20T21:24:08.387255+00:00",
+      "finished_utc": "2026-10-20T21:25:33.592881+00:00",
+      "exit": 0,
+      "scope": "Coordinator read-only sealed audit; durable local completion logging survives notification/tool interruption.",
+      "outputs": {
+        "stdout": {
+          "path": "data/coordinator-final-command-history/maps.stdout.gz",
+          "raw_bytes": 1423,
+          "raw_sha256": "264dd3365ece7dc30c0b0f07c22285c81923fb7ad174a37be8dba2169f5d1850",
+          "stored_bytes": 736,
+          "stored_sha256": "2ba3c51190dda2eb4a3313e20dcde169c5b3a4bf0d5254f11041d2dc22b88944"
+        },
+        "stderr": {
+          "path": "data/coordinator-final-command-history/maps.stderr.gz",
+          "raw_bytes": 0,
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stored_bytes": 20,
+          "stored_sha256": "f1b651238a58fe290baec6c5e32f3bdb1943dd2bd582f02569231f7a757c7837"
+        }
+      }
+    }
+  ],
+  "owned_writes_in_or_after_worker_audits": false,
+  "scope": "Actual logged coordinator reruns, not an assumed worker result. All independent coordinator reviews separately pin whole source bodies and worker manifests."
+}

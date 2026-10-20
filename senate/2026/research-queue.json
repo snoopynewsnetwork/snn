@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "requested_date": "2026-10-17",
-  "updated_at_utc": "2026-10-20T21:12:08.770934+00:00",
+  "updated_at_utc": "2026-10-20T21:50:11.439429+00:00",
   "scope": "35 states in the repository 2026 U.S. Senate race index",
   "coordinator_agent_id": "d0fc3534-1613-4883-b48b-21a233fcfd9e",
   "workspace_id": "wks_b290f45007010740",
@@ -9261,7 +9261,7 @@
       "election": "Regular",
       "seat_class": "II",
       "priority": 26,
-      "status": "four-original-questions-independently-reviewed-ready-for-whole-state-publication",
+      "status": "published",
       "workers": {
         "turnout": {
           "agent_id": "5b42c895-68ea-40c4-9b7c-534e46d14d7a",
@@ -9635,6 +9635,15 @@
           "maximum_stored_bytes": 25798569,
           "push_exit": 0,
           "remote_exact_verified": true
+        },
+        {
+          "commit": "0fa9e036a0b8fc43542fc269ae477337341569f1",
+          "scope": "Complete independently reviewed four-question bounded historical/source state package and actual Arkansas second-wave launch metadata",
+          "exact_changed_blobs": 6809,
+          "changed_bytes": 1357501645,
+          "maximum_changed_blob": 30000000,
+          "push_exit": 0,
+          "exact_remote_verified": true
         }
       ],
       "state_specific_notes": "No 2024 Senate contest. 2024 president, 2022 Senate recent midterm/other seat and 2020 same-seat Senate distinct. Verify actual 2026 statewide Senate rules/slate separately from congressional special-primary/redistricting changes.",
@@ -9778,7 +9787,8 @@
         "all_parents": 67,
         "priority_parents": 63,
         "current_geography_approved": false
-      }
+      },
+      "published_at_utc": "2026-10-20T21:22:43.395220+00:00"
     },
     {
       "state": "Arkansas",
@@ -9787,11 +9797,11 @@
       "election": "Regular",
       "seat_class": "II",
       "priority": 27,
-      "status": "both-original-official-and-maps-active-from-complete-reviewed-source-authority",
+      "status": "complete-reviewed-awaiting-publication",
       "workers": {
         "turnout": {
           "agent_id": "43866295-c1c8-4f15-8933-67a99b3454c0",
-          "status": "complete-bounded-reciprocal-and-preservation-independently-reviewed",
+          "status": "complete-reviewed",
           "launched_at_utc": "2026-10-20T18:49:11.978621+00:00",
           "released_by_actual_finish": "61838d17-5eed-4661-8d3f-e7b5a2825994",
           "only_other_active_worker": "f2db457b-3e3c-47d0-a65c-7d6be8bbe5c7",
@@ -9910,7 +9920,7 @@
         },
         "partisanship": {
           "agent_id": "302e0938-9d85-4b49-99c1-87bbb564364d",
-          "status": "complete-independent-original-source-math-CLI-reviewed",
+          "status": "complete-reviewed",
           "launched_at_utc": "2026-10-20T19:05:10.255696+00:00",
           "released_by_actual_finish": "f2db457b-3e3c-47d0-a65c-7d6be8bbe5c7",
           "turnout_also_actually_finished": true,
@@ -9975,7 +9985,7 @@
         },
         "official-results": {
           "agent_id": "b6f64566-f806-42c3-a97a-c28ae547d90a",
-          "status": "active-original-independent-source-replay-and-public-research",
+          "status": "complete-reviewed",
           "launched_at_utc": "2026-10-20T20:55:55.304963+00:00",
           "launch_timestamp_scope": "Coordinator record immediately following actual successful create_agent response",
           "released_by_actual_finish": "f09b4630-ce6d-4e9a-b982-5d56cc1024ca",
@@ -10003,11 +10013,24 @@
             "bytes": 1311,
             "sha256": "a2911245dc48d556fce380bb4ddf90a016c9f6859f222ee8ce8be91f31ed4e9a",
             "independently_reviewed": false
+          },
+          "actual_finish_event_received": true,
+          "final_handoff": {
+            "manifest": {
+              "path": "data/results-sources/asset-manifest.json",
+              "bytes": 221820,
+              "sha256": "e6e27a865cb731d3e0023848cae7ef930290cb136cf546445111ef7e4236039f",
+              "targets": 1089,
+              "all_files": 1090
+            },
+            "worker_final_readonly_audit": "PASS reported; independent rerun in progress",
+            "raw_FullData_bytes": 53950979,
+            "current_November_counts_admitted": false
           }
         },
         "precinct-maps": {
           "agent_id": "b962db1b-305d-410d-8f53-99bff62810c0",
-          "status": "active-original-independent-source-replay-and-public-research",
+          "status": "complete-reviewed",
           "launched_at_utc": "2026-10-20T20:58:11.278640+00:00",
           "launch_timestamp_scope": "Coordinator record immediately following actual successful create_agent response",
           "released_by_actual_finish": "44c53403-8904-4118-9a62-f9a468b9fc51",
@@ -10029,11 +10052,54 @@
           },
           "scope": "Original fourth question only; full qualified2841/1056/1785/all75/68priorityparents; external authority path-only; no producer writes/new workers/peer/unfinished official-package dependency/current joins",
           "first_action_independent_exact_whole_bytes_SHA_JSON_full_value_traversal_worker_reported": true,
-          "acceptance_path_only_and_flags_unchanged_worker_reported": true
+          "acceptance_path_only_and_flags_unchanged_worker_reported": true,
+          "actual_finish_event_received": true,
+          "final_handoff": {
+            "manifest_bytes": 188135,
+            "manifest_sha256": "c60fde1fa31cc3c615d2e61b87a0ef8ff72e7b66d17aba8fbe60289d43f28d99",
+            "targets": 1072,
+            "stored_bytes": 388923935,
+            "maximum_stored_bytes": 19766207,
+            "handoff_bytes": 3964,
+            "handoff_sha256": "6030bfff172051e9d5ffa9570a8d821486ec4f4c9ee0c42986e1faca8f1a4bb5",
+            "seal_bytes": 2303,
+            "seal_sha256": "5d14a8a9325ae496f21d888530e62b1de6e3e69413b04e233e6ca582ed7d66c6",
+            "worker_final_readonly_audit": "pass_final_readonly reported; root review pending",
+            "no_post_audit_writes_reported": true,
+            "current_approvals": false
+          }
         }
       },
-      "validation": null,
-      "gaps": [],
+      "validation": {
+        "status": "pass",
+        "whole_state": "arkansas/data/coordinator-validation.json",
+        "review": "arkansas/research-review.md",
+        "manifest": "arkansas/data/coordinator-asset-manifest.json",
+        "complete_four_original_workers": true,
+        "owned_targets_excluding_only_manifest": 3694,
+        "full_native_historical_contexts": 2841,
+        "all_parents": 75,
+        "priority": 1056,
+        "priority_parents": 68,
+        "official_complete_current_native_examples": 2768,
+        "map_native_features": 2928,
+        "official_independent_checks": 14611,
+        "map_independent_checks": 3131316,
+        "whole_primary_PDFs_reextracted": 12,
+        "manual_whole_specimen_pages": 1,
+        "manual_whole_map_pages": 2,
+        "worker_final_sealed_audits": "Both actually rerun, exit0; complete graph/source/negative/guarded exact-output checks pass.",
+        "publication": "Exact reviewed stage/commit/push still required.",
+        "repository_check": "npm run check passed build35races, TypeScript noEmit and node --check"
+      },
+      "gaps": [
+        "19 required-contest and9 contextual2020 presidential API/FullData differences; two numerical combination cases/five exact-match native-ID gaps, not physical equivalence.",
+        "No native turnout/registration/blank-under-over observations in225 county turnout responses; no allocation.",
+        "Current public November product has demo/banner configuration and positive pre-election values. Entire raw53950979B export and75county examples unadmitted; no password/code/auth used.",
+        "Stone specimen establishes three printed choices, not signed statewide later roster or eligible named-write-in exhaustion. Later operative legal/docket completeness unproved.",
+        "GIS layer2012 description versus1481null/heterogeneous later edit dates; two county map print/approval vintages differ.36curves/17source-invalid diagnostics/21positive-area pairs unrepaired. All2841result-polygon matches null.",
+        "No genuine November update sequence, measured cadence, exact eligible remaining pool, collector/forecast/calibrated probability."
+      ],
       "published_commits": [
         {
           "commit": "752956db096a304e1d9cf851f7232f7d0b9b81ed",
@@ -10197,6 +10263,23 @@
           "current_or_legal_or_live_approval": false
         },
         "current_or_legal_live_approval": false
+      },
+      "priority_geography": {
+        "basis": "2024 original XLSX seven named presidential tickets; source reported candidate marks, not ballots/land or current native geometry",
+        "full_count": 2841,
+        "top15_votes": 40031,
+        "denominator": 1182676,
+        "minimum80_count": 1056,
+        "minimum80_votes": 946377,
+        "preceding_count": 1055,
+        "preceding_votes": 946007,
+        "integer_threshold": 946141,
+        "crossing": "CLEBURNE / GRASSEY OUTSIDE +370",
+        "remainder_count": 1785,
+        "remainder_votes": 236299,
+        "parent_count": 75,
+        "priority_parent_count": 68,
+        "current_geography_approved": false
       }
     },
     {
@@ -10206,13 +10289,79 @@
       "election": "Regular",
       "seat_class": "II",
       "priority": 28,
-      "status": "queued",
-      "workers": {},
+      "status": "first-pair-sealed-awaiting-coordinator-review",
+      "workers": {
+        "turnout": {
+          "agent_id": "b2a7de63-14d6-4adf-9164-6a199028479d",
+          "status": "complete-sealed-awaiting-coordinator-review",
+          "launched_at_utc": "2026-10-20T21:17:31.491178+00:00",
+          "timestamp_scope": "Coordinator record immediately following successful actual create_agent",
+          "released_by_actual_finish": "b6f64566-f806-42c3-a97a-c28ae547d90a",
+          "only_other_active_researcher": "b962db1b-305d-410d-8f53-99bff62810c0",
+          "provider": "codex/gpt-6.1-sol",
+          "settings": {
+            "modeId": "auto-review",
+            "thinkingOptionId": "high"
+          },
+          "fresh_profile": "Research",
+          "all_four_profile_notes_read": true,
+          "provider_draft_inspected": true,
+          "notifyOnFinish": true,
+          "initial_prompt": {
+            "path": "senate/2026/kentucky/data/coordinator-launches/turnout-initial-prompt.txt",
+            "bytes": 16565,
+            "sha256": "58582c5ffd50b6c9c91dbc02a5bbd1d9c3c1059799584c3aea2a494618a935f1"
+          },
+          "peer_agent_id": null,
+          "scope": "Original-first complete full candidate/native/method/admin/source positional controls and120parent inventory; full witness before numerical derivatives. Certified native priority null if universe cannot close, county sensitivity separate. Own turnout paths only.",
+          "root_queue_refresh": "Recorded after exact already-staged Alabama bytes were committed; publication push still in progress.",
+          "worker_original_first_start_acknowledged": true,
+          "actual_partisanship_peer_ID_provided": "ce1620b8-8df0-406b-bdb1-a8522aeea2f4",
+          "latest_original_first_milestone": {
+            "all120counties_and17_4_8columns_close_own_original_certificate_footers": true,
+            "no_numerical_derivatives_read": true,
+            "new_actual_source": "Current SBE2024 GeneralRecaps index reachable,120literal PDFs; first40observed200, large native/method originals inclJefferson2736/Fayette1716pages; whole native coverage unclosed yet",
+            "canonical_native_priority": null,
+            "dispatch_keys": [],
+            "source_agreement": false,
+            "coordinator_acceptance": false
+          },
+          "actual_finish_utc": "2026-10-20T21:47:14.957980+00:00",
+          "handoff_manifest_sha256": "9721574f385847d85c2cea99e8704425838138d10e9958a81a2586e9fa9629e2"
+        },
+        "partisanship": {
+          "agent_id": "ce1620b8-8df0-406b-bdb1-a8522aeea2f4",
+          "status": "complete-sealed-awaiting-coordinator-review",
+          "launched_at_utc": "2026-10-20T21:22:43.395220+00:00",
+          "timestamp_scope": "Coordinator record immediately following actual successful create_agent",
+          "released_by_actual_finish": "b962db1b-305d-410d-8f53-99bff62810c0",
+          "only_other_active_worker": "b2a7de63-14d6-4adf-9164-6a199028479d",
+          "provider": "codex/gpt-6.1-sol",
+          "settings": {
+            "modeId": "auto-review",
+            "thinkingOptionId": "high"
+          },
+          "fresh_profile": "Research",
+          "all_four_profile_notes_read": true,
+          "provider_draft_inspected": true,
+          "notifyOnFinish": true,
+          "launch_prompt": {
+            "path": "senate/2026/kentucky/data/coordinator-launches/partisanship-initial-prompt.txt",
+            "bytes": 24704,
+            "sha256": "447545990ff3e6f2710f56bc8ea23810a22960bd0a59845120a822d568cd2a47"
+          },
+          "actual_original_turnout_peer": "b2a7de63-14d6-4adf-9164-6a199028479d",
+          "strict_calculator_appendix_attached": true,
+          "scope": "Independent full original-first extraction/witness before numerical derivatives; current actual120-GeneralRecaps raw-source route only as lead; full native/known/county scopes distinct; own baseline paths only",
+          "actual_finish_utc": "2026-10-20T21:44:24.643419+00:00",
+          "handoff_manifest_sha256": "9415e66193d21382abc5bc9f5ab97b3943ce2498c64e33acb3aade7dfdf5b2a4"
+        }
+      },
       "validation": null,
       "gaps": [],
       "published_commits": [],
       "state_specific_notes": "No 2024 Senate contest. Preserve 2022 other-seat midterm and 2020 same-seat Senate separately. Verify actual locality/precinct timezones and current election rules, not a single assumed statewide UTC close.",
-      "coordinator_preparation": "Regional newsroom and state-specific strategy drafts, bounded captures and offline hash/source-state checks prepared; no question agents launched or complete state package claimed. Additional original-text preparation verifies all120 literal counties for2024Pres/2022Sen/2020Sen at3480candidate+29footer positions,17/4/8columns and2074530/1477830/2135057source totals. Paired presidential names are one vote column; named Write-In columns separate. Six full original header/footer pages visually inspected; no new network observations/duplicated originals/native or priority acceptance. ActualCDXlisted2020Estill/Lyon officialrecap originals recovered200110519/114882bytes,3/2pages. Fullfiveoriginalpagesrendered/read;bothimage-onlynopdftotextnumericacceptance. Complete source/storedhashes/URLs/clocks/errorpredecessors retained;no fullnative/method/priority approval.",
+      "coordinator_preparation": "Original turnout launched after actual Arkansas official finish and fresh profiles/provider. Independent original-first extraction before numerical derivatives; no peer or priority accepted.",
       "bounded_certification_county_preparation": {
         "path": "data/coordinator-certified-county-preflight.json",
         "bytes": 400675,
@@ -10304,13 +10453,34 @@
       "election": "Regular",
       "seat_class": "II",
       "priority": 29,
-      "status": "queued",
-      "workers": {},
+      "status": "research-first-pair-active",
+      "workers": {
+        "turnout": {
+          "agent_id": "50fd7a21-788d-47d2-b03a-2a379c81a18b",
+          "status": "original-first-research-active",
+          "launch_record": "senate/2026/louisiana/data/coordinator-launches/turnout-launch.json",
+          "profile": "Research",
+          "settings": {
+            "modeId": "auto-review",
+            "thinkingOptionId": "high"
+          }
+        },
+        "partisanship": {
+          "agent_id": "4f625056-8184-4b03-97fb-4152b00397e3",
+          "status": "original-first-research-active",
+          "launch_record": "senate/2026/louisiana/data/coordinator-launches/partisanship-launch.json",
+          "profile": "Research",
+          "settings": {
+            "modeId": "auto-review",
+            "thinkingOptionId": "high"
+          }
+        }
+      },
       "validation": null,
       "gaps": [],
       "published_commits": [],
       "state_specific_notes": "Current primary SOS explanation explicitly applies closed-party primaries to U.S. Senate from 2026 and says the general-election winner is plurality, no majority required. Do NOT assume historical jungle/runoff rules govern November Senate. April30 Governor suspension applies only to U.S. House; inspect actual current Senate ballot/rules and later controlling changes. Leads: https://www.sos.la.gov/elections-voting/closed-party-primary-elections and https://gov.louisiana.gov/news/5093 WBRZ actual linked November setup is a concatenated JSON object stream: 187 records/13 parish labels including Multi-Parish, all votes zero; client supports the framing and fetches once. Modern SOS raw results links contain environment placeholders; no silent hostname repair.",
-      "coordinator_preparation": "State-specific regional newsroom/strategy drafts, bounded primary captures and offline hash/source-identity checks prepared locally; four question agents not launched and no completed state package claimed.",
+      "coordinator_preparation": "Both actual original first-pair workers launched after actual Kentucky completion releases. No priority/current approvals; second-wave questions not launched.",
       "prepared_first_pair_prompts": {
         "turnout": {
           "path": "senate/2026/louisiana/data/coordinator-launches/prepared-turnout-prompt.txt",
@@ -10857,16 +11027,19 @@
     }
   ],
   "batch_status": {
-    "completed_new_states": 25,
+    "completed_new_states": 26,
     "retained_complete_Michigan": true,
     "requested_new_states": 34,
     "all_requested_complete": false,
     "actual_active_researchers": [
-      "b6f64566-f806-42c3-a97a-c28ae547d90a",
-      "b962db1b-305d-410d-8f53-99bff62810c0"
+      "50fd7a21-788d-47d2-b03a-2a379c81a18b",
+      "4f625056-8184-4b03-97fb-4152b00397e3"
     ],
-    "unlaunched_new_states": 7,
-    "source": "Actual finish/launch callbacks and exact reviewed publication commits, not agent status polls"
+    "unlaunched_new_states": 5,
+    "source": "Actual finish/launch callbacks and exact reviewed publication commits, not agent status polls",
+    "complete_reviewed_awaiting_publication": [
+      "AR"
+    ]
   },
   "coordinator_preparation_audit": {
     "status": "pass_complete_retained_source_integrity_for_unlaunched_states_only",
@@ -10897,40 +11070,7 @@
       "sha256": "4ba6519b3a4897bb7e21560d03a53d6c54b9be39ff6472a5b5d9f9ac1cca437a"
     }
   },
-  "coordinator_next_actions": {
-    "current_HEAD_exact_remote_verified": "f93a3958178af1c397eb25517fcac209771d4d51",
-    "completed_new_states": 25,
-    "retained_Michigan": true,
-    "actual_active_workers": [
-      "b6f64566-f806-42c3-a97a-c28ae547d90a",
-      "b962db1b-305d-410d-8f53-99bff62810c0"
-    ],
-    "next_actual_released_slot": "Original Kentucky turnout Research/high after fresh profiles/provider; no third researcher.",
-    "next_following_released_slot": "Original Kentucky partisanship Research/high, independently original-first before captured-peer comparison.",
-    "source_authorities": "AL fourworkers finished, final O/M independent review underway. ARoriginalofficialb6f64566 and mapsb962db1b active from exact frozen full authority. No status polling.",
-    "seven_unlaunched_in_order": [
-      "kentucky",
-      "louisiana",
-      "montana",
-      "oklahoma",
-      "tennessee",
-      "west-virginia",
-      "wyoming"
-    ],
-    "current_index": "empty after reviewed296blob component; source/capture/currentproducer files frozen. ActiveALownedpackages excluded until finalindependentreview.",
-    "no_final_until_all34": true,
-    "latest_reviewed_component": {
-      "commit": "f93a3958178af1c397eb25517fcac209771d4d51",
-      "scope": "Sixteen exact root/newsroom classification/status/history blobs only; active worker packages and seven unlaunched preparations excluded",
-      "changed_blobs": 16,
-      "changed_bytes": 764566,
-      "maximum_blob": 602964,
-      "push_exit": 0,
-      "exact_remote_verified": true
-    },
-    "Alabama_maps": "Actual immutable finish received; final independent source/geometry/PDF/DOM/manifest review now. No optional producer restart.",
-    "Alabama": "All four original workers and independent complete final reviews pass; whole-state reviewed stage/commit/push next. No current/legal/live approval inferred."
-  },
+  "coordinator_next_actions": "Publish exact reviewed complete Arkansas state package, then independently review completed Kentucky first pair. Louisiana original first-pair workers50fd7a21/4f625056 are the only two active researchers; no status polling. Continue through all34 queued states.",
   "coordinator_prompt_preparation": {
     "scope": "Unlaunched future first-wave prompts only; no agent IDs or completed packages implied",
     "config": "/tmp/snn-future-state-context.json",
@@ -11429,6 +11569,22 @@
         "source": "Actual finish/launch callbacks and exact reviewed publication commits, not agentstatuspolls"
       },
       "reason": "Refresh from actual Virginia whole-state publication and actual Alabama launch callbacks; no status polling."
+    },
+    {
+      "recorded_utc": "2026-10-20T21:49:57.112863+00:00",
+      "previous": {
+        "completed_new_states": 26,
+        "retained_complete_Michigan": true,
+        "requested_new_states": 34,
+        "all_requested_complete": false,
+        "actual_active_researchers": [
+          "b2a7de63-14d6-4adf-9164-6a199028479d",
+          "ce1620b8-8df0-406b-bdb1-a8522aeea2f4"
+        ],
+        "unlaunched_new_states": 6,
+        "source": "Actual finish/launch callbacks and exact reviewed publication commits, not agent status polls"
+      },
+      "reason": "Actual Kentucky first-pair finishes released original Louisiana research pair slots."
     }
   ],
   "coordinator_future_newsroom_replay": {

@@ -1,0 +1,80 @@
+[
+  {
+    "label": "pulaski-precincts-june2026",
+    "original_sha256": "df15b419d72e35a920bc07614299c73db58bc64f3d08a4a60ca5c930cddc7cf9",
+    "pages": 1,
+    "runs": [
+      {
+        "operation": "info",
+        "arguments": [
+          "pdfinfo",
+          "<exact-original>"
+        ],
+        "exit": 0
+      },
+      {
+        "operation": "text",
+        "arguments": [
+          "pdftotext",
+          "-layout",
+          "<exact-original>",
+          "-"
+        ],
+        "exit": 0
+      },
+      {
+        "operation": "render",
+        "arguments": [
+          "pdftoppm",
+          "-r",
+          "45",
+          "-png",
+          "<exact-original>",
+          "/Users/tqbf/codebase/snn/senate/2026/arkansas/maps/qa/pdf/pulaski-precincts-june2026/page"
+        ],
+        "exit": 0
+      }
+    ],
+    "automatic_all_pages_rendered": true,
+    "manual_visual_scope": "recorded separately after image inspection; automatic renders do not imply manual all-page visual review"
+  },
+  {
+    "label": "pulaski-precincts-judicial",
+    "original_sha256": "2316836cfbc8f6bafd214e871ec6872317e64b2748206c059cee8710ce207e5e",
+    "pages": 1,
+    "runs": [
+      {
+        "operation": "info",
+        "arguments": [
+          "pdfinfo",
+          "<exact-original>"
+        ],
+        "exit": 0
+      },
+      {
+        "operation": "text",
+        "arguments": [
+          "pdftotext",
+          "-layout",
+          "<exact-original>",
+          "-"
+        ],
+        "exit": 0
+      },
+      {
+        "operation": "render",
+        "arguments": [
+          "pdftoppm",
+          "-r",
+          "45",
+          "-png",
+          "<exact-original>",
+          "/Users/tqbf/codebase/snn/senate/2026/arkansas/maps/qa/pdf/pulaski-precincts-judicial/page"
+        ],
+        "exit": 0
+      }
+    ],
+    "automatic_all_pages_rendered": true,
+    "manual_visual_scope": "recorded separately after image inspection; automatic renders do not imply manual all-page visual review"
+  }
+]

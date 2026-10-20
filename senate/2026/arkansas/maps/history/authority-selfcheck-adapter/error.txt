@@ -1,0 +1,2 @@
+AssertionError: authority body copy
+The initial literal substring check matched its own validation needle inside the checker source, not a copied authority body. Entire checker/actual failing input retained. Replace only that self-matching test with parsed JSON top-level structure detection plus an in-memory-only digest absence check. Authority content/digest is not persisted by the revised check.

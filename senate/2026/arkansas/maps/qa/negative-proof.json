@@ -1,0 +1,163 @@
+{
+  "status": "pass",
+  "complete_actual_packet_positive": true,
+  "negative_packets": 31,
+  "cases": [
+    {
+      "case": "truncated-whole-source",
+      "status": "rejected",
+      "error": "whole array count mismatch /contract/full_order"
+    },
+    {
+      "case": "truncated-whole-companion",
+      "status": "rejected",
+      "error": "whole array count mismatch /complete_companion"
+    },
+    {
+      "case": "missing-native-observation",
+      "status": "rejected",
+      "error": "whole array count mismatch /contract/full_order"
+    },
+    {
+      "case": "missing-native-field",
+      "status": "rejected",
+      "error": "whole object fields/order mismatch /contract/full_order/0"
+    },
+    {
+      "case": "candidate-count",
+      "status": "rejected",
+      "error": "source literal/value mismatch /contract/full_order/0/candidates/Jill Stein/Rudolph Ware"
+    },
+    {
+      "case": "party-normalization",
+      "status": "rejected",
+      "error": "source literal/value mismatch /contract/full_order/0/party_literals/Jill Stein/Rudolph Ware"
+    },
+    {
+      "case": "method-collapse",
+      "status": "rejected",
+      "error": "whole object fields/order mismatch /contract/full_order/0/methods"
+    },
+    {
+      "case": "null-to-zero",
+      "status": "rejected",
+      "error": "type/null mismatch /contract/full_order/0/ballots_cast"
+    },
+    {
+      "case": "admin-context",
+      "status": "rejected",
+      "error": "whole object fields/order mismatch /contract/all75parents/0"
+    },
+    {
+      "case": "raw-source-positions",
+      "status": "rejected",
+      "error": "source literal/value mismatch /contract/full_order/0/source_rows/0"
+    },
+    {
+      "case": "source-mask",
+      "status": "rejected",
+      "error": "source literal/value mismatch /contract/full_order/0/unit_type"
+    },
+    {
+      "case": "header-trimming",
+      "status": "rejected",
+      "error": "source literal/value mismatch /native_receipt/headers/bytes"
+    },
+    {
+      "case": "wrong-ID",
+      "status": "rejected",
+      "error": "source literal/value mismatch /native_page/features/0/attributes/objectid"
+    },
+    {
+      "case": "wrong-all-ID-count",
+      "status": "rejected",
+      "error": "whole array count mismatch /all_IDs/objectIds"
+    },
+    {
+      "case": "wrong-count",
+      "status": "rejected",
+      "error": "source literal/value mismatch /count/count"
+    },
+    {
+      "case": "wrong-CRS",
+      "status": "rejected",
+      "error": "source literal/value mismatch /native_page/spatialReference/wkid"
+    },
+    {
+      "case": "wrong-vintage",
+      "status": "rejected",
+      "error": "source literal/value mismatch /layer_metadata/description"
+    },
+    {
+      "case": "full-order",
+      "status": "rejected",
+      "error": "source literal/value mismatch /contract/full_order/0/key"
+    },
+    {
+      "case": "priority-order",
+      "status": "rejected",
+      "error": "source literal/value mismatch /contract/ordered_priority_keys/0"
+    },
+    {
+      "case": "remainder-order",
+      "status": "rejected",
+      "error": "source literal/value mismatch /contract/remainder_keys/0"
+    },
+    {
+      "case": "80-percent-crossing",
+      "status": "rejected",
+      "error": "source literal/value mismatch /contract/statistics/minimum80_count"
+    },
+    {
+      "case": "parent-child-array",
+      "status": "rejected",
+      "error": "whole object fields/order mismatch /contract/all75parents/0/source_native_constituents"
+    },
+    {
+      "case": "county-substitute",
+      "status": "rejected",
+      "error": "source literal/value mismatch /policy/county_substitute"
+    },
+    {
+      "case": "residual-allocation",
+      "status": "rejected",
+      "error": "source literal/value mismatch /policy/residual_allocation"
+    },
+    {
+      "case": "spatial-allocation",
+      "status": "rejected",
+      "error": "source literal/value mismatch /policy/spatial_allocation"
+    },
+    {
+      "case": "result-polygon-alias",
+      "status": "rejected",
+      "error": "type/null mismatch /policy/result_polygon_join"
+    },
+    {
+      "case": "current-admission",
+      "status": "rejected",
+      "error": "source literal/value mismatch /policy/current_admission"
+    },
+    {
+      "case": "native-geometry-precision",
+      "status": "rejected",
+      "error": "type/null mismatch /native_page/features/1/geometry/rings/0/0/0"
+    },
+    {
+      "case": "native-geometry-part-loss",
+      "status": "rejected",
+      "error": "whole array count mismatch /native_page/features/0/geometry/curveRings"
+    },
+    {
+      "case": "duplicate-keys",
+      "status": "rejected",
+      "error": "duplicate JSON key"
+    },
+    {
+      "case": "truncated-JSON",
+      "status": "rejected",
+      "error": "Expecting value: line 559051 column 25 (char 18573317)"
+    }
+  ],
+  "qualification": "These fixtures reject corrupted full immutable historical/native packets before current admission; no legal or physical identity is asserted."
+}

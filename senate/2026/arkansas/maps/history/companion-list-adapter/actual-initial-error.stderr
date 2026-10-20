@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/Users/tqbf/codebase/snn/senate/2026/arkansas/maps/scripts/negative_fixtures.py", line 77, in <module>
+    d=run('--write' in sys.argv);print('Positive whole packet accepted;',d['negative_packets'],'actual whole negative inputs rejected.')
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tqbf/codebase/snn/senate/2026/arkansas/maps/scripts/negative_fixtures.py", line 55, in run
+    p=copy.deepcopy(expected);mutate(p);raw=dumps(p).encode()
+                              ^^^^^^^^^
+  File "/Users/tqbf/codebase/snn/senate/2026/arkansas/maps/scripts/negative_fixtures.py", line 21, in <lambda>
+    ('truncated-whole-companion',lambda p:p['complete_companion'].pop(next(iter(p['complete_companion'])))),
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'dict' object cannot be interpreted as an integer

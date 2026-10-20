@@ -1,0 +1,114 @@
+class LinearRing(LineString):
+    """Geometry type composed of one or more line segments that forms a closed loop.
+
+    A LinearRing is a closed, one-dimensional feature.
+    A LinearRing that crosses itself or touches itself at a single point is
+    invalid and operations on it may fail.
+
+    Parameters
+    ----------
+    coordinates : sequence
+        A sequence of (x, y [,z]) numeric coordinate pairs or triples, or
+        an array-like with shape (N, 2) or (N, 3).
+        Also can be a sequence of Point objects.
+
+    See Also
+    --------
+    linearrings : Create an array of linearrings.
+    empty : Create a geometry array prefilled with None or with empty geometries.
+
+    Notes
+    -----
+    Rings are automatically closed. There is no need to specify a final
+    coordinate pair identical to the first.
+
+    Examples
+    --------
+    Construct a square ring.
+
+    >>> from shapely import LinearRing
+    >>> ring = LinearRing( ((0, 0), (0, 1), (1 ,1 ), (1 , 0)) )
+    >>> ring.is_closed
+    True
+    >>> list(ring.coords)
+    [(0.0, 0.0), (0.0, 1.0), (1.0, 1.0), (1.0, 0.0), (0.0, 0.0)]
+    >>> ring.length
+    4.0
+
+    """
+
+    __slots__ = []
+
+    def __new__(cls, coordinates=None):
+        """Create a new LinearRing geometry."""
+        if coordinates is None:
+            # empty geometry
+            # TODO better way?
+            return shapely.from_wkt("LINEARRING EMPTY")
+        elif isinstance(coordinates, LineString):
+            if type(coordinates) is LinearRing:
+                # return original objects since geometries are immutable
+                return coordinates
+            elif not coordinates.is_valid:
+                raise TopologicalError("An input LineString must be valid.")
+            else:
+                # LineString
+                # TODO convert LineString to LinearRing more directly?
+                coordinates = coordinates.coords
+
+        else:
+            if hasattr(coordinates, "__array__"):
+                coordinates = np.asarray(coordinates)
+            if isinstance(coordinates, np.ndarray) and np.issubdtype(
+                coordinates.dtype, np.number
+            ):
+                pass
+            else:
+                # check coordinates on points
+                def _coords(o):
+                    if isinstance(o, Point):
+                        return o.coords[0]
+                    else:
+                        return [float(c) for c in o]
+
+                coordinates = np.array([_coords(o) for o in coordinates])
+                if not np.issubdtype(coordinates.dtype, np.number):
+                    # conversion of coords to 2D array failed, this might be due
+                    # to inconsistent coordinate dimensionality
+                    raise ValueError("Inconsistent coordinate dimensionality")
+
+        if len(coordinates) == 0:
+            # empty geometry
+            # TODO better constructor + should shapely.linearrings handle this?
+            return shapely.from_wkt("LINEARRING EMPTY")
+
+        geom = shapely.linearrings(coordinates)
+        if not isinstance(geom, LinearRing):
+            raise ValueError("Invalid values passed to LinearRing constructor")
+        return geom
+
+    @property
+    def __geo_interface__(self):
+        """Return a GeoJSON-like mapping of the LinearRing geometry."""
+        return {"type": "LinearRing", "coordinates": tuple(self.coords)}
+
+    def __reduce__(self):
+        """Pickle support.
+
+        WKB doesn't differentiate between LineString and LinearRing so we
+        need to move the coordinate sequence into the correct geometry type
+        """
+        return (_unpickle_linearring, (shapely.to_wkb(self, include_srid=True),))
+
+    @property
+    def is_ccw(self):
+        """True if the ring is oriented counter clock-wise."""
+        return bool(shapely.is_ccw(self))
+
+    @property
+    def is_simple(self):
+        """True if the geometry is simple.
+
+        Simple means that any self-intersections are only at boundary points.
+        """
+        return bool(shapely.is_simple(self))

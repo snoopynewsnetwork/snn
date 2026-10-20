@@ -1,0 +1,142 @@
+class Polygon(BaseGeometry):
+    """A geometry type representing an area that is enclosed by a linear ring.
+
+    A polygon is a two-dimensional feature and has a non-zero area. It may
+    have one or more negative-space "holes" which are also bounded by linear
+    rings. If any rings cross each other, the feature is invalid and
+    operations on it may fail.
+
+    Parameters
+    ----------
+    shell : sequence
+        A sequence of (x, y [,z]) numeric coordinate pairs or triples, or
+        an array-like with shape (N, 2) or (N, 3).
+        Also can be a sequence of Point objects.
+    holes : sequence
+        A sequence of objects which satisfy the same requirements as the
+        shell parameters above
+
+    Attributes
+    ----------
+    exterior : LinearRing
+        The ring which bounds the positive space of the polygon.
+    interiors : sequence
+        A sequence of rings which bound all existing holes.
+
+    See Also
+    --------
+    polygons : Create an array of polygons.
+    box : Create box polygons.
+    empty : Create a geometry array prefilled with None or with empty geometries.
+
+    Examples
+    --------
+    Create a square polygon with no holes
+
+    >>> from shapely import Polygon
+    >>> coords = ((0., 0.), (0., 1.), (1., 1.), (1., 0.), (0., 0.))
+    >>> polygon = Polygon(coords)
+    >>> polygon.area
+    1.0
+
+    """
+
+    __slots__ = []
+
+    def __new__(cls, shell=None, holes=None):
+        """Create a new Polygon geometry."""
+        if shell is None:
+            # empty geometry
+            # TODO better way?
+            return shapely.from_wkt("POLYGON EMPTY")
+        elif isinstance(shell, Polygon):
+            # return original objects since geometries are immutable
+            return shell
+        else:
+            shell = LinearRing(shell)
+
+        if holes is not None:
+            if len(holes) == 0:
+                # shapely constructor cannot handle holes=[]
+                holes = None
+            else:
+                holes = [LinearRing(ring) for ring in holes]
+
+        geom = shapely.polygons(shell, holes=holes)
+        if not isinstance(geom, Polygon):
+            raise ValueError("Invalid values passed to Polygon constructor")
+        return geom
+
+    @property
+    def exterior(self):
+        """Return the exterior ring of the polygon."""
+        return shapely.lib.get_exterior_ring_scalar(self)
+
+    @property
+    def interiors(self):
+        """Return the sequence of interior rings of the polygon."""
+        if self.is_empty:
+            return []
+        return InteriorRingSequence(self)
+
+    @property
+    def coords(self):
+        """Not implemented for polygons."""
+        raise NotImplementedError(
+            "Component rings have coordinate sequences, but the polygon does not"
+        )
+
+    @property
+    def __geo_interface__(self):
+        """Return a GeoJSON-like mapping of the Polygon geometry."""
+        if self.exterior == LinearRing():
+            coords = []
+        else:
+            coords = [tuple(self.exterior.coords)]
+            for hole in self.interiors:
+                coords.append(tuple(hole.coords))
+        return {"type": "Polygon", "coordinates": tuple(coords)}
+
+    def svg(self, scale_factor=1.0, fill_color=None, opacity=None):
+        """Return SVG path element for the Polygon geometry.
+
+        Parameters
+        ----------
+        scale_factor : float
+            Multiplication factor for the SVG stroke-width.  Default is 1.
+        fill_color : str, optional
+            Hex string for fill color. Default is to use "#66cc99" if
+            geometry is valid, and "#ff3333" if invalid.
+        opacity : float
+            Float number between 0 and 1 for color opacity. Default value is 0.6
+
+        """
+        if self.is_empty:
+            return "<g />"
+        if fill_color is None:
+            fill_color = "#66cc99" if self.is_valid else "#ff3333"
+        if opacity is None:
+            opacity = 0.6
+        exterior_coords = [["{},{}".format(*c) for c in self.exterior.coords]]
+        interior_coords = [
+            ["{},{}".format(*c) for c in interior.coords] for interior in self.interiors
+        ]
+        path = " ".join(
+            [
+                "M {} L {} z".format(coords[0], " L ".join(coords[1:]))
+                for coords in exterior_coords + interior_coords
+            ]
+        )
+        return (
+            f'<path fill-rule="evenodd" fill="{fill_color}" stroke="#555555" '
+            f'stroke-width="{2.0 * scale_factor}" opacity="{opacity}" d="{path}" />'
+        )
+
+    @classmethod
+    def from_bounds(cls, xmin, ymin, xmax, ymax):
+        """Construct a `Polygon()` from spatial bounds.
+
+        The ring is built in counterclockwise order, consistent with
+        ``shapely.box()``, so it satisfies the GeoJSON right-hand rule.
+        """
+        return cls([(xmax, ymin), (xmax, ymax), (xmin, ymax), (xmin, ymin)])

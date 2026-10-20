@@ -1,0 +1,45 @@
+Traceback (most recent call last):
+  File "/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/shutil.py", line 745, in rmtree
+    fd = os.open(path, os.O_RDONLY, dir_fd=dir_fd)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tqbf/codebase/snn/senate/2026/arkansas/data/results-sources/offline_replay.py", line 32, in guard
+    counters['helper_read_denials']+=1;raise PermissionError('mutable helper/peer read denied: '+str(p))
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: mutable helper/peer read denied: /private/var/folders/zp/s8nrrzhn5398283cx69zqwh80000gp/T/arkansas-question3-offline-x0alq5qb
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/tempfile.py", line 893, in onerror
+    _os.unlink(path)
+PermissionError: [Errno 1] Operation not permitted: '/var/folders/zp/s8nrrzhn5398283cx69zqwh80000gp/T/arkansas-question3-offline-x0alq5qb'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/tqbf/codebase/snn/senate/2026/arkansas/data/results-sources/offline_replay.py", line 55, in <module>
+    if __name__=='__main__':print(json.dumps(run(),sort_keys=True))
+                                             ^^^^^
+  File "/Users/tqbf/codebase/snn/senate/2026/arkansas/data/results-sources/offline_replay.py", line 17, in run
+    with tempfile.TemporaryDirectory(prefix='arkansas-question3-offline-') as tmp:
+  File "/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/tempfile.py", line 943, in __exit__
+    self.cleanup()
+  File "/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/tempfile.py", line 947, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/tempfile.py", line 929, in _rmtree
+    _shutil.rmtree(name, onerror=onerror)
+  File "/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/shutil.py", line 748, in rmtree
+    onerror(os.open, path, sys.exc_info())
+  File "/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/tempfile.py", line 919, in onerror
+    cls._rmtree(path, ignore_errors=ignore_errors,
+  File "/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/tempfile.py", line 929, in _rmtree
+    _shutil.rmtree(name, onerror=onerror)
+  File "/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/shutil.py", line 748, in rmtree
+    onerror(os.open, path, sys.exc_info())
+  File "/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/shutil.py", line 745, in rmtree
+    fd = os.open(path, os.O_RDONLY, dir_fd=dir_fd)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tqbf/codebase/snn/senate/2026/arkansas/data/results-sources/offline_replay.py", line 32, in guard
+    counters['helper_read_denials']+=1;raise PermissionError('mutable helper/peer read denied: '+str(p))
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: mutable helper/peer read denied: /private/var/folders/zp/s8nrrzhn5398283cx69zqwh80000gp/T/arkansas-question3-offline-x0alq5qb

@@ -1,0 +1,1 @@
+Final preceding run exit1. During own TemporaryDirectory cleanup, shutil._rmtree_safe_fd calls os.scandir with a directory file descriptor. The audit hook tried Path(args[0]) for that integer and raised TypeError: expected str, bytes or os.PathLike object, not int. Full checker and unchanged complete immutable input pins preserved before the narrowly scoped fd-aware fix.

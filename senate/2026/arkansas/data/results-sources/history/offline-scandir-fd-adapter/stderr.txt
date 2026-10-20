@@ -1,0 +1,22 @@
+Traceback (most recent call last):
+  File "/Users/tqbf/codebase/snn/senate/2026/arkansas/data/results-sources/offline_replay.py", line 55, in <module>
+    if __name__=='__main__':print(json.dumps(run(),sort_keys=True))
+                                             ^^^^^
+  File "/Users/tqbf/codebase/snn/senate/2026/arkansas/data/results-sources/offline_replay.py", line 17, in run
+    with tempfile.TemporaryDirectory(prefix='arkansas-question3-offline-') as tmp:
+  File "/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/tempfile.py", line 943, in __exit__
+    self.cleanup()
+  File "/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/tempfile.py", line 947, in cleanup
+    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)
+  File "/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/tempfile.py", line 929, in _rmtree
+    _shutil.rmtree(name, onerror=onerror)
+  File "/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/shutil.py", line 752, in rmtree
+    _rmtree_safe_fd(fd, path, onerror)
+  File "/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/shutil.py", line 643, in _rmtree_safe_fd
+    with os.scandir(topfd) as scandir_it:
+         ^^^^^^^^^^^^^^^^^
+  File "/Users/tqbf/codebase/snn/senate/2026/arkansas/data/results-sources/offline_replay.py", line 34, in guard
+    p=Path(os.fsdecode(args[0])).resolve()
+           ^^^^^^^^^^^^^^^^^^^^
+  File "<frozen os>", line 824, in fsdecode
+TypeError: expected str, bytes or os.PathLike object, not int
