@@ -1049,3 +1049,5 @@ unavailable under privacy masks. Official-source worker `3204f3a1` launched
 after the same baseline worker's repair finished. Oregon baseline `7c03df8c`
 is the only other active researcher. New Mexico maps take the next actual
 released slot. The completed count remains 21 new states plus Michigan.
+
+New Mexico first-pair/source-authority component published `520cdba5ed99e9e1f3b1389ee3a30e2031757e84`; push succeeded and exact remote verified. All 408 staged blobs matched reviewed bytes. Official-source work remains active, maps remain queued, and the completed-state count is unchanged.
