@@ -74,3 +74,13 @@ full candidates, nulls, raw positions, methods and nonadditive finer fields.
 Accepted for historical source research only; no current/legal/eligible-writein
 robustness or live approval. NJofficial/maps prepared prompts have NO actual
 IDs yet. ExactlyMAofficial4c5f1926 andMAmaps8cff5762 occupy real research slots.
+
+
+## Actual official-source launch
+
+Massachusetts maps8cff5762 actually finished, releasing the slot now occupied by
+NJofficial `e4a43ae3-0624-43d9-8860-c3b4e2f751f9`. All four profile notes were
+freshly read; Research and provider settings inspected before create. Exact
+transmitted prompt is data/coordinator-launches/official-results-initial-prompt.txt.
+Only other researcher is MAofficial4c5f1926. NJmaps remains prepared only, no
+actual ID. Historical acceptance is path-only; no current/legal/live admission.
