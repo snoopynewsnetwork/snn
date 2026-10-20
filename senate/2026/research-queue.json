@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "requested_date": "2026-10-17",
-  "updated_at_utc": "2026-10-20T01:05:19.421864+00:00",
+  "updated_at_utc": "2026-10-20T01:12:00.057673+00:00",
   "scope": "35 states in the repository 2026 U.S. Senate race index",
   "coordinator_agent_id": "d0fc3534-1613-4883-b48b-21a233fcfd9e",
   "workspace_id": "wks_b290f45007010740",
@@ -5521,7 +5521,7 @@
       "election": "Regular",
       "seat_class": "II",
       "priority": 18,
-      "status": "all-four-complete-coordinator-final-review",
+      "status": "all-four-reviewed-ready-for-publication",
       "workers": {
         "turnout": {
           "agent_id": "f5a17f09-a714-4ee5-a7e7-265474c0c809",
@@ -5590,7 +5590,7 @@
         },
         "official-results": {
           "agent_id": "960cdd44-9970-4cd0-900f-9968e5ef8d24",
-          "status": "complete-awaiting-coordinator-final-review",
+          "status": "complete-reviewed-historical-source-scope",
           "launched_at_utc": "2026-10-20T00:40:33.085058+00:00",
           "launch_timestamp_scope": "Coordinator record after actual successful create response, not exact provider start",
           "provider": "codex/gpt-6.1-sol",
@@ -5640,7 +5640,7 @@
         },
         "precinct-maps": {
           "agent_id": "d6da6ae3-e2be-46bb-90f8-44aa562ae5ba",
-          "status": "complete-awaiting-coordinator-final-review",
+          "status": "complete-reviewed-historical-source-scope",
           "launched_at_utc": "2026-10-20T00:49:26.752474+00:00",
           "launch_timestamp_scope": "Coordinator record after actual create response, not exact provider start",
           "provider": "codex/gpt-6.1-sol",
@@ -5688,7 +5688,7 @@
         }
       },
       "validation": {
-        "status": "first_pair_pass_complete_historical_source_dispatch_only",
+        "status": "pass_complete_four_question_historical_source_research",
         "source_review": {
           "path": "senate/2026/delaware/data/coordinator-native-original-review.json",
           "bytes": 7616921,
@@ -5715,9 +5715,16 @@
         "unit_targets": 8650,
         "baseline_final_checks": 33910,
         "turnout_final_checks": 200,
-        "second_wave_complete": false
+        "second_wave_complete": true,
+        "independent_second_wave_checks": 213504,
+        "official_offline_checks_coordinator_verified": 124390,
+        "map_checks_coordinator_verified": 651914
       },
-      "gaps": [],
+      "gaps": [
+        "No genuineNovemberreturns/currentleaf/candidate/resultgeographicjoins admitted;530Senate/531native/537structure/533sample/412VTDscopes distinct.",
+        "SeparateWIs336/18/1215 andunknown2020presidential-onlyparents remainunallocated;participationstocks differ.",
+        "Later signedroster/exhaustivelegalorders/Senate-specifictieremedy/measuredcadence/exactremainingpool/calibration are external qualifications."
+      ],
       "published_commits": [],
       "coordinator_preparation": "Actual2024 report HTML/stateCSV/separate officialwriteinPDF retained. Source headline533/533 and observedSenate530EDtables are distinct scopes to reconcile; county/RD/ED/other views overlap. Actual question/native/validcandidate checks and priority pending. Additional actualarchive2020/2022reportCSV/native partitions andcompletewriteinPDFs nowretain22256sourcepositions, noearlyvotingnativezeroimputation, presidential-only2020ED0218oneBidenvote withSenateabsence, and2022writeinheadingyearconflict. Firstpairindependentcount/native/validcandidate/prioritychecksremainpending.",
       "historical_native_source_preparation": {
@@ -5822,6 +5829,16 @@
         "pre_post_metadata_count_ids_equal": true,
         "historical_or_current_leaf_join": false,
         "source_limits": "ServerNovember2023update/Hub2010description/template2022;District11mapspansNewCastleandKent;07-08vs08-07actualmapsbothMar8,2023. No source-key orientation/current/legal effectiveness approval."
+      },
+      "coordinator_second_wave_review": {
+        "path": "data/coordinator-second-wave-review.json",
+        "bytes": 3336,
+        "sha256": "d603361a02a0ff743a9aa04893c2ce9b117ae41e73cefd2e228144f94e5b7fac"
+      },
+      "coordinator_legal_visual_review": {
+        "path": "data/coordinator-current-law-visual-review.json",
+        "bytes": 6619,
+        "sha256": "1c63d3900032081b653add04da626e4210f6c8fafcd4931772631388b9f59a10"
       }
     },
     {

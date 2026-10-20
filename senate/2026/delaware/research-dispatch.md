@@ -148,3 +148,15 @@ provider inspection. Its actual official-results peer is
 The accepted5,540/all10,062/108-source-parent historical dispatch remains
 qualified; legal/current/native crosswalks and live readiness are unapproved.
 Massachusetts is the next unlaunched first pair;15 later states remain queued.
+
+
+## Complete independent Delaware integration review
+
+All four actual question workers are finished. First-pair complete source,
+method, parent, bounded-target and live-input reviews pass. Final official and
+map seals pass; independent second-wave review adds213,504 full-body, schema,
+hierarchy, native-topology and Census-binary checks. The exact311/all530/219/3
+historical dispatch remains; current result/geographic/eligible-pool/cadence/
+probability admission staysfalse. The package is ready for coordinator explicit
+staging and publication, with producer bytes unchanged. Illinois official
+0ce74399 and mapsd02ee332 remain the only active researchers.
