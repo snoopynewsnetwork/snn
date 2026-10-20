@@ -1107,3 +1107,9 @@ Oregon four-question whole package is independently reviewed and ready for23rd n
 
 
 Oregon whole package published0d74c3e01daae846a4ed6f37e03e2f2a0dcff9b1;push0/exactremote verified,all1507stagedblobs exact. Twenty-three new states complete plusMichigan. RIofficial1c1068c1 actually finished/sealed1,236targets; its slot launched original Virginia turnout61838d17 after fresh Research/high profile/provider inspection. Only RImaps6c5beb21 andVAturnout61838d17 active;9states unlaunched.
+
+
+RIofficial reviewed component published5aea0f638bfee050b97b0744f7a174e1bcffa49a;push0/exactremote,all1250blobs match reviewed bytes. A stalled batch-size checker was terminated before commit; bounded individual exact object/path/hash/size and whitespace checks passed, prior plan/finding retained. No activeworker files staged. RImaps6c5beb21 andVAturnout61838d17 remain the only researchers;23new complete states plusMichigan. VAoriginal recovery all133officiallocality/2669native method controls closes candidates, distinct turnout/registration publications remain unallocated.
+
+
+Bounded Virginia regional followup: sixactualWDBJ/WTVRlink-chain requests/eightcomplete entities. WDBJ actualresults GSync2713inactive2026General with39races/143zerochoices; Senate61210 remainspublisher setup only. WTVRlinked currentguide iscivic/newsroom context, notprimarylaw/ballot approval. Complete25target regionalmanifest/read-only review pass; oldnewsledger/activeworkerbytes untouched. RImaps6c5beb21 andVAturnout61838d17 remainonlyactive;23newcomplete states plusMichigan.
