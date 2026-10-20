@@ -94,3 +94,57 @@ That actual slot launched Delaware official-results
 provider inspection, on the externally accepted311/all530/3-parent contract.
 Illinois baseline `a7b49f02-905f-4208-b957-fffdb58615bf` is the only other active
 researcher. Delaware maps remains prepared only; no third researcher exists.
+
+
+## Illinois first pair finished; Delaware second wave active
+
+Illinois partisanship `a7b49f02-905f-4208-b957-fffdb58615bf` actually finished
+its248-owned/478-source-reference seal and2,980,647 checks, including99 state
+scenarios and repaired strict-JSON negative fixtures. Both Illinois producers
+are finished; coordinator final99-scenario/full-field/seal review and external
+historical dispatch acceptance remain pending.
+
+The actual released slot launched Delaware maps
+`d6da6ae3-e2be-46bb-90f8-44aa562ae5ba` after fresh profiles/all four notes and
+provider inspection. Its actual active official peer is
+`960cdd44-9970-4cd0-900f-9968e5ef8d24`. These are the only two researchers.
+Complete311/530/219 source dispatch remains historical only; optional531-feature
+map originals carry no current/result-key join approval.
+
+
+## Illinois historical dispatch accepted; Delaware official finished
+
+Illinois independent final source, canonical order, 99-scenario arithmetic,
+strict-input repair and both producer seals pass. The external historical
+acceptance preserves all31 roots,116 complete companions and554,096 complete
+recursive source objects, independently reconstructed in full. It accepts only
+the5,540 printed-known historical observations:4,474,312 of5,592,368 after
+5,539/4,473,789. All10,062 observations,108 source parents and4,522 remainder survive. Legal
+write-in robustness, current geography and November returns remain unapproved.
+
+Delaware official-results `960cdd44-9970-4cd0-900f-9968e5ef8d24` actually finished
+its410-entry sealed package,388,641 original-field and124,390 offline checks.
+Final coordinator source/legal review follows; no current admission is implied.
+That actual slot launched Illinois official-results
+`0ce74399-fe2e-42a8-9428-650729a9137c` after fresh profiles/all four notes and
+provider inspection. Delaware maps `d6da6ae3-e2be-46bb-90f8-44aa562ae5ba` is the
+only other active researcher. Illinois maps is prepared only;15 later states
+remain queued. No third worker, finished-producer restart or shared edit.
+
+
+## Delaware all four finished; Illinois second wave active
+
+Delaware maps `d6da6ae3-e2be-46bb-90f8-44aa562ae5ba` actually finished its
+408-entry owned seal,651,914 checks and exact deterministic replay. All311
+priorities/530 observations/219 remainder and3 parents survive;531 native map
+features and412 historical VTDs remain distinct, with no current leaf join.
+All four Delaware workers are finished; coordinator final review/publication
+continues without altering frozen producer artifacts.
+
+The actual released slot launched Illinois maps
+`d02ee332-ee45-4f77-8eb1-e3364aa3bc41` after fresh profiles/all four notes and
+provider inspection. Its actual official-results peer is
+`0ce74399-fe2e-42a8-9428-650729a9137c`. These are the only two researchers.
+The accepted5,540/all10,062/108-source-parent historical dispatch remains
+qualified; legal/current/native crosswalks and live readiness are unapproved.
+Massachusetts is the next unlaunched first pair;15 later states remain queued.
