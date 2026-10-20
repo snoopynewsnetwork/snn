@@ -1,0 +1,200 @@
+{
+  "status": "actual_initial_CLI_input_failures_identified",
+  "producer_calculator": {
+    "path": "data/baselines/calculator.py",
+    "bytes": 5543,
+    "sha256": "bf8e719605b3e76442c6a8ce08a25ac9a344597e3901b518766cced20810c351"
+  },
+  "cases": [
+    {
+      "name": "boolean_count",
+      "negative": true,
+      "input_path": "boolean_count.input.json",
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"calculated\",\n  \"input\": {\n    \"counted_A\": true,\n    \"counted_B\": 50,\n    \"counted_other\": {\n      \"C\": 5\n    },\n    \"remaining\": 100,\n    \"pair_participation\": 0.8,\n    \"remaining_A_pair_share\": 0.6,\n    \"remaining_other_mix\": {\n      \"C\": 1\n    }\n  },\n  \"clipped_preference\": false,\n  \"used_remaining_A_pair_share\": 0.6,\n  \"remaining_pair_pool\": 80.0,\n  \"fixed_counted_votes\": {\n    \"A\": true,\n    \"B\": 50,\n    \"other\": {\n      \"C\": 5\n    }\n  },\n  \"final\": {\n    \"A\": 49.0,\n    \"B\": 82.0,\n    \"other\": {\n      \"C\": 25.0\n    },\n    \"pair_denominator\": 131.0,\n    \"all_candidate_denominator\": 156.0,\n    \"pair_net\": -33.0,\n    \"pair_margin_pp\": -25.19083969465649,\n    \"all_candidate_margin_pp\": -21.153846153846153,\n    \"plurality_leaders\": [\n      \"B\"\n    ],\n    \"A_outright_plurality\": false\n  },\n  \"pair_target\": {\n    \"required_share_unbounded\": 0.80625,\n    \"feasible_share\": 0.80625,\n    \"status\": \"feasible\"\n  },\n  \"legal_plurality_tie_boundary_remaining_A_pair_share_unbounded\": 0.80625,\n  \"interpretation\": \"Strictly exceed all opponents for an outright plurality; equality is a tie. Pair cushion is illustrative.\"\n}\n",
+      "stderr": "",
+      "strict_JSON_parse_error": null,
+      "status": "fail",
+      "observed_status": "calculated"
+    },
+    {
+      "name": "boolean_target",
+      "negative": true,
+      "input_path": "boolean_target.input.json",
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"calculated\",\n  \"input\": {\n    \"counted_A\": 40,\n    \"counted_B\": 50,\n    \"counted_other\": {\n      \"C\": 5\n    },\n    \"remaining\": 100,\n    \"pair_participation\": 0.8,\n    \"remaining_A_pair_share\": 0.6,\n    \"remaining_other_mix\": {\n      \"C\": 1\n    },\n    \"target_pair_margin\": true\n  },\n  \"clipped_preference\": false,\n  \"used_remaining_A_pair_share\": 0.6,\n  \"remaining_pair_pool\": 80.0,\n  \"fixed_counted_votes\": {\n    \"A\": 40,\n    \"B\": 50,\n    \"other\": {\n      \"C\": 5\n    }\n  },\n  \"final\": {\n    \"A\": 88.0,\n    \"B\": 82.0,\n    \"other\": {\n      \"C\": 25.0\n    },\n    \"pair_denominator\": 170.0,\n    \"all_candidate_denominator\": 195.0,\n    \"pair_net\": 6.0,\n    \"pair_margin_pp\": 3.5294117647058822,\n    \"all_candidate_margin_pp\": 3.076923076923077,\n    \"plurality_leaders\": [\n      \"A\"\n    ],\n    \"A_outright_plurality\": true\n  },\n  \"pair_target\": {\n    \"required_share_unbounded\": 1.625,\n    \"feasible_share\": null,\n    \"status\": \"impossible\"\n  },\n  \"legal_plurality_tie_boundary_remaining_A_pair_share_unbounded\": 0.5625,\n  \"interpretation\": \"Strictly exceed all opponents for an outright plurality; equality is a tie. Pair cushion is illustrative.\"\n}\n",
+      "stderr": "",
+      "strict_JSON_parse_error": null,
+      "status": "fail",
+      "observed_status": "calculated"
+    },
+    {
+      "name": "nonfinite_target",
+      "negative": true,
+      "input_path": "nonfinite_target.input.json",
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py\", line 65, in <module>\n    if __name__=='__main__':main()\n                            ^^^^^^\n  File \"/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py\", line 64, in main\n    print(json.dumps(out,indent=2,allow_nan=False))\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/json/__init__.py\", line 238, in dumps\n    **kw).encode(obj)\n          ^^^^^^^^^^^\n  File \"/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/json/encoder.py\", line 202, in encode\n    chunks = list(chunks)\n             ^^^^^^^^^^^^\n  File \"/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/json/encoder.py\", line 432, in _iterencode\n    yield from _iterencode_dict(o, _current_indent_level)\n  File \"/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/json/encoder.py\", line 406, in _iterencode_dict\n    yield from chunks\n  File \"/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/json/encoder.py\", line 398, in _iterencode_dict\n    yield _floatstr(value)\n          ^^^^^^^^^^^^^^^^\n  File \"/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/json/encoder.py\", line 240, in floatstr\n    raise ValueError(\nValueError: Out of range float values are not JSON compliant: nan\n",
+      "strict_JSON_parse_error": "Expecting value: line 1 column 1 (char 0)",
+      "status": "fail",
+      "observed_status": null
+    },
+    {
+      "name": "nonfinite_other_mix",
+      "negative": true,
+      "input_path": "nonfinite_other_mix.input.json",
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py\", line 65, in <module>\n    if __name__=='__main__':main()\n                            ^^^^^^\n  File \"/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py\", line 64, in main\n    print(json.dumps(out,indent=2,allow_nan=False))\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/json/__init__.py\", line 238, in dumps\n    **kw).encode(obj)\n          ^^^^^^^^^^^\n  File \"/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/json/encoder.py\", line 202, in encode\n    chunks = list(chunks)\n             ^^^^^^^^^^^^\n  File \"/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/json/encoder.py\", line 432, in _iterencode\n    yield from _iterencode_dict(o, _current_indent_level)\n  File \"/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/json/encoder.py\", line 406, in _iterencode_dict\n    yield from chunks\n  File \"/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/json/encoder.py\", line 406, in _iterencode_dict\n    yield from chunks\n  File \"/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/json/encoder.py\", line 398, in _iterencode_dict\n    yield _floatstr(value)\n          ^^^^^^^^^^^^^^^^\n  File \"/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/json/encoder.py\", line 240, in floatstr\n    raise ValueError(\nValueError: Out of range float values are not JSON compliant: nan\n",
+      "strict_JSON_parse_error": "Expecting value: line 1 column 1 (char 0)",
+      "status": "fail",
+      "observed_status": null
+    },
+    {
+      "name": "boolean_other_mix",
+      "negative": true,
+      "input_path": "boolean_other_mix.input.json",
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"calculated\",\n  \"input\": {\n    \"counted_A\": 40,\n    \"counted_B\": 50,\n    \"counted_other\": {\n      \"C\": 5\n    },\n    \"remaining\": 100,\n    \"pair_participation\": 0.8,\n    \"remaining_A_pair_share\": 0.6,\n    \"remaining_other_mix\": {\n      \"C\": true\n    }\n  },\n  \"clipped_preference\": false,\n  \"used_remaining_A_pair_share\": 0.6,\n  \"remaining_pair_pool\": 80.0,\n  \"fixed_counted_votes\": {\n    \"A\": 40,\n    \"B\": 50,\n    \"other\": {\n      \"C\": 5\n    }\n  },\n  \"final\": {\n    \"A\": 88.0,\n    \"B\": 82.0,\n    \"other\": {\n      \"C\": 25.0\n    },\n    \"pair_denominator\": 170.0,\n    \"all_candidate_denominator\": 195.0,\n    \"pair_net\": 6.0,\n    \"pair_margin_pp\": 3.5294117647058822,\n    \"all_candidate_margin_pp\": 3.076923076923077,\n    \"plurality_leaders\": [\n      \"A\"\n    ],\n    \"A_outright_plurality\": true\n  },\n  \"pair_target\": {\n    \"required_share_unbounded\": 0.5625,\n    \"feasible_share\": 0.5625,\n    \"status\": \"feasible\"\n  },\n  \"legal_plurality_tie_boundary_remaining_A_pair_share_unbounded\": 0.5625,\n  \"interpretation\": \"Strictly exceed all opponents for an outright plurality; equality is a tie. Pair cushion is illustrative.\"\n}\n",
+      "stderr": "",
+      "strict_JSON_parse_error": null,
+      "status": "fail",
+      "observed_status": "calculated"
+    },
+    {
+      "name": "text_other_mix",
+      "negative": true,
+      "input_path": "text_other_mix.input.json",
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py\", line 65, in <module>\n    if __name__=='__main__':main()\n                            ^^^^^^\n  File \"/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py\", line 56, in main\n    if a.live_json:out=live(json.loads(Path(a.live_json).read_text()))\n                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py\", line 44, in live\n    if others>0 and (not mix or any(v<0 for v in mix.values())or abs(sum(mix.values())-1)>1e-10):return {'status':'unknown_other_mix','input':x,'final':None}\n                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py\", line 44, in <genexpr>\n    if others>0 and (not mix or any(v<0 for v in mix.values())or abs(sum(mix.values())-1)>1e-10):return {'status':'unknown_other_mix','input':x,'final':None}\n                                    ^^^\nTypeError: '<' not supported between instances of 'str' and 'int'\n",
+      "strict_JSON_parse_error": "Expecting value: line 1 column 1 (char 0)",
+      "status": "fail",
+      "observed_status": null
+    },
+    {
+      "name": "null_other_object",
+      "negative": true,
+      "input_path": "null_other_object.input.json",
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py\", line 65, in <module>\n    if __name__=='__main__':main()\n                            ^^^^^^\n  File \"/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py\", line 56, in main\n    if a.live_json:out=live(json.loads(Path(a.live_json).read_text()))\n                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py\", line 34, in live\n    if A is None or B is None or R is None or any(v is None for v in O.values()):return {'status':'unknown','input':x,'final':None}\n                                                                     ^^^^^^^^\nAttributeError: 'NoneType' object has no attribute 'values'\n",
+      "strict_JSON_parse_error": "Expecting value: line 1 column 1 (char 0)",
+      "status": "fail",
+      "observed_status": null
+    },
+    {
+      "name": "list_other_object",
+      "negative": true,
+      "input_path": "list_other_object.input.json",
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py\", line 65, in <module>\n    if __name__=='__main__':main()\n                            ^^^^^^\n  File \"/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py\", line 56, in main\n    if a.live_json:out=live(json.loads(Path(a.live_json).read_text()))\n                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py\", line 34, in live\n    if A is None or B is None or R is None or any(v is None for v in O.values()):return {'status':'unknown','input':x,'final':None}\n                                                                     ^^^^^^^^\nAttributeError: 'list' object has no attribute 'values'\n",
+      "strict_JSON_parse_error": "Expecting value: line 1 column 1 (char 0)",
+      "status": "fail",
+      "observed_status": null
+    },
+    {
+      "name": "text_remaining_with_unknown_preference",
+      "negative": true,
+      "input_path": "text_remaining_with_unknown_preference.input.json",
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py\", line 65, in <module>\n    if __name__=='__main__':main()\n                            ^^^^^^\n  File \"/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py\", line 56, in main\n    if a.live_json:out=live(json.loads(Path(a.live_json).read_text()))\n                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py\", line 39, in live\n    if R*p==0:q=.5\n       ~^~\nTypeError: can't multiply sequence by non-int of type 'float'\n",
+      "strict_JSON_parse_error": "Expecting value: line 1 column 1 (char 0)",
+      "status": "fail",
+      "observed_status": null
+    },
+    {
+      "name": "boolean_participation",
+      "negative": true,
+      "input_path": "boolean_participation.input.json",
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"calculated\",\n  \"input\": {\n    \"counted_A\": 40,\n    \"counted_B\": 50,\n    \"counted_other\": {\n      \"C\": 5\n    },\n    \"remaining\": 100,\n    \"pair_participation\": true,\n    \"remaining_A_pair_share\": 0.6,\n    \"remaining_other_mix\": {\n      \"C\": 1\n    }\n  },\n  \"clipped_preference\": false,\n  \"used_remaining_A_pair_share\": 0.6,\n  \"remaining_pair_pool\": 100,\n  \"fixed_counted_votes\": {\n    \"A\": 40,\n    \"B\": 50,\n    \"other\": {\n      \"C\": 5\n    }\n  },\n  \"final\": {\n    \"A\": 100.0,\n    \"B\": 90.0,\n    \"other\": {\n      \"C\": 5\n    },\n    \"pair_denominator\": 190,\n    \"all_candidate_denominator\": 195,\n    \"pair_net\": 10.0,\n    \"pair_margin_pp\": 5.2631578947368425,\n    \"all_candidate_margin_pp\": 5.128205128205129,\n    \"plurality_leaders\": [\n      \"A\"\n    ],\n    \"A_outright_plurality\": true\n  },\n  \"pair_target\": {\n    \"required_share_unbounded\": 0.55,\n    \"feasible_share\": 0.55,\n    \"status\": \"feasible\"\n  },\n  \"legal_plurality_tie_boundary_remaining_A_pair_share_unbounded\": 0.55,\n  \"interpretation\": \"Strictly exceed all opponents for an outright plurality; equality is a tie. Pair cushion is illustrative.\"\n}\n",
+      "stderr": "",
+      "strict_JSON_parse_error": null,
+      "status": "fail",
+      "observed_status": "calculated"
+    },
+    {
+      "name": "infinite_count",
+      "negative": true,
+      "input_path": "infinite_count.input.json",
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py\", line 65, in <module>\n    if __name__=='__main__':main()\n                            ^^^^^^\n  File \"/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py\", line 64, in main\n    print(json.dumps(out,indent=2,allow_nan=False))\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/json/__init__.py\", line 238, in dumps\n    **kw).encode(obj)\n          ^^^^^^^^^^^\n  File \"/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/json/encoder.py\", line 202, in encode\n    chunks = list(chunks)\n             ^^^^^^^^^^^^\n  File \"/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/json/encoder.py\", line 432, in _iterencode\n    yield from _iterencode_dict(o, _current_indent_level)\n  File \"/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/json/encoder.py\", line 406, in _iterencode_dict\n    yield from chunks\n  File \"/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/json/encoder.py\", line 398, in _iterencode_dict\n    yield _floatstr(value)\n          ^^^^^^^^^^^^^^^^\n  File \"/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/json/encoder.py\", line 240, in floatstr\n    raise ValueError(\nValueError: Out of range float values are not JSON compliant: inf\n",
+      "strict_JSON_parse_error": "Expecting value: line 1 column 1 (char 0)",
+      "status": "fail",
+      "observed_status": null
+    },
+    {
+      "name": "out_of_bounds_target",
+      "negative": true,
+      "input_path": "out_of_bounds_target.input.json",
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_negative_or_bounds\",\n  \"input\": {\n    \"counted_A\": 40,\n    \"counted_B\": 50,\n    \"counted_other\": {\n      \"C\": 5\n    },\n    \"remaining\": 100,\n    \"pair_participation\": 0.8,\n    \"remaining_A_pair_share\": 0.6,\n    \"remaining_other_mix\": {\n      \"C\": 1\n    },\n    \"target_pair_margin\": 1.1\n  },\n  \"final\": null\n}\n",
+      "stderr": "",
+      "strict_JSON_parse_error": null,
+      "status": "pass",
+      "observed_status": "invalid_negative_or_bounds"
+    },
+    {
+      "name": "ordinary",
+      "negative": false,
+      "input_path": "ordinary.input.json",
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"calculated\",\n  \"input\": {\n    \"counted_A\": 40,\n    \"counted_B\": 50,\n    \"counted_other\": {\n      \"C\": 5\n    },\n    \"remaining\": 100,\n    \"pair_participation\": 0.8,\n    \"remaining_A_pair_share\": 0.6,\n    \"remaining_other_mix\": {\n      \"C\": 1\n    }\n  },\n  \"clipped_preference\": false,\n  \"used_remaining_A_pair_share\": 0.6,\n  \"remaining_pair_pool\": 80.0,\n  \"fixed_counted_votes\": {\n    \"A\": 40,\n    \"B\": 50,\n    \"other\": {\n      \"C\": 5\n    }\n  },\n  \"final\": {\n    \"A\": 88.0,\n    \"B\": 82.0,\n    \"other\": {\n      \"C\": 25.0\n    },\n    \"pair_denominator\": 170.0,\n    \"all_candidate_denominator\": 195.0,\n    \"pair_net\": 6.0,\n    \"pair_margin_pp\": 3.5294117647058822,\n    \"all_candidate_margin_pp\": 3.076923076923077,\n    \"plurality_leaders\": [\n      \"A\"\n    ],\n    \"A_outright_plurality\": true\n  },\n  \"pair_target\": {\n    \"required_share_unbounded\": 0.5625,\n    \"feasible_share\": 0.5625,\n    \"status\": \"feasible\"\n  },\n  \"legal_plurality_tie_boundary_remaining_A_pair_share_unbounded\": 0.5625,\n  \"interpretation\": \"Strictly exceed all opponents for an outright plurality; equality is a tie. Pair cushion is illustrative.\"\n}\n",
+      "stderr": "",
+      "strict_JSON_parse_error": null,
+      "status": "pass",
+      "observed_status": "calculated"
+    },
+    {
+      "name": "unknown_remaining",
+      "negative": false,
+      "input_path": "unknown_remaining.input.json",
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"unknown\",\n  \"input\": {\n    \"counted_A\": 40,\n    \"counted_B\": 50,\n    \"counted_other\": {\n      \"C\": 5\n    },\n    \"remaining\": null,\n    \"pair_participation\": 0.8,\n    \"remaining_A_pair_share\": 0.6,\n    \"remaining_other_mix\": {\n      \"C\": 1\n    }\n  },\n  \"final\": null\n}\n",
+      "stderr": "",
+      "strict_JSON_parse_error": null,
+      "status": "pass",
+      "observed_status": "unknown"
+    },
+    {
+      "name": "zero_pool",
+      "negative": false,
+      "input_path": "zero_pool.input.json",
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"calculated\",\n  \"input\": {\n    \"counted_A\": 40,\n    \"counted_B\": 50,\n    \"counted_other\": {\n      \"C\": 5\n    },\n    \"remaining\": 0,\n    \"pair_participation\": 0.8,\n    \"remaining_A_pair_share\": 0.6,\n    \"remaining_other_mix\": {\n      \"C\": 1\n    }\n  },\n  \"clipped_preference\": false,\n  \"used_remaining_A_pair_share\": null,\n  \"remaining_pair_pool\": 0.0,\n  \"fixed_counted_votes\": {\n    \"A\": 40,\n    \"B\": 50,\n    \"other\": {\n      \"C\": 5\n    }\n  },\n  \"final\": {\n    \"A\": 40.0,\n    \"B\": 50.0,\n    \"other\": {\n      \"C\": 5.0\n    },\n    \"pair_denominator\": 90.0,\n    \"all_candidate_denominator\": 95.0,\n    \"pair_net\": -10.0,\n    \"pair_margin_pp\": -11.11111111111111,\n    \"all_candidate_margin_pp\": -10.526315789473685,\n    \"plurality_leaders\": [\n      \"B\"\n    ],\n    \"A_outright_plurality\": false\n  },\n  \"pair_target\": {\n    \"required_share_unbounded\": null,\n    \"feasible_share\": null,\n    \"status\": \"no_positive_pool\",\n    \"net_minus_target\": -10.0\n  },\n  \"legal_plurality_tie_boundary_remaining_A_pair_share_unbounded\": null,\n  \"interpretation\": \"Strictly exceed all opponents for an outright plurality; equality is a tie. Pair cushion is illustrative.\"\n}\n",
+      "stderr": "",
+      "strict_JSON_parse_error": null,
+      "status": "pass",
+      "observed_status": "calculated"
+    },
+    {
+      "name": "explicit_preference_clipping",
+      "negative": false,
+      "input_path": "explicit_preference_clipping.input.json",
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"calculated\",\n  \"input\": {\n    \"counted_A\": 40,\n    \"counted_B\": 50,\n    \"counted_other\": {\n      \"C\": 5\n    },\n    \"remaining\": 100,\n    \"pair_participation\": 0.8,\n    \"remaining_A_pair_share\": 1.2,\n    \"remaining_other_mix\": {\n      \"C\": 1\n    }\n  },\n  \"clipped_preference\": true,\n  \"used_remaining_A_pair_share\": 1.0,\n  \"remaining_pair_pool\": 80.0,\n  \"fixed_counted_votes\": {\n    \"A\": 40,\n    \"B\": 50,\n    \"other\": {\n      \"C\": 5\n    }\n  },\n  \"final\": {\n    \"A\": 120.0,\n    \"B\": 50.0,\n    \"other\": {\n      \"C\": 25.0\n    },\n    \"pair_denominator\": 170.0,\n    \"all_candidate_denominator\": 195.0,\n    \"pair_net\": 70.0,\n    \"pair_margin_pp\": 41.1764705882353,\n    \"all_candidate_margin_pp\": 35.8974358974359,\n    \"plurality_leaders\": [\n      \"A\"\n    ],\n    \"A_outright_plurality\": true\n  },\n  \"pair_target\": {\n    \"required_share_unbounded\": 0.5625,\n    \"feasible_share\": 0.5625,\n    \"status\": \"feasible\"\n  },\n  \"legal_plurality_tie_boundary_remaining_A_pair_share_unbounded\": 0.5625,\n  \"interpretation\": \"Strictly exceed all opponents for an outright plurality; equality is a tie. Pair cushion is illustrative.\"\n}\n",
+      "stderr": "",
+      "strict_JSON_parse_error": null,
+      "status": "pass",
+      "observed_status": "calculated"
+    }
+  ],
+  "failures": [
+    "boolean_count",
+    "boolean_target",
+    "nonfinite_target",
+    "nonfinite_other_mix",
+    "boolean_other_mix",
+    "text_other_mix",
+    "null_other_object",
+    "list_other_object",
+    "text_remaining_with_unknown_preference",
+    "boolean_participation",
+    "infinite_count"
+  ],
+  "scope": "Malformed/null/type/bool/nonfinite target/count/mix inputs must be structured rejections before arithmetic; legitimate unknowns remain unknown, explicit live preference clipping remains supported. All producer bytes unchanged."
+}

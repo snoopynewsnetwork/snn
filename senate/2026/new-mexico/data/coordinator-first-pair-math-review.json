@@ -1,0 +1,61 @@
+{
+  "status": "pass_independent_historical_formula_review_CLI_input_repair_separate",
+  "checks": 168853,
+  "method": "Independent saturation-event integration; no author solver import or bisection call",
+  "state_scenarios": 32,
+  "county_contribution_selected_rows": 1056,
+  "native_baseline_rows": 8558,
+  "native_source_known_scenarios": 8,
+  "native_target_rows": 17116,
+  "source_county_rows": 132,
+  "maximum_shift_difference": 3.885780586188048e-16,
+  "maximum_net_residual": 5.011315806768835e-10,
+  "all_unknown_native_targets_remain_unmodeled": true,
+  "protected_allocations": false,
+  "canonical_certified_native_order_min80_unavailable": true,
+  "source_inputs": [
+    {
+      "path": "data/turnout/original-extract.json",
+      "bytes": 18569359,
+      "sha256": "f9cf81fb757aee83c1cb873cd30cbef5cfc3dee8ba1c515d68f95bbafd14d06f"
+    },
+    {
+      "path": "data/county-baselines.csv",
+      "bytes": 59696,
+      "sha256": "0a36a259f9cece453fc3c73f0a22a1585f0c5cfbcc7a84d5185490f89f32f6d0"
+    },
+    {
+      "path": "data/baselines/settings.json",
+      "bytes": 1100,
+      "sha256": "41fc2fc561d778bd6f556015569753c2cff8c0691243e7c761ccd64bd6ad6b6b"
+    }
+  ],
+  "output_pins": [
+    {
+      "path": "data/baselines/state-scenarios.json",
+      "bytes": 32593,
+      "sha256": "835464b954af3c5e8fffea5b1f67817d8d35522cf67058bf35e59a2b2d5e1e12"
+    },
+    {
+      "path": "data/baselines/county-target-scenarios.csv",
+      "bytes": 404625,
+      "sha256": "64495a7787c664837b856583cd721a1aa19052e5d243bc8a9ba61a2b61e70988"
+    },
+    {
+      "path": "data/baselines/native-baselines.csv",
+      "bytes": 4266914,
+      "sha256": "d60cfe6765312af42e80092efa29bfe47c505c2d3db3afdf0ffcfcc6022445a3"
+    },
+    {
+      "path": "data/baselines/native-state-scenarios.json",
+      "bytes": 6144,
+      "sha256": "b65c4bf072ce81e534fd4f6132b014e0a538d0b4df120fccb69a1dbe7c91aa89"
+    },
+    {
+      "path": "data/baselines/native-targets.csv",
+      "bytes": 5258478,
+      "sha256": "5510b3b1ebd7fbf6b1fea7632e09eb6e546f03abd14fed58d9522b6b470ac63b"
+    }
+  ],
+  "CLI_robustness_not_approved": "Actual separate input review found11failures; same-worker repair pending real slot. Historical arithmetic equality does not approve malformed input handling or current/legal/feed/geography/probability."
+}
