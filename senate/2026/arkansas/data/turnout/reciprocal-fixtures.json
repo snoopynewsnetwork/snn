@@ -1,0 +1,250 @@
+{
+  "schema": "arkansas-reciprocal-negative-fixtures-v1",
+  "status": "pass",
+  "positive_original_packet_passed": true,
+  "negative_cases": 24,
+  "all_rejected": true,
+  "fixtures": [
+    {
+      "name": "missing-native",
+      "rejected": true,
+      "error": "complete unique native inventory",
+      "input_path": "fixtures/reciprocal/missing-native.input.json.gz",
+      "raw_sha256": "313fdeffce75f7b3b3c9b580818df1fd746df813efd336417cc145df4edf608d",
+      "stored_sha256": "e855767d6833bb9b13b1c8c43b6847accf4123041c0b8b4a8d4f8cf1fe0741c3",
+      "raw_bytes": 465002,
+      "stored_bytes": 72485
+    },
+    {
+      "name": "missing-candidate",
+      "rejected": true,
+      "error": "candidate coverage/balance",
+      "input_path": "fixtures/reciprocal/missing-candidate.input.json.gz",
+      "raw_sha256": "fbbabe289c8918926d48fa913614341dfddd8514ba86a81a0206e3c4a5a8c67a",
+      "stored_sha256": "030ff89b75140c0bfc3305630b0a245cf38155379af894f06d0ab3068d03b067",
+      "raw_bytes": 465099,
+      "stored_bytes": 72502
+    },
+    {
+      "name": "missing-method",
+      "rejected": true,
+      "error": "method coverage",
+      "input_path": "fixtures/reciprocal/missing-method.input.json.gz",
+      "raw_sha256": "7a898d830d4e193a77bec043d8f791bc3d0cc05fe7b5b80923f2c8e62cc77ab6",
+      "stored_sha256": "56b6005dc3701a7f25b4d9ead7810b38efcfc52d08915e4d377771dccbedb5ee",
+      "raw_bytes": 464885,
+      "stored_bytes": 72492
+    },
+    {
+      "name": "missing-null-field",
+      "rejected": true,
+      "error": "'native_id'",
+      "input_path": "fixtures/reciprocal/missing-null-field.input.json.gz",
+      "raw_sha256": "639f2bdf875fc2b7c45a03a93a51ea63cae88237ba32f3b1769e749ced8dc137",
+      "stored_sha256": "cce2f87020e9136fba78d4038d261e157f7c729ad19ebd941d0a4388ef05ca3e",
+      "raw_bytes": 465110,
+      "stored_bytes": 72497
+    },
+    {
+      "name": "missing-administrative-field",
+      "rejected": true,
+      "error": "('actual-original-source-packet/null_admin', 'keys', {'source_native_type'}, set())",
+      "input_path": "fixtures/reciprocal/missing-administrative-field.input.json.gz",
+      "raw_sha256": "2770d750345ee4fdf56e6f6b9e7684dc1981c22811049afd7284b0b9e6a26788",
+      "stored_sha256": "554cc062943034691b5c541a00708389f4e69edae5a617cab892435c05698637",
+      "raw_bytes": 465003,
+      "stored_bytes": 72437
+    },
+    {
+      "name": "missing-header",
+      "rejected": true,
+      "error": "('actual-original-source-packet/header', 'length', 10, 9)",
+      "input_path": "fixtures/reciprocal/missing-header.input.json.gz",
+      "raw_sha256": "46dd51c502f603a54d39cb3020391209b528bc48ce3adcd1ebe787bc3602fd9b",
+      "stored_sha256": "a84c3f0582bf56974848b7e13ce5a2ba5eaf1a0e2df1f111919404617117196a",
+      "raw_bytes": 465113,
+      "stored_bytes": 72494
+    },
+    {
+      "name": "missing-source-field",
+      "rejected": true,
+      "error": "('actual-original-source-packet/source', 'keys', {'parent'}, set())",
+      "input_path": "fixtures/reciprocal/missing-source-field.input.json.gz",
+      "raw_sha256": "26ac75716b96660ff2f161cf09b90152450084b738e9aa8b152211d1ae04ad97",
+      "stored_sha256": "97dd3ceb0767fe0425d68c6eb89b77354171da10b0a3d5beec42b67a7e9c25fc",
+      "raw_bytes": 465021,
+      "stored_bytes": 72478
+    },
+    {
+      "name": "missing-native-companion",
+      "rejected": true,
+      "error": "('actual-original-source-packet/companion', 'keys', {'raw'}, set())",
+      "input_path": "fixtures/reciprocal/missing-native-companion.input.json.gz",
+      "raw_sha256": "e0af63d496c43a1b509504e0902ef254626af4b04e5b5a4d159e9b9e6582a188",
+      "stored_sha256": "fb6dce16582be3f7d8ebcb6b88aae397e50dc1dbfdedb69cb23c6c4d6f39059a",
+      "raw_bytes": 465017,
+      "stored_bytes": 72472
+    },
+    {
+      "name": "wrong-control-total",
+      "rejected": true,
+      "error": "('actual-original-source-packet/control/raw/totalVotes', 'value', '1274', '1275')",
+      "input_path": "fixtures/reciprocal/wrong-control-total.input.json.gz",
+      "raw_sha256": "d11e994b5a320906e089c5e5f4bd1d3318b2e9270d7c1e4be3058071ccb02fe2",
+      "stored_sha256": "fdd7c7a6f290403455d22b0e7be4cd55d95e759c11e71caa3e57319e32251d47",
+      "raw_bytes": 465127,
+      "stored_bytes": 72500
+    },
+    {
+      "name": "missing-metadata-null",
+      "rejected": true,
+      "error": "('actual-original-source-packet/metadata/metadata', 'keys', {'locationType'}, set())",
+      "input_path": "fixtures/reciprocal/missing-metadata-null.input.json.gz",
+      "raw_sha256": "11e95258a1196ae2645d0de2b4f99b5efa39a5c287695d6b3ca86f7b9bbc49c5",
+      "stored_sha256": "dba6256c1834b7f5ae58cfc52993aaa6c89c993acc626ed4b960cea9af3ace9a",
+      "raw_bytes": 465107,
+      "stored_bytes": 72492
+    },
+    {
+      "name": "wrong-native-id",
+      "rejected": true,
+      "error": "('actual-original-source-packet/companion/native_id', 'value', '00091510', '0')",
+      "input_path": "fixtures/reciprocal/wrong-native-id.input.json.gz",
+      "raw_sha256": "6eb8ac842a64298bb3e9ca53e037941de5131a6824c37c8b43222bbf092c3f3d",
+      "stored_sha256": "bb6ac9f4f2645d25639f597904fa9b565b7e29fb02889dd777a3e5f28391fc34",
+      "raw_bytes": 465120,
+      "stored_bytes": 72497
+    },
+    {
+      "name": "wrong-descending-order",
+      "rejected": true,
+      "error": "descending native order",
+      "input_path": "fixtures/reciprocal/wrong-descending-order.input.json.gz",
+      "raw_sha256": "4fcccce2ace47d9c8b2e95b7a158f590ddf5a0ae8277f80014945abff428c87e",
+      "stored_sha256": "4e50d972a0f33f88679d4c62266cf1b20d9886765ef90ed9c1a22ab9896ce540",
+      "raw_bytes": 465127,
+      "stored_bytes": 72508
+    },
+    {
+      "name": "off-by-one-minimum80",
+      "rejected": true,
+      "error": "minimum80 and full remainder",
+      "input_path": "fixtures/reciprocal/off-by-one-minimum80.input.json.gz",
+      "raw_sha256": "2725b86b36c3ccfa5d7cf87a3a51c9ee561ae0f958064b22972bbd9c1654148f",
+      "stored_sha256": "09bffa98e240573ea98214b167787c23e1448bd958f76bca21e8aa03152768d2",
+      "raw_bytes": 465088,
+      "stored_bytes": 72499
+    },
+    {
+      "name": "duplicate-native-key",
+      "rejected": true,
+      "error": "complete unique native inventory",
+      "input_path": "fixtures/reciprocal/duplicate-native-key.input.json.gz",
+      "raw_sha256": "925141419aa7cf051dc340bad374e894ae6a1d6a198b237d107a0228514d4f98",
+      "stored_sha256": "9b3fde55b36584a96ecf03498e5f780480c81790f77eea4051d9db90829fa565",
+      "raw_bytes": 465246,
+      "stored_bytes": 72510
+    },
+    {
+      "name": "county-dispatch-substitute",
+      "rejected": true,
+      "error": "complete unique native inventory",
+      "input_path": "fixtures/reciprocal/county-dispatch-substitute.input.json.gz",
+      "raw_sha256": "f871efaca9f0fafe6d27bd9785c82a8c906c93fecf550c8b78953ba03299da43",
+      "stored_sha256": "8fe9c91a87c2c14f46d375d668ad83f06e0df0e90ce2844d321186fa84a6023f",
+      "raw_bytes": 132217,
+      "stored_bytes": 29530
+    },
+    {
+      "name": "residual-allocation-total-preserved",
+      "rejected": true,
+      "error": "('actual-original-source-packet/native/0/candidates/Kamala D. Harris/Tim Walz', 'value', '8', '9')",
+      "input_path": "fixtures/reciprocal/residual-allocation-total-preserved.input.json.gz",
+      "raw_sha256": "3293b5902b4bdee60a5da23561c369c9031fb8d71bb3a6c986f8e136df5779f3",
+      "stored_sha256": "7daeeff8df9ce92110380bb8cf34a9cf56a47fd915a530c1db0bf29a3547d2f9",
+      "raw_bytes": 465127,
+      "stored_bytes": 72500
+    },
+    {
+      "name": "current-geography-admission",
+      "rejected": true,
+      "error": "current/legal/feed/forecast admission prohibited",
+      "input_path": "fixtures/reciprocal/current-geography-admission.input.json.gz",
+      "raw_sha256": "8acfd8cf10bad5044a7c7a7f5dedee17453478103c5e68bc2f0d8445f8a1c6e4",
+      "stored_sha256": "d12f0a170076c647f596fd192737d3014be5a21592c7c243b47141461d75fa55",
+      "raw_bytes": 465126,
+      "stored_bytes": 72502
+    },
+    {
+      "name": "november-feed-admission",
+      "rejected": true,
+      "error": "current/legal/feed/forecast admission prohibited",
+      "input_path": "fixtures/reciprocal/november-feed-admission.input.json.gz",
+      "raw_sha256": "82b06d3d8dbc832838e904a84ca596fb0bcc72326a31a0aefdc6f4f8cecf66af",
+      "stored_sha256": "996dd91fc7d6c781886b68f98919635d637a96d7724cf7d2fc8c1aa5b9d2c690",
+      "raw_bytes": 465126,
+      "stored_bytes": 72500
+    },
+    {
+      "name": "unknown-ballots-to-zero",
+      "rejected": true,
+      "error": "('actual-original-source-packet/null_admin/native_ballots', 'type', 'NoneType', 'int')",
+      "input_path": "fixtures/reciprocal/unknown-ballots-to-zero.input.json.gz",
+      "raw_sha256": "2b6a2088402b237ea9fb5721dd0bfd019e6ede1f1beff560f37cf9bf0f930ff2",
+      "stored_sha256": "366383fdabfc4b5cc226259521380481ad3a9cb756448981e60052a945fba9db",
+      "raw_bytes": 465124,
+      "stored_bytes": 72499
+    },
+    {
+      "name": "all-is-not-election-day",
+      "rejected": true,
+      "error": "('actual-original-source-packet/metadata/vote_types/1/description', 'value', 'All', 'Election Day')",
+      "input_path": "fixtures/reciprocal/all-is-not-election-day.input.json.gz",
+      "raw_sha256": "207fa0aa238521918634dd45ffc02971470f7cd55f83bc0e630ddac04fecc6d4",
+      "stored_sha256": "059169c69af56bc6c4be453de3106a67d13e1aae220f5ccbbb33d6f247ddec14",
+      "raw_bytes": 465136,
+      "stored_bytes": 72498
+    },
+    {
+      "name": "raw-header-type-change",
+      "rejected": true,
+      "error": "('actual-original-source-packet/header_cells/0/type', 'type', 'str', 'NoneType')",
+      "input_path": "fixtures/reciprocal/raw-header-type-change.input.json.gz",
+      "raw_sha256": "5e1b962622f02e2473a7882408d7b84f40d92dbf05f5ce55ab7ea6de07e2821f",
+      "stored_sha256": "1ad3ba0d4699e20715b3fed72a86c427b5f237e68dc0acee9a433d8336706408",
+      "raw_bytes": 465128,
+      "stored_bytes": 72503
+    },
+    {
+      "name": "raw-v-change",
+      "rejected": true,
+      "error": "('actual-original-source-packet/header_cells/0/raw_value', 'value', '0', '999')",
+      "input_path": "fixtures/reciprocal/raw-v-change.input.json.gz",
+      "raw_sha256": "d5e9e28317c066e88adb878c92e50e795c744ce133cf8823232b4108fd2220cb",
+      "stored_sha256": "08945626c3bbff2a64c73552dfdda086712ff41ef392d32f5d1fabfee7bc99fa",
+      "raw_bytes": 465129,
+      "stored_bytes": 72501
+    },
+    {
+      "name": "party-metadata-normalization",
+      "rejected": true,
+      "error": "('actual-original-source-packet/metadata/parties/2097/partyName', 'value', 'Nevada Green Party', 'Green Party')",
+      "input_path": "fixtures/reciprocal/party-metadata-normalization.input.json.gz",
+      "raw_sha256": "3e2b4800c33f5fe04e4c5a3e406a28d90f5b83b57fd29b2f817a7af22f95edd3",
+      "stored_sha256": "f4418864787d373b845a27e4e7e0d60265d9b4a128bc1e02e0822abc3c972b22",
+      "raw_bytes": 465120,
+      "stored_bytes": 72500
+    },
+    {
+      "name": "wrong-source-pointer",
+      "rejected": true,
+      "error": "('actual-original-source-packet/control/position', 'value', '/response/contests/366/locations/30216902', '/response/contests/0')",
+      "input_path": "fixtures/reciprocal/wrong-source-pointer.input.json.gz",
+      "raw_sha256": "b8dcf29fcc0bdaa5c680147d15312fc6f4e7cad5a7257fbcfe81c3944ecf5b1e",
+      "stored_sha256": "3d9e27def22dbca7c28e056a6e5edb3d4145579dc259117864919a672f3ec855",
+      "raw_bytes": 465106,
+      "stored_bytes": 72491
+    }
+  ],
+  "scope": "Actual complete captured-source inputs with full2841 order/1056priority/1785remainder and real raw/candidate/method/null/admin/header/metadata companions. Negative data are fixtures only, never canonical election results."
+}

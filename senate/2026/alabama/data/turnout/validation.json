@@ -1,6 +1,6 @@
 {
   "status": "PASS",
-  "scope": "Deterministic historical research/offline QA; no independent peer or coordinator acceptance asserted",
+  "scope": "Deterministic historical research/offline QA plus actually captured-final bounded historical peer evidence agreement; no coordinator/current/legal/geography/model admission",
   "checks": [
     {
       "check": "all_original_shared_and_download_body_hashes_sizes_receipts",
@@ -156,22 +156,46 @@
       }
     },
     {
+      "check": "complete_original_phase_and_actual_final_peer_body_reconstruction",
+      "result": "PASS",
+      "evidence": {
+        "status": "PASS",
+        "own_original_manifest_targets_reconstructed": 145,
+        "own_complete_original_files_including_manifest": 146,
+        "own_original_history_bodies_reconstructed": 17,
+        "own_original_first_witness_sha256": "b8a4bba1c934beb847166e79d5ca75e1d8b0a5757da5bdbb80abda490b7d7ce5",
+        "own_external_originals_verified": 9,
+        "peer_actual_final_manifest_targets_reconstructed": 306,
+        "peer_complete_files_including_manifest": 307,
+        "peer_archive_bodies": 306,
+        "peer_large_original_entity_references": 1,
+        "peer_capture_only_fresh_original_receipts_verified": 8,
+        "peer_original_first_v1_witness_sha256": "941f8c78065a55966c2514b6e99bc1e148ec200d9cc1b269cf461146e83b940d",
+        "source_scope": "Only frozen exact individual original references and complete captured archive bodies. Peer reverse proof is original-turnout-phase historical evidence, never future/current full-report equality."
+      }
+    },
+    {
+      "check": "unchanged_canonical_source_counts_native_masks_order_and_contract_semantics",
+      "result": "PASS",
+      "evidence": "Only explicit peer identity/agreement/dispatch status and added bounded proof metadata differ from captured original contract. All original CSV/source body pins independently unchanged."
+    },
+    {
       "check": "relative_markdown_links_file_size_bounds_no_dependencies_or_caches",
       "result": "PASS",
       "evidence": {
-        "links": 34,
+        "links": 43,
         "seal_phase_generated_links_verified_by_post_seal_readonly_audit": [
           "validation.json",
           "final-seal.json",
           "asset-manifest.json"
         ],
-        "largest_owned_bytes": 15256104
+        "largest_owned_bytes": 25798569
       }
     },
     {
       "check": "all_prior_owned_body_histories_reconstruct_exactly",
       "result": "PASS",
-      "evidence": 16
+      "evidence": 26
     }
   ],
   "source_hashes": [
@@ -383,11 +407,11 @@
       "unlabeled_populated_columns": 0
     }
   },
-  "independent_peer_agreement": false,
-  "peer_agent_id": null,
+  "independent_peer_agreement": true,
+  "peer_agent_id": "f2db457b-3e3c-47d0-a65c-7d6be8bbe5c7",
   "coordinator_acceptance": false,
   "external_qualifications": [
-    "pending actual independent peer reciprocal and coordinator acceptance",
+    "coordinator acceptance pending; actual bounded captured-final historical peer reciprocal complete",
     "November2026 legal geography/native IDs/crosswalk not established",
     "generic write-in rows do not establish eligible named/valid write-in allocation",
     "source-scoped ballot/registration and within-unit statistical discrepancies remain unrepaired",

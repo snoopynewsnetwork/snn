@@ -1,0 +1,162 @@
+{
+  "status": "PASS",
+  "clean_input_passed": true,
+  "direct_original_members": 201,
+  "direct_original_native_units": 6270,
+  "direct_source_field_positions_checked_in_clean_input": 681032,
+  "actual_corruption_fixture_count": 30,
+  "results": [
+    {
+      "name": "missing-native",
+      "result": "REJECTED",
+      "rule": "native_universe_uniqueness_coverage"
+    },
+    {
+      "name": "duplicate-native-key",
+      "result": "REJECTED",
+      "rule": "native_universe_uniqueness_coverage"
+    },
+    {
+      "name": "missing-candidate-row",
+      "result": "REJECTED",
+      "rule": "missing_candidate_or_admin_source_row"
+    },
+    {
+      "name": "missing-administrative-row",
+      "result": "REJECTED",
+      "rule": "missing_candidate_or_admin_source_row"
+    },
+    {
+      "name": "missing-source-party",
+      "result": "REJECTED",
+      "rule": "source_candidate_admin_party_type_null_value_companion"
+    },
+    {
+      "name": "wrong-header",
+      "result": "REJECTED",
+      "rule": "literal_header_native_identity_member_source_position"
+    },
+    {
+      "name": "missing-source-member-hash",
+      "result": "REJECTED",
+      "rule": "literal_header_native_identity_member_source_position"
+    },
+    {
+      "name": "wrong-source-column",
+      "result": "REJECTED",
+      "rule": "literal_header_native_identity_member_source_position"
+    },
+    {
+      "name": "changed-native-type",
+      "result": "REJECTED",
+      "rule": "source_candidate_admin_party_type_null_value_companion"
+    },
+    {
+      "name": "zero-for-blank-registration",
+      "result": "REJECTED",
+      "rule": "separate_source_field_missing_null_or_value"
+    },
+    {
+      "name": "zero-for-missing-under",
+      "result": "REJECTED",
+      "rule": "separate_source_field_missing_null_or_value"
+    },
+    {
+      "name": "PDF-null-imputed-zero",
+      "result": "REJECTED",
+      "rule": "PDF_source_null_dash_or_position_imputed"
+    },
+    {
+      "name": "residual-allocation-candidate",
+      "result": "REJECTED",
+      "rule": "source_candidate_admin_party_type_null_value_companion"
+    },
+    {
+      "name": "residual-allocation-contest-total",
+      "result": "REJECTED",
+      "rule": "source_candidate_total_residual_allocation"
+    },
+    {
+      "name": "wrong80count",
+      "result": "REJECTED",
+      "rule": "minimum80_full_order_denominator"
+    },
+    {
+      "name": "wrong-cumulative",
+      "result": "REJECTED",
+      "rule": "rank_cumulative_integer_control"
+    },
+    {
+      "name": "wrong-full-order",
+      "result": "REJECTED",
+      "rule": "descending_full_order"
+    },
+    {
+      "name": "missing-remainder-key",
+      "result": "REJECTED",
+      "rule": "complete_priority_remainder_partition"
+    },
+    {
+      "name": "missing-parent",
+      "result": "REJECTED",
+      "rule": "all67parent_coverage"
+    },
+    {
+      "name": "missing-parent-constituent",
+      "result": "REJECTED",
+      "rule": "parent_disjoint_source_constituent_priority_remainder"
+    },
+    {
+      "name": "county-dispatch-substitution",
+      "result": "REJECTED",
+      "rule": "contract_priority_remainder_arrays"
+    },
+    {
+      "name": "current-geometry-admission",
+      "result": "REJECTED",
+      "rule": "current_coordinator_legal_geography_admission"
+    },
+    {
+      "name": "coordinator-admission",
+      "result": "REJECTED",
+      "rule": "current_coordinator_legal_geography_admission"
+    },
+    {
+      "name": "current-crosswalk-admission",
+      "result": "REJECTED",
+      "rule": "unestablished_current_crosswalk_id_writein_admission"
+    },
+    {
+      "name": "valid-named-writein-admission",
+      "result": "REJECTED",
+      "rule": "unestablished_current_crosswalk_id_writein_admission"
+    },
+    {
+      "name": "missing-context-companion",
+      "result": "REJECTED",
+      "rule": "source_context_and_unavailable_companion_metadata"
+    },
+    {
+      "name": "missing-original-receipt-headers",
+      "result": "REJECTED",
+      "rule": "complete_original_body_receipt_context_companion_metadata"
+    },
+    {
+      "name": "changed-source-election-context",
+      "result": "REJECTED",
+      "rule": "literal_header_native_identity_member_source_position"
+    },
+    {
+      "name": "missing-receipt-part-hash",
+      "result": "REJECTED",
+      "rule": "complete_original_body_receipt_context_companion_metadata"
+    },
+    {
+      "name": "wrong-contract-complete-source-field",
+      "result": "REJECTED",
+      "rule": "contract_full_native_fields_context"
+    }
+  ],
+  "scope": "Actual complete in-memory source/contract records reconstructed from immutable original-phase bodies plus retained exact ordered patch. Direct XLS source identities/types/values/party/header/administrative rows and relationships supply truth; stored success flags do not establish acceptance.",
+  "no_network_peer_calculator_or_mutable_aggregate": true
+}

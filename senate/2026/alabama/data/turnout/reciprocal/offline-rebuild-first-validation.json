@@ -1,0 +1,396 @@
+{
+  "status": "PASS",
+  "scope": "Deterministic historical research/offline QA; no independent peer or coordinator acceptance asserted",
+  "checks": [
+    {
+      "check": "all_original_shared_and_download_body_hashes_sizes_receipts",
+      "result": "PASS",
+      "evidence": 24
+    },
+    {
+      "check": "direct_original_XLS_full_raw_rows_values_types_and_member_hashes",
+      "result": "PASS",
+      "evidence": {
+        "members": 201,
+        "raw_cells": 6246656
+      }
+    },
+    {
+      "check": "direct_original_target_candidate_method_admin_cell_comparisons",
+      "result": "PASS",
+      "evidence": {
+        "cells_checked": 85129,
+        "missing_candidate_cells_at_labeled_headers": 0
+      }
+    },
+    {
+      "check": "all_county_native_candidate_and_statewide_controls",
+      "result": "PASS",
+      "evidence": {
+        "2024": {
+          "native_units": 2085,
+          "county_parents": 67,
+          "candidate_sums": {
+            "Kamala D. Harris": 772412,
+            "Donald J. Trump": 1462616,
+            "Robert F. Kennedy Jr.": 12075,
+            "Chase Oliver": 4930,
+            "Jill Stein": 4319,
+            "Write-In": 8738
+          },
+          "denominator": 2265090,
+          "top15_votes": 115428,
+          "minimum80_count": 887,
+          "minimum80_votes": 1812818,
+          "preceding_count": 886,
+          "preceding_votes": 1811981,
+          "crossing_key": "AL:2024:general:01015:col030:OAK%20GROVE%20BAPT",
+          "remainder_count": 1198,
+          "remainder_votes": 452272,
+          "unlabeled_populated_columns": 0
+        },
+        "2022": {
+          "native_units": 2074,
+          "county_parents": 67,
+          "candidate_sums": {
+            "Will Boyd": 436746,
+            "Katie Britt": 942154,
+            "John Sophocleus": 32879,
+            "Write-In": 2459
+          },
+          "denominator": 1414238,
+          "top15_votes": 60242,
+          "minimum80_count": 893,
+          "minimum80_votes": 1131580,
+          "preceding_count": 892,
+          "preceding_votes": 1131060,
+          "crossing_key": "AL:2022:general:01123:col015:HACKNEYVILLE%20COMM%20CTR",
+          "remainder_count": 1181,
+          "remainder_votes": 282658,
+          "unlabeled_populated_columns": 0
+        },
+        "2020": {
+          "native_units": 2111,
+          "county_parents": 67,
+          "candidate_sums": {
+            "Doug Jones": 920478,
+            "Tommy Tuberville": 1392076,
+            "Write-In": 3891
+          },
+          "denominator": 2316445,
+          "top15_votes": 226674,
+          "minimum80_count": 874,
+          "minimum80_votes": 1853909,
+          "preceding_count": 873,
+          "preceding_votes": 1853059,
+          "crossing_key": "AL:2020:general:01123:col017:MANOY%20V_%20H_",
+          "remainder_count": 1237,
+          "remainder_votes": 462536,
+          "unlabeled_populated_columns": 0
+        }
+      }
+    },
+    {
+      "check": "independent_SQLite_full_orders_exact_weights_integer_min80_and_remainders",
+      "result": "PASS",
+      "evidence": "all three election universes"
+    },
+    {
+      "check": "complete_dispatch_coverage_priority_parent_constituents_administration_and_pending_acceptance",
+      "result": "PASS",
+      "evidence": {
+        "parents": 67,
+        "units": 2085,
+        "priority": 887
+      }
+    },
+    {
+      "check": "canvass_null_dash_generic_scope_character_and_page_positions",
+      "result": "PASS",
+      "evidence": [
+        [
+          2024,
+          "Wilcox",
+          "Jill Stein",
+          "blank",
+          0
+        ],
+        [
+          2022,
+          "Washington",
+          "Write-In",
+          "blank",
+          0
+        ],
+        [
+          2020,
+          "Perry",
+          "Write-In",
+          "dash",
+          0
+        ]
+      ]
+    },
+    {
+      "check": "visual_transcription_full_image_paths_and_region_bounds",
+      "result": "PASS",
+      "evidence": "all explicit readings"
+    },
+    {
+      "check": "separate_all67_ballot_registration_absentee_party_report_footers_raw_positions",
+      "result": "PASS",
+      "evidence": "all five integer fields for 2024, 2022, 2020"
+    },
+    {
+      "check": "ballot_registration_absentee_sensitivity_orders_denominators_thresholds",
+      "result": "PASS",
+      "evidence": "county report all three fields and available raw native field scopes"
+    },
+    {
+      "check": "exact_parent_original_HTML_hyperlinks_and_turnout_rate_scopes",
+      "result": "PASS",
+      "evidence": {
+        "linked_child_receipts": 13,
+        "link_observations": 51,
+        "exact_rate_rows": 204
+      }
+    },
+    {
+      "check": "relative_markdown_links_file_size_bounds_no_dependencies_or_caches",
+      "result": "PASS",
+      "evidence": {
+        "links": 34,
+        "seal_phase_generated_links_verified_by_post_seal_readonly_audit": [
+          "validation.json",
+          "final-seal.json",
+          "asset-manifest.json"
+        ],
+        "largest_owned_bytes": 15256104
+      }
+    },
+    {
+      "check": "all_prior_owned_body_histories_reconstruct_exactly",
+      "result": "PASS",
+      "evidence": 17
+    }
+  ],
+  "source_hashes": [
+    {
+      "path": "senate/2026/alabama/data/news/sos-primary-release.html.gz",
+      "stored_sha256": "77ed92a18a52ed1824de99a2cc22265ab682e0a3db369f1be672dbdc4da061e5",
+      "raw_sha256": "06f12b3bdbe8c1c3af2c2d610b069665f1ca3e3d0ecc8441193ffc92fb223b4a",
+      "raw_bytes": 39312
+    },
+    {
+      "path": "senate/2026/alabama/data/news/sos-election-information.html.gz",
+      "stored_sha256": "8681dce316d9013db97d767583598882cebea7ff3e9eb0c08bd2188657486551",
+      "raw_sha256": "de328970548c523e5b4cf0bfcc115288236826b2393fe7864c06a83daabbed32",
+      "raw_bytes": 43117
+    },
+    {
+      "path": "senate/2026/alabama/data/news/sos-2022-canvass-parent.html.gz",
+      "stored_sha256": "19ad2676c2079c0ad40e06ef86b4ca6bf30b6093558682314af39f0af239e668",
+      "raw_sha256": "f19e8b3d30b95673eedbe3ebba2e3980258179145f56f81ee7a756852404ff04",
+      "raw_bytes": 36444
+    },
+    {
+      "path": "senate/2026/alabama/data/news/sos-2022-canvass-original.html.gz",
+      "stored_sha256": "3e809a8434de0f89f83fa409f5f6931e000b9ab5d09853428ef6cda8e216a737",
+      "raw_sha256": "2f924587c91a72f161913a110612125bbc17b78151e20963a0003774666091ed",
+      "raw_bytes": 7706312
+    },
+    {
+      "path": "senate/2026/alabama/data/news/sos-2024-results-index.html.gz",
+      "stored_sha256": "da55a3c97578820fbcb35883f6ddc7e84c3d07d8ad34297ab1a2c31b66c441b3",
+      "raw_sha256": "f288118e5a2eaf7c17992555683ce938ac95644aae22b09e66bb1fb08a61742c",
+      "raw_bytes": 66484
+    },
+    {
+      "path": "senate/2026/alabama/data/news/sos-2020-results-index.html.gz",
+      "stored_sha256": "e2abe8dfda018d729cd6c703006929cd5ef99012f5e67e950f5d4ddac3dd9b30",
+      "raw_sha256": "9174bd28c19f76b584778fdd254f8c6202e8d7221110846dcf594bcaf579f642",
+      "raw_bytes": 58939
+    },
+    {
+      "path": "senate/2026/alabama/data/news/sos-2024-canvass-original.html.gz",
+      "stored_sha256": "cfc104204e4fc703a9f45b0b2c3e477764c1dbd122fe5157fe57f85ac900363f",
+      "raw_sha256": "88ec1f92e29aca3a715981f8540fad2351e8dfde8bc252022821ce108efad49d",
+      "raw_bytes": 46116016
+    },
+    {
+      "path": "senate/2026/alabama/data/news/sos-2020-canvass-original.html.gz",
+      "stored_sha256": "8c702eecc2913597fd92e9529d629d4323ee180c1b55c25b06919e01be551b14",
+      "raw_sha256": "2cb5744552cf0574234fa8e731adbe83ccee5ae3421ee4e8e28c35c47a6d7176",
+      "raw_bytes": 1571756
+    },
+    {
+      "path": "senate/2026/alabama/data/news/sos-2020-ballots-original.html.gz",
+      "stored_sha256": "0d12b667f8bf99d0e0a4fe63e74abe705461d763a80c5d36aafc566b8eff3950",
+      "raw_sha256": "8bb8a2389a54480766c8eb2aaff6f9994d622393e261c63a979a40c5c2c1b32c",
+      "raw_bytes": 107988
+    },
+    {
+      "receipt": "source/http/2026-10-20T181726926441+0000-e099bfe2a257.receipt.json",
+      "raw_sha256": "e099bfe2a257a5ba0993a56361959fb989f38041dbc8da12a5dad31cfeebab29",
+      "raw_bytes": 217435,
+      "status": 200
+    },
+    {
+      "receipt": "source/http/2026-10-20T181728442746+0000-adde72e6d3cf.receipt.json",
+      "raw_sha256": "adde72e6d3cf62dbff70beed20758b52680664f0211678a8f7fd18d9d1960849",
+      "raw_bytes": 56345,
+      "status": 200
+    },
+    {
+      "receipt": "source/http/2026-10-20T181750737580+0000-4ecca55fc235.receipt.json",
+      "raw_sha256": "4ecca55fc235018aeb2385debd375e6fa7aaa553c5bd67786add08d850efcc96",
+      "raw_bytes": 985426,
+      "status": 200
+    },
+    {
+      "receipt": "source/http/2026-10-20T181752983862+0000-4ea186b9e9ee.receipt.json",
+      "raw_sha256": "4ea186b9e9eefa7786b3708b8ffd2da5755a9ba5c018b4ff9d47a2ceec46983a",
+      "raw_bytes": 1192448,
+      "status": 200
+    },
+    {
+      "receipt": "source/http/2026-10-20T181755156856+0000-471fc54cfc87.receipt.json",
+      "raw_sha256": "471fc54cfc87984c8e6325c4baef6933545044cd6482a153c234b97f74d4693d",
+      "raw_bytes": 938137,
+      "status": 200
+    },
+    {
+      "receipt": "source/http/2026-10-20T181804548954+0000-f1cfb4e8619b.receipt.json",
+      "raw_sha256": "f1cfb4e8619bbf4a0efbea0582abdbe40b9b23285d611740038901bc328b528b",
+      "raw_bytes": 129608,
+      "status": 200
+    },
+    {
+      "receipt": "source/http/2026-10-20T181806078987+0000-823fe88d8227.receipt.json",
+      "raw_sha256": "823fe88d82277f6ea8cb42b4d1a0fc9f214608c0568b94afab009d75fbb678ca",
+      "raw_bytes": 301371,
+      "status": 200
+    },
+    {
+      "receipt": "source/http/2026-10-20T181959808760+0000-c2f4687e09b8.receipt.json",
+      "raw_sha256": "c2f4687e09b80676de7f68dec92ebea395209616dbc6f895520e547c5f68c0f5",
+      "raw_bytes": 8531,
+      "status": 200
+    },
+    {
+      "receipt": "source/http/2026-10-20T182001750005+0000-5c2800a156f3.receipt.json",
+      "raw_sha256": "5c2800a156f356c1150f95c8d606f543dd233e95ceb24f8e5f9a5ae7ef2a40db",
+      "raw_bytes": 422065,
+      "status": 200
+    },
+    {
+      "receipt": "source/http/2026-10-20T182011912735+0000-dbb8540ace50.receipt.json",
+      "raw_sha256": "dbb8540ace50584ad92c20fec3fc9fef0f5f24a3d317b13d2ed4eb7d578a00a0",
+      "raw_bytes": 397013,
+      "status": 200
+    },
+    {
+      "receipt": "source/http/2026-10-20T182014532854+0000-a3a109642073.receipt.json",
+      "raw_sha256": "a3a109642073bd075596e0d2a0d3fa5c5a692b1178f12e13532a73987c2c89c6",
+      "raw_bytes": 641392,
+      "status": 200
+    },
+    {
+      "receipt": "source/http/2026-10-20T182016160846+0000-707afb050c7b.receipt.json",
+      "raw_sha256": "707afb050c7bc052ce8eca51ced59b56641acedfb7c28e7ae5a1e164da2f71ae",
+      "raw_bytes": 50648,
+      "status": 200
+    },
+    {
+      "receipt": "source/http/2026-10-20T182017608920+0000-9a8da843edc5.receipt.json",
+      "raw_sha256": "9a8da843edc524791a6e46bc545cf208936fe23e1b63ec794b8ca5a0114b6559",
+      "raw_bytes": 44621,
+      "status": 200
+    },
+    {
+      "receipt": "source/http/2026-10-20T182019068693+0000-9f6e5f6eb6ac.receipt.json",
+      "raw_sha256": "9f6e5f6eb6ac2f5e9a36d5fd01dec77991bddc75118f748a069441a4782970d6",
+      "raw_bytes": 126639,
+      "status": 200
+    },
+    {
+      "receipt": "source/http/2026-10-20T182109500270+0000-4f1a69210a68.receipt.json",
+      "raw_sha256": "4f1a69210a68808985d5982feb526f3e241d743bd7b690604f785192be5614ae",
+      "raw_bytes": 311460,
+      "status": 200
+    }
+  ],
+  "measurements": {
+    "2024": {
+      "native_units": 2085,
+      "county_parents": 67,
+      "candidate_sums": {
+        "Kamala D. Harris": 772412,
+        "Donald J. Trump": 1462616,
+        "Robert F. Kennedy Jr.": 12075,
+        "Chase Oliver": 4930,
+        "Jill Stein": 4319,
+        "Write-In": 8738
+      },
+      "denominator": 2265090,
+      "top15_votes": 115428,
+      "minimum80_count": 887,
+      "minimum80_votes": 1812818,
+      "preceding_count": 886,
+      "preceding_votes": 1811981,
+      "crossing_key": "AL:2024:general:01015:col030:OAK%20GROVE%20BAPT",
+      "remainder_count": 1198,
+      "remainder_votes": 452272,
+      "unlabeled_populated_columns": 0
+    },
+    "2022": {
+      "native_units": 2074,
+      "county_parents": 67,
+      "candidate_sums": {
+        "Will Boyd": 436746,
+        "Katie Britt": 942154,
+        "John Sophocleus": 32879,
+        "Write-In": 2459
+      },
+      "denominator": 1414238,
+      "top15_votes": 60242,
+      "minimum80_count": 893,
+      "minimum80_votes": 1131580,
+      "preceding_count": 892,
+      "preceding_votes": 1131060,
+      "crossing_key": "AL:2022:general:01123:col015:HACKNEYVILLE%20COMM%20CTR",
+      "remainder_count": 1181,
+      "remainder_votes": 282658,
+      "unlabeled_populated_columns": 0
+    },
+    "2020": {
+      "native_units": 2111,
+      "county_parents": 67,
+      "candidate_sums": {
+        "Doug Jones": 920478,
+        "Tommy Tuberville": 1392076,
+        "Write-In": 3891
+      },
+      "denominator": 2316445,
+      "top15_votes": 226674,
+      "minimum80_count": 874,
+      "minimum80_votes": 1853909,
+      "preceding_count": 873,
+      "preceding_votes": 1853059,
+      "crossing_key": "AL:2020:general:01123:col017:MANOY%20V_%20H_",
+      "remainder_count": 1237,
+      "remainder_votes": 462536,
+      "unlabeled_populated_columns": 0
+    }
+  },
+  "independent_peer_agreement": false,
+  "peer_agent_id": null,
+  "coordinator_acceptance": false,
+  "external_qualifications": [
+    "pending actual independent peer reciprocal and coordinator acceptance",
+    "November2026 legal geography/native IDs/crosswalk not established",
+    "generic write-in rows do not establish eligible named/valid write-in allocation",
+    "source-scoped ballot/registration and within-unit statistical discrepancies remain unrepaired",
+    "no live collector/cadence/outstanding-ballot count/forecast calibration"
+  ]
+}

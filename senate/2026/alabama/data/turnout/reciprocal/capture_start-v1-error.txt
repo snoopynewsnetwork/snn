@@ -1,0 +1,3 @@
+First complete peer tar capture verified all 307 file paths/hashes but failed size-bound assertion before any owned mutation or peer comparison:
+AssertionError at capture_start.py line10: archive.stat().st_size < 40000000
+Measured temporary archive 54,570,159 bytes; peer's complete original raw entity source/http/54edd...gz is 28,765,007 bytes. Revised capture reuses this unchanged original by exact individual stored/raw pin and receipt role instead of duplicating it. Failed code and error retained. Oversized temporary tar is superseded, not an owned artifact.

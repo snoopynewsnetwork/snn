@@ -8,7 +8,7 @@
 - [Partisanship and conditional targets](county-partisanship.md): all required contests, distinct API/FullData publications and a named Libertarian opposition scenario for 2020.
 - [Independent coordinator review](research-review.md) and [actual dispatch](research-dispatch.md).
 
-This is the reviewed first pair. Reciprocal turnout continuation and official-results/maps research remain ahead. Historical numerical agreement does not approve current geography, eligible write-ins, November feeds, remaining ballots or calibrated probabilities. The race tracker below remains unchanged.
+This is the reviewed first pair. The same turnout worker completed bounded reciprocal review; [complete historical source authority](data/coordinator-priority-acceptance.json) passed exhaustive replay. Original official-results/maps assignments await actual released slots. [Newsroom sources](local-news-results.md) and the [proposed collection strategy](live-polling-strategy.md) retain separate setup/access qualifications. Historical numerical agreement does not approve current geography, eligible write-ins, November feeds, remaining ballots or calibrated probabilities. The race tracker below remains unchanged.
 
 ## Seat details
 

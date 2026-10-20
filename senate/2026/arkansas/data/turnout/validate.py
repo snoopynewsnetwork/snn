@@ -4,7 +4,7 @@
 --write records validation.json before sealing. --sealed verifies manifest
 membership and hashes and never writes. No build module or peer is imported.
 """
-import argparse, collections, csv, decimal, gzip, hashlib, io, json, pathlib, re
+import argparse, collections, contextlib, csv, decimal, gzip, hashlib, io, json, pathlib, posixpath, re
 import tarfile, urllib.parse, xml.etree.ElementTree as ET, zipfile, subprocess, tempfile
 P=pathlib.Path(__file__).resolve().parent;S=P.parents[1];REPO=P.parents[4]
 def sha(b):return hashlib.sha256(b).hexdigest()
@@ -20,7 +20,7 @@ def receipt_body(r,path):
     return raw
 def main():
     ap=argparse.ArgumentParser();ap.add_argument('--write',action='store_true');ap.add_argument('--sealed',action='store_true');args=ap.parse_args();assert not(args.write and args.sealed)
-    result={'status':'pass','peer_agreement':'unavailable: peer not launched; coordinator acceptance pending','tests':{}}
+    result={'status':'pass','peer_agreement':'bounded captured-final baseline source/field/order reciprocal passed; coordinator/legal/current approval pending','tests':{}}
     tests=result['tests'];receipts={};bodies={}
     for f in sorted((P/'source').glob('*.receipt.json'))+sorted((P/'source/acquired').glob('*.receipt.json')):
         r=load(f);b=receipt_body(r,f);receipts[r['id']]=r;bodies[r['id']]=b
@@ -182,6 +182,50 @@ def main():
         for r in snapshot['members']:
             mb=tar.extractfile(r['path']).read();assert len(mb)==r['bytes'] and sha(mb)==r['sha256']
     tests['original_first_frozen_snapshot_members']=len(snapshot['members'])
+    # Whole old bodies are reconstructed from captures, never from rewritten current files.
+    from reciprocal import Capture,Checks,run as reciprocal_run
+    from reciprocal_status import verify as verify_status
+    from test_reciprocal import run as fixture_run
+    own_capture=Capture('own');peer_capture=Capture('peer')
+    assert own_capture.audit()==1028 and peer_capture.audit()==314
+    verify_status()
+    allowed={'turnout.md','data/turnout/source/SCHEMA.md','data/turnout/report.py','data/turnout/validate.py','data/turnout/seal.py','data/turnout/validation.json','data/turnout/final-seal.json','data/turnout/asset-manifest.json','data/turnout/priority-set.json'}
+    changes=[];unchanged=0
+    for path,r in own_capture.records.items():
+        old=own_capture.read(path);current=(S/path).read_bytes()
+        if old!=current:assert path in allowed,('unauthorized old canonical/body change',path);changes.append(path)
+        else:unchanged+=1
+    with contextlib.redirect_stdout(io.StringIO()):
+        reciprocal_result,_,_=reciprocal_run(False)
+        fixture_result=fixture_run(False)
+    Checks().eq(load(P/'reciprocal.json'),reciprocal_result,'saved-vs-recomputed-whole-reciprocal-proof')
+    Checks().eq(load(P/'reciprocal-fixtures.json'),fixture_result,'saved-vs-recomputed-whole-negative-proof')
+    replay=load(P/'isolated-replay.json');assert replay['status']=='pass' and len(replay['outputs'])==49
+    assert not replay['network_allowed'] and not replay['producer_writes_allowed'] and not replay['peer_derivatives_allowed']
+    for r in replay['outputs']:
+        old=own_capture.read(r['path']);assert sha(old)==r['sha256'] and len(old)==r['bytes'] and r['equals_whole_captured_old_body']
+    tests['bounded_captured_final_reciprocal']=dict(checks=reciprocal_result['checks'],errors=0,own_whole_bodies=1028,peer_whole_bodies=314,unchanged_old_whole_bodies=unchanged,only_allowed_changes=sorted(changes),all_other_canonical_contract_fields_and_native_csv_exact=True,negative_fixtures=fixture_result['negative_cases'],all_negative_inputs_rejected=True,isolated_exact_rebuild_bodies=49,scope='captured final original/source/field/order/array agreement only; coordinator/legal/current/Novfeed/calculator/scenario/outcome approval not implied')
+    # Source identifiers and exact requested/final URL fields are audited offline.
+    urlcount=0
+    for sid,r in receipts.items():
+        for url in [r['url'],r.get('final_url') or r.get('http',{}).get('url_effective')]:
+            if url is None:continue
+            parsed=urllib.parse.urlsplit(url);assert parsed.scheme in ['http','https'] and parsed.hostname and parsed.username is None,(sid,url);urlcount+=1
+    captured_links=[]
+    for label,cap in [('turnout',own_capture),('baseline',peer_capture)]:
+        for path in cap.records:
+            if not path.endswith('.md'):continue
+            for href in re.findall(r'\]\(([^)]+)\)',cap.read(path).decode()):
+                href=href.strip('<>')
+                if href.startswith(('http:','https:','#','mailto:')):continue
+                target=posixpath.normpath(str(pathlib.PurePosixPath(path).parent/urllib.parse.unquote(href.split('#')[0])))
+                if target not in cap.records:
+                    # Cross-package raw references are resolved only to an individually pinned original or a captured own body.
+                    rel=str(pathlib.PurePosixPath('senate/2026/arkansas')/target)
+                    pinned={r['path'] for r in own_capture.capture['shared_originals']}
+                    assert target in own_capture.records or rel in pinned,('captured relative link outside frozen evidence',label,path,href,target)
+                captured_links.append(dict(capture=label,from_path=path,to_path=target))
+    tests['exact_source_identifier_url_and_captured_link_audit']=dict(requested_final_urls=urlcount,selected_source_identifiers_and_pointers_checked_in_reciprocal=True,captured_relative_links=len(captured_links))
     files=owned();assert all(not f.is_symlink() for f in files)
     assert all(f.stat().st_size<40000000 for f in files)
     assert not any(any(t in f.parts for t in ['node_modules','__pycache__','.cache']) or f.suffix=='.pyc' for f in files)

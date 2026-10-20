@@ -1,0 +1,4 @@
+{
+  "actual_error": "offline_rebuild.py line77 AssertionError: expected oldhistory16/regenerated17",
+  "finding": "Coordinator copied the helper but its hardcoded temporary WORK path reused the worker preceding rebuild tree. That tree is not a clean isolated rerun. Preserve regenerated result and rerun with a fresh coordinator-only temporary base. No sealed producer writes or source/count/model repair."
+}

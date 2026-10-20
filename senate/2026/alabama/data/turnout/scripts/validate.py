@@ -79,7 +79,7 @@ check('direct_original_target_candidate_method_admin_cell_comparisons',{'cells_c
 check('all_county_native_candidate_and_statewide_controls',measurements)
 check('independent_SQLite_full_orders_exact_weights_integer_min80_and_remainders','all three election universes')
 # Complete primary dispatch equality and disjointness.
-contract=j('priority-set.json');sm=all_summary['2024'];assert contract['full_order']==sm['full_order'] and contract['ordered_priority_keys']==sm['priority_keys'];assert contract['remainder_keys']==sm['remainder_keys'];assert len(contract['parents'])==67;assert contract['units']==j('native-units-2024.json');assert not contract['coordinator_acceptance'] and not contract['independent_peer_agreement'] and contract['peer_agent_id'] is None;assert not contract['legal_geographic_approval_2026']
+contract=j('priority-set.json');sm=all_summary['2024'];assert contract['full_order']==sm['full_order'] and contract['ordered_priority_keys']==sm['priority_keys'];assert contract['remainder_keys']==sm['remainder_keys'];assert len(contract['parents'])==67;assert contract['units']==j('native-units-2024.json');assert not contract['coordinator_acceptance'] and contract['independent_peer_agreement'] is True and contract['peer_agent_id']=='f2db457b-3e3c-47d0-a65c-7d6be8bbe5c7';peerproof=j('reciprocal/comparison.json');assert contract['peer_agreement_scope']['proof_sha256']==sha((R/'reciprocal/comparison.json').read_bytes());assert peerproof['counts']['native_units']==6270 and peerproof['counts']['ballot_numeric_positions']==1020;assert not contract['legal_geographic_approval_2026']
 keys=set(contract['full_order']);assert set(contract['priority_keys']).isdisjoint(contract['remainder_keys']);assert set(contract['priority_keys'])|set(contract['remainder_keys'])==keys
 for p in contract['parents']:assert set(p['priority_constituent_keys'])|set(p['remainder_constituent_keys'])==set(p['constituent_keys']);assert not set(p['priority_constituent_keys'])&set(p['remainder_constituent_keys'])
 check('complete_dispatch_coverage_priority_parent_constituents_administration_and_pending_acceptance',{'parents':67,'units':len(keys),'priority':len(contract['priority_keys'])})
@@ -130,6 +130,15 @@ for row in rates:
  assert Fraction(row['turnout_exact'])==Fraction(row['report_ballots'],row['report_registered_voters']);assert Fraction(row['absentee_fraction_exact'])==Fraction(row['report_absentee_ballots'],row['report_ballots']);assert row['turnout_printed_matches_integer_ratio'] and row['absentee_printed_matches_integer_ratio']
 check('exact_parent_original_HTML_hyperlinks_and_turnout_rate_scopes',{'linked_child_receipts':sum(bool(c['observed_parent_links']) for c in chains),'link_observations':linked,'exact_rate_rows':204})
 
+# Full exact captured body/history reconstruction, not equality of old pins to revised current files.
+import importlib.util
+spec=importlib.util.spec_from_file_location('al_captured_audit',R/'reciprocal/audit_captures.py');module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module);captureproof=module.verify();check('complete_original_phase_and_actual_final_peer_body_reconstruction',captureproof)
+original_archive=__import__('tarfile').open(R/'reciprocal/turnout-original-phase.tar.gz');original_contract=json.loads(original_archive.extractfile('data/turnout/priority-set.json').read())
+for key in original_contract:
+ if key not in ['peer_agent_id','independent_peer_agreement','dispatch_status']:assert contract[key]==original_contract[key],key
+assert contract['peer_agreement_scope']['current_legal_geographic_admission'] is False
+check('unchanged_canonical_source_counts_native_masks_order_and_contract_semantics','Only explicit peer identity/agreement/dispatch status and added bounded proof metadata differ from captured original contract. All original CSV/source body pins independently unchanged.')
+
 # Every local Markdown target exists; all owned files below object bound and no caches/deps.
 links=[]
 for p in [S/'turnout.md',R/'source/SCHEMA.md']:
@@ -144,5 +153,5 @@ history=0
 for p in (R/'history').glob('*.json'):
  r=json.loads(p.read_text());b=gzip.decompress((p.parent/r['stored_body']).read_bytes());assert sha(b)==r['sha256'] and len(b)==r['original_bytes'];history+=1
 check('all_prior_owned_body_histories_reconstruct_exactly',history)
-result={'status':'PASS','scope':'Deterministic historical research/offline QA; no independent peer or coordinator acceptance asserted','checks':checks,'source_hashes':source_hashes,'measurements':measurements,'independent_peer_agreement':False,'peer_agent_id':None,'coordinator_acceptance':False,'external_qualifications':['pending actual independent peer reciprocal and coordinator acceptance','November2026 legal geography/native IDs/crosswalk not established','generic write-in rows do not establish eligible named/valid write-in allocation','source-scoped ballot/registration and within-unit statistical discrepancies remain unrepaired','no live collector/cadence/outstanding-ballot count/forecast calibration']}
+result={'status':'PASS','scope':'Deterministic historical research/offline QA plus actually captured-final bounded historical peer evidence agreement; no coordinator/current/legal/geography/model admission','checks':checks,'source_hashes':source_hashes,'measurements':measurements,'independent_peer_agreement':True,'peer_agent_id':'f2db457b-3e3c-47d0-a65c-7d6be8bbe5c7','coordinator_acceptance':False,'external_qualifications':['coordinator acceptance pending; actual bounded captured-final historical peer reciprocal complete','November2026 legal geography/native IDs/crosswalk not established','generic write-in rows do not establish eligible named/valid write-in allocation','source-scoped ballot/registration and within-unit statistical discrepancies remain unrepaired','no live collector/cadence/outstanding-ballot count/forecast calibration']}
 write(R/'validation.json',json.dumps(result,indent=2)+'\n');print(json.dumps({'status':'PASS','checks':len(checks),'original_field_cells_checked':field_checks,'original_raw_cells_checked':raw_cells,'members':member_count},indent=2))

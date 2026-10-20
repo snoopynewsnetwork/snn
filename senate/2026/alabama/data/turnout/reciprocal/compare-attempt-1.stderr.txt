@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/Users/tqbf/codebase/snn/senate/2026/alabama/data/turnout/reciprocal/compare_captured.py", line 47, in <module>
+    eq((c['candidate_literal'].strip(),c['party_literal'],c['value']),(vc['candidate']['name'],vc['candidate']['party'],vc['votes']),'vector identity/count');eq(vc['candidate']['id'],vc['candidate']['name'],'vector candidate id');eq(vc['candidate']['scope'],'generic_write_in' if c['candidate_literal'].strip()=='Write-In' else 'named','vector write-in scope');counts['native_candidate_cells']+=1
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tqbf/codebase/snn/senate/2026/alabama/data/turnout/reciprocal/compare_captured.py", line 16, in eq
+    if a!=b:raise AssertionError({'scope':scope,'own':a,'peer':b})
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'scope': 'vector identity/count', 'own': ('Jill Stein', 'IND', 7), 'peer': ('Chase Oliver', 'IND', 1)}
