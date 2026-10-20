@@ -1051,3 +1051,5 @@ is the only other active researcher. New Mexico maps take the next actual
 released slot. The completed count remains 21 new states plus Michigan.
 
 New Mexico first-pair/source-authority component published `520cdba5ed99e9e1f3b1389ee3a30e2031757e84`; push succeeded and exact remote verified. All 408 staged blobs matched reviewed bytes. Official-source work remains active, maps remain queued, and the completed-state count is unchanged.
+
+Oregon original-first turnout/source component published `15b6fdf533e98bb38f95c7806eee2114be7a9528`; push succeeded and exact remote verified. Independent source review passes 48,053 checks. Canonical native priority is unavailable and the completed-state count remains unchanged.
