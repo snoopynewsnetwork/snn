@@ -1113,3 +1113,15 @@ RIofficial reviewed component published5aea0f638bfee050b97b0744f7a174e1bcffa49a;
 
 
 Bounded Virginia regional followup: sixactualWDBJ/WTVRlink-chain requests/eightcomplete entities. WDBJ actualresults GSync2713inactive2026General with39races/143zerochoices; Senate61210 remainspublisher setup only. WTVRlinked currentguide iscivic/newsroom context, notprimarylaw/ballot approval. Complete25target regionalmanifest/read-only review pass; oldnewsledger/activeworkerbytes untouched. RImaps6c5beb21 andVAturnout61838d17 remainonlyactive;23newcomplete states plusMichigan.
+
+
+New Virginia regional pack published0ba0cc3a73d941d472ddf7c20f2bcfc855d455bb;push0/exactremote andall28reviewedobjects verified,1,128,760changedbytes/max541,952. Sixrequests/eightwholeentities andsource-specific no-count-admission qualifications retained. No activeworker data or older unreviewedpreparation staged.
+
+
+Virginia turnout61838d17 actually finished originalfirst sealed388assets; all2669native/133parents/40035candidate-method controls. Its releasedslot launched originalbaseline8bfac51f after fresh Research/high profile/provider inspection, with strictactualCLI input appendix and independent2024president requirement. OnlyRImaps6c5beb21 andVAbaseline8bfac51f areactive;23newcomplete plusMichigan,9unlaunched. Turnout source-known1538prefix unaccepted pending independentreview/actualpeer; no legal/current approval.
+
+
+RhodeIsland maps6c5beb21 actually finished/frozen; its post-seal replay/rebuild294bodies passed. Releasedslot launched original Alabama turnout5b42c895-68ea-40c4-9b7c-534e46d14d7a after fresh4profile notes/provider Research/high inspection. Exact14,140B promptSHA6f336fdf2f58887f9d73d5bebf8f5fb4b99e79048a590e97e72507fb0e275182. Only other researcher Virginia baseline8bfac51f; no thirdworker. RI independent maps/whole-state review remains pending. VA baseline independently closes fourcontests/133parents but witness stillbeingfrozen, not actualfinish. Twenty-three newcomplete states plusMichigan;8unlaunched.
+
+
+RIwhole four-question package now independently passescomplete state validation:2683manifest targets/461643439storedB/max26873599, all2558producer-owned hashes unchanged. Rootmaps316080checks andactual fullpostsealaudit/294bodyrebuild pass. Readyfor24thnewstatepublication; current/legal/live approvals remainqualifiedfalse. Actualresearchers remainonlyVAbaseline8bfac51f andALturnout5b42c895. ALactual officialXLSZIP recovery closes all6/4/3candidate nativecontrols across67members/year; finalorder/QA stillactive. No earlyfinish inferred.

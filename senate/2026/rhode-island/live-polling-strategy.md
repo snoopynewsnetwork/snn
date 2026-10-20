@@ -1,6 +1,6 @@
 # Rhode Island collection and remaining-vote strategy
 
-Prepared **2026-10-18 UTC / 2026-10-17 Central**. Both original-first source assignments, the narrow Cranston detail correction and bounded reciprocal review are complete. Qualified historical dispatch is accepted; official-source research is complete and independently reviewed; maps are active. Read the [news survey](local-news-results.md); no live implementation or calibrated forecast is supplied.
+Prepared **2026-10-18 UTC / 2026-10-17 Central**. Both original-first source assignments, the narrow Cranston detail correction and bounded reciprocal review are complete. Qualified historical dispatch is accepted; all four bounded question packages are complete and independently reviewed. Read the [news survey](local-news-results.md); no live implementation or calibrated forecast is supplied.
 
 ## Rhode Island-specific preflight
 
@@ -62,3 +62,26 @@ The [official-source package](official-results.md) now retains the state Board/S
 Follow the [operative primary-rule review](data/results-sources/RULES.md) and recheck later changes before operations. Enacted2026chapter60 specifies federal recount requests within nine days after declaration; the Secretary calendar'sNovember12/after-election plan and older seven-day guide/rule remain distinct publications. Federal plurality/new-election tie remedy, strict recount denominators/thresholds, ordinary mail receipt by8pm, UOCAVA/cure receipt lanes and NewShoreham9am opening are separately sourced. January2027-effective municipal duty changes are not applied to2026. Signed mail-processing session schedules are plans rather than demonstrated update cadence or proof all ballots are counted.
 
 An actual Foster1201front specimen shows McKayRepublican/ReedDemocrat/BahryIndependent plus write-in, while Cranston's signed warrant has a0727no-polling-place/no-voters row. These local documents do not establish statewide later ballot/eligible-writein completeness or a current source-label/polygon match. All current native/choice/method/geographic joins remain null. Account for the Board's2022directory freshness warning, two SOS reader representations without rawHTTP metadata, unavailable older duplicate-request receipt metadata and final-body versus intermediate-redirect scope. The exact eligible outstanding pool, measured November cadence and calibrated probability remain unavailable.
+
+
+## Downloaded map compatibility
+
+The [map atlas](maps/index.html) preserves242priority observations plus all458/
+216remainder/497inventory/43parent scopes, using complete shared-municipality
+resources without child matches. Both full416-feature service snapshots have
+separate native CRS/coordinates/metadata and exact pre/post/count/ID-page evidence;
+RIGIS1584rings and Secretary420rings cannot be treated as an interchangeable
+boundary universe.21actual PDFs/36rendered pages include historical maps, warrants,
+rosters and sample ballots with distinct scopes. No votes, ballots, registration
+or unallocated federal-admin counts were spatially assigned.
+
+Preserve these qualified historical resources for later manual comparison. Do
+not attach live vote rows merely by code, count, municipality, filename year or
+visual resemblance. Cranston's2022adoption/reference disclaimer, Glocester's
+conflicting line-change descriptions, RIGIS's invalid original and unproved
+same-vintage legal outline remain in the compatibility ledger. Current/local
+boundary authority and actual November reporting identities need separate
+source evidence before any operational join. The completed bounded research
+provides sources, conditional arithmetic and replay; it supplies no live
+collector, observed November cadence, eligible remainder estimate or calibrated
+win probability.

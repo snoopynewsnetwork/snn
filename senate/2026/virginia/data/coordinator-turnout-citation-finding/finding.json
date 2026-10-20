@@ -1,0 +1,40 @@
+{
+  "status": "confirmed_owned_report_generation_citation_defect_pending_same_worker_narrow_repair",
+  "recorded_utc": "2026-10-20T18:09:48.203114+00:00",
+  "worker": "61838d17-5eed-4661-8d3f-e7b5a2825994",
+  "wrong_report_target": "https://enr.elections.virginia.gov/cdn/results/d2c804ee-4ec2-46bb-91d7-5b41526eab03/Election%20Results_e5b689ae-a 931-4b8a-a 5f7-7392e9571c61.csv",
+  "actual_retained_requested_final_URL": "https://enr.elections.virginia.gov/cdn/results/d2c804ee-4ec2-46bb-91d7-5b41526eab03/Election%20Results_e5b689ae-a931-4b8a-a5f7-7392e9571c61.csv",
+  "original_complete_receipt": {
+    "path": "data/turnout/source/acquired/enr-2024-results-report.receipt.json",
+    "bytes": 3438,
+    "sha256": "fc240b6ba30520c7ac80c2d7bfdb2ca0c568a3bab29bc50ac8dd3a3b2d5cb364"
+  },
+  "cause": "Final prose-spacing regex includes word a followed by digits and rewrites a931/a5f7 hyphen-delimited UUID components inside a Markdown URL. Generator source literal is correct before this blanket formatting substitution. Source CSV bytes/counts/order are unchanged; external URL validation did not detect it.",
+  "frozen_before_any_possible_repair": [
+    {
+      "original_path": "turnout.md",
+      "original_bytes": 31537,
+      "original_sha256": "d0c164680bec4ec3cd1af78ba62b3da44e87d849c63b0f6822ce671919ad6db1",
+      "stored_path": "data/coordinator-turnout-citation-finding/turnout.md.before-citation-fix.gz",
+      "stored_bytes": 12644,
+      "stored_sha256": "73cfac44b5fcbdc8536b92d9946a148ef287a970537ac9dd56e35d2df2a6fc70"
+    },
+    {
+      "original_path": "data/turnout/build_turnout.py",
+      "original_bytes": 41477,
+      "original_sha256": "96098a7c105462e6002a22d6de52970c7f5ddd83403dbde537388d88ffebdfc2",
+      "stored_path": "data/coordinator-turnout-citation-finding/build_turnout.py.before-citation-fix.gz",
+      "stored_bytes": 14090,
+      "stored_sha256": "644b2e1936faf2b838c684074f0d12f347b8d2642bfa8cfe90dd1481343e994d"
+    }
+  ],
+  "requested_bounded_correction": "Protect exact Markdown/code/source identifiers from prose formatting (or remove unsafe blanket substitution), restore actual existing requested URL only, validate external citations against literal original/request edges without new source chasing. Preserve current full pre-peer body history, keep all source/numeric/native/order/CSV semantics exact. Bundle with later actual same-ID reciprocal when independent peer core and actual free slot permit.",
+  "producer_modified_by_coordinator": false,
+  "finished_worker_contacted_or_restarted": false,
+  "new_worker_required": false,
+  "actual_active_workers": [
+    "6c5beb21-b481-401b-a92f-fd3346f2e113",
+    "8bfac51f-775a-4104-ad5c-42daa3bfdc4c"
+  ],
+  "current_November_or_geography_approval": false
+}

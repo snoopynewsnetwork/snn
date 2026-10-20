@@ -1,0 +1,62 @@
+{
+  "status": "finished-qualified-historical-fourth-question",
+  "authority_path": "data/coordinator-priority-acceptance.json",
+  "report_pin": {
+    "path": "precinct-maps.md",
+    "bytes": 17170,
+    "sha256": "a06ec9c5f6785d70d9efb5ab98dadff437f7b1a7bcb5349d0cd5ebfd2178eefd"
+  },
+  "review_entry_points": [
+    "precinct-maps.md",
+    "maps/index.html",
+    "maps/derived/context-observations.json",
+    "maps/qa/authority-replay.json",
+    "maps/qa/historical-reconstruction.json",
+    "maps/qa/publication-reconstruction.json",
+    "maps/qa/native-audit.json",
+    "maps/qa/manual-visual-review.json",
+    "maps/qa/validation.json",
+    "maps/qa/reproduction.json",
+    "maps/final-seal.json",
+    "maps/manifest.json"
+  ],
+  "source_scope": {
+    "ordered_priority": 242,
+    "ordered_full": 458,
+    "ordered_remainder": 216,
+    "inventory_2024": 497,
+    "municipal_parents": 39,
+    "admin_parents": 4,
+    "priority_municipal_chains": 37,
+    "all_historical_inventory_objects": 1459,
+    "five_contest_native_rows": 2460
+  },
+  "actual_acquisitions": {
+    "requests": 197,
+    "complete_statewide_native_services": 2,
+    "features_per_service": 416,
+    "original_PDFs": 21,
+    "all_rendered_pages": 36,
+    "actual_manual_images": 15,
+    "actual_manual_PDF_pages": 12,
+    "actual_manual_native_previews": 3
+  },
+  "substantive_findings": [
+    "Two416-feature copies differ: RIGIS EPSG3438/1584 rings/151257 XY versus SOS EPSG3857/420 rings/151110 XY. Same count/labels do not establish equality.",
+    "Native pre/post metadata equal separately; complete counts/IDs and <=50-ID requests close. All attrs/native geometry/raw bytes retained; no geometry repair or transformation.",
+    "RIGIS OBJECTID304 invalid single-ring remains unchanged. GEOS only340 RIGIS/412 SOS single-ring-valid subset; no legal gap/overlap claim.",
+    "Full Cranston adopted2022 ward/precinct maps and November2026 warrant;0727 explicitly no polling place/no voters in that source. No historical/current/result feed join.",
+    "Glocester precinct-named2026 PDFs are sample ballots. Separate actual2022/2026 maps have unresolved line-change notes.",
+    "Actual Newport ward/precinct maps, Pawtucket2022 map, Coventry2026 site roster and Westerly six-page booklet retain separate scopes.",
+    "Allfour administrative contexts retain source parent RI:state and separate sensitivity parent keys; no polygons or municipal vote allocation."
+  ],
+  "qualifications": [
+    "Shared municipality/source-resource scope only for all242 historical observations; no finer sourcecode/physical/current/legal/result-ID match approved.",
+    "Four priority homepages403; later exact resource timeouts/403s retained, no bypass/outreach. Full bounded chains and exact gaps remain.",
+    "No SHP/DBF/SHX acquired, no binary shapefile audit claimed. No same-vintage independent legal outline.",
+    "All source candidate/party/method/null/admin/raw-position controls, corrected1227/eight and historical1226/nine write-in scopes and old producer pending-peer metadata retained unchanged.",
+    "Coordinator/current/legal/native80/eligibleWI/feed/November/cadence/exactremainder/collector/forecast/calibration false/unknown, precise report qualifications; no optional active-official/coordinator review dependency."
+  ],
+  "final_audit_command": "PYTHONDONTWRITEBYTECODE=1 python3 -B maps/scripts/final_audit.py",
+  "disposition": "Coordinator d0fc3534-1613-4883-b48b-21a233fcfd9e alone accepts, publishes and performs Git. Worker ends after immutable final pins and final read-only audit; no further writes/research."
+}

@@ -68,7 +68,19 @@ independently reviewed. The finer minimum80set has242contexts/394,072votes after
 393,066through241;43municipal/admin parents are a separate sensitivity. All497
 inventory contexts,39absentSenate cases and four unallocated federal codes survive.
 The [coordinator review](research-review.md) documents full original/source-order
-checks and bounded gaps. Independent baseline/reciprocal review and qualified historical dispatch are complete. Official-source research is independently reviewed; maps are active. Current geographic/feed approval remains unavailable. Existing campaign and polling tracker sections are unchanged.
+checks and bounded gaps. Independent baseline/reciprocal review and qualified historical dispatch are complete. All four question packages are complete and independently reviewed. Current geographic/feed approval remains unavailable. Existing campaign and polling tracker sections are unchanged.
 
 
-The [baseline package](county-partisanship.md) and repaired [turnout research](turnout.md) now pass independent full-source and bounded-math review. [Qualified historical dispatch](data/coordinator-priority-acceptance.json) preserves242priority observations among458reported Senate contexts, plus all497inventory/39unavailable Senate cases and four separate federal administrative contexts. Full original write-in detail1227/eight local discrepancies and prior row6-only1226/nine are retained; source votes/order unchanged. [Official-source research](official-results.md) is complete and independently reviewed; map research is active. No current geographic/eligible-writein/live approval follows from this historical scope.
+The [baseline package](county-partisanship.md) and repaired [turnout research](turnout.md) now pass independent full-source and bounded-math review. [Qualified historical dispatch](data/coordinator-priority-acceptance.json) preserves242priority observations among458reported Senate contexts, plus all497inventory/39unavailable Senate cases and four separate federal administrative contexts. Full original write-in detail1227/eight local discrepancies and prior row6-only1226/nine are retained; source votes/order unchanged. [Official-source research](official-results.md) and [map research](precinct-maps.md) are complete and independently reviewed. No current geographic/eligible-writein/live approval follows from this historical scope.
+
+
+The [offline map atlas](maps/index.html) preserves all242priorities/458ranked
+Senate contexts/216remainder,497inventory and43complete parent scopes. Two complete
+416-feature native layers,21PDF originals/36rendered pages and all37priority
+municipal chains are retained. Native CRS/ring structures differ; shared municipal
+resources establish no child/current/legal identity. [Whole-package validation](data/coordinator-validation.json)
+and the [asset inventory](data/coordinator-asset-manifest.json) cover all four
+sealed assignments and independent coordinator reviews. This completes bounded
+historical election-night research, with current ballot/IDs, eligible write-ins,
+geometry, genuine November counts, cadence, remaining pool and calibration still
+qualified separately. Campaign/polling tracker fields above remain unfilled.

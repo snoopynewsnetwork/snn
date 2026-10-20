@@ -3,7 +3,8 @@
 Turnout's bounded original-first package is complete. The independent baseline
 worker has finished and is sealed. The same turnout worker has completed the
 confirmed detail correction and bounded reciprocal review. Qualified historical
-source dispatch is accepted; official-source research is active and maps queued.
+source dispatch is accepted; all four bounded question assignments are now complete
+and independently reviewed.
 
 [The source review](data/coordinator-turnout-original-review.json) passes951,928
 checks without producer imports or writes. It reconstructs all44members of six
@@ -82,7 +83,7 @@ The finished baseline component has now passed [independent source/native/math r
 
 [Final repair review](data/coordinator-turnout-repair-final-review.json) passes2,521checks, reconstructing all362oldbodies/361oldmanifest targets,375repaired preterminal bodies and235captured finished-baseline bodies.351oldbodies remain byte-identical. The full primary contract/CSV/nativeinventory/order/candidate controls/original227bodywitness and148original refs are unchanged; only confirmed detail-coverage, report/docs, proof and seal files changed. Producer final read-only audit passes396checks/18corruptions. Both full1227/eight and historicalrow6-only1226/nine remain exact, with trailing-space source names preserved.
 
-The [external qualified historical source authority](data/coordinator-priority-acceptance.json) is now independently validated by [full replay](data/coordinator-priority-validation.json):1,702,375checks,23complete roots,384whole companions,1,699,508recursive objects in12complete ordered partitions,632individual file pins and877exact historical body resolvers. It retains all458ranked Senate contexts,242priority/216remainder,497inventory with39unavailable Senate, all39municipal+4federal scopes and37prioritymunicipal chains. The reported printed+generic denominator491948 is accepted for historical research dispatch only; it is not legal eligible-writein/native80robustness/currentgeometry/feed approval. The frozen producercontract retains its old pending peer-status string by design; external independently checked capture proofs govern bounded source-core agreement, with no producerflag mutation or future/model/report equality claim. At that dispatch official1c1068c1 began; its finished package is now reviewed below. Original maps6c5beb21 is active in an actual released slot.
+The [external qualified historical source authority](data/coordinator-priority-acceptance.json) is now independently validated by [full replay](data/coordinator-priority-validation.json):1,702,375checks,23complete roots,384whole companions,1,699,508recursive objects in12complete ordered partitions,632individual file pins and877exact historical body resolvers. It retains all458ranked Senate contexts,242priority/216remainder,497inventory with39unavailable Senate, all39municipal+4federal scopes and37prioritymunicipal chains. The reported printed+generic denominator491948 is accepted for historical research dispatch only; it is not legal eligible-writein/native80robustness/currentgeometry/feed approval. The frozen producercontract retains its old pending peer-status string by design; external independently checked capture proofs govern bounded source-core agreement, with no producerflag mutation or future/model/report equality claim. At that dispatch official1c1068c1 began; its finished package is now reviewed below. Original maps6c5beb21 subsequently finished; its independent review is recorded below.
 
 
 ## Reviewed official-source component
@@ -93,4 +94,50 @@ The [official package](official-results.md) has finished bounded research across
 
 [Selected original visual/legal review](data/coordinator-official-visual-review.json) actually views only calendar physical13, Cranston's whole signed warrant page and Foster1201front original image. The calendar saysNovember12/after-election; enacted[2026chapter60](https://webserver.rilegislature.gov/PublicLaws/law26/law26060.htm) uses nine days after declaration and includes federal returns. Older seven-day guide/Part14 wording remains qualified. The current primary web reader independently corroborates that enactment and strict statutory recount thresholds; its tie-page timeout is not proof of missing law, and the complete acquired primary200text supplies the selected tie-rule reading. The January2027-duty act remains excluded. No exhaustive later-law/order, statewide signed/later roster or eligible named-writein proof is claimed.
 
-The complete final source entities/status/headers/clocks and configured request metadata survive, with specific limits: intermediate redirect bodies/full transport framing are not claimed; earlier duplicate-department request receipt metadata was overwritten and remains unavailable, although surviving source bodies/final actual receipts are exact. Two SOS directory reader outputs are representations without rawHTTP metadata. Five direct municipal403outcomes and NorthProvidenceDNS failure have bounded Board/public-primary alternatives rather than challenge bypass. These are candid access/provenance limits, not invented completed local inspections or future exhaustion gates. Maps remain an independent active assignment; no whole-state/current/live acceptance is inferred from this component publication.
+The complete final source entities/status/headers/clocks and configured request metadata survive, with specific limits: intermediate redirect bodies/full transport framing are not claimed; earlier duplicate-department request receipt metadata was overwritten and remains unavailable, although surviving source bodies/final actual receipts are exact. Two SOS directory reader outputs are representations without rawHTTP metadata. Five direct municipal403outcomes and NorthProvidenceDNS failure have bounded Board/public-primary alternatives rather than challenge bypass. These are candid access/provenance limits, not invented completed local inspections or future exhaustion gates. That component publication preceded the independent map review below; no current/live acceptance follows.
+
+
+## Complete map evidence and bounded whole-state finish
+
+[Independent map review](data/coordinator-maps-final-review.json) passes316,080checks
+without producer imports or writes. All710manifest targets/self-only exclusion,
+148whole historical originals,197complete requests/211response entities, full242/
+458/216orders/497inventory/43parents and37priority municipal chains are preserved.
+The post-seal worker audit independently reconstructs23roots/384wholecompanions/
+1,699,508objects/12ledgers/632pins/877historicalbodies, all187,401full long records,
+all121HTML entities/117municipal hierarchies/1447childlinks, three Board workbooks/
+148,880selectedcells and294exact regenerated map/report bodies.21negative fixtures
+pass. No owned producer bytes changed after seal.
+
+Both acquired statewide layers contain416features, but RIGIS uses EPSG3438 and
+1584rings/151257XYpositions while the Secretary copy uses EPSG3857 and420rings/
+151110XYpositions. Every native attribute, position/ordinate-bit digest, <=50-ID
+page, full pre/post service/layer/count/allIDs and municipal resource position is
+checked. Equal counts/labels do not establish source equality or a historical/
+November result-leaf crosswalk. RIGIS OBJECTID304 remains invalid; limited GEOS
+single-ring-valid subsets are340/412features, with no legal topology certification.
+There is no acquired shapefile and no claimed SHP/DBF/SHX binary audit.
+
+All21original PDFs/36pages are automatically rendered. The worker actually viewed
+12PDFpages/three native previews; coordinator additional actual image scope is
+only Cranston citywide map page1, Glocester2026map page1 and SOS Cranston preview.
+The Cranston map prints March30/April12,2022adoption and a reference/planning
+limitation. Glocester's2026map says last line changes2020, while its separately
+retained2022map describes redistricting. These remain distinct unresolved vintage
+statements. Sample ballots and site rosters are separately classified. Four
+administrative federal source contexts have no municipality/polygon allocation.
+
+The root checker's initial hardcoded OBJECTID assumption failed on the Secretary
+source's different native ID field. Exact prior checker/error is preserved in
+[data/coordinator-maps-review-history](data/coordinator-maps-review-history/finding.json);
+the corrected checker reads each actual allIDs field. No producer/source repair
+was needed. The exact static atlas has48HTMLpages and1541local links, with full
+source objects decoded and compared from the generated DOM; no browser claim.
+
+[Whole-state validation](data/coordinator-validation.json) now covers all four
+actual finished question workers, frozen source authority, original/source/math/
+CLI/official/legal/map reviews and every current state asset. This completes the
+bounded historical research package. Later signed/amended roster, legal eligible
+write-in completeness, physical/current geography, November IDs/returns, measured
+cadence, exact eligible outstanding pool, collector and calibrated probability
+remain explicit false/unknown external qualifications, not unfinished worker gates.
