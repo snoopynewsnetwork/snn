@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "requested_date": "2026-10-17",
-  "updated_at_utc": "2026-10-20T04:21:43.231312+00:00",
+  "updated_at_utc": "2026-10-20T04:28:19.016842+00:00",
   "scope": "35 states in the repository 2026 U.S. Senate race index",
   "coordinator_agent_id": "d0fc3534-1613-4883-b48b-21a233fcfd9e",
   "workspace_id": "wks_b290f45007010740",
@@ -6692,7 +6692,7 @@
       "election": "Regular",
       "seat_class": "II",
       "priority": 21,
-      "status": "first-pair-accepted-official-finished-under-review-maps-active",
+      "status": "historical-first-pair-and-official-reviewed-components-published-maps-active",
       "workers": {
         "turnout": {
           "agent_id": "04473229-3e65-45b1-b628-b2fe909eaeee",
@@ -6914,7 +6914,8 @@
         "complete_dispatch_ledger_replay_objects": 724943,
         "complete_dispatch_companion_bodies": 504,
         "official_independent_checks": 25609,
-        "official_producer_owned_entries": 1443
+        "official_producer_owned_entries": 1443,
+        "repository_check": "npm run check passed after reviewed nonmap component publication"
       },
       "gaps": [],
       "published_commits": [],
@@ -7038,7 +7039,19 @@
         "path": "senate/2026/new-jersey/data/coordinator-official-final-review.json",
         "bytes": 2211,
         "sha256": "4c1a121cb667f38e4956da4c1ff758ef862a37ceb8910c9f5975692e9f97f6a7"
-      }
+      },
+      "reviewed_component_publications": [
+        {
+          "commit": "212a9d5aac657e4bd111dbbce3c2727f09595d0a",
+          "scope": "Independent official final review and actual maps launch records; exact remote verified"
+        },
+        {
+          "commit": "572aa4ae316f849698d87b1419582290ea437c7c",
+          "scope": "4155exact reviewed nonmap historical/official/source evidence blobs,292296990stored bytes; full state completion still pending maps",
+          "push_exit": 0,
+          "remote_exact_verified": true
+        }
+      ]
     },
     {
       "state": "New Mexico",
@@ -7172,6 +7185,24 @@
         "HTTP200": 3,
         "HTTP403": 1,
         "scope": "Actual eastern/southern publisher access only; no November numerical result or cadence admission"
+      },
+      "prepared_first_pair_prompts": {
+        "turnout": {
+          "path": "senate/2026/oregon/data/coordinator-launches/prepared-turnout-prompt.txt",
+          "bytes": 11318,
+          "sha256": "441a94cf633acb215262dfa222fe686cc477b5c0738cf335d172caca41d54534",
+          "prepared_only": true,
+          "actual_agent_id": null,
+          "scope": "Prepared only after NewMexico first pair; fresh launch discovery/real released slot required. Full original-first source recovery, qualified unknown scopes, bounded research and offlineQA."
+        },
+        "partisanship": {
+          "path": "senate/2026/oregon/data/coordinator-launches/prepared-partisanship-prompt.txt",
+          "bytes": 13097,
+          "sha256": "ee8b6fa185b33edd2961142dcb04da484870e9b494e8b1ead809ca9f4e09ff10",
+          "prepared_only": true,
+          "actual_agent_id": null,
+          "scope": "Prepared only after NewMexico first pair; fresh launch discovery/real released slot required. Full original-first source recovery, qualified unknown scopes, bounded research and offlineQA."
+        }
       }
     },
     {
