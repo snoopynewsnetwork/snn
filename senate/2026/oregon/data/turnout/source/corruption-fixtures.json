@@ -1,0 +1,127 @@
+{
+  "status": "pass",
+  "positive_original_bundle": true,
+  "negative_fixtures": 14,
+  "exact_boundary_positive": true,
+  "cases": [
+    {
+      "fixture": "missing_original_source",
+      "mutation": "Delete first complete original inventory object",
+      "status": "rejected",
+      "reason": "complete original membership/order/CRC/hash/role metadata"
+    },
+    {
+      "fixture": "missing_native",
+      "mutation": "Delete first known native rank object",
+      "status": "rejected",
+      "reason": "complete known native membership, no county substitution"
+    },
+    {
+      "fixture": "missing_administrative",
+      "mutation": "Delete full nonadditive administrative unit OR:2020:41027:2020-13:All Precincts",
+      "status": "rejected",
+      "reason": "complete native and administrative presentations"
+    },
+    {
+      "fixture": "missing_companion",
+      "mutation": "Remove overlapping Multnomah PDF companion",
+      "status": "rejected",
+      "reason": "all original companions/method/control presentations"
+    },
+    {
+      "fixture": "alter_null",
+      "mutation": "Replace unknown native_reporting_unit_count null with zero",
+      "status": "rejected",
+      "reason": "all parent/child/admin/null/source arrays preserved"
+    },
+    {
+      "fixture": "alter_candidate_count",
+      "mutation": "Increment first abstract original vote by one",
+      "status": "rejected",
+      "reason": "source-bound candidate fields/parties/positions/raw values"
+    },
+    {
+      "fixture": "alter_source_metadata",
+      "mutation": "Change original receipt HTTP status 200 to 206",
+      "status": "rejected",
+      "reason": "full original source clock/header/request/status metadata"
+    },
+    {
+      "fixture": "alter_method_control",
+      "mutation": "Change preserved native control without changing candidates",
+      "status": "rejected",
+      "reason": "source-bound native/admin identity/null/control/locator objects"
+    },
+    {
+      "fixture": "duplicate_native_key",
+      "mutation": "Replace second known native key with first",
+      "status": "rejected",
+      "reason": "unique native keys"
+    },
+    {
+      "fixture": "wrong_descending_order",
+      "mutation": "Swap first two ranked known units",
+      "status": "rejected",
+      "reason": "descending full native order and exact tie key"
+    },
+    {
+      "fixture": "wrong_minimum80",
+      "mutation": "Increase known minimum80 count 213 to 214",
+      "status": "rejected",
+      "reason": "exact minimum integer80 predecessor and crossing"
+    },
+    {
+      "fixture": "county_substitution",
+      "mutation": "Replace known native rows with 36 parent count surrogates",
+      "status": "rejected",
+      "reason": "complete known native membership, no county substitution"
+    },
+    {
+      "fixture": "invalid_current_admission",
+      "mutation": "Invent a current result ID on archived native source row",
+      "status": "rejected",
+      "reason": "no invented current native identity/admission"
+    },
+    {
+      "fixture": "invalid_canonical_admission",
+      "mutation": "Set current canonical complete order to known-source-only keys",
+      "status": "rejected",
+      "reason": "canonical statewide unavailable, unknown membership not zero"
+    },
+    {
+      "fixture": "exact80_inclusive_positive",
+      "mutation": "8/10 reaches exactly80%; minimum must be1",
+      "status": "passed",
+      "actual": {
+        "total": 10,
+        "full_order": [
+          {
+            "key": "a",
+            "votes": 8,
+            "rank": 1,
+            "cumulative_votes": 8
+          },
+          {
+            "key": "b",
+            "votes": 2,
+            "rank": 2,
+            "cumulative_votes": 10
+          }
+        ],
+        "top15_votes": 10,
+        "minimum80": 1,
+        "preceding_votes": 0,
+        "crossing_key": "a",
+        "crossing_votes": 8,
+        "priority_keys": [
+          "a"
+        ],
+        "remainder_keys": [
+          "b"
+        ],
+        "remainder_votes": 2
+      }
+    }
+  ],
+  "qualification": "In-memory altered source-native/admin/metadata/companion/count/null/identity/order gates; no producer or peer files were changed. Exact immutable-source object equality is distinct from mathematical order/threshold validation."
+}

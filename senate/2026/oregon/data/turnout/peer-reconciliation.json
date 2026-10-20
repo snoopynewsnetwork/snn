@@ -1,0 +1,366 @@
+{
+  "schema": "oregon.turnout.reciprocal-source-core-v1",
+  "peer_agent_id": "7c03df8c-f908-40a8-a289-369e4aa26e69",
+  "own_original_first_witness_sha256": "d2b433035d5671178fda01261f0d35a6d13d95ab9c9a2204192ea138eda291b9",
+  "peer_original_first_witness_sha256": "208a3ad98dfb055eea0f895c0c0faf9881f684214e7d5a34c41e01f4df123b7f",
+  "status": "bounded_source_core_agreement_with_explicit_historical_extraction_differences",
+  "adapters": {
+    "county": {
+      "column": "own zero-based column_index = peer one-based source_candidate_column - 1",
+      "scope": {
+        "named_ballot_candidate": "named candidate",
+        "reported_Misc_unresolved_writein_validity": "generic Misc/write-in (not eligibility)"
+      },
+      "keys": "Own candidate_key is derived. Literal candidate and party fields agree; full source headers retained, no header inferred from normalized names."
+    },
+    "native": {
+      "identity": "Exact (source_key, contest, literal unit label). Never across years/current geography.",
+      "control_fields": {
+        "ballots_source": "ballots",
+        "registered_voters_source": "registered_voters",
+        "over_voted_ballots_source": "over_voted_ballots",
+        "overvotes_source": "overvotes_in_ballot_heading",
+        "undervotes_source": "undervotes_in_ballot_heading",
+        "Overvotes": "overvotes",
+        "Undervotes": "undervotes",
+        "Cast Votes excluding Misc_source": "Cast Votes"
+      },
+      "metadata_disposition": {
+        "source_key/county/fips/contest/unit_label": "exact mapped identity",
+        "candidates/controls": "all fields examined; missing/null retained",
+        "source_positions/control_observations": "full arrays retained in mapping, exact raw row mapping below",
+        "method_source/source_overlap": "source presentation metadata retained, never added",
+        "unit_key/unit_kind": "versioned representation, not geographic equivalence",
+        "A/B/A_votes/B_votes/pair_votes/A_pair_share": "peer partisanship-derived fields excluded from source-core equality; preserved in captured full objects",
+        "unresolved_normalization_conflict/missing_candidate_columns": "explicit extraction status, not repaired",
+        "reported_all_choice_votes": "recomputed only for closed known/source scopes",
+        "current_source_accepted/geography_accepted": "false checked"
+      }
+    }
+  },
+  "unique_county_and_participation_source_field_positions": 4749,
+  "qualification": "Not an equality claim for peer calculator/scenarios/live/report/future outputs. No count repair or peer numeric adoption. All canonical/current/geographic/coordinator acceptance remains false or unavailable.",
+  "full_evidence": {
+    "path": "source/reciprocal-full-evidence.json.gz",
+    "raw_bytes": 35278477,
+    "raw_sha256": "6d612b4f64551cfb67461041c68b812b33eccc0d3faa19f47637d00cec6eda1d",
+    "stored_bytes": 1476299,
+    "stored_sha256": "5b05686b86693c5116f228f8c1beb54e1b3798565b7fe205fe28c7e77084e3f8"
+  },
+  "counts": {
+    "own_frozen_bodies": 4343,
+    "peer_frozen_bodies": 600,
+    "shared_originals": 91,
+    "county_candidate_positions": 864,
+    "participation_group_rows": 1295,
+    "monthly_source_rows": 111,
+    "shared_native_objects": 2793,
+    "shared_candidate_cells": 16442,
+    "shared_control_comparisons": 12883,
+    "candidate_differences": 1,
+    "control_differences": 17,
+    "unique_raw_CSV_records": 1872,
+    "unique_raw_CSV_fields": 25483,
+    "raw_text_status": {
+      "equal_original_text": 6748,
+      "equal_frozen_own_OCR_text": 279,
+      "equal_own_source_observation": 432
+    },
+    "method_rows": 963,
+    "known_native_rows": 510,
+    "county_orders": 14
+  },
+  "coverage": {
+    "2024-president": {
+      "own_closed": [
+        "Clackamas",
+        "Marion",
+        "Multnomah",
+        "Wasco",
+        "Washington"
+      ],
+      "peer_closed": [
+        "Clackamas",
+        "Marion",
+        "Multnomah",
+        "Wasco",
+        "Washington"
+      ],
+      "own_only": [],
+      "peer_only": [],
+      "own_source_groups": [],
+      "peer_source_groups": []
+    },
+    "2020-senate": {
+      "own_closed": [
+        "Benton",
+        "Columbia",
+        "Curry",
+        "Harney",
+        "Hood River",
+        "Jackson",
+        "Klamath",
+        "Lane",
+        "Linn",
+        "Marion",
+        "Multnomah",
+        "Tillamook",
+        "Umatilla",
+        "Wasco",
+        "Washington",
+        "Yamhill"
+      ],
+      "peer_closed": [
+        "Benton",
+        "Columbia",
+        "Coos",
+        "Curry",
+        "Hood River",
+        "Jackson",
+        "Klamath",
+        "Lane",
+        "Linn",
+        "Marion",
+        "Multnomah",
+        "Tillamook",
+        "Umatilla",
+        "Wasco",
+        "Washington",
+        "Yamhill"
+      ],
+      "own_only": [
+        "Harney"
+      ],
+      "peer_only": [
+        "Coos"
+      ],
+      "own_source_groups": [
+        {
+          "source_key": "2020-12",
+          "county": "Harney",
+          "contest": "2020-senate",
+          "observed_additive_rows": 3,
+          "rows_with_full_candidate_vector": 3,
+          "candidate_sums": [
+            3213,
+            1055,
+            38,
+            65,
+            6
+          ],
+          "county_abstract_controls": [
+            3213,
+            1055,
+            38,
+            65,
+            6
+          ],
+          "differences": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "complete_candidate_vectors_and_county_columns_close": true,
+          "membership_and_method_completeness": "requires independent peer/source review; column closure alone is insufficient",
+          "nonadditive_presentations": [
+            "All Precincts"
+          ]
+        }
+      ],
+      "peer_source_groups": [
+        {
+          "contest": "2020-senate",
+          "county": "Coos",
+          "source_key": "2020-05",
+          "extracted_units": 18,
+          "candidate_sums": {
+            "Jo Rae Perkins": 20051,
+            "Jeff Merkley": 14885,
+            "Ibrahim A Taher": 470,
+            "Gary Dye": 676,
+            "Misc.": 24
+          },
+          "abstract_controls": {
+            "Jo Rae Perkins": 20051,
+            "Jeff Merkley": 14885,
+            "Ibrahim A Taher": 470,
+            "Gary Dye": 676,
+            "Misc.": 24
+          },
+          "differences": {
+            "Jo Rae Perkins": 0,
+            "Jeff Merkley": 0,
+            "Ibrahim A Taher": 0,
+            "Gary Dye": 0,
+            "Misc.": 0
+          },
+          "units_missing_columns": [],
+          "column_closed": true,
+          "qualification": "candidate column closure only, historical source-local identities; no 2026 crosswalk"
+        },
+        {
+          "contest": "2020-senate",
+          "county": "Harney",
+          "source_key": null,
+          "extracted_units": 0,
+          "candidate_sums": null,
+          "abstract_controls": {
+            "Jo Rae Perkins": 3213,
+            "Jeff Merkley": 1055,
+            "Ibrahim A Taher": 38,
+            "Gary Dye": 65,
+            "Misc.": 6
+          },
+          "differences": null,
+          "units_missing_columns": [],
+          "column_closed": false,
+          "qualification": "native normalization partial; no residual allocation; unknown source-universe outside extracted identities"
+        }
+      ]
+    },
+    "2022-senate": {
+      "own_closed": [
+        "Benton",
+        "Clatsop",
+        "Columbia",
+        "Curry",
+        "Hood River",
+        "Jackson",
+        "Klamath",
+        "Lane",
+        "Linn",
+        "Tillamook",
+        "Umatilla",
+        "Wasco",
+        "Washington"
+      ],
+      "peer_closed": [
+        "Benton",
+        "Clatsop",
+        "Columbia",
+        "Curry",
+        "Hood River",
+        "Jackson",
+        "Klamath",
+        "Lane",
+        "Linn",
+        "Tillamook",
+        "Umatilla",
+        "Wasco",
+        "Washington"
+      ],
+      "own_only": [],
+      "peer_only": [],
+      "own_source_groups": [],
+      "peer_source_groups": []
+    },
+    "2022-governor": {
+      "own_closed": [
+        "Benton",
+        "Clatsop",
+        "Columbia",
+        "Curry",
+        "Hood River",
+        "Jackson",
+        "Klamath",
+        "Lane",
+        "Linn",
+        "Tillamook",
+        "Umatilla",
+        "Washington"
+      ],
+      "peer_closed": [
+        "Benton",
+        "Clatsop",
+        "Columbia",
+        "Curry",
+        "Hood River",
+        "Jackson",
+        "Klamath",
+        "Lane",
+        "Linn",
+        "Tillamook",
+        "Umatilla",
+        "Wasco",
+        "Washington"
+      ],
+      "own_only": [],
+      "peer_only": [
+        "Wasco"
+      ],
+      "own_source_groups": [
+        {
+          "source_key": "2022-32",
+          "county": "Wasco",
+          "contest": "2022-governor",
+          "observed_additive_rows": 12,
+          "rows_with_full_candidate_vector": 11,
+          "candidate_sums": [
+            4077,
+            45,
+            51,
+            1240,
+            5231,
+            9
+          ],
+          "county_abstract_controls": [
+            4077,
+            52,
+            51,
+            1240,
+            5978,
+            9
+          ],
+          "differences": [
+            0,
+            -7,
+            0,
+            0,
+            -747,
+            0
+          ],
+          "complete_candidate_vectors_and_county_columns_close": false,
+          "membership_and_method_completeness": "requires independent peer/source review; column closure alone is insufficient",
+          "nonadditive_presentations": []
+        }
+      ],
+      "peer_source_groups": [
+        {
+          "contest": "2022-governor",
+          "county": "Wasco",
+          "source_key": "2022-32",
+          "extracted_units": 12,
+          "candidate_sums": {
+            "Tina Kotek": 4077,
+            "Donice Noelle Smith": 52,
+            "R Leon Noble": 51,
+            "Betsy Johnson": 1240,
+            "Christine Drazan": 5978,
+            "Misc.": 9
+          },
+          "abstract_controls": {
+            "Tina Kotek": 4077,
+            "Donice Noelle Smith": 52,
+            "R Leon Noble": 51,
+            "Betsy Johnson": 1240,
+            "Christine Drazan": 5978,
+            "Misc.": 9
+          },
+          "differences": {
+            "Tina Kotek": 0,
+            "Donice Noelle Smith": 0,
+            "R Leon Noble": 0,
+            "Betsy Johnson": 0,
+            "Christine Drazan": 0,
+            "Misc.": 0
+          },
+          "units_missing_columns": [],
+          "column_closed": true,
+          "qualification": "candidate column closure only, historical source-local identities; no 2026 crosswalk"
+        }
+      ]
+    }
+  }
+}

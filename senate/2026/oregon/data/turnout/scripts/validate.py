@@ -9,6 +9,8 @@ sys.dont_write_bytecode = True
 from pathlib import Path
 import argparse,csv,gzip,hashlib,importlib.util,io,json,re,tempfile,zipfile
 from collections import Counter,defaultdict
+from reciprocal import O,P,audit,enc
+from review_layer import status as peer_status
 from decimal import Decimal
 OUT=Path(__file__).resolve().parents[1];STATE=OUT.parents[1];NEWS=OUT.parent/'news'
 sha=lambda b:hashlib.sha256(b).hexdigest()
@@ -90,7 +92,7 @@ def main():
     unavailable=[p for p in parents if p['unknown_native_membership']]
     fail(len(unavailable)==31 and all(p['native_reporting_unit_count']is None and not p['source_native_constituents']for p in unavailable),'unknown not zero')
     fail(contract['complete_order']is None and contract['ordered_priority_keys']is None and contract['top15']is None and contract['minimum80']is None,'canonical unavailable')
-    fail(contract['peer_agreement']['peer_agent_id']is None and not contract['coordinator_acceptance']['accepted'],'no premature acceptance')
+    fail(contract['peer_agreement']==peer_status() and not contract['coordinator_acceptance']['accepted'],'bounded captured peer status; no premature acceptance')
     fail(known['total']+sum(p['county_presidential_reported_votes']for p in unavailable)==contract['statewide_reported_votes'],'unknown parents kept in state')
     choices={r['county']:defaultdict(int)for r in known['full_order']}
     for r in known['full_order']:
@@ -135,11 +137,25 @@ def main():
     planned=[OUT/'validation.json',OUT/'asset-manifest.json',OUT/'pre-peer-witness-v1.json']
     expected_owned=len(owned)+sum(not p.exists()for p in planned)
     ok('relative_links_bounds',dict(relative_report_links_checked=sum(not l.startswith(('http','#'))for l in links),owned_files_after_seal=expected_owned,strict_max_bytes=40000000))
+    # Every unaffected original-first body remains byte-exact, including all counts/orders/source controls.
+    allowed={'turnout.md','data/turnout/source/SCHEMA.md','data/turnout/priority-set.json','data/turnout/scripts/validate.py','data/turnout/asset-manifest.json','data/turnout/validation.json'}
+    unaffected=0
+    for name,r in O.idx.items():
+        if name in allowed:continue
+        b=(STATE/name).read_bytes();fail((len(b),sha(b))==(r['bytes'],r['sha256']),'unaffected original-first body '+name);unaffected+=1
+    oldcontract=O.js('data/turnout/priority-set.json');current=dict(contract);current['peer_agreement']=oldcontract['peer_agreement'];fail(current==oldcontract,'only peer-status metadata may change in contract')
+    units=load(OUT/'native/units.json');fail(len({(r['source_key'],r['contest'],r['unit_literal'],r['presentation'])for r in units})==len(units),'all source/contest/native/admin observation identities unique')
+    fixture=load(OUT/'source/corruption-fixtures.json');fail(fixture['negative_fixtures']==14 and fixture['exact_boundary_positive'],'corruption gates')
+    rebuilt=load(OUT/'source/offline-rebuild.json');fail(rebuilt['reconstructed_bodies']==4343 and rebuilt['all_original_first_bodies_identical'],'full original-first rebuild')
+    summary=load(OUT/'peer-reconciliation.json');record=summary['full_evidence'];z=(OUT/record['path']).read_bytes();raw=gzip.decompress(z)
+    fail((len(z),sha(z),len(raw),sha(raw))==(record['stored_bytes'],record['stored_sha256'],record['raw_bytes'],record['raw_sha256']),'lossless full reciprocal evidence')
+    full=load(OUT/'source/peer-capture-v1/inventory.json');fail(len(full['entries'])==600,'final peer capture scope')
+    ok('immutable_history_bounded_peer_and_negatives',dict(unaffected_original_first_bodies=unaffected,original_phase_bodies_rebuilt=4343,peer_captured_bodies=600,source_core_summary=summary['counts'],negative_fixtures=14,exact80_inclusive_positive=True,canonical_approval=False))
     rec=load(OUT/'native/county-reconciliation.json');closed={co:sorted({r['county']for r in rec if r['contest']==co and r['complete_candidate_vectors_and_county_columns_close']})for co in ['2020-senate','2022-senate','2022-governor']}
     output=dict(status='pass_qualified_research_only_canonical_native_priority_unavailable',research_date='2026-10-20',checks=checks,
         material_gates=dict(canonical_2024_native_complete=False,unclosed_2024_parents=[p['county']for p in unavailable],
             historical_native_normalization_complete=False,historical_county_candidate_column_closed_sets=closed,
-            peer_agent_id=None,peer_agreement='pending_not_launched',coordinator_acceptance='pending',approved_current_election=False,approved_current_geometry=False),
+            peer_agent_id='7c03df8c-f908-40a8-a289-369e4aa26e69',peer_agreement='bounded_captured_source_core_with_explicit_historical_differences',coordinator_acceptance='pending',approved_current_election=False,approved_current_geometry=False),
         limits=['County aggregate primary reconciliation complete. It does not establish unobserved native membership.',
             'Historic raw originals complete; native parsing/administrative/method review remains partial. Unclosed groups are excluded from priority math.',
             'No November 2026 identity/geometry/live cadence/collector/forecast approval.'])
@@ -154,7 +170,7 @@ def main():
         p=(STATE/r['path']).resolve();fail(p.is_relative_to(STATE.resolve()),'shared state bound');b=p.read_bytes();fail((len(b),sha(b))==(r['bytes'],r['sha256'])and len(b)<40000000,r['path'])
     witness=load(OUT/'pre-peer-witness-v1.json')
     for r in witness['pinned_files']:
-        b=(STATE/r['path']).read_bytes();fail(sha(b)==r['sha256']and len(b)==r['bytes'],'pre-peer immutable pin '+r['path'])
+        b=O.read(r['path']);fail(sha(b)==r['sha256']and len(b)==r['bytes'],'pre-peer reconstructed immutable pin '+r['path'])
     fail(load(OUT/'validation.json')==output,'sealed validation matches current recomputation')
     print(json.dumps(dict(status=output['status'],checks=len(checks),sealed_owned_assets=len(paths),shared_assets=len(manifest['shared_assets']),pre_peer_witness_verified=True,canonical_priority_available=False)))
 if __name__=='__main__':main()

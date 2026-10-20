@@ -2,7 +2,7 @@
 
 The two historical source assignments are independently extracted and reviewed.
 The same turnout worker has finished bounded reciprocal QA against the final
-captured baseline core; final coordinator review of its new seal is pending. Official-source/maps assignments have not launched;
+captured baseline core; its final coordinator seal review now passes. Official-source/maps assignments have not launched;
 whole-state acceptance and canonical native priority remain unavailable.
 
 ## Original source controls
@@ -78,3 +78,29 @@ launch and later actual Verification/medium repair/reciprocal settings separatel
 Current geometry, signed final roster/write-in eligibility, November IDs/returns,
 measured cadence, eligible outstanding votes and calibrated probabilities remain
 explicit external qualifications. No full-state publication claim is made yet.
+
+
+## Final bounded reciprocal preservation
+
+[The final independent review](data/coordinator-turnout-reciprocal-final-review.json)
+passes23,630checks: all4,343old own bodies reconstruct, all600captured peer bodies
+remain exact, and4,367current manifest entries cover4,368ownedfiles excluding
+only the manifest. Six report/peer-metadata/validator files changed; the only
+changed contract field is peer_agreement. All original count, source, method,
+null, control, native/order/parent bodies and CSV remain unchanged.
+
+The actual read-only final_package.py audit passes, including14corruption
+fixtures and exact80positive control. Captured source-core proof covers91shared
+original/text entities including72ZIPmembers,48full receipts,864county positions,
+1,295participation and111monthly rows,2,793mapped native objects,16,442candidate
+cells,12,883control comparisons,1,872uniqueCSVrecords/25,483fields,963method lanes
+and510known-native/14county orders. One candidate and17mapped control comparisons
+differ only in unclosedDouglas2022;16literal reverse-proof differences plus a
+repeated-heading representation remain explicit. Historical closure differences
+remain qualified, with no adoption or count repair. Future peer calculator,
+scenario/report changes and all600file semantic equality are outside this claim.
+
+The original-first, full bounded core and complete source coverage are ready for
+a coordinator source-research authority. Canonical statewide native priority
+is unavailable; all36parent chains and known510contexts plus31unavailable cases
+will be investigated by later assignments. This is not a current/native approval.

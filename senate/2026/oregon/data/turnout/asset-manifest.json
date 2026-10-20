@@ -1,6 +1,6 @@
 {
-  "schema_version": "oregon.turnout.asset-manifest.v1",
-  "self_exclusion": "asset-manifest.json only; SHA256 self-reference is not defined",
+  "schema_version": "oregon.turnout.asset-manifest.v2",
+  "self_exclusion": "data/turnout/asset-manifest.json only; no other owned exclusions",
   "owned_assets": [
     {
       "path": "data/county-turnout.csv",
@@ -26,6 +26,11 @@
       "path": "data/turnout/county-sensitivities.json",
       "bytes": 133775,
       "sha256": "2c790a31e810d97f24ea8780a6d94d4af3e4dd9f54f5791183b3c1c1ca673ccd"
+    },
+    {
+      "path": "data/turnout/finalseal.json",
+      "bytes": 2652,
+      "sha256": "cb3c3e50e07498022037fe6db2f2d9ede5e61f322b8c79a2dd13cd518be0e8ac"
     },
     {
       "path": "data/turnout/known-native-order.csv",
@@ -88,14 +93,19 @@
       "sha256": "7221333f3a85510b075673c1b5ce1469da153bb77048d3f46b997c7dbc14d8f7"
     },
     {
+      "path": "data/turnout/peer-reconciliation.json",
+      "bytes": 10722,
+      "sha256": "440c85a3d3efdf62099d9be63f32aff0f9d43d9b0af45616192bf19a09d84c50"
+    },
+    {
       "path": "data/turnout/pre-peer-witness-v1.json",
       "bytes": 778410,
       "sha256": "d2b433035d5671178fda01261f0d35a6d13d95ab9c9a2204192ea138eda291b9"
     },
     {
       "path": "data/turnout/priority-set.json",
-      "bytes": 891039,
-      "sha256": "8c8bd919febc57ae285c4a0bd0baa8f250e53978ec0596ff70024dac8cf0f052"
+      "bytes": 891659,
+      "sha256": "06faf77e374172fadabf9b99d5acfd64a5658ccf76e1b4310602bca4274f9add"
     },
     {
       "path": "data/turnout/scripts/acquire.py",
@@ -106,6 +116,11 @@
       "path": "data/turnout/scripts/build.py",
       "bytes": 13636,
       "sha256": "14c1667ae98e457e7cc9e0652aab01b8245bcc62104e634c3ee1c77dde931066"
+    },
+    {
+      "path": "data/turnout/scripts/corruption_fixtures.py",
+      "bytes": 7264,
+      "sha256": "d6d8a3b34c65d679b4f5fe3f28b35ef5e9a57999161471db92e6580353f2f974"
     },
     {
       "path": "data/turnout/scripts/county_controls.py",
@@ -121,6 +136,11 @@
       "path": "data/turnout/scripts/extract_originals.py",
       "bytes": 4929,
       "sha256": "79be44a02c7c3e980005876154be10d868091890da303ac9084d26bde45cbb7f"
+    },
+    {
+      "path": "data/turnout/scripts/final_package.py",
+      "bytes": 4798,
+      "sha256": "40e0f14e741b5150742a3362ab392afac79aaec49ee8a2daeb6403e86ec0d7da"
     },
     {
       "path": "data/turnout/scripts/native_extract.py",
@@ -143,9 +163,19 @@
       "sha256": "3df8cb6be7c8ac0a08dfa658f6d54d72d3bc7974a7af8efb28f11ab17e8a1b40"
     },
     {
+      "path": "data/turnout/scripts/offline_rebuild.py",
+      "bytes": 3551,
+      "sha256": "41743bf338a5b998cb25d2dc6c90f59472a2aeb05a9023420a4feea4babe4fda"
+    },
+    {
       "path": "data/turnout/scripts/participation_controls.py",
       "bytes": 2162,
       "sha256": "d3d314238cfb82d0252d60d76e43dc4f72ece2dd3c2927a4810695fbc5f8c9be"
+    },
+    {
+      "path": "data/turnout/scripts/reciprocal.py",
+      "bytes": 34476,
+      "sha256": "e8b89aca68cf35f4bc2d20fead44fd41a1400702672e98341695da664647f99a"
     },
     {
       "path": "data/turnout/scripts/render_qa.py",
@@ -156,6 +186,11 @@
       "path": "data/turnout/scripts/report.py",
       "bytes": 20218,
       "sha256": "d41b71dfb59bd7757c7eb2c0ce3b6e4703b45678cc7f2d782cdfb66fe500b236"
+    },
+    {
+      "path": "data/turnout/scripts/review_layer.py",
+      "bytes": 12397,
+      "sha256": "1d9904f8688bea43088648c5d7aec2d052cbc508f496c5dd3dadd87a450aa4b9"
     },
     {
       "path": "data/turnout/scripts/scope_fields.py",
@@ -169,8 +204,8 @@
     },
     {
       "path": "data/turnout/scripts/validate.py",
-      "bytes": 14829,
-      "sha256": "98b65badfa675aabea79627c410e2f20c64a5ef90927a0efadb3166330da2f9f"
+      "bytes": 17000,
+      "sha256": "d8ddfefea03bf44d76aab5eb7d5e9b38d117dbb871bbf5ccd88bd5be2418dc15"
     },
     {
       "path": "data/turnout/source/2020-00.layout.txt.gz",
@@ -584,8 +619,8 @@
     },
     {
       "path": "data/turnout/source/SCHEMA.md",
-      "bytes": 10995,
-      "sha256": "03d1764d26d62ff0ad3960d013b646a5efd6a93a3bbef3abd67fa4b673a232d8"
+      "bytes": 14783,
+      "sha256": "bd92481dce2ccc2b9845f2b5a9fa6cd2c1656fb4afb73110d8b13a96f12a0864"
     },
     {
       "path": "data/turnout/source/acquired/benton-2020-precincts.hop0.gz",
@@ -1008,9 +1043,24 @@
       "sha256": "5268a2c7d5752cce9ed3a8354b7c2432d5c970f76e49fe74e7608eb569b59745"
     },
     {
+      "path": "data/turnout/source/corruption-fixtures.json",
+      "bytes": 4288,
+      "sha256": "0ce5cc03c74bca9ea8525b7230da3d3f82265757f374de73bbde3b699c5b1dec"
+    },
+    {
       "path": "data/turnout/source/county-wide.json",
       "bytes": 24152,
       "sha256": "44b6c864518cab0672eb48bcbd72d000d5276f053b2a3eddaf3131f87811b3f4"
+    },
+    {
+      "path": "data/turnout/source/history/pre-reciprocal-v1/bodies-000.tar.gz",
+      "bytes": 10863368,
+      "sha256": "6612d29687d303759e075c05d3c3d924c73406c47e74fcc27295f24d1b0a3f28"
+    },
+    {
+      "path": "data/turnout/source/history/pre-reciprocal-v1/inventory.json",
+      "bytes": 1318964,
+      "sha256": "810a989dab6d3127d075ce0ed54edbb3ef037b2bf80c0fb0eee982114b36c967"
     },
     {
       "path": "data/turnout/source/ocr/2020-00-p001.json",
@@ -15603,6 +15653,11 @@
       "sha256": "a15b2130040dfde0565b26c6982951d870f328c636fa91ac629cda16b25d0f32"
     },
     {
+      "path": "data/turnout/source/offline-rebuild.json",
+      "bytes": 800210,
+      "sha256": "5e5a396acf5755c3fef18f472f958192f342b8c00b52a1719f5db774d8e3b0c2"
+    },
+    {
       "path": "data/turnout/source/original-inventory.json",
       "bytes": 42705,
       "sha256": "bee1db25e3bd9085579e2be87e2ab1c1da9eeeaec6858131d6ddd75e379cf99f"
@@ -15611,6 +15666,21 @@
       "path": "data/turnout/source/participation-footers.json",
       "bytes": 1307,
       "sha256": "34759d1b150ecfac15009f78a7c4133315140d3740cf00a0b82d5ccbc7b2ae0f"
+    },
+    {
+      "path": "data/turnout/source/peer-capture-v1/bodies-000.tar.gz",
+      "bytes": 9641889,
+      "sha256": "3b2b2d514a0a28eacfa8350eb32ae267dca2d841d37bad11dd2f7af6f4c7db3c"
+    },
+    {
+      "path": "data/turnout/source/peer-capture-v1/bodies-001.tar.gz",
+      "bytes": 20767138,
+      "sha256": "cf66038cfc620f7b73c3d04a2b11e9520342c71d096b52e6046eb9566b40e3c3"
+    },
+    {
+      "path": "data/turnout/source/peer-capture-v1/inventory.json",
+      "bytes": 207051,
+      "sha256": "9d98c5948662be7e01a1954c3563877b1644fb3920f74605fe91d3fb1be39a27"
     },
     {
       "path": "data/turnout/source/qa/2020-senate-state-controls.png",
@@ -15661,6 +15731,11 @@
       "path": "data/turnout/source/qa/washington-audit-controls.png",
       "bytes": 347778,
       "sha256": "e70297aa0b85a8344fc50835e30272809cfe4cfcdf998f4fbf0d3955504a97c2"
+    },
+    {
+      "path": "data/turnout/source/reciprocal-full-evidence.json.gz",
+      "bytes": 1476299,
+      "sha256": "5b05686b86693c5116f228f8c1beb54e1b3798565b7fe205fe28c7e77084e3f8"
     },
     {
       "path": "data/turnout/source/refined-ocr/2020-00-p002.json",
@@ -21683,6 +21758,56 @@
       "sha256": "f83895f0a390c95de64047b55b25f757be0848b1286ac2c3d5ae12266c08e6c9"
     },
     {
+      "path": "data/turnout/source/review-development/VP-name-check-failure.json",
+      "bytes": 216,
+      "sha256": "abbbcd9746c4e195d8efcf42aefd5929c47131b3d4a254d2e66ea96a64eea208"
+    },
+    {
+      "path": "data/turnout/source/review-development/geography-key-vs-contest-object-failure.json",
+      "bytes": 315869,
+      "sha256": "7a01082ecc4886941bfe537b2c217d24d3b37cd0be6931f7e3cc80bf21a098e2"
+    },
+    {
+      "path": "data/turnout/source/review-development/preseal-validation-link-failure.json",
+      "bytes": 376,
+      "sha256": "85a80ecd37495170e7552c40bce846ac476ea5c250acaa2485737c9f3d4a2f8b"
+    },
+    {
+      "path": "data/turnout/source/review-development/raw-CSV-first-check-failure.json",
+      "bytes": 41072,
+      "sha256": "611a05ca1ca5eb67dcd826da654eea578783f37c7e79285d816240b8e5fe5611"
+    },
+    {
+      "path": "data/turnout/source/review-development/raw-position-first-check-failure.json",
+      "bytes": 261,
+      "sha256": "3d64ea24480badf835fcde2d289c9a258e571d4cbc85590d06c647210c069913"
+    },
+    {
+      "path": "data/turnout/source/review-development/reciprocal-checker-v1.py.gz",
+      "bytes": 8994,
+      "sha256": "ba2b2378d3b6e77606597d85cb9d91bba44bb2000d88aad0454987133cd0e0d9"
+    },
+    {
+      "path": "data/turnout/source/review-development/reciprocal-checker-v3.py.gz",
+      "bytes": 10436,
+      "sha256": "30be997ca84b2b22d09746f474d196f24b23c2071f8dbaf857c3d3abeb4a0cf4"
+    },
+    {
+      "path": "data/turnout/source/review-development/v2-peer-reconciliation.json.gz",
+      "bytes": 1285369,
+      "sha256": "b5d012efc13a6f426942405d316603b568dac28c846b2d4c43e564e010b61a23"
+    },
+    {
+      "path": "data/turnout/source/review-development/v2-reciprocal.py.gz",
+      "bytes": 10108,
+      "sha256": "bd1e5c1a53fbe3babede45c2cf5fcbaad966ad8ca4ac6144870452b9de1bc2c5"
+    },
+    {
+      "path": "data/turnout/source/review-development/validator-v2-geography-key-failure.py.gz",
+      "bytes": 6185,
+      "sha256": "4c13519f72730492322d33a9f983ef05c50a7b2c5ff7f89e2fd6da1484896519"
+    },
+    {
       "path": "data/turnout/source/shared-authority-chain-snapshot.json",
       "bytes": 75783,
       "sha256": "ed0ae3b0cfde9aec387057485d77c4ff32fe6fdaad166ebb5e37c576259ef7d9"
@@ -21704,13 +21829,13 @@
     },
     {
       "path": "data/turnout/validation.json",
-      "bytes": 5484,
-      "sha256": "54ba7ddec612f51f2ecadfb1ce98d4d033f79b08de6255971507154011652eed"
+      "bytes": 6780,
+      "sha256": "2c3b26b6961cb5b53eea276f0a3d9267f621617d6478dcbc84e85f8b12193cbc"
     },
     {
       "path": "turnout.md",
-      "bytes": 24611,
-      "sha256": "74b632006d9915915cb75c0e9e616ba22f95e3904b8cf48b5e167005c278e666"
+      "bytes": 31209,
+      "sha256": "1eb6e41107ecc71fdd650ea8c66990f43736c78285d61f78d52c34277851f4ec"
     }
   ],
   "shared_assets": [
@@ -22020,6 +22145,6 @@
       "sha256": "399d9524a01025d5abe9a19d5aebfac729ddf537041e403eced32718e809cce5"
     }
   ],
-  "original_reconstruction": "source/shared-original-pins.json, source/original-inventory.json and source/shared-authority-chain-snapshot.json retain raw/original/stored/member hashes, headers, public parent/download chains and exact ordered-byte recipes. Shared original bodies are not duplicated.",
+  "original_reconstruction": "Complete historical inventories restore every prior body. Original response entities and huge ZIP byteparts remain once by immutable raw/stored hash references; all72members CRC/hash/position checked. See source/SCHEMA.md.",
   "strict_individual_artifact_byte_limit": 40000000
 }

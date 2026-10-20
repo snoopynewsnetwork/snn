@@ -1074,3 +1074,6 @@ NMmaps actual finish released slot for RhodeIsland turnout5bf8df2e-5c2f-4e0e-a51
 
 
 NewMexico whole four-question package published9ed8c7f1d01449d74ad66559008a4ff23ed6721e; push0/exactremote verified. All2033staged blobs matched reviewed bytes. Twenty-two new states complete plusMichigan. SAMEOregonturnoutbd151c4c reciprocal has actually finished; its slot launched RhodeIsland baseline5d9f9b63 under fresh Research/high profile/provider inspection. Only actualRIturnout5bf8df2e andRIbaseline5d9f9b63 areactive. Oregon full source review/authority preparation follows; canonicalnativepriority remainsnull.
+
+
+Oregon baseline reviewed component publishedb4688cc3fee4e5e3f8d40ceffeddd5ec87b84fa6; push0/exactremote. Final SAMEturnout reciprocal independent review passes23,630checks, all4343old own bodies/600captured peer bodies exact. Source authority preparation preserves canonicalnativepriorityNULL and31unclosedparents. RhodeIsland firstpair5bf8df2e/5d9f9b63 remain the only active researchers; no secondwave launch yet.

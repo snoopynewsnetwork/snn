@@ -1,6 +1,6 @@
 # Oregon collection and remaining-vote strategy
 
-Prepared **2026-10-18 UTC / 2026-10-17 Central**. The historical source pair is independently reviewed and bounded reciprocal QA has finished and final coordinator source acceptance remains pending; official/map integration remains queued. Read the [news observations](local-news-results.md). This proposes operations without claiming a running collector.
+Prepared **2026-10-18 UTC / 2026-10-17 Central**. The historical source pair is independently reviewed and bounded reciprocal QA has finished and final coordinator source review passes; source-research authority remains in preparation; official/map integration remains queued. Read the [news observations](local-news-results.md). This proposes operations without claiming a running collector.
 
 ## Oregon-specific preflight
 

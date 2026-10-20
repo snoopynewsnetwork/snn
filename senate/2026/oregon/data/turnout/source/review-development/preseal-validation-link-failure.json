@@ -1,0 +1,5 @@
+{
+  "command": "validate.py --write before final_package.py --seal",
+  "failure": "AssertionError: report link data/turnout/finalseal.json",
+  "reason": "Final seal did not yet exist; premature standalone validation invocation. No checker scope change. final_package.py --seal creates the planned seal member before validation and writes its final content before manifest."
+}
