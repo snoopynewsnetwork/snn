@@ -1,0 +1,40 @@
+    def _shape(
+        self,
+        shape_len_B: int,  # Excluding header
+        oid: int | None = None,
+        bbox: BBox | None = None,
+    ) -> Shape | None:
+        """Returns geometry for a single shape (or None if
+        it is outside the specified bbox).
+
+        Requires the size in B of the shaps, and the .shp
+        file to have been .seeked to the start of the shape
+        (immediately after the shape's header).
+        """
+
+        # Read entire record into memory to avoid having to call
+        # seek on the file afterwards
+        b_io: ReadSeekableBinStream = io.BytesIO(self.file.read(shape_len_B))
+        # To avoid a .seek for the next shape's header (where we are already)
+        b_io.seek(0)
+
+        try:
+            shapeType = unpack("<i", b_io.read(4))[0]
+        except StructError as e:
+            raise e
+
+        ShapeClass = SHAPE_CLASS_FROM_SHAPETYPE[shapeType]
+        shape = ShapeClass.from_byte_stream(
+            shapeType=shapeType,
+            b_io=b_io,
+            next_shape_pos=shape_len_B,
+            oid=oid,
+            bbox=bbox,
+        )
+
+        # Seek to the end of this record as defined by the record header because
+        # the shapefile spec doesn't require the actual content to meet the header
+        # definition.  Probably allowed for lazy feature deletion.
+        # self.file.seek(next_shape_pos)
+
+        return shape

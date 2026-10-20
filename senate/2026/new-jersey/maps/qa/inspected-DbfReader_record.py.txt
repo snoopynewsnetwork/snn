@@ -1,0 +1,16 @@
+    def record(self, i: int = 0, fields: list[str] | None = None) -> _Record | None:
+        """Returns a specific dbf record based on the supplied index.
+        To only read some of the fields, specify the 'fields' arg as a
+        list of one or more fieldnames.
+
+
+        Returns None if record's deletion flag is marked.
+        """
+        i = ensure_within_bounds(i, self.numRecords)
+        recSize = self._record_length
+        self.file.seek(0)
+        self.file.seek(self._dbfHdrLength + (i * recSize))
+        fieldTuples, recLookup, recStruct = self._record_fields(fields)
+        return self._record(
+            oid=i, fieldTuples=fieldTuples, recLookup=recLookup, recStruct=recStruct
+        )

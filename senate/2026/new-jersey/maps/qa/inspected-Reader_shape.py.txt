@@ -1,0 +1,18 @@
+    def shape(self, i: int = 0, bbox: BBox | None = None) -> Shape | None:
+        """Returns a shape object for a shape in the geometry
+        record file.
+        If the 'bbox' arg is given (list or tuple of xmin,ymin,xmax,ymax),
+        returns None if the shape is not within that region.
+        """
+        N = len(self)
+        if N == 0:
+            raise ShapefileException("No shapes loaded.")
+        i = ensure_within_bounds(i, N)
+        if self._shx:
+            offset, shape_len_B = (
+                self.shx_reader.offsets[i],
+                self.shx_reader.shape_lengths_B[i],
+            )
+        else:
+            offset, shape_len_B = None, None
+        return self.shp_reader.shape(i, offset, shape_len_B, bbox)

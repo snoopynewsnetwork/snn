@@ -1,0 +1,51 @@
+    @classmethod
+    def from_byte_stream(
+        cls,
+        shapeType: int,
+        b_io: ReadSeekableBinStream,
+        next_shape_pos: int,
+        oid: int | None = None,
+        bbox: BBox | None = None,
+    ) -> Shape | None:
+        ShapeClass = cast(type[_CanHaveBBox], SHAPE_CLASS_FROM_SHAPETYPE[shapeType])
+
+        kwargs: CanHaveBboxNoLinesKwargs = {"oid": oid}  # "shapeType": shapeType}
+        kwargs["bbox"] = shape_bbox = cls._read_bbox_from_byte_stream(b_io)
+
+        # if bbox specified and no overlap, skip this shape
+        if bbox is not None and not bbox_overlap(bbox, shape_bbox):
+            # because we stop parsing this shape, caller must skip to beginning of
+            # next shape after we return (as done in f.seek(next_shape_pos))
+            return None
+
+        nParts: int | None = (
+            _CanHaveParts._read_nparts_from_byte_stream(b_io)
+            if shapeType in _CanHaveParts_shapeTypes
+            else None
+        )
+        nPoints: int = cls._read_npoints_from_byte_stream(b_io)
+        # Previously, we also set __zmin = __zmax = __mmin = __mmax = None
+
+        if nParts:
+            kwargs["parts"] = _CanHaveParts._read_parts_from_byte_stream(b_io, nParts)
+            if shapeType == MULTIPATCH:
+                kwargs["partTypes"] = MultiPatch._read_part_types_from_byte_stream(
+                    b_io, nParts
+                )
+
+        if nPoints:
+            kwargs["points"] = cast(
+                PointsT, cls._read_points_from_byte_stream(b_io, nPoints)
+            )
+
+            if shapeType in _HasZ_shapeTypes:
+                kwargs["zbox"], kwargs["z"] = _HasZ._read_zs_from_byte_stream(
+                    b_io, nPoints
+                )
+
+            if shapeType in _HasM_shapeTypes:
+                kwargs["mbox"], kwargs["m"] = _HasM._read_ms_from_byte_stream(
+                    b_io, nPoints, next_shape_pos
+                )
+
+        return ShapeClass(**kwargs)

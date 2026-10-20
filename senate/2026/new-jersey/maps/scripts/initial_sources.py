@@ -1,0 +1,4 @@
+from acquire import fetch
+from concurrent.futures import ThreadPoolExecutor
+S=[('doe-publications','https://www.nj.gov/state/elections/doe-publications.shtml','search result'),('directory','https://www.nj.gov/state/elections/vote-county-election-officials.shtml?os=v','search result'),('nj-census-report','https://www.nj.gov/state/dos-reports-2020-census-report.shtml','search result'),('census-catalog','https://catalog.data.gov/dataset/tiger-line-shapefile-2020-state-new-jersey-voting-districts','search result'),('tiger-vtd-layer','https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/tigerWMS_Census2020/MapServer/58','search result'),('njgin-election-retired','https://njogis-newjersey.opendata.arcgis.com/datasets/election-districts-for-new-jersey','historical link found in NJ VEST validation report; no official live status inferred')]
+with ThreadPoolExecutor(max_workers=5) as e:list(e.map(lambda x:fetch(*x),S))

@@ -14,7 +14,7 @@
 | Current seat holder | Cory Booker |
 | Seat holder's party | Democratic |
 | Seat details verified | 2026-10-17 |
-| Coverage status | Initialized; campaign and ballot research pending |
+| Coverage status | Historical election-night research complete; campaign tracker unpopulated |
 
 ## Candidates
 
@@ -57,3 +57,27 @@ No results entered yet.
 - [FEC 2026 election calendar](https://www.fec.gov/documents/5910/2026pdates.pdf): election scope and general election date.
 - [New Jersey election office](https://www.state.nj.us/state/elections/index.shtml): ballot access, election schedule, and official results.
 - [FEC New Jersey Senate election data](https://www.fec.gov/data/elections/senate/NJ/2026/): candidate filings and campaign finance.
+
+## Election-night research
+
+The completed source research covers all21 counties and575 disjoint historical
+municipal/admin publication observations. Six published2024 Senate candidate
+columns total4,031,795: top15 contribute631,518 (15.6634451900%), and the
+minimum233 observations contribute3,229,453 (80.0996330419%), following
+232/3,224,325. This historical publication scope is separate from a finest
+precinct roster, legally complete write-in universe or current geographic join.
+
+- [Turnout and exact source order](turnout.md), [source CSV](data/county-turnout.csv) and [full priority contract](data/turnout/priority-set.json).
+- [Historical partisan baselines and conditional targets](county-partisanship.md), [county controls](data/county-baselines.csv) and [calculator/source schema](data/baselines/source/SCHEMA.md).
+- [Official source investigations](official-results.md) and [86-row authority inventory](data/official-results-sources.csv).
+- [Downloaded map research](precinct-maps.md) and [complete offline atlas](maps/atlas.html).
+- [Regional newsroom/NYT backstops](local-news-results.md), [proposed collection strategy](live-polling-strategy.md), [independent review](research-review.md) and [actual worker dispatch](research-dispatch.md).
+- [Whole-state validation](data/coordinator-validation.json) and [complete asset inventory](data/coordinator-asset-manifest.json).
+
+Original source differences, protected/null fields and nonadditive finer views
+remain explicit. Gloucester and Salem general-election zero templates are setup
+evidence; no genuine November returns, approved current leaf match, measured
+cadence, exact outstanding pool or calibrated win probability is admitted.
+Maps include historical native/Census context and county originals with specific
+access, vintage and certification gaps. The existing campaign, polling and
+finance tables above remain unpopulated.

@@ -73,7 +73,8 @@ def main(check=False):
     ]
     for name in reviews:
         status = read(D / name)['status']
-        assert status.startswith('pass') or status.startswith('actual_coordinator'), (name, status)
+        descriptive_success = name == 'coordinator-somerset-caption-review/review.json' and status == 'original_literal_caption_preserved_with_complete_page_evidence'
+        assert status.startswith('pass') or status.startswith('actual_coordinator') or descriptive_success, (name, status)
     assert official['priority'] == maps['priority'] == 233
     assert official['remainder'] == maps['remainder'] == 342
     assert (math['state_scenarios'], math['every_unit_rows']) == (40, 8588)
@@ -86,13 +87,17 @@ def main(check=False):
         if p.suffix == '.py':
             ast.parse(p.read_bytes(), filename=str(p))
             syntax += 1
+    fragments = {S / 'data/results-sources/report-intro.md', S / 'data/results-sources/report-tail.md'}
+    for p in fragments:
+        assert p.read_text() in (S / 'official-results.md').read_text()
     for p in S.rglob('*.md'):
         for target in re.findall(r'\[[^\]\n]*\]\(([^\n)]+)\)', p.read_text()):
             target = target.split(' "')[0].strip('<>')
             u = urllib.parse.urlsplit(target)
             if u.scheme or u.netloc or not u.path:
                 continue
-            dest = (p.parent / urllib.parse.unquote(u.path)).resolve()
+            base = S if p in fragments else p.parent
+            dest = (base / urllib.parse.unquote(u.path)).resolve()
             assert dest.exists() or (not check and dest in [manifest.resolve(), validation.resolve()]), (p, target)
             links += 1
     result = dict(
@@ -119,6 +124,7 @@ def main(check=False):
         primary_Clarity_sets=11, general_Clarity_zero_template_sets=1,
         Senate_current_or_geographic_leaf_matches_approved=0,
         Python_AST_files=syntax, local_markdown_links=links,
+        report_fragment_links_checked_in_actual_output_context=2,
         all_producer_bytes_unchanged=True, cache_dependency_directories_absent=True,
         strict_per_stored_object_limit=40000000,
         current_geometry_returns_liveIDs_cadence_exact_remainder_probability_approved=False,

@@ -1,7 +1,7 @@
 # New Jersey coordinator review
 
-The complete first pair and finished official-source package have passed
-independent coordinator review. Maps research remains active. This review
+All four finished question packages have passed independent coordinator review.
+The historical source package is complete, with the limits below. This review
 approves historical source research, with the limits below; it does not approve
 a current geographic crosswalk, legally complete write-in universe, November
 feed, measured cadence, remaining-vote estimate or probability.
@@ -179,10 +179,12 @@ a duty to count every day. Later controlling law/orders, final ballot changes,
 eligible outstanding pools and current geographic approval remain external
 qualifications. They do not require reopening completed historical research.
 
-The map worker is separately auditing actual acquired originals and historical
-fallbacks. Its preliminary NJOGIS layer is explicitly mature support and
-intended for2019–2020; upload paths alone establish no current vintage or
-source-label match. Final map review and whole-state publication remain pending.
+The finished [map report](precinct-maps.md) and [offline atlas](maps/atlas.html)
+preserve all575 observations,233 priorities,342 remainder and21 full county
+hierarchies. Every row has acquired qualified shared resources and specific
+access/vintage/finer/physical/current gaps. The NJOGIS layer is explicitly
+mature support and intended for2019–2020; upload paths alone establish no
+current vintage or source-label match.
 
 An [independent raw native snapshot audit](data/coordinator-native-map-snapshot-review.json)
 passes2,800,941 checks across all6,348 statewide and401 Burlington features,
@@ -204,3 +206,30 @@ There are1,151,117 XY positions, comprising2,302,234 individual coordinate
 values; the initial guard's mistaken unit and correction are retained. No
 coordinate, ring, source field or vote was changed. Census2020 VTDs remain
 historical context, with no result-label or current legal crosswalk approved.
+
+The [final independent map review](data/coordinator-maps-final-review.json)
+passes14,699 checks, including exact1,656-file membership/hashes,2,679 immutable
+dependencies,487 request receipts/550 complete response hops, all215 original
+PDFs and323 page-text/raster records, and578 unchanged deterministic products.
+The actual atlas JavaScript harness passed with its sole report write replaced
+by an exact read-only comparison; all producer bytes were rehashed afterward.
+No browser-layout or native browser file-picker test is claimed. MuPDF color-
+profile warnings remain recorded, with complete originals unchanged.
+
+The [coordinator's selected visual review](data/coordinator-maps-visual-review.json)
+adds two actually viewed complete pages. Gloucester's acquired file has one
+physical page printedPage2of2 and only12 Mantua districts, dated11/12/2025;
+it is not a complete county roster. Elizabeth prints an October6,2026 map date
+with blank certification lines. The worker separately records its selected
+viewing scope; automatic rendering of323 pages does not mean every map label
+or legal footnote was manually read. Blank signatures, older revisions, denied
+county sources and incomplete rosters remain qualified, without vote allocation
+or legal-boundary inference.
+
+All four question seals exclude only their own manifest and include validation
+and final seals. The [whole-state validation](data/coordinator-validation.json)
+and [asset inventory](data/coordinator-asset-manifest.json) bind the completed
+reports, source originals, scripts and independent proofs. Current legal/
+physical reporting joins, later exhaustive law/ballot/write-in review, genuine
+November votes, measured cadence, eligible outstanding pools and probability
+remain external qualifications. No collector or2026 turnout forecast is built.
