@@ -1,6 +1,6 @@
 # Rhode Island collection and remaining-vote strategy
 
-Prepared **2026-10-18 UTC / 2026-10-17 Central**. Original-first turnout is reviewed; independent baseline/reciprocal and official/map integration remain pending. Read the [news survey](local-news-results.md); no live implementation or calibrated forecast is supplied.
+Prepared **2026-10-18 UTC / 2026-10-17 Central**. Both original-first source assignments, the narrow Cranston detail correction and bounded reciprocal review are complete. Qualified historical dispatch is accepted; official-source research is active and maps queued. Read the [news survey](local-news-results.md); no live implementation or calibrated forecast is supplied.
 
 ## Rhode Island-specific preflight
 
@@ -44,7 +44,12 @@ current legal/reporting identities.
 
 Technical root/nested/setup are nonadditive export views, not successive snapshots
 with a proven correction chronology. Board official controls and courtesy
-download roles remain distinct. Independent baseline/reciprocal acceptance is
-pending. Complete candidates/methods/nulls/ballot-registration availability and
+download roles remain distinct. Bounded independent baseline/reciprocal source agreement and external historical dispatch are
+accepted; current/legal/eligible-writein approval remains unavailable. Complete candidates/methods/nulls/ballot-registration availability and
 write-in publication discrepancies survive; no exact eligible pool or November
 preference can be inferred from them.
+
+
+[Full historical authority replay](data/coordinator-priority-validation.json) passes1,702,375checks across every complete root,384companions and1,699,508recursive objects. Deep official/map research targets242ordered historical source contexts under37municipal parents, while every458Senate/497inventory/39municipal+fouradmin scope remains in statewide coverage. The full parent set is43; retain its municipal and administrative roles rather than synthesizing county reporting units. The producer contract remains byte-frozen, including its original pending-peer descriptive string; external captured-source proofs establish bounded agreement without changing producer flags.
+
+The original Board write-in detail is now correctly1,227/eight local discrepancies; the old row6-only1,226/nine remains historical evidence. Both stay separate from municipal generic1,239/state1,244 and from a legally eligible named-writein universe. No ballot or choice is added/allocated. Historical2020sameClassII and2024otherClassI Senate preferences and source-specific volume/methods are conditional anchors, not2026candidate/turnout predictions. The16saved scenarios include all nonpriority/federal source votes, and the47independentCLI cases verify counted-fixed/final-denominator/unknown/no-pool and bounded arithmetic; they do not supply remaining-ballot estimates or calibrated win probabilities.
