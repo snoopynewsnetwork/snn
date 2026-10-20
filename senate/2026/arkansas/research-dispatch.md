@@ -1,0 +1,5 @@
+# Arkansas research dispatch
+
+Actual original-first turnout worker `43866295-c1c8-4f15-8933-67a99b3454c0` launched after SAME Virginia turnout actually finished its bounded repair/reciprocal. Fresh Research profile/provider selected codex/gpt-6.1-sol auto-review/high. [Exact prompt](data/coordinator-launches/turnout-initial-prompt.txt):15942B SHA f749f55a4ab501b7468b8217bf6cb73814b1c987a52ac0585dce4d6c9f9123da.
+
+Only Alabama baselinef2db457b is the other actual researcher. Own turnout.md/data/county-turnout.csv/data/turnout only; no Git/shared writes/delegation/statuspolls. All75county/native/reporting/candidate/method/null/rawpositions retained. Complete original OOXML/JSON/PDF/HTML before numerical/helper/peer derivatives. API/FullData discrepancies remain distinct; no2024Senate,2020HarringtonLibertarian versusCotton/noDemocrat, voteType1All notElectionDay. Fullsource witness/finalseal/actualend required. Independent baseline notlaunched, no actualpeer/current/legal/geographic/feed/cadence approval; coordinator alone accepts and publishes.

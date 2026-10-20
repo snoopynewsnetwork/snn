@@ -57,3 +57,26 @@ No results entered yet.
 - [FEC 2026 election calendar](https://www.fec.gov/documents/5910/2026pdates.pdf): election scope and general election date.
 - [Virginia election office](https://www.elections.virginia.gov/): ballot access, election schedule, and official results.
 - [FEC Virginia Senate election data](https://www.fec.gov/data/elections/senate/VA/2026/): candidate filings and campaign finance.
+
+
+## Election-night research
+
+The [native turnout report](turnout.md), [2,669-row source CSV](data/county-turnout.csv)
+and [full historical contract](data/turnout/priority-set.json) preserve all133
+Virginia localities:95counties and38independent cities. The source-known2024
+Senate reported candidate/generic denominator is4,445,535. Top15supply80,617
+(1.8134375278%); minimum1,538supply3,557,034 after3,555,604through1,537. The
+Washington County literal `102 - West Abingdon` record adds1,430. All1,131
+remainder observations remain, and44parent sensitivity never substitutes for
+native dispatch.
+
+The [independent baseline report](county-partisanship.md), [532locality-election
+rows](data/county-baselines.csv), four-contest native evidence and offline
+calculators cover2024other-seat Senate, separately2024president,2020same-seat
+Senate and actual2018Senate midterm. [Coordinator review](research-review.md)
+documents source/method/null/control reconciliation, independent bounded arithmetic,
+actual CLI tests and the preserved citation correction. Qualified historical
+source authority and the official/map assignments are the next integration
+phase. Current ballot/feed IDs, legal eligible write-ins, physical/current
+geometry, genuine November counts, cadence, remaining pool and calibrated
+probabilities remain unapproved. Existing race-tracker fields above are unchanged.

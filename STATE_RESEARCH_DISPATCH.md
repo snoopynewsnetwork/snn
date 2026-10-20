@@ -1125,3 +1125,18 @@ RhodeIsland maps6c5beb21 actually finished/frozen; its post-seal replay/rebuild2
 
 
 RIwhole four-question package now independently passescomplete state validation:2683manifest targets/461643439storedB/max26873599, all2558producer-owned hashes unchanged. Rootmaps316080checks andactual fullpostsealaudit/294bodyrebuild pass. Readyfor24thnewstatepublication; current/legal/live approvals remainqualifiedfalse. Actualresearchers remainonlyVAbaseline8bfac51f andALturnout5b42c895. ALactual officialXLSZIP recovery closes all6/4/3candidate nativecontrols across67members/year; finalorder/QA stillactive. No earlyfinish inferred.
+
+
+RhodeIsland whole four-question package published45ea95b513a7963a5b80b9b8aee7dedad4e3a62d;push0/exactremote verified. All731changed blobs exactly match reviewed paths/modes/bytes/hashes, total123856470B/max7675297. Whole2683-target state seal passes withfourproducerseals unchanged. Twenty-four newstatescomplete plusMichigan. OnlyVAbaseline8bfac51f andALturnout5b42c895 remainactive; no current/legal/live approval inferred.
+
+
+Virginia baseline8bfac51f ACTUALLY FINISHED:all133parents/fourcontests/11009native/65CLI/242byte-rebuild, final299target seal. Its realreleasedslot resumed SAMEturnout61838d17 after fresh4profile notes/provider and successful Verification/medium runtimeupdate for confirmed literalUUIDcitationfix +capturedactualfinalpeer core reciprocal. Exact9680B promptSHA9c06bf0c190fcfc3ad1626eb4cfce552f1661af9f31ffc1e8e72826dded214f0. Rootturnoutoriginalsource review790790checks passes withknownreportcitationdefect; no counts/order/source changes. Only other researcherALturnout5b42c895;24newcomplete plusMichigan.
+
+
+ALturnout5b42c895 ACTUALLY FINISHED/sealed145targets:all67counties/2085native2024,minimum887/1812818; exact201originalXLSmembers/6246656rawcells/85129selectedcandidate-method-admincells. Its releasedslot launched actualALbaselinef2db457b-3e3c-47d0-a65c-7d6be8bbe5c7 after fresh4profile notes/provider Research/high. Exact24619B promptSHAfa8be51a2ae69ce4f7f42766a980f0151311e379be131822c7ce4ff5e8d8bcd3 with strictCLIappendix/originals-before-peer. Only other researcher SAMEVAturnout61838d17 repair/reciprocal. Twenty-four newcomplete plusMichigan;8unlaunched.
+
+
+SAMEVAturnout61838d17 ACTUALLY FINISHED/resealed411targets:confirmedexternalUUIDcitationfixed,60220capturedsourcecomparisons/17orders,69finalreadonlychecks; counts/CSV/orderunchanged. RootBsource/math869122checks+66actualCLIpass. Its releasedslot launched ARturnout43866295-c1c8-4f15-8933-67a99b3454c0 freshResearch/high;15942B promptSHAf749f55a4ab501b7468b8217bf6cb73814b1c987a52ac0585dce4d6c9f9123da. OnlyotherresearcherALbaselinef2db457b. Rootindependentxlrdoriginal67member scan resolvesALfalse263candidate discrepancy to Jeffersonrow12Stein994/row13Oliver731; activeBpreservedoldbodies/correctedonlystateinventorylabelaggregation, rawunits/totals/orderunchanged.24newcompleteplusMichigan;7unlaunched.
+
+
+Virginia firstpair now independently reviewed:790790originalsource checks on exact historicalphase; citation/peerpreservation2286checks/389old+300peerbodies/381unchanged; baseline869122source/math+66actualCLI; finalT69readonly andBsealed auditpassed. Firstpaircomponentvalidation710exactownedtargets; fullsourceauthority next, no O/Mlaunch or currentapproval yet. ActiveARturnout43866295 andALbaselinef2db457b only. ARoriginalcoreb23716c... freezes2841XLSXnative/1056prefix and75APIparents beforepeer; separateAPI2839 andFullData1184575 scopes preserved, report/QA stillactive.
