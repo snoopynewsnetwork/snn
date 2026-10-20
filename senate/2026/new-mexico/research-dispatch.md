@@ -18,3 +18,6 @@ finish precede any later reciprocal comparison or coordinator acceptance.
 
 
 NMbaseline9a904675 ACTUALLY finished qualified source/scenario package; originalpin6770ae96 unchanged,103owned+64external exact hash review passes. SAMEturnout5f787f59 resumed bounded reciprocal only in released baseline slot after fresh all-profile/provider inspection; Verificationauto-review/medium applied. Exact8219B prompt584974b303d5da3aa9ede1707da2da75c7c7cb69968ad0561a3706667bafb147 retained. Only other active researcher ORturnoutbd151c4c. No new worker, source expansion or certifiednativepriority/private allocation.
+
+
+Turnout5f787f59 ACTUALLY finished bounded reciprocal:800667assertions/zero unresolvedsource mismatches,256owned+65source exact seal. Coordinatorfinal1290checks also verifies complete92/104historical capture bodies, all old witnesses and unchanged sourcecount/CSV/order fields; only threepeer/status fields pluspeer_review added. Canonicalcertified native priority remainsnull/empty. The releasedslot resumes SAMEbaseline9a904675 for21actualCLIcases/16type/nonfinite/unknown-county failures under freshVerificationauto-review/medium; exact7239B prompt2ec0a41d089d9aa4624552f7af50263db0484fb51e986867438ef027524f8c3f retained. OnlyotherresearcherORturnoutbd151c4c. No sourceexpansion or finished-peercontact.

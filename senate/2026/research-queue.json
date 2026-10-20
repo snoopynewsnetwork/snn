@@ -7198,11 +7198,11 @@
       "election": "Regular",
       "seat_class": "II",
       "priority": 22,
-      "status": "baseline-qualified-finished-same-turnout-reciprocal-active",
+      "status": "turnout-reciprocal-finished-baseline-input-repair-active",
       "workers": {
         "turnout": {
           "agent_id": "5f787f59-e6ff-4494-b416-a0fb4383237f",
-          "status": "bounded-same-agent-reciprocal-QA-active",
+          "status": "complete-reviewed-bounded-reciprocal-source-core-seal",
           "launched_at_utc": "2026-10-20T04:45:48.357279+00:00",
           "launch_timestamp_scope": "Coordinator record after actual successful create, not provider start",
           "provider": "codex/gpt-6.1-sol",
@@ -7228,13 +7228,13 @@
           "actual_partisanship_peer": "9a904675-c599-4e28-8862-663c3496078e",
           "latest_substantive_milestone": "Worker original-first source milestone (not coordinator acceptance): all33 county candidate vectors2024Sen/2020Sen/2022Gov independently matched originalPDFs;2024Pres check ongoing. Actual SOS archive rf-table→linked public SDK GetWidgetFiles→literal originals recovered, includingreplacement2022 file62880d00…;document799failure retained. Wholeballots/methods2024=928290 and2022=714754 close acrossPDF/portal/native/service;2020PDF928172 vsportal928230 across7counties retained. Oct31/Nov26registration source stocks1377085/1406281 differ countyreport1377093/1406283. Allmasks/nulls/clock scopes retained, peer remainsnull, qualified observed-native universe and33county sensitivities underway.",
           "actual_finish_event_received": true,
-          "owned_manifest_entries": 91,
-          "source_assets": 63,
-          "offline_checks": 324,
+          "owned_manifest_entries": 256,
+          "source_assets": 65,
+          "offline_checks": 338,
           "final_manifest": {
             "path": "senate/2026/new-mexico/data/turnout/asset-manifest.json",
-            "bytes": 37446,
-            "sha256": "386c585692491b28b04082d8120e0561771fe6fb2fee200795f98c95e758d88b"
+            "bytes": 87938,
+            "sha256": "1ad33f1b2ba8d3fb6e38b03177fe973921b2925a24d87ff7dce58ffe92b9911e"
           },
           "final_contract": {
             "path": "senate/2026/new-mexico/data/turnout/priority-set.json",
@@ -7278,11 +7278,17 @@
               "sha256": "584974b303d5da3aa9ede1707da2da75c7c7cb69968ad0561a3706667bafb147"
             },
             "no_replacement_agent": true
-          }
+          },
+          "source_comparison_checks": 800667,
+          "negative_fixtures": 13,
+          "read_only_seal_checks": 973,
+          "reciprocal_proof_sha256": "2c61c90d5629ca77cefce24d71a77cb1cc960001c91509194a4ab24daab9b55a",
+          "future_calculator_or_final_peer_byte_equality_excluded": true,
+          "final_readonly_validator_coordinator_verified": true
         },
         "partisanship": {
           "agent_id": "9a904675-c599-4e28-8862-663c3496078e",
-          "status": "finished-source-and-model-CLI-repair-pending-real-slot",
+          "status": "same-agent-bounded-calculator-input-repair-active",
           "launched_at_utc": "2026-10-20T13:35:38.377023+00:00",
           "launch_timestamp_scope": "Coordinator record after actual create response, not exact provider start",
           "provider": "codex/gpt-6.1-sol",
@@ -7318,7 +7324,34 @@
           },
           "final_validation_checks": 442529,
           "final_asset_audit_checks": 442698,
-          "coordinator_owned_external_hashes_pass": true
+          "coordinator_owned_external_hashes_pass": true,
+          "bounded_repair_continuation": {
+            "actual_same_agent_id": "9a904675-c599-4e28-8862-663c3496078e",
+            "resumed_at_utc": "2026-10-20T14:11:43.304226+00:00",
+            "released_by_actual_finish": "5f787f59-e6ff-4494-b416-a0fb4383237f",
+            "only_other_active_worker": "bd151c4c-70ea-4b72-9063-2012086b07e6",
+            "fresh_all_four_profile_notes_and_provider_inspection": true,
+            "selected_profile": {
+              "id": "agent_profile_mvfmfxpm_2d4ky8aslts",
+              "name": "Verification",
+              "notes": "Checking implementations, testing that things work, and problem solving. For simple problems, implement fixes directly; for complicated ones, pass them back to implementation."
+            },
+            "provider": "codex/gpt-6.1-sol",
+            "settings": {
+              "modeId": "auto-review",
+              "thinkingOptionId": "medium"
+            },
+            "runtime_settings_update_succeeded": true,
+            "notifyOnFinish": true,
+            "prompt": {
+              "path": "senate/2026/new-mexico/data/coordinator-launches/partisanship-calculator-repair-prompt.txt",
+              "bytes": 7239,
+              "sha256": "2ec0a41d089d9aa4624552f7af50263db0484fb51e986867438ef027524f8c3f"
+            },
+            "actual_CLI_fixtures": 21,
+            "actual_failed_fixtures": 16,
+            "no_new_or_replacement_agent": true
+          }
         }
       },
       "validation": null,
@@ -7471,6 +7504,21 @@
         "maximum_net_residual": 5.011315806768835e-10,
         "method": "Independent saturation-event integration, no author solver imports",
         "actual_CLI_input_repair_still_pending": true
+      },
+      "coordinator_turnout_final_review": {
+        "path": "senate/2026/new-mexico/data/coordinator-turnout-final-review.json",
+        "bytes": 2040,
+        "sha256": "9a953014cf7a119ac979c2dd79de64fe427575550c13b6fe7ba734e35e14fc83",
+        "checks": 1290,
+        "old_turnout_capture_files": 92,
+        "old_baseline_capture_files": 104,
+        "only_contract_changes": [
+          "status",
+          "peer_agent_id",
+          "peer_agreement",
+          "added peer_review"
+        ],
+        "counts_masks_CSV_orders_witness_unchanged": true
       }
     },
     {
@@ -8263,8 +8311,8 @@
   },
   "coordinator_next_actions": [
     "Twenty-one new states published plus retainedMichigan; exactlatestpublication receipts retained.",
-    "Only actual ORturnoutbd151c4c and SAME NMturnout5f787f59 reciprocal active. NMbaseline9a904675 actually finished and sealed.",
-    "Independent actualNMcalculatorCLI16cases found11type/nonfinite/malformed-object failures; preserve exactevidence. Next realreleasedslot resumes SAMEbaseline9a904675 bounded repair afterfreshprofile/provider. No thirdworker or producerrootedit. ORbaseline waits appropriate nextslot.",
+    "Only actual ORturnoutbd151c4c and SAME NMbaseline9a904675 bounded CLI repair active. NMturnout5f787f59 reciprocal ACTUALLY finished;800667source assertions no unresolved mismatch.",
+    "Next real released slot launches ORbaseline from prepared body+sourceappendix+v2recovery context after freshprofiles/provider, unless required same-worker regression repair persists. NMsecondwave after final reciprocal/math/input review and full source authority; certifiednativepriority remains unavailable.",
     "Coordinator independent NMbaseline source/math/CLI review then full firstpair source coverage acceptance with certifiednativepriority unavailable. Complete whole field/original ledger, never county substitute/private reconstruction.",
     "Next actual released slot launches prepared ORbaseline with immutable sourceappendix+v2recovery notes after fresh profiles/provider; NMofficial/maps only after reciprocal acceptance and real slots. Continue all34states."
   ],
