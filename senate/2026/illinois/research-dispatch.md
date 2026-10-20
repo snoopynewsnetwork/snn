@@ -124,3 +124,17 @@ provider inspection. Its actual official-results peer is
 The accepted5,540/all10,062/108-source-parent historical dispatch remains
 qualified; legal/current/native crosswalks and live readiness are unapproved.
 Massachusetts is the next unlaunched first pair;15 later states remain queued.
+
+
+## Illinois maps finished; actual Massachusetts turnout launched
+
+Illinois maps `d02ee332-ee45-4f77-8eb1-e3364aa3bc41` actually finished its
+1,006-entry seal, complete5,540/10,062/4,522/108hierarchy and original-source
+Census/authority/atlas audits. Coordinator independent review follows, with
+no current/legal leaf matches or native write-in allocation approved.
+
+That actual released slot launched Massachusetts turnout
+`eb66a7f4-a730-4f4d-8382-35941613a2ff` after fresh profiles/all four notes and
+provider inspection. Illinois official `0ce74399-fe2e-42a8-9428-650729a9137c`
+is the only other active researcher. Massachusetts baseline awaits a real slot
+and independent original extraction;14 later states remain queued.
