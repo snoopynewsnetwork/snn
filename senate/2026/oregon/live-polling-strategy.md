@@ -1,6 +1,6 @@
 # Oregon collection and remaining-vote strategy
 
-Prepared **2026-10-18 UTC / 2026-10-17 Central**. The historical source pair is independently reviewed and bounded reciprocal QA has finished and final coordinator source review passes; source-research authority remains in preparation; official/map integration remains queued. Read the [news observations](local-news-results.md). This proposes operations without claiming a running collector.
+Prepared **2026-10-18 UTC / 2026-10-17 Central**. The historical source pair is independently reviewed and bounded reciprocal QA has finished and final coordinator source review passes; qualified source-research authority is complete; official-source research is active and map integration remains queued. Read the [news observations](local-news-results.md). This proposes operations without claiming a running collector.
 
 ## Oregon-specific preflight
 
@@ -38,3 +38,11 @@ All36county scenario weights include nonpriority areas. Misc/write-in eligibilit
 complete statewide canvass nonvote controls and current/final ballot mapping
 remain unknown. Historical volume and preference settings are conditional
 sensitivities; they supply no measured outstanding pool or live probability.
+
+
+The [qualified source authority](data/coordinator-source-research-acceptance.json)
+now requires substantive investigations across all36parent chains, preserving
+510known fullsource contexts and31unavailable native-parent cases. No incomplete
+parent's native membership or priority is inferred. Current official research
+will retain actual state/county/vendor constructors and stage/control semantics;
+its observations still require November-specific admission before live use.

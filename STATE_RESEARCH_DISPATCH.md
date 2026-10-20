@@ -1077,3 +1077,6 @@ NewMexico whole four-question package published9ed8c7f1d01449d74ad66559008a4ff23
 
 
 Oregon baseline reviewed component publishedb4688cc3fee4e5e3f8d40ceffeddd5ec87b84fa6; push0/exactremote. Final SAMEturnout reciprocal independent review passes23,630checks, all4343old own bodies/600captured peer bodies exact. Source authority preparation preserves canonicalnativepriorityNULL and31unclosedparents. RhodeIsland firstpair5bf8df2e/5d9f9b63 remain the only active researchers; no secondwave launch yet.
+
+
+Oregon final reciprocal component published41e60c0d1790125f7c39558098ab71a923ca6d16, push0/exactremote. Source authority now passes1,014,017fullchecks with23roots/1994wholecompanions/495672objects/4ledgers. All36parents/510knownsourcecontexts/31unavailable native universes retained; canonicalnativeprioritynull. Actual RIturnout5bf8df2e finished; fresh Research/high profile/provider inspection launched actualORofficial49aba7f6 in thatslot. Only other researcherRIbaseline5d9f9b63. Twenty-two new complete states plusMichigan; wholeORnotyetcomplete.
