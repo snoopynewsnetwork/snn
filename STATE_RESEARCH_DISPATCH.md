@@ -1071,3 +1071,6 @@ Oregon same baseline repair actually finished:600complete owned bodies,599manife
 
 
 NMmaps actual finish released slot for RhodeIsland turnout5bf8df2e-5c2f-4e0e-a51e-2021afca7bea, launched after fresh all-profile/provider Research/high inspection. Only other researcher is SAME Oregonturnoutbd151c4c reciprocal. No replacement/coordinator/grandchild. NewMexico full map review and Oregon source-pair acceptance remain pending; completed count unchanged.
+
+
+NewMexico whole four-question package published9ed8c7f1d01449d74ad66559008a4ff23ed6721e; push0/exactremote verified. All2033staged blobs matched reviewed bytes. Twenty-two new states complete plusMichigan. SAMEOregonturnoutbd151c4c reciprocal has actually finished; its slot launched RhodeIsland baseline5d9f9b63 under fresh Research/high profile/provider inspection. Only actualRIturnout5bf8df2e andRIbaseline5d9f9b63 areactive. Oregon full source review/authority preparation follows; canonicalnativepriority remainsnull.
