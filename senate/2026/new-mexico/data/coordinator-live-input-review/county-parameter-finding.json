@@ -1,0 +1,82 @@
+{
+  "status": "actual_initial_parameter_surface_failures",
+  "calculator": {
+    "path": "data/baselines/calculator.py",
+    "bytes": 5543,
+    "sha256": "bf8e719605b3e76442c6a8ce08a25ac9a344597e3901b518766cced20810c351"
+  },
+  "cases": [
+    {
+      "name": "uniform_nan_target",
+      "argv": [
+        "--target-margin-pp",
+        "nan"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py\", line 65, in <module>\n    if __name__=='__main__':main()\n                            ^^^^^^\n  File \"/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py\", line 64, in main\n    print(json.dumps(out,indent=2,allow_nan=False))\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/json/__init__.py\", line 238, in dumps\n    **kw).encode(obj)\n          ^^^^^^^^^^^\n  File \"/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/json/encoder.py\", line 202, in encode\n    chunks = list(chunks)\n             ^^^^^^^^^^^^\n  File \"/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/json/encoder.py\", line 432, in _iterencode\n    yield from _iterencode_dict(o, _current_indent_level)\n  File \"/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/json/encoder.py\", line 398, in _iterencode_dict\n    yield _floatstr(value)\n          ^^^^^^^^^^^^^^^^\n  File \"/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/json/encoder.py\", line 240, in floatstr\n    raise ValueError(\nValueError: Out of range float values are not JSON compliant: nan\n",
+      "strict_JSON_error": "JSONDecodeError('Expecting value: line 1 column 1 (char 0)')",
+      "status": "fail"
+    },
+    {
+      "name": "uniform_infinite_target",
+      "argv": [
+        "--target-margin-pp",
+        "inf"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py\", line 65, in <module>\n    if __name__=='__main__':main()\n                            ^^^^^^\n  File \"/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py\", line 64, in main\n    print(json.dumps(out,indent=2,allow_nan=False))\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/json/__init__.py\", line 238, in dumps\n    **kw).encode(obj)\n          ^^^^^^^^^^^\n  File \"/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/json/encoder.py\", line 202, in encode\n    chunks = list(chunks)\n             ^^^^^^^^^^^^\n  File \"/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/json/encoder.py\", line 432, in _iterencode\n    yield from _iterencode_dict(o, _current_indent_level)\n  File \"/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/json/encoder.py\", line 398, in _iterencode_dict\n    yield _floatstr(value)\n          ^^^^^^^^^^^^^^^^\n  File \"/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/json/encoder.py\", line 240, in floatstr\n    raise ValueError(\nValueError: Out of range float values are not JSON compliant: inf\n",
+      "strict_JSON_error": "JSONDecodeError('Expecting value: line 1 column 1 (char 0)')",
+      "status": "fail"
+    },
+    {
+      "name": "selected_nan_target",
+      "argv": [
+        "--county",
+        "Bernalillo",
+        "--target-margin-pp",
+        "nan"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py\", line 65, in <module>\n    if __name__=='__main__':main()\n                            ^^^^^^\n  File \"/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py\", line 64, in main\n    print(json.dumps(out,indent=2,allow_nan=False))\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/json/__init__.py\", line 238, in dumps\n    **kw).encode(obj)\n          ^^^^^^^^^^^\n  File \"/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/json/encoder.py\", line 202, in encode\n    chunks = list(chunks)\n             ^^^^^^^^^^^^\n  File \"/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/json/encoder.py\", line 432, in _iterencode\n    yield from _iterencode_dict(o, _current_indent_level)\n  File \"/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/json/encoder.py\", line 398, in _iterencode_dict\n    yield _floatstr(value)\n          ^^^^^^^^^^^^^^^^\n  File \"/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/json/encoder.py\", line 240, in floatstr\n    raise ValueError(\nValueError: Out of range float values are not JSON compliant: nan\n",
+      "strict_JSON_error": "JSONDecodeError('Expecting value: line 1 column 1 (char 0)')",
+      "status": "fail"
+    },
+    {
+      "name": "selected_infinite_other_shift",
+      "argv": [
+        "--county",
+        "Bernalillo",
+        "--others-shift-pp",
+        "inf"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py\", line 65, in <module>\n    if __name__=='__main__':main()\n                            ^^^^^^\n  File \"/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py\", line 64, in main\n    print(json.dumps(out,indent=2,allow_nan=False))\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/json/__init__.py\", line 238, in dumps\n    **kw).encode(obj)\n          ^^^^^^^^^^^\n  File \"/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/json/encoder.py\", line 202, in encode\n    chunks = list(chunks)\n             ^^^^^^^^^^^^\n  File \"/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/json/encoder.py\", line 432, in _iterencode\n    yield from _iterencode_dict(o, _current_indent_level)\n  File \"/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/json/encoder.py\", line 398, in _iterencode_dict\n    yield _floatstr(value)\n          ^^^^^^^^^^^^^^^^\n  File \"/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/json/encoder.py\", line 240, in floatstr\n    raise ValueError(\nValueError: Out of range float values are not JSON compliant: inf\n",
+      "strict_JSON_error": "JSONDecodeError('Expecting value: line 1 column 1 (char 0)')",
+      "status": "fail"
+    },
+    {
+      "name": "unknown_county",
+      "argv": [
+        "--county",
+        "NO_SUCH_SOURCE_COUNTY"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py\", line 65, in <module>\n    if __name__=='__main__':main()\n                            ^^^^^^\n  File \"/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py\", line 61, in main\n    r=next(r for r in rs if r['county']==a.county);others=sum(float(t['pair_votes'])*(2*clip(float(t['A_pair_share'])+a.others_shift_pp/100)-1)for t in rs if t!=r)\n      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nStopIteration\n",
+      "strict_JSON_error": "JSONDecodeError('Expecting value: line 1 column 1 (char 0)')",
+      "status": "fail"
+    }
+  ],
+  "failures": [
+    "uniform_nan_target",
+    "uniform_infinite_target",
+    "selected_nan_target",
+    "selected_infinite_other_shift",
+    "unknown_county"
+  ],
+  "scope": "Same bounded finite/typed-target and named-source-input validation expectation; no new mathematical functionality or source changes."
+}
