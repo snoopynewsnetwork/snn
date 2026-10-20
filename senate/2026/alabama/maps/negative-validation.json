@@ -1,0 +1,158 @@
+{
+  "status": "PASS",
+  "clean_complete_inputs_passed": true,
+  "actual_corruptions_rejected": 30,
+  "cases": [
+    {
+      "name": "truncated_native",
+      "status": "REJECTED",
+      "rule": "complete native count"
+    },
+    {
+      "name": "missing_admin_fields",
+      "status": "REJECTED",
+      "rule": "complete original administrative_fields"
+    },
+    {
+      "name": "missing_candidate",
+      "status": "REJECTED",
+      "rule": "complete original candidate_votes"
+    },
+    {
+      "name": "raw_source_position",
+      "status": "REJECTED",
+      "rule": "complete original candidate_votes"
+    },
+    {
+      "name": "raw_party",
+      "status": "REJECTED",
+      "rule": "complete original candidate_votes"
+    },
+    {
+      "name": "null_to_zero",
+      "status": "REJECTED",
+      "rule": "complete remaining full source contexts"
+    },
+    {
+      "name": "raw_native_header",
+      "status": "REJECTED",
+      "rule": "literal native identity and raw positions"
+    },
+    {
+      "name": "method_alias",
+      "status": "REJECTED",
+      "rule": "literal native identity and raw positions"
+    },
+    {
+      "name": "administrative_polygon",
+      "status": "REJECTED",
+      "rule": "literal native identity and raw positions"
+    },
+    {
+      "name": "admin_mask",
+      "status": "REJECTED",
+      "rule": "complete administrative membership mask"
+    },
+    {
+      "name": "priority_mask",
+      "status": "REJECTED",
+      "rule": "exact887 priority /1198 remainder masks"
+    },
+    {
+      "name": "wrong80",
+      "status": "REJECTED",
+      "rule": "exact integer80 crossing"
+    },
+    {
+      "name": "source_order",
+      "status": "REJECTED",
+      "rule": "full original native order"
+    },
+    {
+      "name": "parent_child_order",
+      "status": "REJECTED",
+      "rule": "complete67 ordered parent/child arrays"
+    },
+    {
+      "name": "county_substitute",
+      "status": "REJECTED",
+      "rule": "complete native count"
+    },
+    {
+      "name": "residual_allocation",
+      "status": "REJECTED",
+      "rule": "source integer marks, no residual allocation"
+    },
+    {
+      "name": "duplicate_keys",
+      "status": "REJECTED",
+      "rule": "unique complete native keys"
+    },
+    {
+      "name": "current_geography",
+      "status": "REJECTED",
+      "rule": "no current/legal admission"
+    },
+    {
+      "name": "current_reporting_ID",
+      "status": "REJECTED",
+      "rule": "no current/legal admission"
+    },
+    {
+      "name": "truncated_companion_context",
+      "status": "REJECTED",
+      "rule": "complete remaining full source contexts"
+    },
+    {
+      "name": "raw_admin_null",
+      "status": "REJECTED",
+      "rule": "complete original administrative_fields"
+    },
+    {
+      "name": "remainder_loss",
+      "status": "REJECTED",
+      "rule": "exact887 priority /1198 remainder masks"
+    },
+    {
+      "name": "wrong_CRS",
+      "status": "REJECTED",
+      "rule": "nativeCRS exact"
+    },
+    {
+      "name": "wrong_vintage",
+      "status": "REJECTED",
+      "rule": "literal layer vintage/name"
+    },
+    {
+      "name": "truncated_native_fields",
+      "status": "REJECTED",
+      "rule": "complete native field inventory"
+    },
+    {
+      "name": "missing_ID",
+      "status": "REJECTED",
+      "rule": "exact disjoint requested/returned IDs and count"
+    },
+    {
+      "name": "duplicate_ID",
+      "status": "REJECTED",
+      "rule": "exact disjoint requested/returned IDs and count"
+    },
+    {
+      "name": "wrong_count",
+      "status": "REJECTED",
+      "rule": "exact disjoint requested/returned IDs and count"
+    },
+    {
+      "name": "duplicate_JSON_fields",
+      "status": "REJECTED",
+      "rule": "duplicate JSON key source"
+    },
+    {
+      "name": "truncated_source",
+      "status": "REJECTED",
+      "rule": "Unterminated string starting at: line 402618 column 5 (char 15256973)"
+    }
+  ],
+  "qualification": "Patches reconstruct complete original inputs; deliberately invalid examples remain raw rejected history, never admitted current sources."
+}

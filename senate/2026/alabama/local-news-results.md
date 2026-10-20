@@ -1,6 +1,6 @@
 # Alabama newsroom and NYT backstops
 
-Research observed **2026-10-18 UTC / 2026-10-17 Central**. The historical first pair, bounded reciprocal and full source authority are now independently reviewed. Original official-results/maps assignments are active; full-state integration remains pending. [Retained responses](data/news/manifest.json) preserve UTC retrieval, URLs, HTTP status/headers and exact compressed/raw hashes. No November live collector or complete state package is claimed.
+Research observed **2026-10-18 UTC / 2026-10-17 Central**. Integrated October 20 after all four original assignments and independent reviews. The underlying newsroom observations retain their own October 18/20 clocks. [Retained responses](data/news/manifest.json) preserve UTC retrieval, URLs, HTTP status/headers and exact compressed/raw hashes. This is a completed bounded research package; no November live collector or current count admission is claimed.
 
 | Region/product | Primary source | Actual observation |
 | --- | --- | --- |
@@ -10,9 +10,9 @@ Research observed **2026-10-18 UTC / 2026-10-17 Central**. The historical first 
 | Statewide original reporting — Alabama Reflector | [Homepage](https://alabamareflector.com/) | Direct 403; research-browser current homepage confirms original state reporting. Actual count product/access remains unverified; preserve original author/upstream attribution for manual contextual reports. |
 | Mobile / Gulf Coast — WKRG | [Homepage](https://www.wkrg.com/) | Direct 403. Exact November scoreboard, supplier, geographic coverage and automated access remain gaps. |
 
-The [SOS primary announcement](https://www.sos.alabama.gov/newsroom/secretary-state-wes-allen-announces-unofficial-primary-election-results-are-available) was retained HTTP 200. It explicitly concerns **May 19 primary** returns from counties and links AlabamaVotes. It does not establish November setup or a guaranteed update interval. The official-results worker must verify actual county probate/election-office authority, native precinct/method records and November slate/rules. Congressional special-primary/redistricting dates must not be assumed to define statewide Senate count geography. No current county feed is inferred from a May announcement.
+The [SOS primary announcement](https://www.sos.alabama.gov/newsroom/secretary-state-wes-allen-announces-unofficial-primary-election-results-are-available) was retained HTTP 200. It explicitly concerns **May 19 primary** returns from counties and links AlabamaVotes. It does not establish November setup or a guaranteed update interval. The completed [official-results investigation](official-results.md) inventories state/all 67 county authority chains, native/method records and bounded roster/legal sources with precise gaps. Congressional special-primary/redistricting dates must not be assumed to define statewide Senate count geography. No current county feed is inferred from a May announcement.
 
-An **October20 UTC** bounded regional followup retains
+An **October 20 UTC** bounded regional followup retains
 [three complete requests](data/news/coordinator-oct20-regional/acquisition-complete-v1.json)
 and a [complete embedded-widget review](data/news/coordinator-oct20-regional/review.json).
 Wiregrass broadcaster [WTVY's results page](https://www.wtvy.com/politics/election-results/)
@@ -48,3 +48,10 @@ The separate already reviewed regional packs preserve fuller response-hop
 records. Read-only audit uses frozen individual receipts embedded in its proof,
 not a mutable aggregate as a rebuild input. No new network requests, unseen
 browser execution, live source admission or collector occurred in this review.
+
+
+## Official-source comparison and source admission
+
+The [independently reviewed official package](official-results.md) retains Mobile's fresh November 3-labelled raw product: Oct 20 08:26AM with timezone unstated,3,578 administrative ballots/80 of 80, and Senate setup Wess 1,035 / Moore 2,070. Four whole45-contest responses preserve the all-scope,ordinary0001,ABSENTEE0081 andPROVISIONAL0082 options. These are **positive pre-election setup**, not November returns. The cached browser June 16 view and fresh raw October 20 body are distinct observations, without an inferred correction sequence.
+
+An inactive zero newsroom product, a positive official setup, a current title and a reporting percentage each need independent source admission. None measures eligible uncounted candidate votes or update cadence. The current SOS May-primary route says Results Coming Soon; local primary/runoff exports remain separately dated. Common Gray infrastructure, official reprints and shared upstream counts do not supply independent statewide confirmations. Signed August 26 certificates and the Autauga specimen are bounded ballot evidence, not exhaustive later-roster or named-write-in approval. Source disagreements, failed access and legacy metadata limits remain in the linked packages.

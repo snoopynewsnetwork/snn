@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/Users/tqbf/codebase/snn/senate/2026/alabama/maps/scripts/replay_xls.py", line 49, in <module>
+    result,refs=run();(M/'xls-source-validation.json').write_text(json.dumps(result,indent=2)+'\n');(M/'original-references.json').write_text(json.dumps(refs,indent=2)+'\n');print(json.dumps(result))
+                ^^^^^
+  File "/Users/tqbf/codebase/snn/senate/2026/alabama/maps/scripts/replay_xls.py", line 28, in run
+    assert row['row_1based']==i+1 and row['values']==sheet.row_values(i) and row['types']==sheet.row_types(i)
+                                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

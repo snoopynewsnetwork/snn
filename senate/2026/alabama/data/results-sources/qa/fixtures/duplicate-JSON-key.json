@@ -1,0 +1,17 @@
+{
+  "name": "duplicate-JSON-key",
+  "base": {
+    "path": "historical-hierarchy.json.gz",
+    "bytes": 4060261,
+    "sha256": "680244ce16330491c0cd9353705ac24f64819b1350740a5108b3c26f82f0bdb0",
+    "reconstruct": "gzip.decompress whole body, parse strict JSON, apply exact JSON-pointer replacement"
+  },
+  "byte_patch": {
+    "offset": 4,
+    "insert_utf8": "\"schema\":null,"
+  },
+  "actual_result": {
+    "status": "REJECTED",
+    "rule": "strict duplicate JSON field parser"
+  }
+}

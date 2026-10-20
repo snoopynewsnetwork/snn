@@ -1,0 +1,1645 @@
+pyshp 3.1.6 at /Users/tqbf/.local/lib/python3.11/site-packages/shapefile.py
+
+class Reader(_HasExitStack):
+    """Reads the three files of a shapefile as a unit or
+    separately.  If one of the three files (.shp, .shx,
+    .dbf) is missing no exception is thrown until you try
+    to call a method that depends on that particular file.
+    The .shx index file is used if available for efficiency
+    but is not required to read the geometry from the .shp
+    file. If present, the "shapefile_path" argument in the
+    constructor must be a string, path or otherwise satisfy
+    os.PathLike.  It is the name of the file you want to open,
+    and can be the path to a shapefile on a local filesystem,
+    inside a zipfile, or a url.
+
+    You can instantiate a Reader without specifying a shapefile
+    and then specify one later with the load() method.
+
+    Only the shapefile headers are read upon loading. Content
+    within each file is only accessed when required and as
+    efficiently as possible. Shapefiles are usually not large
+    but they can be.
+    """
+
+    FileProto = ReadSeekableBinStream
+    new_file_obj_mode = "rb"
+    ext = ".shp"
+    ExceptionClass = ShapefileException
+
+    def __init__(
+        self,
+        shapefile_path: str | PathLike[Any] = "",
+        /,
+        *,
+        encoding: str | None = None,
+        encodingErrors: str = "strict",
+        shp: _NoShpSentinel | BinaryFileT | None = _NoShpSentinel(),
+        shx: BinaryFileT | None = None,
+        dbf: BinaryFileT | None = None,
+        cpg: BinaryFileT | None = None,
+        # Keep kwargs even though unused, to preserve PyShp 2.4 API
+        **kwargs: Any,
+    ):
+        super().__init__()
+        # Store encoding info to use if lazy loading DbfReader later.
+        self._user_specified_encoding = encoding
+        self.encodingErrors = encodingErrors
+        self._shp = None
+        self._shx = None
+        self._dbf = None
+        self._cpg = None
+        self.shapeName = "Not specified"
+        self.numShapes: int = 0
+        self.path: str | os.PathLike[Any] | None = None
+        # See if a shapefile name was passed as the first argument
+        if shapefile_path:
+            if not isinstance(shapefile_path, (str, os.PathLike)):
+                raise TypeError(
+                    f"Unsupported shapefile path argument type: {type(shapefile_path)}. "
+                    "The first arg of Reader must be a str or pathlib.Path"
+                    " (or satisfy os.PathLike). "
+                )
+            discarded_kwargs = {}
+            if shp is not None and not isinstance(shp, _NoShpSentinel):
+                discarded_kwargs["shp"] = shp
+            if shx is not None:
+                discarded_kwargs["shx"] = shx
+            if dbf is not None:
+                discarded_kwargs["dbf"] = dbf
+            if cpg is not None:
+                discarded_kwargs["cpg"] = cpg
+            if discarded_kwargs:
+                raise TypeError(
+                    "Please be specific about the shapefile you want to load. "
+                    f"Got: {shapefile_path}, plus the following unusable "
+                    " kwargs: {discarded_kwargs} which previous versions of PyShp ignored. \n"
+                    "Only either: i) exactly one positional arg \n"
+                    "         or: ii) one or both of shp and dbf, optionally plus shx and cpg kwargs\n"
+                    "is currently supported.  All other kwargs may be set (or not). "
+                )
+            self.path = shapefile_path
+
+            if isinstance(self.path, str):
+                # Try to parse to a supported URL first, as
+                # because pathlib.Path parses URLs like relative file paths
+                # (Path.resolve even returns an absolute one from one, which
+                # could even exist on a Posix file system if the user has a dir
+                # called "https:").
+                url_info = urlsplit(self.path)
+                if (
+                    url_info.netloc
+                    and url_info.scheme
+                    and (
+                        not IS_WINDOWS or not Path(f"{url_info.scheme}:").is_dir()
+                    )  # scheme != drive letter
+                    and url_info.scheme.lower().startswith(SUPPORTED_URL_SCHEMES)
+                ):
+                    # i) ".zip" in the domain name no longer implies it's a url
+                    # to a .zip file (e.g. www.zipfiles.com/unzipped_shapefile.shp).
+                    # ii) Paths to specific shapefiles within zip files from URLs not supported.
+                    if Path(url_info.path).suffix.lower() == ".zip":
+                        zipfileobj = self._download_binary_file_from_url(
+                            url_info,
+                            ".zip",
+                            add_to_exit_stack=False,
+                            suppress_http_errors=False,
+                        )
+                        if zipfileobj is None:
+                            raise ShapefileException("Error downloading: {self.path}")
+                        self._load_from_zipfileobj(zipfileobj)
+                    else:
+                        self._load_from_url(url_info)
+                        # Raises ShapefileException if not self._shp or self._dbf
+                    return
+
+            path = Path(self.path).resolve()
+            paths = [path]
+            paths.extend(path.parents)
+            # Checking path.anchor != "" (e.g. "/" or r"c:\") because Path("https://...").parents[-1] == Path(".")
+            # Only test paths[-1].is_dir() because later path dirs could be inside a zip file.
+            if path.anchor and paths[-1].is_dir():
+                zippath = next(
+                    (
+                        p
+                        for p in reversed(paths)
+                        if p.suffix.lower() == ".zip" and p.is_file()
+                    ),
+                    None,
+                )
+                if zippath is not None:
+                    self._load_from_local_zip_file(path, zippath)
+                    # Raises ShapefileException if not self._shp or self._dbf
+                    return
+
+            self.load(path)
+            # Raises ShapefileException if not self._shp or self._dbf
+            #
+            return
+
+        if not isinstance(shp, _NoShpSentinel):
+            self._shp = self._seek_0_on_file_obj_wrap_or_open_from_name(".shp", shp)
+            self._shx = self._seek_0_on_file_obj_wrap_or_open_from_name(".shx", shx)
+
+        self._cpg = self._seek_0_on_file_obj_wrap_or_open_from_name(".cpg", cpg)
+        self._dbf = self._seek_0_on_file_obj_wrap_or_open_from_name(".dbf", dbf)
+
+        # Load the files
+        if self._shp:
+            self._get_shp_reader()
+        if self._dbf:
+            # Sets self.encoding
+            self._get_dbf_reader()
+        if self._shx:
+            self._get_shx_reader()
+
+    @functools.cache
+    def _get_shp_reader(self) -> ShpReader:
+        if self._shp is None:
+            raise ShapefileException(
+                "ShpReader requires a .shp file or file-like object."
+            )
+        shp_reader = ShpReader(
+            shp=self._shp,
+        )
+        return shp_reader
+
+    @functools.cache
+    def _get_shx_reader(self) -> ShxReader:
+        if self._shx is None:
+            raise ShapefileException(
+                "ShxReader requires a .shx file or file-like object."
+            )
+        shx_reader = ShxReader(
+            shx=self._shx,
+        )
+        self.numShapes = shx_reader.numShapes
+        return shx_reader
+
+    @functools.cache
+    def _get_dbf_reader(self) -> DbfReader:
+        if self._dbf is None:
+            raise ShapefileException(
+                "DbfReader requires a .dbf file or file-like object."
+            )
+        self._set_encoding()
+        return DbfReader(
+            dbf=self._dbf,
+            encoding=self.encoding,
+            encodingErrors=self.encodingErrors,
+        )
+
+    @functools.cache
+    def _set_encoding(self) -> None:
+        if self._cpg is None:
+            encoding_from_cpg = ""
+        else:
+            encoding_from_cpg = (
+                self._cpg.read().decode().lower().replace("-", "_").strip()
+            )
+            if not encoding_from_cpg:
+                warnings.warn("Empty .cpg file (no encoding found). ")
+
+        if self._user_specified_encoding is None:
+            encoding = encoding_from_cpg
+        else:
+            encoding = self._user_specified_encoding.lower().replace("-", "_").strip()
+
+            if encoding_from_cpg and encoding != encoding_from_cpg:
+                warnings.warn(
+                    f"Specified encoding: {encoding} "
+                    "different to encoding read from "
+                    f".cpg file: {encoding_from_cpg}",
+                )
+        self.encoding = encoding or "utf-8"
+
+    @property
+    def shp_reader(self) -> ShpReader:
+        return self._get_shp_reader()
+
+    @property
+    def shx_reader(self) -> ShxReader:
+        return self._get_shx_reader()
+
+    @property
+    def dbf_reader(self) -> DbfReader:
+        return self._get_dbf_reader()
+
+    # Simple references to the 3 constituent file objects for backwards compatibility.
+    @property
+    def shp(self) -> ReadSeekableBinStream:
+        return self.shp_reader.file
+
+    @property
+    def shx(self) -> ReadSeekableBinStream:
+        return self.shx_reader.file
+
+    @property
+    def dbf(self) -> ReadSeekableBinStream:
+        return self.dbf_reader.file
+
+    @property
+    def _offsets(self) -> list[int]:
+        if self._shx:
+            return self.shx_reader.offsets
+        return self.shp_reader.offsets
+
+    @property
+    def shapeTypeName(self) -> str:
+        return self.shp_reader.shapeTypeName
+
+    @property
+    def shapeType(self) -> int:
+        return self.shp_reader.shapeType
+
+    @property
+    def bbox(self) -> BBox:
+        return self.shp_reader.bbox
+
+    @property
+    def mbox(self) -> MBox:
+        return self.shp_reader.mbox
+
+    @property
+    def zbox(self) -> ZBox:
+        return self.shp_reader.zbox
+
+    @property
+    def numRecords(self) -> int | None:
+        if self._dbf is None:
+            return None
+        return self.dbf_reader.numRecords
+
+    @property
+    def fields(self) -> list[Field]:
+        return self.dbf_reader.fields
+
+    @property
+    def data_fields(self) -> list[Field]:
+        """All fields except the DeletionFlag."""
+        return self.dbf_reader.data_fields
+
+    def record(self, i: int = 0, fields: list[str] | None = None) -> _Record | None:
+        return self.dbf_reader.record(i, fields)
+
+    def records(
+        self,
+        fields: list[str] | None = None,
+        start: int = 0,
+        stop: int | None = None,
+        deleted_as_None: bool = False,
+    ) -> list[_Record | None]:
+        return self.dbf_reader.records(fields, start, stop, deleted_as_None)
+
+    def iterRecords(
+        self,
+        fields: list[str] | None = None,
+        start: int = 0,
+        stop: int | None = None,
+        deleted_as_None: bool = False,
+    ) -> Iterator[_Record | None]:
+        return self.dbf_reader.iterRecords(fields, start, stop, deleted_as_None)
+
+    def _try_get_open_constituent_file(
+        self,
+        file: Path,
+        ext: Literal[".shp", ".shx", ".dbf", ".cpg"],
+    ) -> IO[bytes] | None:
+        """
+        Attempts to open a .shp, .dbf or .shx file,
+        with both lower case and upper case file extensions,
+        and return it.  If it was not possible to open the file, None is returned.
+        """
+        exts = {ext, ext.upper(), ext.lower()}
+
+        for candidate_ext in exts:
+            try:
+                file_obj = file.with_suffix(candidate_ext).open("rb")
+            except OSError:
+                continue
+            self.exit_stack.enter_context(file_obj)
+            return file_obj
+        return None
+
+    def _seek_0_on_file_obj_wrap_or_open_from_name(
+        self,
+        ext: Literal[".shp", ".shx", ".dbf", ".cpg"],
+        file: BinaryFileT | None,
+    ) -> None | IO[bytes]:
+        if file is None:
+            return None
+
+        if isinstance(file, (str, PathLike)):
+            # Added to exit stack if opened.
+            return self._try_get_open_constituent_file(Path(file), ext)
+
+        # Other user-opened file objects not added to exit stack.
+        # The user must close them.
+        if hasattr(file, "read"):
+            # Copy if required
+            try:
+                file.seek(0)
+                return file
+            except (NameError, io.UnsupportedOperation):
+                # Read the whole file into a seekable wrapper.
+                return io.BytesIO(file.read())
+
+        raise ShapefileException(
+            f"Could not load shapefile constituent file from: {file}"
+        )
+
+    def _download_binary_file_from_url(
+        self,
+        urlinfo: SplitResult,
+        ext: Literal[".shp", ".shx", ".dbf", ".cpg", ".zip"],
+        add_to_exit_stack: bool = True,
+        suppress_http_errors: bool = True,
+    ) -> tempfile._TemporaryFileWrapper[bytes] | None:
+        sniffed_bytes, resp = _try_to_download_binary_file(
+            urlinfo=urlinfo,
+            ext=ext,
+            suppress_http_errors=suppress_http_errors,
+        )
+        if resp is None:
+            return None
+        # Use tempfile as source for url data.
+        fileobj = _save_to_named_tmp_file(resp, initial_bytes=sniffed_bytes)
+        if add_to_exit_stack:
+            self.exit_stack.enter_context(fileobj)
+        return fileobj
+
+    def _load_from_url(self, urlinfo: SplitResult) -> None:
+        # Shapefile is from a url
+        # Download each file to temporary path and treat as normal shapefile path
+        self._shp = self._download_binary_file_from_url(urlinfo, ".shp")
+        self._shx = self._download_binary_file_from_url(urlinfo, ".shx")
+        self._cpg = self._download_binary_file_from_url(urlinfo, ".cpg")
+        self._dbf = self._download_binary_file_from_url(urlinfo, ".dbf")
+
+        if self._shp is None and self._dbf is None:
+            raise ShapefileException(
+                f"Failed to download .shp or .dbf from: {urlunsplit(urlinfo)}"
+            )
+
+    def _load_file_from_zip_to_tmp_file(
+        self,
+        archive: zipfile.ZipFile,
+        file: Path,
+        ext: Literal[".shp", ".shx", ".dbf", ".cpg"],
+    ) -> tempfile._TemporaryFileWrapper[bytes] | None:
+        for cased_ext in {ext.lower(), ext.upper(), ext}:
+            try:
+                member = archive.open(file.with_suffix(cased_ext).as_posix())
+            except (OSError, KeyError):
+                continue
+            # Use read+write tempfile as source for member data.
+            fileobj = _save_to_named_tmp_file(member)
+            self.exit_stack.enter_context(fileobj)
+            return fileobj
+        return None
+
+    def _load_from_local_zip_file(
+        self,
+        path: Path,
+        zippath: Path,
+    ) -> None:
+
+        shapefile: Path | None
+
+        if path != zippath:
+            more_zipfile_parents = [
+                parent
+                for parent in path.relative_to(zippath).parents
+                if parent.suffix.lower() == ".zip"
+            ]
+            if more_zipfile_parents:
+                warnings.warn(
+                    f"Reading from multiple nested zipfiles is not supported. "
+                    "Multiple path segments requested within zip file, that "
+                    f"also look like zip files: {more_zipfile_parents}. "
+                    "Trying to open Shapefile at: {path} anyway "
+                )
+            shapefile = path.relative_to(zippath)
+        else:
+            shapefile = None
+
+        with open(zippath, mode="rb") as zipfileobj:
+            self._load_from_zipfileobj(zipfileobj, shapefile)
+
+    def _load_from_zipfileobj(
+        self,
+        zipfileobj: tempfile._TemporaryFileWrapper[bytes] | io.BufferedReader,
+        shapefile: Path | None = None,
+    ) -> None:
+        # Open the zipfile archive
+        with zipfile.ZipFile(zipfileobj, "r") as archive:
+            if shapefile is None:
+                # Only the zipfile path is given
+                # Inspect zipfile contents to find the full shapefile path
+                constituent_files = (
+                    Path(name)
+                    for name in archive.namelist()
+                    if name.lower().endswith((".shp", ".dbf", ".shx", ".cpg"))
+                )
+
+                def without_ext(path: Path) -> Path:
+                    return path.with_suffix("")
+
+                shapefiles = list(itertools.groupby(constituent_files, without_ext))
+                # The zipfile must contain exactly one shapefile
+                if not shapefiles:
+                    raise ShapefileException("Zipfile does not contain any shapefiles")
+                if len(shapefiles) >= 2:
+                    raise ShapefileException(
+                        f"Zipfile contains more than one shapefile: {shapefiles}. "
+                        "Please ensure the zip file is on the file system "
+                        "(download it if necessary) "
+                        "and specify the full path to the shapefile in it "
+                        "that you would like to open, "
+                        "e.g. 'my_zip_file.zip/this_particular_shape_file.shp'. "
+                    )
+                shapefile, _files = shapefiles[0]
+            # Try to extract file-like objects from zipfile
+            self._shp = self._load_file_from_zip_to_tmp_file(archive, shapefile, ".shp")
+            self._shx = self._load_file_from_zip_to_tmp_file(archive, shapefile, ".shx")
+            self._cpg = self._load_file_from_zip_to_tmp_file(archive, shapefile, ".cpg")
+            self._dbf = self._load_file_from_zip_to_tmp_file(archive, shapefile, ".dbf")
+
+    def load(self, file: str | os.PathLike[Any]) -> None:
+        """Opens a shapefile from a filename or file-like
+        object. Normally this method would be called by the
+        constructor with the file name as an argument."""
+        if not file:
+            raise ShapefileException(f"No Shapefile to load.  Got: {file=}")
+        self.path = file
+        file = Path(file)
+        self.shapeName = file.stem
+        self.load_shp(file)
+        self.load_shx(file)
+        self.load_dbf(file)
+        if not (self._shp or self._dbf):
+            raise ShapefileException(
+                f"Neither {self.shapeName}.dbf nor {self.shapeName}.shp could be opened "
+            )
+
+    def load_shp(self, file: Path) -> None:
+        """
+        Attempts to load file with .shp extension as both lower and upper case
+        """
+        self._shp = self._try_get_open_constituent_file(file, ".shp")
+        if self._shp is not None:
+            self._get_shp_reader()
+
+    def load_shx(self, file: Path) -> None:
+        """
+        Attempts to load file with .shx extension as both lower and upper case
+        """
+        self._shx = self._try_get_open_constituent_file(file, ".shx")
+        if self._shx is not None:
+            self._get_shx_reader()
+
+    def load_dbf(self, file: Path) -> None:
+        """
+        Attempts to load file with .dbf extension as both lower and upper case
+        """
+        self._dbf = self._try_get_open_constituent_file(file, ".dbf")
+        if self._dbf is not None:
+            self._cpg = self._try_get_open_constituent_file(file, ".cpg")
+            self._get_dbf_reader()
+
+    def __len__(self) -> int:
+        """Returns the number of shapes/records in the shapefile."""
+        if self._dbf:
+            # Preferably use dbf record count
+            return len(self.dbf_reader)
+
+        if self._shp:
+            # Otherwise use shape count
+            if self._shx:
+                return self.shx_reader.numShapes
+
+            # Index file not available, iterate all shapes to get total count
+            elif self.numShapes == 0:
+                # Determine length of shp file from
+                # shp_reader offsets (and set these too)
+                self.numShapes = len(self._offsets)
+
+        return self.numShapes
+
+    def __iter__(self) -> Iterator[ShapeRecord]:
+        """Iterates through the shapes/records in the shapefile."""
+        yield from self.iterShapeRecords()
+
+    @property
+    def __geo_interface__(self) -> GeoJSONFeatureCollectionWithBBox:
+        return GeoJSONFeatureCollectionWithBBox(
+            bbox=list(self.bbox),
+            **self.shapeRecords().__geo_interface__,
+        )
+
+    def __del__(self) -> None:
+        self.close()
+
+    def __str__(self) -> str:
+        """
+        Use some general info on the shapefile as __str__
+        """
+        info = ["shapefile Reader"]
+        if self._shp:
+            info.append(
+                f"    {self.numShapes} shapes (type '{SHAPETYPE_LOOKUP[self.shapeType]}')"
+            )
+        if self._dbf:
+            info.append(f"    {self.numRecords} records ({len(self.fields)} fields)")
+        return "\n".join(info)
+
+    def shape(self, i: int = 0, bbox: BBox | None = None) -> Shape | None:
+        """Returns a shape object for a shape in the geometry
+        record file.
+        If the 'bbox' arg is given (list or tuple of xmin,ymin,xmax,ymax),
+        returns None if the shape is not within that region.
+        """
+        N = len(self)
+        if N == 0:
+            raise ShapefileException("No shapes loaded.")
+        i = ensure_within_bounds(i, N)
+        if self._shx:
+            offset, shape_len_B = (
+                self.shx_reader.offsets[i],
+                self.shx_reader.shape_lengths_B[i],
+            )
+        else:
+            offset, shape_len_B = None, None
+        return self.shp_reader.shape(i, offset, shape_len_B, bbox)
+
+    def shapes(self, bbox: BBox | None = None) -> Shapes:
+        """Returns all shapes in a shapefile.
+        To only read shapes within a given spatial region, specify the 'bbox'
+        arg as a list or tuple of xmin,ymin,xmax,ymax.
+        """
+        shapes = Shapes(self.iterShapes(bbox=bbox))
+        return shapes
+
+    def iterShapes(self, bbox: BBox | None = None) -> Iterator[Shape | None]:
+        """Returns a generator of shapes in a shapefile. Useful
+        for handling large shapefiles.
+        To only read shapes within a given spatial region, specify the 'bbox'
+        arg as a list or tuple of xmin,ymin,xmax,ymax.
+        """
+        shape_lengths_B = self.shx_reader.shape_lengths_B if self._shx else None
+        bbox = BBox(*bbox) if bbox is not None else None
+        yield from self.shp_reader.iterShapes(
+            shape_lengths_B=shape_lengths_B, bbox=bbox
+        )
+        self.numShapes = len(self.shp_reader.headers_cache)
+
+    def shapeRecord(
+        self,
+        i: int = 0,
+        fields: list[str] | None = None,
+        bbox: BBox | None = None,
+    ) -> ShapeRecord | None:
+        """Returns a combination geometry and attribute record for the
+        supplied record index.
+        To only read some of the fields, specify the 'fields' arg as a
+        list of one or more fieldnames.
+        If the 'bbox' arg is given (list or tuple of xmin,ymin,xmax,ymax),
+        returns None if the shape is not within that region.
+        """
+        if self.numRecords is None:
+            raise ShapefileException(
+                "A .dbf file is required to read Records, for ShapeRecords"
+            )
+        i = ensure_within_bounds(i, self.numRecords)
+        shape = self.shape(i, bbox=bbox)
+        if shape:
+            record = self.dbf_reader.record(i, fields=fields)
+            return ShapeRecord(shape=shape, record=record)
+        return None
+
+    def shapeRecords(
+        self,
+        fields: list[str] | None = None,
+        bbox: BBox | None = None,
+    ) -> ShapeRecords:
+        """Returns a list of combination geometry/attribute records for
+        all records in a shapefile.
+        To only read some of the fields, specify the 'fields' arg as a
+        list of one or more fieldnames.
+        To only read entries within a given spatial region, specify the 'bbox'
+        arg as a list or tuple of xmin,ymin,xmax,ymax.
+        """
+        return ShapeRecords(self.iterShapeRecords(fields=fields, bbox=bbox))
+
+    def iterShapeRecords(
+        self,
+        fields: list[str] | None = None,
+        bbox: BBox | None = None,
+    ) -> Iterator[ShapeRecord]:
+        """Returns a generator of combination geometry/attribute records for
+        all records in a shapefile.
+        To only read some of the fields, specify the 'fields' arg as a
+        list of one or more fieldnames.
+        To only read entries within a given spatial region, specify the 'bbox'
+        arg as a list or tuple of xmin,ymin,xmax,ymax.
+        """
+        if bbox is None:
+            # iterate through all shapes and records
+            for shape, record in zip(
+                self.iterShapes(), self.dbf_reader.iterRecords(fields=fields)
+            ):
+                yield ShapeRecord(shape=shape, record=record)
+        else:
+            # Only yield ShapeRecords whose shape.bbox overlaps with bbox.
+            # TODO: internal _record method should be faster but would have to
+            # make sure to seek to correct file location...
+
+            # fieldTuples,recLookup,recStruct = self._record_fields(fields)
+            for shape in self.iterShapes(bbox=bbox):
+                if shape:
+                    # record = self._record(oid=i, fieldTuples=fieldTuples, recLookup=recLookup, recStruct=recStruct)
+                    record = self.dbf_reader.record(i=shape.oid, fields=fields)
+                    yield ShapeRecord(shape=shape, record=record)
+
+
+class Shape:
+    def __init__(
+        self,
+        shapeType: int | _NoShapeTypeSentinel = _NoShapeTypeSentinel(),
+        points: PointsT | None = None,
+        parts: Sequence[int] | None = None,  # index of start point of each part
+        lines: list[PointsT] | None = None,
+        partTypes: Sequence[int] | None = None,
+        oid: int | None = None,
+        *,
+        m: Sequence[float | None] | None = None,
+        z: Sequence[float] | None = None,
+        bbox: BBox | None = None,
+        mbox: MBox | None = None,
+        zbox: ZBox | None = None,
+    ):
+        """Stores the geometry of the different shape types
+        specified in the Shapefile spec. Shape types are
+        usually point, polyline, or polygons. Every shape type
+        except the "Null" type contains points at some level for
+        example vertices in a polygon. If a shape type has
+        multiple shapes containing points within a single
+        geometry record then those shapes are called parts. Parts
+        are designated by their starting index in geometry record's
+        list of shapes. For MultiPatch geometry, partTypes designates
+        the patch type of each of the parts.
+        Lines allows the points-lists and parts to be denoted together
+        in one argument.  It is intended for multiple point shapes
+        (polylines, polygons and multipatches) but if used as a length-1
+        nested list for a multipoint (instead of points for some reason)
+        PyShp will not complain, as multipoints only have 1 part internally.
+        """
+
+        # Preserve previous behaviour for anyone who set self.shapeType = None
+        if isinstance(shapeType, _NoShapeTypeSentinel):
+            class_name = self.__class__.__name__
+            self.shapeType = SHAPETYPENUM_LOOKUP.get(class_name.upper(), NULL)
+        else:
+            self.shapeType = shapeType
+
+        if partTypes is not None:
+            if self.shapeType != MULTIPATCH:
+                raise ShapefileException(
+                    f"Only a Multipatch shape supports partTypes, not: {self.__class__.__name__} "
+                    f" (shape type: {self.shapeTypeName}) "
+                    f"Got: {partTypes=}"
+                )
+            self.partTypes = _Array[int]("i", partTypes)
+
+        default_points: PointsT = []
+        default_parts: list[int] = []
+
+        if points and lines:
+            raise ShapefileException(
+                "Constructing meaningful Shapes unambiguously from both "
+                "points and lines is not supported.  Provide one only. "
+                f" Got: {points=} and {lines=}"
+            )
+        elif not points and not lines:
+            if self.shapeType != NULL:
+                raise ShapefileException(
+                    f"Shape: {self.__class__.__name__} or shape type: {self.shapeTypeName} "
+                    "requires non-empty points or non-empty lines."
+                    f" Got: {points=} and {lines=}"
+                )
+        elif self.shapeType == NULL:
+            raise ShapefileException(
+                f"NullShape or shape type: {self.shapeTypeName} "
+                "must have zero points and zero lines (or neither set, or both None). "
+                f" Got: {points=} and {lines=}"
+            )
+        elif self.shapeType in Point_shapeTypes:
+            if not points or len(points) >= 2:
+                raise ShapefileException(
+                    f"Single point Shape: {self.__class__.__name__}, shape type: {self.shapeTypeName} "
+                    "requires one or  points (and possibly a z co-ordinate and m value), not "
+                    f"lines. Got: {points=} and {lines=}"
+                )
+            if lines:
+                raise ShapefileException(
+                    f"Single point shape: {self.__class__.__name__}, shape type: {self.shapeTypeName} "
+                    f"does not support lines. Got: {lines=}"
+                )
+        elif self.shapeType in MultiPoint_shapeTypes and lines and len(lines) >= 2:
+            raise ShapefileException(
+                f"Multipoint shape: {self.__class__.__name__}, shape type: {self.shapeTypeName} "
+                f"is a single part shape, but was given multiple parts - got {lines=}. "
+                "Point clouds can be constructed from a list of list points supplied to lines "
+                "(instead of points) but only one single 'line' is supported. "
+            )
+
+        if lines is not None:
+            if self.shapeType in Polygon_shapeTypes:
+                lines = _with_polygon_rings_closed(lines)
+
+            default_points, default_parts = _points_and_part_indices(lines)
+
+        elif not parts and self.shapeType in _CanHaveBBox_shapeTypes:
+            # TODO:  Raise issue.
+            # This ensures Polylines, Polygons and Multipatches with no part information are a single
+            # Polyline, Polygon or Multipatch respectively.
+            #
+            # This is consistent with  MultiPoints shapes having single part index 0 as
+            # documented in README.md, also when set from points
+            #
+            # Alternatively single points could be given parts = [0] too, as they do if formed
+            # _from_geojson.
+            default_parts = [0]
+
+        # PyShp 2 API compatibility requires self.points = []
+        # on NullShapes (and self.parts = []).
+        self.points: PointsT = points or default_points
+        self.parts = _Array[int]("i", parts or default_parts)
+
+        # and a dict to record any captured errors encountered in GeoJSON
+        self._errors: dict[str, int] = {}
+
+        # add oid
+        self._oid: int = -1 if oid is None else oid
+
+        if self.shapeType != NULL and self.shapeType not in Point_shapeTypes:
+            self.bbox: BBox = bbox or self._bbox_from_points()
+
+        ms_found = True
+        if m:
+            self.m: Sequence[float | None] = [_ensure_within_bounds(x) for x in m]
+        elif self.shapeType in _HasM_shapeTypes:
+            i_m = 3 if self.shapeType in _HasZ_shapeTypes | PointZ_shapeTypes else 2
+            self.m = [_m_from_point(p, i_m) for p in self.points]
+        elif self.shapeType in PointM_shapeTypes:
+            i_m = 3 if self.shapeType == POINTZ else 2
+            self.m = (_m_from_point(self.points[0], i_m),)
+        else:
+            ms_found = False
+
+        zs_found = True
+        if z:
+            self.z: Sequence[float] = _Array[float]("d", z)
+        elif self.shapeType in _HasZ_shapeTypes:
+            self.z = _Array[float]("d", (_z_from_point(p) for p in self.points))
+        elif self.shapeType == POINTZ:
+            self.z = (_z_from_point(self.points[0]),)
+        else:
+            zs_found = False
+
+        if mbox is not None:
+            self.mbox: MBox = mbox
+        elif ms_found:
+            self.mbox = self._mbox_from_ms()
+
+        if zbox is not None:
+            self.zbox: ZBox = zbox
+        elif zs_found:
+            self.zbox = self._zbox_from_zs()
+
+    @property
+    def oid(self) -> int:
+        """The index position of the shape in the original shapefile"""
+        return self._oid
+
+    @property
+    def shapeTypeName(self) -> str:
+        return SHAPETYPE_LOOKUP[self.shapeType]
+
+    @property
+    def points_2D(self) -> list[Point2D]:
+        return [(x, y) for (x, y, *_rest) in self.points]
+
+    @property
+    def points_3D(self) -> list[Point3D]:
+        zs = getattr(self, "z", None)
+        if zs is None:
+            return [(x, y, _z_from_point((x, y))) for (x, y, *_rest) in self.points]
+        return [(x, y, z) for (x, y, *_rest), z in zip(self.points, zs)]
+
+    def __repr__(self) -> str:
+        class_name = self.__class__.__name__
+        if class_name == "Shape":
+            return f"Shape #{self._oid}: {self.shapeTypeName}"
+        return f"{class_name} #{self._oid}"
+
+    def _bbox_from_points(self) -> BBox:
+        xs: list[float] = []
+        ys: list[float] = []
+
+        for point in self.points:
+            xs.append(point[0])
+            ys.append(point[1])
+
+        return BBox(min(xs), min(ys), max(xs), max(ys))
+
+    def _mbox_from_ms(self) -> MBox:
+        ms: list[float] = [m for m in self.m if m is not None]
+
+        if not ms:
+            return MBox(None, None)
+            # # only if none of the shapes had m values, should mbox be set to missing m values
+            # ms.append(NODATA)
+
+        return MBox(min(ms), max(ms))
+
+    def _zbox_from_zs(self) -> ZBox:
+        return ZBox(min(self.z), max(self.z))
+
+    @property
+    def __geo_interface__(self) -> GeoJSONHomogeneousGeometryObject:
+        if self.shapeType in {POINT, POINTM, POINTZ}:
+            # point
+            if len(self.points) == 0:
+                # the shape has no coordinate information, i.e. is 'empty'
+                # the geojson spec does not define a proper null-geometry type
+                # however, it does allow geometry types with 'empty' coordinates to be interpreted as null-geometries
+                return {"type": "Point", "coordinates": ()}
+
+            return {"type": "Point", "coordinates": self.points[0]}
+
+        if self.shapeType in {MULTIPOINT, MULTIPOINTM, MULTIPOINTZ}:
+            if len(self.points) == 0:
+                # the shape has no coordinate information, i.e. is 'empty'
+                # the geojson spec does not define a proper null-geometry type
+                # however, it does allow geometry types with 'empty' coordinates to be interpreted as null-geometries
+                return {"type": "MultiPoint", "coordinates": []}
+
+            # multipoint
+            return {
+                "type": "MultiPoint",
+                "coordinates": self.points,
+            }
+
+        if self.shapeType in {POLYLINE, POLYLINEM, POLYLINEZ}:
+            if len(self.parts) == 0:
+                # the shape has no coordinate information, i.e. is 'empty'
+                # the geojson spec does not define a proper null-geometry type
+                # however, it does allow geometry types with 'empty' coordinates to be interpreted as null-geometries
+                return {"type": "LineString", "coordinates": []}
+
+            if len(self.parts) == 1:
+                # linestring
+                return {
+                    "type": "LineString",
+                    "coordinates": self.points,
+                }
+
+            # multilinestring
+            ps = None
+            coordinates = []
+            for part in self.parts:
+                if ps is None:
+                    ps = part
+                    continue
+
+                coordinates.append(list(self.points[ps:part]))
+                ps = part
+
+            # assert len(self.parts) > 1
+            # from previous if len(self.parts) checks so part is defined
+            coordinates.append(list(self.points[part:]))
+            return {"type": "MultiLineString", "coordinates": coordinates}
+
+        if self.shapeType in {POLYGON, POLYGONM, POLYGONZ}:
+            if len(self.parts) == 0:
+                # the shape has no coordinate information, i.e. is 'empty'
+                # the geojson spec does not define a proper null-geometry type
+                # however, it does allow geometry types with 'empty' coordinates to be interpreted as null-geometries
+                return {"type": "Polygon", "coordinates": []}
+
+            # get all polygon rings
+            rings = []
+            for i, start in enumerate(self.parts):
+                # get indexes of start and end points of the ring
+                try:
+                    end = self.parts[i + 1]
+                except IndexError:
+                    end = len(self.points)
+
+                # extract the points that make up the ring
+                ring = list(self.points[start:end])
+                rings.append(ring)
+
+            # organize rings into list of polygons, where each polygon is defined as list of rings.
+            # the first ring is the exterior and any remaining rings are holes (same as GeoJSON).
+            polys = organize_polygon_rings(rings, self._errors)
+
+            # if VERBOSE is True, issue detailed warning about any shape errors
+            # encountered during the Shapefile to GeoJSON conversion
+            if VERBOSE and self._errors:
+                header = f"Possible issue encountered when converting Shape #{self.oid} to GeoJSON: "
+                orphans = self._errors.get("polygon_orphaned_holes", None)
+                if orphans:
+                    msg = (
+                        header
+                        + "Shapefile format requires that all polygon interior holes be contained by an exterior ring, \
+but the Shape contained interior holes (defined by counter-clockwise orientation in the shapefile format) that were \
+orphaned, i.e. not contained by any exterior rings. The rings were still included but were \
+encoded as GeoJSON exterior rings instead of holes."
+                    )
+                    logger.warning(msg)
+                only_holes = self._errors.get("polygon_only_holes", None)
+                if only_holes:
+                    msg = (
+                        header
+                        + "Shapefile format requires that polygons contain at least one exterior ring, \
+but the Shape was entirely made up of interior holes (defined by counter-clockwise orientation in the shapefile format). The rings were \
+still included but were encoded as GeoJSON exterior rings instead of holes."
+                    )
+                    logger.warning(msg)
+
+            # return as geojson
+            if len(polys) == 1:
+                return {"type": "Polygon", "coordinates": polys[0]}
+
+            return {"type": "MultiPolygon", "coordinates": polys}
+
+        raise GeoJSON_Error(
+            f'Shape type "{SHAPETYPE_LOOKUP[self.shapeType]}" cannot be represented as GeoJSON.'
+        )
+
+    @staticmethod
+    def _from_geojson(geoj: GeoJSONHomogeneousGeometryObject) -> Shape:
+
+        shapeType = GEOJSON_TO_SHAPETYPE.get(geoj["type"], None)
+        if shapeType is None:
+            raise GeoJSON_Error(
+                f"Cannot create Shape from GeoJSON type '{geoj['type']}'"
+            )
+        if shapeType == NULL or (geoj["type"] == "Point" and geoj["coordinates"] == ()):
+            return NullShape()
+
+        points: PointsT
+        parts: list[int]
+
+        # set points and parts
+        if geoj["type"] == "Point" and isinstance(geoj["coordinates"], list):
+            points = [geoj["coordinates"]]
+            parts = [0]
+        elif geoj["type"] == "MultiPoint" or geoj["type"] == "LineString":
+            points = geoj["coordinates"]
+            parts = [0]
+        elif geoj["type"] == "Polygon":
+            points = []
+            parts = []
+            index = 0
+            for i, ext_or_hole in enumerate(geoj["coordinates"]):
+                # although the latest GeoJSON spec states that exterior rings should have
+                # counter-clockwise orientation, we explicitly check orientation since older
+                # GeoJSONs might not enforce this.
+                if i == 0 and not is_cw(ext_or_hole):
+                    # flip exterior direction
+                    ext_or_hole = rewind(ext_or_hole)
+                elif i > 0 and is_cw(ext_or_hole):
+                    # flip hole direction
+                    ext_or_hole = rewind(ext_or_hole)
+                points.extend(ext_or_hole)
+                parts.append(index)
+                index += len(ext_or_hole)
+        elif geoj["type"] == "MultiLineString":
+            points = []
+            parts = []
+            index = 0
+            for linestring in geoj["coordinates"]:
+                points.extend(linestring)
+                parts.append(index)
+                index += len(linestring)
+        elif geoj["type"] == "MultiPolygon":
+            points = []
+            parts = []
+            index = 0
+            for polygon in geoj["coordinates"]:
+                for i, ext_or_hole in enumerate(polygon):
+                    # although the latest GeoJSON spec states that exterior rings should have
+                    # counter-clockwise orientation, we explicitly check orientation since older
+                    # GeoJSONs might not enforce this.
+                    if i == 0 and not is_cw(ext_or_hole):
+                        # flip exterior direction
+                        ext_or_hole = rewind(ext_or_hole)
+                    elif i > 0 and is_cw(ext_or_hole):
+                        # flip hole direction
+                        ext_or_hole = rewind(ext_or_hole)
+                    points.extend(ext_or_hole)
+                    parts.append(index)
+                    index += len(ext_or_hole)
+        return Shape(shapeType=shapeType, points=points, parts=parts)
+
+
+class ShpReader(_HasCheckedReadableFile):
+    """Reads a .shp file."""
+
+    FileProto = ReadSeekableBinStream
+    new_file_obj_mode = "rb"
+    ext = ".shp"
+
+    def __init__(
+        self,
+        shp: str | PathLike[Any] | ReadSeekableBinStream,
+    ):
+        super().__init__(file=shp)
+        # self.bbox: BBox
+        # self.zbox: ZBox
+        # self.mbox: MBox
+        self.shapeType: int
+        self._shpHeader()
+        self.headers_cache: list[ShapeHeaderInfoT] = []
+
+    @property
+    def shapeTypeName(self) -> str:
+        return SHAPETYPE_LOOKUP[self.shapeType]
+
+    def _shpHeader(self) -> None:
+        """Reads the header information from a .shp file."""
+
+        # File length (16-bit word * 2 = bytes)
+        self.file.seek(24)
+        self.shp_file_size_B = unpack(">i", self.file.read(4))[0] * 2
+        # Shape type
+        self.file.seek(32)
+        self.shapeType = unpack("<i", self.file.read(4))[0]
+        # The shapefile's bounding box (lower left, upper right)
+        self.bbox = BBox(*unpack("<4d", self.file.read(32)))
+        # Elevation
+        self.zbox = ZBox(*unpack("<2d", self.file.read(16)))
+        # Measure
+        # Measure values less than -1e38 are nodata values according to the spec
+        self.mbox = MBox(
+            *(
+                float(m_bound) if m_bound >= ISDATA_LOWER_BOUND else None
+                for m_bound in unpack("<2d", self.file.read(16))
+            )
+        )
+
+        if self.file_size_B != self.shp_file_size_B:
+            file_name = getattr(self.file, "name", ".shp")
+            msg = (
+                f"Declared file size in {file_name} header: {self.shp_file_size_B} "
+                f"not equal to actual file size: {self.file_size_B} "
+                "(both in bytes)"
+            )
+            warnings.warn(msg, category=PossiblyCorruptFileHeader)
+
+    @functools.cache  # Only read through the shape headers (e.g. on disk), at most once.
+    def _headers_cached_gen(self) -> Iterator[ShapeHeaderInfoT]:
+
+        header_pos = 100  # after .shp file header, before start of first shape's header
+
+        while header_pos < self.file_size_B:
+            self.file.seek(header_pos)
+            # Unpack the shape header only
+            recNum, recLength_16bw = unpack(">2i", self.file.read(8))
+
+            shp_length_B = 2 * recLength_16bw
+            shape_header_data = header_pos, shp_length_B, recNum
+            self.headers_cache.append(shape_header_data)
+            yield shape_header_data
+
+            # Calculate next shape header position
+            header_pos += 8 + shp_length_B
+
+    def shape_header(self, index: int) -> ShapeHeaderInfoT:
+        while index < 0 or index >= len(self.headers_cache):
+            try:
+                next(self._headers_cached_gen())
+            except StopIteration:
+                break
+        return self.headers_cache[index]
+
+    def headers_gen(self) -> Iterator[ShapeHeaderInfoT]:
+        yield from self.headers_cache
+        yield from self._headers_cached_gen()
+
+    def cache_all_headers(self) -> None:
+        self.shape_header(-1)
+
+    @functools.cached_property
+    def offsets(self) -> list[int]:
+        return [header[0] for header in self.headers_gen()]
+
+    def shape(
+        self,
+        index: int,
+        offset: int | None = None,
+        shape_len_B: int | None = None,
+        bbox: BBox | None = None,
+    ) -> Shape | None:
+        """Returns the Shape at a given index, or None if it is outside the
+        specified bbox.  If a corresponding .shx file is available, it
+        is faster to provide offset and shape_len_B from it, e.g. via the main
+        Shapefile Reader class.  Otherwise offsets (and record numbers
+        and shape lengths) will be read on the fly as needed, and
+        cached in memory.
+        """
+        if offset is None or shape_len_B is None:
+            offset, shape_len_B, _recNum = self.shape_header(index)
+        # Seek to 8B after the offset (past the shape's 8B header).
+        self.file.seek(offset + 8)
+        shape = self._shape(shape_len_B=shape_len_B, oid=index, bbox=bbox)
+        return shape
+
+    def _shape(
+        self,
+        shape_len_B: int,  # Excluding header
+        oid: int | None = None,
+        bbox: BBox | None = None,
+    ) -> Shape | None:
+        """Returns geometry for a single shape (or None if
+        it is outside the specified bbox).
+
+        Requires the size in B of the shaps, and the .shp
+        file to have been .seeked to the start of the shape
+        (immediately after the shape's header).
+        """
+
+        # Read entire record into memory to avoid having to call
+        # seek on the file afterwards
+        b_io: ReadSeekableBinStream = io.BytesIO(self.file.read(shape_len_B))
+        # To avoid a .seek for the next shape's header (where we are already)
+        b_io.seek(0)
+
+        try:
+            shapeType = unpack("<i", b_io.read(4))[0]
+        except StructError as e:
+            raise e
+
+        ShapeClass = SHAPE_CLASS_FROM_SHAPETYPE[shapeType]
+        shape = ShapeClass.from_byte_stream(
+            shapeType=shapeType,
+            b_io=b_io,
+            next_shape_pos=shape_len_B,
+            oid=oid,
+            bbox=bbox,
+        )
+
+        # Seek to the end of this record as defined by the record header because
+        # the shapefile spec doesn't require the actual content to meet the header
+        # definition.  Probably allowed for lazy feature deletion.
+        # self.file.seek(next_shape_pos)
+
+        return shape
+
+    def shapes(
+        self,
+        shape_lengths_B: list[int] | None = None,
+        bbox: list[float] | tuple[float, float, float, float] | BBox | None = None,
+    ) -> Shapes:
+        """Returns all shapes in file.
+        To only read shapes within a given spatial region, specify the 'bbox'
+        arg as a list or tuple of xmin,ymin,xmax,ymax.
+        """
+        return Shapes(
+            self.iterShapes(
+                shape_lengths_B=shape_lengths_B,
+                bbox=BBox(*bbox) if bbox else None,
+            )
+        )
+
+    def iterShapes(
+        self,
+        shape_lengths_B: list[int] | None = None,
+        bbox: BBox | None = None,
+        outside_bbox_as_None: bool = False,
+    ) -> Iterator[Shape | None]:
+        """Returns a generator of shapes in a shapefile (or None for shapes
+        outside a specified bbox). Useful for handling large shapefiles.
+        bbox should be a tuple or list containing xmin,ymin,xmax,ymax.
+        """
+
+        bbox = BBox(*bbox) if bbox is not None else None
+
+        # Found shapefiles which report incorrect
+        # shp file length in the header. Can't trust
+        # that so we seek to the end of the file
+        # and figure it out.
+        # self.file.seek(0, 2)
+        # file_size_B = self.file.tell()
+        if shape_lengths_B is not None:
+            pos = 108  # Skip first shape's header
+            # Iterate exactly the number of shapes as shape
+            # lengths were provided for, e.g. from shx header
+            for i, shape_len_B in enumerate(shape_lengths_B):
+                self.file.seek(pos)
+                shape = self._shape(shape_len_B=shape_len_B, oid=i, bbox=bbox)
+                if shape is not None or outside_bbox_as_None:
+                    yield shape
+                pos += shape_len_B + 8
+
+            # MAYBE: check if more left of file or exit early?
+            return
+
+        n = 0  # counter for num of actual shapes found
+
+        # No shx file, unknown nr of shapes
+        # Instead iterate until reach end of file
+        # Calculate the offset indices during iteration
+        for i, (pos, shape_len_B, _recNum) in enumerate(self.headers_gen()):
+            self.file.seek(pos + 8)  # Skip the shape's 8 byte header
+            shape = self._shape(shape_len_B=shape_len_B, oid=i, bbox=bbox)
+            # # pos = self.file.tell()
+            # pos += num_bytes
+            n += 1
+            if shape is not None or outside_bbox_as_None:
+                yield shape
+
+        assert n == len(self.headers_cache), f"{n=}, {len(self.headers_cache)=}"
+
+
+class ShxReader(_HasCheckedReadableFile):
+    """Reads an shx file (a file of file positions
+    of shapes in a .shp file).
+    """
+
+    FileProto = ReadSeekableBinStream
+    new_file_obj_mode = "rb"
+    ext = ".shx"
+
+    def __init__(
+        self,
+        shx: str | PathLike[Any] | ReadSeekableBinStream,
+    ):
+        super().__init__(file=shx)
+        self.numShapes: int
+        self._shxHeader()
+        self._shxRecords_16bw: array.array[int] | None = None
+
+    def _shxHeader(self) -> None:
+        """Reads the header information from a .shx file."""
+        # File length (16-bit word * 2 = bytes) - header length
+        self.file.seek(24)
+        shx_records_length_B = (unpack(">i", self.file.read(4))[0] * 2) - 100
+        self.numShapes = shx_records_length_B // 8
+
+    @functools.cache
+    def _read_shxRecords(self) -> None:
+        """Reads the shape offset positions from a .shx file"""
+        # Jump to the first record.
+        self.file.seek(100)
+        # Each index record consists of two nums.  We only want the first one
+        self._shxRecords_16bw = array.array("i", self.file.read(2 * self.numShapes * 4))
+        if sys.byteorder != "big":
+            self._shxRecords_16bw.byteswap()
+
+    # Only read .shx file body lazily
+    @functools.cached_property
+    def offsets(self) -> list[int]:
+        self._read_shxRecords()
+        # Convert from offsets in 16b Words to Bytes (8b).
+        offsets_ = [2 * el for el in cast(Sequence[int], self._shxRecords_16bw)[::2]]
+        assert len(offsets_) == self.numShapes, f"{self.numShapes=}, {len(offsets_)=}"
+        return offsets_
+
+    @functools.cached_property
+    def shape_lengths_B(self) -> list[int]:
+        self._read_shxRecords()
+        return [2 * x for x in cast(Sequence[int], self._shxRecords_16bw)[1::2]]
+
+
+class DbfReader(_HasCheckedReadableFile):
+    """Reads a dbf file's fields and records."""
+
+    FileProto = ReadSeekableBinStream
+    new_file_obj_mode = "rb"
+    ext = ".dbf"
+    ExceptionClass = dbfFileException
+
+    def __init__(
+        self,
+        dbf: str | PathLike[Any] | ReadSeekableBinStream,
+        *,
+        encoding: str = "utf-8",
+        encodingErrors: str = "strict",
+        strict: bool = False,
+    ):
+        super().__init__(file=dbf)
+
+        self.encoding = encoding
+        self.encodingErrors = encodingErrors
+        self.strict = strict
+
+        self.fields: list[Field] = []
+        self._fieldLookup: dict[str, int] = {}
+
+        self._dbfHeader()
+
+    def __len__(self) -> int:
+        """Returns the number of records in the .dbf file."""
+        return self.numRecords
+
+    def _dbfHeader(self) -> None:
+        """Reads a dbf header. Xbase-related code borrows heavily from
+        ActiveState Python Cookbook Recipe 362715 by Raymond Hettinger
+        """
+
+        # read relevant header parts
+        self.file.seek(0)
+        self.numRecords, self._dbfHdrLength, self._record_length = cast(
+            tuple[int, int, int], unpack("<xxxxLHH20x", self.file.read(32))
+        )
+
+        # read fields
+        numFields = (self._dbfHdrLength - 33) // 32
+        for __ in range(numFields):
+            self.fields.append(
+                Field.from_byte_stream(
+                    b_io=self.file,
+                    encoding=self.encoding,
+                    encodingErrors=self.encodingErrors,
+                )
+            )
+
+        terminator = self.file.read(1)
+        if terminator != b"\r":
+            raise dbfFileException(
+                "Dbf header lacks expected terminator. (likely corrupt?)"
+            )
+
+        # insert deletion field at start
+        self.fields.insert(0, Field("DeletionFlag", FieldType.C, 1, 0))
+
+        # store all field positions for easy lookups
+        # note: fieldLookup gives the index position of a field inside Reader.fields
+        self._fieldLookup = {f.name: i for i, f in enumerate(self.fields)}
+
+        # by default, read all fields except the deletion flag, hence "[1:]"
+        # note: recLookup gives the index position of a field inside a _Record list
+        fieldnames = [f.name for f in self.fields[1:]]
+        __fieldTuples, recLookup, recStruct = self._record_fields(fieldnames)
+        self._fullRecStruct = recStruct
+        self._fullRecLookup = recLookup
+
+    @property
+    def data_fields(self) -> list[Field]:
+        """All fields except the DeletionFlag."""
+        return self.fields[1:]
+
+    def _record_fmt(self, fields: Container[str] | None = None) -> tuple[str, int]:
+        """Calculates the format and size of a .dbf record. Optional 'fields' arg
+        specifies which fieldnames to unpack and which to ignore. Note that this
+        always includes the DeletionFlag at index 0, regardless of the 'fields' arg.
+        """
+        structcodes = [f"{fieldinfo.size}s" for fieldinfo in self.fields]
+        if fields is not None:
+            # only unpack specified fields, ignore others using padbytes (x)
+            structcodes = [
+                code
+                if fieldinfo.name in fields
+                or fieldinfo.name == "DeletionFlag"  # always unpack delflag
+                else f"{fieldinfo.size}x"
+                for fieldinfo, code in zip(self.fields, structcodes)
+            ]
+        fmt = "".join(structcodes)
+        fmt_size = calcsize(fmt)
+        # total size of fields should add up to recordlength from the header
+        while fmt_size < self._record_length:
+            # if not, pad byte until reaches recordlength
+            fmt += "x"
+            fmt_size += 1
+        return (fmt, fmt_size)
+
+    def _record_fields(
+        self, fields: Iterable[str] | None = None
+    ) -> tuple[list[Field], dict[str, int], Struct]:
+        """Returns the necessary info required to unpack a record's fields,
+        restricted to a subset of fieldnames 'fields' if specified.
+        Returns a list of field info tuples, a name-index lookup dict,
+        and a Struct instance for unpacking these fields. Note that DeletionFlag
+        is not a valid field.
+        """
+        if fields is not None:
+            # restrict info to the specified fields
+            # first ignore repeated field names (order doesn't matter)
+            unique_fields = list(set(fields))
+            # get the struct
+            fmt, __fmt_size = self._record_fmt(fields=unique_fields)
+            recStruct = Struct(fmt)
+            # make sure the given fieldnames exist
+            for name in unique_fields:
+                if name not in self._fieldLookup or name == "DeletionFlag":
+                    raise ValueError(f'"{name}" is not a valid field name')
+            # fetch relevant field info tuples
+            fieldTuples = []
+            for fieldinfo in self.fields[1:]:
+                if fieldinfo.name in unique_fields:
+                    fieldTuples.append(fieldinfo)
+            # store the field positions
+            recLookup = {f.name: i for i, f in enumerate(fieldTuples)}
+        else:
+            # use all the dbf fields
+            fieldTuples = self.fields[1:]  # sans deletion flag
+            recStruct = self._fullRecStruct
+            recLookup = self._fullRecLookup
+        return fieldTuples, recLookup, recStruct
+
+    def _record(
+        self,
+        fieldTuples: list[Field],
+        recLookup: dict[str, int],
+        recStruct: Struct,
+        oid: int | None = None,
+    ) -> _Record | None:
+        """Reads and returns a dbf record row as a list of values. Requires specifying
+        a list of field info Field namedtuples 'fieldTuples', a record name-index dict 'recLookup',
+        and a Struct instance 'recStruct' for unpacking these fields.
+
+        None is returned for 'deleted' records (those with their deletion flag marked).
+        """
+        # The only format chars in from self._record_fmt, in recStruct from _record_fields,
+        # are s and x (ascii encoded str and pad byte) so everything in recordContents is bytes
+        # https://docs.python.org/3/library/struct.html#format-characters
+        recordContents = recStruct.unpack(self.file.read(recStruct.size))
+
+        # deletion flag field is always unpacked as first value (see _record_fmt)
+        if recordContents[0] != b" ":
+            # deleted record
+            return None
+
+        # drop deletion flag from values
+        recordContents = recordContents[1:]
+
+        # check that values match fields
+        if len(fieldTuples) != len(recordContents):
+            raise ShapefileException(
+                f"Number of record values ({len(recordContents)}) is different from the requested "
+                f"number of fields ({len(fieldTuples)})"
+            )
+
+        # parse each value
+        record = []
+        for (__name, typ, __size, decimal), value in zip(fieldTuples, recordContents):
+            if typ is FieldType.N or typ is FieldType.F:
+                # numeric or float: number stored as a string, right justified, and padded with blanks to the width of the field.
+                value, __, __ = value.partition(b"\x00")
+                value = value.strip(b"*")  # QGIS NULL is all '*' chars
+                if value == b"":
+                    value = None
+                elif decimal:
+                    try:
+                        value = float(value)
+                    except ValueError:
+                        # not parseable as float, set to None
+                        value = None
+                else:
+                    # force to int
+                    try:
+                        # first try to force directly to int.
+                        # forcing a large int to float and back to int
+                        # will lose information and result in wrong nr.
+                        value = int(value)
+                    except ValueError:
+                        # forcing directly to int failed, so was probably a float.
+                        try:
+                            value = int(float(value))
+                        except ValueError:
+                            # not parseable as int, set to None
+                            value = None
+            elif typ is FieldType.D:
+                # date: 8 bytes - date stored as a string in the format YYYYMMDD.
+                if (
+                    not value.replace(b"\x00", b"")
+                    .replace(b" ", b"")
+                    .replace(b"0", b"")
+                ):
+                    # dbf date field has no official null value
+                    # but can check for all hex null-chars, all spaces, or all 0s (QGIS null)
+                    value = None
+                else:
+                    date_str = value.decode("ascii")
+                    try:
+                        # return as python date object
+                        value = datetime.strptime(date_str, "%Y%m%d").date()
+                    except (TypeError, ValueError):
+                        # if invalid date, just return as unicode string so user can handle it.
+                        value = date_str
+            elif typ is FieldType.L:
+                # logical: 1 byte - initialized to 0x20 (space) otherwise T or F.
+                if value == b" ":
+                    value = None  # space means missing or not yet set
+                else:
+                    if value in b"YyTt1":
+                        value = True
+                    elif value in b"NnFf0":
+                        value = False
+                    else:
+                        value = None  # unknown value is set to missing
+            else:
+                value = _decode_C_or_M_field(
+                    value,
+                    encoding=self.encoding,
+                    encodingErrors=self.encodingErrors,
+                )
+            record.append(value)
+
+        return _Record(recLookup, record, oid)
+
+    def record(self, i: int = 0, fields: list[str] | None = None) -> _Record | None:
+        """Returns a specific dbf record based on the supplied index.
+        To only read some of the fields, specify the 'fields' arg as a
+        list of one or more fieldnames.
+
+
+        Returns None if record's deletion flag is marked.
+        """
+        i = ensure_within_bounds(i, self.numRecords)
+        recSize = self._record_length
+        self.file.seek(0)
+        self.file.seek(self._dbfHdrLength + (i * recSize))
+        fieldTuples, recLookup, recStruct = self._record_fields(fields)
+        return self._record(
+            oid=i, fieldTuples=fieldTuples, recLookup=recLookup, recStruct=recStruct
+        )
+
+    def records(
+        self,
+        fields: list[str] | None = None,
+        start: int = 0,
+        stop: int | None = None,
+        deleted_as_None: bool = False,
+    ) -> list[_Record | None]:
+        """Returns a list of records in a dbf file.
+        To only read some of the fields, specify the 'fields' arg as a
+        list of one or more fieldnames.
+        By default returns all records.  Otherwise, specify start
+        (default: 0) or stop (default: number_of_records)
+        to only yield record numbers i, where
+        start <= i < stop, (or
+        start <= i < number_of_records + stop
+        if stop < 0).
+
+        Excludes 'deleted' records (those whose deletion flag is marked).
+        Set deleted_as_None=True to insert None for these, to preserve
+        the indexing, as for DbfReader.record
+        """
+        return [
+            record for record in self.iterRecords(fields, start, stop, deleted_as_None)
+        ]
+
+    def iterRecords(
+        self,
+        fields: list[str] | None = None,
+        start: int = 0,
+        stop: int | None = None,
+        deleted_as_None: bool = False,
+    ) -> Iterator[_Record | None]:
+        """Returns a generator of records in a dbf file.
+        Useful for large shapefiles or dbf files.
+        To only read some of the fields, specify the 'fields' arg as a
+        list of one or more fieldnames.
+        By default yields all records.  Otherwise, specify start
+        (default: 0) or stop (default: number_of_records)
+        to only yield record numbers i, where
+        start <= i < stop, (or
+        start <= i < number_of_records + stop
+        if stop < 0).
+
+        Excludes 'deleted' records (those whose deletion flag is marked).
+        Set deleted_as_None=True to insert None for these, to preserve
+        the indexing, as for DbfReader.record
+        """
+        if not isinstance(self.numRecords, int):
+            raise ShapefileException(
+                "Error when reading number of Records in dbf file header"
+            )
+
+        # Exit early if there are no records
+        if self.numRecords == 0:
+            return
+
+        start = ensure_within_bounds(start, self.numRecords)
+        if stop is None:
+            stop = self.numRecords
+        elif abs(stop) > self.numRecords:
+            raise IndexError(
+                f"abs(stop): {abs(stop)} exceeds number of records: {self.numRecords}."
+            )
+        elif stop < 0:
+            stop = range(self.numRecords)[stop]
+        recSize = self._record_length
+        self.file.seek(self._dbfHdrLength + (start * recSize))
+        fieldTuples, recLookup, recStruct = self._record_fields(fields)
+        for i in range(start, stop):
+            r = self._record(
+                oid=i, fieldTuples=fieldTuples, recLookup=recLookup, recStruct=recStruct
+            )
+            if r is not None or deleted_as_None:
+                yield r

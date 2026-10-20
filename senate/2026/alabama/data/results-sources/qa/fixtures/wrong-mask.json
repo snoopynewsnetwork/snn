@@ -1,0 +1,20 @@
+{
+  "name": "wrong-mask",
+  "scope": "hierarchy",
+  "base": {
+    "path": "historical-hierarchy.json.gz",
+    "bytes": 4060261,
+    "sha256": "680244ce16330491c0cd9353705ac24f64819b1350740a5108b3c26f82f0bdb0",
+    "reconstruct": "gzip.decompress whole body, parse strict JSON, apply exact JSON-pointer replacement"
+  },
+  "patch": {
+    "op": "replace",
+    "pointer": "/source_contexts/0/priority",
+    "value": false
+  },
+  "actual_result": {
+    "status": "REJECTED",
+    "exception": "AssertionError",
+    "reason": ""
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "status": "PASS",
+  "fixed_input_files": 5077,
+  "exact_deterministic_outputs": [
+    {
+      "output": "original-catalogue.json",
+      "bytes": 1038509,
+      "sha256": "eaf9a03e1b552dda21002254054be036abb68b9a01e9ebd42d6c77a14b2307d4",
+      "exact": true
+    },
+    {
+      "output": "manifest.csv",
+      "bytes": 539946,
+      "sha256": "f7010a0674f747fa3d4398879735860e8c51c08bcb43d42a4845bf49e583b9b7",
+      "exact": true
+    },
+    {
+      "output": "county-investigations.json",
+      "bytes": 8595187,
+      "sha256": "acde3c4b08837ba9b30882d041da3e959c1f4ea52ea141d1f779df8bb78bd315",
+      "exact": true
+    },
+    {
+      "output": "admission.json",
+      "bytes": 611,
+      "sha256": "cebb0c67a5303eb4ae5ff66403c3c5a3e87ad249eab49aa43960fea2908bcf11",
+      "exact": true
+    },
+    {
+      "output": "native-context-index.csv",
+      "bytes": 585793,
+      "sha256": "3a3fabe914ff3dd9475d170d4e01845e56b5d794243c36bf3f6cea8562d11524",
+      "exact": true
+    },
+    {
+      "output": "coverage.json",
+      "bytes": 1412934,
+      "sha256": "f8825fe0df5ccc7dcde9198cb374db7d8a3f01bd1306a0fe3dcee7ceb9c53e08",
+      "exact": true
+    },
+    {
+      "output": "map-vintage-observations.json",
+      "bytes": 735149,
+      "sha256": "904ec1d142e0e588cf61c216d05561d5d32227b29dc87753fc34b2cc84bd3842",
+      "exact": true
+    },
+    {
+      "output": "index.html",
+      "bytes": 26083820,
+      "sha256": "a1edd6c8cfe215ced1a795d1c9ff1bd29f030b9059d5f446c54f0f6c31a361d0",
+      "exact": true
+    },
+    {
+      "output": "research-summary.json",
+      "bytes": 529,
+      "sha256": "a747f9f4b27458b5f198f3646ab088dbcb7f91ab305ebd20048cae5c0d9111d1",
+      "exact": true
+    },
+    {
+      "output": "precinct-maps.md",
+      "bytes": 18375,
+      "sha256": "67d606ebaf059ad6d101e2d65c894f46f361d0a10f4f2b0c091dd9c0cd0c491e",
+      "exact": true
+    }
+  ],
+  "actual_forbidden_route_probes": [
+    {
+      "route": "network",
+      "status": "DENIED",
+      "reason": "offline network denied socket.getaddrinfo"
+    },
+    {
+      "route": "mutable_news_aggregate",
+      "status": "DENIED",
+      "reason": "unallowlisted mutable/peer/helper repository read denied /Users/tqbf/codebase/snn/senate/2026/alabama/data/news/source-ledger.json"
+    },
+    {
+      "route": "producer_helper",
+      "status": "DENIED",
+      "reason": "unallowlisted mutable/peer/helper repository read denied /Users/tqbf/codebase/snn/senate/2026/alabama/data/turnout/scripts/build.py"
+    },
+    {
+      "route": "peer_writer",
+      "status": "DENIED",
+      "reason": "unallowlisted mutable/peer/helper repository read denied /Users/tqbf/codebase/snn/senate/2026/alabama/data/baselines/build.py"
+    },
+    {
+      "route": "owned_write",
+      "status": "DENIED",
+      "reason": "outside temporary outputs writer denied /Users/tqbf/codebase/snn/senate/2026/alabama/maps/forbidden-probe.txt"
+    }
+  ],
+  "network_denied": true,
+  "mutable_aggregate_helper_peer_writer_denied": true,
+  "producer_imports_or_execution": false,
+  "temporary_only_writes": true
+}

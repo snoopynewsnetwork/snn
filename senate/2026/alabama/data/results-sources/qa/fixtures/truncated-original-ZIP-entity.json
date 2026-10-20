@@ -1,0 +1,20 @@
+{
+  "name": "truncated-original-ZIP-entity",
+  "scope": "original-entity",
+  "base_receipt": {
+    "path": "data/turnout/source/http/2026-10-20T181750737580+0000-4ecca55fc235.receipt.json",
+    "bytes": 1949,
+    "sha256": "942ac8a4336d7e23f9eecab7f1c14c37c36128de0af57e47812cfcad1803c6d3"
+  },
+  "whole_entity": {
+    "bytes": 985426,
+    "sha256": "4ecca55fc235018aeb2385debd375e6fa7aaa553c5bd67786add08d850efcc96"
+  },
+  "byte_patch": {
+    "op": "drop-last-byte"
+  },
+  "actual_result": {
+    "status": "REJECTED",
+    "rule": "complete entity size/SHA before parsing"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "failure": "Exploratory schema read treated actual Mobile outer arrays as objects; AttributeError before any output/source/producer mutation. Complete original outer/inner arrays remain unchanged.",
+  "exact_exception": "AttributeError: 'list' object has no attribute 'get'",
+  "source": "data/results-sources/complete-public-json-samples.json",
+  "source_bytes": 128858,
+  "source_sha256": "1daa279692dd237094832d1c0b034f4dfba6a6f9b65979035f20876467cd2733",
+  "correction": "Preserve each actual single-object inner array and inspect contest_data within its dict; no flattening of retained source object."
+}

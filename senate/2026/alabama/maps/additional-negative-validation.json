@@ -1,0 +1,39 @@
+{
+  "status": "PASS",
+  "actual_corruptions_rejected": 2,
+  "cases": [
+    {
+      "name": "truncated_whole_companion",
+      "input": {
+        "base_complete_pin": {
+          "path": "data/turnout/source/workbooks-2024.json.gz",
+          "bytes": 573052,
+          "sha256": "adee4ab7175876aeec99e7fa763f10a5a955964f95605810661fcda46f95258c"
+        },
+        "operation": "remove",
+        "pointer": "/66"
+      },
+      "result": {
+        "status": "REJECTED",
+        "rule": "Complete67-member whole companion required; length/whole recursive semantic mismatch"
+      }
+    },
+    {
+      "name": "truncated_whole_original",
+      "input": {
+        "base_complete_pin": {
+          "path": "maps/source/d0b534a2b056f6db9683bdcc62d671066698adec8e2fe7e1f6b0cd049c2bf79d.gzpart",
+          "bytes": 282545,
+          "sha256": "d0b534a2b056f6db9683bdcc62d671066698adec8e2fe7e1f6b0cd049c2bf79d"
+        },
+        "complete_receipt": "source/2026-10-20T202621583740+0000-4f3f47572cf7.receipt.json",
+        "operation": "truncate_final_bytes",
+        "bytes": 8
+      },
+      "result": {
+        "status": "REJECTED",
+        "rule": "Compressed file ended before the end-of-stream marker was reached"
+      }
+    }
+  ]
+}

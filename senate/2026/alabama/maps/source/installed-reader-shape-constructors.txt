@@ -1,0 +1,555 @@
+0
+class NullShape(Shape):
+    # Shape.shapeType = NULL already,
+    # to preserve handling of default args in Shape.__init__
+    # Repeated for the avoidance of doubt.
+    def __init__(
+        self,
+        oid: int | None = None,
+    ):
+        Shape.__init__(self, shapeType=NULL, oid=oid)
+
+    @staticmethod
+    def from_byte_stream(
+        shapeType: int,
+        b_io: ReadSeekableBinStream,
+        next_shape_pos: int,
+        oid: int | None = None,
+        bbox: BBox | None = None,
+    ) -> NullShape:
+        """In the ESRI spec, Null shapes are defined in .shp files
+        entirely by a single integer encoding shape type 0
+        (this happens in ShpWriter._shp_record, amongst the shape
+        record header code).
+        """
+        # Shape.__init__ sets self.points = points or []
+        return NullShape(oid=oid)
+
+    @staticmethod
+    def write_to_byte_stream(
+        b_io: WriteableBinStream,
+        s: Shape,
+        i: int,
+    ) -> int:
+        """No op (see above)."""
+        return 0
+
+
+1
+class Point(Shape):
+    # We also use the fact that the single Point types are the only
+    # shapes that cannot have their own bounding box (a user supplied
+    # bbox is still used to filter out points).
+    def __init__(
+        self,
+        x: float,
+        y: float,
+        oid: int | None = None,
+    ):
+        Shape.__init__(self, points=[(x, y)], oid=oid)
+
+    @staticmethod
+    def _x_y_from_byte_stream(b_io: ReadableBinStream) -> tuple[float, float]:
+        x, y = unpack("<2d", b_io.read(16))
+        # Convert to tuple
+        return x, y
+
+    @staticmethod
+    def _write_x_y_to_byte_stream(
+        b_io: WriteableBinStream, x: float, y: float, i: int
+    ) -> int:
+        try:
+            return b_io.write(pack("<2d", x, y))
+        except StructError:
+            raise ShapefileException(
+                f"Failed to write point for record {i}. Expected floats."
+            )
+
+    @classmethod
+    def from_byte_stream(
+        cls,
+        shapeType: int,
+        b_io: ReadSeekableBinStream,
+        next_shape_pos: int,
+        oid: int | None = None,
+        bbox: BBox | None = None,
+    ) -> Shape | None:
+        x, y = cls._x_y_from_byte_stream(b_io)
+
+        if bbox is not None:
+            # create bounding box for Point by duplicating coordinates
+            # skip shape if no overlap with bounding box
+            if not bbox_overlap(bbox, BBox(x, y, x, y)):
+                return None
+        elif shapeType == POINT:
+            return Point(x=x, y=y, oid=oid)
+
+        if shapeType == POINTZ:
+            z = PointZ._read_single_point_zs_from_byte_stream(b_io)[0]
+
+        m = PointM._read_single_point_ms_from_byte_stream(b_io, next_shape_pos)[0]
+
+        if shapeType == POINTZ:
+            return PointZ(x=x, y=y, z=z, m=m, oid=oid)
+
+        return PointM(x=x, y=y, m=m, oid=oid)
+        # return Shape(shapeType=shapeType, points=[(x, y)], z=zs, m=ms, oid=oid)
+
+    @staticmethod
+    def write_to_byte_stream(b_io: WriteableBinStream, s: Shape, i: int) -> int:
+        # Serialize a single point
+        x, y = s.points[0][0], s.points[0][1]
+        n = Point._write_x_y_to_byte_stream(b_io, x, y, i)
+
+        # Write a single Z value
+        if s.shapeType in PointZ_shapeTypes:
+            n += PointZ._write_single_point_z_to_byte_stream(b_io, cast(PointZ, s), i)
+
+        # Write a single M value
+        if s.shapeType in PointM_shapeTypes:
+            n += PointM._write_single_point_m_to_byte_stream(b_io, cast(PointM, s), i)
+
+        return n
+
+
+3
+class Polyline(_CanHaveParts):
+    def __init__(
+        self,
+        *args: PointsT,
+        lines: list[PointsT] | None = None,
+        points: PointsT | None = None,
+        parts: list[int] | None = None,
+        bbox: BBox | None = None,
+        oid: int | None = None,
+    ):
+        if args:
+            if lines:
+                raise ShapefileException(
+                    "Specify Either: a) positional args, or: b) the keyword arg lines. "
+                    f"Not both.  Got both: {args} and {lines=}. "
+                    "If this was intentional, after the other positional args, "
+                    "the arg passed to lines can be unpacked (arg1, arg2, *more_args, *lines, oid=oid,...)"
+                )
+            lines = list(args)
+        Shape.__init__(
+            self,
+            lines=lines,
+            points=points,
+            parts=parts,
+            bbox=bbox,
+            oid=oid,
+        )
+
+
+5
+class Polygon(_CanHaveParts):
+    def __init__(
+        self,
+        *args: PointsT,
+        lines: list[PointsT] | None = None,
+        parts: list[int] | None = None,
+        points: PointsT | None = None,
+        bbox: BBox | None = None,
+        oid: int | None = None,
+    ):
+        lines = list(args) if args else lines
+        Shape.__init__(
+            self,
+            lines=lines,
+            points=points,
+            parts=parts,
+            bbox=bbox,
+            oid=oid,
+        )
+
+
+8
+class MultiPoint(_CanHaveBBox):
+    def __init__(
+        self,
+        *args: PointT,
+        points: PointsT | None = None,
+        bbox: BBox | None = None,
+        oid: int | None = None,
+    ):
+        if args:
+            if points:
+                raise ShapefileException(
+                    "Specify Either: a) positional args, or: b) the keyword arg points. "
+                    f"Not both.  Got both: {args} and {points=}. "
+                    "If this was intentional, after the other positional args, "
+                    "the arg passed to points can be unpacked, e.g. "
+                    " (arg1, arg2, *more_args, *points, oid=oid,...)"
+                )
+            points = list(args)
+        Shape.__init__(
+            self,
+            points=points,
+            bbox=bbox,
+            oid=oid,
+        )
+
+
+11
+class PointZ(PointM):
+    def __init__(
+        self,
+        x: float,
+        y: float,
+        z: float = 0.0,
+        m: float | None = None,
+        oid: int | None = None,
+    ):
+        Shape.__init__(self, points=[(x, y)], z=(z,), m=(m,), oid=oid)
+
+    # same default as in Writer._shp_record (if s.shapeType == 11:)
+    z: Sequence[float] = (0.0,)
+
+    @staticmethod
+    def _read_single_point_zs_from_byte_stream(b_io: ReadableBinStream) -> tuple[float]:
+        return unpack("<d", b_io.read(8))
+
+    @staticmethod
+    def _write_single_point_z_to_byte_stream(
+        b_io: WriteableBinStream, s: PointZ, i: int
+    ) -> int:
+        # Note: missing z values are autoset to 0, but not sure if this is ideal.
+        z: float = s.z[0] if s.z else 0.0
+        try:
+            return b_io.write(pack("<d", z))
+        except StructError:
+            raise ShapefileException(
+                f"Failed to write elevation value for record {i}. Expected floats."
+            )
+
+
+13
+class PolylineZ(PolylineM, _HasZ):
+    def __init__(
+        self,
+        *args: PointsT,
+        lines: list[PointsT] | None = None,
+        z: list[float] | None = None,
+        m: list[float | None] | None = None,
+        points: PointsT | None = None,
+        parts: list[int] | None = None,
+        bbox: BBox | None = None,
+        mbox: MBox | None = None,
+        zbox: ZBox | None = None,
+        oid: int | None = None,
+    ):
+        if args:
+            if lines:
+                raise ShapefileException(
+                    "Specify Either: a) positional args, or: b) the keyword arg lines. "
+                    f"Not both.  Got both: {args} and {lines=}. "
+                    "If this was intentional, after the other positional args, "
+                    "the arg passed to lines can be unpacked (arg1, arg2, *more_args, *lines, oid=oid,...)"
+                )
+            lines = list(args)
+        Shape.__init__(
+            self,
+            lines=lines,
+            points=points,
+            parts=parts,
+            z=z,
+            m=m,
+            bbox=bbox,
+            zbox=zbox,
+            mbox=mbox,
+            oid=oid,
+        )
+
+
+15
+class PolygonZ(PolygonM, _HasZ):
+    def __init__(
+        self,
+        *args: PointsT,
+        lines: list[PointsT] | None = None,
+        parts: list[int] | None = None,
+        z: list[float] | None = None,
+        m: list[float | None] | None = None,
+        points: PointsT | None = None,
+        bbox: BBox | None = None,
+        mbox: MBox | None = None,
+        zbox: ZBox | None = None,
+        oid: int | None = None,
+    ):
+        if args:
+            if lines:
+                raise ShapefileException(
+                    "Specify Either: a) positional args, or: b) the keyword arg lines. "
+                    f"Not both.  Got both: {args} and {lines=}. "
+                    "If this was intentional, after the other positional args, "
+                    "the arg passed to lines can be unpacked (arg1, arg2, *more_args, *lines, oid=oid,...)"
+                )
+            lines = list(args)
+        Shape.__init__(
+            self,
+            lines=lines,
+            points=points,
+            parts=parts,
+            z=z,
+            m=m,
+            bbox=bbox,
+            mbox=mbox,
+            zbox=zbox,
+            oid=oid,
+        )
+
+
+18
+class MultiPointZ(MultiPointM, _HasZ):
+    def __init__(
+        self,
+        *args: PointT,
+        points: PointsT | None = None,
+        z: list[float] | None = None,
+        m: Sequence[float | None] | None = None,
+        bbox: BBox | None = None,
+        mbox: MBox | None = None,
+        zbox: ZBox | None = None,
+        oid: int | None = None,
+    ):
+        if args:
+            if points:
+                raise ShapefileException(
+                    "Specify Either: a) positional args, or: b) the keyword arg points. "
+                    f"Not both. Got both: {args} and {points=}. "
+                    "If this was intentional, after the other positional args, "
+                    "the arg passed to points can be unpacked, e.g. "
+                    " (arg1, arg2, , ..., *more_args, *points, oid=oid, ...)"
+                )
+            points = list(args)
+        Shape.__init__(
+            self,
+            points=points,
+            bbox=bbox,
+            z=z,
+            m=m,
+            zbox=zbox,
+            mbox=mbox,
+            oid=oid,
+        )
+
+
+21
+class PointM(Point):
+    def __init__(
+        self,
+        x: float,
+        y: float,
+        # same default as in Writer._shp_record (if s.shapeType in (11, 21):)
+        # PyShp encodes None m values as NODATA
+        m: float | None = None,
+        oid: int | None = None,
+    ):
+        Shape.__init__(self, points=[(x, y)], m=(m,), oid=oid)
+
+    @staticmethod
+    def _read_single_point_ms_from_byte_stream(
+        b_io: ReadSeekableBinStream, next_shape_pos: int
+    ) -> tuple[float | None]:
+        if next_shape_pos - b_io.tell() >= 8:
+            (m,) = unpack("<d", b_io.read(8))
+        else:
+            m = NODATA
+        # Measure values less than -10e38 are nodata values according to the spec
+        if m >= ISDATA_LOWER_BOUND:
+            return (m,)
+        else:
+            return (None,)
+
+    @staticmethod
+    def _write_single_point_m_to_byte_stream(
+        b_io: WriteableBinStream, s: PointM, i: int
+    ) -> int:
+
+        m = s.m[0] if s.m else None
+        # Set missing m values to NODATA.
+        m_to_encode = m if m is not None else NODATA
+
+        try:
+            return b_io.write(pack("<1d", m_to_encode))
+        except StructError:
+            raise ShapefileException(
+                f"Failed to write measure value for record {i}. Expected floats."
+            )
+
+
+23
+class PolylineM(Polyline, _HasM):
+    def __init__(
+        self,
+        *args: PointsT,
+        lines: list[PointsT] | None = None,
+        parts: list[int] | None = None,
+        m: Sequence[float | None] | None = None,
+        points: PointsT | None = None,
+        bbox: BBox | None = None,
+        mbox: MBox | None = None,
+        oid: int | None = None,
+    ):
+        if args:
+            if lines:
+                raise ShapefileException(
+                    "Specify Either: a) positional args, or: b) the keyword arg lines. "
+                    f"Not both.  Got both: {args} and {lines=}. "
+                    "If this was intentional, after the other positional args, "
+                    "the arg passed to lines can be unpacked (arg1, arg2, *more_args, *lines, oid=oid,...)"
+                )
+            lines = list(args)
+        Shape.__init__(
+            self,
+            lines=lines,
+            points=points,
+            parts=parts,
+            m=m,
+            bbox=bbox,
+            mbox=mbox,
+            oid=oid,
+        )
+
+
+25
+class PolygonM(Polygon, _HasM):
+    def __init__(
+        self,
+        *args: PointsT,
+        lines: list[PointsT] | None = None,
+        parts: list[int] | None = None,
+        m: list[float | None] | None = None,
+        points: PointsT | None = None,
+        bbox: BBox | None = None,
+        mbox: MBox | None = None,
+        oid: int | None = None,
+    ):
+        if args:
+            if lines:
+                raise ShapefileException(
+                    "Specify Either: a) positional args, or: b) the keyword arg lines. "
+                    f"Not both.  Got both: {args} and {lines=}. "
+                    "If this was intentional, after the other positional args, "
+                    "the arg passed to lines can be unpacked (arg1, arg2, *more_args, *lines, oid=oid,...)"
+                )
+            lines = list(args)
+        Shape.__init__(
+            self,
+            lines=lines,
+            points=points,
+            parts=parts,
+            m=m,
+            bbox=bbox,
+            mbox=mbox,
+            oid=oid,
+        )
+
+
+28
+class MultiPointM(MultiPoint, _HasM):
+    def __init__(
+        self,
+        *args: PointT,
+        points: PointsT | None = None,
+        m: Sequence[float | None] | None = None,
+        bbox: BBox | None = None,
+        mbox: MBox | None = None,
+        oid: int | None = None,
+    ):
+        if args:
+            if points:
+                raise ShapefileException(
+                    "Specify Either: a) positional args, or: b) the keyword arg points. "
+                    f"Not both.  Got both: {args} and {points=}. "
+                    "If this was intentional, after the other positional args, "
+                    "the arg passed to points can be unpacked, e.g. "
+                    " (arg1, arg2, *more_args, *points, oid=oid,...)"
+                )
+            points = list(args)
+        Shape.__init__(
+            self,
+            points=points,
+            m=m,
+            bbox=bbox,
+            mbox=mbox,
+            oid=oid,
+        )
+
+
+31
+class MultiPatch(_HasM, _HasZ, _CanHaveParts):
+    def __init__(
+        self,
+        *args: PointsT,
+        lines: list[PointsT] | None = None,
+        partTypes: list[int] | None = None,
+        z: list[float] | None = None,
+        m: list[float | None] | None = None,
+        points: PointsT | None = None,
+        parts: list[int] | None = None,
+        bbox: BBox | None = None,
+        mbox: MBox | None = None,
+        zbox: ZBox | None = None,
+        oid: int | None = None,
+    ):
+        if args:
+            if lines:
+                raise ShapefileException(
+                    "Specify Either: a) positional args, or: b) the keyword arg lines. "
+                    f"Not both.  Got both: {args} and {lines=}. "
+                    "If this was intentional, after the other positional args, "
+                    "the arg passed to lines can be unpacked (arg1, arg2, *more_args, *lines, oid=oid,...)"
+                )
+            lines = list(args)
+        Shape.__init__(
+            self,
+            lines=lines,
+            points=points,
+            parts=parts,
+            partTypes=partTypes,
+            z=z,
+            m=m,
+            bbox=bbox,
+            zbox=zbox,
+            mbox=mbox,
+            oid=oid,
+        )
+
+    @staticmethod
+    def _read_part_types_from_byte_stream(
+        b_io: ReadableBinStream, nParts: int
+    ) -> Sequence[int]:
+        return _Array[int]("i", unpack(f"<{nParts}i", b_io.read(nParts * 4)))
+
+    @staticmethod
+    def _write_part_types_to_byte_stream(b_io: WriteableBinStream, s: Shape) -> int:
+        return b_io.write(pack(f"<{len(s.partTypes)}i", *s.partTypes))
+
+
+def _decode_C_or_M_field(
+    b: bytes,
+    encoding: str = "utf8",
+    encodingErrors: str = "strict",
+    strict: bool = True,
+) -> str:
+    retval = _try_to_decode_dbf_name_or_text_field(
+        b=b,
+        pad_bytes=b" " + b"\x00",  # Should contain an ascii space
+        encoding=encoding,
+        encodingErrors=encodingErrors,
+    )
+
+    if not strict:
+        return retval
+
+    if retval.rstrip("\x00") != retval:
+        msg = (
+            f"More trailing null chars in: {retval!r}"
+            " after removing one trailing null char and ascii spaces"
+            f" from {b!r}, and decoding (codec: {encoding}, errors: {encodingErrors}). "
+        )
+        warnings.warn(msg, category=PossibleDataLoss)
+
+    return retval

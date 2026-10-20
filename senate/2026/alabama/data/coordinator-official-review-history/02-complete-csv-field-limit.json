@@ -1,0 +1,10 @@
+{
+  "failure": "Independent standard csv reader default131072-character field limit was smaller than the complete nested office/source records retained in the actual CSV. Source values and producer outputs unchanged.",
+  "exact_stderr": "_csv.Error: field larger than field limit (131072) at list(csv.DictReader(...)), line80",
+  "full_input": {
+    "path": "data/official-results-sources.csv",
+    "bytes": 13403361,
+    "sha256": "b421f8f939967dcd3e8f22574f549bbb1245deddb979afdb71efd82ce075c649"
+  },
+  "correction": "Raise csv.field_size_limit to the authorized40000000 per-artifact bound before parsing; no truncation/projection or value changes."
+}

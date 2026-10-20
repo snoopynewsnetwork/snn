@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/Users/tqbf/codebase/snn/senate/2026/alabama/maps/scripts/audit_shp.py", line 88, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/Users/tqbf/codebase/snn/senate/2026/alabama/maps/scripts/audit_shp.py", line 85, in main
+    result=audit_zip(b);path=ROOT/'zip-audit'/(h+'.json.gz');path.parent.mkdir(exist_ok=True);path.write_bytes(gzip.compress(js(result),mtime=0));seen[h]=str(path.relative_to(ROOT));print(h[:12],result['checks'],flush=True)
+           ^^^^^^^^^^^^
+  File "/Users/tqbf/codebase/snn/senate/2026/alabama/maps/scripts/audit_shp.py", line 34, in audit_zip
+    assert [[f.name,str(f.field_type.value),f.size,f.decimal] for f in reader.fields[1:]]==[[f['name'],f['type'],f['width'],f['decimal']] for f in fields]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tqbf/codebase/snn/senate/2026/alabama/maps/scripts/audit_shp.py", line 34, in <listcomp>
+    assert [[f.name,str(f.field_type.value),f.size,f.decimal] for f in reader.fields[1:]]==[[f['name'],f['type'],f['width'],f['decimal']] for f in fields]
+                        ^^^^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'value'

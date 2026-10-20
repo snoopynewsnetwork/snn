@@ -2,15 +2,18 @@
 
 [All 2026 Senate races](../README.md)
 
-## Historical first-pair research
+## Election-night research
 
-Reviewed historical turnout and conditional baseline research are available:
+The four original question assignments and independent coordinator reviews are complete for **bounded historical/source research**, observed through October 20,2026:
 
-- [Turnout and exact native coverage](turnout.md): 2,085 source-native 2024 columns across all 67 counties; top 15 supply 5.0959564521%, and 887 reach 80.0329346737%.
-- [Partisanship and conditional targets](county-partisanship.md): 2024 president, 2020 same-seat Senate and 2022 other-seat Senate; all 6,270 native observations and 201 county-year records retained.
-- [Independent coordinator review](research-review.md) and [actual question-worker dispatch](research-dispatch.md).
+- [Turnout and exact native priority](turnout.md): all 2,085 source-native 2024 columns/67 county parents; top 15 supply115,428 / 2,265,090 marks (5.0959564521%). The minimum 887 reach1,812,818 after886 reach1,811,981. All1,198 remainder contexts survive. County 25 is a separate sensitivity.
+- [Partisanship and conditional targets](county-partisanship.md): distinct2024 president,2020 same-seat Senate and2022 other-seat Senate, all 6,270 native observations/201 county-year records, full denominators and clipped/selected-only targets. Compatibility county CSVs are county controls; the complete finer objects remain in their packages.
+- [Official sources](official-results.md): state/all 67 county investigations, all 63 priority-parent chains,278 literal office records and 67 full current specimens. Mobile's positive pre-election setup remains excluded from November returns.
+- [Maps report](precinct-maps.md) and [offline atlas](maps/index.html): full887 / 2,085 / 1,198 hierarchy, bounded63 priority chains, county map/context assets for26 parents,45 full historical TIGER ZIPs and separate all 67-parent cartographic context. Zero approved result-polygon joins.
+- [Newsroom backstops](local-news-results.md), [collection strategy](live-polling-strategy.md), [actual worker dispatch](research-dispatch.md), and [independent review](research-review.md).
+- [Whole-package validation](data/coordinator-validation.json) and [complete asset inventory](data/coordinator-asset-manifest.json).
 
-This is the reviewed first pair. The same turnout worker's bounded reciprocal and independent preservation review are complete; [complete historical source authority](data/coordinator-priority-acceptance.json) passed exhaustive replay. Original official-results/maps workers are active. [Newsroom sources](local-news-results.md) and the [proposed collection strategy](live-polling-strategy.md) retain separate setup/access qualifications. No current geographic join, eligible write-in allocation, November feed, exact remaining pool or calibrated probability is approved. The race tracker below remains unchanged.
+Historical source dispatch is separate from legal/current-geographic approval. Generic write-ins, ballot/registration discrepancies, incomplete later roster/legal verification, current IDs/joins, genuine November updates, measured cadence and eligible remaining pools retain their stated gaps. No collector,2026 turnout forecast or calibrated probability is implemented. The existing race tracker below is preserved.
 
 ## Seat details
 
