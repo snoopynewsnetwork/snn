@@ -1034,3 +1034,6 @@ in reviewed bounded transfers; final map metadata c2871c889 and first-pair
 state remains incomplete pending official4c5f1926 actual immutable finish and
 independent review. Nineteen new complete states plus Michigan remains the
 completion count. New Jersey officiale4a43ae3 remains the only other researcher.
+
+
+2026-10-20T13:35:38.377023+00:00 — NMturnout5f787f59 and MAofficial4c5f1926 actual finished handoffs received. Fresh all-profile/provider discovery precedes actual NMbaseline9a904675 and ORturnoutbd151c4c launches. Exactly these two researchers active; MAindependent integration/publication underway. No certified NMnative priority inferred from protected source cells.
