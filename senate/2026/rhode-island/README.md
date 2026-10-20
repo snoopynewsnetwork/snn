@@ -71,3 +71,6 @@ The [coordinator review](research-review.md) documents full original/source-orde
 checks and bounded gaps. Independent baseline/reciprocal review is active;
 priority acceptance, official/maps research and current geographic/feed approval
 remain pending. Existing campaign and polling tracker sections are unchanged.
+
+
+The [baseline package](county-partisanship.md) and repaired [turnout research](turnout.md) now pass independent full-source and bounded-math review. [Qualified historical dispatch](data/coordinator-priority-acceptance.json) preserves242priority observations among458reported Senate contexts, plus all497inventory/39unavailable Senate cases and four separate federal administrative contexts. Full original write-in detail1227/eight local discrepancies and prior row6-only1226/nine are retained; source votes/order unchanged. Official-source research is active; maps remain queued. No current geographic/eligible-writein/live approval follows from this historical scope.
