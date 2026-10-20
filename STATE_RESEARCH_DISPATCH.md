@@ -42,11 +42,11 @@ Each complete state passed independent source/native/target/map/whole-package
 and repository review, with its push independently verified. Historical source
 qualifications remain explicit; current geography and live readiness are separate.
 
-The only active researchers are Illinois turnout
-`a2a3b1cf-ac46-446b-be8d-18390c8885e4` and partisanship
-`a7b49f02-905f-4208-b957-fffdb58615bf`. Delaware's complete first pair has
-external historical dispatch acceptance; its official/maps prompts await actual
-released slots. Fifteen later states remain queued. No extra workers, finished
+The only active researchers are Delaware official-results
+`960cdd44-9970-4cd0-900f-9968e5ef8d24` and Illinois partisanship
+`a7b49f02-905f-4208-b957-fffdb58615bf`. Illinois turnout has finished. Delaware's
+complete first pair has external historical dispatch acceptance; its maps
+prompt awaits another actual released slot. Fifteen later states remain queued. No extra workers, finished
 producer restarts or coordinator replacements have been created.
 
 Illinois's independent source-record replay confirms all10,062 authority/literal
@@ -705,3 +705,19 @@ changingNovembercounts, exactremainder or probability is approved.
 Delaware official/maps prompts are prepared only, awaiting actual slot releases.
 Illinois turnouta2a3b1cf and baselinea7b49f02 remain the only active researchers.
 No finished worker restart, extra agent or producer flag/source mutation.
+
+
+## Illinois turnout finished; actual Delaware official assignment launched
+
+Illinois turnout `a2a3b1cf-ac46-446b-be8d-18390c8885e4` actually finished its
+937-entry owned seal,330,469 saved checks and331,407 reported final read-only
+checks. Independent original source-known rank review agrees on all10,062
+source groups and5,540/4,474,312 crossing; final whole first-pair review awaits
+the still-active Illinois baseline worker. No current/native valid-write-in
+allocation or geographic approval follows.
+
+That actual slot launched Delaware official-results
+`960cdd44-9970-4cd0-900f-9968e5ef8d24`, after fresh profiles/all four notes and
+provider inspection, on the externally accepted311/all530/3-parent contract.
+Illinois baseline `a7b49f02-905f-4208-b957-fffdb58615bf` is the only other active
+researcher. Delaware maps remains prepared only; no third researcher exists.
