@@ -998,3 +998,21 @@ Both active workers remain MAofficial4c5f1926 andMAmaps8cff5762. Subsequent
 launches require actual finish callbacks/fresh profiles/provider, no third
 researcher. Reviewed original-byte source exceptions and all producer false
 flags remain untouched. Continue the complete34-state batch.
+
+
+## Remaining-state source integrity and bounded court-order scope
+
+A fresh readonly audit of13still-unlaunched states verifies447retained response
+records/446complete HTTPentities and451stored references, including exactsplit
+reconstruction and original/stored SHA256/size/headers/UTC. All failures and
+206ranges stay source-scoped; this is integrity preparation, not completed
+question research or admitted November data. Previous21-state preparation
+audit history is retained alongside the current complete manifest snapshots.
+
+Optional MAorder review independently extracts both complete originals and
+actually views three selected pages: Aug24SCOTUS26A124/26A139 stays the earlier
+executive-order injunction; Sept4Dkt156 separately enjoins specified USPS-rule
+provisions and denies a trial-level stay. No inference about later appellate
+action or exhaustive current status follows. Source MuPDF tagging warnings
+are retained; originals remain exact and only actual selected visualscope is
+claimed. This proof is outside worker build dependencies.

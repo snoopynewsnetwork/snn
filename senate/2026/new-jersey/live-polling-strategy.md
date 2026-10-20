@@ -1,18 +1,18 @@
 # New Jersey collection and remaining-vote strategy
 
-Updated **2026-10-20 UTC / 2026-10-19 Central** with reviewed bounded turnout evidence; the independent baseline final handoff and second-wave assignments remain pending. The [news survey](local-news-results.md) records actual captures and source gaps; this is proposed operation, not live implementation.
+Updated **2026-10-20 UTC / 2026-10-19 Central** with reviewed bounded turnout evidence; both first-pair packages and the complete historical source dispatch are accepted; second-wave assignments await real slots. The [news survey](local-news-results.md) records actual captures and source gaps; this is proposed operation, not live implementation.
 
 ## New Jersey-specific preflight
 
 Use the [Division's actual Election Night landing](https://www.nj.gov/state/elections/election-night-results.shtml) to discover county channels and periodic reports. It is titled 2026 yet the observed update is June 2, 8:38 p.m. Linked vendor IDs are primary-discovery evidence, not verified November contest IDs. Follow new links and validate the full election/candidate/status before collection. The [2026 information page](https://nj.gov/state/elections/election-information-2026.shtml) retains amended candidate certifications; distinguish roster amendments, primary votes and actual general returns.
 
-All 21 counties remain in statewide arithmetic, with native municipality/ward/precinct and authority scope retained. County clerks, boards and statewide periodic reports can publish overlapping polling-place, early, mail and provisional totals. Verify disjoint method scope before combining; a county's periodic report is not an extra batch to add to a cumulative vendor tally. The historical source scope below has been measured independently; coordinator dispatch acceptance and the actual map/November crosswalk remain pending. Historical and current source IDs alone do not establish geographic equivalence.
+All 21 counties remain in statewide arithmetic, with native municipality/ward/precinct and authority scope retained. County clerks, boards and statewide periodic reports can publish overlapping polling-place, early, mail and provisional totals. Verify disjoint method scope before combining; a county's periodic report is not an extra batch to add to a cumulative vendor tally. The historical source scope below has been measured independently; complete historical dispatch acceptance is recorded separately; the actual map/November crosswalk remains unapproved. Historical and current source IDs alone do not establish geographic equivalence.
 
 2024 Senate and president concern a different candidate field/seat from the 2026 regular contest; retain 2020 same-seat Senate separately. A recent midterm statewide comparator must be a contest actually held; do not invent a 2022 Senate election. Current poll hours, timely postmark/receipt rules, signature cure, provisional processing and certification deadlines require primary verification by the results question, including any later controlling order. Preserve election-night incomplete method coverage after polling-place completion.
 
 NJ Spotlight's original reporting and NBC10/News12 regional access are verified. News12's primary iframe links runtime XML whose actual category list now labels a General Senate race. Following its published ID returns nonzero pre-election counts, 98 percent and a winner flag with an October 15 timestamp, but no election date/test marker or count-origin evidence. Quarantine that sample as unvalidated setup data. The client's 30-second timer is not a demonstrated publisher cadence. FOX29 mixes New Jersey introductory prose with Delaware primary panels; reject wrong-state records. No usable November numeric feed or independent count supplier is established. Their reports can explain board delays or ballot-category changes with author/time/primary attribution. Additional southern/interior regional product gaps remain explicit. No cloned old primary ID becomes a November endpoint without actual publication evidence.
 
-## Measured source scope awaiting complete first-pair acceptance
+## Accepted historical publication source scope
 
 The [turnout contract](data/turnout/priority-set.json) preserves all575disjoint
 2024Senate municipal/admin publication rows under21county parents:564municipal

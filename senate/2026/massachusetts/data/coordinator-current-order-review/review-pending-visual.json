@@ -1,0 +1,87 @@
+{
+  "status": "pass_bounded_complete_order_text_and_selected_original_render_audit",
+  "documents": [
+    {
+      "id": "usps-injunction",
+      "source_receipt": {
+        "path": "data/results-sources/source/http/usps-injunction.json",
+        "bytes": 4215,
+        "sha256": "b2582fe4ec84b9519d844aab307044968ed68a4590da18c02e9e2140f815eede"
+      },
+      "complete_original_stored_body": {
+        "path": "data/results-sources/source/byhash/f2eb1860101f1ab6a91635c897637feff63d17afad06e6f03c8197bcd3c6d72e.gz",
+        "bytes": 416142,
+        "sha256": "bee839f2991998fc81f0a2bb857fa14b48fed32d5ad435a372b143798e6193af"
+      },
+      "raw_bytes": 430785,
+      "raw_sha256": "f2eb1860101f1ab6a91635c897637feff63d17afad06e6f03c8197bcd3c6d72e",
+      "source_url": "https://www.mass.gov/doc/elections-uspspreliminary-injunction/download",
+      "original_source_retrieval_UTC": "2026-10-20T02:37:45.260966+00:00",
+      "original_pages": 49,
+      "complete_text_derivative": {
+        "path": "data/coordinator-current-order-review/usps-injunction.complete-layout.txt.gz",
+        "bytes": 39356,
+        "sha256": "fab7eedfa2f9ad6d61742eb4182beec0c3b8ef372e71c07ad7a1853092f0f8c6"
+      },
+      "selected_renders": [
+        {
+          "original_page": 47,
+          "complete_original_page_render": {
+            "path": "data/coordinator-current-order-review/usps-injunction-original-page47.png",
+            "bytes": 127942,
+            "sha256": "6e7566bbd76241f496e07eaacd9847022100cfba7ae8856a5a0ef70d8faa20d4"
+          }
+        },
+        {
+          "original_page": 48,
+          "complete_original_page_render": {
+            "path": "data/coordinator-current-order-review/usps-injunction-original-page48.png",
+            "bytes": 117522,
+            "sha256": "163c51974d1fc9f600569374091e3fba963fadd22206066ab1226a9dc1b616a2"
+          }
+        }
+      ]
+    },
+    {
+      "id": "scotus-eo-2026-stay",
+      "source_receipt": {
+        "path": "data/results-sources/source/http/scotus-eo-2026-stay.json",
+        "bytes": 4159,
+        "sha256": "3e6acb7bc5e1a17b8973e9014172a0d7700701585fc66bcbe8758d6052b07165"
+      },
+      "complete_original_stored_body": {
+        "path": "data/results-sources/source/byhash/9729f21f8a1810e15b17af17b6b2fa720036719f56502834751dab36a0e99db5.gz",
+        "bytes": 220368,
+        "sha256": "b8c2ec8ed302e2c621579a9d39e4472c435b1a835b1e3791d44578eb27b56397"
+      },
+      "raw_bytes": 241750,
+      "raw_sha256": "9729f21f8a1810e15b17af17b6b2fa720036719f56502834751dab36a0e99db5",
+      "source_url": "https://www.mass.gov/doc/scotus-elections-eo-20-order/download",
+      "original_source_retrieval_UTC": "2026-10-20T02:48:30.407177+00:00",
+      "original_pages": 37,
+      "complete_text_derivative": {
+        "path": "data/coordinator-current-order-review/scotus-eo-2026-stay.complete-layout.txt.gz",
+        "bytes": 27275,
+        "sha256": "0daf2be25bd4605ee368a8839c373faaebb50dd44ea3dede5ea67bf88cc37142"
+      },
+      "selected_renders": [
+        {
+          "original_page": 1,
+          "complete_original_page_render": {
+            "path": "data/coordinator-current-order-review/scotus-eo-2026-stay-original-page1.png",
+            "bytes": 91639,
+            "sha256": "aeba76e83b1eeba65362aa3b43a633e91e394819a1392284334949caa207468e"
+          }
+        }
+      ]
+    }
+  ],
+  "scoped_observations": [
+    "Aug24SCOTUS26A124/26A139 grants a stay of the underlying executive-order injunction; the percuriam discusses standing/ripeness and EO14399. It is not the later Sept4 USPS-final-rule preliminary injunction.",
+    "Sept4Dkt156 in1:26-cv-13917-IT/related11549 is a49page order granting a preliminary injunction as to enumerated DMM provisions for elections before/onNov3,2026; it denies a trial-level stay request and dissolves theAug27TRO. This does not prove no later appellate action."
+  ],
+  "acquisition_scope": "Independent text extraction and render from exactly pinned worker-retained complete original bodies; no new successful HTTP retrieval claimed. Coordinator web-open attempts to both URLs returned403; no missing web response headers/body invented.",
+  "actual_visual_scope": "Record actual selected-page visual review only after viewing the three generated complete original-page images; full text extraction is not full visual inspection.",
+  "later_docket_or_current_operative_exhaustiveness": false,
+  "producer_mutation_or_import": false
+}

@@ -52,7 +52,7 @@ def main():
             entry['response'] = response(r)
             if r.status_code == 200:
                 text = r.text
-                entry['literal_map_link_candidates_not_approved'] = sorted(set(re.findall(r'https?[^\s<>"\\]+(?:FeatureServer|MapServer|\.zip)[^\s<>"\\]*', text)))
+                entry['literal_map_link_candidates_not_approved'] = sorted(set(re.findall(r'https?://[^\s<>"\\]+(?:FeatureServer|MapServer|\.zip)[^\s<>"\\]*', text)))
         except requests.RequestException as e:
             entry['transport_error'] = dict(type=type(e).__name__, detail=str(e))
         entry['finished_at_utc'] = datetime.datetime.now(datetime.timezone.utc).isoformat()

@@ -1,0 +1,33 @@
+{
+  "status": "pass_complete_original_request_integrity_with_explicit_initial_diagnostic_rejection",
+  "checks": 6,
+  "receipts": [
+    {
+      "path": "subprecincts-metadata.receipt.json",
+      "bytes": 1671,
+      "sha256": "424d5bfbed22b0b859e1de6025fb52e62b8c2987bc4f668d2f73c438df4486ff"
+    },
+    {
+      "path": "wards-metadata.receipt.json",
+      "bytes": 1678,
+      "sha256": "66d75f665fe1de08d9a786b9b4661e25faa019c4e2488b6044fe1251d39f9423"
+    },
+    {
+      "path": "wards-official-hub.receipt.json",
+      "bytes": 170657,
+      "sha256": "56f846c0112f576306109ba094e8d1c32f9cec1527c9096e9b5652899419dfdc"
+    }
+  ],
+  "initial_bad_link_diagnostics_rejected": [
+    {
+      "receipt": "wards-official-hub.receipt.json",
+      "diagnostic_string_bytes": 169115,
+      "diagnostic_string_sha256": "74704ec8d6d9897830a32d1101b7cef1052371400f89b6b1b09e8779e1621f42",
+      "reason": "Initial broad regex captured percent-encoded whole site state, not a valid URL; no acquisition query followed this value."
+    }
+  ],
+  "original_receipts_and_bodies_unchanged": true,
+  "helper_correction": "For new actual requests only, literal http:// or https:// now required. Existing immutable v1 receipts/inventory retain initial rejected diagnostic verbatim. No download followed it.",
+  "native_features_or_ZIPs_acquired_in_this_preparation": false,
+  "current_or_legal_source_geometry_approval": false
+}

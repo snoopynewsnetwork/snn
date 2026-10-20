@@ -1,6 +1,6 @@
 # Massachusetts collection and remaining-vote strategy
 
-Updated with the independently reviewed historical first pair on **2026-10-20 UTC / 2026-10-19 Central**. Official-source research is active; map research awaits a real released slot. Read the [newsroom observations](local-news-results.md). No live collector or calibrated forecast is implemented.
+Updated with the independently reviewed historical first pair on **2026-10-20 UTC / 2026-10-19 Central**. Official-source and map research are active in their exclusive paths. Read the [newsroom observations](local-news-results.md). No live collector or calibrated forecast is implemented.
 
 ## Massachusetts-specific preflight
 
