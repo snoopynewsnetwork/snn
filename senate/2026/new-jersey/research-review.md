@@ -1,11 +1,10 @@
 # New Jersey coordinator review
 
-The complete first pair is reviewed for historical source research dispatch.
-Official-source and map assignments have not launched. Exactly two researchers
-are currently working in Massachusetts; future New Jersey launches require
-actual released slots and fresh profile/provider inspection. This review does
-not approve a current geographic crosswalk, legally complete write-in universe,
-November feed, measured cadence, remaining-vote estimate or probability.
+The complete first pair and finished official-source package have passed
+independent coordinator review. Maps research remains active. This review
+approves historical source research, with the limits below; it does not approve
+a current geographic crosswalk, legally complete write-in universe, November
+feed, measured cadence, remaining-vote estimate or probability.
 
 ## Accepted historical scope
 
@@ -131,13 +130,56 @@ candidate; no lower-preference, coalition, candidate-effect or2026 projection
 is implied. Live arithmetic keeps all counted candidates fixed and forecasts
 only an explicitly supplied remainder. Unknown remainder stays unknown.
 
-The actual general publication/certification downloaded by the baseline worker
-retains four candidates and literal party captions; the Booker asterisk is
-not given an unproved interpretation. Later amendments, write-in eligibility,
-actual November candidate/reporting IDs, geometry and signed/final coverage
-remain bounded qualifications for the official-source assignment. A future-
-dated nonzero News12 XML sample stays quarantined. Neither current returned
-counts, measured cadence, exact outstanding ballots, a collector nor calibrated
-probability is admitted. The remaining two question assignments will add their
-bounded evidence without making future exhaustive external review a worker
-completion gate.
+The actual general publication/certification retains four candidates and
+literal party captions. Subsequent direct original-page review establishes
+that this current roster's asterisk denotes incumbent. That explanation does
+not reinterpret historical source flags. The July27 signed certification
+covers Senate and House; the September4 signed amendment concerns the CD7
+House nominee only. The [selected original-page and docket proof](data/coordinator-current-roster-order-review/review.json)
+records three actually viewed complete pages and the September18 denial of
+the stay application in26A358. It establishes no exhaustive later amendment,
+write-in, Senate-ballot or docket clearance. A future-dated nonzero News12 XML
+sample remains quarantined.
+
+## Finished official-source package
+
+The [official report](official-results.md) and [86-row authority inventory](data/official-results-sources.csv)
+preserve all21 counties' three raw directory roles,21 separate canvass actors
+and two state actors. Every county has a substantive bounded investigation.
+All575 complete historical observations, exact233 priority and342 remainder
+records, and every county/child array remain reconstructable. These are shared
+parent investigations, not233 independently established leaf feeds.
+
+The [independent final review](data/coordinator-official-final-review.json)
+passed25,609 checks: exact1,443-file membership and hashes,2,679 immutable
+dependency pins,485 complete request observations,523 response hops and415
+distinct complete entity reconstructions. It independently checks complete
+JSON schemas, CSV cells, XML trees and107 PDFs/4,503 pages' text and word
+positions. Automated full-page checks are distinct from the worker's three
+actually viewed PDF pages. The producer's sealed read-only validation also
+passes; no producer import, writer, mutable newsroom aggregate or optional
+unfinished proof was used.
+
+The Division explicitly does not publish running election-night results.
+Its county election-night directory and periodic-report directory are distinct.
+Eleven complete Clarity samples remain June primary products. Gloucester's
+county-linked127298 is an explicitly November3 general zero template, while
+the stale state126344 remains primary. Salem's clerk-linked general13 is
+separate from state-linked primary12; full HTML, CSV and XML retain all zero
+votes, source clocks, nulls and literal NaN%. These observations establish
+setup/schema evidence only. No genuine November votes or approved current
+choice, reporting, method or geographic join enters arithmetic.
+
+The bounded legal review retains complete code chapters, calendar, guides,
+enacted amendments and actual selected orders. Actc31's section23 distinguishes
+August15,2026 operation from sections12,13,14,19 delayed to October1,2027.
+Poll-close, conditional mail receipt, cure, canvass and periodic-report duties
+remain distinct; a reporting deadline is not measured publication cadence or
+a duty to count every day. Later controlling law/orders, final ballot changes,
+eligible outstanding pools and current geographic approval remain external
+qualifications. They do not require reopening completed historical research.
+
+The map worker is separately auditing actual acquired originals and historical
+fallbacks. Its preliminary NJOGIS layer is explicitly mature support and
+intended for2019–2020; upload paths alone establish no current vintage or
+source-label match. Final map review and whole-state publication remain pending.

@@ -45,8 +45,8 @@ and repository review, with its push independently verified. Historical source
 qualifications remain explicit; current geography and live readiness are separate.
 
 The only active researchers are Massachusetts official sources
-`4c5f1926-ae99-4a2d-bd4d-580280e21bcb` and New Jersey official sources
-`e4a43ae3-0624-43d9-8860-c3b4e2f751f9`. Massachusetts maps
+`4c5f1926-ae99-4a2d-bd4d-580280e21bcb` and New Jersey maps
+`c09137ad-248a-409b-ad50-cba7526553ef`. New Jersey official research has finished; Massachusetts maps
 `8cff5762-76ce-4417-9927-177d07757961` has actually finished and released the
 New Jersey official-source launch slot. Massachusetts historical dispatch passes complete source
 reconstruction. Both New Jersey first-pair packages and the complete historical
