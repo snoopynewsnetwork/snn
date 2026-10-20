@@ -32,21 +32,22 @@ in the queue, and published commit IDs as packages finish.
 
 ## Progress
 
-**Eighteen new state packages plus retained Michigan are published.** Exact
+**Nineteen new state packages plus retained Michigan are published.** Exact
 reviewed state commits: North Carolina e2241313, Alaska9672f51f, Ohiof5cc934a,
 Mainee0fe91ed, Texas1ffe97de, Iowa47e6a682, Kansas9de81d5c, Georgia9c8ad26f,
 NewHampshire7ad7bb89, Minnesota4e4cfc92, SouthCarolina794a7aed,
 Florida4b03078e, Mississippi78c905c3, Nebraska158fc262, SouthDakota1cffd920,
 Idaho744627cb, Coloradof92a04a2696b8e54bc4dc739c3e5a69b3da3218f and
-Delaware2425d880bf6769a83a83b7fdbbcf0e977c7e5997.
+Delaware2425d880bf6769a83a83b7fdbbcf0e977c7e5997 and
+Illinoise687b0c985f6dd3c4632bdb2be90e095b655b6bb.
 Each complete state passed independent source/native/target/map/whole-package
 and repository review, with its push independently verified. Historical source
 qualifications remain explicit; current geography and live readiness are separate.
 
 The only active researchers are Massachusetts partisanship
 `41e0bf1a-4609-4a2a-b901-568567431a57` and New Jersey turnout
-`04473229-3e65-45b1-b628-b2fe909eaeee`. All four Illinois workers have actually
-finished; final official-source review and publication are pending. Massachusetts
+`04473229-3e65-45b1-b628-b2fe909eaeee`. All four Illinois workers finished, and the complete Illinois package is
+published with independent source/math/map/seal and repository review. Massachusetts
 turnout finished its bounded original-first phase and will resume the SAME agent
 for reciprocal QA after stable baseline extraction and an actual free slot.
 Thirteen later states remain unlaunched. No extra/replacement worker exists.
@@ -844,3 +845,20 @@ scope and exact full-package seals pass. Printed-known5,540/all10,062/4,522/
 108-source-parent dispatch remains qualified, with zero current leaf matches.
 The complete state is ready for explicit reviewed publication. Massachusetts
 baseline41e0bf1a and NewJersey turnout04473229 remain the only researchers.
+
+
+## Illinois publication verified
+
+Illinois `e687b0c985f6dd3c4632bdb2be90e095b655b6bb` is committed and pushed;
+origin/main independently matches exactly. All5,384 indexed state blobs match
+the whole5,383-entry manifest plus itself,744,495,171listed bytes, maximum
+29,210,617 below40MB. Strict text whitespace and repository npm checks pass.
+All producer bytes and the full31root/116companion/554096object source graph
+remain exact. Printed-known scope/current geography/live admission distinctions
+remain explicit. No current IDs/returns/crosswalk/remainder approval follows.
+
+Nineteen new state packages plus retainedMichigan are published. Only actual
+Massachusetts baseline41e0bf1a and NewJersey turnout04473229 are researching.
+Massachusetts turnout's SAMEeb66a7f4 awaits bounded reciprocal continuation in
+a real free slot after baseline stability. Thirteen later states remain
+unlaunched; full34-state batch continuation remains authorized and active.
