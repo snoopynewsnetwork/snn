@@ -131,3 +131,9 @@ outstanding pool, collector and calibrated win probability remain false/unknown
 external qualifications. Official/map work requires the complete frozen source
 authority next; those future qualifications do not reopen finished first-pair
 bounded research.
+
+## Qualified source dispatch
+
+The reviewed first pair is published in `ca58114b69b7c319ab29300f2ec41b01da7f6628`; remote main was verified exactly. Its sealed report contains one literal trailing space, preserved and [documented](data/coordinator-stage-whitespace-review.json). The [complete external historical source authority](data/coordinator-priority-acceptance.json) is now frozen. An [independent full replay](data/coordinator-priority-validation.json) passed 3,478,661 checks: all 25 roots, 471 whole companions, 3,474,062 recursive objects across 24 complete ledgers, 721 fixed files and 1,172 exact historical bodies. Current producer flags remain untouched. Downstream authority is path only.
+
+This dispatch requires all 133 localities, all 108 priority parents, 1,538 complete ordered source investigations and 1,131 explicit remainder objects. It approves bounded historical source research only. Current geographic joins, legal write-in completeness, November choice/reporting IDs, genuinely changing returns, measured cadence and eligible remaining pools remain unapproved. Actual official-results worker `fdfeb006-8e44-426d-b527-3e318898b0c4` has started. Maps has not launched; neither later worker depends on unfinished peer outputs. Earlier first-pair proofs remain immutable records of their original review phase.
