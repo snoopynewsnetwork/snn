@@ -1,0 +1,12 @@
+{
+  "status": "checker_assumption_failure_preserved_no_source_changes",
+  "initial_script": {
+    "path": "initial-complete-SR-equality-check.py",
+    "bytes": 7690,
+    "sha256": "2eac672cbdb873b6aba437b1759f181906bd45ec06dc0e7a849c5c5b6995f9c3"
+  },
+  "failed_assertion": "o['spatialReference'] == layer['extent']['spatialReference']",
+  "observed_scope": "Burlington layer extent has xy/z/m tolerance/origin/unit fields; native batch only prints wkid102711/latestWkid3424. State service objects are fully equal. Both complete originals remain unchanged.",
+  "correction": "Compare every returned spatial-reference field to its layer value, preserve complete metadata and batch objects separately, and record omitted supplemental fields explicitly. Never alter coordinates or assume omitted tolerance fields are new values.",
+  "exact_failure_UTC_not_captured": true
+}
