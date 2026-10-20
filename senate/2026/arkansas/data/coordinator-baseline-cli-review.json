@@ -1,0 +1,2091 @@
+{
+  "status": "pass_actual_CLI_independent_pair_full_field_counted_fixed_unknown_clipping_and_input_review",
+  "actual_CLI_cases": 73,
+  "expected_invalid": 62,
+  "strict_JSON_exit_empty_stderr": true,
+  "producer_import_or_write": false,
+  "no_current_pool_forecast_probability_or_legal_declaration": true,
+  "cases": [
+    {
+      "name": "fixed-counted-final-denominators-selected-only",
+      "input_text": "{\"mode\": \"live\", \"objective\": \"pair_margin\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"target_margin\": 0.01, \"selected_unit\": \"u\", \"assumptions\": \"Coordinator synthetic fixed counts and explicit pools; no forecast\", \"source_scope\": \"Synthetic source scope\", \"units\": [{\"key\": \"u\", \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": 0.4, \"other_allocation\": {\"C\": 1}}, {\"key\": \"v\", \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"remaining\": 50, \"pair_participation\": 0.8, \"a_share\": 0.8, \"other_allocation\": {\"C\": 1}}]}",
+      "expected_invalid": false,
+      "exit": 0,
+      "stderr": "",
+      "output": {
+        "status": "ok",
+        "mode": "live",
+        "objective": "pair_margin",
+        "named_pair": [
+          "A",
+          "B"
+        ],
+        "other_candidates": [
+          "C"
+        ],
+        "source_scope": "Synthetic source scope",
+        "assumptions": "Coordinator synthetic fixed counts and explicit pools; no forecast",
+        "counted_fixed": {
+          "A": 35.0,
+          "B": 35.0,
+          "C": 10.0
+        },
+        "remaining_all_candidates": 150.0,
+        "remaining_pair": 120.0,
+        "final_pair_denominator": 190.0,
+        "final_all_candidate_denominator": 230.0,
+        "target_margin": 0.01,
+        "target_net_votes": 1.9000000000000001,
+        "unknown_positive_pair_pool_units": [],
+        "pool_status": "positive",
+        "baseline": {
+          "votes": {
+            "A": 99.0,
+            "B": 91.0,
+            "C": 39.99999999999999
+          },
+          "pair_total": 190.0,
+          "all_candidate_total": 230.0,
+          "pair_net_votes": 8.0,
+          "pair_margin": 0.042105263157894736,
+          "all_candidate_pair_margin": 0.034782608695652174,
+          "a_full_field_lead": 8.0,
+          "a_full_field_status": "ahead",
+          "objective_residual_net_votes": 6.1
+        },
+        "uniform": {
+          "status": "feasible",
+          "unbounded_pair_share_shift": -0.025416666666666664,
+          "bounded_common_share_shift": -0.025416666666666782,
+          "at_min": {
+            "votes": {
+              "A": 35.0,
+              "B": 155.0,
+              "C": 39.99999999999999
+            },
+            "pair_total": 190.0,
+            "all_candidate_total": 230.0,
+            "pair_net_votes": -120.0,
+            "pair_margin": -0.631578947368421,
+            "all_candidate_pair_margin": -0.5217391304347826,
+            "a_full_field_lead": -120.0,
+            "a_full_field_status": "behind",
+            "objective_residual_net_votes": -121.9
+          },
+          "at_max": {
+            "votes": {
+              "A": 155.0,
+              "B": 35.0,
+              "C": 39.99999999999999
+            },
+            "pair_total": 190.0,
+            "all_candidate_total": 230.0,
+            "pair_net_votes": 120.0,
+            "pair_margin": 0.631578947368421,
+            "all_candidate_pair_margin": 0.5217391304347826,
+            "a_full_field_lead": 115.0,
+            "a_full_field_status": "ahead",
+            "objective_residual_net_votes": 118.1
+          },
+          "target": {
+            "votes": {
+              "A": 95.95,
+              "B": 94.05,
+              "C": 39.99999999999999
+            },
+            "pair_total": 190.0,
+            "all_candidate_total": 230.0,
+            "pair_net_votes": 1.9000000000000057,
+            "pair_margin": 0.01000000000000003,
+            "all_candidate_pair_margin": 0.008260869565217417,
+            "a_full_field_lead": 1.9000000000000057,
+            "a_full_field_status": "ahead",
+            "objective_residual_net_votes": 5.551115123125783e-15
+          },
+          "clipped_units": []
+        },
+        "selected": {
+          "key": "u",
+          "status": "feasible",
+          "required_a_share_raw": 0.361875,
+          "required_pair_share_raw": 0.361875,
+          "required_full_plurality_share_raw": 0.364375,
+          "required_a_share_clipped": 0.361875,
+          "others_fixed_at_supplied_assumptions": true
+        },
+        "units": [
+          {
+            "key": "u",
+            "pair_pool": 80.0,
+            "pair_participation": 0.8,
+            "state_final_pair_weight": 0.42105263157894735,
+            "remaining_pool_weight": 0.6666666666666666,
+            "baseline_a_share": 0.4,
+            "baseline_remaining_net": -15.999999999999996,
+            "target_a_share": 0.37458333333333327,
+            "target_remaining_net": -20.066666666666677,
+            "net_gain_per_one_share_point": 1.6,
+            "counted_fixed": {
+              "A": 30,
+              "B": 20,
+              "C": 10
+            },
+            "remaining_other_votes": {
+              "C": 19.999999999999996
+            }
+          },
+          {
+            "key": "v",
+            "pair_pool": 40.0,
+            "pair_participation": 0.8,
+            "state_final_pair_weight": 0.21052631578947367,
+            "remaining_pool_weight": 0.3333333333333333,
+            "baseline_a_share": 0.8,
+            "baseline_remaining_net": 24.000000000000004,
+            "target_a_share": 0.7745833333333333,
+            "target_remaining_net": 21.96666666666666,
+            "net_gain_per_one_share_point": 0.8,
+            "counted_fixed": {
+              "A": 5,
+              "B": 15,
+              "C": 0
+            },
+            "remaining_other_votes": {
+              "C": 9.999999999999998
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "unknown-selected-True",
+      "input_text": "{\"mode\": \"live\", \"objective\": \"pair_margin\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"target_margin\": 0.01, \"selected_unit\": \"u\", \"assumptions\": \"Coordinator synthetic fixed counts and explicit pools; no forecast\", \"source_scope\": \"Synthetic source scope\", \"units\": [{\"key\": \"u\", \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": null, \"other_allocation\": {\"C\": 1}}, {\"key\": \"v\", \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"remaining\": 50, \"pair_participation\": 0.8, \"a_share\": 0.8, \"other_allocation\": {\"C\": 1}}]}",
+      "expected_invalid": false,
+      "exit": 0,
+      "stderr": "",
+      "output": {
+        "status": "unknown",
+        "mode": "live",
+        "objective": "pair_margin",
+        "named_pair": [
+          "A",
+          "B"
+        ],
+        "other_candidates": [
+          "C"
+        ],
+        "source_scope": "Synthetic source scope",
+        "assumptions": "Coordinator synthetic fixed counts and explicit pools; no forecast",
+        "counted_fixed": {
+          "A": 35.0,
+          "B": 35.0,
+          "C": 10.0
+        },
+        "remaining_all_candidates": 150.0,
+        "remaining_pair": 120.0,
+        "final_pair_denominator": 190.0,
+        "final_all_candidate_denominator": 230.0,
+        "target_margin": 0.01,
+        "target_net_votes": 1.9000000000000001,
+        "unknown_positive_pair_pool_units": [
+          "u"
+        ],
+        "pool_status": "positive",
+        "baseline": null,
+        "uniform": null,
+        "selected": {
+          "key": "u",
+          "status": "feasible",
+          "required_a_share_raw": 0.361875,
+          "required_pair_share_raw": 0.361875,
+          "required_full_plurality_share_raw": 0.364375,
+          "required_a_share_clipped": 0.361875,
+          "others_fixed_at_supplied_assumptions": true
+        },
+        "units": [
+          {
+            "key": "u",
+            "pair_pool": 80.0,
+            "pair_participation": 0.8,
+            "state_final_pair_weight": 0.42105263157894735,
+            "remaining_pool_weight": 0.6666666666666666,
+            "baseline_a_share": null,
+            "baseline_remaining_net": null,
+            "target_a_share": null,
+            "target_remaining_net": null,
+            "net_gain_per_one_share_point": 1.6,
+            "counted_fixed": {
+              "A": 30,
+              "B": 20,
+              "C": 10
+            },
+            "remaining_other_votes": {
+              "C": 19.999999999999996
+            }
+          },
+          {
+            "key": "v",
+            "pair_pool": 40.0,
+            "pair_participation": 0.8,
+            "state_final_pair_weight": 0.21052631578947367,
+            "remaining_pool_weight": 0.3333333333333333,
+            "baseline_a_share": 0.8,
+            "baseline_remaining_net": 24.000000000000004,
+            "target_a_share": null,
+            "target_remaining_net": null,
+            "net_gain_per_one_share_point": 0.8,
+            "counted_fixed": {
+              "A": 5,
+              "B": 15,
+              "C": 0
+            },
+            "remaining_other_votes": {
+              "C": 9.999999999999998
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "unknown-selected-False",
+      "input_text": "{\"mode\": \"live\", \"objective\": \"pair_margin\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"target_margin\": 0.01, \"selected_unit\": \"u\", \"assumptions\": \"Coordinator synthetic fixed counts and explicit pools; no forecast\", \"source_scope\": \"Synthetic source scope\", \"units\": [{\"key\": \"u\", \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": 0.4, \"other_allocation\": {\"C\": 1}}, {\"key\": \"v\", \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"remaining\": 50, \"pair_participation\": 0.8, \"a_share\": null, \"other_allocation\": {\"C\": 1}}]}",
+      "expected_invalid": false,
+      "exit": 0,
+      "stderr": "",
+      "output": {
+        "status": "unknown",
+        "mode": "live",
+        "objective": "pair_margin",
+        "named_pair": [
+          "A",
+          "B"
+        ],
+        "other_candidates": [
+          "C"
+        ],
+        "source_scope": "Synthetic source scope",
+        "assumptions": "Coordinator synthetic fixed counts and explicit pools; no forecast",
+        "counted_fixed": {
+          "A": 35.0,
+          "B": 35.0,
+          "C": 10.0
+        },
+        "remaining_all_candidates": 150.0,
+        "remaining_pair": 120.0,
+        "final_pair_denominator": 190.0,
+        "final_all_candidate_denominator": 230.0,
+        "target_margin": 0.01,
+        "target_net_votes": 1.9000000000000001,
+        "unknown_positive_pair_pool_units": [
+          "v"
+        ],
+        "pool_status": "positive",
+        "baseline": null,
+        "uniform": null,
+        "selected": {
+          "key": "u",
+          "status": "unknown-other-unit-preferences",
+          "unknown_units": [
+            "v"
+          ]
+        },
+        "units": [
+          {
+            "key": "u",
+            "pair_pool": 80.0,
+            "pair_participation": 0.8,
+            "state_final_pair_weight": 0.42105263157894735,
+            "remaining_pool_weight": 0.6666666666666666,
+            "baseline_a_share": 0.4,
+            "baseline_remaining_net": -15.999999999999996,
+            "target_a_share": null,
+            "target_remaining_net": null,
+            "net_gain_per_one_share_point": 1.6,
+            "counted_fixed": {
+              "A": 30,
+              "B": 20,
+              "C": 10
+            },
+            "remaining_other_votes": {
+              "C": 19.999999999999996
+            }
+          },
+          {
+            "key": "v",
+            "pair_pool": 40.0,
+            "pair_participation": 0.8,
+            "state_final_pair_weight": 0.21052631578947367,
+            "remaining_pool_weight": 0.3333333333333333,
+            "baseline_a_share": null,
+            "baseline_remaining_net": null,
+            "target_a_share": null,
+            "target_remaining_net": null,
+            "net_gain_per_one_share_point": 0.8,
+            "counted_fixed": {
+              "A": 5,
+              "B": 15,
+              "C": 0
+            },
+            "remaining_other_votes": {
+              "C": 9.999999999999998
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "exact-literal-key-not-trimmed",
+      "input_text": "{\"mode\": \"live\", \"objective\": \"pair_margin\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"target_margin\": 0.01, \"selected_unit\": \" u \", \"assumptions\": \"Coordinator synthetic fixed counts and explicit pools; no forecast\", \"source_scope\": \"Synthetic source scope\", \"units\": [{\"key\": \"u\", \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": 0.4, \"other_allocation\": {\"C\": 1}}, {\"key\": \" u \", \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"remaining\": 50, \"pair_participation\": 0.8, \"a_share\": 0.8, \"other_allocation\": {\"C\": 1}}]}",
+      "expected_invalid": false,
+      "exit": 0,
+      "stderr": "",
+      "output": {
+        "status": "ok",
+        "mode": "live",
+        "objective": "pair_margin",
+        "named_pair": [
+          "A",
+          "B"
+        ],
+        "other_candidates": [
+          "C"
+        ],
+        "source_scope": "Synthetic source scope",
+        "assumptions": "Coordinator synthetic fixed counts and explicit pools; no forecast",
+        "counted_fixed": {
+          "A": 35.0,
+          "B": 35.0,
+          "C": 10.0
+        },
+        "remaining_all_candidates": 150.0,
+        "remaining_pair": 120.0,
+        "final_pair_denominator": 190.0,
+        "final_all_candidate_denominator": 230.0,
+        "target_margin": 0.01,
+        "target_net_votes": 1.9000000000000001,
+        "unknown_positive_pair_pool_units": [],
+        "pool_status": "positive",
+        "baseline": {
+          "votes": {
+            "A": 99.0,
+            "B": 91.0,
+            "C": 39.99999999999999
+          },
+          "pair_total": 190.0,
+          "all_candidate_total": 230.0,
+          "pair_net_votes": 8.0,
+          "pair_margin": 0.042105263157894736,
+          "all_candidate_pair_margin": 0.034782608695652174,
+          "a_full_field_lead": 8.0,
+          "a_full_field_status": "ahead",
+          "objective_residual_net_votes": 6.1
+        },
+        "uniform": {
+          "status": "feasible",
+          "unbounded_pair_share_shift": -0.025416666666666664,
+          "bounded_common_share_shift": -0.025416666666666782,
+          "at_min": {
+            "votes": {
+              "A": 35.0,
+              "B": 155.0,
+              "C": 39.99999999999999
+            },
+            "pair_total": 190.0,
+            "all_candidate_total": 230.0,
+            "pair_net_votes": -120.0,
+            "pair_margin": -0.631578947368421,
+            "all_candidate_pair_margin": -0.5217391304347826,
+            "a_full_field_lead": -120.0,
+            "a_full_field_status": "behind",
+            "objective_residual_net_votes": -121.9
+          },
+          "at_max": {
+            "votes": {
+              "A": 155.0,
+              "B": 35.0,
+              "C": 39.99999999999999
+            },
+            "pair_total": 190.0,
+            "all_candidate_total": 230.0,
+            "pair_net_votes": 120.0,
+            "pair_margin": 0.631578947368421,
+            "all_candidate_pair_margin": 0.5217391304347826,
+            "a_full_field_lead": 115.0,
+            "a_full_field_status": "ahead",
+            "objective_residual_net_votes": 118.1
+          },
+          "target": {
+            "votes": {
+              "A": 95.95,
+              "B": 94.05,
+              "C": 39.99999999999999
+            },
+            "pair_total": 190.0,
+            "all_candidate_total": 230.0,
+            "pair_net_votes": 1.9000000000000057,
+            "pair_margin": 0.01000000000000003,
+            "all_candidate_pair_margin": 0.008260869565217417,
+            "a_full_field_lead": 1.9000000000000057,
+            "a_full_field_status": "ahead",
+            "objective_residual_net_votes": 5.551115123125783e-15
+          },
+          "clipped_units": []
+        },
+        "selected": {
+          "key": " u ",
+          "status": "feasible",
+          "required_a_share_raw": 0.72375,
+          "required_pair_share_raw": 0.72375,
+          "required_full_plurality_share_raw": 0.72875,
+          "required_a_share_clipped": 0.72375,
+          "others_fixed_at_supplied_assumptions": true
+        },
+        "units": [
+          {
+            "key": "u",
+            "pair_pool": 80.0,
+            "pair_participation": 0.8,
+            "state_final_pair_weight": 0.42105263157894735,
+            "remaining_pool_weight": 0.6666666666666666,
+            "baseline_a_share": 0.4,
+            "baseline_remaining_net": -15.999999999999996,
+            "target_a_share": 0.37458333333333327,
+            "target_remaining_net": -20.066666666666677,
+            "net_gain_per_one_share_point": 1.6,
+            "counted_fixed": {
+              "A": 30,
+              "B": 20,
+              "C": 10
+            },
+            "remaining_other_votes": {
+              "C": 19.999999999999996
+            }
+          },
+          {
+            "key": " u ",
+            "pair_pool": 40.0,
+            "pair_participation": 0.8,
+            "state_final_pair_weight": 0.21052631578947367,
+            "remaining_pool_weight": 0.3333333333333333,
+            "baseline_a_share": 0.8,
+            "baseline_remaining_net": 24.000000000000004,
+            "target_a_share": 0.7745833333333333,
+            "target_remaining_net": 21.96666666666666,
+            "net_gain_per_one_share_point": 0.8,
+            "counted_fixed": {
+              "A": 5,
+              "B": 15,
+              "C": 0
+            },
+            "remaining_other_votes": {
+              "C": 9.999999999999998
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "actual-clipped-root-differs-from-unbounded",
+      "input_text": "{\"mode\": \"historical\", \"objective\": \"pair_margin\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"target_margin\": 0, \"source_scope\": \"Synthetic clipping\", \"assumptions\": \"Clipped common shift is distinct from pair algebra\", \"units\": [{\"key\": \"lo\", \"counted\": {\"A\": 0, \"B\": 0, \"C\": 0}, \"remaining\": 10, \"pair_participation\": 1, \"a_share\": 0, \"other_allocation\": {\"C\": 1}}, {\"key\": \"hi\", \"counted\": {\"A\": 0, \"B\": 0, \"C\": 0}, \"remaining\": 90, \"pair_participation\": 1, \"a_share\": 0.9, \"other_allocation\": {\"C\": 1}}]}",
+      "expected_invalid": false,
+      "exit": 0,
+      "stderr": "",
+      "output": {
+        "status": "ok",
+        "mode": "historical",
+        "objective": "pair_margin",
+        "named_pair": [
+          "A",
+          "B"
+        ],
+        "other_candidates": [
+          "C"
+        ],
+        "source_scope": "Synthetic clipping",
+        "assumptions": "Clipped common shift is distinct from pair algebra",
+        "counted_fixed": {
+          "A": 0.0,
+          "B": 0.0,
+          "C": 0.0
+        },
+        "remaining_all_candidates": 100.0,
+        "remaining_pair": 100.0,
+        "final_pair_denominator": 100.0,
+        "final_all_candidate_denominator": 100.0,
+        "target_margin": 0,
+        "target_net_votes": 0.0,
+        "unknown_positive_pair_pool_units": [],
+        "pool_status": "positive",
+        "baseline": {
+          "votes": {
+            "A": 81.0,
+            "B": 19.0,
+            "C": 0.0
+          },
+          "pair_total": 100.0,
+          "all_candidate_total": 100.0,
+          "pair_net_votes": 62.0,
+          "pair_margin": 0.62,
+          "all_candidate_pair_margin": 0.62,
+          "a_full_field_lead": 62.0,
+          "a_full_field_status": "ahead",
+          "objective_residual_net_votes": 62.0
+        },
+        "uniform": {
+          "status": "feasible",
+          "unbounded_pair_share_shift": -0.31,
+          "bounded_common_share_shift": -0.34444444444444455,
+          "at_min": {
+            "votes": {
+              "A": 0.0,
+              "B": 100.0,
+              "C": 0.0
+            },
+            "pair_total": 100.0,
+            "all_candidate_total": 100.0,
+            "pair_net_votes": -100.0,
+            "pair_margin": -1.0,
+            "all_candidate_pair_margin": -1.0,
+            "a_full_field_lead": -100.0,
+            "a_full_field_status": "behind",
+            "objective_residual_net_votes": -100.0
+          },
+          "at_max": {
+            "votes": {
+              "A": 100.0,
+              "B": 0.0,
+              "C": 0.0
+            },
+            "pair_total": 100.0,
+            "all_candidate_total": 100.0,
+            "pair_net_votes": 100.0,
+            "pair_margin": 1.0,
+            "all_candidate_pair_margin": 1.0,
+            "a_full_field_lead": 100.0,
+            "a_full_field_status": "ahead",
+            "objective_residual_net_votes": 100.0
+          },
+          "target": {
+            "votes": {
+              "A": 49.99999999999999,
+              "B": 50.00000000000001,
+              "C": 0.0
+            },
+            "pair_total": 100.0,
+            "all_candidate_total": 100.0,
+            "pair_net_votes": -1.4210854715202004e-14,
+            "pair_margin": -1.4210854715202004e-16,
+            "all_candidate_pair_margin": -1.4210854715202004e-16,
+            "a_full_field_lead": -1.4210854715202004e-14,
+            "a_full_field_status": "behind",
+            "objective_residual_net_votes": -1.4210854715202004e-14
+          },
+          "clipped_units": [
+            "lo"
+          ]
+        },
+        "selected": null,
+        "units": [
+          {
+            "key": "lo",
+            "pair_pool": 10,
+            "pair_participation": 1,
+            "state_final_pair_weight": 0.1,
+            "remaining_pool_weight": 0.1,
+            "baseline_a_share": 0,
+            "baseline_remaining_net": -10,
+            "target_a_share": 0,
+            "target_remaining_net": -10,
+            "net_gain_per_one_share_point": 0.2,
+            "counted_fixed": {
+              "A": 0,
+              "B": 0,
+              "C": 0
+            },
+            "remaining_other_votes": {
+              "C": 0
+            }
+          },
+          {
+            "key": "hi",
+            "pair_pool": 90,
+            "pair_participation": 1,
+            "state_final_pair_weight": 0.9,
+            "remaining_pool_weight": 0.9,
+            "baseline_a_share": 0.9,
+            "baseline_remaining_net": 72.0,
+            "target_a_share": 0.5555555555555555,
+            "target_remaining_net": 9.999999999999984,
+            "net_gain_per_one_share_point": 1.8,
+            "counted_fixed": {
+              "A": 0,
+              "B": 0,
+              "C": 0
+            },
+            "remaining_other_votes": {
+              "C": 0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "pair-leader-and-pair-tie-both-lose-to-C",
+      "input_text": "{\"mode\": \"historical\", \"objective\": \"pair_margin\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"target_margin\": 0, \"source_scope\": \"Synthetic clipping\", \"assumptions\": \"Clipped common shift is distinct from pair algebra\", \"units\": [{\"key\": \"third\", \"counted\": {\"A\": 0, \"B\": 0, \"C\": 0}, \"remaining\": 100, \"pair_participation\": 0.2, \"a_share\": 0.6, \"other_allocation\": {\"C\": 1}}], \"selected_unit\": \"third\"}",
+      "expected_invalid": false,
+      "exit": 0,
+      "stderr": "",
+      "output": {
+        "status": "ok",
+        "mode": "historical",
+        "objective": "pair_margin",
+        "named_pair": [
+          "A",
+          "B"
+        ],
+        "other_candidates": [
+          "C"
+        ],
+        "source_scope": "Synthetic clipping",
+        "assumptions": "Clipped common shift is distinct from pair algebra",
+        "counted_fixed": {
+          "A": 0.0,
+          "B": 0.0,
+          "C": 0.0
+        },
+        "remaining_all_candidates": 100.0,
+        "remaining_pair": 20.0,
+        "final_pair_denominator": 20.0,
+        "final_all_candidate_denominator": 100.0,
+        "target_margin": 0,
+        "target_net_votes": 0.0,
+        "unknown_positive_pair_pool_units": [],
+        "pool_status": "positive",
+        "baseline": {
+          "votes": {
+            "A": 12.0,
+            "B": 8.0,
+            "C": 80.0
+          },
+          "pair_total": 20.0,
+          "all_candidate_total": 100.0,
+          "pair_net_votes": 4.0,
+          "pair_margin": 0.2,
+          "all_candidate_pair_margin": 0.04,
+          "a_full_field_lead": -68.0,
+          "a_full_field_status": "behind",
+          "objective_residual_net_votes": 4.0
+        },
+        "uniform": {
+          "status": "feasible",
+          "unbounded_pair_share_shift": -0.1,
+          "bounded_common_share_shift": -0.1,
+          "at_min": {
+            "votes": {
+              "A": 0.0,
+              "B": 20.0,
+              "C": 80.0
+            },
+            "pair_total": 20.0,
+            "all_candidate_total": 100.0,
+            "pair_net_votes": -20.0,
+            "pair_margin": -1.0,
+            "all_candidate_pair_margin": -0.2,
+            "a_full_field_lead": -80.0,
+            "a_full_field_status": "behind",
+            "objective_residual_net_votes": -20.0
+          },
+          "at_max": {
+            "votes": {
+              "A": 20.0,
+              "B": 0.0,
+              "C": 80.0
+            },
+            "pair_total": 20.0,
+            "all_candidate_total": 100.0,
+            "pair_net_votes": 20.0,
+            "pair_margin": 1.0,
+            "all_candidate_pair_margin": 0.2,
+            "a_full_field_lead": -60.0,
+            "a_full_field_status": "behind",
+            "objective_residual_net_votes": 20.0
+          },
+          "target": {
+            "votes": {
+              "A": 10.0,
+              "B": 10.0,
+              "C": 80.0
+            },
+            "pair_total": 20.0,
+            "all_candidate_total": 100.0,
+            "pair_net_votes": 0.0,
+            "pair_margin": 0.0,
+            "all_candidate_pair_margin": 0.0,
+            "a_full_field_lead": -70.0,
+            "a_full_field_status": "behind",
+            "objective_residual_net_votes": 0.0
+          },
+          "clipped_units": []
+        },
+        "selected": {
+          "key": "third",
+          "status": "feasible",
+          "required_a_share_raw": 0.5,
+          "required_pair_share_raw": 0.5,
+          "required_full_plurality_share_raw": 4.0,
+          "required_a_share_clipped": 0.5,
+          "others_fixed_at_supplied_assumptions": true
+        },
+        "units": [
+          {
+            "key": "third",
+            "pair_pool": 20.0,
+            "pair_participation": 0.2,
+            "state_final_pair_weight": 1.0,
+            "remaining_pool_weight": 1.0,
+            "baseline_a_share": 0.6,
+            "baseline_remaining_net": 3.999999999999999,
+            "target_a_share": 0.5,
+            "target_remaining_net": 0.0,
+            "net_gain_per_one_share_point": 0.4,
+            "counted_fixed": {
+              "A": 0,
+              "B": 0,
+              "C": 0
+            },
+            "remaining_other_votes": {
+              "C": 80.0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "full-field-objective-impossible-when-pair-tie-feasible",
+      "input_text": "{\"mode\": \"historical\", \"objective\": \"full_candidate_plurality\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"target_margin\": 0, \"source_scope\": \"Synthetic clipping\", \"assumptions\": \"Clipped common shift is distinct from pair algebra\", \"units\": [{\"key\": \"third\", \"counted\": {\"A\": 0, \"B\": 0, \"C\": 0}, \"remaining\": 100, \"pair_participation\": 0.2, \"a_share\": 0.6, \"other_allocation\": {\"C\": 1}}], \"selected_unit\": \"third\"}",
+      "expected_invalid": false,
+      "exit": 0,
+      "stderr": "",
+      "output": {
+        "status": "ok",
+        "mode": "historical",
+        "objective": "full_candidate_plurality",
+        "named_pair": [
+          "A",
+          "B"
+        ],
+        "other_candidates": [
+          "C"
+        ],
+        "source_scope": "Synthetic clipping",
+        "assumptions": "Clipped common shift is distinct from pair algebra",
+        "counted_fixed": {
+          "A": 0.0,
+          "B": 0.0,
+          "C": 0.0
+        },
+        "remaining_all_candidates": 100.0,
+        "remaining_pair": 20.0,
+        "final_pair_denominator": 20.0,
+        "final_all_candidate_denominator": 100.0,
+        "target_margin": 0,
+        "target_net_votes": 0.0,
+        "unknown_positive_pair_pool_units": [],
+        "pool_status": "positive",
+        "baseline": {
+          "votes": {
+            "A": 12.0,
+            "B": 8.0,
+            "C": 80.0
+          },
+          "pair_total": 20.0,
+          "all_candidate_total": 100.0,
+          "pair_net_votes": 4.0,
+          "pair_margin": 0.2,
+          "all_candidate_pair_margin": 0.04,
+          "a_full_field_lead": -68.0,
+          "a_full_field_status": "behind",
+          "objective_residual_net_votes": -68.0
+        },
+        "uniform": {
+          "status": "impossible",
+          "unbounded_pair_share_shift": -0.1,
+          "bounded_common_share_shift": null,
+          "at_min": {
+            "votes": {
+              "A": 0.0,
+              "B": 20.0,
+              "C": 80.0
+            },
+            "pair_total": 20.0,
+            "all_candidate_total": 100.0,
+            "pair_net_votes": -20.0,
+            "pair_margin": -1.0,
+            "all_candidate_pair_margin": -0.2,
+            "a_full_field_lead": -80.0,
+            "a_full_field_status": "behind",
+            "objective_residual_net_votes": -80.0
+          },
+          "at_max": {
+            "votes": {
+              "A": 20.0,
+              "B": 0.0,
+              "C": 80.0
+            },
+            "pair_total": 20.0,
+            "all_candidate_total": 100.0,
+            "pair_net_votes": 20.0,
+            "pair_margin": 1.0,
+            "all_candidate_pair_margin": 0.2,
+            "a_full_field_lead": -60.0,
+            "a_full_field_status": "behind",
+            "objective_residual_net_votes": -60.0
+          },
+          "target": null,
+          "clipped_units": []
+        },
+        "selected": {
+          "key": "third",
+          "status": "impossible",
+          "required_a_share_raw": 4.0,
+          "required_pair_share_raw": 0.5,
+          "required_full_plurality_share_raw": 4.0,
+          "required_a_share_clipped": 1,
+          "others_fixed_at_supplied_assumptions": true
+        },
+        "units": [
+          {
+            "key": "third",
+            "pair_pool": 20.0,
+            "pair_participation": 0.2,
+            "state_final_pair_weight": 1.0,
+            "remaining_pool_weight": 1.0,
+            "baseline_a_share": 0.6,
+            "baseline_remaining_net": 3.999999999999999,
+            "target_a_share": null,
+            "target_remaining_net": null,
+            "net_gain_per_one_share_point": 0.4,
+            "counted_fixed": {
+              "A": 0,
+              "B": 0,
+              "C": 0
+            },
+            "remaining_other_votes": {
+              "C": 80.0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "full-field-positive-cushion-has-full-denominator",
+      "input_text": "{\"mode\": \"live\", \"objective\": \"full_candidate_plurality\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"target_margin\": 0.01, \"selected_unit\": \"u\", \"assumptions\": \"Coordinator synthetic fixed counts and explicit pools; no forecast\", \"source_scope\": \"Synthetic source scope\", \"units\": [{\"key\": \"u\", \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": 0.4, \"other_allocation\": {\"C\": 1}}, {\"key\": \"v\", \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"remaining\": 50, \"pair_participation\": 0.8, \"a_share\": 0.8, \"other_allocation\": {\"C\": 1}}]}",
+      "expected_invalid": false,
+      "exit": 0,
+      "stderr": "",
+      "output": {
+        "status": "ok",
+        "mode": "live",
+        "objective": "full_candidate_plurality",
+        "named_pair": [
+          "A",
+          "B"
+        ],
+        "other_candidates": [
+          "C"
+        ],
+        "source_scope": "Synthetic source scope",
+        "assumptions": "Coordinator synthetic fixed counts and explicit pools; no forecast",
+        "counted_fixed": {
+          "A": 35.0,
+          "B": 35.0,
+          "C": 10.0
+        },
+        "remaining_all_candidates": 150.0,
+        "remaining_pair": 120.0,
+        "final_pair_denominator": 190.0,
+        "final_all_candidate_denominator": 230.0,
+        "target_margin": 0.01,
+        "target_net_votes": 2.3000000000000003,
+        "unknown_positive_pair_pool_units": [],
+        "pool_status": "positive",
+        "baseline": {
+          "votes": {
+            "A": 99.0,
+            "B": 91.0,
+            "C": 39.99999999999999
+          },
+          "pair_total": 190.0,
+          "all_candidate_total": 230.0,
+          "pair_net_votes": 8.0,
+          "pair_margin": 0.042105263157894736,
+          "all_candidate_pair_margin": 0.034782608695652174,
+          "a_full_field_lead": 8.0,
+          "a_full_field_status": "ahead",
+          "objective_residual_net_votes": 5.699999999999999
+        },
+        "uniform": {
+          "status": "feasible",
+          "unbounded_pair_share_shift": -0.025416666666666664,
+          "bounded_common_share_shift": -0.023749999999999993,
+          "at_min": {
+            "votes": {
+              "A": 35.0,
+              "B": 155.0,
+              "C": 39.99999999999999
+            },
+            "pair_total": 190.0,
+            "all_candidate_total": 230.0,
+            "pair_net_votes": -120.0,
+            "pair_margin": -0.631578947368421,
+            "all_candidate_pair_margin": -0.5217391304347826,
+            "a_full_field_lead": -120.0,
+            "a_full_field_status": "behind",
+            "objective_residual_net_votes": -122.3
+          },
+          "at_max": {
+            "votes": {
+              "A": 155.0,
+              "B": 35.0,
+              "C": 39.99999999999999
+            },
+            "pair_total": 190.0,
+            "all_candidate_total": 230.0,
+            "pair_net_votes": 120.0,
+            "pair_margin": 0.631578947368421,
+            "all_candidate_pair_margin": 0.5217391304347826,
+            "a_full_field_lead": 115.0,
+            "a_full_field_status": "ahead",
+            "objective_residual_net_votes": 112.7
+          },
+          "target": {
+            "votes": {
+              "A": 96.15,
+              "B": 93.85,
+              "C": 39.99999999999999
+            },
+            "pair_total": 190.0,
+            "all_candidate_total": 230.0,
+            "pair_net_votes": 2.3000000000000114,
+            "pair_margin": 0.012105263157894796,
+            "all_candidate_pair_margin": 0.010000000000000049,
+            "a_full_field_lead": 2.3000000000000114,
+            "a_full_field_status": "ahead",
+            "objective_residual_net_votes": 1.1102230246251565e-14
+          },
+          "clipped_units": []
+        },
+        "selected": {
+          "key": "u",
+          "status": "feasible",
+          "required_a_share_raw": 0.364375,
+          "required_pair_share_raw": 0.361875,
+          "required_full_plurality_share_raw": 0.364375,
+          "required_a_share_clipped": 0.364375,
+          "others_fixed_at_supplied_assumptions": true
+        },
+        "units": [
+          {
+            "key": "u",
+            "pair_pool": 80.0,
+            "pair_participation": 0.8,
+            "state_final_pair_weight": 0.42105263157894735,
+            "remaining_pool_weight": 0.6666666666666666,
+            "baseline_a_share": 0.4,
+            "baseline_remaining_net": -15.999999999999996,
+            "target_a_share": 0.37625000000000003,
+            "target_remaining_net": -19.799999999999997,
+            "net_gain_per_one_share_point": 1.6,
+            "counted_fixed": {
+              "A": 30,
+              "B": 20,
+              "C": 10
+            },
+            "remaining_other_votes": {
+              "C": 19.999999999999996
+            }
+          },
+          {
+            "key": "v",
+            "pair_pool": 40.0,
+            "pair_participation": 0.8,
+            "state_final_pair_weight": 0.21052631578947367,
+            "remaining_pool_weight": 0.3333333333333333,
+            "baseline_a_share": 0.8,
+            "baseline_remaining_net": 24.000000000000004,
+            "target_a_share": 0.7762500000000001,
+            "target_remaining_net": 22.10000000000001,
+            "net_gain_per_one_share_point": 0.8,
+            "counted_fixed": {
+              "A": 5,
+              "B": 15,
+              "C": 0
+            },
+            "remaining_other_votes": {
+              "C": 9.999999999999998
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "counted-only-zero-pool-no-unknown-inference",
+      "input_text": "{\"mode\": \"live\", \"objective\": \"pair_margin\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"target_margin\": 0.01, \"selected_unit\": \"u\", \"assumptions\": \"Coordinator synthetic fixed counts and explicit pools; no forecast\", \"source_scope\": \"Synthetic source scope\", \"units\": [{\"key\": \"u\", \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"remaining\": 0, \"pair_participation\": 0.8, \"a_share\": null, \"other_allocation\": {\"C\": 1}}, {\"key\": \"v\", \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"remaining\": 0, \"pair_participation\": 0.8, \"a_share\": null, \"other_allocation\": {\"C\": 1}}]}",
+      "expected_invalid": false,
+      "exit": 0,
+      "stderr": "",
+      "output": {
+        "status": "ok",
+        "mode": "live",
+        "objective": "pair_margin",
+        "named_pair": [
+          "A",
+          "B"
+        ],
+        "other_candidates": [
+          "C"
+        ],
+        "source_scope": "Synthetic source scope",
+        "assumptions": "Coordinator synthetic fixed counts and explicit pools; no forecast",
+        "counted_fixed": {
+          "A": 35.0,
+          "B": 35.0,
+          "C": 10.0
+        },
+        "remaining_all_candidates": 0.0,
+        "remaining_pair": 0.0,
+        "final_pair_denominator": 70.0,
+        "final_all_candidate_denominator": 80.0,
+        "target_margin": 0.01,
+        "target_net_votes": 0.7000000000000001,
+        "unknown_positive_pair_pool_units": [],
+        "pool_status": "no-positive-pool",
+        "baseline": {
+          "votes": {
+            "A": 35.0,
+            "B": 35.0,
+            "C": 10.0
+          },
+          "pair_total": 70.0,
+          "all_candidate_total": 80.0,
+          "pair_net_votes": 0.0,
+          "pair_margin": 0.0,
+          "all_candidate_pair_margin": 0.0,
+          "a_full_field_lead": 0.0,
+          "a_full_field_status": "tied",
+          "objective_residual_net_votes": -0.7000000000000001
+        },
+        "uniform": {
+          "status": "no-positive-pool",
+          "fixed_target_status": "unmet",
+          "unbounded_pair_share_shift": null,
+          "bounded_common_share_shift": null
+        },
+        "selected": {
+          "key": "u",
+          "status": "no-positive-pool",
+          "required_a_share_raw": null,
+          "fixed_target_status": "unmet"
+        },
+        "units": [
+          {
+            "key": "u",
+            "pair_pool": 0.0,
+            "pair_participation": 0.8,
+            "state_final_pair_weight": 0.0,
+            "remaining_pool_weight": null,
+            "baseline_a_share": null,
+            "baseline_remaining_net": 0,
+            "target_a_share": null,
+            "target_remaining_net": 0,
+            "net_gain_per_one_share_point": 0.0,
+            "counted_fixed": {
+              "A": 30,
+              "B": 20,
+              "C": 10
+            },
+            "remaining_other_votes": {
+              "C": 0.0
+            }
+          },
+          {
+            "key": "v",
+            "pair_pool": 0.0,
+            "pair_participation": 0.8,
+            "state_final_pair_weight": 0.0,
+            "remaining_pool_weight": null,
+            "baseline_a_share": null,
+            "baseline_remaining_net": 0,
+            "target_a_share": null,
+            "target_remaining_net": 0,
+            "net_gain_per_one_share_point": 0.0,
+            "counted_fixed": {
+              "A": 5,
+              "B": 15,
+              "C": 0
+            },
+            "remaining_other_votes": {
+              "C": 0.0
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "selected-only-raw-secured",
+      "input_text": "{\"mode\": \"live\", \"objective\": \"pair_margin\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"target_margin\": 0.01, \"selected_unit\": \"u\", \"assumptions\": \"Coordinator synthetic fixed counts and explicit pools; no forecast\", \"source_scope\": \"Synthetic source scope\", \"units\": [{\"key\": \"u\", \"counted\": {\"A\": 1000, \"B\": 0, \"C\": 0}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": 0.4, \"other_allocation\": {\"C\": 1}}, {\"key\": \"v\", \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"remaining\": 50, \"pair_participation\": 0.8, \"a_share\": 0.8, \"other_allocation\": {\"C\": 1}}]}",
+      "expected_invalid": false,
+      "exit": 0,
+      "stderr": "",
+      "output": {
+        "status": "ok",
+        "mode": "live",
+        "objective": "pair_margin",
+        "named_pair": [
+          "A",
+          "B"
+        ],
+        "other_candidates": [
+          "C"
+        ],
+        "source_scope": "Synthetic source scope",
+        "assumptions": "Coordinator synthetic fixed counts and explicit pools; no forecast",
+        "counted_fixed": {
+          "A": 1005.0,
+          "B": 15.0,
+          "C": 0.0
+        },
+        "remaining_all_candidates": 150.0,
+        "remaining_pair": 120.0,
+        "final_pair_denominator": 1140.0,
+        "final_all_candidate_denominator": 1170.0,
+        "target_margin": 0.01,
+        "target_net_votes": 11.4,
+        "unknown_positive_pair_pool_units": [],
+        "pool_status": "positive",
+        "baseline": {
+          "votes": {
+            "A": 1069.0,
+            "B": 71.0,
+            "C": 29.999999999999993
+          },
+          "pair_total": 1140.0,
+          "all_candidate_total": 1170.0,
+          "pair_net_votes": 998.0,
+          "pair_margin": 0.875438596491228,
+          "all_candidate_pair_margin": 0.852991452991453,
+          "a_full_field_lead": 998.0,
+          "a_full_field_status": "ahead",
+          "objective_residual_net_votes": 986.6
+        },
+        "uniform": {
+          "status": "secured",
+          "unbounded_pair_share_shift": -4.110833333333334,
+          "bounded_common_share_shift": null,
+          "at_min": {
+            "votes": {
+              "A": 1005.0,
+              "B": 135.0,
+              "C": 29.999999999999993
+            },
+            "pair_total": 1140.0,
+            "all_candidate_total": 1170.0,
+            "pair_net_votes": 870.0,
+            "pair_margin": 0.7631578947368421,
+            "all_candidate_pair_margin": 0.7435897435897436,
+            "a_full_field_lead": 870.0,
+            "a_full_field_status": "ahead",
+            "objective_residual_net_votes": 858.6
+          },
+          "at_max": {
+            "votes": {
+              "A": 1125.0,
+              "B": 15.0,
+              "C": 29.999999999999993
+            },
+            "pair_total": 1140.0,
+            "all_candidate_total": 1170.0,
+            "pair_net_votes": 1110.0,
+            "pair_margin": 0.9736842105263158,
+            "all_candidate_pair_margin": 0.9487179487179487,
+            "a_full_field_lead": 1095.0,
+            "a_full_field_status": "ahead",
+            "objective_residual_net_votes": 1098.6
+          },
+          "target": null,
+          "clipped_units": []
+        },
+        "selected": {
+          "key": "u",
+          "status": "secured",
+          "required_a_share_raw": -5.76625,
+          "required_pair_share_raw": -5.76625,
+          "required_full_plurality_share_raw": -5.764374999999999,
+          "required_a_share_clipped": 0,
+          "others_fixed_at_supplied_assumptions": true
+        },
+        "units": [
+          {
+            "key": "u",
+            "pair_pool": 80.0,
+            "pair_participation": 0.8,
+            "state_final_pair_weight": 0.07017543859649122,
+            "remaining_pool_weight": 0.6666666666666666,
+            "baseline_a_share": 0.4,
+            "baseline_remaining_net": -15.999999999999996,
+            "target_a_share": null,
+            "target_remaining_net": null,
+            "net_gain_per_one_share_point": 1.6,
+            "counted_fixed": {
+              "A": 1000,
+              "B": 0,
+              "C": 0
+            },
+            "remaining_other_votes": {
+              "C": 19.999999999999996
+            }
+          },
+          {
+            "key": "v",
+            "pair_pool": 40.0,
+            "pair_participation": 0.8,
+            "state_final_pair_weight": 0.03508771929824561,
+            "remaining_pool_weight": 0.3333333333333333,
+            "baseline_a_share": 0.8,
+            "baseline_remaining_net": 24.000000000000004,
+            "target_a_share": null,
+            "target_remaining_net": null,
+            "net_gain_per_one_share_point": 0.8,
+            "counted_fixed": {
+              "A": 5,
+              "B": 15,
+              "C": 0
+            },
+            "remaining_other_votes": {
+              "C": 9.999999999999998
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "selected-only-raw-impossible",
+      "input_text": "{\"mode\": \"live\", \"objective\": \"pair_margin\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"target_margin\": 0.01, \"selected_unit\": \"u\", \"assumptions\": \"Coordinator synthetic fixed counts and explicit pools; no forecast\", \"source_scope\": \"Synthetic source scope\", \"units\": [{\"key\": \"u\", \"counted\": {\"A\": 0, \"B\": 1000, \"C\": 0}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": 0.4, \"other_allocation\": {\"C\": 1}}, {\"key\": \"v\", \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"remaining\": 50, \"pair_participation\": 0.8, \"a_share\": 0.8, \"other_allocation\": {\"C\": 1}}]}",
+      "expected_invalid": false,
+      "exit": 0,
+      "stderr": "",
+      "output": {
+        "status": "ok",
+        "mode": "live",
+        "objective": "pair_margin",
+        "named_pair": [
+          "A",
+          "B"
+        ],
+        "other_candidates": [
+          "C"
+        ],
+        "source_scope": "Synthetic source scope",
+        "assumptions": "Coordinator synthetic fixed counts and explicit pools; no forecast",
+        "counted_fixed": {
+          "A": 5.0,
+          "B": 1015.0,
+          "C": 0.0
+        },
+        "remaining_all_candidates": 150.0,
+        "remaining_pair": 120.0,
+        "final_pair_denominator": 1140.0,
+        "final_all_candidate_denominator": 1170.0,
+        "target_margin": 0.01,
+        "target_net_votes": 11.4,
+        "unknown_positive_pair_pool_units": [],
+        "pool_status": "positive",
+        "baseline": {
+          "votes": {
+            "A": 69.0,
+            "B": 1071.0,
+            "C": 29.999999999999993
+          },
+          "pair_total": 1140.0,
+          "all_candidate_total": 1170.0,
+          "pair_net_votes": -1002.0,
+          "pair_margin": -0.8789473684210526,
+          "all_candidate_pair_margin": -0.8564102564102564,
+          "a_full_field_lead": -1002.0,
+          "a_full_field_status": "behind",
+          "objective_residual_net_votes": -1013.4
+        },
+        "uniform": {
+          "status": "impossible",
+          "unbounded_pair_share_shift": 4.2225,
+          "bounded_common_share_shift": null,
+          "at_min": {
+            "votes": {
+              "A": 5.0,
+              "B": 1135.0,
+              "C": 29.999999999999993
+            },
+            "pair_total": 1140.0,
+            "all_candidate_total": 1170.0,
+            "pair_net_votes": -1130.0,
+            "pair_margin": -0.9912280701754386,
+            "all_candidate_pair_margin": -0.9658119658119658,
+            "a_full_field_lead": -1130.0,
+            "a_full_field_status": "behind",
+            "objective_residual_net_votes": -1141.4
+          },
+          "at_max": {
+            "votes": {
+              "A": 125.0,
+              "B": 1015.0,
+              "C": 29.999999999999993
+            },
+            "pair_total": 1140.0,
+            "all_candidate_total": 1170.0,
+            "pair_net_votes": -890.0,
+            "pair_margin": -0.7807017543859649,
+            "all_candidate_pair_margin": -0.7606837606837606,
+            "a_full_field_lead": -890.0,
+            "a_full_field_status": "behind",
+            "objective_residual_net_votes": -901.4
+          },
+          "target": null,
+          "clipped_units": []
+        },
+        "selected": {
+          "key": "u",
+          "status": "impossible",
+          "required_a_share_raw": 6.733750000000001,
+          "required_pair_share_raw": 6.733750000000001,
+          "required_full_plurality_share_raw": 6.735625000000001,
+          "required_a_share_clipped": 1,
+          "others_fixed_at_supplied_assumptions": true
+        },
+        "units": [
+          {
+            "key": "u",
+            "pair_pool": 80.0,
+            "pair_participation": 0.8,
+            "state_final_pair_weight": 0.07017543859649122,
+            "remaining_pool_weight": 0.6666666666666666,
+            "baseline_a_share": 0.4,
+            "baseline_remaining_net": -15.999999999999996,
+            "target_a_share": null,
+            "target_remaining_net": null,
+            "net_gain_per_one_share_point": 1.6,
+            "counted_fixed": {
+              "A": 0,
+              "B": 1000,
+              "C": 0
+            },
+            "remaining_other_votes": {
+              "C": 19.999999999999996
+            }
+          },
+          {
+            "key": "v",
+            "pair_pool": 40.0,
+            "pair_participation": 0.8,
+            "state_final_pair_weight": 0.03508771929824561,
+            "remaining_pool_weight": 0.3333333333333333,
+            "baseline_a_share": 0.8,
+            "baseline_remaining_net": 24.000000000000004,
+            "target_a_share": null,
+            "target_remaining_net": null,
+            "net_gain_per_one_share_point": 0.8,
+            "counted_fixed": {
+              "A": 5,
+              "B": 15,
+              "C": 0
+            },
+            "remaining_other_votes": {
+              "C": 9.999999999999998
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "invalid-fractional-target-0",
+      "input_text": "{\"mode\": \"live\", \"objective\": \"pair_margin\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"target_margin\": null, \"selected_unit\": \"u\", \"assumptions\": \"Coordinator synthetic fixed counts and explicit pools; no forecast\", \"source_scope\": \"Synthetic source scope\", \"units\": [{\"key\": \"u\", \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": 0.4, \"other_allocation\": {\"C\": 1}}, {\"key\": \"v\", \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"remaining\": 50, \"pair_participation\": 0.8, \"a_share\": 0.8, \"other_allocation\": {\"C\": 1}}]}",
+      "expected_invalid": true,
+      "exit": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "target_margin must be a finite number in bounds"
+      }
+    },
+    {
+      "name": "invalid-fractional-target-1",
+      "input_text": "{\"mode\": \"live\", \"objective\": \"pair_margin\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"target_margin\": true, \"selected_unit\": \"u\", \"assumptions\": \"Coordinator synthetic fixed counts and explicit pools; no forecast\", \"source_scope\": \"Synthetic source scope\", \"units\": [{\"key\": \"u\", \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": 0.4, \"other_allocation\": {\"C\": 1}}, {\"key\": \"v\", \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"remaining\": 50, \"pair_participation\": 0.8, \"a_share\": 0.8, \"other_allocation\": {\"C\": 1}}]}",
+      "expected_invalid": true,
+      "exit": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "target_margin must be a finite number in bounds"
+      }
+    },
+    {
+      "name": "invalid-fractional-target-2",
+      "input_text": "{\"mode\": \"live\", \"objective\": \"pair_margin\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"target_margin\": false, \"selected_unit\": \"u\", \"assumptions\": \"Coordinator synthetic fixed counts and explicit pools; no forecast\", \"source_scope\": \"Synthetic source scope\", \"units\": [{\"key\": \"u\", \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": 0.4, \"other_allocation\": {\"C\": 1}}, {\"key\": \"v\", \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"remaining\": 50, \"pair_participation\": 0.8, \"a_share\": 0.8, \"other_allocation\": {\"C\": 1}}]}",
+      "expected_invalid": true,
+      "exit": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "target_margin must be a finite number in bounds"
+      }
+    },
+    {
+      "name": "invalid-fractional-target-3",
+      "input_text": "{\"mode\": \"live\", \"objective\": \"pair_margin\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"target_margin\": \"0\", \"selected_unit\": \"u\", \"assumptions\": \"Coordinator synthetic fixed counts and explicit pools; no forecast\", \"source_scope\": \"Synthetic source scope\", \"units\": [{\"key\": \"u\", \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": 0.4, \"other_allocation\": {\"C\": 1}}, {\"key\": \"v\", \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"remaining\": 50, \"pair_participation\": 0.8, \"a_share\": 0.8, \"other_allocation\": {\"C\": 1}}]}",
+      "expected_invalid": true,
+      "exit": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "target_margin must be a finite number in bounds"
+      }
+    },
+    {
+      "name": "invalid-fractional-target-4",
+      "input_text": "{\"mode\": \"live\", \"objective\": \"pair_margin\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"target_margin\": {}, \"selected_unit\": \"u\", \"assumptions\": \"Coordinator synthetic fixed counts and explicit pools; no forecast\", \"source_scope\": \"Synthetic source scope\", \"units\": [{\"key\": \"u\", \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": 0.4, \"other_allocation\": {\"C\": 1}}, {\"key\": \"v\", \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"remaining\": 50, \"pair_participation\": 0.8, \"a_share\": 0.8, \"other_allocation\": {\"C\": 1}}]}",
+      "expected_invalid": true,
+      "exit": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "target_margin must be a finite number in bounds"
+      }
+    },
+    {
+      "name": "invalid-fractional-target-5",
+      "input_text": "{\"mode\": \"live\", \"objective\": \"pair_margin\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"target_margin\": [], \"selected_unit\": \"u\", \"assumptions\": \"Coordinator synthetic fixed counts and explicit pools; no forecast\", \"source_scope\": \"Synthetic source scope\", \"units\": [{\"key\": \"u\", \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": 0.4, \"other_allocation\": {\"C\": 1}}, {\"key\": \"v\", \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"remaining\": 50, \"pair_participation\": 0.8, \"a_share\": 0.8, \"other_allocation\": {\"C\": 1}}]}",
+      "expected_invalid": true,
+      "exit": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "target_margin must be a finite number in bounds"
+      }
+    },
+    {
+      "name": "invalid-fractional-target-6",
+      "input_text": "{\"mode\": \"live\", \"objective\": \"pair_margin\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"target_margin\": NaN, \"selected_unit\": \"u\", \"assumptions\": \"Coordinator synthetic fixed counts and explicit pools; no forecast\", \"source_scope\": \"Synthetic source scope\", \"units\": [{\"key\": \"u\", \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": 0.4, \"other_allocation\": {\"C\": 1}}, {\"key\": \"v\", \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"remaining\": 50, \"pair_participation\": 0.8, \"a_share\": 0.8, \"other_allocation\": {\"C\": 1}}]}",
+      "expected_invalid": true,
+      "exit": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "nonfinite JSON token NaN"
+      }
+    },
+    {
+      "name": "invalid-fractional-target-7",
+      "input_text": "{\"mode\": \"live\", \"objective\": \"pair_margin\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"target_margin\": Infinity, \"selected_unit\": \"u\", \"assumptions\": \"Coordinator synthetic fixed counts and explicit pools; no forecast\", \"source_scope\": \"Synthetic source scope\", \"units\": [{\"key\": \"u\", \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": 0.4, \"other_allocation\": {\"C\": 1}}, {\"key\": \"v\", \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"remaining\": 50, \"pair_participation\": 0.8, \"a_share\": 0.8, \"other_allocation\": {\"C\": 1}}]}",
+      "expected_invalid": true,
+      "exit": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "nonfinite JSON token Infinity"
+      }
+    },
+    {
+      "name": "invalid-fractional-target-8",
+      "input_text": "{\"mode\": \"live\", \"objective\": \"pair_margin\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"target_margin\": -Infinity, \"selected_unit\": \"u\", \"assumptions\": \"Coordinator synthetic fixed counts and explicit pools; no forecast\", \"source_scope\": \"Synthetic source scope\", \"units\": [{\"key\": \"u\", \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": 0.4, \"other_allocation\": {\"C\": 1}}, {\"key\": \"v\", \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"remaining\": 50, \"pair_participation\": 0.8, \"a_share\": 0.8, \"other_allocation\": {\"C\": 1}}]}",
+      "expected_invalid": true,
+      "exit": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "nonfinite JSON token -Infinity"
+      }
+    },
+    {
+      "name": "invalid-fractional-target-9",
+      "input_text": "{\"mode\": \"live\", \"objective\": \"pair_margin\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"target_margin\": -1.0001, \"selected_unit\": \"u\", \"assumptions\": \"Coordinator synthetic fixed counts and explicit pools; no forecast\", \"source_scope\": \"Synthetic source scope\", \"units\": [{\"key\": \"u\", \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": 0.4, \"other_allocation\": {\"C\": 1}}, {\"key\": \"v\", \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"remaining\": 50, \"pair_participation\": 0.8, \"a_share\": 0.8, \"other_allocation\": {\"C\": 1}}]}",
+      "expected_invalid": true,
+      "exit": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "target_margin must be a finite number in bounds"
+      }
+    },
+    {
+      "name": "invalid-fractional-target-10",
+      "input_text": "{\"mode\": \"live\", \"objective\": \"pair_margin\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"target_margin\": 1.0001, \"selected_unit\": \"u\", \"assumptions\": \"Coordinator synthetic fixed counts and explicit pools; no forecast\", \"source_scope\": \"Synthetic source scope\", \"units\": [{\"key\": \"u\", \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": 0.4, \"other_allocation\": {\"C\": 1}}, {\"key\": \"v\", \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"remaining\": 50, \"pair_participation\": 0.8, \"a_share\": 0.8, \"other_allocation\": {\"C\": 1}}]}",
+      "expected_invalid": true,
+      "exit": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "target_margin must be a finite number in bounds"
+      }
+    },
+    {
+      "name": "global-key-known-duplicate",
+      "input_text": "{\"mode\": \"live\", \"objective\": \"pair_margin\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"target_margin\": 0.01, \"assumptions\": \"Coordinator synthetic fixed counts and explicit pools; no forecast\", \"source_scope\": \"Synthetic source scope\", \"units\": [{\"key\": \"u\", \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": 0.4, \"other_allocation\": {\"C\": 1}}, {\"key\": \"u\", \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"remaining\": 50, \"pair_participation\": 0.8, \"a_share\": 0.8, \"other_allocation\": {\"C\": 1}}]}",
+      "expected_invalid": true,
+      "exit": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "globally duplicate unit keys"
+      }
+    },
+    {
+      "name": "global-key-known-missing",
+      "input_text": "{\"mode\": \"live\", \"objective\": \"pair_margin\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"target_margin\": 0.01, \"assumptions\": \"Coordinator synthetic fixed counts and explicit pools; no forecast\", \"source_scope\": \"Synthetic source scope\", \"units\": [{\"key\": \"u\", \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": 0.4, \"other_allocation\": {\"C\": 1}}, {\"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"remaining\": 50, \"pair_participation\": 0.8, \"a_share\": 0.8, \"other_allocation\": {\"C\": 1}}]}",
+      "expected_invalid": true,
+      "exit": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "unit key must be a nonblank string"
+      }
+    },
+    {
+      "name": "global-key-known-empty",
+      "input_text": "{\"mode\": \"live\", \"objective\": \"pair_margin\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"target_margin\": 0.01, \"assumptions\": \"Coordinator synthetic fixed counts and explicit pools; no forecast\", \"source_scope\": \"Synthetic source scope\", \"units\": [{\"key\": \"u\", \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": 0.4, \"other_allocation\": {\"C\": 1}}, {\"key\": \"\", \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"remaining\": 50, \"pair_participation\": 0.8, \"a_share\": 0.8, \"other_allocation\": {\"C\": 1}}]}",
+      "expected_invalid": true,
+      "exit": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "unit key must be a nonblank string"
+      }
+    },
+    {
+      "name": "global-key-known-space",
+      "input_text": "{\"mode\": \"live\", \"objective\": \"pair_margin\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"target_margin\": 0.01, \"assumptions\": \"Coordinator synthetic fixed counts and explicit pools; no forecast\", \"source_scope\": \"Synthetic source scope\", \"units\": [{\"key\": \"u\", \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": 0.4, \"other_allocation\": {\"C\": 1}}, {\"key\": \" \\t\", \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"remaining\": 50, \"pair_participation\": 0.8, \"a_share\": 0.8, \"other_allocation\": {\"C\": 1}}]}",
+      "expected_invalid": true,
+      "exit": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "unit key must be a nonblank string"
+      }
+    },
+    {
+      "name": "global-key-known-int",
+      "input_text": "{\"mode\": \"live\", \"objective\": \"pair_margin\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"target_margin\": 0.01, \"assumptions\": \"Coordinator synthetic fixed counts and explicit pools; no forecast\", \"source_scope\": \"Synthetic source scope\", \"units\": [{\"key\": \"u\", \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": 0.4, \"other_allocation\": {\"C\": 1}}, {\"key\": 7, \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"remaining\": 50, \"pair_participation\": 0.8, \"a_share\": 0.8, \"other_allocation\": {\"C\": 1}}]}",
+      "expected_invalid": true,
+      "exit": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "unit key must be a nonblank string"
+      }
+    },
+    {
+      "name": "global-key-known-bool",
+      "input_text": "{\"mode\": \"live\", \"objective\": \"pair_margin\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"target_margin\": 0.01, \"assumptions\": \"Coordinator synthetic fixed counts and explicit pools; no forecast\", \"source_scope\": \"Synthetic source scope\", \"units\": [{\"key\": \"u\", \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": 0.4, \"other_allocation\": {\"C\": 1}}, {\"key\": false, \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"remaining\": 50, \"pair_participation\": 0.8, \"a_share\": 0.8, \"other_allocation\": {\"C\": 1}}]}",
+      "expected_invalid": true,
+      "exit": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "unit key must be a nonblank string"
+      }
+    },
+    {
+      "name": "global-key-unknown-duplicate",
+      "input_text": "{\"mode\": \"live\", \"objective\": \"pair_margin\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"target_margin\": 0.01, \"assumptions\": \"Coordinator synthetic fixed counts and explicit pools; no forecast\", \"source_scope\": \"Synthetic source scope\", \"units\": [{\"key\": \"u\", \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": null, \"other_allocation\": {\"C\": 1}}, {\"key\": \"u\", \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"remaining\": 50, \"pair_participation\": 0.8, \"a_share\": 0.8, \"other_allocation\": {\"C\": 1}}]}",
+      "expected_invalid": true,
+      "exit": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "globally duplicate unit keys"
+      }
+    },
+    {
+      "name": "global-key-unknown-missing",
+      "input_text": "{\"mode\": \"live\", \"objective\": \"pair_margin\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"target_margin\": 0.01, \"assumptions\": \"Coordinator synthetic fixed counts and explicit pools; no forecast\", \"source_scope\": \"Synthetic source scope\", \"units\": [{\"key\": \"u\", \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": null, \"other_allocation\": {\"C\": 1}}, {\"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"remaining\": 50, \"pair_participation\": 0.8, \"a_share\": 0.8, \"other_allocation\": {\"C\": 1}}]}",
+      "expected_invalid": true,
+      "exit": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "unit key must be a nonblank string"
+      }
+    },
+    {
+      "name": "global-key-unknown-empty",
+      "input_text": "{\"mode\": \"live\", \"objective\": \"pair_margin\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"target_margin\": 0.01, \"assumptions\": \"Coordinator synthetic fixed counts and explicit pools; no forecast\", \"source_scope\": \"Synthetic source scope\", \"units\": [{\"key\": \"u\", \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": null, \"other_allocation\": {\"C\": 1}}, {\"key\": \"\", \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"remaining\": 50, \"pair_participation\": 0.8, \"a_share\": 0.8, \"other_allocation\": {\"C\": 1}}]}",
+      "expected_invalid": true,
+      "exit": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "unit key must be a nonblank string"
+      }
+    },
+    {
+      "name": "global-key-unknown-space",
+      "input_text": "{\"mode\": \"live\", \"objective\": \"pair_margin\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"target_margin\": 0.01, \"assumptions\": \"Coordinator synthetic fixed counts and explicit pools; no forecast\", \"source_scope\": \"Synthetic source scope\", \"units\": [{\"key\": \"u\", \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": null, \"other_allocation\": {\"C\": 1}}, {\"key\": \" \\t\", \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"remaining\": 50, \"pair_participation\": 0.8, \"a_share\": 0.8, \"other_allocation\": {\"C\": 1}}]}",
+      "expected_invalid": true,
+      "exit": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "unit key must be a nonblank string"
+      }
+    },
+    {
+      "name": "global-key-unknown-int",
+      "input_text": "{\"mode\": \"live\", \"objective\": \"pair_margin\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"target_margin\": 0.01, \"assumptions\": \"Coordinator synthetic fixed counts and explicit pools; no forecast\", \"source_scope\": \"Synthetic source scope\", \"units\": [{\"key\": \"u\", \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": null, \"other_allocation\": {\"C\": 1}}, {\"key\": 7, \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"remaining\": 50, \"pair_participation\": 0.8, \"a_share\": 0.8, \"other_allocation\": {\"C\": 1}}]}",
+      "expected_invalid": true,
+      "exit": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "unit key must be a nonblank string"
+      }
+    },
+    {
+      "name": "global-key-unknown-bool",
+      "input_text": "{\"mode\": \"live\", \"objective\": \"pair_margin\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"target_margin\": 0.01, \"assumptions\": \"Coordinator synthetic fixed counts and explicit pools; no forecast\", \"source_scope\": \"Synthetic source scope\", \"units\": [{\"key\": \"u\", \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": null, \"other_allocation\": {\"C\": 1}}, {\"key\": false, \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"remaining\": 50, \"pair_participation\": 0.8, \"a_share\": 0.8, \"other_allocation\": {\"C\": 1}}]}",
+      "expected_invalid": true,
+      "exit": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "unit key must be a nonblank string"
+      }
+    },
+    {
+      "name": "global-key-no-pool-duplicate",
+      "input_text": "{\"mode\": \"live\", \"objective\": \"pair_margin\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"target_margin\": 0.01, \"assumptions\": \"Coordinator synthetic fixed counts and explicit pools; no forecast\", \"source_scope\": \"Synthetic source scope\", \"units\": [{\"key\": \"u\", \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"remaining\": 0, \"pair_participation\": 0.8, \"a_share\": null, \"other_allocation\": {\"C\": 1}}, {\"key\": \"u\", \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"remaining\": 0, \"pair_participation\": 0.8, \"a_share\": null, \"other_allocation\": {\"C\": 1}}]}",
+      "expected_invalid": true,
+      "exit": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "globally duplicate unit keys"
+      }
+    },
+    {
+      "name": "global-key-no-pool-missing",
+      "input_text": "{\"mode\": \"live\", \"objective\": \"pair_margin\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"target_margin\": 0.01, \"assumptions\": \"Coordinator synthetic fixed counts and explicit pools; no forecast\", \"source_scope\": \"Synthetic source scope\", \"units\": [{\"key\": \"u\", \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"remaining\": 0, \"pair_participation\": 0.8, \"a_share\": null, \"other_allocation\": {\"C\": 1}}, {\"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"remaining\": 0, \"pair_participation\": 0.8, \"a_share\": null, \"other_allocation\": {\"C\": 1}}]}",
+      "expected_invalid": true,
+      "exit": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "unit key must be a nonblank string"
+      }
+    },
+    {
+      "name": "global-key-no-pool-empty",
+      "input_text": "{\"mode\": \"live\", \"objective\": \"pair_margin\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"target_margin\": 0.01, \"assumptions\": \"Coordinator synthetic fixed counts and explicit pools; no forecast\", \"source_scope\": \"Synthetic source scope\", \"units\": [{\"key\": \"u\", \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"remaining\": 0, \"pair_participation\": 0.8, \"a_share\": null, \"other_allocation\": {\"C\": 1}}, {\"key\": \"\", \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"remaining\": 0, \"pair_participation\": 0.8, \"a_share\": null, \"other_allocation\": {\"C\": 1}}]}",
+      "expected_invalid": true,
+      "exit": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "unit key must be a nonblank string"
+      }
+    },
+    {
+      "name": "global-key-no-pool-space",
+      "input_text": "{\"mode\": \"live\", \"objective\": \"pair_margin\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"target_margin\": 0.01, \"assumptions\": \"Coordinator synthetic fixed counts and explicit pools; no forecast\", \"source_scope\": \"Synthetic source scope\", \"units\": [{\"key\": \"u\", \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"remaining\": 0, \"pair_participation\": 0.8, \"a_share\": null, \"other_allocation\": {\"C\": 1}}, {\"key\": \" \\t\", \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"remaining\": 0, \"pair_participation\": 0.8, \"a_share\": null, \"other_allocation\": {\"C\": 1}}]}",
+      "expected_invalid": true,
+      "exit": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "unit key must be a nonblank string"
+      }
+    },
+    {
+      "name": "global-key-no-pool-int",
+      "input_text": "{\"mode\": \"live\", \"objective\": \"pair_margin\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"target_margin\": 0.01, \"assumptions\": \"Coordinator synthetic fixed counts and explicit pools; no forecast\", \"source_scope\": \"Synthetic source scope\", \"units\": [{\"key\": \"u\", \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"remaining\": 0, \"pair_participation\": 0.8, \"a_share\": null, \"other_allocation\": {\"C\": 1}}, {\"key\": 7, \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"remaining\": 0, \"pair_participation\": 0.8, \"a_share\": null, \"other_allocation\": {\"C\": 1}}]}",
+      "expected_invalid": true,
+      "exit": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "unit key must be a nonblank string"
+      }
+    },
+    {
+      "name": "global-key-no-pool-bool",
+      "input_text": "{\"mode\": \"live\", \"objective\": \"pair_margin\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"target_margin\": 0.01, \"assumptions\": \"Coordinator synthetic fixed counts and explicit pools; no forecast\", \"source_scope\": \"Synthetic source scope\", \"units\": [{\"key\": \"u\", \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"remaining\": 0, \"pair_participation\": 0.8, \"a_share\": null, \"other_allocation\": {\"C\": 1}}, {\"key\": false, \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"remaining\": 0, \"pair_participation\": 0.8, \"a_share\": null, \"other_allocation\": {\"C\": 1}}]}",
+      "expected_invalid": true,
+      "exit": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "unit key must be a nonblank string"
+      }
+    },
+    {
+      "name": "invalid-unit-remaining-40",
+      "input_text": "{\"mode\": \"live\", \"objective\": \"pair_margin\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"target_margin\": 0.01, \"selected_unit\": \"u\", \"assumptions\": \"Coordinator synthetic fixed counts and explicit pools; no forecast\", \"source_scope\": \"Synthetic source scope\", \"units\": [{\"key\": \"u\", \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"remaining\": -1, \"pair_participation\": 0.8, \"a_share\": 0.4, \"other_allocation\": {\"C\": 1}}, {\"key\": \"v\", \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"remaining\": 50, \"pair_participation\": 0.8, \"a_share\": 0.8, \"other_allocation\": {\"C\": 1}}]}",
+      "expected_invalid": true,
+      "exit": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "remaining must be a finite number in bounds"
+      }
+    },
+    {
+      "name": "invalid-unit-remaining-41",
+      "input_text": "{\"mode\": \"live\", \"objective\": \"pair_margin\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"target_margin\": 0.01, \"selected_unit\": \"u\", \"assumptions\": \"Coordinator synthetic fixed counts and explicit pools; no forecast\", \"source_scope\": \"Synthetic source scope\", \"units\": [{\"key\": \"u\", \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"remaining\": null, \"pair_participation\": 0.8, \"a_share\": 0.4, \"other_allocation\": {\"C\": 1}}, {\"key\": \"v\", \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"remaining\": 50, \"pair_participation\": 0.8, \"a_share\": 0.8, \"other_allocation\": {\"C\": 1}}]}",
+      "expected_invalid": true,
+      "exit": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "remaining must be a finite number in bounds"
+      }
+    },
+    {
+      "name": "invalid-unit-remaining-42",
+      "input_text": "{\"mode\": \"live\", \"objective\": \"pair_margin\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"target_margin\": 0.01, \"selected_unit\": \"u\", \"assumptions\": \"Coordinator synthetic fixed counts and explicit pools; no forecast\", \"source_scope\": \"Synthetic source scope\", \"units\": [{\"key\": \"u\", \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"remaining\": true, \"pair_participation\": 0.8, \"a_share\": 0.4, \"other_allocation\": {\"C\": 1}}, {\"key\": \"v\", \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"remaining\": 50, \"pair_participation\": 0.8, \"a_share\": 0.8, \"other_allocation\": {\"C\": 1}}]}",
+      "expected_invalid": true,
+      "exit": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "remaining must be a finite number in bounds"
+      }
+    },
+    {
+      "name": "invalid-unit-remaining-43",
+      "input_text": "{\"mode\": \"live\", \"objective\": \"pair_margin\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"target_margin\": 0.01, \"selected_unit\": \"u\", \"assumptions\": \"Coordinator synthetic fixed counts and explicit pools; no forecast\", \"source_scope\": \"Synthetic source scope\", \"units\": [{\"key\": \"u\", \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"remaining\": \"3\", \"pair_participation\": 0.8, \"a_share\": 0.4, \"other_allocation\": {\"C\": 1}}, {\"key\": \"v\", \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"remaining\": 50, \"pair_participation\": 0.8, \"a_share\": 0.8, \"other_allocation\": {\"C\": 1}}]}",
+      "expected_invalid": true,
+      "exit": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "remaining must be a finite number in bounds"
+      }
+    },
+    {
+      "name": "invalid-unit-remaining-44",
+      "input_text": "{\"mode\": \"live\", \"objective\": \"pair_margin\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"target_margin\": 0.01, \"selected_unit\": \"u\", \"assumptions\": \"Coordinator synthetic fixed counts and explicit pools; no forecast\", \"source_scope\": \"Synthetic source scope\", \"units\": [{\"key\": \"u\", \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"remaining\": Infinity, \"pair_participation\": 0.8, \"a_share\": 0.4, \"other_allocation\": {\"C\": 1}}, {\"key\": \"v\", \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"remaining\": 50, \"pair_participation\": 0.8, \"a_share\": 0.8, \"other_allocation\": {\"C\": 1}}]}",
+      "expected_invalid": true,
+      "exit": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "nonfinite JSON token Infinity"
+      }
+    },
+    {
+      "name": "invalid-unit-pair_participation-45",
+      "input_text": "{\"mode\": \"live\", \"objective\": \"pair_margin\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"target_margin\": 0.01, \"selected_unit\": \"u\", \"assumptions\": \"Coordinator synthetic fixed counts and explicit pools; no forecast\", \"source_scope\": \"Synthetic source scope\", \"units\": [{\"key\": \"u\", \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"remaining\": 100, \"pair_participation\": -0.1, \"a_share\": 0.4, \"other_allocation\": {\"C\": 1}}, {\"key\": \"v\", \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"remaining\": 50, \"pair_participation\": 0.8, \"a_share\": 0.8, \"other_allocation\": {\"C\": 1}}]}",
+      "expected_invalid": true,
+      "exit": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "pair_participation must be a finite number in bounds"
+      }
+    },
+    {
+      "name": "invalid-unit-pair_participation-46",
+      "input_text": "{\"mode\": \"live\", \"objective\": \"pair_margin\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"target_margin\": 0.01, \"selected_unit\": \"u\", \"assumptions\": \"Coordinator synthetic fixed counts and explicit pools; no forecast\", \"source_scope\": \"Synthetic source scope\", \"units\": [{\"key\": \"u\", \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"remaining\": 100, \"pair_participation\": 1.1, \"a_share\": 0.4, \"other_allocation\": {\"C\": 1}}, {\"key\": \"v\", \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"remaining\": 50, \"pair_participation\": 0.8, \"a_share\": 0.8, \"other_allocation\": {\"C\": 1}}]}",
+      "expected_invalid": true,
+      "exit": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "pair_participation must be a finite number in bounds"
+      }
+    },
+    {
+      "name": "invalid-unit-pair_participation-47",
+      "input_text": "{\"mode\": \"live\", \"objective\": \"pair_margin\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"target_margin\": 0.01, \"selected_unit\": \"u\", \"assumptions\": \"Coordinator synthetic fixed counts and explicit pools; no forecast\", \"source_scope\": \"Synthetic source scope\", \"units\": [{\"key\": \"u\", \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"remaining\": 100, \"pair_participation\": true, \"a_share\": 0.4, \"other_allocation\": {\"C\": 1}}, {\"key\": \"v\", \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"remaining\": 50, \"pair_participation\": 0.8, \"a_share\": 0.8, \"other_allocation\": {\"C\": 1}}]}",
+      "expected_invalid": true,
+      "exit": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "pair_participation must be a finite number in bounds"
+      }
+    },
+    {
+      "name": "invalid-unit-a_share-48",
+      "input_text": "{\"mode\": \"live\", \"objective\": \"pair_margin\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"target_margin\": 0.01, \"selected_unit\": \"u\", \"assumptions\": \"Coordinator synthetic fixed counts and explicit pools; no forecast\", \"source_scope\": \"Synthetic source scope\", \"units\": [{\"key\": \"u\", \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": \"0.5\", \"other_allocation\": {\"C\": 1}}, {\"key\": \"v\", \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"remaining\": 50, \"pair_participation\": 0.8, \"a_share\": 0.8, \"other_allocation\": {\"C\": 1}}]}",
+      "expected_invalid": true,
+      "exit": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "a_share must be a finite number in bounds"
+      }
+    },
+    {
+      "name": "invalid-unit-a_share-49",
+      "input_text": "{\"mode\": \"live\", \"objective\": \"pair_margin\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"target_margin\": 0.01, \"selected_unit\": \"u\", \"assumptions\": \"Coordinator synthetic fixed counts and explicit pools; no forecast\", \"source_scope\": \"Synthetic source scope\", \"units\": [{\"key\": \"u\", \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": false, \"other_allocation\": {\"C\": 1}}, {\"key\": \"v\", \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"remaining\": 50, \"pair_participation\": 0.8, \"a_share\": 0.8, \"other_allocation\": {\"C\": 1}}]}",
+      "expected_invalid": true,
+      "exit": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "a_share must be a finite number in bounds"
+      }
+    },
+    {
+      "name": "invalid-unit-a_share-50",
+      "input_text": "{\"mode\": \"live\", \"objective\": \"pair_margin\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"target_margin\": 0.01, \"selected_unit\": \"u\", \"assumptions\": \"Coordinator synthetic fixed counts and explicit pools; no forecast\", \"source_scope\": \"Synthetic source scope\", \"units\": [{\"key\": \"u\", \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": -0.1, \"other_allocation\": {\"C\": 1}}, {\"key\": \"v\", \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"remaining\": 50, \"pair_participation\": 0.8, \"a_share\": 0.8, \"other_allocation\": {\"C\": 1}}]}",
+      "expected_invalid": true,
+      "exit": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "a_share must be a finite number in bounds"
+      }
+    },
+    {
+      "name": "invalid-unit-a_share-51",
+      "input_text": "{\"mode\": \"live\", \"objective\": \"pair_margin\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"target_margin\": 0.01, \"selected_unit\": \"u\", \"assumptions\": \"Coordinator synthetic fixed counts and explicit pools; no forecast\", \"source_scope\": \"Synthetic source scope\", \"units\": [{\"key\": \"u\", \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": 1.1, \"other_allocation\": {\"C\": 1}}, {\"key\": \"v\", \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"remaining\": 50, \"pair_participation\": 0.8, \"a_share\": 0.8, \"other_allocation\": {\"C\": 1}}]}",
+      "expected_invalid": true,
+      "exit": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "a_share must be a finite number in bounds"
+      }
+    },
+    {
+      "name": "invalid-unit-a_share-52",
+      "input_text": "{\"mode\": \"live\", \"objective\": \"pair_margin\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"target_margin\": 0.01, \"selected_unit\": \"u\", \"assumptions\": \"Coordinator synthetic fixed counts and explicit pools; no forecast\", \"source_scope\": \"Synthetic source scope\", \"units\": [{\"key\": \"u\", \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": NaN, \"other_allocation\": {\"C\": 1}}, {\"key\": \"v\", \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"remaining\": 50, \"pair_participation\": 0.8, \"a_share\": 0.8, \"other_allocation\": {\"C\": 1}}]}",
+      "expected_invalid": true,
+      "exit": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "nonfinite JSON token NaN"
+      }
+    },
+    {
+      "name": "invalid-unit-other_allocation-53",
+      "input_text": "{\"mode\": \"live\", \"objective\": \"pair_margin\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"target_margin\": 0.01, \"selected_unit\": \"u\", \"assumptions\": \"Coordinator synthetic fixed counts and explicit pools; no forecast\", \"source_scope\": \"Synthetic source scope\", \"units\": [{\"key\": \"u\", \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": 0.4, \"other_allocation\": []}, {\"key\": \"v\", \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"remaining\": 50, \"pair_participation\": 0.8, \"a_share\": 0.8, \"other_allocation\": {\"C\": 1}}]}",
+      "expected_invalid": true,
+      "exit": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "other_allocation must supply exactly all other candidates"
+      }
+    },
+    {
+      "name": "invalid-unit-other_allocation-54",
+      "input_text": "{\"mode\": \"live\", \"objective\": \"pair_margin\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"target_margin\": 0.01, \"selected_unit\": \"u\", \"assumptions\": \"Coordinator synthetic fixed counts and explicit pools; no forecast\", \"source_scope\": \"Synthetic source scope\", \"units\": [{\"key\": \"u\", \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": 0.4, \"other_allocation\": {\"C\": 0.5}}, {\"key\": \"v\", \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"remaining\": 50, \"pair_participation\": 0.8, \"a_share\": 0.8, \"other_allocation\": {\"C\": 1}}]}",
+      "expected_invalid": true,
+      "exit": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "other allocations must sum to 1"
+      }
+    },
+    {
+      "name": "invalid-unit-other_allocation-55",
+      "input_text": "{\"mode\": \"live\", \"objective\": \"pair_margin\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"target_margin\": 0.01, \"selected_unit\": \"u\", \"assumptions\": \"Coordinator synthetic fixed counts and explicit pools; no forecast\", \"source_scope\": \"Synthetic source scope\", \"units\": [{\"key\": \"u\", \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": 0.4, \"other_allocation\": {\"C\": true}}, {\"key\": \"v\", \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"remaining\": 50, \"pair_participation\": 0.8, \"a_share\": 0.8, \"other_allocation\": {\"C\": 1}}]}",
+      "expected_invalid": true,
+      "exit": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "other_allocation C must be a finite number in bounds"
+      }
+    },
+    {
+      "name": "invalid-unit-other_allocation-56",
+      "input_text": "{\"mode\": \"live\", \"objective\": \"pair_margin\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"target_margin\": 0.01, \"selected_unit\": \"u\", \"assumptions\": \"Coordinator synthetic fixed counts and explicit pools; no forecast\", \"source_scope\": \"Synthetic source scope\", \"units\": [{\"key\": \"u\", \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": 0.4, \"other_allocation\": {\"X\": 1}}, {\"key\": \"v\", \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"remaining\": 50, \"pair_participation\": 0.8, \"a_share\": 0.8, \"other_allocation\": {\"C\": 1}}]}",
+      "expected_invalid": true,
+      "exit": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "other_allocation must supply exactly all other candidates"
+      }
+    },
+    {
+      "name": "invalid-unit-counted-57",
+      "input_text": "{\"mode\": \"live\", \"objective\": \"pair_margin\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"target_margin\": 0.01, \"selected_unit\": \"u\", \"assumptions\": \"Coordinator synthetic fixed counts and explicit pools; no forecast\", \"source_scope\": \"Synthetic source scope\", \"units\": [{\"key\": \"u\", \"counted\": {\"A\": 0, \"B\": 0}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": 0.4, \"other_allocation\": {\"C\": 1}}, {\"key\": \"v\", \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"remaining\": 50, \"pair_participation\": 0.8, \"a_share\": 0.8, \"other_allocation\": {\"C\": 1}}]}",
+      "expected_invalid": true,
+      "exit": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "counted must explicitly supply every candidate"
+      }
+    },
+    {
+      "name": "invalid-unit-counted-58",
+      "input_text": "{\"mode\": \"live\", \"objective\": \"pair_margin\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"target_margin\": 0.01, \"selected_unit\": \"u\", \"assumptions\": \"Coordinator synthetic fixed counts and explicit pools; no forecast\", \"source_scope\": \"Synthetic source scope\", \"units\": [{\"key\": \"u\", \"counted\": {\"A\": 0, \"B\": 0, \"C\": -1}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": 0.4, \"other_allocation\": {\"C\": 1}}, {\"key\": \"v\", \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"remaining\": 50, \"pair_participation\": 0.8, \"a_share\": 0.8, \"other_allocation\": {\"C\": 1}}]}",
+      "expected_invalid": true,
+      "exit": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "counted C must be a finite number in bounds"
+      }
+    },
+    {
+      "name": "invalid-unit-counted-59",
+      "input_text": "{\"mode\": \"live\", \"objective\": \"pair_margin\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"target_margin\": 0.01, \"selected_unit\": \"u\", \"assumptions\": \"Coordinator synthetic fixed counts and explicit pools; no forecast\", \"source_scope\": \"Synthetic source scope\", \"units\": [{\"key\": \"u\", \"counted\": {\"A\": true, \"B\": 0, \"C\": 0}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": 0.4, \"other_allocation\": {\"C\": 1}}, {\"key\": \"v\", \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"remaining\": 50, \"pair_participation\": 0.8, \"a_share\": 0.8, \"other_allocation\": {\"C\": 1}}]}",
+      "expected_invalid": true,
+      "exit": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "counted A must be a finite number in bounds"
+      }
+    },
+    {
+      "name": "invalid-unit-counted_total-60",
+      "input_text": "{\"mode\": \"live\", \"objective\": \"pair_margin\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"target_margin\": 0.01, \"selected_unit\": \"u\", \"assumptions\": \"Coordinator synthetic fixed counts and explicit pools; no forecast\", \"source_scope\": \"Synthetic source scope\", \"units\": [{\"key\": \"u\", \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": 0.4, \"other_allocation\": {\"C\": 1}, \"counted_total\": 59}, {\"key\": \"v\", \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"remaining\": 50, \"pair_participation\": 0.8, \"a_share\": 0.8, \"other_allocation\": {\"C\": 1}}]}",
+      "expected_invalid": true,
+      "exit": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "counted_total does not equal complete supplied field"
+      }
+    },
+    {
+      "name": "invalid-unit-counted_total-61",
+      "input_text": "{\"mode\": \"live\", \"objective\": \"pair_margin\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"target_margin\": 0.01, \"selected_unit\": \"u\", \"assumptions\": \"Coordinator synthetic fixed counts and explicit pools; no forecast\", \"source_scope\": \"Synthetic source scope\", \"units\": [{\"key\": \"u\", \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": 0.4, \"other_allocation\": {\"C\": 1}, \"counted_total\": true}, {\"key\": \"v\", \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"remaining\": 50, \"pair_participation\": 0.8, \"a_share\": 0.8, \"other_allocation\": {\"C\": 1}}]}",
+      "expected_invalid": true,
+      "exit": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "counted_total must be a finite number in bounds"
+      }
+    },
+    {
+      "name": "unsupported-mode",
+      "input_text": "{\"mode\": \"runoff\", \"objective\": \"pair_margin\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"target_margin\": 0.01, \"selected_unit\": \"u\", \"assumptions\": \"Coordinator synthetic fixed counts and explicit pools; no forecast\", \"source_scope\": \"Synthetic source scope\", \"units\": [{\"key\": \"u\", \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": 0.4, \"other_allocation\": {\"C\": 1}}, {\"key\": \"v\", \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"remaining\": 50, \"pair_participation\": 0.8, \"a_share\": 0.8, \"other_allocation\": {\"C\": 1}}]}",
+      "expected_invalid": true,
+      "exit": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "mode must be historical or live"
+      }
+    },
+    {
+      "name": "unsupported-objective",
+      "input_text": "{\"mode\": \"live\", \"objective\": \"forecast\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"target_margin\": 0.01, \"selected_unit\": \"u\", \"assumptions\": \"Coordinator synthetic fixed counts and explicit pools; no forecast\", \"source_scope\": \"Synthetic source scope\", \"units\": [{\"key\": \"u\", \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": 0.4, \"other_allocation\": {\"C\": 1}}, {\"key\": \"v\", \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"remaining\": 50, \"pair_participation\": 0.8, \"a_share\": 0.8, \"other_allocation\": {\"C\": 1}}]}",
+      "expected_invalid": true,
+      "exit": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "unsupported objective"
+      }
+    },
+    {
+      "name": "duplicate-pair",
+      "input_text": "{\"mode\": \"live\", \"objective\": \"pair_margin\", \"pair\": [\"A\", \"A\"], \"other_candidates\": [\"C\"], \"target_margin\": 0.01, \"selected_unit\": \"u\", \"assumptions\": \"Coordinator synthetic fixed counts and explicit pools; no forecast\", \"source_scope\": \"Synthetic source scope\", \"units\": [{\"key\": \"u\", \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": 0.4, \"other_allocation\": {\"C\": 1}}, {\"key\": \"v\", \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"remaining\": 50, \"pair_participation\": 0.8, \"a_share\": 0.8, \"other_allocation\": {\"C\": 1}}]}",
+      "expected_invalid": true,
+      "exit": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "candidate identities collide"
+      }
+    },
+    {
+      "name": "other-collision",
+      "input_text": "{\"mode\": \"live\", \"objective\": \"pair_margin\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"A\"], \"target_margin\": 0.01, \"selected_unit\": \"u\", \"assumptions\": \"Coordinator synthetic fixed counts and explicit pools; no forecast\", \"source_scope\": \"Synthetic source scope\", \"units\": [{\"key\": \"u\", \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": 0.4, \"other_allocation\": {\"C\": 1}}, {\"key\": \"v\", \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"remaining\": 50, \"pair_participation\": 0.8, \"a_share\": 0.8, \"other_allocation\": {\"C\": 1}}]}",
+      "expected_invalid": true,
+      "exit": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "candidate identities collide"
+      }
+    },
+    {
+      "name": "missing-selection",
+      "input_text": "{\"mode\": \"live\", \"objective\": \"pair_margin\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"target_margin\": 0.01, \"selected_unit\": \"absent\", \"assumptions\": \"Coordinator synthetic fixed counts and explicit pools; no forecast\", \"source_scope\": \"Synthetic source scope\", \"units\": [{\"key\": \"u\", \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": 0.4, \"other_allocation\": {\"C\": 1}}, {\"key\": \"v\", \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"remaining\": 50, \"pair_participation\": 0.8, \"a_share\": 0.8, \"other_allocation\": {\"C\": 1}}]}",
+      "expected_invalid": true,
+      "exit": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "selected unit missing"
+      }
+    },
+    {
+      "name": "blank-selection",
+      "input_text": "{\"mode\": \"live\", \"objective\": \"pair_margin\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"target_margin\": 0.01, \"selected_unit\": \" \", \"assumptions\": \"Coordinator synthetic fixed counts and explicit pools; no forecast\", \"source_scope\": \"Synthetic source scope\", \"units\": [{\"key\": \"u\", \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": 0.4, \"other_allocation\": {\"C\": 1}}, {\"key\": \"v\", \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"remaining\": 50, \"pair_participation\": 0.8, \"a_share\": 0.8, \"other_allocation\": {\"C\": 1}}]}",
+      "expected_invalid": true,
+      "exit": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "selected_unit must be a nonblank string"
+      }
+    },
+    {
+      "name": "selection-bool",
+      "input_text": "{\"mode\": \"live\", \"objective\": \"pair_margin\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"target_margin\": 0.01, \"selected_unit\": false, \"assumptions\": \"Coordinator synthetic fixed counts and explicit pools; no forecast\", \"source_scope\": \"Synthetic source scope\", \"units\": [{\"key\": \"u\", \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": 0.4, \"other_allocation\": {\"C\": 1}}, {\"key\": \"v\", \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"remaining\": 50, \"pair_participation\": 0.8, \"a_share\": 0.8, \"other_allocation\": {\"C\": 1}}]}",
+      "expected_invalid": true,
+      "exit": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "selected_unit must be a nonblank string"
+      }
+    },
+    {
+      "name": "extra-setting",
+      "input_text": "{\"mode\": \"live\", \"objective\": \"pair_margin\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"target_margin\": 0.01, \"selected_unit\": \"u\", \"assumptions\": \"Coordinator synthetic fixed counts and explicit pools; no forecast\", \"source_scope\": \"Synthetic source scope\", \"units\": [{\"key\": \"u\", \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": 0.4, \"other_allocation\": {\"C\": 1}}, {\"key\": \"v\", \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"remaining\": 50, \"pair_participation\": 0.8, \"a_share\": 0.8, \"other_allocation\": {\"C\": 1}}], \"repair\": true}",
+      "expected_invalid": true,
+      "exit": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "unsupported setting"
+      }
+    },
+    {
+      "name": "overflow",
+      "input_text": "{\"mode\": \"live\", \"objective\": \"pair_margin\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"target_margin\": 0.01, \"selected_unit\": \"u\", \"assumptions\": \"Coordinator synthetic fixed counts and explicit pools; no forecast\", \"source_scope\": \"Synthetic source scope\", \"units\": [{\"key\": \"u\", \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"remaining\": 1e+308, \"pair_participation\": 0.8, \"a_share\": 0.4, \"other_allocation\": {\"C\": 1}}, {\"key\": \"v\", \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"remaining\": 1e+308, \"pair_participation\": 0.8, \"a_share\": 0.8, \"other_allocation\": {\"C\": 1}}]}",
+      "expected_invalid": true,
+      "exit": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "aggregate numeric overflow"
+      }
+    },
+    {
+      "name": "duplicate-root-object-field",
+      "input_text": "{\"mode\": \"live\", \"objective\": \"pair_margin\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"target_margin\": 0.01, \"selected_unit\": \"u\", \"assumptions\": \"Coordinator synthetic fixed counts and explicit pools; no forecast\", \"source_scope\": \"Synthetic source scope\", \"units\": [{\"key\": \"u\", \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": 0.4, \"other_allocation\": {\"C\": 1}}, {\"key\": \"v\", \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"remaining\": 50, \"pair_participation\": 0.8, \"a_share\": 0.8, \"other_allocation\": {\"C\": 1}}],\"mode\":\"historical\"}",
+      "expected_invalid": true,
+      "exit": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "duplicate JSON object field: mode"
+      }
+    },
+    {
+      "name": "duplicate-unit-object-field",
+      "input_text": "{\"mode\": \"live\", \"objective\": \"pair_margin\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"target_margin\": 0.01, \"selected_unit\": \"u\", \"assumptions\": \"Coordinator synthetic fixed counts and explicit pools; no forecast\", \"source_scope\": \"Synthetic source scope\", \"units\": [{\"key\": \"u\", \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"remaining\": 100,\"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": 0.4, \"other_allocation\": {\"C\": 1}}, {\"key\": \"v\", \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"remaining\": 50, \"pair_participation\": 0.8, \"a_share\": 0.8, \"other_allocation\": {\"C\": 1}}]}",
+      "expected_invalid": true,
+      "exit": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "duplicate JSON object field: remaining"
+      }
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+Traceback (most recent call last):
+  File "/Users/tqbf/codebase/snn/senate/2026/arkansas/data/turnout/build.py", line 227, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/Users/tqbf/codebase/snn/senate/2026/arkansas/data/turnout/build.py", line 129, in main
+    ts=load(f'{year}-turnout-state');tc={f:load(f'{year}-turnout-{f}') for f in locs}
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tqbf/codebase/snn/senate/2026/arkansas/data/turnout/build.py", line 129, in <dictcomp>
+    ts=load(f'{year}-turnout-state');tc={f:load(f'{year}-turnout-{f}') for f in locs}
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tqbf/codebase/snn/senate/2026/arkansas/data/turnout/build.py", line 24, in load
+    def load(key): return json.loads(read(key))
+                          ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/json/__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/json/decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/json/decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)

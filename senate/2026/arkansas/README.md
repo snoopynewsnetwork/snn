@@ -2,6 +2,14 @@
 
 [All 2026 Senate races](../README.md)
 
+## Historical first-pair research
+
+- [Turnout and exact native coverage](turnout.md): all 75 parents and 2,841 original 2024 presidential reporting units. Top 15 supply 3.38478163%; 1,056 reach 80.01997166%.
+- [Partisanship and conditional targets](county-partisanship.md): all required contests, distinct API/FullData publications and a named Libertarian opposition scenario for 2020.
+- [Independent coordinator review](research-review.md) and [actual dispatch](research-dispatch.md).
+
+This is the reviewed first pair. Reciprocal turnout continuation and official-results/maps research remain ahead. Historical numerical agreement does not approve current geography, eligible write-ins, November feeds, remaining ballots or calibrated probabilities. The race tracker below remains unchanged.
+
 ## Seat details
 
 | Field | Value |
