@@ -1,6 +1,6 @@
 # New Mexico newsroom and NYT backstops
 
-Research observed **2026-10-18 UTC / 2026-10-17 Central**. This is coordinator preparation; the historical first pair is now reviewed and the remaining question packages are pending. [Retained responses](data/news/manifest.json) preserve UTC retrieval, URLs, HTTP status/headers and exact compressed/raw hashes. No November live collector or complete state package is claimed.
+Research observed **2026-10-18 UTC / 2026-10-17 Central**. This is coordinator preparation; the historical first pair is now reviewed and official-source research is now reviewed and map review is pending. [Retained responses](data/news/manifest.json) preserve UTC retrieval, URLs, HTTP status/headers and exact compressed/raw hashes. No November live collector or complete state package is claimed.
 
 | Region/product | Primary source | Observed state and operational use |
 | --- | --- | --- |
@@ -44,8 +44,17 @@ Treat common upstream suppliers, official reprints and shared newsroom reporting
 
 The historical first pair has passed [source review](research-review.md).
 All 2,201 native observations and 33 parent inventories survive, with masked
-values unallocated and certified native priority unavailable. Official-source
-research is active for all 33 county chains. These findings leave the earlier
+values unallocated and certified native priority unavailable. The [official-source package](official-results.md) now covers all 33 county chains. These findings leave the earlier
 newsroom captures and election stages unchanged. Future numeric comparisons
 require actual November election, contest, candidate, unit, method and status
 validation.
+
+
+The October20 [official-source review](data/coordinator-official-final-review.json)
+checks actual state primary2911 and distinct county primary products. Bernalillo's
+raw generic write-ins survive even where its client hides or zeros them; SanJuan's
+30-second client timer is only a request schedule. Neither supplies November
+Senate returns or measured update cadence. Newsroom comparisons must match the
+actual election, candidate and source scope before replacing an unavailable
+official observation. No regional newsroom has been promoted to an independent
+November vote source by this review.

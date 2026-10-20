@@ -82,9 +82,13 @@ regressions. The 2020 Class II Senate, 2024 Class I Senate, 2024 presidential
 and 2022 governor contests retain their own candidates and source scopes.
 Ballots, Eligible Voters and dated registration stocks remain separate controls.
 
-Official-source research is active across all 33 parents and 2,201 source
-observations. Map research is prepared for the next available slot. The
+The [official-source package](official-results.md) is complete and independently
+reviewed across all 33 parents and 2,201 source observations. The [map report](precinct-maps.md) and [offline atlas](maps/index.html) are also
+complete and independently reviewed. The
 [newsroom survey](local-news-results.md), [collection strategy](live-polling-strategy.md)
 and [dispatch record](research-dispatch.md) retain their preparation limits.
 Current ballot scope, result IDs, geometry, November returns, measured cadence,
-remaining votes and calibrated probabilities remain unverified.
+remaining votes and calibrated probabilities remain unverified. All four bounded
+research assignments are complete; those external qualifications remain explicit.
+The [whole-state validation](data/coordinator-validation.json) and
+[asset manifest](data/coordinator-asset-manifest.json) seal the reviewed package.

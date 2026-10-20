@@ -96,3 +96,82 @@ November result IDs/counts, current geometry, later legal orders, measured
 cadence, eligible outstanding votes and calibrated probabilities remain external
 qualifications. The coordinator reviews and publishes the whole state after
 the official-source and maps packages finish.
+
+
+## Official-source package review
+
+The completed [official report](official-results.md) preserves all33authorities,
+2,201complete source investigations and current joins asnull. Its read-only
+`run_offline.py --audit` passes whole reference reconstruction, source replay,
+sample controls,33negative fixtures and the final seal without rewriting any
+owned bytes. The manifest lists1,010owned assets excluding only itself;
+626individual immutable external pins and196captured historical bodies resolve
+older paths by their expected hash. No mutable news aggregate, producer writer
+or unfinished maps review is a build dependency.
+
+The [independent coordinator reviewer](data/review_official_final.py) passes
+[38,106checks](data/coordinator-official-final-review.json): exact owned/input
+pins;257complete request receipts; all33parent dossiers and2,201full source
+objects; whole71JSON,158HTML,2CSV,1XML and1XLSX structures. HTML341,595events,
+full XML trees and empty workbook cells retain original order and fields.
+The initial checker incorrectly expected an external-reference array where
+the manifest names an index file; its exact script/finding remain frozen. The
+corrected reviewer reads that complete index, with no producer source change.
+
+The state API's primary method totals, CSV trailing empty cell, protected
+values and literal CountyID spaces survive. Bernalillo raw generic write-in
+votes differ from client presentation; SanJuan's refresh timer and HTTP clock
+are separate from publisher timestamp and actual changes. No primary/current
+setup or empty export is admitted as November counts.
+
+Exactly [five root-selected pages](data/coordinator-official-visual-review/review.json)
+were manually inspected from two byte-exact originals: code physical188,189,
+452,453 and the August20ThirdAmended election-judge order's signed finalpage8.
+They support the receipt/verification/cure and federal-recount scope described
+in the report, and distinguish judge assignment from outcome/deadline orders.
+Other PDF pages were not manually claimed. Full worker legal evidence retains
+selected enactments/rules/dockets, including explicit draft-adoption and later
+docket gaps. The separately reviewed map package completes the fourth bounded assignment.
+Current approvals remain qualified as described below.
+
+
+## Maps and completed historical package
+
+The [map report](precinct-maps.md) and [offline atlas](maps/index.html) retain
+all2,201complete source observations/all33full parent-child arrays, with no
+certified native rank or result-to-polygon matches. The final read-only producer
+audit verifies994owned files,626individual frozen dependencies and196older
+virtual bodies. Its largest stored artifact is27,013,936bytes. Complete60PDF
+originals/194pages are automatically rendered; these are not all manual views.
+
+The [independent native reviewer](data/review_maps_final.py) passes
+[113,588checks](data/coordinator-maps-final-review.json), restoring every source
+response and comparing both ZIPs' full memberCRC/hash, SHP/SHXrecords/parts/bboxes,
+DBFfields/raw cells/values and all2,317,826XYpositions bit-for-bit against the
+installed native reader. The2,177-feature service closes44batches of at most50IDs
+with exact pre/post metadata/count/IDsets, fullattributes and nativeEPSG26913XY.
+No output CRS, precision, quantization, generalization or source repair was used.
+The2024/2026ZIPs retain2,169/2,177features; seven duplicate2026GEOCODEvalues and
+one invalid feature remain as published. Source units differ between ZIP
+geographic degrees and service meters. These are preservation/diagnostic checks,
+not legal overlap/gap/sliver certification.
+
+Exactly [two original map pages and one preview](data/coordinator-maps-visual-review.json)
+were actually viewed by the coordinator. SantaFe's map visibly names six new
+180–185splits effectiveJanuary1/2026, while both2026RGIS and service still
+contain179SantaFefeatures. Its reference-only disclaimer remains. Cibola's
+first precinct page is a2022map; the complete155,242,680-byte original is retained
+in seven lossless parts. Sandoval's165-feature preview is geographic context.
+No manual claim covers every page, source statute or boundary.
+
+All four actual question workers have finished and their bounded source,
+formula, CLI, reciprocal, native, DOM/negative and exact-membership checks pass.
+The [whole-state validator](data/validate_state_package.py) seals every owned
+file, including independent evidence and documentary history, excluding only
+its own manifest. Privacy masks,2020ballot−58/seven-county discrepancies,
+SandovalEligibleVoters−3, registrationstock differences, Otero president-only18,
+source-current candidate/status namespaces and map-vintage conflicts remain
+unallocated. Later signed ballot/write-in scope, law/dockets, current result
+IDs/geometry, Novemberreturns, cadence, eligible remainder and calibrated
+probabilities remain explicit external qualifications. Historical research
+completion does not assert those approvals.

@@ -1053,3 +1053,21 @@ released slot. The completed count remains 21 new states plus Michigan.
 New Mexico first-pair/source-authority component published `520cdba5ed99e9e1f3b1389ee3a30e2031757e84`; push succeeded and exact remote verified. All 408 staged blobs matched reviewed bytes. Official-source work remains active, maps remain queued, and the completed-state count is unchanged.
 
 Oregon original-first turnout/source component published `15b6fdf533e98bb38f95c7806eee2114be7a9528`; push succeeded and exact remote verified. Independent source review passes 48,053 checks. Canonical native priority is unavailable and the completed-state count remains unchanged.
+
+Oregon baseline `7c03df8c` finished; its released slot launched actual New Mexico
+maps worker `30e855e4` after fresh profile/provider inspection. New Mexico
+source worker `3204f3a1` is the only other active researcher. Oregon reviews
+and same-turnout reciprocal continuation remain queued. No new state is yet
+marked complete.
+
+New Mexico official `3204f3a1` actually finished. Its slot resumed SAME Oregon
+baseline `7c03df8c` under fresh Verification/medium for two concrete packaging
+and immutable-input dependency findings. New Mexico maps `30e855e4` are the
+only other active research worker. Counts/models are unchanged; coordinator
+reviews remain pending.
+
+
+Oregon same baseline repair actually finished:600complete owned bodies,599manifest entries,self-only exclusion,288unaffected payloads exact. Independent coordinator repair review passes1,650checks and guarded producer validation39. Its slot resumed SAME turnoutbd151c4c under fresh Verification/medium for captured source-core reciprocal. NewMexico maps30e855e4 has now actually finished; map independent review and next real-slot launch proceed without polling. Official NMcomponent review passes38,106checks. Completed-state count remains21new states plusMichigan.
+
+
+NMmaps actual finish released slot for RhodeIsland turnout5bf8df2e-5c2f-4e0e-a51e-2021afca7bea, launched after fresh all-profile/provider Research/high inspection. Only other researcher is SAME Oregonturnoutbd151c4c reciprocal. No replacement/coordinator/grandchild. NewMexico full map review and Oregon source-pair acceptance remain pending; completed count unchanged.
