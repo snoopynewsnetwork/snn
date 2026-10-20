@@ -46,8 +46,8 @@ qualifications remain explicit; current geography and live readiness are separat
 
 The only active researchers are Massachusetts turnout
 `eb66a7f4-a730-4f4d-8382-35941613a2ff`, resumed as the SAME agent for bounded
-reciprocal/final-seal QA, and New Jersey turnout
-`04473229-3e65-45b1-b628-b2fe909eaeee`. Massachusetts partisanship actually
+reciprocal/final-seal QA, and New Jersey partisanship
+`61054f9e-a14c-44fc-b6b2-7bbc4c84b449`.  Massachusetts partisanship actually
 finished its257-entry package; source/math/CLI/producer-seal reviews pass.
 All four Illinois workers finished and the complete package is published.
 Thirteen later states remain unlaunched. No extra/replacement worker exists.
@@ -879,3 +879,21 @@ membership must exclude only the manifest, without reverse hash cycles.
 NewJersey turnout04473229 is the sole other researcher; all575literal source
 rows/21parents/7084nonadditive finer references are being sealed. No formal
 MAhistorical dispatch/current approval or NJpeer launch is inferred yet.
+
+
+## New Jersey turnout bounded phase finished; actual baseline launched
+
+NewJersey turnout04473229 actually finished its original-first phase:1522owned
+artifacts/34offline checks/636exact network-free rebuilt bodies,575literal
+municipal/admin source objects and21complete parent chains. Finer originals
+for six counties remain nonadditive7,084positioned constituent/page references;
+no finest/current/legal precinct coverage is asserted. All588shared candidate
+controls match; literal Neptune and Somerset+420 anomalies stay unallocated.
+Its original-first witness remains exact and reciprocal completion is pending.
+
+That real released slot launched actual NewJersey partisanship
+`61054f9e-a14c-44fc-b6b2-7bbc4c84b449`, after fresh profiles/all four notes and
+provider inspection. It independently extracts originals before turnout or
+coordinator derivative values. Massachusetts same-turnouteb66a7f4 reciprocal
+phase is the sole other active researcher. Resume SAME04473229 for bounded
+reciprocal later, never a replacement agent or finished-peer contact.
