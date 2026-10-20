@@ -44,12 +44,12 @@ Each complete state passed independent source/native/target/map/whole-package
 and repository review, with its push independently verified. Historical source
 qualifications remain explicit; current geography and live readiness are separate.
 
-The only active researchers are Massachusetts partisanship
-`41e0bf1a-4609-4a2a-b901-568567431a57` and New Jersey turnout
-`04473229-3e65-45b1-b628-b2fe909eaeee`. All four Illinois workers finished, and the complete Illinois package is
-published with independent source/math/map/seal and repository review. Massachusetts
-turnout finished its bounded original-first phase and will resume the SAME agent
-for reciprocal QA after stable baseline extraction and an actual free slot.
+The only active researchers are Massachusetts turnout
+`eb66a7f4-a730-4f4d-8382-35941613a2ff`, resumed as the SAME agent for bounded
+reciprocal/final-seal QA, and New Jersey turnout
+`04473229-3e65-45b1-b628-b2fe909eaeee`. Massachusetts partisanship actually
+finished its257-entry package; source/math/CLI/producer-seal reviews pass.
+All four Illinois workers finished and the complete package is published.
 Thirteen later states remain unlaunched. No extra/replacement worker exists.
 
 Illinois's historical printed-known threshold is5,540/4,474,312 of5,592,368,
@@ -862,3 +862,20 @@ Massachusetts baseline41e0bf1a and NewJersey turnout04473229 are researching.
 Massachusetts turnout's SAMEeb66a7f4 awaits bounded reciprocal continuation in
 a real free slot after baseline stability. Thirteen later states remain
 unlaunched; full34-state batch continuation remains authorized and active.
+
+
+## Massachusetts baseline finished; same turnout reciprocal continuation
+
+Massachusetts partisanship41e0bf1a actually finished:257owned files plus18exact
+inputpins,9351native records/32orders/36statescenarios/36702unit targets and
+65meaningful calculator checks. Independent coordinator388787source/order,
+569182math and25actualCLI fixtures pass; wording findings were repaired before
+seal without source/count/formula changes.
+
+The actual released slot resumed the SAME turnout eb66a7f4 for bounded
+reciprocal QA/final manifest repair, after fresh profiles/all notes/provider
+inspection. Its109-body original-first witness stays exact; final owned
+membership must exclude only the manifest, without reverse hash cycles.
+NewJersey turnout04473229 is the sole other researcher; all575literal source
+rows/21parents/7084nonadditive finer references are being sealed. No formal
+MAhistorical dispatch/current approval or NJpeer launch is inferred yet.

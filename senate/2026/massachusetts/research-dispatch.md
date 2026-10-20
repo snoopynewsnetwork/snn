@@ -38,3 +38,15 @@ into the assignment's exclusive paths. No diagnostic/coordinator/peer votes may
 replace original extraction. Complete stable reciprocal field/order/coverage
 agreement and coordinator reviewed historical acceptance precede actual
 official-results/maps dispatch. Current external qualifications remainfalse.
+
+
+## Actual baseline finish and same-ID reciprocal phase
+
+Partisanship41e0bf1a actually finished its257-owned/18input sealed package.
+Coordinator independent source/order/math/CLI and readonly sealed validation
+pass. Turnout SAMEeb66a7f4 resumed in that real released slot for bounded
+reciprocal capture/comparison and complete self-only-excluded manifest.
+No replacement/new worker, finished peer contact or optional source expansion.
+Actual sole other researcher is NewJersey turnout04473229. Full source-only
+1470/2394/924/351 hierarchy still awaits final turnout handoff and coordinator
+acceptance; current geometry/eligible-writein/feed approval remainsfalse.
