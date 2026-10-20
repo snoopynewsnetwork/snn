@@ -1,10 +1,11 @@
-# Massachusetts coordinator review — first pair in progress
+# Massachusetts coordinator review
 
 Both actual first-pair workers have finished and their exact source/reciprocal/
 scenario/seal reviews pass. The [external historical dispatch acceptance](data/coordinator-priority-acceptance.json)
 applies only to complete named-source research, with all current/legal/eligible-
-writein/geographic/feed approvals false. Official/maps assignments are prepared
-only and await real released slots. No extra researcher exists.
+writein/geographic/feed approvals false. Maps research is finished and independently
+reviewed; official-source research is completing its final QA. Publication of the
+whole state waits for that delivered package and coordinator review.
 
 
 [Independent original review](data/coordinator-turnout-original-review.json)
@@ -40,11 +41,9 @@ unknown/no-positive pool and already-secured examples. The explicit pair+1
 case still loses to candidateC, preserving the full candidate field and counted
 votes. No probability or actual remaining pool is inferred.
 
-The bounded turnout manifest lists195own files and excludes itself,validation
-andfinalseal. Final reciprocal continuation must remove reverse manifest
-pins/cycles and seal every owned body excluding only the manifest itself,
-while preserving all earlier exact witness bytes. Source/count/order checks
-pass; final peer/whole-field/seal/coordinator acceptance is pending. Unknown
+The original bounded turnout manifest listed195files and excluded validation
+andfinalseal. That earlier phase is preserved as historical evidence; the final
+reciprocal package below seals524files and excludes only its manifest. Unknown
 AllOthers eligibility, source2022HTML county discrepancy, blocked statistics,
 source33/64volume differences, current/native boundaries and November IDs/
 returns/cadence/remainder remain precise qualifications, not fabricated zeros.
@@ -93,4 +92,41 @@ map research dispatch. AllOthers eligibility/native method/admin/reg/under-over,
 current signed/later ballot/feed IDs/geometry/cadence/exact outstanding pool and
 calibration remain external qualifications. Neither351municipal sensitivity nor
 14county HTML replaces the finer2394primary source records. Second-wave owned
-research, final state integration and publication remain pending actual slots.
+research has now been dispatched. Final state integration and publication await
+the official-source final package.
+
+## Finished maps and independent review
+
+The [map report](precinct-maps.md) and [offline atlas](maps/index.html) preserve
+every full source observation, all351parents,1470priorities and924remainder.
+All287priority municipal chains have bounded actual requests. Complete native
+MassGIS snapshots contain2256ward/precinct features and147subprecinct features,
+with all attributes, exact pre/post layer metadata/count/IDs and batches of at
+most50. The ward service viewport initialExtent differs and is retained; layer
+metadata/count/IDs remain equal. No result-leaf polygon match is approved.
+
+[Independent native integrity review](data/coordinator-native-map-snapshot-review.json)
+passes1,426,949checks of complete raw batches, attributes and every ring position:
+691,383ward-layer and12,835subprecinct coordinate positions. Two source-invalid
+features remain unrepaired. Worker native-area intersection diagnostics supply
+no legal overlap/gap certification. No originalSHPZIP was acquired, so there is
+no DBF/SHP/SHX equivalence claim.
+
+[Independent final map review](data/coordinator-maps-final-review.json) passes
+39,384checks, including exact10155owned membership/hashes,807frozen dependencies,
+2435complete raw response reconstructions and the entire source hierarchy. All
+508PDFs/3526pages have automatic renders. The worker manually viewed six PDF
+first pages and four native previews; those narrower scopes remain explicit.
+The actual atlas DOM/filter/ordering/escaping/full-object tests pass. The manifest
+includes report,validation andfinalseal and excludes only itself, without a
+reverse hash cycle. Its largest stored object is39,000,000bytes, strictly below
+40,000,000. Incidental clerk-navigation/media bodies have no map/current credit.
+
+The [coordinator's selected visual check](data/coordinator-maps-visual-review.json)
+actually viewed Groton and Nantucket complete first pages plus the Nantucket
+native preview. Groton prints aSeptember27,2023amendment despite its2021filename;
+Nantucket prints a statutory separate-precinct exception and2020population,
+which is not turnout. This is selected visual evidence, not whole-inventory
+manual review or a browser/current-geography approval. Westfield's two state
+PDF links returned404; Boston planning/adjustment originals and the shared
+state-native context remain separately qualified.
