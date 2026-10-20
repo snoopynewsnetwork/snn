@@ -15,3 +15,6 @@ finish precede any later reciprocal comparison or coordinator acceptance.
 
 
 2026-10-20T13:35:38.377023+00:00 — Turnout5f787f59 ACTUALLY finished original-first package: all2201source rows retained; protected values leave certified native dispatch unavailable/empty. Baseline9a904675-c599-4e28-8862-663c3496078e now actually launched after fresh profile/provider discovery, independently parsing originals before turnout derivatives. Same turnout may resume only for bounded reciprocal QA after stable baseline and a real slot. No county dispatch substitution or protected-value reconstruction.
+
+
+NMbaseline9a904675 ACTUALLY finished qualified source/scenario package; originalpin6770ae96 unchanged,103owned+64external exact hash review passes. SAMEturnout5f787f59 resumed bounded reciprocal only in released baseline slot after fresh all-profile/provider inspection; Verificationauto-review/medium applied. Exact8219B prompt584974b303d5da3aa9ede1707da2da75c7c7cb69968ad0561a3706667bafb147 retained. Only other active researcher ORturnoutbd151c4c. No new worker, source expansion or certifiednativepriority/private allocation.
