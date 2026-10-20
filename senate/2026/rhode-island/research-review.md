@@ -50,3 +50,18 @@ and points to Board publications. Later certification/amendment scope, legal
 write-ins, current IDs/geometry, genuineNovembervotes, measuredcadence and eligible
 remaining ballots remain explicit external qualifications. No collector or
 probability model is admitted.
+
+
+The original-first component is published as120a7ec2a3679dc060074a1a72e5dab1b338ee5a.
+A coordinator command-ordering error allowed commit/push after Gitadd flagged an
+unlisted ignored news-preparation bytecode cache, skipping the planned index
+check. [Post-publication verification](data/coordinator-stage-review-history/post-publication-exact-tree-review.json)
+checks every410published object against the saved reviewed bytes, size limit
+and whitespace, with active worker paths/cache excluded. Allmatch; no rollback
+or producer edit occurred. The exact6,059-byte ignored cache is preserved as
+[opaque cleanup evidence](data/coordinator-generated-file-history/unlisted-news-fetch-bytecode.json),
+then only that byte-identical untracked file and its empty directory were
+removed. Its original creation actor/time is not independently attributed. It
+is not a primary source or input. Later staging now uses a separately confirmed
+verification result before commit. This exception changes no original source,
+turnout body, native order, witness, seal or acceptance qualification.
