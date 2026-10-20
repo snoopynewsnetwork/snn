@@ -32,14 +32,15 @@ in the queue, and published commit IDs as packages finish.
 
 ## Progress
 
-**Nineteen new state packages plus retained Michigan are published.** Exact
+**Twenty new state packages plus retained Michigan are published.** Exact
 reviewed state commits: North Carolina e2241313, Alaska9672f51f, Ohiof5cc934a,
 Mainee0fe91ed, Texas1ffe97de, Iowa47e6a682, Kansas9de81d5c, Georgia9c8ad26f,
 NewHampshire7ad7bb89, Minnesota4e4cfc92, SouthCarolina794a7aed,
 Florida4b03078e, Mississippi78c905c3, Nebraska158fc262, SouthDakota1cffd920,
 Idaho744627cb, Coloradof92a04a2696b8e54bc4dc739c3e5a69b3da3218f and
 Delaware2425d880bf6769a83a83b7fdbbcf0e977c7e5997 and
-Illinoise687b0c985f6dd3c4632bdb2be90e095b655b6bb.
+Illinoise687b0c985f6dd3c4632bdb2be90e095b655b6bb and
+NewJersey5c7f115bcd5844e45cedf9d5246722decc201aea.
 Each complete state passed independent source/native/target/map/whole-package
 and repository review, with its push independently verified. Historical source
 qualifications remain explicit; current geography and live readiness are separate.
@@ -48,8 +49,8 @@ The only active researchers are Massachusetts official sources
 `4c5f1926-ae99-4a2d-bd4d-580280e21bcb` and New Mexico turnout
 `5f787f59-e6ff-4494-b416-a0fb4383237f`. New Jersey maps
 `c09137ad-248a-409b-ad50-cba7526553ef` actually finished and released that slot;
-all four NJ questions are finished, with final map/whole-state review pending.
-NJ historical and official-source components are already published. Massachusetts
+all four NJ questions and independent whole-state review now pass.
+The complete New Jersey package is pushed with exact remote confirmation. Massachusetts
 maps and historical components are published while official final QA continues.
 Twelve later states remain unlaunched; all prepared briefs are explicitly not
 actual workers. No extra researcher exists.
