@@ -1,8 +1,9 @@
 # Rhode Island research review
 
 Turnout's bounded original-first package is complete. The independent baseline
-worker is active; reciprocal agreement and coordinator priority acceptance remain
-pending. Official-source/maps assignments have not launched.
+worker has finished and is sealed. The same turnout worker is now performing the
+confirmed detail correction and bounded reciprocal review; coordinator priority
+acceptance remains pending. Official-source/maps assignments have not launched.
 
 [The source review](data/coordinator-turnout-original-review.json) passes951,928
 checks without producer imports or writes. It reconstructs all44members of six
@@ -42,8 +43,15 @@ workbook application or scanned page was visually inspected. The2020linked
 These labels and unlabelled groups4–14 remain distinct source descriptions.
 
 The separate2024Senate write-in publication's printed municipality total1,239
-matches municipality generic marks, but literal detail sum1,226 differs in nine
-municipalities. No spelling merge, deduplication, legal eligibility or native
+matches municipality generic marks. The original turnout summary's row6-onward
+projection totals1,226 and differs in nine municipalities. The independent
+baseline worker identified a real omitted row: Cranston D5 is literal `Mario
+Frioli ` and E5 is1. [Coordinator original-XML replay](data/coordinator-writein-row5-review/proof.json)
+independently checks all39worksheets and confirms complete detail1,227 with
+eight local discrepancies. The original workbook, all source cells and prior
+extractor remain retained. The narrow SAMEturnout repair was actually resumed after the independent
+baseline finished; review and acceptance of its corrected seal remain pending. Generic totals, native458order and242
+membership require no correction. No spelling merge, deduplication, legal eligibility or native
 allocation is inferred. Native ballots/registration/nonvote availability remains
 source-scoped. The technical data index expressly disclaims official authority
 and points to Board publications. Later certification/amendment scope, legal
