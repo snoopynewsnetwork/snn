@@ -183,3 +183,15 @@ The map worker is separately auditing actual acquired originals and historical
 fallbacks. Its preliminary NJOGIS layer is explicitly mature support and
 intended for2019–2020; upload paths alone establish no current vintage or
 source-label match. Final map review and whole-state publication remain pending.
+
+An [independent raw native snapshot audit](data/coordinator-native-map-snapshot-review.json)
+passes2,800,941 checks across all6,348 statewide and401 Burlington features,
+all attributes and1,379,257 original linear coordinate positions. Complete
+service/layer pre/post metadata, counts and ID sets match within each source;
+all requested batches contain at most50 IDs with exact requested/returned sets.
+No output CRS, precision, quantization, simplification or geometry repair was
+requested. Burlington's layer extent additionally supplies tolerance/origin/
+unit fields omitted from batch spatial-reference objects; both complete forms
+remain and the returned WKID values agree. The initial stricter checker
+assumption and correction are retained separately. This is raw-source integrity,
+not a topology, legal-boundary, current-crosswalk or finished-map-package claim.
