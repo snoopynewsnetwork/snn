@@ -1,8 +1,8 @@
 {
-  "schema": "ri-turnout-validation-v2",
+  "schema": "ri-turnout-validation-repair-v3",
   "status": "passed",
-  "peer_agreement": "pending; actual peer launched, no derivative accessed",
-  "coordinator_acceptance": "pending",
+  "peer_agreement": "bounded captured source-core passed; broader peer models/scenarios/outcomes not asserted",
+  "coordinator_acceptance": false,
   "checks": [
     {
       "check": "original_hash:boe-history",
@@ -1975,14 +1975,75 @@
       ]
     },
     {
-      "check": "writein_discrepancies_retained_unallocated",
+      "check": "complete_writein_discrepancies_retained_unallocated",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "historical_row6_scope_retained",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "full_historical362_and_original227_body_reconstruction",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "check": "ten_original_row5_metadata_admission_corruption_tests",
+      "passed": true,
+      "detail": [
+        {
+          "case": "actual_missing_row5_D5_cell",
+          "rejected": true
+        },
+        {
+          "case": "actual_row5_omission_from_detail_admission",
+          "rejected": true
+        },
+        {
+          "case": "stale_row6_summary1226",
+          "rejected": true
+        },
+        {
+          "case": "source_body_hash_corruption",
+          "rejected": true
+        },
+        {
+          "case": "worksheet_member_crc_metadata_corruption",
+          "rejected": true
+        },
+        {
+          "case": "worksheet_relationship_metadata_corruption",
+          "rejected": true
+        },
+        {
+          "case": "duplicate_source_detail_admission",
+          "rejected": true
+        },
+        {
+          "case": "trailing_space_name_loss",
+          "rejected": true
+        },
+        {
+          "case": "invented_eligible_writein_admission",
+          "rejected": true
+        },
+        {
+          "case": "source_position_corruption",
+          "rejected": true
+        }
+      ]
+    },
+    {
+      "check": "finished_peer235_full_capture_and17_source_core_scopes",
       "passed": true,
       "detail": null
     },
     {
       "check": "owned_bounds_relative_links",
       "passed": true,
-      "detail": 358
+      "detail": 377
     }
   ],
   "corruption_tests": [
@@ -2016,6 +2077,46 @@
     },
     {
       "case": "source_position_key_corruption",
+      "rejected": true
+    },
+    {
+      "case": "actual_missing_row5_D5_cell",
+      "rejected": true
+    },
+    {
+      "case": "actual_row5_omission_from_detail_admission",
+      "rejected": true
+    },
+    {
+      "case": "stale_row6_summary1226",
+      "rejected": true
+    },
+    {
+      "case": "source_body_hash_corruption",
+      "rejected": true
+    },
+    {
+      "case": "worksheet_member_crc_metadata_corruption",
+      "rejected": true
+    },
+    {
+      "case": "worksheet_relationship_metadata_corruption",
+      "rejected": true
+    },
+    {
+      "case": "duplicate_source_detail_admission",
+      "rejected": true
+    },
+    {
+      "case": "trailing_space_name_loss",
+      "rejected": true
+    },
+    {
+      "case": "invented_eligible_writein_admission",
+      "rejected": true
+    },
+    {
+      "case": "source_position_corruption",
       "rejected": true
     }
   ],

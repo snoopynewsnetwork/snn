@@ -1,0 +1,191 @@
+{
+  "schema": "row5-original-detail-repair-audit-v1",
+  "status": "passed",
+  "historical362_and_old361_manifest_targets_verified": true,
+  "original227_full_body_witness_and148_originals_unchanged": true,
+  "protected_bodies": [
+    {
+      "path": "data/county-turnout.csv",
+      "sha256": "b88359a99851da1558c2ce8bd3e101f3b4463170f10b2922b8c1cafe78e7bc9e",
+      "bytes": 265181
+    },
+    {
+      "path": "data/turnout/priority-set.json",
+      "sha256": "7d788cf5c2efa884b86332833cb18a54e481b261f2f6cbab5206ac9d20e10aac",
+      "bytes": 11125694
+    },
+    {
+      "path": "data/turnout/native-inventory.json",
+      "sha256": "68c2293eaa846162911033445bc6503a353dbe018867b8a7dd421bdde535ad1e",
+      "bytes": 23183209
+    },
+    {
+      "path": "data/turnout/parent-sensitivity.csv",
+      "sha256": "6a7fbc6acf504baab7477f47091296bf1c92c0cdea16685011dc2262c5e717d7",
+      "bytes": 9815
+    },
+    {
+      "path": "data/turnout/parent-sensitivity.json",
+      "sha256": "489dfc094a7123623c3a581a19bcfe24ad5c5939c4a5371400855d57170012ad",
+      "bytes": 10222310
+    },
+    {
+      "path": "data/turnout/rankings.json",
+      "sha256": "6bb7c3204fa5c9094a2550e834864589b39a0cd2b330461ab47a8846f2da0cb8",
+      "bytes": 1789572
+    },
+    {
+      "path": "data/turnout/candidate-reconciliation.json",
+      "sha256": "5bda32bd1bf5a7938da12c96119f03ea1e4d5afbb0a3cabd367f3644e53ea987",
+      "bytes": 1297634
+    },
+    {
+      "path": "data/turnout/state-controls.json",
+      "sha256": "233ce6ac3fb2b4e4e3d4f01ccbebbfff3c9d869ce21dc1c28f31553b16dbff90",
+      "bytes": 8536
+    },
+    {
+      "path": "data/turnout/municipal-controls.json",
+      "sha256": "e4100f7120eff3da49be200335a27a64cbfd1244c3c5a01043aa853132d19937",
+      "bytes": 897155
+    },
+    {
+      "path": "data/turnout/extracts/selected-root-rows.jsonl.gz",
+      "sha256": "c56efdd4f56fa89dd93d33258837a121be990c967da19d2047e199fa974ec426",
+      "bytes": 520060
+    },
+    {
+      "path": "data/turnout/extracts/all-long-rows.jsonl.gz",
+      "sha256": "1f8eba075aaf370095b3124ae2fd45e26241d5781dcbf977ae74ee3c18aa361a",
+      "bytes": 7073015
+    },
+    {
+      "path": "data/turnout/extracts/2024-senate-writein-cells.json",
+      "sha256": "75b45484c983665aaa320217bc417c89b96ce3b6fe1eb86061483e4478d4faba",
+      "bytes": 350334
+    },
+    {
+      "path": "data/turnout/qa/pre-peer-body-witness.json",
+      "sha256": "a88c8c63384f2de6011a80bd7d50bf225e4c5dbcd312b0e469cb3a5777de99f1",
+      "bytes": 111917
+    },
+    {
+      "path": "data/turnout/qa/pre-peer-bodies.tar.gz",
+      "sha256": "30ef7f528ad0fc42dfa7a382acec7fc687faecbdc74b097fb6359a31f8685eb2",
+      "bytes": 9388381
+    }
+  ],
+  "source_proof": {
+    "path": "extracts/writein-original-detail-proof.json",
+    "sha256": "a8af53530b3197d9cbb8830a4c1c1335f46e4f307292af2c3f549d0dd740e381"
+  },
+  "narrow_correction": "Original Cranston D5 Mario Frioli trailing space / E5 numeric1 included structurally. Full1227/eight; prior row6-only1226/nine preserved. Printed1239/state generic1244 unchanged.",
+  "corruption_tests": [
+    {
+      "case": "actual_missing_row5_D5_cell",
+      "rejected": true
+    },
+    {
+      "case": "actual_row5_omission_from_detail_admission",
+      "rejected": true
+    },
+    {
+      "case": "stale_row6_summary1226",
+      "rejected": true
+    },
+    {
+      "case": "source_body_hash_corruption",
+      "rejected": true
+    },
+    {
+      "case": "worksheet_member_crc_metadata_corruption",
+      "rejected": true
+    },
+    {
+      "case": "worksheet_relationship_metadata_corruption",
+      "rejected": true
+    },
+    {
+      "case": "duplicate_source_detail_admission",
+      "rejected": true
+    },
+    {
+      "case": "trailing_space_name_loss",
+      "rejected": true
+    },
+    {
+      "case": "invented_eligible_writein_admission",
+      "rejected": true
+    },
+    {
+      "case": "source_position_corruption",
+      "rejected": true
+    }
+  ],
+  "changed_prior_bodies_at_audit": [
+    {
+      "path": "data/turnout/extracts/writein-scope-comparison.json",
+      "old_sha256": "2a86516477e6a1e8ca3fb14af58c86df47348d15deeaba4ef5c303b441fad71a",
+      "new_sha256": "f0ae9e281803f44590834cdefa8931e1ad988c28fcb26eea0f144ac577c8740d",
+      "old_bytes": 17703,
+      "new_bytes": 37874
+    },
+    {
+      "path": "data/turnout/history/repair-history.json",
+      "old_sha256": "526327f1eb71097ea4931d155b3ebf9ad004a2e7e5fb46384e794bcc77fe376b",
+      "new_sha256": "7457a1484cbb8960716c2e6ad5ec23df7a4624e9b6413d7de1d45329cd9b7679",
+      "old_bytes": 2528,
+      "new_bytes": 3469
+    },
+    {
+      "path": "data/turnout/make_report.py",
+      "old_sha256": "0e1f4b90e7b84249f95caa521e456583178e22c337607f285a4503cca33178c8",
+      "new_sha256": "b57af05825be05e3a307b6f1d0667a08b37caaa71e26ae18adf01ca6dd904a88",
+      "old_bytes": 24366,
+      "new_bytes": 26416
+    },
+    {
+      "path": "data/turnout/seal_package.py",
+      "old_sha256": "4a5394b223ab392612d504a8793783f3f0feaf2f388a40ac25089ca8e411eac9",
+      "new_sha256": "a32c133aa73db6205f0520ee95d1cab6fe84b9e0573407679ae5136d54be1fcc",
+      "old_bytes": 4932,
+      "new_bytes": 5176
+    },
+    {
+      "path": "data/turnout/source/SCHEMA.md",
+      "old_sha256": "361768ae484f3676996d49d6656c0052450348748ff425116b41db7695c37387",
+      "new_sha256": "d0e4656257a0d2b5e0edbf42287deaba0951fba76ffce774bb0171387853688c",
+      "old_bytes": 12595,
+      "new_bytes": 15926
+    },
+    {
+      "path": "data/turnout/validate_turnout.py",
+      "old_sha256": "7aac97488279626fb721d9820a4e19927b1580bcfa9012746eab760fcdc2dfd3",
+      "new_sha256": "4e53afc5dc188411700b5379ed5634f375ad6458e1f9fbd446a849ce901ffc97",
+      "old_bytes": 15937,
+      "new_bytes": 18152
+    },
+    {
+      "path": "data/turnout/validation.json",
+      "old_sha256": "f7a270fc199693e6d130e905f1e635415edf278d10660c6ecf1bbfd285b8a79c",
+      "new_sha256": "16a16bfe8d030157940584cbea49c17e0eef7e5216aedbd92573bd624fa4dd7c",
+      "old_bytes": 70307,
+      "new_bytes": 72725
+    },
+    {
+      "path": "data/turnout/writein_scopes.py",
+      "old_sha256": "1a0fe96465bd27d6582f6779425b5ad9ffba3b7ac4b4ef0515fbf3eee52bf223",
+      "new_sha256": "5e63a78ef3431943c03c2bd8244d85e29e2763359454b0d05cc32a9a12c41b07",
+      "old_bytes": 3732,
+      "new_bytes": 6336
+    },
+    {
+      "path": "turnout.md",
+      "old_sha256": "400ddbab70250f409c24507ec5160d72bb9a03a421efb5f0311f173037c8e011",
+      "new_sha256": "44c7e1bd92352d3563617addb206fc40051333d608482f950fd4e0973283abab",
+      "old_bytes": 66604,
+      "new_bytes": 68654
+    }
+  ],
+  "peer_baseline_was_not_repaired": true
+}

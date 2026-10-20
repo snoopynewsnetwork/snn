@@ -1,31 +1,51 @@
 {
-  "schema": "ri-turnout-final-seal-v1",
-  "phase": "original-first offline research complete; peer/coordinator acceptance pending",
-  "peer_derivatives_accessed": false,
-  "peer_agent_id": "5d9f9b63-0cf2-4b55-b52b-579cbc1d76d1",
-  "primary_contract": {
-    "path": "priority-set.json",
-    "sha256": "7d788cf5c2efa884b86332833cb18a54e481b261f2f6cbab5206ac9d20e10aac",
-    "bytes": 11125694
+  "schema": "ri-turnout-bounded-repair-final-seal-v2",
+  "phase": "Original-first row5 detail correction and captured-finished-peer source-core review complete; coordinator acceptance pending",
+  "pins": {
+    "priority-set.json": {
+      "sha256": "7d788cf5c2efa884b86332833cb18a54e481b261f2f6cbab5206ac9d20e10aac",
+      "bytes": 11125694
+    },
+    "validation.json": {
+      "sha256": "16a16bfe8d030157940584cbea49c17e0eef7e5216aedbd92573bd624fa4dd7c",
+      "bytes": 72725
+    },
+    "qa/repair-validation.json": {
+      "sha256": "36c82501c6bdf41ef3ef739dafd1209ab4ce4075b7d17a0a51444e3d29d42c06",
+      "bytes": 6608
+    },
+    "reciprocal/source-core-comparison.json": {
+      "sha256": "9ae85f1771ccfe499f67cce24fab2d057251b41e0bfed42b623dd847c718bea4",
+      "bytes": 2991419
+    },
+    "reciprocal/peer-finished-capture/capture.json": {
+      "sha256": "7500566bb18ad7b9a547e0e04e34ed637fe8db3b3d80ffa3bea337afd7324b0b",
+      "bytes": 46400
+    },
+    "qa/pre-peer-body-witness.json": {
+      "sha256": "a88c8c63384f2de6011a80bd7d50bf225e4c5dbcd312b0e469cb3a5777de99f1",
+      "bytes": 111917
+    },
+    "qa/repaired-body-witness.json": {
+      "sha256": "c982c1310891174f7024e9be2ed98801b17be7cb823db6f523dfdafa4fa60a9d",
+      "bytes": 154039
+    },
+    "qa/repaired-body-changes.tar.gz": {
+      "sha256": "3e54b0cbdcd8b8a685af6ebff8422dc778c508c536695ac10a0f2a4c02948586",
+      "bytes": 356413
+    }
   },
-  "validation": {
-    "path": "validation.json",
-    "sha256": "f7a270fc199693e6d130e905f1e635415edf278d10660c6ecf1bbfd285b8a79c",
-    "bytes": 70307,
-    "status": "passed",
-    "checks": 389
-  },
-  "full_body_witness": {
-    "path": "qa/pre-peer-body-witness.json",
-    "sha256": "a88c8c63384f2de6011a80bd7d50bf225e4c5dbcd312b0e469cb3a5777de99f1",
-    "bytes": 111917
-  },
-  "body_archive": {
-    "path": "qa/pre-peer-bodies.tar.gz",
-    "sha256": "30ef7f528ad0fc42dfa7a382acec7fc687faecbdc74b097fb6359a31f8685eb2",
-    "bytes": 9388381
-  },
-  "final_read_only_audit_command": "python3 -B senate/2026/rhode-island/data/turnout/validate_turnout.py",
-  "final_audit_required_after_manifest": true,
-  "no_manifest_reverse_pin": true
+  "peer_id": "5d9f9b63-0cf2-4b55-b52b-579cbc1d76d1",
+  "peer_manifest_sha256": "f3b33d30631cec93796c4aab2becec82a49982da39878421f11c22ea5e1a8620",
+  "source_core_agreement": "passed; bounded captured source objects and independent order arithmetic only",
+  "peer_model_scenario_outcome_equality_claimed": false,
+  "original_first_witness_unchanged": true,
+  "prior362_historical_bodies_preserved": true,
+  "primary_native_csv_source_order_unchanged": true,
+  "coordinator_acceptance": false,
+  "current_geometry_approval": false,
+  "eligible_writein_universe": null,
+  "no_manifest_reverse_pin": true,
+  "final_read_only_audit_required": true,
+  "final_audit_command": "python3 -B senate/2026/rhode-island/data/turnout/validate_turnout.py"
 }

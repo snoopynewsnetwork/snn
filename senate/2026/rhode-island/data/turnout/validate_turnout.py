@@ -131,7 +131,16 @@ def audit():
     a=copy.deepcopy(c);a['minimum80']['minimum80_count']=241;reject('premature_80_crossing',lambda:order_invariants(a))
     a=copy.deepcopy(c);a['complete_descending_order'][241]['key']+=':wrong';reject('source_position_key_corruption',lambda:order_invariants(a))
     ok('meaningful_corruption_rejections',len(mutations)==8,mutations)
-    wi=json.loads((ROOT/'extracts/writein-scope-comparison.json').read_text());ok('writein_discrepancies_retained_unallocated',len(wi)==39 and sum(x['printed_top_total']for x in wi)==1239 and sum(x['detail_sum']for x in wi)==1226 and sum(x['difference']!=0 for x in wi)==9)
+    wi=json.loads((ROOT/'extracts/writein-scope-comparison.json').read_text());ok('complete_writein_discrepancies_retained_unallocated',len(wi)==39 and sum(x['printed_top_total']for x in wi)==1239 and sum(x['detail_sum']for x in wi)==1227 and sum(x['difference']!=0 for x in wi)==8)
+    ok('historical_row6_scope_retained',sum(x['prior_row6_detail_sum']for x in wi)==1226 and sum(x['prior_row6_difference']!=0 for x in wi)==9)
+    from repair_validation import audit as repair_audit
+    repair=repair_audit();ok('full_historical362_and_original227_body_reconstruction',repair['status']=='passed')
+    ok('ten_original_row5_metadata_admission_corruption_tests',len(repair['corruption_tests'])==10,repair['corruption_tests'])
+    from reciprocal_source_core import Capture
+    peer=Capture();comparison=json.loads((ROOT/'reciprocal/source-core-comparison.json').read_text());assert comparison['status']=='passed'and len(comparison['checks'])==17 and len(comparison['child_label_whitespace_differences'])==11
+    for item in peer.index['all235']:
+        b=peer.tar.extractfile(item['path']).read();assert len(b)==item['bytes']and sha(b)==item['sha256']
+    ok('finished_peer235_full_capture_and17_source_core_scopes',True)
     # Every owned file is below the strict object bound; validate all relative Markdown links.
     owned=[STATE/'turnout.md',STATE/'data/county-turnout.csv']+[p for p in ROOT.rglob('*')if p.is_file()]
     for path in owned:assert path.stat().st_size<40000000
@@ -139,24 +148,34 @@ def audit():
         for link in re.findall(r'\]\(([^)]+)\)',path.read_text()):
             if re.match(r'https?://',link):continue
             dest=(path.parent/link.split('#')[0]).resolve()
-            deferred={ROOT/'validation.json',ROOT/'qa/pre-peer-body-witness.json',ROOT/'final-seal.json',ROOT/'asset-manifest.json'}
-            if '--write'in sys.argv and not (ROOT/'asset-manifest.json').exists()and dest in deferred:continue
+            deferred={ROOT/'validation.json',ROOT/'qa/pre-peer-body-witness.json',ROOT/'final-seal.json',ROOT/'asset-manifest.json',ROOT/'qa/repaired-body-witness.json'}
+            if '--write'in sys.argv and dest in deferred:continue
             assert dest.exists(),(path,link)
     ok('owned_bounds_relative_links',True,len(owned))
-    if (ROOT/'asset-manifest.json').exists():
+    if (ROOT/'asset-manifest.json').exists()and '--write'not in sys.argv:
         manifest=json.loads((ROOT/'asset-manifest.json').read_text());expected_paths={str(p.relative_to(STATE))for p in owned if p!=ROOT/'asset-manifest.json'}
         assert {x['path']for x in manifest['owned_assets']}==expected_paths
         for item in manifest['owned_assets']:
             b=(STATE/item['path']).read_bytes();assert len(b)==item['bytes']and sha(b)==item['sha256']
         ok('manifest_exact_membership_hash_size_excludes_only_itself',True,len(expected_paths))
-        witness=json.loads((ROOT/'qa/pre-peer-body-witness.json').read_text());tb=gzip.decompress((ROOT/witness['body_archive']['path']).read_bytes());assert sha(tb)==witness['body_archive']['uncompressed_tar_sha256']
+        from repair_validation import historical
+        old=historical();witness=json.loads((ROOT/'qa/pre-peer-body-witness.json').read_text());tb=gzip.decompress((ROOT/witness['body_archive']['path']).read_bytes());assert sha(tb)==witness['body_archive']['uncompressed_tar_sha256']
         with tarfile.open(fileobj=io.BytesIO(tb))as t:
             for item in witness['frozen_bodies']:
-                data=t.extractfile(item['path']).read();assert sha(data)==item['sha256']and len(data)==item['bytes'];assert (STATE/item['path']).read_bytes()==data
+                data=t.extractfile(item['path']).read();assert sha(data)==item['sha256']and len(data)==item['bytes'];assert old[item['path']]==data
         for item in witness['immutable_original_references']:
             data=(STATE/item['path']).read_bytes();assert sha(data)==item['stored_sha256']and len(data)==item['stored_bytes'];assert sha(gzip.decompress(data))==item['raw_sha256']
         ok('full_body_witness_exact_reconstruction_and_originals',True)
-    return dict(schema='ri-turnout-validation-v2',status='passed',peer_agreement='pending; actual peer launched, no derivative accessed',coordinator_acceptance='pending',checks=checks,corruption_tests=mutations,source_observations=original_refs)
+        current=json.loads((ROOT/'qa/repaired-body-witness.json').read_text());archive=(ROOT/current['changed_archive']['path']).read_bytes();assert sha(archive)==current['changed_archive']['sha256'];tar=gzip.decompress(archive);assert sha(tar)==current['changed_archive']['tar_sha256']
+        with tarfile.open(fileobj=io.BytesIO(tar))as changed:
+            for item in current['bodies']:
+                st=item['storage'];data=changed.extractfile(st['member']).read()if st['kind']=='changed_tar'else old[item['path']]if st['kind']=='historical_tar'else (STATE/st['path']).read_bytes();assert len(data)==item['bytes']and sha(data)==item['sha256']and data==(STATE/item['path']).read_bytes()
+        assert {x['path']for x in current['bodies']}=={str(p.relative_to(STATE))for p in owned}-set(current['terminal_exclusions'])
+        seal=json.loads((ROOT/'final-seal.json').read_text())
+        for path,pin in seal['pins'].items():
+            b=(ROOT/path).read_bytes();assert sha(b)==pin['sha256']and len(b)==pin['bytes']
+        ok('current_complete_repaired_body_witness_terminal_closure_and_seal',True,len(current['bodies']))
+    return dict(schema='ri-turnout-validation-repair-v3',status='passed',peer_agreement='bounded captured source-core passed; broader peer models/scenarios/outcomes not asserted',coordinator_acceptance=False,checks=checks,corruption_tests=mutations+repair['corruption_tests'],source_observations=original_refs)
 if __name__=='__main__':
     result=audit()
     if '--write'in sys.argv:dump(ROOT/'validation.json',result)

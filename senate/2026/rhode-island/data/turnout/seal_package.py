@@ -1,37 +1,36 @@
-"""Freeze full original-first bodies, fixed seal, then owned manifest LAST.
-Run validate_turnout.py --write first. Final audit is a separate read-only command.
-"""
-import io,tarfile,datetime,json
+"""Bounded-repair seal: preserve historical bodies, fixed seal, manifest LAST."""
+import io,tarfile,json,gzip
 from common import *
-from acquire import allreceipts
+from repair_validation import historical
 def owned():return sorted([STATE/'turnout.md',STATE/'data/county-turnout.csv']+[p for p in ROOT.rglob('*')if p.is_file()])
 def run():
-    assert not (ROOT/'final-seal.json').exists(),'Immutable seal already exists; do not overwrite'
-    validation=json.loads((ROOT/'validation.json').read_text());assert validation['status']=='passed'
-    excluded={ROOT/'asset-manifest.json',ROOT/'final-seal.json',ROOT/'qa/pre-peer-body-witness.json',ROOT/'qa/pre-peer-bodies.tar.gz'}
-    rawpaths={};references={}
-    for r in allreceipts():
-        for h in ([r]if 'stored_path'in r else [])+r.get('hops',[]):
-            path=(ROOT/h['stored_path']).resolve();stored=path.read_bytes();raw=original(h)
-            info=dict(path=str(path.relative_to(STATE)),stored_sha256=sha(stored),stored_bytes=len(stored),raw_sha256=sha(raw),raw_bytes=len(raw),compression=h.get('compression'),source_ids=[])
-            if info['stored_sha256']not in references:references[info['stored_sha256']]=info
-            references[info['stored_sha256']]['source_ids'].append(r['id'])
-            rawpaths[path]=True
-    buffer=io.BytesIO();items=[]
-    with tarfile.open(fileobj=buffer,mode='w',format=tarfile.PAX_FORMAT)as tar:
-        for p in owned():
-            if p in excluded or p.resolve()in rawpaths:continue
-            b=p.read_bytes();name=str(p.relative_to(STATE));entry=tarfile.TarInfo(name);entry.size=len(b);entry.mtime=0;entry.mode=0o644;entry.uid=entry.gid=0;entry.uname=entry.gname='';tar.addfile(entry,io.BytesIO(b));items.append(dict(path=name,sha256=sha(b),bytes=len(b)))
-    by=buffer.getvalue();gzwrite(ROOT/'qa/pre-peer-bodies.tar.gz',by);packed=(ROOT/'qa/pre-peer-bodies.tar.gz').read_bytes();assert len(packed)<40000000
-    for v in references.values():v['source_ids']=sorted(set(v['source_ids']))
-    dump(ROOT/'qa/pre-peer-body-witness.json',dict(schema='ri-original-first-full-body-witness-v1',frozen_at_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),peer_derivative_accessed=False,peer_agent_id='5d9f9b63-0cf2-4b55-b52b-579cbc1d76d1',frozen_bodies=items,immutable_original_references=list(references.values()),body_archive=dict(path='qa/pre-peer-bodies.tar.gz',stored_sha256=sha(packed),stored_bytes=len(packed),compression='gzip',uncompressed_tar_sha256=sha(by),uncompressed_tar_bytes=len(by)),reconstruction='gzip.decompress the body archive, then read each exact tar member path; original entity bytes are gzip.decompress of each referenced stored body. Every complete witness body and original is verified byte-for-byte; no partial metadata-only witness.',exclusions='Raw original objects reused by exact immutable references, never duplicate huge ZIP/PDF bytes. Seal and manifest are subsequent terminal evidence and are not inputs to earlier bodies.'))
-    witness=(ROOT/'qa/pre-peer-body-witness.json').read_bytes();v=(ROOT/'validation.json').read_bytes();contract=(ROOT/'priority-set.json').read_bytes()
-    dump(ROOT/'final-seal.json',dict(schema='ri-turnout-final-seal-v1',phase='original-first offline research complete; peer/coordinator acceptance pending',peer_derivatives_accessed=False,peer_agent_id='5d9f9b63-0cf2-4b55-b52b-579cbc1d76d1',primary_contract=dict(path='priority-set.json',sha256=sha(contract),bytes=len(contract)),validation=dict(path='validation.json',sha256=sha(v),bytes=len(v),status='passed',checks=len(validation['checks'])),full_body_witness=dict(path='qa/pre-peer-body-witness.json',sha256=sha(witness),bytes=len(witness)),body_archive=dict(path='qa/pre-peer-bodies.tar.gz',sha256=sha(packed),bytes=len(packed)),final_read_only_audit_command='python3 -B senate/2026/rhode-island/data/turnout/validate_turnout.py',final_audit_required_after_manifest=True,no_manifest_reverse_pin=True))
+    assert not (ROOT/'qa/repaired-body-witness.json').exists(),'Repaired witness already sealed'
+    old=historical();validation=json.loads((ROOT/'validation.json').read_text());assert validation['status']=='passed'
+    comparison=json.loads((ROOT/'reciprocal/source-core-comparison.json').read_text());assert comparison['status']=='passed'
+    capture=json.loads((ROOT/'history/pre-repair-v1/capture.json').read_text());refs={x['path']:x for x in capture['immutable_original_refs']}
+    excluded={ROOT/x for x in ['asset-manifest.json','final-seal.json','qa/repaired-body-witness.json','qa/repaired-body-changes.tar.gz']};bodies=[];changed={}
+    for path in owned():
+        if path in excluded:continue
+        b=path.read_bytes();name=str(path.relative_to(STATE));item=dict(path=name,sha256=sha(b),bytes=len(b))
+        if name in old and old[name]==b:item['storage']=dict(kind='immutable_original_reference',path=name)if name in refs else dict(kind='historical_tar',archive='history/pre-repair-v1/bodies.tar.gz',member=name)
+        elif path.suffix=='.gz'or '.part'in path.name:item['storage']=dict(kind='immutable_evidence_reference',path=name)
+        else:changed[name]=b;item['storage']=dict(kind='changed_tar',archive='qa/repaired-body-changes.tar.gz',member=name)
+        bodies.append(item)
+    buf=io.BytesIO()
+    with tarfile.open(fileobj=buf,mode='w',format=tarfile.PAX_FORMAT)as t:
+        for name,b in sorted(changed.items()):
+            e=tarfile.TarInfo(name);e.size=len(b);e.mtime=0;e.mode=420;t.addfile(e,io.BytesIO(b))
+    packed=gzip.compress(buf.getvalue(),mtime=0);assert len(packed)<40000000;(ROOT/'qa/repaired-body-changes.tar.gz').write_bytes(packed)
+    dump(ROOT/'qa/repaired-body-witness.json',dict(schema='ri-complete-repaired-body-witness-v1',bodies=bodies,changed_archive=dict(path='qa/repaired-body-changes.tar.gz',sha256=sha(packed),bytes=len(packed),tar_sha256=sha(buf.getvalue())),historical_capture=dict(path='history/pre-repair-v1/capture.json',sha256=sha((ROOT/'history/pre-repair-v1/capture.json').read_bytes())),original_first_witness=dict(path='qa/pre-peer-body-witness.json',sha256=sha((ROOT/'qa/pre-peer-body-witness.json').read_bytes())),terminal_exclusions=[str(p.relative_to(STATE))for p in sorted(excluded)],reconstruction='Each complete body is its historical tar member, unchanged immutable original/evidence file, or current changed-body tar member. Original ZIP/PDF/XLSX bodies are not duplicated. Manifest pins witness/terminal files; fixed seal never pins current manifest.'))
+    pins={}
+    for name in ['priority-set.json','validation.json','qa/repair-validation.json','reciprocal/source-core-comparison.json','reciprocal/peer-finished-capture/capture.json','qa/pre-peer-body-witness.json','qa/repaired-body-witness.json','qa/repaired-body-changes.tar.gz']:
+        b=(ROOT/name).read_bytes();pins[name]=dict(sha256=sha(b),bytes=len(b))
+    dump(ROOT/'final-seal.json',dict(schema='ri-turnout-bounded-repair-final-seal-v2',phase='Original-first row5 detail correction and captured-finished-peer source-core review complete; coordinator acceptance pending',pins=pins,peer_id='5d9f9b63-0cf2-4b55-b52b-579cbc1d76d1',peer_manifest_sha256='f3b33d30631cec93796c4aab2becec82a49982da39878421f11c22ea5e1a8620',source_core_agreement='passed; bounded captured source objects and independent order arithmetic only',peer_model_scenario_outcome_equality_claimed=False,original_first_witness_unchanged=True,prior362_historical_bodies_preserved=True,primary_native_csv_source_order_unchanged=True,coordinator_acceptance=False,current_geometry_approval=False,eligible_writein_universe=None,no_manifest_reverse_pin=True,final_read_only_audit_required=True,final_audit_command='python3 -B senate/2026/rhode-island/data/turnout/validate_turnout.py'))
     assets=[]
-    for p in owned():
-        if p==ROOT/'asset-manifest.json':continue
-        b=p.read_bytes();assert len(b)<40000000;assets.append(dict(path=str(p.relative_to(STATE)),sha256=sha(b),bytes=len(b)))
-    # Last owned write. All following operations are strictly read-only.
-    dump(ROOT/'asset-manifest.json',dict(schema='ri-turnout-owned-assets-v1',excludes_only_itself=True,owned_assets=assets,external_original_references=[x for x in references.values()if not (STATE/x['path']).resolve().is_relative_to(ROOT)],peer_agreement='pending',coordinator_acceptance='pending'))
-    print(json.dumps(dict(seal_sha256=sha((ROOT/'final-seal.json').read_bytes()),manifest_sha256=sha((ROOT/'asset-manifest.json').read_bytes()),witness_sha256=sha(witness),contract_sha256=sha(contract),owned_assets=len(assets),witness_bodies=len(items),immutable_original_objects=len(references),archive_stored_bytes=len(packed))))
+    for path in owned():
+        if path==ROOT/'asset-manifest.json':continue
+        b=path.read_bytes();assert len(b)<40000000;assets.append(dict(path=str(path.relative_to(STATE)),sha256=sha(b),bytes=len(b)))
+    # LAST OWNED WRITE. Final audit is read-only.
+    dump(ROOT/'asset-manifest.json',dict(schema='ri-turnout-owned-assets-repair-v2',excludes_only_itself=True,owned_assets=assets,external_original_references=json.loads(old['data/turnout/asset-manifest.json'])['external_original_references'],source_core_agreement='passed within captured finished-peer source-core scope',coordinator_acceptance=False))
+    print(json.dumps(dict(owned_targets=len(assets),witness_bodies=len(bodies),changed_bodies=len(changed),changed_archive_bytes=len(packed),manifest_sha256=sha((ROOT/'asset-manifest.json').read_bytes()),seal_sha256=sha((ROOT/'final-seal.json').read_bytes()),witness_sha256=sha((ROOT/'qa/repaired-body-witness.json').read_bytes()),comparison_sha256=sha((ROOT/'reciprocal/source-core-comparison.json').read_bytes()))))
 if __name__=='__main__':run()

@@ -1,9 +1,9 @@
 # Rhode Island research review
 
 Turnout's bounded original-first package is complete. The independent baseline
-worker has finished and is sealed. The same turnout worker is now performing the
-confirmed detail correction and bounded reciprocal review; coordinator priority
-acceptance remains pending. Official-source/maps assignments have not launched.
+worker has finished and is sealed. The same turnout worker has completed the
+confirmed detail correction and bounded reciprocal review. Qualified historical
+source dispatch is accepted; official-source research is active and maps queued.
 
 [The source review](data/coordinator-turnout-original-review.json) passes951,928
 checks without producer imports or writes. It reconstructs all44members of six
@@ -49,8 +49,8 @@ baseline worker identified a real omitted row: Cranston D5 is literal `Mario
 Frioli ` and E5 is1. [Coordinator original-XML replay](data/coordinator-writein-row5-review/proof.json)
 independently checks all39worksheets and confirms complete detail1,227 with
 eight local discrepancies. The original workbook, all source cells and prior
-extractor remain retained. The narrow SAMEturnout repair was actually resumed after the independent
-baseline finished; review and acceptance of its corrected seal remain pending. Generic totals, native458order and242
+extractor remain retained. The narrow SAMEturnout repair finished after the independent
+baseline finished; its corrected seal and history now pass independent review. Generic totals, native458order and242
 membership require no correction. No spelling merge, deduplication, legal eligibility or native
 allocation is inferred. Native ballots/registration/nonvote availability remains
 source-scoped. The technical data index expressly disclaims official authority
@@ -75,4 +75,11 @@ verification result before commit. This exception changes no original source,
 turnout body, native order, witness, seal or acceptance qualification.
 
 
-The finished baseline component has now passed [independent source/native/math review](data/coordinator-baseline-final-review.json):293,062 checks, all148fixed original entities,12,997full selected original records/all14methods,2,460inventory rows/2,378observed contest rows, every parent/child candidate control,16full scenarios and7,504native targets. An independent piecewise-linear clipped root differs by at most5.56e-17 share and5.11e-11 net votes. [47actual CLI cases](data/coordinator-baseline-cli-review.json) pass for counted-fixed/final denominators, selected-only, unknown/no-pool/secured/impossible/clipped/full-field and strict invalid-input cases. Producer read-only audit passes370checks/eight corruptions/30own CLI cases/24,249captured peer checks;234sealed targets/self-only exclusion and all148original refs match. No baseline correction was needed. Two coordinator checker assumptions (lowercaseTXT versus literalASC member and a fixture that did not actually clip) are frozen in `data/coordinator-baseline-review-history`; neither was attributed to a producer defect. This is conditional historical/scenario readiness, not current geography, legal named-writein completeness, live remainder or probability calibration. The bounded same-turnout detail correction/reciprocal remains active, so whole priority acceptance is still pending.
+The finished baseline component has now passed [independent source/native/math review](data/coordinator-baseline-final-review.json):293,062 checks, all148fixed original entities,12,997full selected original records/all14methods,2,460inventory rows/2,378observed contest rows, every parent/child candidate control,16full scenarios and7,504native targets. An independent piecewise-linear clipped root differs by at most5.56e-17 share and5.11e-11 net votes. [47actual CLI cases](data/coordinator-baseline-cli-review.json) pass for counted-fixed/final denominators, selected-only, unknown/no-pool/secured/impossible/clipped/full-field and strict invalid-input cases. Producer read-only audit passes370checks/eight corruptions/30own CLI cases/24,249captured peer checks;234sealed targets/self-only exclusion and all148original refs match. No baseline correction was needed. Two coordinator checker assumptions (lowercaseTXT versus literalASC member and a fixture that did not actually clip) are frozen in `data/coordinator-baseline-review-history`; neither was attributed to a producer defect. This is conditional historical/scenario readiness, not current geography, legal named-writein completeness, live remainder or probability calibration. The bounded same-turnout detail correction/reciprocal subsequently completed; the final section records qualified historical dispatch acceptance.
+
+
+## Corrected seal and qualified historical dispatch
+
+[Final repair review](data/coordinator-turnout-repair-final-review.json) passes2,521checks, reconstructing all362oldbodies/361oldmanifest targets,375repaired preterminal bodies and235captured finished-baseline bodies.351oldbodies remain byte-identical. The full primary contract/CSV/nativeinventory/order/candidate controls/original227bodywitness and148original refs are unchanged; only confirmed detail-coverage, report/docs, proof and seal files changed. Producer final read-only audit passes396checks/18corruptions. Both full1227/eight and historicalrow6-only1226/nine remain exact, with trailing-space source names preserved.
+
+The [external qualified historical source authority](data/coordinator-priority-acceptance.json) is now independently validated by [full replay](data/coordinator-priority-validation.json):1,702,375checks,23complete roots,384whole companions,1,699,508recursive objects in12complete ordered partitions,632individual file pins and877exact historical body resolvers. It retains all458ranked Senate contexts,242priority/216remainder,497inventory with39unavailable Senate, all39municipal+4federal scopes and37prioritymunicipal chains. The reported printed+generic denominator491948 is accepted for historical research dispatch only; it is not legal eligible-writein/native80robustness/currentgeometry/feed approval. The frozen producercontract retains its old pending peer-status string by design; external independently checked capture proofs govern bounded source-core agreement, with no producerflag mutation or future/model/report equality claim. Official1c1068c1 is active; no map worker has launched yet.
