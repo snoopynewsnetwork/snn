@@ -1,0 +1,154 @@
+version=3.1.6
+    def __init__(
+        self,
+        shapeType: int | _NoShapeTypeSentinel = _NoShapeTypeSentinel(),
+        points: PointsT | None = None,
+        parts: Sequence[int] | None = None,  # index of start point of each part
+        lines: list[PointsT] | None = None,
+        partTypes: Sequence[int] | None = None,
+        oid: int | None = None,
+        *,
+        m: Sequence[float | None] | None = None,
+        z: Sequence[float] | None = None,
+        bbox: BBox | None = None,
+        mbox: MBox | None = None,
+        zbox: ZBox | None = None,
+    ):
+        """Stores the geometry of the different shape types
+        specified in the Shapefile spec. Shape types are
+        usually point, polyline, or polygons. Every shape type
+        except the "Null" type contains points at some level for
+        example vertices in a polygon. If a shape type has
+        multiple shapes containing points within a single
+        geometry record then those shapes are called parts. Parts
+        are designated by their starting index in geometry record's
+        list of shapes. For MultiPatch geometry, partTypes designates
+        the patch type of each of the parts.
+        Lines allows the points-lists and parts to be denoted together
+        in one argument.  It is intended for multiple point shapes
+        (polylines, polygons and multipatches) but if used as a length-1
+        nested list for a multipoint (instead of points for some reason)
+        PyShp will not complain, as multipoints only have 1 part internally.
+        """
+
+        # Preserve previous behaviour for anyone who set self.shapeType = None
+        if isinstance(shapeType, _NoShapeTypeSentinel):
+            class_name = self.__class__.__name__
+            self.shapeType = SHAPETYPENUM_LOOKUP.get(class_name.upper(), NULL)
+        else:
+            self.shapeType = shapeType
+
+        if partTypes is not None:
+            if self.shapeType != MULTIPATCH:
+                raise ShapefileException(
+                    f"Only a Multipatch shape supports partTypes, not: {self.__class__.__name__} "
+                    f" (shape type: {self.shapeTypeName}) "
+                    f"Got: {partTypes=}"
+                )
+            self.partTypes = _Array[int]("i", partTypes)
+
+        default_points: PointsT = []
+        default_parts: list[int] = []
+
+        if points and lines:
+            raise ShapefileException(
+                "Constructing meaningful Shapes unambiguously from both "
+                "points and lines is not supported.  Provide one only. "
+                f" Got: {points=} and {lines=}"
+            )
+        elif not points and not lines:
+            if self.shapeType != NULL:
+                raise ShapefileException(
+                    f"Shape: {self.__class__.__name__} or shape type: {self.shapeTypeName} "
+                    "requires non-empty points or non-empty lines."
+                    f" Got: {points=} and {lines=}"
+                )
+        elif self.shapeType == NULL:
+            raise ShapefileException(
+                f"NullShape or shape type: {self.shapeTypeName} "
+                "must have zero points and zero lines (or neither set, or both None). "
+                f" Got: {points=} and {lines=}"
+            )
+        elif self.shapeType in Point_shapeTypes:
+            if not points or len(points) >= 2:
+                raise ShapefileException(
+                    f"Single point Shape: {self.__class__.__name__}, shape type: {self.shapeTypeName} "
+                    "requires one or  points (and possibly a z co-ordinate and m value), not "
+                    f"lines. Got: {points=} and {lines=}"
+                )
+            if lines:
+                raise ShapefileException(
+                    f"Single point shape: {self.__class__.__name__}, shape type: {self.shapeTypeName} "
+                    f"does not support lines. Got: {lines=}"
+                )
+        elif self.shapeType in MultiPoint_shapeTypes and lines and len(lines) >= 2:
+            raise ShapefileException(
+                f"Multipoint shape: {self.__class__.__name__}, shape type: {self.shapeTypeName} "
+                f"is a single part shape, but was given multiple parts - got {lines=}. "
+                "Point clouds can be constructed from a list of list points supplied to lines "
+                "(instead of points) but only one single 'line' is supported. "
+            )
+
+        if lines is not None:
+            if self.shapeType in Polygon_shapeTypes:
+                lines = _with_polygon_rings_closed(lines)
+
+            default_points, default_parts = _points_and_part_indices(lines)
+
+        elif not parts and self.shapeType in _CanHaveBBox_shapeTypes:
+            # TODO:  Raise issue.
+            # This ensures Polylines, Polygons and Multipatches with no part information are a single
+            # Polyline, Polygon or Multipatch respectively.
+            #
+            # This is consistent with  MultiPoints shapes having single part index 0 as
+            # documented in README.md, also when set from points
+            #
+            # Alternatively single points could be given parts = [0] too, as they do if formed
+            # _from_geojson.
+            default_parts = [0]
+
+        # PyShp 2 API compatibility requires self.points = []
+        # on NullShapes (and self.parts = []).
+        self.points: PointsT = points or default_points
+        self.parts = _Array[int]("i", parts or default_parts)
+
+        # and a dict to record any captured errors encountered in GeoJSON
+        self._errors: dict[str, int] = {}
+
+        # add oid
+        self._oid: int = -1 if oid is None else oid
+
+        if self.shapeType != NULL and self.shapeType not in Point_shapeTypes:
+            self.bbox: BBox = bbox or self._bbox_from_points()
+
+        ms_found = True
+        if m:
+            self.m: Sequence[float | None] = [_ensure_within_bounds(x) for x in m]
+        elif self.shapeType in _HasM_shapeTypes:
+            i_m = 3 if self.shapeType in _HasZ_shapeTypes | PointZ_shapeTypes else 2
+            self.m = [_m_from_point(p, i_m) for p in self.points]
+        elif self.shapeType in PointM_shapeTypes:
+            i_m = 3 if self.shapeType == POINTZ else 2
+            self.m = (_m_from_point(self.points[0], i_m),)
+        else:
+            ms_found = False
+
+        zs_found = True
+        if z:
+            self.z: Sequence[float] = _Array[float]("d", z)
+        elif self.shapeType in _HasZ_shapeTypes:
+            self.z = _Array[float]("d", (_z_from_point(p) for p in self.points))
+        elif self.shapeType == POINTZ:
+            self.z = (_z_from_point(self.points[0]),)
+        else:
+            zs_found = False
+
+        if mbox is not None:
+            self.mbox: MBox = mbox
+        elif ms_found:
+            self.mbox = self._mbox_from_ms()
+
+        if zbox is not None:
+            self.zbox: ZBox = zbox
+        elif zs_found:
+            self.zbox = self._zbox_from_zs()

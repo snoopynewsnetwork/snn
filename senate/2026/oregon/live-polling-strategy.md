@@ -1,6 +1,6 @@
 # Oregon collection and remaining-vote strategy
 
-Prepared **2026-10-18 UTC / 2026-10-17 Central**. The historical source pair is independently reviewed and bounded reciprocal QA has finished and final coordinator source review passes; qualified source-research authority is complete; official-source research is finished/reviewed and map integration is active. Read the [news observations](local-news-results.md). This proposes operations without claiming a running collector.
+Prepared **2026-10-18 UTC / 2026-10-17 Central**. The historical source pair is independently reviewed and bounded reciprocal QA has finished and final coordinator source review passes; qualified source-research authority is complete; all four source assignments and whole-package review are complete. Read the [news observations](local-news-results.md). This proposes operations without claiming a running collector.
 
 ## Oregon-specific preflight
 
@@ -28,7 +28,7 @@ Counted votes remain fixed. Estimate only uncounted ballots using documented uni
 
 Compare partial returns with the same historical geography/method and boundary vintage. No allocation through an unvalidated map crosswalk. Historical turnout volumes are sensitivity anchors, not 2026 projections. Tie/+1 conditional scenarios require complete statewide weights and candidate/other-vote reconciliation; distinguish share-point shifts from margin-point shifts. Do not substitute an independent candidate into a D/R coalition without explicit identity and assumptions.
 
-Before live use, replay genuine dated releases and test idempotent retries, missing units, corrections/decreases, overlapping aggregates, candidate identity and manual recovery. Keep original counts and derivatives auditable. A calibrated win probability additionally requires a dated prior, genuine historical release sequences, remaining-ballot assumptions and held-out calibration under the [root plan](../../../ELECTION_NIGHT_PLAN.md). No live collector or calibrated Needle is implemented here. Final integration requires complete official authority investigations, qualified actual map assets and current-rule verification. All36parents and explicit unavailable native cases remain in research coverage; no county substitute or invented statewide priority is permitted.
+Before live use, replay genuine dated releases and test idempotent retries, missing units, corrections/decreases, overlapping aggregates, candidate identity and manual recovery. Keep original counts and derivatives auditable. A calibrated win probability additionally requires a dated prior, genuine historical release sequences, remaining-ballot assumptions and held-out calibration under the [root plan](../../../ELECTION_NIGHT_PLAN.md). No live collector or calibrated Needle is implemented here. The completed bounded source investigation supplies actual authority chains, qualified map assets and selected operative legal sources; live admission still requires genuine November scope and later-law/order checks. All36parents and explicit unavailable native cases remain in research coverage; no county substitute or invented statewide priority is permitted.
 
 
 [Independent source, mathematical and CLI review](research-review.md) now passes
@@ -43,9 +43,11 @@ sensitivities; they supply no measured outstanding pool or live probability.
 The [qualified source authority](data/coordinator-source-research-acceptance.json)
 now requires substantive investigations across all36parent chains, preserving
 510known fullsource contexts and31unavailable native-parent cases. No incomplete
-parent's native membership or priority is inferred. Current official research
-will retain actual state/county/vendor constructors and stage/control semantics;
+parent's native membership or priority is inferred. The completed official research retains actual state/county/vendor constructors and stage/control semantics;
 its observations still require November-specific admission before live use.
 
 
 The [reviewed official investigation](official-results.md) now supplies full36county chains, a signed September3 ballot directive and current temporary165-007-0550. Follow each county's declared release schedule, retaining PT or unspecified timezone labels exactly and resolving Malheur's boundary before UTC conversion. At least one election-night report and scheduled releases/one-hour republication rules are legal/publisher plans, not observed vote-change cadence. The familiar production root redirects to SOS welcome; positive unlinked staging counts and zero/sample reports remain quarantined. Multnomah RCV-ballot reporting exceptions are not Senate RCV. All proposed polling settings above still require a verified genuine November production channel. Retain source-specific postal/drop/electronic/cure eligibility lanes; no schedule, registration, ART or reporting-precinct percentage supplies an exact remaining-vote pool.
+
+
+[The completed offline atlas](maps/index.html) supports manual geographic reference across all36counties,510known2024source rows and31unavailable native-parent cases. Its18native services, three historical SHP layers and135whole PDFs are nonadditive source evidence. No native result row has an approved physical/legal/current polygon match. Keep original reporting keys and methods; never allocate votes by overlapping shapes, matching labels, equal feature counts or county context. Curved/empty/missing geometry remains excluded from linear previews with explicit defects. Neither known-only213 nor county11 supplies canonical statewide native dispatch, and neither map coverage nor publication status supplies remaining votes or preferences.

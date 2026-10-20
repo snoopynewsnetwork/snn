@@ -1098,3 +1098,9 @@ ACTUAL RI official worker1c1068c1-271d-4696-ac6c-9527c35fdd6f launched after SAM
 
 
 Current actual workers: Oregon maps490fbb31 and RIofficial1c1068c1 only. RI same-turnout repair/authority published be8f6d994 after exact53blob/index check; 22new states complete plus Michigan. New regional packs: TNactualWTVF64race/168choice XMLallzero plus30s clientplan (no measuredcadence/datezone/roster approval), WVactualWDTV Nov3APsetup49137 with no counts, WYadditionalregional access/actualJacksonsection only. Ten unlisted ignored preparation bytecode files were losslessly retained in coordinator-generated-file-history then same-file removed, originalactor/time unknown, no source or primary input credit. No further worker launch from preparation; RI maps awaits a real released slot.
+
+
+2026-10-20: Oregon maps490fbb31 actually finished sealed1493targets; coordinator independent review begins. Released slot launched original RI maps6c5beb21-b481-401b-a92f-fd3346f2e113 after fresh Research/high profile/provider inspection; only other researcher RIofficial1c1068c1. 22 newly completed states plus Michigan;10 unlaunched, no full-batch completion claim.
+
+
+Oregon four-question whole package is independently reviewed and ready for23rd new-state publication. Whole seal covers7,524targets/7,525files/702,281,516bytes,max39,000,000; maps independent248,456checks plus worker full replay1,012,011checks. All36chains/510known complete contexts/31unavailable cases survive, canonical statewide priorityNULL. RIofficial1c1068c1 andRImaps6c5beb21 are the only active researchers. No current/legal/live approvals follow historical publication.
