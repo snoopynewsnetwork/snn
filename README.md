@@ -78,6 +78,7 @@ its usage limits. No custom domain is required.
 | GET | `/api/health` | Check storage and the race count |
 | GET | `/api/races` | List races with reporting-note counts |
 | GET | `/api/races/:slug` | Read a race, research sources, and notes |
+| GET | `/api/races/:slug/markets` | Read Polymarket and Kalshi prices for a race with mapped markets |
 | POST | `/api/editor` | Verify the editor key |
 | POST | `/api/races/:slug/notes` | Add a sourced note |
 | DELETE | `/api/races/:slug/notes/:id` | Remove a note from the public log |
@@ -86,6 +87,12 @@ All POST and DELETE routes require `Authorization: Bearer <ADMIN_TOKEN>`.
 Creating a note requires JSON fields `category` (`news`, `candidates`, `polling`,
 `finance`, or `results`), `title`, `body`, `date` (`YYYY-MM-DD`), and `sourceUrl`
 (HTTP or HTTPS). Editing fails closed if no editor secret is configured.
+
+Market prices come from the public Polymarket and Kalshi APIs, and the Worker
+caches them for five minutes. `src/markets.json` pairs each race's outcomes on
+the two exchanges by party. Run `npm run check:markets` after editing it, or
+when a race changes, to confirm every market is open and names the right state
+and party or candidate.
 
 This is a starting point with one shared editor key, public reporting notes,
 and no user accounts. App notes are stored in the Durable Object, not written

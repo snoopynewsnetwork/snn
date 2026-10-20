@@ -1,5 +1,6 @@
 import { DurableObject } from "cloudflare:workers";
 import seed from "./generated/races.json";
+import { getMarketOdds, hasMarkets } from "./markets";
 
 interface Env {
   NEWSROOM: DurableObjectNamespace<Newsroom>;
@@ -287,6 +288,19 @@ async function handleRequest(request: Request, env: Env): Promise<Response> {
   }
   if (path === "/api/races" && request.method === "GET")
     return json({ races: await newsroom.listRaces() });
+  const markets = path.match(/^\/api\/races\/([a-z-]+)\/markets$/);
+  if (markets) {
+    if (request.method !== "GET") throw new HttpError(405, "Method not allowed.");
+    let odds;
+    try {
+      odds = await getMarketOdds(markets[1]);
+    } catch (error) {
+      console.error("Market prices failed", error);
+      throw new HttpError(502, "Market prices are unavailable right now.");
+    }
+    if (!odds) throw new HttpError(404, "No market prices for this race.");
+    return json(odds);
+  }
   const match = path.match(
     /^\/api\/races\/([a-z-]+)(?:\/notes(?:\/([a-f0-9-]{36}))?)?$/,
   );
@@ -302,7 +316,7 @@ async function handleRequest(request: Request, env: Env): Promise<Response> {
   if (isNotes) await authorize(request, env);
   const race = await newsroom.getRace(slug);
   if (!race) throw new HttpError(404, "Race not found.");
-  if (!isNotes) return json(race);
+  if (!isNotes) return json({ ...race, hasMarkets: hasMarkets(slug) });
   if (!noteId)
     return json(await newsroom.addNote(slug, await parseNote(request)), 201);
   if (!(await newsroom.removeNote(slug, noteId)))

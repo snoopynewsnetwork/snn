@@ -112,11 +112,248 @@ function renderNotes(category = "") {
     });
 }
 
+const marketNames = { polymarket: "Polymarket", kalshi: "Kalshi" };
+const easternDay = new Intl.DateTimeFormat("en-US", {
+  timeZone: "America/New_York",
+  month: "short",
+  day: "numeric",
+});
+const easternHour = new Intl.DateTimeFormat("en-US", {
+  timeZone: "America/New_York",
+  month: "short",
+  day: "numeric",
+  hour: "numeric",
+});
+const easternTime = new Intl.DateTimeFormat("en-US", {
+  timeZone: "America/New_York",
+  hour: "numeric",
+  minute: "2-digit",
+  timeZoneName: "short",
+});
+// Market prices for the open race: { slug, requestedAt, odds, range, index }.
+// index is the inspected sample, or null to show the latest prices.
+let market = null;
+
+function percent(value) {
+  if (value == null) return "—";
+  if (value < 0.005) return "<1%";
+  if (value > 0.995) return ">99%";
+  return `${Math.round(value * 100)}%`;
+}
+
+function marketX(times, index) {
+  const span = times.at(-1) - times[0] || 1;
+  return (((times[index] - times[0]) / span) * 1000).toFixed(1);
+}
+
+function marketY(value) {
+  return (100 - value * 100).toFixed(2);
+}
+
+function linePath(values, times) {
+  let path = "";
+  let drawing = false;
+  values.forEach((value, index) => {
+    if (value == null) {
+      drawing = false;
+      return;
+    }
+    path += `${drawing ? "L" : "M"}${marketX(times, index)} ${marketY(value)}`;
+    drawing = true;
+  });
+  return path;
+}
+
+// A zero-length segment with round caps draws a dot that stays circular
+// while the SVG stretches to fit its box.
+function dotPath(x, value) {
+  return `M${x} ${marketY(value)}h0.001`;
+}
+
+function sampleLabel(times, index) {
+  if (index === times.length - 1)
+    return `Latest · ${easternTime.format(times[index])}`;
+  // Daily samples fall at midnight ET, so each one closes the previous day.
+  return market.range === "30d"
+    ? `${easternDay.format(times[index] - 1)} close`
+    : easternHour.format(times[index]);
+}
+
+function marketShell() {
+  return `<section class="market-card" aria-labelledby="market-title">
+    <div class="market-head"><div><h2 id="market-title">Market odds over time</h2><p>Each candidate’s chance of winning, as priced by prediction markets</p></div>
+    <div class="range-toggle" role="group" aria-label="Time range"><button type="button" data-range="7d">7D</button><button type="button" data-range="30d">30D</button></div></div>
+    <div class="market-legend">${Object.entries(marketNames)
+      .map(([id, name]) => `<span class="key ${id}">${name}</span>`)
+      .join("")}</div>
+    <div class="market-columns" aria-hidden="true"><span>Candidate</span><span>Win probability</span><span>Price</span></div>
+    <div id="market-rows"><p class="market-message">Loading market prices…</p></div>
+    <div class="market-foot"><span>Same 0–100% scale on every chart.</span><span>Hover, tap or use ← → to inspect dates.</span></div>
+  </section><div id="market-note" class="market-note"></div>`;
+}
+
+function renderMarketCursor() {
+  const { odds, range } = market;
+  const times = odds.times[range];
+  const index = market.index ?? times.length - 1;
+  const x = marketX(times, index);
+  const label = sampleLabel(times, index);
+  for (const plot of document.querySelectorAll(".plot")) {
+    const history = odds.candidates[plot.dataset.candidate].history[range];
+    const values = Object.keys(marketNames).map((id) => [
+      id,
+      history[id][index],
+    ]);
+    plot.querySelector(".cursor").innerHTML =
+      (market.index === null
+        ? ""
+        : `<line class="crosshair" x1="${x}" x2="${x}" y1="0" y2="100"/>`) +
+      values
+        .filter(([, value]) => value != null)
+        .map(
+          ([id, value]) =>
+            `<path class="marker-halo" d="${dotPath(x, value)}"/><path class="marker ${id}" d="${dotPath(x, value)}"/>`,
+        )
+        .join("");
+    const row = plot.closest(".market-row");
+    for (const [id, value] of values)
+      row.querySelector(`dd[data-source="${id}"]`).textContent = percent(value);
+    row.querySelector(".price-caption").textContent = label;
+    plot.setAttribute("aria-valuenow", index);
+    plot.setAttribute(
+      "aria-valuetext",
+      `${label}: ${values.map(([id, value]) => `${marketNames[id]} ${value == null ? "no price" : percent(value)}`).join(", ")}`,
+    );
+  }
+}
+
+function renderMarkets() {
+  for (const button of document.querySelectorAll(".range-toggle button"))
+    button.setAttribute("aria-pressed", button.dataset.range === market.range);
+  const { odds, range } = market;
+  if (!odds) return;
+  const times = odds.times[range];
+  const last = times.length - 1;
+  $("#market-rows").innerHTML = odds.candidates
+    .map(
+      (candidate, i) => `<div class="market-row">
+    <div class="market-candidate"><h3>${escape(candidate.name)}</h3><span class="party ${escape(candidate.party.toLowerCase())}">${escape(candidate.party)}</span></div>
+    <div class="market-chart">
+      <div class="y-axis" aria-hidden="true"><span>100</span><span>50</span><span>0</span></div>
+      <div class="plot" tabindex="0" role="slider" data-candidate="${i}" aria-label="${escape(candidate.name)} win probability" aria-valuemin="0" aria-valuemax="${last}">
+        <svg viewBox="0 0 1000 100" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+          <line class="gridline" x1="0" x2="1000" y1="0" y2="0"/><line class="gridline middle" x1="0" x2="1000" y1="50" y2="50"/><line class="gridline" x1="0" x2="1000" y1="100" y2="100"/>
+          ${Object.keys(marketNames)
+            .map(
+              (id) =>
+                `<path class="line ${id}" d="${linePath(candidate.history[range][id], times)}"/>`,
+            )
+            .join("")}
+          <g class="cursor"></g>
+        </svg>
+      </div>
+      <div class="x-axis" aria-hidden="true"><span>${escape(easternDay.format(range === "30d" ? times[0] - 1 : times[0]))}</span><span>${escape(easternDay.format(times[last]))}</span></div>
+      <p class="chart-caption">${range === "30d" ? "Prices at midnight ET each day" : "Hourly prices"}</p>
+    </div>
+    <div class="market-price"><dl>${Object.entries(marketNames)
+      .map(
+        ([id, name]) =>
+          `<div class="${id}"><dt>${name}</dt><dd data-source="${id}"></dd></div>`,
+      )
+      .join("")}</dl><p class="price-caption"></p></div>
+  </div>`,
+    )
+    .join("");
+  const missing = odds.sources.filter((source) => !source.available);
+  $("#market-note").innerHTML = `<p><strong>About these prices.</strong> Each contract pays $1 if its outcome happens, so a price of 69¢ is read as a 69% chance. ${escape(odds.settlement)} Prices come from the Polymarket and Kalshi public APIs. They are not SNN forecasts.${missing.length ? ` ${missing.map((source) => escape(source.name)).join(" and ")} prices could not be loaded just now.` : ""}</p>
+    <p>Market pages: ${odds.sources.map((source) => `<a href="${escape(source.url)}" target="_blank" rel="noopener noreferrer">${escape(source.name)} ↗</a>`).join(" · ")}</p>`;
+  for (const plot of document.querySelectorAll(".plot")) {
+    const inspect = (event) => {
+      const box = plot.getBoundingClientRect();
+      const share = Math.min(
+        1,
+        Math.max(0, (event.clientX - box.left) / box.width),
+      );
+      const target = times[0] + share * (times[last] - times[0]);
+      let nearest = 0;
+      times.forEach((time, index) => {
+        if (Math.abs(time - target) < Math.abs(times[nearest] - target))
+          nearest = index;
+      });
+      market.index = nearest;
+      renderMarketCursor();
+    };
+    const reset = () => {
+      market.index = null;
+      renderMarketCursor();
+    };
+    plot.addEventListener("pointerdown", inspect);
+    plot.addEventListener("pointermove", inspect);
+    // A tap leaves its date in view until focus moves elsewhere.
+    plot.addEventListener("pointerleave", (event) => {
+      if (event.pointerType === "mouse" && document.activeElement !== plot)
+        reset();
+    });
+    plot.addEventListener("blur", reset);
+    plot.addEventListener("keydown", (event) => {
+      const current = market.index ?? last;
+      const next = {
+        ArrowLeft: current - 1,
+        ArrowDown: current - 1,
+        ArrowRight: current + 1,
+        ArrowUp: current + 1,
+        Home: 0,
+        End: last,
+      }[event.key];
+      if (event.key === "Escape") reset();
+      if (next === undefined) return;
+      event.preventDefault();
+      market.index = Math.min(last, Math.max(0, next));
+      renderMarketCursor();
+    });
+  }
+  renderMarketCursor();
+}
+
+async function showMarkets(race) {
+  for (const button of document.querySelectorAll(".range-toggle button"))
+    button.addEventListener("click", () => {
+      if (!market) return;
+      market.range = button.dataset.range;
+      market.index = null;
+      renderMarkets();
+    });
+  // Reuse prices for five minutes, matching the Worker's cache.
+  if (market?.slug === race.slug && Date.now() - market.requestedAt < 300000) {
+    renderMarkets();
+    return;
+  }
+  const request = {
+    slug: race.slug,
+    requestedAt: Date.now(),
+    odds: null,
+    range: market?.slug === race.slug ? market.range : "30d",
+    index: null,
+  };
+  market = request;
+  renderMarkets();
+  try {
+    request.odds = await api(`/api/races/${race.slug}/markets`);
+    if (market === request) renderMarkets();
+  } catch (error) {
+    if (market !== request) return;
+    market = null;
+    $("#market-rows").innerHTML =
+      `<p class="market-message">${escape(error.message)}</p>`;
+  }
+}
+
 function renderRace() {
   const race = currentRace;
   document.title = `${race.state} · Senate 2026 · SNN`;
   $("#race-view").innerHTML = `<a href="#" class="back">← All Senate races</a>
     <div class="race-hero"><div><p class="eyebrow">${escape(race.code)} / U.S. SENATE / 2026</p><h1>${escape(race.state)}</h1><p class="muted">General election ${escape(race.electionDate)} · Class ${escape(race.seatClass)}</p></div><span class="tag ${race.election === "Special" ? "special" : ""}">${escape(race.election)} election</span></div>
+    ${race.hasMarkets ? marketShell() : ""}
     <div class="race-layout"><div><section class="panel"><h2>The seat at a glance</h2><dl class="facts">
       <div><dt>Current seat holder</dt><dd>${escape(race.holder)}</dd></div><div><dt>Seat holder’s party</dt><dd>${escape(race.party)}</dd></div>
       <div><dt>Term to be filled</dt><dd>${escape(race.term)}</dd></div><div><dt>Seat details verified</dt><dd>${escape(race.verified)}</dd></div>
@@ -140,6 +377,7 @@ function renderRace() {
     <aside><section class="panel"><h2>Research sources</h2><ul class="sources">${race.sources.map((source) => `<li><a href="${escape(source.url)}" target="_blank" rel="noopener noreferrer">${escape(source.title)} ↗</a><p>${escape(source.description)}</p></li>`).join("")}</ul></section>
     <p class="aside-note">Baseline seat details and source links come from the project’s research files. The reporting log contains notes added through this app; it does not update automatically.</p><a class="aside-note" href="${escape(race.repositoryUrl)}" target="_blank" rel="noopener noreferrer">Read the original tracker ↗</a></aside></div>`;
   renderNotes();
+  if (race.hasMarkets) showMarkets(race);
   $("#note-category-filter").addEventListener("change", (event) =>
     renderNotes(event.target.value),
   );
