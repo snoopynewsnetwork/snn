@@ -57,3 +57,34 @@ No results entered yet.
 - [FEC 2026 election calendar](https://www.fec.gov/documents/5910/2026pdates.pdf): election scope and general election date.
 - [New Mexico election office](https://www.sos.state.nm.us/): ballot access, election schedule, and official results.
 - [FEC New Mexico Senate election data](https://www.fec.gov/data/elections/senate/NM/2026/): candidate filings and campaign finance.
+
+
+## Election-night research
+
+The historical turnout and baseline pair is complete and independently reviewed.
+[Turnout](turnout.md), the [native source CSV](data/county-turnout.csv),
+[coverage contract](data/turnout/priority-set.json), [partisan baselines](county-partisanship.md)
+and [calculator schema](data/baselines/source/SCHEMA.md) preserve all 33 county
+parents and 2,201 Senate source observations. The [source-research authority](data/coordinator-source-research-acceptance.json)
+authorizes complete source investigation. Protected cells leave the certified
+native vote order, top-15 share and minimum 80% set unknown; canonical priority
+keys remain empty.
+
+The fully observed candidate lane contains 2,181 observations and 902,421 votes.
+Its descriptive 1,392-row prefix totals 722,113 votes, after 721,760 through
+1,391 rows. The statewide county controls total 903,311 candidate votes.
+Unknown and administrative cases remain in the inventory, with no allocation
+of residuals. County sensitivities remain separate from native dispatch.
+
+[Coordinator review](research-review.md) covers original fields, 800,667 bounded
+reciprocal assertions, independent historical mathematics and repaired CLI
+regressions. The 2020 Class II Senate, 2024 Class I Senate, 2024 presidential
+and 2022 governor contests retain their own candidates and source scopes.
+Ballots, Eligible Voters and dated registration stocks remain separate controls.
+
+Official-source research is active across all 33 parents and 2,201 source
+observations. Map research is prepared for the next available slot. The
+[newsroom survey](local-news-results.md), [collection strategy](live-polling-strategy.md)
+and [dispatch record](research-dispatch.md) retain their preparation limits.
+Current ballot scope, result IDs, geometry, November returns, measured cadence,
+remaining votes and calibrated probabilities remain unverified.

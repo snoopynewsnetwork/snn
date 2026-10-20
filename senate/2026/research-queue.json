@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "requested_date": "2026-10-17",
-  "updated_at_utc": "2026-10-20T13:40:25.454685+00:00",
+  "updated_at_utc": "2026-10-20T14:37:17.721214+00:00",
   "scope": "35 states in the repository 2026 U.S. Senate race index",
   "coordinator_agent_id": "d0fc3534-1613-4883-b48b-21a233fcfd9e",
   "workspace_id": "wks_b290f45007010740",
@@ -7198,7 +7198,7 @@
       "election": "Regular",
       "seat_class": "II",
       "priority": 22,
-      "status": "turnout-reciprocal-finished-baseline-input-repair-active",
+      "status": "qualified-firstpair-source-authority-accepted-official-active-maps-prepared",
       "workers": {
         "turnout": {
           "agent_id": "5f787f59-e6ff-4494-b416-a0fb4383237f",
@@ -7238,8 +7238,8 @@
           },
           "final_contract": {
             "path": "senate/2026/new-mexico/data/turnout/priority-set.json",
-            "bytes": 2178487,
-            "sha256": "c8c58081c089d5c41a1bbd672149cd7492134ce92c793757b874f99399274e8a"
+            "bytes": 2180488,
+            "sha256": "e61fb2a61fca45892171b3c8de1e7fe3ceedefb3dd4fa957ff5d94a6a5581c5a"
           },
           "original_first_witness": {
             "path": "senate/2026/new-mexico/data/turnout/original-first-witness-v2.json",
@@ -7284,11 +7284,16 @@
           "read_only_seal_checks": 973,
           "reciprocal_proof_sha256": "2c61c90d5629ca77cefce24d71a77cb1cc960001c91509194a4ab24daab9b55a",
           "future_calculator_or_final_peer_byte_equality_excluded": true,
-          "final_readonly_validator_coordinator_verified": true
+          "final_readonly_validator_coordinator_verified": true,
+          "original_phase_contract": {
+            "path": "senate/2026/new-mexico/data/turnout/priority-set.json",
+            "bytes": 2178487,
+            "sha256": "c8c58081c089d5c41a1bbd672149cd7492134ce92c793757b874f99399274e8a"
+          }
         },
         "partisanship": {
           "agent_id": "9a904675-c599-4e28-8862-663c3496078e",
-          "status": "same-agent-bounded-calculator-input-repair-active",
+          "status": "complete-reviewed-source-historical-formulas-and-repaired-CLI-seal",
           "launched_at_utc": "2026-10-20T13:35:38.377023+00:00",
           "launch_timestamp_scope": "Coordinator record after actual create response, not exact provider start",
           "provider": "codex/gpt-6.1-sol",
@@ -7314,16 +7319,16 @@
           "actual_turnout_peer": "5f787f59-e6ff-4494-b416-a0fb4383237f",
           "latest_substantive_milestone": "Original495countyPDFcandidatecells/fourcontests verified;32state/1056county/8558nativebaseline/17116nativetargetrows withprotectedcasesunknown. Low2022Gov/base2024Sen/high2024Pres plus2020historicalmix/4anchors/explicitcounty pairparticipation. Capturedoriginal-firstturnoutcore376717fieldchecks+all18sourceorders; label/sourceposition tiepresentation andregistrationparser repairs explicit. Report/seal active; canonicalcertifieddispatch remains empty/null.",
           "actual_finish_event_received": true,
-          "owned_manifest_entries": 103,
+          "owned_manifest_entries": 342,
           "external_original_assets": 64,
           "independent_original_pin": "6770ae96313d9f9d2e0964da2470fd903d1f72122e260eece7635370aca014b7",
           "final_manifest": {
             "path": "senate/2026/new-mexico/data/baselines/asset-manifest.json",
-            "bytes": 44971,
-            "sha256": "b7889d8a9b68cfc4dbca9beed0ef1b8400a7bcbeca6b0bb97796da15ce52173b"
+            "bytes": 100754,
+            "sha256": "ff03786a45ddb3485d71edbe8f2f28f610ef8dd7adfec30d62d05c675a5fd390"
           },
-          "final_validation_checks": 442529,
-          "final_asset_audit_checks": 442698,
+          "final_validation_checks": 443371,
+          "final_asset_audit_checks": 443785,
           "coordinator_owned_external_hashes_pass": true,
           "bounded_repair_continuation": {
             "actual_same_agent_id": "9a904675-c599-4e28-8862-663c3496078e",
@@ -7351,13 +7356,57 @@
             "actual_CLI_fixtures": 21,
             "actual_failed_fixtures": 16,
             "no_new_or_replacement_agent": true
-          }
+          },
+          "actual_repair_finish_event_received": true,
+          "repaired_manifest_sha256": "ff03786a45ddb3485d71edbe8f2f28f610ef8dd7adfec30d62d05c675a5fd390",
+          "repaired_calculator_sha256": "825fd61c5fd3fc5d1a3fbbc3826484998a908c8ef53c5aa9de285f0eabd26cc9",
+          "repair_regression_cases": 132,
+          "final_audit_checks": 443785,
+          "final_readonly_asset_hashes_coordinator_verified": true,
+          "coordinator_source_checks": 404304,
+          "coordinator_actual_CLI_cases": 21,
+          "all_16_actual_failures_resolved": true,
+          "repaired_owned_manifest_entries": 342,
+          "repaired_external_original_assets": 64,
+          "original_phase_manifest": {
+            "path": "senate/2026/new-mexico/data/baselines/asset-manifest.json",
+            "bytes": 44971,
+            "sha256": "b7889d8a9b68cfc4dbca9beed0ef1b8400a7bcbeca6b0bb97796da15ce52173b"
+          },
+          "original_phase_owned_manifest_entries": 103
+        },
+        "official_results": {
+          "agent_id": "3204f3a1-022c-4a3b-8f76-37d7f2e756f0",
+          "status": "active",
+          "launched_at_utc": "2026-10-20T14:28:51.451691+00:00",
+          "launch_timestamp_scope": "Coordinator record after actualcreate response, not exactprovider start",
+          "released_by_actual_finish": "9a904675-c599-4e28-8862-663c3496078e",
+          "only_other_active_worker": "7c03df8c-f908-40a8-a289-369e4aa26e69",
+          "provider": "codex/gpt-6.1-sol",
+          "settings": {
+            "modeId": "auto-review",
+            "thinkingOptionId": "high"
+          },
+          "selected_fresh_profile": {
+            "id": "agent_profile_mvfmd7wg_u16123g52jn",
+            "name": "Research",
+            "notes": "When reading existing code, reading existing papers, or generally researching BEFORE devising a plan."
+          },
+          "all_four_profile_notes_read": true,
+          "provider_draft_inspected": true,
+          "notifyOnFinish": true,
+          "launch_prompt": {
+            "path": "senate/2026/new-mexico/data/coordinator-launches/official-results-initial-prompt.txt",
+            "bytes": 13596,
+            "sha256": "b90e8784f8b94c92319fbd8bbfdce59cd698f4daa01a5fa76ef5cde5d1efbe1c"
+          },
+          "scope": "Actualall33county chains andall2201source-coverage entries, no invented certified native priority"
         }
       },
       "validation": null,
       "gaps": [],
       "published_commits": [],
-      "coordinator_preparation": "State-specific newsroom and strategy preparation written with retained primary captures; question agents not launched and no completed package claimed. AdditionalactualElectionStats2020Sen13251/2022Gov11090/2024Pres14877pages yield literalnativeCSVlinks1959/2196/2202rows including33privacyaggregateseach;existingSen2024has2201rows. All33county/statecontrolsclose,50179sourcepositions/10441maskedfields retainedwithoutallocation;candidateonlymasks316/668/9408/30. Otero18 appearsPres91/273/364 but absentSenate, not0. Actualembedded3canvassoriginalsremain403;sourcecompletion/method/uniformballot/currentgeo/prioritygatesopen.",
+      "coordinator_preparation": "Historical first pair independently reviewed; qualified complete-source authority accepted. Official-source worker active; maps prepared. Certified native priority remains unavailable; whole four-question package is not complete.",
       "state_specific_notes": "No 2022 U.S. Senate contest; use actual certified statewide midterm such as governor. 2024 Senate is other seat, 2020 same-seat. SOS index mixes 2021 generic text with current primary/runoff/municipal links; verify actual November election ID.",
       "historical_native_source_preparation": {
         "status": "bounded_original_native_source_controls_with_explicit_privacy_and_canvass_access_gaps",
@@ -7454,8 +7503,8 @@
           "path": "senate/2026/new-mexico/data/coordinator-launches/prepared-official-results-prompt.txt",
           "bytes": 9505,
           "sha256": "bd5191da6c39ce416d9a7693b560f8cd9b3bf8256d83001516b5e880d79f5fe6",
-          "prepared_only": true,
-          "actual_agent_id": null,
+          "prepared_only": false,
+          "actual_agent_id": "3204f3a1-022c-4a3b-8f76-37d7f2e756f0",
           "scope": "Prepared bounded full33parent/2201source research plan only. Actual first-pair reciprocal review/external authority/fresh discovery/realreleasedslot required; no invented certifiednative80keys or county dispatch."
         },
         "precinct_maps": {
@@ -7474,7 +7523,7 @@
         "actual_CLI_cases": 16,
         "actual_failed_cases": 11,
         "no_producer_bytes_modified": true,
-        "repair_pending_same_agent_real_slot": true,
+        "repair_pending_same_agent_real_slot": false,
         "additional_parameter_surface_finding": {
           "path": "senate/2026/new-mexico/data/coordinator-live-input-review/county-parameter-finding.json",
           "bytes": 7678,
@@ -7483,14 +7532,16 @@
           "failed_cases": 5
         },
         "total_actual_CLI_cases": 21,
-        "total_actual_failed_cases": 16
+        "total_actual_failed_cases": 16,
+        "resolved_by_same_agent_final_review": "coordinator_final_actual_CLI_review"
       },
       "prepared_baseline_calculator_repair": {
         "path": "senate/2026/new-mexico/data/coordinator-launches/prepared-partisanship-calculator-repair-prompt.txt",
         "bytes": 4820,
         "sha256": "98a40188e3911555c3f0629af1d2f676e8f446c002a1d062bd92781f82b16e9e",
-        "prepared_only": true,
-        "actual_same_agent": "9a904675-c599-4e28-8862-663c3496078e"
+        "prepared_only": false,
+        "actual_same_agent": "9a904675-c599-4e28-8862-663c3496078e",
+        "actual_continuation": "workers.partisanship.bounded_repair_continuation"
       },
       "coordinator_independent_math_review": {
         "path": "senate/2026/new-mexico/data/coordinator-first-pair-math-review.json",
@@ -7503,7 +7554,8 @@
         "maximum_shift_difference": 3.885780586188048e-16,
         "maximum_net_residual": 5.011315806768835e-10,
         "method": "Independent saturation-event integration, no author solver imports",
-        "actual_CLI_input_repair_still_pending": true
+        "actual_CLI_input_repair_still_pending_at_original_review": true,
+        "subsequent_actual_CLI_repairs_verified": true
       },
       "coordinator_turnout_final_review": {
         "path": "senate/2026/new-mexico/data/coordinator-turnout-final-review.json",
@@ -7519,6 +7571,37 @@
           "added peer_review"
         ],
         "counts_masks_CSV_orders_witness_unchanged": true
+      },
+      "coordinator_baseline_source_review": {
+        "path": "senate/2026/new-mexico/data/coordinator-baseline-source-review.json",
+        "bytes": 1356,
+        "sha256": "331ac1c8bb76d42eeea4e7ac2e3ffa3442f3fdf35f7207deb9a1237132755323"
+      },
+      "coordinator_final_actual_CLI_review": {
+        "path": "senate/2026/new-mexico/data/coordinator-live-input-review/review.json",
+        "bytes": 16756,
+        "sha256": "6a12c8e04e070a45f7fa714e01f2a3c112dedca1c4ac0377975c2c6180af5089"
+      },
+      "qualified_source_research_authority": {
+        "path": "senate/2026/new-mexico/data/coordinator-source-research-acceptance.json",
+        "bytes": 902648,
+        "sha256": "23b39102927cebabfd789bff8aadfff97427e2a7aca92a0c18f0a2cfa7be6346",
+        "independent_replay": {
+          "path": "senate/2026/new-mexico/data/coordinator-source-acceptance-validation.json",
+          "bytes": 731,
+          "sha256": "6cfaa0933f6bd0e04fddf27d17150b643cbea163a0253888d06a0e07cefcc30b"
+        },
+        "root_fields": 31,
+        "complete_companions": 68,
+        "recursive_objects": 403993,
+        "complete_partitions": 3,
+        "historical_virtual_bodies": 196,
+        "all_source_native": 2201,
+        "all_research_parents": 33,
+        "canonical_certified_priority": null,
+        "canonical_priority_keys": [],
+        "source_coverage_research_approved": true,
+        "current_or_legal_geographic_approval": false
       }
     },
     {
@@ -7528,11 +7611,11 @@
       "election": "Regular",
       "seat_class": "II",
       "priority": 23,
-      "status": "turnout-original-first-active",
+      "status": "turnout-qualified-original-phase-finished-independent-baseline-active",
       "workers": {
         "turnout": {
           "agent_id": "bd151c4c-70ea-4b72-9063-2012086b07e6",
-          "status": "active",
+          "status": "bounded-original-first-complete-peer-pending",
           "launched_at_utc": "2026-10-20T13:35:38.377023+00:00",
           "launch_timestamp_scope": "Coordinator record after actual create response, not exact provider start",
           "provider": "codex/gpt-6.1-sol",
@@ -7556,13 +7639,68 @@
           "released_by_actual_finish": "4c5f1926-ae99-4a2d-bd4d-580280e21bcb",
           "only_other_active_worker": "9a904675-c599-4e28-8862-663c3496078e",
           "actual_partisanship_peer": null,
-          "latest_substantive_milestone": "Original2024all8candidatecolumns close5parents510knownunits:Multnomah107/Washington155/Clackamas118combined115-116/Marion118/Wasco12.31otherparents remainunclosed; canonicalcertifiednativeprioritynull. Archivedparticipation36countyvectors all2020/22/24close distinctregistration/returnedcontrols. Benton2020federalmissingZIPscope recoveredseparateactual262pagecountyreport; old115pagearchive remainsstateoffices. Report/QA/prepeerfreeze active, nopeerread."
+          "latest_substantive_milestone": "Original2024all8candidatecolumns close5parents510knownunits:Multnomah107/Washington155/Clackamas118combined115-116/Marion118/Wasco12.31otherparents remainunclosed; canonicalcertifiednativeprioritynull. Archivedparticipation36countyvectors all2020/22/24close distinctregistration/returnedcontrols. Benton2020federalmissingZIPscope recoveredseparateactual262pagecountyreport; old115pagearchive remainsstateoffices. Report/QA/prepeerfreeze active, nopeerread.",
+          "actual_finish_event_received": true,
+          "owned_manifest_entries": 4342,
+          "shared_assets": 61,
+          "original_first_witness_sha256": "d2b433035d5671178fda01261f0d35a6d13d95ab9c9a2204192ea138eda291b9",
+          "final_manifest_sha256": "c11efbdc93b1d27147ff0636c9a166366872e1fe58602b7675fced37fadfdc84",
+          "canonical_certified_native_priority_unavailable": true,
+          "known_2024native_rows": 510,
+          "known_2024parents": 5,
+          "unclosed_2024parents": 31
+        },
+        "partisanship": {
+          "agent_id": "7c03df8c-f908-40a8-a289-369e4aa26e69",
+          "status": "active",
+          "launched_at_utc": "2026-10-20T14:20:35.747658+00:00",
+          "launch_timestamp_scope": "Coordinator record after actualcreate response, not exactproviderstart",
+          "released_by_actual_finish": "bd151c4c-70ea-4b72-9063-2012086b07e6",
+          "only_other_active_worker_at_launch": "9a904675-c599-4e28-8862-663c3496078e",
+          "actual_turnout_peer": "bd151c4c-70ea-4b72-9063-2012086b07e6",
+          "provider": "codex/gpt-6.1-sol",
+          "settings": {
+            "modeId": "auto-review",
+            "thinkingOptionId": "high"
+          },
+          "selected_fresh_profile": {
+            "id": "agent_profile_mvfmd7wg_u16123g52jn",
+            "name": "Research",
+            "notes": "When reading existing code, reading existing papers, or generally researching BEFORE devising a plan."
+          },
+          "all_four_profile_notes_read": true,
+          "provider_draft_inspected": true,
+          "notifyOnFinish": true,
+          "launch_prompt": {
+            "path": "senate/2026/oregon/data/coordinator-launches/partisanship-initial-prompt.txt",
+            "bytes": 22655,
+            "sha256": "840497b28b6b78d551ac61fca6087eadef082d07da6b16539eea77506ee1bd4e"
+          },
+          "latest_substantive_milestone": {
+            "scope": "Actual worker original-first milestone; not coordinator acceptance or completed reciprocal proof",
+            "original_first_witness_sha256": "208a3ad98dfb055eea0f895c0c0faf9881f684214e7d5a34c41e01f4df123b7f",
+            "original_inventory_sha256": "b501110cefb52b1f3f75f8f8e4201fb68417146500af19ce2eead6d75b1f5e17",
+            "all_ZIP_members": 72,
+            "text_extracted_original_entities": 113,
+            "county_candidate_Misc_cells": 864,
+            "known_2024native_rows": 510,
+            "canonical_native_priority": null,
+            "historical_closed_parents": {
+              "2020Senate": 16,
+              "2022Senate": 12,
+              "2022Governor": 12
+            },
+            "historical_2022Senate_peer_difference": "Turnout reported 13 closed parents; exact extraction gap will remain explicit in bounded reconciliation",
+            "CLI_fixtures": 63,
+            "independent_clipped_root_checks": 120,
+            "peer_contacted_or_restarted": false
+          }
         }
       },
       "validation": null,
       "gaps": [],
       "published_commits": [],
-      "coordinator_preparation": "State-specific newsroom and strategy preparation written with retained primary captures; question agents not launched and no completed package claimed.",
+      "coordinator_preparation": "Turnout original-first phase finished; actual baseline worker independently extracted originals and is reconciling captured turnout core. Whole package and certified native priority remain unavailable.",
       "state_specific_notes": "No 2024 Senate contest. Use 2024 president, 2022 Senate midterm and 2020 same-seat Senate separately. Familiar results root currently redirects to generic SOS welcome; no staging/primary ID assumed November production. Preserve current mail rules from primary sources.",
       "bounded_Wasco_2024_native_preparation": {
         "path": "data/coordinator-wasco-2024-native-preflight.json",
@@ -7607,8 +7745,8 @@
           "path": "senate/2026/oregon/data/coordinator-launches/prepared-partisanship-prompt.txt",
           "bytes": 13097,
           "sha256": "ee8b6fa185b33edd2961142dcb04da484870e9b494e8b1ead809ca9f4e09ff10",
-          "prepared_only": true,
-          "actual_agent_id": null,
+          "prepared_only": false,
+          "actual_agent_id": "7c03df8c-f908-40a8-a289-369e4aa26e69",
           "scope": "Prepared only after NewMexico first pair; fresh launch discovery/real released slot required. Full original-first source recovery, qualified unknown scopes, bounded research and offlineQA."
         }
       },
@@ -8310,11 +8448,10 @@
     }
   },
   "coordinator_next_actions": [
-    "Twenty-one new states published plus retainedMichigan; exactlatestpublication receipts retained.",
-    "Only actual ORturnoutbd151c4c and SAME NMbaseline9a904675 bounded CLI repair active. NMturnout5f787f59 reciprocal ACTUALLY finished;800667source assertions no unresolved mismatch.",
-    "Next real released slot launches ORbaseline from prepared body+sourceappendix+v2recovery context after freshprofiles/provider, unless required same-worker regression repair persists. NMsecondwave after final reciprocal/math/input review and full source authority; certifiednativepriority remains unavailable.",
-    "Coordinator independent NMbaseline source/math/CLI review then full firstpair source coverage acceptance with certifiednativepriority unavailable. Complete whole field/original ledger, never county substitute/private reconstruction.",
-    "Next actual released slot launches prepared ORbaseline with immutable sourceappendix+v2recovery notes after fresh profiles/provider; NMofficial/maps only after reciprocal acceptance and real slots. Continue all34states."
+    "Twenty-one new states completepublished plus retainedMichigan.",
+    "Only actualNMofficial3204f3a1 and ORbaseline7c03df8c researchactive. No agentstatuspolls. NMmaps nextrealreleasedslot with exactqualified sourceauthority/contractpins afterfreshprofiles/provider.",
+    "Publish reviewed NMfirstpair/completequalifiedsourceledger incrementally, retain31roots/68companions/403993objects/196historicalbody resolvers; canonical certifiednativepriorityNULL/keysEMPTY, all33deepcoverage notcounty priority substitute.",
+    "ORbaseline completes original-first and immutablecaptured turnout audit; SAMEORT reciprocal later realreleasedslot, no finishedpeercontact or future-byte equality. Continue all34states and11unlaunched states."
   ],
   "coordinator_prompt_preparation": {
     "scope": "Unlaunched future first-wave prompts only; no agent IDs or completed packages implied",
@@ -8633,7 +8770,7 @@
       "queued_states": 13,
       "prepared_prompt_files": 26,
       "actual_agents_launched": 0,
-      "historical_snapshot_note": "This26-prompt/13-state inventory predates actualNMturnout5f787f59 launch; original prepared bodies remain exact. Current actual worker IDs are in state records;12 states remain unlaunched."
+      "historical_snapshot_note": "This26prompt/13state inventory predates actualNM/ORfirstpair launches. Prepared bodies remain exact. ActualworkerIDs are in state records;11states remain unlaunched."
     }
   },
   "coordinator_preparation_audit_history": [
