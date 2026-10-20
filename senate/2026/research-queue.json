@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "requested_date": "2026-10-17",
-  "updated_at_utc": "2026-10-20T16:25:17.945342+00:00",
+  "updated_at_utc": "2026-10-20T16:31:17.259698+00:00",
   "scope": "35 states in the repository 2026 U.S. Senate race index",
   "coordinator_agent_id": "d0fc3534-1613-4883-b48b-21a233fcfd9e",
   "workspace_id": "wks_b290f45007010740",
@@ -7714,7 +7714,7 @@
       "election": "Regular",
       "seat_class": "II",
       "priority": 23,
-      "status": "qualified-source-authority-accepted-official-active-maps-queued",
+      "status": "qualified-source-authority-accepted-official-finished-maps-active",
       "workers": {
         "turnout": {
           "agent_id": "bd151c4c-70ea-4b72-9063-2012086b07e6",
@@ -7881,7 +7881,7 @@
         },
         "official_results": {
           "agent_id": "49aba7f6-0608-41c5-b809-ed1ce1c29ed6",
-          "status": "active",
+          "status": "actual-finished-sealed-awaiting-coordinator-review",
           "launched_at_utc": "2026-10-20T15:55:40.435521+00:00",
           "launch_timestamp_scope": "Coordinator record after actualcreate response",
           "released_by_actual_finish": "5bf8df2e-5c2f-4e0e-a51e-2021afca7bea",
@@ -7903,6 +7903,36 @@
             "path": "senate/2026/oregon/data/coordinator-launches/official-results-initial-prompt.txt",
             "bytes": 15595,
             "sha256": "9539ab086a6f2cfd5d18cced3c911b4e75c410724c4fd6c2ad6ad38ed50a384a"
+          },
+          "actual_finish_event_received": true,
+          "final_manifest_sha256": "fcc6f5c41352a340fa7005ce8d1b9f3ae97e8d6fde373b030c4e7819a5558296",
+          "owned_manifest_entries": 766,
+          "reported_acquisitions": 235
+        },
+        "precinct_maps": {
+          "agent_id": "490fbb31-a0f1-4595-bc9e-d3701a4b14d4",
+          "status": "active",
+          "launched_at_utc": "2026-10-20T16:26:51.952739+00:00",
+          "launch_timestamp_scope": "Coordinator record following actual create response",
+          "released_by_actual_finish": "49aba7f6-0608-41c5-b809-ed1ce1c29ed6",
+          "only_other_active_worker": "5bf8df2e-5c2f-4e0e-a51e-2021afca7bea",
+          "provider": "codex/gpt-6.1-sol",
+          "settings": {
+            "modeId": "auto-review",
+            "thinkingOptionId": "high"
+          },
+          "selected_fresh_profile": {
+            "id": "agent_profile_mvfmd7wg_u16123g52jn",
+            "name": "Research",
+            "notes": "When reading existing code, reading existing papers, or generally researching BEFORE devising a plan."
+          },
+          "all_four_profile_notes_read": true,
+          "provider_draft_inspected": true,
+          "notifyOnFinish": true,
+          "launch_prompt": {
+            "path": "senate/2026/oregon/data/coordinator-launches/precinct-maps-initial-prompt.txt",
+            "bytes": 13735,
+            "sha256": "cb7ee204bbcc4d5806d81467cde01c0aa38a376a3df6d1cbe301a0724bc62af4"
           }
         }
       },
@@ -8249,7 +8279,7 @@
         },
         "partisanship": {
           "agent_id": "5d9f9b63-0cf2-4b55-b52b-579cbc1d76d1",
-          "status": "actual-finished-sealed-awaiting-coordinator-math-source-review",
+          "status": "complete-reviewed-original-source-bounded-math-CLI",
           "launched_at_utc": "2026-10-20T15:44:41.332278+00:00",
           "launch_timestamp_scope": "Coordinator record after actualcreate response",
           "released_by_actual_finish": "bd151c4c-70ea-4b72-9063-2012086b07e6",
@@ -8402,10 +8432,37 @@
           "sha256": "cb7487c9dd4cfe3b181396bb63df704d46f1b0df2eb35304831644350cc00807"
         },
         "active_workers_unchanged": [
-          "49aba7f6-0608-41c5-b809-ed1ce1c29ed6",
+          "490fbb31-a0f1-4595-bc9e-d3701a4b14d4",
           "5bf8df2e-5c2f-4e0e-a51e-2021afca7bea"
         ],
         "resume_requires_actual_free_slot": true
+      },
+      "coordinator_baseline_final_review": {
+        "path": "senate/2026/rhode-island/data/coordinator-baseline-final-review.json",
+        "checks": 293062,
+        "exact_owned_targets": 234,
+        "full_original_inputs": 148,
+        "full_original_records": 12997,
+        "native_inventory_rows": 2460,
+        "observed_native_contests": 2378,
+        "state_scenarios": 16,
+        "native_targets": 7504,
+        "maximum_independent_shift_difference": 5.551115123125783e-17,
+        "maximum_net_target_residual_votes": 5.100719846495849e-11,
+        "read_only_producer_audit": "pass370checks/eightcorruptions/30CLI/24249capturedpeer",
+        "actual_coordinator_CLI_cases": 47,
+        "CLI_proof": "senate/2026/rhode-island/data/coordinator-baseline-cli-review.json",
+        "producer_repair_required": false,
+        "checker_history": "coordinator-baseline-review-history retains literal ASC-suffix and non-clipping fixture assumptions, no producer error"
+      },
+      "coordinator_finding_publication": {
+        "commit": "55e7aef8956ada028f94a0982616b6bd02ec95e4",
+        "push_exit_code": 0,
+        "exact_remote_verified": true,
+        "exact_staged_blobs": 55,
+        "bytes": 1462011,
+        "max_object": 508316,
+        "scope": "RI original row5 omission proof/actual sameworker continuation and independent Oklahoma regional pack; no whole-state finish/acceptance."
       }
     },
     {

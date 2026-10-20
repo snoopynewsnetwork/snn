@@ -1,0 +1,1133 @@
+{
+  "status": "pass_actual_CLI_arithmetic_and_input_review",
+  "actual_cases": 47,
+  "producer_writes": false,
+  "cases": [
+    {
+      "case": "known_counted_plus_remainder",
+      "input_text": "{\"mode\": \"live\", \"pair\": {\"A\": \"a\", \"B\": \"b\"}, \"candidate_universe_complete\": true, \"target_margin\": 0, \"selected_unit\": \"x\", \"units\": [{\"key\": \"x\", \"counted\": {\"A\": 80, \"B\": 120, \"others\": {\"c\": 10}}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": 0.7, \"other_shares\": {\"c\": 1}}, {\"key\": \"y\", \"counted\": {\"A\": 20, \"B\": 10, \"others\": {\"c\": 5}}, \"remaining\": 50, \"pair_participation\": 0.6, \"a_share\": 0.4, \"other_shares\": {\"c\": 1}}]}",
+      "returncode": 0,
+      "stderr": "",
+      "output": {
+        "mode": "live",
+        "pair": {
+          "A": "a",
+          "B": "b"
+        },
+        "counted_A": 100.0,
+        "counted_B": 130.0,
+        "counted_pair_lead": -30.0,
+        "remaining_pair_pool": 110.0,
+        "final_pair_denominator": 340.0,
+        "final_all_candidate_denominator": 395.0,
+        "target_pair_margin": 0.0,
+        "target_net_votes": 0.0,
+        "counted_fixed_units": [
+          {
+            "key": "x",
+            "counted_A": 80.0,
+            "counted_B": 120.0,
+            "counted_others": {
+              "c": 10.0
+            },
+            "counted_unallocated_other": 0.0,
+            "remaining_all": 100.0,
+            "remaining_pair": 80.0,
+            "pair_participation": 0.8,
+            "a_share": 0.7,
+            "remaining_other_shares": {
+              "c": 1.0
+            },
+            "remaining_unallocated_other_share": 0.0
+          },
+          {
+            "key": "y",
+            "counted_A": 20.0,
+            "counted_B": 10.0,
+            "counted_others": {
+              "c": 5.0
+            },
+            "counted_unallocated_other": 0.0,
+            "remaining_all": 50.0,
+            "remaining_pair": 30.0,
+            "pair_participation": 0.6,
+            "a_share": 0.4,
+            "remaining_other_shares": {
+              "c": 1.0
+            },
+            "remaining_unallocated_other_share": 0.0
+          }
+        ],
+        "pooled_tie_or_margin_requirement": {
+          "raw_required_share": 0.6363636363636364,
+          "feasible_share": 0.6363636363636364,
+          "status": "feasible",
+          "unbounded": false
+        },
+        "possible_final_net_votes": [
+          -140.0,
+          80.0
+        ],
+        "unknown_positive_pair_preferences": [],
+        "calibrated_probability": null,
+        "is_synthetic_arithmetic": false,
+        "selected_only": {
+          "raw_required_share": 0.725,
+          "feasible_share": 0.725,
+          "status": "feasible",
+          "unbounded": false,
+          "key": "x",
+          "other_units_net_votes": -36.0,
+          "other_units_assumption": "Counted votes fixed; all other remaining pair votes use the supplied shares"
+        },
+        "status": "calculated",
+        "forecast_A": 168.0,
+        "forecast_B": 172.0,
+        "forecast_net_votes": -4.0,
+        "forecast_pair_margin": -0.011764705882352941,
+        "forecast_all_candidate_margin": -0.010126582278481013,
+        "fullfield": {
+          "supplied_candidate_totals": {
+            "A": 168.0,
+            "B": 172.0,
+            "c": 55.0
+          },
+          "supplied_plurality_leaders": [
+            "B"
+          ],
+          "supplied_A_strict_plurality": false,
+          "unallocated_other": 0.0,
+          "candidate_universe_complete": true,
+          "full_field_result": "A_not_strict_plurality",
+          "legal_declaration": false
+        }
+      }
+    },
+    {
+      "case": "bounded_historical_clipping",
+      "input_text": "{\"mode\": \"historical\", \"pair\": {\"A\": \"a\", \"B\": \"b\"}, \"candidate_universe_complete\": true, \"target_margin\": 0.01, \"units\": [{\"key\": \"x\", \"pair_volume\": 100, \"all_volume\": 110, \"a_share\": 1, \"others\": {\"c\": 10}}, {\"key\": \"y\", \"pair_volume\": 100, \"all_volume\": 100, \"a_share\": 0}], \"selected_unit\": \"x\"}",
+      "returncode": 0,
+      "stderr": "",
+      "output": {
+        "mode": "historical",
+        "pair": {
+          "A": "a",
+          "B": "b"
+        },
+        "target_pair_margin": 0.01,
+        "pair_denominator": 200.0,
+        "all_candidate_denominator": 210.0,
+        "pair_participation": 0.9523809523809523,
+        "unknown_positive_pair_preferences": [],
+        "calibrated_probability": null,
+        "baseline_net_votes": 0.0,
+        "baseline_pair_margin": 0.0,
+        "target_net_votes": 2.0,
+        "baseline_target_status": "below_target",
+        "status": "solved",
+        "uniform_share_shift": 0.009999999999999981,
+        "unbounded_share_shift": 0.005,
+        "uniform_share_shift_points": 0.9999999999999981,
+        "unbounded_share_shift_points": 0.5,
+        "final_net_votes": 2.0,
+        "final_pair_margin": 0.01,
+        "final_all_candidate_margin": 0.009523809523809525,
+        "all_candidate_cushion_votes": 2.0,
+        "clipped_keys": [
+          "x"
+        ],
+        "units": [
+          {
+            "key": "x",
+            "pair_volume": 100.0,
+            "all_volume": 110.0,
+            "pair_participation": 0.9090909090909091,
+            "pair_weight": 0.5,
+            "all_candidate_weight": 0.5238095238095238,
+            "baseline_a_share": 1.0,
+            "baseline_net_votes": 100.0,
+            "target_a_share": 1.0,
+            "target_pair_margin": 1.0,
+            "target_net_votes": 100.0,
+            "a_share_shift": 0.0,
+            "net_vote_gain": 0.0,
+            "plus1_share_point_net_vote_gain": 2.0,
+            "clipped": true,
+            "selected_only": {
+              "raw_required_share": 1.01,
+              "feasible_share": null,
+              "status": "impossible",
+              "unbounded": true,
+              "other_units_assumption": "All other rows held at the supplied baseline preferences and volumes",
+              "other_units_net_votes": -100.0
+            }
+          },
+          {
+            "key": "y",
+            "pair_volume": 100.0,
+            "all_volume": 100.0,
+            "pair_participation": 1.0,
+            "pair_weight": 0.5,
+            "all_candidate_weight": 0.47619047619047616,
+            "baseline_a_share": 0.0,
+            "baseline_net_votes": -100.0,
+            "target_a_share": 0.009999999999999981,
+            "target_pair_margin": -0.98,
+            "target_net_votes": -98.0,
+            "a_share_shift": 0.009999999999999981,
+            "net_vote_gain": 2.0,
+            "plus1_share_point_net_vote_gain": 2.0,
+            "clipped": false,
+            "selected_only": {
+              "raw_required_share": 0.010000000000000009,
+              "feasible_share": 0.010000000000000009,
+              "status": "feasible",
+              "unbounded": false,
+              "other_units_assumption": "All other rows held at the supplied baseline preferences and volumes",
+              "other_units_net_votes": 100.0
+            }
+          }
+        ],
+        "fullfield": {
+          "supplied_candidate_totals": {
+            "A": 101.0,
+            "B": 99.0,
+            "c": 10.0
+          },
+          "supplied_plurality_leaders": [
+            "A"
+          ],
+          "supplied_A_strict_plurality": true,
+          "unallocated_other": 0.0,
+          "candidate_universe_complete": true,
+          "full_field_result": "A_strict_plurality",
+          "legal_declaration": false
+        },
+        "selected_unit": {
+          "key": "x",
+          "pair_volume": 100.0,
+          "all_volume": 110.0,
+          "pair_participation": 0.9090909090909091,
+          "pair_weight": 0.5,
+          "all_candidate_weight": 0.5238095238095238,
+          "baseline_a_share": 1.0,
+          "baseline_net_votes": 100.0,
+          "target_a_share": 1.0,
+          "target_pair_margin": 1.0,
+          "target_net_votes": 100.0,
+          "a_share_shift": 0.0,
+          "net_vote_gain": 0.0,
+          "plus1_share_point_net_vote_gain": 2.0,
+          "clipped": true,
+          "selected_only": {
+            "raw_required_share": 1.01,
+            "feasible_share": null,
+            "status": "impossible",
+            "unbounded": true,
+            "other_units_assumption": "All other rows held at the supplied baseline preferences and volumes",
+            "other_units_net_votes": -100.0
+          }
+        }
+      }
+    },
+    {
+      "case": "unknown_historical_preference",
+      "input_text": "{\"mode\": \"historical\", \"pair\": {\"A\": \"a\", \"B\": \"b\"}, \"candidate_universe_complete\": true, \"target_margin\": 0.01, \"units\": [{\"key\": \"x\", \"pair_volume\": 100, \"all_volume\": 110, \"a_share\": null, \"others\": {\"c\": 10}}, {\"key\": \"y\", \"pair_volume\": 100, \"all_volume\": 100, \"a_share\": 0}], \"selected_unit\": \"x\"}",
+      "returncode": 0,
+      "stderr": "",
+      "output": {
+        "mode": "historical",
+        "pair": {
+          "A": "a",
+          "B": "b"
+        },
+        "target_pair_margin": 0.01,
+        "pair_denominator": 200.0,
+        "all_candidate_denominator": 210.0,
+        "pair_participation": 0.9523809523809523,
+        "unknown_positive_pair_preferences": [
+          "x"
+        ],
+        "calibrated_probability": null,
+        "status": "unknown_preference",
+        "uniform_share_shift": null,
+        "units": null
+      }
+    },
+    {
+      "case": "unknown_other_remaining_preference",
+      "input_text": "{\"mode\": \"live\", \"pair\": {\"A\": \"a\", \"B\": \"b\"}, \"candidate_universe_complete\": true, \"target_margin\": 0, \"selected_unit\": \"x\", \"units\": [{\"key\": \"x\", \"counted\": {\"A\": 80, \"B\": 120, \"others\": {\"c\": 10}}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": 0.7, \"other_shares\": {\"c\": 1}}, {\"key\": \"y\", \"counted\": {\"A\": 20, \"B\": 10, \"others\": {\"c\": 5}}, \"remaining\": 50, \"pair_participation\": 0.6, \"a_share\": null, \"other_shares\": {\"c\": 1}}]}",
+      "returncode": 0,
+      "stderr": "",
+      "output": {
+        "mode": "live",
+        "pair": {
+          "A": "a",
+          "B": "b"
+        },
+        "counted_A": 100.0,
+        "counted_B": 130.0,
+        "counted_pair_lead": -30.0,
+        "remaining_pair_pool": 110.0,
+        "final_pair_denominator": 340.0,
+        "final_all_candidate_denominator": 395.0,
+        "target_pair_margin": 0.0,
+        "target_net_votes": 0.0,
+        "counted_fixed_units": [
+          {
+            "key": "x",
+            "counted_A": 80.0,
+            "counted_B": 120.0,
+            "counted_others": {
+              "c": 10.0
+            },
+            "counted_unallocated_other": 0.0,
+            "remaining_all": 100.0,
+            "remaining_pair": 80.0,
+            "pair_participation": 0.8,
+            "a_share": 0.7,
+            "remaining_other_shares": {
+              "c": 1.0
+            },
+            "remaining_unallocated_other_share": 0.0
+          },
+          {
+            "key": "y",
+            "counted_A": 20.0,
+            "counted_B": 10.0,
+            "counted_others": {
+              "c": 5.0
+            },
+            "counted_unallocated_other": 0.0,
+            "remaining_all": 50.0,
+            "remaining_pair": 30.0,
+            "pair_participation": 0.6,
+            "a_share": null,
+            "remaining_other_shares": {
+              "c": 1.0
+            },
+            "remaining_unallocated_other_share": 0.0
+          }
+        ],
+        "pooled_tie_or_margin_requirement": {
+          "raw_required_share": 0.6363636363636364,
+          "feasible_share": 0.6363636363636364,
+          "status": "feasible",
+          "unbounded": false
+        },
+        "possible_final_net_votes": [
+          -140.0,
+          80.0
+        ],
+        "unknown_positive_pair_preferences": [
+          "y"
+        ],
+        "calibrated_probability": null,
+        "is_synthetic_arithmetic": false,
+        "selected_only": {
+          "status": "unknown_other_unit_preference",
+          "unknown_keys": [
+            "y"
+          ]
+        },
+        "status": "unknown_preference",
+        "forecast_A": null,
+        "forecast_B": null,
+        "forecast_pair_margin": null,
+        "fullfield": null
+      }
+    },
+    {
+      "case": "all_counted_no_pool",
+      "input_text": "{\"mode\": \"live\", \"pair\": {\"A\": \"a\", \"B\": \"b\"}, \"candidate_universe_complete\": true, \"target_margin\": 0, \"selected_unit\": \"x\", \"units\": [{\"key\": \"x\", \"counted\": {\"A\": 80, \"B\": 120, \"others\": {\"c\": 10}}, \"remaining\": 0, \"pair_participation\": 0.8, \"a_share\": 0.7, \"other_shares\": {\"c\": 1}}, {\"key\": \"y\", \"counted\": {\"A\": 20, \"B\": 10, \"others\": {\"c\": 5}}, \"remaining\": 0, \"pair_participation\": 0.6, \"a_share\": 0.4, \"other_shares\": {\"c\": 1}}]}",
+      "returncode": 0,
+      "stderr": "",
+      "output": {
+        "mode": "live",
+        "pair": {
+          "A": "a",
+          "B": "b"
+        },
+        "counted_A": 100.0,
+        "counted_B": 130.0,
+        "counted_pair_lead": -30.0,
+        "remaining_pair_pool": 0.0,
+        "final_pair_denominator": 230.0,
+        "final_all_candidate_denominator": 245.0,
+        "target_pair_margin": 0.0,
+        "target_net_votes": 0.0,
+        "counted_fixed_units": [
+          {
+            "key": "x",
+            "counted_A": 80.0,
+            "counted_B": 120.0,
+            "counted_others": {
+              "c": 10.0
+            },
+            "counted_unallocated_other": 0.0,
+            "remaining_all": 0.0,
+            "remaining_pair": 0.0,
+            "pair_participation": 0.8,
+            "a_share": 0.7,
+            "remaining_other_shares": {
+              "c": 1.0
+            },
+            "remaining_unallocated_other_share": 0.0
+          },
+          {
+            "key": "y",
+            "counted_A": 20.0,
+            "counted_B": 10.0,
+            "counted_others": {
+              "c": 5.0
+            },
+            "counted_unallocated_other": 0.0,
+            "remaining_all": 0.0,
+            "remaining_pair": 0.0,
+            "pair_participation": 0.6,
+            "a_share": 0.4,
+            "remaining_other_shares": {
+              "c": 1.0
+            },
+            "remaining_unallocated_other_share": 0.0
+          }
+        ],
+        "pooled_tie_or_margin_requirement": {
+          "raw_required_share": null,
+          "feasible_share": null,
+          "status": "no_positive_pool",
+          "fixed_target_status": "impossible",
+          "unbounded": false
+        },
+        "possible_final_net_votes": [
+          -30.0,
+          -30.0
+        ],
+        "unknown_positive_pair_preferences": [],
+        "calibrated_probability": null,
+        "is_synthetic_arithmetic": false,
+        "selected_only": {
+          "raw_required_share": null,
+          "feasible_share": null,
+          "status": "no_positive_pool",
+          "fixed_target_status": "impossible",
+          "unbounded": false,
+          "key": "x",
+          "other_units_net_votes": -30.0,
+          "other_units_assumption": "Counted votes fixed; all other remaining pair votes use the supplied shares"
+        },
+        "status": "no_positive_pool",
+        "forecast_A": 100.0,
+        "forecast_B": 130.0,
+        "forecast_net_votes": -30.0,
+        "forecast_pair_margin": -0.13043478260869565,
+        "forecast_all_candidate_margin": -0.12244897959183673,
+        "fullfield": {
+          "supplied_candidate_totals": {
+            "A": 100.0,
+            "B": 130.0,
+            "c": 15.0
+          },
+          "supplied_plurality_leaders": [
+            "B"
+          ],
+          "supplied_A_strict_plurality": false,
+          "unallocated_other": 0.0,
+          "candidate_universe_complete": true,
+          "full_field_result": "A_not_strict_plurality",
+          "legal_declaration": false
+        }
+      }
+    },
+    {
+      "case": "secured_pool_requirement",
+      "input_text": "{\"mode\": \"live\", \"pair\": {\"A\": \"a\", \"B\": \"b\"}, \"candidate_universe_complete\": true, \"target_margin\": 0, \"selected_unit\": \"x\", \"units\": [{\"key\": \"x\", \"counted\": {\"A\": 500, \"B\": 120, \"others\": {\"c\": 10}}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": 0.7, \"other_shares\": {\"c\": 1}}, {\"key\": \"y\", \"counted\": {\"A\": 20, \"B\": 10, \"others\": {\"c\": 5}}, \"remaining\": 50, \"pair_participation\": 0.6, \"a_share\": 0.4, \"other_shares\": {\"c\": 1}}]}",
+      "returncode": 0,
+      "stderr": "",
+      "output": {
+        "mode": "live",
+        "pair": {
+          "A": "a",
+          "B": "b"
+        },
+        "counted_A": 520.0,
+        "counted_B": 130.0,
+        "counted_pair_lead": 390.0,
+        "remaining_pair_pool": 110.0,
+        "final_pair_denominator": 760.0,
+        "final_all_candidate_denominator": 815.0,
+        "target_pair_margin": 0.0,
+        "target_net_votes": 0.0,
+        "counted_fixed_units": [
+          {
+            "key": "x",
+            "counted_A": 500.0,
+            "counted_B": 120.0,
+            "counted_others": {
+              "c": 10.0
+            },
+            "counted_unallocated_other": 0.0,
+            "remaining_all": 100.0,
+            "remaining_pair": 80.0,
+            "pair_participation": 0.8,
+            "a_share": 0.7,
+            "remaining_other_shares": {
+              "c": 1.0
+            },
+            "remaining_unallocated_other_share": 0.0
+          },
+          {
+            "key": "y",
+            "counted_A": 20.0,
+            "counted_B": 10.0,
+            "counted_others": {
+              "c": 5.0
+            },
+            "counted_unallocated_other": 0.0,
+            "remaining_all": 50.0,
+            "remaining_pair": 30.0,
+            "pair_participation": 0.6,
+            "a_share": 0.4,
+            "remaining_other_shares": {
+              "c": 1.0
+            },
+            "remaining_unallocated_other_share": 0.0
+          }
+        ],
+        "pooled_tie_or_margin_requirement": {
+          "raw_required_share": -1.2727272727272727,
+          "feasible_share": null,
+          "status": "secured",
+          "unbounded": true
+        },
+        "possible_final_net_votes": [
+          280.0,
+          500.0
+        ],
+        "unknown_positive_pair_preferences": [],
+        "calibrated_probability": null,
+        "is_synthetic_arithmetic": false,
+        "selected_only": {
+          "raw_required_share": -1.9,
+          "feasible_share": null,
+          "status": "secured",
+          "unbounded": true,
+          "key": "x",
+          "other_units_net_votes": 384.0,
+          "other_units_assumption": "Counted votes fixed; all other remaining pair votes use the supplied shares"
+        },
+        "status": "calculated",
+        "forecast_A": 588.0,
+        "forecast_B": 172.0,
+        "forecast_net_votes": 416.0,
+        "forecast_pair_margin": 0.5473684210526316,
+        "forecast_all_candidate_margin": 0.5104294478527608,
+        "fullfield": {
+          "supplied_candidate_totals": {
+            "A": 588.0,
+            "B": 172.0,
+            "c": 55.0
+          },
+          "supplied_plurality_leaders": [
+            "A"
+          ],
+          "supplied_A_strict_plurality": true,
+          "unallocated_other": 0.0,
+          "candidate_universe_complete": true,
+          "full_field_result": "A_strict_plurality",
+          "legal_declaration": false
+        }
+      }
+    },
+    {
+      "case": "impossible_pool_requirement",
+      "input_text": "{\"mode\": \"live\", \"pair\": {\"A\": \"a\", \"B\": \"b\"}, \"candidate_universe_complete\": true, \"target_margin\": 0, \"selected_unit\": \"x\", \"units\": [{\"key\": \"x\", \"counted\": {\"A\": 80, \"B\": 800, \"others\": {\"c\": 10}}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": 0.7, \"other_shares\": {\"c\": 1}}, {\"key\": \"y\", \"counted\": {\"A\": 20, \"B\": 10, \"others\": {\"c\": 5}}, \"remaining\": 50, \"pair_participation\": 0.6, \"a_share\": 0.4, \"other_shares\": {\"c\": 1}}]}",
+      "returncode": 0,
+      "stderr": "",
+      "output": {
+        "mode": "live",
+        "pair": {
+          "A": "a",
+          "B": "b"
+        },
+        "counted_A": 100.0,
+        "counted_B": 810.0,
+        "counted_pair_lead": -710.0,
+        "remaining_pair_pool": 110.0,
+        "final_pair_denominator": 1020.0,
+        "final_all_candidate_denominator": 1075.0,
+        "target_pair_margin": 0.0,
+        "target_net_votes": 0.0,
+        "counted_fixed_units": [
+          {
+            "key": "x",
+            "counted_A": 80.0,
+            "counted_B": 800.0,
+            "counted_others": {
+              "c": 10.0
+            },
+            "counted_unallocated_other": 0.0,
+            "remaining_all": 100.0,
+            "remaining_pair": 80.0,
+            "pair_participation": 0.8,
+            "a_share": 0.7,
+            "remaining_other_shares": {
+              "c": 1.0
+            },
+            "remaining_unallocated_other_share": 0.0
+          },
+          {
+            "key": "y",
+            "counted_A": 20.0,
+            "counted_B": 10.0,
+            "counted_others": {
+              "c": 5.0
+            },
+            "counted_unallocated_other": 0.0,
+            "remaining_all": 50.0,
+            "remaining_pair": 30.0,
+            "pair_participation": 0.6,
+            "a_share": 0.4,
+            "remaining_other_shares": {
+              "c": 1.0
+            },
+            "remaining_unallocated_other_share": 0.0
+          }
+        ],
+        "pooled_tie_or_margin_requirement": {
+          "raw_required_share": 3.727272727272727,
+          "feasible_share": null,
+          "status": "impossible",
+          "unbounded": true
+        },
+        "possible_final_net_votes": [
+          -820.0,
+          -600.0
+        ],
+        "unknown_positive_pair_preferences": [],
+        "calibrated_probability": null,
+        "is_synthetic_arithmetic": false,
+        "selected_only": {
+          "raw_required_share": 4.975,
+          "feasible_share": null,
+          "status": "impossible",
+          "unbounded": true,
+          "key": "x",
+          "other_units_net_votes": -716.0,
+          "other_units_assumption": "Counted votes fixed; all other remaining pair votes use the supplied shares"
+        },
+        "status": "calculated",
+        "forecast_A": 168.0,
+        "forecast_B": 852.0,
+        "forecast_net_votes": -684.0,
+        "forecast_pair_margin": -0.6705882352941176,
+        "forecast_all_candidate_margin": -0.6362790697674419,
+        "fullfield": {
+          "supplied_candidate_totals": {
+            "A": 168.0,
+            "B": 852.0,
+            "c": 55.0
+          },
+          "supplied_plurality_leaders": [
+            "B"
+          ],
+          "supplied_A_strict_plurality": false,
+          "unallocated_other": 0.0,
+          "candidate_universe_complete": true,
+          "full_field_result": "A_not_strict_plurality",
+          "legal_declaration": false
+        }
+      }
+    },
+    {
+      "case": "pair_leader_loses_full_field",
+      "input_text": "{\"mode\": \"live\", \"pair\": {\"A\": \"a\", \"B\": \"b\"}, \"candidate_universe_complete\": true, \"target_margin\": 0, \"selected_unit\": \"x\", \"units\": [{\"key\": \"x\", \"counted\": {\"A\": 300, \"B\": 120, \"others\": {\"c\": 1000}}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": 0.7, \"other_shares\": {\"c\": 1}}, {\"key\": \"y\", \"counted\": {\"A\": 20, \"B\": 10, \"others\": {\"c\": 5}}, \"remaining\": 50, \"pair_participation\": 0.6, \"a_share\": 0.4, \"other_shares\": {\"c\": 1}}]}",
+      "returncode": 0,
+      "stderr": "",
+      "output": {
+        "mode": "live",
+        "pair": {
+          "A": "a",
+          "B": "b"
+        },
+        "counted_A": 320.0,
+        "counted_B": 130.0,
+        "counted_pair_lead": 190.0,
+        "remaining_pair_pool": 110.0,
+        "final_pair_denominator": 560.0,
+        "final_all_candidate_denominator": 1605.0,
+        "target_pair_margin": 0.0,
+        "target_net_votes": 0.0,
+        "counted_fixed_units": [
+          {
+            "key": "x",
+            "counted_A": 300.0,
+            "counted_B": 120.0,
+            "counted_others": {
+              "c": 1000.0
+            },
+            "counted_unallocated_other": 0.0,
+            "remaining_all": 100.0,
+            "remaining_pair": 80.0,
+            "pair_participation": 0.8,
+            "a_share": 0.7,
+            "remaining_other_shares": {
+              "c": 1.0
+            },
+            "remaining_unallocated_other_share": 0.0
+          },
+          {
+            "key": "y",
+            "counted_A": 20.0,
+            "counted_B": 10.0,
+            "counted_others": {
+              "c": 5.0
+            },
+            "counted_unallocated_other": 0.0,
+            "remaining_all": 50.0,
+            "remaining_pair": 30.0,
+            "pair_participation": 0.6,
+            "a_share": 0.4,
+            "remaining_other_shares": {
+              "c": 1.0
+            },
+            "remaining_unallocated_other_share": 0.0
+          }
+        ],
+        "pooled_tie_or_margin_requirement": {
+          "raw_required_share": -0.36363636363636365,
+          "feasible_share": null,
+          "status": "secured",
+          "unbounded": true
+        },
+        "possible_final_net_votes": [
+          80.0,
+          300.0
+        ],
+        "unknown_positive_pair_preferences": [],
+        "calibrated_probability": null,
+        "is_synthetic_arithmetic": false,
+        "selected_only": {
+          "raw_required_share": -0.6499999999999999,
+          "feasible_share": null,
+          "status": "secured",
+          "unbounded": true,
+          "key": "x",
+          "other_units_net_votes": 184.0,
+          "other_units_assumption": "Counted votes fixed; all other remaining pair votes use the supplied shares"
+        },
+        "status": "calculated",
+        "forecast_A": 388.0,
+        "forecast_B": 172.0,
+        "forecast_net_votes": 216.0,
+        "forecast_pair_margin": 0.38571428571428573,
+        "forecast_all_candidate_margin": 0.13457943925233645,
+        "fullfield": {
+          "supplied_candidate_totals": {
+            "A": 388.0,
+            "B": 172.0,
+            "c": 1045.0
+          },
+          "supplied_plurality_leaders": [
+            "c"
+          ],
+          "supplied_A_strict_plurality": false,
+          "unallocated_other": 0.0,
+          "candidate_universe_complete": true,
+          "full_field_result": "A_not_strict_plurality",
+          "legal_declaration": false
+        }
+      }
+    },
+    {
+      "case": "live_invalid_target_None",
+      "input_text": "{\"mode\": \"live\", \"pair\": {\"A\": \"a\", \"B\": \"b\"}, \"candidate_universe_complete\": true, \"target_margin\": null, \"selected_unit\": \"x\", \"units\": [{\"key\": \"x\", \"counted\": {\"A\": 80, \"B\": 120, \"others\": {\"c\": 10}}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": 0.7, \"other_shares\": {\"c\": 1}}, {\"key\": \"y\", \"counted\": {\"A\": 20, \"B\": 10, \"others\": {\"c\": 5}}, \"remaining\": 50, \"pair_participation\": 0.6, \"a_share\": 0.4, \"other_shares\": {\"c\": 1}}]}",
+      "returncode": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid_input",
+        "error": "target_margin must be finite numeric (not bool/null/text)"
+      }
+    },
+    {
+      "case": "historical_invalid_target_None",
+      "input_text": "{\"mode\": \"historical\", \"pair\": {\"A\": \"a\", \"B\": \"b\"}, \"candidate_universe_complete\": true, \"target_margin\": null, \"units\": [{\"key\": \"x\", \"pair_volume\": 100, \"all_volume\": 110, \"a_share\": 1, \"others\": {\"c\": 10}}, {\"key\": \"y\", \"pair_volume\": 100, \"all_volume\": 100, \"a_share\": 0}], \"selected_unit\": \"x\"}",
+      "returncode": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid_input",
+        "error": "target_margin must be finite numeric (not bool/null/text)"
+      }
+    },
+    {
+      "case": "live_invalid_target_True",
+      "input_text": "{\"mode\": \"live\", \"pair\": {\"A\": \"a\", \"B\": \"b\"}, \"candidate_universe_complete\": true, \"target_margin\": true, \"selected_unit\": \"x\", \"units\": [{\"key\": \"x\", \"counted\": {\"A\": 80, \"B\": 120, \"others\": {\"c\": 10}}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": 0.7, \"other_shares\": {\"c\": 1}}, {\"key\": \"y\", \"counted\": {\"A\": 20, \"B\": 10, \"others\": {\"c\": 5}}, \"remaining\": 50, \"pair_participation\": 0.6, \"a_share\": 0.4, \"other_shares\": {\"c\": 1}}]}",
+      "returncode": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid_input",
+        "error": "target_margin must be finite numeric (not bool/null/text)"
+      }
+    },
+    {
+      "case": "historical_invalid_target_True",
+      "input_text": "{\"mode\": \"historical\", \"pair\": {\"A\": \"a\", \"B\": \"b\"}, \"candidate_universe_complete\": true, \"target_margin\": true, \"units\": [{\"key\": \"x\", \"pair_volume\": 100, \"all_volume\": 110, \"a_share\": 1, \"others\": {\"c\": 10}}, {\"key\": \"y\", \"pair_volume\": 100, \"all_volume\": 100, \"a_share\": 0}], \"selected_unit\": \"x\"}",
+      "returncode": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid_input",
+        "error": "target_margin must be finite numeric (not bool/null/text)"
+      }
+    },
+    {
+      "case": "live_invalid_target_'0'",
+      "input_text": "{\"mode\": \"live\", \"pair\": {\"A\": \"a\", \"B\": \"b\"}, \"candidate_universe_complete\": true, \"target_margin\": \"0\", \"selected_unit\": \"x\", \"units\": [{\"key\": \"x\", \"counted\": {\"A\": 80, \"B\": 120, \"others\": {\"c\": 10}}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": 0.7, \"other_shares\": {\"c\": 1}}, {\"key\": \"y\", \"counted\": {\"A\": 20, \"B\": 10, \"others\": {\"c\": 5}}, \"remaining\": 50, \"pair_participation\": 0.6, \"a_share\": 0.4, \"other_shares\": {\"c\": 1}}]}",
+      "returncode": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid_input",
+        "error": "target_margin must be finite numeric (not bool/null/text)"
+      }
+    },
+    {
+      "case": "historical_invalid_target_'0'",
+      "input_text": "{\"mode\": \"historical\", \"pair\": {\"A\": \"a\", \"B\": \"b\"}, \"candidate_universe_complete\": true, \"target_margin\": \"0\", \"units\": [{\"key\": \"x\", \"pair_volume\": 100, \"all_volume\": 110, \"a_share\": 1, \"others\": {\"c\": 10}}, {\"key\": \"y\", \"pair_volume\": 100, \"all_volume\": 100, \"a_share\": 0}], \"selected_unit\": \"x\"}",
+      "returncode": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid_input",
+        "error": "target_margin must be finite numeric (not bool/null/text)"
+      }
+    },
+    {
+      "case": "live_invalid_target_-1.00001",
+      "input_text": "{\"mode\": \"live\", \"pair\": {\"A\": \"a\", \"B\": \"b\"}, \"candidate_universe_complete\": true, \"target_margin\": -1.00001, \"selected_unit\": \"x\", \"units\": [{\"key\": \"x\", \"counted\": {\"A\": 80, \"B\": 120, \"others\": {\"c\": 10}}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": 0.7, \"other_shares\": {\"c\": 1}}, {\"key\": \"y\", \"counted\": {\"A\": 20, \"B\": 10, \"others\": {\"c\": 5}}, \"remaining\": 50, \"pair_participation\": 0.6, \"a_share\": 0.4, \"other_shares\": {\"c\": 1}}]}",
+      "returncode": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid_input",
+        "error": "target_margin outside supported range"
+      }
+    },
+    {
+      "case": "historical_invalid_target_-1.00001",
+      "input_text": "{\"mode\": \"historical\", \"pair\": {\"A\": \"a\", \"B\": \"b\"}, \"candidate_universe_complete\": true, \"target_margin\": -1.00001, \"units\": [{\"key\": \"x\", \"pair_volume\": 100, \"all_volume\": 110, \"a_share\": 1, \"others\": {\"c\": 10}}, {\"key\": \"y\", \"pair_volume\": 100, \"all_volume\": 100, \"a_share\": 0}], \"selected_unit\": \"x\"}",
+      "returncode": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid_input",
+        "error": "target_margin outside supported range"
+      }
+    },
+    {
+      "case": "live_invalid_target_1.00001",
+      "input_text": "{\"mode\": \"live\", \"pair\": {\"A\": \"a\", \"B\": \"b\"}, \"candidate_universe_complete\": true, \"target_margin\": 1.00001, \"selected_unit\": \"x\", \"units\": [{\"key\": \"x\", \"counted\": {\"A\": 80, \"B\": 120, \"others\": {\"c\": 10}}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": 0.7, \"other_shares\": {\"c\": 1}}, {\"key\": \"y\", \"counted\": {\"A\": 20, \"B\": 10, \"others\": {\"c\": 5}}, \"remaining\": 50, \"pair_participation\": 0.6, \"a_share\": 0.4, \"other_shares\": {\"c\": 1}}]}",
+      "returncode": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid_input",
+        "error": "target_margin outside supported range"
+      }
+    },
+    {
+      "case": "historical_invalid_target_1.00001",
+      "input_text": "{\"mode\": \"historical\", \"pair\": {\"A\": \"a\", \"B\": \"b\"}, \"candidate_universe_complete\": true, \"target_margin\": 1.00001, \"units\": [{\"key\": \"x\", \"pair_volume\": 100, \"all_volume\": 110, \"a_share\": 1, \"others\": {\"c\": 10}}, {\"key\": \"y\", \"pair_volume\": 100, \"all_volume\": 100, \"a_share\": 0}], \"selected_unit\": \"x\"}",
+      "returncode": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid_input",
+        "error": "target_margin outside supported range"
+      }
+    },
+    {
+      "case": "live_invalid_target_nan",
+      "input_text": "{\"mode\": \"live\", \"pair\": {\"A\": \"a\", \"B\": \"b\"}, \"candidate_universe_complete\": true, \"target_margin\": NaN, \"selected_unit\": \"x\", \"units\": [{\"key\": \"x\", \"counted\": {\"A\": 80, \"B\": 120, \"others\": {\"c\": 10}}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": 0.7, \"other_shares\": {\"c\": 1}}, {\"key\": \"y\", \"counted\": {\"A\": 20, \"B\": 10, \"others\": {\"c\": 5}}, \"remaining\": 50, \"pair_participation\": 0.6, \"a_share\": 0.4, \"other_shares\": {\"c\": 1}}]}",
+      "returncode": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid_input",
+        "error": "non-JSON numeric constant NaN"
+      }
+    },
+    {
+      "case": "historical_invalid_target_nan",
+      "input_text": "{\"mode\": \"historical\", \"pair\": {\"A\": \"a\", \"B\": \"b\"}, \"candidate_universe_complete\": true, \"target_margin\": NaN, \"units\": [{\"key\": \"x\", \"pair_volume\": 100, \"all_volume\": 110, \"a_share\": 1, \"others\": {\"c\": 10}}, {\"key\": \"y\", \"pair_volume\": 100, \"all_volume\": 100, \"a_share\": 0}], \"selected_unit\": \"x\"}",
+      "returncode": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid_input",
+        "error": "non-JSON numeric constant NaN"
+      }
+    },
+    {
+      "case": "live_invalid_target_inf",
+      "input_text": "{\"mode\": \"live\", \"pair\": {\"A\": \"a\", \"B\": \"b\"}, \"candidate_universe_complete\": true, \"target_margin\": Infinity, \"selected_unit\": \"x\", \"units\": [{\"key\": \"x\", \"counted\": {\"A\": 80, \"B\": 120, \"others\": {\"c\": 10}}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": 0.7, \"other_shares\": {\"c\": 1}}, {\"key\": \"y\", \"counted\": {\"A\": 20, \"B\": 10, \"others\": {\"c\": 5}}, \"remaining\": 50, \"pair_participation\": 0.6, \"a_share\": 0.4, \"other_shares\": {\"c\": 1}}]}",
+      "returncode": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid_input",
+        "error": "non-JSON numeric constant Infinity"
+      }
+    },
+    {
+      "case": "historical_invalid_target_inf",
+      "input_text": "{\"mode\": \"historical\", \"pair\": {\"A\": \"a\", \"B\": \"b\"}, \"candidate_universe_complete\": true, \"target_margin\": Infinity, \"units\": [{\"key\": \"x\", \"pair_volume\": 100, \"all_volume\": 110, \"a_share\": 1, \"others\": {\"c\": 10}}, {\"key\": \"y\", \"pair_volume\": 100, \"all_volume\": 100, \"a_share\": 0}], \"selected_unit\": \"x\"}",
+      "returncode": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid_input",
+        "error": "non-JSON numeric constant Infinity"
+      }
+    },
+    {
+      "case": "live_invalid_target_-inf",
+      "input_text": "{\"mode\": \"live\", \"pair\": {\"A\": \"a\", \"B\": \"b\"}, \"candidate_universe_complete\": true, \"target_margin\": -Infinity, \"selected_unit\": \"x\", \"units\": [{\"key\": \"x\", \"counted\": {\"A\": 80, \"B\": 120, \"others\": {\"c\": 10}}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": 0.7, \"other_shares\": {\"c\": 1}}, {\"key\": \"y\", \"counted\": {\"A\": 20, \"B\": 10, \"others\": {\"c\": 5}}, \"remaining\": 50, \"pair_participation\": 0.6, \"a_share\": 0.4, \"other_shares\": {\"c\": 1}}]}",
+      "returncode": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid_input",
+        "error": "non-JSON numeric constant -Infinity"
+      }
+    },
+    {
+      "case": "historical_invalid_target_-inf",
+      "input_text": "{\"mode\": \"historical\", \"pair\": {\"A\": \"a\", \"B\": \"b\"}, \"candidate_universe_complete\": true, \"target_margin\": -Infinity, \"units\": [{\"key\": \"x\", \"pair_volume\": 100, \"all_volume\": 110, \"a_share\": 1, \"others\": {\"c\": 10}}, {\"key\": \"y\", \"pair_volume\": 100, \"all_volume\": 100, \"a_share\": 0}], \"selected_unit\": \"x\"}",
+      "returncode": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid_input",
+        "error": "non-JSON numeric constant -Infinity"
+      }
+    },
+    {
+      "case": "global_bad_key_before_unknown_''",
+      "input_text": "{\"mode\": \"live\", \"pair\": {\"A\": \"a\", \"B\": \"b\"}, \"candidate_universe_complete\": true, \"target_margin\": 0, \"units\": [{\"key\": \"x\", \"counted\": {\"A\": 80, \"B\": 120, \"others\": {\"c\": 10}}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": null, \"other_shares\": {\"c\": 1}}, {\"key\": \"\", \"counted\": {\"A\": 20, \"B\": 10, \"others\": {\"c\": 5}}, \"remaining\": 50, \"pair_participation\": 0.6, \"a_share\": 0.4, \"other_shares\": {\"c\": 1}}]}",
+      "returncode": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid_input",
+        "error": "unit key must be a nonempty string"
+      }
+    },
+    {
+      "case": "global_bad_key_before_unknown_'   '",
+      "input_text": "{\"mode\": \"live\", \"pair\": {\"A\": \"a\", \"B\": \"b\"}, \"candidate_universe_complete\": true, \"target_margin\": 0, \"units\": [{\"key\": \"x\", \"counted\": {\"A\": 80, \"B\": 120, \"others\": {\"c\": 10}}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": null, \"other_shares\": {\"c\": 1}}, {\"key\": \"   \", \"counted\": {\"A\": 20, \"B\": 10, \"others\": {\"c\": 5}}, \"remaining\": 50, \"pair_participation\": 0.6, \"a_share\": 0.4, \"other_shares\": {\"c\": 1}}]}",
+      "returncode": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid_input",
+        "error": "unit key must be a nonempty string"
+      }
+    },
+    {
+      "case": "global_bad_key_before_unknown_None",
+      "input_text": "{\"mode\": \"live\", \"pair\": {\"A\": \"a\", \"B\": \"b\"}, \"candidate_universe_complete\": true, \"target_margin\": 0, \"units\": [{\"key\": \"x\", \"counted\": {\"A\": 80, \"B\": 120, \"others\": {\"c\": 10}}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": null, \"other_shares\": {\"c\": 1}}, {\"key\": null, \"counted\": {\"A\": 20, \"B\": 10, \"others\": {\"c\": 5}}, \"remaining\": 50, \"pair_participation\": 0.6, \"a_share\": 0.4, \"other_shares\": {\"c\": 1}}]}",
+      "returncode": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid_input",
+        "error": "unit key must be a nonempty string"
+      }
+    },
+    {
+      "case": "global_bad_key_before_unknown_5",
+      "input_text": "{\"mode\": \"live\", \"pair\": {\"A\": \"a\", \"B\": \"b\"}, \"candidate_universe_complete\": true, \"target_margin\": 0, \"units\": [{\"key\": \"x\", \"counted\": {\"A\": 80, \"B\": 120, \"others\": {\"c\": 10}}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": null, \"other_shares\": {\"c\": 1}}, {\"key\": 5, \"counted\": {\"A\": 20, \"B\": 10, \"others\": {\"c\": 5}}, \"remaining\": 50, \"pair_participation\": 0.6, \"a_share\": 0.4, \"other_shares\": {\"c\": 1}}]}",
+      "returncode": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid_input",
+        "error": "unit key must be a nonempty string"
+      }
+    },
+    {
+      "case": "global_bad_key_before_unknown_False",
+      "input_text": "{\"mode\": \"live\", \"pair\": {\"A\": \"a\", \"B\": \"b\"}, \"candidate_universe_complete\": true, \"target_margin\": 0, \"units\": [{\"key\": \"x\", \"counted\": {\"A\": 80, \"B\": 120, \"others\": {\"c\": 10}}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": null, \"other_shares\": {\"c\": 1}}, {\"key\": false, \"counted\": {\"A\": 20, \"B\": 10, \"others\": {\"c\": 5}}, \"remaining\": 50, \"pair_participation\": 0.6, \"a_share\": 0.4, \"other_shares\": {\"c\": 1}}]}",
+      "returncode": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid_input",
+        "error": "unit key must be a nonempty string"
+      }
+    },
+    {
+      "case": "global_duplicate_before_unknown",
+      "input_text": "{\"mode\": \"live\", \"pair\": {\"A\": \"a\", \"B\": \"b\"}, \"candidate_universe_complete\": true, \"target_margin\": 0, \"units\": [{\"key\": \"x\", \"counted\": {\"A\": 80, \"B\": 120, \"others\": {\"c\": 10}}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": null, \"other_shares\": {\"c\": 1}}, {\"key\": \"x\", \"counted\": {\"A\": 20, \"B\": 10, \"others\": {\"c\": 5}}, \"remaining\": 50, \"pair_participation\": 0.6, \"a_share\": 0.4, \"other_shares\": {\"c\": 1}}]}",
+      "returncode": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid_input",
+        "error": "duplicate unit key"
+      }
+    },
+    {
+      "case": "invalid_remaining_-1",
+      "input_text": "{\"mode\": \"live\", \"pair\": {\"A\": \"a\", \"B\": \"b\"}, \"candidate_universe_complete\": true, \"target_margin\": 0, \"selected_unit\": \"x\", \"units\": [{\"key\": \"x\", \"counted\": {\"A\": 80, \"B\": 120, \"others\": {\"c\": 10}}, \"remaining\": -1, \"pair_participation\": 0.8, \"a_share\": 0.7, \"other_shares\": {\"c\": 1}}, {\"key\": \"y\", \"counted\": {\"A\": 20, \"B\": 10, \"others\": {\"c\": 5}}, \"remaining\": 50, \"pair_participation\": 0.6, \"a_share\": 0.4, \"other_shares\": {\"c\": 1}}]}",
+      "returncode": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid_input",
+        "error": "remaining outside supported range"
+      }
+    },
+    {
+      "case": "invalid_remaining_None",
+      "input_text": "{\"mode\": \"live\", \"pair\": {\"A\": \"a\", \"B\": \"b\"}, \"candidate_universe_complete\": true, \"target_margin\": 0, \"selected_unit\": \"x\", \"units\": [{\"key\": \"x\", \"counted\": {\"A\": 80, \"B\": 120, \"others\": {\"c\": 10}}, \"remaining\": null, \"pair_participation\": 0.8, \"a_share\": 0.7, \"other_shares\": {\"c\": 1}}, {\"key\": \"y\", \"counted\": {\"A\": 20, \"B\": 10, \"others\": {\"c\": 5}}, \"remaining\": 50, \"pair_participation\": 0.6, \"a_share\": 0.4, \"other_shares\": {\"c\": 1}}]}",
+      "returncode": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid_input",
+        "error": "remaining must be finite numeric (not bool/null/text)"
+      }
+    },
+    {
+      "case": "invalid_remaining_True",
+      "input_text": "{\"mode\": \"live\", \"pair\": {\"A\": \"a\", \"B\": \"b\"}, \"candidate_universe_complete\": true, \"target_margin\": 0, \"selected_unit\": \"x\", \"units\": [{\"key\": \"x\", \"counted\": {\"A\": 80, \"B\": 120, \"others\": {\"c\": 10}}, \"remaining\": true, \"pair_participation\": 0.8, \"a_share\": 0.7, \"other_shares\": {\"c\": 1}}, {\"key\": \"y\", \"counted\": {\"A\": 20, \"B\": 10, \"others\": {\"c\": 5}}, \"remaining\": 50, \"pair_participation\": 0.6, \"a_share\": 0.4, \"other_shares\": {\"c\": 1}}]}",
+      "returncode": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid_input",
+        "error": "remaining must be finite numeric (not bool/null/text)"
+      }
+    },
+    {
+      "case": "invalid_remaining_'5'",
+      "input_text": "{\"mode\": \"live\", \"pair\": {\"A\": \"a\", \"B\": \"b\"}, \"candidate_universe_complete\": true, \"target_margin\": 0, \"selected_unit\": \"x\", \"units\": [{\"key\": \"x\", \"counted\": {\"A\": 80, \"B\": 120, \"others\": {\"c\": 10}}, \"remaining\": \"5\", \"pair_participation\": 0.8, \"a_share\": 0.7, \"other_shares\": {\"c\": 1}}, {\"key\": \"y\", \"counted\": {\"A\": 20, \"B\": 10, \"others\": {\"c\": 5}}, \"remaining\": 50, \"pair_participation\": 0.6, \"a_share\": 0.4, \"other_shares\": {\"c\": 1}}]}",
+      "returncode": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid_input",
+        "error": "remaining must be finite numeric (not bool/null/text)"
+      }
+    },
+    {
+      "case": "invalid_remaining_inf",
+      "input_text": "{\"mode\": \"live\", \"pair\": {\"A\": \"a\", \"B\": \"b\"}, \"candidate_universe_complete\": true, \"target_margin\": 0, \"selected_unit\": \"x\", \"units\": [{\"key\": \"x\", \"counted\": {\"A\": 80, \"B\": 120, \"others\": {\"c\": 10}}, \"remaining\": Infinity, \"pair_participation\": 0.8, \"a_share\": 0.7, \"other_shares\": {\"c\": 1}}, {\"key\": \"y\", \"counted\": {\"A\": 20, \"B\": 10, \"others\": {\"c\": 5}}, \"remaining\": 50, \"pair_participation\": 0.6, \"a_share\": 0.4, \"other_shares\": {\"c\": 1}}]}",
+      "returncode": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid_input",
+        "error": "non-JSON numeric constant Infinity"
+      }
+    },
+    {
+      "case": "invalid_pair_participation_-0.01",
+      "input_text": "{\"mode\": \"live\", \"pair\": {\"A\": \"a\", \"B\": \"b\"}, \"candidate_universe_complete\": true, \"target_margin\": 0, \"selected_unit\": \"x\", \"units\": [{\"key\": \"x\", \"counted\": {\"A\": 80, \"B\": 120, \"others\": {\"c\": 10}}, \"remaining\": 100, \"pair_participation\": -0.01, \"a_share\": 0.7, \"other_shares\": {\"c\": 1}}, {\"key\": \"y\", \"counted\": {\"A\": 20, \"B\": 10, \"others\": {\"c\": 5}}, \"remaining\": 50, \"pair_participation\": 0.6, \"a_share\": 0.4, \"other_shares\": {\"c\": 1}}]}",
+      "returncode": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid_input",
+        "error": "pair_participation outside supported range"
+      }
+    },
+    {
+      "case": "invalid_pair_participation_1.01",
+      "input_text": "{\"mode\": \"live\", \"pair\": {\"A\": \"a\", \"B\": \"b\"}, \"candidate_universe_complete\": true, \"target_margin\": 0, \"selected_unit\": \"x\", \"units\": [{\"key\": \"x\", \"counted\": {\"A\": 80, \"B\": 120, \"others\": {\"c\": 10}}, \"remaining\": 100, \"pair_participation\": 1.01, \"a_share\": 0.7, \"other_shares\": {\"c\": 1}}, {\"key\": \"y\", \"counted\": {\"A\": 20, \"B\": 10, \"others\": {\"c\": 5}}, \"remaining\": 50, \"pair_participation\": 0.6, \"a_share\": 0.4, \"other_shares\": {\"c\": 1}}]}",
+      "returncode": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid_input",
+        "error": "pair_participation outside supported range"
+      }
+    },
+    {
+      "case": "invalid_pair_participation_False",
+      "input_text": "{\"mode\": \"live\", \"pair\": {\"A\": \"a\", \"B\": \"b\"}, \"candidate_universe_complete\": true, \"target_margin\": 0, \"selected_unit\": \"x\", \"units\": [{\"key\": \"x\", \"counted\": {\"A\": 80, \"B\": 120, \"others\": {\"c\": 10}}, \"remaining\": 100, \"pair_participation\": false, \"a_share\": 0.7, \"other_shares\": {\"c\": 1}}, {\"key\": \"y\", \"counted\": {\"A\": 20, \"B\": 10, \"others\": {\"c\": 5}}, \"remaining\": 50, \"pair_participation\": 0.6, \"a_share\": 0.4, \"other_shares\": {\"c\": 1}}]}",
+      "returncode": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid_input",
+        "error": "pair_participation must be finite numeric (not bool/null/text)"
+      }
+    },
+    {
+      "case": "invalid_pair_participation_None",
+      "input_text": "{\"mode\": \"live\", \"pair\": {\"A\": \"a\", \"B\": \"b\"}, \"candidate_universe_complete\": true, \"target_margin\": 0, \"selected_unit\": \"x\", \"units\": [{\"key\": \"x\", \"counted\": {\"A\": 80, \"B\": 120, \"others\": {\"c\": 10}}, \"remaining\": 100, \"pair_participation\": null, \"a_share\": 0.7, \"other_shares\": {\"c\": 1}}, {\"key\": \"y\", \"counted\": {\"A\": 20, \"B\": 10, \"others\": {\"c\": 5}}, \"remaining\": 50, \"pair_participation\": 0.6, \"a_share\": 0.4, \"other_shares\": {\"c\": 1}}]}",
+      "returncode": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid_input",
+        "error": "pair_participation must be finite numeric (not bool/null/text)"
+      }
+    },
+    {
+      "case": "invalid_a_share_-0.01",
+      "input_text": "{\"mode\": \"live\", \"pair\": {\"A\": \"a\", \"B\": \"b\"}, \"candidate_universe_complete\": true, \"target_margin\": 0, \"selected_unit\": \"x\", \"units\": [{\"key\": \"x\", \"counted\": {\"A\": 80, \"B\": 120, \"others\": {\"c\": 10}}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": -0.01, \"other_shares\": {\"c\": 1}}, {\"key\": \"y\", \"counted\": {\"A\": 20, \"B\": 10, \"others\": {\"c\": 5}}, \"remaining\": 50, \"pair_participation\": 0.6, \"a_share\": 0.4, \"other_shares\": {\"c\": 1}}]}",
+      "returncode": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid_input",
+        "error": "a_share outside supported range"
+      }
+    },
+    {
+      "case": "invalid_a_share_1.01",
+      "input_text": "{\"mode\": \"live\", \"pair\": {\"A\": \"a\", \"B\": \"b\"}, \"candidate_universe_complete\": true, \"target_margin\": 0, \"selected_unit\": \"x\", \"units\": [{\"key\": \"x\", \"counted\": {\"A\": 80, \"B\": 120, \"others\": {\"c\": 10}}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": 1.01, \"other_shares\": {\"c\": 1}}, {\"key\": \"y\", \"counted\": {\"A\": 20, \"B\": 10, \"others\": {\"c\": 5}}, \"remaining\": 50, \"pair_participation\": 0.6, \"a_share\": 0.4, \"other_shares\": {\"c\": 1}}]}",
+      "returncode": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid_input",
+        "error": "a_share outside supported range"
+      }
+    },
+    {
+      "case": "invalid_a_share_True",
+      "input_text": "{\"mode\": \"live\", \"pair\": {\"A\": \"a\", \"B\": \"b\"}, \"candidate_universe_complete\": true, \"target_margin\": 0, \"selected_unit\": \"x\", \"units\": [{\"key\": \"x\", \"counted\": {\"A\": 80, \"B\": 120, \"others\": {\"c\": 10}}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": true, \"other_shares\": {\"c\": 1}}, {\"key\": \"y\", \"counted\": {\"A\": 20, \"B\": 10, \"others\": {\"c\": 5}}, \"remaining\": 50, \"pair_participation\": 0.6, \"a_share\": 0.4, \"other_shares\": {\"c\": 1}}]}",
+      "returncode": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid_input",
+        "error": "a_share must be finite numeric (not bool/null/text)"
+      }
+    },
+    {
+      "case": "invalid_a_share_'0.5'",
+      "input_text": "{\"mode\": \"live\", \"pair\": {\"A\": \"a\", \"B\": \"b\"}, \"candidate_universe_complete\": true, \"target_margin\": 0, \"selected_unit\": \"x\", \"units\": [{\"key\": \"x\", \"counted\": {\"A\": 80, \"B\": 120, \"others\": {\"c\": 10}}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": \"0.5\", \"other_shares\": {\"c\": 1}}, {\"key\": \"y\", \"counted\": {\"A\": 20, \"B\": 10, \"others\": {\"c\": 5}}, \"remaining\": 50, \"pair_participation\": 0.6, \"a_share\": 0.4, \"other_shares\": {\"c\": 1}}]}",
+      "returncode": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid_input",
+        "error": "a_share must be finite numeric (not bool/null/text)"
+      }
+    },
+    {
+      "case": "unallocated_positive_other_pool",
+      "input_text": "{\"mode\": \"live\", \"pair\": {\"A\": \"a\", \"B\": \"b\"}, \"candidate_universe_complete\": true, \"target_margin\": 0, \"selected_unit\": \"x\", \"units\": [{\"key\": \"x\", \"counted\": {\"A\": 80, \"B\": 120, \"others\": {\"c\": 10}}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": 0.7, \"other_shares\": {\"c\": 0.5}}, {\"key\": \"y\", \"counted\": {\"A\": 20, \"B\": 10, \"others\": {\"c\": 5}}, \"remaining\": 50, \"pair_participation\": 0.6, \"a_share\": 0.4, \"other_shares\": {\"c\": 1}}]}",
+      "returncode": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid_input",
+        "error": "positive remaining other pool must be allocated or explicitly unallocated"
+      }
+    },
+    {
+      "case": "negative_counted_votes",
+      "input_text": "{\"mode\": \"live\", \"pair\": {\"A\": \"a\", \"B\": \"b\"}, \"candidate_universe_complete\": true, \"target_margin\": 0, \"selected_unit\": \"x\", \"units\": [{\"key\": \"x\", \"counted\": {\"A\": -1, \"B\": 120, \"others\": {\"c\": 10}}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": 0.7, \"other_shares\": {\"c\": 1}}, {\"key\": \"y\", \"counted\": {\"A\": 20, \"B\": 10, \"others\": {\"c\": 5}}, \"remaining\": 50, \"pair_participation\": 0.6, \"a_share\": 0.4, \"other_shares\": {\"c\": 1}}]}",
+      "returncode": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid_input",
+        "error": "counted.A outside supported range"
+      }
+    },
+    {
+      "case": "pair_larger_than_all",
+      "input_text": "{\"mode\": \"historical\", \"pair\": {\"A\": \"a\", \"B\": \"b\"}, \"candidate_universe_complete\": true, \"target_margin\": 0.01, \"units\": [{\"key\": \"x\", \"pair_volume\": 100, \"all_volume\": 99, \"a_share\": 1, \"others\": {\"c\": 10}}, {\"key\": \"y\", \"pair_volume\": 100, \"all_volume\": 100, \"a_share\": 0}], \"selected_unit\": \"x\"}",
+      "returncode": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid_input",
+        "error": "pair_volume exceeds all_volume"
+      }
+    },
+    {
+      "case": "missing_selected_key",
+      "input_text": "{\"mode\": \"live\", \"pair\": {\"A\": \"a\", \"B\": \"b\"}, \"candidate_universe_complete\": true, \"target_margin\": 0, \"selected_unit\": \"absent\", \"units\": [{\"key\": \"x\", \"counted\": {\"A\": 80, \"B\": 120, \"others\": {\"c\": 10}}, \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": 0.7, \"other_shares\": {\"c\": 1}}, {\"key\": \"y\", \"counted\": {\"A\": 20, \"B\": 10, \"others\": {\"c\": 5}}, \"remaining\": 50, \"pair_participation\": 0.6, \"a_share\": 0.4, \"other_shares\": {\"c\": 1}}]}",
+      "returncode": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid_input",
+        "error": "selected_unit absent"
+      }
+    }
+  ]
+}

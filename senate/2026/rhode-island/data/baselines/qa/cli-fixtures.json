@@ -1,0 +1,279 @@
+{
+  "calibrated_probability": null,
+  "synthetic": true,
+  "tests": [
+    {
+      "fixture": "known-final-denominator",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "passed": true,
+      "expected": {
+        "final_all_candidate_denominator": 395.0,
+        "final_pair_denominator": 340.0,
+        "forecast_A": 168.0,
+        "forecast_B": 172.0
+      }
+    },
+    {
+      "fixture": "unknown-preference",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "passed": true,
+      "expected": {
+        "status": "unknown_preference",
+        "forecast_A": null,
+        "final_all_candidate_denominator": 395.0
+      }
+    },
+    {
+      "fixture": "no-pool-counted-fixed",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "passed": true,
+      "expected": {
+        "status": "no_positive_pool",
+        "forecast_A": 80.0,
+        "forecast_B": 120.0,
+        "final_all_candidate_denominator": 210.0
+      }
+    },
+    {
+      "fixture": "secured",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "passed": true,
+      "expected": {
+        "selected_only.status": "secured",
+        "pooled_tie_or_margin_requirement.status": "secured"
+      }
+    },
+    {
+      "fixture": "impossible",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "passed": true,
+      "expected": {
+        "selected_only.status": "impossible",
+        "pooled_tie_or_margin_requirement.status": "impossible"
+      }
+    },
+    {
+      "fixture": "pair-leader-loses-full-field",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "passed": true,
+      "expected": {
+        "fullfield.full_field_result": "A_not_strict_plurality",
+        "forecast_pair_margin": 0.3333333333333333
+      }
+    },
+    {
+      "fixture": "supplied-universe-only",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "passed": true,
+      "expected": {
+        "fullfield.full_field_result": "unknown_full_field"
+      }
+    },
+    {
+      "fixture": "no-remaining-pair-other-pool",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "passed": true,
+      "expected": {
+        "final_all_candidate_denominator": 260.0,
+        "final_pair_denominator": 200.0,
+        "status": "no_positive_pool"
+      }
+    },
+    {
+      "fixture": "bounded-clipping-root",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "passed": true,
+      "expected": {
+        "uniform_share_shift": -0.24444444444444446,
+        "final_net_votes": 0.0
+      }
+    },
+    {
+      "fixture": "zero-pair-preference-undefined",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "passed": true,
+      "expected": {
+        "status": "no_positive_pool",
+        "uniform_share_shift": null,
+        "fullfield.supplied_plurality_leaders": [
+          "Synthetic C"
+        ]
+      }
+    },
+    {
+      "fixture": "reject-target-bool",
+      "returncode": 2,
+      "expected_returncode": 2,
+      "passed": true,
+      "expected": {
+        "status": "invalid_input"
+      }
+    },
+    {
+      "fixture": "reject-target-null",
+      "returncode": 2,
+      "expected_returncode": 2,
+      "passed": true,
+      "expected": {
+        "status": "invalid_input"
+      }
+    },
+    {
+      "fixture": "reject-target-text",
+      "returncode": 2,
+      "expected_returncode": 2,
+      "passed": true,
+      "expected": {
+        "status": "invalid_input"
+      }
+    },
+    {
+      "fixture": "reject-target-negative-range",
+      "returncode": 2,
+      "expected_returncode": 2,
+      "passed": true,
+      "expected": {
+        "status": "invalid_input"
+      }
+    },
+    {
+      "fixture": "reject-target-positive-range",
+      "returncode": 2,
+      "expected_returncode": 2,
+      "passed": true,
+      "expected": {
+        "status": "invalid_input"
+      }
+    },
+    {
+      "fixture": "reject-remaining-negative",
+      "returncode": 2,
+      "expected_returncode": 2,
+      "passed": true,
+      "expected": {
+        "status": "invalid_input"
+      }
+    },
+    {
+      "fixture": "reject-remaining-bool",
+      "returncode": 2,
+      "expected_returncode": 2,
+      "passed": true,
+      "expected": {
+        "status": "invalid_input"
+      }
+    },
+    {
+      "fixture": "reject-remaining-text",
+      "returncode": 2,
+      "expected_returncode": 2,
+      "passed": true,
+      "expected": {
+        "status": "invalid_input"
+      }
+    },
+    {
+      "fixture": "reject-remaining-null",
+      "returncode": 2,
+      "expected_returncode": 2,
+      "passed": true,
+      "expected": {
+        "status": "invalid_input"
+      }
+    },
+    {
+      "fixture": "reject-key-empty-no-pool",
+      "returncode": 2,
+      "expected_returncode": 2,
+      "passed": true,
+      "expected": {
+        "status": "invalid_input"
+      }
+    },
+    {
+      "fixture": "reject-key-nonstring-no-pool",
+      "returncode": 2,
+      "expected_returncode": 2,
+      "passed": true,
+      "expected": {
+        "status": "invalid_input"
+      }
+    },
+    {
+      "fixture": "reject-global-duplicate-key",
+      "returncode": 2,
+      "expected_returncode": 2,
+      "passed": true,
+      "expected": {
+        "status": "invalid_input"
+      }
+    },
+    {
+      "fixture": "reject-unbalanced-other-allocation",
+      "returncode": 2,
+      "expected_returncode": 2,
+      "passed": true,
+      "expected": {
+        "status": "invalid_input"
+      }
+    },
+    {
+      "fixture": "reject-final-denominator-balance",
+      "returncode": 2,
+      "expected_returncode": 2,
+      "passed": true,
+      "expected": {
+        "status": "invalid_input"
+      }
+    },
+    {
+      "fixture": "reject-container",
+      "returncode": 2,
+      "expected_returncode": 2,
+      "passed": true,
+      "expected": {
+        "status": "invalid_input"
+      }
+    },
+    {
+      "fixture": "reject-counted-bool",
+      "returncode": 2,
+      "expected_returncode": 2,
+      "passed": true,
+      "expected": {
+        "status": "invalid_input"
+      }
+    },
+    {
+      "fixture": "reject-NaN",
+      "returncode": 2,
+      "passed": true
+    },
+    {
+      "fixture": "reject-Infinity",
+      "returncode": 2,
+      "passed": true
+    },
+    {
+      "fixture": "reject-negative-Infinity",
+      "returncode": 2,
+      "passed": true
+    },
+    {
+      "fixture": "duplicate-property",
+      "returncode": 2,
+      "passed": true
+    }
+  ],
+  "all_passed": true
+}
