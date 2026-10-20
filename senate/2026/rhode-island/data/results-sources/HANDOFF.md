@@ -1,0 +1,11 @@
+# Immutable official-source handoff
+
+Owned scope: `official-results.md`, `data/official-results-sources.csv`, `data/results-sources/**`, relative to the Rhode Island state directory. No Git, producer/coordinator/peer writes, messages/outreach, account/admin operations, collector or forecast were performed.
+
+Authority is path-only: `data/coordinator-priority-acceptance.json`. Complete in-memory independent replay and whole historical-original checks are in [QA](qa/authority-replay.json) and [original audit](qa/original-audit.json). See the [report](../../official-results.md), [schema](SCHEMA.md), [rules](RULES.md) and [reproduction](REPRODUCTION.md).
+
+Coverage is exact242priority+216remainder=458Senate contexts;497inventory with39unavailable-Senate nulls and15observedzero contexts;39municipal chains,37priorityparents and four separate historical administrative scopes. Complete objects use immutable full-body/pointer references; this is shared-parent research, not242 feeds/current leaves. All original source records/identities/methods/nulls/history/receipts/entities and original first-pair model outcomes remain reconstructable without new model/equality obligations.
+
+Current research captures336 complete receipt objects:325 successful public responses, eight HTTP403 bodies and three non-HTTP failures. Whole primary data covers39municipalities+Federal and the advertised complete shared export. No November event appears in the captured jurisdiction navigation. Local Foster specimens, Cranston warrant and current legal acts are separately scoped. The corrected federal recount deadline and2027-effective municipal-duty change are distinguished from older publications and the calendar plan. No exhaustive later-law/order clearance is claimed.
+
+The [final manifest](asset-manifest.json) includes every owned file and excludes only itself. [The final seal](final-seal.json) and complete preterminal witness avoid a reverse-manifest digest cycle. The final read-only audit follows sealing; then bytes are frozen. The coordinator alone reviews/accepts/publishes this handoff. Current identity/geography, final statewide eligible write-ins, legal native80, November returns, cadence, exact remainder, collector, forecast and calibration remain false/unknown bounded qualifications, not unfinished peer/map/helper dependencies.

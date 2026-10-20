@@ -1,0 +1,21 @@
+{
+  "issues": [
+    {
+      "issue": "Municipal department request list contained repeated identical IDs/URLs. Concurrent tasks passed the initial exists check and repeated several HTTP requests. Final receipt for each repeated ID is retained; content-addressed response bodies remain. Earlier overwritten receipt timestamps/headers are unavailable and are not reconstructed.",
+      "scope": "municipal-dept-requests.json before batch deduplication",
+      "fix": "batch.py now deduplicates IDs with exact URL agreement before submitting requests; current receipts retain their actual observed metadata."
+    },
+    {
+      "issue": "Initial board-directory repository-root lookup failed before state-relative verification; no authority bytes were consumed from wrong path.",
+      "scope": "launch"
+    },
+    {
+      "issue": "Initial sandbox DNS failure retained separately as board-directory.receipt.json; later permitted network request is board-directory-network.receipt.json",
+      "scope": "network"
+    },
+    {
+      "issue": "Standalone checker authoring found and repaired XML regex greediness across self-closing cells, inaccurate 2020/2022 archive-ID names in the short-view check, reader citation regex crossing lines and administrative sensitivity-key routing. These were checker/representation assumptions, not producer defects. Full original checks now require all nine views and all1955 cells; original producer bodies were never modified.",
+      "scope": "pre-seal checker authoring"
+    }
+  ]
+}
