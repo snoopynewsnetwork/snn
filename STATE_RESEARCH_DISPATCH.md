@@ -946,3 +946,22 @@ is retained in the state coordinator-launches. It independently verified both
 complete frozen inputs first; source/current-law research proceeds only in its
 owned paths. The only other active researcher is NJbaseline61054f9e. MA maps
 has not launched; no third researcher or current/geographic self-approval.
+
+
+## Independent New Jersey source, target and live arithmetic checkpoint
+
+Complete original-only replay passes17033checks on84PDFs/2296native source
+rows and588county-candidate controls. Independent final turnout verification
+passes22821checks, exact2336asset membership and all1515unchanged prior bodies.
+Original header/candidate/null/position/core audit passes57222checks. A single
+Somerset presidential caption literally says Kenndy while other publications
+say Kennedy; the complete original page was actually viewed and both captions
+are preserved without relabeling votes or implying a current identity join.
+
+Separate event-integration solver verifies40state targets/8588every-unit rows
+with243937checks and maximum net residual1.97e-10votes. All33actual CLI cases
+pass(8positive/25negative), including final denominators, fixed counted votes,
+third-candidate plurality, unknown/no-pool/clipping and invalid input rejection.
+These proofs pin stable current baseline bodies only, pending actual final
+baseline handoff/seal. No producer import/writer, finished-peer restart, dispatch
+acceptance or current/legal/eligible-writein approval is implied.

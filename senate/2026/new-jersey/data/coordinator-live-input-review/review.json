@@ -1,0 +1,909 @@
+{
+  "status": "pass_actual_cli_arithmetic_and_negative_input_review",
+  "calculator": {
+    "path": "data/baselines/scripts/calculator.py",
+    "bytes": 10023,
+    "sha256": "31bf3cbb47692a0bb8ff9ecf7c974bbe2b0563cc259b7c0e06fb96056a385678"
+  },
+  "cases": 33,
+  "positive_cases": 8,
+  "negative_cases": 25,
+  "complete_actual_inputs_outputs": [
+    {
+      "label": "target_null",
+      "input": {
+        "path": "data/coordinator-live-input-review/target_null.json",
+        "bytes": 406,
+        "sha256": "0a0ef3df655f7b4729ef91b219bc3239d2d03e3496a2715f07ac77e8d3feebe2"
+      },
+      "exit": 2,
+      "stderr": "",
+      "full_output": {
+        "error": "target_margin must be a finite number"
+      }
+    },
+    {
+      "label": "target_bool",
+      "input": {
+        "path": "data/coordinator-live-input-review/target_bool.json",
+        "bytes": 406,
+        "sha256": "2ef02fff52ea3054768c28400ad242debe54bbc786bda02098918beb442beab6"
+      },
+      "exit": 2,
+      "stderr": "",
+      "full_output": {
+        "error": "target_margin must be a finite number"
+      }
+    },
+    {
+      "label": "target_text",
+      "input": {
+        "path": "data/coordinator-live-input-review/target_text.json",
+        "bytes": 405,
+        "sha256": "285f78d5f739a0c5d3cf698937908fda54361ed469f1124bf57e4dde392d10cd"
+      },
+      "exit": 2,
+      "stderr": "",
+      "full_output": {
+        "error": "target_margin must be a finite number"
+      }
+    },
+    {
+      "label": "target_nan",
+      "input": {
+        "path": "data/coordinator-live-input-review/target_nan.json",
+        "bytes": 405,
+        "sha256": "cda01b204ee394c807318cd2e7466f3d604d24b9014401b84cf4af64c7684664"
+      },
+      "exit": 2,
+      "stderr": "",
+      "full_output": {
+        "error": "nonfinite JSON constant"
+      }
+    },
+    {
+      "label": "target_posinf",
+      "input": {
+        "path": "data/coordinator-live-input-review/target_posinf.json",
+        "bytes": 410,
+        "sha256": "e7d290163605b46dc82d1c825f127d7aa5c3f4e3282c9f1e2d55314f17bf4a86"
+      },
+      "exit": 2,
+      "stderr": "",
+      "full_output": {
+        "error": "nonfinite JSON constant"
+      }
+    },
+    {
+      "label": "target_neginf",
+      "input": {
+        "path": "data/coordinator-live-input-review/target_neginf.json",
+        "bytes": 411,
+        "sha256": "3321ebd7a8eab9509c937739a3d76c3acacdbf08d96d4a959410971912292bba"
+      },
+      "exit": 2,
+      "stderr": "",
+      "full_output": {
+        "error": "nonfinite JSON constant"
+      }
+    },
+    {
+      "label": "target_range",
+      "input": {
+        "path": "data/coordinator-live-input-review/target_range.json",
+        "bytes": 406,
+        "sha256": "5c03a82a02d3289b02d6fa31c909c8db8f93197c96a79c37e4e5c1a8cc6f0779"
+      },
+      "exit": 2,
+      "stderr": "",
+      "full_output": {
+        "error": "target_margin outside allowed range"
+      }
+    },
+    {
+      "label": "key_null",
+      "input": {
+        "path": "data/coordinator-live-input-review/key_null.json",
+        "bytes": 405,
+        "sha256": "cf30ee2014280b4a60bc0747c330079c490e86aab39ffdc5746258d2d5d1be0c"
+      },
+      "exit": 2,
+      "stderr": "",
+      "full_output": {
+        "error": "unit keys must be globally unique nonempty strings"
+      }
+    },
+    {
+      "label": "key_blank",
+      "input": {
+        "path": "data/coordinator-live-input-review/key_blank.json",
+        "bytes": 404,
+        "sha256": "a865e95b1c8403d8505726f12dde75cf83264888250206f7d48621eeb2332b3e"
+      },
+      "exit": 2,
+      "stderr": "",
+      "full_output": {
+        "error": "unit keys must be globally unique nonempty strings"
+      }
+    },
+    {
+      "label": "key_number",
+      "input": {
+        "path": "data/coordinator-live-input-review/key_number.json",
+        "bytes": 402,
+        "sha256": "1faa79478c667bfa04ed189aa5324988fd8351df5ab7188a82b71b1b9506e47f"
+      },
+      "exit": 2,
+      "stderr": "",
+      "full_output": {
+        "error": "unit keys must be globally unique nonempty strings"
+      }
+    },
+    {
+      "label": "key_list",
+      "input": {
+        "path": "data/coordinator-live-input-review/key_list.json",
+        "bytes": 403,
+        "sha256": "2538b95b535c9528827d8838eedb64d92e9fe338193a0a27eb641ef3e0ed3d7e"
+      },
+      "exit": 2,
+      "stderr": "",
+      "full_output": {
+        "error": "unit keys must be globally unique nonempty strings"
+      }
+    },
+    {
+      "label": "duplicate_key_no_selected",
+      "input": {
+        "path": "data/coordinator-live-input-review/duplicate_key_no_selected.json",
+        "bytes": 742,
+        "sha256": "3098550d8a348f35cb5670f7f9320edf32b80647cb50d9d20328b83ee82dfb3a"
+      },
+      "exit": 2,
+      "stderr": "",
+      "full_output": {
+        "error": "unit keys must be globally unique nonempty strings"
+      }
+    },
+    {
+      "label": "negative_count",
+      "input": {
+        "path": "data/coordinator-live-input-review/negative_count.json",
+        "bytes": 406,
+        "sha256": "ab03baf8f0ac0dbcd405c5eb68933f69661535e8d8029d3e35ebda91fe54bc27"
+      },
+      "exit": 2,
+      "stderr": "",
+      "full_output": {
+        "error": "one counted A outside allowed range"
+      }
+    },
+    {
+      "label": "bool_count",
+      "input": {
+        "path": "data/coordinator-live-input-review/bool_count.json",
+        "bytes": 408,
+        "sha256": "9525e49236c305b0cae46dcdda870d38fb55c2ab42701a05fca8fa99b6dde775"
+      },
+      "exit": 2,
+      "stderr": "",
+      "full_output": {
+        "error": "one counted A must be a finite number"
+      }
+    },
+    {
+      "label": "fractional_count",
+      "input": {
+        "path": "data/coordinator-live-input-review/fractional_count.json",
+        "bytes": 407,
+        "sha256": "445c5b56016d0bce796069490b25ed279a5ac411544fa1a73dd96efc6fc4a259"
+      },
+      "exit": 2,
+      "stderr": "",
+      "full_output": {
+        "error": "counted votes must be integers"
+      }
+    },
+    {
+      "label": "null_count",
+      "input": {
+        "path": "data/coordinator-live-input-review/null_count.json",
+        "bytes": 408,
+        "sha256": "cc470a48c3978230c39a21d6e6ecce90debcc93039f8841e910d318fe652efe7"
+      },
+      "exit": 2,
+      "stderr": "",
+      "full_output": {
+        "error": "one counted A must be a finite number"
+      }
+    },
+    {
+      "label": "negative_pool",
+      "input": {
+        "path": "data/coordinator-live-input-review/negative_pool.json",
+        "bytes": 405,
+        "sha256": "f117bfcead79d943db0679c756ff4681788cdbf8c094baa8089436ed22a43850"
+      },
+      "exit": 2,
+      "stderr": "",
+      "full_output": {
+        "error": "remaining contest_votes outside allowed range"
+      }
+    },
+    {
+      "label": "invalid_fraction",
+      "input": {
+        "path": "data/coordinator-live-input-review/invalid_fraction.json",
+        "bytes": 408,
+        "sha256": "2917c7af054acbdd6f817d584c88bf38921510086adfa04405dacc66a9a8b8d9"
+      },
+      "exit": 2,
+      "stderr": "",
+      "full_output": {
+        "error": "pair_fraction outside allowed range"
+      }
+    },
+    {
+      "label": "invalid_share",
+      "input": {
+        "path": "data/coordinator-live-input-review/invalid_share.json",
+        "bytes": 407,
+        "sha256": "c13796066696a31d98529ccddace6b8c8ab0657b5ae95b4751b047960a47fbd2"
+      },
+      "exit": 2,
+      "stderr": "",
+      "full_output": {
+        "error": "a_pair_share outside allowed range"
+      }
+    },
+    {
+      "label": "nonfinite_shift",
+      "input": {
+        "path": "data/coordinator-live-input-review/nonfinite_shift.json",
+        "bytes": 413,
+        "sha256": "acc84ec96c0c2121a704166a52403e0e5305f2e028e3e0b237df97448f7f0614"
+      },
+      "exit": 2,
+      "stderr": "",
+      "full_output": {
+        "error": "nonfinite JSON constant"
+      }
+    },
+    {
+      "label": "nonunit_other_mix",
+      "input": {
+        "path": "data/coordinator-live-input-review/nonunit_other_mix.json",
+        "bytes": 408,
+        "sha256": "a1a5e7c311c6253039231c8a68cfcaa969e5a61568df005012bdc2fce1ff9019"
+      },
+      "exit": 2,
+      "stderr": "",
+      "full_output": {
+        "error": "other_mix must sum to one"
+      }
+    },
+    {
+      "label": "absent_selected",
+      "input": {
+        "path": "data/coordinator-live-input-review/absent_selected.json",
+        "bytes": 434,
+        "sha256": "d4d87a53d3565c84c4f2c58765bf07ef702edf67720cfa64aeea62cd622901fd"
+      },
+      "exit": 2,
+      "stderr": "",
+      "full_output": {
+        "error": "selected_key is not a supplied unit key"
+      }
+    },
+    {
+      "label": "incomplete_global_coverage",
+      "input": {
+        "path": "data/coordinator-live-input-review/incomplete_global_coverage.json",
+        "bytes": 457,
+        "sha256": "e74a034028eed6746f201ca425283901ce93f7721555501677fc354edd910133"
+      },
+      "exit": 2,
+      "stderr": "",
+      "full_output": {
+        "error": "units differ from expected_keys: missing or extra units"
+      }
+    },
+    {
+      "label": "implicit_missing_participation",
+      "input": {
+        "path": "data/coordinator-live-input-review/implicit_missing_participation.json",
+        "bytes": 378,
+        "sha256": "48a5a2844c94e09d6698524f69e0fc78a0f7f2d896966ec93f3569d34763cff2"
+      },
+      "exit": 2,
+      "stderr": "",
+      "full_output": {
+        "error": "remaining must explicitly state contest_votes, pair_fraction and a_pair_share; null means unknown"
+      }
+    },
+    {
+      "label": "overflow_derived_denominator",
+      "input": {
+        "path": "data/coordinator-live-input-review/overflow_derived_denominator.json",
+        "bytes": 740,
+        "sha256": "c6f582ec105ee3d504597e8116223d6e9617a8c4d7bb29d9acb6851f68a8e54e"
+      },
+      "exit": 2,
+      "stderr": "",
+      "full_output": {
+        "error": "margin must be a finite number"
+      }
+    },
+    {
+      "label": "pair_Aplus1_can_lose_other_plurality",
+      "input": {
+        "path": "data/coordinator-live-input-review/pair_Aplus1_can_lose_other_plurality.json",
+        "bytes": 406,
+        "sha256": "2012cb699a0098e7d56f5c6a21080c8658d2de14b8b7f3251a5fcb2811fcfbd2"
+      },
+      "exit": 0,
+      "stderr": "",
+      "full_output": {
+        "status": "conditional-arithmetic",
+        "counted_fixed": {
+          "A": 20,
+          "B": 80,
+          "others": {
+            "C": 300
+          },
+          "all_candidate_votes": 400,
+          "pair_votes": 100,
+          "net_A_minus_B": -60
+        },
+        "remaining_contest_pool": 100,
+        "remaining_pair_pool": 100,
+        "final_pair_denominator": 200,
+        "final_all_candidate_denominator": 500,
+        "target_margin": 0.01,
+        "target_denominator": "pair",
+        "target_net_A_minus_B": 2.0,
+        "conditional_threshold": {
+          "raw_share": 0.81,
+          "bounded_share": 0.81,
+          "status": "feasible"
+        },
+        "selected_only_threshold": null,
+        "bounded_uniform_remaining_shift": {
+          "shift": 0.21000000000000002,
+          "clipped_units": 0,
+          "remaining_net": 62.000000000000014
+        },
+        "projected_final": {
+          "A": 80.0,
+          "B": 120.0,
+          "others": {
+            "C": 300
+          },
+          "net_A_minus_B": -40.0,
+          "pair_margin": -0.2,
+          "all_candidate_margin": -0.08,
+          "A_all_candidate_share": 0.16,
+          "plurality_leaders": [
+            "C"
+          ],
+          "A_unique_plurality": false,
+          "pair_target_A_votes": 101.0,
+          "pair_target_beats_largest_other": false
+        },
+        "units": [
+          {
+            "key": "one",
+            "remaining_contest": 100,
+            "remaining_pair": 100,
+            "base_pair_share": 0.6,
+            "share_shift": 0,
+            "unclipped_pair_share": 0.6,
+            "pair_share": 0.6,
+            "clipped": false,
+            "other_mix": {
+              "C": 1
+            }
+          }
+        ],
+        "probability": null
+      }
+    },
+    {
+      "label": "all_denominator_distinct",
+      "input": {
+        "path": "data/coordinator-live-input-review/all_denominator_distinct.json",
+        "bytes": 405,
+        "sha256": "c03184584a7eca4bb2e68b86e84b9538544f14095148225d8bb7bb0999873c43"
+      },
+      "exit": 0,
+      "stderr": "",
+      "full_output": {
+        "status": "conditional-arithmetic",
+        "counted_fixed": {
+          "A": 20,
+          "B": 80,
+          "others": {
+            "C": 300
+          },
+          "all_candidate_votes": 400,
+          "pair_votes": 100,
+          "net_A_minus_B": -60
+        },
+        "remaining_contest_pool": 100,
+        "remaining_pair_pool": 100,
+        "final_pair_denominator": 200,
+        "final_all_candidate_denominator": 500,
+        "target_margin": 0.01,
+        "target_denominator": "all",
+        "target_net_A_minus_B": 5.0,
+        "conditional_threshold": {
+          "raw_share": 0.825,
+          "bounded_share": 0.825,
+          "status": "feasible"
+        },
+        "selected_only_threshold": null,
+        "bounded_uniform_remaining_shift": {
+          "shift": 0.22500000000000003,
+          "clipped_units": 0,
+          "remaining_net": 64.99999999999999
+        },
+        "projected_final": {
+          "A": 80.0,
+          "B": 120.0,
+          "others": {
+            "C": 300
+          },
+          "net_A_minus_B": -40.0,
+          "pair_margin": -0.2,
+          "all_candidate_margin": -0.08,
+          "A_all_candidate_share": 0.16,
+          "plurality_leaders": [
+            "C"
+          ],
+          "A_unique_plurality": false,
+          "pair_target_A_votes": 102.5,
+          "pair_target_beats_largest_other": false
+        },
+        "units": [
+          {
+            "key": "one",
+            "remaining_contest": 100,
+            "remaining_pair": 100,
+            "base_pair_share": 0.6,
+            "share_shift": 0,
+            "unclipped_pair_share": 0.6,
+            "pair_share": 0.6,
+            "clipped": false,
+            "other_mix": {
+              "C": 1
+            }
+          }
+        ],
+        "probability": null
+      }
+    },
+    {
+      "label": "explicit_unknown_remaining",
+      "input": {
+        "path": "data/coordinator-live-input-review/explicit_unknown_remaining.json",
+        "bytes": 407,
+        "sha256": "facb8c30d28b9267449148adb2dbb75b58f02a1d3ad4502ea64048029578c14f"
+      },
+      "exit": 0,
+      "stderr": "",
+      "full_output": {
+        "status": "unknown-assumptions",
+        "counted_fixed": {
+          "A": 20,
+          "B": 80,
+          "others": {
+            "C": 300
+          },
+          "all_candidate_votes": 400,
+          "pair_votes": 100,
+          "net_A_minus_B": -60
+        },
+        "unknown_units": [
+          "one"
+        ],
+        "projected_final": null,
+        "conditional_threshold": null,
+        "units": [
+          {
+            "key": "one",
+            "remaining_contest": null,
+            "remaining_pair": null,
+            "base_pair_share": 0.6,
+            "share_shift": 0,
+            "unclipped_pair_share": 0.6,
+            "pair_share": 0.6,
+            "clipped": false,
+            "other_mix": {
+              "C": 1
+            }
+          }
+        ],
+        "probability": null
+      }
+    },
+    {
+      "label": "no_positive_pool",
+      "input": {
+        "path": "data/coordinator-live-input-review/no_positive_pool.json",
+        "bytes": 405,
+        "sha256": "499dab0b45ea4c507686ea0f75c5e3b3a18ed044c26940b4027f78c98e2611ed"
+      },
+      "exit": 0,
+      "stderr": "",
+      "full_output": {
+        "status": "conditional-arithmetic",
+        "counted_fixed": {
+          "A": 20,
+          "B": 80,
+          "others": {
+            "C": 300
+          },
+          "all_candidate_votes": 400,
+          "pair_votes": 100,
+          "net_A_minus_B": -60
+        },
+        "remaining_contest_pool": 0,
+        "remaining_pair_pool": 0,
+        "final_pair_denominator": 100,
+        "final_all_candidate_denominator": 400,
+        "target_margin": 0.01,
+        "target_denominator": "pair",
+        "target_net_A_minus_B": 1.0,
+        "conditional_threshold": {
+          "raw_share": null,
+          "bounded_share": null,
+          "status": "no-positive-pool",
+          "fixed_meets_target": false
+        },
+        "selected_only_threshold": null,
+        "bounded_uniform_remaining_shift": null,
+        "projected_final": {
+          "A": 20,
+          "B": 80,
+          "others": {
+            "C": 300
+          },
+          "net_A_minus_B": -60,
+          "pair_margin": -0.6,
+          "all_candidate_margin": -0.15,
+          "A_all_candidate_share": 0.05,
+          "plurality_leaders": [
+            "C"
+          ],
+          "A_unique_plurality": false,
+          "pair_target_A_votes": 50.5,
+          "pair_target_beats_largest_other": false
+        },
+        "units": [
+          {
+            "key": "one",
+            "remaining_contest": 0,
+            "remaining_pair": 0,
+            "base_pair_share": null,
+            "share_shift": 0,
+            "unclipped_pair_share": null,
+            "pair_share": null,
+            "clipped": false,
+            "other_mix": {
+              "C": 1
+            }
+          }
+        ],
+        "probability": null
+      }
+    },
+    {
+      "label": "already_secured",
+      "input": {
+        "path": "data/coordinator-live-input-review/already_secured.json",
+        "bytes": 407,
+        "sha256": "c187a10570e3e9c5043d4017b204bf6929b5989c6fa77797dac6145db42f7324"
+      },
+      "exit": 0,
+      "stderr": "",
+      "full_output": {
+        "status": "conditional-arithmetic",
+        "counted_fixed": {
+          "A": 1000,
+          "B": 0,
+          "others": {
+            "C": 300
+          },
+          "all_candidate_votes": 1300,
+          "pair_votes": 1000,
+          "net_A_minus_B": 1000
+        },
+        "remaining_contest_pool": 100,
+        "remaining_pair_pool": 100,
+        "final_pair_denominator": 1100,
+        "final_all_candidate_denominator": 1400,
+        "target_margin": 0.01,
+        "target_denominator": "pair",
+        "target_net_A_minus_B": 11.0,
+        "conditional_threshold": {
+          "raw_share": -4.445,
+          "bounded_share": 0,
+          "status": "already-secured"
+        },
+        "selected_only_threshold": null,
+        "bounded_uniform_remaining_shift": null,
+        "projected_final": {
+          "A": 1060.0,
+          "B": 40.0,
+          "others": {
+            "C": 300
+          },
+          "net_A_minus_B": 1020.0,
+          "pair_margin": 0.9272727272727272,
+          "all_candidate_margin": 0.7285714285714285,
+          "A_all_candidate_share": 0.7571428571428571,
+          "plurality_leaders": [
+            "A"
+          ],
+          "A_unique_plurality": true,
+          "pair_target_A_votes": 555.5,
+          "pair_target_beats_largest_other": true
+        },
+        "units": [
+          {
+            "key": "one",
+            "remaining_contest": 100,
+            "remaining_pair": 100,
+            "base_pair_share": 0.6,
+            "share_shift": 0,
+            "unclipped_pair_share": 0.6,
+            "pair_share": 0.6,
+            "clipped": false,
+            "other_mix": {
+              "C": 1
+            }
+          }
+        ],
+        "probability": null
+      }
+    },
+    {
+      "label": "impossible_positive_target",
+      "input": {
+        "path": "data/coordinator-live-input-review/impossible_positive_target.json",
+        "bytes": 407,
+        "sha256": "e0e07b9c4c7c2b37cb8fc5a2dfe39dee985a0595dbc4c47a567a6681e8b33699"
+      },
+      "exit": 0,
+      "stderr": "",
+      "full_output": {
+        "status": "conditional-arithmetic",
+        "counted_fixed": {
+          "A": 0,
+          "B": 1000,
+          "others": {
+            "C": 300
+          },
+          "all_candidate_votes": 1300,
+          "pair_votes": 1000,
+          "net_A_minus_B": -1000
+        },
+        "remaining_contest_pool": 100,
+        "remaining_pair_pool": 100,
+        "final_pair_denominator": 1100,
+        "final_all_candidate_denominator": 1400,
+        "target_margin": 0.01,
+        "target_denominator": "pair",
+        "target_net_A_minus_B": 11.0,
+        "conditional_threshold": {
+          "raw_share": 5.555,
+          "bounded_share": 1,
+          "status": "impossible"
+        },
+        "selected_only_threshold": null,
+        "bounded_uniform_remaining_shift": null,
+        "projected_final": {
+          "A": 60.0,
+          "B": 1040.0,
+          "others": {
+            "C": 300
+          },
+          "net_A_minus_B": -980.0,
+          "pair_margin": -0.8909090909090909,
+          "all_candidate_margin": -0.7,
+          "A_all_candidate_share": 0.04285714285714286,
+          "plurality_leaders": [
+            "B"
+          ],
+          "A_unique_plurality": false,
+          "pair_target_A_votes": 555.5,
+          "pair_target_beats_largest_other": true
+        },
+        "units": [
+          {
+            "key": "one",
+            "remaining_contest": 100,
+            "remaining_pair": 100,
+            "base_pair_share": 0.6,
+            "share_shift": 0,
+            "unclipped_pair_share": 0.6,
+            "pair_share": 0.6,
+            "clipped": false,
+            "other_mix": {
+              "C": 1
+            }
+          }
+        ],
+        "probability": null
+      }
+    },
+    {
+      "label": "selected_only_outside_fixed_and_other_pool",
+      "input": {
+        "path": "data/coordinator-live-input-review/selected_only_outside_fixed_and_other_pool.json",
+        "bytes": 767,
+        "sha256": "424955501cebe4815b0eff131b87a3d075cb14a8cb39abc333e33665c6a54c0d"
+      },
+      "exit": 0,
+      "stderr": "",
+      "full_output": {
+        "status": "conditional-arithmetic",
+        "counted_fixed": {
+          "A": 30,
+          "B": 90,
+          "others": {
+            "C": 300
+          },
+          "all_candidate_votes": 420,
+          "pair_votes": 120,
+          "net_A_minus_B": -60
+        },
+        "remaining_contest_pool": 300,
+        "remaining_pair_pool": 200.0,
+        "final_pair_denominator": 320.0,
+        "final_all_candidate_denominator": 720,
+        "target_margin": 0.01,
+        "target_denominator": "pair",
+        "target_net_A_minus_B": 3.2,
+        "conditional_threshold": {
+          "raw_share": 0.6579999999999999,
+          "bounded_share": 0.6579999999999999,
+          "status": "feasible"
+        },
+        "selected_only_threshold": {
+          "raw_share": 0.9159999999999999,
+          "bounded_share": 0.9159999999999999,
+          "status": "feasible",
+          "other_units_fixed_net": -80.0,
+          "selected_key": "one"
+        },
+        "bounded_uniform_remaining_shift": {
+          "shift": 0.15799999999999997,
+          "clipped_units": 0,
+          "remaining_net": 63.20000000000001
+        },
+        "projected_final": {
+          "A": 130.0,
+          "B": 190.0,
+          "others": {
+            "C": 400.0
+          },
+          "net_A_minus_B": -60.0,
+          "pair_margin": -0.1875,
+          "all_candidate_margin": -0.08333333333333333,
+          "A_all_candidate_share": 0.18055555555555555,
+          "plurality_leaders": [
+            "C"
+          ],
+          "A_unique_plurality": false,
+          "pair_target_A_votes": 161.6,
+          "pair_target_beats_largest_other": false
+        },
+        "units": [
+          {
+            "key": "one",
+            "remaining_contest": 100,
+            "remaining_pair": 100,
+            "base_pair_share": 0.6,
+            "share_shift": 0,
+            "unclipped_pair_share": 0.6,
+            "pair_share": 0.6,
+            "clipped": false,
+            "other_mix": {
+              "C": 1
+            }
+          },
+          {
+            "key": "two",
+            "remaining_contest": 200,
+            "remaining_pair": 100.0,
+            "base_pair_share": 0.4,
+            "share_shift": 0,
+            "unclipped_pair_share": 0.4,
+            "pair_share": 0.4,
+            "clipped": false,
+            "other_mix": {
+              "C": 1
+            }
+          }
+        ],
+        "probability": null
+      }
+    },
+    {
+      "label": "clipped_remaining_preference_counted_fixed",
+      "input": {
+        "path": "data/coordinator-live-input-review/clipped_remaining_preference_counted_fixed.json",
+        "bytes": 406,
+        "sha256": "83b6739a7351fd987eb769d3a486bdf912fea11024accd389b9f57284125cb01"
+      },
+      "exit": 0,
+      "stderr": "",
+      "full_output": {
+        "status": "conditional-arithmetic",
+        "counted_fixed": {
+          "A": 20,
+          "B": 80,
+          "others": {
+            "C": 300
+          },
+          "all_candidate_votes": 400,
+          "pair_votes": 100,
+          "net_A_minus_B": -60
+        },
+        "remaining_contest_pool": 100,
+        "remaining_pair_pool": 100,
+        "final_pair_denominator": 200,
+        "final_all_candidate_denominator": 500,
+        "target_margin": 0.01,
+        "target_denominator": "pair",
+        "target_net_A_minus_B": 2.0,
+        "conditional_threshold": {
+          "raw_share": 0.81,
+          "bounded_share": 0.81,
+          "status": "feasible"
+        },
+        "selected_only_threshold": null,
+        "bounded_uniform_remaining_shift": {
+          "shift": -0.19,
+          "clipped_units": 0,
+          "remaining_net": 62.000000000000014
+        },
+        "projected_final": {
+          "A": 120,
+          "B": 80,
+          "others": {
+            "C": 300
+          },
+          "net_A_minus_B": 40,
+          "pair_margin": 0.2,
+          "all_candidate_margin": 0.08,
+          "A_all_candidate_share": 0.24,
+          "plurality_leaders": [
+            "C"
+          ],
+          "A_unique_plurality": false,
+          "pair_target_A_votes": 101.0,
+          "pair_target_beats_largest_other": false
+        },
+        "units": [
+          {
+            "key": "one",
+            "remaining_contest": 100,
+            "remaining_pair": 100,
+            "base_pair_share": 0.6,
+            "share_shift": 1,
+            "unclipped_pair_share": 1.6,
+            "pair_share": 1,
+            "clipped": true,
+            "other_mix": {
+              "C": 1
+            }
+          }
+        ],
+        "probability": null
+      }
+    }
+  ],
+  "qualification": "Synthetic source-free arithmetic only. Counted full candidate field fixed; final pair and all denominators distinct; unknown pool not zero, pair target not legal plurality or probability."
+}
