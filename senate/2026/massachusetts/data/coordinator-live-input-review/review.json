@@ -1,0 +1,475 @@
+{
+  "status": "pass_actual_strict_CLI_arithmetic_and_negative_input_review",
+  "calculator": {
+    "path": "data/baselines/calculate.py",
+    "bytes": 9488,
+    "sha256": "8d5acc63a82bc5e57c49c82df2381a486fe39ee82dbfe3a3892cbcf94f955893"
+  },
+  "case_count": 25,
+  "positive_cases": 4,
+  "negative_cases": 21,
+  "all_original_inputs_outputs": [
+    {
+      "label": "target_null",
+      "input": {
+        "path": "data/coordinator-live-input-review/target_null.json",
+        "bytes": 397,
+        "sha256": "7320d8966750238d989e6d3a5b170bcbd803a40eac94dbb7bc927aaa486d6c5b"
+      },
+      "exit": 2,
+      "stderr": "",
+      "complete_output": {
+        "status": "invalid_input",
+        "error": "target_margin must be a finite number"
+      }
+    },
+    {
+      "label": "target_bool",
+      "input": {
+        "path": "data/coordinator-live-input-review/target_bool.json",
+        "bytes": 397,
+        "sha256": "02b679b47f8927158fba22fe70bac6759bb99c7940180fac311950a67b3fbd82"
+      },
+      "exit": 2,
+      "stderr": "",
+      "complete_output": {
+        "status": "invalid_input",
+        "error": "target_margin must be a finite number"
+      }
+    },
+    {
+      "label": "target_text",
+      "input": {
+        "path": "data/coordinator-live-input-review/target_text.json",
+        "bytes": 396,
+        "sha256": "8bb0d179de1f68776e68b16ad27c58eba9c58806e98bf5e8bf48f45f375ba51c"
+      },
+      "exit": 2,
+      "stderr": "",
+      "complete_output": {
+        "status": "invalid_input",
+        "error": "target_margin must be a finite number"
+      }
+    },
+    {
+      "label": "target_nan",
+      "input": {
+        "path": "data/coordinator-live-input-review/target_nan.json",
+        "bytes": 396,
+        "sha256": "1f137546cec265ee39918aeedc85ac33dbe679e40a11526a099bb4e1283523c6"
+      },
+      "exit": 2,
+      "stderr": "",
+      "complete_output": {
+        "status": "invalid_input",
+        "error": "nonfinite JSON number"
+      }
+    },
+    {
+      "label": "target_posinf",
+      "input": {
+        "path": "data/coordinator-live-input-review/target_posinf.json",
+        "bytes": 401,
+        "sha256": "8ccbc95385534fda956b71343c2ff48575d01a2aa96379952a92f53e0ebcf1ff"
+      },
+      "exit": 2,
+      "stderr": "",
+      "complete_output": {
+        "status": "invalid_input",
+        "error": "nonfinite JSON number"
+      }
+    },
+    {
+      "label": "target_neginf",
+      "input": {
+        "path": "data/coordinator-live-input-review/target_neginf.json",
+        "bytes": 402,
+        "sha256": "0ac060ef341c672a7fd1fcf2005286b6fcf62f9a96977c3ab95997dba44adf0b"
+      },
+      "exit": 2,
+      "stderr": "",
+      "complete_output": {
+        "status": "invalid_input",
+        "error": "nonfinite JSON number"
+      }
+    },
+    {
+      "label": "target_range",
+      "input": {
+        "path": "data/coordinator-live-input-review/target_range.json",
+        "bytes": 397,
+        "sha256": "f8136a691b8cf21d8b525b8373bb734dead057999b3e5b9d9771312e8890132a"
+      },
+      "exit": 2,
+      "stderr": "",
+      "complete_output": {
+        "status": "invalid_input",
+        "error": "target_margin outside allowed range"
+      }
+    },
+    {
+      "label": "key_null",
+      "input": {
+        "path": "data/coordinator-live-input-review/key_null.json",
+        "bytes": 393,
+        "sha256": "56d0a32f8e2049a0738e7a311e291288c106986b3080f09ad59a324de57d1b5a"
+      },
+      "exit": 2,
+      "stderr": "",
+      "complete_output": {
+        "status": "invalid_input",
+        "error": "global source-unit keys requires nonempty unique string keys"
+      }
+    },
+    {
+      "label": "key_blank",
+      "input": {
+        "path": "data/coordinator-live-input-review/key_blank.json",
+        "bytes": 392,
+        "sha256": "a744912d39a3a309cfc886eaa079a0b0e815a67052ca559ba9dd982bec9c9c69"
+      },
+      "exit": 2,
+      "stderr": "",
+      "complete_output": {
+        "status": "invalid_input",
+        "error": "global source-unit keys requires nonempty unique string keys"
+      }
+    },
+    {
+      "label": "key_number",
+      "input": {
+        "path": "data/coordinator-live-input-review/key_number.json",
+        "bytes": 390,
+        "sha256": "d1f4729d63efdfa34ee8b294a212abfe083eeb9ca2593995de6c10c7ba97fd2b"
+      },
+      "exit": 2,
+      "stderr": "",
+      "complete_output": {
+        "status": "invalid_input",
+        "error": "global source-unit keys requires nonempty unique string keys"
+      }
+    },
+    {
+      "label": "key_list",
+      "input": {
+        "path": "data/coordinator-live-input-review/key_list.json",
+        "bytes": 391,
+        "sha256": "391868cada458d52d45ee98cd85cb4804bb4fc0a6463c925397d0d12ad945eb6"
+      },
+      "exit": 2,
+      "stderr": "",
+      "complete_output": {
+        "status": "invalid_input",
+        "error": "global source-unit keys requires nonempty unique string keys"
+      }
+    },
+    {
+      "label": "global_duplicate_no_selected",
+      "input": {
+        "path": "data/coordinator-live-input-review/global_duplicate_no_selected.json",
+        "bytes": 676,
+        "sha256": "d456e0e53c524a91c4becddbb93838c5d696da63b38113f8f73f868d47f30ae5"
+      },
+      "exit": 2,
+      "stderr": "",
+      "complete_output": {
+        "status": "invalid_input",
+        "error": "global source-unit keys requires nonempty unique string keys"
+      }
+    },
+    {
+      "label": "negative_counted",
+      "input": {
+        "path": "data/coordinator-live-input-review/negative_counted.json",
+        "bytes": 397,
+        "sha256": "ad0af68460050241bb017cccdd008f47453f06d2faaff1182a75c24f9382aff7"
+      },
+      "exit": 2,
+      "stderr": "",
+      "complete_output": {
+        "status": "invalid_input",
+        "error": "counted A outside allowed range"
+      }
+    },
+    {
+      "label": "bool_counted",
+      "input": {
+        "path": "data/coordinator-live-input-review/bool_counted.json",
+        "bytes": 399,
+        "sha256": "e74e303a5cdf884e85f34c069cad57655a39508df9129ac742cdb68d865d4a6d"
+      },
+      "exit": 2,
+      "stderr": "",
+      "complete_output": {
+        "status": "invalid_input",
+        "error": "counted A must be a finite number"
+      }
+    },
+    {
+      "label": "overflow_counted",
+      "input": {
+        "path": "data/coordinator-live-input-review/overflow_counted.json",
+        "bytes": 405,
+        "sha256": "ed8ac5644035a5cb358c1825c8c0a5b403a4c9989c4d1cf2a37dd9a524159dc6"
+      },
+      "exit": 2,
+      "stderr": "",
+      "complete_output": {
+        "status": "invalid_input",
+        "error": "arithmetic exceeds finite numeric range"
+      }
+    },
+    {
+      "label": "nonfinite_allocation",
+      "input": {
+        "path": "data/coordinator-live-input-review/nonfinite_allocation.json",
+        "bytes": 397,
+        "sha256": "c66b3134b6cb8452a65fca76c8e63db8db9708595bf61202517a07c58a9e77c1"
+      },
+      "exit": 2,
+      "stderr": "",
+      "complete_output": {
+        "status": "invalid_input",
+        "error": "nonfinite JSON number"
+      }
+    },
+    {
+      "label": "allocation_range",
+      "input": {
+        "path": "data/coordinator-live-input-review/allocation_range.json",
+        "bytes": 397,
+        "sha256": "bf324f36b5114c7399cdf4f437117fcc4a1cf95cbd67e14b875c26201b167252"
+      },
+      "exit": 2,
+      "stderr": "",
+      "complete_output": {
+        "status": "invalid_input",
+        "error": "allocation A outside allowed range"
+      }
+    },
+    {
+      "label": "negative_remaining",
+      "input": {
+        "path": "data/coordinator-live-input-review/negative_remaining.json",
+        "bytes": 396,
+        "sha256": "787c055918f3ee46c50a5d8f86bb53f1a8514d53c2606b533093241e719f63df"
+      },
+      "exit": 2,
+      "stderr": "",
+      "complete_output": {
+        "status": "invalid_input",
+        "error": "remaining pool outside allowed range"
+      }
+    },
+    {
+      "label": "unknown_guessed_count",
+      "input": {
+        "path": "data/coordinator-live-input-review/unknown_guessed_count.json",
+        "bytes": 399,
+        "sha256": "6d9ae2bbc8f9cf8ac3972db28d9bd5ee845bc6fe51ea7ce3a5eaa44c4d8620b9"
+      },
+      "exit": 2,
+      "stderr": "",
+      "complete_output": {
+        "status": "invalid_input",
+        "error": "unknown pool cannot contain numeric guesses"
+      }
+    },
+    {
+      "label": "incomplete_counted_field",
+      "input": {
+        "path": "data/coordinator-live-input-review/incomplete_counted_field.json",
+        "bytes": 379,
+        "sha256": "f42ea5d31781bf6ad7e2ec206b77ace22ab0a8d970491db3216e77f3c41e52a3"
+      },
+      "exit": 2,
+      "stderr": "",
+      "complete_output": {
+        "status": "invalid_input",
+        "error": "counted requires complete candidate field"
+      }
+    },
+    {
+      "label": "missing_selected",
+      "input": {
+        "path": "data/coordinator-live-input-review/missing_selected.json",
+        "bytes": 425,
+        "sha256": "779c87681072a5cdd1cfe1f67c1513a61f8b044f314737ec63692c37d35632f5"
+      },
+      "exit": 2,
+      "stderr": "",
+      "complete_output": {
+        "status": "invalid_input",
+        "error": "unknown selected_key"
+      }
+    },
+    {
+      "label": "pair_target_other_candidate_wins",
+      "input": {
+        "path": "data/coordinator-live-input-review/pair_target_other_candidate_wins.json",
+        "bytes": 397,
+        "sha256": "47bc3fcde25045192750afcdf574ba5d179987cc633ef60da88ef24d2c1d73c5"
+      },
+      "exit": 0,
+      "stderr": "",
+      "complete_output": {
+        "status": "known_scenario",
+        "counted": {
+          "A": 60,
+          "B": 40,
+          "C": 500
+        },
+        "counted_denominator": 600,
+        "remaining_candidate_pool": 100,
+        "remaining_pair_pool": 100.0,
+        "variable_pair_pool": 100.0,
+        "final": {
+          "A": 110.0,
+          "B": 90.0,
+          "C": 500
+        },
+        "final_denominator": 700.0,
+        "final_pair_denominator": 200.0,
+        "A_final_all_candidate_share": 0.15714285714285714,
+        "A_minus_B_final_pair_margin": 0.1,
+        "A_minus_B_final_all_candidate_margin": 0.02857142857142857,
+        "target_pair_margin": 0.01,
+        "pair_requirement": {
+          "raw_share": 0.41,
+          "clipped_share": 0.41,
+          "status": "feasible"
+        },
+        "full_field_A_strict_plurality_share_threshold": 4.4,
+        "full_field_rival_thresholds": {
+          "B": 0.4,
+          "C": 4.4
+        },
+        "full_field_status": "unique_leader",
+        "leaders": [
+          "C"
+        ],
+        "qualification": "Arithmetic conditional on supplied complete candidate field and remaining candidate-vote pool; no blanks, eligibility, lower preferences or probabilities inferred. A pair target does not establish full-field plurality; ties unresolved."
+      }
+    },
+    {
+      "label": "unknown_pool",
+      "input": {
+        "path": "data/coordinator-live-input-review/unknown_pool.json",
+        "bytes": 377,
+        "sha256": "b2c810c73002390a9022e7c5b14f1a13b54bffcd4958377da7972318f5e0c41d"
+      },
+      "exit": 0,
+      "stderr": "",
+      "complete_output": {
+        "status": "unknown_remaining_pool",
+        "unknown_units": [
+          "unit-1"
+        ],
+        "counted": {
+          "A": 60,
+          "B": 40,
+          "C": 500
+        },
+        "counted_denominator": 600,
+        "final": null,
+        "final_denominator": null,
+        "pair_requirement": null
+      }
+    },
+    {
+      "label": "no_pool",
+      "input": {
+        "path": "data/coordinator-live-input-review/no_pool.json",
+        "bytes": 395,
+        "sha256": "47292389c4fff015b899a84f51120e4b8dc964de2c158770dd18f2423e8c4a6c"
+      },
+      "exit": 0,
+      "stderr": "",
+      "complete_output": {
+        "status": "known_scenario",
+        "counted": {
+          "A": 60,
+          "B": 40,
+          "C": 500
+        },
+        "counted_denominator": 600,
+        "remaining_candidate_pool": 0,
+        "remaining_pair_pool": 0.0,
+        "variable_pair_pool": 0.0,
+        "final": {
+          "A": 60.0,
+          "B": 40.0,
+          "C": 500
+        },
+        "final_denominator": 600.0,
+        "final_pair_denominator": 100.0,
+        "A_final_all_candidate_share": 0.1,
+        "A_minus_B_final_pair_margin": 0.2,
+        "A_minus_B_final_all_candidate_margin": 0.03333333333333333,
+        "target_pair_margin": 0.01,
+        "pair_requirement": {
+          "raw_share": null,
+          "clipped_share": null,
+          "status": "no_positive_pool",
+          "fixed_net": 20
+        },
+        "full_field_A_strict_plurality_share_threshold": null,
+        "full_field_rival_thresholds": {},
+        "full_field_status": "unique_leader",
+        "leaders": [
+          "C"
+        ],
+        "qualification": "Arithmetic conditional on supplied complete candidate field and remaining candidate-vote pool; no blanks, eligibility, lower preferences or probabilities inferred. A pair target does not establish full-field plurality; ties unresolved."
+      }
+    },
+    {
+      "label": "already_secured",
+      "input": {
+        "path": "data/coordinator-live-input-review/already_secured.json",
+        "bytes": 396,
+        "sha256": "4e4474a2ae72a19fce73ed5f1c23b0412ec5ecab18a5b35396e2129d20a1166b"
+      },
+      "exit": 0,
+      "stderr": "",
+      "complete_output": {
+        "status": "known_scenario",
+        "counted": {
+          "A": 1000,
+          "B": 0,
+          "C": 0
+        },
+        "counted_denominator": 1000,
+        "remaining_candidate_pool": 100,
+        "remaining_pair_pool": 100.0,
+        "variable_pair_pool": 100.0,
+        "final": {
+          "A": 1050.0,
+          "B": 50.0,
+          "C": 0
+        },
+        "final_denominator": 1100.0,
+        "final_pair_denominator": 1100.0,
+        "A_final_all_candidate_share": 0.9545454545454546,
+        "A_minus_B_final_pair_margin": 0.9090909090909091,
+        "A_minus_B_final_all_candidate_margin": 0.9090909090909091,
+        "target_pair_margin": 0.01,
+        "pair_requirement": {
+          "raw_share": -4.445,
+          "clipped_share": 0.0,
+          "status": "already_secured"
+        },
+        "full_field_A_strict_plurality_share_threshold": -4.5,
+        "full_field_rival_thresholds": {
+          "B": -4.5,
+          "C": -10.0
+        },
+        "full_field_status": "unique_leader",
+        "leaders": [
+          "A"
+        ],
+        "qualification": "Arithmetic conditional on supplied complete candidate field and remaining candidate-vote pool; no blanks, eligibility, lower preferences or probabilities inferred. A pair target does not establish full-field plurality; ties unresolved."
+      }
+    }
+  ],
+  "qualification": "Synthetic arithmetic only; counted full candidate field staysfixed, pair target may lose full-field plurality. No real remaining pool/current source approval."
+}
