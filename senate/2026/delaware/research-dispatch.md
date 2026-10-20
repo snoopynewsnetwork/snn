@@ -78,3 +78,19 @@ update are retained separately. No result-key orientation, legal effectiveness
 or historical/current leaf join is approved. Individual immutable originals
 and receipts may be independently reused; optional coordinator proof is not
 a required worker build dependency. No second-wave worker has launched yet.
+
+
+## Illinois turnout finished; actual Delaware official assignment launched
+
+Illinois turnout `a2a3b1cf-ac46-446b-be8d-18390c8885e4` actually finished its
+937-entry owned seal,330,469 saved checks and331,407 reported final read-only
+checks. Independent original source-known rank review agrees on all10,062
+source groups and5,540/4,474,312 crossing; final whole first-pair review awaits
+the still-active Illinois baseline worker. No current/native valid-write-in
+allocation or geographic approval follows.
+
+That actual slot launched Delaware official-results
+`960cdd44-9970-4cd0-900f-9968e5ef8d24`, after fresh profiles/all four notes and
+provider inspection, on the externally accepted311/all530/3-parent contract.
+Illinois baseline `a7b49f02-905f-4208-b957-fffdb58615bf` is the only other active
+researcher. Delaware maps remains prepared only; no third researcher exists.

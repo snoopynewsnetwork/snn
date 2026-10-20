@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "requested_date": "2026-10-17",
-  "updated_at_utc": "2026-10-20T00:29:40.471889+00:00",
+  "updated_at_utc": "2026-10-20T00:40:33.085058+00:00",
   "scope": "35 states in the repository 2026 U.S. Senate race index",
   "coordinator_agent_id": "d0fc3534-1613-4883-b48b-21a233fcfd9e",
   "workspace_id": "wks_b290f45007010740",
@@ -5521,7 +5521,7 @@
       "election": "Regular",
       "seat_class": "II",
       "priority": 18,
-      "status": "first-pair-accepted-awaiting-second-wave-slots",
+      "status": "official-active-maps-awaiting-real-slot",
       "workers": {
         "turnout": {
           "agent_id": "f5a17f09-a714-4ee5-a7e7-265474c0c809",
@@ -5540,9 +5540,11 @@
           },
           "notifyOnFinish": true,
           "launch_prompt": {
-            "path": "/tmp/snn-delaware-turnout-launched-prompt.txt",
+            "path": "senate/2026/delaware/data/coordinator-launches/turnout-initial-prompt.txt",
             "bytes": 10742,
-            "sha256": "733ff817e80d57a6d9ab78858da0a330bdc44ca7c77b45f9e3644fb3cadb5b21"
+            "sha256": "733ff817e80d57a6d9ab78858da0a330bdc44ca7c77b45f9e3644fb3cadb5b21",
+            "temporary_original_path": "/tmp/snn-delaware-turnout-launched-prompt.txt",
+            "scope": "Exact complete prompt transmitted at actual create_agent; no later worker changes included"
           },
           "released_by_actual_finish": "a3b6cf9c-a1de-47fa-b472-ce7491c1f082",
           "actual_peer": "4724b2aa-c338-4708-8044-c4b606bfaaeb",
@@ -5569,9 +5571,11 @@
           },
           "notifyOnFinish": true,
           "launch_prompt": {
-            "path": "/tmp/snn-delaware-partisanship-launched-prompt.txt",
+            "path": "senate/2026/delaware/data/coordinator-launches/partisanship-initial-prompt.txt",
             "bytes": 11868,
-            "sha256": "9790bc80325b7f9ce5470337c407e9ed160e6f3d52029e22f14deabca3b43f9c"
+            "sha256": "9790bc80325b7f9ce5470337c407e9ed160e6f3d52029e22f14deabca3b43f9c",
+            "temporary_original_path": "/tmp/snn-delaware-partisanship-launched-prompt.txt",
+            "scope": "Exact complete prompt transmitted at actual create_agent; no later worker changes included"
           },
           "released_by_actual_finish": "356c1a4e-e6b9-4804-82bf-fc1ef28b5516",
           "actual_peer": "f5a17f09-a714-4ee5-a7e7-265474c0c809",
@@ -5583,6 +5587,33 @@
           "complete_unit_targets": 8650,
           "sealed_asset_entries": 151,
           "shared_original_refs": 12
+        },
+        "official-results": {
+          "agent_id": "960cdd44-9970-4cd0-900f-9968e5ef8d24",
+          "status": "active",
+          "launched_at_utc": "2026-10-20T00:40:33.085058+00:00",
+          "launch_timestamp_scope": "Coordinator record after actual successful create response, not exact provider start",
+          "provider": "codex/gpt-6.1-sol",
+          "settings": {
+            "modeId": "auto-review",
+            "thinkingOptionId": "high"
+          },
+          "selected_fresh_profile": {
+            "id": "agent_profile_mvfmd7wg_u16123g52jn",
+            "name": "Research",
+            "notes": "When reading existing code, reading existing papers, or generally researching BEFORE devising a plan."
+          },
+          "all_four_profile_notes_read": true,
+          "notifyOnFinish": true,
+          "launch_prompt": {
+            "path": "senate/2026/delaware/data/coordinator-launches/official-results-initial-prompt.txt",
+            "bytes": 8339,
+            "sha256": "b3d7d5920a7a4488577f910f211592e6641665d72547116446c25a5390d2b603",
+            "temporary_original_path": "/tmp/snn-delaware-official-results-launched-prompt.txt",
+            "scope": "Exact complete prompt transmitted at actual create_agent; no later worker changes included"
+          },
+          "released_by_actual_finish": "a2a3b1cf-ac46-446b-be8d-18390c8885e4",
+          "only_other_active_worker": "a7b49f02-905f-4208-b957-fffdb58615bf"
         }
       },
       "validation": {
@@ -5729,11 +5760,11 @@
       "election": "Regular",
       "seat_class": "II",
       "priority": 19,
-      "status": "first-pair-active",
+      "status": "turnout-complete-baseline-final-QA-active",
       "workers": {
         "turnout": {
           "agent_id": "a2a3b1cf-ac46-446b-be8d-18390c8885e4",
-          "status": "active",
+          "status": "complete-awaiting-coordinator-final-review",
           "launched_at_utc": "2026-10-20T00:12:26.635894+00:00",
           "launch_timestamp_scope": "Coordinator record after actual successful create response, not exact provider start",
           "provider": "codex/gpt-6.1-sol",
@@ -5748,13 +5779,24 @@
           },
           "notifyOnFinish": true,
           "launch_prompt": {
-            "path": "/tmp/snn-illinois-turnout-launched-prompt.txt",
+            "path": "senate/2026/illinois/data/coordinator-launches/turnout-initial-prompt.txt",
             "bytes": 13076,
-            "sha256": "4cc1065437cbbf4c65cbed0938237cffade71d435157758b0c9d4d9c810d5048"
+            "sha256": "4cc1065437cbbf4c65cbed0938237cffade71d435157758b0c9d4d9c810d5048",
+            "temporary_original_path": "/tmp/snn-illinois-turnout-launched-prompt.txt",
+            "scope": "Exact complete prompt transmitted at actual create_agent; no later worker changes included"
           },
           "released_by_actual_finish": "4724b2aa-c338-4708-8044-c4b606bfaaeb",
           "actual_independent_peer": "a7b49f02-905f-4208-b957-fffdb58615bf",
-          "latest_substantive_milestone": "Original146370CSVrecords/12fields,306countycanvasses/1462candidate rows/all102turnoutcontrols; primary10062sourcegroups N5592368,5540/4474312 after55394473789,StClairO FALLON3+523;2232689reciprocalchecks. Final report/QA active; no acceptance."
+          "latest_substantive_milestone": "Original146370CSVrecords/12fields,306countycanvasses/1462candidate rows/all102turnoutcontrols; primary10062sourcegroups N5592368,5540/4474312 after55394473789,StClairO FALLON3+523;2232689reciprocalchecks. Final report/QA active; no acceptance.",
+          "actual_finish_event_received": true,
+          "owned_manifest_entries": 937,
+          "final_saved_checks": 330469,
+          "final_read_only_checks_reported": 331407,
+          "handoff_hashes": {
+            "report": "95277da548e37223879688014d857b2978ac3d69cb2788a8e08730a5d55397ce",
+            "contract": "50a21c166dbe14339d3cfa103443c75d7141bf6554f40f5cc96dddf8dfecb78e",
+            "manifest": "7e616994d8dce3bb9abafc909bcc3a5395395e0b3b3d6e68831acf8802c8e341"
+          }
         },
         "partisanship": {
           "agent_id": "a7b49f02-905f-4208-b957-fffdb58615bf",
@@ -5773,9 +5815,11 @@
           },
           "notifyOnFinish": true,
           "launch_prompt": {
-            "path": "/tmp/snn-illinois-partisanship-launched-prompt.txt",
+            "path": "senate/2026/illinois/data/coordinator-launches/partisanship-initial-prompt.txt",
             "bytes": 14253,
-            "sha256": "b27cf7faaf6c86645bf0027ae4085d68082c2a157eaf15afea55ae0f1d51d543"
+            "sha256": "b27cf7faaf6c86645bf0027ae4085d68082c2a157eaf15afea55ae0f1d51d543",
+            "temporary_original_path": "/tmp/snn-illinois-partisanship-launched-prompt.txt",
+            "scope": "Exact complete prompt transmitted at actual create_agent; no later worker changes included"
           },
           "released_by_actual_finish": "f5a17f09-a714-4ee5-a7e7-265474c0c809",
           "actual_turnout_peer": "a2a3b1cf-ac46-446b-be8d-18390c8885e4",
@@ -5865,6 +5909,28 @@
         "absent_Kennedy_cells": 15,
         "legal_valid_writein_robustness": false,
         "current_geography_approved": false
+      },
+      "coordinator_original_county_review": {
+        "path": "data/coordinator-county-original-review.json",
+        "bytes": 599388,
+        "sha256": "8f7dc29ea29e18ec8b592bd5af624c5b6c234a0016cdbdd59adccc80c239d4fe"
+      },
+      "coordinator_pre_handoff_math_review": {
+        "path": "data/coordinator-first-pair-math-review.json",
+        "bytes": 1845,
+        "sha256": "3f24dd5f0d583331e26fcef04a573f8b8434960039c5b0e4fa4ddf5fae41b1bc",
+        "checks": 1376679,
+        "state_scenarios": 90,
+        "county_targets": 8262,
+        "native_targets": 90558,
+        "producer_final_seals_pending": true
+      },
+      "coordinator_live_repair_review": {
+        "path": "data/coordinator-live-input-review-v1/repair-review.json",
+        "bytes": 3111,
+        "sha256": "1d231a87f6a60e5b24f85b76ffd452d04daedfb08d463984d9a765dd65763126",
+        "actual_failures_replayed": 7,
+        "producer_fixed_before_handoff": true
       }
     },
     {
@@ -5908,6 +5974,14 @@
         "native_method_column_available": false,
         "formal_priority_accepted": false,
         "current_geography_approved": false
+      },
+      "coordinator_regional_news_recheck": {
+        "path": "data/news/coordinator-oct19-recheck/review.json",
+        "bytes": 4862,
+        "sha256": "eac3b97bc71e5b7622194efa19eb9167e6b0e986e9030d003d3679db8c7c3735",
+        "complete_original_observations": 10,
+        "status": "optional-preparation-only-no-question-workers-launched",
+        "November_counts_admitted": false
       }
     },
     {
@@ -6390,7 +6464,7 @@
       ]
     }
   ],
-  "batch_status": "in-progress:17newstatespublished-plus-retainedMichigan;Illinois-first-pair-only-active;Delaware-firstpair-accepted-awaiting-actual-second-wave-slots;15laterstatesqueued",
+  "batch_status": "in-progress:17newstatespublished-plus-retainedMichigan;Delaware-official-and-Illinois-baseline-only-active;Illinois-turnout-complete-under-review;15laterstatesqueued",
   "coordinator_preparation_audit": {
     "status": "pass",
     "checked_at_utc": "2026-10-19T19:35:57.007950+00:00",
