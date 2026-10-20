@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "requested_date": "2026-10-17",
-  "updated_at_utc": "2026-10-20T01:45:35.499386+00:00",
+  "updated_at_utc": "2026-10-20T01:52:21.659407+00:00",
   "scope": "35 states in the repository 2026 U.S. Senate race index",
   "coordinator_agent_id": "d0fc3534-1613-4883-b48b-21a233fcfd9e",
   "workspace_id": "wks_b290f45007010740",
@@ -5861,7 +5861,7 @@
       "election": "Regular",
       "seat_class": "II",
       "priority": 19,
-      "status": "all-four-finished-final-official-integration-review",
+      "status": "all-four-complete-independent-final-integration-pass-ready-publication",
       "workers": {
         "turnout": {
           "agent_id": "a2a3b1cf-ac46-446b-be8d-18390c8885e4",
@@ -5940,7 +5940,7 @@
         },
         "official-results": {
           "agent_id": "0ce74399-fe2e-42a8-9428-650729a9137c",
-          "status": "complete-pending-independent-final-review",
+          "status": "complete-reviewed-historical-source-scope",
           "launched_at_utc": "2026-10-20T01:03:52.285362+00:00",
           "launch_timestamp_scope": "Coordinator record after successful actual create response, not exact provider start",
           "provider": "codex/gpt-6.1-sol",
@@ -5976,7 +5976,8 @@
           "maximum_stored_asset": 10442586,
           "actual_directory_authorities": 108,
           "full_investigations": 10062,
-          "current_return_admission": false
+          "current_return_admission": false,
+          "final_read_only_validator_coordinator_verified": true
         },
         "precinct-maps": {
           "agent_id": "d02ee332-ee45-4f77-8eb1-e3364aa3bc41",
@@ -6022,8 +6023,8 @@
         }
       },
       "validation": {
-        "status": "first_pair_pass_complete_historical_known_printed_source_dispatch_only",
-        "second_wave_complete": false,
+        "status": "pass_complete_four_question_historical_research_with_explicit_source_limits",
+        "second_wave_complete": true,
         "independent_math_checks": 1388406,
         "state_scenarios": 99,
         "county_unit_rows": 8262,
@@ -6034,10 +6035,15 @@
         "complete_original_fields_each_producer": 1756440,
         "producer_owned_seals": [
           937,
-          248
+          248,
+          3047,
+          1006
         ],
         "baseline_exact_original_refs": 478,
-        "acceptance_complete_object_replay": 554096
+        "acceptance_complete_object_replay": 554096,
+        "official_independent_checks": 4392673,
+        "maps_independent_checks": 3830176,
+        "all_current_admissions_false": true
       },
       "gaps": [
         "Legal named-writein native allocation/80percent robustness unproved;15Kennedy missing and4unknown admin pools retained.",
@@ -6207,6 +6213,26 @@
         "source_receipts": 342,
         "native_records": 10084,
         "exact_native_XY": 1664969
+      },
+      "coordinator_final_official_review": {
+        "path": "senate/2026/illinois/data/coordinator-official-final-review.json",
+        "bytes": 1758,
+        "sha256": "d50641b0ecf56a9480a255491e0d4950dd7ef68e1640e40941a7236823971766"
+      },
+      "coordinator_current_primary_review": {
+        "path": "senate/2026/illinois/data/coordinator-official-current-recheck/review.json",
+        "bytes": 51444,
+        "sha256": "6df5f63099f1048b453c2b3f78a4c2392442468f14e69a6137cd1762bcdce093"
+      },
+      "coordinator_whole_state_review": {
+        "path": "senate/2026/illinois/data/coordinator-validation.json",
+        "bytes": 6176,
+        "sha256": "62d6eba9e416ed4202eea0e1553cbc88a6a5bd8ac715bbfe92f461b1e28d7c48"
+      },
+      "coordinator_whole_state_manifest": {
+        "path": "senate/2026/illinois/data/coordinator-asset-manifest.json",
+        "bytes": 1037945,
+        "sha256": "a68f70ff51277d86237de6d6e67fe9bd7c1d905261868903154f0cb26c0bb6ff"
       }
     },
     {
