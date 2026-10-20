@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "requested_date": "2026-10-17",
-  "updated_at_utc": "2026-10-20T16:05:39.189200+00:00",
+  "updated_at_utc": "2026-10-20T16:25:17.945342+00:00",
   "scope": "35 states in the repository 2026 U.S. Senate race index",
   "coordinator_agent_id": "d0fc3534-1613-4883-b48b-21a233fcfd9e",
   "workspace_id": "wks_b290f45007010740",
@@ -8152,11 +8152,11 @@
       "election": "Regular",
       "seat_class": "II",
       "priority": 24,
-      "status": "turnout-original-first-finished-baseline-active",
+      "status": "baseline-finished-turnout-same-agent-detail-repair-reciprocal-active",
       "workers": {
         "turnout": {
           "agent_id": "5bf8df2e-5c2f-4e0e-a51e-2021afca7bea",
-          "status": "bounded-original-first-finished-peer-and-coordinator-review-pending",
+          "status": "active-same-agent-bounded-row5-repair-and-reciprocal",
           "launched_at_utc": "2026-10-20T15:29:56.190760+00:00",
           "launch_timestamp_scope": "Coordinator record following actual create response",
           "released_by_actual_finish": "30e855e4-3ff5-4bdd-9f7a-1a0a6f77e232",
@@ -8219,11 +8219,37 @@
           "crossing_literal_code": "0804",
           "president_only_cases": 39,
           "state_admin_codes": 4,
-          "county_substitution": false
+          "county_substitution": false,
+          "bounded_repair_continuation": {
+            "actual_same_agent_id": "5bf8df2e-5c2f-4e0e-a51e-2021afca7bea",
+            "resumed_at_utc": "2026-10-20T16:23:17.309926+00:00",
+            "released_by_actual_finish": "5d9f9b63-0cf2-4b55-b52b-579cbc1d76d1",
+            "only_other_active_worker": "49aba7f6-0608-41c5-b809-ed1ce1c29ed6",
+            "fresh_all_four_profile_notes_and_provider_inspection": true,
+            "selected_profile": {
+              "id": "agent_profile_mvfmfxpm_2d4ky8aslts",
+              "name": "Verification",
+              "notes": "Checking implementations, testing that things work, and problem solving. For simple problems, implement fixes directly; for complicated ones, pass them back to implementation."
+            },
+            "provider": "codex/gpt-6.1-sol",
+            "settings": {
+              "modeId": "auto-review",
+              "thinkingOptionId": "medium"
+            },
+            "actual_runtime_update_succeeded": true,
+            "notifyOnFinish": true,
+            "prompt": {
+              "path": "senate/2026/rhode-island/data/coordinator-launches/turnout-detail-repair-reciprocal-prompt.txt",
+              "bytes": 10397,
+              "sha256": "38542a34b92612634275974e908097fb9228d1d01050abbb5eef53628b9109f0"
+            },
+            "scope": "Real Cranston row5 detail coverage correction + captured actual-final independent baseline original-source reciprocal audit; original native counts/order unchanged",
+            "no_new_or_replacement_agent": true
+          }
         },
         "partisanship": {
           "agent_id": "5d9f9b63-0cf2-4b55-b52b-579cbc1d76d1",
-          "status": "active",
+          "status": "actual-finished-sealed-awaiting-coordinator-math-source-review",
           "launched_at_utc": "2026-10-20T15:44:41.332278+00:00",
           "launch_timestamp_scope": "Coordinator record after actualcreate response",
           "released_by_actual_finish": "bd151c4c-70ea-4b72-9063-2012086b07e6",
@@ -8248,25 +8274,33 @@
             "sha256": "042ef6f9bbc4cb25cccab1ab165b130bbba1b504164b3cacdb302a6180973771"
           },
           "latest_substantive_milestone": {
-            "scope": "Actual independent original-first worker; not coordinator acceptance or completed reciprocal",
-            "original_receipts": 148,
-            "immutable_input_sha256": "0f1cb9f669827e45d604b6686fa4d8267d77e7fc70c962d8e6c3f907ee3260ab",
-            "native_2024Senate": 458,
-            "native_votes": 491948,
-            "top15": 34697,
-            "minimum80": 242,
-            "cumulative": 394072,
-            "preceding": 393066,
-            "crossing_literal": "0804",
-            "crossing_source_byte_offset": 1075900,
+            "scope": "Active independent baseline source-core comparison and final QA, no restart/contact",
+            "captured_turnout_source_checks": 24249,
+            "all458_order_and_80_match": true,
+            "full_writein_detail": 1227,
+            "local_discrepancies": 8,
+            "literal_row5_proof": "data/baselines/extracts/writein-row5-source-proof.json",
+            "scenario_settings": 16,
+            "CLI_fixtures": 30,
+            "isolated_rebuild_products": 52,
             "current_geometry_approved": false
-          }
+          },
+          "actual_finish_event_received": true,
+          "final_manifest_sha256": "f3b33d30631cec93796c4aab2becec82a49982da39878421f11c22ea5e1a8620",
+          "final_seal_sha256": "7193431c53e45c059a468cb24d821f149d27a57a42c3c7006540c1e956f353bd",
+          "owned_manifest_entries": 234,
+          "complete_owned_files": 235,
+          "reported_read_only_checks": 370,
+          "reported_real_CLI_fixtures": 30,
+          "reported_corruption_cases": 8,
+          "reported_source_core_peer_checks": 24249,
+          "complete_owned_hash_review_pass": true
         }
       },
       "validation": null,
       "gaps": [],
       "published_commits": [],
-      "coordinator_preparation": "Actual original-first turnout launched; baseline not launched. Full39municipal/native scope, fixed-width view differences and method/administrative cases retained; no priority or current approval.",
+      "coordinator_preparation": "Baseline actual finish released slot. Same turnout ID now actually resumed Verification/medium after fresh profiles/provider/runtime update for confirmed Cranston row5 omission and bounded full original-source reciprocal review. Oregon official remains sole other active researcher; maps not launched.",
       "state_specific_notes": "Use municipalities/wards/native precincts and board-administered categories, not five county feeds. No 2022 U.S. Senate contest; use actual statewide midterm such as governor. Journal/state current routes are September primary; contest completion denominators differ (402 Senate vs 398 governor in sample).",
       "bounded_historical_native_preparation": {
         "path": "data/coordinator-historical-native-preflight.json",
@@ -8339,6 +8373,39 @@
         "scope": "Original-first finer458native/242source-scope and complete source preparation only; peer/current/geographic/whole-state acceptance pending.",
         "command_order_exception": "Gitadd flagged unlisted ignored preparation bytecode; later newline commit continued before planned index check. Postpublication full tree/object/size/hash/whitespace verification passed all410objects against exact saved review plan; activeworker/cache excluded. Exactopaque cache preserved then removed, no producer change.",
         "post_publication_review": "senate/2026/rhode-island/data/coordinator-stage-review-history/post-publication-exact-tree-review.json"
+      },
+      "coordinator_writein_detail_finding": {
+        "status": "confirmed-original-row5-omission-same-worker-repair-actually-resumed",
+        "proof": {
+          "path": "senate/2026/rhode-island/data/coordinator-writein-row5-review/proof.json",
+          "bytes": 159293,
+          "sha256": "f2c5ca68dbd6d91336de871ff50f8af0addd2e72c8685138eca1c94fee0e75ed"
+        },
+        "review_script": {
+          "path": "senate/2026/rhode-island/data/review_writein_row5.py",
+          "bytes": 8461,
+          "sha256": "421a06b5ff33699f77b9cfb6ca9857bf75c72e231bf94f8cc1c260a9f30e3b48"
+        },
+        "original_workbook_sha256": "71929b0ba569b546cbb3aad7c0427cfe7e94f15c42e2b15ea330cbd5b28b039c",
+        "old_row6_detail": 1226,
+        "old_discrepant_municipalities": 9,
+        "full_row5_detail": 1227,
+        "full_discrepant_municipalities": 8,
+        "actual_omission": "Cranston D5 Mario Frioli [literal trailing space] / E5=1; actual rId7 -> xl/worksheets/sheet7.xml",
+        "municipal_printed_generic": 1239,
+        "state_generic": 1244,
+        "primary_order_membership_changed": false,
+        "producer_bytes_changed_by_coordinator": false,
+        "prepared_prompt": {
+          "path": "senate/2026/rhode-island/data/coordinator-launches/prepared-turnout-detail-repair-reciprocal-prompt.txt",
+          "bytes": 7583,
+          "sha256": "cb7487c9dd4cfe3b181396bb63df704d46f1b0df2eb35304831644350cc00807"
+        },
+        "active_workers_unchanged": [
+          "49aba7f6-0608-41c5-b809-ed1ce1c29ed6",
+          "5bf8df2e-5c2f-4e0e-a51e-2021afca7bea"
+        ],
+        "resume_requires_actual_free_slot": true
       }
     },
     {
@@ -8691,6 +8758,29 @@
           "actual_agent_id": null,
           "scope": "Prepared only for later queue. Fresh profiles/allnotes/provider and actual releasedslot required. No peer values, current approval or research completion claimed."
         }
+      },
+      "coordinator_additional_regional_news": {
+        "review": {
+          "path": "senate/2026/oklahoma/data/news/coordinator-oct20-regional/review.json",
+          "bytes": 922,
+          "sha256": "cff2d5a0b94da95281c364a76869442cb64bb6867030d179c25c4ea10a84de47"
+        },
+        "manifest": {
+          "path": "senate/2026/oklahoma/data/news/coordinator-oct20-regional/asset-manifest.json",
+          "bytes": 8003,
+          "sha256": "2ffe4411753520a8d6130037400a03699c8a8ae57a16ed7d1dcee5598a6fb92e"
+        },
+        "immutable_inventory": {
+          "path": "senate/2026/oklahoma/data/news/coordinator-oct20-regional/acquisition-complete-v1.json",
+          "bytes": 54640,
+          "sha256": "19bd48effb899e336c6a685d2217979d2aef0d5ee40f9e7b24660e8f509487b0"
+        },
+        "complete_request_receipts": 11,
+        "whole_response_hops": 13,
+        "scope": "Actual KSWO empty mainwidget, literal AP November3 Senate setup layouts and client/org config; NewsOn6Juneprimary; Enidcategory access. No candidate votes/nativejoins/cadence/remainingpool/currentadmission. AP not independent from other AP.",
+        "observed_setup_race_id": "20261103OK37960",
+        "measured_cadence": null,
+        "genuine_November_counts_admitted": false
       }
     },
     {

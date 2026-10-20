@@ -1,0 +1,322 @@
+{
+  "AP_HTTP_decoding": {
+    "receipt": "ap-literal-layout-client.receipt.json",
+    "original_HTTP_content_encoding": "gzip",
+    "archival_encoding": "additional gzip, separate from HTTP representation",
+    "decoded_bytes": 271875,
+    "decoded_sha256": "41f69be688a4a58beb8e63442822be6d56ad77517d7521633c9efa54a6497682"
+  },
+  "actual_client_tokens": [
+    {
+      "decoded_byte_offset": 227915,
+      "exact_token": "w.slow=window.setInterval(i.bind(null,\"slow\"),12e4)",
+      "context": ".then(t=>{for(let n of t){let t=e.get(n),r=a.get(n);for(let e of r)e(t)}})}return document.addEventListener(\"visibilitychange\",o),w.slow=window.setInterval(i.bind(null,\"slow\"),12e4),w.fast=window.setInterval(i.bind(null,\"fast\"),1e4),function({prefix:n}){let r=n.includes(\"data-test\");return{request:function(e,t,o={}){let{poll:i=!1,lane:u=\"slow\"}=o,s=r?\"fast\":u"
+    },
+    {
+      "decoded_byte_offset": 227967,
+      "exact_token": "w.fast=window.setInterval(i.bind(null,\"fast\"),1e4)",
+      "context": "for(let e of r)e(t)}})}return document.addEventListener(\"visibilitychange\",o),w.slow=window.setInterval(i.bind(null,\"slow\"),12e4),w.fast=window.setInterval(i.bind(null,\"fast\"),1e4),function({prefix:n}){let r=n.includes(\"data-test\");return{request:function(e,t,o={}){let{poll:i=!1,lane:u=\"slow\"}=o,s=r?\"fast\":u;if(e){let r=k(e,n);l(t,r),i&&a(r,t,s)}},unsubscrib"
+    },
+    {
+      "decoded_byte_offset": 266209,
+      "exact_token": "fetch(`https://interactives.apelections.org/election-results/customers/layouts/organization-layouts/config/${e}/config.json`)",
+      "context": "ate)(!1),[d,p]=(0,l.useState)(\"loading\"),[m,g]=(0,l.useState)(\"\"),[v,y]=(0,l.useState)({});(0,l.useEffect)(()=>{if(o)return;let t;fetch(`https://interactives.apelections.org/election-results/customers/layouts/organization-layouts/config/${e}/config.json`).then(e=>{if(e.ok)return e.json();throw new Error(\"Could not load organization configuration.\")}).then(function(e){return i(e),s(e.allowsAnalytics),t=e.defaultThemeId,h(e.domains)}"
+    },
+    {
+      "decoded_byte_offset": 265992,
+      "exact_token": "\"true\"===new URLSearchParams(n).get(\"test\")",
+      "context": "(\"/\")};return(0,r.jsx)(An,{customStyles:l},t)})})}const ur=(sr=function({organization:e,grid:t}){const n=window.location.search,a=\"true\"===new URLSearchParams(n).get(\"test\"),[o,i]=(0,l.useState)(null),[u,s]=(0,l.useState)(!1),[d,p]=(0,l.useState)(\"loading\"),[m,g]=(0,l.useState)(\"\"),[v,y]=(0,l.useState)({});(0,l.useEffect)(()=>{if(o)return;let t;fetch("
+    },
+    {
+      "decoded_byte_offset": 228356,
+      "exact_token": "new URL(e,t).href",
+      "context": "i=n?k(a,n):a,u=r?\"fast\":o;l(e.get(i));let s=t[u],c=s.get(i);c&&(c.delete(l),0===c.size&&s.delete(i))}}}}();function k(e,t){return new URL(e,t).href}function E(e,t){let n={Pragma:\"no-cache\",\"Cache-Control\":\"no-cache\"};return t&&(n[\"If-None-Match\"]=t),fetch(e,{headers:n}).then(t=>{if(t.status>=400)throw Error(`request failed fo"
+    }
+  ],
+  "full_AP_layouts": [
+    {
+      "source_receipt": "kswo-linked-ap-1.receipt.json",
+      "outer": {
+        "organization": "110246",
+        "grid": "{\"slots\":[{\"id\":0,\"cycle\":\"2026\",\"date\":\"2026-11-03\",\"visualization\":\"BalanceOfPower\",\"props\":{\"officeID\":\"S\",\"hideHeader\":true},\"col\":[1,3],\"row\":[1,2]}]}"
+      },
+      "grid": {
+        "slots": [
+          {
+            "id": 0,
+            "cycle": "2026",
+            "date": "2026-11-03",
+            "visualization": "BalanceOfPower",
+            "props": {
+              "officeID": "S",
+              "hideHeader": true
+            },
+            "col": [
+              1,
+              3
+            ],
+            "row": [
+              1,
+              2
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "source_receipt": "kswo-linked-ap-2.receipt.json",
+      "outer": {
+        "organization": "110246",
+        "grid": "{\"slots\":[{\"id\":0,\"date\":\"2026-11-03\",\"visualization\":\"SummaryTable\",\"props\":{\"state\":\"OK\",\"raceID\":\"20261103OK37960\"},\"col\":[1,2],\"row\":[1,2]},{\"id\":2,\"date\":\"2026-11-03\",\"visualization\":\"ResultsCardGrid\",\"props\":{\"state\":\"OK\",\"office\":\"H\"},\"col\":[1,3],\"row\":[3,4]},{\"id\":3,\"date\":\"2026-11-03\",\"visualization\":\"SummaryTable\",\"props\":{\"state\":\"OK\",\"raceID\":\"20261103OK37857\"},\"col\":[1,2],\"row\":[2,3]},{\"date\":\"2026-11-03\",\"label\":\"Map of General for U.S. Senate, Class II in Oklahoma\",\"searchText\":\"OK Oklahoma state map\",\"visualization\":\"StateMap\",\"offices\":[\"U.S. Senate\"],\"props\":{\"raceID\":\"20261103OK37960\",\"state\":\"OK\",\"seatNum\":\"2\",\"officeID\":\"S\",\"cities\":true,\"includeTotalVotes\":true,\"includeUncountedVote\":true,\"includeCountyLeader\":true,\"makeTotalVotesDefault\":true,\"showTitle\":false},\"row\":[1,2],\"col\":[2,3],\"id\":4},{\"date\":\"2026-11-03\",\"label\":\"Map of General for Governor in Oklahoma\",\"searchText\":\"OK Oklahoma state map\",\"visualization\":\"StateMap\",\"offices\":[\"Governor\"],\"props\":{\"raceID\":\"20261103OK37857\",\"state\":\"OK\",\"seatNum\":null,\"officeID\":\"G\",\"cities\":true,\"includeTotalVotes\":true,\"includeUncountedVote\":true,\"includeCountyLeader\":true,\"makeTotalVotesDefault\":true,\"showTitle\":false},\"row\":[2,3],\"col\":[2,3],\"id\":5}]}"
+      },
+      "grid": {
+        "slots": [
+          {
+            "id": 0,
+            "date": "2026-11-03",
+            "visualization": "SummaryTable",
+            "props": {
+              "state": "OK",
+              "raceID": "20261103OK37960"
+            },
+            "col": [
+              1,
+              2
+            ],
+            "row": [
+              1,
+              2
+            ]
+          },
+          {
+            "id": 2,
+            "date": "2026-11-03",
+            "visualization": "ResultsCardGrid",
+            "props": {
+              "state": "OK",
+              "office": "H"
+            },
+            "col": [
+              1,
+              3
+            ],
+            "row": [
+              3,
+              4
+            ]
+          },
+          {
+            "id": 3,
+            "date": "2026-11-03",
+            "visualization": "SummaryTable",
+            "props": {
+              "state": "OK",
+              "raceID": "20261103OK37857"
+            },
+            "col": [
+              1,
+              2
+            ],
+            "row": [
+              2,
+              3
+            ]
+          },
+          {
+            "date": "2026-11-03",
+            "label": "Map of General for U.S. Senate, Class II in Oklahoma",
+            "searchText": "OK Oklahoma state map",
+            "visualization": "StateMap",
+            "offices": [
+              "U.S. Senate"
+            ],
+            "props": {
+              "raceID": "20261103OK37960",
+              "state": "OK",
+              "seatNum": "2",
+              "officeID": "S",
+              "cities": true,
+              "includeTotalVotes": true,
+              "includeUncountedVote": true,
+              "includeCountyLeader": true,
+              "makeTotalVotesDefault": true,
+              "showTitle": false
+            },
+            "row": [
+              1,
+              2
+            ],
+            "col": [
+              2,
+              3
+            ],
+            "id": 4
+          },
+          {
+            "date": "2026-11-03",
+            "label": "Map of General for Governor in Oklahoma",
+            "searchText": "OK Oklahoma state map",
+            "visualization": "StateMap",
+            "offices": [
+              "Governor"
+            ],
+            "props": {
+              "raceID": "20261103OK37857",
+              "state": "OK",
+              "seatNum": null,
+              "officeID": "G",
+              "cities": true,
+              "includeTotalVotes": true,
+              "includeUncountedVote": true,
+              "includeCountyLeader": true,
+              "makeTotalVotesDefault": true,
+              "showTitle": false
+            },
+            "row": [
+              2,
+              3
+            ],
+            "col": [
+              2,
+              3
+            ],
+            "id": 5
+          }
+        ]
+      }
+    }
+  ],
+  "complete_publisher_election_cache": {
+    "gsync-elections-featured": {
+      "{\"arc-site\":\"kswo\",\"includeTestResults\":false}": {
+        "data": {
+          "id": null,
+          "isActive": false,
+          "name": "",
+          "races": [],
+          "totalResults": 0,
+          "hasRecentUpdates": false,
+          "updatedDate": null,
+          "dataTransformedAt": "2026-10-20T16:08:00.524Z",
+          "_id": null
+        },
+        "expires": 1792512600524,
+        "lastModified": 1792512480482
+      }
+    },
+    "gsync-elections": {
+      "{\"arc-site\":\"kswo\",\"includeTestResults\":false}": {
+        "data": {
+          "elections": [],
+          "toggles": {
+            "front": 0,
+            "page": 0,
+            "toggle": 0
+          },
+          "totalElections": 0,
+          "selectedElection": {
+            "id": null
+          },
+          "hasRecentUpdates": false,
+          "updatedDate": null,
+          "dataTransformedAt": "2026-10-20T16:08:43.326Z",
+          "_id": "e55ab3714edf111db42aa74976057f0bb40d0481257624aa971548dba0ea991c"
+        },
+        "expires": 1792512643327,
+        "lastModified": 1792512523282
+      }
+    }
+  },
+  "NewsOn6_meta_description": "Oklahoma primary election results for the June 16 vote for Oklahoma Governor, Oklahoma State Superintendent, Oklahoma Insurance Commissioner, and U.S. Senate race. Breaking coverage as the polls open, and exclusive interviews with winners.",
+  "complete_NewsOn6_schema": [
+    {
+      "@context": "http://schema.org",
+      "@type": "",
+      "@graph": [
+        {
+          "@context": "http://schema.org",
+          "@type": "WebPage",
+          "url": "https://www.newson6.com/oklahoma-politics/oklahoma-primary-election",
+          "publisher": {
+            "@type": "Organization",
+            "name": "NewsOn6.com",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://cdn.griffin.news/dims4/default/60ccd61/2147483647/strip/false/crop/164x152+0+0/resize/65x60!/quality/90/?url=https%3A%2F%2Fgriffin-media-production-griffin.s3.us-east-2.amazonaws.com%2Fbrightspot%2Fd1%2Fdf%2F4fafa11c4b259c2b7b3454c097a9%2F26mkt-okown-mastheadbug-n6.gif",
+              "width": 65,
+              "height": 60
+            }
+          },
+          "description": "Oklahoma primary election results for the June 16 vote for Oklahoma Governor, Oklahoma State Superintendent, Oklahoma Insurance Commissioner, and U.S. Senate race. Breaking coverage as the polls open, and exclusive interviews with winners.",
+          "name": "Oklahoma Primary Election Results | Oklahoma Governor Primary | newson6.com - NewsOn6.com"
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "Organization",
+          "@id": "https://www.newson6.com/#organization",
+          "name": "News On 6",
+          "sameAs": [
+            "https://www.facebook.com/NewsOn6/",
+            "https://twitter.com/NewsOn6",
+            "https://www.instagram.com/newson6kotv/",
+            "https://www.youtube.com/user/TheNewsOn6"
+          ],
+          "url": "https://www.newson6.com"
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "Website",
+          "description": "If you want to live and be informed, reach out to News On 6, covering Tulsa and all of Oklahoma. We have the breaking news just waiting for your involvement.",
+          "@id": "https://www.newson6.com/#website",
+          "inLanguage": "en-US",
+          "name": "News On 6",
+          "publisher": {
+            "@id": "https://www.newson6.com/#organization"
+          },
+          "url": "https://www.newson6.com"
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "WebPage",
+          "potentialAction": [
+            {
+              "@context": "http://schema.org",
+              "@type": "ReadAction",
+              "target": "https://www.newson6.com/oklahoma-politics/oklahoma-primary-election"
+            }
+          ],
+          "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@context": "http://schema.org",
+                "@type": "ListItem",
+                "item": "https://www.newson6.com/politics",
+                "name": "Politics",
+                "position": 1
+              },
+              {
+                "@context": "http://schema.org",
+                "@type": "ListItem",
+                "item": "https://www.newson6.com/oklahoma-politics",
+                "name": "Oklahoma Politics",
+                "position": 2
+              }
+            ]
+          },
+          "@id": "https://www.newson6.com/oklahoma-politics/oklahoma-primary-election/#webpage",
+          "inLanguage": "en-US",
+          "name": "Oklahoma Primary Election TUL",
+          "isPartOf": {
+            "@id": "https://www.newson6.com/#website"
+          },
+          "datePublished": "2026-06-15T19:53:01.803Z",
+          "dateModified": "2026-06-16T17:34:15.776Z",
+          "url": "https://www.newson6.com/oklahoma-politics/oklahoma-primary-election"
+        }
+      ]
+    }
+  ],
+  "org_config_receipt": "ap-observed-org-config.receipt.json",
+  "domain_registration_is_not_runtime_browser_verification": true
+}

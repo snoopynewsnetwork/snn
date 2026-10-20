@@ -10,3 +10,9 @@ Turnout5bf8df2e actually finished original-first seal:361MFtargets,391checks/eig
 
 
 Coordinator independently reviewed the finished original-first turnout package:951,928checks across all44ZIPmembers/187401full long records/5059827literalfields/12997selected candidate records and finer458order. Source-source/Board hierarchy/legalWI/current qualifications explicit. Baseline5d9f9b63 active, no reciprocal acceptance or next-wave dispatch yet.
+
+
+RI concrete detail correction prepared, not resumed: original Board Cranston D5/E5 contributes1, so full detail1227/eight local discrepancies versus prior row6-only1226/nine. Coordinator independently replayed all39 worksheets and saved exact XML/member/offset proof in `senate/2026/rhode-island/data/coordinator-writein-row5-review/proof.json`. Same turnout5bf8df2e narrow repair/reciprocal awaits actual free slot; only Oregon official49aba7f6 and RI baseline5d9f9b63 remain active. Native458/242 order, generic totals and current-approval flags unchanged.
+
+
+ACTUAL RI continuation: baseline5d9f9b63 ACTUALLY FINISHED/sealed, releasing slot. SAMEturnout5bf8df2e resumed for confirmed row5 detail correction plus bounded reciprocal against exact finished peer MFf3b33d30631cec93796c4aab2becec82a49982da39878421f11c22ea5e1a8620. Fresh all4notes/provider and successful runtime update selected Verification auto-review/medium. Exact10,397B promptSHA38542a34b92612634275974e908097fb9228d1d01050abbb5eef53628b9109f0. Only other active researcher Oregon official49aba7f6; no new/thirdworker/mapslaunch. Original Research/high history retained.
