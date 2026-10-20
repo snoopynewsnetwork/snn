@@ -33,7 +33,8 @@ def near(a, b):
 def main():
     proof = read(S / 'data/coordinator-native-original-review.json')
     original_rows = proof['all_original_source_rows']
-    parent_records = read(S / 'data/turnout/extract/native-rows.json')
+    parent_path = S / 'data/turnout/extract/native-rows.json'
+    parent_records = read(parent_path)
     parents = {r['source_id']: (r['county'], r['county_fips']) for rr in parent_records.values() for r in rr}
     headers = {r['source_id']: r['header_lines'][0]['complete_predata_nonnumeric_layout_lines'] for r in proof['complete_original_pins_and_header_representations']}
     definitions = {}
@@ -53,6 +54,8 @@ def main():
         definitions[scope] = list(zip(names, parties))
         for footer in result['printed_county_footers']:
             text = '\n'.join(headers[footer['source_id']])
+            county = parents[footer['source_id']][0]
+            ck(re.search(re.escape(county) + r'\s+County', text, re.I) is not None, 'original printed parent caption')
             for name, party in definitions[scope]:
                 literal = name
                 if footer['source_id'] == '2024-official-general-results-president-somerset' and name == 'Robert F. Kennedy Jr.':
@@ -108,6 +111,7 @@ def main():
                native_rows=checked_native, candidate_schemas={k: [dict(name=a, party=b) for a, b in v] for k, v in definitions.items()},
                exact_current_core_pins=initial, literal_caption_exceptions=literal_caption_exceptions,
                original_audit=pin(S/'data/coordinator-native-original-review.json'),
+               complete_source_parent_metadata=pin(parent_path),
                qualifications='Full literal candidate/header/party/raw source/position/null/pair/other fields checked against complete original PDF replay. Known numeric source scope only, not statewide eligible writein allocation, later final peer equality, finer physical roster or current identity approval.')
     p = S/'data/coordinator-baseline-core-review.json'
     p.write_text(json.dumps(out, indent=2)+'\n')

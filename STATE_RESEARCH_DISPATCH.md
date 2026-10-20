@@ -44,13 +44,13 @@ Each complete state passed independent source/native/target/map/whole-package
 and repository review, with its push independently verified. Historical source
 qualifications remain explicit; current geography and live readiness are separate.
 
-The only active researchers are New Jersey partisanship
-`61054f9e-a14c-44fc-b6b2-7bbc4c84b449` and Massachusetts official sources
-`4c5f1926-ae99-4a2d-bd4d-580280e21bcb`, launched in the actual NJturnout
-bounded reciprocal finish slot. Both Massachusetts first-pair workers finished;
-full historical dispatch and all complete original/object references pass.
-Massachusetts maps awaits a real slot. Thirteen later states remain unlaunched.
-No replacement or extra researcher exists.
+The only active researchers are Massachusetts official sources
+`4c5f1926-ae99-4a2d-bd4d-580280e21bcb` and Massachusetts maps
+`8cff5762-76ce-4417-9927-177d07757961`, each launched in an actual New Jersey
+first-pair finish slot. Massachusetts historical dispatch passes complete source
+reconstruction. Both New Jersey first-pair packages and the complete historical
+dispatch now pass independent source, target, actual CLI, final seal and full
+ledger reconstruction. Thirteen later states remain unlaunched. No extra researcher exists.
 
 Illinois's historical printed-known threshold is5,540/4,474,312 of5,592,368,
 following5,539/4,473,789; top15=29,572. Complete10,062 source groups,108 source
@@ -965,3 +965,36 @@ third-candidate plurality, unknown/no-pool/clipping and invalid input rejection.
 These proofs pin stable current baseline bodies only, pending actual final
 baseline handoff/seal. No producer import/writer, finished-peer restart, dispatch
 acceptance or current/legal/eligible-writein approval is implied.
+
+
+## Actual New Jersey baseline finish and Massachusetts maps launch
+
+NJbaseline61054f9e actually finished with318listed assets plus manifest itself,
+417original-reference entries and a complete acyclic seal. Producer readonly
+29636checks and independent final continuity1956checks pass; original core57306,
+math243937 and33actual CLIcases remain pinned and unchanged. No finished worker
+restart or future current/legal exhaustion is required. NJcomplete historical
+dispatch now awaits full source-field acceptance and independent ledger replay.
+
+MAmap worker `8cff5762-76ce-4417-9927-177d07757961` actually launched in that
+real released slot after fresh all-four profile notes/provider inspection. Exact
+10155B prompt SHAd78beaae33eb099265083956a974936ce55c3f7557ae7774d9af5d7838c35508
+is durably saved under state coordinator-launches. The sole other researcher is
+MAofficial4c5f1926. Both own exclusive paths; no Git/delegation/current approval.
+
+
+## New Jersey historical source dispatch accepted
+
+External acceptance545985B SHA f2abbba1f09a7b3a89b6bca0e30dfc90f201ee3c07bd6741c35a5cc0019aa826
+now preserves24complete roots/504whole companions/724943recursive objects across
+five complete ledgers. Independent replay checks all2654producer-listed bodies
+plus both manifests and417original dependency entries. Exact575/233/342/all21
+hierarchy and full6candidate4031795source denominator retained. This accepts
+municipal/admin publication research only, not finest precinct, current/legal
+geography, eligible-writein robustness or live readiness.
+
+NJofficial/maps prompts are prepared ONLY with real source pins and limits.
+Both active workers remain MAofficial4c5f1926 andMAmaps8cff5762. Subsequent
+launches require actual finish callbacks/fresh profiles/provider, no third
+researcher. Reviewed original-byte source exceptions and all producer false
+flags remain untouched. Continue the complete34-state batch.
