@@ -10,7 +10,7 @@ Reviewed historical turnout and conditional baseline research are available:
 - [Partisanship and conditional targets](county-partisanship.md): 2024 president, 2020 same-seat Senate and 2022 other-seat Senate; all 6,270 native observations and 201 county-year records retained.
 - [Independent coordinator review](research-review.md) and [actual question-worker dispatch](research-dispatch.md).
 
-This is the reviewed first pair. The turnout worker's reciprocal continuation and the official-results/map assignments remain ahead. No current geographic join, eligible write-in allocation, November feed, exact remaining pool or calibrated probability is approved. The race tracker below remains unchanged.
+This is the reviewed first pair. The same turnout worker's bounded reciprocal and independent preservation review are complete; [complete historical source authority](data/coordinator-priority-acceptance.json) passed exhaustive replay. Original official-results/maps workers are active. [Newsroom sources](local-news-results.md) and the [proposed collection strategy](live-polling-strategy.md) retain separate setup/access qualifications. No current geographic join, eligible write-in allocation, November feed, exact remaining pool or calibrated probability is approved. The race tracker below remains unchanged.
 
 ## Seat details
 

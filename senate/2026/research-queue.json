@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "requested_date": "2026-10-17",
-  "updated_at_utc": "2026-10-20T20:08:11.206471+00:00",
+  "updated_at_utc": "2026-10-20T20:24:10.785904+00:00",
   "scope": "35 states in the repository 2026 U.S. Senate race index",
   "coordinator_agent_id": "d0fc3534-1613-4883-b48b-21a233fcfd9e",
   "workspace_id": "wks_b290f45007010740",
@@ -8760,7 +8760,7 @@
       "election": "Regular",
       "seat_class": "II",
       "priority": 25,
-      "status": "complete-reviewed-awaiting-final-publication",
+      "status": "complete-published",
       "workers": {
         "turnout": {
           "agent_id": "61838d17-5eed-4661-8d3f-e7b5a2825994",
@@ -9076,6 +9076,15 @@
           "staged_bytes": 1238966,
           "push_exit": 0,
           "remote_exact_verified": true
+        },
+        {
+          "commit": "19b43de296086b7f30e11ff86b9523e23e364967",
+          "scope": "Complete four-question original source/map evidence, full historical authority, integrated news/strategy and independent final reviews",
+          "exact_staged_blobs": 5498,
+          "staged_bytes": 1093152719,
+          "maximum_stored_bytes": 32494593,
+          "push_exit": 0,
+          "remote_exact_verified": true
         }
       ],
       "state_specific_notes": "Actual geography includes independent cities as distinct from same-named counties. No 2022 Senate statewide contest: use an actual available statewide midterm such as 2018 Senate plus separately identified 2022 ballot volume. State links November Angular shell; WHSV general-named test display and WTOP primary AP access gap remain preflight only.",
@@ -9252,11 +9261,11 @@
       "election": "Regular",
       "seat_class": "II",
       "priority": 26,
-      "status": "same-turnout-bounded-reciprocal-active",
+      "status": "original-official-and-maps-active-from-reviewed-complete-source-authority",
       "workers": {
         "turnout": {
           "agent_id": "5b42c895-68ea-40c4-9b7c-534e46d14d7a",
-          "status": "active-same-agent-bounded-captured-final-peer-reciprocal",
+          "status": "complete-bounded-reciprocal-and-preservation-independently-reviewed",
           "launched_at_utc": "2026-10-20T18:16:31.256508+00:00",
           "launch_timestamp_scope": "Coordinator record following actualcreate response",
           "released_by_actual_finish": "6c5beb21-b481-401b-a92f-fd3346f2e113",
@@ -9350,7 +9359,7 @@
             "final_report_QA": "inprogress"
           },
           "actual_finish_event_received": true,
-          "final_manifest_sha256": "4e2a1f5ab3c66508444c112f9e6430006dce94f795a172837c7b95eaee557207",
+          "final_manifest_sha256": "f412a3901a1d08db6f2e855de396f483c85cfe0810a3d58e1f7c9f150f3db17c",
           "final_contract_sha256": "16d89ba0e4568d94c9ffe33abe52c451e14f88b5e00b3fd7c868615de0f5a9da",
           "original_first_witness": "b8a4bba1c934beb847166e79d5ca75e1d8b0a5757da5bdbb80abda490b7d7ce5",
           "owned_targets": 145,
@@ -9393,6 +9402,13 @@
             "original_first_witness_preserved": true,
             "source_comparison": "in progress",
             "peer_contact": false
+          },
+          "bounded_continuation_actual_finish_received": true,
+          "coordinator_final_reciprocal_review": {
+            "path": "senate/2026/alabama/data/coordinator-turnout-reciprocal-final-review.json",
+            "bytes": 3093,
+            "sha256": "ace24104a38a7d4309bebb461cc1c3a3845979a65c7f76b897b9805f660fbac4",
+            "checks": 2762
           }
         },
         "partisanship": {
@@ -9457,6 +9473,58 @@
             "all_prior_ordinal_aggregation_claims_preserved": true,
             "coordinator_accepted": false
           }
+        },
+        "official-results": {
+          "agent_id": "44c53403-8904-4118-9a62-f9a468b9fc51",
+          "status": "active-independent-source-replay-and-original-research",
+          "launched_at_utc": "2026-10-20T20:24:10.785904+00:00",
+          "launch_timestamp_scope": "Coordinator record following actual create_agent success",
+          "released_by_actual_finished_workers": [
+            "5b42c895-68ea-40c4-9b7c-534e46d14d7a",
+            "43866295-c1c8-4f15-8933-67a99b3454c0"
+          ],
+          "provider": "codex/gpt-6.1-sol",
+          "settings": {
+            "modeId": "auto-review",
+            "thinkingOptionId": "high"
+          },
+          "fresh_profile": "Research",
+          "all_four_profile_notes_read": true,
+          "provider_draft_inspected": true,
+          "notifyOnFinish": true,
+          "launch_prompt": {
+            "path": "senate/2026/alabama/data/coordinator-launches/official-results-initial-prompt.txt",
+            "bytes": 9986,
+            "sha256": "96ea078d42a37678068d0627bebee313634142a94d2ea22d254ec56ce3157ef8"
+          },
+          "whole_launch_pins_reverified_before_launch": true,
+          "first_action_independent_exact_pin_success_worker_reported": true
+        },
+        "precinct-maps": {
+          "agent_id": "f09b4630-ce6d-4e9a-b982-5d56cc1024ca",
+          "status": "active-independent-source-replay-and-original-research",
+          "launched_at_utc": "2026-10-20T20:24:10.785904+00:00",
+          "launch_timestamp_scope": "Coordinator record following actual create_agent success",
+          "released_by_actual_finished_workers": [
+            "5b42c895-68ea-40c4-9b7c-534e46d14d7a",
+            "43866295-c1c8-4f15-8933-67a99b3454c0"
+          ],
+          "provider": "codex/gpt-6.1-sol",
+          "settings": {
+            "modeId": "auto-review",
+            "thinkingOptionId": "high"
+          },
+          "fresh_profile": "Research",
+          "all_four_profile_notes_read": true,
+          "provider_draft_inspected": true,
+          "notifyOnFinish": true,
+          "launch_prompt": {
+            "path": "senate/2026/alabama/data/coordinator-launches/precinct-maps-initial-prompt.txt",
+            "bytes": 10286,
+            "sha256": "c9b77290bffdb9d5672989831246aad31677707cd5ba7208c52e34058df564d4"
+          },
+          "whole_launch_pins_reverified_before_launch": true,
+          "first_action_independent_exact_pin_success_worker_reported": true
         }
       },
       "validation": null,
@@ -9549,6 +9617,45 @@
         "sha256": "987c502c02d0d37dbaea52633cbe8c4081470db37fa638d1c2900b6dde907996",
         "prepared_only": false,
         "no_actual_resume_yet": true
+      },
+      "prepared_second_wave_prompts": {
+        "official-results": {
+          "path": "senate/2026/alabama/data/coordinator-launches/prepared-official-results-prompt.txt",
+          "bytes": 8162,
+          "sha256": "a6a0aa097ed6930b98c73f72fd003f3aa16ce584ef49a4cb46314da2dd942c35",
+          "prepared_only": true
+        },
+        "precinct-maps": {
+          "path": "senate/2026/alabama/data/coordinator-launches/prepared-precinct-maps-prompt.txt",
+          "bytes": 8465,
+          "sha256": "a12ec71e27f5a78b975a3097546f9eff6e46824f9fe53dd7f77e6da8604d9a2f",
+          "prepared_only": true
+        }
+      },
+      "complete_historical_source_authority": {
+        "path": "senate/2026/alabama/data/coordinator-priority-acceptance.json",
+        "bytes": 1502535,
+        "sha256": "47528a2e52237aa5cf803ce771c52dd73207a1bc23c0b732154a0bd3798a1615",
+        "independent_exhaustive_replay": {
+          "status": "pass_independent_complete_exhaustive_source_authority_replay",
+          "checks": 1613112,
+          "complete_roots": 29,
+          "complete_companions": 303,
+          "every_recursive_object": 1608035,
+          "every_ordered_partition": 11,
+          "entire_source_traversal_exhausted": true,
+          "fixed_files": 612,
+          "historical_body_resolvers": 634,
+          "complete_archives": 7,
+          "all_native": 2085,
+          "priority": 887,
+          "remainder": 1198,
+          "parents": 67,
+          "priority_parents": 63,
+          "producer_writes": false,
+          "current_or_legal_or_live_approval": false
+        },
+        "current_or_legal_live_approval": false
       }
     },
     {
@@ -9558,11 +9665,11 @@
       "election": "Regular",
       "seat_class": "II",
       "priority": 27,
-      "status": "same-turnout-bounded-reciprocal-active",
+      "status": "complete-firstpair-reciprocal-reviewed-source-authority-ready-awaiting-released-slot",
       "workers": {
         "turnout": {
           "agent_id": "43866295-c1c8-4f15-8933-67a99b3454c0",
-          "status": "active-same-agent-bounded-captured-final-peer-reciprocal",
+          "status": "complete-bounded-reciprocal-and-preservation-independently-reviewed",
           "launched_at_utc": "2026-10-20T18:49:11.978621+00:00",
           "released_by_actual_finish": "61838d17-5eed-4661-8d3f-e7b5a2825994",
           "only_other_active_worker": "f2db457b-3e3c-47d0-a65c-7d6be8bbe5c7",
@@ -9669,7 +9776,15 @@
             "isolated_old_output_bodies_reproduced": 49,
             "negative_fixtures_and_seal": "in progress; no actual finish inferred",
             "source_count_order_changes": false
-          }
+          },
+          "bounded_continuation_actual_finish_received": true,
+          "coordinator_final_reciprocal_review": {
+            "path": "senate/2026/arkansas/data/coordinator-turnout-reciprocal-final-review.json",
+            "bytes": 2973,
+            "sha256": "c5d3bd6d878ef09c38a828917275203f22199d8f5d8a9216d1a0b6838ec91449",
+            "checks": 6690
+          },
+          "final_manifest_sha256": "165da25d0fb35bfcaaf6204da8e0576b568c972f93e87b1dde790036c2b90265"
         },
         "partisanship": {
           "agent_id": "302e0938-9d85-4b49-99c1-87bbb564364d",
@@ -9854,6 +9969,45 @@
         "bytes": 5848,
         "sha256": "7e4dd7fe06bbcab74c38b61387b0ff2a2ba3f3f641ac365fa58ae12d12bcd221",
         "producer_targets": 1340
+      },
+      "prepared_second_wave_prompts": {
+        "official-results": {
+          "path": "senate/2026/arkansas/data/coordinator-launches/prepared-official-results-prompt.txt",
+          "bytes": 8253,
+          "sha256": "6b0f20078716a84e2dd04aca6a1a383b8c4423c8b72022c5122c856aafa3fb16",
+          "prepared_only": true
+        },
+        "precinct-maps": {
+          "path": "senate/2026/arkansas/data/coordinator-launches/prepared-precinct-maps-prompt.txt",
+          "bytes": 8555,
+          "sha256": "66f77ae91fbe9ecc4e545993c041490aff488a432b0b67c2c6f60535db16e5f6",
+          "prepared_only": true
+        }
+      },
+      "complete_historical_source_authority": {
+        "path": "senate/2026/arkansas/data/coordinator-priority-acceptance.json",
+        "bytes": 2057714,
+        "sha256": "611bd16fa386224b2fffea1b0d9ea5f8bd2cf7545fd8973aa9c310b08e2a0173",
+        "independent_exhaustive_replay": {
+          "status": "pass_independent_complete_exhaustive_source_authority_replay",
+          "checks": 2195470,
+          "complete_roots": 18,
+          "complete_companions": 773,
+          "every_recursive_object": 2185390,
+          "every_ordered_partition": 15,
+          "entire_source_traversal_exhausted": true,
+          "fixed_files": 1399,
+          "historical_body_resolvers": 1418,
+          "complete_archives": 5,
+          "all_native": 2841,
+          "priority": 1056,
+          "remainder": 1785,
+          "parents": 75,
+          "priority_parents": 68,
+          "producer_writes": false,
+          "current_or_legal_or_live_approval": false
+        },
+        "current_or_legal_live_approval": false
       }
     },
     {
@@ -10555,19 +10709,16 @@
     }
   },
   "coordinator_next_actions": {
-    "current_HEAD_exact_remote_verified": "509790f9c306c9228ff52e9fb014210617a03465",
-    "completed_new_states": 24,
+    "current_HEAD_exact_remote_verified": "19b43de296086b7f30e11ff86b9523e23e364967",
+    "completed_new_states": 25,
     "retained_Michigan": true,
     "actual_active_workers": [
-      "5b42c895-68ea-40c4-9b7c-534e46d14d7a",
-      "43866295-c1c8-4f15-8933-67a99b3454c0"
+      "44c53403-8904-4118-9a62-f9a468b9fc51",
+      "f09b4630-ce6d-4e9a-b982-5d56cc1024ca"
     ],
-    "next_actual_released_slot": "Original Alabama official/results or maps after same-turnout final review and complete frozen authority; no finished-peer contact.",
-    "next_following_released_slot": "Original Arkansas official/results or maps after bounded reciprocal review and full frozen authority.",
-    "after_same_turnout_final_handoffs": "Independently review complete old-body preservation/metadata-only contract/source-core/no-network reproduction; adapt old coordinator original checker to exact captured historical phase if current MF changed. Freeze complete external source authorities, then actual official/maps for AL/AR in released slots.",
-    "Virginia": "All four workers and independent source/geometry/whole-package checks pass. Exact stage/commit/push next; current/live/legal approval remains falseunknown.",
-    "Arkansas_root_reviews": "OriginalT613570/B1212814/math1517309/CLI73(62invalid)/history178 and1340-target firstpair guard pass. Component752956db published; raw source/value/model/calc changes not needed.",
-    "Alabama_root_reviews": "Original7249699/math390250/CLI75(65invalid)/history44474 and451-target firstpair guard pass. Component8ef208e2 published; statewide ordinal aggregation correction own-history preserved and raw/nativecandidate identities unchanged.",
+    "next_actual_released_slot": "Original Arkansas official-results Research/high from full authority611bd16f... after fresh all4profiles/provider/wholelaunchpins; actual two-worker cap.",
+    "next_following_released_slot": "Original Arkansas maps from same complete authority, then Kentucky originalfirstpair in releasedslots.",
+    "source_authorities": "AL1613112checks/29roots303companions1608035objects11partitions612files634historicalbodies7archives; AR2195470checks/18roots773companions2185390objects15partitions1399files1418historicalbodies5archives. Complete traversal exhausted; allproducer/currentflagsunchanged.",
     "seven_unlaunched_in_order": [
       "kentucky",
       "louisiana",
@@ -10577,10 +10728,8 @@
       "west-virginia",
       "wyoming"
     ],
-    "current_index": "empty; exact complete Virginia plus actual AL/AR reciprocal launch records selected next; active AL/AR derivative bodies excluded.",
-    "pending_root_metadata": "Latest exact component publication IDs and root next-actions working-tree records await next reviewed component/state commit. Existing per-state old news/strategy/prep beyond reviewed published regions remain untracked, not reviewed wholesale.",
-    "no_final_until_all34": true,
-    "completed_new_states_reviewed": 25
+    "current_index": "empty; publish reviewed AL/AR reciprocal and complete authority components; exclude active ALofficial/maps owned paths",
+    "no_final_until_all34": true
   },
   "coordinator_prompt_preparation": {
     "scope": "Unlaunched future first-wave prompts only; no agent IDs or completed packages implied",
@@ -11006,6 +11155,34 @@
       "current_index": "empty; active AL/AR turnout derivatives excluded; VA O/M under independent review",
       "pending_root_metadata": "Latest exact component publication IDs and root next-actions working-tree records await next reviewed component/state commit. Existing per-state old news/strategy/prep beyond reviewed published regions remain untracked, not reviewed wholesale.",
       "no_final_until_all34": true
+    },
+    {
+      "current_HEAD_exact_remote_verified": "509790f9c306c9228ff52e9fb014210617a03465",
+      "completed_new_states": 24,
+      "retained_Michigan": true,
+      "actual_active_workers": [
+        "5b42c895-68ea-40c4-9b7c-534e46d14d7a",
+        "43866295-c1c8-4f15-8933-67a99b3454c0"
+      ],
+      "next_actual_released_slot": "Original Alabama official/results or maps after same-turnout final review and complete frozen authority; no finished-peer contact.",
+      "next_following_released_slot": "Original Arkansas official/results or maps after bounded reciprocal review and full frozen authority.",
+      "after_same_turnout_final_handoffs": "Independently review complete old-body preservation/metadata-only contract/source-core/no-network reproduction; adapt old coordinator original checker to exact captured historical phase if current MF changed. Freeze complete external source authorities, then actual official/maps for AL/AR in released slots.",
+      "Virginia": "All four workers and independent source/geometry/whole-package checks pass. Exact stage/commit/push next; current/live/legal approval remains falseunknown.",
+      "Arkansas_root_reviews": "OriginalT613570/B1212814/math1517309/CLI73(62invalid)/history178 and1340-target firstpair guard pass. Component752956db published; raw source/value/model/calc changes not needed.",
+      "Alabama_root_reviews": "Original7249699/math390250/CLI75(65invalid)/history44474 and451-target firstpair guard pass. Component8ef208e2 published; statewide ordinal aggregation correction own-history preserved and raw/nativecandidate identities unchanged.",
+      "seven_unlaunched_in_order": [
+        "kentucky",
+        "louisiana",
+        "montana",
+        "oklahoma",
+        "tennessee",
+        "west-virginia",
+        "wyoming"
+      ],
+      "current_index": "empty; exact complete Virginia plus actual AL/AR reciprocal launch records selected next; active AL/AR derivative bodies excluded.",
+      "pending_root_metadata": "Latest exact component publication IDs and root next-actions working-tree records await next reviewed component/state commit. Existing per-state old news/strategy/prep beyond reviewed published regions remain untracked, not reviewed wholesale.",
+      "no_final_until_all34": true,
+      "completed_new_states_reviewed": 25
     }
   ],
   "coordinator_latest_regional_publication": {
