@@ -1,0 +1,493 @@
+{
+  "status": "pass",
+  "cases": 38,
+  "results": [
+    {
+      "case": "NaN",
+      "input_path": "negative-fixtures/NaN.json",
+      "expected_status": "invalid_selected_target_pair_margin",
+      "actual_exit_code": 0,
+      "stdout_json": {
+        "status": "invalid_selected_target_pair_margin",
+        "expected": "finite numeric fraction within[-1,1]; null, text and nonfinite values rejected"
+      },
+      "stderr": "",
+      "input_bytes": 327,
+      "input_sha256": "db94c4f088c56caf0c4b1a636b4a77192555b4c134878b1f3b4b31d5a3ab9a6d"
+    },
+    {
+      "case": "positiveInfinity",
+      "input_path": "negative-fixtures/positiveInfinity.json",
+      "expected_status": "invalid_selected_target_pair_margin",
+      "actual_exit_code": 0,
+      "stdout_json": {
+        "status": "invalid_selected_target_pair_margin",
+        "expected": "finite numeric fraction within[-1,1]; null, text and nonfinite values rejected"
+      },
+      "stderr": "",
+      "input_bytes": 332,
+      "input_sha256": "42c5e88a987d0e0eb31b3cfcb92e0cbcb26e903385bb2bf1eb68b8f5cd73763d"
+    },
+    {
+      "case": "negativeInfinity",
+      "input_path": "negative-fixtures/negativeInfinity.json",
+      "expected_status": "invalid_selected_target_pair_margin",
+      "actual_exit_code": 0,
+      "stdout_json": {
+        "status": "invalid_selected_target_pair_margin",
+        "expected": "finite numeric fraction within[-1,1]; null, text and nonfinite values rejected"
+      },
+      "stderr": "",
+      "input_bytes": 333,
+      "input_sha256": "9d79242445a19f918439679fe40a1cfbdd181a9f0fed751519aadb0e065cf832"
+    },
+    {
+      "case": "null",
+      "input_path": "negative-fixtures/null.json",
+      "expected_status": "invalid_selected_target_pair_margin",
+      "actual_exit_code": 0,
+      "stdout_json": {
+        "status": "invalid_selected_target_pair_margin",
+        "expected": "finite numeric fraction within[-1,1]; null, text and nonfinite values rejected"
+      },
+      "stderr": "",
+      "input_bytes": 328,
+      "input_sha256": "944dc244427810ee5c2211ebae3e11afc75ab8abbb4fca263e955469c3fec89c"
+    },
+    {
+      "case": "text",
+      "input_path": "negative-fixtures/text.json",
+      "expected_status": "invalid_selected_target_pair_margin",
+      "actual_exit_code": 0,
+      "stdout_json": {
+        "status": "invalid_selected_target_pair_margin",
+        "expected": "finite numeric fraction within[-1,1]; null, text and nonfinite values rejected"
+      },
+      "stderr": "",
+      "input_bytes": 329,
+      "input_sha256": "0a4f2778eb5b61075ab85b5ea37a33aab4d486dd9dbd2796d7577cedbc02e774"
+    },
+    {
+      "case": "tooLarge",
+      "input_path": "negative-fixtures/tooLarge.json",
+      "expected_status": "invalid_selected_target_pair_margin",
+      "actual_exit_code": 0,
+      "stdout_json": {
+        "status": "invalid_selected_target_pair_margin",
+        "expected": "finite numeric fraction within[-1,1]; null, text and nonfinite values rejected"
+      },
+      "stderr": "",
+      "input_bytes": 327,
+      "input_sha256": "7f1ffcf15d9f40124017fb4c52b60db73c95ddf889ced12ebb7f80c87410e75e"
+    },
+    {
+      "case": "duplicate_pool_unit",
+      "input_path": "negative-fixtures/duplicate_pool_unit.json",
+      "expected_status": "duplicate_remaining_unit_key",
+      "actual_exit_code": 0,
+      "stdout_json": {
+        "status": "duplicate_remaining_unit_key",
+        "expected": "one remaining forecast per exact source unit key; duplicate pools rejected globally"
+      },
+      "stderr": "",
+      "input_bytes": 448,
+      "input_sha256": "b01d55cdf3fe99e7c51dc9d43211f5fb979a3702a14821bb93524d1b145ec4bf"
+    },
+    {
+      "case": "votes-text",
+      "input_path": "negative-fixtures/votes-text.json",
+      "expected_status": "invalid_remaining_votes_type",
+      "actual_exit_code": 0,
+      "stdout_json": {
+        "status": "invalid_remaining_votes_type",
+        "expected": "finite numeric votes or null for unknown"
+      },
+      "stderr": "",
+      "input_bytes": 267,
+      "input_sha256": "1fc12b0bb64944db961b9de308daac94a5c1159ed0e886fa9a32b9aba34dd86c"
+    },
+    {
+      "case": "votes-bool",
+      "input_path": "negative-fixtures/votes-bool.json",
+      "expected_status": "invalid_remaining_votes_type",
+      "actual_exit_code": 0,
+      "stdout_json": {
+        "status": "invalid_remaining_votes_type",
+        "expected": "finite numeric votes or null for unknown"
+      },
+      "stderr": "",
+      "input_bytes": 267,
+      "input_sha256": "2388c311b550ce99e81edc295590553c7a030fb693e865b433704b057e8edb1f"
+    },
+    {
+      "case": "votes-list",
+      "input_path": "negative-fixtures/votes-list.json",
+      "expected_status": "invalid_remaining_votes_type",
+      "actual_exit_code": 0,
+      "stdout_json": {
+        "status": "invalid_remaining_votes_type",
+        "expected": "finite numeric votes or null for unknown"
+      },
+      "stderr": "",
+      "input_bytes": 265,
+      "input_sha256": "7c127852246eb501a952f6041361c8e0de10a4c0c3d5aa72596ad7bbbd0ab4b0"
+    },
+    {
+      "case": "votes-nan",
+      "input_path": "negative-fixtures/votes-nan.json",
+      "expected_status": "invalid_remaining_votes_type",
+      "actual_exit_code": 0,
+      "stdout_json": {
+        "status": "invalid_remaining_votes_type",
+        "expected": "finite numeric votes or null for unknown"
+      },
+      "stderr": "",
+      "input_bytes": 266,
+      "input_sha256": "678e80ac89546786063a5db4b546c5fd5a22c135eb20799c157099622413e9c4"
+    },
+    {
+      "case": "votes-infinity",
+      "input_path": "negative-fixtures/votes-infinity.json",
+      "expected_status": "invalid_remaining_votes_type",
+      "actual_exit_code": 0,
+      "stdout_json": {
+        "status": "invalid_remaining_votes_type",
+        "expected": "finite numeric votes or null for unknown"
+      },
+      "stderr": "",
+      "input_bytes": 271,
+      "input_sha256": "2566963ec74cc2c0a876b1a3af8f5ac72d885d2a1ce46d150c4e38340daa0498"
+    },
+    {
+      "case": "share-text",
+      "input_path": "negative-fixtures/share-text.json",
+      "expected_status": "invalid_remaining_share_type",
+      "actual_exit_code": 0,
+      "stdout_json": {
+        "status": "invalid_remaining_share_type",
+        "expected": "finite numeric A pair share or null for unknown; finite out-of-range shares explicitly clipped"
+      },
+      "stderr": "",
+      "input_bytes": 267,
+      "input_sha256": "331225e5d545f2f63661019eb95602266fbcad9982ca5150a330f6d50d8e5bf7"
+    },
+    {
+      "case": "share-bool",
+      "input_path": "negative-fixtures/share-bool.json",
+      "expected_status": "invalid_remaining_share_type",
+      "actual_exit_code": 0,
+      "stdout_json": {
+        "status": "invalid_remaining_share_type",
+        "expected": "finite numeric A pair share or null for unknown; finite out-of-range shares explicitly clipped"
+      },
+      "stderr": "",
+      "input_bytes": 267,
+      "input_sha256": "60a304bf40f286a2d407b4dcb92aa0645b8293f07cab6581b4d7f49a97a6f1f7"
+    },
+    {
+      "case": "share-object",
+      "input_path": "negative-fixtures/share-object.json",
+      "expected_status": "invalid_remaining_share_type",
+      "actual_exit_code": 0,
+      "stdout_json": {
+        "status": "invalid_remaining_share_type",
+        "expected": "finite numeric A pair share or null for unknown; finite out-of-range shares explicitly clipped"
+      },
+      "stderr": "",
+      "input_bytes": 264,
+      "input_sha256": "bf61ab2c5a02ad1e54f2dbf44a4bb4a44572e9f993776541432ddf3a9479f0fc"
+    },
+    {
+      "case": "share-nan",
+      "input_path": "negative-fixtures/share-nan.json",
+      "expected_status": "invalid_remaining_share_type",
+      "actual_exit_code": 0,
+      "stdout_json": {
+        "status": "invalid_remaining_share_type",
+        "expected": "finite numeric A pair share or null for unknown; finite out-of-range shares explicitly clipped"
+      },
+      "stderr": "",
+      "input_bytes": 265,
+      "input_sha256": "dfcb6e4328d65569711f46bfabd114521c053f599f14e73aa788c69086404229"
+    },
+    {
+      "case": "participation-text",
+      "input_path": "negative-fixtures/participation-text.json",
+      "expected_status": "invalid_pair_participation",
+      "actual_exit_code": 0,
+      "stdout_json": {
+        "status": "invalid_pair_participation",
+        "expected": "finite numeric fraction within[0,1] or null for unknown"
+      },
+      "stderr": "",
+      "input_bytes": 266,
+      "input_sha256": "b54c855227b0c6e4b790f2cf16de2c498f27a20a087b66c81b81d102fbd43e4c"
+    },
+    {
+      "case": "participation-bool",
+      "input_path": "negative-fixtures/participation-bool.json",
+      "expected_status": "invalid_pair_participation",
+      "actual_exit_code": 0,
+      "stdout_json": {
+        "status": "invalid_pair_participation",
+        "expected": "finite numeric fraction within[0,1] or null for unknown"
+      },
+      "stderr": "",
+      "input_bytes": 266,
+      "input_sha256": "0c6db5ff2177f127a426938db633583bedc3cc5fa8a626bb021cc15f62ca9e27"
+    },
+    {
+      "case": "participation-infinity",
+      "input_path": "negative-fixtures/participation-infinity.json",
+      "expected_status": "invalid_pair_participation",
+      "actual_exit_code": 0,
+      "stdout_json": {
+        "status": "invalid_pair_participation",
+        "expected": "finite numeric fraction within[0,1] or null for unknown"
+      },
+      "stderr": "",
+      "input_bytes": 270,
+      "input_sha256": "e4be87c2c7f5d90d287276d4aaae2ac0d40cc90bb496ac1fdde6d57beb168b8f"
+    },
+    {
+      "case": "participation-over-one",
+      "input_path": "negative-fixtures/participation-over-one.json",
+      "expected_status": "invalid_pair_participation",
+      "actual_exit_code": 0,
+      "stdout_json": {
+        "status": "invalid_pair_participation",
+        "expected": "finite numeric fraction within[0,1] or null for unknown"
+      },
+      "stderr": "",
+      "input_bytes": 265,
+      "input_sha256": "3e23971bbd380b5e3508b061c468896aa0e3d55efdde6a88379f120ca38ba6eb"
+    },
+    {
+      "case": "empty-unit",
+      "input_path": "negative-fixtures/empty-unit.json",
+      "expected_status": "invalid_remaining_unit_key",
+      "actual_exit_code": 0,
+      "stdout_json": {
+        "status": "invalid_remaining_unit_key",
+        "expected": "nonempty source unit key on every remaining pool, including zero pools"
+      },
+      "stderr": "",
+      "input_bytes": 264,
+      "input_sha256": "99e12db076201d4e8e70f52196a704b2d20a6c33b298d065dee9c93e9f5bd085"
+    },
+    {
+      "case": "blank-unit",
+      "input_path": "negative-fixtures/blank-unit.json",
+      "expected_status": "invalid_remaining_unit_key",
+      "actual_exit_code": 0,
+      "stdout_json": {
+        "status": "invalid_remaining_unit_key",
+        "expected": "nonempty source unit key on every remaining pool, including zero pools"
+      },
+      "stderr": "",
+      "input_bytes": 266,
+      "input_sha256": "ef8c97e1e90b33d75ff9757af4c3e8dd9b11e82aef16378fb1e89c6fad1dda9b"
+    },
+    {
+      "case": "unit-object",
+      "input_path": "negative-fixtures/unit-object.json",
+      "expected_status": "invalid_remaining_unit_key",
+      "actual_exit_code": 0,
+      "stdout_json": {
+        "status": "invalid_remaining_unit_key",
+        "expected": "nonempty source unit key on every remaining pool, including zero pools"
+      },
+      "stderr": "",
+      "input_bytes": 264,
+      "input_sha256": "8c3a4e9c982de4cc4daa1b8491f8d5184b33e930d5ab339d82c04df2a3671104"
+    },
+    {
+      "case": "other-string",
+      "input_path": "negative-fixtures/other-string.json",
+      "expected_status": "invalid_other_share_allocation",
+      "actual_exit_code": 0,
+      "stdout_json": {
+        "status": "invalid_other_share_allocation"
+      },
+      "stderr": "",
+      "input_bytes": 244,
+      "input_sha256": "528d59d7543bb16caf879cb6122f5d53c944967bb94765af6e572b7e266cd487"
+    },
+    {
+      "case": "other-invalid-value",
+      "input_path": "negative-fixtures/other-invalid-value.json",
+      "expected_status": "invalid_other_share_allocation",
+      "actual_exit_code": 0,
+      "stdout_json": {
+        "status": "invalid_other_share_allocation"
+      },
+      "stderr": "",
+      "input_bytes": 267,
+      "input_sha256": "0dd221e1f123a0e3dfc6f659566f6d23be33fbf37fdea57d4e897c4209ec0d52"
+    },
+    {
+      "case": "other-nan",
+      "input_path": "negative-fixtures/other-nan.json",
+      "expected_status": "invalid_other_share_allocation",
+      "actual_exit_code": 0,
+      "stdout_json": {
+        "status": "invalid_other_share_allocation"
+      },
+      "stderr": "",
+      "input_bytes": 267,
+      "input_sha256": "21f9e92a6452cae58b8c21a7e15e6fbe234eadc0ac8e4fa2ed28ec5349741e1b"
+    },
+    {
+      "case": "selected-target-too-small",
+      "input_path": "negative-fixtures/selected-target-too-small.json",
+      "expected_status": "invalid_selected_target_pair_margin",
+      "actual_exit_code": 0,
+      "stdout_json": {
+        "status": "invalid_selected_target_pair_margin",
+        "expected": "finite numeric fraction within[-1,1]; null, text and nonfinite values rejected"
+      },
+      "stderr": "",
+      "input_bytes": 304,
+      "input_sha256": "345c06c8239ce978105e510f72850333275ca56d4b53e42ff5384af9455e28df"
+    },
+    {
+      "case": "selected-target-bool",
+      "input_path": "negative-fixtures/selected-target-bool.json",
+      "expected_status": "invalid_selected_target_pair_margin",
+      "actual_exit_code": 0,
+      "stdout_json": {
+        "status": "invalid_selected_target_pair_margin",
+        "expected": "finite numeric fraction within[-1,1]; null, text and nonfinite values rejected"
+      },
+      "stderr": "",
+      "input_bytes": 304,
+      "input_sha256": "c56f9899fcfdf4e4bedc7c99a12e2c6174b9d5b67f883657544b0a35fd35480d"
+    },
+    {
+      "case": "selected-target-list",
+      "input_path": "negative-fixtures/selected-target-list.json",
+      "expected_status": "invalid_selected_target_pair_margin",
+      "actual_exit_code": 0,
+      "stdout_json": {
+        "status": "invalid_selected_target_pair_margin",
+        "expected": "finite numeric fraction within[-1,1]; null, text and nonfinite values rejected"
+      },
+      "stderr": "",
+      "input_bytes": 302,
+      "input_sha256": "563d690dea417fbb0541633ce9cef6ab80af946ec38636714ace2b2eff4436bd"
+    },
+    {
+      "case": "selected-target-object",
+      "input_path": "negative-fixtures/selected-target-object.json",
+      "expected_status": "invalid_selected_target_pair_margin",
+      "actual_exit_code": 0,
+      "stdout_json": {
+        "status": "invalid_selected_target_pair_margin",
+        "expected": "finite numeric fraction within[-1,1]; null, text and nonfinite values rejected"
+      },
+      "stderr": "",
+      "input_bytes": 302,
+      "input_sha256": "5ca52e7e67ff385db8ce39dd6f2f8e7307e841e4f55d2d6ed645f79897711d76"
+    },
+    {
+      "case": "duplicate-without-selected",
+      "input_path": "negative-fixtures/duplicate-without-selected.json",
+      "expected_status": "duplicate_remaining_unit_key",
+      "actual_exit_code": 0,
+      "stdout_json": {
+        "status": "duplicate_remaining_unit_key",
+        "expected": "one remaining forecast per exact source unit key; duplicate pools rejected globally"
+      },
+      "stderr": "",
+      "input_bytes": 423,
+      "input_sha256": "0e7263ccea46e635b016ea8b5bd1e6dfd0b94b5bd11814d055bd0a6a830877f3"
+    },
+    {
+      "case": "missing-unit-key",
+      "input_path": "negative-fixtures/missing-unit-key.json",
+      "expected_status": "invalid_remaining_unit_key",
+      "actual_exit_code": 0,
+      "stdout_json": {
+        "status": "invalid_remaining_unit_key",
+        "expected": "nonempty source unit key on every remaining pool, including zero pools"
+      },
+      "stderr": "",
+      "input_bytes": 246,
+      "input_sha256": "1942658b1cc1e1c6f8db768cac3236416eebb860a516dfc13732e53b8f6c6c02"
+    },
+    {
+      "case": "zero-pool-invalid-share-type",
+      "input_path": "negative-fixtures/zero-pool-invalid-share-type.json",
+      "expected_status": "invalid_remaining_share_type",
+      "actual_exit_code": 0,
+      "stdout_json": {
+        "status": "invalid_remaining_share_type",
+        "expected": "finite numeric A pair share or null for unknown; finite out-of-range shares explicitly clipped"
+      },
+      "stderr": "",
+      "input_bytes": 285,
+      "input_sha256": "f8528dfcc3230c9ceb6bb3e19b31effe3665e1cc33cd01787720ceafb63e0b0a"
+    },
+    {
+      "case": "boolean-counted-votes",
+      "input_path": "negative-fixtures/boolean-counted-votes.json",
+      "expected_status": "invalid_counted_votes",
+      "actual_exit_code": 0,
+      "stdout_json": {
+        "status": "invalid_counted_votes"
+      },
+      "stderr": "",
+      "input_bytes": 266,
+      "input_sha256": "8c792a17f8829b190e0f849ffda9df8b034c850d2285586314a089f491502439"
+    },
+    {
+      "case": "counted-array",
+      "input_path": "negative-fixtures/counted-array.json",
+      "expected_status": "invalid_counted_object",
+      "actual_exit_code": 0,
+      "stdout_json": {
+        "status": "invalid_counted_object"
+      },
+      "stderr": "",
+      "input_bytes": 243,
+      "input_sha256": "ea5a9d5f6cb0ed38abe20ff327a34b9b28736ae4543d9ad51bc4312a287bed33"
+    },
+    {
+      "case": "remaining-object",
+      "input_path": "negative-fixtures/remaining-object.json",
+      "expected_status": "invalid_remaining_pool_list",
+      "actual_exit_code": 0,
+      "stdout_json": {
+        "status": "invalid_remaining_pool_list"
+      },
+      "stderr": "",
+      "input_bytes": 105,
+      "input_sha256": "c8a39be6156249998c91bb9dfa91d85abcd2f7b79a577a52efd6885495c10cec"
+    },
+    {
+      "case": "null-pool-object",
+      "input_path": "negative-fixtures/null-pool-object.json",
+      "expected_status": "invalid_remaining_pool_list",
+      "actual_exit_code": 0,
+      "stdout_json": {
+        "status": "invalid_remaining_pool_list"
+      },
+      "stderr": "",
+      "input_bytes": 117,
+      "input_sha256": "3210dafa0e20993f172deb0180d49e37d0be64122b839601ed75a64dc517657e"
+    },
+    {
+      "case": "null-case-object",
+      "input_path": "negative-fixtures/null-case-object.json",
+      "expected_status": "invalid_case_object",
+      "actual_exit_code": 0,
+      "stdout_json": {
+        "status": "invalid_case_object"
+      },
+      "stderr": "",
+      "input_bytes": 5,
+      "input_sha256": "38e0b9de817f645c4bec37c0d4a3e58baecccb040f5718dc069a72c7385a0bed"
+    }
+  ],
+  "qualification": "Arithmetic input validation; intentional invalid input tokens are fixtures, not accepted source observations or probabilities."
+}

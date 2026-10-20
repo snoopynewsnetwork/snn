@@ -1,0 +1,94 @@
+{
+  "events": [
+    {
+      "event": "Initial sandbox network diagnostics",
+      "requests": [
+        {
+          "method": "GET",
+          "url": "https://www.elections.il.gov/Main/PrecinctMaps.aspx",
+          "status": null,
+          "error": "requests ConnectionError caused by NameResolutionError; sandbox DNS unavailable",
+          "response_body": null,
+          "retrieval_utc": null
+        },
+        {
+          "method": "GET",
+          "url": "https://www.elections.il.gov/precinctmaps/",
+          "status": null,
+          "error": "requests ConnectionError caused by NameResolutionError; sandbox DNS unavailable",
+          "response_body": null,
+          "retrieval_utc": null
+        },
+        {
+          "method": "GET",
+          "url": "https://www2.census.gov/geo/tiger/TIGER2020PL/LAYER/VTD/2020/",
+          "status": null,
+          "error": "requests ConnectionError caused by NameResolutionError; sandbox DNS unavailable",
+          "response_body": null,
+          "retrieval_utc": null
+        },
+        {
+          "method": "GET",
+          "url": "https://www.elections.il.gov/ElectionOperations/ElectionAuthorities.aspx",
+          "status": null,
+          "error": "requests ConnectionError caused by NameResolutionError; sandbox DNS unavailable",
+          "response_body": null,
+          "retrieval_utc": null
+        }
+      ],
+      "qualification": "Diagnostic tool output only; initial clocks and complete exception strings were not stored. No diagnostic body is a source input. Authorized public acquisition subsequently succeeded with per-request receipts."
+    },
+    {
+      "event": "Oversized first-pass Calhoun GET interrupted with KeyboardInterrupt",
+      "method": "GET",
+      "url": "https://www.elections.il.gov/precinctmaps/Calhoun/CALHOUN%20MAP.pdf",
+      "parent": "maps/source/authority-7-archive.receipt.json",
+      "literal_href": "/precinctmaps/Calhoun/CALHOUN%20MAP.pdf",
+      "status": null,
+      "final_url": null,
+      "retrieval_utc": null,
+      "response_headers": null,
+      "partial_original_admitted": false,
+      "qualification": "Interrupted while requests was still reading response. No partial bytes or fabricated complete receipt retained. A subsequent actual HEAD retains server status/headers and 130299774-byte advertised size. Complete historical Census fallback covers the county; this leaf body remains unacquired."
+    },
+    {
+      "event": "Initial discovery-only successful GET calibration before persistent acquirer was installed",
+      "requests": [
+        {
+          "method": "GET",
+          "url": "https://www.elections.il.gov/Main/PrecinctMaps.aspx",
+          "status": 200,
+          "observed_entity_bytes": 40010,
+          "headers": null,
+          "raw_body_retained": false,
+          "raw_sha256": null,
+          "retrieval_utc": null,
+          "final_url": null
+        },
+        {
+          "method": "GET",
+          "url": "https://www.elections.il.gov/precinctmaps/",
+          "status": 200,
+          "observed_entity_bytes": 10592,
+          "headers": null,
+          "raw_body_retained": false,
+          "raw_sha256": null,
+          "retrieval_utc": null,
+          "final_url": null
+        },
+        {
+          "method": "GET",
+          "url": "https://www2.census.gov/geo/tiger/TIGER2020PL/LAYER/VTD/2020/",
+          "status": 200,
+          "observed_entity_bytes": 738279,
+          "headers": null,
+          "raw_body_retained": false,
+          "raw_sha256": null,
+          "retrieval_utc": null,
+          "final_url": null
+        }
+      ],
+      "qualification": "Only status, entity lengths and parsed literal links appeared in initial tool output. Unrecorded headers/clocks/whole-body hashes are not fabricated. Each parent was then reacquired in full by the persistent per-request acquirer; those later exact complete receipts/bodies alone supply offline discovery and source provenance."
+    }
+  ]
+}

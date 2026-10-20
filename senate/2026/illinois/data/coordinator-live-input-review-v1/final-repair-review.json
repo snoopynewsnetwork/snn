@@ -1,0 +1,83 @@
+{
+  "status": "pass_actual_seven_input_repairs",
+  "frozen_repaired_CLI": {
+    "path": "data/coordinator-live-input-review-v1/final-calculator.py.gz",
+    "stored_bytes": 3249,
+    "stored_sha256": "6598e86c9e08700e335998b428aca3b22d0a49d16de79eee0819b0fc50b8f61a",
+    "raw_bytes": 10109,
+    "raw_sha256": "a840be4328b72a2fa3ff4d9408f860263578f1b4aa3ce6ad9e7956158e32003b"
+  },
+  "cases": [
+    {
+      "input": "NaN.json",
+      "input_sha256": "db94c4f088c56caf0c4b1a636b4a77192555b4c134878b1f3b4b31d5a3ab9a6d",
+      "exit_code": 0,
+      "strict_JSON": {
+        "status": "invalid_selected_target_pair_margin",
+        "expected": "finite numeric fraction within[-1,1]; null, text and nonfinite values rejected"
+      },
+      "stderr": ""
+    },
+    {
+      "input": "positiveInfinity.json",
+      "input_sha256": "42c5e88a987d0e0eb31b3cfcb92e0cbcb26e903385bb2bf1eb68b8f5cd73763d",
+      "exit_code": 0,
+      "strict_JSON": {
+        "status": "invalid_selected_target_pair_margin",
+        "expected": "finite numeric fraction within[-1,1]; null, text and nonfinite values rejected"
+      },
+      "stderr": ""
+    },
+    {
+      "input": "negativeInfinity.json",
+      "input_sha256": "9d79242445a19f918439679fe40a1cfbdd181a9f0fed751519aadb0e065cf832",
+      "exit_code": 0,
+      "strict_JSON": {
+        "status": "invalid_selected_target_pair_margin",
+        "expected": "finite numeric fraction within[-1,1]; null, text and nonfinite values rejected"
+      },
+      "stderr": ""
+    },
+    {
+      "input": "null.json",
+      "input_sha256": "944dc244427810ee5c2211ebae3e11afc75ab8abbb4fca263e955469c3fec89c",
+      "exit_code": 0,
+      "strict_JSON": {
+        "status": "invalid_selected_target_pair_margin",
+        "expected": "finite numeric fraction within[-1,1]; null, text and nonfinite values rejected"
+      },
+      "stderr": ""
+    },
+    {
+      "input": "text.json",
+      "input_sha256": "0a4f2778eb5b61075ab85b5ea37a33aab4d486dd9dbd2796d7577cedbc02e774",
+      "exit_code": 0,
+      "strict_JSON": {
+        "status": "invalid_selected_target_pair_margin",
+        "expected": "finite numeric fraction within[-1,1]; null, text and nonfinite values rejected"
+      },
+      "stderr": ""
+    },
+    {
+      "input": "tooLarge.json",
+      "input_sha256": "7f1ffcf15d9f40124017fb4c52b60db73c95ddf889ced12ebb7f80c87410e75e",
+      "exit_code": 0,
+      "strict_JSON": {
+        "status": "invalid_selected_target_pair_margin",
+        "expected": "finite numeric fraction within[-1,1]; null, text and nonfinite values rejected"
+      },
+      "stderr": ""
+    },
+    {
+      "input": "duplicate_pool_unit.json",
+      "input_sha256": "b01d55cdf3fe99e7c51dc9d43211f5fb979a3702a14821bb93524d1b145ec4bf",
+      "exit_code": 0,
+      "strict_JSON": {
+        "status": "duplicate_remaining_unit_key",
+        "expected": "one remaining forecast per exact source unit key; duplicate pools rejected globally"
+      },
+      "stderr": ""
+    }
+  ],
+  "scope": "Actual seven coordinator failures repeated against the complete frozen repaired CLI. No producer writer or solver import."
+}

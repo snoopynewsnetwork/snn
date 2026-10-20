@@ -1,0 +1,59 @@
+{
+  "status": "pass_independent_original_weight_and_breakpoint_math",
+  "checks": 1388406,
+  "complete_state_scenarios": 99,
+  "county_unit_target_rows": 8262,
+  "native_unit_target_rows": 90558,
+  "all_counties": 102,
+  "all_source_native_groups": 10062,
+  "authority_unit_target_rows": 972,
+  "all_source_authorities": 108,
+  "max_shift_error": 1.908195823574488e-15,
+  "max_net_residual": 1.6341800801455975e-08,
+  "source_reviews": [
+    {
+      "path": "data/coordinator-county-original-review.json",
+      "bytes": 599388,
+      "sha256": "8f7dc29ea29e18ec8b592bd5af624c5b6c234a0016cdbdd59adccc80c239d4fe"
+    },
+    {
+      "path": "data/coordinator-printed-native-priority-review.json",
+      "bytes": 9937295,
+      "sha256": "596c186f27c7b61be51163f68bd1f8fcb8ca6ed0d0d08df0b49cc1a4da849500"
+    }
+  ],
+  "exact_producer_inputs": [
+    {
+      "path": "data/baselines/state-scenarios.csv",
+      "bytes": 201541,
+      "sha256": "3c9b2ccdc72d216f3c1ec16c891cafecb1354c38946fe267232f29b45b0d5562"
+    },
+    {
+      "path": "data/baselines/county-target-scenarios.csv.gz",
+      "bytes": 1462296,
+      "sha256": "11e33cf786a3c545ce3e1885bde7cda35ea24e99a670540cd9b0958b7f48e635"
+    },
+    {
+      "path": "data/baselines/native-target-scenarios.csv.gz",
+      "bytes": 11209044,
+      "sha256": "a80fc50a9d4d8f33662c82b5b4a2b54ab05a6befe9197e34469feef95b70a581"
+    },
+    {
+      "path": "data/baselines/scenario-settings.json",
+      "bytes": 1752,
+      "sha256": "d824ff5c0a38ca8206690c55342f04db91c7b0c09551fd8d375871fa73f0e30f"
+    },
+    {
+      "path": "data/baselines/authority-state-scenarios.json",
+      "bytes": 6375,
+      "sha256": "7243a969430ddc0f6f393de1646602320a12f20ae3a9976ac6f836185620a479"
+    },
+    {
+      "path": "data/baselines/authority-target-scenarios.csv",
+      "bytes": 324845,
+      "sha256": "277c8122a1631b2d35e8b23a326122ceeb550856aa441e6dfce221e44b482ad6"
+    }
+  ],
+  "independent_solver": "Sorted saturation event integration; no producer bisection or extraction imported.",
+  "qualification": "All nonpriority observations retained. Missing named pools stay null. Scenario pair/full-field denominators are explicit historical assumptions, not eligible native write-in allocation, geography, probability or2026 forecast."
+}

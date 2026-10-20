@@ -1,0 +1,39 @@
+{
+  "volume_bases": {
+    "low": {
+      "year": "2022",
+      "contest": "Senate ClassIII midterm",
+      "all_candidate_votes": 4098896
+    },
+    "base": {
+      "year": "2024",
+      "contest": "President",
+      "all_candidate_votes": 5633310
+    },
+    "high": {
+      "year": "2020",
+      "contest": "Senate ClassII",
+      "all_candidate_votes": 5968901
+    }
+  },
+  "county_mix_years": [
+    "2020",
+    "2022",
+    "2024"
+  ],
+  "county_preference_years": [
+    "2020",
+    "2022",
+    "2024"
+  ],
+  "county_volume_formula": "N_c=historical_state_all_candidate_volume * (mix_year_county_all_named / mix_year_state_all_named); T_c=N_c*(mix_year_county_pair / mix_year_county_all_named). Preference independently uses named A/(A+B) of preference year.",
+  "native_formula": "Only2024 authority+literal precinct recorded pair weights; low/base/high pair and all-candidate statewide totals from named historical contests, proportionally scaled over original2024pair weights. Historical preference remains2024. Four administrative-only contexts have no assigned pair pool; no absent named vote is relabeled observed0.",
+  "native_cross_year_join": false,
+  "target_definitions": {
+    "tie": 0,
+    "pair_A_plus1": ".01*T",
+    "all_candidate_A_plus1": ".01*N"
+  },
+  "legal_outcome": "Strict plurality of all named candidates; tie/+1 A-B arithmetic alone does not establish an election winner. Other named candidate vote shares held at mix-year statewide totals in county scenarios, and volume-anchor statewide totals in native scenarios, as explicit historical-only assumptions.",
+  "others_selected_only_assumption": "Every other unit fixed at that model baseline share and expected volume, zero additional share shift; no priority filter."
+}

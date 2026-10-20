@@ -1,0 +1,82 @@
+{
+  "status": "pass",
+  "source": "mutations of actual accepted rows and actual acquired Census binary; no synthetic success fixture",
+  "cases": [
+    {
+      "fixture": "swapped-priority-order",
+      "operation": "swap ranks1and2",
+      "result": "rejected",
+      "error": "exact full/priority/remainder order"
+    },
+    {
+      "fixture": "invented-polygon",
+      "operation": "set physical_polygon",
+      "result": "rejected",
+      "error": "no polygon/method inference"
+    },
+    {
+      "fixture": "dropped-source-field",
+      "operation": "remove method_status",
+      "result": "rejected",
+      "error": "complete recursive source observation including nulls/schema/category/positions"
+    },
+    {
+      "fixture": "absent-candidate-zero",
+      "operation": "replace absent Kennedy null with0",
+      "result": "rejected",
+      "error": "complete recursive source observation including nulls/schema/category/positions"
+    },
+    {
+      "fixture": "county-parent-replacement",
+      "operation": "replace city reporting parent with county",
+      "result": "rejected",
+      "error": "reporting parent preserved"
+    },
+    {
+      "fixture": "lost-remainder",
+      "operation": "delete final row",
+      "result": "rejected",
+      "error": "complete inventory"
+    },
+    {
+      "fixture": "bad-shx-index",
+      "operation": {
+        "member": "tl_2020_17_vtd20.shx",
+        "byte_offset": 103,
+        "xor": 1
+      },
+      "result": "rejected",
+      "error": "every SHX offset/length"
+    },
+    {
+      "fixture": "bad-dbf-field-width",
+      "operation": {
+        "member": "tl_2020_17_vtd20.dbf",
+        "byte_offset": 48,
+        "xor": 1
+      },
+      "result": "rejected",
+      "error": "DBF field widths"
+    },
+    {
+      "fixture": "bad-shp-feature-bbox",
+      "operation": {
+        "member": "tl_2020_17_vtd20.shp",
+        "byte_offset": 112,
+        "xor": 1
+      },
+      "result": "rejected",
+      "error": "native bbox every point"
+    },
+    {
+      "fixture": "bad-shp-part-index",
+      "operation": {
+        "member": "tl_2020_17_vtd20.shp",
+        "byte_offset": 152,
+        "xor": 1
+      },
+      "result": "rejected",
+      "error": "first part"
+    }
+  ]
+}

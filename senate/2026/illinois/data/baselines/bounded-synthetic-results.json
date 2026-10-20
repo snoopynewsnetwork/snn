@@ -1,0 +1,140 @@
+[
+  {
+    "id": "clipped-tie",
+    "units": [
+      {
+        "volume": 90,
+        "share": 0.9
+      },
+      {
+        "volume": 10,
+        "share": 0.05
+      }
+    ],
+    "target_margin": 0,
+    "result": {
+      "status": "feasible",
+      "total": 100,
+      "baseline_net": 63.0,
+      "baseline_margin": 0.63,
+      "target_margin": 0,
+      "target_net": 0,
+      "unbounded_shift": -0.315,
+      "shift": -0.34444444444444455,
+      "achieved_net": -1.5987211554602254e-14,
+      "clipped_units": 1,
+      "already_A_winning": true,
+      "positive_improvement_needed": 0.0
+    }
+  },
+  {
+    "id": "clipped-Aplus1",
+    "units": [
+      {
+        "volume": 10,
+        "share": 0.99
+      },
+      {
+        "volume": 90,
+        "share": 0.2
+      }
+    ],
+    "target_margin": 0.01,
+    "result": {
+      "status": "feasible",
+      "total": 100,
+      "baseline_net": -44.2,
+      "baseline_margin": -0.442,
+      "target_margin": 0.01,
+      "target_net": 1.0,
+      "unbounded_shift": 0.226,
+      "shift": 0.25,
+      "achieved_net": 1.0000000000000018,
+      "clipped_units": 1,
+      "already_A_winning": false,
+      "positive_improvement_needed": 0.25
+    }
+  },
+  {
+    "id": "impossible-margin",
+    "units": [
+      {
+        "volume": 100,
+        "share": 0.5
+      }
+    ],
+    "target_margin": 1.1,
+    "result": {
+      "status": "impossible",
+      "shift": null,
+      "total": 100
+    }
+  },
+  {
+    "id": "no-positive-pool",
+    "units": [
+      {
+        "volume": 0,
+        "share": null
+      }
+    ],
+    "target_margin": 0,
+    "result": {
+      "status": "no_positive_pool",
+      "shift": null,
+      "total": 0
+    }
+  },
+  {
+    "id": "unknown-positive-preference",
+    "units": [
+      {
+        "volume": 10,
+        "share": null
+      }
+    ],
+    "target_margin": 0,
+    "result": {
+      "status": "unknown_preference",
+      "shift": null,
+      "total": 10
+    }
+  },
+  {
+    "id": "negative-volume",
+    "units": [
+      {
+        "volume": -1,
+        "share": 0.5
+      }
+    ],
+    "target_margin": 0,
+    "result": {
+      "status": "invalid_volume"
+    }
+  },
+  {
+    "id": "already-winning-negative-shift",
+    "units": [
+      {
+        "volume": 100,
+        "share": 0.65
+      }
+    ],
+    "target_margin": 0,
+    "result": {
+      "status": "feasible",
+      "total": 100,
+      "baseline_net": 30.000000000000004,
+      "baseline_margin": 0.30000000000000004,
+      "target_margin": 0,
+      "target_net": 0,
+      "unbounded_shift": -0.15000000000000002,
+      "shift": -0.15000000000000008,
+      "achieved_net": -1.1102230246251565e-14,
+      "clipped_units": 0,
+      "already_A_winning": true,
+      "positive_improvement_needed": 0.0
+    }
+  }
+]

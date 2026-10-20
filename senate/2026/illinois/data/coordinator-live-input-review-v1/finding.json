@@ -1,0 +1,60 @@
+{
+  "status": "actual_pre_handoff_input_validation_findings",
+  "producer_script": {
+    "path": "data/baselines/calculator.py",
+    "bytes": 6985,
+    "sha256": "f41f6146a58d21c5ecf2b032c2feaa2fe810282c27bab480b804759b662b9415"
+  },
+  "complete_exact_script": "initial-calculator.py.gz",
+  "cases": [
+    {
+      "case": "NaN",
+      "input_path": "data/coordinator-live-input-review-v1/NaN.json",
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/var/folders/zp/s8nrrzhn5398283cx69zqwh80000gp/T/tmpm3nhjwj3/calculator.py\", line 88, in <module>\n    if __name__=='__main__':main()\n                            ^^^^^^\n  File \"/var/folders/zp/s8nrrzhn5398283cx69zqwh80000gp/T/tmpm3nhjwj3/calculator.py\", line 85, in main\n    b=json.dumps(out,indent=2,allow_nan=False)+'\\n'\n      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/json/__init__.py\", line 238, in dumps\n    **kw).encode(obj)\n          ^^^^^^^^^^^\n  File \"/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/json/encoder.py\", line 202, in encode\n    chunks = list(chunks)\n             ^^^^^^^^^^^^\n  File \"/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/json/encoder.py\", line 432, in _iterencode\n    yield from _iterencode_dict(o, _current_indent_level)\n  File \"/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/json/encoder.py\", line 406, in _iterencode_dict\n    yield from chunks\n  File \"/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/json/encoder.py\", line 398, in _iterencode_dict\n    yield _floatstr(value)\n          ^^^^^^^^^^^^^^^^\n  File \"/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/json/encoder.py\", line 240, in floatstr\n    raise ValueError(\nValueError: Out of range float values are not JSON compliant: nan\n"
+    },
+    {
+      "case": "positiveInfinity",
+      "input_path": "data/coordinator-live-input-review-v1/positiveInfinity.json",
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/var/folders/zp/s8nrrzhn5398283cx69zqwh80000gp/T/tmpm3nhjwj3/calculator.py\", line 88, in <module>\n    if __name__=='__main__':main()\n                            ^^^^^^\n  File \"/var/folders/zp/s8nrrzhn5398283cx69zqwh80000gp/T/tmpm3nhjwj3/calculator.py\", line 85, in main\n    b=json.dumps(out,indent=2,allow_nan=False)+'\\n'\n      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/json/__init__.py\", line 238, in dumps\n    **kw).encode(obj)\n          ^^^^^^^^^^^\n  File \"/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/json/encoder.py\", line 202, in encode\n    chunks = list(chunks)\n             ^^^^^^^^^^^^\n  File \"/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/json/encoder.py\", line 432, in _iterencode\n    yield from _iterencode_dict(o, _current_indent_level)\n  File \"/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/json/encoder.py\", line 406, in _iterencode_dict\n    yield from chunks\n  File \"/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/json/encoder.py\", line 398, in _iterencode_dict\n    yield _floatstr(value)\n          ^^^^^^^^^^^^^^^^\n  File \"/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/json/encoder.py\", line 240, in floatstr\n    raise ValueError(\nValueError: Out of range float values are not JSON compliant: inf\n"
+    },
+    {
+      "case": "negativeInfinity",
+      "input_path": "data/coordinator-live-input-review-v1/negativeInfinity.json",
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/var/folders/zp/s8nrrzhn5398283cx69zqwh80000gp/T/tmpm3nhjwj3/calculator.py\", line 88, in <module>\n    if __name__=='__main__':main()\n                            ^^^^^^\n  File \"/var/folders/zp/s8nrrzhn5398283cx69zqwh80000gp/T/tmpm3nhjwj3/calculator.py\", line 85, in main\n    b=json.dumps(out,indent=2,allow_nan=False)+'\\n'\n      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/json/__init__.py\", line 238, in dumps\n    **kw).encode(obj)\n          ^^^^^^^^^^^\n  File \"/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/json/encoder.py\", line 202, in encode\n    chunks = list(chunks)\n             ^^^^^^^^^^^^\n  File \"/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/json/encoder.py\", line 432, in _iterencode\n    yield from _iterencode_dict(o, _current_indent_level)\n  File \"/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/json/encoder.py\", line 406, in _iterencode_dict\n    yield from chunks\n  File \"/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/json/encoder.py\", line 398, in _iterencode_dict\n    yield _floatstr(value)\n          ^^^^^^^^^^^^^^^^\n  File \"/Users/tqbf/.pyenv/versions/3.11.8/lib/python3.11/json/encoder.py\", line 240, in floatstr\n    raise ValueError(\nValueError: Out of range float values are not JSON compliant: -inf\n"
+    },
+    {
+      "case": "null",
+      "input_path": "data/coordinator-live-input-review-v1/null.json",
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/var/folders/zp/s8nrrzhn5398283cx69zqwh80000gp/T/tmpm3nhjwj3/calculator.py\", line 88, in <module>\n    if __name__=='__main__':main()\n                            ^^^^^^\n  File \"/var/folders/zp/s8nrrzhn5398283cx69zqwh80000gp/T/tmpm3nhjwj3/calculator.py\", line 84, in main\n    obj=json.loads(a.input.read_text());out=[{'id':x.get('id'),'input':x,'result':live(x)}for x in obj]if isinstance(obj,list)else live(obj)\n                                                                                                                                   ^^^^^^^^^\n  File \"/var/folders/zp/s8nrrzhn5398283cx69zqwh80000gp/T/tmpm3nhjwj3/calculator.py\", line 79, in live\n    out['selected']=selected_only(u,lead-u*(2*q-1),pair,case.get('selected_target_pair_margin',0))\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/var/folders/zp/s8nrrzhn5398283cx69zqwh80000gp/T/tmpm3nhjwj3/calculator.py\", line 32, in selected_only\n    target=target_margin*total\n           ~~~~~~~~~~~~~^~~~~~\nTypeError: unsupported operand type(s) for *: 'NoneType' and 'float'\n"
+    },
+    {
+      "case": "text",
+      "input_path": "data/coordinator-live-input-review-v1/text.json",
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "Traceback (most recent call last):\n  File \"/var/folders/zp/s8nrrzhn5398283cx69zqwh80000gp/T/tmpm3nhjwj3/calculator.py\", line 88, in <module>\n    if __name__=='__main__':main()\n                            ^^^^^^\n  File \"/var/folders/zp/s8nrrzhn5398283cx69zqwh80000gp/T/tmpm3nhjwj3/calculator.py\", line 84, in main\n    obj=json.loads(a.input.read_text());out=[{'id':x.get('id'),'input':x,'result':live(x)}for x in obj]if isinstance(obj,list)else live(obj)\n                                                                                                                                   ^^^^^^^^^\n  File \"/var/folders/zp/s8nrrzhn5398283cx69zqwh80000gp/T/tmpm3nhjwj3/calculator.py\", line 79, in live\n    out['selected']=selected_only(u,lead-u*(2*q-1),pair,case.get('selected_target_pair_margin',0))\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/var/folders/zp/s8nrrzhn5398283cx69zqwh80000gp/T/tmpm3nhjwj3/calculator.py\", line 32, in selected_only\n    target=target_margin*total\n           ~~~~~~~~~~~~~^~~~~~\nTypeError: can't multiply sequence by non-int of type 'float'\n"
+    },
+    {
+      "case": "tooLarge",
+      "input_path": "data/coordinator-live-input-review-v1/tooLarge.json",
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"calculated\",\n  \"counted_fixed\": {\n    \"A\": 100,\n    \"B\": 120,\n    \"C\": 5\n  },\n  \"remaining_total_contest_votes\": 50,\n  \"remaining_pair_votes\": 40.0,\n  \"remaining_other_votes\": 10.0,\n  \"final\": {\n    \"A\": 124.0,\n    \"B\": 136.0,\n    \"C\": 15.0\n  },\n  \"final_all_candidate_denominator\": 275.0,\n  \"final_pair_denominator\": 260.0,\n  \"final_pair_net\": -12.0,\n  \"final_pair_margin\": -0.046153846153846156,\n  \"final_all_candidate_margin_A_minus_B\": -0.04363636363636364,\n  \"final_A_all_candidate_share\": 0.4509090909090909,\n  \"pair_tie_threshold\": {\n    \"status\": \"feasible\",\n    \"required_share\": 0.75,\n    \"bounded_share\": 0.75,\n    \"equality_at_boundary\": false\n  },\n  \"pair_A_plus1_threshold\": {\n    \"status\": \"feasible\",\n    \"required_share\": 0.7825,\n    \"bounded_share\": 0.7825,\n    \"equality_at_boundary\": false\n  },\n  \"full_field_tie_lower_bound_A_remaining_share\": 0.75,\n  \"full_field_strict_plurality_requires_greater_than_bound\": true,\n  \"full_field_threshold_status\": \"feasible\",\n  \"legal_plurality_outcome\": \"A_not_plurality\",\n  \"largest_competitor\": \"B\",\n  \"clip_events\": [],\n  \"selected\": {\n    \"status\": \"impossible\",\n    \"required_share\": 4.325,\n    \"bounded_share\": 1.0,\n    \"equality_at_boundary\": false\n  }\n}\n\n",
+      "stderr": ""
+    },
+    {
+      "case": "duplicate_pool_unit",
+      "input_path": "data/coordinator-live-input-review-v1/duplicate_pool_unit.json",
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"calculated\",\n  \"counted_fixed\": {\n    \"A\": 100,\n    \"B\": 120,\n    \"C\": 5\n  },\n  \"remaining_total_contest_votes\": 100,\n  \"remaining_pair_votes\": 80.0,\n  \"remaining_other_votes\": 20.0,\n  \"final\": {\n    \"A\": 148.0,\n    \"B\": 152.0,\n    \"C\": 25.0\n  },\n  \"final_all_candidate_denominator\": 325.0,\n  \"final_pair_denominator\": 300.0,\n  \"final_pair_net\": -4.0,\n  \"final_pair_margin\": -0.013333333333333334,\n  \"final_all_candidate_margin_A_minus_B\": -0.012307692307692308,\n  \"final_A_all_candidate_share\": 0.4553846153846154,\n  \"pair_tie_threshold\": {\n    \"status\": \"feasible\",\n    \"required_share\": 0.625,\n    \"bounded_share\": 0.625,\n    \"equality_at_boundary\": false\n  },\n  \"pair_A_plus1_threshold\": {\n    \"status\": \"feasible\",\n    \"required_share\": 0.64375,\n    \"bounded_share\": 0.64375,\n    \"equality_at_boundary\": false\n  },\n  \"full_field_tie_lower_bound_A_remaining_share\": 0.625,\n  \"full_field_strict_plurality_requires_greater_than_bound\": true,\n  \"full_field_threshold_status\": \"feasible\",\n  \"legal_plurality_outcome\": \"A_not_plurality\",\n  \"largest_competitor\": \"B\",\n  \"clip_events\": []\n}\n\n",
+      "stderr": ""
+    }
+  ]
+}
