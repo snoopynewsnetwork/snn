@@ -1,0 +1,92 @@
+{
+  "id": "fresh-2020-csv",
+  "requested_url": "https://va2.elstats.civera.com/api/download_contest/144564_table.csv?split_party=false",
+  "parent_source": null,
+  "hops": [
+    {
+      "request_url": "https://va2.elstats.civera.com/api/download_contest/144564_table.csv?split_party=false",
+      "request_method": "GET",
+      "request_headers": {
+        "User-Agent": "Virginia-election-research/1.0 public-source-audit",
+        "Accept-Encoding": "identity"
+      },
+      "retrieved_at_utc": "2026-10-20T17:46:22.931595+00:00",
+      "response_url": "https://va2.elstats.civera.com/api/download_contest/144564_table.csv?split_party=false",
+      "status": 307,
+      "response_headers": [
+        [
+          "Date",
+          "Tue, 20 Oct 2026 17:46:23 GMT"
+        ],
+        [
+          "Content-Type",
+          "text/html"
+        ],
+        [
+          "Content-Length",
+          "164"
+        ],
+        [
+          "Connection",
+          "close"
+        ],
+        [
+          "Location",
+          "https://va2.elstats3.civera.com/api/download_contest/144564_table.csv?split_party=false"
+        ]
+      ],
+      "body_path": "source/acquired/fresh-2020-csv.hop0.gz",
+      "raw_sha256": "8f03491247cbfa8a2e60e0f7ec62d63b5070659f60383a1c81abeb2b20221be3",
+      "stored_sha256": "a759b26fb2c34d06e1e887dff44eda01dc1f51328b08c1b86b45086d950813e8",
+      "raw_bytes": 164,
+      "stored_bytes": 116,
+      "storage": "gzip of complete response entity; Accept-Encoding identity requested; no decoding transformation"
+    },
+    {
+      "request_url": "https://va2.elstats3.civera.com/api/download_contest/144564_table.csv?split_party=false",
+      "request_method": "GET",
+      "request_headers": {
+        "User-Agent": "Virginia-election-research/1.0 public-source-audit",
+        "Accept-Encoding": "identity"
+      },
+      "retrieved_at_utc": "2026-10-20T17:46:23.034865+00:00",
+      "response_url": "https://va2.elstats3.civera.com/api/download_contest/144564_table.csv?split_party=false",
+      "status": 200,
+      "response_headers": [
+        [
+          "Date",
+          "Tue, 20 Oct 2026 17:46:23 GMT"
+        ],
+        [
+          "Content-Type",
+          "text/csv"
+        ],
+        [
+          "Transfer-Encoding",
+          "chunked"
+        ],
+        [
+          "Connection",
+          "close"
+        ],
+        [
+          "Vary",
+          "Accept-Encoding"
+        ],
+        [
+          "Strict-Transport-Security",
+          "max-age=31536000; includeSubDomains"
+        ]
+      ],
+      "body_path": "source/acquired/fresh-2020-csv.hop1.gz",
+      "raw_sha256": "bf7a58bf131b4c0a4b43e3948f24f5e0a5c5678b647eb867d29a145ccfd8a53a",
+      "stored_sha256": "0eb47f06896e5d9f7985547bd4be19fce062b66ecf6d123c39364f95b528b061",
+      "raw_bytes": 135719,
+      "stored_bytes": 43507,
+      "storage": "gzip of complete response entity; Accept-Encoding identity requested; no decoding transformation"
+    }
+  ],
+  "final_url": "https://va2.elstats3.civera.com/api/download_contest/144564_table.csv?split_party=false",
+  "source_status": "as published; no status inferred solely from HTTP",
+  "retrieval_clock": "UTC"
+}

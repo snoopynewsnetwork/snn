@@ -1,0 +1,20 @@
+Traceback (most recent call last):
+  File "/Users/tqbf/codebase/snn/senate/2026/virginia/data/turnout/review/reciprocal.py", line 123, in <module>
+    result=run();(R/'reciprocal.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n');print(json.dumps({k:result[k] for k in ['status','comparison_count','api_complete_scopes','native_candidate_method_objects','historical_native_counts']}))
+           ^^^^^
+  File "/Users/tqbf/codebase/snn/senate/2026/virginia/data/turnout/review/reciprocal.py", line 24, in run
+    p=subprocess.run([sys.executable,'-B',str(gp),str(out/name)],capture_output=True,text=True,env={**os.environ,'PYTHONDONTWRITEBYTECODE':'1'});runs.append({'script':name,'returncode':p.returncode,'stdout':p.stdout,'stderr':p.stderr});assert p.returncode==0,p.stderr
+                                                                                                                                                                                                                                                   ^^^^^^^^^^^^^^^
+AssertionError: Traceback (most recent call last):
+  File "/private/tmp/va-turnout-offline-xx430ft0/guard.py", line 10, in <module>
+    runpy.run_path(sys.argv[1],run_name='__main__')
+  File "<frozen runpy>", line 291, in run_path
+  File "<frozen runpy>", line 98, in _run_module_code
+  File "<frozen runpy>", line 88, in _run_code
+  File "/private/tmp/va-turnout-offline-xx430ft0/virginia/data/turnout/build_turnout.py", line 236, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/private/tmp/va-turnout-offline-xx430ft0/virginia/data/turnout/build_turnout.py", line 233, in main
+    from apply_review_metadata import apply
+ModuleNotFoundError: No module named 'apply_review_metadata'
+

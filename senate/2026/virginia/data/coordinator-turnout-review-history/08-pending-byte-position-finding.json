@@ -1,0 +1,10 @@
+{
+  "scope": "Independent checker failed byte position; cause not yet classified; producer/source unchanged",
+  "failure": "check459214 positional source CSV replay mismatch",
+  "checker_raw_SHA256": "92dbd35d9601373aba1ab013c1fde8a703d400c8560390ab846874cce7751853",
+  "checker_gzip_SHA256": "c5ceab0edc39894e6a1599251d81f4f9801b1974112109cde6a38c1c6370271d",
+  "pending": "add source/ordinal diagnostic, compare exact original bytes before attributing cause",
+  "resolution": "Coordinator BOM/header convention. Original registration CSV starts UTF8 BOM; producer header physical span0..550 includes that BOM and UTF8sig decoding strips it, while root iterator began at3. End offsets and every later physical offset match. Exact retained original byte slice decoded under documented encoding is independently required for each selected record.",
+  "producer_defect": false,
+  "source_or_producer_changed": false
+}

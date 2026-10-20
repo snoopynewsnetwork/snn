@@ -1,0 +1,1682 @@
+{
+  "status": "pass_actual_CLI_independent_counted_fixed_denominator_unknown_clipping_input_review",
+  "actual_CLI_cases": 66,
+  "expected_invalid": 57,
+  "strict_JSON_exit_stderr": true,
+  "producer_import_or_write": false,
+  "source_counts_or_model_changed": false,
+  "scope": "Synthetic arithmetic/input cases only; no forecast, ballot pool, probability or legal declaration.",
+  "cases": [
+    {
+      "name": "counted-fixed-final-pair-and-all-denominators",
+      "input_text": "{\"mode\": \"live\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"candidate_universe\": \"full\", \"unallocated_generic\": false, \"assumptions\": \"Coordinator synthetic counted-fixed two-pool arithmetic, no forecast\", \"target_pair_margin\": 0.01, \"selected_unit\": \"u\", \"units\": [{\"key\": \"u\", \"remaining\": 100, \"pair_participation\": 0.8, \"share\": 0.4, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"counted_all_candidate_total\": 60}, {\"key\": \"v\", \"remaining\": 50, \"pair_participation\": 0.8, \"share\": 0.8, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"counted_all_candidate_total\": 20}]}",
+      "expected_invalid": false,
+      "exit_code": 0,
+      "stderr": "",
+      "output": {
+        "status": "ok",
+        "mode": "live",
+        "pair": [
+          "A",
+          "B"
+        ],
+        "assumptions": "Coordinator synthetic counted-fixed two-pool arithmetic, no forecast",
+        "candidate_universe": "full",
+        "unallocated_generic": false,
+        "counted_fixed": {
+          "A": 35.0,
+          "B": 35.0,
+          "C": 10.0
+        },
+        "counted_pair_denominator": 70.0,
+        "counted_all_candidate_denominator": 80.0,
+        "remaining_all_candidate_pool": 150.0,
+        "remaining_pair_pool": 120.0,
+        "final_pair_denominator": 190.0,
+        "final_all_candidate_denominator": 230.0,
+        "target_pair_margin": 0.01,
+        "target_pair_net": 1.9000000000000001,
+        "target_all_candidate_margin": 0.008260869565217393,
+        "unknown_positive_pair_preferences": [],
+        "aggregate_remaining_requirement": {
+          "raw_required_share": 0.5079166666666667,
+          "status": "feasible",
+          "feasible_share": 0.5079166666666667
+        },
+        "baseline_pair_net": 8.000000000000007,
+        "baseline_pair_margin": 0.04210526315789478,
+        "uniform": {
+          "status": "feasible",
+          "unbounded_share_shift": -0.025416666666666695,
+          "unbounded_all_shares_feasible": true,
+          "bounded_share_shift": -0.0254166666666667,
+          "bounded_net": 1.9000000000000021,
+          "residual_net": 1.9984014443252818e-15,
+          "endpoint_clipped_units": []
+        },
+        "units": [
+          {
+            "key": "u",
+            "counted": {
+              "A": 30,
+              "B": 20,
+              "C": 10
+            },
+            "counted_all": 60.0,
+            "volume": 100,
+            "pool": 80.0,
+            "share": 0.4,
+            "participation": 0.8,
+            "allocations": {
+              "C": 1
+            },
+            "pair_weight": 0.42105263157894735,
+            "all_candidate_weight": 0.43478260869565216,
+            "gain_net_for_one_share_pp": 1.6,
+            "baseline_remaining_net": -15.999999999999996,
+            "selected_only": {
+              "raw_required_share": 0.36187500000000006,
+              "status": "feasible",
+              "feasible_share": 0.36187500000000006
+            },
+            "bounded_target_share": 0.3745833333333333,
+            "bounded_remaining_net": -20.06666666666667
+          },
+          {
+            "key": "v",
+            "counted": {
+              "A": 5,
+              "B": 15,
+              "C": 0
+            },
+            "counted_all": 20.0,
+            "volume": 50,
+            "pool": 40.0,
+            "share": 0.8,
+            "participation": 0.8,
+            "allocations": {
+              "C": 1
+            },
+            "pair_weight": 0.21052631578947367,
+            "all_candidate_weight": 0.21739130434782608,
+            "gain_net_for_one_share_pp": 0.8,
+            "baseline_remaining_net": 24.000000000000004,
+            "selected_only": {
+              "raw_required_share": 0.7237499999999999,
+              "status": "feasible",
+              "feasible_share": 0.7237499999999999
+            },
+            "bounded_target_share": 0.7745833333333334,
+            "bounded_remaining_net": 21.966666666666672
+          }
+        ],
+        "selected_unit_requirement": {
+          "raw_required_share": 0.36187500000000006,
+          "status": "feasible",
+          "feasible_share": 0.36187500000000006
+        },
+        "projected_candidates": {
+          "A": 99.0,
+          "B": 91.0,
+          "C": 39.99999999999999
+        },
+        "plurality": {
+          "status": "conditional-full-field",
+          "leaders": [
+            "A"
+          ],
+          "pair_A_leads": true,
+          "A_leads_every_supplied_other": true,
+          "legal_declaration": false
+        }
+      }
+    },
+    {
+      "name": "unknown-selected-only-solvable-others-known",
+      "input_text": "{\"mode\": \"live\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"candidate_universe\": \"full\", \"unallocated_generic\": false, \"assumptions\": \"Coordinator synthetic counted-fixed two-pool arithmetic, no forecast\", \"target_pair_margin\": 0.01, \"selected_unit\": \"u\", \"units\": [{\"key\": \"u\", \"remaining\": 100, \"pair_participation\": 0.8, \"share\": null, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"counted_all_candidate_total\": 60}, {\"key\": \"v\", \"remaining\": 50, \"pair_participation\": 0.8, \"share\": 0.8, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"counted_all_candidate_total\": 20}]}",
+      "expected_invalid": false,
+      "exit_code": 0,
+      "stderr": "",
+      "output": {
+        "status": "ok",
+        "mode": "live",
+        "pair": [
+          "A",
+          "B"
+        ],
+        "assumptions": "Coordinator synthetic counted-fixed two-pool arithmetic, no forecast",
+        "candidate_universe": "full",
+        "unallocated_generic": false,
+        "counted_fixed": {
+          "A": 35.0,
+          "B": 35.0,
+          "C": 10.0
+        },
+        "counted_pair_denominator": 70.0,
+        "counted_all_candidate_denominator": 80.0,
+        "remaining_all_candidate_pool": 150.0,
+        "remaining_pair_pool": 120.0,
+        "final_pair_denominator": 190.0,
+        "final_all_candidate_denominator": 230.0,
+        "target_pair_margin": 0.01,
+        "target_pair_net": 1.9000000000000001,
+        "target_all_candidate_margin": 0.008260869565217393,
+        "unknown_positive_pair_preferences": [
+          "u"
+        ],
+        "aggregate_remaining_requirement": {
+          "raw_required_share": 0.5079166666666667,
+          "status": "feasible",
+          "feasible_share": 0.5079166666666667
+        },
+        "baseline_pair_net": null,
+        "baseline_pair_margin": null,
+        "uniform": {
+          "status": "unknown-preference",
+          "unbounded_share_shift": null,
+          "bounded_share_shift": null
+        },
+        "units": [
+          {
+            "key": "u",
+            "counted": {
+              "A": 30,
+              "B": 20,
+              "C": 10
+            },
+            "counted_all": 60.0,
+            "volume": 100,
+            "pool": 80.0,
+            "share": null,
+            "participation": 0.8,
+            "allocations": {
+              "C": 1
+            },
+            "pair_weight": 0.42105263157894735,
+            "all_candidate_weight": 0.43478260869565216,
+            "gain_net_for_one_share_pp": 1.6,
+            "baseline_remaining_net": null,
+            "selected_only": {
+              "raw_required_share": 0.36187500000000006,
+              "status": "feasible",
+              "feasible_share": 0.36187500000000006
+            },
+            "bounded_target_share": null,
+            "bounded_remaining_net": null
+          },
+          {
+            "key": "v",
+            "counted": {
+              "A": 5,
+              "B": 15,
+              "C": 0
+            },
+            "counted_all": 20.0,
+            "volume": 50,
+            "pool": 40.0,
+            "share": 0.8,
+            "participation": 0.8,
+            "allocations": {
+              "C": 1
+            },
+            "pair_weight": 0.21052631578947367,
+            "all_candidate_weight": 0.21739130434782608,
+            "gain_net_for_one_share_pp": 0.8,
+            "baseline_remaining_net": 24.000000000000004,
+            "selected_only": {
+              "status": "unknown-other-preference",
+              "raw_required_share": null
+            },
+            "bounded_target_share": null,
+            "bounded_remaining_net": null
+          }
+        ],
+        "selected_unit_requirement": {
+          "raw_required_share": 0.36187500000000006,
+          "status": "feasible",
+          "feasible_share": 0.36187500000000006
+        },
+        "projected_candidates": null,
+        "plurality": {
+          "status": "unknown-preference"
+        }
+      }
+    },
+    {
+      "name": "unknown-positive-other-stays-unknown",
+      "input_text": "{\"mode\": \"live\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"candidate_universe\": \"full\", \"unallocated_generic\": false, \"assumptions\": \"Coordinator synthetic counted-fixed two-pool arithmetic, no forecast\", \"target_pair_margin\": 0.01, \"selected_unit\": \"u\", \"units\": [{\"key\": \"u\", \"remaining\": 100, \"pair_participation\": 0.8, \"share\": 0.4, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"counted_all_candidate_total\": 60}, {\"key\": \"v\", \"remaining\": 50, \"pair_participation\": 0.8, \"share\": null, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"counted_all_candidate_total\": 20}]}",
+      "expected_invalid": false,
+      "exit_code": 0,
+      "stderr": "",
+      "output": {
+        "status": "ok",
+        "mode": "live",
+        "pair": [
+          "A",
+          "B"
+        ],
+        "assumptions": "Coordinator synthetic counted-fixed two-pool arithmetic, no forecast",
+        "candidate_universe": "full",
+        "unallocated_generic": false,
+        "counted_fixed": {
+          "A": 35.0,
+          "B": 35.0,
+          "C": 10.0
+        },
+        "counted_pair_denominator": 70.0,
+        "counted_all_candidate_denominator": 80.0,
+        "remaining_all_candidate_pool": 150.0,
+        "remaining_pair_pool": 120.0,
+        "final_pair_denominator": 190.0,
+        "final_all_candidate_denominator": 230.0,
+        "target_pair_margin": 0.01,
+        "target_pair_net": 1.9000000000000001,
+        "target_all_candidate_margin": 0.008260869565217393,
+        "unknown_positive_pair_preferences": [
+          "v"
+        ],
+        "aggregate_remaining_requirement": {
+          "raw_required_share": 0.5079166666666667,
+          "status": "feasible",
+          "feasible_share": 0.5079166666666667
+        },
+        "baseline_pair_net": null,
+        "baseline_pair_margin": null,
+        "uniform": {
+          "status": "unknown-preference",
+          "unbounded_share_shift": null,
+          "bounded_share_shift": null
+        },
+        "units": [
+          {
+            "key": "u",
+            "counted": {
+              "A": 30,
+              "B": 20,
+              "C": 10
+            },
+            "counted_all": 60.0,
+            "volume": 100,
+            "pool": 80.0,
+            "share": 0.4,
+            "participation": 0.8,
+            "allocations": {
+              "C": 1
+            },
+            "pair_weight": 0.42105263157894735,
+            "all_candidate_weight": 0.43478260869565216,
+            "gain_net_for_one_share_pp": 1.6,
+            "baseline_remaining_net": -15.999999999999996,
+            "selected_only": {
+              "status": "unknown-other-preference",
+              "raw_required_share": null
+            },
+            "bounded_target_share": null,
+            "bounded_remaining_net": null
+          },
+          {
+            "key": "v",
+            "counted": {
+              "A": 5,
+              "B": 15,
+              "C": 0
+            },
+            "counted_all": 20.0,
+            "volume": 50,
+            "pool": 40.0,
+            "share": null,
+            "participation": 0.8,
+            "allocations": {
+              "C": 1
+            },
+            "pair_weight": 0.21052631578947367,
+            "all_candidate_weight": 0.21739130434782608,
+            "gain_net_for_one_share_pp": 0.8,
+            "baseline_remaining_net": null,
+            "selected_only": {
+              "raw_required_share": 0.7237499999999999,
+              "status": "feasible",
+              "feasible_share": 0.7237499999999999
+            },
+            "bounded_target_share": null,
+            "bounded_remaining_net": null
+          }
+        ],
+        "selected_unit_requirement": {
+          "status": "unknown-other-preference",
+          "raw_required_share": null
+        },
+        "projected_candidates": null,
+        "plurality": {
+          "status": "unknown-preference"
+        }
+      }
+    },
+    {
+      "name": "literal-space-key-is-distinct-not-trimmed-alias",
+      "input_text": "{\"mode\": \"live\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"candidate_universe\": \"full\", \"unallocated_generic\": false, \"assumptions\": \"Coordinator synthetic counted-fixed two-pool arithmetic, no forecast\", \"target_pair_margin\": 0.01, \"selected_unit\": \" u \", \"units\": [{\"key\": \"u\", \"remaining\": 100, \"pair_participation\": 0.8, \"share\": 0.4, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"counted_all_candidate_total\": 60}, {\"key\": \" u \", \"remaining\": 50, \"pair_participation\": 0.8, \"share\": 0.8, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"counted_all_candidate_total\": 20}]}",
+      "expected_invalid": false,
+      "exit_code": 0,
+      "stderr": "",
+      "output": {
+        "status": "ok",
+        "mode": "live",
+        "pair": [
+          "A",
+          "B"
+        ],
+        "assumptions": "Coordinator synthetic counted-fixed two-pool arithmetic, no forecast",
+        "candidate_universe": "full",
+        "unallocated_generic": false,
+        "counted_fixed": {
+          "A": 35.0,
+          "B": 35.0,
+          "C": 10.0
+        },
+        "counted_pair_denominator": 70.0,
+        "counted_all_candidate_denominator": 80.0,
+        "remaining_all_candidate_pool": 150.0,
+        "remaining_pair_pool": 120.0,
+        "final_pair_denominator": 190.0,
+        "final_all_candidate_denominator": 230.0,
+        "target_pair_margin": 0.01,
+        "target_pair_net": 1.9000000000000001,
+        "target_all_candidate_margin": 0.008260869565217393,
+        "unknown_positive_pair_preferences": [],
+        "aggregate_remaining_requirement": {
+          "raw_required_share": 0.5079166666666667,
+          "status": "feasible",
+          "feasible_share": 0.5079166666666667
+        },
+        "baseline_pair_net": 8.000000000000007,
+        "baseline_pair_margin": 0.04210526315789478,
+        "uniform": {
+          "status": "feasible",
+          "unbounded_share_shift": -0.025416666666666695,
+          "unbounded_all_shares_feasible": true,
+          "bounded_share_shift": -0.0254166666666667,
+          "bounded_net": 1.9000000000000021,
+          "residual_net": 1.9984014443252818e-15,
+          "endpoint_clipped_units": []
+        },
+        "units": [
+          {
+            "key": "u",
+            "counted": {
+              "A": 30,
+              "B": 20,
+              "C": 10
+            },
+            "counted_all": 60.0,
+            "volume": 100,
+            "pool": 80.0,
+            "share": 0.4,
+            "participation": 0.8,
+            "allocations": {
+              "C": 1
+            },
+            "pair_weight": 0.42105263157894735,
+            "all_candidate_weight": 0.43478260869565216,
+            "gain_net_for_one_share_pp": 1.6,
+            "baseline_remaining_net": -15.999999999999996,
+            "selected_only": {
+              "raw_required_share": 0.36187500000000006,
+              "status": "feasible",
+              "feasible_share": 0.36187500000000006
+            },
+            "bounded_target_share": 0.3745833333333333,
+            "bounded_remaining_net": -20.06666666666667
+          },
+          {
+            "key": " u ",
+            "counted": {
+              "A": 5,
+              "B": 15,
+              "C": 0
+            },
+            "counted_all": 20.0,
+            "volume": 50,
+            "pool": 40.0,
+            "share": 0.8,
+            "participation": 0.8,
+            "allocations": {
+              "C": 1
+            },
+            "pair_weight": 0.21052631578947367,
+            "all_candidate_weight": 0.21739130434782608,
+            "gain_net_for_one_share_pp": 0.8,
+            "baseline_remaining_net": 24.000000000000004,
+            "selected_only": {
+              "raw_required_share": 0.7237499999999999,
+              "status": "feasible",
+              "feasible_share": 0.7237499999999999
+            },
+            "bounded_target_share": 0.7745833333333334,
+            "bounded_remaining_net": 21.966666666666672
+          }
+        ],
+        "selected_unit_requirement": {
+          "raw_required_share": 0.7237499999999999,
+          "status": "feasible",
+          "feasible_share": 0.7237499999999999
+        },
+        "projected_candidates": {
+          "A": 99.0,
+          "B": 91.0,
+          "C": 39.99999999999999
+        },
+        "plurality": {
+          "status": "conditional-full-field",
+          "leaders": [
+            "A"
+          ],
+          "pair_A_leads": true,
+          "A_leads_every_supplied_other": true,
+          "legal_declaration": false
+        }
+      }
+    },
+    {
+      "name": "bounded-clipped-root-differs-from-unbounded",
+      "input_text": "{\"mode\": \"historical\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"candidate_universe\": \"full\", \"unallocated_generic\": false, \"assumptions\": \"Synthetic endpoint-clipping proof\", \"target_pair_margin\": 0, \"units\": [{\"key\": \"lo\", \"volume\": 10, \"pair_participation\": 1, \"share\": 0, \"other_allocations\": {\"C\": 1}}, {\"key\": \"hi\", \"volume\": 90, \"pair_participation\": 1, \"share\": 0.9, \"other_allocations\": {\"C\": 1}}]}",
+      "expected_invalid": false,
+      "exit_code": 0,
+      "stderr": "",
+      "output": {
+        "status": "ok",
+        "mode": "historical",
+        "pair": [
+          "A",
+          "B"
+        ],
+        "assumptions": "Synthetic endpoint-clipping proof",
+        "candidate_universe": "full",
+        "unallocated_generic": false,
+        "counted_fixed": {
+          "A": 0.0,
+          "B": 0.0,
+          "C": 0.0
+        },
+        "counted_pair_denominator": 0.0,
+        "counted_all_candidate_denominator": 0.0,
+        "remaining_all_candidate_pool": 100.0,
+        "remaining_pair_pool": 100.0,
+        "final_pair_denominator": 100.0,
+        "final_all_candidate_denominator": 100.0,
+        "target_pair_margin": 0,
+        "target_pair_net": 0.0,
+        "target_all_candidate_margin": 0.0,
+        "unknown_positive_pair_preferences": [],
+        "aggregate_remaining_requirement": {
+          "raw_required_share": 0.5,
+          "status": "feasible",
+          "feasible_share": 0.5
+        },
+        "baseline_pair_net": 62.0,
+        "baseline_pair_margin": 0.62,
+        "uniform": {
+          "status": "feasible",
+          "unbounded_share_shift": -0.31,
+          "unbounded_all_shares_feasible": false,
+          "bounded_share_shift": -0.34444444444444455,
+          "bounded_net": -1.5987211554602254e-14,
+          "residual_net": -1.5987211554602254e-14,
+          "endpoint_clipped_units": [
+            "lo"
+          ]
+        },
+        "units": [
+          {
+            "key": "lo",
+            "counted": {
+              "A": 0,
+              "B": 0,
+              "C": 0
+            },
+            "counted_all": 0,
+            "volume": 10,
+            "pool": 10,
+            "share": 0,
+            "participation": 1,
+            "allocations": {
+              "C": 1
+            },
+            "pair_weight": 0.1,
+            "all_candidate_weight": 0.1,
+            "gain_net_for_one_share_pp": 0.2,
+            "baseline_remaining_net": -10,
+            "selected_only": {
+              "raw_required_share": -3.1,
+              "status": "secured",
+              "feasible_share": null
+            },
+            "bounded_target_share": 0,
+            "bounded_remaining_net": -10
+          },
+          {
+            "key": "hi",
+            "counted": {
+              "A": 0,
+              "B": 0,
+              "C": 0
+            },
+            "counted_all": 0,
+            "volume": 90,
+            "pool": 90,
+            "share": 0.9,
+            "participation": 1,
+            "allocations": {
+              "C": 1
+            },
+            "pair_weight": 0.9,
+            "all_candidate_weight": 0.9,
+            "gain_net_for_one_share_pp": 1.8,
+            "baseline_remaining_net": 72.0,
+            "selected_only": {
+              "raw_required_share": 0.5555555555555556,
+              "status": "feasible",
+              "feasible_share": 0.5555555555555556
+            },
+            "bounded_target_share": 0.5555555555555555,
+            "bounded_remaining_net": 9.999999999999984
+          }
+        ],
+        "projected_candidates": {
+          "A": 81.0,
+          "B": 19.0,
+          "C": 0.0
+        },
+        "plurality": {
+          "status": "conditional-full-field",
+          "leaders": [
+            "A"
+          ],
+          "pair_A_leads": true,
+          "A_leads_every_supplied_other": true,
+          "legal_declaration": false
+        }
+      }
+    },
+    {
+      "name": "pair-leader-loses-supplied-full-field",
+      "input_text": "{\"mode\": \"historical\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"candidate_universe\": \"full\", \"unallocated_generic\": false, \"assumptions\": \"Synthetic endpoint-clipping proof\", \"target_pair_margin\": 0, \"units\": [{\"key\": \"third\", \"volume\": 100, \"pair_participation\": 0.2, \"share\": 0.6, \"other_allocations\": {\"C\": 1}}]}",
+      "expected_invalid": false,
+      "exit_code": 0,
+      "stderr": "",
+      "output": {
+        "status": "ok",
+        "mode": "historical",
+        "pair": [
+          "A",
+          "B"
+        ],
+        "assumptions": "Synthetic endpoint-clipping proof",
+        "candidate_universe": "full",
+        "unallocated_generic": false,
+        "counted_fixed": {
+          "A": 0.0,
+          "B": 0.0,
+          "C": 0.0
+        },
+        "counted_pair_denominator": 0.0,
+        "counted_all_candidate_denominator": 0.0,
+        "remaining_all_candidate_pool": 100.0,
+        "remaining_pair_pool": 20.0,
+        "final_pair_denominator": 20.0,
+        "final_all_candidate_denominator": 100.0,
+        "target_pair_margin": 0,
+        "target_pair_net": 0.0,
+        "target_all_candidate_margin": 0.0,
+        "unknown_positive_pair_preferences": [],
+        "aggregate_remaining_requirement": {
+          "raw_required_share": 0.5,
+          "status": "feasible",
+          "feasible_share": 0.5
+        },
+        "baseline_pair_net": 3.999999999999999,
+        "baseline_pair_margin": 0.19999999999999996,
+        "uniform": {
+          "status": "feasible",
+          "unbounded_share_shift": -0.09999999999999998,
+          "unbounded_all_shares_feasible": true,
+          "bounded_share_shift": -0.1,
+          "bounded_net": 0.0,
+          "residual_net": 0.0,
+          "endpoint_clipped_units": []
+        },
+        "units": [
+          {
+            "key": "third",
+            "counted": {
+              "A": 0,
+              "B": 0,
+              "C": 0
+            },
+            "counted_all": 0,
+            "volume": 100,
+            "pool": 20.0,
+            "share": 0.6,
+            "participation": 0.2,
+            "allocations": {
+              "C": 1
+            },
+            "pair_weight": 1.0,
+            "all_candidate_weight": 1.0,
+            "gain_net_for_one_share_pp": 0.4,
+            "baseline_remaining_net": 3.999999999999999,
+            "selected_only": {
+              "raw_required_share": 0.5,
+              "status": "feasible",
+              "feasible_share": 0.5
+            },
+            "bounded_target_share": 0.5,
+            "bounded_remaining_net": 0.0
+          }
+        ],
+        "projected_candidates": {
+          "A": 12.0,
+          "B": 8.0,
+          "C": 80.0
+        },
+        "plurality": {
+          "status": "conditional-full-field",
+          "leaders": [
+            "C"
+          ],
+          "pair_A_leads": true,
+          "A_leads_every_supplied_other": false,
+          "legal_declaration": false
+        }
+      }
+    },
+    {
+      "name": "no-positive-pool-counted-only",
+      "input_text": "{\"mode\": \"live\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"candidate_universe\": \"full\", \"unallocated_generic\": false, \"assumptions\": \"Coordinator synthetic counted-fixed two-pool arithmetic, no forecast\", \"target_pair_margin\": 0.01, \"selected_unit\": \"u\", \"units\": [{\"key\": \"u\", \"remaining\": 0, \"pair_participation\": 0.8, \"share\": null, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"counted_all_candidate_total\": 60}, {\"key\": \"v\", \"remaining\": 0, \"pair_participation\": 0.8, \"share\": null, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"counted_all_candidate_total\": 20}]}",
+      "expected_invalid": false,
+      "exit_code": 0,
+      "stderr": "",
+      "output": {
+        "status": "ok",
+        "mode": "live",
+        "pair": [
+          "A",
+          "B"
+        ],
+        "assumptions": "Coordinator synthetic counted-fixed two-pool arithmetic, no forecast",
+        "candidate_universe": "full",
+        "unallocated_generic": false,
+        "counted_fixed": {
+          "A": 35.0,
+          "B": 35.0,
+          "C": 10.0
+        },
+        "counted_pair_denominator": 70.0,
+        "counted_all_candidate_denominator": 80.0,
+        "remaining_all_candidate_pool": 0.0,
+        "remaining_pair_pool": 0.0,
+        "final_pair_denominator": 70.0,
+        "final_all_candidate_denominator": 80.0,
+        "target_pair_margin": 0.01,
+        "target_pair_net": 0.7000000000000001,
+        "target_all_candidate_margin": 0.00875,
+        "unknown_positive_pair_preferences": [],
+        "aggregate_remaining_requirement": {
+          "status": "no-positive-pool",
+          "fixed_target_status": "below",
+          "raw_required_share": null
+        },
+        "baseline_pair_net": 0.0,
+        "baseline_pair_margin": 0.0,
+        "uniform": {
+          "status": "no-positive-pool",
+          "fixed_target_status": "below",
+          "unbounded_share_shift": null,
+          "bounded_share_shift": null
+        },
+        "units": [
+          {
+            "key": "u",
+            "counted": {
+              "A": 30,
+              "B": 20,
+              "C": 10
+            },
+            "counted_all": 60.0,
+            "volume": 0,
+            "pool": 0.0,
+            "share": null,
+            "participation": 0.8,
+            "allocations": {
+              "C": 1
+            },
+            "pair_weight": 0.0,
+            "all_candidate_weight": 0.0,
+            "gain_net_for_one_share_pp": 0.0,
+            "baseline_remaining_net": 0,
+            "selected_only": {
+              "status": "no-positive-pool",
+              "raw_required_share": null,
+              "fixed_target_status": "below"
+            },
+            "bounded_target_share": null,
+            "bounded_remaining_net": null
+          },
+          {
+            "key": "v",
+            "counted": {
+              "A": 5,
+              "B": 15,
+              "C": 0
+            },
+            "counted_all": 20.0,
+            "volume": 0,
+            "pool": 0.0,
+            "share": null,
+            "participation": 0.8,
+            "allocations": {
+              "C": 1
+            },
+            "pair_weight": 0.0,
+            "all_candidate_weight": 0.0,
+            "gain_net_for_one_share_pp": 0.0,
+            "baseline_remaining_net": 0,
+            "selected_only": {
+              "status": "no-positive-pool",
+              "raw_required_share": null,
+              "fixed_target_status": "below"
+            },
+            "bounded_target_share": null,
+            "bounded_remaining_net": null
+          }
+        ],
+        "selected_unit_requirement": {
+          "status": "no-positive-pool",
+          "raw_required_share": null,
+          "fixed_target_status": "below"
+        },
+        "projected_candidates": {
+          "A": 35.0,
+          "B": 35.0,
+          "C": 10.0
+        },
+        "plurality": {
+          "status": "conditional-full-field",
+          "leaders": [
+            "A",
+            "B"
+          ],
+          "pair_A_leads": false,
+          "A_leads_every_supplied_other": false,
+          "legal_declaration": false
+        }
+      }
+    },
+    {
+      "name": "negative-required-share-secured-kept-raw",
+      "input_text": "{\"mode\": \"live\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"candidate_universe\": \"full\", \"unallocated_generic\": false, \"assumptions\": \"Coordinator synthetic counted-fixed two-pool arithmetic, no forecast\", \"target_pair_margin\": 0.01, \"selected_unit\": \"u\", \"units\": [{\"key\": \"u\", \"remaining\": 100, \"pair_participation\": 0.8, \"share\": 0.4, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 1000, \"B\": 0, \"C\": 0}, \"counted_all_candidate_total\": 1000}, {\"key\": \"v\", \"remaining\": 50, \"pair_participation\": 0.8, \"share\": 0.8, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"counted_all_candidate_total\": 20}]}",
+      "expected_invalid": false,
+      "exit_code": 0,
+      "stderr": "",
+      "output": {
+        "status": "ok",
+        "mode": "live",
+        "pair": [
+          "A",
+          "B"
+        ],
+        "assumptions": "Coordinator synthetic counted-fixed two-pool arithmetic, no forecast",
+        "candidate_universe": "full",
+        "unallocated_generic": false,
+        "counted_fixed": {
+          "A": 1005.0,
+          "B": 15.0,
+          "C": 0.0
+        },
+        "counted_pair_denominator": 1020.0,
+        "counted_all_candidate_denominator": 1020.0,
+        "remaining_all_candidate_pool": 150.0,
+        "remaining_pair_pool": 120.0,
+        "final_pair_denominator": 1140.0,
+        "final_all_candidate_denominator": 1170.0,
+        "target_pair_margin": 0.01,
+        "target_pair_net": 11.4,
+        "target_all_candidate_margin": 0.009743589743589744,
+        "unknown_positive_pair_preferences": [],
+        "aggregate_remaining_requirement": {
+          "raw_required_share": -3.5775,
+          "status": "secured",
+          "feasible_share": null
+        },
+        "baseline_pair_net": 998.0,
+        "baseline_pair_margin": 0.875438596491228,
+        "uniform": {
+          "status": "secured",
+          "unbounded_share_shift": -4.110833333333334,
+          "bounded_share_shift": null
+        },
+        "units": [
+          {
+            "key": "u",
+            "counted": {
+              "A": 1000,
+              "B": 0,
+              "C": 0
+            },
+            "counted_all": 1000.0,
+            "volume": 100,
+            "pool": 80.0,
+            "share": 0.4,
+            "participation": 0.8,
+            "allocations": {
+              "C": 1
+            },
+            "pair_weight": 0.07017543859649122,
+            "all_candidate_weight": 0.08547008547008547,
+            "gain_net_for_one_share_pp": 1.6,
+            "baseline_remaining_net": -15.999999999999996,
+            "selected_only": {
+              "raw_required_share": -5.76625,
+              "status": "secured",
+              "feasible_share": null
+            },
+            "bounded_target_share": null,
+            "bounded_remaining_net": null
+          },
+          {
+            "key": "v",
+            "counted": {
+              "A": 5,
+              "B": 15,
+              "C": 0
+            },
+            "counted_all": 20.0,
+            "volume": 50,
+            "pool": 40.0,
+            "share": 0.8,
+            "participation": 0.8,
+            "allocations": {
+              "C": 1
+            },
+            "pair_weight": 0.03508771929824561,
+            "all_candidate_weight": 0.042735042735042736,
+            "gain_net_for_one_share_pp": 0.8,
+            "baseline_remaining_net": 24.000000000000004,
+            "selected_only": {
+              "raw_required_share": -11.5325,
+              "status": "secured",
+              "feasible_share": null
+            },
+            "bounded_target_share": null,
+            "bounded_remaining_net": null
+          }
+        ],
+        "selected_unit_requirement": {
+          "raw_required_share": -5.76625,
+          "status": "secured",
+          "feasible_share": null
+        },
+        "projected_candidates": {
+          "A": 1069.0,
+          "B": 71.0,
+          "C": 29.999999999999993
+        },
+        "plurality": {
+          "status": "conditional-full-field",
+          "leaders": [
+            "A"
+          ],
+          "pair_A_leads": true,
+          "A_leads_every_supplied_other": true,
+          "legal_declaration": false
+        }
+      }
+    },
+    {
+      "name": "required-share-above-one-impossible-kept-raw",
+      "input_text": "{\"mode\": \"live\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"candidate_universe\": \"full\", \"unallocated_generic\": false, \"assumptions\": \"Coordinator synthetic counted-fixed two-pool arithmetic, no forecast\", \"target_pair_margin\": 0.01, \"selected_unit\": \"u\", \"units\": [{\"key\": \"u\", \"remaining\": 100, \"pair_participation\": 0.8, \"share\": 0.4, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 0, \"B\": 1000, \"C\": 0}, \"counted_all_candidate_total\": 1000}, {\"key\": \"v\", \"remaining\": 50, \"pair_participation\": 0.8, \"share\": 0.8, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"counted_all_candidate_total\": 20}]}",
+      "expected_invalid": false,
+      "exit_code": 0,
+      "stderr": "",
+      "output": {
+        "status": "ok",
+        "mode": "live",
+        "pair": [
+          "A",
+          "B"
+        ],
+        "assumptions": "Coordinator synthetic counted-fixed two-pool arithmetic, no forecast",
+        "candidate_universe": "full",
+        "unallocated_generic": false,
+        "counted_fixed": {
+          "A": 5.0,
+          "B": 1015.0,
+          "C": 0.0
+        },
+        "counted_pair_denominator": 1020.0,
+        "counted_all_candidate_denominator": 1020.0,
+        "remaining_all_candidate_pool": 150.0,
+        "remaining_pair_pool": 120.0,
+        "final_pair_denominator": 1140.0,
+        "final_all_candidate_denominator": 1170.0,
+        "target_pair_margin": 0.01,
+        "target_pair_net": 11.4,
+        "target_all_candidate_margin": 0.009743589743589744,
+        "unknown_positive_pair_preferences": [],
+        "aggregate_remaining_requirement": {
+          "raw_required_share": 4.755833333333333,
+          "status": "impossible",
+          "feasible_share": null
+        },
+        "baseline_pair_net": -1002.0,
+        "baseline_pair_margin": -0.8789473684210526,
+        "uniform": {
+          "status": "impossible",
+          "unbounded_share_shift": 4.2225,
+          "bounded_share_shift": null
+        },
+        "units": [
+          {
+            "key": "u",
+            "counted": {
+              "A": 0,
+              "B": 1000,
+              "C": 0
+            },
+            "counted_all": 1000.0,
+            "volume": 100,
+            "pool": 80.0,
+            "share": 0.4,
+            "participation": 0.8,
+            "allocations": {
+              "C": 1
+            },
+            "pair_weight": 0.07017543859649122,
+            "all_candidate_weight": 0.08547008547008547,
+            "gain_net_for_one_share_pp": 1.6,
+            "baseline_remaining_net": -15.999999999999996,
+            "selected_only": {
+              "raw_required_share": 6.733750000000001,
+              "status": "impossible",
+              "feasible_share": null
+            },
+            "bounded_target_share": null,
+            "bounded_remaining_net": null
+          },
+          {
+            "key": "v",
+            "counted": {
+              "A": 5,
+              "B": 15,
+              "C": 0
+            },
+            "counted_all": 20.0,
+            "volume": 50,
+            "pool": 40.0,
+            "share": 0.8,
+            "participation": 0.8,
+            "allocations": {
+              "C": 1
+            },
+            "pair_weight": 0.03508771929824561,
+            "all_candidate_weight": 0.042735042735042736,
+            "gain_net_for_one_share_pp": 0.8,
+            "baseline_remaining_net": 24.000000000000004,
+            "selected_only": {
+              "raw_required_share": 13.467500000000001,
+              "status": "impossible",
+              "feasible_share": null
+            },
+            "bounded_target_share": null,
+            "bounded_remaining_net": null
+          }
+        ],
+        "selected_unit_requirement": {
+          "raw_required_share": 6.733750000000001,
+          "status": "impossible",
+          "feasible_share": null
+        },
+        "projected_candidates": {
+          "A": 69.0,
+          "B": 1071.0,
+          "C": 29.999999999999993
+        },
+        "plurality": {
+          "status": "conditional-full-field",
+          "leaders": [
+            "B"
+          ],
+          "pair_A_leads": false,
+          "A_leads_every_supplied_other": false,
+          "legal_declaration": false
+        }
+      }
+    },
+    {
+      "name": "invalid-target-0",
+      "input_text": "{\"mode\": \"live\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"candidate_universe\": \"full\", \"unallocated_generic\": false, \"assumptions\": \"Coordinator synthetic counted-fixed two-pool arithmetic, no forecast\", \"target_pair_margin\": null, \"selected_unit\": \"u\", \"units\": [{\"key\": \"u\", \"remaining\": 100, \"pair_participation\": 0.8, \"share\": 0.4, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"counted_all_candidate_total\": 60}, {\"key\": \"v\", \"remaining\": 50, \"pair_participation\": 0.8, \"share\": 0.8, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"counted_all_candidate_total\": 20}]}",
+      "expected_invalid": true,
+      "exit_code": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "target_pair_margin fraction must be a finite number, not bool/null/text"
+      }
+    },
+    {
+      "name": "invalid-target-1",
+      "input_text": "{\"mode\": \"live\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"candidate_universe\": \"full\", \"unallocated_generic\": false, \"assumptions\": \"Coordinator synthetic counted-fixed two-pool arithmetic, no forecast\", \"target_pair_margin\": true, \"selected_unit\": \"u\", \"units\": [{\"key\": \"u\", \"remaining\": 100, \"pair_participation\": 0.8, \"share\": 0.4, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"counted_all_candidate_total\": 60}, {\"key\": \"v\", \"remaining\": 50, \"pair_participation\": 0.8, \"share\": 0.8, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"counted_all_candidate_total\": 20}]}",
+      "expected_invalid": true,
+      "exit_code": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "target_pair_margin fraction must be a finite number, not bool/null/text"
+      }
+    },
+    {
+      "name": "invalid-target-2",
+      "input_text": "{\"mode\": \"live\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"candidate_universe\": \"full\", \"unallocated_generic\": false, \"assumptions\": \"Coordinator synthetic counted-fixed two-pool arithmetic, no forecast\", \"target_pair_margin\": false, \"selected_unit\": \"u\", \"units\": [{\"key\": \"u\", \"remaining\": 100, \"pair_participation\": 0.8, \"share\": 0.4, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"counted_all_candidate_total\": 60}, {\"key\": \"v\", \"remaining\": 50, \"pair_participation\": 0.8, \"share\": 0.8, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"counted_all_candidate_total\": 20}]}",
+      "expected_invalid": true,
+      "exit_code": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "target_pair_margin fraction must be a finite number, not bool/null/text"
+      }
+    },
+    {
+      "name": "invalid-target-3",
+      "input_text": "{\"mode\": \"live\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"candidate_universe\": \"full\", \"unallocated_generic\": false, \"assumptions\": \"Coordinator synthetic counted-fixed two-pool arithmetic, no forecast\", \"target_pair_margin\": \"0\", \"selected_unit\": \"u\", \"units\": [{\"key\": \"u\", \"remaining\": 100, \"pair_participation\": 0.8, \"share\": 0.4, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"counted_all_candidate_total\": 60}, {\"key\": \"v\", \"remaining\": 50, \"pair_participation\": 0.8, \"share\": 0.8, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"counted_all_candidate_total\": 20}]}",
+      "expected_invalid": true,
+      "exit_code": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "target_pair_margin fraction must be a finite number, not bool/null/text"
+      }
+    },
+    {
+      "name": "invalid-target-4",
+      "input_text": "{\"mode\": \"live\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"candidate_universe\": \"full\", \"unallocated_generic\": false, \"assumptions\": \"Coordinator synthetic counted-fixed two-pool arithmetic, no forecast\", \"target_pair_margin\": {}, \"selected_unit\": \"u\", \"units\": [{\"key\": \"u\", \"remaining\": 100, \"pair_participation\": 0.8, \"share\": 0.4, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"counted_all_candidate_total\": 60}, {\"key\": \"v\", \"remaining\": 50, \"pair_participation\": 0.8, \"share\": 0.8, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"counted_all_candidate_total\": 20}]}",
+      "expected_invalid": true,
+      "exit_code": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "target_pair_margin fraction must be a finite number, not bool/null/text"
+      }
+    },
+    {
+      "name": "invalid-target-5",
+      "input_text": "{\"mode\": \"live\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"candidate_universe\": \"full\", \"unallocated_generic\": false, \"assumptions\": \"Coordinator synthetic counted-fixed two-pool arithmetic, no forecast\", \"target_pair_margin\": [], \"selected_unit\": \"u\", \"units\": [{\"key\": \"u\", \"remaining\": 100, \"pair_participation\": 0.8, \"share\": 0.4, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"counted_all_candidate_total\": 60}, {\"key\": \"v\", \"remaining\": 50, \"pair_participation\": 0.8, \"share\": 0.8, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"counted_all_candidate_total\": 20}]}",
+      "expected_invalid": true,
+      "exit_code": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "target_pair_margin fraction must be a finite number, not bool/null/text"
+      }
+    },
+    {
+      "name": "invalid-target-6",
+      "input_text": "{\"mode\": \"live\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"candidate_universe\": \"full\", \"unallocated_generic\": false, \"assumptions\": \"Coordinator synthetic counted-fixed two-pool arithmetic, no forecast\", \"target_pair_margin\": NaN, \"selected_unit\": \"u\", \"units\": [{\"key\": \"u\", \"remaining\": 100, \"pair_participation\": 0.8, \"share\": 0.4, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"counted_all_candidate_total\": 60}, {\"key\": \"v\", \"remaining\": 50, \"pair_participation\": 0.8, \"share\": 0.8, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"counted_all_candidate_total\": 20}]}",
+      "expected_invalid": true,
+      "exit_code": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "nonfinite JSON token: NaN"
+      }
+    },
+    {
+      "name": "invalid-target-7",
+      "input_text": "{\"mode\": \"live\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"candidate_universe\": \"full\", \"unallocated_generic\": false, \"assumptions\": \"Coordinator synthetic counted-fixed two-pool arithmetic, no forecast\", \"target_pair_margin\": Infinity, \"selected_unit\": \"u\", \"units\": [{\"key\": \"u\", \"remaining\": 100, \"pair_participation\": 0.8, \"share\": 0.4, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"counted_all_candidate_total\": 60}, {\"key\": \"v\", \"remaining\": 50, \"pair_participation\": 0.8, \"share\": 0.8, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"counted_all_candidate_total\": 20}]}",
+      "expected_invalid": true,
+      "exit_code": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "nonfinite JSON token: Infinity"
+      }
+    },
+    {
+      "name": "invalid-target-8",
+      "input_text": "{\"mode\": \"live\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"candidate_universe\": \"full\", \"unallocated_generic\": false, \"assumptions\": \"Coordinator synthetic counted-fixed two-pool arithmetic, no forecast\", \"target_pair_margin\": -Infinity, \"selected_unit\": \"u\", \"units\": [{\"key\": \"u\", \"remaining\": 100, \"pair_participation\": 0.8, \"share\": 0.4, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"counted_all_candidate_total\": 60}, {\"key\": \"v\", \"remaining\": 50, \"pair_participation\": 0.8, \"share\": 0.8, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"counted_all_candidate_total\": 20}]}",
+      "expected_invalid": true,
+      "exit_code": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "nonfinite JSON token: -Infinity"
+      }
+    },
+    {
+      "name": "invalid-target-9",
+      "input_text": "{\"mode\": \"live\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"candidate_universe\": \"full\", \"unallocated_generic\": false, \"assumptions\": \"Coordinator synthetic counted-fixed two-pool arithmetic, no forecast\", \"target_pair_margin\": -1.00001, \"selected_unit\": \"u\", \"units\": [{\"key\": \"u\", \"remaining\": 100, \"pair_participation\": 0.8, \"share\": 0.4, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"counted_all_candidate_total\": 60}, {\"key\": \"v\", \"remaining\": 50, \"pair_participation\": 0.8, \"share\": 0.8, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"counted_all_candidate_total\": 20}]}",
+      "expected_invalid": true,
+      "exit_code": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "target_pair_margin fraction outside finite supported bounds"
+      }
+    },
+    {
+      "name": "invalid-target-10",
+      "input_text": "{\"mode\": \"live\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"candidate_universe\": \"full\", \"unallocated_generic\": false, \"assumptions\": \"Coordinator synthetic counted-fixed two-pool arithmetic, no forecast\", \"target_pair_margin\": 1.00001, \"selected_unit\": \"u\", \"units\": [{\"key\": \"u\", \"remaining\": 100, \"pair_participation\": 0.8, \"share\": 0.4, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"counted_all_candidate_total\": 60}, {\"key\": \"v\", \"remaining\": 50, \"pair_participation\": 0.8, \"share\": 0.8, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"counted_all_candidate_total\": 20}]}",
+      "expected_invalid": true,
+      "exit_code": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "target_pair_margin fraction outside finite supported bounds"
+      }
+    },
+    {
+      "name": "global-key-ordinary-duplicate",
+      "input_text": "{\"mode\": \"live\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"candidate_universe\": \"full\", \"unallocated_generic\": false, \"assumptions\": \"Coordinator synthetic counted-fixed two-pool arithmetic, no forecast\", \"target_pair_margin\": 0.01, \"units\": [{\"key\": \"u\", \"remaining\": 100, \"pair_participation\": 0.8, \"share\": 0.4, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"counted_all_candidate_total\": 60}, {\"key\": \"u\", \"remaining\": 50, \"pair_participation\": 0.8, \"share\": 0.8, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"counted_all_candidate_total\": 20}]}",
+      "expected_invalid": true,
+      "exit_code": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "duplicate unit key"
+      }
+    },
+    {
+      "name": "global-key-ordinary-missing",
+      "input_text": "{\"mode\": \"live\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"candidate_universe\": \"full\", \"unallocated_generic\": false, \"assumptions\": \"Coordinator synthetic counted-fixed two-pool arithmetic, no forecast\", \"target_pair_margin\": 0.01, \"units\": [{\"key\": \"u\", \"remaining\": 100, \"pair_participation\": 0.8, \"share\": 0.4, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"counted_all_candidate_total\": 60}, {\"remaining\": 50, \"pair_participation\": 0.8, \"share\": 0.8, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"counted_all_candidate_total\": 20}]}",
+      "expected_invalid": true,
+      "exit_code": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "identities and unit keys must be nonblank strings"
+      }
+    },
+    {
+      "name": "global-key-ordinary-empty",
+      "input_text": "{\"mode\": \"live\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"candidate_universe\": \"full\", \"unallocated_generic\": false, \"assumptions\": \"Coordinator synthetic counted-fixed two-pool arithmetic, no forecast\", \"target_pair_margin\": 0.01, \"units\": [{\"key\": \"u\", \"remaining\": 100, \"pair_participation\": 0.8, \"share\": 0.4, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"counted_all_candidate_total\": 60}, {\"key\": \"\", \"remaining\": 50, \"pair_participation\": 0.8, \"share\": 0.8, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"counted_all_candidate_total\": 20}]}",
+      "expected_invalid": true,
+      "exit_code": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "identities and unit keys must be nonblank strings"
+      }
+    },
+    {
+      "name": "global-key-ordinary-whitespace",
+      "input_text": "{\"mode\": \"live\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"candidate_universe\": \"full\", \"unallocated_generic\": false, \"assumptions\": \"Coordinator synthetic counted-fixed two-pool arithmetic, no forecast\", \"target_pair_margin\": 0.01, \"units\": [{\"key\": \"u\", \"remaining\": 100, \"pair_participation\": 0.8, \"share\": 0.4, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"counted_all_candidate_total\": 60}, {\"key\": \" \\t\", \"remaining\": 50, \"pair_participation\": 0.8, \"share\": 0.8, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"counted_all_candidate_total\": 20}]}",
+      "expected_invalid": true,
+      "exit_code": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "identities and unit keys must be nonblank strings"
+      }
+    },
+    {
+      "name": "global-key-ordinary-integer",
+      "input_text": "{\"mode\": \"live\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"candidate_universe\": \"full\", \"unallocated_generic\": false, \"assumptions\": \"Coordinator synthetic counted-fixed two-pool arithmetic, no forecast\", \"target_pair_margin\": 0.01, \"units\": [{\"key\": \"u\", \"remaining\": 100, \"pair_participation\": 0.8, \"share\": 0.4, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"counted_all_candidate_total\": 60}, {\"key\": 3, \"remaining\": 50, \"pair_participation\": 0.8, \"share\": 0.8, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"counted_all_candidate_total\": 20}]}",
+      "expected_invalid": true,
+      "exit_code": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "identities and unit keys must be nonblank strings"
+      }
+    },
+    {
+      "name": "global-key-ordinary-boolean",
+      "input_text": "{\"mode\": \"live\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"candidate_universe\": \"full\", \"unallocated_generic\": false, \"assumptions\": \"Coordinator synthetic counted-fixed two-pool arithmetic, no forecast\", \"target_pair_margin\": 0.01, \"units\": [{\"key\": \"u\", \"remaining\": 100, \"pair_participation\": 0.8, \"share\": 0.4, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"counted_all_candidate_total\": 60}, {\"key\": false, \"remaining\": 50, \"pair_participation\": 0.8, \"share\": 0.8, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"counted_all_candidate_total\": 20}]}",
+      "expected_invalid": true,
+      "exit_code": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "identities and unit keys must be nonblank strings"
+      }
+    },
+    {
+      "name": "global-key-unknown-duplicate",
+      "input_text": "{\"mode\": \"live\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"candidate_universe\": \"full\", \"unallocated_generic\": false, \"assumptions\": \"Coordinator synthetic counted-fixed two-pool arithmetic, no forecast\", \"target_pair_margin\": 0.01, \"units\": [{\"key\": \"u\", \"remaining\": 100, \"pair_participation\": 0.8, \"share\": null, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"counted_all_candidate_total\": 60}, {\"key\": \"u\", \"remaining\": 50, \"pair_participation\": 0.8, \"share\": 0.8, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"counted_all_candidate_total\": 20}]}",
+      "expected_invalid": true,
+      "exit_code": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "duplicate unit key"
+      }
+    },
+    {
+      "name": "global-key-unknown-missing",
+      "input_text": "{\"mode\": \"live\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"candidate_universe\": \"full\", \"unallocated_generic\": false, \"assumptions\": \"Coordinator synthetic counted-fixed two-pool arithmetic, no forecast\", \"target_pair_margin\": 0.01, \"units\": [{\"key\": \"u\", \"remaining\": 100, \"pair_participation\": 0.8, \"share\": null, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"counted_all_candidate_total\": 60}, {\"remaining\": 50, \"pair_participation\": 0.8, \"share\": 0.8, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"counted_all_candidate_total\": 20}]}",
+      "expected_invalid": true,
+      "exit_code": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "identities and unit keys must be nonblank strings"
+      }
+    },
+    {
+      "name": "global-key-unknown-empty",
+      "input_text": "{\"mode\": \"live\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"candidate_universe\": \"full\", \"unallocated_generic\": false, \"assumptions\": \"Coordinator synthetic counted-fixed two-pool arithmetic, no forecast\", \"target_pair_margin\": 0.01, \"units\": [{\"key\": \"u\", \"remaining\": 100, \"pair_participation\": 0.8, \"share\": null, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"counted_all_candidate_total\": 60}, {\"key\": \"\", \"remaining\": 50, \"pair_participation\": 0.8, \"share\": 0.8, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"counted_all_candidate_total\": 20}]}",
+      "expected_invalid": true,
+      "exit_code": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "identities and unit keys must be nonblank strings"
+      }
+    },
+    {
+      "name": "global-key-unknown-whitespace",
+      "input_text": "{\"mode\": \"live\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"candidate_universe\": \"full\", \"unallocated_generic\": false, \"assumptions\": \"Coordinator synthetic counted-fixed two-pool arithmetic, no forecast\", \"target_pair_margin\": 0.01, \"units\": [{\"key\": \"u\", \"remaining\": 100, \"pair_participation\": 0.8, \"share\": null, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"counted_all_candidate_total\": 60}, {\"key\": \" \\t\", \"remaining\": 50, \"pair_participation\": 0.8, \"share\": 0.8, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"counted_all_candidate_total\": 20}]}",
+      "expected_invalid": true,
+      "exit_code": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "identities and unit keys must be nonblank strings"
+      }
+    },
+    {
+      "name": "global-key-unknown-integer",
+      "input_text": "{\"mode\": \"live\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"candidate_universe\": \"full\", \"unallocated_generic\": false, \"assumptions\": \"Coordinator synthetic counted-fixed two-pool arithmetic, no forecast\", \"target_pair_margin\": 0.01, \"units\": [{\"key\": \"u\", \"remaining\": 100, \"pair_participation\": 0.8, \"share\": null, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"counted_all_candidate_total\": 60}, {\"key\": 3, \"remaining\": 50, \"pair_participation\": 0.8, \"share\": 0.8, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"counted_all_candidate_total\": 20}]}",
+      "expected_invalid": true,
+      "exit_code": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "identities and unit keys must be nonblank strings"
+      }
+    },
+    {
+      "name": "global-key-unknown-boolean",
+      "input_text": "{\"mode\": \"live\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"candidate_universe\": \"full\", \"unallocated_generic\": false, \"assumptions\": \"Coordinator synthetic counted-fixed two-pool arithmetic, no forecast\", \"target_pair_margin\": 0.01, \"units\": [{\"key\": \"u\", \"remaining\": 100, \"pair_participation\": 0.8, \"share\": null, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"counted_all_candidate_total\": 60}, {\"key\": false, \"remaining\": 50, \"pair_participation\": 0.8, \"share\": 0.8, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"counted_all_candidate_total\": 20}]}",
+      "expected_invalid": true,
+      "exit_code": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "identities and unit keys must be nonblank strings"
+      }
+    },
+    {
+      "name": "global-key-no-pool-duplicate",
+      "input_text": "{\"mode\": \"live\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"candidate_universe\": \"full\", \"unallocated_generic\": false, \"assumptions\": \"Coordinator synthetic counted-fixed two-pool arithmetic, no forecast\", \"target_pair_margin\": 0.01, \"units\": [{\"key\": \"u\", \"remaining\": 0, \"pair_participation\": 0.8, \"share\": null, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"counted_all_candidate_total\": 60}, {\"key\": \"u\", \"remaining\": 0, \"pair_participation\": 0.8, \"share\": null, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"counted_all_candidate_total\": 20}]}",
+      "expected_invalid": true,
+      "exit_code": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "duplicate unit key"
+      }
+    },
+    {
+      "name": "global-key-no-pool-missing",
+      "input_text": "{\"mode\": \"live\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"candidate_universe\": \"full\", \"unallocated_generic\": false, \"assumptions\": \"Coordinator synthetic counted-fixed two-pool arithmetic, no forecast\", \"target_pair_margin\": 0.01, \"units\": [{\"key\": \"u\", \"remaining\": 0, \"pair_participation\": 0.8, \"share\": null, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"counted_all_candidate_total\": 60}, {\"remaining\": 0, \"pair_participation\": 0.8, \"share\": null, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"counted_all_candidate_total\": 20}]}",
+      "expected_invalid": true,
+      "exit_code": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "identities and unit keys must be nonblank strings"
+      }
+    },
+    {
+      "name": "global-key-no-pool-empty",
+      "input_text": "{\"mode\": \"live\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"candidate_universe\": \"full\", \"unallocated_generic\": false, \"assumptions\": \"Coordinator synthetic counted-fixed two-pool arithmetic, no forecast\", \"target_pair_margin\": 0.01, \"units\": [{\"key\": \"u\", \"remaining\": 0, \"pair_participation\": 0.8, \"share\": null, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"counted_all_candidate_total\": 60}, {\"key\": \"\", \"remaining\": 0, \"pair_participation\": 0.8, \"share\": null, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"counted_all_candidate_total\": 20}]}",
+      "expected_invalid": true,
+      "exit_code": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "identities and unit keys must be nonblank strings"
+      }
+    },
+    {
+      "name": "global-key-no-pool-whitespace",
+      "input_text": "{\"mode\": \"live\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"candidate_universe\": \"full\", \"unallocated_generic\": false, \"assumptions\": \"Coordinator synthetic counted-fixed two-pool arithmetic, no forecast\", \"target_pair_margin\": 0.01, \"units\": [{\"key\": \"u\", \"remaining\": 0, \"pair_participation\": 0.8, \"share\": null, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"counted_all_candidate_total\": 60}, {\"key\": \" \\t\", \"remaining\": 0, \"pair_participation\": 0.8, \"share\": null, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"counted_all_candidate_total\": 20}]}",
+      "expected_invalid": true,
+      "exit_code": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "identities and unit keys must be nonblank strings"
+      }
+    },
+    {
+      "name": "global-key-no-pool-integer",
+      "input_text": "{\"mode\": \"live\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"candidate_universe\": \"full\", \"unallocated_generic\": false, \"assumptions\": \"Coordinator synthetic counted-fixed two-pool arithmetic, no forecast\", \"target_pair_margin\": 0.01, \"units\": [{\"key\": \"u\", \"remaining\": 0, \"pair_participation\": 0.8, \"share\": null, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"counted_all_candidate_total\": 60}, {\"key\": 3, \"remaining\": 0, \"pair_participation\": 0.8, \"share\": null, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"counted_all_candidate_total\": 20}]}",
+      "expected_invalid": true,
+      "exit_code": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "identities and unit keys must be nonblank strings"
+      }
+    },
+    {
+      "name": "global-key-no-pool-boolean",
+      "input_text": "{\"mode\": \"live\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"candidate_universe\": \"full\", \"unallocated_generic\": false, \"assumptions\": \"Coordinator synthetic counted-fixed two-pool arithmetic, no forecast\", \"target_pair_margin\": 0.01, \"units\": [{\"key\": \"u\", \"remaining\": 0, \"pair_participation\": 0.8, \"share\": null, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"counted_all_candidate_total\": 60}, {\"key\": false, \"remaining\": 0, \"pair_participation\": 0.8, \"share\": null, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"counted_all_candidate_total\": 20}]}",
+      "expected_invalid": true,
+      "exit_code": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "identities and unit keys must be nonblank strings"
+      }
+    },
+    {
+      "name": "invalid-unit-remaining-38",
+      "input_text": "{\"mode\": \"live\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"candidate_universe\": \"full\", \"unallocated_generic\": false, \"assumptions\": \"Coordinator synthetic counted-fixed two-pool arithmetic, no forecast\", \"target_pair_margin\": 0.01, \"selected_unit\": \"u\", \"units\": [{\"key\": \"u\", \"remaining\": -1, \"pair_participation\": 0.8, \"share\": 0.4, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"counted_all_candidate_total\": 60}, {\"key\": \"v\", \"remaining\": 50, \"pair_participation\": 0.8, \"share\": 0.8, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"counted_all_candidate_total\": 20}]}",
+      "expected_invalid": true,
+      "exit_code": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "u volume outside finite supported bounds"
+      }
+    },
+    {
+      "name": "invalid-unit-remaining-39",
+      "input_text": "{\"mode\": \"live\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"candidate_universe\": \"full\", \"unallocated_generic\": false, \"assumptions\": \"Coordinator synthetic counted-fixed two-pool arithmetic, no forecast\", \"target_pair_margin\": 0.01, \"selected_unit\": \"u\", \"units\": [{\"key\": \"u\", \"remaining\": true, \"pair_participation\": 0.8, \"share\": 0.4, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"counted_all_candidate_total\": 60}, {\"key\": \"v\", \"remaining\": 50, \"pair_participation\": 0.8, \"share\": 0.8, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"counted_all_candidate_total\": 20}]}",
+      "expected_invalid": true,
+      "exit_code": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "u volume must be a finite number, not bool/null/text"
+      }
+    },
+    {
+      "name": "invalid-unit-remaining-40",
+      "input_text": "{\"mode\": \"live\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"candidate_universe\": \"full\", \"unallocated_generic\": false, \"assumptions\": \"Coordinator synthetic counted-fixed two-pool arithmetic, no forecast\", \"target_pair_margin\": 0.01, \"selected_unit\": \"u\", \"units\": [{\"key\": \"u\", \"remaining\": null, \"pair_participation\": 0.8, \"share\": 0.4, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"counted_all_candidate_total\": 60}, {\"key\": \"v\", \"remaining\": 50, \"pair_participation\": 0.8, \"share\": 0.8, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"counted_all_candidate_total\": 20}]}",
+      "expected_invalid": true,
+      "exit_code": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "u volume must be a finite number, not bool/null/text"
+      }
+    },
+    {
+      "name": "invalid-unit-remaining-41",
+      "input_text": "{\"mode\": \"live\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"candidate_universe\": \"full\", \"unallocated_generic\": false, \"assumptions\": \"Coordinator synthetic counted-fixed two-pool arithmetic, no forecast\", \"target_pair_margin\": 0.01, \"selected_unit\": \"u\", \"units\": [{\"key\": \"u\", \"remaining\": \"100\", \"pair_participation\": 0.8, \"share\": 0.4, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"counted_all_candidate_total\": 60}, {\"key\": \"v\", \"remaining\": 50, \"pair_participation\": 0.8, \"share\": 0.8, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"counted_all_candidate_total\": 20}]}",
+      "expected_invalid": true,
+      "exit_code": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "u volume must be a finite number, not bool/null/text"
+      }
+    },
+    {
+      "name": "invalid-unit-remaining-42",
+      "input_text": "{\"mode\": \"live\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"candidate_universe\": \"full\", \"unallocated_generic\": false, \"assumptions\": \"Coordinator synthetic counted-fixed two-pool arithmetic, no forecast\", \"target_pair_margin\": 0.01, \"selected_unit\": \"u\", \"units\": [{\"key\": \"u\", \"remaining\": Infinity, \"pair_participation\": 0.8, \"share\": 0.4, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"counted_all_candidate_total\": 60}, {\"key\": \"v\", \"remaining\": 50, \"pair_participation\": 0.8, \"share\": 0.8, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"counted_all_candidate_total\": 20}]}",
+      "expected_invalid": true,
+      "exit_code": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "nonfinite JSON token: Infinity"
+      }
+    },
+    {
+      "name": "invalid-unit-pair_participation-43",
+      "input_text": "{\"mode\": \"live\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"candidate_universe\": \"full\", \"unallocated_generic\": false, \"assumptions\": \"Coordinator synthetic counted-fixed two-pool arithmetic, no forecast\", \"target_pair_margin\": 0.01, \"selected_unit\": \"u\", \"units\": [{\"key\": \"u\", \"remaining\": 100, \"pair_participation\": -0.1, \"share\": 0.4, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"counted_all_candidate_total\": 60}, {\"key\": \"v\", \"remaining\": 50, \"pair_participation\": 0.8, \"share\": 0.8, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"counted_all_candidate_total\": 20}]}",
+      "expected_invalid": true,
+      "exit_code": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "u pair_participation outside finite supported bounds"
+      }
+    },
+    {
+      "name": "invalid-unit-pair_participation-44",
+      "input_text": "{\"mode\": \"live\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"candidate_universe\": \"full\", \"unallocated_generic\": false, \"assumptions\": \"Coordinator synthetic counted-fixed two-pool arithmetic, no forecast\", \"target_pair_margin\": 0.01, \"selected_unit\": \"u\", \"units\": [{\"key\": \"u\", \"remaining\": 100, \"pair_participation\": 1.1, \"share\": 0.4, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"counted_all_candidate_total\": 60}, {\"key\": \"v\", \"remaining\": 50, \"pair_participation\": 0.8, \"share\": 0.8, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"counted_all_candidate_total\": 20}]}",
+      "expected_invalid": true,
+      "exit_code": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "u pair_participation outside finite supported bounds"
+      }
+    },
+    {
+      "name": "invalid-unit-pair_participation-45",
+      "input_text": "{\"mode\": \"live\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"candidate_universe\": \"full\", \"unallocated_generic\": false, \"assumptions\": \"Coordinator synthetic counted-fixed two-pool arithmetic, no forecast\", \"target_pair_margin\": 0.01, \"selected_unit\": \"u\", \"units\": [{\"key\": \"u\", \"remaining\": 100, \"pair_participation\": true, \"share\": 0.4, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"counted_all_candidate_total\": 60}, {\"key\": \"v\", \"remaining\": 50, \"pair_participation\": 0.8, \"share\": 0.8, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"counted_all_candidate_total\": 20}]}",
+      "expected_invalid": true,
+      "exit_code": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "u pair_participation must be a finite number, not bool/null/text"
+      }
+    },
+    {
+      "name": "invalid-unit-share-46",
+      "input_text": "{\"mode\": \"live\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"candidate_universe\": \"full\", \"unallocated_generic\": false, \"assumptions\": \"Coordinator synthetic counted-fixed two-pool arithmetic, no forecast\", \"target_pair_margin\": 0.01, \"selected_unit\": \"u\", \"units\": [{\"key\": \"u\", \"remaining\": 100, \"pair_participation\": 0.8, \"share\": -1, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"counted_all_candidate_total\": 60}, {\"key\": \"v\", \"remaining\": 50, \"pair_participation\": 0.8, \"share\": 0.8, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"counted_all_candidate_total\": 20}]}",
+      "expected_invalid": true,
+      "exit_code": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "u share outside finite supported bounds"
+      }
+    },
+    {
+      "name": "invalid-unit-share-47",
+      "input_text": "{\"mode\": \"live\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"candidate_universe\": \"full\", \"unallocated_generic\": false, \"assumptions\": \"Coordinator synthetic counted-fixed two-pool arithmetic, no forecast\", \"target_pair_margin\": 0.01, \"selected_unit\": \"u\", \"units\": [{\"key\": \"u\", \"remaining\": 100, \"pair_participation\": 0.8, \"share\": 1.01, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"counted_all_candidate_total\": 60}, {\"key\": \"v\", \"remaining\": 50, \"pair_participation\": 0.8, \"share\": 0.8, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"counted_all_candidate_total\": 20}]}",
+      "expected_invalid": true,
+      "exit_code": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "u share outside finite supported bounds"
+      }
+    },
+    {
+      "name": "invalid-unit-share-48",
+      "input_text": "{\"mode\": \"live\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"candidate_universe\": \"full\", \"unallocated_generic\": false, \"assumptions\": \"Coordinator synthetic counted-fixed two-pool arithmetic, no forecast\", \"target_pair_margin\": 0.01, \"selected_unit\": \"u\", \"units\": [{\"key\": \"u\", \"remaining\": 100, \"pair_participation\": 0.8, \"share\": true, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"counted_all_candidate_total\": 60}, {\"key\": \"v\", \"remaining\": 50, \"pair_participation\": 0.8, \"share\": 0.8, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"counted_all_candidate_total\": 20}]}",
+      "expected_invalid": true,
+      "exit_code": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "u share must be a finite number, not bool/null/text"
+      }
+    },
+    {
+      "name": "invalid-unit-share-49",
+      "input_text": "{\"mode\": \"live\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"candidate_universe\": \"full\", \"unallocated_generic\": false, \"assumptions\": \"Coordinator synthetic counted-fixed two-pool arithmetic, no forecast\", \"target_pair_margin\": 0.01, \"selected_unit\": \"u\", \"units\": [{\"key\": \"u\", \"remaining\": 100, \"pair_participation\": 0.8, \"share\": \"0.5\", \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"counted_all_candidate_total\": 60}, {\"key\": \"v\", \"remaining\": 50, \"pair_participation\": 0.8, \"share\": 0.8, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"counted_all_candidate_total\": 20}]}",
+      "expected_invalid": true,
+      "exit_code": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "u share must be a finite number, not bool/null/text"
+      }
+    },
+    {
+      "name": "invalid-unit-share-50",
+      "input_text": "{\"mode\": \"live\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"candidate_universe\": \"full\", \"unallocated_generic\": false, \"assumptions\": \"Coordinator synthetic counted-fixed two-pool arithmetic, no forecast\", \"target_pair_margin\": 0.01, \"selected_unit\": \"u\", \"units\": [{\"key\": \"u\", \"remaining\": 100, \"pair_participation\": 0.8, \"share\": NaN, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"counted_all_candidate_total\": 60}, {\"key\": \"v\", \"remaining\": 50, \"pair_participation\": 0.8, \"share\": 0.8, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"counted_all_candidate_total\": 20}]}",
+      "expected_invalid": true,
+      "exit_code": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "nonfinite JSON token: NaN"
+      }
+    },
+    {
+      "name": "invalid-unit-other_allocations-51",
+      "input_text": "{\"mode\": \"live\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"candidate_universe\": \"full\", \"unallocated_generic\": false, \"assumptions\": \"Coordinator synthetic counted-fixed two-pool arithmetic, no forecast\", \"target_pair_margin\": 0.01, \"selected_unit\": \"u\", \"units\": [{\"key\": \"u\", \"remaining\": 100, \"pair_participation\": 0.8, \"share\": 0.4, \"other_allocations\": [], \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"counted_all_candidate_total\": 60}, {\"key\": \"v\", \"remaining\": 50, \"pair_participation\": 0.8, \"share\": 0.8, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"counted_all_candidate_total\": 20}]}",
+      "expected_invalid": true,
+      "exit_code": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "u other allocation identities mismatch"
+      }
+    },
+    {
+      "name": "invalid-unit-other_allocations-52",
+      "input_text": "{\"mode\": \"live\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"candidate_universe\": \"full\", \"unallocated_generic\": false, \"assumptions\": \"Coordinator synthetic counted-fixed two-pool arithmetic, no forecast\", \"target_pair_margin\": 0.01, \"selected_unit\": \"u\", \"units\": [{\"key\": \"u\", \"remaining\": 100, \"pair_participation\": 0.8, \"share\": 0.4, \"other_allocations\": {\"C\": 0.5}, \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"counted_all_candidate_total\": 60}, {\"key\": \"v\", \"remaining\": 50, \"pair_participation\": 0.8, \"share\": 0.8, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"counted_all_candidate_total\": 20}]}",
+      "expected_invalid": true,
+      "exit_code": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "u other allocations must sum to one"
+      }
+    },
+    {
+      "name": "invalid-unit-other_allocations-53",
+      "input_text": "{\"mode\": \"live\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"candidate_universe\": \"full\", \"unallocated_generic\": false, \"assumptions\": \"Coordinator synthetic counted-fixed two-pool arithmetic, no forecast\", \"target_pair_margin\": 0.01, \"selected_unit\": \"u\", \"units\": [{\"key\": \"u\", \"remaining\": 100, \"pair_participation\": 0.8, \"share\": 0.4, \"other_allocations\": {\"C\": true}, \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"counted_all_candidate_total\": 60}, {\"key\": \"v\", \"remaining\": 50, \"pair_participation\": 0.8, \"share\": 0.8, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"counted_all_candidate_total\": 20}]}",
+      "expected_invalid": true,
+      "exit_code": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "u allocation C must be a finite number, not bool/null/text"
+      }
+    },
+    {
+      "name": "invalid-unit-other_allocations-54",
+      "input_text": "{\"mode\": \"live\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"candidate_universe\": \"full\", \"unallocated_generic\": false, \"assumptions\": \"Coordinator synthetic counted-fixed two-pool arithmetic, no forecast\", \"target_pair_margin\": 0.01, \"selected_unit\": \"u\", \"units\": [{\"key\": \"u\", \"remaining\": 100, \"pair_participation\": 0.8, \"share\": 0.4, \"other_allocations\": {\"X\": 1}, \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"counted_all_candidate_total\": 60}, {\"key\": \"v\", \"remaining\": 50, \"pair_participation\": 0.8, \"share\": 0.8, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"counted_all_candidate_total\": 20}]}",
+      "expected_invalid": true,
+      "exit_code": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "u other allocation identities mismatch"
+      }
+    },
+    {
+      "name": "invalid-unit-counted-55",
+      "input_text": "{\"mode\": \"live\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"candidate_universe\": \"full\", \"unallocated_generic\": false, \"assumptions\": \"Coordinator synthetic counted-fixed two-pool arithmetic, no forecast\", \"target_pair_margin\": 0.01, \"selected_unit\": \"u\", \"units\": [{\"key\": \"u\", \"remaining\": 100, \"pair_participation\": 0.8, \"share\": 0.4, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 30, \"B\": 20, \"C\": -1}, \"counted_all_candidate_total\": 60}, {\"key\": \"v\", \"remaining\": 50, \"pair_participation\": 0.8, \"share\": 0.8, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"counted_all_candidate_total\": 20}]}",
+      "expected_invalid": true,
+      "exit_code": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "u counted C outside finite supported bounds"
+      }
+    },
+    {
+      "name": "invalid-unit-counted-56",
+      "input_text": "{\"mode\": \"live\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"candidate_universe\": \"full\", \"unallocated_generic\": false, \"assumptions\": \"Coordinator synthetic counted-fixed two-pool arithmetic, no forecast\", \"target_pair_margin\": 0.01, \"selected_unit\": \"u\", \"units\": [{\"key\": \"u\", \"remaining\": 100, \"pair_participation\": 0.8, \"share\": 0.4, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 30, \"B\": 20}, \"counted_all_candidate_total\": 60}, {\"key\": \"v\", \"remaining\": 50, \"pair_participation\": 0.8, \"share\": 0.8, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"counted_all_candidate_total\": 20}]}",
+      "expected_invalid": true,
+      "exit_code": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "u counted candidate identities mismatch"
+      }
+    },
+    {
+      "name": "invalid-unit-counted_all_candidate_total-57",
+      "input_text": "{\"mode\": \"live\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"candidate_universe\": \"full\", \"unallocated_generic\": false, \"assumptions\": \"Coordinator synthetic counted-fixed two-pool arithmetic, no forecast\", \"target_pair_margin\": 0.01, \"selected_unit\": \"u\", \"units\": [{\"key\": \"u\", \"remaining\": 100, \"pair_participation\": 0.8, \"share\": 0.4, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"counted_all_candidate_total\": 50}, {\"key\": \"v\", \"remaining\": 50, \"pair_participation\": 0.8, \"share\": 0.8, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"counted_all_candidate_total\": 20}]}",
+      "expected_invalid": true,
+      "exit_code": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "u counted all-candidate total does not balance full supplied field"
+      }
+    },
+    {
+      "name": "invalid-unit-counted_all_candidate_total-58",
+      "input_text": "{\"mode\": \"live\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"candidate_universe\": \"full\", \"unallocated_generic\": false, \"assumptions\": \"Coordinator synthetic counted-fixed two-pool arithmetic, no forecast\", \"target_pair_margin\": 0.01, \"selected_unit\": \"u\", \"units\": [{\"key\": \"u\", \"remaining\": 100, \"pair_participation\": 0.8, \"share\": 0.4, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"counted_all_candidate_total\": true}, {\"key\": \"v\", \"remaining\": 50, \"pair_participation\": 0.8, \"share\": 0.8, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"counted_all_candidate_total\": 20}]}",
+      "expected_invalid": true,
+      "exit_code": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "u counted_all_candidate_total must be a finite number, not bool/null/text"
+      }
+    },
+    {
+      "name": "unsupported-mode",
+      "input_text": "{\"mode\": \"runoff\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"candidate_universe\": \"full\", \"unallocated_generic\": false, \"assumptions\": \"Coordinator synthetic counted-fixed two-pool arithmetic, no forecast\", \"target_pair_margin\": 0.01, \"selected_unit\": \"u\", \"units\": [{\"key\": \"u\", \"remaining\": 100, \"pair_participation\": 0.8, \"share\": 0.4, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"counted_all_candidate_total\": 60}, {\"key\": \"v\", \"remaining\": 50, \"pair_participation\": 0.8, \"share\": 0.8, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"counted_all_candidate_total\": 20}]}",
+      "expected_invalid": true,
+      "exit_code": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "unsupported mode"
+      }
+    },
+    {
+      "name": "candidate-collision",
+      "input_text": "{\"mode\": \"live\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"A\"], \"candidate_universe\": \"full\", \"unallocated_generic\": false, \"assumptions\": \"Coordinator synthetic counted-fixed two-pool arithmetic, no forecast\", \"target_pair_margin\": 0.01, \"selected_unit\": \"u\", \"units\": [{\"key\": \"u\", \"remaining\": 100, \"pair_participation\": 0.8, \"share\": 0.4, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"counted_all_candidate_total\": 60}, {\"key\": \"v\", \"remaining\": 50, \"pair_participation\": 0.8, \"share\": 0.8, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"counted_all_candidate_total\": 20}]}",
+      "expected_invalid": true,
+      "exit_code": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "candidate identity collision"
+      }
+    },
+    {
+      "name": "duplicate-pair",
+      "input_text": "{\"mode\": \"live\", \"pair\": [\"A\", \"A\"], \"other_candidates\": [\"C\"], \"candidate_universe\": \"full\", \"unallocated_generic\": false, \"assumptions\": \"Coordinator synthetic counted-fixed two-pool arithmetic, no forecast\", \"target_pair_margin\": 0.01, \"selected_unit\": \"u\", \"units\": [{\"key\": \"u\", \"remaining\": 100, \"pair_participation\": 0.8, \"share\": 0.4, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"counted_all_candidate_total\": 60}, {\"key\": \"v\", \"remaining\": 50, \"pair_participation\": 0.8, \"share\": 0.8, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"counted_all_candidate_total\": 20}]}",
+      "expected_invalid": true,
+      "exit_code": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "candidate identity collision"
+      }
+    },
+    {
+      "name": "missing-selection",
+      "input_text": "{\"mode\": \"live\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"candidate_universe\": \"full\", \"unallocated_generic\": false, \"assumptions\": \"Coordinator synthetic counted-fixed two-pool arithmetic, no forecast\", \"target_pair_margin\": 0.01, \"selected_unit\": \"absent\", \"units\": [{\"key\": \"u\", \"remaining\": 100, \"pair_participation\": 0.8, \"share\": 0.4, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"counted_all_candidate_total\": 60}, {\"key\": \"v\", \"remaining\": 50, \"pair_participation\": 0.8, \"share\": 0.8, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"counted_all_candidate_total\": 20}]}",
+      "expected_invalid": true,
+      "exit_code": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "selected_unit absent"
+      }
+    },
+    {
+      "name": "empty-selection",
+      "input_text": "{\"mode\": \"live\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"candidate_universe\": \"full\", \"unallocated_generic\": false, \"assumptions\": \"Coordinator synthetic counted-fixed two-pool arithmetic, no forecast\", \"target_pair_margin\": 0.01, \"selected_unit\": \" \", \"units\": [{\"key\": \"u\", \"remaining\": 100, \"pair_participation\": 0.8, \"share\": 0.4, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"counted_all_candidate_total\": 60}, {\"key\": \"v\", \"remaining\": 50, \"pair_participation\": 0.8, \"share\": 0.8, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"counted_all_candidate_total\": 20}]}",
+      "expected_invalid": true,
+      "exit_code": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "identities and unit keys must be nonblank strings"
+      }
+    },
+    {
+      "name": "aggregate-overflow",
+      "input_text": "{\"mode\": \"live\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"candidate_universe\": \"full\", \"unallocated_generic\": false, \"assumptions\": \"Coordinator synthetic counted-fixed two-pool arithmetic, no forecast\", \"target_pair_margin\": 0.01, \"selected_unit\": \"u\", \"units\": [{\"key\": \"u\", \"remaining\": 1e+308, \"pair_participation\": 0.8, \"share\": 0.4, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"counted_all_candidate_total\": 60}, {\"key\": \"v\", \"remaining\": 1e+308, \"pair_participation\": 0.8, \"share\": 0.8, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"counted_all_candidate_total\": 20}]}",
+      "expected_invalid": true,
+      "exit_code": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "final all-candidate denominator numeric overflow"
+      }
+    },
+    {
+      "name": "duplicate-root-field-rejected",
+      "input_text": "{\"mode\": \"live\", \"pair\": [\"A\", \"B\"], \"other_candidates\": [\"C\"], \"candidate_universe\": \"full\", \"unallocated_generic\": false, \"assumptions\": \"Coordinator synthetic counted-fixed two-pool arithmetic, no forecast\", \"target_pair_margin\": 0.01, \"selected_unit\": \"u\", \"units\": [{\"key\": \"u\", \"remaining\": 100, \"pair_participation\": 0.8, \"share\": 0.4, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 30, \"B\": 20, \"C\": 10}, \"counted_all_candidate_total\": 60}, {\"key\": \"v\", \"remaining\": 50, \"pair_participation\": 0.8, \"share\": 0.8, \"other_allocations\": {\"C\": 1}, \"counted\": {\"A\": 5, \"B\": 15, \"C\": 0}, \"counted_all_candidate_total\": 20}],\"mode\":\"historical\"}",
+      "expected_invalid": true,
+      "exit_code": 2,
+      "stderr": "",
+      "output": {
+        "status": "invalid-input",
+        "error": "duplicate JSON object field: mode"
+      }
+    }
+  ]
+}

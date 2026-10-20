@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/Users/tqbf/codebase/snn/senate/2026/virginia/data/turnout/review/reciprocal.py", line 97, in <module>
+    result=run();(R/'reciprocal.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n');print(json.dumps({k:result[k] for k in ['status','comparison_count','api_complete_scopes','native_candidate_method_objects','historical_native_counts']}))
+           ^^^^^
+  File "/Users/tqbf/codebase/snn/senate/2026/virginia/data/turnout/review/reciprocal.py", line 63, in run
+    api=ownapis['enr-native-'+p['code']];eq('parent-full-election:'+label,api['election'],p['api_election']);eq('parent-full-voterturnout:'+label,api['voterTurnout'],p['voterTurnout']);eq('parent-source-row:'+label,localraw[label],p['historical_record'])
+                                                                                                                                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/tqbf/codebase/snn/senate/2026/virginia/data/turnout/review/reciprocal.py", line 9, in eq
+    assert a==b,label
+           ^^^^
+AssertionError: parent-source-row:Accomack County

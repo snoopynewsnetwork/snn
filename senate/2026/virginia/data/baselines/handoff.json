@@ -1,0 +1,71 @@
+{
+  "assignment": "Virginia actual partisanship worker,2026 regular ClassII",
+  "owned_paths": [
+    "county-partisanship.md",
+    "data/county-baselines.csv",
+    "data/baselines/**"
+  ],
+  "research_date_utc": "2026-10-20",
+  "coverage": {
+    "locality_parents": 133,
+    "counties": 95,
+    "independent_cities": 38,
+    "required_contests": [
+      "2024 other-seat Senate",
+      "2024 president",
+      "2020 same-seat Senate",
+      "2018 Senate midterm"
+    ],
+    "native_rows_per_contest": [
+      2669,
+      2669,
+      2846,
+      2825
+    ],
+    "full_candidate_baseline_native_rows": 11009,
+    "locality_election_rows": 532,
+    "native_method_units_2024": 13345,
+    "candidate_native_method_objects": 40035,
+    "all_nonpriority_retained": true
+  },
+  "priority": {
+    "denominator": 4445535,
+    "scope": "reported candidates plus generic marks, not legal eligible named-WI robustness",
+    "native_minimum80_count": 1538,
+    "preceding_votes": 3555604,
+    "crossing_votes": 3557034,
+    "minimum_integer_threshold": 3556428,
+    "remaining_native_count": 1131,
+    "coordinator_acceptance": null
+  },
+  "independent_peer_audit": {
+    "own_original_first_witness_sha256": "0ceae3b881ee35bfc226f28313b657a0b09c23f34f7ad982d1695fad1526d56c",
+    "captured_source_order_scopes": 17,
+    "source_differences": 0,
+    "peer_values_adopted": false,
+    "peer_contacted_or_mutated": false
+  },
+  "checks": {
+    "cli_runs": 65,
+    "cli_passed": true,
+    "rebuild_status": "passed",
+    "rebuild_exact_generated_files": 242,
+    "historical_target_rows": 23082,
+    "sensitivity_targets": 96,
+    "sensitivity_unit_rows": 12768,
+    "method_target_rows": 26690,
+    "piecewise_independent_roots_and_selected_thresholds": true,
+    "final_seal_audit_command": "python3 -B senate/2026/virginia/data/baselines/validate.py --sealed"
+  },
+  "material_qualifications": [
+    "2018generic native/state5509 versus locality5473;36 unallocated",
+    "2018/2020compiled official/unofficial source notes; chronology unresolved",
+    "2024nVotesParty1 alternatives retained separately",
+    "Turnout API/CSV/annual/registration scopes incompatible as a common ballot universe",
+    "Named eligible write-in allocation not known",
+    "Current ballot names from10/6official general-election workbook; amendments/Novemberfeed IDs need recheck",
+    "No native crossyear/current geometry approval",
+    "Historical volume/mix anchors are not2026turnout estimates; no inferred candidate effects, lower preferences or remaining pools",
+    "No collector, measured cadence, calibrated probabilities or legal declaration"
+  ]
+}

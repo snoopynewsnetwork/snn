@@ -1,0 +1,26 @@
+#!/usr/bin/env python3
+"""Seal bounded citation/reciprocal review; write COMPLETE current manifest LAST."""
+import datetime,json
+from pathlib import Path
+from captured import T,S,H,sha,Capture
+
+def write(p,o):p.write_text(json.dumps(o,ensure_ascii=False,indent=2)+'\n')
+def owned():return sorted([S/'turnout.md',S/'data/county-turnout.csv']+[p for p in T.rglob('*') if p.is_file()])
+if __name__=='__main__':
+ old=Capture('turnout-original-first');peer=Capture('baseline-final-peer')
+ assert (T/'asset-manifest.json').read_bytes()==old.read('data/turnout/asset-manifest.json'),'already resealed or unexpected manifest'
+ assert (T/'final-seal.json').read_bytes()==old.read('data/turnout/final-seal.json')
+ v=json.loads((T/'validation.json').read_text());proof=json.loads((T/'review/reciprocal.json').read_text());rep=json.loads((T/'review/final-reproduction.json').read_text());assert v['status']==proof['status']==rep['status']=='pass' and all(v['checks'].values())
+ assert proof['checker_sha256']==sha((T/'review/reciprocal.py').read_bytes());assert rep['checker_sha256']==sha((T/'review/reproduce_final.py').read_bytes())
+ assert sha((S/'data/county-turnout.csv').read_bytes())=='5ce44dc51ad9c096013e9b63fd2e73b9b723f34480b185312da5c2cd10bf848f'
+ assert sha((T/'pre-peer-witness.json').read_bytes())=='65318164238e4a7ac04ad9dce4421747cd80a6f13117c61d53fdec3598c69485'
+ assert sha((T/'pre-peer-bodies.tar.gz').read_bytes())=='3fdb602bf0e87d43719329f540d2f50ca76dc704462e63de66b86cac3cbc1e15'
+ seal={'schema':'va-turnout-citation-reciprocal-final-v2','created_at_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'status':'bounded citation repair and captured-final-independent source-core reciprocal complete; ready for final read-only audit','original_manifest_sha256':old.index['manifest_sha256'],'original_witness_sha256':sha((T/'pre-peer-witness.json').read_bytes()),'original_whole_witness_archive_sha256':sha((T/'pre-peer-bodies.tar.gz').read_bytes()),'original389_capture_index_sha256':sha((H/'turnout-original-first.json').read_bytes()),'peer300_capture_index_sha256':sha((H/'baseline-final-peer.json').read_bytes()),'peer_manifest_sha256':peer.index['manifest_sha256'],'peer_pre_peer_witness_sha256':sha(peer.read('data/baselines/pre-peer-witness.json')),'peer_agent_id':'8bfac51f-775a-4104-ad5c-42daa3bfdc4c','peer_agreement_scope':'Captured shared2024/2020/2018Senate source core and17orders only; no calculators/scenarios/targets/outcomes/president/later metadata equality','peer_derivatives_before_original_first_witness':False,'captured_peer_derivatives_used_for_current_review':True,'coordinator_acceptance':None,'legal_named_writein_current_geography_feed_probability_approval':False,'prior_validator_limitation':'Original blanket prose formatter mangled a931/a5f7 inside an external citation; original validator did not catch it. Full original bodies/finding and actual old/new production-renderer regression retained.','reciprocal_proof_sha256':sha((T/'review/reciprocal.json').read_bytes()),'final_reproduction_sha256':sha((T/'review/final-reproduction.json').read_bytes()),'validation_sha256':sha((T/'validation.json').read_bytes()),'report_sha256':sha((S/'turnout.md').read_bytes()),'contract_sha256':sha((T/'priority-set.json').read_bytes()),'native_csv_sha256':sha((S/'data/county-turnout.csv').read_bytes()),'source_core_comparisons':proof['comparison_count'],'preseal_checks':len(v['checks']),'native_count':2669,'parent_count':133,'candidate_method_native_objects':40035,'priority':{'total':4445535,'top15':80617,'integer80threshold':3556428,'minimum80count':1538,'minimum80votes':3557034,'preceding_count':1537,'preceding_votes':3555604,'crossing_record':2717,'remainder_count':1131,'remainder_votes':888501},'stored_file_bound_exclusive':40000000,'proof_order':'exact original and final peer capture -> isolated original derivation/comparison -> citation and metadata repair -> isolated final reproduction -> preseal validation -> current seal -> complete manifest LAST -> final read-only audit; no reverse manifest digest'}
+ write(T/'final-seal.json',seal)
+ manifest={'schema':'va-turnout-complete-owned-asset-manifest-v2','excludes_only_itself':'data/turnout/asset-manifest.json','owned_assets':[],'read_only_original_references':json.loads(old.read('data/turnout/asset-manifest.json'))['read_only_original_references'],'fixed_peer_reference_capture':'history/resume-citation-reciprocal/baseline-final-peer.json','exact_original_history_capture':'history/resume-citation-reciprocal/turnout-original-first.json'}
+ for p in owned():
+  if p==T/'asset-manifest.json':continue
+  b=p.read_bytes();assert len(b)<40000000 and not p.is_symlink() and '__pycache__' not in p.parts and 'node_modules' not in p.parts
+  manifest['owned_assets'].append({'path':str(p.relative_to(S)),'bytes':len(b),'sha256':sha(b)})
+ write(T/'asset-manifest.json',manifest) # LAST owned write.
+ print(json.dumps({'owned_targets':len(manifest['owned_assets']),'owned_including_manifest':len(manifest['owned_assets'])+1,'contract_sha256':seal['contract_sha256'],'manifest_sha256':sha((T/'asset-manifest.json').read_bytes()),'seal_sha256':sha((T/'final-seal.json').read_bytes()),'next':'final read-only validate_turnout.py; files frozen'}))

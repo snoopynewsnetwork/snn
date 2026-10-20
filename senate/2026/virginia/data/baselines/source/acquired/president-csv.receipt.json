@@ -1,0 +1,87 @@
+{
+  "id": "president-csv",
+  "requested_url": "https://va2.elstats.civera.com/api/download_contest/161256_table.csv?split_party=false",
+  "parent_source": "president-html",
+  "final_url": "https://va2.elstats3.civera.com/api/download_contest/161256_table.csv?split_party=false",
+  "hops": [
+    {
+      "request_url": "https://va2.elstats.civera.com/api/download_contest/161256_table.csv?split_party=false",
+      "request_headers": {
+        "User-Agent": "Virginia-partisanship-public-research/1.0",
+        "Accept-Encoding": "identity"
+      },
+      "retrieved_at_utc": "2026-10-20T18:08:51.728668+00:00",
+      "status": 307,
+      "response_headers": [
+        [
+          "Date",
+          "Tue, 20 Oct 2026 18:08:51 GMT"
+        ],
+        [
+          "Content-Type",
+          "text/html"
+        ],
+        [
+          "Content-Length",
+          "164"
+        ],
+        [
+          "Connection",
+          "close"
+        ],
+        [
+          "Location",
+          "https://va2.elstats3.civera.com/api/download_contest/161256_table.csv?split_party=false"
+        ]
+      ],
+      "response_url": "https://va2.elstats.civera.com/api/download_contest/161256_table.csv?split_party=false",
+      "body_path": "source/acquired/president-csv.hop0.gz",
+      "raw_bytes": 164,
+      "raw_sha256": "8f03491247cbfa8a2e60e0f7ec62d63b5070659f60383a1c81abeb2b20221be3",
+      "stored_bytes": 116,
+      "stored_sha256": "a759b26fb2c34d06e1e887dff44eda01dc1f51328b08c1b86b45086d950813e8"
+    },
+    {
+      "request_url": "https://va2.elstats3.civera.com/api/download_contest/161256_table.csv?split_party=false",
+      "request_headers": {
+        "User-Agent": "Virginia-partisanship-public-research/1.0",
+        "Accept-Encoding": "identity"
+      },
+      "retrieved_at_utc": "2026-10-20T18:08:51.864341+00:00",
+      "status": 200,
+      "response_headers": [
+        [
+          "Date",
+          "Tue, 20 Oct 2026 18:08:52 GMT"
+        ],
+        [
+          "Content-Type",
+          "text/csv"
+        ],
+        [
+          "Transfer-Encoding",
+          "chunked"
+        ],
+        [
+          "Connection",
+          "close"
+        ],
+        [
+          "Vary",
+          "Accept-Encoding"
+        ],
+        [
+          "Strict-Transport-Security",
+          "max-age=31536000; includeSubDomains"
+        ]
+      ],
+      "response_url": "https://va2.elstats3.civera.com/api/download_contest/161256_table.csv?split_party=false",
+      "body_path": "source/acquired/president-csv.hop1.gz",
+      "raw_bytes": 145419,
+      "raw_sha256": "f4e54c7fc691cc253ba2026cc37eb81945513600ad0fdef5fde50a3de50671c8",
+      "stored_bytes": 54271,
+      "stored_sha256": "a8caed96fb9657862ec8d3dcf72a883624c1e1003692f4f8720dfb259f86480f"
+    }
+  ],
+  "transport": "Complete response entity after HTTP transfer framing; identity requested. No TLS/wire packet capture."
+}
