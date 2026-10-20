@@ -1024,3 +1024,11 @@ coordinator final review underway. Real released slot launched NJofficial
 `e4a43ae3-0624-43d9-8860-c3b4e2f751f9` after fresh profiles/allnotes/provider.
 Only MAofficial4c5f1926 and NJofficiale4a43ae3 are active. NJmaps next real slot;
 no third researcher, replacements or finished-worker restart.
+
+
+Massachusetts historical source pair and complete map package are now published
+in reviewed bounded transfers; final map metadata c2871c889 and first-pair
+6f1bf1b7b have successful pushes and exact remote verification. The overall
+state remains incomplete pending official4c5f1926 actual immutable finish and
+independent review. Nineteen new complete states plus Michigan remains the
+completion count. New Jersey officiale4a43ae3 remains the only other researcher.
