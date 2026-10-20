@@ -1,0 +1,287 @@
+{
+  "corrupt_zip_fixture_hex": "504b0304140000000000000021284663ca4416000000160000000f00000066756c6c2d6d656d6265722e62696e6f6f742d616e2d656c656374696f6e2d736f75726365504b01021403140000000000000021284663ca4416000000160000000f000000000000000000000080010000000066756c6c2d6d656d6265722e62696e504b050600000000010001003d000000430000000000",
+  "diagnostic_observations": {
+    "features": [
+      {
+        "curve_rings": false,
+        "empty_geometry": false,
+        "id": 1,
+        "null_geometry": true,
+        "qualification": "Native absent/empty/curve representation retained, no linear conversion",
+        "rings": []
+      },
+      {
+        "curve_rings": false,
+        "empty_geometry": true,
+        "id": 2,
+        "null_geometry": false,
+        "qualification": "Native absent/empty/curve representation retained, no linear conversion",
+        "rings": []
+      },
+      {
+        "curve_rings": true,
+        "empty_geometry": false,
+        "id": 3,
+        "null_geometry": false,
+        "qualification": "Native absent/empty/curve representation retained, no linear conversion",
+        "rings": []
+      },
+      {
+        "curve_rings": false,
+        "empty_geometry": false,
+        "id": 4,
+        "null_geometry": false,
+        "orphan_positive_rings": [
+          0
+        ],
+        "rings": [
+          {
+            "closed": true,
+            "coordinate_dimensions": [
+              2
+            ],
+            "finite": true,
+            "index": 0,
+            "positions": 5,
+            "reason": "Valid Geometry",
+            "ring_valid": true,
+            "signed_native_area": 1.0
+          }
+        ]
+      },
+      {
+        "curve_rings": false,
+        "empty_geometry": false,
+        "id": 5,
+        "null_geometry": false,
+        "orphan_positive_rings": [
+          0
+        ],
+        "rings": [
+          {
+            "closed": true,
+            "coordinate_dimensions": [
+              2
+            ],
+            "finite": true,
+            "index": 0,
+            "positions": 5,
+            "reason": "Self-intersection[0.5 0.5]",
+            "ring_valid": false,
+            "signed_native_area": 0.0
+          }
+        ]
+      },
+      {
+        "curve_rings": false,
+        "empty_geometry": false,
+        "id": 6,
+        "null_geometry": false,
+        "orphan_positive_rings": [],
+        "rings": [
+          {
+            "closed": false,
+            "coordinate_dimensions": [
+              2
+            ],
+            "finite": true,
+            "index": 0,
+            "positions": 3,
+            "reason": "unclosed/too short; not auto-closed",
+            "ring_valid": false,
+            "signed_native_area": 0.5
+          }
+        ]
+      }
+    ],
+    "legal_boundary_coverage_certified": false,
+    "native_units": "EPSG3857 coordinate metres; area square projected metres, not ground geodesic area",
+    "positive_area_pair_intersections": [],
+    "qualification": "No same-vintage legal state/ED outline acquired. Intersections are numerical diagnostics only; no legal gaps/slivers/overlaps certified. Null/empty/invalid/curve native originals remain untouched.",
+    "ring_convention": "Esri clockwise shells; positive rings are holes only if actually contained by a negative ring, orphan holes retained as defects without reinterpretation",
+    "shapely_version": "2.2.0",
+    "touching_pairs": 0
+  },
+  "source_defect_fixtures": [
+    {
+      "attributes": {
+        "OBJECTID": 1
+      },
+      "geometry": null
+    },
+    {
+      "attributes": {
+        "OBJECTID": 2
+      },
+      "geometry": {}
+    },
+    {
+      "attributes": {
+        "OBJECTID": 3
+      },
+      "geometry": {
+        "curveRings": [
+          [
+            [
+              0,
+              0
+            ],
+            {
+              "c": [
+                [
+                  2,
+                  0
+                ],
+                [
+                  1,
+                  1
+                ]
+              ]
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "attributes": {
+        "OBJECTID": 4
+      },
+      "geometry": {
+        "rings": [
+          [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              0
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes": {
+        "OBJECTID": 5
+      },
+      "geometry": {
+        "rings": [
+          [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "attributes": {
+        "OBJECTID": 6
+      },
+      "geometry": {
+        "rings": [
+          [
+            [
+              0.0,
+              0.0
+            ],
+            [
+              1.0,
+              0.0
+            ],
+            [
+              1.0,
+              1.0
+            ]
+          ]
+        ]
+      }
+    }
+  ],
+  "status": "pass",
+  "synthetic_only": true,
+  "tests": [
+    {
+      "name": "same-count-wrong-ID",
+      "status": "rejected"
+    },
+    {
+      "name": "duplicate-ID",
+      "status": "rejected"
+    },
+    {
+      "name": "truncated-page",
+      "status": "rejected"
+    },
+    {
+      "name": "over-50-ID-page",
+      "status": "rejected"
+    },
+    {
+      "name": "lost-null-attribute",
+      "status": "rejected"
+    },
+    {
+      "name": "server-reprojection",
+      "status": "rejected"
+    },
+    {
+      "name": "server-quantization",
+      "status": "rejected"
+    },
+    {
+      "name": "server-generalization",
+      "status": "rejected"
+    },
+    {
+      "name": "priority-order-mutated",
+      "status": "rejected"
+    },
+    {
+      "name": "vote-only-projection",
+      "status": "rejected"
+    },
+    {
+      "name": "member-CRC-corruption",
+      "status": "rejected"
+    },
+    {
+      "name": "open-lines-and-rings-not-auto-closed",
+      "status": "preserved"
+    },
+    {
+      "name": "null-empty-truecurve-orphan-invalid-open-source-defects-retained",
+      "status": "preserved"
+    }
+  ]
+}

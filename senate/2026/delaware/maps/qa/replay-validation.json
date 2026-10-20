@@ -1,0 +1,18 @@
+{
+  "actual_execution": "Offline replay of geometry/original-field/build/raster/negative-fixture scripts followed by full manifest check",
+  "all_compared_paths_unchanged_by_bytes_and_sha256": true,
+  "external_acceptance_reads": 0,
+  "map_files_compared_before_this_proof_was_added": 407,
+  "network_calls": 0,
+  "producer_writes": 0,
+  "qualifications": "Proof records the performed replay; final seal includes this proof, and replay can verify final additional files without rewriting this proof.",
+  "reproduction_command": "PYTHONDONTWRITEBYTECODE=1 python3 senate/2026/delaware/maps/replay.py",
+  "scripts": [
+    "audit_geometry.py",
+    "audit_historical.py",
+    "build.py",
+    "render_previews.py",
+    "negative_fixtures.py"
+  ],
+  "status": "pass"
+}

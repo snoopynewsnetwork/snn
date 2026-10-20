@@ -1,0 +1,99 @@
+[
+  {
+    "name": "bounded_uniform_clipping",
+    "input": [
+      [
+        1,
+        0
+      ],
+      [
+        100,
+        0.9
+      ]
+    ],
+    "result": {
+      "status": "feasible-bounded",
+      "pair_total": 101,
+      "baseline_net": 79.0,
+      "raw_shift": -0.3910891089108911,
+      "bounded_shift": -0.395,
+      "target_net": 0,
+      "raw_uniform_feasible": false,
+      "clipped_units": 1,
+      "solution_interval": null,
+      "already_at_or_above_target": true
+    }
+  },
+  {
+    "name": "unbounded_full_A_saturation_ray",
+    "result": {
+      "status": "feasible-bounded",
+      "pair_total": 11,
+      "baseline_net": 2.6000000000000005,
+      "raw_shift": 0.3818181818181818,
+      "bounded_shift": 0.6,
+      "target_net": 11,
+      "raw_uniform_feasible": false,
+      "clipped_units": 1,
+      "solution_interval": [
+        0.6,
+        "infinity"
+      ],
+      "already_at_or_above_target": false
+    }
+  },
+  {
+    "name": "unbounded_full_B_saturation_ray",
+    "result": {
+      "status": "feasible-bounded",
+      "pair_total": 11,
+      "baseline_net": 2.6000000000000005,
+      "raw_shift": -0.6181818181818183,
+      "bounded_shift": -0.8,
+      "target_net": -11,
+      "raw_uniform_feasible": false,
+      "clipped_units": 1,
+      "solution_interval": [
+        "-infinity",
+        -0.8
+      ],
+      "already_at_or_above_target": true
+    }
+  },
+  {
+    "name": "no_pool_uniform",
+    "result": {
+      "status": "no-positive-pool",
+      "pair_total": 0,
+      "baseline_net": 0,
+      "raw_shift": null,
+      "bounded_shift": null,
+      "target_net": 0,
+      "raw_uniform_feasible": null,
+      "clipped_units": 0
+    }
+  },
+  {
+    "name": "impossible_margin_above100percent",
+    "result": {
+      "status": "impossible",
+      "pair_total": 10,
+      "baseline_net": 0.0,
+      "raw_shift": 0.505,
+      "bounded_shift": null,
+      "target_net": 10.1,
+      "raw_uniform_feasible": false,
+      "clipped_units": 0
+    }
+  },
+  {
+    "name": "selected_zero_pool",
+    "result": {
+      "required_share_unbounded": null,
+      "required_share_clipped": null,
+      "status": "no-positive-pool",
+      "fixed_other_net": 30,
+      "already_at_target": true
+    }
+  }
+]

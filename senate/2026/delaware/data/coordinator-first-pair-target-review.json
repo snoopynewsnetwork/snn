@@ -1,0 +1,46 @@
+{
+  "status": "pass_independent_breakpoint_source_weight_and_target_review",
+  "checks": 146238,
+  "state_scenarios": 80,
+  "complete_unit_targets": 8650,
+  "baseline_units": 2699,
+  "original_native_scopes": {
+    "2024_SEN": 530,
+    "2024_PRES": 533,
+    "2020_SEN": 436,
+    "2020_PRES": 439,
+    "2022_HOUSE": 516
+  },
+  "source_original_review": {
+    "path": "data/coordinator-native-original-review.json",
+    "bytes": 7616921,
+    "sha256": "4e5475213522eb7eca33847bfdb250339dc988b19dcb986a7ad410c32f4c8df4"
+  },
+  "exact_producer_inputs": [
+    {
+      "path": "data/baselines/native-baselines.csv",
+      "bytes": 2829062,
+      "sha256": "dd4ef6a1fe6b024f501e203f6f665b1e2edee8178b27d2bc11faae8001b8812b"
+    },
+    {
+      "path": "data/baselines/state-scenarios.csv",
+      "bytes": 41226,
+      "sha256": "c18c1e4c001a10cf19f965c57120451c20194e901a3c1dbfde878c8c67b5a0cc"
+    },
+    {
+      "path": "data/baselines/unit-targets.csv",
+      "bytes": 5233921,
+      "sha256": "4ede7c03745040519af3b0ac13a565b9c8695322350b0ca84e0404a8ec6db7ee"
+    },
+    {
+      "path": "data/baselines/scenario-settings.json",
+      "bytes": 8437,
+      "sha256": "68f3d50b2a2b6e9f8400d067c075c9f908aa51b633a21a3c2464a5583acbbcf7"
+    }
+  ],
+  "solver": "Independent sorted saturation-breakpoint integration, no producer bisection imported",
+  "maximum_shift_difference": 7.216449660063518e-16,
+  "maximum_net_residual": 4.4929038267582655e-10,
+  "source_county_and_native_volume_mix_and_preference_checked": true,
+  "qualifications": "Whole-state alternative views remain separate, all nonpriority source units retained. Source unallocated write-ins are not native allocations. Scenario arithmetic is not legal eligibility, current geography, probability or a2026 forecast."
+}

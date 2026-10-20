@@ -1,0 +1,1008 @@
+[
+  {
+    "name": "ordinary_pair_tie",
+    "input": {
+      "name": "ordinary_pair_tie",
+      "counted": {
+        "A": 40,
+        "B": 60,
+        "other": {}
+      },
+      "remaining": [
+        {
+          "unit": "selected",
+          "remaining_total": 100,
+          "remaining_other": {},
+          "pair_share": 0.5
+        }
+      ],
+      "target_pair_margin": 0,
+      "selected_unit": "selected"
+    },
+    "result": {
+      "status": "feasible",
+      "counted_fixed": {
+        "A": 40,
+        "B": 60,
+        "other": {}
+      },
+      "remaining_pair_pool": 100,
+      "final_pair_denominator": 200,
+      "final_all_candidate_denominator": 200,
+      "final_other": {},
+      "target_pair_margin": 0,
+      "required_remaining_A_share_unbounded": 0.6,
+      "required_remaining_A_share_clipped": 0.6,
+      "pair_tie_required_share": 0.6,
+      "plurality_strictly_exceeds_share": 0.6,
+      "plurality_status": "feasible",
+      "other_candidate_thresholds": {},
+      "share_clipping": [],
+      "calibration": "Arithmetic only; no calibrated probability",
+      "final_A": 90.0,
+      "final_B": 110.0,
+      "final_pair_net": -20.0,
+      "final_pair_margin": -0.1,
+      "final_all_margin": -0.1,
+      "plurality_A_secured": false,
+      "selected": {
+        "required_share_unbounded": 0.6,
+        "required_share_clipped": 0.6,
+        "status": "feasible",
+        "fixed_other_net": -20,
+        "already_at_target": null
+      }
+    }
+  },
+  {
+    "name": "final_denominator_A_plus1",
+    "input": {
+      "name": "final_denominator_A_plus1",
+      "counted": {
+        "A": 40,
+        "B": 60,
+        "other": {}
+      },
+      "remaining": [
+        {
+          "unit": "selected",
+          "remaining_total": 100,
+          "remaining_other": {},
+          "pair_share": 0.5
+        }
+      ],
+      "target_pair_margin": 0.01,
+      "selected_unit": "selected"
+    },
+    "result": {
+      "status": "feasible",
+      "counted_fixed": {
+        "A": 40,
+        "B": 60,
+        "other": {}
+      },
+      "remaining_pair_pool": 100,
+      "final_pair_denominator": 200,
+      "final_all_candidate_denominator": 200,
+      "final_other": {},
+      "target_pair_margin": 0.01,
+      "required_remaining_A_share_unbounded": 0.61,
+      "required_remaining_A_share_clipped": 0.61,
+      "pair_tie_required_share": 0.6,
+      "plurality_strictly_exceeds_share": 0.6,
+      "plurality_status": "feasible",
+      "other_candidate_thresholds": {},
+      "share_clipping": [],
+      "calibration": "Arithmetic only; no calibrated probability",
+      "final_A": 90.0,
+      "final_B": 110.0,
+      "final_pair_net": -20.0,
+      "final_pair_margin": -0.1,
+      "final_all_margin": -0.1,
+      "plurality_A_secured": false,
+      "selected": {
+        "required_share_unbounded": 0.61,
+        "required_share_clipped": 0.61,
+        "status": "feasible",
+        "fixed_other_net": -20,
+        "already_at_target": null
+      }
+    }
+  },
+  {
+    "name": "unknown_remainder",
+    "input": {
+      "name": "unknown_remainder",
+      "counted": {
+        "A": 40,
+        "B": 60,
+        "other": {}
+      },
+      "remaining": [
+        {
+          "unit": "selected",
+          "remaining_total": null,
+          "remaining_other": {},
+          "pair_share": 0.5
+        }
+      ],
+      "target_pair_margin": 0,
+      "selected_unit": "selected"
+    },
+    "result": {
+      "status": "unknown-remainder",
+      "counted_fixed": {
+        "A": 40,
+        "B": 60,
+        "other": {}
+      }
+    }
+  },
+  {
+    "name": "no_pool_A_ahead",
+    "input": {
+      "name": "no_pool_A_ahead",
+      "counted": {
+        "A": 60,
+        "B": 40,
+        "other": {}
+      },
+      "remaining": [
+        {
+          "unit": "selected",
+          "remaining_total": 0,
+          "remaining_other": {},
+          "pair_share": 0.5
+        }
+      ],
+      "target_pair_margin": 0,
+      "selected_unit": "selected"
+    },
+    "result": {
+      "status": "no-positive-pool",
+      "counted_fixed": {
+        "A": 60,
+        "B": 40,
+        "other": {}
+      },
+      "remaining_pair_pool": 0,
+      "final_pair_denominator": 100,
+      "final_all_candidate_denominator": 100,
+      "final_other": {},
+      "target_pair_margin": 0,
+      "required_remaining_A_share_unbounded": null,
+      "required_remaining_A_share_clipped": null,
+      "pair_tie_required_share": null,
+      "plurality_strictly_exceeds_share": null,
+      "plurality_status": "no-positive-pool",
+      "other_candidate_thresholds": {},
+      "share_clipping": [],
+      "calibration": "Arithmetic only; no calibrated probability",
+      "final_A": 60,
+      "final_B": 40,
+      "final_pair_net": 20,
+      "final_pair_margin": 0.2,
+      "final_all_margin": 0.2,
+      "plurality_A_secured": true,
+      "selected": {
+        "required_share_unbounded": null,
+        "required_share_clipped": null,
+        "status": "no-positive-pool",
+        "fixed_other_net": 20,
+        "already_at_target": true
+      }
+    }
+  },
+  {
+    "name": "no_pool_tie",
+    "input": {
+      "name": "no_pool_tie",
+      "counted": {
+        "A": 50,
+        "B": 50,
+        "other": {}
+      },
+      "remaining": [
+        {
+          "unit": "selected",
+          "remaining_total": 0,
+          "remaining_other": {},
+          "pair_share": 0.5
+        }
+      ],
+      "target_pair_margin": 0,
+      "selected_unit": "selected"
+    },
+    "result": {
+      "status": "no-positive-pool",
+      "counted_fixed": {
+        "A": 50,
+        "B": 50,
+        "other": {}
+      },
+      "remaining_pair_pool": 0,
+      "final_pair_denominator": 100,
+      "final_all_candidate_denominator": 100,
+      "final_other": {},
+      "target_pair_margin": 0,
+      "required_remaining_A_share_unbounded": null,
+      "required_remaining_A_share_clipped": null,
+      "pair_tie_required_share": null,
+      "plurality_strictly_exceeds_share": null,
+      "plurality_status": "no-positive-pool",
+      "other_candidate_thresholds": {},
+      "share_clipping": [],
+      "calibration": "Arithmetic only; no calibrated probability",
+      "final_A": 50,
+      "final_B": 50,
+      "final_pair_net": 0,
+      "final_pair_margin": 0.0,
+      "final_all_margin": 0.0,
+      "plurality_A_secured": false,
+      "selected": {
+        "required_share_unbounded": null,
+        "required_share_clipped": null,
+        "status": "no-positive-pool",
+        "fixed_other_net": 0,
+        "already_at_target": true
+      }
+    }
+  },
+  {
+    "name": "negative_pool_rejected",
+    "input": {
+      "name": "negative_pool_rejected",
+      "counted": {
+        "A": 40,
+        "B": 60,
+        "other": {}
+      },
+      "remaining": [
+        {
+          "unit": "selected",
+          "remaining_total": -10,
+          "remaining_other": {},
+          "pair_share": 0.5
+        }
+      ],
+      "target_pair_margin": 0,
+      "selected_unit": "selected"
+    },
+    "result": {
+      "status": "invalid-negative-or-nonfinite-remainder",
+      "counted_fixed": {
+        "A": 40,
+        "B": 60,
+        "other": {}
+      }
+    }
+  },
+  {
+    "name": "negative_counted_rejected",
+    "input": {
+      "name": "negative_counted_rejected",
+      "counted": {
+        "A": -1,
+        "B": 50,
+        "other": {}
+      },
+      "remaining": [
+        {
+          "unit": "selected",
+          "remaining_total": 100,
+          "remaining_other": {},
+          "pair_share": 0.5
+        }
+      ],
+      "target_pair_margin": 0,
+      "selected_unit": "selected"
+    },
+    "result": {
+      "status": "invalid-negative-or-nonfinite-counted"
+    }
+  },
+  {
+    "name": "impossible_A_to_tie",
+    "input": {
+      "name": "impossible_A_to_tie",
+      "counted": {
+        "A": 0,
+        "B": 1000,
+        "other": {}
+      },
+      "remaining": [
+        {
+          "unit": "selected",
+          "remaining_total": 100,
+          "remaining_other": {},
+          "pair_share": 0.5
+        }
+      ],
+      "target_pair_margin": 0,
+      "selected_unit": "selected"
+    },
+    "result": {
+      "status": "impossible-under-assumptions",
+      "counted_fixed": {
+        "A": 0,
+        "B": 1000,
+        "other": {}
+      },
+      "remaining_pair_pool": 100,
+      "final_pair_denominator": 1100,
+      "final_all_candidate_denominator": 1100,
+      "final_other": {},
+      "target_pair_margin": 0,
+      "required_remaining_A_share_unbounded": 5.5,
+      "required_remaining_A_share_clipped": 1.0,
+      "pair_tie_required_share": 5.5,
+      "plurality_strictly_exceeds_share": 5.5,
+      "plurality_status": "impossible-under-assumptions",
+      "other_candidate_thresholds": {},
+      "share_clipping": [],
+      "calibration": "Arithmetic only; no calibrated probability",
+      "final_A": 50.0,
+      "final_B": 1050.0,
+      "final_pair_net": -1000.0,
+      "final_pair_margin": -0.9090909090909091,
+      "final_all_margin": -0.9090909090909091,
+      "plurality_A_secured": false,
+      "selected": {
+        "required_share_unbounded": 5.5,
+        "required_share_clipped": 1.0,
+        "status": "impossible-under-assumptions",
+        "fixed_other_net": -1000,
+        "already_at_target": null
+      }
+    }
+  },
+  {
+    "name": "secured_even_at_zero_A_remaining",
+    "input": {
+      "name": "secured_even_at_zero_A_remaining",
+      "counted": {
+        "A": 1000,
+        "B": 0,
+        "other": {}
+      },
+      "remaining": [
+        {
+          "unit": "selected",
+          "remaining_total": 100,
+          "remaining_other": {},
+          "pair_share": 0.5
+        }
+      ],
+      "target_pair_margin": 0,
+      "selected_unit": "selected"
+    },
+    "result": {
+      "status": "secured-under-assumptions",
+      "counted_fixed": {
+        "A": 1000,
+        "B": 0,
+        "other": {}
+      },
+      "remaining_pair_pool": 100,
+      "final_pair_denominator": 1100,
+      "final_all_candidate_denominator": 1100,
+      "final_other": {},
+      "target_pair_margin": 0,
+      "required_remaining_A_share_unbounded": -4.5,
+      "required_remaining_A_share_clipped": 0.0,
+      "pair_tie_required_share": -4.5,
+      "plurality_strictly_exceeds_share": -4.5,
+      "plurality_status": "secured-under-assumptions",
+      "other_candidate_thresholds": {},
+      "share_clipping": [],
+      "calibration": "Arithmetic only; no calibrated probability",
+      "final_A": 1050.0,
+      "final_B": 50.0,
+      "final_pair_net": 1000.0,
+      "final_pair_margin": 0.9090909090909091,
+      "final_all_margin": 0.9090909090909091,
+      "plurality_A_secured": true,
+      "selected": {
+        "required_share_unbounded": -4.5,
+        "required_share_clipped": 0.0,
+        "status": "secured-under-assumptions",
+        "fixed_other_net": 1000,
+        "already_at_target": null
+      }
+    }
+  },
+  {
+    "name": "clip_high_preference",
+    "input": {
+      "name": "clip_high_preference",
+      "counted": {
+        "A": 40,
+        "B": 60,
+        "other": {}
+      },
+      "remaining": [
+        {
+          "unit": "selected",
+          "remaining_total": 100,
+          "remaining_other": {},
+          "pair_share": 1.4
+        }
+      ],
+      "target_pair_margin": 0,
+      "selected_unit": "selected"
+    },
+    "result": {
+      "status": "feasible",
+      "counted_fixed": {
+        "A": 40,
+        "B": 60,
+        "other": {}
+      },
+      "remaining_pair_pool": 100,
+      "final_pair_denominator": 200,
+      "final_all_candidate_denominator": 200,
+      "final_other": {},
+      "target_pair_margin": 0,
+      "required_remaining_A_share_unbounded": 0.6,
+      "required_remaining_A_share_clipped": 0.6,
+      "pair_tie_required_share": 0.6,
+      "plurality_strictly_exceeds_share": 0.6,
+      "plurality_status": "feasible",
+      "other_candidate_thresholds": {},
+      "share_clipping": [
+        {
+          "unit": "selected",
+          "input": 1.4,
+          "clipped": 1.0
+        }
+      ],
+      "calibration": "Arithmetic only; no calibrated probability",
+      "final_A": 140.0,
+      "final_B": 60.0,
+      "final_pair_net": 80.0,
+      "final_pair_margin": 0.4,
+      "final_all_margin": 0.4,
+      "plurality_A_secured": true,
+      "selected": {
+        "required_share_unbounded": 0.6,
+        "required_share_clipped": 0.6,
+        "status": "feasible",
+        "fixed_other_net": -20,
+        "already_at_target": null
+      }
+    }
+  },
+  {
+    "name": "clip_low_preference",
+    "input": {
+      "name": "clip_low_preference",
+      "counted": {
+        "A": 40,
+        "B": 60,
+        "other": {}
+      },
+      "remaining": [
+        {
+          "unit": "selected",
+          "remaining_total": 100,
+          "remaining_other": {},
+          "pair_share": -0.4
+        }
+      ],
+      "target_pair_margin": 0,
+      "selected_unit": "selected"
+    },
+    "result": {
+      "status": "feasible",
+      "counted_fixed": {
+        "A": 40,
+        "B": 60,
+        "other": {}
+      },
+      "remaining_pair_pool": 100,
+      "final_pair_denominator": 200,
+      "final_all_candidate_denominator": 200,
+      "final_other": {},
+      "target_pair_margin": 0,
+      "required_remaining_A_share_unbounded": 0.6,
+      "required_remaining_A_share_clipped": 0.6,
+      "pair_tie_required_share": 0.6,
+      "plurality_strictly_exceeds_share": 0.6,
+      "plurality_status": "feasible",
+      "other_candidate_thresholds": {},
+      "share_clipping": [
+        {
+          "unit": "selected",
+          "input": -0.4,
+          "clipped": 0.0
+        }
+      ],
+      "calibration": "Arithmetic only; no calibrated probability",
+      "final_A": 40.0,
+      "final_B": 160.0,
+      "final_pair_net": -120.0,
+      "final_pair_margin": -0.6,
+      "final_all_margin": -0.6,
+      "plurality_A_secured": false,
+      "selected": {
+        "required_share_unbounded": 0.6,
+        "required_share_clipped": 0.6,
+        "status": "feasible",
+        "fixed_other_net": -20,
+        "already_at_target": null
+      }
+    }
+  },
+  {
+    "name": "all_other_remainder_no_pair_pool",
+    "input": {
+      "name": "all_other_remainder_no_pair_pool",
+      "counted": {
+        "A": 40,
+        "B": 60,
+        "other": {
+          "Independent C": 20
+        }
+      },
+      "remaining": [
+        {
+          "unit": "selected",
+          "remaining_total": 100,
+          "remaining_other": {
+            "Independent C": 100
+          },
+          "pair_share": 0.5
+        }
+      ],
+      "target_pair_margin": 0,
+      "selected_unit": "selected"
+    },
+    "result": {
+      "status": "no-positive-pool",
+      "counted_fixed": {
+        "A": 40,
+        "B": 60,
+        "other": {
+          "Independent C": 20
+        }
+      },
+      "remaining_pair_pool": 0,
+      "final_pair_denominator": 100,
+      "final_all_candidate_denominator": 220,
+      "final_other": {
+        "Independent C": 120
+      },
+      "target_pair_margin": 0,
+      "required_remaining_A_share_unbounded": null,
+      "required_remaining_A_share_clipped": null,
+      "pair_tie_required_share": null,
+      "plurality_strictly_exceeds_share": null,
+      "plurality_status": "no-positive-pool",
+      "other_candidate_thresholds": {},
+      "share_clipping": [],
+      "calibration": "Arithmetic only; no calibrated probability",
+      "final_A": 40,
+      "final_B": 60,
+      "final_pair_net": -20,
+      "final_pair_margin": -0.2,
+      "final_all_margin": -0.09090909090909091,
+      "plurality_A_secured": false,
+      "selected": {
+        "required_share_unbounded": null,
+        "required_share_clipped": null,
+        "status": "no-positive-pool",
+        "fixed_other_net": -20,
+        "already_at_target": false
+      }
+    }
+  },
+  {
+    "name": "third_candidate_defeats_pair_winner",
+    "input": {
+      "name": "third_candidate_defeats_pair_winner",
+      "counted": {
+        "A": 40,
+        "B": 60,
+        "other": {
+          "Independent C": 250
+        }
+      },
+      "remaining": [
+        {
+          "unit": "selected",
+          "remaining_total": 100,
+          "remaining_other": {
+            "Independent C": 20
+          },
+          "pair_share": 0.8
+        }
+      ],
+      "target_pair_margin": 0,
+      "selected_unit": "selected"
+    },
+    "result": {
+      "status": "feasible",
+      "counted_fixed": {
+        "A": 40,
+        "B": 60,
+        "other": {
+          "Independent C": 250
+        }
+      },
+      "remaining_pair_pool": 80,
+      "final_pair_denominator": 180,
+      "final_all_candidate_denominator": 450,
+      "final_other": {
+        "Independent C": 270
+      },
+      "target_pair_margin": 0,
+      "required_remaining_A_share_unbounded": 0.625,
+      "required_remaining_A_share_clipped": 0.625,
+      "pair_tie_required_share": 0.625,
+      "plurality_strictly_exceeds_share": 2.875,
+      "plurality_status": "impossible-under-assumptions",
+      "other_candidate_thresholds": {
+        "Independent C": 2.875
+      },
+      "share_clipping": [],
+      "calibration": "Arithmetic only; no calibrated probability",
+      "final_A": 104.0,
+      "final_B": 76.0,
+      "final_pair_net": 28.0,
+      "final_pair_margin": 0.15555555555555556,
+      "final_all_margin": 0.06222222222222222,
+      "plurality_A_secured": false,
+      "selected": {
+        "required_share_unbounded": 0.625,
+        "required_share_clipped": 0.625,
+        "status": "feasible",
+        "fixed_other_net": -20,
+        "already_at_target": null
+      }
+    }
+  },
+  {
+    "name": "other_exceeds_pool_rejected",
+    "input": {
+      "name": "other_exceeds_pool_rejected",
+      "counted": {
+        "A": 40,
+        "B": 60,
+        "other": {}
+      },
+      "remaining": [
+        {
+          "unit": "selected",
+          "remaining_total": 10,
+          "remaining_other": {
+            "Libertarian C": 11
+          },
+          "pair_share": 0.5
+        }
+      ],
+      "target_pair_margin": 0,
+      "selected_unit": "selected"
+    },
+    "result": {
+      "status": "invalid-other-exceeds-pool",
+      "counted_fixed": {
+        "A": 40,
+        "B": 60,
+        "other": {}
+      }
+    }
+  },
+  {
+    "name": "counted_other_final_denominator",
+    "input": {
+      "name": "counted_other_final_denominator",
+      "counted": {
+        "A": 40,
+        "B": 60,
+        "other": {
+          "Independent C": 30,
+          "Libertarian D": 10
+        }
+      },
+      "remaining": [
+        {
+          "unit": "selected",
+          "remaining_total": 110,
+          "remaining_other": {
+            "Independent C": 6,
+            "Libertarian D": 4
+          },
+          "pair_share": 0.6
+        }
+      ],
+      "target_pair_margin": 0,
+      "selected_unit": "selected"
+    },
+    "result": {
+      "status": "feasible",
+      "counted_fixed": {
+        "A": 40,
+        "B": 60,
+        "other": {
+          "Independent C": 30,
+          "Libertarian D": 10
+        }
+      },
+      "remaining_pair_pool": 100,
+      "final_pair_denominator": 200,
+      "final_all_candidate_denominator": 250,
+      "final_other": {
+        "Independent C": 36,
+        "Libertarian D": 14
+      },
+      "target_pair_margin": 0,
+      "required_remaining_A_share_unbounded": 0.6,
+      "required_remaining_A_share_clipped": 0.6,
+      "pair_tie_required_share": 0.6,
+      "plurality_strictly_exceeds_share": 0.6,
+      "plurality_status": "feasible",
+      "other_candidate_thresholds": {
+        "Independent C": -0.04,
+        "Libertarian D": -0.26
+      },
+      "share_clipping": [],
+      "calibration": "Arithmetic only; no calibrated probability",
+      "final_A": 100.0,
+      "final_B": 100.0,
+      "final_pair_net": 0.0,
+      "final_pair_margin": 0.0,
+      "final_all_margin": 0.0,
+      "plurality_A_secured": false,
+      "selected": {
+        "required_share_unbounded": 0.6,
+        "required_share_clipped": 0.6,
+        "status": "feasible",
+        "fixed_other_net": -20,
+        "already_at_target": null
+      }
+    }
+  },
+  {
+    "name": "selected_only_with_other_unit_fixed",
+    "input": {
+      "name": "selected_only_with_other_unit_fixed",
+      "counted": {
+        "A": 400,
+        "B": 450,
+        "other": {
+          "Independent C": 25
+        }
+      },
+      "remaining": [
+        {
+          "unit": "selected",
+          "remaining_total": 200,
+          "remaining_other": {
+            "Independent C": 20
+          },
+          "pair_share": 0.55
+        },
+        {
+          "unit": "other",
+          "remaining_total": 100,
+          "remaining_other": {
+            "Independent C": 10
+          },
+          "pair_share": 0.7
+        }
+      ],
+      "selected_unit": "selected",
+      "target_pair_margin": 0.01
+    },
+    "result": {
+      "status": "feasible",
+      "counted_fixed": {
+        "A": 400,
+        "B": 450,
+        "other": {
+          "Independent C": 25
+        }
+      },
+      "remaining_pair_pool": 270,
+      "final_pair_denominator": 1120,
+      "final_all_candidate_denominator": 1175,
+      "final_other": {
+        "Independent C": 55
+      },
+      "target_pair_margin": 0.01,
+      "required_remaining_A_share_unbounded": 0.6133333333333333,
+      "required_remaining_A_share_clipped": 0.6133333333333333,
+      "pair_tie_required_share": 0.5925925925925926,
+      "plurality_strictly_exceeds_share": 0.5925925925925926,
+      "plurality_status": "feasible",
+      "other_candidate_thresholds": {
+        "Independent C": -1.2777777777777777
+      },
+      "share_clipping": [],
+      "calibration": "Arithmetic only; no calibrated probability",
+      "final_A": 562.0,
+      "final_B": 558.0,
+      "final_pair_net": 4.0,
+      "final_pair_margin": 0.0035714285714285713,
+      "final_all_margin": 0.003404255319148936,
+      "plurality_A_secured": true,
+      "selected": {
+        "required_share_unbounded": 0.57,
+        "required_share_clipped": 0.57,
+        "status": "feasible",
+        "fixed_other_net": -14.000000000000007,
+        "already_at_target": null
+      }
+    }
+  },
+  {
+    "name": "unknown_other_unit_share",
+    "input": {
+      "name": "unknown_other_unit_share",
+      "counted": {
+        "A": 10,
+        "B": 20,
+        "other": {}
+      },
+      "remaining": [
+        {
+          "unit": "selected",
+          "remaining_total": 30,
+          "remaining_other": {},
+          "pair_share": 0.5
+        },
+        {
+          "unit": "other",
+          "remaining_total": 40,
+          "remaining_other": {},
+          "pair_share": null
+        }
+      ],
+      "selected_unit": "selected"
+    },
+    "result": {
+      "status": "feasible",
+      "counted_fixed": {
+        "A": 10,
+        "B": 20,
+        "other": {}
+      },
+      "remaining_pair_pool": 70,
+      "final_pair_denominator": 100,
+      "final_all_candidate_denominator": 100,
+      "final_other": {},
+      "target_pair_margin": 0,
+      "required_remaining_A_share_unbounded": 0.5714285714285714,
+      "required_remaining_A_share_clipped": 0.5714285714285714,
+      "pair_tie_required_share": 0.5714285714285714,
+      "plurality_strictly_exceeds_share": 0.5714285714285714,
+      "plurality_status": "feasible",
+      "other_candidate_thresholds": {},
+      "share_clipping": [],
+      "calibration": "Arithmetic only; no calibrated probability",
+      "selected": {
+        "status": "unknown-other-unit-preference"
+      }
+    }
+  },
+  {
+    "name": "nonnumeric_target_rejected",
+    "input": {
+      "name": "nonnumeric_target_rejected",
+      "counted": {
+        "A": 40,
+        "B": 60,
+        "other": {}
+      },
+      "remaining": [
+        {
+          "unit": "selected",
+          "remaining_total": 100,
+          "remaining_other": {},
+          "pair_share": 0.5
+        }
+      ],
+      "target_pair_margin": "NaN",
+      "selected_unit": "selected"
+    },
+    "result": {
+      "status": "invalid-nonfinite-or-nonnumeric-target",
+      "counted_fixed": {
+        "A": 40,
+        "B": 60,
+        "other": {}
+      }
+    }
+  },
+  {
+    "name": "null_target_rejected",
+    "input": {
+      "name": "null_target_rejected",
+      "counted": {
+        "A": 40,
+        "B": 60,
+        "other": {}
+      },
+      "remaining": [
+        {
+          "unit": "selected",
+          "remaining_total": 100,
+          "remaining_other": {},
+          "pair_share": 0.5
+        }
+      ],
+      "target_pair_margin": null,
+      "selected_unit": "selected"
+    },
+    "result": {
+      "status": "invalid-nonfinite-or-nonnumeric-target",
+      "counted_fixed": {
+        "A": 40,
+        "B": 60,
+        "other": {}
+      }
+    }
+  },
+  {
+    "name": "duplicate_nonselected_pool_rejected",
+    "input": {
+      "name": "duplicate_nonselected_pool_rejected",
+      "counted": {
+        "A": 1,
+        "B": 2,
+        "other": {}
+      },
+      "remaining": [
+        {
+          "unit": "county|method|one",
+          "remaining_total": 10,
+          "remaining_other": {},
+          "pair_share": 0.5
+        },
+        {
+          "unit": "county|method|one",
+          "remaining_total": 10,
+          "remaining_other": {},
+          "pair_share": 0.5
+        }
+      ]
+    },
+    "result": {
+      "status": "invalid-duplicate-remaining-unit",
+      "counted_fixed": {
+        "A": 1,
+        "B": 2,
+        "other": {}
+      }
+    }
+  },
+  {
+    "name": "out_of_bounds_target_rejected",
+    "input": {
+      "name": "out_of_bounds_target_rejected",
+      "counted": {
+        "A": 40,
+        "B": 60,
+        "other": {}
+      },
+      "remaining": [
+        {
+          "unit": "selected",
+          "remaining_total": 100,
+          "remaining_other": {},
+          "pair_share": 0.5
+        }
+      ],
+      "target_pair_margin": 1.01,
+      "selected_unit": "selected"
+    },
+    "result": {
+      "status": "invalid-target-out-of-bounds",
+      "counted_fixed": {
+        "A": 40,
+        "B": 60,
+        "other": {}
+      }
+    }
+  }
+]

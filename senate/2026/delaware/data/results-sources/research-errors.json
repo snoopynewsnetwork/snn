@@ -1,0 +1,102 @@
+[
+  {
+    "kind": "researcher_path_error",
+    "attempt": "Initial data/coordinator-priority-acceptance.json relative to repo root",
+    "result": "FileNotFoundError",
+    "correction": "Read state-relative senate/2026/delaware/data path and verified both launch pins before substantive research",
+    "source_modified": false
+  },
+  {
+    "kind": "researcher_environment_error",
+    "attempt": "System python import bs4 for exploratory source inspection",
+    "result": "ModuleNotFoundError",
+    "correction": "Exploratory reads used existing temporary environment. Delivered scripts use standard library and Poppler; no bs4 dependency directory",
+    "source_modified": false
+  },
+  {
+    "kind": "actual_network_error",
+    "receipt": "raw/state-home.receipt.json",
+    "result": "DNS lookup unavailable under restricted network",
+    "correction": "Authorized bounded request retried with network access under new immutable ID state-home-network"
+  },
+  {
+    "kind": "researcher_decode_error",
+    "attempt": "Exploratory BeautifulSoup bytes parse of delcode Title15",
+    "result": "Zero links from false UTF16 meta despite UTF8 bytes",
+    "correction": "Explicit UTF8 decoded original; literal index links then followed; raw response untouched"
+  },
+  {
+    "kind": "researcher_parser_error",
+    "attempt": "Initial independent row-audit assumed every td has data-label",
+    "result": "NoneType subscript",
+    "correction": "Use actual positional table header for unlabelled county cells; preserve both native patterns"
+  },
+  {
+    "kind": "researcher_parser_error",
+    "attempt": "Audit assumed every candidate field is Candidate/Party",
+    "result": "KeyError Candidate on actual2022 source Candidate Name/Party Name",
+    "correction": "Check distinct literal schema names, no original rename; all388641 final audit checks pass"
+  },
+  {
+    "kind": "researcher_parent_error",
+    "attempt": "Join exact frozen parent literal to titlecase directory label",
+    "result": "StopIteration because frozen KENT/NEW CASTLE/SUSSEX uppercase",
+    "correction": "Explicit case-only display match at county level, original parent literals retained; no ED numeric/geometry joins"
+  },
+  {
+    "kind": "researcher_QA_schema_error",
+    "attempt": "Initial allcurrent table check assumed lowercase opening tag; initialHTML detection did not remove UTF8BOM",
+    "result": "Whole current table assertion failed on uppercase legislative HTML; ArticleV derivative missing despite retained full original",
+    "correction": "Case-insensitive table checks and explicit UTF8BOM removal for format detection; all original bytes preserved"
+  },
+  {
+    "kind": "researcher_QA_bootstrap_error",
+    "attempt": "Initial validation checked links to its own not-yet-written output and final manifest",
+    "result": "Relative-link assertion for validation.json during first generation",
+    "correction": "Creation defers only these two generated targets; final read-only checks require both actual files. No external dependency cycle introduced"
+  },
+  {
+    "kind": "researcher_wrong_article_scope",
+    "receipt": "raw/constitution.receipt.json",
+    "result": "URL constitution-05 is ArticleIV Judiciary, not ArticleV",
+    "correction": "Follow actual literal constitution-06 next-article link; retain both whole originals; ArticleV source used"
+  },
+  {
+    "kind": "source_HTTP200_shell",
+    "receipts": [
+      "raw/session-421.receipt.json",
+      "raw/session-422.receipt.json"
+    ],
+    "result": "Actual code footnote redirects return Chapter0 shell, not enacted chapter body",
+    "correction": "Literal catalogue links and actual bill records/texts inspected; never guess chapter IDs or accept by HTTP200"
+  },
+  {
+    "kind": "source_catalogue_scope",
+    "receipt": "raw/session-volume85.receipt.json",
+    "result": "Printed Volume85 uses literal native volume166; downloaded catalogue ends chapter317",
+    "correction": "SB329 signed record/unamended actual text and operative code retained; separate enacted download unavailable on that current bill page"
+  },
+  {
+    "kind": "source_meta_refresh",
+    "receipt": "raw/us-constitution.receipt.json",
+    "result": "HTTP200 120-byte meta-refresh, no constitutional body",
+    "correction": "Literal refresh target fetched separately as us-constitution-current"
+  },
+  {
+    "kind": "source_mixed_election_download",
+    "receipt": "raw/primary-csv.receipt.json",
+    "result": "PR2026.csv contains829 full rows over12 electiondate values; seventeen Senate rows, only six currentprimary",
+    "correction": "Retain entire body/schema, require row-level electiondate/name/contest/party/candidate/clock; no filename admission"
+  },
+  {
+    "kind": "source_clock_schema",
+    "receipt": "raw/court-opinions-index.receipt.json",
+    "result": "Public submitFormGet constructor references some control IDs differing from rendered current form",
+    "correction": "Bounded explicit public constructor query for SupremeCourt/customyear2024/searchMennella; actual result supplies literal opinion365850; no enumerated IDs"
+  },
+  {
+    "kind": "source_identity_limit",
+    "result": "Current primary source does not contain old literal ElectionDistrict0404; visible/DOM selectors not vendorIDs",
+    "correction": "Every current leaf/geography/method/reporting/choice/contest mapping remains null"
+  }
+]

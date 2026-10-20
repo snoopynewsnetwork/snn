@@ -1,0 +1,63 @@
+"""Build source-only inventory and ordered historical entry investigations offline."""
+from pathlib import Path
+import csv,gzip,html,io,json,re
+from freeze import R,S,load,pin,sem
+from extract import write,text,document
+def ref(path,pointer=''):
+    return dict(file=pin(S/path),pointer=pointer,complete_recursive_body=True)
+def raw(sid):return gzip.decompress((R/f'raw/{sid}.body.gz').read_bytes()).decode('utf-8-sig')
+def receipt(sid):return ref(f'data/results-sources/raw/{sid}.receipt.json')
+def main():
+    frozen=load(R/'frozen-references.json.gz');c=load(S/frozen['contract']['path'])
+    # Full raw directory sections, including warehouse, headers, blanks and obfuscated fields.
+    t=raw('locations');directory=[]
+    offices=[('sec','State Election Commissioner',None),('kc','Kent','10001'),('ncc','New Castle','10003'),('nccwh','New Castle Warehouse','10003'),('sc','Sussex','10005')]
+    for i,(anchor,name,fips) in enumerate(offices):
+        start=t.index(f'<div class="anchors" id="{anchor}">');end=t.find('<div class="anchors"',start+1)
+        if end<0:end=t.index('</section>',start)
+        section=t[start:end];emails=[]
+        for value in re.findall(r'data-cfemail="([0-9a-f]+)"',section):
+            b=bytes.fromhex(value);emails.append(dict(raw_cfemail=value,display_decoded=''.join(chr(n^b[0]) for n in b[1:])))
+        directory.append(dict(id=anchor,name=name,fips=fips,directory_url='https://elections.delaware.gov/locations.html#'+anchor,literal_href='#'+anchor,source_start=start,source_end=end,raw_section=section,raw_text=text(section),emails=emails,raw_tables=document(section,'https://elections.delaware.gov/locations.html')['tables'],office_website=None,independent_county_results_url=None,source=receipt('locations')))
+    write('directory-full-fields.json',directory)
+    # Current report is one public state document shared across all county parents.
+    pt=raw('primary');pd=load(R/'extracts/primary.json.gz');cty=pt.index('id="cty"');wilm=pt.index('id="wilm"');parent_cases=[]
+    county_tables=[(i,v) for i,v in enumerate(pd['tables']) if cty<v['source_start']<wilm]
+    senate_tables=[(i,v) for i,v in county_tables if 'USSenator' in str(v['attrs'])]
+    assert len(senate_tables)==2
+    for parent,children in c['county_native_hierarchy'].items():
+        office=next(x for x in directory if x['name'].upper()==parent)
+        samples=[]
+        for i,table in senate_tables:
+            headers=[x['normalized_text']for x in table['rows'][0]['cells']];assert parent.title() in headers
+            samples.append(dict(full_table=ref('data/results-sources/extracts/primary.json.gz',f'/tables/{i}'),county_column=parent.title(),scope='2026-09-15 primary party contest, not November; full table includes all counties/State',candidate_IDs=None,contest_IDs=None))
+        parent_cases.append(dict(parent=parent,fips=children['fips'],raw_directory=ref('data/results-sources/directory-full-fields.json',f'/{directory.index(office)}'),role='State Department of Elections county office; not independent county website or commission',canvass_authority='Superior Court board of canvass for this county, Title15 5701',authority_source=receipt('law-c057'),source_chain=[receipt('state-home-network'),receipt('locations'),receipt('results'),receipt('primary'),receipt('primary-csv')],public_HTML_request=receipt('primary'),public_CSV_download=receipt('primary-csv'),config_inspection=ref('data/results-sources/extracts/primary.json.gz','/scripts'),search_config_requests=[receipt('primary-funnelbackConfig'),receipt('primary-funnelback'),receipt('search-november-response')],bounded_samples=samples,format='state-generated complete public HTML/county columns and downloadable state contest CSV; no linked results vendor established',access='actual GET200 full HTML and CSV; shared source requested once, county columns inspected individually',legal_gaps='November can change under canvass/correction/recount; no later docket exhaustiveness claimed',candidate_gaps='Current qualified/declared observations do not provide signed final later roster or vendor IDs',statistics_gaps='No exact current outstanding pool, rejected/uncured/provisional November total or current leaf status established',native_compatibility_gaps='Historical ED/native keys not proved to match current captions/DOM keys/physical polygons; source county columns only',measured_changing_cadence=None,publisher_guaranteed_interval=None,source_clock='09/18/2026 02:47 PM, timezone unprinted; county manual status last reviewed9/16/2026 12:58AM, timezone unprinted',current_leaf_join=None,current_method_join=None,live_approval=False))
+    write('parent-investigations.json',parent_cases)
+    parent_index={v['parent']:i for i,v in enumerate(parent_cases)}
+    owner={k:p for p,v in c['county_native_hierarchy'].items() for k in v['ordered_senate_native_keys']}
+    row_indexes={}
+    for i,row in enumerate(load(S/'data/turnout/extracts/candidate-rows.jsonl.gz')):
+        if row['year']==2024 and row['office_key']=='USSenator' and row['view']=='byelectiondist':row_indexes.setdefault(row['native_key'],[]).append(i+1)
+    order_index={v['native_key']:i for i,v in enumerate(c['full_order'])}
+    def entry(k,rank,kind):
+        p=owner[k];i=order_index[k];rr=row_indexes[k];assert len(rr)==3
+        return dict(investigation_order=rank,kind=kind,election='2024-11-05',contest_literal='USSenator',native_key=k,historical_parent=p,frozen_full_observation=ref('data/turnout/priority-set.json',f'/full_order/{i}'),complete_source_candidate_rows=[dict(file=pin(S/'data/turnout/extracts/candidate-rows.jsonl.gz'),JSONL_record=n,complete_recursive_body=True)for n in rr],shared_parent_investigation=ref('data/results-sources/parent-investigations.json',f'/{parent_index[p]}'),investigation_basis='Actual shared state publication chain, county column/full payload/script/CSV and legal review. This is not an independent current leaf request or native dispatch.',access_gap='Shared primary public200 inspected; genuine November leaf returns unavailable in tested current chain',legal_gap='Historical source status does not certify November; canvass/recount/correction qualification retained',candidate_gap='Historical3candidates retained; current5observations require final signed/later roster and result identity evidence',statistics_gap='Current leaf participation, nonvotes, rejected ballots and exact outstanding ballots unknown',native_compatibility_gap='No independent current leaf/geography/method/nativeID join; no numeric RD guess',current_election_leaf=None,current_geography=None,current_method=None,current_candidate_IDs=None,current_contest_ID=None,current_reporting_ID=None,live_approval=False)
+    priority=[entry(k,i+1,'ordered_priority_shared_parent') for i,k in enumerate(c['ordered_priority_keys'])]
+    remainder=[entry(k,i+1,'explicit_remainder_shared_parent') for i,k in enumerate(c['ordered_remainder_keys'])]
+    assert len(priority)==311 and len(remainder)==219
+    write('priority-entry-investigations.json.gz',priority);write('remainder-entry-investigations.json.gz',remainder)
+    write('full-hierarchy.json',dict(complete_hierarchy=ref('data/turnout/priority-set.json','/county_native_hierarchy'),full_historical_order=ref('data/turnout/priority-set.json','/full_order'),county_children=c['county_native_hierarchy'],ordered_priority_keys=c['ordered_priority_keys'],ordered_remainder_keys=c['ordered_remainder_keys'],all_year_native_union=ref('data/turnout/priority-set.json','/all_available_source_constituents'),native_union_count=1495,current_joins_approved=False))
+    write('source-only-unavailable-cases.json',dict(administrative_cases=ref('data/turnout/priority-set.json','/administrative_cases'),complete_administrative_objects=c['administrative_cases'],unavailable_cases=ref('data/turnout/priority-set.json','/unavailable_administrative_cases'),complete_unavailable_objects=c['unavailable_administrative_cases'],unavailable_statistics=ref('data/turnout/priority-set.json','/statistics_unavailable'),all_source_companions=ref('data/results-sources/frozen-references.json.gz','/complete_companions'),no_zero_imputation=True,no_unallocated_2020_presidential_parent_guess=True))
+    fields=['source_id','jurisdiction','fips','authority_role','directory_url','literal_directory_href','raw_directory_fields','official_local_site','official_results_url','current_November_url','historical_HTML_url','current_sample_URL','CSV_URL','config_evidence','actual_access','method','source_clock','clock_timezone','status_semantics','correction_completion_semantics','measured_cadence','publisher_plan','access_gap','legal_gap','candidate_gap','statistics_gap','native_compatibility_gap','current_leaf_ID','current_method_ID','approval']
+    rows=[]
+    for d in directory:
+        anchor=d['id'];county=d['name'].upper()in parent_index;role='County Department of Elections office' if county else 'Warehouse satellite/training office' if anchor=='nccwh' else 'State Election Commissioner, Department publication'
+        rows.append(dict(source_id=anchor,jurisdiction=d['name'],fips=d['fips'],authority_role=role,directory_url=d['directory_url'],literal_directory_href=d['literal_href'],raw_directory_fields=f'data/results-sources/directory-full-fields.json#/{directory.index(d)}',official_local_site=None,official_results_url='https://elections.delaware.gov/results/index.html',current_November_url=None,historical_HTML_url='https://elections.delaware.gov/reports/GE2024.html',current_sample_URL='https://elections.delaware.gov/results/enr/PR2026.html',CSV_URL='https://elections.delaware.gov/reports/PR2026.csv',config_evidence='extracts/primary.json.gz scripts; raw/primary-funnelbackConfig.body.gz; raw/primary-funnelback.body.gz',actual_access='GET200 directory; GET301 primary -> GET200 reports/PR2026.html; GET200 actual CSV; full bodies retained',method='GET',source_clock='09/18/2026 02:47 PM',clock_timezone=None,status_semantics='September15 primary OFFICIAL RESULTS; 530/530 includes early/day, not absentee completion or certification',correction_completion_semantics='County absentee manual status separate; RD33 primary recount no changes; November canvass/recount separate',measured_cadence=None,publisher_plan=None,access_gap='No independent county-hosted result feed identified in official directory; no genuine November results admitted',legal_gap='2026operative law/court scope qualified; later case/docket exhaustiveness unproved',candidate_gap='Full qualified/declared literal rows retained; no final signed/later roster/feed IDs',statistics_gap='Exact November outstanding ballots unknown; no registration residual',native_compatibility_gap='Current leaf/geography/method/vendor IDs unproved; DOM/select/ballotorder not IDs',current_leaf_ID=None,current_method_ID=None,approval=False))
+    for parent in parent_index:
+        base=dict(rows[next(i for i,d in enumerate(directory)if d['name'].upper()==parent)]);base.update(source_id='canvass-'+parent.lower().replace(' ','-'),authority_role='Superior Court county Board of Canvass under Title15 5701; Department observers/assistants',directory_url='https://delcode.delaware.gov/title15/c057/index.html',literal_directory_href=None,raw_directory_fields=None,actual_access='GET200 complete operative statute; county canvass composition/roles read; November hearing/results not yet observed',source_clock='Calendar November5 2026 10AM Eastern; not a returned result timestamp');rows.append(base)
+    base=dict(rows[0]);base.update(source_id='state-board',jurisdiction='Delaware State Board of Elections',fips=None,authority_role='State Board appointments/administration; distinct from county Superior Court Boards of Canvass',directory_url='https://elections.delaware.gov/aboutagency.html',literal_directory_href='/aboutagency.html',raw_directory_fields='extracts/about.json.gz',actual_access='GET200 complete agency roles and Board roster',source_clock=None);rows.append(base)
+    with (S/'data/official-results-sources.csv').open('w',newline='') as f:
+        w=csv.DictWriter(f,fieldnames=fields);w.writeheader();w.writerows(rows)
+    write('build-coverage.json',dict(status='pass',priority=311,remainder=219,full=530,parents=3,directory_offices=5,inventory_authorities=len(rows),full_hierarchy_retained=True,current_count_admission=False,current_leaf_mapping=None,current_geometry_mapping=None,current_method_mapping=None,current_outstanding_ballots=None,live_approval=False))
+    print('Built',len(rows),'authority rows;',len(priority),'+',len(remainder),'ordered complete source investigations')
+if __name__=='__main__':main()

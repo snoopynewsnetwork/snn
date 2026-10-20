@@ -57,3 +57,26 @@ No results entered yet.
 - [FEC 2026 election calendar](https://www.fec.gov/documents/5910/2026pdates.pdf): election scope and general election date.
 - [Delaware election office](https://elections.delaware.gov/): ballot access, election schedule, and official results.
 - [FEC Delaware Senate election data](https://www.fec.gov/data/elections/senate/DE/2026/): candidate filings and campaign finance.
+
+
+## Election-night research
+
+The completed historical research package covers all three counties and five
+separate historical contests, with full source candidates, methods, nulls and
+nonadditive views. Its accepted source-native Senate80% set is311 observations
+/400,539 of500,606 votes, after310/399,708. All530 observations and219 remainder
+remain. This is a historical source dispatch, not a current geographic approval.
+
+- [Turnout and exact source priority](turnout.md) · [native CSV](data/county-turnout.csv)
+- [Baselines and bounded targets](county-partisanship.md) · [county CSV](data/county-baselines.csv)
+- [Official publication and legal sources](official-results.md)
+- [Downloaded maps](precinct-maps.md) · [offline atlas](maps/index.html)
+- [Regional news and national backstops](local-news-results.md)
+- [Proposed collection and remaining-vote strategy](live-polling-strategy.md)
+- [Independent review](research-review.md) · [actual worker dispatch](research-dispatch.md)
+
+Independent source/arithmetic/whole-package audits preserve unknown2020parents,
+separate write-ins and participation disagreements. The current results chain
+is primary/historical; no genuine November returns, current leaf crosswalk,
+exact remaining pool or calibrated probability is approved. Campaign, polling
+and finance tracker fields above are intentionally unchanged.

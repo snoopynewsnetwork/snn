@@ -1,0 +1,27 @@
+{
+  "status": "pass_actual_read_only_final_commands_and_repository_check",
+  "commands": [
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 python3 -B -S senate/2026/delaware/data/results-sources/reproduce.py --check",
+      "exit_code": 0,
+      "observed_output": "PASS124390offlinechecks;93fullrequestreceipts;2702embeddedfullrefs;manifest410files15893460bytes"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 python3 -B senate/2026/delaware/maps/validate.py --check",
+      "exit_code": 0,
+      "observed_output": "PASS651914offlinechecks;manifestverified"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 python3 -B senate/2026/delaware/data/review_second_wave.py",
+      "exit_code": 0,
+      "observed_output": "PASS213504independentfullsourceandgeometrychecks"
+    },
+    {
+      "command": "npm run check",
+      "exit_code": 0,
+      "observed_output": "Built35races;TypeScript and public/app.js syntax passed"
+    }
+  ],
+  "scope": "Commands actually executed after handoffs; no stable source/calculator rebuild repeated merely for optional review. Producer writer/replay completion remains separately frozen in own receipts.",
+  "source_and_producer_bytes_unchanged": true
+}

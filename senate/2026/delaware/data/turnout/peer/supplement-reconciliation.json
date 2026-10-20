@@ -1,0 +1,29 @@
+{
+  "peer_actual_id": "4724b2aa-c338-4708-8044-c4b606bfaaeb",
+  "pass": true,
+  "checks": [
+    {
+      "scope": "four party-group Registered/Voted/percentage + exact raw line, start and end including newline, line number; all county/RD/ED/state total rows",
+      "matched_rows": 1631
+    },
+    {
+      "scope": "monthly RD-native registration totals, all party counts and null fields; county identity",
+      "matched_rows": 1477
+    },
+    {
+      "scope": "monthly RD county/state registered stock controls",
+      "matched_rows": 12
+    },
+    {
+      "scope": "every required named WI identity/county/method/page/total, blank cells null",
+      "matched_rows": 43
+    },
+    {
+      "scope": "resolved same-year native county parent per required contest, including null president-only2020",
+      "matched_rows": 2454
+    }
+  ],
+  "differences": [],
+  "capture_manifest_sha256": "03e256fff499170a0479fcc03807ae3c265055aed65069446c70acf187804255",
+  "boundary_scope": "historical literal identities only; no geometry/current approval"
+}

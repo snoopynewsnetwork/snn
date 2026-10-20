@@ -1,0 +1,114 @@
+[
+  {
+    "name": "HTTP200 shell",
+    "kind": "synthetic source admission fixture, not live evidence",
+    "input": {
+      "http": 200
+    },
+    "expected_admitted": false
+  },
+  {
+    "name": "wrongprimary",
+    "kind": "synthetic source admission fixture, not live evidence",
+    "input": {
+      "http": 200,
+      "electiondate": "2026-09-15",
+      "office": "U.S. Senator"
+    },
+    "expected_admitted": false
+  },
+  {
+    "name": "testNovember",
+    "kind": "synthetic source admission fixture, not live evidence",
+    "input": {
+      "http": 200,
+      "electiondate": "2026-11-03",
+      "office": "U.S. Senator",
+      "status": "TEST",
+      "genuine_changing_return": true,
+      "identity_proved": true
+    },
+    "expected_admitted": false
+  },
+  {
+    "name": "zero setup",
+    "kind": "synthetic source admission fixture, not live evidence",
+    "input": {
+      "http": 200,
+      "electiondate": "2026-11-03",
+      "office": "U.S. Senator",
+      "status": "ZERO_SETUP",
+      "votes": 0,
+      "identity_proved": true
+    },
+    "expected_admitted": false
+  },
+  {
+    "name": "DOM ID mistaken for native",
+    "kind": "synthetic source admission fixture, not live evidence",
+    "input": {
+      "http": 200,
+      "electiondate": "2026-11-03",
+      "office": "U.S. Senator",
+      "genuine_changing_return": true,
+      "identity_proved": false,
+      "DOM_ID": "USSenator"
+    },
+    "expected_admitted": false
+  },
+  {
+    "name": "filenameNovemberonly",
+    "kind": "synthetic source admission fixture, not live evidence",
+    "input": {
+      "http": 200,
+      "filename": "GE2026.csv"
+    },
+    "expected_admitted": false
+  },
+  {
+    "name": "registration residual",
+    "kind": "synthetic source admission fixture, not live evidence",
+    "input": {
+      "http": 200,
+      "registered": 593286,
+      "counted": 129031,
+      "remaining_pool": null
+    },
+    "expected_admitted": false
+  },
+  {
+    "name": "futureeffectivecure",
+    "kind": "synthetic source admission fixture, not live evidence",
+    "input": {
+      "http": 200,
+      "effective_date": "2027-07-01",
+      "electiondate": "2026-11-03"
+    },
+    "expected_admitted": false
+  },
+  {
+    "name": "missing candidate universe",
+    "kind": "synthetic source admission fixture, not live evidence",
+    "input": {
+      "http": 200,
+      "electiondate": "2026-11-03",
+      "office": "U.S. Senator",
+      "genuine_changing_return": true,
+      "identity_proved": null
+    },
+    "expected_admitted": false
+  },
+  {
+    "name": "synthetic valid identity control only",
+    "kind": "synthetic positive test does not approve any live source",
+    "input": {
+      "http": 200,
+      "electiondate": "2026-11-03",
+      "office": "U.S. Senator",
+      "status": "UNOFFICIAL",
+      "genuine_changing_return": true,
+      "identity_proved": true
+    },
+    "expected_admitted": true
+  }
+]
