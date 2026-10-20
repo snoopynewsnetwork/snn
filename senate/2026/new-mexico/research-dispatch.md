@@ -21,3 +21,24 @@ NMbaseline9a904675 ACTUALLY finished qualified source/scenario package; original
 
 
 Turnout5f787f59 ACTUALLY finished bounded reciprocal:800667assertions/zero unresolvedsource mismatches,256owned+65source exact seal. Coordinatorfinal1290checks also verifies complete92/104historical capture bodies, all old witnesses and unchanged sourcecount/CSV/order fields; only threepeer/status fields pluspeer_review added. Canonicalcertified native priority remainsnull/empty. The releasedslot resumes SAMEbaseline9a904675 for21actualCLIcases/16type/nonfinite/unknown-county failures under freshVerificationauto-review/medium; exact7239B prompt2ec0a41d089d9aa4624552f7af50263db0484fb51e986867438ef027524f8c3f retained. OnlyotherresearcherORturnoutbd151c4c. No sourceexpansion or finished-peercontact.
+
+
+## Qualified source authority and official-source launch
+
+The first pair passes independent source, field, mathematical and input checks:
+404,304 baseline source checks, 168,853 formula checks and 21 actual CLI
+regressions resolving 16 failures. The source authority at
+`data/coordinator-source-research-acceptance.json` is 902,648 bytes, SHA256
+`23b39102927cebabfd789bff8aadfff97427e2a7aca92a0c18f0a2cfa7be6346`.
+Independent replay covers 31 roots, 68 companions, 403,993 recursive objects,
+three partitions and 196 historical virtual bodies. Certified native order,
+top-15 and minimum 80% remain null, with empty priority keys. Research covers
+all 2,201 source observations and 33 parents.
+
+Official-source worker `3204f3a1-022c-4a3b-8f76-37d7f2e756f0` launched after
+the baseline repair finished and fresh profile/provider inspection selected
+Research, auto-review/high. The exact 13,596-byte prompt is retained, SHA256
+`b90e8784f8b94c92319fbd8bbfdce59cd698f4daa01a5fa76ef5cde5d1efbe1c`.
+Oregon baseline `7c03df8c-f908-40a8-a289-369e4aa26e69` is the only other active
+researcher. Maps remain prepared. No first-pair restart or current geographic,
+legal or feed admission follows from source agreement.

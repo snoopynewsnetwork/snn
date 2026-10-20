@@ -1,0 +1,25 @@
+{
+  "volume_definition": "Each county actual all-candidate valid votes from named historical contest; no actual-ballot conversion",
+  "volume_anchors": {
+    "low-2022-governor": "2022-governor",
+    "base-2024-senate": "2024-senate",
+    "high-2024-president": "2024-president",
+    "context-2020-same-seat": "2020-senate"
+  },
+  "preference_anchors": [
+    "2024-senate",
+    "2020-senate",
+    "2022-governor",
+    "2024-president"
+  ],
+  "pair_participation": "Each preference anchor county (A+B)/all named candidate votes, held fixed when changing volume mix",
+  "other_allocation": "Each non-A/B candidate retains their own anchor county share of all-candidate votes; no transfer/lower preference inference",
+  "targets_pair_margin": [
+    0,
+    0.01
+  ],
+  "other_county_shift_for_selected_only": 0,
+  "native_model": "only directly printed positive A+B within each contest; no cross-year/native crosswalk; all-native whole-state uniform solution unavailable",
+  "clipping": "clip each A pair share to [0,1] then solve uniform bounded shift by bisection",
+  "historical_not_forecast": true
+}

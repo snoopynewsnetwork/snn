@@ -1,0 +1,511 @@
+{
+  "ordinary": {
+    "status": "calculated",
+    "input": {
+      "counted_A": 40,
+      "counted_B": 50,
+      "counted_other": {
+        "C": 5
+      },
+      "remaining": 100,
+      "pair_participation": 0.8,
+      "remaining_A_pair_share": 0.6,
+      "remaining_other_mix": {
+        "C": 1
+      }
+    },
+    "clipped_preference": false,
+    "used_remaining_A_pair_share": 0.6,
+    "remaining_pair_pool": 80.0,
+    "fixed_counted_votes": {
+      "A": 40,
+      "B": 50,
+      "other": {
+        "C": 5
+      }
+    },
+    "final": {
+      "A": 88.0,
+      "B": 82.0,
+      "other": {
+        "C": 25.0
+      },
+      "pair_denominator": 170.0,
+      "all_candidate_denominator": 195.0,
+      "pair_net": 6.0,
+      "pair_margin_pp": 3.5294117647058822,
+      "all_candidate_margin_pp": 3.076923076923077,
+      "plurality_leaders": [
+        "A"
+      ],
+      "A_outright_plurality": true
+    },
+    "pair_target": {
+      "required_share_unbounded": 0.5625,
+      "feasible_share": 0.5625,
+      "status": "feasible"
+    },
+    "legal_plurality_tie_boundary_remaining_A_pair_share_unbounded": 0.5625,
+    "interpretation": "Strictly exceed all opponents for an outright plurality; equality is a tie. Pair cushion is illustrative."
+  },
+  "unknown_remaining": {
+    "status": "unknown",
+    "input": {
+      "counted_A": 40,
+      "counted_B": 50,
+      "counted_other": {
+        "C": 5
+      },
+      "remaining": null,
+      "pair_participation": 0.8,
+      "remaining_A_pair_share": 0.6,
+      "remaining_other_mix": {
+        "C": 1
+      }
+    },
+    "final": null
+  },
+  "unknown_preference": {
+    "status": "unknown",
+    "input": {
+      "counted_A": 40,
+      "counted_B": 50,
+      "counted_other": {
+        "C": 5
+      },
+      "remaining": 100,
+      "pair_participation": 0.8,
+      "remaining_A_pair_share": null,
+      "remaining_other_mix": {
+        "C": 1
+      }
+    },
+    "final": null
+  },
+  "negative_pool": {
+    "status": "invalid_negative_or_bounds",
+    "error": {
+      "field": "remaining",
+      "reason": "number_out_of_declared_range"
+    },
+    "final": null
+  },
+  "no_pool": {
+    "status": "calculated",
+    "input": {
+      "counted_A": 40,
+      "counted_B": 50,
+      "counted_other": {
+        "C": 5
+      },
+      "remaining": 0,
+      "pair_participation": 0.8,
+      "remaining_A_pair_share": 0.6,
+      "remaining_other_mix": {
+        "C": 1
+      }
+    },
+    "clipped_preference": false,
+    "used_remaining_A_pair_share": null,
+    "remaining_pair_pool": 0.0,
+    "fixed_counted_votes": {
+      "A": 40,
+      "B": 50,
+      "other": {
+        "C": 5
+      }
+    },
+    "final": {
+      "A": 40.0,
+      "B": 50.0,
+      "other": {
+        "C": 5.0
+      },
+      "pair_denominator": 90.0,
+      "all_candidate_denominator": 95.0,
+      "pair_net": -10.0,
+      "pair_margin_pp": -11.11111111111111,
+      "all_candidate_margin_pp": -10.526315789473685,
+      "plurality_leaders": [
+        "B"
+      ],
+      "A_outright_plurality": false
+    },
+    "pair_target": {
+      "required_share_unbounded": null,
+      "feasible_share": null,
+      "status": "no_positive_pool",
+      "net_minus_target": -10.0
+    },
+    "legal_plurality_tie_boundary_remaining_A_pair_share_unbounded": null,
+    "interpretation": "Strictly exceed all opponents for an outright plurality; equality is a tie. Pair cushion is illustrative."
+  },
+  "secured": {
+    "status": "calculated",
+    "input": {
+      "counted_A": 200,
+      "counted_B": 50,
+      "counted_other": {
+        "C": 5
+      },
+      "remaining": 100,
+      "pair_participation": 0.8,
+      "remaining_A_pair_share": 0.6,
+      "remaining_other_mix": {
+        "C": 1
+      }
+    },
+    "clipped_preference": false,
+    "used_remaining_A_pair_share": 0.6,
+    "remaining_pair_pool": 80.0,
+    "fixed_counted_votes": {
+      "A": 200,
+      "B": 50,
+      "other": {
+        "C": 5
+      }
+    },
+    "final": {
+      "A": 248.0,
+      "B": 82.0,
+      "other": {
+        "C": 25.0
+      },
+      "pair_denominator": 330.0,
+      "all_candidate_denominator": 355.0,
+      "pair_net": 166.0,
+      "pair_margin_pp": 50.303030303030305,
+      "all_candidate_margin_pp": 46.76056338028169,
+      "plurality_leaders": [
+        "A"
+      ],
+      "A_outright_plurality": true
+    },
+    "pair_target": {
+      "required_share_unbounded": -0.4375,
+      "feasible_share": 0.0,
+      "status": "already_secured"
+    },
+    "legal_plurality_tie_boundary_remaining_A_pair_share_unbounded": -0.4375,
+    "interpretation": "Strictly exceed all opponents for an outright plurality; equality is a tie. Pair cushion is illustrative."
+  },
+  "impossible": {
+    "status": "calculated",
+    "input": {
+      "counted_A": 40,
+      "counted_B": 300,
+      "counted_other": {
+        "C": 5
+      },
+      "remaining": 100,
+      "pair_participation": 0.8,
+      "remaining_A_pair_share": 0.6,
+      "remaining_other_mix": {
+        "C": 1
+      }
+    },
+    "clipped_preference": false,
+    "used_remaining_A_pair_share": 0.6,
+    "remaining_pair_pool": 80.0,
+    "fixed_counted_votes": {
+      "A": 40,
+      "B": 300,
+      "other": {
+        "C": 5
+      }
+    },
+    "final": {
+      "A": 88.0,
+      "B": 332.0,
+      "other": {
+        "C": 25.0
+      },
+      "pair_denominator": 420.0,
+      "all_candidate_denominator": 445.0,
+      "pair_net": -244.0,
+      "pair_margin_pp": -58.095238095238095,
+      "all_candidate_margin_pp": -54.831460674157306,
+      "plurality_leaders": [
+        "B"
+      ],
+      "A_outright_plurality": false
+    },
+    "pair_target": {
+      "required_share_unbounded": 2.125,
+      "feasible_share": null,
+      "status": "impossible"
+    },
+    "legal_plurality_tie_boundary_remaining_A_pair_share_unbounded": 2.125,
+    "interpretation": "Strictly exceed all opponents for an outright plurality; equality is a tie. Pair cushion is illustrative."
+  },
+  "clip_high": {
+    "status": "calculated",
+    "input": {
+      "counted_A": 40,
+      "counted_B": 50,
+      "counted_other": {
+        "C": 5
+      },
+      "remaining": 100,
+      "pair_participation": 0.8,
+      "remaining_A_pair_share": 1.2,
+      "remaining_other_mix": {
+        "C": 1
+      }
+    },
+    "clipped_preference": true,
+    "used_remaining_A_pair_share": 1.0,
+    "remaining_pair_pool": 80.0,
+    "fixed_counted_votes": {
+      "A": 40,
+      "B": 50,
+      "other": {
+        "C": 5
+      }
+    },
+    "final": {
+      "A": 120.0,
+      "B": 50.0,
+      "other": {
+        "C": 25.0
+      },
+      "pair_denominator": 170.0,
+      "all_candidate_denominator": 195.0,
+      "pair_net": 70.0,
+      "pair_margin_pp": 41.1764705882353,
+      "all_candidate_margin_pp": 35.8974358974359,
+      "plurality_leaders": [
+        "A"
+      ],
+      "A_outright_plurality": true
+    },
+    "pair_target": {
+      "required_share_unbounded": 0.5625,
+      "feasible_share": 0.5625,
+      "status": "feasible"
+    },
+    "legal_plurality_tie_boundary_remaining_A_pair_share_unbounded": 0.5625,
+    "interpretation": "Strictly exceed all opponents for an outright plurality; equality is a tie. Pair cushion is illustrative."
+  },
+  "clip_low": {
+    "status": "calculated",
+    "input": {
+      "counted_A": 40,
+      "counted_B": 50,
+      "counted_other": {
+        "C": 5
+      },
+      "remaining": 100,
+      "pair_participation": 0.8,
+      "remaining_A_pair_share": -0.3,
+      "remaining_other_mix": {
+        "C": 1
+      }
+    },
+    "clipped_preference": true,
+    "used_remaining_A_pair_share": 0.0,
+    "remaining_pair_pool": 80.0,
+    "fixed_counted_votes": {
+      "A": 40,
+      "B": 50,
+      "other": {
+        "C": 5
+      }
+    },
+    "final": {
+      "A": 40.0,
+      "B": 130.0,
+      "other": {
+        "C": 25.0
+      },
+      "pair_denominator": 170.0,
+      "all_candidate_denominator": 195.0,
+      "pair_net": -90.0,
+      "pair_margin_pp": -52.94117647058823,
+      "all_candidate_margin_pp": -46.15384615384615,
+      "plurality_leaders": [
+        "B"
+      ],
+      "A_outright_plurality": false
+    },
+    "pair_target": {
+      "required_share_unbounded": 0.5625,
+      "feasible_share": 0.5625,
+      "status": "feasible"
+    },
+    "legal_plurality_tie_boundary_remaining_A_pair_share_unbounded": 0.5625,
+    "interpretation": "Strictly exceed all opponents for an outright plurality; equality is a tie. Pair cushion is illustrative."
+  },
+  "no_pair_pool": {
+    "status": "calculated",
+    "input": {
+      "counted_A": 40,
+      "counted_B": 50,
+      "counted_other": {
+        "C": 5
+      },
+      "remaining": 100,
+      "pair_participation": 0,
+      "remaining_A_pair_share": 0.6,
+      "remaining_other_mix": {
+        "C": 1
+      }
+    },
+    "clipped_preference": false,
+    "used_remaining_A_pair_share": null,
+    "remaining_pair_pool": 0,
+    "fixed_counted_votes": {
+      "A": 40,
+      "B": 50,
+      "other": {
+        "C": 5
+      }
+    },
+    "final": {
+      "A": 40.0,
+      "B": 50.0,
+      "other": {
+        "C": 105
+      },
+      "pair_denominator": 90,
+      "all_candidate_denominator": 195,
+      "pair_net": -10.0,
+      "pair_margin_pp": -11.11111111111111,
+      "all_candidate_margin_pp": -5.128205128205129,
+      "plurality_leaders": [
+        "C"
+      ],
+      "A_outright_plurality": false
+    },
+    "pair_target": {
+      "required_share_unbounded": null,
+      "feasible_share": null,
+      "status": "no_positive_pool",
+      "net_minus_target": -10
+    },
+    "legal_plurality_tie_boundary_remaining_A_pair_share_unbounded": null,
+    "interpretation": "Strictly exceed all opponents for an outright plurality; equality is a tie. Pair cushion is illustrative."
+  },
+  "unknown_other_mix": {
+    "status": "unknown_other_mix",
+    "input": {
+      "counted_A": 40,
+      "counted_B": 50,
+      "counted_other": {
+        "C": 5
+      },
+      "remaining": 100,
+      "pair_participation": 0.8,
+      "remaining_A_pair_share": 0.6,
+      "remaining_other_mix": {}
+    },
+    "final": null
+  },
+  "other_candidate_wins": {
+    "status": "calculated",
+    "input": {
+      "counted_A": 40,
+      "counted_B": 50,
+      "counted_other": {
+        "C": 300
+      },
+      "remaining": 100,
+      "pair_participation": 0.8,
+      "remaining_A_pair_share": 0.6,
+      "remaining_other_mix": {
+        "C": 1
+      }
+    },
+    "clipped_preference": false,
+    "used_remaining_A_pair_share": 0.6,
+    "remaining_pair_pool": 80.0,
+    "fixed_counted_votes": {
+      "A": 40,
+      "B": 50,
+      "other": {
+        "C": 300
+      }
+    },
+    "final": {
+      "A": 88.0,
+      "B": 82.0,
+      "other": {
+        "C": 320.0
+      },
+      "pair_denominator": 170.0,
+      "all_candidate_denominator": 490.0,
+      "pair_net": 6.0,
+      "pair_margin_pp": 3.5294117647058822,
+      "all_candidate_margin_pp": 1.2244897959183674,
+      "plurality_leaders": [
+        "C"
+      ],
+      "A_outright_plurality": false
+    },
+    "pair_target": {
+      "required_share_unbounded": 0.5625,
+      "feasible_share": 0.5625,
+      "status": "feasible"
+    },
+    "legal_plurality_tie_boundary_remaining_A_pair_share_unbounded": 3.5,
+    "interpretation": "Strictly exceed all opponents for an outright plurality; equality is a tie. Pair cushion is illustrative."
+  },
+  "Aplus1_final_denominator": {
+    "status": "calculated",
+    "input": {
+      "counted_A": 40,
+      "counted_B": 50,
+      "counted_other": {
+        "C": 5
+      },
+      "remaining": 100,
+      "pair_participation": 0.8,
+      "remaining_A_pair_share": 0.6,
+      "remaining_other_mix": {
+        "C": 1
+      },
+      "target_pair_margin": 0.01
+    },
+    "clipped_preference": false,
+    "used_remaining_A_pair_share": 0.6,
+    "remaining_pair_pool": 80.0,
+    "fixed_counted_votes": {
+      "A": 40,
+      "B": 50,
+      "other": {
+        "C": 5
+      }
+    },
+    "final": {
+      "A": 88.0,
+      "B": 82.0,
+      "other": {
+        "C": 25.0
+      },
+      "pair_denominator": 170.0,
+      "all_candidate_denominator": 195.0,
+      "pair_net": 6.0,
+      "pair_margin_pp": 3.5294117647058822,
+      "all_candidate_margin_pp": 3.076923076923077,
+      "plurality_leaders": [
+        "A"
+      ],
+      "A_outright_plurality": true
+    },
+    "pair_target": {
+      "required_share_unbounded": 0.573125,
+      "feasible_share": 0.573125,
+      "status": "feasible"
+    },
+    "legal_plurality_tie_boundary_remaining_A_pair_share_unbounded": 0.5625,
+    "interpretation": "Strictly exceed all opponents for an outright plurality; equality is a tie. Pair cushion is illustrative."
+  },
+  "invalid_participation": {
+    "status": "invalid_negative_or_bounds",
+    "error": {
+      "field": "pair_participation",
+      "reason": "number_out_of_declared_range"
+    },
+    "final": null
+  }
+}

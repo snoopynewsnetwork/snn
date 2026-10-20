@@ -1,0 +1,2852 @@
+{
+  "status": "pass",
+  "calculator_sha256": "825fd61c5fd3fc5d1a3fbbc3826484998a908c8ef53c5aa9de285f0eabd26cc9",
+  "history_freeze_sha256": "b0291453d6b01926e9ea05a6276c863c2fcf59d226890456e4660d377f97af48",
+  "coordinator_initial_finding_sha256": "93402ef5d1a99312fc676fd10e3f5389ba62bdb29200dbfe7b4a9e1c30c2d8a4",
+  "coordinator_county_finding_sha256": "d910e56046bcd194e64d6dae3d5e16793395c102ae3626a75f30283d51cd11fd",
+  "case_count": 132,
+  "coordinator_exact_cases": 21,
+  "negative_cases": 97,
+  "positive_cases": 35,
+  "failures": [],
+  "cases": [
+    {
+      "name": "coordinator-boolean_count",
+      "expected": "invalid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--live-json",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/coordinator-boolean_count.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"counted_A\",\n    \"reason\": \"finite_number_required; booleans and null are not numbers\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "78ef22091321ffc49b136be1b7c32d0545c86c9fef2d7a5a154f5ad54165db81",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/coordinator-boolean_count.json",
+        "bytes": 173,
+        "sha256": "de7348e906c5a4de5565d908daab7d825eac67bed519df711a09519013dc6488"
+      }
+    },
+    {
+      "name": "coordinator-boolean_target",
+      "expected": "invalid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--live-json",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/coordinator-boolean_target.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"target_pair_margin\",\n    \"reason\": \"finite_number_required; booleans and null are not numbers\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "68d62b2308e0e7eb61b966d1a08fa8611d17f3b759314f4199d7ab500c61dcdd",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/coordinator-boolean_target.json",
+        "bytes": 199,
+        "sha256": "12d14bdb00370c74ded5b9a2a915fbb85edd53225f038eb3766372c6a6452bc2"
+      }
+    },
+    {
+      "name": "coordinator-nonfinite_target",
+      "expected": "invalid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--live-json",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/coordinator-nonfinite_target.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"input.target_pair_margin\",\n    \"reason\": \"finite_representable_number_required\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "b93fbf7f68560f380df255af8ac80456ad422830f141bea0cc8cd6741ef177bc",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/coordinator-nonfinite_target.json",
+        "bytes": 198,
+        "sha256": "8d0fda2dc97f1527d6469f93efacbee5206cc66f1c451fe2008896fa4585380e"
+      }
+    },
+    {
+      "name": "coordinator-nonfinite_other_mix",
+      "expected": "invalid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--live-json",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/coordinator-nonfinite_other_mix.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"input.remaining_other_mix.C\",\n    \"reason\": \"finite_representable_number_required\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "46e033b4976c4d49563e85a3074e1b9a5ceeb521055587107b68e49a91fcfc5f",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/coordinator-nonfinite_other_mix.json",
+        "bytes": 173,
+        "sha256": "bc27d9dc9cbc5c84500122dcd8e8c0ff359bceec1682bf7116cd700fd29659f2"
+      }
+    },
+    {
+      "name": "coordinator-boolean_other_mix",
+      "expected": "invalid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--live-json",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/coordinator-boolean_other_mix.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"remaining_other_mix.C\",\n    \"reason\": \"finite_number_required; booleans and null are not numbers\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "166d1aec962f5b1779d4ecc7fb939e2fe772b90071089ebc030799ae755235de",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/coordinator-boolean_other_mix.json",
+        "bytes": 174,
+        "sha256": "1145aef509f2592c0f2632091226f1e667e7456c184a1ec2d2626beb29ae7023"
+      }
+    },
+    {
+      "name": "coordinator-text_other_mix",
+      "expected": "invalid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--live-json",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/coordinator-text_other_mix.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"remaining_other_mix.C\",\n    \"reason\": \"finite_number_required; booleans and null are not numbers\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "166d1aec962f5b1779d4ecc7fb939e2fe772b90071089ebc030799ae755235de",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/coordinator-text_other_mix.json",
+        "bytes": 173,
+        "sha256": "bb86005e8565ce5deae44975eb7987f8bf4b067cc22931fe2b355240d54e2fc4"
+      }
+    },
+    {
+      "name": "coordinator-null_other_object",
+      "expected": "invalid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--live-json",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/coordinator-null_other_object.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"counted_other\",\n    \"reason\": \"named_candidate_object_required\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "66dc46a021539e4de9a1c346c6ce1097fd81db2d20483355f2f1ac808c1f62d7",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/coordinator-null_other_object.json",
+        "bytes": 167,
+        "sha256": "c645c1bb8d4ad946e01ed10df4665443fa9f1601ff27d97e44f34a4f8081d190"
+      }
+    },
+    {
+      "name": "coordinator-list_other_object",
+      "expected": "invalid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--live-json",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/coordinator-list_other_object.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"counted_other\",\n    \"reason\": \"named_candidate_object_required\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "66dc46a021539e4de9a1c346c6ce1097fd81db2d20483355f2f1ac808c1f62d7",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/coordinator-list_other_object.json",
+        "bytes": 166,
+        "sha256": "8a352ec9c6a3f5fe1c65527298526481780ac07a340e39d59a8eec58f010a4d2"
+      }
+    },
+    {
+      "name": "coordinator-text_remaining_with_unknown_preference",
+      "expected": "invalid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--live-json",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/coordinator-text_remaining_with_unknown_preference.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"remaining\",\n    \"reason\": \"finite_number_required; booleans and null are not numbers\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "15caa715b3bf452a3b76f1b728354836eae56efb6a6902f64c78c965ef3e01c7",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/coordinator-text_remaining_with_unknown_preference.json",
+        "bytes": 174,
+        "sha256": "0b6963772b03d5a1f95f3265179952cf2f2d1d078989fb75b7825a1b8fb51bba"
+      }
+    },
+    {
+      "name": "coordinator-boolean_participation",
+      "expected": "invalid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--live-json",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/coordinator-boolean_participation.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"pair_participation\",\n    \"reason\": \"finite_number_required; booleans and null are not numbers\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "34e3216b275be7d669929f26eaf0aea5bf174db15e0d61f5c3e75455888050df",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/coordinator-boolean_participation.json",
+        "bytes": 172,
+        "sha256": "0e3b0b4dfbefafba9bb2485ec78477c11ed74085a1a03bfa9b86d4f675c24461"
+      }
+    },
+    {
+      "name": "coordinator-infinite_count",
+      "expected": "invalid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--live-json",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/coordinator-infinite_count.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"input.counted_A\",\n    \"reason\": \"finite_representable_number_required\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "c7b9c42f384d5d3e4c1a45167b0632ac99cd45d1cee5579227180f66e2d52d3b",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/coordinator-infinite_count.json",
+        "bytes": 177,
+        "sha256": "b1c949370d3c0c012c6e97d48451bc4215bffdfb1662d0c9b853bfa17251c3ed"
+      }
+    },
+    {
+      "name": "coordinator-out_of_bounds_target",
+      "expected": "invalid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--live-json",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/coordinator-out_of_bounds_target.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_negative_or_bounds\",\n  \"error\": {\n    \"field\": \"target_pair_margin\",\n    \"reason\": \"number_out_of_declared_range\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "d984302f469c4be5b03e476815553c059596f6bd987468a823cae797e701be35",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_negative_or_bounds",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/coordinator-out_of_bounds_target.json",
+        "bytes": 198,
+        "sha256": "d94bdbc935cfb8268791131071247315ce6edc2a0983fcf9b1ae83187aa4e345"
+      }
+    },
+    {
+      "name": "coordinator-ordinary",
+      "expected": "valid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--live-json",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/coordinator-ordinary.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"calculated\",\n  \"input\": {\n    \"counted_A\": 40,\n    \"counted_B\": 50,\n    \"counted_other\": {\n      \"C\": 5\n    },\n    \"remaining\": 100,\n    \"pair_participation\": 0.8,\n    \"remaining_A_pair_share\": 0.6,\n    \"remaining_other_mix\": {\n      \"C\": 1\n    }\n  },\n  \"clipped_preference\": false,\n  \"used_remaining_A_pair_share\": 0.6,\n  \"remaining_pair_pool\": 80.0,\n  \"fixed_counted_votes\": {\n    \"A\": 40,\n    \"B\": 50,\n    \"other\": {\n      \"C\": 5\n    }\n  },\n  \"final\": {\n    \"A\": 88.0,\n    \"B\": 82.0,\n    \"other\": {\n      \"C\": 25.0\n    },\n    \"pair_denominator\": 170.0,\n    \"all_candidate_denominator\": 195.0,\n    \"pair_net\": 6.0,\n    \"pair_margin_pp\": 3.5294117647058822,\n    \"all_candidate_margin_pp\": 3.076923076923077,\n    \"plurality_leaders\": [\n      \"A\"\n    ],\n    \"A_outright_plurality\": true\n  },\n  \"pair_target\": {\n    \"required_share_unbounded\": 0.5625,\n    \"feasible_share\": 0.5625,\n    \"status\": \"feasible\"\n  },\n  \"legal_plurality_tie_boundary_remaining_A_pair_share_unbounded\": 0.5625,\n  \"interpretation\": \"Strictly exceed all opponents for an outright plurality; equality is a tie. Pair cushion is illustrative.\"\n}\n",
+      "stdout_sha256": "12690365b500272e30c5c44c789853b5213b27d635b68a5564f6edcb620d54fb",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "calculated",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/coordinator-ordinary.json",
+        "bytes": 171,
+        "sha256": "b36f4fe417a768bf01e37bb5fa2388b345cee1625a2c3baf23ed8001b9725f9f"
+      }
+    },
+    {
+      "name": "coordinator-unknown_remaining",
+      "expected": "valid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--live-json",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/coordinator-unknown_remaining.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"unknown\",\n  \"input\": {\n    \"counted_A\": 40,\n    \"counted_B\": 50,\n    \"counted_other\": {\n      \"C\": 5\n    },\n    \"remaining\": null,\n    \"pair_participation\": 0.8,\n    \"remaining_A_pair_share\": 0.6,\n    \"remaining_other_mix\": {\n      \"C\": 1\n    }\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "91800050ad66abc92198f36b7718e8f3ad5df6e2841b6611d0e2f32b7877e218",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "unknown",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/coordinator-unknown_remaining.json",
+        "bytes": 172,
+        "sha256": "99462e7068617a61822e984b207f30a6d8b93b1486dd3009052550743af3d2f8"
+      }
+    },
+    {
+      "name": "coordinator-zero_pool",
+      "expected": "valid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--live-json",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/coordinator-zero_pool.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"calculated\",\n  \"input\": {\n    \"counted_A\": 40,\n    \"counted_B\": 50,\n    \"counted_other\": {\n      \"C\": 5\n    },\n    \"remaining\": 0,\n    \"pair_participation\": 0.8,\n    \"remaining_A_pair_share\": 0.6,\n    \"remaining_other_mix\": {\n      \"C\": 1\n    }\n  },\n  \"clipped_preference\": false,\n  \"used_remaining_A_pair_share\": null,\n  \"remaining_pair_pool\": 0.0,\n  \"fixed_counted_votes\": {\n    \"A\": 40,\n    \"B\": 50,\n    \"other\": {\n      \"C\": 5\n    }\n  },\n  \"final\": {\n    \"A\": 40.0,\n    \"B\": 50.0,\n    \"other\": {\n      \"C\": 5.0\n    },\n    \"pair_denominator\": 90.0,\n    \"all_candidate_denominator\": 95.0,\n    \"pair_net\": -10.0,\n    \"pair_margin_pp\": -11.11111111111111,\n    \"all_candidate_margin_pp\": -10.526315789473685,\n    \"plurality_leaders\": [\n      \"B\"\n    ],\n    \"A_outright_plurality\": false\n  },\n  \"pair_target\": {\n    \"required_share_unbounded\": null,\n    \"feasible_share\": null,\n    \"status\": \"no_positive_pool\",\n    \"net_minus_target\": -10.0\n  },\n  \"legal_plurality_tie_boundary_remaining_A_pair_share_unbounded\": null,\n  \"interpretation\": \"Strictly exceed all opponents for an outright plurality; equality is a tie. Pair cushion is illustrative.\"\n}\n",
+      "stdout_sha256": "a5b28b26e6bad61068d88f7cd8dd9b53ee216f481cf764ff39ac64da96c73c99",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "calculated",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/coordinator-zero_pool.json",
+        "bytes": 169,
+        "sha256": "b3def6b44fdde9a2e08daf4ab45456d4272182f22730c09003c3508901396ced"
+      }
+    },
+    {
+      "name": "coordinator-explicit_preference_clipping",
+      "expected": "valid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--live-json",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/coordinator-explicit_preference_clipping.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"calculated\",\n  \"input\": {\n    \"counted_A\": 40,\n    \"counted_B\": 50,\n    \"counted_other\": {\n      \"C\": 5\n    },\n    \"remaining\": 100,\n    \"pair_participation\": 0.8,\n    \"remaining_A_pair_share\": 1.2,\n    \"remaining_other_mix\": {\n      \"C\": 1\n    }\n  },\n  \"clipped_preference\": true,\n  \"used_remaining_A_pair_share\": 1.0,\n  \"remaining_pair_pool\": 80.0,\n  \"fixed_counted_votes\": {\n    \"A\": 40,\n    \"B\": 50,\n    \"other\": {\n      \"C\": 5\n    }\n  },\n  \"final\": {\n    \"A\": 120.0,\n    \"B\": 50.0,\n    \"other\": {\n      \"C\": 25.0\n    },\n    \"pair_denominator\": 170.0,\n    \"all_candidate_denominator\": 195.0,\n    \"pair_net\": 70.0,\n    \"pair_margin_pp\": 41.1764705882353,\n    \"all_candidate_margin_pp\": 35.8974358974359,\n    \"plurality_leaders\": [\n      \"A\"\n    ],\n    \"A_outright_plurality\": true\n  },\n  \"pair_target\": {\n    \"required_share_unbounded\": 0.5625,\n    \"feasible_share\": 0.5625,\n    \"status\": \"feasible\"\n  },\n  \"legal_plurality_tie_boundary_remaining_A_pair_share_unbounded\": 0.5625,\n  \"interpretation\": \"Strictly exceed all opponents for an outright plurality; equality is a tie. Pair cushion is illustrative.\"\n}\n",
+      "stdout_sha256": "2546c3027ef6b4daaf6ab6464dc29628b98dd95aee5ee49aa9cb6994b5fee823",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "calculated",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/coordinator-explicit_preference_clipping.json",
+        "bytes": 171,
+        "sha256": "93464c507fcff0c390b32ade4c4059e4e02b98ee5fc437e1dc92f4b91f08f4f9"
+      }
+    },
+    {
+      "name": "coordinator-uniform_nan_target",
+      "expected": "invalid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--target-margin-pp",
+        "nan"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"target_margin_pp\",\n    \"reason\": \"finite_representable_number_required\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "f594c347476c920c19e73fd9157c013caff58ab417ffef897704a11d43f32f8f",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true
+    },
+    {
+      "name": "coordinator-uniform_infinite_target",
+      "expected": "invalid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--target-margin-pp",
+        "inf"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"target_margin_pp\",\n    \"reason\": \"finite_representable_number_required\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "f594c347476c920c19e73fd9157c013caff58ab417ffef897704a11d43f32f8f",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true
+    },
+    {
+      "name": "coordinator-selected_nan_target",
+      "expected": "invalid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--county",
+        "Bernalillo",
+        "--target-margin-pp",
+        "nan"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"target_margin_pp\",\n    \"reason\": \"finite_representable_number_required\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "f594c347476c920c19e73fd9157c013caff58ab417ffef897704a11d43f32f8f",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true
+    },
+    {
+      "name": "coordinator-selected_infinite_other_shift",
+      "expected": "invalid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--county",
+        "Bernalillo",
+        "--others-shift-pp",
+        "inf"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"others_shift_pp\",\n    \"reason\": \"finite_representable_number_required\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "52da79fe39d9133f17b7c1e5185a217228e45b0a78c1116a65d4711140628de5",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true
+    },
+    {
+      "name": "coordinator-unknown_county",
+      "expected": "invalid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--county",
+        "NO_SUCH_SOURCE_COUNTY"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"county\",\n    \"reason\": \"unknown_source_county\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "be89171f13c34f46b86fde800c105c97bea573e0df6a55b56a3ae3ade055d1ea",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true
+    },
+    {
+      "name": "null-target",
+      "expected": "invalid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--live-json",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/null-target.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"target_pair_margin\",\n    \"reason\": \"finite_number_required; booleans and null are not numbers\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "68d62b2308e0e7eb61b966d1a08fa8611d17f3b759314f4199d7ab500c61dcdd",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/null-target.json",
+        "bytes": 199,
+        "sha256": "bc6ad805d4c4a8ef8b1ad56f9bda794576190303cc0aaf4b13651dae17fbd080"
+      }
+    },
+    {
+      "name": "text-target",
+      "expected": "invalid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--live-json",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/text-target.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"target_pair_margin\",\n    \"reason\": \"finite_number_required; booleans and null are not numbers\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "68d62b2308e0e7eb61b966d1a08fa8611d17f3b759314f4199d7ab500c61dcdd",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/text-target.json",
+        "bytes": 198,
+        "sha256": "34f30c1875c5185d58d00cd74fc17bf6d40dd03059e2d304741b32bb66caf93a"
+      }
+    },
+    {
+      "name": "bool-false-target",
+      "expected": "invalid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--live-json",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/bool-false-target.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"target_pair_margin\",\n    \"reason\": \"finite_number_required; booleans and null are not numbers\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "68d62b2308e0e7eb61b966d1a08fa8611d17f3b759314f4199d7ab500c61dcdd",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/bool-false-target.json",
+        "bytes": 200,
+        "sha256": "a48d02eb17d9b22109d9d2e9f1795565b70adcff8e8bbf4cf07633ca3acbe35f"
+      }
+    },
+    {
+      "name": "negative-infinite-target",
+      "expected": "invalid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--live-json",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/negative-infinite-target.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"input.target_pair_margin\",\n    \"reason\": \"finite_representable_number_required\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "b93fbf7f68560f380df255af8ac80456ad422830f141bea0cc8cd6741ef177bc",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/negative-infinite-target.json",
+        "bytes": 204,
+        "sha256": "c1799a1fd5efced3d99a7e9856ee1aa167ab4b320e909477032792d802acb333"
+      }
+    },
+    {
+      "name": "null-count",
+      "expected": "invalid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--live-json",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/null-count.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"counted_A\",\n    \"reason\": \"finite_number_required; booleans and null are not numbers\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "78ef22091321ffc49b136be1b7c32d0545c86c9fef2d7a5a154f5ad54165db81",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/null-count.json",
+        "bytes": 173,
+        "sha256": "b42ebd72b362511364fa86115bfca492efe09f83912f33e9f64788b28844794c"
+      }
+    },
+    {
+      "name": "text-count",
+      "expected": "invalid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--live-json",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/text-count.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"counted_B\",\n    \"reason\": \"finite_number_required; booleans and null are not numbers\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "c4454780a40d90e0849c05eeb00dd3040a29fbe2ad727477d054c99bb6fd4f4f",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/text-count.json",
+        "bytes": 173,
+        "sha256": "10155a28792e87ff58dd46a51dc32dcf48aed97daabb9652db089b80d623266e"
+      }
+    },
+    {
+      "name": "negative-count",
+      "expected": "invalid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--live-json",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/negative-count.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_negative_or_bounds\",\n  \"error\": {\n    \"field\": \"counted_A\",\n    \"reason\": \"number_out_of_declared_range\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "c4c27499d6b968fc2283a5240251da8ad58a6acceabd2a01eab652640788561d",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_negative_or_bounds",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/negative-count.json",
+        "bytes": 171,
+        "sha256": "af03351d3e52eeeff0766d4db00c87750ee33296492b411f28f8b4d4db596a91"
+      }
+    },
+    {
+      "name": "bool-negative-pool",
+      "expected": "invalid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--live-json",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/bool-negative-pool.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"remaining\",\n    \"reason\": \"finite_number_required; booleans and null are not numbers\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "15caa715b3bf452a3b76f1b728354836eae56efb6a6902f64c78c965ef3e01c7",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/bool-negative-pool.json",
+        "bytes": 173,
+        "sha256": "a3a9c64b2003d8707191327635619fdf328bf3f1e7a5fa2c2aaf770f0a53643b"
+      }
+    },
+    {
+      "name": "text-pool",
+      "expected": "invalid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--live-json",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/text-pool.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"remaining\",\n    \"reason\": \"finite_number_required; booleans and null are not numbers\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "15caa715b3bf452a3b76f1b728354836eae56efb6a6902f64c78c965ef3e01c7",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/text-pool.json",
+        "bytes": 173,
+        "sha256": "a6704c641a2fa76ac34fd42591711401a00d0b4e65b79ed04e8dc77dbc007482"
+      }
+    },
+    {
+      "name": "negative-pool",
+      "expected": "invalid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--live-json",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/negative-pool.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_negative_or_bounds\",\n  \"error\": {\n    \"field\": \"remaining\",\n    \"reason\": \"number_out_of_declared_range\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "da338a5778aab12f57545f0055b5661d20cf85e65dd54b93c8c17b19c5b2caec",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_negative_or_bounds",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/negative-pool.json",
+        "bytes": 170,
+        "sha256": "9114c5936fd25ca39887ff378d8ccf4392819d848a19d8d0aa487c0add74ee64"
+      }
+    },
+    {
+      "name": "unknown-does-not-hide-bool-target",
+      "expected": "invalid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--live-json",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/unknown-does-not-hide-bool-target.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"target_pair_margin\",\n    \"reason\": \"finite_number_required; booleans and null are not numbers\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "68d62b2308e0e7eb61b966d1a08fa8611d17f3b759314f4199d7ab500c61dcdd",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/unknown-does-not-hide-bool-target.json",
+        "bytes": 200,
+        "sha256": "53e8f718f3c8e2f1989492b1a0293de5b7610938c3fb61533731dcab58f6f013"
+      }
+    },
+    {
+      "name": "unknown-does-not-hide-bad-mix",
+      "expected": "invalid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--live-json",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/unknown-does-not-hide-bad-mix.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"input.remaining_other_mix.C\",\n    \"reason\": \"finite_representable_number_required\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "46e033b4976c4d49563e85a3074e1b9a5ceeb521055587107b68e49a91fcfc5f",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/unknown-does-not-hide-bad-mix.json",
+        "bytes": 179,
+        "sha256": "bf6a9debcc861eadf8dd987b73f3229e24ea727db28407c8f95a0676cab9c556"
+      }
+    },
+    {
+      "name": "null-mix-object",
+      "expected": "invalid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--live-json",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/null-mix-object.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"remaining_other_mix\",\n    \"reason\": \"named_candidate_object_required\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "7cf2d206e4f2a1249f2ec2207886200317de66260a31a4a14498bc071dac16ba",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/null-mix-object.json",
+        "bytes": 167,
+        "sha256": "3c9a8aedfa2608c0950ee659a11b586dbec1d91727a9ccc9e8f2d588cebd9cdc"
+      }
+    },
+    {
+      "name": "list-mix-object",
+      "expected": "invalid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--live-json",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/list-mix-object.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"remaining_other_mix\",\n    \"reason\": \"named_candidate_object_required\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "7cf2d206e4f2a1249f2ec2207886200317de66260a31a4a14498bc071dac16ba",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/list-mix-object.json",
+        "bytes": 166,
+        "sha256": "b57142c1eb9e51e8fbc2e7067dbe3e87ffc37ccbc433e2fcc8966a37efeea15c"
+      }
+    },
+    {
+      "name": "text-mix-object",
+      "expected": "invalid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--live-json",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/text-mix-object.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"remaining_other_mix\",\n    \"reason\": \"named_candidate_object_required\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "7cf2d206e4f2a1249f2ec2207886200317de66260a31a4a14498bc071dac16ba",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/text-mix-object.json",
+        "bytes": 166,
+        "sha256": "ac754400686afb109cf9ef5200d65371d4c487bcb222064bc1b1ee9793344f6b"
+      }
+    },
+    {
+      "name": "negative-mix",
+      "expected": "invalid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--live-json",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/negative-mix.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_negative_or_bounds\",\n  \"error\": {\n    \"field\": \"remaining_other_mix.C\",\n    \"reason\": \"number_out_of_declared_range\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "c390b48089b735bdaf80614269f7156621c8938270d14e6bb8e15fe3237adfd7",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_negative_or_bounds",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/negative-mix.json",
+        "bytes": 172,
+        "sha256": "9b38dcd41b768a6544b0580203f2aa27fb3271031913b5c089be0c1529f70d50"
+      }
+    },
+    {
+      "name": "unnormalized-mix",
+      "expected": "invalid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--live-json",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/unnormalized-mix.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_mix\",\n  \"error\": {\n    \"field\": \"remaining_other_mix\",\n    \"reason\": \"nonempty_mix_must_sum_to_one\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "3c55f8ccaaf2b4383cb18961c81bd3496f10d517bda1d8fa8434275bbb12a402",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_mix",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/unnormalized-mix.json",
+        "bytes": 173,
+        "sha256": "88034ae19f9b8b80944cda3112e99a92ecfa40d6eea7f7451d4e1cab00ef6146"
+      }
+    },
+    {
+      "name": "oversized-mix",
+      "expected": "invalid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--live-json",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/oversized-mix.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_negative_or_bounds\",\n  \"error\": {\n    \"field\": \"remaining_other_mix.C\",\n    \"reason\": \"number_out_of_declared_range\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "c390b48089b735bdaf80614269f7156621c8938270d14e6bb8e15fe3237adfd7",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_negative_or_bounds",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/oversized-mix.json",
+        "bytes": 173,
+        "sha256": "04f16d68316189d99ae52a5c34bded0c9ba23a3cb973d989c8f8160635fb3974"
+      }
+    },
+    {
+      "name": "null-mix-value",
+      "expected": "invalid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--live-json",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/null-mix-value.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"remaining_other_mix.C\",\n    \"reason\": \"finite_number_required; booleans and null are not numbers\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "166d1aec962f5b1779d4ecc7fb939e2fe772b90071089ebc030799ae755235de",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/null-mix-value.json",
+        "bytes": 174,
+        "sha256": "6bfa8d70f00e63a8faadfc84708421775bd07d507bbcae060ad4ca73cece171e"
+      }
+    },
+    {
+      "name": "empty-mix-key",
+      "expected": "invalid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--live-json",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/empty-mix-key.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"remaining_other_mix\",\n    \"reason\": \"nonempty_other_candidate_keys_distinct_from_A_and_B_required\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "e2838807ae50d675ae0e5e3d839e1a1a9501305d6aa51d2e9aea2cbaad04740f",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/empty-mix-key.json",
+        "bytes": 170,
+        "sha256": "3ad7e4c6466f51388de2e3a44e1e3fc8c6516f81324a071302ae507be1f1afbb"
+      }
+    },
+    {
+      "name": "reserved-mix-key",
+      "expected": "invalid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--live-json",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/reserved-mix-key.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"remaining_other_mix\",\n    \"reason\": \"nonempty_other_candidate_keys_distinct_from_A_and_B_required\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "e2838807ae50d675ae0e5e3d839e1a1a9501305d6aa51d2e9aea2cbaad04740f",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/reserved-mix-key.json",
+        "bytes": 171,
+        "sha256": "e3b52f6b1ddf8292e6826eba86a916e0a3ac01f85da362310544b465c7198de3"
+      }
+    },
+    {
+      "name": "reserved-counted-key",
+      "expected": "invalid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--live-json",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/reserved-counted-key.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"counted_other\",\n    \"reason\": \"nonempty_other_candidate_keys_distinct_from_A_and_B_required\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "9be8cac7c7e593fb590d553bccafaad73f0ba16e27bcbe47f175c17a33fdbb10",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/reserved-counted-key.json",
+        "bytes": 171,
+        "sha256": "7bf6f2f0cb44865e9dda73b8c285f46db4fdf307016c130e49ca16190eac7bf6"
+      }
+    },
+    {
+      "name": "blank-counted-key",
+      "expected": "invalid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--live-json",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/blank-counted-key.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"counted_other\",\n    \"reason\": \"nonempty_other_candidate_keys_distinct_from_A_and_B_required\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "9be8cac7c7e593fb590d553bccafaad73f0ba16e27bcbe47f175c17a33fdbb10",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/blank-counted-key.json",
+        "bytes": 171,
+        "sha256": "fac5db9b335e86de73810ee630f8ed24dab35f910485e092d37c897f3d8537de"
+      }
+    },
+    {
+      "name": "bool-counted-other",
+      "expected": "invalid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--live-json",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/bool-counted-other.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"counted_other.C\",\n    \"reason\": \"finite_number_required; booleans and null are not numbers\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "4cd50fb9f730c4d7d21ed9b09e44aea71f9d92b8e50971c6f093d0a1346fc39b",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/bool-counted-other.json",
+        "bytes": 174,
+        "sha256": "b8f84522abcdb291ab882508bb9fb4be96d673aa1b1effe9f63eb79ee22aa542"
+      }
+    },
+    {
+      "name": "text-counted-other",
+      "expected": "invalid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--live-json",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/text-counted-other.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"counted_other.C\",\n    \"reason\": \"finite_number_required; booleans and null are not numbers\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "4cd50fb9f730c4d7d21ed9b09e44aea71f9d92b8e50971c6f093d0a1346fc39b",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/text-counted-other.json",
+        "bytes": 173,
+        "sha256": "c474cce5b2f9b85777904351403b4cd50dec28bdcfee078df32e7aa2822890c3"
+      }
+    },
+    {
+      "name": "null-counted-other-value",
+      "expected": "invalid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--live-json",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/null-counted-other-value.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"counted_other.C\",\n    \"reason\": \"finite_number_required; booleans and null are not numbers\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "4cd50fb9f730c4d7d21ed9b09e44aea71f9d92b8e50971c6f093d0a1346fc39b",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/null-counted-other-value.json",
+        "bytes": 174,
+        "sha256": "0a5adbfe74db597aed4215cff667e593a6f43c13067b5a1a7cbc1a7ef5b14f80"
+      }
+    },
+    {
+      "name": "negative-counted-other",
+      "expected": "invalid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--live-json",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/negative-counted-other.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_negative_or_bounds\",\n  \"error\": {\n    \"field\": \"counted_other.C\",\n    \"reason\": \"number_out_of_declared_range\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "8ed205333e4e58f20dbfa0b16d790e9cfc8f3d1a4c38ef6e749e44471aea0e76",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_negative_or_bounds",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/negative-counted-other.json",
+        "bytes": 172,
+        "sha256": "b282a53ac8692659856a656a9ff746c58dd780ac7be97b0daec33b7397121202"
+      }
+    },
+    {
+      "name": "infinite-counted-other",
+      "expected": "invalid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--live-json",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/infinite-counted-other.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"input.counted_other.C\",\n    \"reason\": \"finite_representable_number_required\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "2ade08106ea164f0b926c3a7ae0b787cade65cba8a9ecc3746b47062dcc01cbd",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/infinite-counted-other.json",
+        "bytes": 178,
+        "sha256": "f63d55bb236a4209da1195b37a8f624f546771b0987053832976f1589eddf597"
+      }
+    },
+    {
+      "name": "nonfinite-participation",
+      "expected": "invalid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--live-json",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/nonfinite-participation.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"input.pair_participation\",\n    \"reason\": \"finite_representable_number_required\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "7f08aaae2aa14efef2e313b4414d8bebe30b63fb237fedd21b976a70a45c6489",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/nonfinite-participation.json",
+        "bytes": 176,
+        "sha256": "2d6c9a06891a069175b44ac5b793273b65984fccda55900aac5e1c476273c29f"
+      }
+    },
+    {
+      "name": "negative-participation",
+      "expected": "invalid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--live-json",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/negative-participation.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_negative_or_bounds\",\n  \"error\": {\n    \"field\": \"pair_participation\",\n    \"reason\": \"number_out_of_declared_range\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "e56ec31c2036adb6c0314ac298302a4d3b8e04c4401f39b37dc3433ee3fcf815",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_negative_or_bounds",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/negative-participation.json",
+        "bytes": 172,
+        "sha256": "3305d3ff2bda6844f88e5a0e0ff377969aefb0ad284ea90fdd4b9b399a4519ea"
+      }
+    },
+    {
+      "name": "bool-preference",
+      "expected": "invalid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--live-json",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/bool-preference.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"remaining_A_pair_share\",\n    \"reason\": \"finite_number_required; booleans and null are not numbers\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "a61a52bef22297b24cc9d356ce613d2837f395bcf7703d8ffc7d133c4e6c14ad",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/bool-preference.json",
+        "bytes": 172,
+        "sha256": "487b041718e2b8522088fd2b37c9bdba590a9b72f6dfbde34d81668d04ee406d"
+      }
+    },
+    {
+      "name": "text-preference",
+      "expected": "invalid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--live-json",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/text-preference.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"remaining_A_pair_share\",\n    \"reason\": \"finite_number_required; booleans and null are not numbers\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "a61a52bef22297b24cc9d356ce613d2837f395bcf7703d8ffc7d133c4e6c14ad",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/text-preference.json",
+        "bytes": 172,
+        "sha256": "84ad0b3aac2db0fb30ad37db9ba2aae698d4485ddef46587b419c8df297d11a5"
+      }
+    },
+    {
+      "name": "infinite-preference",
+      "expected": "invalid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--live-json",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/infinite-preference.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"input.remaining_A_pair_share\",\n    \"reason\": \"finite_representable_number_required\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "ab7d71b02adc66652b1316841c8059eb40370fe2c8729fd42a2f3765caed8ba9",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/infinite-preference.json",
+        "bytes": 176,
+        "sha256": "5bac08b51f346a8072fb46c64d27aa5ba5dd19f0c25415ec8a6553bfd51c8066"
+      }
+    },
+    {
+      "name": "extra-nonfinite-before-unknown",
+      "expected": "invalid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--live-json",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/extra-nonfinite-before-unknown.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"input.metadata.x\",\n    \"reason\": \"finite_representable_number_required\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "d3dec9edd56e7826884d1837062ba8df6bb45a80a842584356fe0943306f79ef",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/extra-nonfinite-before-unknown.json",
+        "bytes": 196,
+        "sha256": "73a265e06ba4a78edb3235f448f142e845708872c43d09061fd37658a4f59da6"
+      }
+    },
+    {
+      "name": "derived-count-overflow",
+      "expected": "invalid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--live-json",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/derived-count-overflow.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_arithmetic\",\n  \"error\": {\n    \"field\": \"final_pair_denominator\",\n    \"reason\": \"derived_value_not_finite_or_representable\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "a0b7546d2f6b25e0fcfaf2d61243dda9c5d3e979e7c7806d9af62e6d3ca55b6e",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_arithmetic",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/derived-count-overflow.json",
+        "bytes": 179,
+        "sha256": "7d1ef6526c1155d1793f6812ec27954486fbd87601d442aab8e7c7c5d365374c"
+      }
+    },
+    {
+      "name": "derived-other-overflow",
+      "expected": "invalid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--live-json",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/derived-other-overflow.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_arithmetic\",\n  \"error\": {\n    \"field\": \"final_all_candidate_denominator\",\n    \"reason\": \"derived_value_not_finite_or_representable\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "fb23ee9d6b1a10ccf77c06bc230e6c4e401cdab2cd63b40bb7cd5444c58c4d1d",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_arithmetic",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/derived-other-overflow.json",
+        "bytes": 189,
+        "sha256": "5187c9bbc5fceb61faea3c80b1ebe5fd122f2afc810287178406defb9599b37b"
+      }
+    },
+    {
+      "name": "derived-tiny-pool",
+      "expected": "invalid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--live-json",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/derived-tiny-pool.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_arithmetic\",\n  \"error\": {\n    \"field\": \"remaining_pair_pool\",\n    \"reason\": \"positive_pool_underflows_representation\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "6542a3c415957279bc9f167f0eec41da54e5562a43324dc5831bdd29ae72f854",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_arithmetic",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/derived-tiny-pool.json",
+        "bytes": 174,
+        "sha256": "fbfdea674ff4aff314504b83d1cd425dbf26b2e10a0a9452b5b48c2c51eb21d5"
+      }
+    },
+    {
+      "name": "unrepresentable-integer",
+      "expected": "invalid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--live-json",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/unrepresentable-integer.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"input.counted_A\",\n    \"reason\": \"finite_representable_number_required\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "c7b9c42f384d5d3e4c1a45167b0632ac99cd45d1cee5579227180f66e2d52d3b",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/unrepresentable-integer.json",
+        "bytes": 570,
+        "sha256": "cf735f7122de753df50ee25ccbfc13525a18e21ac4ec3c704ca6abc7e147a461"
+      }
+    },
+    {
+      "name": "root-null",
+      "expected": "invalid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--live-json",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/root-null.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"input\",\n    \"reason\": \"request_object_required\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "9d4384028e1be21ac37312df1b79526f319f636d04c16825de518d6f4aa06ca3",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/root-null.json",
+        "bytes": 5,
+        "sha256": "38e0b9de817f645c4bec37c0d4a3e58baecccb040f5718dc069a72c7385a0bed"
+      }
+    },
+    {
+      "name": "root-list",
+      "expected": "invalid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--live-json",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/root-list.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"input\",\n    \"reason\": \"request_object_required\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "9d4384028e1be21ac37312df1b79526f319f636d04c16825de518d6f4aa06ca3",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/root-list.json",
+        "bytes": 3,
+        "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+      }
+    },
+    {
+      "name": "root-bool",
+      "expected": "invalid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--live-json",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/root-bool.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"input\",\n    \"reason\": \"request_object_required\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "9d4384028e1be21ac37312df1b79526f319f636d04c16825de518d6f4aa06ca3",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/root-bool.json",
+        "bytes": 5,
+        "sha256": "a17fcf0a2f50e2d495e4f90ce263410edc183add6c62699a2facbccf60410f74"
+      }
+    },
+    {
+      "name": "root-text",
+      "expected": "invalid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--live-json",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/root-text.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"input\",\n    \"reason\": \"request_object_required\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "9d4384028e1be21ac37312df1b79526f319f636d04c16825de518d6f4aa06ca3",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/root-text.json",
+        "bytes": 10,
+        "sha256": "f1532b53537b419ff329f6381e03a66cfef21cca407e610a3cbd19aa3b8dc6b6"
+      }
+    },
+    {
+      "name": "malformed-json",
+      "expected": "invalid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--live-json",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/malformed-json.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"live_json\",\n    \"reason\": \"valid_JSON_request_required\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "49d6de05f837713d04fe81d17c1e086188dbc0899c514ba4f9e6817c22b86a33",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/malformed-json.json",
+        "bytes": 2,
+        "sha256": "a6fb08fda1acb957b6116bd37811a1fe41a01611c0631edbf786d6889a27a55c"
+      }
+    },
+    {
+      "name": "duplicate-candidate-key",
+      "expected": "invalid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--live-json",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/duplicate-candidate-key.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"JSON_object\",\n    \"reason\": \"duplicate_object_key\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "eeaba0ab8d893717a4c3ab5d6b074365fe060008b3badd651784ed309adcbe3f",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/duplicate-candidate-key.json",
+        "bytes": 62,
+        "sha256": "d444d9151f98120fca95963a4b381d992b943a78cfcc7411ba50e620d16f00a0"
+      }
+    },
+    {
+      "name": "uniform-null-target",
+      "expected": "invalid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--target-margin-pp",
+        "null"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"target_margin_pp\",\n    \"reason\": \"numeric_command_argument_required\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "f1fefb9aca8d4b92b4400f50bdcedcc7a16787f9b18a8ffb645e4e6daa495a56",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true
+    },
+    {
+      "name": "uniform-bool-target",
+      "expected": "invalid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--target-margin-pp",
+        "true"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"target_margin_pp\",\n    \"reason\": \"numeric_command_argument_required\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "f1fefb9aca8d4b92b4400f50bdcedcc7a16787f9b18a8ffb645e4e6daa495a56",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true
+    },
+    {
+      "name": "uniform-negative-infinite",
+      "expected": "invalid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--target-margin-pp=-inf"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"target_margin_pp\",\n    \"reason\": \"finite_representable_number_required\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "f594c347476c920c19e73fd9157c013caff58ab417ffef897704a11d43f32f8f",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true
+    },
+    {
+      "name": "uniform-out-of-range",
+      "expected": "invalid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--target-margin-pp",
+        "101"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"target_margin_pp\",\n    \"reason\": \"number_out_of_declared_range\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "a67e0fb22b7cb8f5d8fcaef35273a2b9644a0e20212e5c1e6fed7e85f6489737",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true
+    },
+    {
+      "name": "selected-text-target",
+      "expected": "invalid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--county",
+        "Bernalillo",
+        "--target-margin-pp",
+        "bad"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"target_margin_pp\",\n    \"reason\": \"numeric_command_argument_required\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "f1fefb9aca8d4b92b4400f50bdcedcc7a16787f9b18a8ffb645e4e6daa495a56",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true
+    },
+    {
+      "name": "selected-null-target",
+      "expected": "invalid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--county",
+        "Bernalillo",
+        "--target-margin-pp",
+        "null"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"target_margin_pp\",\n    \"reason\": \"numeric_command_argument_required\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "f1fefb9aca8d4b92b4400f50bdcedcc7a16787f9b18a8ffb645e4e6daa495a56",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true
+    },
+    {
+      "name": "selected-bool-shift",
+      "expected": "invalid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--county",
+        "Bernalillo",
+        "--others-shift-pp",
+        "true"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"others_shift_pp\",\n    \"reason\": \"numeric_command_argument_required\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "ac25abb111f3bcf96fb0255259ddf697122b7a70ab71f666f0a55d7196aa7fa2",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true
+    },
+    {
+      "name": "selected-nan-shift",
+      "expected": "invalid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--county",
+        "Bernalillo",
+        "--others-shift-pp",
+        "nan"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"others_shift_pp\",\n    \"reason\": \"finite_representable_number_required\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "52da79fe39d9133f17b7c1e5185a217228e45b0a78c1116a65d4711140628de5",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true
+    },
+    {
+      "name": "selected-overrange-shift",
+      "expected": "invalid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--county",
+        "Bernalillo",
+        "--others-shift-pp",
+        "101"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"others_shift_pp\",\n    \"reason\": \"number_out_of_declared_range\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "f4ce7ab58719d3ab91c9a1e53e6a92d734da7e88687dacee85e221787d2de6aa",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true
+    },
+    {
+      "name": "selected-blank-county",
+      "expected": "invalid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--county",
+        ""
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"county\",\n    \"reason\": \"unknown_source_county\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "be89171f13c34f46b86fde800c105c97bea573e0df6a55b56a3ae3ade055d1ea",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true
+    },
+    {
+      "name": "incomplete-argv",
+      "expected": "invalid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--county"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"argv\",\n    \"reason\": \"unrecognized_or_incomplete_arguments\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "d78979d4029569871cd9fc7c8df0aaeea303a56cf940a8e474f71b2e1b433790",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true
+    },
+    {
+      "name": "unknown-flag",
+      "expected": "invalid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--bogus"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"argv\",\n    \"reason\": \"unrecognized_or_incomplete_arguments\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "d78979d4029569871cd9fc7c8df0aaeea303a56cf940a8e474f71b2e1b433790",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true
+    },
+    {
+      "name": "positive-ordinary",
+      "expected": "valid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--live-json",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/positive-ordinary.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"calculated\",\n  \"input\": {\n    \"counted_A\": 40,\n    \"counted_B\": 50,\n    \"counted_other\": {\n      \"C\": 5\n    },\n    \"remaining\": 100,\n    \"pair_participation\": 0.8,\n    \"remaining_A_pair_share\": 0.6,\n    \"remaining_other_mix\": {\n      \"C\": 1\n    }\n  },\n  \"clipped_preference\": false,\n  \"used_remaining_A_pair_share\": 0.6,\n  \"remaining_pair_pool\": 80.0,\n  \"fixed_counted_votes\": {\n    \"A\": 40,\n    \"B\": 50,\n    \"other\": {\n      \"C\": 5\n    }\n  },\n  \"final\": {\n    \"A\": 88.0,\n    \"B\": 82.0,\n    \"other\": {\n      \"C\": 25.0\n    },\n    \"pair_denominator\": 170.0,\n    \"all_candidate_denominator\": 195.0,\n    \"pair_net\": 6.0,\n    \"pair_margin_pp\": 3.5294117647058822,\n    \"all_candidate_margin_pp\": 3.076923076923077,\n    \"plurality_leaders\": [\n      \"A\"\n    ],\n    \"A_outright_plurality\": true\n  },\n  \"pair_target\": {\n    \"required_share_unbounded\": 0.5625,\n    \"feasible_share\": 0.5625,\n    \"status\": \"feasible\"\n  },\n  \"legal_plurality_tie_boundary_remaining_A_pair_share_unbounded\": 0.5625,\n  \"interpretation\": \"Strictly exceed all opponents for an outright plurality; equality is a tie. Pair cushion is illustrative.\"\n}\n",
+      "stdout_sha256": "12690365b500272e30c5c44c789853b5213b27d635b68a5564f6edcb620d54fb",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "calculated",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/positive-ordinary.json",
+        "bytes": 171,
+        "sha256": "b36f4fe417a768bf01e37bb5fa2388b345cee1625a2c3baf23ed8001b9725f9f"
+      }
+    },
+    {
+      "name": "positive-unknown_remaining",
+      "expected": "valid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--live-json",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/positive-unknown_remaining.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"unknown\",\n  \"input\": {\n    \"counted_A\": 40,\n    \"counted_B\": 50,\n    \"counted_other\": {\n      \"C\": 5\n    },\n    \"remaining\": null,\n    \"pair_participation\": 0.8,\n    \"remaining_A_pair_share\": 0.6,\n    \"remaining_other_mix\": {\n      \"C\": 1\n    }\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "91800050ad66abc92198f36b7718e8f3ad5df6e2841b6611d0e2f32b7877e218",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "unknown",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/positive-unknown_remaining.json",
+        "bytes": 172,
+        "sha256": "99462e7068617a61822e984b207f30a6d8b93b1486dd3009052550743af3d2f8"
+      }
+    },
+    {
+      "name": "positive-unknown_preference",
+      "expected": "valid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--live-json",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/positive-unknown_preference.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"unknown\",\n  \"input\": {\n    \"counted_A\": 40,\n    \"counted_B\": 50,\n    \"counted_other\": {\n      \"C\": 5\n    },\n    \"remaining\": 100,\n    \"pair_participation\": 0.8,\n    \"remaining_A_pair_share\": null,\n    \"remaining_other_mix\": {\n      \"C\": 1\n    }\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "402cc080f5931d45d10069b2fc626b49b4e6224b668e7688ebb01364a63ba3e8",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "unknown",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/positive-unknown_preference.json",
+        "bytes": 172,
+        "sha256": "a1d4bde22ef5b959d46aefb47cb7b857d45cad9f6c9921d0743def8a3203f1b2"
+      }
+    },
+    {
+      "name": "positive-no_pool",
+      "expected": "valid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--live-json",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/positive-no_pool.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"calculated\",\n  \"input\": {\n    \"counted_A\": 40,\n    \"counted_B\": 50,\n    \"counted_other\": {\n      \"C\": 5\n    },\n    \"remaining\": 0,\n    \"pair_participation\": 0.8,\n    \"remaining_A_pair_share\": 0.6,\n    \"remaining_other_mix\": {\n      \"C\": 1\n    }\n  },\n  \"clipped_preference\": false,\n  \"used_remaining_A_pair_share\": null,\n  \"remaining_pair_pool\": 0.0,\n  \"fixed_counted_votes\": {\n    \"A\": 40,\n    \"B\": 50,\n    \"other\": {\n      \"C\": 5\n    }\n  },\n  \"final\": {\n    \"A\": 40.0,\n    \"B\": 50.0,\n    \"other\": {\n      \"C\": 5.0\n    },\n    \"pair_denominator\": 90.0,\n    \"all_candidate_denominator\": 95.0,\n    \"pair_net\": -10.0,\n    \"pair_margin_pp\": -11.11111111111111,\n    \"all_candidate_margin_pp\": -10.526315789473685,\n    \"plurality_leaders\": [\n      \"B\"\n    ],\n    \"A_outright_plurality\": false\n  },\n  \"pair_target\": {\n    \"required_share_unbounded\": null,\n    \"feasible_share\": null,\n    \"status\": \"no_positive_pool\",\n    \"net_minus_target\": -10.0\n  },\n  \"legal_plurality_tie_boundary_remaining_A_pair_share_unbounded\": null,\n  \"interpretation\": \"Strictly exceed all opponents for an outright plurality; equality is a tie. Pair cushion is illustrative.\"\n}\n",
+      "stdout_sha256": "a5b28b26e6bad61068d88f7cd8dd9b53ee216f481cf764ff39ac64da96c73c99",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "calculated",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/positive-no_pool.json",
+        "bytes": 169,
+        "sha256": "b3def6b44fdde9a2e08daf4ab45456d4272182f22730c09003c3508901396ced"
+      }
+    },
+    {
+      "name": "positive-secured",
+      "expected": "valid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--live-json",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/positive-secured.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"calculated\",\n  \"input\": {\n    \"counted_A\": 200,\n    \"counted_B\": 50,\n    \"counted_other\": {\n      \"C\": 5\n    },\n    \"remaining\": 100,\n    \"pair_participation\": 0.8,\n    \"remaining_A_pair_share\": 0.6,\n    \"remaining_other_mix\": {\n      \"C\": 1\n    }\n  },\n  \"clipped_preference\": false,\n  \"used_remaining_A_pair_share\": 0.6,\n  \"remaining_pair_pool\": 80.0,\n  \"fixed_counted_votes\": {\n    \"A\": 200,\n    \"B\": 50,\n    \"other\": {\n      \"C\": 5\n    }\n  },\n  \"final\": {\n    \"A\": 248.0,\n    \"B\": 82.0,\n    \"other\": {\n      \"C\": 25.0\n    },\n    \"pair_denominator\": 330.0,\n    \"all_candidate_denominator\": 355.0,\n    \"pair_net\": 166.0,\n    \"pair_margin_pp\": 50.303030303030305,\n    \"all_candidate_margin_pp\": 46.76056338028169,\n    \"plurality_leaders\": [\n      \"A\"\n    ],\n    \"A_outright_plurality\": true\n  },\n  \"pair_target\": {\n    \"required_share_unbounded\": -0.4375,\n    \"feasible_share\": 0.0,\n    \"status\": \"already_secured\"\n  },\n  \"legal_plurality_tie_boundary_remaining_A_pair_share_unbounded\": -0.4375,\n  \"interpretation\": \"Strictly exceed all opponents for an outright plurality; equality is a tie. Pair cushion is illustrative.\"\n}\n",
+      "stdout_sha256": "e17cf134631462f3ab28b0ff3e8efd08ea480952ab3b270b85ccdf08200333c9",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "calculated",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/positive-secured.json",
+        "bytes": 172,
+        "sha256": "fa307915ea4cb7e2b7acaa4643ed5a9f6251f737d85f0c9ee25fc52cf5a1876a"
+      }
+    },
+    {
+      "name": "positive-impossible",
+      "expected": "valid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--live-json",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/positive-impossible.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"calculated\",\n  \"input\": {\n    \"counted_A\": 40,\n    \"counted_B\": 300,\n    \"counted_other\": {\n      \"C\": 5\n    },\n    \"remaining\": 100,\n    \"pair_participation\": 0.8,\n    \"remaining_A_pair_share\": 0.6,\n    \"remaining_other_mix\": {\n      \"C\": 1\n    }\n  },\n  \"clipped_preference\": false,\n  \"used_remaining_A_pair_share\": 0.6,\n  \"remaining_pair_pool\": 80.0,\n  \"fixed_counted_votes\": {\n    \"A\": 40,\n    \"B\": 300,\n    \"other\": {\n      \"C\": 5\n    }\n  },\n  \"final\": {\n    \"A\": 88.0,\n    \"B\": 332.0,\n    \"other\": {\n      \"C\": 25.0\n    },\n    \"pair_denominator\": 420.0,\n    \"all_candidate_denominator\": 445.0,\n    \"pair_net\": -244.0,\n    \"pair_margin_pp\": -58.095238095238095,\n    \"all_candidate_margin_pp\": -54.831460674157306,\n    \"plurality_leaders\": [\n      \"B\"\n    ],\n    \"A_outright_plurality\": false\n  },\n  \"pair_target\": {\n    \"required_share_unbounded\": 2.125,\n    \"feasible_share\": null,\n    \"status\": \"impossible\"\n  },\n  \"legal_plurality_tie_boundary_remaining_A_pair_share_unbounded\": 2.125,\n  \"interpretation\": \"Strictly exceed all opponents for an outright plurality; equality is a tie. Pair cushion is illustrative.\"\n}\n",
+      "stdout_sha256": "d2db357a618b408a8b4d74b3fc7362e391cbce90e066f57af4fe86cf90bb0137",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "calculated",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/positive-impossible.json",
+        "bytes": 172,
+        "sha256": "87e5a5ead7e5635503c02acb92651c8f91b656f0c2ab957c9796a2a59150d33f"
+      }
+    },
+    {
+      "name": "positive-clip_high",
+      "expected": "valid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--live-json",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/positive-clip_high.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"calculated\",\n  \"input\": {\n    \"counted_A\": 40,\n    \"counted_B\": 50,\n    \"counted_other\": {\n      \"C\": 5\n    },\n    \"remaining\": 100,\n    \"pair_participation\": 0.8,\n    \"remaining_A_pair_share\": 1.2,\n    \"remaining_other_mix\": {\n      \"C\": 1\n    }\n  },\n  \"clipped_preference\": true,\n  \"used_remaining_A_pair_share\": 1.0,\n  \"remaining_pair_pool\": 80.0,\n  \"fixed_counted_votes\": {\n    \"A\": 40,\n    \"B\": 50,\n    \"other\": {\n      \"C\": 5\n    }\n  },\n  \"final\": {\n    \"A\": 120.0,\n    \"B\": 50.0,\n    \"other\": {\n      \"C\": 25.0\n    },\n    \"pair_denominator\": 170.0,\n    \"all_candidate_denominator\": 195.0,\n    \"pair_net\": 70.0,\n    \"pair_margin_pp\": 41.1764705882353,\n    \"all_candidate_margin_pp\": 35.8974358974359,\n    \"plurality_leaders\": [\n      \"A\"\n    ],\n    \"A_outright_plurality\": true\n  },\n  \"pair_target\": {\n    \"required_share_unbounded\": 0.5625,\n    \"feasible_share\": 0.5625,\n    \"status\": \"feasible\"\n  },\n  \"legal_plurality_tie_boundary_remaining_A_pair_share_unbounded\": 0.5625,\n  \"interpretation\": \"Strictly exceed all opponents for an outright plurality; equality is a tie. Pair cushion is illustrative.\"\n}\n",
+      "stdout_sha256": "2546c3027ef6b4daaf6ab6464dc29628b98dd95aee5ee49aa9cb6994b5fee823",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "calculated",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/positive-clip_high.json",
+        "bytes": 171,
+        "sha256": "93464c507fcff0c390b32ade4c4059e4e02b98ee5fc437e1dc92f4b91f08f4f9"
+      }
+    },
+    {
+      "name": "positive-clip_low",
+      "expected": "valid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--live-json",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/positive-clip_low.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"calculated\",\n  \"input\": {\n    \"counted_A\": 40,\n    \"counted_B\": 50,\n    \"counted_other\": {\n      \"C\": 5\n    },\n    \"remaining\": 100,\n    \"pair_participation\": 0.8,\n    \"remaining_A_pair_share\": -0.3,\n    \"remaining_other_mix\": {\n      \"C\": 1\n    }\n  },\n  \"clipped_preference\": true,\n  \"used_remaining_A_pair_share\": 0.0,\n  \"remaining_pair_pool\": 80.0,\n  \"fixed_counted_votes\": {\n    \"A\": 40,\n    \"B\": 50,\n    \"other\": {\n      \"C\": 5\n    }\n  },\n  \"final\": {\n    \"A\": 40.0,\n    \"B\": 130.0,\n    \"other\": {\n      \"C\": 25.0\n    },\n    \"pair_denominator\": 170.0,\n    \"all_candidate_denominator\": 195.0,\n    \"pair_net\": -90.0,\n    \"pair_margin_pp\": -52.94117647058823,\n    \"all_candidate_margin_pp\": -46.15384615384615,\n    \"plurality_leaders\": [\n      \"B\"\n    ],\n    \"A_outright_plurality\": false\n  },\n  \"pair_target\": {\n    \"required_share_unbounded\": 0.5625,\n    \"feasible_share\": 0.5625,\n    \"status\": \"feasible\"\n  },\n  \"legal_plurality_tie_boundary_remaining_A_pair_share_unbounded\": 0.5625,\n  \"interpretation\": \"Strictly exceed all opponents for an outright plurality; equality is a tie. Pair cushion is illustrative.\"\n}\n",
+      "stdout_sha256": "ec51763f15e54cd8d73b3e34affa527264510a352d0518d17f754fe13f02a9a7",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "calculated",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/positive-clip_low.json",
+        "bytes": 172,
+        "sha256": "431451fb046732c2982e3a8f40798a5a389c77f548ab937215c4aa689e15e6e0"
+      }
+    },
+    {
+      "name": "positive-no_pair_pool",
+      "expected": "valid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--live-json",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/positive-no_pair_pool.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"calculated\",\n  \"input\": {\n    \"counted_A\": 40,\n    \"counted_B\": 50,\n    \"counted_other\": {\n      \"C\": 5\n    },\n    \"remaining\": 100,\n    \"pair_participation\": 0,\n    \"remaining_A_pair_share\": 0.6,\n    \"remaining_other_mix\": {\n      \"C\": 1\n    }\n  },\n  \"clipped_preference\": false,\n  \"used_remaining_A_pair_share\": null,\n  \"remaining_pair_pool\": 0,\n  \"fixed_counted_votes\": {\n    \"A\": 40,\n    \"B\": 50,\n    \"other\": {\n      \"C\": 5\n    }\n  },\n  \"final\": {\n    \"A\": 40.0,\n    \"B\": 50.0,\n    \"other\": {\n      \"C\": 105\n    },\n    \"pair_denominator\": 90,\n    \"all_candidate_denominator\": 195,\n    \"pair_net\": -10.0,\n    \"pair_margin_pp\": -11.11111111111111,\n    \"all_candidate_margin_pp\": -5.128205128205129,\n    \"plurality_leaders\": [\n      \"C\"\n    ],\n    \"A_outright_plurality\": false\n  },\n  \"pair_target\": {\n    \"required_share_unbounded\": null,\n    \"feasible_share\": null,\n    \"status\": \"no_positive_pool\",\n    \"net_minus_target\": -10\n  },\n  \"legal_plurality_tie_boundary_remaining_A_pair_share_unbounded\": null,\n  \"interpretation\": \"Strictly exceed all opponents for an outright plurality; equality is a tie. Pair cushion is illustrative.\"\n}\n",
+      "stdout_sha256": "6f54cfca6b7918719715dad30d9781caa2611ead774979abd5855ac007dda2e3",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "calculated",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/positive-no_pair_pool.json",
+        "bytes": 169,
+        "sha256": "290b55b0b242f1f08f8531b653e4a8a44c165868408b1a6515ee1bc289785dd0"
+      }
+    },
+    {
+      "name": "positive-unknown_other_mix",
+      "expected": "valid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--live-json",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/positive-unknown_other_mix.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"unknown_other_mix\",\n  \"input\": {\n    \"counted_A\": 40,\n    \"counted_B\": 50,\n    \"counted_other\": {\n      \"C\": 5\n    },\n    \"remaining\": 100,\n    \"pair_participation\": 0.8,\n    \"remaining_A_pair_share\": 0.6,\n    \"remaining_other_mix\": {}\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "46b50f8f397a6422f5141e66bf897ee53d2263dcb01d68b813ea7c8f5f7288a6",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "unknown_other_mix",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/positive-unknown_other_mix.json",
+        "bytes": 165,
+        "sha256": "79caaab0d0e175a27a988388d7182be2b89598f7ccb53e9ec9a366665f1f9494"
+      }
+    },
+    {
+      "name": "positive-other_candidate_wins",
+      "expected": "valid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--live-json",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/positive-other_candidate_wins.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"calculated\",\n  \"input\": {\n    \"counted_A\": 40,\n    \"counted_B\": 50,\n    \"counted_other\": {\n      \"C\": 300\n    },\n    \"remaining\": 100,\n    \"pair_participation\": 0.8,\n    \"remaining_A_pair_share\": 0.6,\n    \"remaining_other_mix\": {\n      \"C\": 1\n    }\n  },\n  \"clipped_preference\": false,\n  \"used_remaining_A_pair_share\": 0.6,\n  \"remaining_pair_pool\": 80.0,\n  \"fixed_counted_votes\": {\n    \"A\": 40,\n    \"B\": 50,\n    \"other\": {\n      \"C\": 300\n    }\n  },\n  \"final\": {\n    \"A\": 88.0,\n    \"B\": 82.0,\n    \"other\": {\n      \"C\": 320.0\n    },\n    \"pair_denominator\": 170.0,\n    \"all_candidate_denominator\": 490.0,\n    \"pair_net\": 6.0,\n    \"pair_margin_pp\": 3.5294117647058822,\n    \"all_candidate_margin_pp\": 1.2244897959183674,\n    \"plurality_leaders\": [\n      \"C\"\n    ],\n    \"A_outright_plurality\": false\n  },\n  \"pair_target\": {\n    \"required_share_unbounded\": 0.5625,\n    \"feasible_share\": 0.5625,\n    \"status\": \"feasible\"\n  },\n  \"legal_plurality_tie_boundary_remaining_A_pair_share_unbounded\": 3.5,\n  \"interpretation\": \"Strictly exceed all opponents for an outright plurality; equality is a tie. Pair cushion is illustrative.\"\n}\n",
+      "stdout_sha256": "ec4bba8c26c6ad9ea05882e6a7051a56d3be3cfc928924971b84de3943d04bd8",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "calculated",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/positive-other_candidate_wins.json",
+        "bytes": 173,
+        "sha256": "618a80d4196abf801a98f896abb3ca420d2a8fcfb469657dd854c6642ab261a0"
+      }
+    },
+    {
+      "name": "positive-Aplus1_final_denominator",
+      "expected": "valid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--live-json",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/positive-Aplus1_final_denominator.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"calculated\",\n  \"input\": {\n    \"counted_A\": 40,\n    \"counted_B\": 50,\n    \"counted_other\": {\n      \"C\": 5\n    },\n    \"remaining\": 100,\n    \"pair_participation\": 0.8,\n    \"remaining_A_pair_share\": 0.6,\n    \"remaining_other_mix\": {\n      \"C\": 1\n    },\n    \"target_pair_margin\": 0.01\n  },\n  \"clipped_preference\": false,\n  \"used_remaining_A_pair_share\": 0.6,\n  \"remaining_pair_pool\": 80.0,\n  \"fixed_counted_votes\": {\n    \"A\": 40,\n    \"B\": 50,\n    \"other\": {\n      \"C\": 5\n    }\n  },\n  \"final\": {\n    \"A\": 88.0,\n    \"B\": 82.0,\n    \"other\": {\n      \"C\": 25.0\n    },\n    \"pair_denominator\": 170.0,\n    \"all_candidate_denominator\": 195.0,\n    \"pair_net\": 6.0,\n    \"pair_margin_pp\": 3.5294117647058822,\n    \"all_candidate_margin_pp\": 3.076923076923077,\n    \"plurality_leaders\": [\n      \"A\"\n    ],\n    \"A_outright_plurality\": true\n  },\n  \"pair_target\": {\n    \"required_share_unbounded\": 0.573125,\n    \"feasible_share\": 0.573125,\n    \"status\": \"feasible\"\n  },\n  \"legal_plurality_tie_boundary_remaining_A_pair_share_unbounded\": 0.5625,\n  \"interpretation\": \"Strictly exceed all opponents for an outright plurality; equality is a tie. Pair cushion is illustrative.\"\n}\n",
+      "stdout_sha256": "1548e75aa0e59274a0f63f8aaeb4180228ffb48d7d82e0a4571a9cd59ad566b7",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "calculated",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/positive-Aplus1_final_denominator.json",
+        "bytes": 199,
+        "sha256": "ddaa905a31193a7995bb57665d5fe7e05cd926d8e272a2d38af56188d55fbbb5"
+      }
+    },
+    {
+      "name": "positive-unknown-participation",
+      "expected": "valid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--live-json",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/positive-unknown-participation.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"unknown\",\n  \"input\": {\n    \"counted_A\": 40,\n    \"counted_B\": 50,\n    \"counted_other\": {\n      \"C\": 5\n    },\n    \"remaining\": 100,\n    \"pair_participation\": null,\n    \"remaining_A_pair_share\": 0.6,\n    \"remaining_other_mix\": {\n      \"C\": 1\n    }\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "8e2d3f4e6b9169e9053874ab67c2dc057c9041ddb161f983d515e1277871facf",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "unknown",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/positive-unknown-participation.json",
+        "bytes": 172,
+        "sha256": "857155012c52d2840c00c88dbf9cbbd974791d3f8d9f21c1015cb0032906e147"
+      }
+    },
+    {
+      "name": "positive-no-pool-unknown-preference",
+      "expected": "valid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--live-json",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/positive-no-pool-unknown-preference.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"calculated\",\n  \"input\": {\n    \"counted_A\": 40,\n    \"counted_B\": 50,\n    \"counted_other\": {\n      \"C\": 5\n    },\n    \"remaining\": 0,\n    \"pair_participation\": null,\n    \"remaining_A_pair_share\": null,\n    \"remaining_other_mix\": {\n      \"C\": 1\n    }\n  },\n  \"clipped_preference\": false,\n  \"used_remaining_A_pair_share\": null,\n  \"remaining_pair_pool\": 0,\n  \"fixed_counted_votes\": {\n    \"A\": 40,\n    \"B\": 50,\n    \"other\": {\n      \"C\": 5\n    }\n  },\n  \"final\": {\n    \"A\": 40.0,\n    \"B\": 50.0,\n    \"other\": {\n      \"C\": 5\n    },\n    \"pair_denominator\": 90,\n    \"all_candidate_denominator\": 95,\n    \"pair_net\": -10.0,\n    \"pair_margin_pp\": -11.11111111111111,\n    \"all_candidate_margin_pp\": -10.526315789473685,\n    \"plurality_leaders\": [\n      \"B\"\n    ],\n    \"A_outright_plurality\": false\n  },\n  \"pair_target\": {\n    \"required_share_unbounded\": null,\n    \"feasible_share\": null,\n    \"status\": \"no_positive_pool\",\n    \"net_minus_target\": -10\n  },\n  \"legal_plurality_tie_boundary_remaining_A_pair_share_unbounded\": null,\n  \"interpretation\": \"Strictly exceed all opponents for an outright plurality; equality is a tie. Pair cushion is illustrative.\"\n}\n",
+      "stdout_sha256": "400b2adc3762fc4a7b23fee91c18e094d47840d9f7dc4b010adadff8df0e5adc",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "calculated",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/positive-no-pool-unknown-preference.json",
+        "bytes": 171,
+        "sha256": "b1eeba1ca0a9e5c555a08a905973e8001e618f40a7bdcd6297147ca861ffa05f"
+      }
+    },
+    {
+      "name": "positive-fully-zero",
+      "expected": "valid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--live-json",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/positive-fully-zero.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"calculated\",\n  \"input\": {\n    \"counted_A\": 0,\n    \"counted_B\": 0,\n    \"counted_other\": {},\n    \"remaining\": 0,\n    \"pair_participation\": 0.8,\n    \"remaining_A_pair_share\": 0.6,\n    \"remaining_other_mix\": {\n      \"C\": 1\n    }\n  },\n  \"clipped_preference\": false,\n  \"used_remaining_A_pair_share\": null,\n  \"remaining_pair_pool\": 0.0,\n  \"fixed_counted_votes\": {\n    \"A\": 0,\n    \"B\": 0,\n    \"other\": {}\n  },\n  \"final\": {\n    \"A\": 0.0,\n    \"B\": 0.0,\n    \"other\": {\n      \"C\": 0.0\n    },\n    \"pair_denominator\": 0.0,\n    \"all_candidate_denominator\": 0.0,\n    \"pair_net\": 0.0,\n    \"pair_margin_pp\": null,\n    \"all_candidate_margin_pp\": null,\n    \"plurality_leaders\": [\n      \"A\",\n      \"B\",\n      \"C\"\n    ],\n    \"A_outright_plurality\": false\n  },\n  \"pair_target\": {\n    \"required_share_unbounded\": null,\n    \"feasible_share\": null,\n    \"status\": \"no_positive_pool\",\n    \"net_minus_target\": 0.0\n  },\n  \"legal_plurality_tie_boundary_remaining_A_pair_share_unbounded\": null,\n  \"interpretation\": \"Strictly exceed all opponents for an outright plurality; equality is a tie. Pair cushion is illustrative.\"\n}\n",
+      "stdout_sha256": "00869c572b9deb62c2a061503c4b242d2341261f909ef0b54312c0c8f5b656d5",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "calculated",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/positive-fully-zero.json",
+        "bytes": 161,
+        "sha256": "ae3b96cd0d2c272353047b64664626e56005c8ad6880c6807b8a1f9d688b238d"
+      }
+    },
+    {
+      "name": "positive-two-named-opponents",
+      "expected": "valid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--live-json",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/positive-two-named-opponents.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"calculated\",\n  \"input\": {\n    \"counted_A\": 40,\n    \"counted_B\": 50,\n    \"counted_other\": {\n      \"C\": 5,\n      \"D\": 3\n    },\n    \"remaining\": 100,\n    \"pair_participation\": 0.8,\n    \"remaining_A_pair_share\": 0.6,\n    \"remaining_other_mix\": {\n      \"C\": 0.25,\n      \"D\": 0.75\n    }\n  },\n  \"clipped_preference\": false,\n  \"used_remaining_A_pair_share\": 0.6,\n  \"remaining_pair_pool\": 80.0,\n  \"fixed_counted_votes\": {\n    \"A\": 40,\n    \"B\": 50,\n    \"other\": {\n      \"C\": 5,\n      \"D\": 3\n    }\n  },\n  \"final\": {\n    \"A\": 88.0,\n    \"B\": 82.0,\n    \"other\": {\n      \"C\": 10.0,\n      \"D\": 18.0\n    },\n    \"pair_denominator\": 170.0,\n    \"all_candidate_denominator\": 198.0,\n    \"pair_net\": 6.0,\n    \"pair_margin_pp\": 3.5294117647058822,\n    \"all_candidate_margin_pp\": 3.0303030303030303,\n    \"plurality_leaders\": [\n      \"A\"\n    ],\n    \"A_outright_plurality\": true\n  },\n  \"pair_target\": {\n    \"required_share_unbounded\": 0.5625,\n    \"feasible_share\": 0.5625,\n    \"status\": \"feasible\"\n  },\n  \"legal_plurality_tie_boundary_remaining_A_pair_share_unbounded\": 0.5625,\n  \"interpretation\": \"Strictly exceed all opponents for an outright plurality; equality is a tie. Pair cushion is illustrative.\"\n}\n",
+      "stdout_sha256": "dfb444d80dd943a6a62ee2a11b2ccf02e3ff2c8e3c387943dddacb173b8c9a41",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "calculated",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/positive-two-named-opponents.json",
+        "bytes": 193,
+        "sha256": "c911e27aafb463eef3096dac107a3e9e17cc91af1d8838d3764fc57b1530bc5e"
+      }
+    },
+    {
+      "name": "valid-uniform",
+      "expected": "valid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"feasible\",\n  \"volume\": 903311.0,\n  \"baseline_net\": 91354.99999999997,\n  \"baseline_margin_pp\": 10.113349665840444,\n  \"baseline_already_A_winning\": true,\n  \"unbounded_shift\": -0.050566748329202216,\n  \"unbounded_shift_pp\": -5.056674832920222,\n  \"shift\": -0.050566748329202216,\n  \"shift_pp\": -5.056674832920222,\n  \"target_margin_pp\": 0.0,\n  \"target_net\": 0.0,\n  \"net_gain\": -91354.99999999997,\n  \"clipped_units\": 0,\n  \"solved_net\": -4.18367562815547e-11\n}\n",
+      "stdout_sha256": "442cd8fd491e99313fb61205074091619f5ca93e91e3732ae1b9de434750e514",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "feasible",
+      "passed": true
+    },
+    {
+      "name": "valid-uniform-cushion",
+      "expected": "valid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--target-margin-pp",
+        "1"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"feasible\",\n  \"volume\": 903311.0,\n  \"baseline_net\": 91354.99999999997,\n  \"baseline_margin_pp\": 10.113349665840444,\n  \"baseline_already_A_winning\": true,\n  \"unbounded_shift\": -0.04556674832920222,\n  \"unbounded_shift_pp\": -4.556674832920222,\n  \"shift\": -0.04556674832920221,\n  \"shift_pp\": -4.556674832920221,\n  \"target_margin_pp\": 1.0,\n  \"target_net\": 9033.11,\n  \"net_gain\": -82321.88999999997,\n  \"clipped_units\": 0,\n  \"solved_net\": 9033.110000000052\n}\n",
+      "stdout_sha256": "2e0fe157c6a65788b3aa63c4c3a729e7a863f6a433046772b2801094a2998e83",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "feasible",
+      "passed": true
+    },
+    {
+      "name": "valid-selected",
+      "expected": "valid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--county",
+        "Bernalillo"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"required_share_unbounded\": 0.4642857142857143,\n  \"feasible_share\": 0.4642857142857143,\n  \"status\": \"feasible\",\n  \"county\": \"Bernalillo\",\n  \"others_shift_pp\": 0.0,\n  \"pair_total\": 903311.0,\n  \"target_margin_pp\": 0.0\n}\n",
+      "stdout_sha256": "ea7e59dd899c53f9bf6c84a828d113bbd6e9288460f4e6b92b4924aa256bf80e",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "feasible",
+      "passed": true
+    },
+    {
+      "name": "valid-selected-impossible",
+      "expected": "valid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--county",
+        "Catron",
+        "--others-shift-pp",
+        "-100"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"required_share_unbounded\": 197.14338716717592,\n  \"feasible_share\": null,\n  \"status\": \"impossible\",\n  \"county\": \"Catron\",\n  \"others_shift_pp\": -100.0,\n  \"pair_total\": 903311.0,\n  \"target_margin_pp\": 0.0\n}\n",
+      "stdout_sha256": "29b3573532f5c6c91fc934fda253c70fd4b78df787111364da1d7927581770cf",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "impossible",
+      "passed": true
+    },
+    {
+      "name": "valid-selected-secured",
+      "expected": "valid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--county",
+        "Catron",
+        "--others-shift-pp",
+        "100"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"required_share_unbounded\": -196.14338716717592,\n  \"feasible_share\": 0.0,\n  \"status\": \"already_secured\",\n  \"county\": \"Catron\",\n  \"others_shift_pp\": 100.0,\n  \"pair_total\": 903311.0,\n  \"target_margin_pp\": 0.0\n}\n",
+      "stdout_sha256": "0c9498aefe9d78a80849b2a52bae9efe42cca366ea97ed2fb46a6abc12830bc9",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "already_secured",
+      "passed": true
+    },
+    {
+      "name": "valid-selected-boundary",
+      "expected": "valid",
+      "argv": [
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/calculator.py",
+        "--county",
+        "Bernalillo",
+        "--target-margin-pp",
+        "-100"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"required_share_unbounded\": -1.0178251481600589,\n  \"feasible_share\": 0.0,\n  \"status\": \"already_secured\",\n  \"county\": \"Bernalillo\",\n  \"others_shift_pp\": 0.0,\n  \"pair_total\": 903311.0,\n  \"target_margin_pp\": -100.0\n}\n",
+      "stdout_sha256": "6fa37e227ba5b771a9b593fbae4bc28b8b2436cc02d7c17d9814e41d9667bc1f",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "already_secured",
+      "passed": true
+    },
+    {
+      "name": "uniform-bool-margin",
+      "expected": "invalid",
+      "argv": [
+        "-c",
+        "import sys,json;sys.path.insert(0,sys.argv[1]);import calculator;c=json.load(open(sys.argv[2]));print(json.dumps(getattr(calculator,c['function'])(*c['args']),allow_nan=False,indent=2))",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/uniform-bool-margin.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"margin\",\n    \"reason\": \"finite_number_required; booleans and null are not numbers\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "7d12e40167b0799ae8b64907f81efa4e8a47ed6540fd0d252f283f0d6844fc9f",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/uniform-bool-margin.json",
+        "bytes": 72,
+        "sha256": "c66eb756c538cf513458bfd1e3f52ad7a3806769573f606f61d900687bb60f6d"
+      }
+    },
+    {
+      "name": "uniform-null-margin",
+      "expected": "invalid",
+      "argv": [
+        "-c",
+        "import sys,json;sys.path.insert(0,sys.argv[1]);import calculator;c=json.load(open(sys.argv[2]));print(json.dumps(getattr(calculator,c['function'])(*c['args']),allow_nan=False,indent=2))",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/uniform-null-margin.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"margin\",\n    \"reason\": \"finite_number_required; booleans and null are not numbers\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "7d12e40167b0799ae8b64907f81efa4e8a47ed6540fd0d252f283f0d6844fc9f",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/uniform-null-margin.json",
+        "bytes": 72,
+        "sha256": "50d729550a48eb502d094326d523dd6dcb95916c2e1b8d40c7e333bc5b6477ef"
+      }
+    },
+    {
+      "name": "uniform-text-margin",
+      "expected": "invalid",
+      "argv": [
+        "-c",
+        "import sys,json;sys.path.insert(0,sys.argv[1]);import calculator;c=json.load(open(sys.argv[2]));print(json.dumps(getattr(calculator,c['function'])(*c['args']),allow_nan=False,indent=2))",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/uniform-text-margin.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"margin\",\n    \"reason\": \"finite_number_required; booleans and null are not numbers\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "7d12e40167b0799ae8b64907f81efa4e8a47ed6540fd0d252f283f0d6844fc9f",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/uniform-text-margin.json",
+        "bytes": 71,
+        "sha256": "167a9e251752d423811785bda653c84e38cd09bac12111e255bc5df46faef5f5"
+      }
+    },
+    {
+      "name": "uniform-infinite-margin",
+      "expected": "invalid",
+      "argv": [
+        "-c",
+        "import sys,json;sys.path.insert(0,sys.argv[1]);import calculator;c=json.load(open(sys.argv[2]));print(json.dumps(getattr(calculator,c['function'])(*c['args']),allow_nan=False,indent=2))",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/uniform-infinite-margin.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"margin\",\n    \"reason\": \"finite_representable_number_required\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "5c83b281067c845889425b38aaaebe57709faadd5385472e37591effd24cc1ef",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/uniform-infinite-margin.json",
+        "bytes": 76,
+        "sha256": "9a7b3cc407589a731c04ccbb53b356a35207bd281e9fa52a85fe086c7a6bda70"
+      }
+    },
+    {
+      "name": "uniform-nan-margin",
+      "expected": "invalid",
+      "argv": [
+        "-c",
+        "import sys,json;sys.path.insert(0,sys.argv[1]);import calculator;c=json.load(open(sys.argv[2]));print(json.dumps(getattr(calculator,c['function'])(*c['args']),allow_nan=False,indent=2))",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/uniform-nan-margin.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"margin\",\n    \"reason\": \"finite_representable_number_required\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "5c83b281067c845889425b38aaaebe57709faadd5385472e37591effd24cc1ef",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/uniform-nan-margin.json",
+        "bytes": 71,
+        "sha256": "ad7f95a62899f6602dc74e6997ce0cedeb09c369839ba54f7499cdc1910dc092"
+      }
+    },
+    {
+      "name": "uniform-not-list",
+      "expected": "invalid",
+      "argv": [
+        "-c",
+        "import sys,json;sys.path.insert(0,sys.argv[1]);import calculator;c=json.load(open(sys.argv[2]));print(json.dumps(getattr(calculator,c['function'])(*c['args']),allow_nan=False,indent=2))",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/uniform-not-list.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"units\",\n    \"reason\": \"list_of_unit_objects_required\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "a0037033293c8e53f8ad8d624926926d5da89b7896d414c2988f636e23477923",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/uniform-not-list.json",
+        "bytes": 38,
+        "sha256": "0ed380ab2a895f368d7920e72a39be311f2ffb21c46c679d6370d44b02a2bfb7"
+      }
+    },
+    {
+      "name": "uniform-null-unit",
+      "expected": "invalid",
+      "argv": [
+        "-c",
+        "import sys,json;sys.path.insert(0,sys.argv[1]);import calculator;c=json.load(open(sys.argv[2]));print(json.dumps(getattr(calculator,c['function'])(*c['args']),allow_nan=False,indent=2))",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/uniform-null-unit.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"units[0]\",\n    \"reason\": \"unit_object_required\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "2ddf8b97f79fc7912e2249ea495b0456c7fa2e850472e201f2a714de3bc21b9f",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/uniform-null-unit.json",
+        "bytes": 42,
+        "sha256": "f520c5f79ae662fd8fb51a464efb70145dfe4051d6c26e013384c60be398f946"
+      }
+    },
+    {
+      "name": "uniform-bool-volume",
+      "expected": "invalid",
+      "argv": [
+        "-c",
+        "import sys,json;sys.path.insert(0,sys.argv[1]);import calculator;c=json.load(open(sys.argv[2]));print(json.dumps(getattr(calculator,c['function'])(*c['args']),allow_nan=False,indent=2))",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/uniform-bool-volume.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"units[0].volume\",\n    \"reason\": \"finite_number_required; booleans and null are not numbers\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "528a2802f94b5f0a31c907045fca93b2a585056170c87c09b923faa767abbf73",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/uniform-bool-volume.json",
+        "bytes": 68,
+        "sha256": "70e719560328515785b255024b2066e90d0239845254ea10574b82c4e03393b6"
+      }
+    },
+    {
+      "name": "uniform-negative-volume",
+      "expected": "invalid",
+      "argv": [
+        "-c",
+        "import sys,json;sys.path.insert(0,sys.argv[1]);import calculator;c=json.load(open(sys.argv[2]));print(json.dumps(getattr(calculator,c['function'])(*c['args']),allow_nan=False,indent=2))",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/uniform-negative-volume.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"units[0].volume\",\n    \"reason\": \"number_out_of_declared_range\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "5a262eaadfe9e1abcce1c7c725539e5ece480a0bb6221db873e310d7d5414744",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/uniform-negative-volume.json",
+        "bytes": 66,
+        "sha256": "0d569a4a11ae9b74ba564bd77f535963f099e228ff5ff7ec02f104e5899f6a65"
+      }
+    },
+    {
+      "name": "uniform-text-volume",
+      "expected": "invalid",
+      "argv": [
+        "-c",
+        "import sys,json;sys.path.insert(0,sys.argv[1]);import calculator;c=json.load(open(sys.argv[2]));print(json.dumps(getattr(calculator,c['function'])(*c['args']),allow_nan=False,indent=2))",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/uniform-text-volume.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"units[0].volume\",\n    \"reason\": \"finite_number_required; booleans and null are not numbers\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "528a2802f94b5f0a31c907045fca93b2a585056170c87c09b923faa767abbf73",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/uniform-text-volume.json",
+        "bytes": 68,
+        "sha256": "6b96f1a68e92b133b7f250e97e730794964440bc8a06c2dbf2879d5559480973"
+      }
+    },
+    {
+      "name": "uniform-infinite-volume",
+      "expected": "invalid",
+      "argv": [
+        "-c",
+        "import sys,json;sys.path.insert(0,sys.argv[1]);import calculator;c=json.load(open(sys.argv[2]));print(json.dumps(getattr(calculator,c['function'])(*c['args']),allow_nan=False,indent=2))",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/uniform-infinite-volume.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"units[0].volume\",\n    \"reason\": \"finite_representable_number_required\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "4eca0ecb2a156f16d6a19665be657c95074f45fdc92b3e5d42329112c10e5b78",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/uniform-infinite-volume.json",
+        "bytes": 72,
+        "sha256": "c3876828f03ab6f30a0ac5fffef4e654258009a4dbb4383ab58e2fe837da0190"
+      }
+    },
+    {
+      "name": "uniform-bool-share",
+      "expected": "invalid",
+      "argv": [
+        "-c",
+        "import sys,json;sys.path.insert(0,sys.argv[1]);import calculator;c=json.load(open(sys.argv[2]));print(json.dumps(getattr(calculator,c['function'])(*c['args']),allow_nan=False,indent=2))",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/uniform-bool-share.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"units[0].share\",\n    \"reason\": \"finite_number_required; booleans and null are not numbers\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "329fb907157b95f6c3c4f66b84b8ac1d73cabc21bd2958ce4069874ef75535b3",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/uniform-bool-share.json",
+        "bytes": 67,
+        "sha256": "7143f40cfbbeca070fe65199108bd19170b75f7be541fcdd89e8894117c05c3d"
+      }
+    },
+    {
+      "name": "uniform-unbounded-share",
+      "expected": "invalid",
+      "argv": [
+        "-c",
+        "import sys,json;sys.path.insert(0,sys.argv[1]);import calculator;c=json.load(open(sys.argv[2]));print(json.dumps(getattr(calculator,c['function'])(*c['args']),allow_nan=False,indent=2))",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/uniform-unbounded-share.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"units[0].share\",\n    \"reason\": \"number_out_of_declared_range\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "be02f2a0cefdf941a076460a24c2c379fc89ace0f7b24aad797e194a54db26cc",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/uniform-unbounded-share.json",
+        "bytes": 66,
+        "sha256": "afd3ec791e391bf37964dcbfad7c0b67aefd188b85c9da226b7f70d145400e20"
+      }
+    },
+    {
+      "name": "uniform-duplicate-key",
+      "expected": "invalid",
+      "argv": [
+        "-c",
+        "import sys,json;sys.path.insert(0,sys.argv[1]);import calculator;c=json.load(open(sys.argv[2]));print(json.dumps(getattr(calculator,c['function'])(*c['args']),allow_nan=False,indent=2))",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/uniform-duplicate-key.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"units[1].key\",\n    \"reason\": \"duplicate_unit_identity\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "cc3c305775c589daeaf7bddf54dd9f62fe01bdb6fb3e872d6cda0ff40ed227a5",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/uniform-duplicate-key.json",
+        "bytes": 118,
+        "sha256": "9a856c1e8ab62c6105bc13653c10fa9d48a37838ec3b17ad16e3ec3f9cf2509d"
+      }
+    },
+    {
+      "name": "uniform-duplicate-county",
+      "expected": "invalid",
+      "argv": [
+        "-c",
+        "import sys,json;sys.path.insert(0,sys.argv[1]);import calculator;c=json.load(open(sys.argv[2]));print(json.dumps(getattr(calculator,c['function'])(*c['args']),allow_nan=False,indent=2))",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/uniform-duplicate-county.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"units[1].county\",\n    \"reason\": \"duplicate_unit_identity\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "b51484b52a8734e1f39896ec3aced3de9941f4d5079d427095e07c951e9753bd",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/uniform-duplicate-county.json",
+        "bytes": 124,
+        "sha256": "9465637339226aa8ed096e8c4f2de57250f8c8ee1b99896e3d2bc2c632cea453"
+      }
+    },
+    {
+      "name": "uniform-bool-id",
+      "expected": "invalid",
+      "argv": [
+        "-c",
+        "import sys,json;sys.path.insert(0,sys.argv[1]);import calculator;c=json.load(open(sys.argv[2]));print(json.dumps(getattr(calculator,c['function'])(*c['args']),allow_nan=False,indent=2))",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/uniform-bool-id.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"units[0].id\",\n    \"reason\": \"nonempty_string_unit_identity_required\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "1e06b3f515ebe2ce070b472bfee4d6c2d9c4e70fd723bb590be6d3b58348f62c",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/uniform-bool-id.json",
+        "bytes": 77,
+        "sha256": "09c6767525c19e37568d3bce88e61b74bcce5c2567ea48076fd75d7981081d83"
+      }
+    },
+    {
+      "name": "uniform-overflow",
+      "expected": "invalid",
+      "argv": [
+        "-c",
+        "import sys,json;sys.path.insert(0,sys.argv[1]);import calculator;c=json.load(open(sys.argv[2]));print(json.dumps(getattr(calculator,c['function'])(*c['args']),allow_nan=False,indent=2))",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/uniform-overflow.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_arithmetic\",\n  \"error\": {\n    \"field\": \"volume\",\n    \"reason\": \"derived_value_not_finite_or_representable\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "cb9eab738be04dfc09aa61b5b8b5a6596e7b3589f175bd541c054274be3d8031",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_arithmetic",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/uniform-overflow.json",
+        "bytes": 104,
+        "sha256": "bc691fd9116f2cd0ef7a5ed10d7a1bd3f557dfe561f8b97a1239cd8a2809f5bd"
+      }
+    },
+    {
+      "name": "selected-bool-pool",
+      "expected": "invalid",
+      "argv": [
+        "-c",
+        "import sys,json;sys.path.insert(0,sys.argv[1]);import calculator;c=json.load(open(sys.argv[2]));print(json.dumps(getattr(calculator,c['function'])(*c['args']),allow_nan=False,indent=2))",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/selected-bool-pool.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"pool\",\n    \"reason\": \"finite_number_required; booleans and null are not numbers\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "d14bfe7944ae3c45c69f339a80ef4b186b629073c8b88867dae9ea40cba2f1a6",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/selected-bool-pool.json",
+        "bytes": 47,
+        "sha256": "919ddcb22341f28b85bf5d5042631630619bb18e6d40ba0d8976f06535345916"
+      }
+    },
+    {
+      "name": "selected-negative-pool",
+      "expected": "invalid",
+      "argv": [
+        "-c",
+        "import sys,json;sys.path.insert(0,sys.argv[1]);import calculator;c=json.load(open(sys.argv[2]));print(json.dumps(getattr(calculator,c['function'])(*c['args']),allow_nan=False,indent=2))",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/selected-negative-pool.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_negative_pool\",\n  \"error\": {\n    \"field\": \"pool\",\n    \"reason\": \"number_out_of_declared_range\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "5f2b7cca1616eb8f881644cbd2884732c9d936bab45c2cda9979025325b6fd27",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_negative_pool",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/selected-negative-pool.json",
+        "bytes": 45,
+        "sha256": "dcc108d31b21929f8ce2cd06cb0e1b1125f128ed20b14770902b5678162cd3d7"
+      }
+    },
+    {
+      "name": "selected-nonfinite-net",
+      "expected": "invalid",
+      "argv": [
+        "-c",
+        "import sys,json;sys.path.insert(0,sys.argv[1]);import calculator;c=json.load(open(sys.argv[2]));print(json.dumps(getattr(calculator,c['function'])(*c['args']),allow_nan=False,indent=2))",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/selected-nonfinite-net.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"other_net\",\n    \"reason\": \"finite_representable_number_required\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "e67309dc7c7786d0a85a83ab84beb73a30fc363ccbc2373222d03d35be17eb9f",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/selected-nonfinite-net.json",
+        "bytes": 51,
+        "sha256": "5c9f57eb22defb511e8f3f559fcd7f338c69b0be1d1862518c9b13cc53253f12"
+      }
+    },
+    {
+      "name": "selected-null-target",
+      "expected": "invalid",
+      "argv": [
+        "-c",
+        "import sys,json;sys.path.insert(0,sys.argv[1]);import calculator;c=json.load(open(sys.argv[2]));print(json.dumps(getattr(calculator,c['function'])(*c['args']),allow_nan=False,indent=2))",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/selected-null-target.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"target_net\",\n    \"reason\": \"finite_number_required; booleans and null are not numbers\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "2ef0ba9516d9372beaac8d1f51b5d50d7acbdfa4b0eac3a379a122caafe9a0db",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/selected-null-target.json",
+        "bytes": 47,
+        "sha256": "1518dd3a5436238296c72c744f717c87cf1ee4e949008613a393f8baa0d01cfc"
+      }
+    },
+    {
+      "name": "selected-bool-target",
+      "expected": "invalid",
+      "argv": [
+        "-c",
+        "import sys,json;sys.path.insert(0,sys.argv[1]);import calculator;c=json.load(open(sys.argv[2]));print(json.dumps(getattr(calculator,c['function'])(*c['args']),allow_nan=False,indent=2))",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/selected-bool-target.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"target_net\",\n    \"reason\": \"finite_number_required; booleans and null are not numbers\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "2ef0ba9516d9372beaac8d1f51b5d50d7acbdfa4b0eac3a379a122caafe9a0db",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/selected-bool-target.json",
+        "bytes": 47,
+        "sha256": "7a1c0284edc809f2de16359b3d264a2cf23883492be13a42c729b714668c163d"
+      }
+    },
+    {
+      "name": "selected-unknown-bad-target",
+      "expected": "invalid",
+      "argv": [
+        "-c",
+        "import sys,json;sys.path.insert(0,sys.argv[1]);import calculator;c=json.load(open(sys.argv[2]));print(json.dumps(getattr(calculator,c['function'])(*c['args']),allow_nan=False,indent=2))",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/selected-unknown-bad-target.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_input\",\n  \"error\": {\n    \"field\": \"target_net\",\n    \"reason\": \"finite_representable_number_required\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "47ca10755cd7dc01ae6c8a8b16b1a87df7d7c7bd81d5f4a0f294366946e7f9c5",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_input",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/selected-unknown-bad-target.json",
+        "bytes": 52,
+        "sha256": "766cb780fc008f0f3e5a17f3f77648c98fb651643e3749f8e666af34f5a5557b"
+      }
+    },
+    {
+      "name": "selected-overflow",
+      "expected": "invalid",
+      "argv": [
+        "-c",
+        "import sys,json;sys.path.insert(0,sys.argv[1]);import calculator;c=json.load(open(sys.argv[2]));print(json.dumps(getattr(calculator,c['function'])(*c['args']),allow_nan=False,indent=2))",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/selected-overflow.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"invalid_arithmetic\",\n  \"error\": {\n    \"field\": \"required_share_unbounded\",\n    \"reason\": \"derived_value_not_finite_or_representable\"\n  },\n  \"final\": null\n}\n",
+      "stdout_sha256": "16337b5b8d75b4870685d82fb4b3c7b5d241029914ab51bc653a24842b34926a",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "invalid_arithmetic",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/selected-overflow.json",
+        "bytes": 60,
+        "sha256": "ad77a690f95b6f67e9936520fb7551b327a9d33de92ca4f607b2ba4884377354"
+      }
+    },
+    {
+      "name": "uniform-unknown-volume",
+      "expected": "valid",
+      "argv": [
+        "-c",
+        "import sys,json;sys.path.insert(0,sys.argv[1]);import calculator;c=json.load(open(sys.argv[2]));print(json.dumps(getattr(calculator,c['function'])(*c['args']),allow_nan=False,indent=2))",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/uniform-unknown-volume.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"unknown\",\n  \"shift\": null\n}\n",
+      "stdout_sha256": "6ce84e93d65522aafc5b9b59bce90004649944b22ed8dbdb0a52359274393f0d",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "unknown",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/uniform-unknown-volume.json",
+        "bytes": 68,
+        "sha256": "afd41187b7931b6869a544b21cef6cfe13fc63a2ee02e26339c29a86904b3fca"
+      }
+    },
+    {
+      "name": "uniform-unknown-preference",
+      "expected": "valid",
+      "argv": [
+        "-c",
+        "import sys,json;sys.path.insert(0,sys.argv[1]);import calculator;c=json.load(open(sys.argv[2]));print(json.dumps(getattr(calculator,c['function'])(*c['args']),allow_nan=False,indent=2))",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/uniform-unknown-preference.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"unknown\",\n  \"shift\": null\n}\n",
+      "stdout_sha256": "6ce84e93d65522aafc5b9b59bce90004649944b22ed8dbdb0a52359274393f0d",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "unknown",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/uniform-unknown-preference.json",
+        "bytes": 67,
+        "sha256": "ec04ec1fc4185fdf08900d338d5a130de7cf577107deddff04161966876d52e6"
+      }
+    },
+    {
+      "name": "uniform-no-pool",
+      "expected": "valid",
+      "argv": [
+        "-c",
+        "import sys,json;sys.path.insert(0,sys.argv[1]);import calculator;c=json.load(open(sys.argv[2]));print(json.dumps(getattr(calculator,c['function'])(*c['args']),allow_nan=False,indent=2))",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/uniform-no-pool.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"no_positive_pool\",\n  \"shift\": null\n}\n",
+      "stdout_sha256": "821091985eac36ae91c783aa536a933b82af1e5836010b04a065bf0b68a62fd0",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "no_positive_pool",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/uniform-no-pool.json",
+        "bytes": 38,
+        "sha256": "574b3b54697dfa2494e43c73ab8f6b87ddab8d89e82924583100ec80b90f7cf2"
+      }
+    },
+    {
+      "name": "uniform-impossible-internal",
+      "expected": "valid",
+      "argv": [
+        "-c",
+        "import sys,json;sys.path.insert(0,sys.argv[1]);import calculator;c=json.load(open(sys.argv[2]));print(json.dumps(getattr(calculator,c['function'])(*c['args']),allow_nan=False,indent=2))",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/uniform-impossible-internal.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"impossible\",\n  \"shift\": null,\n  \"unbounded_shift\": 0.55\n}\n",
+      "stdout_sha256": "c8d230667aeb3328d868e4cd9fd521ccbbea890e199b994fe88586eafba42b83",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "impossible",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/uniform-impossible-internal.json",
+        "bytes": 71,
+        "sha256": "825bb32fbfe7faa626eb706c537319918c1e6eb2d2df9acd266bf7ebfeaff887"
+      }
+    },
+    {
+      "name": "uniform-clipped",
+      "expected": "valid",
+      "argv": [
+        "-c",
+        "import sys,json;sys.path.insert(0,sys.argv[1]);import calculator;c=json.load(open(sys.argv[2]));print(json.dumps(getattr(calculator,c['function'])(*c['args']),allow_nan=False,indent=2))",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/uniform-clipped.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"status\": \"feasible\",\n  \"volume\": 100,\n  \"baseline_net\": -7.9999999999999964,\n  \"baseline_margin_pp\": -7.9999999999999964,\n  \"baseline_already_A_winning\": false,\n  \"unbounded_shift\": 0.49,\n  \"unbounded_shift_pp\": 49.0,\n  \"shift\": 0.5444444444444443,\n  \"shift_pp\": 54.44444444444443,\n  \"target_margin_pp\": 90.0,\n  \"target_net\": 90.0,\n  \"net_gain\": 98.0,\n  \"clipped_units\": 1,\n  \"solved_net\": 89.99999999999997\n}\n",
+      "stdout_sha256": "e3b844f6c7b963db79faccc5e583cb56768bfc2c7a8b5653e343df312660be12",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "feasible",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/uniform-clipped.json",
+        "bytes": 99,
+        "sha256": "b7fcede3033f2236231886e7e90769ccf05e9fa427d7a9dad8daf9228031f549"
+      }
+    },
+    {
+      "name": "selected-unknown",
+      "expected": "valid",
+      "argv": [
+        "-c",
+        "import sys,json;sys.path.insert(0,sys.argv[1]);import calculator;c=json.load(open(sys.argv[2]));print(json.dumps(getattr(calculator,c['function'])(*c['args']),allow_nan=False,indent=2))",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/selected-unknown.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"required_share_unbounded\": null,\n  \"feasible_share\": null,\n  \"status\": \"unknown\"\n}\n",
+      "stdout_sha256": "b8f64a624652426917f19fb9e8efd7f6fdfc39863e10dde793a3c17a2467bfc5",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "unknown",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/selected-unknown.json",
+        "bytes": 50,
+        "sha256": "8ba06df48c000dd68d985addd891fe7191fc2c012fa617d50581096b5caf167c"
+      }
+    },
+    {
+      "name": "selected-no-pool",
+      "expected": "valid",
+      "argv": [
+        "-c",
+        "import sys,json;sys.path.insert(0,sys.argv[1]);import calculator;c=json.load(open(sys.argv[2]));print(json.dumps(getattr(calculator,c['function'])(*c['args']),allow_nan=False,indent=2))",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/selected-no-pool.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"required_share_unbounded\": null,\n  \"feasible_share\": null,\n  \"status\": \"no_positive_pool\",\n  \"net_minus_target\": 1\n}\n",
+      "stdout_sha256": "eb61e41e371f848edf27fdf552aba66a3658588ec21ae648b036f8bfaddb93c7",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "no_positive_pool",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/selected-no-pool.json",
+        "bytes": 44,
+        "sha256": "e45f0aacd8787f32f0f5a5a0867785ee94f18ba15e601e38870a31725a76da6b"
+      }
+    },
+    {
+      "name": "selected-impossible",
+      "expected": "valid",
+      "argv": [
+        "-c",
+        "import sys,json;sys.path.insert(0,sys.argv[1]);import calculator;c=json.load(open(sys.argv[2]));print(json.dumps(getattr(calculator,c['function'])(*c['args']),allow_nan=False,indent=2))",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/selected-impossible.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"required_share_unbounded\": 5.5,\n  \"feasible_share\": null,\n  \"status\": \"impossible\"\n}\n",
+      "stdout_sha256": "72df8cdfb0b714b458a1c03e0ea02d4c161bf678cc1d8ded113ab414a7372a0f",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "impossible",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/selected-impossible.json",
+        "bytes": 46,
+        "sha256": "3d69acee9809e4fa04541e6484144808d7431ddb0fda7789a04b0c10aa0e4ae9"
+      }
+    },
+    {
+      "name": "selected-secured",
+      "expected": "valid",
+      "argv": [
+        "-c",
+        "import sys,json;sys.path.insert(0,sys.argv[1]);import calculator;c=json.load(open(sys.argv[2]));print(json.dumps(getattr(calculator,c['function'])(*c['args']),allow_nan=False,indent=2))",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines",
+        "/Users/tqbf/codebase/snn/senate/2026/new-mexico/data/baselines/repair-regressions/fixtures/selected-secured.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"required_share_unbounded\": -4.5,\n  \"feasible_share\": 0.0,\n  \"status\": \"already_secured\"\n}\n",
+      "stdout_sha256": "f55e41747d72558cec0f8b673c80d040f9852335f4282512b5793d6c2d87cab7",
+      "stderr": "",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "strict_JSON_error": null,
+      "observed_status": "already_secured",
+      "passed": true,
+      "fixture": {
+        "path": "data/baselines/repair-regressions/fixtures/selected-secured.json",
+        "bytes": 45,
+        "sha256": "ab16abb114e92dc18972a7c3abb5882bcceac76246e30bd979cac765bf9f890f"
+      }
+    }
+  ],
+  "scope": "Actual current subprocess outputs; prior coordinator and producer bytes preserved separately. No peer/future-final equality claim."
+}

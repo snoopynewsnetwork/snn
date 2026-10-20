@@ -1040,3 +1040,12 @@ completion count. New Jersey officiale4a43ae3 remains the only other researcher.
 
 
 Massachusetts whole four-question package published3eab6edb4fab7863569638973c8423b8aa92b291; push0 and exactremoteHEAD verified. Twenty-one new states complete plus retainedMichigan. Full16117listed-state-file manifest/selfonlyexclusion checks pass, max39M. Current/eligibleAllOthers/geography/feed/cadence/remainder/legal-exhaustion qualifications remain explicit. OnlyNMbaseline9a904675 and ORturnoutbd151c4c research actively.
+
+
+New Mexico's first pair is independently reviewed, including repaired CLI
+inputs. Its source authority retains 31 roots, 68 companions and 403,993 objects
+for all 2,201 observations and 33 parents; certified native priority remains
+unavailable under privacy masks. Official-source worker `3204f3a1` launched
+after the same baseline worker's repair finished. Oregon baseline `7c03df8c`
+is the only other active researcher. New Mexico maps take the next actual
+released slot. The completed count remains 21 new states plus Michigan.
