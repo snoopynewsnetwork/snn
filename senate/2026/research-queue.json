@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "requested_date": "2026-10-17",
-  "updated_at_utc": "2026-10-20T19:39:39.076607+00:00",
+  "updated_at_utc": "2026-10-20T19:45:49.360291+00:00",
   "scope": "35 states in the repository 2026 U.S. Senate race index",
   "coordinator_agent_id": "d0fc3534-1613-4883-b48b-21a233fcfd9e",
   "workspace_id": "wks_b290f45007010740",
@@ -9200,6 +9200,24 @@
         "sha256": "78ee658fc688eade254a73a42b7e8d32cd835e82421d66e6d8ae2a96c9a23ffe",
         "prepared_only": true,
         "actual_worker_id": null
+      },
+      "coordinator_newsroom_original_review": {
+        "path": "data/coordinator-newsroom-original-review.json",
+        "whole_legacy_receipts": 21,
+        "WHSV": {
+          "selected_id": "2677",
+          "inactive": true,
+          "request_includeTestResults": false,
+          "separate_UI_displayTestData": true,
+          "isTest": false,
+          "local_races": 12,
+          "choices": 42,
+          "all_zero": true,
+          "Senate_present": false
+        },
+        "producer_or_raw_source_mutation": false,
+        "earlier_docs_preserved": "data/coordinator-newsroom-review-history",
+        "November_admission": false
       }
     },
     {
@@ -9483,7 +9501,7 @@
       "election": "Regular",
       "seat_class": "II",
       "priority": 27,
-      "status": "first-pair-independently-reviewed-awaiting-same-turnout-reciprocal-slot",
+      "status": "first-pair-reviewed-published-awaiting-same-turnout-reciprocal-slot",
       "workers": {
         "turnout": {
           "agent_id": "43866295-c1c8-4f15-8933-67a99b3454c0",
@@ -9630,7 +9648,17 @@
       },
       "validation": null,
       "gaps": [],
-      "published_commits": [],
+      "published_commits": [
+        {
+          "commit": "752956db096a304e1d9cf851f7232f7d0b9b81ed",
+          "scope": "Complete reviewed original firstpair/raw sources/root reviews plus exact fourth Virginia-worker dispatch; not whole-state completion",
+          "exact_staged_blobs": 1387,
+          "staged_bytes": 175045169,
+          "maximum_stored_blob_bytes": 32689131,
+          "push_exit": 0,
+          "remote_exact_verified": true
+        }
+      ],
       "state_specific_notes": "No 2024 Senate contest. 2020 same-seat Senate had no Democrat; preserve named Libertarian opposition scenario rather than forcing D/R. 2022 Senate midterm is different seat/candidates.",
       "coordinator_preparation": "Regional newsroom and state-specific strategy drafts, bounded captures and offline hash/source-state checks prepared; no question agents launched or complete state package claimed.",
       "prepared_first_pair_prompts": {
@@ -9729,6 +9757,12 @@
         "sha256": "7c02129be69007a4ee10fb40d33ca9b081b5ca3bce870dd11c4ddc839f28f087",
         "prepared_only": true,
         "actual_resume_yet": false
+      },
+      "coordinator_first_pair_validation": {
+        "path": "data/coordinator-first-pair-validation.json",
+        "bytes": 5848,
+        "sha256": "7e4dd7fe06bbcab74c38b61387b0ff2a2ba3f3f641ac365fa58ae12d12bcd221",
+        "producer_targets": 1340
       }
     },
     {
@@ -10429,12 +10463,33 @@
       "sha256": "4ba6519b3a4897bb7e21560d03a53d6c54b9be39ff6472a5b5d9f9ac1cca437a"
     }
   },
-  "coordinator_next_actions": [
-    "Complete immutable full-field Virginia external source authority from both reviewed frozen producers; official/maps may launch only after full source replay and an actual releasedslot.",
-    "Independently review Alabama original turnout/fullworkbook controls and finished baseline when its actual finish arrives; preserve label-aggregation correction and exact histories. Same turnout reciprocal only against actual stablepeer in actualslot.",
-    "Arkansas original-first turnout active with separate API/OOXML/FullData lanes. Independent Arkansas baseline gets a real releasedslot, no unlaunchedpeer wait or thirdworker.",
-    "Continue seven unlaunched states Kentucky,Louisiana,Montana,Oklahoma,Tennessee,WestVirginia,Wyoming with four actual workers each; max2researchers and no statuspolling."
-  ],
+  "coordinator_next_actions": {
+    "current_HEAD_exact_remote_verified": "752956db096a304e1d9cf851f7232f7d0b9b81ed",
+    "completed_new_states": 24,
+    "retained_Michigan": true,
+    "actual_active_workers": [
+      "fdfeb006-8e44-426d-b527-3e318898b0c4",
+      "f85e5171-e2b8-493b-bbec-9be073c21e6c"
+    ],
+    "next_actual_released_slot": "Resume SAME Alabama turnout5b42c895-68ea-40c4-9b7c-534e46d14d7a Verification/medium with fresh profiles/provider and actual update, using prepared prompt+actual release metadata. Do not create third worker or contact finished peers.",
+    "next_following_released_slot": "SAME Arkansas turnout43866295-c1c8-4f15-8933-67a99b3454c0 bounded captured-final-baseline reciprocal, unless earlier priority completion requires a reviewed source dispatch.",
+    "after_same_turnout_final_handoffs": "Independently review complete old-body preservation/metadata-only contract/source-core/no-network reproduction; adapt old coordinator original checker to exact captured historical phase if current MF changed. Freeze complete external source authorities, then actual official/maps for AL/AR in released slots.",
+    "Virginia": "Both required original official/maps workers active under whole immutable authority783f5abd...; await actual finish callbacks without polling. Then independent source/legal/maps original audits, combine reviewed news/strategy and publish whole state. No optional unfinished worker/coordinator proof dependency.",
+    "Arkansas_root_reviews": "OriginalT613570/B1212814/math1517309/CLI73(62invalid)/history178 and1340-target firstpair guard pass. Component752956db published; raw source/value/model/calc changes not needed.",
+    "Alabama_root_reviews": "Original7249699/math390250/CLI75(65invalid)/history44474 and451-target firstpair guard pass. Component8ef208e2 published; statewide ordinal aggregation correction own-history preserved and raw/nativecandidate identities unchanged.",
+    "seven_unlaunched_in_order": [
+      "kentucky",
+      "louisiana",
+      "montana",
+      "oklahoma",
+      "tennessee",
+      "west-virginia",
+      "wyoming"
+    ],
+    "current_index": "empty after published commits; do not stage active VAofficial/maps paths",
+    "pending_root_metadata": "Latest exact component publication IDs and root next-actions working-tree records await next reviewed component/state commit. Existing per-state old news/strategy/prep beyond reviewed published regions remain untracked, not reviewed wholesale.",
+    "no_final_until_all34": true
+  },
   "coordinator_prompt_preparation": {
     "scope": "Unlaunched future first-wave prompts only; no agent IDs or completed packages implied",
     "config": "/tmp/snn-future-state-context.json",
@@ -10823,6 +10878,15 @@
       ],
       "next": "Independently review frozen Virginia turnout original/official method source controls and phase seal. Await actual RI maps or VAbaseline finish; no status polls or finishedpeercontact. On next real slot begin Alabama turnout or necessary same-agent bounded reciprocal according to stable actual baseline evidence. RI maps whole-state review/integration when finish callback arrives.",
       "last_exact_remote_publication": "0ba0cc3a73d941d472ddf7c20f2bcfc855d455bb"
+    },
+    {
+      "recorded_at_utc": "2026-10-20T19:45:49.360115+00:00",
+      "previous": [
+        "Complete immutable full-field Virginia external source authority from both reviewed frozen producers; official/maps may launch only after full source replay and an actual releasedslot.",
+        "Independently review Alabama original turnout/fullworkbook controls and finished baseline when its actual finish arrives; preserve label-aggregation correction and exact histories. Same turnout reciprocal only against actual stablepeer in actualslot.",
+        "Arkansas original-first turnout active with separate API/OOXML/FullData lanes. Independent Arkansas baseline gets a real releasedslot, no unlaunchedpeer wait or thirdworker.",
+        "Continue seven unlaunched states Kentucky,Louisiana,Montana,Oklahoma,Tennessee,WestVirginia,Wyoming with four actual workers each; max2researchers and no statuspolling."
+      ]
     }
   ],
   "coordinator_latest_regional_publication": {
