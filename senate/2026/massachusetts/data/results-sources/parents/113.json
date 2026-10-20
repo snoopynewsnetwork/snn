@@ -1,0 +1,254 @@
+{
+  "schema": "MA bounded shared municipal parent investigation v1",
+  "research_parent_ordinal": 113,
+  "source_parent_key": "[\"Great Barrington\",\"\",\"\"]",
+  "source_parent_literal": "Great Barrington",
+  "research_full_name": "Great Barrington",
+  "authority_path": "data/coordinator-priority-acceptance.json",
+  "priority_parent": false,
+  "historical_parent_full_object": {
+    "municipal_key": "[\"Great Barrington\",\"\",\"\"]",
+    "literal_city_town": "Great Barrington",
+    "csv_record_ordinal": 115,
+    "values": [
+      3103,
+      747,
+      7,
+      104,
+      3961
+    ],
+    "native_keys_source_order": [
+      "[\"Great Barrington\",\"-\",\"A\"]",
+      "[\"Great Barrington\",\"-\",\"B\"]",
+      "[\"Great Barrington\",\"-\",\"C\"]",
+      "[\"Great Barrington\",\"-\",\"D\"]"
+    ],
+    "native_keys_priority_order": [
+      "[\"Great Barrington\",\"-\",\"D\"]",
+      "[\"Great Barrington\",\"-\",\"A\"]",
+      "[\"Great Barrington\",\"-\",\"B\"]",
+      "[\"Great Barrington\",\"-\",\"C\"]"
+    ],
+    "native_context_count": 4,
+    "all_children_present": true,
+    "numeric_id": null,
+    "fips": null,
+    "aggregation": "sum children; parent overlaps children and must never be added"
+  },
+  "government_directory_matching_blocks": [
+    {
+      "name": "Great Barrington",
+      "raw_web_directory_block": "### Great Barrington\n\ncite418†Town of Great Barrington†www.townofgb.org \ncite419†334 Main Street Great Barrington, MA 01230†goo.gl \n413-528-1619\ncite420†Town Department Directory†www.townofgb.org \n",
+      "observed_domains": [
+        "www.townofgb.org"
+      ],
+      "raw_original_html_status": "403; literal hrefs unavailable in extracted web representation",
+      "blank_fields_not_repaired": true
+    }
+  ],
+  "government_directory_correspondence": "historical name research attribution only; not a current ID or boundary match",
+  "government_directory_duplicate_literal": false,
+  "secretary_local_election_directory": {
+    "url": "https://www.sec.state.ma.us/divisions/elections/voter-resources/find-my-local-election-office.htm",
+    "raw_HTML_access": "403 after ordinary redirect/cookie attempt",
+    "raw_field_completeness": false,
+    "indexed_fragment_references": [
+      {
+        "source_file": "source/directory-search/local-024.json",
+        "response_pointer": "/response",
+        "start": 5613,
+        "end": 5878,
+        "literal_heading": "Great Barrington",
+        "observed_role_lines": [
+          "Town Clerk"
+        ],
+        "source_original": false,
+        "entry_completeness": "unverified indexed fragment; gaps may exist inside it"
+      },
+      {
+        "source_file": "source/directory-search/local-027.json",
+        "response_pointer": "/response",
+        "start": 6657,
+        "end": 6922,
+        "literal_heading": "Great Barrington",
+        "observed_role_lines": [
+          "Town Clerk"
+        ],
+        "source_original": false,
+        "entry_completeness": "unverified indexed fragment; gaps may exist inside it"
+      },
+      {
+        "source_file": "source/directory-search/local-028.json",
+        "response_pointer": "/response",
+        "start": 8591,
+        "end": 8910,
+        "literal_heading": "Great Barrington",
+        "observed_role_lines": [
+          "Town Clerk"
+        ],
+        "source_original": false,
+        "entry_completeness": "unverified indexed fragment; gaps may exist inside it"
+      },
+      {
+        "source_file": "source/directory-search/local-060.json",
+        "response_pointer": "/response",
+        "start": 10424,
+        "end": 10743,
+        "literal_heading": "Great Barrington",
+        "observed_role_lines": [
+          "Town Clerk"
+        ],
+        "source_original": false,
+        "entry_completeness": "unverified indexed fragment; gaps may exist inside it"
+      },
+      {
+        "source_file": "source/directory-search/local-062.json",
+        "response_pointer": "/response",
+        "start": 7021,
+        "end": 7286,
+        "literal_heading": "Great Barrington",
+        "observed_role_lines": [
+          "Town Clerk"
+        ],
+        "source_original": false,
+        "entry_completeness": "unverified indexed fragment; gaps may exist inside it"
+      }
+    ],
+    "raw_missing_fields_remain_unknown": true
+  },
+  "distinct_authority_roles": {
+    "indexed_directory_role_lines": [
+      "Town Clerk"
+    ],
+    "actual_page_role_occurrences": [],
+    "precinct_canvass": "presiding officers/precinct clerk: c54 ss104-107; not municipal clerk identity",
+    "municipal_certification": "c54 s112: city/town clerk; Boston Board of Election Commissioners",
+    "post_election_absentee_canvass": "c54 s95: registrars; distinct from clerk record transmission",
+    "recount": "c54 s135: registrars determine, clerk amends and transmits",
+    "state_certification": "c54 ss115-116: Governor/Council examination and Governor Senate certificate countersigned/transmitted by Secretary",
+    "local_current_named_official_ID": null
+  },
+  "secretary_department_navigation": [
+    {
+      "parent_literal": "Great Barrington",
+      "requested_directory_link_id": 420,
+      "web_evidence": "source/navigation/department-027.json",
+      "web_representation": "Staff Directory • Great Barrington, MA • CivicEngage (https://www.townofgb.org/Directory.aspx)\nciteturn196view3 [wordlim: 200] Crawled: last week; Content type: text/html; Source: click({\"ref_id\":\"turn2view1\",\"id\":420}); Redirected to URL: https://www.townofgb.org/m/directory; Total lines: 910\n",
+      "url": "https://www.townofgb.org/Directory.aspx",
+      "original_literal_href": null,
+      "navigation_kind": "department directory"
+    }
+  ],
+  "searches": [
+    "source/search/municipal-028.json"
+  ],
+  "bounded_chain_requests": [
+    {
+      "request_id": "muni-112-1",
+      "receipt": "source/http/muni-112-1.json",
+      "requested_url": "https://greatbarringtonma.civicpluswebopen.com/home?month=2025-09",
+      "final_url": "https://greatbarringtonma.civicpluswebopen.com/home?month=2025-09",
+      "status": 403,
+      "error": null,
+      "body": {
+        "path": "source/byhash/fb1efc28dfbabb36519794e34a80a60e56874a58ab825bf2a5099edec5bf16cc.gz",
+        "raw_bytes": 5597,
+        "raw_sha256": "fb1efc28dfbabb36519794e34a80a60e56874a58ab825bf2a5099edec5bf16cc",
+        "stored_bytes": 3250,
+        "stored_sha256": "e4b909c4cfa526f37c68bee8a6021526c94d5d22143595cbd8eecce253bf4f8d",
+        "encoding": "gzip of requests transport-decoded complete entity"
+      },
+      "structure": null,
+      "source_update_clock": null,
+      "measured_cadence": null,
+      "current_return_admitted": false,
+      "inspection": "source/inspect/muni-112-1.json",
+      "title": "Just a moment..."
+    },
+    {
+      "request_id": "muni-112-0",
+      "receipt": "source/http/muni-112-0.json",
+      "requested_url": "https://www.townofgb.org/ArchiveCenter/ViewFile/Item/230",
+      "final_url": "https://www.townofgb.org/ArchiveCenter/ViewFile/Item/230",
+      "status": 404,
+      "error": null,
+      "body": {
+        "path": "source/byhash/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.gz",
+        "raw_bytes": 0,
+        "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stored_bytes": 20,
+        "stored_sha256": "f1b651238a58fe290baec6c5e32f3bdb1943dd2bd582f02569231f7a757c7837",
+        "encoding": "gzip of requests transport-decoded complete entity"
+      },
+      "structure": null,
+      "source_update_clock": null,
+      "measured_cadence": null,
+      "current_return_admitted": false
+    },
+    {
+      "request_id": "dept-6e914c8a93ca6e1d",
+      "receipt": "source/http/dept-6e914c8a93ca6e1d.json",
+      "requested_url": "https://www.townofgb.org/Directory.aspx",
+      "final_url": "https://www.townofgb.org/Directory.aspx",
+      "status": 404,
+      "error": null,
+      "body": {
+        "path": "source/byhash/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.gz",
+        "raw_bytes": 0,
+        "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stored_bytes": 20,
+        "stored_sha256": "f1b651238a58fe290baec6c5e32f3bdb1943dd2bd582f02569231f7a757c7837",
+        "encoding": "gzip of requests transport-decoded complete entity"
+      },
+      "structure": null,
+      "source_update_clock": null,
+      "measured_cadence": null,
+      "current_return_admitted": false
+    }
+  ],
+  "actual_follow_request_constructors": [],
+  "observed_election_links": [],
+  "publication_status_and_plan_evidence": [],
+  "complete_format_samples": [],
+  "access_gaps": [
+    {
+      "url": "https://greatbarringtonma.civicpluswebopen.com/home?month=2025-09",
+      "status": 403,
+      "error": null
+    },
+    {
+      "url": "https://www.townofgb.org/ArchiveCenter/ViewFile/Item/230",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://www.townofgb.org/Directory.aspx",
+      "status": 404,
+      "error": null
+    }
+  ],
+  "current": {
+    "target_date": "2026-11-03",
+    "stage": "General / State Election",
+    "office": "Senator in Congress",
+    "source_parent_is_historical": true,
+    "current_date_native_id": null,
+    "current_election_native_id": null,
+    "current_stage_native_id": null,
+    "current_office_native_id": null,
+    "current_candidate_choice_ids": null,
+    "current_party_ids": null,
+    "current_reporting_unit_ids": null,
+    "current_method_ids": null,
+    "current_status_ids": null,
+    "geographic_match": null,
+    "genuine_November_returns": null,
+    "current_admission": false,
+    "eligible_unprocessed_votes": null,
+    "measured_cadence": null,
+    "correction_clock": null,
+    "completion_meaning": null
+  },
+  "scope": "complete bounded parent evidence; shared across exact historical children; online election-night service is not guaranteed by statutory authority or a landing 200",
+  "completion_status": "bounded investigation finished, with explicit source/access and future qualifications"
+}

@@ -1,0 +1,307 @@
+{
+  "schema": "MA bounded shared municipal parent investigation v1",
+  "research_parent_ordinal": 64,
+  "source_parent_key": "[\"Clarksburg\",\"\",\"\"]",
+  "source_parent_literal": "Clarksburg",
+  "research_full_name": "Clarksburg",
+  "authority_path": "data/coordinator-priority-acceptance.json",
+  "priority_parent": false,
+  "historical_parent_full_object": {
+    "municipal_key": "[\"Clarksburg\",\"\",\"\"]",
+    "literal_city_town": "Clarksburg",
+    "csv_record_ordinal": 66,
+    "values": [
+      555,
+      406,
+      0,
+      19,
+      980
+    ],
+    "native_keys_source_order": [
+      "[\"Clarksburg\",\"-\",\"1\"]"
+    ],
+    "native_keys_priority_order": [
+      "[\"Clarksburg\",\"-\",\"1\"]"
+    ],
+    "native_context_count": 1,
+    "all_children_present": true,
+    "numeric_id": null,
+    "fips": null,
+    "aggregation": "sum children; parent overlaps children and must never be added"
+  },
+  "government_directory_matching_blocks": [
+    {
+      "name": "Clarksburg",
+      "raw_web_directory_block": "### Clarksburg\n\ncite272†Town of Clarksburg†www.clarksburgma.us \ncite273†111 River Road Clarksburg, MA 01247†goo.gl \n413-663-7940\ncite274†Town Department Directory†www.clarksburgma.us \n",
+      "observed_domains": [
+        "www.clarksburgma.us"
+      ],
+      "raw_original_html_status": "403; literal hrefs unavailable in extracted web representation",
+      "blank_fields_not_repaired": true
+    }
+  ],
+  "government_directory_correspondence": "historical name research attribution only; not a current ID or boundary match",
+  "government_directory_duplicate_literal": false,
+  "secretary_local_election_directory": {
+    "url": "https://www.sec.state.ma.us/divisions/elections/voter-resources/find-my-local-election-office.htm",
+    "raw_HTML_access": "403 after ordinary redirect/cookie attempt",
+    "raw_field_completeness": false,
+    "indexed_fragment_references": [
+      {
+        "source_file": "source/directory-search/local-015.json",
+        "response_pointer": "/response",
+        "start": 6306,
+        "end": 6513,
+        "literal_heading": "Clarksburg",
+        "observed_role_lines": [
+          "Town Clerk"
+        ],
+        "source_original": false,
+        "entry_completeness": "unverified indexed fragment; gaps may exist inside it"
+      },
+      {
+        "source_file": "source/directory-search/local-016.json",
+        "response_pointer": "/response",
+        "start": 4254,
+        "end": 4461,
+        "literal_heading": "Clarksburg",
+        "observed_role_lines": [
+          "Town Clerk"
+        ],
+        "source_original": false,
+        "entry_completeness": "unverified indexed fragment; gaps may exist inside it"
+      }
+    ],
+    "raw_missing_fields_remain_unknown": true
+  },
+  "distinct_authority_roles": {
+    "indexed_directory_role_lines": [
+      "Town Clerk"
+    ],
+    "actual_page_role_occurrences": [
+      {
+        "request_id": "muni-063-0",
+        "literal": "Town Clerk",
+        "context_start": 582,
+        "context_end": 592,
+        "inspection": "source/inspect/muni-063-0.json"
+      },
+      {
+        "request_id": "dept-66e62f86a62eb552",
+        "literal": "Town Clerk",
+        "context_start": 562,
+        "context_end": 572,
+        "inspection": "source/inspect/dept-66e62f86a62eb552.json"
+      },
+      {
+        "request_id": "dept-66e62f86a62eb552",
+        "literal": "Town Clerk",
+        "context_start": 2831,
+        "context_end": 2841,
+        "inspection": "source/inspect/dept-66e62f86a62eb552.json"
+      },
+      {
+        "request_id": "dept-66e62f86a62eb552",
+        "literal": "Town Clerk",
+        "context_start": 2894,
+        "context_end": 2904,
+        "inspection": "source/inspect/dept-66e62f86a62eb552.json"
+      }
+    ],
+    "precinct_canvass": "presiding officers/precinct clerk: c54 ss104-107; not municipal clerk identity",
+    "municipal_certification": "c54 s112: city/town clerk; Boston Board of Election Commissioners",
+    "post_election_absentee_canvass": "c54 s95: registrars; distinct from clerk record transmission",
+    "recount": "c54 s135: registrars determine, clerk amends and transmits",
+    "state_certification": "c54 ss115-116: Governor/Council examination and Governor Senate certificate countersigned/transmitted by Secretary",
+    "local_current_named_official_ID": null
+  },
+  "secretary_department_navigation": [
+    {
+      "parent_literal": "Clarksburg",
+      "requested_directory_link_id": 274,
+      "web_evidence": "source/navigation/department-015.json",
+      "web_representation": "Departments - Town of Clarksburg MA (https://www.clarksburgma.us/departments)\nciteturn187view3 [wordlim: 200] Crawled: 4 weeks ago; Content type: text/html; Source: click({\"ref_id\":\"turn2view1\",\"id\":274}); Redirected to URL: https://clarksburgma.gov/index.php/departments; Total lines: 145\n",
+      "url": "https://www.clarksburgma.us/departments",
+      "original_literal_href": null,
+      "navigation_kind": "department directory"
+    }
+  ],
+  "searches": [
+    "source/search/municipal-015.json"
+  ],
+  "bounded_chain_requests": [
+    {
+      "request_id": "muni-063-0",
+      "receipt": "source/http/muni-063-0.json",
+      "requested_url": "https://clarksburgma.gov/town-elections",
+      "final_url": "https://clarksburgma.gov/town-elections",
+      "status": 200,
+      "error": null,
+      "body": {
+        "path": "source/byhash/14fcd8a9a152e9aa9309504f97385c85e85963858542b907d6ed1351d3be659f.gz",
+        "raw_bytes": 20773,
+        "raw_sha256": "14fcd8a9a152e9aa9309504f97385c85e85963858542b907d6ed1351d3be659f",
+        "stored_bytes": 5777,
+        "stored_sha256": "422e50f8b6d81eadbf46faa384bd1f06404bf135eaf7e7c2c92a8dc225fc8c5d",
+        "encoding": "gzip of requests transport-decoded complete entity"
+      },
+      "structure": "source/structures/14fcd8a9a152e9aa9309504f97385c85e85963858542b907d6ed1351d3be659f.json.gz",
+      "source_update_clock": null,
+      "measured_cadence": null,
+      "current_return_admitted": false,
+      "inspection": "source/inspect/muni-063-0.json",
+      "title": "Annual Town Election & Meeting  - Town of Clarksburg MA"
+    },
+    {
+      "request_id": "dept-66e62f86a62eb552",
+      "receipt": "source/http/dept-66e62f86a62eb552.json",
+      "requested_url": "https://www.clarksburgma.us/departments",
+      "final_url": "https://clarksburgma.gov/index.php/departments",
+      "status": 200,
+      "error": null,
+      "body": {
+        "path": "source/byhash/7d9f5f1bfd2f87f1dd7c81228ec78dfa804c059aa5ad86c35e4d5a27c4c0dfa4.gz",
+        "raw_bytes": 28953,
+        "raw_sha256": "7d9f5f1bfd2f87f1dd7c81228ec78dfa804c059aa5ad86c35e4d5a27c4c0dfa4",
+        "stored_bytes": 6418,
+        "stored_sha256": "01bd06027f9aab8678b9c09c70f1a6bba1fa41f2191a3772eee2f738a0402270",
+        "encoding": "gzip of requests transport-decoded complete entity"
+      },
+      "structure": "source/structures/7d9f5f1bfd2f87f1dd7c81228ec78dfa804c059aa5ad86c35e4d5a27c4c0dfa4.json.gz",
+      "source_update_clock": null,
+      "measured_cadence": null,
+      "current_return_admitted": false,
+      "inspection": "source/inspect/dept-66e62f86a62eb552.json",
+      "title": "Departments - Town of Clarksburg MA"
+    }
+  ],
+  "actual_follow_request_constructors": [],
+  "observed_election_links": [
+    {
+      "source_id": "muni-063-0",
+      "ordinal": 15,
+      "tag": "a",
+      "literal_href": "#mainContentHolder",
+      "url": "https://clarksburgma.gov/town-elections#mainContentHolder",
+      "text": "Skip Navigation",
+      "public_fetch_allowed": true,
+      "fetched": false,
+      "official_result_publication_approval": false
+    },
+    {
+      "source_id": "muni-063-0",
+      "ordinal": 44,
+      "tag": "a",
+      "literal_href": "/town-clerk",
+      "url": "https://clarksburgma.gov/town-clerk",
+      "text": "Town Clerk",
+      "public_fetch_allowed": true,
+      "fetched": false,
+      "official_result_publication_approval": false
+    },
+    {
+      "source_id": "muni-063-0",
+      "ordinal": 45,
+      "tag": "a",
+      "literal_href": "/town-elections",
+      "url": "https://clarksburgma.gov/town-elections",
+      "text": "Annual Town Election & Meeting",
+      "public_fetch_allowed": true,
+      "fetched": true,
+      "official_result_publication_approval": false
+    },
+    {
+      "source_id": "muni-063-0",
+      "ordinal": 88,
+      "tag": "a",
+      "literal_href": "/2026-town-election-results",
+      "url": "https://clarksburgma.gov/2026-town-election-results",
+      "text": "View Town Election 2026 Results Here",
+      "public_fetch_allowed": true,
+      "fetched": false,
+      "official_result_publication_approval": false
+    },
+    {
+      "source_id": "dept-66e62f86a62eb552",
+      "ordinal": 44,
+      "tag": "a",
+      "literal_href": "/town-clerk",
+      "url": "https://clarksburgma.gov/town-clerk",
+      "text": "Town Clerk",
+      "public_fetch_allowed": true,
+      "fetched": false,
+      "official_result_publication_approval": false
+    },
+    {
+      "source_id": "dept-66e62f86a62eb552",
+      "ordinal": 45,
+      "tag": "a",
+      "literal_href": "/town-elections",
+      "url": "https://clarksburgma.gov/town-elections",
+      "text": "Annual Town Election & Meeting",
+      "public_fetch_allowed": true,
+      "fetched": true,
+      "official_result_publication_approval": false
+    },
+    {
+      "source_id": "dept-66e62f86a62eb552",
+      "ordinal": 128,
+      "tag": "a",
+      "literal_href": "departments/town-clerk",
+      "url": "https://clarksburgma.gov/index.php/departments/town-clerk",
+      "text": "Town Clerk",
+      "public_fetch_allowed": true,
+      "fetched": false,
+      "official_result_publication_approval": false
+    },
+    {
+      "source_id": "dept-66e62f86a62eb552",
+      "ordinal": 129,
+      "tag": "a",
+      "literal_href": "departments/town-clerk",
+      "url": "https://clarksburgma.gov/index.php/departments/town-clerk",
+      "text": "Read More",
+      "public_fetch_allowed": true,
+      "fetched": false,
+      "official_result_publication_approval": false
+    }
+  ],
+  "publication_status_and_plan_evidence": [],
+  "complete_format_samples": [
+    {
+      "source_id": "muni-063-0",
+      "format": "HTML",
+      "structure": "source/structures/14fcd8a9a152e9aa9309504f97385c85e85963858542b907d6ed1351d3be659f.json.gz"
+    },
+    {
+      "source_id": "dept-66e62f86a62eb552",
+      "format": "HTML",
+      "structure": "source/structures/7d9f5f1bfd2f87f1dd7c81228ec78dfa804c059aa5ad86c35e4d5a27c4c0dfa4.json.gz"
+    }
+  ],
+  "access_gaps": [],
+  "current": {
+    "target_date": "2026-11-03",
+    "stage": "General / State Election",
+    "office": "Senator in Congress",
+    "source_parent_is_historical": true,
+    "current_date_native_id": null,
+    "current_election_native_id": null,
+    "current_stage_native_id": null,
+    "current_office_native_id": null,
+    "current_candidate_choice_ids": null,
+    "current_party_ids": null,
+    "current_reporting_unit_ids": null,
+    "current_method_ids": null,
+    "current_status_ids": null,
+    "geographic_match": null,
+    "genuine_November_returns": null,
+    "current_admission": false,
+    "eligible_unprocessed_votes": null,
+    "measured_cadence": null,
+    "correction_clock": null,
+    "completion_meaning": null
+  },
+  "scope": "complete bounded parent evidence; shared across exact historical children; online election-night service is not guaranteed by statutory authority or a landing 200",
+  "completion_status": "bounded investigation finished, with explicit source/access and future qualifications"
+}

@@ -1,0 +1,201 @@
+{
+  "schema": "MA bounded shared municipal parent investigation v1",
+  "research_parent_ordinal": 272,
+  "source_parent_key": "[\"Shutesbury\",\"\",\"\"]",
+  "source_parent_literal": "Shutesbury",
+  "research_full_name": "Shutesbury",
+  "authority_path": "data/coordinator-priority-acceptance.json",
+  "priority_parent": true,
+  "historical_parent_full_object": {
+    "municipal_key": "[\"Shutesbury\",\"\",\"\"]",
+    "literal_city_town": "Shutesbury",
+    "csv_record_ordinal": 274,
+    "values": [
+      1045,
+      195,
+      1,
+      23,
+      1264
+    ],
+    "native_keys_source_order": [
+      "[\"Shutesbury\",\"-\",\"1\"]"
+    ],
+    "native_keys_priority_order": [
+      "[\"Shutesbury\",\"-\",\"1\"]"
+    ],
+    "native_context_count": 1,
+    "all_children_present": true,
+    "numeric_id": null,
+    "fips": null,
+    "aggregation": "sum children; parent overlaps children and must never be added"
+  },
+  "government_directory_matching_blocks": [
+    {
+      "name": "Shutesbury",
+      "raw_web_directory_block": "### Shutesbury\n\ncite891†Town of Shutesbury†www.shutesbury.org \ncite892†1 Cooleyville Road Shutesbury, MA 01072†goo.gl \n413-259-1214\ncite893†Town Department Directory†www.shutesbury.org \n",
+      "observed_domains": [
+        "www.shutesbury.org"
+      ],
+      "raw_original_html_status": "403; literal hrefs unavailable in extracted web representation",
+      "blank_fields_not_repaired": true
+    }
+  ],
+  "government_directory_correspondence": "historical name research attribution only; not a current ID or boundary match",
+  "government_directory_duplicate_literal": false,
+  "secretary_local_election_directory": {
+    "url": "https://www.sec.state.ma.us/divisions/elections/voter-resources/find-my-local-election-office.htm",
+    "raw_HTML_access": "403 after ordinary redirect/cookie attempt",
+    "raw_field_completeness": false,
+    "indexed_fragment_references": [
+      {
+        "source_file": "source/directory-search/local-001.json",
+        "response_pointer": "/response",
+        "start": 17555,
+        "end": 17735,
+        "literal_heading": "Shutesbury",
+        "observed_role_lines": [
+          "Town Clerk"
+        ],
+        "source_original": false,
+        "entry_completeness": "unverified indexed fragment; gaps may exist inside it"
+      },
+      {
+        "source_file": "source/directory-search/local-072.json",
+        "response_pointer": "/response",
+        "start": 15299,
+        "end": 15479,
+        "literal_heading": "Shutesbury",
+        "observed_role_lines": [
+          "Town Clerk"
+        ],
+        "source_original": false,
+        "entry_completeness": "unverified indexed fragment; gaps may exist inside it"
+      },
+      {
+        "source_file": "source/directory-search/local-078.json",
+        "response_pointer": "/response",
+        "start": 18312,
+        "end": 18492,
+        "literal_heading": "Shutesbury",
+        "observed_role_lines": [
+          "Town Clerk"
+        ],
+        "source_original": false,
+        "entry_completeness": "unverified indexed fragment; gaps may exist inside it"
+      }
+    ],
+    "raw_missing_fields_remain_unknown": true
+  },
+  "distinct_authority_roles": {
+    "indexed_directory_role_lines": [
+      "Town Clerk"
+    ],
+    "actual_page_role_occurrences": [],
+    "precinct_canvass": "presiding officers/precinct clerk: c54 ss104-107; not municipal clerk identity",
+    "municipal_certification": "c54 s112: city/town clerk; Boston Board of Election Commissioners",
+    "post_election_absentee_canvass": "c54 s95: registrars; distinct from clerk record transmission",
+    "recount": "c54 s135: registrars determine, clerk amends and transmits",
+    "state_certification": "c54 ss115-116: Governor/Council examination and Governor Senate certificate countersigned/transmitted by Secretary",
+    "local_current_named_official_ID": null
+  },
+  "secretary_department_navigation": [
+    {
+      "parent_literal": "Shutesbury",
+      "requested_directory_link_id": 893,
+      "web_evidence": "source/navigation/department-066.json",
+      "web_representation": "Contact Page | Shutesbury.org (https://www.shutesbury.org/contact)\nciteturn239view3 [wordlim: 200] Crawled: 2 days ago; Content type: text/html; Source: click({\"ref_id\":\"turn2view1\",\"id\":893}); Redirected to URL: https://shutesbury.org/contact; Total lines: 56\n",
+      "url": "https://www.shutesbury.org/contact",
+      "original_literal_href": null,
+      "navigation_kind": "department directory"
+    }
+  ],
+  "searches": [
+    "source/search/municipal-067.json"
+  ],
+  "bounded_chain_requests": [
+    {
+      "request_id": "dept-2c7827d2beecfff2",
+      "receipt": "source/http/dept-2c7827d2beecfff2.json",
+      "requested_url": "https://www.shutesbury.org/contact",
+      "final_url": "https://shutesbury.org/contact",
+      "status": 403,
+      "error": null,
+      "body": {
+        "path": "source/byhash/efea47664f92b63df0d03f37dfb3409e4d8dae4d8a50d7c30e9d9bca7da784ce.gz",
+        "raw_bytes": 5522,
+        "raw_sha256": "efea47664f92b63df0d03f37dfb3409e4d8dae4d8a50d7c30e9d9bca7da784ce",
+        "stored_bytes": 3209,
+        "stored_sha256": "50abf1624aedcffbeaceb1acfc871d2f616c0289e74902f31c1a571762dec8d2",
+        "encoding": "gzip of requests transport-decoded complete entity"
+      },
+      "structure": null,
+      "source_update_clock": null,
+      "measured_cadence": null,
+      "current_return_admitted": false,
+      "inspection": "source/inspect/dept-2c7827d2beecfff2.json",
+      "title": "Just a moment..."
+    },
+    {
+      "request_id": "muni-271-0",
+      "receipt": "source/http/muni-271-0.json",
+      "requested_url": "https://www.shutesbury.org/sites/default/files/files-and-images/Annual%20Town%20Reports/Annual%20Town%20Report_FY2024.pdf",
+      "final_url": "https://shutesbury.org/sites/default/files/files-and-images/Annual%20Town%20Reports/Annual%20Town%20Report_FY2024.pdf",
+      "status": 403,
+      "error": null,
+      "body": {
+        "path": "source/byhash/39958928742c3a08a2f6290d9df386457938fdbf97fd9110b8bfb3b93b651f2c.gz",
+        "raw_bytes": 5911,
+        "raw_sha256": "39958928742c3a08a2f6290d9df386457938fdbf97fd9110b8bfb3b93b651f2c",
+        "stored_bytes": 3356,
+        "stored_sha256": "f7463a349b91efb2e8f8af2afda3f0f4122138ccbc8feb773763bb2f7657c854",
+        "encoding": "gzip of requests transport-decoded complete entity"
+      },
+      "structure": null,
+      "source_update_clock": null,
+      "measured_cadence": null,
+      "current_return_admitted": false,
+      "inspection": "source/inspect/muni-271-0.json",
+      "title": "Just a moment..."
+    }
+  ],
+  "actual_follow_request_constructors": [],
+  "observed_election_links": [],
+  "publication_status_and_plan_evidence": [],
+  "complete_format_samples": [],
+  "access_gaps": [
+    {
+      "url": "https://www.shutesbury.org/contact",
+      "status": 403,
+      "error": null
+    },
+    {
+      "url": "https://www.shutesbury.org/sites/default/files/files-and-images/Annual%20Town%20Reports/Annual%20Town%20Report_FY2024.pdf",
+      "status": 403,
+      "error": null
+    }
+  ],
+  "current": {
+    "target_date": "2026-11-03",
+    "stage": "General / State Election",
+    "office": "Senator in Congress",
+    "source_parent_is_historical": true,
+    "current_date_native_id": null,
+    "current_election_native_id": null,
+    "current_stage_native_id": null,
+    "current_office_native_id": null,
+    "current_candidate_choice_ids": null,
+    "current_party_ids": null,
+    "current_reporting_unit_ids": null,
+    "current_method_ids": null,
+    "current_status_ids": null,
+    "geographic_match": null,
+    "genuine_November_returns": null,
+    "current_admission": false,
+    "eligible_unprocessed_votes": null,
+    "measured_cadence": null,
+    "correction_clock": null,
+    "completion_meaning": null
+  },
+  "scope": "complete bounded parent evidence; shared across exact historical children; online election-night service is not guaranteed by statutory authority or a landing 200",
+  "completion_status": "bounded investigation finished, with explicit source/access and future qualifications"
+}

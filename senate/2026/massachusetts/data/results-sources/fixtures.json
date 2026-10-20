@@ -1,0 +1,30 @@
+{
+  "schema": "Offline negative semantic fixtures; no actual feed or votes",
+  "admission_cases": [
+    {"name":"September primary cannot become November general", "input":{"date":"2026-09-01","stage":"Primary","office":"Senator in Congress","kind":"genuine_returns"},"required_rejection":"stage"},
+    {"name":"HTTP200 HTML shell cannot become a return", "input":{"date":"2026-11-03","stage":"General","office":"Senator in Congress","kind":"shell"},"required_rejection":"publication_kind"},
+    {"name":"test data cannot become genuine votes", "input":{"date":"2026-11-03","stage":"General","office":"Senator in Congress","kind":"test"},"required_rejection":"publication_kind"},
+    {"name":"zero fixture cannot become a genuine return", "input":{"date":"2026-11-03","stage":"General","office":"Senator in Congress","kind":"zero_fixture"},"required_rejection":"publication_kind"},
+    {"name":"specimen choices are not returns", "input":{"date":"2026-11-03","stage":"General","office":"Senator in Congress","kind":"specimen"},"required_rejection":"publication_kind"},
+    {"name":"totals-only projection lacks complete response", "input":{"date":"2026-11-03","stage":"General","office":"Senator in Congress","kind":"genuine_returns","complete_envelope":false},"required_rejection":"incomplete_envelope"},
+    {"name":"historical name/counts do not supply native IDs", "input":{"date":"2026-11-03","stage":"General","office":"Senator in Congress","kind":"genuine_returns","complete_envelope":true,"observed_native_ids":false},"required_rejection":"unobserved_ids"},
+    {"name":"municipal historical parent is not approved current coverage", "input":{"date":"2026-11-03","stage":"General","office":"Senator in Congress","kind":"genuine_returns","scope_observed":false},"required_rejection":"unobserved_scope"},
+    {"name":"worker does not self-approve a synthetic full schema", "input":{"date":"2026-11-03","stage":"General","office":"Senator in Congress","kind":"genuine_returns","scope_observed":true,"complete_envelope":true,"observed_native_ids":true},"required_rejection":"coordinator_review"}
+  ],
+  "remaining_cases": [
+    {"name":"registration subtraction is not eligible votes","input":{"kind":"registration_minus_count","value":900,"source_status":"registered"},"expected":null},
+    {"name":"ballots issued are not outstanding eligible Senate votes","input":{"kind":"ballots_issued","value":900,"source_status":"issued"},"expected":null},
+    {"name":"completion percentage cannot give an exact pool","input":{"kind":"completion_counter","value":900,"source_status":"99 percent"},"expected":null},
+    {"name":"raw ballot residual cannot give eligible vote pool","input":{"kind":"raw_ballot_residual","value":900,"source_status":"raw"},"expected":null},
+    {"name":"missing explicit status remains unknown","input":{"kind":"explicit_eligible_unprocessed_votes","value":900},"expected":null},
+    {"name":"negative pool rejected","input":{"kind":"explicit_eligible_unprocessed_votes","value":-1,"source_status":"explicit fixture"},"expected":null},
+    {"name":"boolean is not an integer vote count","input":{"kind":"explicit_eligible_unprocessed_votes","value":true,"source_status":"explicit fixture"},"expected":null},
+    {"name":"synthetic explicit status retains genuine zero","input":{"kind":"explicit_eligible_unprocessed_votes","value":0,"source_status":"explicit eligible outstanding votes, synthetic"},"expected":0}
+  ],
+  "cumulative_correction": {
+    "earlier":{"named":100,"other":2,"blank":"","null_method":null,"header":["Candidate","Party","P1"],"party":["D",null],"raw_positions":["100","2","",null]},
+    "later":{"named":98,"other":3,"blank":"","null_method":null,"header":["Candidate","Party","P1"],"party":["D",null],"raw_positions":["98","3","",null]},
+    "expected_current":{"named":98,"other":3,"blank":"","null_method":null,"header":["Candidate","Party","P1"],"party":["D",null],"raw_positions":["98","3","",null]},
+    "meaning":"Replace cumulative snapshots rather than add them; correction can reduce totals. Fictional fixture, no time interval or real eligibility claim."
+  }
+}

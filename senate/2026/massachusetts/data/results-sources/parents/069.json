@@ -1,0 +1,446 @@
+{
+  "schema": "MA bounded shared municipal parent investigation v1",
+  "research_parent_ordinal": 69,
+  "source_parent_key": "[\"Conway\",\"\",\"\"]",
+  "source_parent_literal": "Conway",
+  "research_full_name": "Conway",
+  "authority_path": "data/coordinator-priority-acceptance.json",
+  "priority_parent": true,
+  "historical_parent_full_object": {
+    "municipal_key": "[\"Conway\",\"\",\"\"]",
+    "literal_city_town": "Conway",
+    "csv_record_ordinal": 71,
+    "values": [
+      918,
+      375,
+      0,
+      17,
+      1310
+    ],
+    "native_keys_source_order": [
+      "[\"Conway\",\"-\",\"1\"]"
+    ],
+    "native_keys_priority_order": [
+      "[\"Conway\",\"-\",\"1\"]"
+    ],
+    "native_context_count": 1,
+    "all_children_present": true,
+    "numeric_id": null,
+    "fips": null,
+    "aggregation": "sum children; parent overlaps children and must never be added"
+  },
+  "government_directory_matching_blocks": [
+    {
+      "name": "Conway",
+      "raw_web_directory_block": "### Conway\n\ncite287†Town of Conway†conwayma.gov \ncite288†32 Main Street Conway, MA 01341†goo.gl \n413-369-4235\ncite289†Town Department Directory†conwayma.gov \n\n",
+      "observed_domains": [
+        "conwayma.gov"
+      ],
+      "raw_original_html_status": "403; literal hrefs unavailable in extracted web representation",
+      "blank_fields_not_repaired": true
+    }
+  ],
+  "government_directory_correspondence": "historical name research attribution only; not a current ID or boundary match",
+  "government_directory_duplicate_literal": false,
+  "secretary_local_election_directory": {
+    "url": "https://www.sec.state.ma.us/divisions/elections/voter-resources/find-my-local-election-office.htm",
+    "raw_HTML_access": "403 after ordinary redirect/cookie attempt",
+    "raw_field_completeness": false,
+    "indexed_fragment_references": [
+      {
+        "source_file": "source/directory-search/local-016.json",
+        "response_pointer": "/response",
+        "start": 5361,
+        "end": 5558,
+        "literal_heading": "Conway",
+        "observed_role_lines": [
+          "Town Clerk"
+        ],
+        "source_original": false,
+        "entry_completeness": "unverified indexed fragment; gaps may exist inside it"
+      }
+    ],
+    "raw_missing_fields_remain_unknown": true
+  },
+  "distinct_authority_roles": {
+    "indexed_directory_role_lines": [
+      "Town Clerk"
+    ],
+    "actual_page_role_occurrences": [
+      {
+        "request_id": "muni-068-0",
+        "literal": "Town Clerk",
+        "context_start": 276,
+        "context_end": 286,
+        "inspection": "source/inspect/muni-068-0.json"
+      },
+      {
+        "request_id": "muni-068-0",
+        "literal": "Board of Registrars",
+        "context_start": 457,
+        "context_end": 476,
+        "inspection": "source/inspect/muni-068-0.json"
+      },
+      {
+        "request_id": "muni-068-0",
+        "literal": "Town Clerk",
+        "context_start": 3130,
+        "context_end": 3140,
+        "inspection": "source/inspect/muni-068-0.json"
+      },
+      {
+        "request_id": "muni-068-0",
+        "literal": "Town Clerk",
+        "context_start": 3780,
+        "context_end": 3790,
+        "inspection": "source/inspect/muni-068-0.json"
+      }
+    ],
+    "precinct_canvass": "presiding officers/precinct clerk: c54 ss104-107; not municipal clerk identity",
+    "municipal_certification": "c54 s112: city/town clerk; Boston Board of Election Commissioners",
+    "post_election_absentee_canvass": "c54 s95: registrars; distinct from clerk record transmission",
+    "recount": "c54 s135: registrars determine, clerk amends and transmits",
+    "state_certification": "c54 ss115-116: Governor/Council examination and Governor Senate certificate countersigned/transmitted by Secretary",
+    "local_current_named_official_ID": null
+  },
+  "secretary_department_navigation": [
+    {
+      "parent_literal": "Conway",
+      "requested_directory_link_id": 289,
+      "web_evidence": "source/navigation/department-017.json",
+      "web_representation": "conwayma.gov (https://conwayma.gov/p/77/Town-Staff-Directory-and-Contact)\nciteturn190view0 [wordlim: 200] Crawled: 3 days ago; Content type: text/html; Source: click({\"ref_id\":\"turn2view1\",\"id\":289}); Total lines: 5\nL0: # Blocked!\nL1: \nL2: Sorry, you appear to be a bad bot [5]\nL3: \nL4: If you feel this is an error, call Montague WebWorks 320 5336\n",
+      "url": "https://conwayma.gov/p/77/Town-Staff-Directory-and-Contact",
+      "original_literal_href": null,
+      "navigation_kind": "department directory"
+    }
+  ],
+  "searches": [
+    "source/search/municipal-017.json"
+  ],
+  "bounded_chain_requests": [
+    {
+      "request_id": "muni-068-1",
+      "receipt": "source/http/muni-068-1.json",
+      "requested_url": "https://conwayma.gov/files/Annual_Report_Conway_FY24.pdf",
+      "final_url": "https://conwayma.gov/files/Annual_Report_Conway_FY24.pdf",
+      "status": 200,
+      "error": null,
+      "body": {
+        "path": "source/byhash/b2570359903ceea26f6980fc332be32338927bf50fda574589738f4ae37a7715.gz",
+        "raw_bytes": 1338752,
+        "raw_sha256": "b2570359903ceea26f6980fc332be32338927bf50fda574589738f4ae37a7715",
+        "stored_bytes": 1120315,
+        "stored_sha256": "38a528131f9c681e122422b87b45d63576da3b6dd712f2de0adeaa9c2b1ad8e9",
+        "encoding": "gzip of requests transport-decoded complete entity"
+      },
+      "structure": "source/structures/b2570359903ceea26f6980fc332be32338927bf50fda574589738f4ae37a7715.json.gz",
+      "source_update_clock": null,
+      "measured_cadence": null,
+      "current_return_admitted": false
+    },
+    {
+      "request_id": "dept-874cbbc90278b56d",
+      "receipt": "source/http/dept-874cbbc90278b56d.json",
+      "requested_url": "https://conwayma.gov/p/77/Town-Staff-Directory-and-Contact",
+      "final_url": "https://conwayma.gov/p/77/Town-Staff-Directory-and-Contact",
+      "status": 200,
+      "error": null,
+      "body": {
+        "path": "source/byhash/894e3634aac31e3ca8b3b973a1e57c8fcfceef152e6b25ccb72b981dd72d3576.gz",
+        "raw_bytes": 265,
+        "raw_sha256": "894e3634aac31e3ca8b3b973a1e57c8fcfceef152e6b25ccb72b981dd72d3576",
+        "stored_bytes": 221,
+        "stored_sha256": "ac23f3ac9fdf2e930bb7edb48c89f407211c2a19fb23f2b082381a70a3247791",
+        "encoding": "gzip of requests transport-decoded complete entity"
+      },
+      "structure": "source/structures/894e3634aac31e3ca8b3b973a1e57c8fcfceef152e6b25ccb72b981dd72d3576.json.gz",
+      "source_update_clock": null,
+      "measured_cadence": null,
+      "current_return_admitted": false,
+      "inspection": "source/inspect/dept-874cbbc90278b56d.json",
+      "title": null
+    },
+    {
+      "request_id": "muni-068-0",
+      "receipt": "source/http/muni-068-0.json",
+      "requested_url": "https://www.conwayma.gov/",
+      "final_url": "https://www.conwayma.gov/",
+      "status": 200,
+      "error": null,
+      "body": {
+        "path": "source/byhash/fffc3954773e6043ee7edca1ad439cf040cc3fe91deb2cb4e07835d44f16c2c8.gz",
+        "raw_bytes": 55142,
+        "raw_sha256": "fffc3954773e6043ee7edca1ad439cf040cc3fe91deb2cb4e07835d44f16c2c8",
+        "stored_bytes": 14645,
+        "stored_sha256": "d6dda04e3e55e6acbef696809ed237841d0cccf2668e7ebff8be8a89ec57dcba",
+        "encoding": "gzip of requests transport-decoded complete entity"
+      },
+      "structure": "source/structures/fffc3954773e6043ee7edca1ad439cf040cc3fe91deb2cb4e07835d44f16c2c8.json.gz",
+      "source_update_clock": null,
+      "measured_cadence": null,
+      "current_return_admitted": false,
+      "inspection": "source/inspect/muni-068-0.json",
+      "title": "Town of Conway MA"
+    },
+    {
+      "request_id": "follow-70e3ffd3c482f37c",
+      "receipt": "source/http/follow-70e3ffd3c482f37c.json",
+      "requested_url": "https://www.conwayma.gov/n/2240/Early-Voting-Hours-for-November-3rd-State-Election",
+      "final_url": "https://www.conwayma.gov/n/2240/Early-Voting-Hours-for-November-3rd-State-Election",
+      "status": 200,
+      "error": null,
+      "body": {
+        "path": "source/byhash/894e3634aac31e3ca8b3b973a1e57c8fcfceef152e6b25ccb72b981dd72d3576.gz",
+        "raw_bytes": 265,
+        "raw_sha256": "894e3634aac31e3ca8b3b973a1e57c8fcfceef152e6b25ccb72b981dd72d3576",
+        "stored_bytes": 221,
+        "stored_sha256": "ac23f3ac9fdf2e930bb7edb48c89f407211c2a19fb23f2b082381a70a3247791",
+        "encoding": "gzip of requests transport-decoded complete entity"
+      },
+      "structure": "source/structures/894e3634aac31e3ca8b3b973a1e57c8fcfceef152e6b25ccb72b981dd72d3576.json.gz",
+      "source_update_clock": null,
+      "measured_cadence": null,
+      "current_return_admitted": false,
+      "inspection": "source/inspect/follow-70e3ffd3c482f37c.json",
+      "title": null
+    },
+    {
+      "request_id": "follow-69015d8ead196984",
+      "receipt": "source/http/follow-69015d8ead196984.json",
+      "requested_url": "https://www.conwayma.gov/d/0/?thisMonth=10&thisYear=2026&cid=29",
+      "final_url": "https://www.conwayma.gov/d/0/?thisMonth=10&thisYear=2026&cid=29",
+      "status": 200,
+      "error": null,
+      "body": {
+        "path": "source/byhash/894e3634aac31e3ca8b3b973a1e57c8fcfceef152e6b25ccb72b981dd72d3576.gz",
+        "raw_bytes": 265,
+        "raw_sha256": "894e3634aac31e3ca8b3b973a1e57c8fcfceef152e6b25ccb72b981dd72d3576",
+        "stored_bytes": 221,
+        "stored_sha256": "ac23f3ac9fdf2e930bb7edb48c89f407211c2a19fb23f2b082381a70a3247791",
+        "encoding": "gzip of requests transport-decoded complete entity"
+      },
+      "structure": "source/structures/894e3634aac31e3ca8b3b973a1e57c8fcfceef152e6b25ccb72b981dd72d3576.json.gz",
+      "source_update_clock": null,
+      "measured_cadence": null,
+      "current_return_admitted": false,
+      "inspection": "source/inspect/follow-69015d8ead196984.json",
+      "title": null
+    },
+    {
+      "request_id": "follow-b00bda43bfd52d16",
+      "receipt": "source/http/follow-b00bda43bfd52d16.json",
+      "requested_url": "https://www.conwayma.gov/p/104/Elections",
+      "final_url": "https://www.conwayma.gov/p/104/Elections",
+      "status": 200,
+      "error": null,
+      "body": {
+        "path": "source/byhash/894e3634aac31e3ca8b3b973a1e57c8fcfceef152e6b25ccb72b981dd72d3576.gz",
+        "raw_bytes": 265,
+        "raw_sha256": "894e3634aac31e3ca8b3b973a1e57c8fcfceef152e6b25ccb72b981dd72d3576",
+        "stored_bytes": 221,
+        "stored_sha256": "ac23f3ac9fdf2e930bb7edb48c89f407211c2a19fb23f2b082381a70a3247791",
+        "encoding": "gzip of requests transport-decoded complete entity"
+      },
+      "structure": "source/structures/894e3634aac31e3ca8b3b973a1e57c8fcfceef152e6b25ccb72b981dd72d3576.json.gz",
+      "source_update_clock": null,
+      "measured_cadence": null,
+      "current_return_admitted": false,
+      "inspection": "source/inspect/follow-b00bda43bfd52d16.json",
+      "title": null
+    },
+    {
+      "request_id": "follow-beadc823e49f568a",
+      "receipt": "source/http/follow-beadc823e49f568a.json",
+      "requested_url": "https://www.conwayma.gov/p/22/Town-Clerk",
+      "final_url": "https://www.conwayma.gov/p/22/Town-Clerk",
+      "status": 200,
+      "error": null,
+      "body": {
+        "path": "source/byhash/894e3634aac31e3ca8b3b973a1e57c8fcfceef152e6b25ccb72b981dd72d3576.gz",
+        "raw_bytes": 265,
+        "raw_sha256": "894e3634aac31e3ca8b3b973a1e57c8fcfceef152e6b25ccb72b981dd72d3576",
+        "stored_bytes": 221,
+        "stored_sha256": "ac23f3ac9fdf2e930bb7edb48c89f407211c2a19fb23f2b082381a70a3247791",
+        "encoding": "gzip of requests transport-decoded complete entity"
+      },
+      "structure": "source/structures/894e3634aac31e3ca8b3b973a1e57c8fcfceef152e6b25ccb72b981dd72d3576.json.gz",
+      "source_update_clock": null,
+      "measured_cadence": null,
+      "current_return_admitted": false,
+      "inspection": "source/inspect/follow-beadc823e49f568a.json",
+      "title": null
+    }
+  ],
+  "actual_follow_request_constructors": [
+    {
+      "id": "follow-70e3ffd3c482f37c",
+      "url": "https://www.conwayma.gov/n/2240/Early-Voting-Hours-for-November-3rd-State-Election",
+      "parent": "https://www.conwayma.gov/",
+      "literal_href": "/n/2240/Early-Voting-Hours-for-November-3rd-State-Election",
+      "reason": "bounded actual link for historical research parent Conway: Early Voting Hours for November 3rd State Election"
+    },
+    {
+      "id": "follow-69015d8ead196984",
+      "url": "https://www.conwayma.gov/d/0/?thisMonth=10&thisYear=2026&cid=29",
+      "parent": "https://www.conwayma.gov/",
+      "literal_href": "/d/0/?thisMonth=10&thisYear=2026&cid=29",
+      "reason": "bounded actual link for historical research parent Conway: Town Clerk"
+    },
+    {
+      "id": "follow-b00bda43bfd52d16",
+      "url": "https://www.conwayma.gov/p/104/Elections",
+      "parent": "https://www.conwayma.gov/",
+      "literal_href": "/p/104/Elections",
+      "reason": "bounded actual link for historical research parent Conway: Elections"
+    },
+    {
+      "id": "follow-beadc823e49f568a",
+      "url": "https://www.conwayma.gov/p/22/Town-Clerk",
+      "parent": "https://www.conwayma.gov/",
+      "literal_href": "/p/22/Town-Clerk",
+      "reason": "bounded actual link for historical research parent Conway: Town Clerk"
+    }
+  ],
+  "observed_election_links": [
+    {
+      "source_id": "muni-068-0",
+      "ordinal": 66,
+      "tag": "a",
+      "literal_href": "/p/104/Elections",
+      "url": "https://www.conwayma.gov/p/104/Elections",
+      "text": "Elections",
+      "public_fetch_allowed": true,
+      "fetched": true,
+      "official_result_publication_approval": false
+    },
+    {
+      "source_id": "muni-068-0",
+      "ordinal": 72,
+      "tag": "a",
+      "literal_href": "/p/22/Town-Clerk",
+      "url": "https://www.conwayma.gov/p/22/Town-Clerk",
+      "text": "Town Clerk",
+      "public_fetch_allowed": true,
+      "fetched": true,
+      "official_result_publication_approval": false
+    },
+    {
+      "source_id": "muni-068-0",
+      "ordinal": 81,
+      "tag": "a",
+      "literal_href": "/g/68/Board-of-Registrars",
+      "url": "https://www.conwayma.gov/g/68/Board-of-Registrars",
+      "text": "Board of Registrars",
+      "public_fetch_allowed": true,
+      "fetched": false,
+      "official_result_publication_approval": false
+    },
+    {
+      "source_id": "muni-068-0",
+      "ordinal": 148,
+      "tag": "a",
+      "literal_href": "/n/2240/Early-Voting-Hours-for-November-3rd-State-Election",
+      "url": "https://www.conwayma.gov/n/2240/Early-Voting-Hours-for-November-3rd-State-Election",
+      "text": "Early Voting Hours for November 3rd State Election",
+      "public_fetch_allowed": true,
+      "fetched": true,
+      "official_result_publication_approval": false
+    },
+    {
+      "source_id": "muni-068-0",
+      "ordinal": 149,
+      "tag": "a",
+      "literal_href": "/news/13/Town-Clerk-News",
+      "url": "https://www.conwayma.gov/news/13/Town-Clerk-News",
+      "text": "Town Clerk News",
+      "public_fetch_allowed": true,
+      "fetched": false,
+      "official_result_publication_approval": false
+    },
+    {
+      "source_id": "muni-068-0",
+      "ordinal": 160,
+      "tag": "a",
+      "literal_href": "/d/54319/In-Person-Early-Voting",
+      "url": "https://www.conwayma.gov/d/54319/In-Person-Early-Voting",
+      "text": "In-Person Early Voting",
+      "public_fetch_allowed": true,
+      "fetched": false,
+      "official_result_publication_approval": false
+    },
+    {
+      "source_id": "muni-068-0",
+      "ordinal": 161,
+      "tag": "a",
+      "literal_href": "/d/0/?thisMonth=10&thisYear=2026&cid=29",
+      "url": "https://www.conwayma.gov/d/0/?thisMonth=10&thisYear=2026&cid=29",
+      "text": "Town Clerk",
+      "public_fetch_allowed": true,
+      "fetched": true,
+      "official_result_publication_approval": false
+    }
+  ],
+  "publication_status_and_plan_evidence": [],
+  "complete_format_samples": [
+    {
+      "source_id": "muni-068-1",
+      "format": "PDF",
+      "structure": "source/structures/b2570359903ceea26f6980fc332be32338927bf50fda574589738f4ae37a7715.json.gz"
+    },
+    {
+      "source_id": "dept-874cbbc90278b56d",
+      "format": "HTML",
+      "structure": "source/structures/894e3634aac31e3ca8b3b973a1e57c8fcfceef152e6b25ccb72b981dd72d3576.json.gz"
+    },
+    {
+      "source_id": "muni-068-0",
+      "format": "HTML",
+      "structure": "source/structures/fffc3954773e6043ee7edca1ad439cf040cc3fe91deb2cb4e07835d44f16c2c8.json.gz"
+    },
+    {
+      "source_id": "follow-70e3ffd3c482f37c",
+      "format": "HTML",
+      "structure": "source/structures/894e3634aac31e3ca8b3b973a1e57c8fcfceef152e6b25ccb72b981dd72d3576.json.gz"
+    },
+    {
+      "source_id": "follow-69015d8ead196984",
+      "format": "HTML",
+      "structure": "source/structures/894e3634aac31e3ca8b3b973a1e57c8fcfceef152e6b25ccb72b981dd72d3576.json.gz"
+    },
+    {
+      "source_id": "follow-b00bda43bfd52d16",
+      "format": "HTML",
+      "structure": "source/structures/894e3634aac31e3ca8b3b973a1e57c8fcfceef152e6b25ccb72b981dd72d3576.json.gz"
+    },
+    {
+      "source_id": "follow-beadc823e49f568a",
+      "format": "HTML",
+      "structure": "source/structures/894e3634aac31e3ca8b3b973a1e57c8fcfceef152e6b25ccb72b981dd72d3576.json.gz"
+    }
+  ],
+  "access_gaps": [],
+  "current": {
+    "target_date": "2026-11-03",
+    "stage": "General / State Election",
+    "office": "Senator in Congress",
+    "source_parent_is_historical": true,
+    "current_date_native_id": null,
+    "current_election_native_id": null,
+    "current_stage_native_id": null,
+    "current_office_native_id": null,
+    "current_candidate_choice_ids": null,
+    "current_party_ids": null,
+    "current_reporting_unit_ids": null,
+    "current_method_ids": null,
+    "current_status_ids": null,
+    "geographic_match": null,
+    "genuine_November_returns": null,
+    "current_admission": false,
+    "eligible_unprocessed_votes": null,
+    "measured_cadence": null,
+    "correction_clock": null,
+    "completion_meaning": null
+  },
+  "scope": "complete bounded parent evidence; shared across exact historical children; online election-night service is not guaranteed by statutory authority or a landing 200",
+  "completion_status": "bounded investigation finished, with explicit source/access and future qualifications"
+}

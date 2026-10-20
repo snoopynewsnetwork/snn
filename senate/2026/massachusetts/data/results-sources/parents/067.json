@@ -1,0 +1,367 @@
+{
+  "schema": "MA bounded shared municipal parent investigation v1",
+  "research_parent_ordinal": 67,
+  "source_parent_key": "[\"Colrain\",\"\",\"\"]",
+  "source_parent_literal": "Colrain",
+  "research_full_name": "Colrain",
+  "authority_path": "data/coordinator-priority-acceptance.json",
+  "priority_parent": false,
+  "historical_parent_full_object": {
+    "municipal_key": "[\"Colrain\",\"\",\"\"]",
+    "literal_city_town": "Colrain",
+    "csv_record_ordinal": 69,
+    "values": [
+      615,
+      405,
+      0,
+      30,
+      1050
+    ],
+    "native_keys_source_order": [
+      "[\"Colrain\",\"-\",\"1\"]"
+    ],
+    "native_keys_priority_order": [
+      "[\"Colrain\",\"-\",\"1\"]"
+    ],
+    "native_context_count": 1,
+    "all_children_present": true,
+    "numeric_id": null,
+    "fips": null,
+    "aggregation": "sum children; parent overlaps children and must never be added"
+  },
+  "government_directory_matching_blocks": [
+    {
+      "name": "Colrain",
+      "raw_web_directory_block": "### Colrain\n\ncite281†Town of Colrain†colrain-ma.gov \ncite282†55 Main Road Colrain, MA 01340†goo.gl \n413-624-3454\ncite283†Town Department Directory†colrain-ma.gov \n",
+      "observed_domains": [
+        "colrain-ma.gov"
+      ],
+      "raw_original_html_status": "403; literal hrefs unavailable in extracted web representation",
+      "blank_fields_not_repaired": true
+    }
+  ],
+  "government_directory_correspondence": "historical name research attribution only; not a current ID or boundary match",
+  "government_directory_duplicate_literal": false,
+  "secretary_local_election_directory": {
+    "url": "https://www.sec.state.ma.us/divisions/elections/voter-resources/find-my-local-election-office.htm",
+    "raw_HTML_access": "403 after ordinary redirect/cookie attempt",
+    "raw_field_completeness": false,
+    "indexed_fragment_references": [
+      {
+        "source_file": "source/directory-search/local-016.json",
+        "response_pointer": "/response",
+        "start": 4936,
+        "end": 5098,
+        "literal_heading": "Colrain",
+        "observed_role_lines": [
+          "Town Clerk"
+        ],
+        "source_original": false,
+        "entry_completeness": "unverified indexed fragment; gaps may exist inside it"
+      }
+    ],
+    "raw_missing_fields_remain_unknown": true
+  },
+  "distinct_authority_roles": {
+    "indexed_directory_role_lines": [
+      "Town Clerk"
+    ],
+    "actual_page_role_occurrences": [
+      {
+        "request_id": "muni-066-1",
+        "literal": "Town Clerk",
+        "context_start": 110,
+        "context_end": 120,
+        "inspection": "source/inspect/muni-066-1.json"
+      },
+      {
+        "request_id": "muni-066-1",
+        "literal": "Town Clerk",
+        "context_start": 1917,
+        "context_end": 1927,
+        "inspection": "source/inspect/muni-066-1.json"
+      },
+      {
+        "request_id": "muni-066-1",
+        "literal": "Town Clerk",
+        "context_start": 3739,
+        "context_end": 3749,
+        "inspection": "source/inspect/muni-066-1.json"
+      },
+      {
+        "request_id": "muni-066-1",
+        "literal": "Town Clerk",
+        "context_start": 4115,
+        "context_end": 4125,
+        "inspection": "source/inspect/muni-066-1.json"
+      },
+      {
+        "request_id": "muni-066-1",
+        "literal": "Town Clerk",
+        "context_start": 6053,
+        "context_end": 6063,
+        "inspection": "source/inspect/muni-066-1.json"
+      },
+      {
+        "request_id": "muni-066-1",
+        "literal": "Town Clerk",
+        "context_start": 6082,
+        "context_end": 6092,
+        "inspection": "source/inspect/muni-066-1.json"
+      }
+    ],
+    "precinct_canvass": "presiding officers/precinct clerk: c54 ss104-107; not municipal clerk identity",
+    "municipal_certification": "c54 s112: city/town clerk; Boston Board of Election Commissioners",
+    "post_election_absentee_canvass": "c54 s95: registrars; distinct from clerk record transmission",
+    "recount": "c54 s135: registrars determine, clerk amends and transmits",
+    "state_certification": "c54 ss115-116: Governor/Council examination and Governor Senate certificate countersigned/transmitted by Secretary",
+    "local_current_named_official_ID": null
+  },
+  "secretary_department_navigation": [
+    {
+      "parent_literal": "Colrain",
+      "requested_directory_link_id": 283,
+      "web_evidence": "source/navigation/department-016.json",
+      "web_representation": "colrain-ma.gov (https://colrain-ma.gov/p/10144/)\nciteturn191view2 [wordlim: 200] Crawled: last week; Content type: text/html; Source: click({\"ref_id\":\"turn2view1\",\"id\":283}); Total lines: 5\nL0: # Blocked!\nL1: \nL2: Sorry, you appear to be a bad bot [5]\nL3: \nL4: If you feel this is an error, call Montague WebWorks 320 5336\n",
+      "url": "https://colrain-ma.gov/p/10144/",
+      "original_literal_href": null,
+      "navigation_kind": "department directory"
+    }
+  ],
+  "searches": [
+    "source/search/municipal-016.json"
+  ],
+  "bounded_chain_requests": [
+    {
+      "request_id": "muni-066-0",
+      "receipt": "source/http/muni-066-0.json",
+      "requested_url": "https://colrain-ma.gov/files/Annual_Town_Meeting_Warrant_FY2018_as_voted.pdf",
+      "final_url": "https://colrain-ma.gov/files/Annual_Town_Meeting_Warrant_FY2018_as_voted.pdf",
+      "status": 200,
+      "error": null,
+      "body": {
+        "path": "source/byhash/e9543dad47413b5141591a94bcd9f5213551fc03097e347cadbff59e5bdf31ee.gz",
+        "raw_bytes": 294762,
+        "raw_sha256": "e9543dad47413b5141591a94bcd9f5213551fc03097e347cadbff59e5bdf31ee",
+        "stored_bytes": 276641,
+        "stored_sha256": "55197c788605a58b54284aae0f2117a90f726d6f67cd8313203155d9aa00dcd7",
+        "encoding": "gzip of requests transport-decoded complete entity"
+      },
+      "structure": "source/structures/e9543dad47413b5141591a94bcd9f5213551fc03097e347cadbff59e5bdf31ee.json.gz",
+      "source_update_clock": null,
+      "measured_cadence": null,
+      "current_return_admitted": false
+    },
+    {
+      "request_id": "dept-cdada118da8e2086",
+      "receipt": "source/http/dept-cdada118da8e2086.json",
+      "requested_url": "https://colrain-ma.gov/p/10144/",
+      "final_url": "https://colrain-ma.gov/p/10144/",
+      "status": 200,
+      "error": null,
+      "body": {
+        "path": "source/byhash/894e3634aac31e3ca8b3b973a1e57c8fcfceef152e6b25ccb72b981dd72d3576.gz",
+        "raw_bytes": 265,
+        "raw_sha256": "894e3634aac31e3ca8b3b973a1e57c8fcfceef152e6b25ccb72b981dd72d3576",
+        "stored_bytes": 221,
+        "stored_sha256": "ac23f3ac9fdf2e930bb7edb48c89f407211c2a19fb23f2b082381a70a3247791",
+        "encoding": "gzip of requests transport-decoded complete entity"
+      },
+      "structure": "source/structures/894e3634aac31e3ca8b3b973a1e57c8fcfceef152e6b25ccb72b981dd72d3576.json.gz",
+      "source_update_clock": null,
+      "measured_cadence": null,
+      "current_return_admitted": false,
+      "inspection": "source/inspect/dept-cdada118da8e2086.json",
+      "title": null
+    },
+    {
+      "request_id": "muni-066-1",
+      "receipt": "source/http/muni-066-1.json",
+      "requested_url": "https://colrain-ma.gov/",
+      "final_url": "https://colrain-ma.gov/",
+      "status": 200,
+      "error": null,
+      "body": {
+        "path": "source/byhash/12356048198a386db1352c57e01c9a45f9cd55d0c7de2a7e080a51536cbd63a8.gz",
+        "raw_bytes": 54703,
+        "raw_sha256": "12356048198a386db1352c57e01c9a45f9cd55d0c7de2a7e080a51536cbd63a8",
+        "stored_bytes": 14572,
+        "stored_sha256": "3fcada5820644d1530cd1e56876e93590aa4d0bba73fac1a67c5c58a019e79ae",
+        "encoding": "gzip of requests transport-decoded complete entity"
+      },
+      "structure": "source/structures/12356048198a386db1352c57e01c9a45f9cd55d0c7de2a7e080a51536cbd63a8.json.gz",
+      "source_update_clock": null,
+      "measured_cadence": null,
+      "current_return_admitted": false,
+      "inspection": "source/inspect/muni-066-1.json",
+      "title": "Town of Colrain, MA"
+    }
+  ],
+  "actual_follow_request_constructors": [],
+  "observed_election_links": [
+    {
+      "source_id": "muni-066-1",
+      "ordinal": 31,
+      "tag": "a",
+      "literal_href": "/p/33/Town-Clerk",
+      "url": "https://colrain-ma.gov/p/33/Town-Clerk",
+      "text": "Town Clerk",
+      "public_fetch_allowed": true,
+      "fetched": false,
+      "official_result_publication_approval": false
+    },
+    {
+      "source_id": "muni-066-1",
+      "ordinal": 84,
+      "tag": "a",
+      "literal_href": "/f/0/2060/Election-Results",
+      "url": "https://colrain-ma.gov/f/0/2060/Election-Results",
+      "text": "Election Results",
+      "public_fetch_allowed": true,
+      "fetched": false,
+      "official_result_publication_approval": false
+    },
+    {
+      "source_id": "muni-066-1",
+      "ordinal": 109,
+      "tag": "a",
+      "literal_href": "/f/0/9/Town-Clerk-Doc-and-Forms",
+      "url": "https://colrain-ma.gov/f/0/9/Town-Clerk-Doc-and-Forms",
+      "text": "Town Clerk Doc and Forms",
+      "public_fetch_allowed": true,
+      "fetched": false,
+      "official_result_publication_approval": false
+    },
+    {
+      "source_id": "muni-066-1",
+      "ordinal": 110,
+      "tag": "a",
+      "literal_href": "/f/0/8/Town-Meeting-Warrants-and-Results",
+      "url": "https://colrain-ma.gov/f/0/8/Town-Meeting-Warrants-and-Results",
+      "text": "Town Meeting Warrants and Results",
+      "public_fetch_allowed": true,
+      "fetched": false,
+      "official_result_publication_approval": false
+    },
+    {
+      "source_id": "muni-066-1",
+      "ordinal": 163,
+      "tag": "a",
+      "literal_href": "/p/33/Town-Clerk",
+      "url": "https://colrain-ma.gov/p/33/Town-Clerk",
+      "text": "Town Clerk:",
+      "public_fetch_allowed": true,
+      "fetched": false,
+      "official_result_publication_approval": false
+    },
+    {
+      "source_id": "muni-066-1",
+      "ordinal": 164,
+      "tag": "a",
+      "literal_href": "/p/33/Town-Clerk",
+      "url": "https://colrain-ma.gov/p/33/Town-Clerk",
+      "text": "Birth, Marriage, Death Certificates",
+      "public_fetch_allowed": true,
+      "fetched": false,
+      "official_result_publication_approval": false
+    },
+    {
+      "source_id": "muni-066-1",
+      "ordinal": 166,
+      "tag": "a",
+      "literal_href": "/p/33/Town-Clerk",
+      "url": "https://colrain-ma.gov/p/33/Town-Clerk",
+      "text": "Voting & Elections",
+      "public_fetch_allowed": true,
+      "fetched": false,
+      "official_result_publication_approval": false
+    },
+    {
+      "source_id": "muni-066-1",
+      "ordinal": 173,
+      "tag": "a",
+      "literal_href": "/d/35257/Early-Voting-Primary-Election",
+      "url": "https://colrain-ma.gov/d/35257/Early-Voting-Primary-Election",
+      "text": "Early Voting - Primary Election",
+      "public_fetch_allowed": true,
+      "fetched": false,
+      "official_result_publication_approval": false
+    },
+    {
+      "source_id": "muni-066-1",
+      "ordinal": 174,
+      "tag": "a",
+      "literal_href": "/d/0/?thisMonth=10&thisYear=2026&cid=26",
+      "url": "https://colrain-ma.gov/d/0/?thisMonth=10&thisYear=2026&cid=26",
+      "text": "Town Clerk",
+      "public_fetch_allowed": true,
+      "fetched": false,
+      "official_result_publication_approval": false
+    },
+    {
+      "source_id": "muni-066-1",
+      "ordinal": 190,
+      "tag": "a",
+      "literal_href": "https://unipaygold.unibank.com/customerinfo.aspx",
+      "url": "https://unipaygold.unibank.com/customerinfo.aspx",
+      "text": "Town Clerk's Online Payments",
+      "public_fetch_allowed": true,
+      "fetched": false,
+      "official_result_publication_approval": false
+    },
+    {
+      "source_id": "muni-066-1",
+      "ordinal": 191,
+      "tag": "a",
+      "literal_href": "/p/33/Clerk",
+      "url": "https://colrain-ma.gov/p/33/Clerk",
+      "text": "Town Clerk",
+      "public_fetch_allowed": true,
+      "fetched": false,
+      "official_result_publication_approval": false
+    }
+  ],
+  "publication_status_and_plan_evidence": [],
+  "complete_format_samples": [
+    {
+      "source_id": "muni-066-0",
+      "format": "PDF",
+      "structure": "source/structures/e9543dad47413b5141591a94bcd9f5213551fc03097e347cadbff59e5bdf31ee.json.gz"
+    },
+    {
+      "source_id": "dept-cdada118da8e2086",
+      "format": "HTML",
+      "structure": "source/structures/894e3634aac31e3ca8b3b973a1e57c8fcfceef152e6b25ccb72b981dd72d3576.json.gz"
+    },
+    {
+      "source_id": "muni-066-1",
+      "format": "HTML",
+      "structure": "source/structures/12356048198a386db1352c57e01c9a45f9cd55d0c7de2a7e080a51536cbd63a8.json.gz"
+    }
+  ],
+  "access_gaps": [],
+  "current": {
+    "target_date": "2026-11-03",
+    "stage": "General / State Election",
+    "office": "Senator in Congress",
+    "source_parent_is_historical": true,
+    "current_date_native_id": null,
+    "current_election_native_id": null,
+    "current_stage_native_id": null,
+    "current_office_native_id": null,
+    "current_candidate_choice_ids": null,
+    "current_party_ids": null,
+    "current_reporting_unit_ids": null,
+    "current_method_ids": null,
+    "current_status_ids": null,
+    "geographic_match": null,
+    "genuine_November_returns": null,
+    "current_admission": false,
+    "eligible_unprocessed_votes": null,
+    "measured_cadence": null,
+    "correction_clock": null,
+    "completion_meaning": null
+  },
+  "scope": "complete bounded parent evidence; shared across exact historical children; online election-night service is not guaranteed by statutory authority or a landing 200",
+  "completion_status": "bounded investigation finished, with explicit source/access and future qualifications"
+}

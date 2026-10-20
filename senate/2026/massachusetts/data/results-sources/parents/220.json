@@ -1,0 +1,365 @@
+{
+  "schema": "MA bounded shared municipal parent investigation v1",
+  "research_parent_ordinal": 220,
+  "source_parent_key": "[\"Norwood\",\"\",\"\"]",
+  "source_parent_literal": "Norwood",
+  "research_full_name": "Norwood",
+  "authority_path": "data/coordinator-priority-acceptance.json",
+  "priority_parent": true,
+  "historical_parent_full_object": {
+    "municipal_key": "[\"Norwood\",\"\",\"\"]",
+    "literal_city_town": "Norwood",
+    "csv_record_ordinal": 222,
+    "values": [
+      9012,
+      6802,
+      40,
+      490,
+      16344
+    ],
+    "native_keys_source_order": [
+      "[\"Norwood\",\"-\",\"1\"]",
+      "[\"Norwood\",\"-\",\"2\"]",
+      "[\"Norwood\",\"-\",\"3\"]",
+      "[\"Norwood\",\"-\",\"4\"]",
+      "[\"Norwood\",\"-\",\"5\"]",
+      "[\"Norwood\",\"-\",\"6\"]",
+      "[\"Norwood\",\"-\",\"7\"]",
+      "[\"Norwood\",\"-\",\"8\"]",
+      "[\"Norwood\",\"-\",\"9\"]"
+    ],
+    "native_keys_priority_order": [
+      "[\"Norwood\",\"-\",\"4\"]",
+      "[\"Norwood\",\"-\",\"8\"]",
+      "[\"Norwood\",\"-\",\"3\"]",
+      "[\"Norwood\",\"-\",\"9\"]",
+      "[\"Norwood\",\"-\",\"1\"]",
+      "[\"Norwood\",\"-\",\"7\"]",
+      "[\"Norwood\",\"-\",\"2\"]",
+      "[\"Norwood\",\"-\",\"6\"]",
+      "[\"Norwood\",\"-\",\"5\"]"
+    ],
+    "native_context_count": 9,
+    "all_children_present": true,
+    "numeric_id": null,
+    "fips": null,
+    "aggregation": "sum children; parent overlaps children and must never be added"
+  },
+  "government_directory_matching_blocks": [
+    {
+      "name": "Norwood",
+      "raw_web_directory_block": "### Norwood\n\ncite735†Town of Norwood†www.norwoodma.gov \ncite736†566 Washington Street Norwood, MA 02062†goo.gl \n781-762-1240\ncite737†Town Department Directory†www.norwoodma.gov \n\n* * *\n\n",
+      "observed_domains": [
+        "www.norwoodma.gov"
+      ],
+      "raw_original_html_status": "403; literal hrefs unavailable in extracted web representation",
+      "blank_fields_not_repaired": true
+    }
+  ],
+  "government_directory_correspondence": "historical name research attribution only; not a current ID or boundary match",
+  "government_directory_duplicate_literal": false,
+  "secretary_local_election_directory": {
+    "url": "https://www.sec.state.ma.us/divisions/elections/voter-resources/find-my-local-election-office.htm",
+    "raw_HTML_access": "403 after ordinary redirect/cookie attempt",
+    "raw_field_completeness": false,
+    "indexed_fragment_references": [
+      {
+        "source_file": "source/directory-search/local-052.json",
+        "response_pointer": "/response",
+        "start": 13223,
+        "end": 13367,
+        "literal_heading": "Norwood",
+        "observed_role_lines": [
+          "Town Clerk"
+        ],
+        "source_original": false,
+        "entry_completeness": "unverified indexed fragment; gaps may exist inside it"
+      },
+      {
+        "source_file": "source/directory-search/local-053.json",
+        "response_pointer": "/response",
+        "start": 13042,
+        "end": 13186,
+        "literal_heading": "Norwood",
+        "observed_role_lines": [
+          "Town Clerk"
+        ],
+        "source_original": false,
+        "entry_completeness": "unverified indexed fragment; gaps may exist inside it"
+      },
+      {
+        "source_file": "source/directory-search/local-054.json",
+        "response_pointer": "/response",
+        "start": 20308,
+        "end": 20452,
+        "literal_heading": "Norwood",
+        "observed_role_lines": [
+          "Town Clerk"
+        ],
+        "source_original": false,
+        "entry_completeness": "unverified indexed fragment; gaps may exist inside it"
+      },
+      {
+        "source_file": "source/search/municipal-extra-030.json",
+        "response_pointer": "/response",
+        "start": 9534,
+        "end": 9678,
+        "literal_heading": "Norwood",
+        "observed_role_lines": [
+          "Town Clerk"
+        ],
+        "source_original": false,
+        "entry_completeness": "unverified indexed fragment; gaps may exist inside it"
+      },
+      {
+        "source_file": "source/search/municipal-extra-031.json",
+        "response_pointer": "/response",
+        "start": 1351,
+        "end": 1495,
+        "literal_heading": "Norwood",
+        "observed_role_lines": [
+          "Town Clerk"
+        ],
+        "source_original": false,
+        "entry_completeness": "unverified indexed fragment; gaps may exist inside it"
+      }
+    ],
+    "raw_missing_fields_remain_unknown": true
+  },
+  "distinct_authority_roles": {
+    "indexed_directory_role_lines": [
+      "Town Clerk"
+    ],
+    "actual_page_role_occurrences": [
+      {
+        "request_id": "dept-8e18d04c12df0026",
+        "literal": "Town Clerk",
+        "context_start": 312,
+        "context_end": 322,
+        "inspection": "source/inspect/dept-8e18d04c12df0026.json"
+      },
+      {
+        "request_id": "dept-8e18d04c12df0026",
+        "literal": "Board of Registrars",
+        "context_start": 436,
+        "context_end": 455,
+        "inspection": "source/inspect/dept-8e18d04c12df0026.json"
+      }
+    ],
+    "precinct_canvass": "presiding officers/precinct clerk: c54 ss104-107; not municipal clerk identity",
+    "municipal_certification": "c54 s112: city/town clerk; Boston Board of Election Commissioners",
+    "post_election_absentee_canvass": "c54 s95: registrars; distinct from clerk record transmission",
+    "recount": "c54 s135: registrars determine, clerk amends and transmits",
+    "state_certification": "c54 ss115-116: Governor/Council examination and Governor Senate certificate countersigned/transmitted by Secretary",
+    "local_current_named_official_ID": null
+  },
+  "secretary_department_navigation": [
+    {
+      "parent_literal": "Norwood",
+      "requested_directory_link_id": 737,
+      "web_evidence": "source/navigation/department-053.json",
+      "web_representation": "Internal Error ()\nciteturn226view3 [wordlim: 200] Source: click({\"ref_id\":\"turn2view1\",\"id\":737}); Total lines: 1\n",
+      "url": null,
+      "original_literal_href": null,
+      "navigation_kind": "department directory"
+    },
+    {
+      "parent_literal": "Norwood",
+      "requested_directory_link_id": 735,
+      "web_evidence": "source/navigation/home-005.json",
+      "web_representation": "Norwood, MA (https://www.norwoodma.gov/)\nciteturn373view0 [wordlim: 200] Crawled: today; Content type: text/html; Source: click({\"ref_id\":\"turn2view1\",\"id\":735}); Total lines: 274\nL0:   * cite0†Departments L1:     * cite1†Airport L2:     * cite2†Animal Control L3:     * cite3†Assessors L4:     * cite4†Building L5:     * cite5†Community Development L6:     * cite6†Economic Development L7:     * cite7†Engineering L8:     * cite8†Facilities L9:     * cite9†Finance & Accounting L10:     * cite10†Fire L11:     * cite11†General Manager L12:     * cite12†Health L13:     * cite13†Human Resources L14:     * cite14†Morrill Memorial Library†www.norwoodlibrary.org L15:     * cite15†Norwood Light & Broadband†norwoodlight.com L16:     * cite16†Police L17:     * cite17†Public Works L18:     * cite18†Purchasing L19:     * cite19†Recreation L20:     * cite20†Schools L21:     * cite21†Senior Center L22:     * cite22†Town Clerk L23:     * cite23†Treasurer & Collector L24:     * cite24†Veterans' Services L25:   * cite25†Boards/Committees L26:     * cite26†Airport Commission L27:     * cite27†Board of Assessors L28:     * cite28†Board of Health L29:     * cite29†Board of Registrars L30:     * cite30†Board of Selectmen L31:     * cite31†Budget Balancing Committee L32:     * cite32†Cable Commission L33:     * cite33†Capital Outlay Committee L34:     * cite34†Commission on Disability L35:     * cite35†Community Preservation Committee L36:     * cite36†Conservation Commission L37:     * cite21†Council on Aging L38:     * cite37†Cultural Council L39:     * cite38†Economic Development Committee L40:     * cite39†Finance Commission L41:     * cite40†Historical Commission L42:     * cite41†Library Board of Trustees L43:     * cite42†Master Plan Steering Committee L44:     * cite43†Personnel Board L45:     * cite44†Planning Board L46:     * cite45†Retirement Board L47:     * cite46†Stormwater Utility Study Committee L48:     * cite47†Sustainability Commission L49:     * cite48†Town Meeting L50:     * cite49†Town Meeting Rules Committee L51:     * cite50†Trails Advisory Committee L52:     * cite51†Zoning Board of Appeals L53:   * cite52†Residents L54:     * cite53†Resident Request Portal†townofnorwoodma.tylerportico.com L55:     * cite54†Become Involved L56:     * cite55†Composting L57:     * cite56†Highland Cemetery L58:     * cite57†Holidays & Community Events L59:     * cite58†Housing L60:     * cite59†Licensing & Permitting Fees L61:     * cite60†Maps L62:     * cite61†Public Health Services L63:     * cite62†Public Service Videos L64:     * cite63†Snow & Ice Removal Policy L65:     * cite64†E-Notify L66:   * cite65†Business L67:     * cite66†Available Sites & Buildings L68:     * cite4†Building L69:     * cite67†Business Resources L70:     * cite5†Community Development L71:     * cite68†Doing Business With the Town L72:     * cite6†Economic Development L73:     * cite69†Expedited Permitting L74:     * cite70†Film in Norwood†www.norwoodonfilm.com L75:     * cite71†Licenses & Permitting L76:     * cite15†Norwood Light & Broadband†norwoodlight.com L77:     * cite72†The Norwood Advantage L78:     * cite73†Welcome to Norwood Videos†www.elocallink.tv L79:   * cite74†How Do I... L80:     * cite22†Apply for a Birth/Death/Marriage Certificate L81:     * cite75†Apply for Boards & Committees L82:     * cite76†Apply for Community Development Permits L83:     * cite77†Apply for Fuel Assistance L84:     * cite78†Contact a Department L85:     * cite79†Find Election Results L86:     * cite80†Find Trash and Recycling Information L87:     * cite81†Find Volunteer Opportunities L88:     * cite82†Online Payments and Donations L89:     * cite83†Pay a Parking Ticket L90:     * cite84†Pay a Recreation Fee L91:     * cite85†Read Financial Reports L92:     * cite86†Read the Annual Report L93:     * cite87†Read the Town Charter & By-Laws L94:     * cite88†Register to Vote L95:     * cite89†Request a Public Record L96:     * cite90†Run For Office L97:     * cite91†Sign Up for Alerts L98:     * cite53†Submit a Concern†townofnorwoodma.tylerportico.com L99:     * cite92†View a Public Meeting†norwoodcommunitymedia.org L100:     * cite93†View Elected & Appointed Officials L101:     * cite94†View GIS Information L102:     * cite95†Apply for a Motor Vehicle Excise Tax abatement L103:   * cite82†Online Payments and Donations L104: cite96†Image: search icon L105: \nL106: cite96†Image: search icon [Input: Search...] [Button: Go]\nL107: \nL108:   * cite97†Search L109:   * cite98†Services L110:   * cite99†News L111:   * cite100†Calendar L112:   * cite101†Social Media L113: \nL114: The Town Everyone\nL115: Returns To\nL116: \nL117: cite96†Image: search icon [Input: How can we assist you today?] [Button: Go]\nL118: \nL119: cite102†Image: arrow left cite103†Image: arrow right L120: \nL121: How Can We Help?\nL122: ## Town Services\nL123: \nL124: cite82†Online Payments & Donations cite104†Employment Opportunities L125: \nL126: cite105†Agendas & Minutes cite71†Licenses & Permits L127: \nL128: cite106†Document Center cite81†Become Involved L129: \nL130: cite52†Residents L131: \nL132: cite102†Image: arrow left cite103†Image: arrow right L133: \nL134: What's Happening\nL135: ## Latest News\nL136: \nL137: cite107†October 15, 2026 Winter Overnight Parking Permit Applications are now live! L138: \nL139: cite108†October 08, 2026 Applications are now open for the Simoni Foundation Youth Sports Grant Program! L140: \nL141: cite109†October 07, 2026 STATE ELECTION - TUESDAY, NOVEMBER 3, 2026 L142: \nL143: cite110†October 02, 2026 11-3-2026 State Election Sample Ballot L144: \nL145: cite111†October 01, 2026 MEETING NOTICE: Hennessey Field Detention Basin Project L146: \nL147: cite112†June 17, 2026 Public Safety Override Notice L148: cite113†June 02, 2026 Norwood Hospital needs your help! L149: \nL150: cite114†June 01, 2026 Amtrak | Infrastructure Inspections by helicopter | May 2026 to October 2026 L151: \nL152: cite115†April 30, 2026 Comprehensive Plan finished and adopted! L153: \nL154: cite116†February 19, 2026 Norwood Hospital Task Force and Supporters Rally on Beacon Hill, Weigh in on Eminent Domain House Bill.  Click for more... L155: \nL156: cite102†Image: arrow left cite103†Image: arrow right L157: \nL158: cite117†See News Archive L159: \nL160: Take Part in Your Community\nL161: ## Meetings Calendar\nL162: \nL163: cite118†See Full Calendar L164: \nL165: Norwood Social Media\nL166: ## Stay Connected\nL167: \nL168: cite119†Image: facebook Facebook cite120†Image: Instagram Instagram\nL169: \nL170: cite121†Boards & Commissions†cms5.revize.com cite122†Resident Information Permits & Licenses Business Resources cite122†Engineering Department cite122†Fire L171: \nL172: cite123†566 Washington St. Norwood, MA 02062†maps.app.goo.gl cite124†Image: footer icon (781) 762-1240 Email (managers@norwoodma.gov) cite125†Image: footer icon Mon-Fri, 8:00 am - 4:00 pm\nL173: \nL174: cite126†Image: revize logo Powered by cite127†revize.,†www.revize.com the Government Website Experts\nL175: cite128†Privacy Policy L176: \nL177: cite129†Login:†cms5.revize.com cite130†Intranet L178: ## MWRA CSO updated plan\nL179: \nL180: The Town of Norwood is encouraging residents to review and submit public comments regarding the Massachusetts Water Resources Authority’s (MWRA) proposed $1.3 Billion Draft Updated cite131†Combined Sewer Overflow (CSO) Control Plan.  L181: \nL182: cite132†Read More cite127†Close†www.revize.com L183: \nL184: cite133†Image: ada icon L185: \nL186: Please ensure Javascript is enabled for purposes of cite134†website accessibility†userway.org L187:   * cite135†Image: translate icon L188:     * cite122†English L189:     * cite122†Afrikaans L190:     * cite122†Albanian L191:     * cite122†Arabic L192:     * cite122†Armenian L193:     * cite122†Azerbaijani L194:     * cite122†Basque L195:     * cite122†Belarusian L196:     * cite122†Bengali L197:     * cite122†Bosnian L198:     * cite122†Bulgarian L199:     * cite122†Catalan L200:     * cite122†Cebuano L201:     * cite122†Chinese (Simplified) L202:     * cite122†Chinese (Traditional) L203:     * cite122†Croatian L204:     * cite122†Czech L205:     * cite122†Danish L206:     * cite122†Dutch L207:     * cite122†Esperanto L208:     * cite122†Estonian L209:     * cite122†Filipino L210:     * cite122†Finnish L211:     * cite122†French L212:     * cite122†Galician L213:     * cite122†Georgian L214:     * cite122†German L215:     * cite122†Greek L216:     * cite122†Gujarati L217:     * cite122†Haitian Creole L218:     * cite122†Hausa L219:     * cite122†Hebrew L220:     * cite122†Hindi L221:     * cite122†Hmong L222:     * cite122†Hungarian L223:     * cite122†Icelandic L224:     * cite122†Igbo L225:     * cite122†Indonesian L226:     * cite122†Irish L227:     * cite122†Italian L228:     * cite122†Japanese L229:     * cite122†Javanese L230:     * cite122†Kannada L231:     * cite122†Khmer L232:     * cite122†Korean L233:     * cite122†Lao L234:     * cite122†Latin L235:     * cite122†Latvian L236:     * cite122†Lithuanian L237:     * cite122†Macedonian L238:     * cite122†Malay L239:     * cite122†Maltese L240:     * cite122†Maori L241:     * cite122†Marathi L242:     * cite122†Mongolian L243:     * cite122†Nepali L244:     * cite122†Norwegian L245:     * cite122†Persian L246:     * cite122†Polish L247:     * cite122†Portuguese L248:     * cite122†Punjabi L249:     * cite122†Romanian L250:     * cite122†Russian L251:     * cite122†Serbian L252:     * cite122†Slovak L253:     * cite122†Slovenian L254:     * cite122†Somali L255:     * cite122†Spanish L256:     * cite122†Swahili L257:     * cite122†Swedish L258:     * cite122†Tamil L259:     * cite122†Telugu L260:     * cite122†Thai L261:     * cite122†Turkish L262:     * cite122†Ukrainian L263:     * cite122†Urdu L264:     * cite122†Vietnamese L265:     * cite122†Welsh L266:     * cite122†Yiddish L267:     * cite122†Yoruba L268:     * cite122†Zulu L269: Share this page\nL270: \nL271: [Button: Close]\nL272: \nL273: cite136†iframe†chatbot.revize.com ",
+      "url": "https://www.norwoodma.gov/",
+      "original_literal_href": null,
+      "navigation_kind": "homepage fallback"
+    }
+  ],
+  "searches": [
+    "source/search/municipal-054.json",
+    "source/search/municipal-extra-031.json"
+  ],
+  "bounded_chain_requests": [
+    {
+      "request_id": "muni-219-17358f850c5b",
+      "receipt": "source/http/muni-219-17358f850c5b.json",
+      "requested_url": "https://www.norwoodma.gov/2023%20Annual%20Report.pdf",
+      "final_url": "https://cms5.revize.com/revize/norwoodma25/2023%20Annual%20Report.pdf",
+      "status": 404,
+      "error": null,
+      "body": {
+        "path": "source/byhash/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.gz",
+        "raw_bytes": 0,
+        "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stored_bytes": 20,
+        "stored_sha256": "f1b651238a58fe290baec6c5e32f3bdb1943dd2bd582f02569231f7a757c7837",
+        "encoding": "gzip of requests transport-decoded complete entity"
+      },
+      "structure": null,
+      "source_update_clock": null,
+      "measured_cadence": null,
+      "current_return_admitted": false
+    },
+    {
+      "request_id": "dept-8e18d04c12df0026",
+      "receipt": "source/http/dept-8e18d04c12df0026.json",
+      "requested_url": "https://www.norwoodma.gov/",
+      "final_url": "https://www.norwoodma.gov/",
+      "status": 200,
+      "error": null,
+      "body": {
+        "path": "source/byhash/973aaca4f5ee7fc84d137d28528f884c85222a5355921fa754119ff93929bcba.gz",
+        "raw_bytes": 95048,
+        "raw_sha256": "973aaca4f5ee7fc84d137d28528f884c85222a5355921fa754119ff93929bcba",
+        "stored_bytes": 17753,
+        "stored_sha256": "2515a76d9a2b8d8af5afb628fb550e5aca298916bf9dedab01ee2be3c11690f9",
+        "encoding": "gzip of requests transport-decoded complete entity"
+      },
+      "structure": "source/structures/973aaca4f5ee7fc84d137d28528f884c85222a5355921fa754119ff93929bcba.json.gz",
+      "source_update_clock": null,
+      "measured_cadence": null,
+      "current_return_admitted": false,
+      "inspection": "source/inspect/dept-8e18d04c12df0026.json",
+      "title": "Norwood, MA"
+    }
+  ],
+  "actual_follow_request_constructors": [],
+  "observed_election_links": [
+    {
+      "source_id": "dept-8e18d04c12df0026",
+      "ordinal": 46,
+      "tag": "a",
+      "literal_href": "https://www.norwoodma.gov/departments/town_clerk/index.php",
+      "url": "https://www.norwoodma.gov/departments/town_clerk/index.php",
+      "text": "Town Clerk",
+      "public_fetch_allowed": true,
+      "fetched": false,
+      "official_result_publication_approval": false
+    },
+    {
+      "source_id": "dept-8e18d04c12df0026",
+      "ordinal": 53,
+      "tag": "a",
+      "literal_href": "https://www.norwoodma.gov/departments/town_clerk/about_the_town_clerk.php",
+      "url": "https://www.norwoodma.gov/departments/town_clerk/about_the_town_clerk.php",
+      "text": "Board of Registrars",
+      "public_fetch_allowed": true,
+      "fetched": false,
+      "official_result_publication_approval": false
+    },
+    {
+      "source_id": "dept-8e18d04c12df0026",
+      "ordinal": 104,
+      "tag": "a",
+      "literal_href": "https://www.norwoodma.gov/departments/town_clerk/index.php",
+      "url": "https://www.norwoodma.gov/departments/town_clerk/index.php",
+      "text": "Apply for a Birth/Death/Marriage Certificate",
+      "public_fetch_allowed": true,
+      "fetched": false,
+      "official_result_publication_approval": false
+    },
+    {
+      "source_id": "dept-8e18d04c12df0026",
+      "ordinal": 109,
+      "tag": "a",
+      "literal_href": "https://www.norwoodma.gov/departments/town_clerk_and_accountant/voting_and_elections/election_results.php",
+      "url": "https://www.norwoodma.gov/departments/town_clerk_and_accountant/voting_and_elections/election_results.php",
+      "text": "Find Election Results",
+      "public_fetch_allowed": true,
+      "fetched": false,
+      "official_result_publication_approval": false
+    },
+    {
+      "source_id": "dept-8e18d04c12df0026",
+      "ordinal": 118,
+      "tag": "a",
+      "literal_href": "https://www.norwoodma.gov/departments/town_clerk_and_accountant/voting_and_elections/departments/town_clerk_and_accountant/voter_registration.php",
+      "url": "https://www.norwoodma.gov/departments/town_clerk_and_accountant/voting_and_elections/departments/town_clerk_and_accountant/voter_registration.php",
+      "text": "Register to Vote",
+      "public_fetch_allowed": true,
+      "fetched": false,
+      "official_result_publication_approval": false
+    },
+    {
+      "source_id": "dept-8e18d04c12df0026",
+      "ordinal": 119,
+      "tag": "a",
+      "literal_href": "https://www.norwoodma.gov/departments/town_clerk/public_records_request.php",
+      "url": "https://www.norwoodma.gov/departments/town_clerk/public_records_request.php",
+      "text": "Request a Public Record",
+      "public_fetch_allowed": true,
+      "fetched": false,
+      "official_result_publication_approval": false
+    },
+    {
+      "source_id": "dept-8e18d04c12df0026",
+      "ordinal": 120,
+      "tag": "a",
+      "literal_href": "https://www.norwoodma.gov/departments/town_clerk/running_for_office_in_norwood.php",
+      "url": "https://www.norwoodma.gov/departments/town_clerk/running_for_office_in_norwood.php",
+      "text": "Run For Office",
+      "public_fetch_allowed": true,
+      "fetched": false,
+      "official_result_publication_approval": false
+    },
+    {
+      "source_id": "dept-8e18d04c12df0026",
+      "ordinal": 160,
+      "tag": "a",
+      "literal_href": "https://www.norwoodma.gov/news_detail_T13_R1155.php",
+      "url": "https://www.norwoodma.gov/news_detail_T13_R1155.php",
+      "text": "October 07, 2026 STATE ELECTION - TUESDAY, NOVEMBER 3, 2026",
+      "public_fetch_allowed": true,
+      "fetched": false,
+      "official_result_publication_approval": false
+    },
+    {
+      "source_id": "dept-8e18d04c12df0026",
+      "ordinal": 161,
+      "tag": "a",
+      "literal_href": "https://www.norwoodma.gov/news_detail_T13_R1168.php",
+      "url": "https://www.norwoodma.gov/news_detail_T13_R1168.php",
+      "text": "October 02, 2026 11-3-2026 State Election Sample Ballot",
+      "public_fetch_allowed": true,
+      "fetched": false,
+      "official_result_publication_approval": false
+    }
+  ],
+  "publication_status_and_plan_evidence": [],
+  "complete_format_samples": [
+    {
+      "source_id": "dept-8e18d04c12df0026",
+      "format": "HTML",
+      "structure": "source/structures/973aaca4f5ee7fc84d137d28528f884c85222a5355921fa754119ff93929bcba.json.gz"
+    }
+  ],
+  "access_gaps": [
+    {
+      "url": "https://www.norwoodma.gov/2023%20Annual%20Report.pdf",
+      "status": 404,
+      "error": null
+    }
+  ],
+  "current": {
+    "target_date": "2026-11-03",
+    "stage": "General / State Election",
+    "office": "Senator in Congress",
+    "source_parent_is_historical": true,
+    "current_date_native_id": null,
+    "current_election_native_id": null,
+    "current_stage_native_id": null,
+    "current_office_native_id": null,
+    "current_candidate_choice_ids": null,
+    "current_party_ids": null,
+    "current_reporting_unit_ids": null,
+    "current_method_ids": null,
+    "current_status_ids": null,
+    "geographic_match": null,
+    "genuine_November_returns": null,
+    "current_admission": false,
+    "eligible_unprocessed_votes": null,
+    "measured_cadence": null,
+    "correction_clock": null,
+    "completion_meaning": null
+  },
+  "scope": "complete bounded parent evidence; shared across exact historical children; online election-night service is not guaranteed by statutory authority or a landing 200",
+  "completion_status": "bounded investigation finished, with explicit source/access and future qualifications"
+}

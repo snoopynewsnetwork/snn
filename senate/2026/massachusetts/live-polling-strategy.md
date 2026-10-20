@@ -1,14 +1,14 @@
 # Massachusetts collection and remaining-vote strategy
 
-Updated with the independently reviewed historical first pair on **2026-10-20 UTC / 2026-10-19 Central**. The map package is sealed and independently reviewed; official-source research is completing its final QA. Read the [newsroom observations](local-news-results.md). No live collector or calibrated forecast is implemented.
+Updated with the independently reviewed historical first pair on **2026-10-20 UTC / 2026-10-19 Central**. All four question packages are sealed and independently reviewed. Read the [newsroom observations](local-news-results.md). No live collector or calibrated forecast is implemented.
 
 ## Massachusetts-specific preflight
 
-The [Secretary's elections page](https://www.sec.state.ma.us/divisions/elections/elections-and-voting.htm) says in research-browser text that it publishes certified results and no Election Night results; direct HTTP returned 403. The official-results worker must verify current municipal authority channels. Counties are not a substitute for the actual town/city, ward and precinct reporting geography. Preserve all municipalities/native units in statewide arithmetic and reconcile disjoint municipal results before county aggregation, if supplied at all. A county-oriented filename is compatibility metadata, not proof of county administration.
+The [Secretary's elections page](https://www.sec.state.ma.us/divisions/elections/elections-and-voting.htm) says in research-browser text that it publishes certified results and no Election Night results; direct HTTP returned 403. The completed [official-source investigation](official-results.md) preserves actual bounded municipal chains and the limits of current authority-directory access. Counties are not a substitute for the actual town/city, ward and precinct reporting geography. Preserve all municipalities/native units in statewide arithmetic and reconcile disjoint municipal results before county aggregation, if supplied at all. A county-oriented filename is compatibility metadata, not proof of county administration.
 
 Keep 2024 Senate and president, 2022 midterm statewide preferences and 2020 same-seat Senate explicitly labeled: different Senate seats/candidates are not interchangeable. The exact 80% set must come from measured official vote volume rather than assumed Boston geography. Retain vote method and boundary vintage; precinct numbers or ward labels alone do not establish a cross-year/November join. Acquired historical maps remain separate from any future current/legal result-polygon approval.
 
-GBH and NEPM have actual **September primary** AP frames; each sampled AP endpoint returned 403. Different AP organization IDs are one upstream supplier. Western Mass News's linked static HTML still shows Markey/Moulton primary counts and 99% precincts, without an established source timestamp/timezone or refresh guarantee. WBUR is verified current reporting; no November data channel was established. WWLP direct access failed. Cape/Islands, southeastern and central Massachusetts inspection gaps remain explicit. The results assignment must verify current municipal polling hours (including earlier opening variations), receipt/postmark and cure rules, provisional handling, canvass and certification; do not carry an older election's deadlines forward.
+GBH and NEPM have actual **September primary** AP frames; each sampled AP endpoint returned 403. Different AP organization IDs are one upstream supplier. Western Mass News's linked static HTML still shows Markey/Moulton primary counts and 99% precincts, without an established source timestamp/timezone or refresh guarantee. WBUR is verified current reporting; no November data channel was established. WWLP direct access failed. Cape/Islands, southeastern and central Massachusetts inspection gaps remain explicit. The official-source report retains bounded current polling, receipt/postmark, provisional, canvass, certification and court evidence with exact vintage limitations. Local opening variations and later signed/legal changes remain separate checks; older deadlines do not carry forward automatically.
 
 ## Measured historical dispatch and conditional arithmetic
 
@@ -74,4 +74,37 @@ Counted votes remain fixed. Estimate only uncounted ballots using documented uni
 
 Compare partial returns with the same historical geography/method and boundary vintage. No allocation through an unvalidated map crosswalk. Historical turnout volumes are sensitivity anchors, not 2026 projections. Tie/+1 conditional scenarios require complete statewide weights and candidate/other-vote reconciliation; distinguish share-point shifts from margin-point shifts. Do not substitute an independent candidate into a D/R coalition without explicit identity and assumptions.
 
-Before live use, replay genuine dated releases and test idempotent retries, missing units, corrections/decreases, overlapping aggregates, candidate identity and manual recovery. Keep original counts and derivatives auditable. A calibrated win probability additionally requires a dated prior, genuine historical release sequences, remaining-ballot assumptions and held-out calibration under the [root plan](../../../ELECTION_NIGHT_PLAN.md). No live collector or calibrated Needle is implemented here. Final integration must add the completed official inventory and bounded current-rule findings. The sealed map package supplies acquired historical context, complete native snapshots and actual municipal chains; it approves no result-polygon match. Historical dispatch acceptance does not admit November IDs, counts, methods, cadence or an outstanding pool.
+Before live use, replay genuine dated releases and test idempotent retries, missing units, corrections/decreases, overlapping aggregates, candidate identity and manual recovery. Keep original counts and derivatives auditable. A calibrated win probability additionally requires a dated prior, genuine historical release sequences, remaining-ballot assumptions and held-out calibration under the [root plan](../../../ELECTION_NIGHT_PLAN.md). No live collector or calibrated Needle is implemented here. The completed official inventory and bounded current-rule findings are linked below. The sealed map package supplies acquired historical context, complete native snapshots and actual municipal chains; it approves no result-polygon match. Historical dispatch acceptance does not admit November IDs, counts, methods, cadence or an outstanding pool.
+
+
+## Completed official-source constraints
+
+The [355-row inventory](data/official-results-sources.csv) preserves351municipal
+research parents and four distinct state/federal actors. Every287priority
+municipal parent has actual bounded HTTP chains, with81showing HTTP200 after
+identified wrong-parent negative evidence is excluded. The Secretary's complete
+election-office directory remains inaccessible; indexed fragments are not a
+replacement for its raw fields. Local failures are unknown coverage, not zero
+votes or proof of nonpublication. All1470shared-parent priority investigations
+and924remainder records retain full original source objects.
+
+The Secretary explicitly describes certified publication rather than a state
+Election Night feed. Build source-specific municipal adapters only after
+verifying a genuine November publication. Primary PDFs, CMS article/live-feed
+constructors, specimen ballots and historicalPD43dropdowns supply format or
+identity research, not current numeric admission. Medford's primary unofficial
+and certified PDFs demonstrate revisions, not measuredNovember cadence.
+
+Keep the report's statutory/source time calculations and legal vintages intact.
+Its provisional verification date is a labeled derived computation, not a
+retrieved clerk-specific2026calendar. Overseas paper and electronic deadlines
+remain distinct. The selectedAugust24SCOTUSstay andSeptember4USPSinjunction
+address different chains; later appeal/docket exhaustion is unproved. These
+qualified source findings guide future verification and do not supply an
+eligible outstanding pool or an approved live model.
+
+[Independent official review](data/coordinator-official-final-review.json)
+passes157,361checks of the full inventory, responses, structures and sealed
+files. No collector, current feed/leaf match, measured cadence, exact eligible
+remainder or probability has been admitted. Historical source/scenario and
+map research is complete with these precise external qualifications.

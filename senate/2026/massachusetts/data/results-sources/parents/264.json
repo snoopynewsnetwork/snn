@@ -1,0 +1,219 @@
+{
+  "schema": "MA bounded shared municipal parent investigation v1",
+  "research_parent_ordinal": 264,
+  "source_parent_key": "[\"Scituate\",\"\",\"\"]",
+  "source_parent_literal": "Scituate",
+  "research_full_name": "Scituate",
+  "authority_path": "data/coordinator-priority-acceptance.json",
+  "priority_parent": true,
+  "historical_parent_full_object": {
+    "municipal_key": "[\"Scituate\",\"\",\"\"]",
+    "literal_city_town": "Scituate",
+    "csv_record_ordinal": 266,
+    "values": [
+      7247,
+      6018,
+      9,
+      301,
+      13575
+    ],
+    "native_keys_source_order": [
+      "[\"Scituate\",\"-\",\"1\"]",
+      "[\"Scituate\",\"-\",\"2\"]",
+      "[\"Scituate\",\"-\",\"3\"]",
+      "[\"Scituate\",\"-\",\"4\"]",
+      "[\"Scituate\",\"-\",\"5\"]",
+      "[\"Scituate\",\"-\",\"6\"]"
+    ],
+    "native_keys_priority_order": [
+      "[\"Scituate\",\"-\",\"6\"]",
+      "[\"Scituate\",\"-\",\"4\"]",
+      "[\"Scituate\",\"-\",\"2\"]",
+      "[\"Scituate\",\"-\",\"1\"]",
+      "[\"Scituate\",\"-\",\"3\"]",
+      "[\"Scituate\",\"-\",\"5\"]"
+    ],
+    "native_context_count": 6,
+    "all_children_present": true,
+    "numeric_id": null,
+    "fips": null,
+    "aggregation": "sum children; parent overlaps children and must never be added"
+  },
+  "government_directory_matching_blocks": [
+    {
+      "name": "Scituate",
+      "raw_web_directory_block": "### Scituate\n\ncite867†Town of Scituate†www.scituatema.gov \ncite868†600 Chief Justice Cushing Highway Scituate, MA 02066†goo.gl \n781-545-8700\ncite869†Town Department Directory†www.scituatema.gov \n\n",
+      "observed_domains": [
+        "www.scituatema.gov"
+      ],
+      "raw_original_html_status": "403; literal hrefs unavailable in extracted web representation",
+      "blank_fields_not_repaired": true
+    }
+  ],
+  "government_directory_correspondence": "historical name research attribution only; not a current ID or boundary match",
+  "government_directory_duplicate_literal": false,
+  "secretary_local_election_directory": {
+    "url": "https://www.sec.state.ma.us/divisions/elections/voter-resources/find-my-local-election-office.htm",
+    "raw_HTML_access": "403 after ordinary redirect/cookie attempt",
+    "raw_field_completeness": false,
+    "indexed_fragment_references": [
+      {
+        "source_file": "source/directory-search/local-065.json",
+        "response_pointer": "/response",
+        "start": 1934,
+        "end": 2139,
+        "literal_heading": "Scituate",
+        "observed_role_lines": [
+          "Town Clerk"
+        ],
+        "source_original": false,
+        "entry_completeness": "unverified indexed fragment; gaps may exist inside it"
+      },
+      {
+        "source_file": "source/directory-search/local-066.json",
+        "response_pointer": "/response",
+        "start": 19000,
+        "end": 19205,
+        "literal_heading": "Scituate",
+        "observed_role_lines": [
+          "Town Clerk"
+        ],
+        "source_original": false,
+        "entry_completeness": "unverified indexed fragment; gaps may exist inside it"
+      },
+      {
+        "source_file": "source/directory-search/local-072.json",
+        "response_pointer": "/response",
+        "start": 13690,
+        "end": 13895,
+        "literal_heading": "Scituate",
+        "observed_role_lines": [
+          "Town Clerk"
+        ],
+        "source_original": false,
+        "entry_completeness": "unverified indexed fragment; gaps may exist inside it"
+      },
+      {
+        "source_file": "source/search/municipal-extra-039.json",
+        "response_pointer": "/response",
+        "start": 3410,
+        "end": 3615,
+        "literal_heading": "Scituate",
+        "observed_role_lines": [
+          "Town Clerk"
+        ],
+        "source_original": false,
+        "entry_completeness": "unverified indexed fragment; gaps may exist inside it"
+      }
+    ],
+    "raw_missing_fields_remain_unknown": true
+  },
+  "distinct_authority_roles": {
+    "indexed_directory_role_lines": [
+      "Town Clerk"
+    ],
+    "actual_page_role_occurrences": [],
+    "precinct_canvass": "presiding officers/precinct clerk: c54 ss104-107; not municipal clerk identity",
+    "municipal_certification": "c54 s112: city/town clerk; Boston Board of Election Commissioners",
+    "post_election_absentee_canvass": "c54 s95: registrars; distinct from clerk record transmission",
+    "recount": "c54 s135: registrars determine, clerk amends and transmits",
+    "state_certification": "c54 ss115-116: Governor/Council examination and Governor Senate certificate countersigned/transmitted by Secretary",
+    "local_current_named_official_ID": null
+  },
+  "secretary_department_navigation": [
+    {
+      "parent_literal": "Scituate",
+      "requested_directory_link_id": 869,
+      "web_evidence": "source/navigation/department-064.json",
+      "web_representation": "Internal Error ()\nciteturn236view3 [wordlim: 200] Source: click({\"ref_id\":\"turn2view1\",\"id\":869}); Total lines: 1\n",
+      "url": null,
+      "original_literal_href": null,
+      "navigation_kind": "department directory"
+    }
+  ],
+  "searches": [
+    "source/search/municipal-065.json"
+  ],
+  "bounded_chain_requests": [
+    {
+      "request_id": "muni-263-1",
+      "receipt": "source/http/muni-263-1.json",
+      "requested_url": "https://www.scituatema.gov/sites/g/files/vyhlif11836/f/pages/official_state_election_results_11-5-24.pdf",
+      "final_url": "https://www.scituatema.gov/sites/g/files/vyhlif11836/f/pages/official_state_election_results_11-5-24.pdf",
+      "status": 404,
+      "error": null,
+      "body": {
+        "path": "source/byhash/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.gz",
+        "raw_bytes": 0,
+        "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stored_bytes": 20,
+        "stored_sha256": "f1b651238a58fe290baec6c5e32f3bdb1943dd2bd582f02569231f7a757c7837",
+        "encoding": "gzip of requests transport-decoded complete entity"
+      },
+      "structure": null,
+      "source_update_clock": null,
+      "measured_cadence": null,
+      "current_return_admitted": false
+    },
+    {
+      "request_id": "muni-263-0",
+      "receipt": "source/http/muni-263-0.json",
+      "requested_url": "https://www.scituatema.gov/1480/Elections-Voting",
+      "final_url": "https://www.scituatema.gov/1480/Elections-Voting",
+      "status": 404,
+      "error": null,
+      "body": {
+        "path": "source/byhash/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.gz",
+        "raw_bytes": 0,
+        "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stored_bytes": 20,
+        "stored_sha256": "f1b651238a58fe290baec6c5e32f3bdb1943dd2bd582f02569231f7a757c7837",
+        "encoding": "gzip of requests transport-decoded complete entity"
+      },
+      "structure": null,
+      "source_update_clock": null,
+      "measured_cadence": null,
+      "current_return_admitted": false
+    }
+  ],
+  "actual_follow_request_constructors": [],
+  "observed_election_links": [],
+  "publication_status_and_plan_evidence": [],
+  "complete_format_samples": [],
+  "access_gaps": [
+    {
+      "url": "https://www.scituatema.gov/sites/g/files/vyhlif11836/f/pages/official_state_election_results_11-5-24.pdf",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://www.scituatema.gov/1480/Elections-Voting",
+      "status": 404,
+      "error": null
+    }
+  ],
+  "current": {
+    "target_date": "2026-11-03",
+    "stage": "General / State Election",
+    "office": "Senator in Congress",
+    "source_parent_is_historical": true,
+    "current_date_native_id": null,
+    "current_election_native_id": null,
+    "current_stage_native_id": null,
+    "current_office_native_id": null,
+    "current_candidate_choice_ids": null,
+    "current_party_ids": null,
+    "current_reporting_unit_ids": null,
+    "current_method_ids": null,
+    "current_status_ids": null,
+    "geographic_match": null,
+    "genuine_November_returns": null,
+    "current_admission": false,
+    "eligible_unprocessed_votes": null,
+    "measured_cadence": null,
+    "correction_clock": null,
+    "completion_meaning": null
+  },
+  "scope": "complete bounded parent evidence; shared across exact historical children; online election-night service is not guaranteed by statutory authority or a landing 200",
+  "completion_status": "bounded investigation finished, with explicit source/access and future qualifications"
+}

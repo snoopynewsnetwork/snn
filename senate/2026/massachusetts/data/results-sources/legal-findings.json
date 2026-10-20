@@ -1,0 +1,269 @@
+{
+  "schema": "MA bounded current-law distinctions v1",
+  "observed_scope": "October19 Central / October20 UTC2026",
+  "legal_exhaustion_or_approval": false,
+  "calendar": [
+    {
+      "event": "state election polls",
+      "local_open_no_later_than": "2026-11-03T07:00:00-05:00",
+      "local_close": "2026-11-03T20:00:00-05:00",
+      "close_UTC": "2026-11-04T01:00:00+00:00",
+      "earlier_open_permitted": "as early as05:45 under s64; local warrant not exhaustively checked",
+      "sources": [
+        "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleVIII/Chapter54/Section64",
+        "https://www.sec.state.ma.us/divisions/elections/recent-updates/upcoming-elections.htm"
+      ]
+    },
+    {
+      "event": "in-person early voting",
+      "start": "2026-10-17",
+      "end": "2026-10-30",
+      "hours": "local schedules, not statewide continuous hours",
+      "sources": [
+        "https://www.sec.state.ma.us/divisions/elections/recent-updates/upcoming-elections.htm"
+      ]
+    },
+    {
+      "event": "mail application receipt",
+      "local": "2026-10-27T17:00:00-04:00",
+      "sources": [
+        "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleVIII/Chapter54/Section25B",
+        "https://www.sec.state.ma.us/divisions/elections/recent-updates/upcoming-elections.htm"
+      ]
+    },
+    {
+      "event": "ordinary biennial mailed ballot receipt",
+      "local": "2026-11-06T17:00:00-05:00",
+      "mailed_by": "2026-11-03",
+      "postmark": "legible postmark evidence; not an invented absolute postmark-only rule",
+      "sources": [
+        "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleVIII/Chapter54/Section25B",
+        "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleVIII/Chapter54/Section93"
+      ]
+    },
+    {
+      "event": "mailed from outside United States receipt",
+      "local": "2026-11-13T17:00:00-05:00",
+      "mailed_by": "2026-11-03",
+      "electronic_return": "close of polls Nov3, no ten-day electronic extension",
+      "sources": [
+        "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleVIII/Chapter54/Section99",
+        "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleVIII/Chapter54/Section95",
+        "https://www.sec.state.ma.us/divisions/elections/voting-information/military-and-overseas-voters.htm"
+      ]
+    },
+    {
+      "event": "provisional verification",
+      "nominal_twelfth_day": "2026-11-15T17:00:00-05:00",
+      "Sunday_adjusted_computation": "2026-11-16T17:00:00-05:00",
+      "interpretation": "derived by election-specific c50s4 Sunday rule; not an independently retrieved2026 clerk calendar/order",
+      "sources": [
+        "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleVIII/Chapter54/Section76C",
+        "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleVIII/Chapter50/Section4"
+      ]
+    },
+    {
+      "event": "local recount petition and statewide signature submission",
+      "local": "2026-11-13T17:00:00-05:00",
+      "sources": [
+        "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleVIII/Chapter54/Section135"
+      ]
+    },
+    {
+      "event": "statewide recount filing with Secretary",
+      "local": "2026-11-18T17:00:00-05:00",
+      "sources": [
+        "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleVIII/Chapter54/Section135"
+      ]
+    },
+    {
+      "event": "municipal certified records transmission",
+      "date": "2026-11-18",
+      "hour_explicit_in_s112": null,
+      "sources": [
+        "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleVIII/Chapter54/Section112"
+      ]
+    },
+    {
+      "event": "earliest ordinary state certificate",
+      "after_local": "2026-11-18T17:00:00-05:00",
+      "actual_certification_date": null,
+      "statewide_recount": "must revise tabulation/determination before certificate",
+      "sources": [
+        "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleVIII/Chapter54/Section115",
+        "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleVIII/Chapter54/Section116"
+      ]
+    }
+  ],
+  "time_rule": {
+    "zone": "America/New_York",
+    "November3": "EST UTC-05:00",
+    "early_period": "EDT UTC-04:00",
+    "NIST_source": "https://www.nist.gov/pml/time-and-frequency-division/popular-links/daylight-saving-time-dst",
+    "federal_DST2026": "March8-November1",
+    "older_state_code": "c4s10 prints older April/October dates; retained, not used to override later federal DST schedule"
+  },
+  "publication_roles": {
+    "Secretary": "current official pages say certified publication, no Election Night service",
+    "municipal": "poll workers announce unofficial counts; local officials may publish online; no universal online service/cadence promise",
+    "authority": [
+      "https://www.sec.state.ma.us/divisions/elections/elections-and-voting.htm",
+      "https://www.sec.state.ma.us/divisions/elections/voting-information/announcing-certifying.htm"
+    ],
+    "legacy_statute_difference": "c54s105 telephone/telegraph central-tabulation text is preserved. It does not establish a current public state ENR endpoint."
+  },
+  "operative_provisions": [
+    {
+      "topic": "plurality and ties",
+      "sources": [
+        "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleVIII/Chapter50/Section2",
+        "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleVIII/Chapter54/Section140"
+      ],
+      "finding": "highest vote-getter; tied candidates not deemed elected if that elects too many. Senate failure-to-choose/vacancy precepts and temporary appointment are specifically in s140; no local lot/primary/elector remedy imported."
+    },
+    {
+      "topic": "mail signature, notice and replacement",
+      "sources": [
+        "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleVIII/Chapter54/Section25B",
+        "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleVIII/Chapter54/Section94"
+      ],
+      "finding": "compare envelope/application signatures with stated family/assistance exceptions, inspect affidavit, notify rejection; replacement under applicable timing. No separately verified universal post-election signature-cure extension."
+    },
+    {
+      "topic": "ID/provisional",
+      "sources": [
+        "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleVIII/Chapter54/Section76B",
+        "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleVIII/Chapter54/Section76C"
+      ],
+      "finding": "federal first-time mail registration identification rule and exceptions distinct from ordinary challenged voter; provisional eligibility determination/verification/disposition duties preserved. Unknown outstanding eligible count."
+    },
+    {
+      "topic": "processing/counting",
+      "sources": [
+        "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleVIII/Chapter54/Section95",
+        "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleVIII/Chapter54/Section105",
+        "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleVIII/Chapter54/Section106",
+        "https://www.sec.state.ma.us/divisions/elections/voting-information/counting-ballots.htm"
+      ],
+      "finding": "public advance depositing/tabulation with notice/security, no vote-total release before close; Election Day/late eligible ballots, registrars amendment and public overseas meeting remain separate. Votes unascertainable or overmarked for office not counted for office. No ballot residual interpreted as eligible Senate votes."
+    },
+    {
+      "topic": "certification/canvass roles",
+      "sources": [
+        "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleVIII/Chapter54/Section104",
+        "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleVIII/Chapter54/Section105",
+        "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleVIII/Chapter54/Section107",
+        "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleVIII/Chapter54/Section112",
+        "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleVIII/Chapter54/Section115",
+        "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleVIII/Chapter54/Section116"
+      ],
+      "finding": "precinct officers/clerk create canvass record; municipal clerk or Boston Board attests/seals/transmits; Secretary presents; Governor with at least five councillors examines/tabulates; Governor issues Senate certificate countersigned/transmitted by Secretary."
+    },
+    {
+      "topic": "recount",
+      "sources": [
+        "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleVIII/Chapter54/Section135"
+      ],
+      "finding": "petition-driven local procedure, statewide at least1000 aggregate voter signatures; local ten-voter requirements with precinct/Boston50 exceptions. Statewide half-percent condition applied to statutory full office vote universe, not automatically the historical research denominator. Registrars decide, clerk amends/transmits. No automatic recount claimed."
+    },
+    {
+      "topic": "contest",
+      "sources": [
+        "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleVIII/Chapter54/Section134",
+        "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleVIII/Chapter54/Section119",
+        "https://www.senate.gov/about/origins-foundations/electing-appointing-senators/contested-senate-elections/"
+      ],
+      "finding": "s134 thirty-day written claim/intent preserves ballots; it is not a universal Senate contest-filing deadline. s119 is electors, not Senate. ArticleIsection5 Senate authority remains distinct from state certification and judicial remedies."
+    },
+    {
+      "topic": "general write-ins",
+      "sources": [
+        "https://www.sec.state.ma.us/divisions/elections/getting-on-the-ballot/how-to-run-as-a-write-in-candidate.htm"
+      ],
+      "finding": "guide recommends notifying officials; general-election plurality has no minimum vote threshold. Primary signature-equivalent threshold and acceptance rules are primary-specific. No exhaustive eligible general-write-in roster or AllOthers allocation established."
+    }
+  ],
+  "amendments": {
+    "codification_cutoff": "before2026-05-31",
+    "published_session_index_cutoff": "2026-10-05",
+    "complete_2026_Acts_linked_and_screened": 238,
+    "source_screen": "enacted-amendment-screen.json",
+    "VOTES_Act": {
+      "url": "https://malegislature.gov/Laws/SessionLaws/Acts/2022/Chapter92",
+      "approved": "2022-06-22",
+      "emergency_preamble": true,
+      "effective_exceptions": "s26 registration changes30days; s28 UOCAVA s18 December1,2022; ss29-30 January1,2023 for specified provisions; no blanket same-day effective-date assumption"
+    },
+    "Act102": {
+      "url": "https://malegislature.gov/Laws/SessionLaws/Acts/2026/Chapter102",
+      "approved": "2026-06-12",
+      "relevant_sections": [
+        127,
+        128
+      ],
+      "scope": "s86 disability terminology; actual Act102 emergency preamble plus June12 approval establish June12,2026 operation for ss127/128; s346 delayed enumerated sections do not list127/128. Constitution ArtXLVIII Referendum I-II emergency exception independently retrieved in source/http/ma-constitution-effective.json."
+    },
+    "Act137": {
+      "url": "https://malegislature.gov/Laws/SessionLaws/Acts/2026/Chapter137",
+      "approved": "2026-07-09",
+      "relevant_sections": "51-62 candidate address/residence publication",
+      "effective": "2027-01-01 by s132; not applied to November2026",
+      "general_effective": "2026-07-01 except otherwise provided by s135"
+    },
+    "older_guidance": "950CMR47 downloaded version dated2020 predates2022 VOTES Act. Primary-specific2026 advisories26-03/26-09 do not set November certification or ballot-return deadlines. Proposed2026 Question4 has January1,2028 proposed effective date; it is not operative2026 election-day-registration/cure law.",
+    "gaps": "Legislature labels online code/session texts unofficial. Published-act screen is not exhaustive of unpublished/later enactments, official print/cumulative supplements, veto/override changes, all special charters or post-Oct5 changes."
+  },
+  "orders": [
+    {
+      "case": "Watson v Republican National Committee",
+      "docket": "24-1260",
+      "date": "2026-06-29",
+      "source": "https://www.supremecourt.gov/opinions/25pdf/24-1260_g3cn.pdf",
+      "receipt": "source/http/watson-opinion.json",
+      "full_pages": 48,
+      "holding_scope": "Court reverses/remands; federal election-day statutes do not preempt Mississippi postmarked-by-election-day late-receipt law. Does not import Mississippi five-business-day receipt window into Massachusetts.",
+      "later_observed_docket": "July31 judgment issued; raw actual docket retained",
+      "later_exhaustion": false
+    },
+    {
+      "case": "Trump v California / Alabama v California",
+      "dockets": [
+        "26A124",
+        "26A139"
+      ],
+      "date": "2026-08-24",
+      "source": "https://www.mass.gov/doc/scotus-elections-eo-20-order/download",
+      "receipt": "source/http/scotus-eo-2026-stay.json",
+      "full_pages": 37,
+      "scope": "Supreme Court grants stay of injunction over EO14399, on standing/ripeness reasoning; not a declaration that all later USPS final-rule challenges fail.",
+      "later_exhaustion": false
+    },
+    {
+      "case": "California v USPS; joined LWVM v Trump motions",
+      "dockets": [
+        "1:26-cv-13917-IT Dkt156",
+        "1:26-cv-11549-IT"
+      ],
+      "date": "2026-09-04",
+      "source": "https://www.mass.gov/doc/elections-uspspreliminary-injunction/download",
+      "receipt": "source/http/usps-injunction.json",
+      "full_pages": 49,
+      "scope": "preliminarily enjoins/stays specified mandatory final-rule DMM705.24 envelope/portal provisions for elections before/on November3,2026; denies requested stay; dissolves Aug27 TRO. Does not enjoin voluntary compliance or later-election implementation wholesale.",
+      "operative_pages": [
+        47,
+        48,
+        49
+      ],
+      "later_exhaustion": false
+    }
+  ],
+  "release_limit": "June24,2026 AG release describes permanent relief concerning March25,2025 EO. That release is not itself an order; its signed order/later complete docket is not independently exhausted here. Separate EO14399/Aug24/USPS Sept4 chains are not collapsed.",
+  "unresolved": [
+    "later federal/state appellate stays and full district dockets",
+    "later signed ballot/withdrawal/substitution/write-in qualification materials",
+    "all351 current polling warrants and actual Governor Council certification date",
+    "later unpublished enactments or new2026 November counting advisories",
+    "exact legal allocation/eligibility of historical AllOthers",
+    "actual eligible/unprocessed vote pools"
+  ]
+}

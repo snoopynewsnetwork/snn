@@ -3,9 +3,10 @@
 Both actual first-pair workers have finished and their exact source/reciprocal/
 scenario/seal reviews pass. The [external historical dispatch acceptance](data/coordinator-priority-acceptance.json)
 applies only to complete named-source research, with all current/legal/eligible-
-writein/geographic/feed approvals false. Maps research is finished and independently
-reviewed; official-source research is completing its final QA. Publication of the
-whole state waits for that delivered package and coordinator review.
+writein/geographic/feed approvals false. Maps and official-source research have
+finished and passed independent final reviews. All four owned questions are
+complete as bounded historical/source research; current admission remains
+separate from publication of this evidence.
 
 
 [Independent original review](data/coordinator-turnout-original-review.json)
@@ -92,8 +93,8 @@ map research dispatch. AllOthers eligibility/native method/admin/reg/under-over,
 current signed/later ballot/feed IDs/geometry/cadence/exact outstanding pool and
 calibration remain external qualifications. Neither351municipal sensitivity nor
 14county HTML replaces the finer2394primary source records. Second-wave owned
-research has now been dispatched. Final state integration and publication await
-the official-source final package.
+research has finished. Final state integration includes the official-source
+package reviewed below.
 
 ## Finished maps and independent review
 
@@ -130,3 +131,51 @@ which is not turnout. This is selected visual evidence, not whole-inventory
 manual review or a browser/current-geography approval. Westfield's two state
 PDF links returned404; Boston planning/adjustment originals and the shared
 state-native context remain separately qualified.
+
+
+## Finished official-source review and integrated scope
+
+The [independent final official review](data/coordinator-official-final-review.json)
+passes **157,361 checks**, including exact membership and hashes for all5,034
+listed owned files,807immutable dependencies, the complete2,394/1,470/924
+hierarchy and351municipal parents. The355-row authority inventory preserves
+all351historical municipal parents plus four distinct state/federal roles.
+Every287priority parent has actual bounded chain attempts;81have HTTP200
+after identified wrong-parent negative evidence is excluded. This is access
+evidence, not81approved feeds or complete current-directory recovery.
+
+All1,526receipts and1,690redirect observations preserve their full envelopes.
+The review independently reconstructs1,034distinct raw entities and checks
+652HTML,117PDF,2JSON,1JavaScript and1XLSX complete structural samples plus
+eight historicalCSV originals. The complete71,566,477-byte Lynnfield original
+is reconstructable from three ordered parts; earlier unretained oversize
+attempts remain separately disclosed. No producer module or writer was run.
+The source directory403,349indexed fragments and missing raw directory fields
+remain explicit, with no invented blanks, hrefs or current officeholders.
+
+The Secretary's source wording says certified publication and expressly no
+state Election Night results. Municipal archives, primary revisions, CMS
+constructor samples and the Peabody specimen remain source-specific evidence.
+The actual2026generalPD43query has no election rows; it is not a zero return.
+Current election/contest/choice/unit/method IDs, genuineNovember votes, measured
+cadence and the eligible outstanding pool remain null/unadmitted. The four
+printed specimen choices and a write-in space do not establish later statewide
+roster or eligible-write-in exhaustion.
+
+The report distinguishes codification and published-act cutoffs, emergency
+operation and delayed2027 provisions. Its selected court originals separate
+the August24executive-order stay from the September4USPS injunction; the
+[coordinator's selected order proof](data/coordinator-current-order-review/review.json)
+retains actual pages and precise limits. Later appellate orders, final signed
+ballot changes and exhaustive legal coverage remain qualified. The worker's
+manual visual scope is three labeled pages; other full PDF texts and renders
+are not described as manual inspection.
+
+The [whole-state validator](data/validate_state_package.py) and
+[validation](data/coordinator-validation.json) check all four producer seals,
+source acceptance, hierarchy, independent arithmetic/reviews, source sizes,
+Python syntax, relative links and the absence of caches/dependencies. The
+[whole manifest](data/coordinator-asset-manifest.json) excludes only itself and
+includes validation without a reverse hash cycle. Publication completes the
+bounded historical research questions; all current/legal/geographic/live
+admission flags retain their explicit qualifications.

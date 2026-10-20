@@ -1,0 +1,390 @@
+{
+  "schema": "MA bounded shared municipal parent investigation v1",
+  "research_parent_ordinal": 296,
+  "source_parent_key": "[\"Tisbury\",\"\",\"\"]",
+  "source_parent_literal": "Tisbury",
+  "research_full_name": "Tisbury",
+  "authority_path": "data/coordinator-priority-acceptance.json",
+  "priority_parent": true,
+  "historical_parent_full_object": {
+    "municipal_key": "[\"Tisbury\",\"\",\"\"]",
+    "literal_city_town": "Tisbury",
+    "csv_record_ordinal": 298,
+    "values": [
+      1997,
+      646,
+      2,
+      55,
+      2700
+    ],
+    "native_keys_source_order": [
+      "[\"Tisbury\",\"-\",\"1\"]"
+    ],
+    "native_keys_priority_order": [
+      "[\"Tisbury\",\"-\",\"1\"]"
+    ],
+    "native_context_count": 1,
+    "all_children_present": true,
+    "numeric_id": null,
+    "fips": null,
+    "aggregation": "sum children; parent overlaps children and must never be added"
+  },
+  "government_directory_matching_blocks": [
+    {
+      "name": "Tisbury",
+      "raw_web_directory_block": "### Tisbury\n\ncite963†Town of Tisbury†www.tisburyma.gov \ncite964†51 Spring Street Vineyard Haven, MA 02568†goo.gl \n508-696-4200\ncite965†Town Department Directory†ma-tisbury.civicplus.com \n\n",
+      "observed_domains": [
+        "www.tisburyma.gov",
+        "ma-tisbury.civicplus.com"
+      ],
+      "raw_original_html_status": "403; literal hrefs unavailable in extracted web representation",
+      "blank_fields_not_repaired": true
+    }
+  ],
+  "government_directory_correspondence": "historical name research attribution only; not a current ID or boundary match",
+  "government_directory_duplicate_literal": false,
+  "secretary_local_election_directory": {
+    "url": "https://www.sec.state.ma.us/divisions/elections/voter-resources/find-my-local-election-office.htm",
+    "raw_HTML_access": "403 after ordinary redirect/cookie attempt",
+    "raw_field_completeness": false,
+    "indexed_fragment_references": [
+      {
+        "source_file": "source/directory-search/local-073.json",
+        "response_pointer": "/response",
+        "start": 659,
+        "end": 800,
+        "literal_heading": "Tisbury",
+        "observed_role_lines": [
+          "Town Clerk"
+        ],
+        "source_original": false,
+        "entry_completeness": "unverified indexed fragment; gaps may exist inside it"
+      },
+      {
+        "source_file": "source/directory-search/local-074.json",
+        "response_pointer": "/response",
+        "start": 641,
+        "end": 782,
+        "literal_heading": "Tisbury",
+        "observed_role_lines": [
+          "Town Clerk"
+        ],
+        "source_original": false,
+        "entry_completeness": "unverified indexed fragment; gaps may exist inside it"
+      },
+      {
+        "source_file": "source/directory-search/local-081.json",
+        "response_pointer": "/response",
+        "start": 17067,
+        "end": 17208,
+        "literal_heading": "Tisbury",
+        "observed_role_lines": [
+          "Town Clerk"
+        ],
+        "source_original": false,
+        "entry_completeness": "unverified indexed fragment; gaps may exist inside it"
+      },
+      {
+        "source_file": "source/search/municipal-extra-045.json",
+        "response_pointer": "/response",
+        "start": 10116,
+        "end": 10257,
+        "literal_heading": "Tisbury",
+        "observed_role_lines": [
+          "Town Clerk"
+        ],
+        "source_original": false,
+        "entry_completeness": "unverified indexed fragment; gaps may exist inside it"
+      },
+      {
+        "source_file": "source/search/municipal-extra-046.json",
+        "response_pointer": "/response",
+        "start": 524,
+        "end": 665,
+        "literal_heading": "Tisbury",
+        "observed_role_lines": [
+          "Town Clerk"
+        ],
+        "source_original": false,
+        "entry_completeness": "unverified indexed fragment; gaps may exist inside it"
+      }
+    ],
+    "raw_missing_fields_remain_unknown": true
+  },
+  "distinct_authority_roles": {
+    "indexed_directory_role_lines": [
+      "Town Clerk"
+    ],
+    "actual_page_role_occurrences": [],
+    "precinct_canvass": "presiding officers/precinct clerk: c54 ss104-107; not municipal clerk identity",
+    "municipal_certification": "c54 s112: city/town clerk; Boston Board of Election Commissioners",
+    "post_election_absentee_canvass": "c54 s95: registrars; distinct from clerk record transmission",
+    "recount": "c54 s135: registrars determine, clerk amends and transmits",
+    "state_certification": "c54 ss115-116: Governor/Council examination and Governor Senate certificate countersigned/transmitted by Secretary",
+    "local_current_named_official_ID": null
+  },
+  "secretary_department_navigation": [
+    {
+      "parent_literal": "Tisbury",
+      "requested_directory_link_id": 965,
+      "web_evidence": "source/navigation/department-072.json",
+      "web_representation": "Internal Error ()\nciteturn246view3 [wordlim: 200] Source: click({\"ref_id\":\"turn2view1\",\"id\":965}); Total lines: 1\n",
+      "url": null,
+      "original_literal_href": null,
+      "navigation_kind": "department directory"
+    }
+  ],
+  "searches": [
+    "source/search/municipal-073.json"
+  ],
+  "bounded_chain_requests": [
+    {
+      "request_id": "muni-295-1",
+      "receipt": "source/http/muni-295-1.json",
+      "requested_url": "https://www.tisburyma.gov/DocumentCenter/View/1529/ANNUAL-TOWN-REPORT-2025pdf",
+      "final_url": "https://www.tisburyma.gov/DocumentCenter/View/1529/ANNUAL-TOWN-REPORT-2025pdf",
+      "status": 404,
+      "error": null,
+      "body": {
+        "path": "source/byhash/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.gz",
+        "raw_bytes": 0,
+        "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stored_bytes": 20,
+        "stored_sha256": "f1b651238a58fe290baec6c5e32f3bdb1943dd2bd582f02569231f7a757c7837",
+        "encoding": "gzip of requests transport-decoded complete entity"
+      },
+      "structure": null,
+      "source_update_clock": null,
+      "measured_cadence": null,
+      "current_return_admitted": false
+    },
+    {
+      "request_id": "muni-295-0",
+      "receipt": "source/http/muni-295-0.json",
+      "requested_url": "https://www.westtisbury-ma.gov/government/town_clerk/annual_town_election_-_april_16th%2C_2026_town_of_west_tisbury_-_official_results.php",
+      "final_url": "https://www.westtisbury-ma.gov/government/town_clerk/annual_town_election_-_april_16th%2C_2026_town_of_west_tisbury_-_official_results.php",
+      "status": 404,
+      "error": null,
+      "body": {
+        "path": "source/byhash/6f503b4ea6f9f71c684b60c06412c68419b079ad22d4c7ee083a2f22f9c943f0.gz",
+        "raw_bytes": 186357,
+        "raw_sha256": "6f503b4ea6f9f71c684b60c06412c68419b079ad22d4c7ee083a2f22f9c943f0",
+        "stored_bytes": 33906,
+        "stored_sha256": "9c66b8f79128d3efee7f1e2b79c675c70516f7cb6907d2968b173b50d719a0de",
+        "encoding": "gzip of requests transport-decoded complete entity"
+      },
+      "structure": null,
+      "source_update_clock": null,
+      "measured_cadence": null,
+      "current_return_admitted": false,
+      "excluded_as_MA_official_result_authority": "wrong municipal research-parent attribution; see source-scope-negatives.json; no current identity inference",
+      "inspection": "source/inspect/muni-295-0.json",
+      "title": "West Tisbury, MA"
+    },
+    {
+      "request_id": "muni-326-0",
+      "receipt": "source/http/muni-326-0.json",
+      "requested_url": "https://www.westtisbury-ma.gov/government/town_clerk/annual_town_election_-_april_16th%2C_2026_town_of_west_tisbury_-_official_results.php",
+      "final_url": "https://www.westtisbury-ma.gov/government/town_clerk/annual_town_election_-_april_16th%2C_2026_town_of_west_tisbury_-_official_results.php",
+      "status": 404,
+      "error": null,
+      "body": {
+        "path": "source/byhash/6f503b4ea6f9f71c684b60c06412c68419b079ad22d4c7ee083a2f22f9c943f0.gz",
+        "raw_bytes": 186357,
+        "raw_sha256": "6f503b4ea6f9f71c684b60c06412c68419b079ad22d4c7ee083a2f22f9c943f0",
+        "stored_bytes": 33906,
+        "stored_sha256": "9c66b8f79128d3efee7f1e2b79c675c70516f7cb6907d2968b173b50d719a0de",
+        "encoding": "gzip of requests transport-decoded complete entity"
+      },
+      "structure": null,
+      "source_update_clock": null,
+      "measured_cadence": null,
+      "current_return_admitted": false,
+      "excluded_as_MA_official_result_authority": "wrong municipal research-parent attribution; see source-scope-negatives.json; no current identity inference",
+      "inspection": "source/inspect/muni-326-0.json",
+      "title": "West Tisbury, MA"
+    },
+    {
+      "request_id": "follow-ecfefd85a42a6737",
+      "receipt": "source/http/follow-ecfefd85a42a6737.json",
+      "requested_url": "https://www.westtisbury-ma.gov/government/town_clerk/government/town_clerk/town_meeting_minutes___election_results_(local_and_national).php",
+      "final_url": "https://www.westtisbury-ma.gov/government/town_clerk/government/town_clerk/town_meeting_minutes___election_results_(local_and_national).php",
+      "status": 404,
+      "error": null,
+      "body": {
+        "path": "source/byhash/6f503b4ea6f9f71c684b60c06412c68419b079ad22d4c7ee083a2f22f9c943f0.gz",
+        "raw_bytes": 186357,
+        "raw_sha256": "6f503b4ea6f9f71c684b60c06412c68419b079ad22d4c7ee083a2f22f9c943f0",
+        "stored_bytes": 33906,
+        "stored_sha256": "9c66b8f79128d3efee7f1e2b79c675c70516f7cb6907d2968b173b50d719a0de",
+        "encoding": "gzip of requests transport-decoded complete entity"
+      },
+      "structure": null,
+      "source_update_clock": null,
+      "measured_cadence": null,
+      "current_return_admitted": false,
+      "inspection": "source/inspect/follow-ecfefd85a42a6737.json",
+      "title": "West Tisbury, MA"
+    },
+    {
+      "request_id": "follow-11312a200593b960",
+      "receipt": "source/http/follow-11312a200593b960.json",
+      "requested_url": "https://www.westtisbury-ma.gov/government/town_clerk/annual_town_election_-_april_16th%2C_2026_town_of_west_tisbury_-_official_results.php#rz-content-wrap",
+      "final_url": "https://www.westtisbury-ma.gov/government/town_clerk/annual_town_election_-_april_16th%2C_2026_town_of_west_tisbury_-_official_results.php#rz-content-wrap",
+      "status": 404,
+      "error": null,
+      "body": {
+        "path": "source/byhash/6f503b4ea6f9f71c684b60c06412c68419b079ad22d4c7ee083a2f22f9c943f0.gz",
+        "raw_bytes": 186357,
+        "raw_sha256": "6f503b4ea6f9f71c684b60c06412c68419b079ad22d4c7ee083a2f22f9c943f0",
+        "stored_bytes": 33906,
+        "stored_sha256": "9c66b8f79128d3efee7f1e2b79c675c70516f7cb6907d2968b173b50d719a0de",
+        "encoding": "gzip of requests transport-decoded complete entity"
+      },
+      "structure": null,
+      "source_update_clock": null,
+      "measured_cadence": null,
+      "current_return_admitted": false,
+      "inspection": "source/inspect/follow-11312a200593b960.json",
+      "title": "West Tisbury, MA"
+    },
+    {
+      "request_id": "follow-41fc9d7666f04092",
+      "receipt": "source/http/follow-41fc9d7666f04092.json",
+      "requested_url": "https://www.westtisbury-ma.gov/government/town_clerk/Documents/Government/Affordable Housing Committee/Chilmark - West Tisbury L2L Program Policies (Aug 2026).pdf",
+      "final_url": "https://www.westtisbury-ma.gov/government/town_clerk/Documents/Government/Affordable%20Housing%20Committee/Chilmark%20-%20West%20Tisbury%20L2L%20Program%20Policies%20(Aug%202026).pdf",
+      "status": 404,
+      "error": null,
+      "body": {
+        "path": "source/byhash/6f503b4ea6f9f71c684b60c06412c68419b079ad22d4c7ee083a2f22f9c943f0.gz",
+        "raw_bytes": 186357,
+        "raw_sha256": "6f503b4ea6f9f71c684b60c06412c68419b079ad22d4c7ee083a2f22f9c943f0",
+        "stored_bytes": 33906,
+        "stored_sha256": "9c66b8f79128d3efee7f1e2b79c675c70516f7cb6907d2968b173b50d719a0de",
+        "encoding": "gzip of requests transport-decoded complete entity"
+      },
+      "structure": null,
+      "source_update_clock": null,
+      "measured_cadence": null,
+      "current_return_admitted": false,
+      "inspection": "source/inspect/follow-41fc9d7666f04092.json",
+      "title": "West Tisbury, MA"
+    },
+    {
+      "request_id": "follow-3ba2ceb2f5264950",
+      "receipt": "source/http/follow-3ba2ceb2f5264950.json",
+      "requested_url": "https://www.westtisbury-ma.gov/government/town_clerk/Documents/Government/Affordable Housing Committee/2025-2026 Dukes County Income Chart (PDF).pdf",
+      "final_url": "https://www.westtisbury-ma.gov/government/town_clerk/Documents/Government/Affordable%20Housing%20Committee/2025-2026%20Dukes%20County%20Income%20Chart%20(PDF).pdf",
+      "status": 404,
+      "error": null,
+      "body": {
+        "path": "source/byhash/6f503b4ea6f9f71c684b60c06412c68419b079ad22d4c7ee083a2f22f9c943f0.gz",
+        "raw_bytes": 186357,
+        "raw_sha256": "6f503b4ea6f9f71c684b60c06412c68419b079ad22d4c7ee083a2f22f9c943f0",
+        "stored_bytes": 33906,
+        "stored_sha256": "9c66b8f79128d3efee7f1e2b79c675c70516f7cb6907d2968b173b50d719a0de",
+        "encoding": "gzip of requests transport-decoded complete entity"
+      },
+      "structure": null,
+      "source_update_clock": null,
+      "measured_cadence": null,
+      "current_return_admitted": false,
+      "inspection": "source/inspect/follow-3ba2ceb2f5264950.json",
+      "title": "West Tisbury, MA"
+    }
+  ],
+  "actual_follow_request_constructors": [
+    {
+      "id": "follow-ecfefd85a42a6737",
+      "url": "https://www.westtisbury-ma.gov/government/town_clerk/government/town_clerk/town_meeting_minutes___election_results_(local_and_national).php",
+      "parent": "https://www.westtisbury-ma.gov/government/town_clerk/annual_town_election_-_april_16th%2C_2026_town_of_west_tisbury_-_official_results.php",
+      "literal_href": "government/town_clerk/town_meeting_minutes___election_results_(local_and_national).php",
+      "reason": "bounded actual link for historical research parent Tisbury: Town Meeting Minutes & Election Results (Local and National)"
+    },
+    {
+      "id": "follow-11312a200593b960",
+      "url": "https://www.westtisbury-ma.gov/government/town_clerk/annual_town_election_-_april_16th%2C_2026_town_of_west_tisbury_-_official_results.php#rz-content-wrap",
+      "parent": "https://www.westtisbury-ma.gov/government/town_clerk/annual_town_election_-_april_16th%2C_2026_town_of_west_tisbury_-_official_results.php",
+      "literal_href": "#rz-content-wrap",
+      "reason": "bounded actual link for historical research parent Tisbury: Skip to main content"
+    },
+    {
+      "id": "follow-41fc9d7666f04092",
+      "url": "https://www.westtisbury-ma.gov/government/town_clerk/Documents/Government/Affordable Housing Committee/Chilmark - West Tisbury L2L Program Policies (Aug 2026).pdf",
+      "parent": "https://www.westtisbury-ma.gov/government/town_clerk/annual_town_election_-_april_16th%2C_2026_town_of_west_tisbury_-_official_results.php",
+      "literal_href": "Documents/Government/Affordable Housing Committee/Chilmark - West Tisbury L2L Program Policies (Aug 2026).pdf",
+      "reason": "bounded actual link for historical research parent Tisbury: Lease to Locals Program Polices"
+    },
+    {
+      "id": "follow-3ba2ceb2f5264950",
+      "url": "https://www.westtisbury-ma.gov/government/town_clerk/Documents/Government/Affordable Housing Committee/2025-2026 Dukes County Income Chart (PDF).pdf",
+      "parent": "https://www.westtisbury-ma.gov/government/town_clerk/annual_town_election_-_april_16th%2C_2026_town_of_west_tisbury_-_official_results.php",
+      "literal_href": "Documents/Government/Affordable Housing Committee/2025-2026 Dukes County Income Chart (PDF).pdf",
+      "reason": "bounded actual link for historical research parent Tisbury: 2025-2026 Dukes County Income Chart"
+    }
+  ],
+  "observed_election_links": [],
+  "publication_status_and_plan_evidence": [],
+  "complete_format_samples": [],
+  "access_gaps": [
+    {
+      "url": "https://www.tisburyma.gov/DocumentCenter/View/1529/ANNUAL-TOWN-REPORT-2025pdf",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://www.westtisbury-ma.gov/government/town_clerk/annual_town_election_-_april_16th%2C_2026_town_of_west_tisbury_-_official_results.php",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://www.westtisbury-ma.gov/government/town_clerk/annual_town_election_-_april_16th%2C_2026_town_of_west_tisbury_-_official_results.php",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://www.westtisbury-ma.gov/government/town_clerk/government/town_clerk/town_meeting_minutes___election_results_(local_and_national).php",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://www.westtisbury-ma.gov/government/town_clerk/annual_town_election_-_april_16th%2C_2026_town_of_west_tisbury_-_official_results.php#rz-content-wrap",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://www.westtisbury-ma.gov/government/town_clerk/Documents/Government/Affordable Housing Committee/Chilmark - West Tisbury L2L Program Policies (Aug 2026).pdf",
+      "status": 404,
+      "error": null
+    },
+    {
+      "url": "https://www.westtisbury-ma.gov/government/town_clerk/Documents/Government/Affordable Housing Committee/2025-2026 Dukes County Income Chart (PDF).pdf",
+      "status": 404,
+      "error": null
+    }
+  ],
+  "current": {
+    "target_date": "2026-11-03",
+    "stage": "General / State Election",
+    "office": "Senator in Congress",
+    "source_parent_is_historical": true,
+    "current_date_native_id": null,
+    "current_election_native_id": null,
+    "current_stage_native_id": null,
+    "current_office_native_id": null,
+    "current_candidate_choice_ids": null,
+    "current_party_ids": null,
+    "current_reporting_unit_ids": null,
+    "current_method_ids": null,
+    "current_status_ids": null,
+    "geographic_match": null,
+    "genuine_November_returns": null,
+    "current_admission": false,
+    "eligible_unprocessed_votes": null,
+    "measured_cadence": null,
+    "correction_clock": null,
+    "completion_meaning": null
+  },
+  "scope": "complete bounded parent evidence; shared across exact historical children; online election-night service is not guaranteed by statutory authority or a landing 200",
+  "completion_status": "bounded investigation finished, with explicit source/access and future qualifications"
+}
