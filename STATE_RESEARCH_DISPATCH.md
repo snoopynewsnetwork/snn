@@ -45,13 +45,14 @@ and repository review, with its push independently verified. Historical source
 qualifications remain explicit; current geography and live readiness are separate.
 
 The only active researchers are Massachusetts official sources
-`4c5f1926-ae99-4a2d-bd4d-580280e21bcb` and New Jersey maps
-`c09137ad-248a-409b-ad50-cba7526553ef`. New Jersey official research has finished; Massachusetts maps
-`8cff5762-76ce-4417-9927-177d07757961` has actually finished and released the
-New Jersey official-source launch slot. Massachusetts historical dispatch passes complete source
-reconstruction. Both New Jersey first-pair packages and the complete historical
-dispatch now pass independent source, target, actual CLI, final seal and full
-ledger reconstruction. Thirteen later states remain unlaunched. No extra researcher exists.
+`4c5f1926-ae99-4a2d-bd4d-580280e21bcb` and New Mexico turnout
+`5f787f59-e6ff-4494-b416-a0fb4383237f`. New Jersey maps
+`c09137ad-248a-409b-ad50-cba7526553ef` actually finished and released that slot;
+all four NJ questions are finished, with final map/whole-state review pending.
+NJ historical and official-source components are already published. Massachusetts
+maps and historical components are published while official final QA continues.
+Twelve later states remain unlaunched; all prepared briefs are explicitly not
+actual workers. No extra researcher exists.
 
 Illinois's historical printed-known threshold is5,540/4,474,312 of5,592,368,
 following5,539/4,473,789; top15=29,572. Complete10,062 source groups,108 source

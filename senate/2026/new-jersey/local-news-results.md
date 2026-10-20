@@ -1,6 +1,6 @@
 # New Jersey newsroom and NYT backstops
 
-Initial research observed **2026-10-18 UTC / 2026-10-17 Central**, with the additional regional check dated below. The historical first pair and official-source package are now reviewed; maps and final integration remain active. [Retained responses](data/news/manifest.json) preserve UTC retrieval, URLs, HTTP status/headers and exact compressed/raw hashes. No November live collector is implemented.
+Initial research observed **2026-10-18 UTC / 2026-10-17 Central**, with the additional regional check dated below. All four historical/source research assignments are now reviewed; [the coordinator review](research-review.md) records their precise limits. [Retained responses](data/news/manifest.json) preserve UTC retrieval, URLs, HTTP status/headers and exact compressed/raw hashes. No November live collector is implemented.
 
 | Region/product | Primary source | Observed state and operational use |
 | --- | --- | --- |

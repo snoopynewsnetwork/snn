@@ -105,3 +105,26 @@ checks pass,1,443 owned entries and2,679 immutable dependency pins. Optional
 roster/order proof references remain exact and present; no reference repair or
 producer write was needed. Mapsc09137ad remains active, with historical native
 layer/vintage limits preserved. Only other researcher is MAofficial4c5f1926.
+
+
+## Actual maps finish
+
+Mapsc09137ad actually finished its sealed report/atlas and full575/233/342/21
+hierarchy. Final independent package review remains before whole-state release.
+Its real released slot now hosts NMturnout5f787f59, not an additional NJworker.
+Only other researcher remains MAofficial4c5f1926. No source/current/legal join
+or worker self-acceptance follows from the finish event.
+
+
+## All four questions independently reviewed
+
+Final coordinator map review passes14,699 checks, all1,656 map-owned file hashes
+and2,679 immutable dependencies, every215 original PDFs/323 pages' text/raster
+records, full575/233/342/21 hierarchy and actual read-only atlas JS harness.
+Native/Census source audits and two additional actual complete-page views remain
+separate. The whole-state guard removes one exact generated coordinator-news
+cache after preserving its bytes; all four producer seals remain unchanged.
+All four bounded historical research assignments are complete. Current physical/
+legal leaf crosswalks, genuine November returns, measured cadence/outstanding
+pools and probability remain unapproved external qualifications. Coordinator
+alone publishes after full-state hash/link/size and repository checks.
