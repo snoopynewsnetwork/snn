@@ -1,0 +1,96 @@
+{
+ "description": "Observations that are not retained HTTP entities. 'webfetch' rows are pages read through the session's web retrieval tool, which renders a page to text from a different network egress; they are quotations/link lists, not original bytes, and were made because direct requests from this host returned HTTP 403. 'wayback_cdx' rows are Internet Archive CDX index query results (capture timestamp, original URL, status, MIME, SHA-1 payload digest in base32, record length). Wayback capture timing reflects archive crawl schedules, not the publisher's update cadence.",
+ "observation_window_utc": "2026-10-18T16:50Z/2026-10-18T17:10Z",
+ "webfetch": [
+  {
+   "id": "webfetch-56021-landing",
+   "scope": "56021",
+   "url": "https://www.laramiecountywy.gov/County-Government/Elected-Officials/County-Clerk/Elections",
+   "direct_status_from_this_host": 403,
+   "findings": [
+    "Results link: 'Election Results' described as 'Results 1998 - current' -> https://www.laramiecountywy.gov/County-Government/Elected-Officials/County-Clerk/Elections/Election-Results",
+    "'Test Results' link -> https://www.laramiecountywy.gov/County-Government/Elected-Officials/County-Clerk/Elections/2026-Election-Information",
+    "Quoted statement: 'All Wyoming counties use the same election equipment and software—Election Systems & Software (ES&S).'",
+    "Page footer: 'Powered by Granicus' (website platform, not a results vendor).",
+    "No statement of when or how election-night results are posted."
+   ]
+  },
+  {
+   "id": "webfetch-56021-results",
+   "scope": "56021",
+   "url": "https://www.laramiecountywy.gov/County-Government/Elected-Officials/County-Clerk/Elections/Election-Results",
+   "direct_status_from_this_host": 403,
+   "findings": [
+    "Heading '2026 Primary Election Official Results' with 8 PDFs under /files/sharedassets/public/v/1/clerk/documents/election-results/2026-primary/ (fed-and-state-election-summary.pdf 65KB, fed-and-state-precinct-summary.pdf 743KB, county-and-city-election-summary.pdf, county-and-city-precinct-summary.pdf, 1-spot-*.pdf, precinct committee people).",
+    "Heading '2024 GENERAL ELECTION RESULTS' with 4 PDFs under .../2024-general/official/ (federal-and-state-election-summary.pdf 35KB, federal-and-state-precinct-summary.pdf 401KB, city-and-county-*).",
+    "No link labeled unofficial, election night, canvass or recount; no posting or update schedule stated."
+   ]
+  },
+  {
+   "id": "webfetch-56021-2026-info",
+   "scope": "56021",
+   "url": "https://www.laramiecountywy.gov/County-Government/Elected-Officials/County-Clerk/Elections/2026-Election-Information",
+   "direct_status_from_this_host": null,
+   "findings": [
+    "'Election Equipment Test Results': 2026 Primary Test -> https://www.laramiecountywy.gov/files/sharedassets/public/v/1/clerk/documents/laramie-county-2026-primary-election-test-deck-results-july-15-16.pdf ; 2026 General Test -> https://www.laramiecountywy.gov/files/sharedassets/public/v/1/clerk/documents/laramie-county-2026-general-election-test-deck-results-september-28.pdf",
+    "No election-night results, unofficial-results posting or canvass-date text on the page."
+   ]
+  },
+  {
+   "id": "webfetch-56025-landing",
+   "scope": "56025",
+   "url": "https://www.natronacounty-wy.gov/128/Elections",
+   "direct_status_from_this_host": 403,
+   "findings": ["The web retrieval tool also received HTTP 403; no content observed. Wayback captures are used instead."]
+  }
+ ],
+ "wayback_cdx": [
+  {
+   "query": "sos.wyo.gov/Elections/Docs/2026/2026GeneralResults.aspx (from 2024)",
+   "result": "no captures",
+   "meaning": "The 2026 general results page has never been archived; consistent with the current HTTP 404."
+  },
+  {
+   "query": "sos.wyo.gov/Elections/Docs/2024/2024GeneralResults.aspx (from 2024)",
+   "result_summary": "HTTP 404 captures on 2024-11-03 (four, digest FIHOKAHX...); first HTTP 200 capture 2024-11-05T19:47:26Z; 20 distinct 200 captures between 2024-11-06T01:58Z and 2024-11-16T02:28Z, then later captures.",
+   "meaning": "The SOS publishes the general-results year page only around election day; before that the same path returned 404."
+  },
+  {
+   "query": "sos.wyo.gov/Elections/Docs/2024/Results/General/2024_General_Statewide_Candidates_Summary.pdf (from 2024)",
+   "captures": [
+    ["20241105194907", "CEYCU3A7W7XVTPVN2EYZOEAX5YZAYWZD"],
+    ["20241106020337", "CEYCU3A7W7XVTPVN2EYZOEAX5YZAYWZD"],
+    ["20241106022201", "CEYCU3A7W7XVTPVN2EYZOEAX5YZAYWZD"],
+    ["20241106045457", "GWFP3XBU5EXLI4VTEZL5P47KEJ7AWSXO"],
+    ["20241106061402", "V2N6I4YHVVKYPLVT46CANP4B3LIQADHN"],
+    ["20241106065516", "NSHYNGDUQZH5XE5MA4AEDGSN6SVWK2RP"],
+    ["20241106071220", "NSHYNGDUQZH5XE5MA4AEDGSN6SVWK2RP"],
+    ["20241106071603", "NSHYNGDUQZH5XE5MA4AEDGSN6SVWK2RP"],
+    ["20241106082840", "LDGYK6VCHBBR27HZAIGBBUOGY4ETGVP3"],
+    ["20241110042054", "2HYVNHI3XGHLGYAOF3SEG2SRHN42U3NV"],
+    ["20241127043346", "RH6R2MX6K6C5LQFHJNRPLYR45TVTYR5P"]
+   ],
+   "meaning": "Seven distinct payloads were archived; captures between 2024-11-06T08:28Z and 2024-11-10T04:20Z are absent, so intermediate versions (if any) are unobserved."
+  },
+  {
+   "query": "sos.wyo.gov/Elections/Docs/2026/Results/Primary/* (2026-08-18 to 2026-08-31)",
+   "result_summary": "Only 2026_Statewide_Senate_Candidates_Summary.pdf (state legislature, 2026-08-19T12:40Z) and 2026_Statewide_Total_Ballots_Cast_Summary.pdf (unofficial digest UHF5... 2026-08-20T03:50Z; official digest PUR5... from 2026-08-28T15:21Z). The 2026_Statewide_Candidates_Summary.pdf with the U.S. Senate primary has no capture before 2026-09-01.",
+   "meaning": "No archived election-night U.S. Senate primary snapshot exists; only a later unofficial ballots-cast version."
+  },
+  {
+   "query": "laramiecountywy.gov/County-Government/Elected-Officials/County-Clerk/Elections/Election-Results (from 2024, collapsed by digest)",
+   "result_summary": "Captures 2024-03-28, 2024-05-29, 2024-08-15, 2024-09-08, 2025-03-06, 2026-08-23, 2026-09-03, 2026-10-11; none in November 2024 or on 2026-08-18/19.",
+   "meaning": "Laramie's election-night page state is unobserved for both reference elections."
+  },
+  {
+   "query": "laramiecountywy.gov/files/sharedassets/public/v/1/clerk/documents/election-results/2024-general/* (collapsed by digest)",
+   "result_summary": "Only paths under 2024-general/official/ were captured (earliest 2025-03-08); a 2026-03-10 capture of city-and-county-election-summary.pdf is itself HTTP 403. No unofficial 2024 path was observed; no unofficial path is guessed.",
+   "meaning": "Laramie blocks some crawler traffic as well; the archive has only official 2024 products."
+  },
+  {
+   "query": "natronacounty-wy.gov/918/Election-Results ; natronacounty-wy.gov/DocumentCenter/View/13854* ; .../12138* ; .../13867*",
+   "result_summary": "918 page captured once (2026-08-24T20:45:29Z); 13854 (2026 primary State Contest Summary - Unofficial) captured 2026-08-24T01:56:11Z; 12138 (Official 2024 General Election Summary) captured 2024-11-22T00:34:37Z; 13867 not captured.",
+   "meaning": "Natrona's unofficial 2026 primary state summary survives only as an archived copy taken six days after the primary; its election-night update sequence is unobserved."
+  }
+ ]
+}

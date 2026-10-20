@@ -1,0 +1,964 @@
+{
+  "schema": "Wyoming precinct-map source registry. acquire.py fetches every request below with the system curl binary, stores each response body losslessly under raw/<source id>/ and appends a retrieval record. Roles: primary-gis (best county-published vector precinct layer), alternate-gis (second county-published vector layer kept for cross-checking), reference-pdf (official county PDF map), reference-roster (official precinct code list), provenance (pages, configs and catalog items that link or describe an asset), negative-evidence (pages checked that publish no precinct geometry), blocked-attempt (request that did not return the resource), census-alternative and third-party-reference (labeled alternatives, never current precincts).",
+  "priority_counties_in_order": [
+    [
+      "Laramie",
+      "56021"
+    ],
+    [
+      "Natrona",
+      "56025"
+    ],
+    [
+      "Campbell",
+      "56005"
+    ],
+    [
+      "Albany",
+      "56001"
+    ],
+    [
+      "Fremont",
+      "56013"
+    ],
+    [
+      "Sweetwater",
+      "56037"
+    ],
+    [
+      "Park",
+      "56029"
+    ],
+    [
+      "Sheridan",
+      "56033"
+    ],
+    [
+      "Teton",
+      "56039"
+    ],
+    [
+      "Lincoln",
+      "56023"
+    ],
+    [
+      "Uinta",
+      "56041"
+    ],
+    [
+      "Converse",
+      "56009"
+    ],
+    [
+      "Carbon",
+      "56007"
+    ],
+    [
+      "Goshen",
+      "56015"
+    ],
+    [
+      "Big Horn",
+      "56003"
+    ]
+  ],
+  "sources": [
+    {
+      "id": "statewide-sos-2026-precinct-roster",
+      "county": "Statewide",
+      "fips": "56",
+      "role": "reference-roster",
+      "publisher": "Wyoming Secretary of State (WyoReg report DP-014)",
+      "vintage_statement": "Report header: 'Statewide Senate Districts and House Districts By County Report', Date 06/12/2026. Linked from the SOS 2026 Election Information page as 2026 Districts and Precincts 'By County' and 'By Legislative District'.",
+      "requests": [
+        {
+          "name": "sos-2026-election-information.html",
+          "url": "https://sos.wyo.gov/Elections/2026ElectionInformation.aspx",
+          "store": "gzip"
+        },
+        {
+          "name": "2026_Districts_and_Precincts_by_County.pdf",
+          "url": "https://sos.wyo.gov/Elections/Docs/2026/2026_Districts_and_Precincts_by_County.pdf",
+          "store": "raw"
+        },
+        {
+          "name": "2026_Districts_and_Precincts_by_Legislative_District.pdf",
+          "url": "https://sos.wyo.gov/Elections/Docs/2026/2026_Districts_and_Precincts_by_Legislative_District.pdf",
+          "store": "raw"
+        }
+      ]
+    },
+    {
+      "id": "statewide-census-2020-vtd",
+      "county": "Statewide",
+      "fips": "56",
+      "role": "census-alternative",
+      "publisher": "U.S. Census Bureau TIGER/Line 2020 (PL 94-171) voting districts",
+      "vintage_statement": "2020 Census voting districts delineated for the 2020 redistricting data; predates Wyoming's 2022 legislative redistricting and county precinct redraws. Not a current precinct layer. VTDI20 'P' marks pseudo voting districts.",
+      "id_field": "VTDST20",
+      "name_field": "NAME20",
+      "native_crs": "EPSG:4269",
+      "requests": [
+        {
+          "name": "data-gov-catalog.html",
+          "url": "https://catalog.data.gov/dataset/tiger-line-shapefile-2020-state-wyoming-voting-districts",
+          "store": "gzip"
+        },
+        {
+          "name": "tl_2020_56_vtd20.zip",
+          "url": "https://www2.census.gov/geo/tiger/TIGER2020PL/LAYER/VTD/2020/tl_2020_56_vtd20.zip",
+          "store": "raw"
+        }
+      ]
+    },
+    {
+      "id": "statewide-rdh-2024-readme",
+      "county": "Statewide",
+      "fips": "56",
+      "role": "third-party-reference",
+      "publisher": "Redistricting Data Hub (third party)",
+      "vintage_statement": "README for RDH's Wyoming 2024 general election precinct results and boundaries, retrieved by RDH 4/28/26. Lists the boundary source used for each county. Only the README is retained; the RDH boundary file itself was not downloaded and is not a county publication.",
+      "requests": [
+        {
+          "name": "readme_wy_2024_gen_prec.txt",
+          "url": "https://redistrictingdatahub.org/wp-content/uploads/2026/04/readme_wy_2024_gen_prec.txt",
+          "store": "gzip"
+        }
+      ]
+    },
+    {
+      "id": "statewide-geohub-precinct-search",
+      "county": "Statewide",
+      "fips": "56",
+      "role": "negative-evidence",
+      "publisher": "Wyoming GeoSpatial Hub / WyGISC (University of Wyoming) ArcGIS Hub",
+      "vintage_statement": "Hub catalog search for 'precinct'. The GeoSpatial Hub home page links the UW GeoHub; the search returned no statewide precinct layer.",
+      "requests": [
+        {
+          "name": "geospatialhub-home.html",
+          "url": "https://www.geospatialhub.org/",
+          "store": "gzip"
+        },
+        {
+          "name": "geohub-search-precinct.json",
+          "url": "https://geohub-uwyo.opendata.arcgis.com/api/search/v1/collections/all/items?q=precinct&limit=50",
+          "store": "gzip"
+        }
+      ]
+    },
+    {
+      "id": "statewide-terragis-county-portal",
+      "county": "Statewide",
+      "fips": "56",
+      "role": "provenance",
+      "publisher": "Terra GIS Ltd. (county web-map host; acquired Greenwood Mapping)",
+      "vintage_statement": "Terra GIS county GIS portal page. Several Wyoming county election/GIS pages link maps.terragis.net/<county>/; older county links to maps.greenwoodmap.com no longer resolve.",
+      "requests": [
+        {
+          "name": "terragis-county-gis.html",
+          "url": "https://www.terragis.net/county-gis/",
+          "store": "gzip"
+        }
+      ]
+    },
+    {
+      "id": "statewide-lso-redistricting-attempt",
+      "county": "Statewide",
+      "fips": "56",
+      "role": "negative-evidence",
+      "publisher": "Wyoming Legislative Service Office (wyoleg.gov)",
+      "vintage_statement": "wyoleg.gov is a JavaScript application: scripted requests return only the application shell (no redistricting content), and /Redistricting/ returned HTTP 403. Published reporting describes the Legislature's 2022 redistricting materials as interactive House/Senate district maps; no LSO precinct layer was found. Legislative districts are not precincts and are not used here.",
+      "requests": [
+        {
+          "name": "wyoleg-home-shell.html",
+          "url": "https://wyoleg.gov/",
+          "store": "gzip"
+        },
+        {
+          "name": "wyoleg-redistricting.html",
+          "url": "https://wyoleg.gov/Redistricting/",
+          "store": "gzip",
+          "expect": 403
+        }
+      ]
+    },
+    {
+      "id": "56021-laramie-clcgisc-precincts",
+      "county": "Laramie",
+      "fips": "56021",
+      "role": "primary-gis",
+      "kind": "arcgis-layer",
+      "layer_url": "https://maps.clcgisc.com/server/rest/services/administrative_restricted_CLK/administrative_restricted_CLK/FeatureServer/0",
+      "publisher": "Cheyenne and Laramie County GIS Cooperative (service copyright); layer 'Precinct' in the Laramie County Clerk 'Political Boundaries and Voter Info' web app",
+      "vintage_statement": "No layer description or vintage label. Feature last_edited_date values are 2022-05-12 and 2022-09-15 (see build output).",
+      "id_field": "precinct",
+      "requests": [
+        {
+          "name": "voting-in-laramie-county.html",
+          "url": "https://www.laramiecountywy.gov/Resident-Services/Elections/Voting-in-Laramie-County",
+          "store": "gzip"
+        },
+        {
+          "name": "app-item.json",
+          "url": "https://maps.clcgisc.com/portal/sharing/rest/content/items/6c122e09faec455eab3a05f9e896448a?f=json",
+          "store": "gzip"
+        },
+        {
+          "name": "app-data.json",
+          "url": "https://maps.clcgisc.com/portal/sharing/rest/content/items/6c122e09faec455eab3a05f9e896448a/data?f=json",
+          "store": "gzip"
+        },
+        {
+          "name": "webmap-item.json",
+          "url": "https://maps.clcgisc.com/portal/sharing/rest/content/items/bd62a08857a642a9a9585ea1eb2229c9?f=json",
+          "store": "gzip"
+        },
+        {
+          "name": "webmap-data.json",
+          "url": "https://maps.clcgisc.com/portal/sharing/rest/content/items/bd62a08857a642a9a9585ea1eb2229c9/data?f=json",
+          "store": "gzip"
+        }
+      ]
+    },
+    {
+      "id": "56021-laramie-2024-districts-precincts-list",
+      "county": "Laramie",
+      "fips": "56021",
+      "role": "reference-roster",
+      "publisher": "Laramie County Clerk",
+      "vintage_statement": "PDF list '2024 Laramie County Districts & Precincts' (list of precincts by legislative district; not a map).",
+      "requests": [
+        {
+          "name": "2024-laramie-county-districts-and-precincts.pdf",
+          "url": "https://www.laramiecountywy.gov/files/sharedassets/public/v/1/clerk/documents/2024-laramie-county-districts-and-precincts.pdf",
+          "store": "raw"
+        }
+      ]
+    },
+    {
+      "id": "56025-natrona-nrgisc-precincts",
+      "county": "Natrona",
+      "fips": "56025",
+      "role": "primary-gis",
+      "kind": "arcgis-layer",
+      "layer_url": "https://maps.casperwy.gov/nrgisc/rest/services/County_Elections/Precincts_2018/MapServer/0",
+      "publisher": "Natrona Regional Geospatial Cooperative server (City of Casper); copyright 'Natrona County Clerk, Tracy Good; Natrona County Elections Department'",
+      "vintage_statement": "Layer description: 'The Precinct boundaries for the 2026 elections, as determined by Natrona County Clerk, Tracy Good.' The service name still says 2018.",
+      "id_field": "PRECINCT",
+      "requests": [
+        {
+          "name": "experience-item.json",
+          "url": "https://www.arcgis.com/sharing/rest/content/items/1efaf68c533b4749ab375f7dc106ae18?f=json",
+          "store": "gzip"
+        },
+        {
+          "name": "webmap-item.json",
+          "url": "https://www.arcgis.com/sharing/rest/content/items/b02ccfd74feb4d5ba1e0bbc7dffd8ad4?f=json",
+          "store": "gzip"
+        },
+        {
+          "name": "webmap-data.json",
+          "url": "https://www.arcgis.com/sharing/rest/content/items/b02ccfd74feb4d5ba1e0bbc7dffd8ad4/data?f=json",
+          "store": "gzip"
+        }
+      ]
+    },
+    {
+      "id": "56025-natrona-county-site-blocked",
+      "county": "Natrona",
+      "fips": "56025",
+      "role": "blocked-attempt",
+      "publisher": "Natrona County",
+      "vintage_statement": "County website returned a Cloudflare 403 challenge to scripted requests (also to the web reader), so county election notices such as precinct boundary changes and Resolution 12-26 could not be retrieved.",
+      "requests": [
+        {
+          "name": "natronacounty-home.html",
+          "url": "https://www.natronacounty-wy.gov/",
+          "store": "gzip",
+          "expect": 403
+        },
+        {
+          "name": "natrona-election-notices.html",
+          "url": "https://www.natronacounty-wy.gov/940/Election-LegalPublic-Notices",
+          "store": "gzip",
+          "expect": 403
+        }
+      ]
+    },
+    {
+      "id": "56005-campbell-votinginformation-precincts",
+      "county": "Campbell",
+      "fips": "56005",
+      "role": "primary-gis",
+      "kind": "arcgis-layer",
+      "layer_url": "https://gis.campbellcountywy.gov/arcgis/rest/services/Campbell_Public/VotingInformation/MapServer/1",
+      "publisher": "Campbell County GIS Cooperative (CCGISCOOP); Voting Information service in the county 'Elections Web Map'",
+      "vintage_statement": "Layer description: 'boundaries of voting precincts in Campbell County Wyoming. Use the definition query of LIFECYCLE = Active to access the most current data.' LIFECYCLE and SOURCE are not exposed by the public layer; no edit dates.",
+      "id_field": "PRECINCTNUM",
+      "requests": [
+        {
+          "name": "campbell-elections.html",
+          "url": "https://www.campbellcountywy.gov/867/Elections",
+          "store": "gzip"
+        },
+        {
+          "name": "app-item.json",
+          "url": "https://www.arcgis.com/sharing/rest/content/items/a9075ff259ca42f9a8451ad564d12047?f=json",
+          "store": "gzip"
+        },
+        {
+          "name": "app-data.json",
+          "url": "https://www.arcgis.com/sharing/rest/content/items/a9075ff259ca42f9a8451ad564d12047/data?f=json",
+          "store": "gzip"
+        },
+        {
+          "name": "webmap-data.json",
+          "url": "https://www.arcgis.com/sharing/rest/content/items/29a16c0ef3bd45f3ab739347449e5702/data?f=json",
+          "store": "gzip"
+        },
+        {
+          "name": "countyprecincts-service-empty.json",
+          "url": "https://gis.campbellcountywy.gov/arcgis/rest/services/Campbell_Public/CountyPrecincts/MapServer?f=json",
+          "store": "gzip"
+        },
+        {
+          "name": "election-rep-app-precincts-layer.json",
+          "url": "https://gis.campbellcountywy.gov/arcgis/rest/services/Election_rep-app/VotingInformation_Precincts/MapServer/0?f=json",
+          "store": "gzip"
+        },
+        {
+          "name": "election-rep-app-precincts-count.json",
+          "url": "https://gis.campbellcountywy.gov/arcgis/rest/services/Election_rep-app/VotingInformation_Precincts/MapServer/0/query?where=1%3D1&returnCountOnly=true&f=json",
+          "store": "gzip"
+        }
+      ]
+    },
+    {
+      "id": "56001-albany-electiongeography-precincts",
+      "county": "Albany",
+      "fips": "56001",
+      "role": "primary-gis",
+      "kind": "arcgis-layer",
+      "layer_url": "https://services1.arcgis.com/EmwrhKkmuQhTATzU/arcgis/rest/services/ElectionGeography_067107137ccb4f169e793599a04dae90/FeatureServer/1",
+      "publisher": "Albany County GIS (owner junverzagt_AlbanyGIS, Albany County Planning Office); 'Voting Precinct' layer of the 'My Elected Representative' app linked from the county Elections page",
+      "vintage_statement": "No description. Layer editingInfo dataLastEditDate 2026-06-15; individual feature EditDate values are 2022 and 2024 (see build output).",
+      "id_field": "precinctid",
+      "requests": [
+        {
+          "name": "albany-elections.html",
+          "url": "https://www.albanycountywy.gov/164/Elections",
+          "store": "gzip"
+        },
+        {
+          "name": "app-item.json",
+          "url": "https://www.arcgis.com/sharing/rest/content/items/5070f17d5e234018a0d6de811a6cc014?f=json",
+          "store": "gzip"
+        },
+        {
+          "name": "app-data.json",
+          "url": "https://www.arcgis.com/sharing/rest/content/items/5070f17d5e234018a0d6de811a6cc014/data?f=json",
+          "store": "gzip"
+        },
+        {
+          "name": "webmap-data.json",
+          "url": "https://www.arcgis.com/sharing/rest/content/items/77ce8b1dac02440c8f375dbca56fcb81/data?f=json",
+          "store": "gzip"
+        },
+        {
+          "name": "service-item.json",
+          "url": "https://www.arcgis.com/sharing/rest/content/items/86ea3d8c13264e35973b390e4e523ccd?f=json",
+          "store": "gzip"
+        }
+      ]
+    },
+    {
+      "id": "56001-albany-precinct-pdfs",
+      "county": "Albany",
+      "fips": "56001",
+      "role": "reference-pdf",
+      "publisher": "Albany County Clerk",
+      "vintage_statement": "Linked as 'CITY PRECINCT MAP' and 'COUNTY PRECINCT MAP' on Vote Centers and Precinct Maps. Server filenames: 'Laramie ALL Precincts_202404241728275960.pdf' and 'County ALL Precincts_202404241728005570.pdf' (April 2024 upload stamps).",
+      "requests": [
+        {
+          "name": "vote-centers-and-precinct-maps.html",
+          "url": "https://www.albanycountywy.gov/1591/Vote-Centers-and-Precinct-Maps",
+          "store": "gzip"
+        },
+        {
+          "name": "albany-city-precinct-map.pdf",
+          "url": "https://www.albanycountywy.gov/DocumentCenter/View/5046",
+          "store": "raw"
+        },
+        {
+          "name": "albany-county-precinct-map.pdf",
+          "url": "https://www.albanycountywy.gov/DocumentCenter/View/5652",
+          "store": "raw"
+        }
+      ]
+    },
+    {
+      "id": "56013-fremont-beacon-voter-precincts",
+      "county": "Fremont",
+      "fips": "56013",
+      "role": "primary-gis",
+      "kind": "arcgis-layer",
+      "layer_url": "https://services8.arcgis.com/rlGvD2ZEQWYJHMZp/arcgis/rest/services/FremontCountyWY_BeaconStatic/FeatureServer/15",
+      "publisher": "Fremont County via Schneider Geospatial Beacon (service owner SG_FremontCountyWY); the county Maps & GIS page links the Beacon 'County Parcel Map' application",
+      "vintage_statement": "Layer 'Voter Precincts'; editingInfo dataLastEditDate 2026-10-02 (service republish time, not a boundary-adoption date).",
+      "id_field": "Precincts",
+      "requests": [
+        {
+          "name": "fremont-maps-gis.html",
+          "url": "https://www.fremontcountywy.gov/maps___gis/index.php",
+          "store": "gzip"
+        },
+        {
+          "name": "fremont-elections.html",
+          "url": "https://www.fremontcountywy.gov/government/elections___voting.php",
+          "store": "gzip"
+        },
+        {
+          "name": "service-item.json",
+          "url": "https://www.arcgis.com/sharing/rest/content/items/5df3356526bb40ac8776a158bf69f37d?f=json",
+          "store": "gzip"
+        }
+      ]
+    },
+    {
+      "id": "56013-fremont-voter-precincts-service",
+      "county": "Fremont",
+      "fips": "56013",
+      "role": "alternate-gis",
+      "kind": "arcgis-layer",
+      "layer_url": "https://services8.arcgis.com/rlGvD2ZEQWYJHMZp/arcgis/rest/services/VOTER_PRECINCTS/FeatureServer/270",
+      "publisher": "Same ArcGIS organization as the Fremont Beacon services (item owner chip1951; title 'VOTER PRECINCTS', snippet 'Fremont County Voter Precincts')",
+      "vintage_statement": "editingInfo dataLastEditDate 2026-05-14.",
+      "id_field": "Precincts",
+      "requests": [
+        {
+          "name": "service-item.json",
+          "url": "https://www.arcgis.com/sharing/rest/content/items/67d87587fa34412a9d52cf2a9d0c688c?f=json",
+          "store": "gzip"
+        }
+      ]
+    },
+    {
+      "id": "56037-sweetwater-terragis-precincts",
+      "county": "Sweetwater",
+      "fips": "56037",
+      "role": "primary-gis",
+      "kind": "topojson",
+      "topojson_request": "precincts.topo.json",
+      "native_crs": "EPSG:3738",
+      "crs_evidence": "conf.js olProjection code EPSG:3738 (us-ft); coordinates fall in Sweetwater County after transformation (checked by build.py).",
+      "publisher": "Sweetwater County GIS map server hosted by Terra GIS (linked as 'Online Map Server' from the County Clerk pages)",
+      "vintage_statement": "Viewer source 'precincts'; the precinct info layer is named 'precinct22'. The County Clerk 'Redistricting 2022' page links the map with layer precinct22. HTTP Last-Modified is the file generation time.",
+      "id_field": "p",
+      "requests": [
+        {
+          "name": "sweetwater-redistricting-2022.html",
+          "url": "https://www.sweetwatercountywy.gov/departments/county_clerk/redistricting_2022.php",
+          "store": "gzip"
+        },
+        {
+          "name": "sweetwater-elections.html",
+          "url": "https://www.sweetwatercountywy.gov/departments/county_clerk/elections.php",
+          "store": "gzip"
+        },
+        {
+          "name": "terragis-landing.html",
+          "url": "https://maps.terragis.net/sweetwater/",
+          "store": "gzip"
+        },
+        {
+          "name": "conf.js",
+          "url": "https://maps.terragis.net/sweetwater/etc/conf.js",
+          "store": "gzip"
+        },
+        {
+          "name": "precincts.topo.json",
+          "url": "https://maps.terragis.net/sweetwater/json-data/precincts.topo.json",
+          "store": "gzip"
+        }
+      ]
+    },
+    {
+      "id": "56029-park-terragis-precinct2024",
+      "county": "Park",
+      "fips": "56029",
+      "role": "primary-gis",
+      "kind": "topojson",
+      "topojson_request": "precinct2024.topo.json",
+      "topojson_object": "precincts",
+      "native_crs": "EPSG:3857",
+      "crs_evidence": "conf.js mapCoordSys/dataCoordSys EPSG:3857; bbox in Web Mercator metres.",
+      "publisher": "Park County GIS map server hosted by Terra GIS (linked from the Park County Elections page with lyrs=precinct)",
+      "vintage_statement": "File name and PostGIS table 'precinct2024' ('Includes house & senate' per conf.js comment). HTTP Last-Modified is the file generation time.",
+      "id_field": "prct",
+      "requests": [
+        {
+          "name": "park-county-elections.html",
+          "url": "https://parkcounty-wy.gov/county-elections/",
+          "store": "gzip"
+        },
+        {
+          "name": "terragis-landing.html",
+          "url": "https://maps.terragis.net/park/",
+          "store": "gzip"
+        },
+        {
+          "name": "conf.js",
+          "url": "https://maps.terragis.net/park/etc/conf.js",
+          "store": "gzip"
+        },
+        {
+          "name": "precinct2024.topo.json",
+          "url": "https://maps.terragis.net/park/json-data/precinct2024.topo.json",
+          "store": "gzip"
+        }
+      ]
+    },
+    {
+      "id": "56033-sheridan-terragis-precincts",
+      "county": "Sheridan",
+      "fips": "56033",
+      "role": "primary-gis",
+      "kind": "topojson",
+      "topojson_request": "precincts.topo.json",
+      "native_crs": "EPSG:3857",
+      "crs_evidence": "conf.js mapCoordSys/dataCoordSys EPSG:3857.",
+      "publisher": "Sheridan County GIS map server hosted by Terra GIS (linked from the county GIS & Mapping page)",
+      "vintage_statement": "Viewer source 'precincts' (class = District-Precinct); conf.js sample-ballot mode is 'general'. HTTP Last-Modified is the file generation time.",
+      "id_field": "class",
+      "requests": [
+        {
+          "name": "sheridan-gis-mapping.html",
+          "url": "https://www.sheridancountywy.gov/departments/information_technology/gis___mapping.php",
+          "store": "gzip"
+        },
+        {
+          "name": "terragis-landing.html",
+          "url": "https://maps.terragis.net/sheridan/",
+          "store": "gzip"
+        },
+        {
+          "name": "conf.js",
+          "url": "https://maps.terragis.net/sheridan/etc/conf.js",
+          "store": "gzip"
+        },
+        {
+          "name": "precincts.topo.json",
+          "url": "https://maps.terragis.net/sheridan/json-data/precincts.topo.json",
+          "store": "gzip"
+        }
+      ]
+    },
+    {
+      "id": "56033-sheridan-arcgis-district-precincts",
+      "county": "Sheridan",
+      "fips": "56033",
+      "role": "alternate-gis",
+      "kind": "arcgis-layer",
+      "layer_url": "https://services5.arcgis.com/V4b98G4pSkzvUam9/arcgis/rest/services/District_Precinct_Boundaries_with_Labels_for_Sheridan_Wyoming_view/FeatureServer/0",
+      "publisher": "Sheridan County ArcGIS organization (sheridanwy; owner rimmell; used by 'Sheridan County Internal Elections Map')",
+      "vintage_statement": "View layer edited 2026-08-08; carries 2010 VTD fields plus Dist/Prec/Polling_Place; 's' suffix codes mark split parts.",
+      "id_field": "VTDST",
+      "requests": [
+        {
+          "name": "service-item.json",
+          "url": "https://www.arcgis.com/sharing/rest/content/items/2c016861296b440f8b19ae859b6b5f41?f=json",
+          "store": "gzip"
+        },
+        {
+          "name": "internal-elections-app-item.json",
+          "url": "https://www.arcgis.com/sharing/rest/content/items/5096b867e6c9419ca6f1e7c1b68430ec?f=json",
+          "store": "gzip"
+        }
+      ]
+    },
+    {
+      "id": "56039-teton-terragis-precinct",
+      "county": "Teton",
+      "fips": "56039",
+      "role": "primary-gis",
+      "kind": "topojson",
+      "topojson_request": "precinct.topo.json",
+      "topojson_object": "precincts",
+      "native_crs": "EPSG:3739",
+      "crs_evidence": "conf.js olProjection code EPSG:3739 (us-ft); Teton download page states all data are EPSG:3739.",
+      "publisher": "Teton County GIS map server hosted by Terra GIS (county Maps page; the Elections page 'Voting Precinct Maps' link to gis.tetoncountywy.gov now redirects to it)",
+      "vintage_statement": "HTTP Last-Modified 2022-04-15; sample-ballot SQL in conf.js reads PostGIS table precinct2022. Baseline 2022 vintage geometry.",
+      "id_field": "precinct",
+      "requests": [
+        {
+          "name": "teton-elections.html",
+          "url": "https://www.tetoncountywy.gov/268/Elections",
+          "store": "gzip"
+        },
+        {
+          "name": "teton-maps.html",
+          "url": "https://tetoncountywy.gov/1107/Maps",
+          "store": "gzip"
+        },
+        {
+          "name": "old-voting-precinct-maps-link.html",
+          "url": "https://gis.tetoncountywy.gov/portal/apps/experiencebuilder/experience/?id=e9e2ce4e629d400e9b80b7d6d2938a3d",
+          "store": "gzip"
+        },
+        {
+          "name": "terragis-landing.html",
+          "url": "https://maps.terragis.net/tetonwy/mapserver/",
+          "store": "gzip"
+        },
+        {
+          "name": "conf.js",
+          "url": "https://maps.terragis.net/tetonwy/mapserver/etc/conf.js",
+          "store": "gzip"
+        },
+        {
+          "name": "precinct.topo.json",
+          "url": "https://maps.terragis.net/tetonwy/mapserver/json-data/precinct.topo.json",
+          "store": "gzip"
+        }
+      ]
+    },
+    {
+      "id": "56023-lincoln-votingmap-precincts",
+      "county": "Lincoln",
+      "fips": "56023",
+      "role": "primary-gis",
+      "kind": "arcgis-layer",
+      "layer_url": "https://maps.lcwy.org/arcgis/rest/services/PUBLIC/VotingMap/MapServer/3",
+      "publisher": "Lincoln County GIS (maps.lcwy.org; 'Where to Vote Map' linked from the County Clerk Elections page)",
+      "vintage_statement": "Layer description 'Lincoln County Voter Precinct Boundaries'. No edit dates; the service does not support pagination (all features fit one response).",
+      "id_field": "PRECINCT",
+      "requests": [
+        {
+          "name": "lincoln-elections.html",
+          "url": "https://www.lincolncountywy.gov/government/clerk/elections_voting_information/index.php",
+          "store": "gzip"
+        },
+        {
+          "name": "letsvote-config.json",
+          "url": "https://maps.lcwy.org/webmaps/Letsvote/config.json",
+          "store": "gzip"
+        },
+        {
+          "name": "webmap-data.json",
+          "url": "https://www.arcgis.com/sharing/rest/content/items/46043a10eb16481381479c195dab57ba/data?f=json",
+          "store": "gzip"
+        },
+        {
+          "name": "service-iteminfo.json",
+          "url": "https://maps.lcwy.org/arcgis/rest/services/PUBLIC/VotingMap/MapServer/info/iteminfo?f=json",
+          "store": "gzip"
+        }
+      ]
+    },
+    {
+      "id": "56041-uinta-terragis-precinct",
+      "county": "Uinta",
+      "fips": "56041",
+      "role": "primary-gis",
+      "kind": "topojson",
+      "topojson_request": "precinct.topo.json",
+      "topojson_object": "precint2022",
+      "native_crs": "EPSG:3857",
+      "crs_evidence": "conf.js mapCoordSys EPSG:3857 (dataCoordSys EPSG:3739 is the query CRS); bbox in Web Mercator metres.",
+      "publisher": "Uinta County GIS map server hosted by Terra GIS (linked from the Uinta County Elections page)",
+      "vintage_statement": "TopoJSON object name 'precint2022'. HTTP Last-Modified is the file generation time.",
+      "id_field": "PRECINT",
+      "requests": [
+        {
+          "name": "uinta-elections.html",
+          "url": "https://www.uintacountywy.gov/26/Elections",
+          "store": "gzip"
+        },
+        {
+          "name": "conf.js",
+          "url": "https://maps.terragis.net/uinta/mapserver/etc/conf.js",
+          "store": "gzip"
+        },
+        {
+          "name": "precinct.topo.json",
+          "url": "https://maps.terragis.net/uinta/mapserver/json-data/precinct.topo.json",
+          "store": "gzip"
+        }
+      ]
+    },
+    {
+      "id": "56041-uinta-arcgis-precincts-2026",
+      "county": "Uinta",
+      "fips": "56041",
+      "role": "alternate-gis",
+      "kind": "arcgis-layer",
+      "layer_url": "https://services.arcgis.com/3lhSvleboHW33hAj/arcgis/rest/services/precints_2022/FeatureServer/0",
+      "publisher": "Uinta County GIS (owner gawelling, Uinta County GIS Coordinator); item snippet 'Voting Precincts 2026'; used by the 'Uinta County Voting Precincts 2026' web app",
+      "vintage_statement": "Item snippet 'Voting Precincts 2026'; editingInfo dataLastEditDate 2026-08-12; service name still 'precints_2022'.",
+      "id_field": "PRECINT",
+      "requests": [
+        {
+          "name": "service-item.json",
+          "url": "https://www.arcgis.com/sharing/rest/content/items/3f157939524541c6ad25f1ce90a3155d?f=json",
+          "store": "gzip"
+        },
+        {
+          "name": "app-item.json",
+          "url": "https://www.arcgis.com/sharing/rest/content/items/e5a13625fa534be8855c2f0d18e0df20?f=json",
+          "store": "gzip"
+        },
+        {
+          "name": "webmap-item.json",
+          "url": "https://www.arcgis.com/sharing/rest/content/items/607bdc3fcbc948118ec3f8f38e3cb6e0?f=json",
+          "store": "gzip"
+        },
+        {
+          "name": "webmap-data.json",
+          "url": "https://www.arcgis.com/sharing/rest/content/items/607bdc3fcbc948118ec3f8f38e3cb6e0/data?f=json",
+          "store": "gzip"
+        }
+      ]
+    },
+    {
+      "id": "56009-converse-terragis-wfs-precinct-poly",
+      "county": "Converse",
+      "fips": "56009",
+      "role": "primary-gis",
+      "kind": "wfs-gml",
+      "gml_request": "precinct_poly.gml",
+      "native_crs": "EPSG:3736",
+      "crs_evidence": "WFS DefaultCRS urn:ogc:def:crs:EPSG::3736; posList order easting northing (checked by build.py).",
+      "publisher": "Converse County GIS map server hosted by Terra GIS (MapServer MAP13; linked as Map Server from the county site)",
+      "vintage_statement": "WFS feature type ms:precinct_poly exposes geometry only (no attributes, no feature IDs). The WMS GetStyles SLD defines 19 classes on attribute 'precinct' (e.g. 'Lost Springs 1-1' = precinct 1-1) and labels 'split'. Feature precinct codes are inferred by build.py from the county server's own per-feature WMS renders and SLD class colours; they are not a downloaded attribute.",
+      "id_field": null,
+      "requests": [
+        {
+          "name": "converse-map-server.html",
+          "url": "https://www.conversecountywy.gov/370/Map-Server",
+          "store": "gzip"
+        },
+        {
+          "name": "conf.js",
+          "url": "https://maps.terragis.net/converse/etc/conf.js",
+          "store": "gzip"
+        },
+        {
+          "name": "infotool-precinct-point-query.html",
+          "url": "https://maps.terragis.net/converse/infoTool.php?layers=precinct&r=10&p=500000,1000000",
+          "store": "gzip",
+          "expect": 418
+        },
+        {
+          "name": "wfs-filter-on-hidden-precinct-attempt.xml",
+          "url": "https://maps.terragis.net/cgi-bin/mapserv76.fcgi?map=MAP13&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetFeature&TYPENAMES=ms%3Aprecinct_poly&RESULTTYPE=hits&FILTER=%3CFilter%3E%3CPropertyIsEqualTo%3E%3CPropertyName%3Eprecinct%3C%2FPropertyName%3E%3CLiteral%3E23-1%3C%2FLiteral%3E%3C%2FPropertyIsEqualTo%3E%3C%2FFilter%3E",
+          "store": "gzip",
+          "expect": 400
+        }
+      ],
+      "wfs": {
+        "endpoint": "https://maps.terragis.net/cgi-bin/mapserv76.fcgi",
+        "map": "MAP13",
+        "typename": "ms:precinct_poly",
+        "wms_layer": "precinct_poly",
+        "legend_layer": "precinct",
+        "srs": "EPSG:3736"
+      }
+    },
+    {
+      "id": "56009-converse-precinct-pdfs",
+      "county": "Converse",
+      "fips": "56009",
+      "role": "reference-pdf",
+      "publisher": "Converse County Clerk",
+      "vintage_statement": "Six precinct maps linked from the county Elections page; server filenames carry 2022-03-31, 2022-04-05 and 2022-05-02 upload stamps except 'Douglas Precinct Map.pdf'. The retained 2026 General Election Sample Ballots page lists 23 sample ballots (ballot styles) for the 19 precinct codes, e.g. 1-1-1 and 1-1-2 Lost Springs.",
+      "requests": [
+        {
+          "name": "converse-elections.html",
+          "url": "https://www.conversecountywy.gov/187/Elections",
+          "store": "gzip"
+        },
+        {
+          "name": "converse-2026-general-sample-ballots.html",
+          "url": "https://www.conversecountywy.gov/558/2026-General-Election-Sample-Ballots",
+          "store": "gzip"
+        },
+        {
+          "name": "county-precinct-map-2022-11x17-hd-sd.pdf",
+          "url": "https://www.conversecountywy.gov/DocumentCenter/View/920/County-Precinct-Map-2022-11x17-HD-and-SD",
+          "store": "raw"
+        },
+        {
+          "name": "county-precincts.pdf",
+          "url": "https://www.conversecountywy.gov/DocumentCenter/View/193/County-Precincts-PDF",
+          "store": "raw"
+        },
+        {
+          "name": "douglas-precinct-map-2022-11x17-hd-sd.pdf",
+          "url": "https://www.conversecountywy.gov/DocumentCenter/View/4145/Douglas-Precinct-Map-2022-11x17-HD--SD",
+          "store": "raw"
+        },
+        {
+          "name": "douglas-precinct-map.pdf",
+          "url": "https://www.conversecountywy.gov/DocumentCenter/View/4148/Douglas-Precinct-Map",
+          "store": "raw"
+        },
+        {
+          "name": "glenrock-precinct-map-2022-11x17-hd-sd.pdf",
+          "url": "https://www.conversecountywy.gov/DocumentCenter/View/922/Glenrock-Precinct-Map-2022-11x17-HD-and--SD",
+          "store": "raw"
+        },
+        {
+          "name": "glenrock-precincts.pdf",
+          "url": "https://www.conversecountywy.gov/DocumentCenter/View/189/Glenrock-Precincts-PDF",
+          "store": "raw"
+        }
+      ]
+    },
+    {
+      "id": "56007-carbon-terragis-precincts2022",
+      "county": "Carbon",
+      "fips": "56007",
+      "role": "primary-gis",
+      "kind": "topojson",
+      "topojson_request": "precincts2022.topo.json",
+      "native_crs": "EPSG:3857",
+      "crs_evidence": "conf.js mapCoordSys/dataCoordSys EPSG:3857.",
+      "publisher": "Carbon County GIS map server hosted by Terra GIS (landing page carries the Carbon County logo and links carbonwy.com; the county's own footer link to maps.greenwoodmap.com/carbon no longer resolves)",
+      "vintage_statement": "File name 'precincts2022'. HTTP Last-Modified is the file generation time.",
+      "id_field": "name",
+      "requests": [
+        {
+          "name": "carbon-polling-places-precincts.html",
+          "url": "https://www.carboncountywy.gov/942/Polling-Places-and-PrecinctsDistricts",
+          "store": "gzip"
+        },
+        {
+          "name": "terragis-landing.html",
+          "url": "https://maps.terragis.net/carbon/",
+          "store": "gzip"
+        },
+        {
+          "name": "conf.js",
+          "url": "https://maps.terragis.net/carbon/etc/conf.js",
+          "store": "gzip"
+        },
+        {
+          "name": "precincts2022.topo.json",
+          "url": "https://maps.terragis.net/carbon/json-data/precincts2022.topo.json",
+          "store": "gzip"
+        }
+      ]
+    },
+    {
+      "id": "56007-carbon-arcgis-election-precincts",
+      "county": "Carbon",
+      "fips": "56007",
+      "role": "alternate-gis",
+      "kind": "arcgis-layer",
+      "layer_url": "https://services1.arcgis.com/qEJ3hgR2R81AFChw/arcgis/rest/services/Election_Precincts/FeatureServer/0",
+      "publisher": "Carbon County ArcGIS organization (owner CarbonCountyWYGIS); item snippet 'Election Precincts in Carbon County, Wyoming'",
+      "vintage_statement": "Layer description 'Internal Use Only' although publicly queryable; dataLastEditDate 2026-05-05.",
+      "id_field": "district_precinct",
+      "requests": [
+        {
+          "name": "service-item.json",
+          "url": "https://www.arcgis.com/sharing/rest/content/items/a58382decd284f49a0f3c6d1d2aafc20?f=json",
+          "store": "gzip"
+        }
+      ]
+    },
+    {
+      "id": "56007-carbon-precinct-pdfs",
+      "county": "Carbon",
+      "fips": "56007",
+      "role": "reference-pdf",
+      "publisher": "Carbon County Clerk",
+      "vintage_statement": "Linked as 'Countywide District/Precinct map (PDF)' and 'Rawlins Wards Map (PDF)'; titles say 2022.",
+      "requests": [
+        {
+          "name": "2022-county-district-precincts-map.pdf",
+          "url": "https://www.carboncountywy.gov/DocumentCenter/View/6132/_2022-County-District-Precincts-Map-Final",
+          "store": "raw"
+        },
+        {
+          "name": "2022-rawlins-ward-map.pdf",
+          "url": "https://www.carboncountywy.gov/DocumentCenter/View/6133/_2022-City-of-Rawlins-Ward-Map",
+          "store": "raw"
+        }
+      ]
+    },
+    {
+      "id": "56015-goshen-redistricting-pdfs",
+      "county": "Goshen",
+      "fips": "56015",
+      "role": "reference-pdf",
+      "publisher": "Goshen County Clerk",
+      "vintage_statement": "Linked from Voter Information as '2022 Goshen County Redistricting Map (PDF)' and '2022 Torrington Redistricting Map (PDF)'. No county GIS precinct layer was found.",
+      "requests": [
+        {
+          "name": "goshen-voter-information.html",
+          "url": "https://www.goshencountywy.gov/198/Voter-Information",
+          "store": "gzip"
+        },
+        {
+          "name": "2022-goshen-county-redistricting-map.pdf",
+          "url": "https://www.goshencountywy.gov/DocumentCenter/View/159/2022-Goshen-County-Redistricting-Map-PDF",
+          "store": "raw"
+        },
+        {
+          "name": "2022-torrington-redistricting-map.pdf",
+          "url": "https://www.goshencountywy.gov/DocumentCenter/View/160/2022-Torrington-Redistricting-Map-PDF",
+          "store": "raw"
+        }
+      ]
+    },
+    {
+      "id": "56003-bighorn-terragis-wfs-prct",
+      "county": "Big Horn",
+      "fips": "56003",
+      "role": "primary-gis",
+      "publisher": "Big Horn County GIS map server hosted by Terra GIS (MapServer MAP09; linked as GIS/Map Server from the county Elections and GIS pages)",
+      "vintage_statement": "WFS feature type ms:prct (WMS group 'precinct') exposes geometry only. The WMS GetStyles SLD defines 13 classes on attribute DIST_NUM (01-01 ... 26-01). The map-server viewer config has no precinct source and the download page offers only parcels, address points and roads. Feature precinct codes are inferred by build.py from per-feature WMS renders and SLD class colours; they are not a downloaded attribute. No vintage label.",
+      "requests": [
+        {
+          "name": "bighorn-elections.html",
+          "url": "https://bighorncountywy.gov/departments/clerk/elections",
+          "store": "gzip"
+        },
+        {
+          "name": "bighorn-gis.html",
+          "url": "https://bighorncountywy.gov/departments/land-planning/gis",
+          "store": "gzip"
+        },
+        {
+          "name": "conf.js",
+          "url": "https://maps.terragis.net/bighorn/mapserver/etc/conf.js",
+          "store": "gzip"
+        },
+        {
+          "name": "download.html",
+          "url": "https://maps.terragis.net/bighorn/mapserver/download/",
+          "store": "gzip"
+        },
+        {
+          "name": "wfs-filter-on-hidden-dist_num-attempt.xml",
+          "url": "https://maps.terragis.net/cgi-bin/mapserv76.fcgi?map=MAP09&SERVICE=WFS&VERSION=2.0.0&REQUEST=GetFeature&TYPENAMES=ms%3Aprct&RESULTTYPE=hits&FILTER=%3CFilter%3E%3CPropertyIsEqualTo%3E%3CPropertyName%3EDIST_NUM%3C%2FPropertyName%3E%3CLiteral%3E01-01%3C%2FLiteral%3E%3C%2FPropertyIsEqualTo%3E%3C%2FFilter%3E",
+          "store": "gzip",
+          "expect": 400
+        }
+      ],
+      "kind": "wfs-gml",
+      "native_crs": "EPSG:3737",
+      "crs_evidence": "GetFeature envelopes and polygons declare srsName urn:ogc:def:crs:EPSG::3737 (the capabilities document omits a DefaultCRS for ms:prct); conf.js olProjection EPSG:3737.",
+      "wfs": {
+        "endpoint": "https://maps.terragis.net/cgi-bin/mapserv76.fcgi",
+        "map": "MAP09",
+        "typename": "ms:prct",
+        "wms_layer": "prct",
+        "legend_layer": "precinct",
+        "srs": "EPSG:3737"
+      },
+      "id_field": null
+    }
+  ]
+}

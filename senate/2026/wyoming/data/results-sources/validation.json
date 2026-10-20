@@ -1,0 +1,317 @@
+{
+ "passed": true,
+ "checks": [
+  {
+   "check": "source ids unique",
+   "passed": true,
+   "detail": 124
+  },
+  {
+   "check": "every source has a manifest entry",
+   "passed": true,
+   "detail": []
+  },
+  {
+   "check": "no transport errors",
+   "passed": true,
+   "detail": []
+  },
+  {
+   "check": "every HTTP status is allowed for its source",
+   "passed": true,
+   "detail": []
+  },
+  {
+   "check": "non-200 statuses are explicitly allowed and recorded",
+   "passed": true,
+   "detail": {
+    "sos-2026-general-page": 404,
+    "county-56025-landing": 403,
+    "county-56025-results-direct": 403,
+    "county-56025-2024gen-direct": 403
+   }
+  },
+  {
+   "check": "stored files match manifest hashes and decompress to original bytes",
+   "passed": true,
+   "detail": []
+  },
+  {
+   "check": "no orphan files in raw/",
+   "passed": true,
+   "detail": []
+  },
+  {
+   "check": "every owned file is below 40,000,000 bytes",
+   "passed": true,
+   "detail": []
+  },
+  {
+   "check": "Wayback entries carry Memento-Datetime and capture timestamp",
+   "passed": true,
+   "detail": 29
+  },
+  {
+   "check": "SOS clerk directory has 23 election-page links equal to the requested county landings",
+   "passed": true,
+   "detail": {
+    "link_count": 23,
+    "version": "1.8",
+    "moddate": "D:20260729171030-06'00'"
+   }
+  },
+  {
+   "check": "inventory covers all 23 counties exactly once",
+   "passed": true,
+   "detail": {
+    "rows": 23,
+    "unique": 23
+   }
+  },
+  {
+   "check": "county names match the turnout file",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "check": "state channel rows use FIPS 56 only",
+   "passed": true,
+   "detail": 5
+  },
+  {
+   "check": "priority flags equal the accepted set",
+   "passed": true,
+   "detail": []
+  },
+  {
+   "check": "15 deep counties, 12 in the 80% set",
+   "passed": true,
+   "detail": [
+    "Albany",
+    "Big Horn",
+    "Campbell",
+    "Carbon",
+    "Converse",
+    "Fremont",
+    "Goshen",
+    "Laramie",
+    "Lincoln",
+    "Natrona",
+    "Park",
+    "Sheridan",
+    "Sweetwater",
+    "Teton",
+    "Uinta"
+   ]
+  },
+  {
+   "check": "no DRAFT values in the inventory",
+   "passed": true,
+   "detail": []
+  },
+  {
+   "check": "no November 2026 counts claimed",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "check": "every deep county has page observations and >=1 tested sample",
+   "passed": true,
+   "detail": []
+  },
+  {
+   "check": "every child URL is linked from its retained parent page",
+   "passed": true,
+   "detail": {
+    "resolved": 98,
+    "unresolved": [],
+    "skipped": [
+     "wb-56025-elections-20260824204517 (parent county-56025-landing not a retained HTML page)",
+     "county-56025-results-direct (parent county-56025-landing not a retained HTML page)"
+    ]
+   }
+  },
+  {
+   "check": "SOS 2026 general link exists only inside an HTML comment",
+   "passed": true,
+   "detail": [
+    {
+     "text": "General Election",
+     "href": "/Elections/Docs/2026/2026GeneralResults.aspx",
+     "url": "https://sos.wyo.gov/Elections/Docs/2026/2026GeneralResults.aspx",
+     "commented_out": true
+    }
+   ]
+  },
+  {
+   "check": "SOS 2026 general page returns 404",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "check": "SOS 2024 counties-reporting never decreases across archived versions",
+   "passed": true,
+   "detail": [
+    8,
+    16,
+    18,
+    23,
+    23
+   ]
+  },
+  {
+   "check": "SOS 2024 Total rows equal county sums in every version",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "check": "rows present equal counties reporting in each unofficial version",
+   "passed": true,
+   "detail": [
+    [
+     "20241106045457",
+     8,
+     [
+      8,
+      23
+     ]
+    ],
+    [
+     "20241106061402",
+     16,
+     [
+      16,
+      23
+     ]
+    ],
+    [
+     "20241106065516",
+     18,
+     [
+      18,
+      23
+     ]
+    ],
+    [
+     "20241106082840",
+     23,
+     [
+      23,
+      23
+     ]
+    ],
+    [
+     "20241110042054",
+     23,
+     [
+      23,
+      23
+     ]
+    ]
+   ]
+  },
+  {
+   "check": "night-final unofficial version covers 23 of 23",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "check": "official 2024 SOS version equals certified county values (23 rows)",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "check": "archived official 2024 file is byte-identical to the turnout worker's current copy",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "check": "2026 primary unofficial vs official ballots-cast comparison parsed for 23 counties",
+   "passed": true,
+   "detail": {
+    "unofficial_total": [
+     132705,
+     13263,
+     4391,
+     150359
+    ],
+    "official_total": [
+     132725,
+     13269,
+     4391,
+     150385
+    ],
+    "changed": [
+     "Albany",
+     "Campbell",
+     "Goshen",
+     "Hot Springs",
+     "Laramie",
+     "Natrona",
+     "Park",
+     "Sheridan",
+     "Sweetwater",
+     "Washakie"
+    ]
+   }
+  },
+  {
+   "check": "county PDF differences occur only in UNOFFICIAL-labeled documents",
+   "passed": true,
+   "detail": [
+    [
+     "county-56037-2024gen-state-unofficial",
+     {
+      "barrasso": -1,
+      "morrow": -2
+     }
+    ],
+    [
+     "county-56015-2026pri-unofficial",
+     {
+      "hageman": 1,
+      "byrd": 0
+     }
+    ]
+   ]
+  },
+  {
+   "check": "at least one text-layer county PDF matches official values in 10+ deep counties",
+   "passed": true,
+   "detail": [
+    "Campbell",
+    "Carbon",
+    "Converse",
+    "Goshen",
+    "Laramie",
+    "Lincoln",
+    "Natrona",
+    "Park",
+    "Sheridan",
+    "Sweetwater",
+    "Teton",
+    "Uinta"
+   ]
+  },
+  {
+   "check": "read-only dependency hashes recorded and turnout original verified",
+   "passed": true,
+   "detail": {
+    "county-turnout.csv": "3a35199e365c78606991080b6bab01744a43dc4c7a3986666fe356effe5d61ff",
+    "baselines/primary-2026-us-senate.csv": "ce7a1f6e261bdf2ad496868b0c97a84544e6e8f91006f04bbc37e4b36cae1482"
+   }
+  },
+  {
+   "check": "official-results.md exists and its relative links resolve",
+   "passed": true,
+   "detail": []
+  }
+ ],
+ "counts": {
+  "sources": 124,
+  "stored": 120,
+  "county_rows": 23,
+  "state_rows": 5,
+  "deep": 15
+ }
+}

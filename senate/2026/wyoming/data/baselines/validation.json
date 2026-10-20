@@ -1,0 +1,210 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "check": "sources: every retained body matches stored and original SHA-256/bytes; each < 40 MB",
+      "passed": true,
+      "detail": "28 sources"
+    },
+    {
+      "check": "sources: only the expected unpublished 2026 pages are non-200",
+      "passed": true,
+      "detail": "sos-2026-general-page, sos-2026-withdrawn-general-pdf"
+    },
+    {
+      "check": "geography: county-baselines.csv has 23 unique counties and 23 unique FIPS",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "geography: FIPS equal Census 2020 Wyoming county codes",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "geography: 2020-senate has 23 county rows + 1 statewide row with unique FIPS",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "geography: 2024-senate has 23 county rows + 1 statewide row with unique FIPS",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "geography: 2024-president has 23 county rows + 1 statewide row with unique FIPS",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "geography: 2022-governor has 23 county rows + 1 statewide row with unique FIPS",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "geography: 2022-house has 23 county rows + 1 statewide row with unique FIPS",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "geography: 2024-house has 23 county rows + 1 statewide row with unique FIPS",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "sums: every candidate/write-in/over/under column of every statewide contest: 23-county sum == published Total row",
+      "passed": true,
+      "detail": "67 columns; mismatches []"
+    },
+    {
+      "check": "sums: state-controls.csv has zero differences (including total ballots cast)",
+      "passed": true,
+      "detail": "70 controls"
+    },
+    {
+      "check": "balances: D/R/named-other/write-in recomputed from long file; D+R+other+write-in+over+under == county Total Ballots Cast for every selected contest row",
+      "passed": true,
+      "detail": "144 rows"
+    },
+    {
+      "check": "weights: 2020-senate pair weights total 1 and county net shares total 1",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "weights: 2024-senate pair weights total 1 and county net shares total 1",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "weights: 2024-president pair weights total 1 and county net shares total 1",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "weights: 2022-governor pair weights total 1 and county net shares total 1",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "weights: 2022-house pair weights total 1 and county net shares total 1",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "weights: 2024-house pair weights total 1 and county net shares total 1",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "precincts: precinct-row sums and PbP Total rows equal county summaries for every selected contest cell",
+      "passed": true,
+      "detail": "828 cells"
+    },
+    {
+      "check": "precincts: non-numeric source cells are recorded, not coerced",
+      "passed": true,
+      "detail": "2024-house Sweetwater Overvotes: R40='.'"
+    },
+    {
+      "check": "pdf: no compared PDF row differs from the XLSX",
+      "passed": true,
+      "detail": "360 equal rows"
+    },
+    {
+      "check": "pdf: each selected contest has 24 PDF-verified geography rows; ballots 24 per year",
+      "passed": true,
+      "detail": "{\"2020-senate\": 24, \"2024-senate\": 24, \"2024-president\": 24, \"2022-governor\": 24, \"2022-house\": 24, \"2024-house\": 24, \"total-ballots-cast\": 72}"
+    },
+    {
+      "check": "scenarios: every scenario has 23 county pools whose weights total 1 and sum to the pair pool",
+      "passed": true,
+      "detail": "54 scenario/goal groups"
+    },
+    {
+      "check": "scenarios: county target nets sum to the statewide goal (tie 0, D+1 = 0.01*T, recount boundary = T/199)",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "scenarios: no county clipped; solved shift equals closed form (target-M0)/(2T)",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "scenarios: D+1 pair margin needs exactly +0.5 D-share pp beyond the tie",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "scenarios: W.S. 22-16-109(b) boundary D-R = 1% of D needs +0.5/199 share beyond the tie",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "scenarios: native tie shift equals (R-D)/(2*(D+R)) from statewide totals for every baseline",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "selected county: required share reproduces the goal with all other counties fixed; status labels consistent",
+      "passed": true,
+      "detail": "{\"impossible\": 1242}"
+    },
+    {
+      "check": "solver tests: clipping re-solve, already-winning negative shift, impossible target",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "turnout: uniformly scaled county pools leave the share threshold unchanged",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "consistency: wide county-baselines.csv equals long county-contests.csv and scenario rows",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "priority: independent 2024 Senate 80% set recomputed",
+      "passed": true,
+      "detail": "12 counties"
+    },
+    {
+      "check": "slate: 2026 general roster lists exactly Hageman (REP) and Byrd (DEM) for U.S. Senator, none withdrawn; PDF agrees",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "slate: official 2026 primary winners match the general roster; no Senate withdrawal or independent petition",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "slate: 2026 primary Senate county sums equal published totals",
+      "passed": true,
+      "detail": "13 columns"
+    },
+    {
+      "check": "report: every generated table appears verbatim in county-partisanship.md",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "report: relative Markdown links resolve",
+      "passed": true,
+      "detail": "25 links; broken []"
+    },
+    {
+      "check": "report: headline tie and D+1 shifts present",
+      "passed": true,
+      "detail": "+23.135794, +23.635794"
+    },
+    {
+      "check": "assets: every owned file < 40,000,000 bytes",
+      "passed": true,
+      "detail": "53 files, 12,980,065 bytes"
+    }
+  ]
+}
