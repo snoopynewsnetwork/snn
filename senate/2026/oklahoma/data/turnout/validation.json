@@ -1,0 +1,1113 @@
+{
+ "passed": true,
+ "count": 164,
+ "failed": [],
+ "checks": [
+  {
+   "check": "census: Oklahoma has 77 county rows with unique FIPS",
+   "passed": true,
+   "rows": 77
+  },
+  {
+   "check": "census: normalized county names unique",
+   "passed": true
+  },
+  {
+   "check": "oker 20241105: getconfig lists 77 counties coded 01-77",
+   "passed": true
+  },
+  {
+   "check": "oker 20221108: getconfig lists 77 counties coded 01-77",
+   "passed": true
+  },
+  {
+   "check": "oker 20201103: getconfig lists 77 counties coded 01-77",
+   "passed": true
+  },
+  {
+   "check": "join: all 77 OKER county codes/names match a Census FIPS by normalized name",
+   "passed": true,
+   "aliases": {
+    "LeFlore (OKER/EIS)": "Le Flore County (Census)",
+    "Roger Mills": "Roger Mills County"
+   }
+  },
+  {
+   "check": "consistency: Census county code = 2*OSEB county code - 1 for all 77 name-joined counties",
+   "passed": true,
+   "counties_differing": []
+  },
+  {
+   "check": "pres2024: OKER election flagged official",
+   "passed": true,
+   "serverTLU": "2024-11-08T17:49:51.517",
+   "turnoutPerc_display": 64.42007
+  },
+  {
+   "check": "pres2024: exactly one statewide race with exact title",
+   "passed": true,
+   "race_id": [
+    10001
+   ]
+  },
+  {
+   "check": "pres2024: statewide CSV race number equals getelec race ID",
+   "passed": true
+  },
+  {
+   "check": "pres2024: statewide precinct reporting complete",
+   "passed": true,
+   "precincts": "1984"
+  },
+  {
+   "check": "pres2024: getelec statewide candidate/method totals equal statewide CSV",
+   "passed": true
+  },
+  {
+   "check": "pres2024: county CSV covers all 77 counties",
+   "passed": true,
+   "counties": 77,
+   "zip_member": "20241105_CountyResults.csv",
+   "member_sha256": "2d4b1ca0dda9cb968ebf0a199be4fa83c9f2424660081062dc32957e43201dde"
+  },
+  {
+   "check": "pres2024: every county row total = absentee mail + early + election day",
+   "passed": true,
+   "bad": 0
+  },
+  {
+   "check": "pres2024: every county has the identical statewide candidate list",
+   "passed": true
+  },
+  {
+   "check": "pres2024: every county reports all precincts",
+   "passed": true
+  },
+  {
+   "check": "pres2024: 77-county candidate x method sums equal statewide CSV exactly",
+   "passed": true,
+   "differences": {}
+  },
+  {
+   "check": "pres2024: GetCntyResults county totals equal county CSV",
+   "passed": true,
+   "mismatched": []
+  },
+  {
+   "check": "pres2024: precinct CSV unit sums equal county CSV for every county/candidate/method",
+   "passed": true,
+   "mismatches": [],
+   "zip_member": "20241105_PrecinctResults.csv",
+   "member_sha256": "24de2815caf009b9bf1920ae0619b3e8dcdd06695119b377cd1ca514aae0bf64"
+  },
+  {
+   "check": "pres2024: each 9999 unit holds all of its county absentee-mail and early votes; geographic precincts there hold election-day votes only",
+   "passed": true,
+   "units": [
+    "559999",
+    "729999"
+   ]
+  },
+  {
+   "check": "pres2024: in the other counties absentee-mail and early votes are carried on precinct rows",
+   "passed": true,
+   "counties": 75
+  },
+  {
+   "check": "pres2024: precinct units exceed race precinct count only by the 9999 units",
+   "passed": true,
+   "units_vs_precinct_count": {
+    "Oklahoma County": [
+     291,
+     290
+    ],
+    "Tulsa County": [
+     252,
+     251
+    ]
+   },
+   "units_9999": {
+    "559999": {
+     "county": "Oklahoma County",
+     "absentee_mail": 34598,
+     "early": 30995,
+     "election_day": 0,
+     "total": 65593,
+     "county_absentee_mail": 34598,
+     "county_early": 30995,
+     "geographic_precincts_absentee_mail_plus_early": 0
+    },
+    "729999": {
+     "county": "Tulsa County",
+     "absentee_mail": 18158,
+     "early": 25947,
+     "election_day": 0,
+     "total": 44105,
+     "county_absentee_mail": 18158,
+     "county_early": 25947,
+     "geographic_precincts_absentee_mail_plus_early": 0
+    }
+   }
+  },
+  {
+   "check": "sen2022s: OKER election flagged official",
+   "passed": true,
+   "serverTLU": "2022-12-05T15:59:50.77",
+   "turnoutPerc_display": 50.34662
+  },
+  {
+   "check": "sen2022s: exactly one statewide race with exact title",
+   "passed": true,
+   "race_id": [
+    10011
+   ]
+  },
+  {
+   "check": "sen2022s: statewide CSV race number equals getelec race ID",
+   "passed": true
+  },
+  {
+   "check": "sen2022s: statewide precinct reporting complete",
+   "passed": true,
+   "precincts": "1984"
+  },
+  {
+   "check": "sen2022s: getelec statewide candidate/method totals equal statewide CSV",
+   "passed": true
+  },
+  {
+   "check": "sen2022s: county CSV covers all 77 counties",
+   "passed": true,
+   "counties": 77,
+   "zip_member": "20221108_CountyResults.csv",
+   "member_sha256": "32627519470f176c59bd2f873470914430398505f6668b4ac3cebe46f720b2ab"
+  },
+  {
+   "check": "sen2022s: every county row total = absentee mail + early + election day",
+   "passed": true,
+   "bad": 0
+  },
+  {
+   "check": "sen2022s: every county has the identical statewide candidate list",
+   "passed": true
+  },
+  {
+   "check": "sen2022s: every county reports all precincts",
+   "passed": true
+  },
+  {
+   "check": "sen2022s: 77-county candidate x method sums equal statewide CSV exactly",
+   "passed": true,
+   "differences": {}
+  },
+  {
+   "check": "sen2022s: GetCntyResults county totals equal county CSV",
+   "passed": true,
+   "mismatched": []
+  },
+  {
+   "check": "sen2022s: precinct CSV unit sums equal county CSV for every county/candidate/method",
+   "passed": true,
+   "mismatches": [],
+   "zip_member": "20221108_PrecinctResults.csv",
+   "member_sha256": "e2d7d1c2e64a2fc9b91a40b181e593ecac327f973fd802e5e0f907382ecc24c3"
+  },
+  {
+   "check": "sen2022s: each 9999 unit holds all of its county absentee-mail and early votes; geographic precincts there hold election-day votes only",
+   "passed": true,
+   "units": [
+    "559999",
+    "729999"
+   ]
+  },
+  {
+   "check": "sen2022s: in the other counties absentee-mail and early votes are carried on precinct rows",
+   "passed": true,
+   "counties": 75
+  },
+  {
+   "check": "sen2022s: precinct units exceed race precinct count only by the 9999 units",
+   "passed": true,
+   "units_vs_precinct_count": {
+    "Oklahoma County": [
+     291,
+     290
+    ],
+    "Tulsa County": [
+     252,
+     251
+    ]
+   },
+   "units_9999": {
+    "559999": {
+     "county": "Oklahoma County",
+     "absentee_mail": 23476,
+     "early": 20928,
+     "election_day": 0,
+     "total": 44404,
+     "county_absentee_mail": 23476,
+     "county_early": 20928,
+     "geographic_precincts_absentee_mail_plus_early": 0
+    },
+    "729999": {
+     "county": "Tulsa County",
+     "absentee_mail": 12856,
+     "early": 16278,
+     "election_day": 0,
+     "total": 29134,
+     "county_absentee_mail": 12856,
+     "county_early": 16278,
+     "geographic_precincts_absentee_mail_plus_early": 0
+    }
+   }
+  },
+  {
+   "check": "sen2022r: OKER election flagged official",
+   "passed": true,
+   "serverTLU": "2022-12-05T15:59:50.77",
+   "turnoutPerc_display": 50.34662
+  },
+  {
+   "check": "sen2022r: exactly one statewide race with exact title",
+   "passed": true,
+   "race_id": [
+    10010
+   ]
+  },
+  {
+   "check": "sen2022r: statewide CSV race number equals getelec race ID",
+   "passed": true
+  },
+  {
+   "check": "sen2022r: statewide precinct reporting complete",
+   "passed": true,
+   "precincts": "1984"
+  },
+  {
+   "check": "sen2022r: getelec statewide candidate/method totals equal statewide CSV",
+   "passed": true
+  },
+  {
+   "check": "sen2022r: county CSV covers all 77 counties",
+   "passed": true,
+   "counties": 77,
+   "zip_member": "20221108_CountyResults.csv",
+   "member_sha256": "32627519470f176c59bd2f873470914430398505f6668b4ac3cebe46f720b2ab"
+  },
+  {
+   "check": "sen2022r: every county row total = absentee mail + early + election day",
+   "passed": true,
+   "bad": 0
+  },
+  {
+   "check": "sen2022r: every county has the identical statewide candidate list",
+   "passed": true
+  },
+  {
+   "check": "sen2022r: every county reports all precincts",
+   "passed": true
+  },
+  {
+   "check": "sen2022r: 77-county candidate x method sums equal statewide CSV exactly",
+   "passed": true,
+   "differences": {}
+  },
+  {
+   "check": "sen2022r: GetCntyResults county totals equal county CSV",
+   "passed": true,
+   "mismatched": []
+  },
+  {
+   "check": "sen2022r: precinct CSV unit sums equal county CSV for every county/candidate/method",
+   "passed": true,
+   "mismatches": [],
+   "zip_member": "20221108_PrecinctResults.csv",
+   "member_sha256": "e2d7d1c2e64a2fc9b91a40b181e593ecac327f973fd802e5e0f907382ecc24c3"
+  },
+  {
+   "check": "sen2022r: each 9999 unit holds all of its county absentee-mail and early votes; geographic precincts there hold election-day votes only",
+   "passed": true,
+   "units": [
+    "559999",
+    "729999"
+   ]
+  },
+  {
+   "check": "sen2022r: in the other counties absentee-mail and early votes are carried on precinct rows",
+   "passed": true,
+   "counties": 75
+  },
+  {
+   "check": "sen2022r: precinct units exceed race precinct count only by the 9999 units",
+   "passed": true,
+   "units_vs_precinct_count": {
+    "Oklahoma County": [
+     291,
+     290
+    ],
+    "Tulsa County": [
+     252,
+     251
+    ]
+   },
+   "units_9999": {
+    "559999": {
+     "county": "Oklahoma County",
+     "absentee_mail": 23504,
+     "early": 20934,
+     "election_day": 0,
+     "total": 44438,
+     "county_absentee_mail": 23504,
+     "county_early": 20934,
+     "geographic_precincts_absentee_mail_plus_early": 0
+    },
+    "729999": {
+     "county": "Tulsa County",
+     "absentee_mail": 12869,
+     "early": 16289,
+     "election_day": 0,
+     "total": 29158,
+     "county_absentee_mail": 12869,
+     "county_early": 16289,
+     "geographic_precincts_absentee_mail_plus_early": 0
+    }
+   }
+  },
+  {
+   "check": "gov2022: OKER election flagged official",
+   "passed": true,
+   "serverTLU": "2022-12-05T15:59:50.77",
+   "turnoutPerc_display": 50.34662
+  },
+  {
+   "check": "gov2022: exactly one statewide race with exact title",
+   "passed": true,
+   "race_id": [
+    10001
+   ]
+  },
+  {
+   "check": "gov2022: statewide CSV race number equals getelec race ID",
+   "passed": true
+  },
+  {
+   "check": "gov2022: statewide precinct reporting complete",
+   "passed": true,
+   "precincts": "1984"
+  },
+  {
+   "check": "gov2022: getelec statewide candidate/method totals equal statewide CSV",
+   "passed": true
+  },
+  {
+   "check": "gov2022: county CSV covers all 77 counties",
+   "passed": true,
+   "counties": 77,
+   "zip_member": "20221108_CountyResults.csv",
+   "member_sha256": "32627519470f176c59bd2f873470914430398505f6668b4ac3cebe46f720b2ab"
+  },
+  {
+   "check": "gov2022: every county row total = absentee mail + early + election day",
+   "passed": true,
+   "bad": 0
+  },
+  {
+   "check": "gov2022: every county has the identical statewide candidate list",
+   "passed": true
+  },
+  {
+   "check": "gov2022: every county reports all precincts",
+   "passed": true
+  },
+  {
+   "check": "gov2022: 77-county candidate x method sums equal statewide CSV exactly",
+   "passed": true,
+   "differences": {}
+  },
+  {
+   "check": "gov2022: GetCntyResults county totals equal county CSV",
+   "passed": true,
+   "mismatched": []
+  },
+  {
+   "check": "gov2022: precinct CSV unit sums equal county CSV for every county/candidate/method",
+   "passed": true,
+   "mismatches": [],
+   "zip_member": "20221108_PrecinctResults.csv",
+   "member_sha256": "e2d7d1c2e64a2fc9b91a40b181e593ecac327f973fd802e5e0f907382ecc24c3"
+  },
+  {
+   "check": "gov2022: each 9999 unit holds all of its county absentee-mail and early votes; geographic precincts there hold election-day votes only",
+   "passed": true,
+   "units": [
+    "559999",
+    "729999"
+   ]
+  },
+  {
+   "check": "gov2022: in the other counties absentee-mail and early votes are carried on precinct rows",
+   "passed": true,
+   "counties": 75
+  },
+  {
+   "check": "gov2022: precinct units exceed race precinct count only by the 9999 units",
+   "passed": true,
+   "units_vs_precinct_count": {
+    "Oklahoma County": [
+     291,
+     290
+    ],
+    "Tulsa County": [
+     252,
+     251
+    ]
+   },
+   "units_9999": {
+    "559999": {
+     "county": "Oklahoma County",
+     "absentee_mail": 23541,
+     "early": 20952,
+     "election_day": 0,
+     "total": 44493,
+     "county_absentee_mail": 23541,
+     "county_early": 20952,
+     "geographic_precincts_absentee_mail_plus_early": 0
+    },
+    "729999": {
+     "county": "Tulsa County",
+     "absentee_mail": 12905,
+     "early": 16336,
+     "election_day": 0,
+     "total": 29241,
+     "county_absentee_mail": 12905,
+     "county_early": 16336,
+     "geographic_precincts_absentee_mail_plus_early": 0
+    }
+   }
+  },
+  {
+   "check": "sen2020: OKER election flagged official",
+   "passed": true,
+   "serverTLU": "2020-11-06T18:33:42.417",
+   "turnoutPerc_display": 69.34186
+  },
+  {
+   "check": "sen2020: exactly one statewide race with exact title",
+   "passed": true,
+   "race_id": [
+    10003
+   ]
+  },
+  {
+   "check": "sen2020: statewide CSV race number equals getelec race ID",
+   "passed": true
+  },
+  {
+   "check": "sen2020: statewide precinct reporting complete",
+   "passed": true,
+   "precincts": "1948"
+  },
+  {
+   "check": "sen2020: getelec statewide candidate/method totals equal statewide CSV",
+   "passed": true
+  },
+  {
+   "check": "sen2020: county CSV covers all 77 counties",
+   "passed": true,
+   "counties": 77,
+   "zip_member": "20201103_CountyResults.csv",
+   "member_sha256": "8645e6b369f67d1cd8a3bad177c452e69fa2770a18da3482107aced277685c50"
+  },
+  {
+   "check": "sen2020: every county row total = absentee mail + early + election day",
+   "passed": true,
+   "bad": 0
+  },
+  {
+   "check": "sen2020: every county has the identical statewide candidate list",
+   "passed": true
+  },
+  {
+   "check": "sen2020: every county reports all precincts",
+   "passed": true
+  },
+  {
+   "check": "sen2020: 77-county candidate x method sums equal statewide CSV exactly",
+   "passed": true,
+   "differences": {}
+  },
+  {
+   "check": "sen2020: GetCntyResults county totals equal county CSV",
+   "passed": true,
+   "mismatched": []
+  },
+  {
+   "check": "sen2020: precinct CSV unit sums equal county CSV for every county/candidate/method",
+   "passed": true,
+   "mismatches": [],
+   "zip_member": "20201103_PrecinctResults.csv",
+   "member_sha256": "5cdbd7c12844a9171b5eb45b4a3b6651d78a11829b3d0974f8e40c5aceefd188"
+  },
+  {
+   "check": "sen2020: each 9999 unit holds all of its county absentee-mail and early votes; geographic precincts there hold election-day votes only",
+   "passed": true,
+   "units": [
+    "559999",
+    "729999"
+   ]
+  },
+  {
+   "check": "sen2020: in the other counties absentee-mail and early votes are carried on precinct rows",
+   "passed": true,
+   "counties": 75
+  },
+  {
+   "check": "sen2020: precinct units exceed race precinct count only by the 9999 units",
+   "passed": true,
+   "units_vs_precinct_count": {
+    "Oklahoma County": [
+     258,
+     257
+    ],
+    "Tulsa County": [
+     263,
+     262
+    ]
+   },
+   "units_9999": {
+    "559999": {
+     "county": "Oklahoma County",
+     "absentee_mail": 86652,
+     "early": 16080,
+     "election_day": 0,
+     "total": 102732,
+     "county_absentee_mail": 86652,
+     "county_early": 16080,
+     "geographic_precincts_absentee_mail_plus_early": 0
+    },
+    "729999": {
+     "county": "Tulsa County",
+     "absentee_mail": 60568,
+     "early": 13297,
+     "election_day": 0,
+     "total": 73865,
+     "county_absentee_mail": 60568,
+     "county_early": 13297,
+     "geographic_precincts_absentee_mail_plus_early": 0
+    }
+   }
+  },
+  {
+   "check": "pres2020: OKER election flagged official",
+   "passed": true,
+   "serverTLU": "2020-11-06T18:33:42.417",
+   "turnoutPerc_display": 69.34186
+  },
+  {
+   "check": "pres2020: exactly one statewide race with exact title",
+   "passed": true,
+   "race_id": [
+    10001
+   ]
+  },
+  {
+   "check": "pres2020: statewide CSV race number equals getelec race ID",
+   "passed": true
+  },
+  {
+   "check": "pres2020: statewide precinct reporting complete",
+   "passed": true,
+   "precincts": "1948"
+  },
+  {
+   "check": "pres2020: getelec statewide candidate/method totals equal statewide CSV",
+   "passed": true
+  },
+  {
+   "check": "pres2020: county CSV covers all 77 counties",
+   "passed": true,
+   "counties": 77,
+   "zip_member": "20201103_CountyResults.csv",
+   "member_sha256": "8645e6b369f67d1cd8a3bad177c452e69fa2770a18da3482107aced277685c50"
+  },
+  {
+   "check": "pres2020: every county row total = absentee mail + early + election day",
+   "passed": true,
+   "bad": 0
+  },
+  {
+   "check": "pres2020: every county has the identical statewide candidate list",
+   "passed": true
+  },
+  {
+   "check": "pres2020: every county reports all precincts",
+   "passed": true
+  },
+  {
+   "check": "pres2020: 77-county candidate x method sums equal statewide CSV exactly",
+   "passed": true,
+   "differences": {}
+  },
+  {
+   "check": "pres2020: GetCntyResults county totals equal county CSV",
+   "passed": true,
+   "mismatched": []
+  },
+  {
+   "check": "pres2020: precinct CSV unit sums equal county CSV for every county/candidate/method",
+   "passed": true,
+   "mismatches": [],
+   "zip_member": "20201103_PrecinctResults.csv",
+   "member_sha256": "5cdbd7c12844a9171b5eb45b4a3b6651d78a11829b3d0974f8e40c5aceefd188"
+  },
+  {
+   "check": "pres2020: each 9999 unit holds all of its county absentee-mail and early votes; geographic precincts there hold election-day votes only",
+   "passed": true,
+   "units": [
+    "559999",
+    "729999"
+   ]
+  },
+  {
+   "check": "pres2020: in the other counties absentee-mail and early votes are carried on precinct rows",
+   "passed": true,
+   "counties": 75
+  },
+  {
+   "check": "pres2020: precinct units exceed race precinct count only by the 9999 units",
+   "passed": true,
+   "units_vs_precinct_count": {
+    "Oklahoma County": [
+     258,
+     257
+    ],
+    "Tulsa County": [
+     263,
+     262
+    ]
+   },
+   "units_9999": {
+    "559999": {
+     "county": "Oklahoma County",
+     "absentee_mail": 86601,
+     "early": 16099,
+     "election_day": 0,
+     "total": 102700,
+     "county_absentee_mail": 86601,
+     "county_early": 16099,
+     "geographic_precincts_absentee_mail_plus_early": 0
+    },
+    "729999": {
+     "county": "Tulsa County",
+     "absentee_mail": 60487,
+     "early": 13330,
+     "election_day": 0,
+     "total": 73817,
+     "county_absentee_mail": 60487,
+     "county_early": 13330,
+     "geographic_precincts_absentee_mail_plus_early": 0
+    }
+   }
+  },
+  {
+   "check": "pres2024: county contest votes sum to statewide total",
+   "passed": true,
+   "statewide": 1566173
+  },
+  {
+   "check": "sen2022s: county contest votes sum to statewide total",
+   "passed": true,
+   "statewide": 1150481
+  },
+  {
+   "check": "sen2022r: county contest votes sum to statewide total",
+   "passed": true,
+   "statewide": 1150732
+  },
+  {
+   "check": "gov2022: county contest votes sum to statewide total",
+   "passed": true,
+   "statewide": 1153284
+  },
+  {
+   "check": "sen2020: county contest votes sum to statewide total",
+   "passed": true,
+   "statewide": 1556361
+  },
+  {
+   "check": "pres2020: county contest votes sum to statewide total",
+   "passed": true,
+   "statewide": 1560699
+  },
+  {
+   "check": "pres2024: every statewide candidate total equals certified federal publication (nara-2024-ascertainment-oklahoma)",
+   "passed": true,
+   "certified": {
+    "TRUMP": 1036213,
+    "OLIVER": 9198,
+    "HARRIS": 499599,
+    "JR": 16020,
+    "GARRITY": 5143
+   }
+  },
+  {
+   "check": "sen2022s: every statewide candidate total equals certified federal publication (clerk-2022-statistics)",
+   "passed": true,
+   "certified": {
+    "MULLIN": 710643,
+    "HORN": 405389,
+    "MURPHY": 17386,
+    "WOODS": 17063
+   }
+  },
+  {
+   "check": "sen2022r: every statewide candidate total equals certified federal publication (clerk-2022-statistics)",
+   "passed": true,
+   "certified": {
+    "LANKFORD": 739960,
+    "HORN": 369370,
+    "DELANEY": 20907,
+    "BLEVINS": 20495
+   }
+  },
+  {
+   "check": "sen2020: every statewide candidate total equals certified federal publication (clerk-2020-statistics)",
+   "passed": true,
+   "certified": {
+    "BROYLES": 509763,
+    "INHOFE": 979140,
+    "MURPHY": 34435,
+    "FARR": 21652,
+    "NESBIT": 11371
+   }
+  },
+  {
+   "check": "pres2020: every statewide candidate total equals certified federal publication (clerk-2020-statistics)",
+   "passed": true,
+   "certified": {
+    "DEMOCRATIC": 503890,
+    "REPUBLICAN": 1020280,
+    "LIBERTARIAN": 24731,
+    "INDEPENDENT": 11798
+   }
+  },
+  {
+   "check": "vh2024: EIS voter history pivot has 77 counties matching OKER",
+   "passed": true
+  },
+  {
+   "check": "vh2024: county credits sum = pivot grand total = card = method pie sum = affiliation sum",
+   "passed": true,
+   "statewide": 1575048,
+   "methods": {
+    "Absentee": 107549,
+    "Early Voting": 293918,
+    "Election Day": 1173581
+   }
+  },
+  {
+   "check": "vh2024: Absentee filtered pivot grand total equals method pie",
+   "passed": true,
+   "counties_absent_from_filtered_pivot": []
+  },
+  {
+   "check": "vh2024: Early Voting filtered pivot grand total equals method pie",
+   "passed": true,
+   "counties_absent_from_filtered_pivot": []
+  },
+  {
+   "check": "vh2024: Election Day filtered pivot grand total equals method pie",
+   "passed": true,
+   "counties_absent_from_filtered_pivot": []
+  },
+  {
+   "check": "vh2024: per-county method credits sum to county total",
+   "passed": true
+  },
+  {
+   "check": "vh2022: EIS voter history pivot has 77 counties matching OKER",
+   "passed": true
+  },
+  {
+   "check": "vh2022: county credits sum = pivot grand total = card = method pie sum = affiliation sum",
+   "passed": true,
+   "statewide": 1153911,
+   "methods": {
+    "Absentee": 71680,
+    "Early Voting": 132402,
+    "Election Day": 949829
+   }
+  },
+  {
+   "check": "vh2022: Absentee filtered pivot grand total equals method pie",
+   "passed": true,
+   "counties_absent_from_filtered_pivot": []
+  },
+  {
+   "check": "vh2022: Early Voting filtered pivot grand total equals method pie",
+   "passed": true,
+   "counties_absent_from_filtered_pivot": []
+  },
+  {
+   "check": "vh2022: Election Day filtered pivot grand total equals method pie",
+   "passed": true,
+   "counties_absent_from_filtered_pivot": []
+  },
+  {
+   "check": "vh2022: per-county method credits sum to county total",
+   "passed": true
+  },
+  {
+   "check": "vh2020: EIS voter history pivot has 77 counties matching OKER",
+   "passed": true
+  },
+  {
+   "check": "vh2020: county credits sum = pivot grand total = card = method pie sum = affiliation sum",
+   "passed": true,
+   "statewide": 1569307,
+   "methods": {
+    "Absentee": 287010,
+    "Early Voting": 167132,
+    "Election Day": 1115165
+   }
+  },
+  {
+   "check": "vh2020: Absentee filtered pivot grand total equals method pie",
+   "passed": true,
+   "counties_absent_from_filtered_pivot": []
+  },
+  {
+   "check": "vh2020: Early Voting filtered pivot grand total equals method pie",
+   "passed": true,
+   "counties_absent_from_filtered_pivot": []
+  },
+  {
+   "check": "vh2020: Election Day filtered pivot grand total equals method pie",
+   "passed": true,
+   "counties_absent_from_filtered_pivot": []
+  },
+  {
+   "check": "vh2020: per-county method credits sum to county total",
+   "passed": true
+  },
+  {
+   "check": "reg20241031: EIS registration pivot has 77 counties",
+   "passed": true
+  },
+  {
+   "check": "reg20241031: county active/inactive sums = grand total = affiliation sums; active+inactive = TotalVoters card",
+   "passed": true,
+   "active": 2095952,
+   "inactive": 346259,
+   "total_card": 2442211
+  },
+  {
+   "check": "reg20221031: EIS registration pivot has 77 counties",
+   "passed": true
+  },
+  {
+   "check": "reg20221031: county active/inactive sums = grand total = affiliation sums; active+inactive = TotalVoters card",
+   "passed": true,
+   "active": 2021787,
+   "inactive": 274119,
+   "total_card": 2295906
+  },
+  {
+   "check": "reg20201031: EIS registration pivot has 77 counties",
+   "passed": true
+  },
+  {
+   "check": "reg20201031: county active/inactive sums = grand total = affiliation sums; active+inactive = TotalVoters card",
+   "passed": true,
+   "active": 2021852,
+   "inactive": 237261,
+   "total_card": 2259113
+  },
+  {
+   "check": "reg20260930: EIS registration pivot has 77 counties",
+   "passed": true
+  },
+  {
+   "check": "reg20260930: county active/inactive sums = grand total = affiliation sums; active+inactive = TotalVoters card",
+   "passed": true,
+   "active": 2070978,
+   "inactive": 375647,
+   "total_card": 2446625
+  },
+  {
+   "check": "EIS county labels identical across voter-history and registration dashboards",
+   "passed": true
+  },
+  {
+   "check": "reg20241031: official Nov 1 county report has 77 counties coded 01-77; each party sum = county total; counties sum to Grand Total",
+   "passed": true,
+   "report_run": "11/1/2024 9:39 AM",
+   "grand_total": 2442211
+  },
+  {
+   "check": "reg20241031: every county total in the official Nov 1 report equals EIS month-end active+inactive",
+   "passed": true,
+   "differences": {}
+  },
+  {
+   "check": "reg20221031: official Nov 1 county report has 77 counties coded 01-77; each party sum = county total; counties sum to Grand Total",
+   "passed": true,
+   "report_run": "11/1/2022 3:09 AM",
+   "grand_total": 2295906
+  },
+  {
+   "check": "reg20221031: every county total in the official Nov 1 report equals EIS month-end active+inactive",
+   "passed": true,
+   "differences": {}
+  },
+  {
+   "check": "reg20201031: official Nov 1 county report has 77 counties coded 01-77; each party sum = county total; counties sum to Grand Total",
+   "passed": true,
+   "report_run": "11/1/2020 3:07 AM",
+   "grand_total": 2259113
+  },
+  {
+   "check": "reg20201031: every county total in the official Nov 1 report equals EIS month-end active+inactive",
+   "passed": true,
+   "differences": {}
+  },
+  {
+   "check": "2024-11-04 OSEB release Nov 1 totals equal the county reports (2024, 2020)",
+   "passed": true,
+   "release_values": {
+    "2024": "2,442,211",
+    "2020": "2,259,113",
+    "2016": "2,157,450",
+    "2012": "2,114,713",
+    "2004": "2,143,978",
+    "2000": "2,233,602"
+   }
+  },
+  {
+   "check": "pres2024: minimum-80% integer proof 5*S(k-1) < 4*T <= 5*S(k)",
+   "passed": true,
+   "k": 25,
+   "S_k_minus_1": 1236291,
+   "S_k": 1253665,
+   "T": 1566173
+  },
+  {
+   "check": "pres2024: ranking covers 77 unique counties and sums to denominator",
+   "passed": true
+  },
+  {
+   "check": "sen2022s: minimum-80% integer proof 5*S(k-1) < 4*T <= 5*S(k)",
+   "passed": true,
+   "k": 25,
+   "S_k_minus_1": 912622,
+   "S_k": 924743,
+   "T": 1150481
+  },
+  {
+   "check": "sen2022s: ranking covers 77 unique counties and sums to denominator",
+   "passed": true
+  },
+  {
+   "check": "sen2022r: minimum-80% integer proof 5*S(k-1) < 4*T <= 5*S(k)",
+   "passed": true,
+   "k": 25,
+   "S_k_minus_1": 912975,
+   "S_k": 925080,
+   "T": 1150732
+  },
+  {
+   "check": "sen2022r: ranking covers 77 unique counties and sums to denominator",
+   "passed": true
+  },
+  {
+   "check": "gov2022: minimum-80% integer proof 5*S(k-1) < 4*T <= 5*S(k)",
+   "passed": true,
+   "k": 25,
+   "S_k_minus_1": 915042,
+   "S_k": 927183,
+   "T": 1153284
+  },
+  {
+   "check": "gov2022: ranking covers 77 unique counties and sums to denominator",
+   "passed": true
+  },
+  {
+   "check": "sen2020: minimum-80% integer proof 5*S(k-1) < 4*T <= 5*S(k)",
+   "passed": true,
+   "k": 26,
+   "S_k_minus_1": 1243660,
+   "S_k": 1259567,
+   "T": 1556361
+  },
+  {
+   "check": "sen2020: ranking covers 77 unique counties and sums to denominator",
+   "passed": true
+  },
+  {
+   "check": "pres2020: minimum-80% integer proof 5*S(k-1) < 4*T <= 5*S(k)",
+   "passed": true,
+   "k": 26,
+   "S_k_minus_1": 1246551,
+   "S_k": 1262527,
+   "T": 1560699
+  },
+  {
+   "check": "pres2020: ranking covers 77 unique counties and sums to denominator",
+   "passed": true
+  },
+  {
+   "check": "vh2024: minimum-80% integer proof 5*S(k-1) < 4*T <= 5*S(k)",
+   "passed": true,
+   "k": 25,
+   "S_k_minus_1": 1244277,
+   "S_k": 1261715,
+   "T": 1575048
+  },
+  {
+   "check": "vh2024: ranking covers 77 unique counties and sums to denominator",
+   "passed": true
+  },
+  {
+   "check": "vh2022: minimum-80% integer proof 5*S(k-1) < 4*T <= 5*S(k)",
+   "passed": true,
+   "k": 25,
+   "S_k_minus_1": 915837,
+   "S_k": 928003,
+   "T": 1153911
+  },
+  {
+   "check": "vh2022: ranking covers 77 unique counties and sums to denominator",
+   "passed": true
+  },
+  {
+   "check": "vh2020: minimum-80% integer proof 5*S(k-1) < 4*T <= 5*S(k)",
+   "passed": true,
+   "k": 26,
+   "S_k_minus_1": 1254381,
+   "S_k": 1270412,
+   "T": 1569307
+  },
+  {
+   "check": "vh2020: ranking covers 77 unique counties and sums to denominator",
+   "passed": true
+  },
+  {
+   "check": "top 15 (pres2024) contained in its minimum-80% set",
+   "passed": true
+  },
+  {
+   "check": "turnout.md embeds the generated ranking table verbatim",
+   "passed": true
+  },
+  {
+   "check": "turnout.md relative links resolve",
+   "passed": true,
+   "missing": []
+  },
+  {
+   "check": "evidence: every manifest file verified by SHA-256 and < 40,000,000 bytes",
+   "passed": true,
+   "files": 73
+  }
+ ]
+}

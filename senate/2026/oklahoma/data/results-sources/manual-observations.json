@@ -1,0 +1,69 @@
+{
+ "note": "Hand-recorded observations made on 2026-10-18 during the session window 16:58-17:40 UTC. They are NOT original HTTP entities and carry no byte hashes. Each says which tool produced it and how it is used. Nothing here overrides a retained raw file.",
+ "observations": [
+  {
+   "id": "webtool-mcclain-home",
+   "tool": "web retrieval tool (rendered page read, not raw bytes)",
+   "url": "https://mcclain-co-ok.us/",
+   "raw_status_with_research_agent": "403 (manifest id home-40087)",
+   "observed": "Navigation contains a link labeled COUNTY ELECTION BOARD pointing to https://mcclain-co-ok.us/offices/county-election-board/ (listed twice). No other election, ballot or results link.",
+   "use": "Locates the McClain County Election Board page only. The raw fetch of that page also returned 403 (manifest id cty-40087-board)."
+  },
+  {
+   "id": "webtool-mcclain-board",
+   "tool": "web retrieval tool (rendered page read, not raw bytes)",
+   "url": "https://mcclain-co-ok.us/offices/county-election-board/",
+   "raw_status_with_research_agent": "403 (manifest id cty-40087-board)",
+   "observed": "No results, unofficial results or tables. An 'Election Returns' link goes to https://oklahoma.gov/elections.html. Links for absentee voting and voter registration go to oklahoma.gov. A '2027 Election Dates' image and a category of 2024-2026 board agendas, minutes and special notices. Contact block: 121 N 2nd Ave, Purcell; mcclaincounty@elections.ok.gov.",
+   "use": "Classifies McClain as 'county page links SEB only'. Not used for any count."
+  },
+  {
+   "id": "exploration-browser-ua",
+   "tool": "curl during exploration (not retained)",
+   "url": "https://mcclain-co-ok.us/",
+   "observed": "Before the retained acquisition run, one exploratory request with a desktop-browser User-Agent string returned HTTP 200 while the descriptive research agent string returned 403. The 200 response was not saved and is not used as evidence. The retained evidence is the 403 plus the web-tool reads above.",
+   "use": "Disclosure only: the 403 is an agent-string block, not a missing page."
+  },
+  {
+   "id": "webtool-garfield-home",
+   "tool": "web retrieval tool (rendered page read, not raw bytes)",
+   "url": "https://www.garfieldok.com/",
+   "observed": "No link text or URL on the rendered home page mentions election, election board, voting, ballot or results. The raw home page (manifest id home-40047) likewise has no such anchor.",
+   "use": "Garfield is recorded as 'no county election board web page found in tested routes'."
+  },
+  {
+   "id": "search-no-board-site",
+   "tool": "web search (result lists only)",
+   "queries": [
+    "\"Garfield County Election Board\" Enid Oklahoma",
+    "\"Stephens County Election Board\" Duncan Oklahoma website",
+    "\"Le Flore County Election Board\" OR \"LeFlore County Election Board\" Poteau",
+    "\"Carter County Election Board\" Ardmore cartercountyok.us",
+    "\"McClain County Election Board\" Purcell mcclain-co-ok.us"
+   ],
+   "observed": "Results were newspapers (Enid News & Eagle, Duncan Banner, Poteau Daily News, KXII, Purcell Register) and third-party directories (U.S. Vote Foundation and similar). None was an official board web page for Garfield, Stephens or Le Flore. A search snippet named www.stephenscountyok.com; that host did not resolve (DNS failure) during exploration and is not inventoried.",
+   "use": "Supports the 'none found' entries. Third-party addresses and names are not copied; the SEB /cebinfo table is the contact authority."
+  },
+  {
+   "id": "curl-legacy-seb-host",
+   "tool": "curl with the operating-system trust store (not retained)",
+   "url": "https://www.ok.gov/elections/",
+   "observed": "HTTP 301 to https://oklahoma.gov/elections.html with certificate verification result 0. A Python request using its default store failed certificate verification (unable to get local issuer certificate): the server does not send a chain that store can complete. The same happened for oklegislature.gov.",
+   "use": "Superseded by the retained request made with the operating-system trust store (manifest id cty-40019-board-link, 301 to oklahoma.gov/elections.html). Explains the Carter and Kay legacy links: they reach the SEB home page; they are not county results channels."
+  },
+  {
+   "id": "visual-seb-minutes-2026-06-23",
+   "tool": "visual reading of the scanned page image extracted from the retained PDF (manifest id seb-minutes-2026-06-23)",
+   "url": "https://oklahoma.gov/content/dam/ok/en/elections/minutes/2026-minutes/minutes-06232026.pdf",
+   "observed": "Page 1: 'MINUTES OF THE STATE ELECTION BOARD JUNE 23, 2026'. Regular meeting on Tuesday, June 23, 2026, at 05:00 P.M., State Capitol, Room G-3. Item 4: report and possible action regarding the certification of the results in the Primary Elections and State Question No. 832 held on June 16, 2026; motion to certify; roll call 3-0, motion passed. Item 5: certification of the results in the Special Democratic Primary Election for State Representative, District 92, held June 16, 2026; motion passed 3-0. The minutes print no vote totals.",
+   "use": "Shows that SEB certification is a board vote at a Tuesday 5 p.m. meeting, as 26 O.S. 7-136 provides. The PDF has no text layer; this transcription is manual."
+  },
+  {
+   "id": "search-index-unofficial-june-2026",
+   "tool": "web search (search-engine summary of an earlier version of an SEB page)",
+   "url": "https://oklahoma.gov/elections/elections-results/election-results/2026-election-results/june-primary-election.html",
+   "observed": "A search summary quoted the unofficial-phase wording of the June 16, 2026 page: provisional ballots not included until after 5 p.m. Friday, June 19; county certification not earlier than 5 p.m. Friday, June 19; State Election Board certification Tuesday, June 23. The live page now reads OFFICIAL RESULTS without that text. The Wayback Machine holds no capture of this page (manifest id wb-cdx-seb-2026-june).",
+   "use": "Low-weight corroboration only. The retained Wayback copies of the 2024 general page and the 2026 runoff page carry the same wording as primary evidence."
+  }
+ ]
+}

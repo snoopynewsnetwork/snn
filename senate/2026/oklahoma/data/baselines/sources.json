@@ -1,0 +1,619 @@
+{
+ "schema": 1,
+ "generated_by": "acquire.py",
+ "pins": {
+  "medsl_2022_commit": "a8126c5790b8d1f438a3e63c3506cdcdc7406d9f",
+  "medsl_2024_commit": "df531089c78e6d0098db1a6bfb3849a066a06995",
+  "openelections_ok_commit": "76320f6588780002f8c0beb4acd641cf019b0489"
+ },
+ "not_used": [
+  {
+   "channel": "SEB OK Election Results (OKER) API, results.okelections.gov/OKERS/enrapi/",
+   "reason": "County/precinct exports (CLCSV/PLCSV/CSV/XML) are served only after an application login performed by the OKER JavaScript client. This package does not perform that login. County values therefore come from pinned secondary transcriptions of those exports, reconciled to official statewide totals."
+  },
+  {
+   "channel": "MEDSL 2020 precinct returns, Harvard Dataverse doi:10.7910/DVN/NT66Z3 file 6100437",
+   "reason": "Download requires a Dataverse guestbook response; not submitted."
+  },
+  {
+   "channel": "VEST 2022 Oklahoma precinct results, UF Election Lab",
+   "reason": "Download requires site login or subscription."
+  }
+ ],
+ "sources": [
+  {
+   "source_id": "seb-results-index",
+   "role": "SEB election-results index; links each year page",
+   "url": "https://oklahoma.gov/elections/elections-results/election-results.html",
+   "final_url": "https://oklahoma.gov/elections/elections-results/election-results.html",
+   "retrieved_utc": "2026-10-18T16:42:53Z",
+   "http_status": 200,
+   "headers": {
+    "content-type": "text/html;charset=utf-8",
+    "date": "Sun, 18 Oct 2026 16:26:21 GMT",
+    "server": "Apache",
+    "last-modified": "Sun, 18 Oct 2026 16:05:51 GMT",
+    "etag": "\"21c31-65e1f924b6564\""
+   },
+   "entity_bytes": 138275,
+   "entity_sha256": "9c1b7f03722aaf1cfd9f2c25c31fcde2c6585275ae643bcd1fd719c6fdb8ee86",
+   "stored_path": "raw/seb-results-index/election-results.html.gz",
+   "stored_encoding": "gzip",
+   "stored_bytes": 22293,
+   "stored_sha256": "bf78d624537892cae0010bada5c3099528a620ca955cb045b230cd0d48c1e62e"
+  },
+  {
+   "source_id": "seb-2020-general-page",
+   "role": "SEB 2020 general page; only results link is the OKER app",
+   "url": "https://oklahoma.gov/elections/elections-results/election-results/2020-election-results/2020-november-general-election.html",
+   "final_url": "https://oklahoma.gov/elections/elections-results/election-results/2020-election-results/2020-november-general-election.html",
+   "retrieved_utc": "2026-10-18T16:42:53Z",
+   "http_status": 200,
+   "headers": {
+    "content-type": "text/html;charset=utf-8",
+    "date": "Sun, 18 Oct 2026 16:26:56 GMT",
+    "server": "Apache",
+    "last-modified": "Sun, 18 Oct 2026 16:26:56 GMT",
+    "etag": "W/\"1ed99-65e1fddae7092\""
+   },
+   "entity_bytes": 126347,
+   "entity_sha256": "9ba42883bd841551c50be4940482f87b71a24df3ec893838161f8cebfcb2c12c",
+   "stored_path": "raw/seb-2020-general-page/2020-november-general-election.html.gz",
+   "stored_encoding": "gzip",
+   "stored_bytes": 21682,
+   "stored_sha256": "bb3ac825bbaeef193c8c75acc12aa0413e057140ca3c0927fb63a04313e134a4"
+  },
+  {
+   "source_id": "seb-2022-general-page",
+   "role": "SEB 2022 general page; says downloads are via the OKER export tab",
+   "url": "https://oklahoma.gov/elections/elections-results/election-results/2022-election-results/2022-november-general-election.html",
+   "final_url": "https://oklahoma.gov/elections/elections-results/election-results/2022-election-results/2022-november-general-election.html",
+   "retrieved_utc": "2026-10-18T16:42:53Z",
+   "http_status": 200,
+   "headers": {
+    "content-type": "text/html;charset=utf-8",
+    "date": "Sun, 18 Oct 2026 16:26:56 GMT",
+    "server": "Apache",
+    "last-modified": "Sun, 18 Oct 2026 16:26:56 GMT",
+    "etag": "W/\"1f308-65e1fddb638b6\""
+   },
+   "entity_bytes": 127738,
+   "entity_sha256": "a7222efe304c9d5b3db4cb6ccf0182febd40aedf1992747bbf1820b62ea2d133",
+   "stored_path": "raw/seb-2022-general-page/2022-november-general-election.html.gz",
+   "stored_encoding": "gzip",
+   "stored_bytes": 21790,
+   "stored_sha256": "ae41dac30a8b1be32dc81ea340e6a57adc142975f846a79ac415f1c64766d8f6"
+  },
+  {
+   "source_id": "seb-2024-general-page",
+   "role": "SEB 2024 general page; only results link is the OKER app",
+   "url": "https://oklahoma.gov/elections/elections-results/election-results/2024-election-results/november-general-election.html",
+   "final_url": "https://oklahoma.gov/elections/elections-results/election-results/2024-election-results/november-general-election.html",
+   "retrieved_utc": "2026-10-18T16:42:53Z",
+   "http_status": 200,
+   "headers": {
+    "content-type": "text/html;charset=utf-8",
+    "date": "Sun, 18 Oct 2026 16:26:44 GMT",
+    "server": "Apache",
+    "last-modified": "Sun, 18 Oct 2026 16:26:44 GMT",
+    "etag": "W/\"1f835-65e1fdcfe13f0\""
+   },
+   "entity_bytes": 129063,
+   "entity_sha256": "d04a90381c9c68003089c11f348102ceb8bc7b4f105cc0cffe365e767e2fcd0f",
+   "stored_path": "raw/seb-2024-general-page/november-general-election.html.gz",
+   "stored_encoding": "gzip",
+   "stored_bytes": 21903,
+   "stored_sha256": "ea57b02a88cf698e58cbb4fcf78bda9bcd9623a894df2ce8a38d68708bb790e2"
+  },
+  {
+   "source_id": "seb-oker-app-shell",
+   "role": "OKER single-page application shell (JS app; no results in HTML)",
+   "url": "https://results.okelections.us/OKER/?elecDate=20221108",
+   "final_url": "https://results.okelections.gov:443/OKER/?elecDate=20221108",
+   "retrieved_utc": "2026-10-18T16:42:53Z",
+   "http_status": 200,
+   "headers": {
+    "date": "Sun, 18 Oct 2026 16:42:53 GMT",
+    "content-type": "text/html",
+    "content-length": "1444",
+    "last-modified": "Tue, 05 May 2026 09:59:20 GMT",
+    "etag": "\"08c8ed775dcdc1:0\"",
+    "server": "Microsoft-IIS/10.0"
+   },
+   "entity_bytes": 1444,
+   "entity_sha256": "75a49bddd937caea5d97445b849e81dd107635b4b67cf0e8cc0df8fab5948168",
+   "stored_path": "raw/seb-oker-app-shell/oker-index.html.gz",
+   "stored_encoding": "gzip",
+   "stored_bytes": 775,
+   "stored_sha256": "8dc6fe9159ce6813f7f6ba779fc9293e52ffc7c22aae8eb408b1aa02aeaff1b0"
+  },
+  {
+   "source_id": "wayback-seb-oker-cdx",
+   "role": "Internet Archive capture inventory for the OKER API",
+   "url": "https://web.archive.org/cdx/search/cdx?url=results.okelections.gov/OKERS/enrapi/*&output=json&fl=timestamp,original,statuscode,mimetype,length,digest",
+   "final_url": "https://web.archive.org/cdx/search/cdx?url=results.okelections.gov/OKERS/enrapi/*&output=json&fl=timestamp,original,statuscode,mimetype,length,digest",
+   "retrieved_utc": "2026-10-18T16:42:53Z",
+   "http_status": 200,
+   "headers": {
+    "server": "nginx",
+    "date": "Sun, 18 Oct 2026 16:43:29 GMT",
+    "content-type": "application/json"
+   },
+   "entity_bytes": 1590,
+   "entity_sha256": "7f9de4e60d87104b0180215754cd5ac16616ccff36e785133910489773d16d19",
+   "stored_path": "raw/wayback-seb-oker-cdx/cdx.json.gz",
+   "stored_encoding": "gzip",
+   "stored_bytes": 574,
+   "stored_sha256": "1b9a1b6b8f918e81849310da5dd1b1358814f7c4c566430be15b54f1a5c2d9c0"
+  },
+  {
+   "source_id": "wayback-seb-oker-2020",
+   "role": "SEB OKER statewide 2020 results, 'Official Results', archived capture",
+   "url": "https://web.archive.org/web/20250629165738id_/https://results.okelections.gov/OKERS/enrapi/getelec/20201103/SW/xx",
+   "final_url": "https://web.archive.org/web/20250629165738id_/https://results.okelections.gov/OKERS/enrapi/getelec/20201103/SW/xx",
+   "retrieved_utc": "2026-10-18T16:43:29Z",
+   "http_status": 200,
+   "headers": {
+    "server": "nginx",
+    "date": "Sun, 18 Oct 2026 16:43:35 GMT",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "67263",
+    "x-archive-orig-date": "Sun, 29 Jun 2025 16:57:38 GMT",
+    "memento-datetime": "Sun, 29 Jun 2025 16:57:38 GMT",
+    "link": "<https://results.okelections.gov/OKERS/enrapi/getelec/20201103/SW/xx>; rel=\"original\", <https://web.archive.org/web/timemap/link/https://results.okelections.gov/OKERS/enrapi/getelec/20201103/SW/xx>; rel=\"timemap\"; type=\"application/link-format\", <https://web.archive.org/web/https://results.okelections.gov/OKERS/enrapi/getelec/20201103/SW/xx>; rel=\"timegate\", <https://web.archive.org/web/20250629165738/https://results.okelections.gov/OKERS/enrapi/getelec/20201103/SW/xx>; rel=\"first memento\"; datetime=\"Sun, 29 Jun 2025 16:57:38 GMT\", <https://web.archive.org/web/20250629165738/https://results.okelections.gov/OKERS/enrapi/getelec/20201103/SW/xx>; rel=\"memento\"; datetime=\"Sun, 29 Jun 2025 16:57:38 GMT\", <https://web.archive.org/web/20250629165738/https://results.okelections.gov/OKERS/enrapi/getelec/20201103/SW/xx>; rel=\"last memento\"; datetime=\"Sun, 29 Jun 2025 16:57:38 GMT\"",
+    "x-archive-src": "spn2-20250629181213/spn2-20250629145510-wwwb-spn21.us.archive.org-8003.warc.gz"
+   },
+   "entity_bytes": 67263,
+   "entity_sha256": "3996d1eb61404fbaadb055d022ba8e441153f320fe3a13e035523bebb7e7c104",
+   "stored_path": "raw/wayback-seb-oker-2020/getelec-20201103-SW.json.gz",
+   "stored_encoding": "gzip",
+   "stored_bytes": 8289,
+   "stored_sha256": "7f97470d5e848fc81129c267a03b78ca4fc4313f44468e705be61a9df14c5755"
+  },
+  {
+   "source_id": "wayback-seb-oker-2024",
+   "role": "SEB OKER statewide 2024 results, 'Unofficial Results', election-night capture",
+   "url": "https://web.archive.org/web/20241106133100id_/https://results.okelections.gov/OKERS/enrapi/getelec/20241105/SW/xx",
+   "final_url": "https://web.archive.org/web/20241106133100id_/https://results.okelections.gov/OKERS/enrapi/getelec/20241105/SW/xx",
+   "retrieved_utc": "2026-10-18T16:43:35Z",
+   "http_status": 200,
+   "headers": {
+    "server": "nginx",
+    "date": "Sun, 18 Oct 2026 16:43:36 GMT",
+    "content-type": "application/json; charset=utf-8",
+    "content-length": "62919",
+    "x-archive-orig-date": "Wed, 06 Nov 2024 13:31:00 GMT",
+    "memento-datetime": "Wed, 06 Nov 2024 13:31:00 GMT",
+    "link": "<https://results.okelections.gov/OKERS/enrapi/getelec/20241105/SW/xx>; rel=\"original\", <https://web.archive.org/web/timemap/link/https://results.okelections.gov/OKERS/enrapi/getelec/20241105/SW/xx>; rel=\"timemap\"; type=\"application/link-format\", <https://web.archive.org/web/https://results.okelections.gov/OKERS/enrapi/getelec/20241105/SW/xx>; rel=\"timegate\", <https://web.archive.org/web/20241106133100/https://results.okelections.gov/OKERS/enrapi/getelec/20241105/SW/xx>; rel=\"first memento\"; datetime=\"Wed, 06 Nov 2024 13:31:00 GMT\", <https://web.archive.org/web/20241106133100/https://results.okelections.gov/OKERS/enrapi/getelec/20241105/SW/xx>; rel=\"memento\"; datetime=\"Wed, 06 Nov 2024 13:31:00 GMT\", <https://web.archive.org/web/20241106133100/https://results.okelections.gov/OKERS/enrapi/getelec/20241105/SW/xx>; rel=\"last memento\"; datetime=\"Wed, 06 Nov 2024 13:31:00 GMT\"",
+    "x-archive-src": "daily_perma_cc_2024-11-06/6CSV-UQUS.warc.gz"
+   },
+   "entity_bytes": 62919,
+   "entity_sha256": "4efa3eee16e561ee4d69cdd204e31de980800586ae36ee3169a8801b69084060",
+   "stored_path": "raw/wayback-seb-oker-2024/getelec-20241105-SW.json.gz",
+   "stored_encoding": "gzip",
+   "stored_bytes": 7659,
+   "stored_sha256": "7269c5ddcaeb5022b9f6e03706a7215929186503b9eba20511d2faca26745c1c"
+  },
+  {
+   "source_id": "clerk-2020",
+   "role": "House Clerk statistics of the 2020 election",
+   "url": "https://clerk.house.gov/member_info/electionInfo/2020/statistics2020.pdf",
+   "final_url": "https://clerk.house.gov/member_info/electionInfo/2020/statistics2020.pdf",
+   "retrieved_utc": "2026-10-18T16:43:37Z",
+   "http_status": 200,
+   "headers": {
+    "content-type": "application/pdf",
+    "last-modified": "Tue, 09 Mar 2021 17:03:19 GMT",
+    "etag": "\"481ca01a615d71:0\"",
+    "content-length": "602172",
+    "date": "Sun, 18 Oct 2026 16:43:37 GMT"
+   },
+   "entity_bytes": 602172,
+   "entity_sha256": "666b2a1f673f263087c141c4d44b0dce47cbddc8f4df27fbc8b415cf05842b76",
+   "stored_path": "raw/clerk-2020/statistics2020.pdf",
+   "stored_encoding": "identity",
+   "stored_bytes": 602172,
+   "stored_sha256": "666b2a1f673f263087c141c4d44b0dce47cbddc8f4df27fbc8b415cf05842b76"
+  },
+  {
+   "source_id": "clerk-2022",
+   "role": "House Clerk statistics of the 2022 election",
+   "url": "https://clerk.house.gov/member_info/electionInfo/2022/statistics2022.pdf",
+   "final_url": "https://clerk.house.gov/member_info/electionInfo/2022/statistics2022.pdf",
+   "retrieved_utc": "2026-10-18T16:43:37Z",
+   "http_status": 200,
+   "headers": {
+    "content-type": "application/pdf",
+    "last-modified": "Thu, 09 Mar 2023 23:26:00 GMT",
+    "etag": "\"0b4ea81de52d91:0\"",
+    "content-length": "457678",
+    "date": "Sun, 18 Oct 2026 16:43:37 GMT"
+   },
+   "entity_bytes": 457678,
+   "entity_sha256": "ef9b8cefcc44bebbdc4928bf346b50e00a72dd3bb54a71ed93ec60d4ebf47690",
+   "stored_path": "raw/clerk-2022/statistics2022.pdf",
+   "stored_encoding": "identity",
+   "stored_bytes": 457678,
+   "stored_sha256": "ef9b8cefcc44bebbdc4928bf346b50e00a72dd3bb54a71ed93ec60d4ebf47690"
+  },
+  {
+   "source_id": "clerk-2024",
+   "role": "House Clerk statistics of the 2024 election",
+   "url": "https://clerk.house.gov/member_info/electionInfo/2024/statistics2024.pdf",
+   "final_url": "https://clerk.house.gov/member_info/electionInfo/2024/statistics2024.pdf",
+   "retrieved_utc": "2026-10-18T16:43:37Z",
+   "http_status": 200,
+   "headers": {
+    "content-type": "application/pdf",
+    "last-modified": "Wed, 19 Mar 2025 15:53:11 GMT",
+    "etag": "\"803a94e798db1:0\"",
+    "content-length": "608100",
+    "date": "Sun, 18 Oct 2026 16:43:37 GMT"
+   },
+   "entity_bytes": 608100,
+   "entity_sha256": "d4ba800fc17135b616ae556c92861080ab962d95916ace34b546c5aac824aec4",
+   "stored_path": "raw/clerk-2024/statistics2024.pdf",
+   "stored_encoding": "identity",
+   "stored_bytes": 608100,
+   "stored_sha256": "d4ba800fc17135b616ae556c92861080ab962d95916ace34b546c5aac824aec4"
+  },
+  {
+   "source_id": "medsl-2022-ok",
+   "role": "MEDSL 2022 Oklahoma precinct returns (source: SEB OKER)",
+   "url": "https://raw.githubusercontent.com/MEDSL/2022-elections-official/a8126c5790b8d1f438a3e63c3506cdcdc7406d9f/individual_states/2022-ok-local-precinct-general.zip",
+   "final_url": "https://raw.githubusercontent.com/MEDSL/2022-elections-official/a8126c5790b8d1f438a3e63c3506cdcdc7406d9f/individual_states/2022-ok-local-precinct-general.zip",
+   "retrieved_utc": "2026-10-18T16:43:37Z",
+   "http_status": 200,
+   "headers": {
+    "content-length": "2104706",
+    "content-type": "application/zip",
+    "etag": "\"b686e6b0e0ba97e96dbd6b53367e91302b2cc3d1443d92c7c996dc5d64555ba7\"",
+    "date": "Sun, 18 Oct 2026 16:43:37 GMT"
+   },
+   "entity_bytes": 2104706,
+   "entity_sha256": "9526b85ec712c66e50ce039564166a0f34c39933f563cb20d949bba1d44ce7d9",
+   "stored_path": "raw/medsl-2022-ok/2022-ok-local-precinct-general.zip",
+   "stored_encoding": "identity",
+   "stored_bytes": 2104706,
+   "stored_sha256": "9526b85ec712c66e50ce039564166a0f34c39933f563cb20d949bba1d44ce7d9"
+  },
+  {
+   "source_id": "medsl-2022-readme",
+   "role": "MEDSL 2022 README (Oklahoma source/added date)",
+   "url": "https://raw.githubusercontent.com/MEDSL/2022-elections-official/a8126c5790b8d1f438a3e63c3506cdcdc7406d9f/README.md",
+   "final_url": "https://raw.githubusercontent.com/MEDSL/2022-elections-official/a8126c5790b8d1f438a3e63c3506cdcdc7406d9f/README.md",
+   "retrieved_utc": "2026-10-18T16:43:37Z",
+   "http_status": 200,
+   "headers": {
+    "content-length": "37933",
+    "content-type": "text/plain; charset=utf-8",
+    "etag": "\"0c0cf36f52891e48abc094df28c959020d139d0ef3980d59889858e839936103\"",
+    "date": "Sun, 18 Oct 2026 16:43:37 GMT"
+   },
+   "entity_bytes": 37933,
+   "entity_sha256": "f69d4a477ea4c2ba86e57a6cedeec09ab43cab2090c3d78e2deaba68f08640d6",
+   "stored_path": "raw/medsl-2022-readme/README.md.gz",
+   "stored_encoding": "gzip",
+   "stored_bytes": 12762,
+   "stored_sha256": "1dfba2dfe1d6ded5723a34071f4e126ec24c625e7c4e01607c3cde9e45327b7e"
+  },
+  {
+   "source_id": "medsl-2024-ok",
+   "role": "MEDSL 2024 Oklahoma precinct returns (source: SEB OKER)",
+   "url": "https://raw.githubusercontent.com/MEDSL/2024-elections-official/df531089c78e6d0098db1a6bfb3849a066a06995/individual_states/ok24.zip",
+   "final_url": "https://raw.githubusercontent.com/MEDSL/2024-elections-official/df531089c78e6d0098db1a6bfb3849a066a06995/individual_states/ok24.zip",
+   "retrieved_utc": "2026-10-18T16:43:37Z",
+   "http_status": 200,
+   "headers": {
+    "content-length": "2164718",
+    "content-type": "application/zip",
+    "etag": "\"5b5c4d8058b79375c15e42d358569854b08593a17e0211930ddc36538fdffbfc\"",
+    "date": "Sun, 18 Oct 2026 16:43:37 GMT"
+   },
+   "entity_bytes": 2164718,
+   "entity_sha256": "8ff2595d40fc86748ab4e8f908276c0dc12adc06f58e9ad261859998e7c7588b",
+   "stored_path": "raw/medsl-2024-ok/ok24.zip",
+   "stored_encoding": "identity",
+   "stored_bytes": 2164718,
+   "stored_sha256": "8ff2595d40fc86748ab4e8f908276c0dc12adc06f58e9ad261859998e7c7588b"
+  },
+  {
+   "source_id": "medsl-2024-readme",
+   "role": "MEDSL 2024 README (Oklahoma source/added date)",
+   "url": "https://raw.githubusercontent.com/MEDSL/2024-elections-official/df531089c78e6d0098db1a6bfb3849a066a06995/README.md",
+   "final_url": "https://raw.githubusercontent.com/MEDSL/2024-elections-official/df531089c78e6d0098db1a6bfb3849a066a06995/README.md",
+   "retrieved_utc": "2026-10-18T16:43:38Z",
+   "http_status": 200,
+   "headers": {
+    "content-length": "14402",
+    "content-type": "text/plain; charset=utf-8",
+    "etag": "\"807e90f4a48192b41d410b754758e25d564a81a16175ab795115883bb70ed659\"",
+    "date": "Sun, 18 Oct 2026 16:43:38 GMT"
+   },
+   "entity_bytes": 14402,
+   "entity_sha256": "d27defc4912fee95418c41535532a8f15961c5ac20fee47c1f50e3f98f409273",
+   "stored_path": "raw/medsl-2024-readme/README.md.gz",
+   "stored_encoding": "gzip",
+   "stored_bytes": 5435,
+   "stored_sha256": "44b209573491a7594e348a35cf7cdc0e902b7e92d01ca2f1a3eaa015bc392b83"
+  },
+  {
+   "source_id": "openelections-2020-county",
+   "role": "OpenElections 2020 Oklahoma county returns (SEB export transcription)",
+   "url": "https://raw.githubusercontent.com/openelections/openelections-data-ok/76320f6588780002f8c0beb4acd641cf019b0489/2020/20201103__ok__general__county.csv",
+   "final_url": "https://raw.githubusercontent.com/openelections/openelections-data-ok/76320f6588780002f8c0beb4acd641cf019b0489/2020/20201103__ok__general__county.csv",
+   "retrieved_utc": "2026-10-18T16:43:38Z",
+   "http_status": 200,
+   "headers": {
+    "content-length": "246470",
+    "content-type": "text/plain; charset=utf-8",
+    "etag": "\"5f868a09fd60fe9afab5e007b8f829edc12bd0242b0f0e059698857a4e04d0f1\"",
+    "date": "Sun, 18 Oct 2026 16:43:38 GMT"
+   },
+   "entity_bytes": 246470,
+   "entity_sha256": "cf03ad4fce3ded6d73ee9aa434a9473f7e0bf5a66b30f9d850b92c683b6221ec",
+   "stored_path": "raw/openelections-2020-county/20201103__ok__general__county.csv.gz",
+   "stored_encoding": "gzip",
+   "stored_bytes": 47040,
+   "stored_sha256": "ff5b0ed3059e8e73a2247d7496f9903bac8ec9e290dc4ff5529801af91fe1046"
+  },
+  {
+   "source_id": "openelections-2020-precinct",
+   "role": "OpenElections 2020 Oklahoma precinct returns (internal county cross-check)",
+   "url": "https://raw.githubusercontent.com/openelections/openelections-data-ok/76320f6588780002f8c0beb4acd641cf019b0489/2020/20201103__ok__general__precinct.csv",
+   "final_url": "https://raw.githubusercontent.com/openelections/openelections-data-ok/76320f6588780002f8c0beb4acd641cf019b0489/2020/20201103__ok__general__precinct.csv",
+   "retrieved_utc": "2026-10-18T16:43:38Z",
+   "http_status": 200,
+   "headers": {
+    "content-length": "6346101",
+    "content-type": "text/plain; charset=utf-8",
+    "etag": "\"d86db8461323721c3b15cc9c78b5cfe202147e4ed1088e22ec4e424a43dd9d5e\"",
+    "date": "Sun, 18 Oct 2026 16:43:38 GMT"
+   },
+   "entity_bytes": 6346101,
+   "entity_sha256": "f204679a46f681be39f9e465bc1492c0f465709668e20a575cbbe71e05f73b8d",
+   "stored_path": "raw/openelections-2020-precinct/20201103__ok__general__precinct.csv.gz",
+   "stored_encoding": "gzip",
+   "stored_bytes": 700541,
+   "stored_sha256": "83ac5dc3972b8fa18323ba35fc3887e2f451e49b90daf5ce6aa8a425ac3abdf9"
+  },
+  {
+   "source_id": "census-ok-counties-2020",
+   "role": "Census 2020 Oklahoma county FIPS reference",
+   "url": "https://www2.census.gov/geo/docs/reference/codes2020/cou/st40_ok_cou2020.txt",
+   "final_url": "https://www2.census.gov/geo/docs/reference/codes2020/cou/st40_ok_cou2020.txt",
+   "retrieved_utc": "2026-10-18T16:43:38Z",
+   "http_status": 200,
+   "headers": {
+    "date": "Sun, 18 Oct 2026 16:43:38 GMT",
+    "content-type": "text/plain",
+    "content-length": "3042",
+    "last-modified": "Fri, 17 Feb 2023 16:12:42 GMT",
+    "server": "cloudflare"
+   },
+   "entity_bytes": 3042,
+   "entity_sha256": "6e8e14d67e9eda577e81e15f87a3a8fbd76255973d30f14c9a2cd3c9ccca82ff",
+   "stored_path": "raw/census-ok-counties-2020/st40_ok_cou2020.txt",
+   "stored_encoding": "identity",
+   "stored_bytes": 3042,
+   "stored_sha256": "6e8e14d67e9eda577e81e15f87a3a8fbd76255973d30f14c9a2cd3c9ccca82ff"
+  },
+  {
+   "source_id": "seb-2026-filing-info",
+   "role": "SEB 2026 filing information page",
+   "url": "https://oklahoma.gov/elections/candidates/2026-candidate-filing-information.html",
+   "final_url": "https://oklahoma.gov/elections/candidates/2026-candidate-filing-information.html",
+   "retrieved_utc": "2026-10-18T16:43:38Z",
+   "http_status": 200,
+   "headers": {
+    "content-type": "text/html;charset=utf-8",
+    "date": "Sun, 18 Oct 2026 16:35:28 GMT",
+    "server": "Apache",
+    "last-modified": "Sun, 18 Oct 2026 16:22:42 GMT",
+    "etag": "\"287dc-65e1fce9101e7\""
+   },
+   "entity_bytes": 165838,
+   "entity_sha256": "0d7480654d97ff481bf92ef3db02f09b391093ac1ce14ef8fb03b12e2b03705b",
+   "stored_path": "raw/seb-2026-filing-info/2026-candidate-filing-information.html.gz",
+   "stored_encoding": "gzip",
+   "stored_bytes": 26299,
+   "stored_sha256": "59ab245da097293f0661531335a621c0131033dd1b60f602026a7821ba3ca78b"
+  },
+  {
+   "source_id": "seb-2026-candidate-list-book",
+   "role": "SEB 2026 candidate list book (filings April 1-3, 2026)",
+   "url": "https://oklahoma.gov/content/dam/ok/en/elections/candidate-filing-archives/2026-candidate-filing-archives/2026-candidate-list-book.pdf",
+   "final_url": "https://oklahoma.gov/content/dam/ok/en/elections/candidate-filing-archives/2026-candidate-filing-archives/2026-candidate-list-book.pdf",
+   "retrieved_utc": "2026-10-18T16:43:39Z",
+   "http_status": 200,
+   "headers": {
+    "content-type": "application/pdf",
+    "content-length": "4297847",
+    "date": "Sun, 18 Oct 2026 16:35:42 GMT",
+    "server": "Apache",
+    "last-modified": "Mon, 06 Apr 2026 14:32:49 GMT",
+    "etag": "\"419477-64ecb8a7c6640\""
+   },
+   "entity_bytes": 4297847,
+   "entity_sha256": "c5e56857e341527dba9535d13be7c109ccadebe575f5f71f2000d3467c8ff5fe",
+   "stored_path": "raw/seb-2026-candidate-list-book/2026-candidate-list-book.pdf",
+   "stored_encoding": "identity",
+   "stored_bytes": 4297847,
+   "stored_sha256": "c5e56857e341527dba9535d13be7c109ccadebe575f5f71f2000d3467c8ff5fe"
+  },
+  {
+   "source_id": "seb-2026-withdrawals",
+   "role": "SEB 2026 candidate withdrawals",
+   "url": "https://oklahoma.gov/elections/candidates/2026-candidate-filing-information/2026-candidate-withdrawals.html",
+   "final_url": "https://oklahoma.gov/elections/candidates/2026-candidate-filing-information/2026-candidate-withdrawals.html",
+   "retrieved_utc": "2026-10-18T16:43:39Z",
+   "http_status": 200,
+   "headers": {
+    "content-type": "text/html;charset=utf-8",
+    "date": "Sun, 18 Oct 2026 16:43:39 GMT",
+    "server": "Apache",
+    "last-modified": "Sun, 18 Oct 2026 16:36:06 GMT",
+    "etag": "\"1fcc0-65e1ffe7d0883\""
+   },
+   "entity_bytes": 130226,
+   "entity_sha256": "01a6df15125269fe3894addea5c2b3935b3eed216203a3ed6ad45c75bf3e74ab",
+   "stored_path": "raw/seb-2026-withdrawals/2026-candidate-withdrawals.html.gz",
+   "stored_encoding": "gzip",
+   "stored_bytes": 22170,
+   "stored_sha256": "64eccc1d124b6adba6993e69a6ea565056095bea0de981352981a1aff53d7b5f"
+  },
+  {
+   "source_id": "seb-2026-contests",
+   "role": "SEB 2026 contests of candidacy",
+   "url": "https://oklahoma.gov/elections/candidates/2026-candidate-filing-information/2026-contests-of-candidacy.html",
+   "final_url": "https://oklahoma.gov/elections/candidates/2026-candidate-filing-information/2026-contests-of-candidacy.html",
+   "retrieved_utc": "2026-10-18T16:43:39Z",
+   "http_status": 200,
+   "headers": {
+    "content-type": "text/html;charset=utf-8",
+    "date": "Sun, 18 Oct 2026 16:43:39 GMT",
+    "server": "Apache",
+    "last-modified": "Sun, 18 Oct 2026 16:36:06 GMT",
+    "etag": "\"1f7cd-65e1ffe7e160a\""
+   },
+   "entity_bytes": 128959,
+   "entity_sha256": "db67ba24dc644e80a84b2e02837127363e997cb8823c3ef3ce15e5206dc9edea",
+   "stored_path": "raw/seb-2026-contests/2026-contests-of-candidacy.html.gz",
+   "stored_encoding": "gzip",
+   "stored_bytes": 21838,
+   "stored_sha256": "777142dd64bd5b34eee42fc092d2b938f512d0822c149fddedea83402090aeb1"
+  },
+  {
+   "source_id": "seb-2026-general-notice",
+   "role": "SEB UOCAVA notice for the November 3, 2026 general election",
+   "url": "https://oklahoma.gov/elections/voters/military-overseas-voters/2026-election-notice-general-election.html",
+   "final_url": "https://oklahoma.gov/elections/voters/military-overseas-voters/2026-election-notice-general-election.html",
+   "retrieved_utc": "2026-10-18T16:43:40Z",
+   "http_status": 200,
+   "headers": {
+    "content-type": "text/html;charset=utf-8",
+    "date": "Sun, 18 Oct 2026 16:36:50 GMT",
+    "server": "Apache",
+    "last-modified": "Sun, 18 Oct 2026 16:36:50 GMT",
+    "etag": "W/\"22f9b-65e20011bd8ef\""
+   },
+   "entity_bytes": 143245,
+   "entity_sha256": "68ae2f473d3b5a0e3a118cbde934abe3e086d86656bbf16e78a50be5338c15cc",
+   "stored_path": "raw/seb-2026-general-notice/2026-election-notice-general-election.html.gz",
+   "stored_encoding": "gzip",
+   "stored_bytes": 24123,
+   "stored_sha256": "245b3fee9efc8ecb9206d09027c4bd503f3d9d1224ebe32cb38020e6a0b2a06e"
+  },
+  {
+   "source_id": "seb-filings-portal",
+   "role": "SEB candidate filing portal page (public)",
+   "url": "https://filings.okelections.gov/ViewCandidates/2026040120260403/99/all",
+   "final_url": "https://filings.okelections.gov/ViewCandidates/2026040120260403/99/all",
+   "retrieved_utc": "2026-10-18T16:54:28Z",
+   "http_status": 200,
+   "headers": {
+    "date": "Sun, 18 Oct 2026 16:54:29 GMT",
+    "content-type": "text/html; charset=utf-8"
+   },
+   "entity_bytes": 17819,
+   "entity_sha256": "7e4d0b1de2c1c3b6124f8525347ab8fb1b3298ff757b7228b7980de12e947624",
+   "stored_path": null,
+   "not_stored_reason": "page HTML embeds a third-party UI-library license key; body not retained. The candidate data come from the public JSON endpoints stored alongside."
+  },
+  {
+   "source_id": "seb-filings-offices",
+   "role": "SEB filing portal office list (public JSON)",
+   "url": "https://filings.okelections.gov/api/Home/GetOfficeList",
+   "final_url": "https://filings.okelections.gov/api/Home/GetOfficeList",
+   "retrieved_utc": "2026-10-18T16:43:40Z",
+   "http_status": 200,
+   "headers": {
+    "date": "Sun, 18 Oct 2026 16:43:40 GMT",
+    "content-type": "application/json; charset=utf-8"
+   },
+   "entity_bytes": 23005,
+   "entity_sha256": "fd2b467bc26647ab262801b76c0ebcfe8e239181bd7025b3d7f79aee5f20fc74",
+   "stored_path": "raw/seb-filings-offices/GetOfficeList.json.gz",
+   "stored_encoding": "gzip",
+   "stored_bytes": 2338,
+   "stored_sha256": "0dbfc3683f6d075911ee9b5fc1a7a237ca2bf349efe79bc0d384b6ac707dc886"
+  },
+  {
+   "source_id": "seb-filings-us-senator",
+   "role": "SEB filing portal U.S. Senator filings (public JSON)",
+   "url": "https://filings.okelections.gov/api/Home/GetCandList?OfficeID=2257",
+   "final_url": "https://filings.okelections.gov/api/Home/GetCandList?OfficeID=2257",
+   "retrieved_utc": "2026-10-18T16:43:40Z",
+   "http_status": 200,
+   "headers": {
+    "date": "Sun, 18 Oct 2026 16:43:40 GMT",
+    "content-type": "application/json; charset=utf-8"
+   },
+   "entity_bytes": 5923,
+   "entity_sha256": "4a2b068a465327265777e43ace414de2057db4ecab964dbf57f32eefc4eb92b1",
+   "stored_path": "raw/seb-filings-us-senator/GetCandList-OfficeID-2257.json.gz",
+   "stored_encoding": "gzip",
+   "stored_bytes": 729,
+   "stored_sha256": "cc618fe55ad58be55eb7fcb8d30daef9da7cf461b363872a39eb36fe346852e1"
+  },
+  {
+   "source_id": "senate-gov-class-ii",
+   "role": "U.S. Senate Class II roster (current seat holder)",
+   "url": "https://www.senate.gov/senators/Class_II.htm",
+   "final_url": "https://www.senate.gov/senators/Class_II.htm",
+   "retrieved_utc": "2026-10-18T16:43:41Z",
+   "http_status": 200,
+   "headers": {
+    "server": "Apache",
+    "content-type": "text/html; charset=UTF-8",
+    "date": "Sun, 18 Oct 2026 16:43:41 GMT",
+    "content-length": "19562"
+   },
+   "entity_bytes": 19562,
+   "entity_sha256": "2cec4a3935927dc250c4b964746aceca026ee49adf0f5a78397861b5ce31667d",
+   "stored_path": "raw/senate-gov-class-ii/Class_II.htm.gz",
+   "stored_encoding": "gzip",
+   "stored_bytes": 4826,
+   "stored_sha256": "0755e09dd653742fa69b3313995a39836f372f155c0a00b4ac816344fb065c86"
+  },
+  {
+   "source_id": "news-okcfox-thomas-runoff",
+   "role": "Newsroom report of the August 25, 2026 Democratic runoff call (secondary)",
+   "url": "https://okcfox.com/news/local/nkiyla-thomas-wins-democratic-nomination-for-us-senate-in-oklahoma",
+   "final_url": "https://okcfox.com/news/local/nkiyla-thomas-wins-democratic-nomination-for-us-senate-in-oklahoma",
+   "retrieved_utc": "2026-10-18T16:43:41Z",
+   "http_status": 200,
+   "headers": {
+    "server": "CloudFront",
+    "content-type": "text/html; charset=utf-8",
+    "date": "Sun, 18 Oct 2026 16:38:10 GMT",
+    "link": "</_next/static/media/851c14db057e20c2-s.p.woff2>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/woff2\", </_next/static/media/e807dee2426166ad-s.p.woff2>; rel=preload; as=\"font\"; crossorigin=\"\"; type=\"font/woff2\", </_next/static/css/5314c8cbb891028c.css>; rel=preload; as=\"style\", </_next/static/css/0be4dbd07763f2bd.css>; rel=preload; as=\"style\", </_next/static/css/547ff0873ecba04c.css>; rel=preload; as=\"style\", </_next/static/css/f4c2ba4b987f776f.css>; rel=preload; as=\"style\", </_next/static/css/b57817c126966131.css>; rel=preload; as=\"style\", </_next/static/css/a522b2079289430f.css>; rel=preload; as=\"style\", </_next/static/css/9fccd7cf5a0576d9.css>; rel=preload; as=\"style\", </_next/static/css/0d767fe7bbd9969d.css>; rel=preload; as=\"style\""
+   },
+   "entity_bytes": 275107,
+   "entity_sha256": "7665e4fbb76ebdd08e125ae9b9296bbe7ffd4ccd5418f26f1cebe3d955c3a22b",
+   "stored_path": "raw/news-okcfox-thomas-runoff/okcfox-thomas-wins.html.gz",
+   "stored_encoding": "gzip",
+   "stored_bytes": 58623,
+   "stored_sha256": "0e5d2e60bacb8ec76cb934740b4d026eb70b0bfe84bddd35ae50ebbc9c0d9c7c"
+  },
+  {
+   "source_id": "news-news9-senate-candidates",
+   "role": "Newsroom list of November 2026 Senate candidates (secondary)",
+   "url": "https://www.news9.com/oklahoma-politics/oklahoma-us-senate-election-candidates-2026",
+   "final_url": "https://www.news9.com/oklahoma-politics/oklahoma-us-senate-election-candidates-2026",
+   "retrieved_utc": "2026-10-18T16:43:41Z",
+   "http_status": 200,
+   "headers": {
+    "content-type": "text/html;charset=UTF-8",
+    "date": "Sun, 18 Oct 2026 16:43:42 GMT",
+    "server": "istio-envoy"
+   },
+   "entity_bytes": 155029,
+   "entity_sha256": "8014fce2a2b044688e37f8c8177c0eb0f08b3417ed2674f495982c78e8385b5e",
+   "stored_path": "raw/news-news9-senate-candidates/news9-senate-candidates-2026.html.gz",
+   "stored_encoding": "gzip",
+   "stored_bytes": 29359,
+   "stored_sha256": "c4d96063086fb808263355c67ff17dfa46c50fa4fb81b74067179d8acad730f0"
+  }
+ ]
+}

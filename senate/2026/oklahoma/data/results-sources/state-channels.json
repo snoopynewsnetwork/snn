@@ -1,0 +1,446 @@
+[
+ {
+  "channel_id": "seb-results-pages",
+  "channel": "SEB election results pages (oklahoma.gov)",
+  "url": "https://oklahoma.gov/elections/elections-results/election-results.html",
+  "access_class": "public_tested",
+  "evidence": [
+   "seb-results-index",
+   "seb-results-2026",
+   "seb-results-2026-june",
+   "seb-results-2026-august",
+   "seb-results-2024",
+   "seb-results-2024-november"
+  ],
+  "status": 200,
+  "source_timestamps": {
+   "seb-results-2026": {
+    "results_text_component_modify_date": "2026-08-25T14:41:20Z",
+    "visible_last_modified": "Aug 25, 2026",
+    "note": "AEM data-layer date of the page text component holding the results table/links; site chrome dates are ignored."
+   },
+   "seb-results-2026-june": {
+    "results_text_component_modify_date": null,
+    "visible_last_modified": "Jun 24, 2026",
+    "note": "AEM data-layer date of the page text component holding the results table/links; site chrome dates are ignored."
+   },
+   "seb-results-2026-august": {
+    "results_text_component_modify_date": null,
+    "visible_last_modified": "Sep 01, 2026",
+    "note": "AEM data-layer date of the page text component holding the results table/links; site chrome dates are ignored."
+   },
+   "seb-results-2024": {
+    "results_text_component_modify_date": "2024-11-05T17:05:58Z",
+    "visible_last_modified": "Nov 05, 2024",
+    "note": "AEM data-layer date of the page text component holding the results table/links; site chrome dates are ignored."
+   },
+   "seb-results-2024-november": {
+    "results_text_component_modify_date": null,
+    "visible_last_modified": "Nov 13, 2024",
+    "note": "AEM data-layer date of the page text component holding the results table/links; site chrome dates are ignored."
+   }
+  },
+  "finding": "2026 page lists 'November 3 General Elections' without a link; June 16 and August 25 pages read OFFICIAL RESULTS and link OKER elecDate=20260616 / 20260825. Pages carry no vote counts; data download is 'Export' inside OKER.",
+  "november_2026_row_present": true,
+  "november_2026_row_linked": false
+ },
+ {
+  "channel_id": "oker-app",
+  "channel": "OK Election Results (OKER) app",
+  "url": "https://results.okelections.us/OKER/?elecDate=20261103",
+  "access_class": "sign_in_gated_not_tested",
+  "evidence": [
+   "oker-shell-20261103",
+   "oker-shell-20260825",
+   "oker-static-config",
+   "oker-main-bundle"
+  ],
+  "status": 200,
+  "shell_sha256_identical_across_dates": true,
+  "shell_last_modified": "Tue, 05 May 2026 09:59:20 GMT",
+  "redirects": [
+   {
+    "status": 301,
+    "from": "https://results.okelections.us/OKER/?elecDate=20261103",
+    "location": "https://results.okelections.gov:443/OKER/?elecDate=20261103"
+   }
+  ],
+  "bundle_routes": [
+   "GetCntyResults",
+   "GetExtract",
+   "GetFile",
+   "GetMap",
+   "GetMapInfo",
+   "GetPPPCDExtract",
+   "GetPPPCDPDF",
+   "GetPctResults",
+   "GetPropText",
+   "GetResults",
+   "getconfig",
+   "getelec",
+   "login"
+  ],
+  "bundle_sha256": "9e598105c6628f776824e59df435f15ce77ce304ba052b211c4ecf29242fbaf2",
+  "finding": "Public shell, static config and bundle fetched. Every data route (getconfig, getelec, GetResults, GetCntyResults, GetPctResults, GetExtract, GetFile, map and proposition routes) is called with a bearer token from the app sign-in, which this research did not perform. Whether 2026-11-03 is configured cannot be observed without it: the shell is byte-identical for every elecDate."
+ },
+ {
+  "channel_id": "oker-retained-capture",
+  "channel": "Retained one-time OKER capture (turnout worker, 2026-10-18)",
+  "url": "data/turnout/raw/",
+  "access_class": "retained_capture_sign_in_gated",
+  "evidence": [
+   "dependencies.json"
+  ],
+  "status": null,
+  "finding": "Format evidence only: getconfig pollingInterval 30000 ms; getelec Title1/isOfficial/lastUpdate/serverTLU; per-race totalPrecincts/reportingPrecincts/reportingPercent and candidate absVotes/earlyVotes/elecDayVotes; county and precinct CSV exports with tot_race_prec/race_prec_reporting. Elections 2020/2022/2024 only; nothing for 2026."
+ },
+ {
+  "channel_id": "seb-election-list",
+  "channel": "SEB November 2026 list of elections (hosting.okelections)",
+  "url": "https://hosting.okelections.gov/electionlist.html",
+  "access_class": "public_tested",
+  "evidence": [
+   "seb-next-election",
+   "seb-election-list-nov2026"
+  ],
+  "status": 200,
+  "source_timestamps": {
+   "last-modified": "Thu, 24 Sep 2026 13:41:40 GMT",
+   "x-amz-meta-s3b-last-modified": "20260924T133940Z",
+   "x-amz-version-id": "hdx3c4vWzktf0T5o5RX0cZrYC0saAGMN"
+  },
+  "redirects": [
+   {
+    "status": 301,
+    "from": "http://hosting.okelections.us/electionlist.html",
+    "location": "https://hosting.okelections.us/electionlist.html"
+   },
+   {
+    "status": 301,
+    "from": "https://hosting.okelections.us/electionlist.html",
+    "location": "https://hosting.okelections.gov/electionlist.html"
+   }
+  ],
+  "finding": "78 county sections; U.S. Senator block in 77; identical five-candidate list in each. Ballot identity only, no counts."
+ },
+ {
+  "channel_id": "seb-early-vote-list",
+  "channel": "SEB November 3 early-voting locations",
+  "url": "https://hosting.okelections.gov/earlyvote.html",
+  "access_class": "public_tested",
+  "evidence": [
+   "seb-early-voting-page",
+   "seb-earlyvote-nov2026"
+  ],
+  "status": 200,
+  "source_timestamps": {
+   "last-modified": "Fri, 09 Oct 2026 19:04:55 GMT"
+  },
+  "finding": "78 county sections, 93 sites; days ['Fri., Oct. 30 - 8:00 am - 6:00 pm', 'Sat., Oct. 31 - 8:00 am - 2:00 pm', 'Thu., Oct. 29 - 8:00 am - 6:00 pm', 'Wed., Oct. 28 - 8:00 am - 6:00 pm']."
+ },
+ {
+  "channel_id": "seb-ceb-directory",
+  "channel": "SEB county election board directory (OK Voter Portal /cebinfo)",
+  "url": "https://okvoterportal.okelections.gov/cebinfo",
+  "access_class": "public_tested",
+  "evidence": [
+   "seb-county-election-boards",
+   "seb-cebinfo",
+   "seb-ceb-addresses-pdf"
+  ],
+  "status": 200,
+  "finding": "77 boards with SEB code, phone, fax, secretary, addresses, hours and @elections.ok.gov email. No county web-site column."
+ },
+ {
+  "channel_id": "eis-absentee",
+  "channel": "SEB Interactive Statistics, Absentee Statistics By County",
+  "url": "https://stats.okelections.gov/Home/AbsByCounty",
+  "access_class": "public_tested",
+  "evidence": [
+   "eis-page-AbsByCounty",
+   "eis-dashboard-AbsStatsByCounty",
+   "eis-abs-election-dates",
+   "eis-abs-20261103-pivot"
+  ],
+  "status": 200,
+  "finding": "Election Date list includes 2026-11-03. County pivot: Total, Sent, Received, Rejected for all 77 counties (59670 sent, 16966 received statewide at retrieval). Administrative mail-absentee counts, not votes or candidate choice; no as-of clock printed."
+ },
+ {
+  "channel_id": "seb-news",
+  "channel": "SEB newsroom releases (2026)",
+  "url": "https://oklahoma.gov/elections/newsroom.html",
+  "access_class": "public_tested",
+  "evidence": [
+   "seb-newsroom",
+   "seb-news-2026-06-12-tips",
+   "seb-news-2026-07-08-ballot-order",
+   "seb-news-2026-07-17-security",
+   "seb-news-2026-10-07-deadlines",
+   "seb-news-2026-10-13-statement"
+  ],
+  "status": 200,
+  "finding": "June 12 release: results on the SEB website after polls close at 7 p.m., auto-refresh recommended. July 8: November ballot order Republican, Democratic, Libertarian, then Independents by lot. Oct 7: Nov 3 deadlines. Oct 13: office evacuation, Secretary says no impact on conducting elections. The newsroom index is script-rendered; releases were located by web search, so the release list is not exhaustive."
+ },
+ {
+  "channel_id": "seb-certification",
+  "channel": "SEB board meetings (certification)",
+  "url": "https://oklahoma.gov/elections/about-us/meeting-notices-agendas-and-minutes.html",
+  "access_class": "public_tested",
+  "evidence": [
+   "seb-meetings-2026",
+   "seb-minutes-2026-06-23",
+   "seb-meetings-2024"
+  ],
+  "status": 200,
+  "november_10_2026_listed": true,
+  "november_10_agenda_tba": false,
+  "finding": "Meeting list includes November 10, 2026 (Tuesday after the election; agenda TBA). June 23, 2026 minutes (scanned) record the 3-0 vote certifying the June 16 primary results at a 5 p.m. meeting; the minutes print no totals. Minutes were posted in September."
+ },
+ {
+  "channel_id": "statutes",
+  "channel": "OSCN statute text",
+  "url": "https://www.oscn.net/applications/oscn/DeliverDocument.asp?CiteID=78592",
+  "access_class": "public_tested",
+  "evidence": [
+   "statute-26-12-101",
+   "statute-26-12-105",
+   "statute-26-14-104",
+   "statute-26-14-115.4",
+   "statute-26-14-123",
+   "statute-26-14-125",
+   "statute-26-7-104",
+   "statute-26-7-116.1",
+   "statute-26-7-136",
+   "statute-51-10",
+   "statute-os26-legislature",
+   "statute-os51-legislature"
+  ],
+  "status": 200,
+  "extracts": {
+   "statute-26-7-104": "26 O.S. \ufffd 7-104 (OSCN 2026) A. At every Primary, Runoff Primary and General Election and any other election conducted by a county election board, each polling place in the state shall open at 7:00 a.m. and shall remain open continuously until 7:00 p.m., and every registered voter of a precinct who presents himself or herself between said hours shall be entitled to vote, as provided by law, provided further, all qualified voters who are in line waiting to vote at 7:00 p.m. shall be allowed to vote. B. 1. A registered voter wishing to vote on election day shall appear at the polling place for his or her assigned precinct. 2. Neither the State Election Board nor any county election board shall utilize vote centers for voting on election day. For the purposes of this section, \"vote center\" means a place where any voter in the entire jurisdiction can vote on election day, regardless of the voter's precinct assignment. Provided, an exception to this requirement may be authorized for a county election board by the Secretary of the State Election Board in the event of an emergency as described in Section 22-101 of this title. The emergency use of a countywide vote center must be limited to the precincts directly impacted by the emergency. 3. Nothing in this subsection shall prohibit the use of subprecincts as described in Section 3-119 of this title, nor shall it prohibit the assignment of precinct officials to serve more than one precinct, if authorized by law, if the precincts share the same election day polling place. C. If any provision of federal law specifies hours for voting in federal elections, the Secretary of the State Election Board shall direct the county election boards to allow voting in all elections held on the same day as such federal elections during the hours specified by federal law.",
+   "statute-26-7-116.1": "26 O.S. \ufffd 7-116.1 (OSCN 2026) A. Provisional ballots shall be available for all elections conducted by the county election board. Provisional ballots shall include all offices, candidates and questions and shall be identical to the regular ballots for each precinct. The Secretary of the State Election Board shall promulgate rules and shall prescribe materials necessary for the implementation of provisional ballots. B. Persons who are not listed in the precinct registry, but who claim to be registered voters in the precinct and eligible to vote in the election, shall be entitled to vote a provisional ballot upon execution of an affidavit prescribed by the Secretary of the State Election Board. Registered voters required to show identification, as described in Section 7-114 , 14-115.4 or 14-121 of this title and who are unable to show one of the acceptable forms of identification described in such sections, shall be entitled to cast a provisional ballot. Persons identified in Section 14-121 of this title shall be entitled to vote a provisional ballot upon execution of an affidavit prescribed by the Secretary of the State Election Board. Persons who are listed in the precinct registry for a partisan primary election, but who dispute the political affiliation indicated by such precinct registry, shall be entitled to vote a provisional ballot for a party other than the one indicated. However, such provisional ballot shall be counted only if evidence is found by the secretary of the county election board of the voter\ufffds valid voter registration in the party for which the provisional ballot was cast. C. Provisional ballots shall be segregated from the regular ballots cast in the precinct in the manner prescribed by the Secretary of the State Election Board and shall not be inserted in the precinct voting device. Information provided by a person who votes a provisional ballot shall be investigated by the secretary of the county election board after the election. A provisional ballot shall be counted only if it is cast in the precinct of the voter\ufffds residence and if evidence of the provisional voter\ufffds valid voter registration, or of the voter\ufffds identity, is found, except a provisional ballot cast by a voter identified in Section 14-121 of this title shall be counted. D. No information concerning provisional ballots, except the number of provisional ballots cast in the county, shall be made public by any election official prior to 1:00 p.m. on Friday following the election. The county sheriff shall secure sealed ballot transfer cases containing provisional ballots that have been counted after 1:00 p.m. on Friday following the election until 5:00 p.m. on Tuesday next succeeding the election or, in the event a recount contest is filed, until such times as the transfer cases are delivered to the district courtroom. E. In the event that the secretary of any county election board is unable to complete the investigation and verification of provisional ballots by 1:00 p.m. on Friday following the election, the Secretary of the State Election Board shall be authorized to extend the period for the investigation and verification of provisional ballots. When such an extension is required by any county for a statewide election, the extension shall apply statewide. The Secretary shall promulgate rules establishing procedures for requesting and granting such extensions. F. All materials used for procuring and casting a provisional ballot shall be retained by the secretary of the county election board for a period of twenty-four (24) months after the day of the election.",
+   "statute-26-7-136": "O.S. \ufffd, __ __ The county election board shall convene at the county courthouse, or at such other place as the county election board may designate on the day of each election, for the purpose of receiving the official precinct returns and shall remain in session until such precinct returns are all delivered. The board shall cause to be accumulated and listed the results of such election, as the official precinct returns are received, in a manner and upon forms prescribed by the Secretary of the State Election Board. The county election board shall use such precinct returns to certify the results of such election for county officers and questions and shall transmit electronically or in writing as prescribed by the Secretary of the State Election Board after 5 p.m. on Friday following the election to the State Election Board the completed county returns for all state officers and questions. Such county returns shall be prima facie evidence of the correctness of the result in the several counties. The State Election Board shall use such county returns to certify the results of such election for all state officers and questions after 5 p.m. on Tuesday next succeeding the election.",
+   "statute-26-12-101": "26 O.S. \ufffd 12-101 (OSCN 2026) A. \ufffdExcept as otherwise provided by law, whenever a vacancy shall occur in the office of a member of the United States House of Representatives from Oklahoma, such vacancy shall be filled at a Special Election to be called by the Governor, who shall issue a Writ of Election within thirty (30) days after such vacancy occurs. B. \ufffdIf the vacancy occurs in the office of a member of the United States House of Representatives in an even-numbered year, the Regular Primary Election, Runoff Primary Election or General Election for that office shall be deemed to also serve as a Special Election to fill the unexpired term as designated by the Governor. \ufffdWithin thirty (30) days after such vacancy occurs, the Governor shall issue a Writ of Election declaring the same, and the candidate elected at the Regular Election shall be deemed to have also been elected at a Special Election to fill the unexpired term. C. \ufffdIf a vacancy or irrevocable resignation occurs in the office of a member of the United States Senate from Oklahoma, the vacancy shall be filled as provided in subsection C of Section 10 of Title 51 of the Oklahoma Statutes. \ufffdThe special election called by the Governor shall be subject to the following provisions: 1. \ufffdA Special Primary, Runoff Primary and General Election shall be held concurrently with the next available regularly scheduled statewide Primary, Runoff Primary and General Election, and a special candidate filing period shall be on the same dates as the regular candidate filing period for those elections; 2. \ufffdProvided, if a vacancy occurs in an even-numbered year on or before March 1, then the special election, if necessary, shall be held that same year in the manner provided in paragraph 1 of this subsection. \ufffdHowever, if the vacancy occurs after March 1 in an even-numbered year, then the special election shall be held at the next subsequent regularly scheduled statewide regular Primary, Runoff Primary and General Elections; 3. \ufffdProvided, if the vacant office is already scheduled to be filled for a full term at the next available regularly scheduled election, then no special election shall be called. \ufffdIn such case, the candidate elected to the office at the regularly scheduled election shall be deemed to also have been elected to fill the vacancy and shall be eligible to assume the office upon the official certification of the election by the State Election Board. 4. \ufffdAn irrevocable resignation shall occur when a member of the United States Senate from Oklahoma provides a written letter of resignation to the Secretary of State as provided in Section 12-119 of this title that serves notice of the Senate member\ufffds resignation on a date certain. D. \ufffdThe proclamation required by Section 12-102 of this title shall serve as the Writ of Election described in this section.",
+   "statute-26-12-105": "O.S. \ufffd, __ __ The successful candidate shall serve the remainder of the unexpired term.",
+   "statute-26-14-104": "O.S. \ufffd, __ __ Absentee ballots shall be returned to the secretary of each county election board no later than 7:00 p.m. the day of the election; provided, absentee ballots that are hand delivered to the county election board as provided in Section 14-108 of this title shall be delivered no later than the end of regular business hours on the day prior to the date of the election.\ufffd",
+   "statute-26-14-123": "26 O.S. \ufffd 14-123 (OSCN 2026) A.\ufffd At 10:00 a.m. on Thursday preceding the election, or at such time thereafter as the secretary of the county election board may desire, the county election board may meet and publicly remove the outer envelopes from all absentee ballots then received, examine and remove properly executed affidavits and place the plain opaque envelopes in a ballot box, locked with three locks.\ufffd The procedure shall be repeated until such time as all ballots have been received.\ufffd Provided, such procedure may begin at an earlier date upon the written approval of the Secretary of the State Election Board. B. \ufffd1. \ufffdThe county election board may designate one or more special absentee voting boards to conduct the removal of outer envelopes and examination of affidavits described in subsection A of this section. \ufffdA special absentee voting board shall consist of two members, neither of whom shall be of the same political party. \ufffdMembers of a special absentee voting board shall be designated by the county election board from a list provided by the secretary of the county election board. \ufffdMembers of a special absentee voting board shall meet the same eligibility requirements as a precinct judge or clerk and shall receive the same compensation as a nursing home absentee voting board. 2. \ufffdThe public shall have the right to be present when a special absentee voting board conducts the removal of outer envelopes and examination of affidavits, but these duties are not required to be performed during a public meeting of the county election board. 3. \ufffdA special absentee voting board so designated shall organize the absentee ballot affidavits they have examined into three groups: a.\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd those the special absentee voting board agrees are properly executed, b.\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd those the special absentee voting board agrees are not properly executed, and c.\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd\ufffd those absentee ballot affidavits about which the special absentee voting board members do not agree. Each group shall be reported to the county election board at a public meeting of the board. 4. \ufffdFor absentee ballot affidavits that the special absentee voting board agrees are properly executed, upon approval of the county election board, the affidavits shall be removed and the plain opaque envelopes shall be eligible to be counted pursuant to law. 5. \ufffdFor absentee ballots that the special absentee voting board agrees are not properly executed pursuant to law, the county election board shall review the affidavits and make a determination as to whether the affidavits should be accepted or rejected pursuant to law. 6. \ufffdFor absentee ballot affidavits on which the special absentee voting board cannot agree about a properly executed affidavit, the county election board shall review the affidavits and make a determination as to whether the affidavits should be accepted or rejected pursuant to law. C. \ufffdWhen an examination of an absentee ballot affidavit is made to determine whether it has been properly executed, such determination shall be based only upon the requirements found in this title for the type of absentee ballot affidavit being examined. \ufffdNo person making such a determination shall substitute his or her own personal preference or judgment in place of the requirements provided by law.",
+   "statute-26-14-125": "OSCN CHALLENGE PAGE (not source text)",
+   "statute-51-10": "OSCN CHALLENGE PAGE (not source text)",
+   "statute-26-14-115.4": "OSCN CHALLENGE PAGE (not source text)"
+  },
+  "phrase_checks": [
+   {
+    "section": "26 O.S. 7-136",
+    "phrase": "after 5 p.m. on Friday following the election",
+    "oscn_record": "statute-26-7-136",
+    "in_oscn": true,
+    "oscn_is_challenge_page": false,
+    "in_legislature_pdf": true
+   },
+   {
+    "section": "26 O.S. 7-136",
+    "phrase": "after 5 p.m. on Tuesday next succeeding the election",
+    "oscn_record": "statute-26-7-136",
+    "in_oscn": true,
+    "oscn_is_challenge_page": false,
+    "in_legislature_pdf": true
+   },
+   {
+    "section": "26 O.S. 12-101(C)(3)",
+    "phrase": "then no special election shall be called",
+    "oscn_record": "statute-26-12-101",
+    "in_oscn": true,
+    "oscn_is_challenge_page": false,
+    "in_legislature_pdf": true
+   },
+   {
+    "section": "26 O.S. 12-101(C)(3)",
+    "phrase": "deemed to also have been elected to fill the vacancy",
+    "oscn_record": "statute-26-12-101",
+    "in_oscn": true,
+    "oscn_is_challenge_page": false,
+    "in_legislature_pdf": true
+   },
+   {
+    "section": "26 O.S. 14-104",
+    "phrase": "no later than 7:00 p.m. the day of the election",
+    "oscn_record": "statute-26-14-104",
+    "in_oscn": true,
+    "oscn_is_challenge_page": false,
+    "in_legislature_pdf": true
+   },
+   {
+    "section": "26 O.S. 14-125",
+    "phrase": "made known to any person nor announced earlier than 7:00 p.m.",
+    "oscn_record": "statute-26-14-125",
+    "in_oscn": false,
+    "oscn_is_challenge_page": true,
+    "in_legislature_pdf": true
+   },
+   {
+    "section": "26 O.S. 14-123",
+    "phrase": "At 10:00 a.m. on Thursday preceding the election",
+    "oscn_record": "statute-26-14-123",
+    "in_oscn": true,
+    "oscn_is_challenge_page": false,
+    "in_legislature_pdf": true
+   },
+   {
+    "section": "26 O.S. 7-104",
+    "phrase": "shall open at 7:00 a.m. and shall remain open continuously until 7:00 p.m.",
+    "oscn_record": "statute-26-7-104",
+    "in_oscn": true,
+    "oscn_is_challenge_page": false,
+    "in_legislature_pdf": true
+   },
+   {
+    "section": "26 O.S. 7-116.1",
+    "phrase": "prior to 1:00 p.m. on Friday following the election",
+    "oscn_record": "statute-26-7-116.1",
+    "in_oscn": true,
+    "oscn_is_challenge_page": false,
+    "in_legislature_pdf": true
+   },
+   {
+    "section": "26 O.S. 14-115.4",
+    "phrase": "without obtaining a printout of results, remove the electronic results storage media",
+    "oscn_record": "statute-26-14-115.4",
+    "in_oscn": false,
+    "oscn_is_challenge_page": true,
+    "in_legislature_pdf": true
+   },
+   {
+    "section": "51 O.S. 10(C)",
+    "phrase": "to serve in such office until a successor is elected",
+    "oscn_record": "statute-51-10",
+    "in_oscn": false,
+    "oscn_is_challenge_page": true,
+    "in_legislature_pdf": true
+   }
+  ],
+  "legislature_pdf_last_modified": {
+   "statute-os26-legislature": "Wed, 31 Dec 2025 02:04:03 GMT",
+   "statute-os51-legislature": "Wed, 31 Dec 2025 04:09:36 GMT"
+  },
+  "finding": "Polls 7 a.m.-7 p.m.; absentee mail by 7 p.m.; absentee results not released before 7 p.m.; county certifies after 5 p.m. Friday; SEB certifies after 5 p.m. the Tuesday after; provisional information withheld until 1 p.m. Friday; U.S. Senate vacancy with a full term already on the ballot needs no special election."
+ },
+ {
+  "channel_id": "wayback",
+  "channel": "Internet Archive copies (third party)",
+  "url": "https://web.archive.org/cdx/search/cdx?url=results.okelections.gov/OKERS/enrapi/&matchType=prefix&output=json&fl=timestamp,original,statuscode,mimetype,length,digest&limit=2000",
+  "access_class": "third_party_archive",
+  "evidence": [
+   "wb-cdx-oker-enrapi",
+   "wb-cdx-seb-2024-november",
+   "wb-cdx-seb-2026-august",
+   "wb-cdx-seb-2026-june",
+   "wb-seb-2024-november-20241105223112",
+   "wb-seb-2024-november-20241106020407",
+   "wb-seb-2024-november-20241108164759",
+   "wb-seb-2026-august-20260827122028",
+   "wb-seb-2026-august-20260910093956"
+  ],
+  "status": 200,
+  "pages": {
+   "wb-seb-2024-november-20241105223112": {
+    "heading": "UNOFFICIAL RESULTS",
+    "provisional_sentence": "will not include provisional ballot results until after 5 p.m. Friday, November 8.",
+    "certification_sentence": "Unless a contest of election or a petition for recount has been filed, county and local results will be certified by county election boards not earlier than 5 p.m. Friday, November 8. Federal and state results will be certified by the State Election Board not earlier than Tuesday, November 12. Results of a race in which a contest of election or a petition for recount has been filed cannot be certified until the contest has been heard or the recount has been completed.",
+    "continuous_update_sentence": true,
+    "memento": "Tue, 05 Nov 2024 22:31:12 GMT"
+   },
+   "wb-seb-2024-november-20241106020407": {
+    "heading": "UNOFFICIAL RESULTS",
+    "provisional_sentence": "will not include provisional ballot results until after 5 p.m. Friday, November 8.",
+    "certification_sentence": "Unless a contest of election or a petition for recount has been filed, county and local results will be certified by county election boards not earlier than 5 p.m. Friday, November 8. Federal and state results will be certified by the State Election Board not earlier than Tuesday, November 12. Results of a race in which a contest of election or a petition for recount has been filed cannot be certified until the contest has been heard or the recount has been completed.",
+    "continuous_update_sentence": true,
+    "memento": "Wed, 06 Nov 2024 02:04:07 GMT"
+   },
+   "wb-seb-2024-november-20241108164759": {
+    "heading": "UNOFFICIAL RESULTS",
+    "provisional_sentence": "will not include provisional ballot results until after 5 p.m. Friday, November 8.",
+    "certification_sentence": "Unless a contest of election or a petition for recount has been filed, county and local results will be certified by county election boards not earlier than 5 p.m. Friday, November 8. Federal and state results will be certified by the State Election Board not earlier than Tuesday, November 12. Results of a race in which a contest of election or a petition for recount has been filed cannot be certified until the contest has been heard or the recount has been completed.",
+    "continuous_update_sentence": false,
+    "memento": "Fri, 08 Nov 2024 16:47:59 GMT"
+   },
+   "wb-seb-2026-august-20260827122028": {
+    "heading": "UNOFFICIAL RESULTS",
+    "provisional_sentence": "will not include provisional ballot results until after 5 p.m. Friday, August 28.",
+    "certification_sentence": "Unless a contest of election or a petition for recount has been filed, results will be certified by county election boards not earlier than 5 p.m. Friday, August 28. State and federal election results will be certified Tuesday, September 1. Results of a race in which a contest of election or a petition for recount has been filed cannot be certified until the contest has been heard or the recount has been completed.",
+    "continuous_update_sentence": true,
+    "memento": "Thu, 27 Aug 2026 12:20:28 GMT"
+   },
+   "wb-seb-2026-august-20260910093956": {
+    "heading": "OFFICIAL RESULTS",
+    "provisional_sentence": null,
+    "certification_sentence": null,
+    "continuous_update_sentence": false,
+    "memento": "Thu, 10 Sep 2026 09:39:56 GMT"
+   }
+  },
+  "oker_api_captures": [
+   {
+    "timestamp": "20250722211800",
+    "path": "getconfig/20180213",
+    "status": "200"
+   },
+   {
+    "timestamp": "20250629165737",
+    "path": "getconfig/20201103",
+    "status": "200"
+   },
+   {
+    "timestamp": "20260830202500",
+    "path": "getconfig/20220628",
+    "status": "200"
+   },
+   {
+    "timestamp": "20241106133100",
+    "path": "getconfig/20241105",
+    "status": "200"
+   },
+   {
+    "timestamp": "20250722211800",
+    "path": "getelec/20180213/SW/xx",
+    "status": "200"
+   },
+   {
+    "timestamp": "20250629165738",
+    "path": "getelec/20201103/SW/xx",
+    "status": "200"
+   },
+   {
+    "timestamp": "20260830202500",
+    "path": "getelec/20220628/SW/xx",
+    "status": "200"
+   },
+   {
+    "timestamp": "20241106133100",
+    "path": "getelec/20241105/SW/xx",
+    "status": "200"
+   },
+   {
+    "timestamp": "20241106133100",
+    "path": "login/",
+    "status": "200"
+   },
+   {
+    "timestamp": "20260830202500",
+    "path": "login/",
+    "status": "200"
+   }
+  ],
+  "finding": "CDX lists 10 archived OKER API URLs, none for a 2026 election. Archived SEB 2024 general and 2026 runoff pages show the unofficial-phase wording (provisional ballots after 5 p.m. Friday; county certification not earlier than 5 p.m. Friday; SEB certification Tuesday)."
+ },
+ {
+  "channel_id": "county-discovery-directory",
+  "channel": "OKCounties county list (KellPro; vendor directory)",
+  "url": "https://okcounties.org/countyData.json",
+  "access_class": "public_tested_non_authority",
+  "evidence": [
+   "okcounties-countydata"
+  ],
+  "status": 200,
+  "finding": "Used only to find county home pages. It is not an election authority; county board pages found through it link back to SEB results."
+ }
+]
