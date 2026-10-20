@@ -75,8 +75,6 @@ rows](data/county-baselines.csv), four-contest native evidence and offline
 calculators cover2024other-seat Senate, separately2024president,2020same-seat
 Senate and actual2018Senate midterm. [Coordinator review](research-review.md)
 documents source/method/null/control reconciliation, independent bounded arithmetic,
-actual CLI tests and the preserved citation correction. Qualified historical
-source authority and the official/map assignments are the next integration
-phase. Current ballot/feed IDs, legal eligible write-ins, physical/current
+actual CLI tests and the preserved citation correction. The [official-source investigation](official-results.md), [source inventory](data/official-results-sources.csv), [map report](precinct-maps.md), [offline atlas](maps/index.html), [newsroom backstops](local-news-results.md) and [collection strategy](live-polling-strategy.md) complete the bounded four-question research package. All 108 priority-parent chains and all 133 parents are retained. Official November setup has 2,528 native objects with zero candidate votes; it is separate from the 2,669 historical observations. Actual official map ZIP/PDF originals cover every parent. These findings establish no approved current leaf or polygon join. Current ballot/feed IDs, legal eligible write-ins, physical/current
 geometry, genuine November counts, cadence, remaining pool and calibrated
 probabilities remain unapproved. Existing race-tracker fields above are unchanged.
