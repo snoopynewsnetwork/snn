@@ -56,7 +56,7 @@ function renderIndex() {
     <td><a class="state-link" href="#race/${escape(race.slug)}"><span class="state-code">${escape(race.code)}</span>${escape(race.state)}</a></td>
     <td><span class="holder">${escape(race.holder)}<span class="party ${escape(race.party.toLowerCase())}">${escape(race.party)}</span></span></td>
     <td><span class="tag ${race.election === "Special" ? "special" : ""}">${escape(race.election)}</span></td>
-    <td>${race.noteCount}</td><td><a class="open-link" href="#race/${escape(race.slug)}" aria-label="Open ${escape(race.state)} race">↗</a></td>
+    <td>${race.noteCount}</td><td><a class="open-link" href="#race/${escape(race.slug)}" aria-label="Open ${escape(race.state)} race"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14"/></svg></a></td>
   </tr>`,
         )
         .join("")
@@ -89,7 +89,7 @@ function renderNotes(category = "") {
   </article>`,
         )
         .join("")
-    : `<div class="empty-state"><strong>No ${category ? escape(categoryNames[category].toLowerCase()) + " " : ""}notes on file yet.</strong>Add dated research with a source to start this race’s reporting log.</div>`;
+    : `<div class="empty-state"><span class="spooky-only empty-ghost" aria-hidden="true">No signs of the living. Yet.</span><strong>No ${category ? escape(categoryNames[category].toLowerCase()) + " " : ""}notes on file yet.</strong>Add dated research with a source to start this race’s reporting log.</div>`;
   for (const button of document.querySelectorAll(".remove-note"))
     button.addEventListener("click", async () => {
       button.disabled = true;
@@ -197,7 +197,7 @@ async function navigate() {
   $("#race-view").hidden = !match;
   if (!match) {
     currentRace = null;
-    document.title = "Snoopy News Network · Senate 2026";
+    document.title = `${document.documentElement.dataset.theme === "spooky" ? "Spoopy" : "Snoopy"} News Network · Senate 2026`;
     return;
   }
   $("#race-view").innerHTML =
