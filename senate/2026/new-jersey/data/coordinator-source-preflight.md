@@ -1,0 +1,13 @@
+# New Jersey primary-source preparation
+
+Preparation only. No question worker, accepted priority, approved November feed or geographic crosswalk is supplied by this file. Actual first-pair workers must independently extract all counties and native reporting units, reconcile the candidate universe and review source disagreements.
+
+The [reproducible original-control extraction](preflight_primary_sources.py) and [retained results](coordinator-primary-preflight.json) parse actual official county-by-candidate Senate PDFs for all 21 counties. The 2024 PDF is dated December 5, 2024: Andy Kim 2,161,491; Curtis Bashaw 1,773,589; Christina Khalil 45,443; Kenneth Kaplan 24,242; Joanne Kuniansky 9,806; Patricia Mooneyham 17,224. Original header flags `(w)` and `*` remain literal and must not be interpreted as write-in status without documentation.
+
+The current 2020 SOS PDF is dated October 14, 2021. It reports Booker 2,541,239; Mehta 1,817,091; Hoffman 38,288; Fernandez 32,290; Burke 11,632. All five full county vectors reconcile to that original. The separately retained House Clerk 2020 PDF reports Booker 2,541,178 and Mehta 1,817,052: SOS is higher by 61 and 39 respectively. Preserve both publications and dates, investigate the correction chronology, and do not allocate or rescale away this 100-vote disagreement. The read-only Clerk original is retained under Michigan with exact hash in the JSON.
+
+The 2026 seat is Class II: 2020 Booker is the same seat; 2024 Kim is the other Class I seat. New Jersey had no 2022 Senate or governor contest. The actual linked 2018 original is now retained: Menendez1,711,654/Hugin1,357,355/Hoffman25,150/Sabrin21,212/Rivera19,897/Flanagan16,101/Kimple9,087/Schroeder8,854, all21county vectors exact. Preserve this separate ClassI midterm comparator; 2022 administrative turnout or House races are separate scopes, not a fabricated statewide candidate contest. County tables do not establish complete native coverage; retain clerk versus board/superintendent roles and all municipal/ward/precinct/central administrative identities actually published.
+
+The current state results authority explicitly directs running election-night returns to county sites; periodic ballot reports are a separate statutory product. Existing News12 positive future-tagged Senate XML/winner flags remain quarantined until election date, test mode, supplier and universe can be admitted. No newsroom winner flag or raw label establishes a current count.
+
+Actual original URLs, retrieval UTC, status, response headers, raw/stored hashes and source text positions remain in [news evidence](news/manifest.json). No original was silently repaired, truncated or relabeled. Every stored object is below 40,000,000 bytes.
