@@ -37,3 +37,20 @@ inspection. Its actual independent turnout peer is
 `a2a3b1cf-ac46-446b-be8d-18390c8885e4`. Those are the only two active
 researchers. Delaware official/maps await reviewed acceptance and actual slots;
 15later states remain queued, with no extra agent or premature admission.
+
+
+## Original source-native threshold independently replayed
+
+The actual first pair remains the only active researchers. Coordinator stdlib
+CSV replay independently confirms10,062 authority/literal-precinct source groups
+and all11,535 full presentations, all108 authorities and raw category rows.
+Printed-known N5,592,368 reaches80% at5,540 contexts/4,474,312, after
+5,539/4,473,789; top15=29,572 and remainder4,522/1,118,056.
+StClair O FALLON3 adds523. Exact full order and priority/remainder arrays match
+the immutable captured baseline proposal. Four administrative-only named pools
+and15 absent Kennedy fields stay null, never observed zeros.
+
+The separate generic-record denominator5,649,779 crosses at5,535/4,520,202;
+county17 sensitivity is not the primary dispatch. Original case-varied generic
+labels remain intact. Final producer source/peer/scenario/asset seals await
+actual handoff; legal-valid native80 robustness/current geography are unapproved.

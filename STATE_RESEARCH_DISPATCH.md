@@ -32,33 +32,29 @@ in the queue, and published commit IDs as packages finish.
 
 ## Progress
 
-**Sixteen new state packages plus retained Michigan are published.** Exact
+**Seventeen new state packages plus retained Michigan are published.** Exact
 reviewed state commits: North Carolina e2241313, Alaska9672f51f, Ohiof5cc934a,
 Mainee0fe91ed, Texas1ffe97de, Iowa47e6a682, Kansas9de81d5c, Georgia9c8ad26f,
 NewHampshire7ad7bb89, Minnesota4e4cfc92, SouthCarolina794a7aed,
-Florida4b03078e, Mississippi78c905c3, Nebraska158fc262 and
-SouthDakota1cffd920e6f02ca23bf17924d1cd2a48a786a99b and
-**Idaho744627cb01b431acdccd3d03e5c5aab07297cc1e**. Each state passed
-its independent source/native/target/map/whole-package and repository review;
-each push was remotely verified. Their source, geography and live-readiness
-qualifications remain explicit rather than converted into current approval.
+Florida4b03078e, Mississippi78c905c3, Nebraska158fc262, SouthDakota1cffd920,
+Idaho744627cb and Coloradof92a04a2696b8e54bc4dc739c3e5a69b3da3218f.
+Each complete state passed independent source/native/target/map/whole-package
+and repository review, with its push independently verified. Historical source
+qualifications remain explicit; current geography and live readiness are separate.
 
-South Dakota's source-only304/all691/66-parent package is complete; certified
-membership robustness remains unproved. Its exact1,508-file state tree includes
-29 county maps,134 native features,96 Census-only priorities and full source
-preservation, with all stored objects below40MB. No genuine November count
-sequence, current geographic join or calibrated probability is admitted.
+The only active researchers are Illinois turnout
+`a2a3b1cf-ac46-446b-be8d-18390c8885e4` and partisanship
+`a7b49f02-905f-4208-b957-fffdb58615bf`. Delaware's complete first pair has
+external historical dispatch acceptance; its official/maps prompts await actual
+released slots. Fifteen later states remain queued. No extra workers, finished
+producer restarts or coordinator replacements have been created.
 
-Idaho is published at744627cb01b431acdccd3d03e5c5aab07297cc1e after all four
-actual workers and independent source/target/official/map/whole-state review.
-The exact2,941-file state tree passed strict object/hash/whitespace and repository
-checks; remote main was independently verified. Colorado official
-`a3b6cf9c-a1de-47fa-b472-ce7491c1f082` and maps
-`356c1a4e-e6b9-4804-82bf-fc1ef28b5516` are the only active workers.
-Both actual launches followed released Idaho slots and fresh profile/provider
-inspection on the accepted complete1,992/3,199/64-parent historical dispatch.
-Seventeen later states remain queued. Publication continues through the full34-state batch.
-
+Illinois's independent source-record replay confirms all10,062 authority/literal
+precinct groups, including four unknown named pools and15 absent Kennedy cells.
+The printed-known source threshold is5,540/4,474,312 of5,592,368, following
+5,539/4,473,789; top15=29,572. Generic-record sensitivity and the17 combined
+county sensitivity stay separate. Neither legal-valid write-in robustness nor
+current geographic membership is approved. Actual first-pair final QA continues.
 
 The following earlier Mississippi checkpoints retain their original pending scopes; the current accepted historical dispatch and actual second-wave IDs are recorded above and at the end.
 
