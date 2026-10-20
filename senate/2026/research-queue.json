@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "requested_date": "2026-10-17",
-  "updated_at_utc": "2026-10-20T19:19:07.863857+00:00",
+  "updated_at_utc": "2026-10-20T19:39:39.076607+00:00",
   "scope": "35 states in the repository 2026 U.S. Senate race index",
   "coordinator_agent_id": "d0fc3534-1613-4883-b48b-21a233fcfd9e",
   "workspace_id": "wks_b290f45007010740",
@@ -8760,7 +8760,7 @@
       "election": "Regular",
       "seat_class": "II",
       "priority": 25,
-      "status": "official-active-qualified-historical-source-dispatch",
+      "status": "official-and-maps-active-from-qualified-full-source-authority",
       "workers": {
         "turnout": {
           "agent_id": "61838d17-5eed-4661-8d3f-e7b5a2825994",
@@ -9011,7 +9011,30 @@
             "path": "senate/2026/virginia/data/coordinator-launches/official-results-initial-prompt.txt",
             "bytes": 11527,
             "sha256": "9e77f596aabc0c77db838ac00be972c25217068a47eb0bcd651be1828e76a21a"
-          }
+          },
+          "directory_lookup_clarification": "data/coordinator-launches/official-directory-lookup-clarification.json"
+        },
+        "precinct-maps": {
+          "agent_id": "f85e5171-e2b8-493b-bbec-9be073c21e6c",
+          "status": "active-independent-full-frozen-replay-and-map-acquisition",
+          "launched_at_utc": "2026-10-20T19:29:23.684126+00:00",
+          "released_by_actual_finish": "302e0938-9d85-4b49-99c1-87bbb564364d",
+          "only_other_active_worker": "fdfeb006-8e44-426d-b527-3e318898b0c4",
+          "provider": "codex/gpt-6.1-sol",
+          "settings": {
+            "modeId": "auto-review",
+            "thinkingOptionId": "high"
+          },
+          "selected_fresh_profile": "Research",
+          "all_four_profile_notes_read": true,
+          "provider_draft_inspected": true,
+          "notifyOnFinish": true,
+          "launch_prompt": {
+            "path": "senate/2026/virginia/data/coordinator-launches/precinct-maps-initial-prompt.txt",
+            "bytes": 8378,
+            "sha256": "04d2b98724f3d9f33d6b919b0b4b22cd6c4eb4043df614dce773d11ff8faff64"
+          },
+          "exact_acceptance_and_contract_reverified_before_launch": true
         }
       },
       "validation": null,
@@ -9170,6 +9193,13 @@
         "full_historical_bodies": 1172,
         "independent_replay_checks": 3478661,
         "scope": "Reported historical candidate+generic source research; producer flags untouched; current/legal/native80/November admission falseunknown; downstream authority PATH ONLY"
+      },
+      "prepared_maps_prompt": {
+        "path": "senate/2026/virginia/data/coordinator-launches/prepared-precinct-maps-prompt.txt",
+        "bytes": 8202,
+        "sha256": "78ee658fc688eade254a73a42b7e8d32cd835e82421d66e6d8ae2a96c9a23ffe",
+        "prepared_only": true,
+        "actual_worker_id": null
       }
     },
     {
@@ -9179,7 +9209,7 @@
       "election": "Regular",
       "seat_class": "II",
       "priority": 26,
-      "status": "first-pair-independently-reviewed-awaiting-same-turnout-reciprocal-slot",
+      "status": "first-pair-reviewed-published-awaiting-same-turnout-reciprocal-slot",
       "workers": {
         "turnout": {
           "agent_id": "5b42c895-68ea-40c4-9b7c-534e46d14d7a",
@@ -9356,7 +9386,17 @@
       },
       "validation": null,
       "gaps": [],
-      "published_commits": [],
+      "published_commits": [
+        {
+          "commit": "8ef208e2f0752a37f5302e66d494623f02e591a3",
+          "scope": "Complete reviewed original first pair/originals/root reviews, not whole-state completion or final reciprocal",
+          "exact_staged_files": 489,
+          "staged_bytes": 172517958,
+          "maximum_object_bytes": 29769765,
+          "push_exit": 0,
+          "remote_exact_verified": true
+        }
+      ],
       "state_specific_notes": "No 2024 Senate contest. 2024 president, 2022 Senate recent midterm/other seat and 2020 same-seat Senate distinct. Verify actual 2026 statewide Senate rules/slate separately from congressional special-primary/redistricting changes.",
       "coordinator_preparation": "Regional newsroom and state-specific strategy drafts, bounded captures and offline hash/source-state checks prepared; no question agents launched or complete state package claimed.",
       "prepared_first_pair_prompts": {
@@ -9443,7 +9483,7 @@
       "election": "Regular",
       "seat_class": "II",
       "priority": 27,
-      "status": "baseline-active-turnout-original-first-finished",
+      "status": "first-pair-independently-reviewed-awaiting-same-turnout-reciprocal-slot",
       "workers": {
         "turnout": {
           "agent_id": "43866295-c1c8-4f15-8933-67a99b3454c0",
@@ -9524,7 +9564,7 @@
         },
         "partisanship": {
           "agent_id": "302e0938-9d85-4b49-99c1-87bbb564364d",
-          "status": "active-original-first-independent-extraction",
+          "status": "complete-sealed-pending-independent-coordinator-review",
           "launched_at_utc": "2026-10-20T19:05:10.255696+00:00",
           "released_by_actual_finish": "f2db457b-3e3c-47d0-a65c-7d6be8bbe5c7",
           "turnout_also_actually_finished": true,
@@ -9551,6 +9591,40 @@
             "balanced_source_nodes": 31970,
             "own_original_first_before_peer_derivatives": true,
             "peer_phase": "capturing finished turnout read-only; no contact/restart"
+          },
+          "latest_captured_peer_reconciliation": {
+            "checks": 120916,
+            "differences": 0,
+            "all_shared_full_orders": 20,
+            "native": 2841,
+            "priority": 1056,
+            "remainder": 1785,
+            "all_parents": 75,
+            "denominator": 1182676,
+            "integer80threshold": 946141,
+            "preceding": 946007,
+            "crossing_prefix": 946377,
+            "scope": "Own original-first freeze precedes exact finished-T capture. No peer contact/restart/value adoption. Historical numeric agreement only; producer still active scenarios/CLI/QA, no finish/releasedslot inferred."
+          },
+          "final_handoff": {
+            "manifest_sha256": "6d320e1b8b87fbea6788a7343544e39fab21dc81019c6f3e63251ba81baee8c4",
+            "seal_sha256": "65b1de23e7354ededcb3df40dc2be6f4aaea02efea3bf3191b1d1b66aecc7f22",
+            "owned_assets": 313,
+            "county_source_contest_rows": 675,
+            "native_source_contest_rows": 23749,
+            "positional_candidate_method_rows": 300887,
+            "historical_models": 29,
+            "tie_plus1_scenarios": 58,
+            "unit_targets": 83690,
+            "actual_synthetic_CLI_cases": 60,
+            "expected_invalid": 42,
+            "extra_actual_native_and_named_Libertarian_CLI_runs": 2,
+            "final_peer_comparison": 162714,
+            "prior_normalized_raw_partial_comparison_superseded": 120916,
+            "final_sealed_checks": 65365,
+            "maximum_file_bytes": 32689131,
+            "source_numeric_repairs_or_peer_adoption": false,
+            "coordinator_accepted": false
           }
         }
       },
@@ -9601,6 +9675,60 @@
           "sha256": "0cc04148ac6d7dd00b2e54e7548abc4b580e1237a6303df8860a2ac53b064e9a"
         },
         "scope": "Untracked ignored preparation bytecode, not source inputs. Exact opaque bytes retained before same-file removal; actor/time not attributed. No original/source/news-manifest edit."
+      },
+      "coordinator_turnout_original_review": {
+        "path": "data/coordinator-turnout-original-review.json",
+        "checks": 613570,
+        "full_receipts": 490,
+        "complete_original_workbook_rows": 69355,
+        "selected_rows": 19887,
+        "all_raw_typed_positions": 198870,
+        "whole_county_result_bodies": 225,
+        "whole_native_objects": 7880,
+        "whole_turnout_envelopes": 225,
+        "full_orders": 20,
+        "source_FullData_API_differences_retained": 19,
+        "no_producer_writes_or_current_approval": true
+      },
+      "coordinator_first_pair_review": {
+        "turnout_original": {
+          "path": "data/coordinator-turnout-original-review.json",
+          "checks": 613570
+        },
+        "baseline_original": {
+          "path": "data/coordinator-baseline-original-review.json",
+          "checks": 1212814
+        },
+        "math": {
+          "path": "data/coordinator-baseline-math-review.json",
+          "checks": 1517309,
+          "source_models": 29,
+          "state_targets": 58,
+          "unit_targets": 83690,
+          "max_shift_difference": 1.1102230246251565e-15,
+          "max_output_net_residual_votes": 2.6045616774439395e-09
+        },
+        "CLI": {
+          "path": "data/coordinator-baseline-cli-review.json",
+          "actual_cases": 73,
+          "expected_invalid": 62
+        },
+        "history": {
+          "path": "data/coordinator-first-pair-history-review.json",
+          "checks": 178,
+          "original_turnout_members": 19,
+          "original_baseline_members": 10,
+          "captured_peer_bodies": 47
+        },
+        "source_model_or_calculator_repairs_needed": false,
+        "current_legal_geographic_approval": false
+      },
+      "prepared_same_turnout_reciprocal": {
+        "path": "senate/2026/arkansas/data/coordinator-launches/prepared-turnout-reciprocal-prompt.txt",
+        "bytes": 5377,
+        "sha256": "7c02129be69007a4ee10fb40d33ca9b081b5ca3bce870dd11c4ddc839f28f087",
+        "prepared_only": true,
+        "actual_resume_yet": false
       }
     },
     {
@@ -10266,8 +10394,8 @@
     "requested_new_states": 34,
     "all_requested_complete": false,
     "actual_active_researchers": [
-      "302e0938-9d85-4b49-99c1-87bbb564364d",
-      "fdfeb006-8e44-426d-b527-3e318898b0c4"
+      "fdfeb006-8e44-426d-b527-3e318898b0c4",
+      "f85e5171-e2b8-493b-bbec-9be073c21e6c"
     ],
     "unlaunched_new_states": 7,
     "source": "Actual finish/launch callbacks and exact reviewed publication commits, not agentstatuspolls"
