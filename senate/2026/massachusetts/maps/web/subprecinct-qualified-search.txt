@@ -1,0 +1,316 @@
+MassGIS Data: 2022 Subprecincts | Mass.gov (https://www.mass.gov/info-details/massgis-data-2022-subprecincts)
+citeturn100search0 [wordlim: 200] Published: 3.0 years ago; Crawled: 3 days ago;   * This page, MassGIS Data: 2022 Subprecincts, is   offered by ... After every national decennial census, voting districts are redelineated to accommodate changes in both population counts and the location of those populations to achieve equitable representation in government. ... The determination of which portion of the precinct is classified as a subprecinct area is established through geographic identification of the 2020 Census blocks and tracts assigned to State and/or Congressional districts in the legislation. ... The Subprecincts layer's polygon attribute table contains the following fields (with field name aliases in the MassGIS database):
+
+  * This page, MassGIS Data: 2022 Subprecincts, is   offered by
+  * MassGIS (Bureau of Geographic Information)
+  * Show more
+
+# MassGIS Data: 2022 Subprecincts
+
+October 2023
+
+Subprecincts represent areas within individual precincts that have been assigned to a State and/or Congressional voting district that is different than those assigned to other areas within that same precinct. Voting resources, including your voting location along with ward and precinct, can be found on the Secretary of the Commonwealth’s website.
+
+## Downloads
+
+Download this data   Where do I vote?  View in an online map  ArcGIS Online Map Service  ArcGIS Online Feature Service 
+
+## Overview
+
+After every national decennial census, voting districts are redelineated to accommodate changes in both population counts and the location of those populations to achieve equitable representation in government. This process is commonly referred to as “redistricting” when it affects districts at the federal level (Congressional districts) and the state level (State House and State Senate legislative districts, and the Governor’s Council districts), and as “reprecincting” when it affects districts at the local level (municipal wards and precincts). An additional distinction is that the districts at the federal and state levels are voted on and approved by the state legislature and Governor whereas wards and precincts are approved by the Local Election Districts Review Commission (LEDRC) in accordance with state law.
+
+Redistricting and reprecincting make use of the updated Census geography and population counts produced for that purpose in the U.S. Census Redistricting File (Public Law 94-171) Dataset. However, operational challenges encountered during the COVID-19 pandemic delayed the release of the 2020 U.S. Census redistricting file by several months. In previous decennial efforts, cities and towns have used that data to update their local voting district boundaries as a precursor to those updated wards and precincts being used in the redistricting efforts at the state and federal levels. But in October 2021 legislation was passed that allowed State and Congressional voting districts to be updated before the local reprecincting updates were complete. State and Congressional voting districts were updated and legally approved in November of 2021, influenced by ward and precinct boundaries established after the 2010 Census, not the 2020 Census.
+
+  * Congressional Districts, Chapter 93 of the Acts of 2021
+  * Representative Districts, Chapter 83 of the Acts of 2021
+  * Senatorial Districts, Chapter 82 of the Acts of 2021
+  * Governor’s Council, Chapter 92 of the Acts of 2021
+
+When the local wards and precincts were fully updated and approved by the revised December 15, 2021 deadline set by the October 2021 legislation, many of the redelineated precincts had partial areas assigned to different updated State and/or Congressional districts than other areas within the same precinct. Functionally, this means voters in each of these precincts have the same voting options and representatives in local government elections but are split up in State and/or Congressional elections. To ensure ballots with the correct voting options are generated for each voter in these precincts, subprecincts have been defined, named, and developed as a geographic data set by the Secretary of the Commonwealth’s Elections Division.
+
+Subprecincts represent areas within individual precincts that have been assigned to a State and/or Congressional voting district that is different than those assigned to other areas within that same precinct. The determination of which portion of the precinct is classified as a subprecinct area is established through geographic identification of the 2020 Census blocks and tracts assigned to State and/or Congressional districts in the legislation. Subprecinct boundaries are coincident with the “parent” precinct boundary except where the split in State and/or Congressional representation occurs; in those locations the subprecinct boundary is coincident with the State and/or Congressional voting district boundary.
+
+The layer is named SUBPRECINCTS2022_POLY.
+
+### Example: Precincts in the town of Acton
+
+The first set of maps (Figure 1) shows the six precincts approved in 2012 using 2010 Census data and the  seven precincts approved in 2022 using 2020 Census data. An increase in population was responsible for the addition of a new precinct in 2022 and required redelineation of the previous precincts.
+
+Image: Precincts 2012 vs 2022
+
+Figure 1
+
+In the next two maps (Figure 2), both the older and newer Acton precincts are shown along with the updated 2022 Massachusetts House of Representatives District boundaries. The boundary between the 14^{th} Middlesex and 37^{th} Middlesex districts in Acton is perfectly coincident with the 2012 Acton precinct boundaries, but splits Acton Precinct 6 in the 2022 precincts. This indicates that the 2022 House district boundaries were updated prior to the Acton Precincts being updated and approved. After the Acton precincts were updated, some voters in Precinct 6 belonged to the 14^{th} Middlesex district and others belonged to the 37^{th} Middlesex district instead of all being assigned to a single House district.
+
+Image: Precincts 2012 vs 2022 and 2022 House districts
+
+Figure 2
+
+The next map (Figure 3) shows that section of Acton Precinct 6 assigned to the 37th Middlesex District represented by the new subprecinct “6A”. It remains a part of Acton Precinct 6.
+
+Image: Precincts 2012 vs 2022 and 2022 House districts and Subprecinct 6A
+
+Figure 3
+
+All voters in Acton Precinct 6 should have the same candidate options listed for local elections on their ballots.  But the voters in subprecinct 6A will see Massachusetts House of Representative candidates for the 37^{th} Middlesex District while the rest of Precinct 6 will see the 14^{th} Middlesex District candidates on their ballots.
+
+## Production
+
+Subprecinct geography is maintained separately from the wards and precincts geography, but the two must co-exist and be used together when voting district maps and election ballots are involved. 
+
+Chapter 82, Chapter 83, and Chapter 93 of the State Legislative Acts of 2021 defined district areas by referencing cities/towns and/or 2020 Census voting district (VTD) geographies and 2020 Census Block geographies. The 11-digit VTD values represent Census tracts, and Census blocks are represented by 15-digit ID values. More information about Census geography IDs 
+
+Using block reports that associated 2020 Census blocks with the updated districts, the Secretary of the Commonwealth’s Elections Division identified those blocks with attributes uncommon from the majority of the blocks in each district. After verification with GIS, those blocks were aggregated into subprecinct areas and assigned identifiers as defined in the Attributes section below.
+
+MassGIS performed additional QA and provided some basic standardization of attribution to facilitate display and use of the data by GIS practitioners.
+
+While the subprecincts in this data layer are the product of the Secretary of Commonwealth’s Elections Division for purposes of elections administration, a small number of subprecincts are established by law but do not exist in this data. These excluded subprecincts create unique polling places within each precinct where they exist and are functionally different than the subprecincts needed to ensure correct ballot options are available to voters when those options are different within a precinct. Some examples of these excluded subprecincts. 
+
+## Attributes
+
+The Subprecincts layer's polygon attribute table contains the following fields (with field name aliases in the MassGIS database):
+
+Field  | Description
+--- | ---
+PARENT_PCT  | (Parent Precinct) – The current precinct (updated after the 2020 Census) that the subprecinct exists inside of. These names match the WP_NAME (Ward and Precinct Name) values found in the 2022 Wards and Precincts data layer.
+SUBPRECINCT  | (Subprecinct) – The identifier assigned to the subprecinct. This subprecinct identifier is derived from the WP_DISTRICT (Ward and Precinct District) value of the parent precinct and appends an alphabetic character if the WP_DISTRICT value ends in a number or appends a number if the WP_DISTRICT value ends with an alphabetic character.
+Examples:
+ - Parent precinct "Andover Precinct 4" has a subprecinct "4A".
+ - Parent precinct "Braintree Precinct 3B" has a subprecinct "3B1".
+ - Parent precinct "Framingham Precinct 21" has three subprecincts, "21A", "21B", and "21C".
+CNGRS_DIST  | (Congressional District) – If this field is populated, it represents the Congressional district assigned to the voters in the subprecinct that is different than the Congressional district(s) assigned to the voters in the remainder of the parent precinct.
+HOUSE_DIST  | (House District) – If this field is populated, it represents the Massachusetts House of Representatives district assigned to the voters in the subprecinct that is different than the Massachusetts House of Representatives district(s) assigned to the voters in the remainder of the parent precinct.
+SENAT_DIST  | (Senate District) – If this field is populated, it represents the Massachusetts Senate district assigned to the voters in the subprecinct that is different than the Massachusetts Senate district(s) assigned to the voters in the remainder of the parent precinct.
+TOWN  | (Town) – The name of the city or town that the subprecinct exists within.
+TOWN_ID  | (Town ID) – The MassGIS city/town ID (1-351) assigned to the TOWN.
+
+** Every subprecinct will have a value in one or more of the CNGRS_DIST, HOUSE_DIST, and SENAT_DIST fields that provide the justification for the subprecinct’s creation.
+
+## Maintenance
+
+The subprecinct data is maintained by the Secretary of the Commonwealth’s Office. Any approved updates will be sent to MassGIS and made available as needed, and the metadata will be updated to reflect them.
+
+The current subprecincts should be rendered obsolete after the 2030 U.S. Census and its subsequent redistricting effort.
+
+Any additional questions about subprecincts should be directed to ma2020census@sec.state.ma.us.
+
+## Update
+
+  * September 27, 2023 – Groton subprecinct 3A was eliminated by legislation.  
+
+Date published:  | October 31, 2023--------------------------------------------------------------------------------
+Session Law - Acts of 2022 Chapter 331 (https://malegislature.gov/Laws/SessionLaws/Acts/2022/Chapter331)
+citeturn100search1 [wordlim: 200] Published: 3.8 years ago; Crawled: last month; This polling place shall be known as ward 2, precinct 3. ... The election commission shall divide the precincts set forth in sections 2 and 3 into 2 subprecincts, and only the names of voters who reside in each such subprecinct shall appear on the voting list for said subprecinct.
+
+# Chapter 331
+
+ Print Page
+
+Prev ious Next
+
+## AN ACT PROVIDING FOR VOTING PRECINCTS IN THE CITY OF REVERE
+
+Be it enacted by the Senate and House of Representatives in General Court assembled, and by the authority of the same, as follows:
+
+SECTION 1. Chapter 22 of the acts of 2012 is hereby repealed.
+
+SECTION 2. Notwithstanding any general or special law to the contrary, ward 2, precinct 3 of the city of Revere shall be 1 precinct for the purpose of forming congressional, representative, senatorial or councilor districts, but shall have 2 polling places for the purpose of voting at any federal, state or municipal election.
+          One of these polling places shall be located at or near the Carl Hyman Towers located at 50 Walnut avenue to serve the voters residing in the area bound by Kimball avenue to the north, by Walnut avenue to the east, stretching from Kimball avenue to Shirley avenue, then by Sumner street to the east, stretching from Shirley avenue to Franklin avenue, then by Franklin avenue and Hichborn street to the southwest, and VFW parkway to the west, stretching from Franklin avenue and Hichborn street northeast of VFW parkway to Kimball avenue. This polling place shall be known as ward 2, precinct 3.
+          The other polling place shall be located at or near the Carl Hyman Towers located at 50 Walnut avenue to serve the voters residing in the area bound by Sumner street to the west, stretching from Shirley avenue to Franklin avenue, then by Shirley avenue to the north, stretching from Sumner street to Walnut avenue, then by Walnut avenue to the east, by Campbell avenue and Fitzhenry square to the southeast, by Centennial avenue to the southeast, and by Franklin avenue to the southwest. This polling location shall be known as ward 2, precinct 3A.
+
+SECTION 3. Notwithstanding any general or special law to the contrary, ward 5, precinct 1 of the city of Revere shall be 1 precinct for the purpose of forming congressional, representative, senatorial or councilor districts, but shall have 2 polling places for the purpose of voting at any federal, state or municipal election.
+          One of these polling places shall be located in the Point of Pines neighborhood in the city of Revere to serve the voters residing north of Mills avenue at the point of intersection of Mills avenue and North Shore road. This includes all of the Point of Pines neighborhood, 182 to 371 North Shore road and 628 to the end of Revere Beach boulevard. This polling location shall be known as ward 5, precinct 1.
+          The other polling place shall be located at or near the Jack Satter House located at 420 Revere Beach boulevard to serve the voters residing south of Mills avenue at the point of intersection of Mills avenue and North Shore road. This includes people residing at the following addresses: 420 to 624 Revere Beach boulevard; 780 to 808 North Shore road; the even number addresses at 810 to 824 North Shore road; the odd number addresses at 35 to 81 Oak Island street; the odd number addresses on Alice street; 32 to 65 Glenwood street; the odd number address at 69 to 89 Glendale street; and all voters residing on Dashwood street and Vera street. This polling location shall be known as ward 5, precinct 1A.
+
+SECTION 4. The election commission of the city of Revere may take all necessary actions to assure compliance with this act including, but not limited to, such actions as assuring the accuracy of the voting lists located at the polling place as set forth in this act. The election commission shall divide the precincts set forth in sections 2 and 3 into 2 subprecincts, and only the names of voters who reside in each such subprecinct shall appear on the voting list for said subprecinct.
+
+Approved, December 28, 2022.--------------------------------------------------------------------------------
+OKLAHOMA STATUTES (https://www.oklegislature.gov/OK_Statutes/CompleteTitles/os26.pdf)
+citeturn100search12 [wordlim: 200] Published: 8 months ago; polling place for the affected precinct, one notice posted at the ... 1, 2019; Laws 2022, c. 44, § 1, emerg. ... Creation of subprecincts.
+changes have been posted and mailed as provided in this paragraph 
+for thirty (30) days.  One notice shall be posted at the door of the 
+polling place for the affected precinct, one notice posted at the 
+door of the county courthouse and one notice shall be mailed to the 
+State Election Board. 
+4.  The registration of each registered voter affected by such 
+change shall be transferred as provided by law by the secretary of 
+the county election board without any request from the voter. 
+5.  Each registered voter whose registration is transferred as 
+hereinbefore provided shall be notified of such transfer in writing 
+by the secretary of the county election board.  At the same time, 
+the voter shall be issued a new voter identification card and shall 
+be instructed to destroy his or her former voter identification 
+card. 
+Added by Laws 1974, c. 153, § 3-118, operative Jan. 1, 1975.  
+Amended by Laws 1990, c. 213, § 4, emerg. eff. May 18, 1990; Laws 
+2019, c. 491, § 19, eff. Nov. 1, 2019; Laws 2022, c. 44, § 1, emerg. 
+eff. April 21, 2022. 
+ 
+§26-3-118.1.  Repealed by Laws 1990, c. 213, § 6, eff. Oct. 1, 1992. 
+NOTE:  Section 6 of Laws 1990, c. 213, repealing this section, was 
+amended by Laws 1991, c. 311, § 1 to read:  "Section 5 of this act 
+shall be repealed October 1, 1992." 
+ 
+§26-3-119.  Creation of subprecincts. 
+If fewer than one thousand five hundred (1,500) registered 
+voters are affected, an area constituting the maximum area possible 
+without crossing boundaries of any district court judicial district 
+electoral division or any congressional, legislative or county 
+commissioner district may be designated as a subprecinct. 
+Oklahoma Statutes - Title 26. Elections 
+Page 42--------------------------------------------------------------------------------
+Hearing Details - Special Joint Committee on Redistricting (https://malegislature.gov/Events/Hearings/Detail/4028)
+citeturn100search2 [wordlim: 200] Published: 5.0 years ago; Crawled: last week; We used 2020 numbers, and House 4118 really was the guiding principle for how we were going to do reprecincting this time around. ... Separate of those issues that have been talked about, and I'm not going to focus too much on the Senate side because I do think there's been a lot of folks from Mass Vote, Tanisha Sullivan from NAACP-- there's been a lot of talk about the Senate seat and the Brockton Randolph connection. ... Back in the 2010-2011 process, we were bequeathed with a subdistrict resulting from the Congressional district, and what we have learned is that every subdistrict is just like a separate precinct. ... And basically, it says, in a polling place for subprecincts created under the act, in a location in the same building as for an existing precinct, no additional election officers are needed to do a subprecinct. ... There are 2,158 precincts in the entirety of Massachusetts, and if you break it down into census blocks, which is the foundation of all this, there's 107,206 census blocks.
+Thank you so much. Chairman Moran.
+
+Thank you, Charles, and please like yourself and Topsfield and a few other municipalities where we can tweak and where we can move. We want to be helpful. Absolutely, we do. So if you can send those over to me and my staff, we'll definitely-- if we can do it, we will.
+
+Additionally, 10 years ago, when we did the bill, section 11 of the bill, we put in that bill that-- and my intent is to do that again in the House side. And basically, it says, in a polling place for subprecincts created under the act, in a location in the same building as for an existing precinct, no additional election officers are needed to do a subprecinct. So we are trying everything we can to work on language that at least brings down the cost of some of these subprecincts where we can. So we'll be doing that again this time around.
+
+I appreciate it, Mr. Chairman. I just want to bring to your attention-- a lot of those precincts, they have two different ballot styles, two different voting lists. It's actually safer to separate them. --------------------------------------------------------------------------------
+CITY COUNCIL (https://rhsconstructionproject.com/wp-content/uploads/2023/03/2022-10-17-City-Council-Full-Minutes-3728.pdf)
+citeturn100search13 [wordlim: 200] Published: last year; September 19, 2022 ... This polling place shall be known as ward 2, precinct 3. ... commission shall divide the precincts set forth in sections 2 and 3 into two subprecincts, and
+Revere to serve the voters residing north of Mills avenue at the point of intersection of Mills 
+avenue and North Shore road. This includes all of the Point of Pines neighborhood, 182-371 
+North Shore road and 628 to the end of Revere Beach boulevard. This polling location shall be 
+known as ward 5, precinct 1. 
+The other polling place shall be located at or near the Jack Satter House located at 420 Revere 
+Beach boulevard to serve the voters residing south of Mills avenue at the point of intersection 
+of Mills avenue and North Shore road. This includes people residing at the following 
+addresses: 420-624 Revere Beach boulevard, 780- 808 North Shore road, the even number 
+addresses at 810-824 North Shore road, the odd number addresses at 35-81 Oak Island street, 
+the odd number addresses on Alice street, 32-65 Glenwood street, the odd number address at 
+69-89 Glendale street, and all voters residing on Dashwood street and Vera street. This polling 
+location shall be known as ward 5, precinct 1A. 
+SECTION 4. The election commission of the city of Revere may take all necessary actions to 
+assure compliance with this act including, but not limited to, such actions as assuring the 
+accuracy of the voting lists located at the polling place as set forth in this act. The election 
+commission shall divide the precincts set forth in sections 2 and 3 into two subprecincts, and 
+only the names of voters who reside in each such subprecinct shall appear on the voting list 
+for said subprecinct. 
+Packet Pg. 13--------------------------------------------------------------------------------
+STATE OF OKLAHOMA (https://www.oklegislature.gov/cf_pdf/2025-26%20INT/hB/HB1865%20INT.PDF)
+citeturn100search14 [wordlim: 200] Published: 7 months ago; 2022 (26 O.S. ... centers; providing exception; clarifying subprecincts ... precinct polling place and in-person absentee voting location shall
+STATE OF OKLAHOMA 
+ 
+1 
+2 
+3 
+4 
+5 
+ 
+1st Session of the 60th Legislature (2025) 
+ 
+HOUSE BILL 1865 
+By: Roberts 
+ 
+ 
+ 
+ 
+ 
+6 
+AS INTRODUCED 
+ 
+7 
+8 
+9 
+10 
+11 
+12 
+13 
+14 
+15 
+16 
+An Act relating to elections; amending Section 1, 
+Chapter 291, O.S.L. 2022 (26 O.S. Supp. 2024, Section 
+6-104.1), which relates to paper ballots; directing 
+for ballots to be printed in advance of election; 
+permitting certain additional ballots be printed; 
+clarifying does not apply to printing or marking of 
+ballots for certain persons; amending 26 O.S. 2021, 
+Section 7-104, which relates to hours for voting; 
+clarifying applicability to county election board; 
+directing that voter appear at assigned polling 
+place; prohibiting voting centers; clarifying voting 
+centers; providing exception; clarifying subprecincts 
+are not prohibited; providing an effective date; and 
+declaring an emergency. 
+ 
+ 
+ 
+ 
+BE IT ENACTED BY THE PEOPLE OF THE STATE OF OKLAHOMA: 
+17 
+SECTION 1.     AMENDATORY     Section 1, Chapter 291, O.S.L. 
+18 
+2022 (26 O.S. Supp. 2024, Section 6-104.1), is amended to read as 
+19 
+follows: 
+20 
+Section 6-104.1.  A.  All ballots used for any election shall be 
+21 
+printed on paper to ensure a fair and accurate count; provided, each 
+22 
+precinct polling place and in-person absentee voting location shall 
+23 
+provide a means for any voter who requires assistance by reason of 
+24 
+blindness, disability, or inability to read or write to cast a 
+Req. No. 11688 
+Page 1--------------------------------------------------------------------------------
+Bill H.5328 (https://malegislature.gov/Bills/192/H5328.Html)
+citeturn100search3 [wordlim: 200] Published: 4.1 years ago; Crawled: 3 weeks ago; This polling place shall be known as ward 2, precinct 3. ... The election commission shall divide the precincts set forth in sections 2 and 3 into two subprecincts, and only the names of voters who reside in each such subprecinct shall appear on the voting list for said subprecinct.
+This includes all of the Point of Pines neighborhood, 182-371 North Shore road and 628 to the end of Revere Beach boulevard. This polling location shall be known as ward 5, precinct 1.
+
+ The other polling place shall be located at or near the Jack Satter House located at 420 Revere Beach boulevard to serve the voters residing south of Mills avenue at the point of intersection of Mills avenue and North Shore road. This includes people residing at the following addresses: 420-624 Revere Beach boulevard, 780- 808 North Shore road, the even number addresses at 810-824 North Shore road, the odd number addresses at 35-81 Oak Island street, the odd number addresses on Alice street, 32-65 Glenwood street, the odd number address at 69-89 Glendale street, and all voters residing on Dashwood street and Vera street. This polling location shall be known as ward 5, precinct 1A.
+
+ SECTION 4. The election commission of the city of Revere may take all necessary actions to assure compliance with this act including, but not limited to, such actions as assuring the accuracy of the voting lists located at the polling place as set forth in this act. The election commission shall divide the precincts set forth in sections 2 and 3 into two subprecincts, and only the names of voters who reside in each such subprecinct shall appear on the voting list for said subprecinct.--------------------------------------------------------------------------------
+An Act 
+ENROLLED HOUSE 
+BILL NO. 1865 
+By: Roberts (https://legiscan.com/OK/text/HB1865/id/3279473/Oklahoma-2026-HB1865-Enrolled.pdf)
+citeturn100search15 [wordlim: 200] Published: 7 months ago; 2022 (26 O.S. ... centers; providing exception; clarifying subprecincts ... precinct polling place and in-person absentee voting location shall
+--------------------------------------------------------------------------------
+1 
+ 
+SENATE FLOOR VERSION 
+April 22, 2025 
+2 
+AS A (https://legiscan.com/OK/text/HB1865/id/3219568/Oklahoma-2025-HB1865-Amended.pdf)
+citeturn100search16 [wordlim: 200] Published: 7 months ago; 2022 (26 O.S. ... centers; providing exception; clarifying subprecincts ... precinct polling place and in-person absentee voting location shall
+--------------------------------------------------------------------------------
+81 
+ 
+ 
+ 
+ 
+HOUSE JOURNAL 
+ 
+ 
+First Regular Sessi (https://members.okhouse.gov/Journals/HJ2025/2025%20HLeg%20Day2.pdf)
+citeturn100search17 [wordlim: 200] Published: 1.5 years ago; 2022 (26 O.S. ... 2024, Section 6-104.1), which relates to paper ballots; directing for ballots to be ... board; directing that voter appear at assigned polling place; prohibiting voting centers;clarifying voting centers; providing exception; clarifying subprecincts are not prohibited;
+--------------------------------------------------------------------------------
+MSCODE (https://unicourt.github.io/cic-code-ms/transforms/ms/ocms/r74/gov.ms.code.title.23.html)
+citeturn100search4 [wordlim: 200] Published: 7.3 years ago; Crawled: 3.9 years ago; Fixing supervisors districts, voting precincts and voting places; purchase of property and construction, repair, renovation, maintenance, etc. of polling places; availability of facilities for use as polling place [Effective until July 1, 2019]. ... 547, 20 So. 2d 85, 1944 Miss. ... The board of supervisors shall cause an entry to be made on the minutes of the board at some meeting, as early as convenient, defining the boundaries of the several supervisors districts, sub-precincts and voting precincts in the county, and designating the voting place in each voting precinct; and as soon as practicable after any change is made in any supervisors district, sub-precincts, voting precinct or any voting place, the board of supervisors shall cause the change to be entered on the minutes of the board in such manner as to be easily understood.Precinct boundaries may be changed only during the times provided in Section 23-15-283.
+--------------------------------------------------------------------------------
+Utah Legislature HB0035 (https://le.utah.gov/~2024/bills/hbillint/HB0035.htm)
+citeturn100search5 [wordlim: 200] Crawled: 2.8 years ago; 4091          (b) The polling place shall be within the combined voting precinct or within 1/2 mile ... 4097          (b) If only two precincts are combined, the polling place shall be within the combined
+--------------------------------------------------------------------------------
+Utah Legislature SB0033 (https://le.utah.gov/~2019/bills/sbillint/SB0033.htm)
+citeturn100search6 [wordlim: 200] Crawled: 7.7 years ago; 1547          (c) election day voting center, in accordance with Subsection 20A-3-703(2). ... 1556     precinct, each early voting polling place, and each election day voting center, including any
+--------------------------------------------------------------------------------
+MSCODE (https://unicourt.github.io/cic-code-ms/transforms/ms/ocms/r75/gov.ms.code.title.23.html)
+citeturn100search7 [wordlim: 200] Published: 7.0 years ago; Crawled: 3.9 years ago; Both Democratic and Republican primaries are to be held at regularly designated polling place in each precinct; there is no prescribed distance by which primaries of different parties must be separated. ... The 2017 amendment, in the second sentence of (1), substituted “election commissioners” for “commissioners of election” and “voter rolls as electronically maintained by the Statewide Elections Management System” for “registration books”; and added (2) and (3). ... The board of supervisors shall cause an entry to be made on the minutes of the board at some meeting, as early as convenient, defining the boundaries of the several supervisors districts, sub-precincts and voting precincts in the county, and designating the voting place in each voting precinct; and as soon as practicable after any change is made in any supervisors district, sub-precincts, voting precinct or any voting place, the board of supervisors shall cause the change to be entered on the minutes of the board in such manner as to be easily understood.Precinct boundaries may be changed only during the times provided in Section 23-15-283.
+--------------------------------------------------------------------------------
+Utah Legislature SB0033 (https://le.utah.gov/~2019/bills/sbillenr/SB0033.htm)
+citeturn100search8 [wordlim: 200] Crawled: 7.6 years ago; 1545          (b) early voting polling place, in accordance with Subsection 20A-3-603(2); or ... 1555     precinct, each early voting polling place, and each election day voting center, including any
+--------------------------------------------------------------------------------
+Utah Legislature HB0161 (https://le.utah.gov/~2024/bills/hbillhtm/HB0161.htm)
+citeturn100search9 [wordlim: 200] Crawled: 2.8 years ago; 1293          (47) (a) "Poll worker" means a person assigned by an election official to assist with an ... 1299          (49) "Polling place" means a building where voting is conducted. ... 1709     January 1, 2022, and January 1 each 10 years after 2022, divide the metro township, city, or ... 2108     does not include all precincts and subprecincts under the jurisdiction of the county, city, town,
+--------------------------------------------------------------------------------
+MSCODE (https://unicourt.github.io/cic-code-ms/transforms/ms/ocms/r72/gov.ms.code.title.23.html)
+citeturn100search10 [wordlim: 200] Published: 7.9 years ago; Crawled: 3.9 years ago; [Derived from 1972 Code §23-5-76 [Laws, 1977, 2d Ex Sess, ch. 24, § 2; repealed by Laws, 1986, ch. 495, § 331]; en, Laws, 1986, ch. 495, § 40, eff from and after January 1, 1987.] ... Former §23-15-133 provided the procedure for forming subprecincts and making subprecinct pollbooks. ... The poll managers of each precinct shall publicly post the following information at the precinct polling place on the day of any election:
+--------------------------------------------------------------------------------
+MSCODE (https://unicourt.github.io/cic-code-ms/transforms/ms/ocms/r73/gov.ms.code.title.23.html)
+citeturn100search11 [wordlim: 200] Published: 7.6 years ago; Crawled: 3.9 years ago; [Derived from 1972 Code §23-5-74 [Laws, 1977, 2d Ex Sess, ch. 24, § 1; repealed by Laws, 1986, ch. 495, § 331]; en, Laws, 1986, ch. ... The 2006 amendment deleted the former third sentence which read: “Separate pollbooks for each subprecinct shall be made.” ... Fixing supervisors districts, voting precincts and voting places; purchase of property and construction, repair, renovation, maintenance, etc. of polling places; availability of facilities for use as polling place.
+
