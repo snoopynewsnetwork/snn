@@ -2,7 +2,7 @@
 
 The two historical source assignments are independently extracted and reviewed.
 The same turnout worker has finished bounded reciprocal QA against the final
-captured baseline core; its final coordinator seal review now passes. Official-source/maps assignments have not launched;
+captured baseline core; its final coordinator seal review now passes. Official-source research is active and maps remain queued;
 whole-state acceptance and canonical native priority remain unavailable.
 
 ## Original source controls
@@ -100,7 +100,35 @@ repeated-heading representation remain explicit. Historical closure differences
 remain qualified, with no adoption or count repair. Future peer calculator,
 scenario/report changes and all600file semantic equality are outside this claim.
 
-The original-first, full bounded core and complete source coverage are ready for
-a coordinator source-research authority. Canonical statewide native priority
+The original-first, full bounded core and complete available source coverage
+now have a qualified coordinator source-research authority. Canonical statewide native priority
 is unavailable; all36parent chains and known510contexts plus31unavailable cases
 will be investigated by later assignments. This is not a current/native approval.
+
+
+## Qualified source-research dispatch
+
+The [external authority](data/coordinator-source-research-acceptance.json)
+retains23full contract fields,1,994whole companions and495,672complete recursive
+objects across four ordered ledgers. It pins5,029individual current source/
+producer bodies and resolves5,261captured older bodies by original path+hash.
+Whole OCR/source-position objects, every required header/party/candidate/method/
+control/null/admin/parent field, full CSVheaders/rows and JSONL arrays remain
+reconstructable. [Independent read-only replay](data/coordinator-source-coverage-validation.json)
+passes1,014,017checks; it is not a vote-only projection or a sample.
+
+Authority accepts complete available source research across all36county chains,
+all510known2024contexts and every31unavailable native-parent case. It supplies
+no certified statewide native order, top15,minimum80,priority or remainder.
+Those fields remainnull, rather than empty-job dispatch or synthetic missing
+precinct keys. Known-only213 and county11 sensitivity remain separate.
+Downstream workers consume the whole authority in memory and refer to it by
+path only, preserving producer false/null flags. They independently replay
+whole companions, ledger partitions and historical resolvers without producer
+writers, mutable news aggregates or unfinished optional peer dependencies.
+
+Actual official-source worker49aba7f6 is now active for all36authorities and
+qualified shared-parent investigations. Maps take a later actual released slot
+after fresh profile/provider discovery. Current geometry, final signed/later
+ballot/write-in scope, November feed identities/returns, measured cadence,
+eligible remainder and probability calibration remain unapproved.
