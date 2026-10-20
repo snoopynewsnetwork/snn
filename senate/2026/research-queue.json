@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "requested_date": "2026-10-17",
-  "updated_at_utc": "2026-10-20T17:24:48.466712+00:00",
+  "updated_at_utc": "2026-10-20T17:40:45.026294+00:00",
   "scope": "35 states in the repository 2026 U.S. Senate race index",
   "coordinator_agent_id": "d0fc3534-1613-4883-b48b-21a233fcfd9e",
   "workspace_id": "wks_b290f45007010740",
@@ -7714,7 +7714,7 @@
       "election": "Regular",
       "seat_class": "II",
       "priority": 23,
-      "status": "qualified-source-authority-accepted-official-finished-maps-active",
+      "status": "complete-reviewed-ready-for-whole-state-publication",
       "workers": {
         "turnout": {
           "agent_id": "bd151c4c-70ea-4b72-9063-2012086b07e6",
@@ -7911,7 +7911,7 @@
         },
         "precinct_maps": {
           "agent_id": "490fbb31-a0f1-4595-bc9e-d3701a4b14d4",
-          "status": "active",
+          "status": "complete-reviewed-independent-native-binary-DOM-source-preservation",
           "launched_at_utc": "2026-10-20T16:26:51.952739+00:00",
           "launch_timestamp_scope": "Coordinator record following actual create response",
           "released_by_actual_finish": "49aba7f6-0608-41c5-b809-ed1ce1c29ed6",
@@ -7933,13 +7933,39 @@
             "path": "senate/2026/oregon/data/coordinator-launches/precinct-maps-initial-prompt.txt",
             "bytes": 13735,
             "sha256": "cb7ee204bbcc4d5806d81467cde01c0aa38a376a3df6d1cbe301a0724bc62af4"
-          }
+          },
+          "actual_finish_event_received": true,
+          "final_manifest_sha256": "25f21b486459fd7936a66e00fe332dbc04f233225b3dcfa0875704c3a939a92f",
+          "owned_manifest_entries": 1493,
+          "complete_owned_files": 1494,
+          "coordinator_independent_checks": 248456
         }
       },
-      "validation": null,
-      "gaps": [],
+      "validation": {
+        "status": "pass_bounded_four_question_whole_source_package",
+        "path": "data/coordinator-validation.json",
+        "full_manifest": "data/coordinator-asset-manifest.json",
+        "manifest_entries": 7524,
+        "whole_files": 7525,
+        "total_stored_bytes": 702281516,
+        "maximum_stored_bytes": 39000000,
+        "producer_manifest_targets": 7225,
+        "complete_known_2024contexts": 510,
+        "all_parent_chains": 36,
+        "unavailable_native_parent_cases": 31,
+        "canonical_statewide_native_priority": null,
+        "all_current_or_live_approvals": false
+      },
+      "gaps": [
+        "31 unclosed2024native universes; no complete statewide native order/top15/min80/priority/remainder",
+        "Generic Misc eligible named-writein allocation unknown; participation/ballot/control/source-vintage discrepancies retained",
+        "Historical native closure differences and unclosed Douglas2022candidate/control disagreement preserved",
+        "Current legal/physical/result-ID polygon joins absent; curved/missing/empty map geometries preserved; fallback county context only",
+        "Unlinked staging positive data rejected; genuine November productionIDs/returns/roster-later-law-docket completeness/eligible pool/measured cadence/calibration unapproved",
+        "Routine implicit official outgoingGET wire metadata and bounded failed-transfer metadata gaps retained"
+      ],
       "published_commits": [],
-      "coordinator_preparation": "Turnout original-first phase finished; actual baseline worker independently extracted originals and is reconciling captured turnout core. Whole package and certified native priority remain unavailable.",
+      "coordinator_preparation": "Allfour original question workers finished. Complete original/source/math/CLI/official/map reviews pass; whole-package seal ready for explicit exact staging and publication. Canonical native priority staysnull, no current/live approval.",
       "state_specific_notes": "No 2024 Senate contest. Use 2024 president, 2022 Senate midterm and 2020 same-seat Senate separately. Familiar results root currently redirects to generic SOS welcome; no staging/primary ID assumed November production. Preserve current mail rules from primary sources.",
       "bounded_Wasco_2024_native_preparation": {
         "path": "data/coordinator-wasco-2024-native-preflight.json",
@@ -8198,6 +8224,24 @@
         "bytes": 38307154,
         "maximum": 6388084,
         "scope": "Reviewed full qualified official-source component and coordinator source/legal/visual controls; maps active, no whole-state completion/current admission."
+      },
+      "coordinator_maps_final_review": {
+        "path": "senate/2026/oregon/data/coordinator-maps-final-review.json",
+        "checks": 248456,
+        "native_services": 18,
+        "native_nonadditive_features": 2174,
+        "ID_pages_max50": 54,
+        "ZIP_originals": 4,
+        "ZIP_members": 128,
+        "SHP_records": 253,
+        "full_DBF_cells": 5183,
+        "XY_IEEE754_values": 416896,
+        "static_HTML_pages": 40,
+        "PDF_originals": 135,
+        "automatically_rendered_pages": 416,
+        "coordinator_manual_PDF_pages": 2,
+        "coordinator_manual_native_previews": 1,
+        "current_polygon_joins": 0
       }
     },
     {
@@ -8207,7 +8251,7 @@
       "election": "Regular",
       "seat_class": "II",
       "priority": 24,
-      "status": "historical-source-priority-accepted-official-active-maps-queued",
+      "status": "qualified-historical-source-accepted-official-and-maps-active",
       "workers": {
         "turnout": {
           "agent_id": "5bf8df2e-5c2f-4e0e-a51e-2021afca7bea",
@@ -8387,12 +8431,38 @@
             "bytes": 13368,
             "sha256": "b77ad4491ea9b46d7c7fb3a74aff79fec41a7d889519281f3f8befbbe844999d"
           }
+        },
+        "precinct_maps": {
+          "agent_id": "6c5beb21-b481-401b-a92f-fd3346f2e113",
+          "status": "active",
+          "launched_at_utc": "2026-10-20T17:36:52.083228+00:00",
+          "launch_timestamp_scope": "Coordinator record following actual create response",
+          "released_by_actual_finish": "490fbb31-a0f1-4595-bc9e-d3701a4b14d4",
+          "only_other_active_worker": "1c1068c1-271d-4696-ac6c-9527c35fdd6f",
+          "provider": "codex/gpt-6.1-sol",
+          "settings": {
+            "modeId": "auto-review",
+            "thinkingOptionId": "high"
+          },
+          "selected_fresh_profile": {
+            "id": "agent_profile_mvfmd7wg_u16123g52jn",
+            "name": "Research",
+            "notes": "When reading existing code, reading existing papers, or generally researching BEFORE devising a plan."
+          },
+          "all_four_profile_notes_read": true,
+          "provider_draft_inspected": true,
+          "notifyOnFinish": true,
+          "launch_prompt": {
+            "path": "senate/2026/rhode-island/data/coordinator-launches/precinct-maps-initial-prompt.txt",
+            "bytes": 11172,
+            "sha256": "9e7db4c7b496a9acac8807e4197b107321c539295a060b53a38ed37b5324b247"
+          }
         }
       },
       "validation": null,
       "gaps": [],
       "published_commits": [],
-      "coordinator_preparation": "Both firstpair components independently reviewed, actual Cranston row5 defect corrected with complete history/no native changes. Full external reported-candidate-plus-generic historical source authority independently replayed1702375checks. Actual official1c1068c1 active; maps not launched; current/legal/geographic/writein robustness/live flags false.",
+      "coordinator_preparation": "Both first-pair components reviewed; corrected Cranston row5 detail and complete historical authority retained. Actual official1c1068c1 and maps6c5beb21 active; source-only historical agreement does not approve legal writeins/current geography/live data.",
       "state_specific_notes": "Use municipalities/wards/native precincts and board-administered categories, not five county feeds. No 2022 U.S. Senate contest; use actual statewide midterm such as governor. Journal/state current routes are September primary; contest completion denominators differ (402 Senate vs 398 governor in sample).",
       "bounded_historical_native_preparation": {
         "path": "data/coordinator-historical-native-preflight.json",
@@ -8587,7 +8657,7 @@
         "bytes": 9052,
         "sha256": "486756745c0e977e0c371d8fe75bfabcad7f76b843d135589f12c56cfd9d8448",
         "prepared_only": true,
-        "actual_map_agent": null
+        "actual_map_agent": "6c5beb21-b481-401b-a92f-fd3346f2e113"
       }
     },
     {
@@ -9413,7 +9483,7 @@
       ]
     }
   ],
-  "batch_status": "22 new states complete/published plus retained Michigan; Oregon maps and RhodeIsland official active, RI maps queued;10 states unlaunched. Historical/source scopes only where qualified.",
+  "batch_status": "22 new states published plus retained Michigan; Oregon full four-question package reviewed/ready for23rd new-state publication; Rhode Island official and maps are the two active researchers;10 states unlaunched.",
   "coordinator_preparation_audit": {
     "status": "pass_complete_retained_source_integrity_for_unlaunched_states_only",
     "checked_at_utc": "2026-10-20T03:11:51.116291+00:00",
@@ -9443,13 +9513,14 @@
       "sha256": "4ba6519b3a4897bb7e21560d03a53d6c54b9be39ff6472a5b5d9f9ac1cca437a"
     }
   },
-  "coordinator_next_actions": [
-    "22 new states complete/published plus retained Michigan. Oregon maps and RhodeIsland official are the only two actual active researchers; no polls/thirdworker.",
-    "Oregon official component244837c reviewed/published, sourceauthority57a3 frozen; maps490fbb31 active. Review its actual final package/whole-source/native/PDF/atlas proofs and publish whole Oregon when finished.",
-    "RI firstpair corrected/reviewed/published be8f6d994. Immutable authority1141721/d0509f5b and contract11125694/7d788cf5 frozen. Official1c1068c1 active; maps prompt prepared only. At next actual released slot after fresh profiles/provider, launch required RI maps with full37priorityparent/242source list and43parent/497inventory context.",
-    "Continue remaining10 queued states Virginia/Alabama/Arkansas/Kentucky/Louisiana/Montana/Oklahoma/Tennessee/WestVirginia/Wyoming with four actual question workers each, max2 concurrently. Prepared prompts do not authorize launch or priority.",
-    "Retain all stated source/native/current/legal/writein/live gaps. Stage only exact reviewed explicit paths; verify complete index/object/size/whitespace in a separate successful call before commit, push and verify exact remote. No final batch response until all34 queued state stacks complete."
-  ],
+  "coordinator_next_actions": {
+    "actual_active_workers": [
+      "1c1068c1-271d-4696-ac6c-9527c35fdd6f",
+      "6c5beb21-b481-401b-a92f-fd3346f2e113"
+    ],
+    "next": "Stage only exact reviewed Oregon whole package plus coordinator records and actual RI maps prompt/dispatch; verify index then commit/push/exactremote. Next actual released slot launches Virginia turnout after fresh profiles/provider.",
+    "last_exact_remote_publication": "59d651355978de48d8a5dcfa3f013faee3d64acb"
+  },
   "coordinator_prompt_preparation": {
     "scope": "Unlaunched future first-wave prompts only; no agent IDs or completed packages implied",
     "config": "/tmp/snn-future-state-context.json",
@@ -9807,7 +9878,14 @@
         "Preserve frozen New Mexico source authority902648/23b391 and turnout contract2180488/e61fb2 plus all historical byte resolvers. Complete both source/map question reviews before whole-state publication.",
         "Continue all34 queued states and11 unlaunched states after these bounded reviews; no final batch response yet."
       ]
-    }
+    },
+    [
+      "22 new states complete/published plus retained Michigan. Oregon maps and RhodeIsland official are the only two actual active researchers; no polls/thirdworker.",
+      "Oregon official component244837c reviewed/published, sourceauthority57a3 frozen; maps490fbb31 active. Review its actual final package/whole-source/native/PDF/atlas proofs and publish whole Oregon when finished.",
+      "RI firstpair corrected/reviewed/published be8f6d994. Immutable authority1141721/d0509f5b and contract11125694/7d788cf5 frozen. Official1c1068c1 active; maps prompt prepared only. At next actual released slot after fresh profiles/provider, launch required RI maps with full37priorityparent/242source list and43parent/497inventory context.",
+      "Continue remaining10 queued states Virginia/Alabama/Arkansas/Kentucky/Louisiana/Montana/Oklahoma/Tennessee/WestVirginia/Wyoming with four actual question workers each, max2 concurrently. Prepared prompts do not authorize launch or priority.",
+      "Retain all stated source/native/current/legal/writein/live gaps. Stage only exact reviewed explicit paths; verify complete index/object/size/whitespace in a separate successful call before commit, push and verify exact remote. No final batch response until all34 queued state stacks complete."
+    ]
   ],
   "coordinator_latest_regional_publication": {
     "commit": "8ffc63d637c5ffa1e79654356adc15f67bee3c94",

@@ -69,4 +69,4 @@ Five2024native parents close510rows;31remain unclosed. Canonical statewide
 native priority is unavailable; county and known-source sensitivities are
 separate. Same-worker reciprocal QA has finished; final coordinator source review and
 [qualified source-research authority](data/coordinator-source-research-acceptance.json)
-are complete. [Official-source research](official-results.md) is finished and independently reviewed; maps are active, with no current IDs/geographic/feed or live probability approval.
+are complete. [Official-source research](official-results.md) and [downloaded map research](precinct-maps.md) are complete and independently reviewed. The [offline atlas](maps/index.html) retains all36parents,510known source contexts and31separate unavailable cases. [Whole-package validation](data/coordinator-validation.json) verifies all four sealed assignments. Current IDs, geographic joins, genuine November counts, measured cadence and live probability remain unapproved.
