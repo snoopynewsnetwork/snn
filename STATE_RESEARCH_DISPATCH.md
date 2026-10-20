@@ -43,12 +43,13 @@ Each complete state passed independent source/native/target/map/whole-package
 and repository review, with its push independently verified. Historical source
 qualifications remain explicit; current geography and live readiness are separate.
 
-The only active researchers are Illinois official-results
-`0ce74399-fe2e-42a8-9428-650729a9137c` and Massachusetts turnout
-`eb66a7f4-a730-4f4d-8382-35941613a2ff`. Illinois maps has actually finished and
-awaits independent final review. Massachusetts baseline awaits a real released
-slot;14 later states remain queued. No extra workers or finished producer
-restarts exist. Delaware is published after full independent integration.
+The only active researchers are Massachusetts partisanship
+`41e0bf1a-4609-4a2a-b901-568567431a57` and New Jersey turnout
+`04473229-3e65-45b1-b628-b2fe909eaeee`. All four Illinois workers have actually
+finished; final official-source review and publication are pending. Massachusetts
+turnout finished its bounded original-first phase and will resume the SAME agent
+for reciprocal QA after stable baseline extraction and an actual free slot.
+Thirteen later states remain unlaunched. No extra/replacement worker exists.
 
 Illinois's historical printed-known threshold is5,540/4,474,312 of5,592,368,
 following5,539/4,473,789; top15=29,572. Complete10,062 source groups,108 source
@@ -813,3 +814,23 @@ That actual released slot launched Massachusetts turnout
 provider inspection. Illinois official `0ce74399-fe2e-42a8-9428-650729a9137c`
 is the only other active researcher. Massachusetts baseline awaits a real slot
 and independent original extraction;14 later states remain queued.
+
+
+## Illinois official finished; actual Massachusetts baseline and New Jersey turnout launched
+
+Illinois official `0ce74399-fe2e-42a8-9428-650729a9137c` actually finished its
+3,047-entry sealed package, complete108 authority inventory and10,062 full
+investigations. All four Illinois workers are finished. Current return and
+geographic/legal approval remain false; final independent review follows.
+
+That released slot launched Massachusetts partisanship
+`41e0bf1a-4609-4a2a-b901-568567431a57` after fresh profiles/all four notes and
+provider inspection. Massachusetts turnout `eb66a7f4-a730-4f4d-8382-35941613a2ff`
+then actually finished its bounded original-first phase,195-entry seal and
+109-body pre-peer freeze. Reciprocal completion is explicitly pending; resume
+that SAME actual worker after independent baseline stability and a real slot.
+
+The turnout finish slot launched New Jersey turnout
+`04473229-3e65-45b1-b628-b2fe909eaeee`, likewise after fresh profile/provider
+inspection. These two launches are the only active researchers. No finished
+producer contact/replacement, extra worker, premature acceptance or current join.
