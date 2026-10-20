@@ -1080,3 +1080,6 @@ Oregon baseline reviewed component publishedb4688cc3fee4e5e3f8d40ceffeddd5ec87b8
 
 
 Oregon final reciprocal component published41e60c0d1790125f7c39558098ab71a923ca6d16, push0/exactremote. Source authority now passes1,014,017fullchecks with23roots/1994wholecompanions/495672objects/4ledgers. All36parents/510knownsourcecontexts/31unavailable native universes retained; canonicalnativeprioritynull. Actual RIturnout5bf8df2e finished; fresh Research/high profile/provider inspection launched actualORofficial49aba7f6 in thatslot. Only other researcherRIbaseline5d9f9b63. Twenty-two new complete states plusMichigan; wholeORnotyetcomplete.
+
+
+RhodeIsland original-first turnout/source component published120a7ec2a3679dc060074a1a72e5dab1b338ee5a; push0/exactremote. A skipped precommit index step caused by ignoredcache/command ordering is candidly retained; complete postpublication tree verification confirms all410changed objects match saved reviewed bytes, no activeworker/cache inclusion. Opaque cachepreserved/removed. No peer/current/nativelegal/fullstate approval. OnlyORofficial49aba7f6 andRIbaseline5d9f9b63 active.
