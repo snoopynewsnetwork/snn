@@ -1,6 +1,6 @@
 {
-  "schema_version": 1,
-  "self_exclusion": "This manifest excludes itself to avoid recursive self hashing; every other owned artifact is listed.",
+  "schema_version": 2,
+  "self_exclusion": "Exclude ONLY this current asset-manifest.json to avoid recursive self hashing. Every other owned file, including validation, final seal, histories, archived manifests, proof and reproduction, is included.",
   "owned_assets": [
     {
       "path": "data/county-turnout.csv",
@@ -12,6 +12,12 @@
       "path": "data/turnout/acquisition.json",
       "sha256": "8adc57ab98af6e69e07c2ab1f5ec3d13f915293d6f4aff7284f8dcedc7750a9d",
       "bytes": 181890,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/apply_peer_review.py",
+      "sha256": "c8ca3217e91dd72109dcc396d97a22ef604c5cde8004f73cf9faa32733a5e869",
+      "bytes": 6677,
       "ownership": "NM turnout exclusive"
     },
     {
@@ -33,6 +39,12 @@
       "ownership": "NM turnout exclusive"
     },
     {
+      "path": "data/turnout/compare_peer.py",
+      "sha256": "58f467647da1000c77e3902bf372c5144fc1f9fc2b78d3d98dcf9095f1f85817",
+      "bytes": 18584,
+      "ownership": "NM turnout exclusive"
+    },
+    {
       "path": "data/turnout/county-identifiers.json",
       "sha256": "5b3cda34b4f203bccf3496bac3d4ee0c06fc6724e212996aeb65ed57db2dc5c0",
       "bytes": 15238,
@@ -45,6 +57,954 @@
       "ownership": "NM turnout exclusive"
     },
     {
+      "path": "data/turnout/final-seal.json",
+      "sha256": "477cd7e8b6ff96f8486e28401cbf250ee34f3b5f970daca22c4e4542653774bf",
+      "bytes": 2813,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/0246c2ea0cf5865455c447066761b93b7dab10b7d4de1ac1ef2cbf321965630d.gz",
+      "sha256": "5344de6e524258117da00b60f58da635e3caba0a2684968a85e6f5867251ac5d",
+      "bytes": 139690,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/02fa555836cdb91324c644d55a0a249a74f785b4719d43ffb2b127c90899cbc0.gz",
+      "sha256": "6276b9246f252020571a67d9b997ac1985cf4fd97f5e92355d6564ec97db95c1",
+      "bytes": 1644,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/045fcfe7d83b5247ca28b7fa7ad35c4b31ae6481722b14112d1e57f59b5482fc.gz",
+      "sha256": "a8e0160bf0b8ee95e262631c8b51246d0f6d1ec8530b9c8fa593acd13ef84094",
+      "bytes": 18611,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/06ae7a77d3ec8da3bca466bfb9935b3e74257306ebdf3fae4d66cb486097d10d.gz",
+      "sha256": "40231f48e06bad3dde688d9cf8fd7730e914c631e95732206a08159ba280141d",
+      "bytes": 10199,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/07b1b8de464ad2619cca5114bc991f315d13f76e32c48cbbf7ea08e7a5a35bb1.gz",
+      "sha256": "7d58763c14a5a7f8ca73dd820580bc774d806c0fee18a24d1765c2fbddd0fb11",
+      "bytes": 4037,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/07d03b4d93262a7ad7accc76044ae9693ff38ac5caffdaf3bb977a3773e8a6ae.gz",
+      "sha256": "bfba5c13b3327683c68f79abf75350ed0de6b84a9f8f576905e827e46f0837e7",
+      "bytes": 553,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/09d716628487bc37afa5a9acc3c950521d2f4abf4ce73363dffe55b15203ac62.gz",
+      "sha256": "d33077bf06f3603ad80ccc073abff8bdaa8bdd2860383a9c69254dda13b99be4",
+      "bytes": 27390,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/0a36a259f9cece453fc3c73f0a22a1585f0c5cfbcc7a84d5185490f89f32f6d0.gz",
+      "sha256": "190b435ae3bab05880a224d55654756a4a4611de039e13a79ab07a31095f17b3",
+      "bytes": 12519,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/0a3f5fada2336b83c360645be3f2291e9fa0815420649c0a7e253dd9fe14bb41.gz",
+      "sha256": "6a75433272afd00e24095b135cbd95a1aaa25b68b44b3fb7642f283932dc34bf",
+      "bytes": 1191,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/16dd4e67923c6fdcd771469d6dfff3556fd781e82cd1cd127f5faf30fae89797.gz",
+      "sha256": "5d79e64a1cf61969b928ded70b8de52961b440ee8b25225a50cfd7d51971e6aa",
+      "bytes": 923,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/1e0b0a61b835c2e7ae9d735f97d5bc49645608fd7f36b2b2afb3354055f8bb07.gz",
+      "sha256": "824e57c92424aa3d6e2c2eef406f5547755ccb01cad98e96d2322c47c3836451",
+      "bytes": 1107006,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/1e84b35d4f7e7c092830b12b12a6665bd37b10a882cb720f9a79375f45cd6d23.gz",
+      "sha256": "b3bf41a0ff629672db0777cc81f16d7d25e8fde2bcc0ceedd205c3cbe4fcf83d",
+      "bytes": 4655,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/24724a8f58df259590f416b51a08ddddc2db90a7a3e1d1ae20c5690cea2538f4.gz",
+      "sha256": "f7a8b6ae31923f54ecd431145950e9bd88a5465203147896c24329f82206f910",
+      "bytes": 1307,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/249a9068fb935b8923639ea5030081e2f9944d81fdb1bab1a76540e744e07049.gz",
+      "sha256": "a5bcb46848ead2f4ca99b6c648d12666c2d542cabb6f2245073958f56caa9f14",
+      "bytes": 94171,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/29fa9484311dbb79cc724820b67cb87e62121290fefee9f68f224fc22d58b691.gz",
+      "sha256": "3bf0c170bd1fcab736932342f14845d45520ffc6f2536ecc8e6c170bcc716c5b",
+      "bytes": 1563,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/2e9adcdc6199287acbf09c804d6736c63f234657d387cfdd65b6475ef254f817.gz",
+      "sha256": "e31ea5f9bd4396f649792f987c70eab9ba111e70e2c754d5461949f073a270cf",
+      "bytes": 3901,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/31576b8434ac679b019390193c606ce4fbe777cc6b934d2ead146dfd03c0cf83.gz",
+      "sha256": "ba2f645395ed69d6ca0e9023fd849d681756375b8060521550484d3cccc32ec4",
+      "bytes": 1060,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/36c6ba8d56342d2d2c20bfa528ea8543b530507621be08c5d36f5dd37b075766.gz",
+      "sha256": "724b420ca250adf8bb4db5ea65b479775db27ea24e63582e3b4a51f7d2e03c64",
+      "bytes": 2208,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/39ec11e7b1745df2aea670ad38e18723673b2e2844591259f13d73c78a6358de.gz",
+      "sha256": "eb56b582df37300a3f18a98acce5dd65a8dcb52da20ac89bcb29247f376d9ed1",
+      "bytes": 483,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/3d3560f0d8a54d12308217aef90140430c4a5bae3155b93f4c171ee8dc6291ae.gz",
+      "sha256": "2e43a8dbdccbab303d23d26775a723731afe6f4024d81bcc1feb810408a8cf94",
+      "bytes": 20353,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/3fd163cc5a86a8dd805b28afdef6479cb777af1071130c7edd95b5be8f5a95de.gz",
+      "sha256": "bfa4116fd4274f042421b6a5d119be56bf4542c32ef0370ccdd75d80338dfc2c",
+      "bytes": 1383,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/40c287aed559c8cbbcd15eb8f918304b452f7f8907830fd74b856ce3c60f6aec.gz",
+      "sha256": "b437e5c26102ed3e107b77efc7a3e8dfbb07ace26d3a9d4ba8ba07d81a8d99f8",
+      "bytes": 406,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/41fc2fc561d778bd6f556015569753c2cff8c0691243e7c761ccd64bd6ad6b6b.gz",
+      "sha256": "5b0313e10aa22e450f014000b94ff57fe925339f9ba89a06bce2a872c2828bc8",
+      "bytes": 541,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/44ae64529753c19a36b63bbc9bcb5c03e9440f4f21c2199f3a4ad7e36f0df813.gz",
+      "sha256": "8ec424b0367465bccc1d66e7ca00de9049f33abe5b155a90fb81260e5172137f",
+      "bytes": 282061,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/45c66805b0968f535a4aa22dc70f25c60b90bfd388e570ada5bfea851bfc0a66.gz",
+      "sha256": "dfb0061972782c2e2b7282757e086474aec2308084fa68173b22b21a1e767d9e",
+      "bytes": 1645,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/4b338da0483367a7ca8c14f07dc9cbd5cdef838f9f95a62226e35cf9b3faadec.gz",
+      "sha256": "c82abe06fa28fb6825567ce53d4048397c2d10eab550f1d324a88f432b3c8de0",
+      "bytes": 4260,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/4d63eb289078e4c8efa95bfc16378a14f29f974b1a11b86889f22d67eeaec64d.gz",
+      "sha256": "bffa026bf4e3a49ade57be649dba20c04b159741d23514aa430b97ce98a52cc4",
+      "bytes": 320004,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/4f6a2b43c39d65e9163c2820fc82d4df7dfe222088504a27abd82e5df96b98bb.gz",
+      "sha256": "21147fef2799b18e11824fb260d6752c7d8cfd08201680d1537cb7894e4efb5f",
+      "bytes": 207131,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/501951da3325d8af5848bc0b848b2d34d3d98c57188bd31181cf7e267f8bb17a.gz",
+      "sha256": "769823a78115bcd1b397f3b56a808178cacb3c1e9216472deace56b80666d031",
+      "bytes": 4619,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/51b25e0b89ca81a818c7e1ae45dd58391ddb2ff13506e024d23d6cdecda180c3.gz",
+      "sha256": "a68a73bb8315ed1a704f3731304103ca20775c97badcbf055be5d28800f06142",
+      "bytes": 243474,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/5510b3b1ebd7fbf6b1fea7632e09eb6e546f03abd14fed58d9522b6b470ac63b.gz",
+      "sha256": "a70fd201b48a1fe97f157dba29d66cb15ec2aeb66280aff95e18a1bbceb295fd",
+      "bytes": 871982,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/55d805e417afc0d8cfb290bc9beff677aca5857d73db7d2dd1a595023f1d4c32.gz",
+      "sha256": "24aa11658f79758c7d5b93432f62a866a6238f3d4ffbb63248563cf889af3656",
+      "bytes": 2500,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/55ff98805d69dfe56dbc2efb2c632410a5b9d2fd398f874f614e19cef23b3441.gz",
+      "sha256": "9be828e55764e4a75e55f912273a4987a597be1938be21863cb87205a5b17968",
+      "bytes": 3889,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/591644fd5214dd2a207a8f3056830dba1f0ba0f254d7edc1baec7cb13657052c.gz",
+      "sha256": "41aad4dc0b59278975b38732e46389df31d0963e6c1cbb1e9dbfc7b69fd1f095",
+      "bytes": 2453,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/5b4d76cfc15c4432904843410bfef341e215b463a2d8bdfeecf8a40cffe6b550.gz",
+      "sha256": "34bf2b6042ad1f1abfb9ce4ab18c4e84e0f5f158c84780a296d85b0622b0a9fe",
+      "bytes": 456588,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/61ef910a33354130ab5dae62a0e15a9a086eb3d5a9609fbe1988dcf6d194d551.gz",
+      "sha256": "7da3e40436f0f9b74a0d7f1fb83a0640823370434c7a37cc87732610cb3c71d8",
+      "bytes": 3048,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/64495a7787c664837b856583cd721a1aa19052e5d243bc8a9ba61a2b61e70988.gz",
+      "sha256": "d5d2711debe4e3a8d171e18e03756032573739d3d2e61b0f45e8103927381c7a",
+      "bytes": 78776,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/657a0dbbbfe55a3cd8901b96a7332c41054c962daf968dc7a99b5a1652804a1e.gz",
+      "sha256": "d682d8888a660fadccee7170b9a934b71945ced50811f5a641a5e3d74b2f81e7",
+      "bytes": 434,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/65c8d87766d49395e14efd18569cfa7bc9151cafa4aeeaf6ea2ac0086e20e55b.gz",
+      "sha256": "127cdeda658e043e6bcda94eac8b9a54c2000d098632fe32ec78d655f1edfd6a",
+      "bytes": 418,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/6770ae96313d9f9d2e0964da2470fd903d1f72122e260eece7635370aca014b7.gz",
+      "sha256": "0bc758b218150919b298e411f59674710ba59bd0e97bbc13875203239db1bd38",
+      "bytes": 1826,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/681957b5c33d6b148ef31c933aa416baa688ba0cbebf298b3d316e72856e16f4.gz",
+      "sha256": "1f4f1d0d0ccb637c100f6215c5e308bd52865d3c25cf91b984cce5c41551a892",
+      "bytes": 326042,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/6bb70489891494d715beb48a49c35e7480ab59d67b685cee2dd2db98049fc569.gz",
+      "sha256": "f22187bb5358a3db820d4aa6cc74ec10da0f18e3c8c509b02e1132eed13e9ee4",
+      "bytes": 4020,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/6dede463744fd463a206436085b9f8a7e6d5ab774523944a82b54003e5e70eba.gz",
+      "sha256": "b6ea21d72df67c3af11cc583fe5edb8fa127e98cd2ba807ec8633a3eafba364f",
+      "bytes": 6047,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/709b3c2a548e4e5d382fd44316a6d3fa01e4ac62a6ab7e9f6c7e1c7202761f97.gz",
+      "sha256": "e1df37f3df2193451c04e4c91cbe8c160b086a39e1205741605e864b3b7af0cf",
+      "bytes": 283805,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/70ed156eefca1227fc7f151ac2513ce4627fa6ca51c51dfd8dbd0248f146b06f.gz",
+      "sha256": "ecc6a18988a8923e0c270ab8dd1476f1f5d466f4204fbd0fa8bba220fa3326fd",
+      "bytes": 4794,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/71901ba34a7d2ed4996b9181a9512ac21e468a3988a731b40edf931b16fda901.gz",
+      "sha256": "2a5bfef99e1445166ef328977ccc88c7566b7efce658a11fa623bc15d9c2abd0",
+      "bytes": 21501,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/720c40fc31ac191db0f88e6f5b475e4593df56dd3f4ad7ad2b4bb07fb341f155.gz",
+      "sha256": "cef5ad9dac45a402d70eddaf7f5e75cacce7c10fad2935a05274c827a1d2a50d",
+      "bytes": 3361,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/754a7145eeca4496972e61311b51ed04ab4a142ec4e92526b0785b11706720ce.gz",
+      "sha256": "e0d787585c38f4a79a91ef6af805d6742d5be0af96bc55041da7efe2c5176176",
+      "bytes": 12166,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/75a52aa8546859ed8035afbb5368a2e7ae11aa0be281bad691ea601b10d22ec6.gz",
+      "sha256": "c939e8bbc51e61e24a9982f0e184e682476baf15b950e949a9420996dec5dd07",
+      "bytes": 399293,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/78f1dcc2684ad0965c4f2fd561e4bd602e447bed00bfb30547489af91260005b.gz",
+      "sha256": "c3bc22268c1f44501b31e6b6bf07b6d4c2dffb28531d648c2decce0e480990d8",
+      "bytes": 175807,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/790e562b0eb924b838e84d47ba006e2eab059b4c665b110c3b533a3cbaf7ad61.gz",
+      "sha256": "ff2c03fa497027ddbda68a09da2b306e91e0cad3ec49e94a8c4e99fa07812ad8",
+      "bytes": 97248,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/7985b9d549ea4d7ecd6761b3a3cbfc2cc08cc4d11e51b7204dafac9a61d0273b.gz",
+      "sha256": "98d777eca7d1b25c82ba835f76e607729282528f8c3f3b8c0b42058a6bf24a07",
+      "bytes": 334,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/7989fc1b3a0df04424e4350b7a49a154f5902b954ae4cf795b5b4af02b68f80c.gz",
+      "sha256": "cb1bcd1a41cfbe738d01830b8c6e6b72d2518a3d8f58dceacf1b3ce5b977e30d",
+      "bytes": 27922,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/79d7ce6228ebafbd79a4f7ceb3505a9021b6f7233e4d9d4f4c1ddc02dabde5d8.gz",
+      "sha256": "9d6ccceb84353d2b9dd7d54b3db9fe35dfb28a87421c14879b44f9ab589894dc",
+      "bytes": 22508,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/7f408f5625f065ea05f0d5f05badd5ff9640a31c75912d13ce2d029d9ee80096.gz",
+      "sha256": "ad868802206a4c724f5d76fb33766158753b2406fc44f8a1e48d6c43be6d0a2d",
+      "bytes": 581,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/81068cc96093b53fe977b8d2271d7669a826dfdef09489390b815f6d00ddc60c.gz",
+      "sha256": "c60ed93ac6f67508a31158e0e6ee16760f2d0b1b46bcd1027ee160a8f3b54b1c",
+      "bytes": 3286,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/835464b954af3c5e8fffea5b1f67817d8d35522cf67058bf35e59a2b2d5e1e12.gz",
+      "sha256": "897307a2426c440fd8134422e1188cf1d716c66a0b127ff0df1a7fec8b9a0caf",
+      "bytes": 3508,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/889f66be3f80d22ebdb8341f62c7189595d7731060817de3567dd2b636c204be.gz",
+      "sha256": "4d7bd0c5d8864132e1248658d86f89dc1e71814b859f0db4fe847643f9320e01",
+      "bytes": 266593,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/88c9adcaa2ce1c8e66d12b1bc499c47ed31dcd3f94ea9fd0d0a093b6950d6c00.gz",
+      "sha256": "a8197ce2ea8168835f72e8b215eb8bfb33c101d8335434d915539c82c85227d2",
+      "bytes": 399288,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/88ffed72f839fa061637133e67849ee59014d2f1577aa3844fa766b7cb21c5eb.gz",
+      "sha256": "fb3cba22fa62378be4779c2de2ab303ab818861b985f81b81e020a0a97d40557",
+      "bytes": 2480,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/8a5feb2906375a44310075c932419d3b48f7579fa7ab74cb4c8af81befdf9da2.gz",
+      "sha256": "5d803f81f69d337b6143d5684a4dfa75c1b8e8a1a512afa22613a7c57efd5296",
+      "bytes": 3673,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/8e17652235ed7f5c4318ce326eba8c0adcc7442443c919f70e587a4f58cf10e1.gz",
+      "sha256": "e9f0a6b3c3302ccbe4c547406463db5e86e84d7848f31821e478abd78be10007",
+      "bytes": 18908,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/8e5e9da4e003f7b99fc761c9157826fd13c7395c146e1438add9f970f63491df.gz",
+      "sha256": "f6c456d1eea93fc6cc243aea10a07afb6eb887fe86b20909082149adade5db13",
+      "bytes": 5170,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/8ea0ad49fc060c445f662704dc880cc7a3f22b4e5f7619d8b226a3b14ee3eee6.gz",
+      "sha256": "442eb5922711c11bd40af9814cc76e635a054a74ea94904da85a6ab54eaa12ed",
+      "bytes": 541110,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/8f6286cea9ddc19370bb1ee703b1f2a93754a41b0cd142d79ff76156eab8a410.gz",
+      "sha256": "e2433d36ea1ff787c649d2dd9ce65f491f32da37a7073ed5209d4c85a087acf2",
+      "bytes": 47681,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/97a4ed0d295358fd35f97e758681c1b2b3b4afca417098df1296a6cca4ab0f1d.gz",
+      "sha256": "156d6edd9882b772661d54c41e8c4d611ee9d11133627660a13340b350d60f5a",
+      "bytes": 18305,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/9e85cf494478197c10fda662cb7b6851a9a439fce3ea6fd297e5e5281e8aa5ed.gz",
+      "sha256": "1162cfda8792af2fb084704e4108da6e753099a6575bae8efc19156dd39b2422",
+      "bytes": 19055,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/a759b26fb2c34d06e1e887dff44eda01dc1f51328b08c1b86b45086d950813e8.gz",
+      "sha256": "e33dfa2404eb8c98b70613281b90f07a089e3ae2f9554b50e59d6e0329977b8a",
+      "bytes": 139,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/a84857a371395f25b45d47a14f48cabf91dde94dc812b73808e061f8e4614a5c.gz",
+      "sha256": "3e70cf32d0dd4c07a82c78e99caaa964101f3f4dcf277c195de752b1ebf51f60",
+      "bytes": 322131,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/b0b0a597ca55b55e91000444d3b3bd44cc69b9a5909b73c146d4613c9b8310ad.gz",
+      "sha256": "a4db45dfb82617b52aa82f7bb0dd1017a25e0afbca74d5832f84a94191dbedd1",
+      "bytes": 7111,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/b2b48b06bc0f06357451c3fa014712929541d0ab79acb441db92c8915b175933.gz",
+      "sha256": "af4c25b9f7f16514fec8210a6aeed6ad3db0f43724b049ca8ac504fa770692d5",
+      "bytes": 492,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/b65c4bf072ce81e534fd4f6132b014e0a538d0b4df120fccb69a1dbe7c91aa89.gz",
+      "sha256": "c41b619e6c6bfa94f7ac87ee89c730af44c028decf4c6ba90a840ddfcbfdb45f",
+      "bytes": 919,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/b7889d8a9b68cfc4dbca9beed0ef1b8400a7bcbeca6b0bb97796da15ce52173b.gz",
+      "sha256": "cf1d1c3d6ded74edddd987dac71a6c2c8f4285d67441393b469780f46fef8700",
+      "bytes": 13196,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/bb24cb52b7a9b35a6b71e353f2d89c74c9743457dc9aed4c5f70424b0ac589eb.gz",
+      "sha256": "06010cf36ba5cabaf213aa239810c9dbe9096e6291485d7e3de241a4191568fc",
+      "bytes": 258949,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/bdfa97fd7dd52b3007c43f61b2d4e72b49c00e6d204ab77eff22dc4dbaa835b5.gz",
+      "sha256": "5d8bb72c6f6a384476ac86c3bfd0394256aa74bc01887b0028cf8ff0da1dcb59",
+      "bytes": 426898,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/bf8e719605b3e76442c6a8ce08a25ac9a344597e3901b518766cced20810c351.gz",
+      "sha256": "e798e4f1e9d811a9554646917586af08202c7eb6bf183ec5abe7f63e84ea45c1",
+      "bytes": 2108,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/bff90e2b82b8e8bdc092131c47462bb715abb98e816436f8a02733eb7e0b75bb.gz",
+      "sha256": "04ceed4b544d9c0b353122ebddee366e375fd089375131b06c338ae49b826c84",
+      "bytes": 329310,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/c03bb5a83114caeeb5c5478a49fdfb36748f6ec58dbcfe957e52c6f49d1e5a5d.gz",
+      "sha256": "0a5a0626af13709bb54da1d7a4ccad0c74de80cb2841a0272086e41cdd531670",
+      "bytes": 389,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/c0bc7182f55ea7c0e55a198e960988c9d24f91b0b68e407be4223bb146a0be64.gz",
+      "sha256": "258bd757952934bfbfa81cb1044b92e2d121afefa17b4efdde9f23140479aa10",
+      "bytes": 4171,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/c1f5ac8ef57ea3627b6906e714245d0a8212728ed2841016fa86dff0d2bb7bce.gz",
+      "sha256": "9dd276f028a5cdc1cf4150c4f919c5b212c03853cb763c95e0767955adc8dbc7",
+      "bytes": 332,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/c27bfdbc046702cf800977a321fdc5fd3bbc6c0c2dd0b8b77e9e13dd83de0d25.gz",
+      "sha256": "20b3a5306fe0262b7a6d6bbce8988311111656f5d8968c51f8e6bfd0fbb297c5",
+      "bytes": 352414,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/c621281cfa9caf22ffd606cb8fe7211ea4ffd638563ecdebf17abd3a5480604c.gz",
+      "sha256": "6f5115a71c30647fda0969340ae739bcbe895f7b40e29b79d8cd53db170fc9f8",
+      "bytes": 22010,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/c656ba0bc577ae75726db0ef2c9d4ac1898803dec5a386286a765e85f3881fee.gz",
+      "sha256": "a85dc0a18fe90947378840f9e258108304e4d1d4084856a5415d2f6c439963e0",
+      "bytes": 93495,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/c8f378c9c105a4f2bc9cdd3cccc731faf2cefbfa2527466f2f2a413fd4600cb7.gz",
+      "sha256": "90a1a9f78d8f704a0d3f38d97921f5391bb6b3ed84655e9e4e7c0ea069ff89f3",
+      "bytes": 47752,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/c98a702038c8198b3cfe1c541f6f0f72e4765d9e5d420338d730b7547d39f6cd.gz",
+      "sha256": "4b765fa55834c69db64f4ef1918208967f4f1ae89790a2f0490f733c8421e4f3",
+      "bytes": 318667,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/capture.json",
+      "sha256": "fd7bb4f13128f96f036d123e422851f79ab28bbdd99aa10e83a08e0baf44fe7a",
+      "bytes": 49173,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/cfba004e911928f548e3f61ababb1047d74bcae374fabff8a82554e96c8f861c.gz",
+      "sha256": "0504eb3b09251c0ddf6ce6b9115d68711a53350fcad403e0c67bed6e170946bd",
+      "bytes": 3207,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/d4f571c0e3fb531b7cd67f12c57bf20170d58bca117feb908a76739ee2c6d3d6.gz",
+      "sha256": "0667f5eb1d27036e03e17cf8a33a6e04fbe4c225b29474ceb9ae5601f4e85542",
+      "bytes": 3458,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/d60cfe6765312af42e80092efa29bfe47c505c2d3db3afdf0ffcfcc6022445a3.gz",
+      "sha256": "5276fdb191fcd3e22d8d8bfc6c51361ec62e88ae22a0c92e1ac7e55dab20346d",
+      "bytes": 650312,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/d96c829cf37262946bdd506ac7efb0dbc0a71a7d810aa8328da45ed7bf870d02.gz",
+      "sha256": "215bc8d245738e90973609cd97b84f0051f544325d80e3d4f0ff8dc53782bdcf",
+      "bytes": 9603,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/db469e0bbbfbc020b2e42a2ed5b813c5239ae316e2b09351e0b21f9d764a041e.gz",
+      "sha256": "d33e2e7a129813594b9bdd70130b135f86d4b72d65535476b95ba16a3156feb6",
+      "bytes": 251,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/db99da4d7f9bbdeadf6e0724a3613e9e6a649bba6dcf95839da08a1035b4b12b.gz",
+      "sha256": "7c1cd5cda168d9f8b9ca7a706f809f60409382e00061b2a3be735bcc3ad10476",
+      "bytes": 11816,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/db9dcbfc43e1627962351c031693df22747b96290fc81a99f6dfc9ac17a77734.gz",
+      "sha256": "c4cab6d8d514b7b8efa39243a31ad225616aaff953c61ec5d31e67cd0d940ec3",
+      "bytes": 230952,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/df435a503918794b8ad168383172d930fc895d98bd3ba164ea85727114ccd379.gz",
+      "sha256": "929c343fa1230d718b818846049707bf780828692189337e14f897a5c4b1905e",
+      "bytes": 284509,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/e0089ea5ac06db56838a8de5ebf8b4ad3f02243881df153e066ecdbbf6b2bb93.gz",
+      "sha256": "c5d0720718b30a523551d3e6e07630d06adfe95af95e6ec9a2e0c556d3505777",
+      "bytes": 39692,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/e24436d57b80e1597e5fda5bb003ed2d2add33aceb1adcbc88277b3160865c69.gz",
+      "sha256": "9bcdde81dcbc91928d58312469878a7accf98a52613891e1ff14c7996749343d",
+      "bytes": 1749,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/e7d66d293969e5c2f86354939faecb2b0f8ba0f56039e4c971a006d9f7814896.gz",
+      "sha256": "5a21e7f5047feaa04d054cb459dc081ae4364d9fc85120684740a084492b321b",
+      "bytes": 19057,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/e8d4e635eefcaf802ce75964a9cf02295feafb579f1fa67fa627e53bfc34e07f.gz",
+      "sha256": "7426503b2e1790a3d793f29fc875a9dfe2a0e6b4b649c78562a4efa971b8e603",
+      "bytes": 87017,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/e965a07ed61acaa46ec74dc124aaa0f0ef6d90def810415ee6301372983b24d7.gz",
+      "sha256": "0b370cea1235c95c20a69a308d7276ad237ed4d43735eea251dadaeddc88eb4a",
+      "bytes": 550634,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/f1b651238a58fe290baec6c5e32f3bdb1943dd2bd582f02569231f7a757c7837.gz",
+      "sha256": "66d19a10a923414855e6166700bea017c53f86fb6ce46127774c7b81830c1878",
+      "bytes": 31,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/f32b445b30cbd438db6645378e5a8a4b8611f5320b7c202c835db4d90f72c437.gz",
+      "sha256": "5a1bdc81c964b2e0210091e971fef11c9216ead5514318e2a6a54499ef37ef0f",
+      "bytes": 5277,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/f4a71dad346ad0a9ac60d82a04b5184b126b45eef9c0b266c7cf4c2e48af00ea.gz",
+      "sha256": "820bcdecd38b0a05590aaa65b09229556fc6abe4ad851bf0df76949a1e40997d",
+      "bytes": 1126,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/f538e61ed3f29632af9dcf732123242735d546326dea8b12e39d893694e531de.gz",
+      "sha256": "a8b0d3f74929a276dc1972e49e76fdeb1df51362b45d5f1877da8aa27a60c1c8",
+      "bytes": 1212,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/f565e622b2f4a0cfbe257ae0bfafee438f86d0b1cf4f63d40fed615bd5f2fe31.gz",
+      "sha256": "d21482afd83b18468495a25c1fb1a4bf46f912bbc19a82854d36886c9ffb4475",
+      "bytes": 23855,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/baseline-final-peer/ff3d616286f709c53786183f7c60b4f0273647f46c5c8d95e3dbcbd645dfecc8.gz",
+      "sha256": "7d023f72b665b56cdecf576c0d66f52708bc17e1fca866d7aaff7a86baa290b5",
+      "bytes": 1474,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/comparison-iterations/075436bb18d683199e16f537b446d84c0c594bfab3060c552236675eba3a1deb.gz",
+      "sha256": "ffe7b98965b68b8d307eb9e0e4bbba221ba4b8ba2ca2e2ead2dba5d9f0f0b8f0",
+      "bytes": 5607,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/comparison-iterations/20eb98ebca695bd5404b273edd7f4a0424ae30210342e5d886529ecd5555bbef.gz",
+      "sha256": "647e63af4026154010cba2294f054b0c5e1a324cbaa3e1d22ef23b05735f0d6c",
+      "bytes": 141845,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/comparison-iterations/iteration-1.json",
+      "sha256": "234484f4ee333f3c7f1d1caa5329c4c5a1412acf1f87da7e1a51aab971f81e4d",
+      "bytes": 792,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/turnout-pre-peer/02fa555836cdb91324c644d55a0a249a74f785b4719d43ffb2b127c90899cbc0.gz",
+      "sha256": "6276b9246f252020571a67d9b997ac1985cf4fd97f5e92355d6564ec97db95c1",
+      "bytes": 1644,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/turnout-pre-peer/045fcfe7d83b5247ca28b7fa7ad35c4b31ae6481722b14112d1e57f59b5482fc.gz",
+      "sha256": "a8e0160bf0b8ee95e262631c8b51246d0f6d1ec8530b9c8fa593acd13ef84094",
+      "bytes": 18611,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/turnout-pre-peer/06ef252e35f089f21b94646c6f193568703e70482946450ed43faf44068ba8b5.gz",
+      "sha256": "4d335b42b411c7bee5cdb0281d7f7a06aca3cffa94e3f886fe21c2ca13dde855",
+      "bytes": 293009,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/turnout-pre-peer/09d716628487bc37afa5a9acc3c950521d2f4abf4ce73363dffe55b15203ac62.gz",
+      "sha256": "d33077bf06f3603ad80ccc073abff8bdaa8bdd2860383a9c69254dda13b99be4",
+      "bytes": 27390,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/turnout-pre-peer/15888e5d6950402c953ac19662dbe3911cd4d6e204e806211f04fed5ab842c7f.gz",
+      "sha256": "c98a702038c8198b3cfe1c541f6f0f72e4765d9e5d420338d730b7547d39f6cd",
+      "bytes": 321024,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/turnout-pre-peer/1ef6836df9c9db784fc58b1d96ed6fd27ba1910eb81f7e106a9ec57eac1650ec.gz",
+      "sha256": "2fdf07ce9b475d71764ab255f6e45b69063c54f284b8905cbf5badb4eaf50872",
+      "bytes": 319353,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/turnout-pre-peer/2ad2396b15b082f6c9aaa71b041869faae9873b83eb8a92e9170847bb65bd9ce.gz",
+      "sha256": "6154fce572b1d18f465c1d41ad68f8728687bf81fc53c785c6df78bf70c33de7",
+      "bytes": 57370,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/turnout-pre-peer/2b31900bea0549625dac6a068e3e920a462854bfa4bc8dca6d51afb09bc028b9.gz",
+      "sha256": "311315be0c825c1f4636b1fe8809bb4d842bc4a8771f434bb36b33a0f0f2c038",
+      "bytes": 290143,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/turnout-pre-peer/2bf40777ffd307d55ac19fec1ada8bf9a751db60a867239ee9b35c485b4143ff.gz",
+      "sha256": "632eed74d22f446c77eb1c098e146f8991d65bc80bd08b58a1986817a50145e7",
+      "bytes": 2707,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/turnout-pre-peer/2cca0da8f46feb195d8ba2c7fdac8fdd3b30f691323afc28c8978e8614fcce3c.gz",
+      "sha256": "db9dcbfc43e1627962351c031693df22747b96290fc81a99f6dfc9ac17a77734",
+      "bytes": 246062,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/turnout-pre-peer/386c585692491b28b04082d8120e0561771fe6fb2fee200795f98c95e758d88b.gz",
+      "sha256": "ec214989826d42861f58d88915fed2216d37921aa001f966490b323349aacb99",
+      "bytes": 7995,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/turnout-pre-peer/3d3560f0d8a54d12308217aef90140430c4a5bae3155b93f4c171ee8dc6291ae.gz",
+      "sha256": "2e43a8dbdccbab303d23d26775a723731afe6f4024d81bcc1feb810408a8cf94",
+      "bytes": 20353,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/turnout-pre-peer/427ad9e10b16e85cc675f6479796f09813afa5a72845b1199d4dd6b4e8ae7c51.gz",
+      "sha256": "f538e61ed3f29632af9dcf732123242735d546326dea8b12e39d893694e531de",
+      "bytes": 1189,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/turnout-pre-peer/45c66805b0968f535a4aa22dc70f25c60b90bfd388e570ada5bfea851bfc0a66.gz",
+      "sha256": "dfb0061972782c2e2b7282757e086474aec2308084fa68173b22b21a1e767d9e",
+      "bytes": 1645,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/turnout-pre-peer/5b3cda34b4f203bccf3496bac3d4ee0c06fc6724e212996aeb65ed57db2dc5c0.gz",
+      "sha256": "0dcff6b43f26ce07a200a9958374fe8063e02215a03c05c07df9cb4810e5f36e",
+      "bytes": 2684,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/turnout-pre-peer/5dcc3d8ac95f43e19ddbe7af545e8b26dad77a2a58314ac62fe696ec8ba4cb6e.gz",
+      "sha256": "5db5204bf5336ad3f5665fb1cb354a12ef84ed77f2911b7248f8d4b4669f988d",
+      "bytes": 10587,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/turnout-pre-peer/60fbce73f0c49db840b77af1e25e318f80ebb9ac74b41be123ef8f341fcfcaca.gz",
+      "sha256": "4f6a2b43c39d65e9163c2820fc82d4df7dfe222088504a27abd82e5df96b98bb",
+      "bytes": 208306,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/turnout-pre-peer/65c8d87766d49395e14efd18569cfa7bc9151cafa4aeeaf6ea2ac0086e20e55b.gz",
+      "sha256": "127cdeda658e043e6bcda94eac8b9a54c2000d098632fe32ec78d655f1edfd6a",
+      "bytes": 418,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/turnout-pre-peer/6b875ebeae3960dd5818e5a874eb63682f9a3c90b5a0a5a97a1265fe6e9aeaac.gz",
+      "sha256": "83eb852f8eb23af9fa8b94c6359d945f5967433519f69a75338fe2308a592521",
+      "bytes": 191978,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/turnout-pre-peer/6c29a1419a0218fdaedf65ccb5b189354e6c2677c2c18f62b47878983fbf4861.gz",
+      "sha256": "75471b65a8d48def47fdf2a12de5f2405ec6aaba343efcf340ac074c291eff59",
+      "bytes": 1032,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/turnout-pre-peer/79d7ce6228ebafbd79a4f7ceb3505a9021b6f7233e4d9d4f4c1ddc02dabde5d8.gz",
+      "sha256": "9d6ccceb84353d2b9dd7d54b3db9fe35dfb28a87421c14879b44f9ab589894dc",
+      "bytes": 22508,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/turnout-pre-peer/7ed91a413446925ffca579da9a675fb0d412a934d0bece6c60d0248985ac82b8.gz",
+      "sha256": "714d9e91edca85b3ec1a9cd970360ddf343fe4105b52a3b99144e589b8cca9f5",
+      "bytes": 2615,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/turnout-pre-peer/82ea637cfa1c5ecee0359e414adf9105c1fa7f1b7b64438ee564ca3c652df9cf.gz",
+      "sha256": "6dede463744fd463a206436085b9f8a7e6d5ab774523944a82b54003e5e70eba",
+      "bytes": 6024,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/turnout-pre-peer/8adc57ab98af6e69e07c2ab1f5ec3d13f915293d6f4aff7284f8dcedc7750a9d.gz",
+      "sha256": "d430d8da3824120821487a5381a48de18f225e9c3a005370672eb7f78f9b52ae",
+      "bytes": 26558,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/turnout-pre-peer/8f6286cea9ddc19370bb1ee703b1f2a93754a41b0cd142d79ff76156eab8a410.gz",
+      "sha256": "e2433d36ea1ff787c649d2dd9ce65f491f32da37a7073ed5209d4c85a087acf2",
+      "bytes": 47681,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/turnout-pre-peer/a2eb2e6d29b59e57e3ddec5d6f00898c84fd740122ab7cc91fd926fed56fc475.gz",
+      "sha256": "6ef1def48fac3179e600a23dfaf7c5a44dec3d4d3b7a15b6bd705e3672126b9c",
+      "bytes": 431370,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/turnout-pre-peer/a661118438f735a638570a9e0e7cc5c44b9abb615086ec4e9aa4e1f2c4ab520e.gz",
+      "sha256": "342e2fefc175b157d5898997c0534ac237fd4f6efdef338fbc37899ab7e0abe8",
+      "bytes": 623,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/turnout-pre-peer/b2b48b06bc0f06357451c3fa014712929541d0ab79acb441db92c8915b175933.gz",
+      "sha256": "af4c25b9f7f16514fec8210a6aeed6ad3db0f43724b049ca8ac504fa770692d5",
+      "bytes": 492,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/turnout-pre-peer/b7838fb1bf26ab1eb3c63429a0fd00293b4e98ccb47d3be9261501eb433e27a7.gz",
+      "sha256": "15a7b635f1bf6d3047367a4ee9188739f2db3648e39d3c15bd4e7a63c501b917",
+      "bytes": 2969,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/turnout-pre-peer/bc20286ab01033b4d154950ef16085ab255bd3cce524037e8214824412d77f15.gz",
+      "sha256": "40912e87c22b11a613a90b3aee9e3c7fee73391a9b178aebdcc28eef5b66aaf5",
+      "bytes": 493,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/turnout-pre-peer/c03bb5a83114caeeb5c5478a49fdfb36748f6ec58dbcfe957e52c6f49d1e5a5d.gz",
+      "sha256": "0a5a0626af13709bb54da1d7a4ccad0c74de80cb2841a0272086e41cdd531670",
+      "bytes": 389,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/turnout-pre-peer/c196372637cdcec3c26ac1d3c167a865c2f2977f1e1c08c92388747847109203.gz",
+      "sha256": "767bdacd2918906b81a60e3ebee76f7a88d710abf3fab56108dc5ba92c4dad86",
+      "bytes": 296,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/turnout-pre-peer/c621281cfa9caf22ffd606cb8fe7211ea4ffd638563ecdebf17abd3a5480604c.gz",
+      "sha256": "6f5115a71c30647fda0969340ae739bcbe895f7b40e29b79d8cd53db170fc9f8",
+      "bytes": 22010,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/turnout-pre-peer/c8c58081c089d5c41a1bbd672149cd7492134ce92c793757b874f99399274e8a.gz",
+      "sha256": "790e562b0eb924b838e84d47ba006e2eab059b4c665b110c3b533a3cbaf7ad61",
+      "bytes": 104444,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/turnout-pre-peer/c8f378c9c105a4f2bc9cdd3cccc731faf2cefbfa2527466f2f2a413fd4600cb7.gz",
+      "sha256": "90a1a9f78d8f704a0d3f38d97921f5391bb6b3ed84655e9e4e7c0ea069ff89f3",
+      "bytes": 47752,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/turnout-pre-peer/c94e93db87f822f16864ebd00d12d713b8d063fd6f0e7b667b4d483274e9adad.gz",
+      "sha256": "c59d2c134ac82971345769c5eda38c3e315f44805b3acc91b8d660433d6a6ef5",
+      "bytes": 763,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/turnout-pre-peer/cade7e24da2beeea535e420625cd66a487bfb9112aca1c16056ec97b1cec42ab.gz",
+      "sha256": "db99da4d7f9bbdeadf6e0724a3613e9e6a649bba6dcf95839da08a1035b4b12b",
+      "bytes": 11793,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/turnout-pre-peer/capture.json",
+      "sha256": "719f7e527bcc3b7b92ffb8757f1ae870943a68eebb23cb8ff0b845be672acae5",
+      "bytes": 39161,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/turnout-pre-peer/cff43c41f4349ea5f49d9a42b1b6d95cbb5e5a4b60975c17df6492de65ecac7c.gz",
+      "sha256": "b98f5af1465b78651af72ccda2c731669922f7efe1f157a0a31e73359f35d340",
+      "bytes": 1954,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/turnout-pre-peer/d7ab158c699f2fe806c15a7b32c6a06c7e1115461c74b6813a15fbecbfca0cff.gz",
+      "sha256": "51b25e0b89ca81a818c7e1ae45dd58391ddb2ff13506e024d23d6cdecda180c3",
+      "bytes": 246070,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/turnout-pre-peer/e80ce7801d3f9b5afc51b9c0f2f83274c14d7eded99c87e6184ce1a79a2f22c1.gz",
+      "sha256": "ebecdbc5d6e1ff85ce259181501358656c5ce01385718af7f97af9210e074107",
+      "bytes": 4498,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/turnout-pre-peer/e902ff7dc2af87f590d734e2d189549bdd7680694269ef81f09cfb8e717d9f5e.gz",
+      "sha256": "803ab041c4055149487bf5200448656e49477e6cbfed5d31c21897fc0fbf661d",
+      "bytes": 8329,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/turnout-pre-peer/e9a10779030a1990cc5d7f47841a3bb9dc322715b5fad42725020b3e38336e5e.gz",
+      "sha256": "d6c5d2be43787ef893d6398f4612008ea823ef744564a178e1dc00b2faba0f9e",
+      "bytes": 4157,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/turnout-pre-peer/f565e622b2f4a0cfbe257ae0bfafee438f86d0b1cf4f63d40fed615bd5f2fe31.gz",
+      "sha256": "d21482afd83b18468495a25c1fb1a4bf46f912bbc19a82854d36886c9ffb4475",
+      "bytes": 23855,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/turnout-pre-peer/f6131d6ac9fafa2d9645de72874f82f193873497a84a261e0ade22825983292a.gz",
+      "sha256": "5c38178324c25f6c7c46d5cd18d3904df274ae2e2d9810636b33e96538ff5bf2",
+      "bytes": 4731,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/turnout-pre-peer/f9cf81fb757aee83c1cb873cd30cbef5cfc3dee8ba1c515d68f95bbafd14d06f.gz",
+      "sha256": "e965a07ed61acaa46ec74dc124aaa0f0ef6d90def810415ee6301372983b24d7",
+      "bytes": 585650,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/turnout-pre-peer/fb81f53fced206ed860413f651e5a528a81679fac428a7971da92d258948286d.gz",
+      "sha256": "f4a71dad346ad0a9ac60d82a04b5184b126b45eef9c0b266c7cf4c2e48af00ea",
+      "bytes": 1103,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/history/turnout-pre-peer/fed7bfa56a07181c79c1a12238462af7b64efb8dfb5551726ace1d9eb534b3e6.gz",
+      "sha256": "7c51d27df7aa4ffa0ab5a29724d373b7872dbc1ed545cc637bbbd68118f58310",
+      "bytes": 4969,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/invariants.py",
+      "sha256": "2103a820ae5d60235da132e82cef7f729887f7889f619633e708909f3633a359",
+      "bytes": 2992,
+      "ownership": "NM turnout exclusive"
+    },
+    {
       "path": "data/turnout/legacy-methods.json",
       "sha256": "fb81f53fced206ed860413f651e5a528a81679fac428a7971da92d258948286d",
       "bytes": 7140,
@@ -54,6 +1014,18 @@
       "path": "data/turnout/native-inventory.json",
       "sha256": "d7ab158c699f2fe806c15a7b32c6a06c7e1115461c74b6813a15fbecbfca0cff",
       "bytes": 3858805,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/negative-fixtures.json",
+      "sha256": "83709f1af9e80432526f1e8b3a3de705bab2e55ed2f8a400d15d1c83619145cd",
+      "bytes": 1202,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/negative_fixtures.py",
+      "sha256": "43789b943f8d7aad0f979be1c49c96bed6c63c05d0776b36dcf1b8aab6f9062f",
+      "bytes": 2807,
       "ownership": "NM turnout exclusive"
     },
     {
@@ -75,9 +1047,21 @@
       "ownership": "NM turnout exclusive"
     },
     {
+      "path": "data/turnout/peer-reconciliation.json",
+      "sha256": "2c61c90d5629ca77cefce24d71a77cb1cc960001c91509194a4ab24daab9b55a",
+      "bytes": 191075,
+      "ownership": "NM turnout exclusive"
+    },
+    {
       "path": "data/turnout/priority-set.json",
-      "sha256": "c8c58081c089d5c41a1bbd672149cd7492134ce92c793757b874f99399274e8a",
-      "bytes": 2178487,
+      "sha256": "e61fb2a61fca45892171b3c8de1e7fe3ceedefb3dd4fa957ff5d94a6a5581c5a",
+      "bytes": 2180488,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/registration-grand-controls.json",
+      "sha256": "66c37b95c9b1a2bcb83f31b0edc6414d2430c554ad0d3e74f9821f35c271a7ca",
+      "bytes": 1087,
       "ownership": "NM turnout exclusive"
     },
     {
@@ -88,8 +1072,14 @@
     },
     {
       "path": "data/turnout/run_offline.py",
-      "sha256": "c196372637cdcec3c26ac1d3c167a865c2f2977f1e1c08c92388747847109203",
-      "bytes": 398,
+      "sha256": "2f7e7d1c82ee134d8f99120514138f2a00b59101685a79077f31822bc295edae",
+      "bytes": 560,
+      "ownership": "NM turnout exclusive"
+    },
+    {
+      "path": "data/turnout/seal.py",
+      "sha256": "b06f1a81c6c6c8e9413cdd0478f301231cbd3aa84958b89e3d1c386c83ced48b",
+      "bytes": 4600,
       "ownership": "NM turnout exclusive"
     },
     {
@@ -232,8 +1222,8 @@
     },
     {
       "path": "data/turnout/source/SCHEMA.md",
-      "sha256": "e80ce7801d3f9b5afc51b9c0f2f83274c14d7eded99c87e6184ce1a79a2f22c1",
-      "bytes": 10480,
+      "sha256": "fe9dc9616a922935a7ae50151a595cda04db50b62f618c270904188d4a7c5f4f",
+      "bytes": 14194,
       "ownership": "NM turnout exclusive"
     },
     {
@@ -532,20 +1522,20 @@
     },
     {
       "path": "data/turnout/validate.py",
-      "sha256": "fed7bfa56a07181c79c1a12238462af7b64efb8dfb5551726ace1d9eb534b3e6",
-      "bytes": 14320,
+      "sha256": "d6afe5f219fe013e08f4964a68cbd1f38a97aa5447fa8f7cd77177b7f64eebbc",
+      "bytes": 15715,
       "ownership": "NM turnout exclusive"
     },
     {
       "path": "data/turnout/validation.json",
-      "sha256": "b7838fb1bf26ab1eb3c63429a0fd00293b4e98ccb47d3be9261501eb433e27a7",
-      "bytes": 41946,
+      "sha256": "845198d56f18577a7cc1bb142048aa187f02a3acdac13512721209c65c11b69d",
+      "bytes": 43782,
       "ownership": "NM turnout exclusive"
     },
     {
       "path": "turnout.md",
-      "sha256": "5dcc3d8ac95f43e19ddbe7af545e8b26dad77a2a58314ac62fe696ec8ba4cb6e",
-      "bytes": 30716,
+      "sha256": "c444e38aed4b27c00cc96acc53ff7ac75c29020816fb781bcce12c977907629a",
+      "bytes": 34775,
       "ownership": "NM turnout exclusive"
     }
   ],
@@ -554,381 +1544,394 @@
       "path": "data/news/sos-2024-archive.html.gz",
       "sha256": "71aabf0b486562c42920d3fc7ad112d61891700442d4501afb0f688627b9c1f1",
       "bytes": 21546,
-      "read_only_reference": true
+      "raw_sha256": "12a5244848fe48aaea36e3ddf2b1a849b630f4d2cb4aab990790026390e8790d"
     },
     {
       "path": "data/news/sos-2022-archive.html.gz",
       "sha256": "ac882ad9dce7fe68547610f2d56e684122ef52d32ae6d4672ed1d38d42dd6bbb",
       "bytes": 22018,
-      "read_only_reference": true
+      "raw_sha256": "efb30f0bf107c6b5be3538973210a916412eb40b3e69c09a65b5f346f5085c19"
     },
     {
       "path": "data/news/sos-2020-archive.html.gz",
       "sha256": "d0481d5e1a0c09a4421c01f8f731585099f943606dc472ccf7df6e36860a956b",
       "bytes": 21440,
-      "read_only_reference": true
+      "raw_sha256": "21c589ee317b311505a5899ce0447a3783d4ee3fa704d0b5e72a8497bcf3db84"
     },
     {
       "path": "data/news/sos-2024-general.html.gz",
       "sha256": "9f56d0db62ac215cd599288fad12a3fd5d7008f05b25bbd9c0eb4faff667416a",
       "bytes": 18899,
-      "read_only_reference": true
+      "raw_sha256": "48c2f461a267ac1fad3ca62f2eb2441c4c63e68651b80eab394338be7f77256f"
     },
     {
       "path": "data/news/sos-2022-general.html.gz",
       "sha256": "0125049e0d3190f238c1913383d186d5e7fd59e8aa36a0597797432cbf424e07",
       "bytes": 18686,
-      "read_only_reference": true
+      "raw_sha256": "2f199e6a50ad8243af2f4b262707b68a34c6c47cb6c4c79cacb7498e6e515a75"
     },
     {
       "path": "data/news/sos-2020-general.html.gz",
       "sha256": "44b7dee282924628bd539d05bef21681e8126bf1a4946a0c69170366f3f3971a",
       "bytes": 18676,
-      "read_only_reference": true
+      "raw_sha256": "625aa818bec0a0229000f73c2bb73c82585f7779169c81f105e62c80cecc7e8d"
     },
     {
       "path": "data/news/sos-2024-federal-csv.html.gz",
       "sha256": "1b8afecd746a9e073e1406cb066216af66d0fa49d696b65145bba36a7a98301d",
       "bytes": 133,
-      "read_only_reference": true
+      "raw_sha256": "73d57a6ca642d8a96d5783ae2922ba17b49716d009facf1df732714a3446cc7b"
     },
     {
       "path": "data/news/sos-2020-federal-csv.html.gz",
       "sha256": "0b8651e8e7de0eb051c966b5db73f86b8520529f6dc388dcc7ec64da7826d25c",
       "bytes": 1094,
-      "read_only_reference": true
+      "raw_sha256": "b73ed05255e39edd6c3dc4edf3bcd60cea5c68b175f64d359512e18d67f6bcdd"
     },
     {
       "path": "data/news/sos-2022-statewide-csv.html.gz",
       "sha256": "a5aa5ec01ea2cea1e3c68672190fdcd9ad12fa4554531d237c4771f5f3863f36",
       "bytes": 3121,
-      "read_only_reference": true
+      "raw_sha256": "93125e0c2d089f23aee8d2b2bc5161df687aa3217c78871c68be8410ac684537"
     },
     {
       "path": "data/news/elstats-2024-senate.html.gz",
       "sha256": "97a4ed0d295358fd35f97e758681c1b2b3b4afca417098df1296a6cca4ab0f1d",
       "bytes": 18277,
-      "read_only_reference": true
+      "raw_sha256": "73618b105c0746669c34b1f8ecdb34dab72d09a548b998eaca73e4017ed3381a"
     },
     {
       "path": "data/news/elstats-2024-senate-linked-csv.html.gz",
       "sha256": "8e17652235ed7f5c4318ce326eba8c0adcc7442443c919f70e587a4f58cf10e1",
       "bytes": 18880,
-      "read_only_reference": true
+      "raw_sha256": "b0703c4f13f91f9d89eaabedc66e78306a2781dfb06f9f282777f271e6a03d2c"
     },
     {
       "path": "data/news/elstats-2024-canvass-document.html.gz",
       "sha256": "1eaf49ba412a8930293826cf13b29fec000bfea7d5c3c83f2db0c88e5fddbc72",
       "bytes": 12232,
-      "read_only_reference": true
+      "raw_sha256": "6a53601177ee530276aafe13b46abaada6ca5b4b676bf8bc348a2076152f19ca"
     },
     {
       "path": "data/news/elstats-2024-state-canvass-original.html.gz",
       "sha256": "8ad91b306bef4ec222b20660a7c2b69c88a5448ad2a8295a4a523382e8f8afb4",
       "bytes": 95,
-      "read_only_reference": true
+      "raw_sha256": "58bf2215b395dcac74c009aa98701854e43cbe54a1cd3a95fee6a647ca9910d4"
     },
     {
       "path": "data/news/elstats-observed-2020-senate-view.html.gz",
       "sha256": "d5987f6c9cf9561cf20ac5d578223a71de24e04fb8e612fa27a6d9803d726783",
       "bytes": 18420,
-      "read_only_reference": true
+      "raw_sha256": "174533f71c0eccda40363242f1088f571aa4c4ed1489dfa4480e510b0f4f7634"
     },
     {
       "path": "data/news/elstats-observed-2020-senate-native-csv.html.gz",
       "sha256": "9f46d5cc34eeec517bd8e5f08191457dfc13c42e849cefb847e3c1cf78075be5",
       "bytes": 19496,
-      "read_only_reference": true
+      "raw_sha256": "7a981e8073414b8b9eb52398ecfe7318babbdecd6de77e80bb650408555b78c2"
     },
     {
       "path": "data/news/elstats-observed-2020-senate-document.html.gz",
       "sha256": "cbf3ec28c6e803508fda7f112aae60e2c228bb1e8e8e81e2b600fcc62c124a23",
       "bytes": 12241,
-      "read_only_reference": true
+      "raw_sha256": "648113b317fa385912d4c0c5aa890c0c93792a46afa47cb5a15fd6356642a9f7"
     },
     {
       "path": "data/news/elstats-observed-2022-governor-view.html.gz",
       "sha256": "101ea2d7703dc7aeb5d2b3a18e01948486c09e2d4227746f8747f1ac81e1190f",
       "bytes": 18558,
-      "read_only_reference": true
+      "raw_sha256": "a2a4030325a91bd5588337efeb29110b5b6a873e21833d580bda128114a2c5d4"
     },
     {
       "path": "data/news/elstats-observed-2022-governor-native-csv.html.gz",
       "sha256": "62116cd578e75c59147e89cd16dbd14932339f61165a50567ebedd709a226931",
       "bytes": 20464,
-      "read_only_reference": true
+      "raw_sha256": "3ac68232b75610ad8f64ca9610207c5e118f94fa179420cd559ae3428020fa29"
     },
     {
       "path": "data/news/elstats-observed-2022-governor-document.html.gz",
       "sha256": "6a743140b13a2fba0cafb26e93fee9a50f958a6cefdef82575245ded023df659",
       "bytes": 12236,
-      "read_only_reference": true
+      "raw_sha256": "55896958dc163271c9ed94310d57bf004bccaa116cfac3a41a72df17ecd16cb4"
     },
     {
       "path": "data/news/elstats-observed-2024-president-view.html.gz",
       "sha256": "bfb4b4cc1d6d1445b487dd099d572f22d5b5e1cb6b4b831550244aa17c8aa500",
       "bytes": 19284,
-      "read_only_reference": true
+      "raw_sha256": "dbc3a5144b16449bb080694c924eb310d7f8d5bf0c53e2bcf8c4fa0288196ca8"
     },
     {
       "path": "data/news/elstats-observed-2024-president-native-csv.html.gz",
       "sha256": "9f2d7030b85fd180b92e8d1cb837d9881c66206e7877d87236fbb74f7444f046",
       "bytes": 23266,
-      "read_only_reference": true
+      "raw_sha256": "50122f8c9b83936eacc167c80be330901e8172c2a0b14dad12d7da2ece86a670"
     },
     {
       "path": "data/turnout/source/cf7f184310e427ab7e8375267b19518693ead1149b11e075647502a6d47bc7bb.gz",
       "sha256": "1f444374f3c3164a173b41cb0223b21024f098df4c2545153f7ed392c71fe071",
       "bytes": 125786,
-      "read_only_reference": false
+      "raw_sha256": "cf7f184310e427ab7e8375267b19518693ead1149b11e075647502a6d47bc7bb"
     },
     {
       "path": "data/turnout/source/0b84709e88c8a221840276b398f7c587d419a0263b1e1e1008e2c6bc076ff683.gz",
       "sha256": "3ad69a7dfbe27f8cb74c5661672b7fb9508abb522848a501002a0dac8b7ef841",
       "bytes": 135371,
-      "read_only_reference": false
+      "raw_sha256": "0b84709e88c8a221840276b398f7c587d419a0263b1e1e1008e2c6bc076ff683"
     },
     {
       "path": "data/turnout/source/c2039abc90f54e553df67c9a19edd672e394d77c33eade13916396118f3d7b02.gz",
       "sha256": "87d3ad1b5afa9f37bdf5c5ccbcf1b57e7655554840b83c4c4561e04eeabb4ed7",
       "bytes": 136353,
-      "read_only_reference": false
+      "raw_sha256": "c2039abc90f54e553df67c9a19edd672e394d77c33eade13916396118f3d7b02"
     },
     {
       "path": "data/turnout/source/e95498540533325693c2595ed5a23243a2499945bb659fffdbfd9ec39c36481a.gz",
       "sha256": "ed6ae7a87fa9d8859a40ca4303f1b8d2e32b8be229fdbe2080ba8edf30a27333",
       "bytes": 21479,
-      "read_only_reference": false
+      "raw_sha256": "e95498540533325693c2595ed5a23243a2499945bb659fffdbfd9ec39c36481a"
     },
     {
       "path": "data/turnout/source/b230144fcfb671bdbf6719191bf2bb2041e4a948951bb4e04237a794db2c8f83.gz",
       "sha256": "25e57b871e0acef39d2da62bed98f9739db233b0bf2c910a7058f7799e3d2b93",
       "bytes": 21694,
-      "read_only_reference": false
+      "raw_sha256": "b230144fcfb671bdbf6719191bf2bb2041e4a948951bb4e04237a794db2c8f83"
     },
     {
       "path": "data/turnout/source/6b457d2260be7f1ffb7a569914dfc400b5e122c2ee6ae5a242f4dcfc81b07d69.gz",
       "sha256": "4d025b75f895dab4bb7d830b5bc9bcb2417bb47ee3ef5ebecae4f14de82f5c34",
       "bytes": 1644862,
-      "read_only_reference": false
+      "raw_sha256": "6b457d2260be7f1ffb7a569914dfc400b5e122c2ee6ae5a242f4dcfc81b07d69"
     },
     {
       "path": "data/turnout/source/2bcc4649abfba286605ebeebf6594feaf07bb940c1d7b90fa86f053f979c6840.gz",
       "sha256": "e6e71aaf557cf7ef50c524c1d993477072b6697ccaa9256307270dde3722eb66",
       "bytes": 82586,
-      "read_only_reference": false
+      "raw_sha256": "2bcc4649abfba286605ebeebf6594feaf07bb940c1d7b90fa86f053f979c6840"
     },
     {
       "path": "data/turnout/source/8a997623b97c077f836c5b7c8a2d9d2a5dc9179291aab9bd4dc8bb42c68e6979.gz",
       "sha256": "cd065c275ee8a92c8109f8be81d5810b2fffb5bd3633cdea6ab3694ea49e845e",
       "bytes": 58667,
-      "read_only_reference": false
+      "raw_sha256": "8a997623b97c077f836c5b7c8a2d9d2a5dc9179291aab9bd4dc8bb42c68e6979"
     },
     {
       "path": "data/turnout/source/1e07c70bc23055090e6dfd7317af42ec750afa9f66ed1fe8f42b30e4e1d60427.gz",
       "sha256": "99d129e23d659de53c20c923ebd804a1b56ba3dd4aee107284d58456927c5911",
       "bytes": 328604,
-      "read_only_reference": false
+      "raw_sha256": "1e07c70bc23055090e6dfd7317af42ec750afa9f66ed1fe8f42b30e4e1d60427"
     },
     {
       "path": "data/turnout/source/c312644e72eb0480e677160afc6475a46aed1e004a4b15632c26fcaa07106de4.gz",
       "sha256": "7e5f5844cde2da60d73cb0714715743adbb9faf38193b4fcee5d86bd2a20d99f",
       "bytes": 2922,
-      "read_only_reference": false
+      "raw_sha256": "c312644e72eb0480e677160afc6475a46aed1e004a4b15632c26fcaa07106de4"
     },
     {
       "path": "data/turnout/source/a04378df17d666ade74d826cac6f58e73c3eba0e699fd5b7bb1756439a4ee349.gz",
       "sha256": "1417efb117339a05552b217fb5bf122c96f474bba002960eb962a015025f6c5b",
       "bytes": 1416625,
-      "read_only_reference": false
+      "raw_sha256": "a04378df17d666ade74d826cac6f58e73c3eba0e699fd5b7bb1756439a4ee349"
     },
     {
       "path": "data/turnout/source/421f81fdbd651139e7ae6351943e2992afc3aba97942400eadcdea4d77b6a9c2.gz",
       "sha256": "e445e7b9cbc5d1094aa03407b1d39b6128c022e6c61816f09dc6b9fba18afe28",
       "bytes": 2921,
-      "read_only_reference": false
+      "raw_sha256": "421f81fdbd651139e7ae6351943e2992afc3aba97942400eadcdea4d77b6a9c2"
     },
     {
       "path": "data/turnout/source/d401a2129d2cab331eade62b8754c92e29706ff7386e2c3e819d093ff38c2e19.gz",
       "sha256": "4a36df210c2544c2673981ae6e00f68aabe2d21e4fdd35e19a9ed50947e251c6",
       "bytes": 323329,
-      "read_only_reference": false
+      "raw_sha256": "d401a2129d2cab331eade62b8754c92e29706ff7386e2c3e819d093ff38c2e19"
     },
     {
       "path": "data/turnout/source/83e697c9aef2d4d48f14b6a30e7da0e32671c32a92709e1b33f890bd152cf7c5.gz",
       "sha256": "123e2658968c73a3a8ea7d7d3e00b77bdd1a869ee423efef573d7dd9da9c6d7c",
       "bytes": 2945,
-      "read_only_reference": false
+      "raw_sha256": "83e697c9aef2d4d48f14b6a30e7da0e32671c32a92709e1b33f890bd152cf7c5"
     },
     {
       "path": "data/turnout/source/7829e666c9422267619e431c6af833e85a8469fdd2d41e462e0ea52548105184.gz",
       "sha256": "65d299e35cbd1be45798fc90591f3c39d216ce8702cd0504fbbd854b730b6118",
       "bytes": 48,
-      "read_only_reference": false
+      "raw_sha256": "7829e666c9422267619e431c6af833e85a8469fdd2d41e462e0ea52548105184"
     },
     {
       "path": "data/turnout/source/beb4971091a23431a0fc323d62cd45cd2535112c492a5ef9fd0e0911d32f17e3.gz",
       "sha256": "33b8ed9a7f7bb7796680492d013479896a93ea7d7768d246543a388ffc52fdec",
       "bytes": 2934,
-      "read_only_reference": false
+      "raw_sha256": "beb4971091a23431a0fc323d62cd45cd2535112c492a5ef9fd0e0911d32f17e3"
     },
     {
       "path": "data/turnout/source/a7f86693cefef173082ec8205667aa5e8d504545f0ce18ddf0bc5340107bc104.gz",
       "sha256": "e9e7531baae97460efac9325086a00308ab1e4f7e2d8e9c435ac8bcba904d370",
       "bytes": 19467,
-      "read_only_reference": false
+      "raw_sha256": "a7f86693cefef173082ec8205667aa5e8d504545f0ce18ddf0bc5340107bc104"
     },
     {
       "path": "data/turnout/source/bb4fe08a34ce7d9e18fba01a418bf1d345370148f51631f88e856a7223816904.gz",
       "sha256": "34fddb4571bea79664ea1ec924ae7711aaadef7a7598ddd8e4fe135e09cb395e",
       "bytes": 2088,
-      "read_only_reference": false
+      "raw_sha256": "bb4fe08a34ce7d9e18fba01a418bf1d345370148f51631f88e856a7223816904"
     },
     {
       "path": "data/turnout/source/510c6f2028cdc7dff0a5d299c75ae87c52e77fe2063e748b0a42e6f4a08f9ae0.gz",
       "sha256": "128e30fb295a5150a3566e757897fe8e96590d94c39fb8362773011b76f21110",
       "bytes": 1339,
-      "read_only_reference": false
+      "raw_sha256": "510c6f2028cdc7dff0a5d299c75ae87c52e77fe2063e748b0a42e6f4a08f9ae0"
     },
     {
       "path": "data/turnout/source/3c994b2d67e389b7a8268a62526f24b2a16b77eb5297c55839ec0af7b2890cc2.gz",
       "sha256": "ad9a89bb7a69bd798e8c6414d13ed27ea02b21c5f622b6b7f582f998545b1d0b",
       "bytes": 1357,
-      "read_only_reference": false
+      "raw_sha256": "3c994b2d67e389b7a8268a62526f24b2a16b77eb5297c55839ec0af7b2890cc2"
     },
     {
       "path": "data/turnout/source/9a8d1ed30cd0d47c52d080fa1da247e89e2d3fe21d62b1c3ef12300fd664a6df.gz",
       "sha256": "3e9f4c22cc2a38e62cbfb53c40d2333a791f116d047511eff9498f40f5c7690c",
       "bytes": 1350,
-      "read_only_reference": false
+      "raw_sha256": "9a8d1ed30cd0d47c52d080fa1da247e89e2d3fe21d62b1c3ef12300fd664a6df"
     },
     {
       "path": "data/turnout/source/a421525a8c1aec05125016b43d4e1e36e9e434f231a744f217c0710415b269a8.gz",
       "sha256": "6ec6625a702af81075f286e5c514953dda98f1dd13d8c4e283a30eda7002c242",
       "bytes": 6642,
-      "read_only_reference": false
+      "raw_sha256": "a421525a8c1aec05125016b43d4e1e36e9e434f231a744f217c0710415b269a8"
     },
     {
       "path": "data/turnout/source/0e932080aeacbbbc0617a9bb990a14954e1f99d0c5d61f0ac24f19ec4cf92482.gz",
       "sha256": "64f39736d13ddf8e9523cec85096b2e81a1aafe3794f6c925266888b4103381c",
       "bytes": 5868,
-      "read_only_reference": false
+      "raw_sha256": "0e932080aeacbbbc0617a9bb990a14954e1f99d0c5d61f0ac24f19ec4cf92482"
     },
     {
       "path": "data/turnout/source/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.gz",
       "sha256": "f1b651238a58fe290baec6c5e32f3bdb1943dd2bd582f02569231f7a757c7837",
       "bytes": 20,
-      "read_only_reference": false
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
       "path": "data/turnout/source/660f19c09a36ca1620054261590b73df388b95892469ff17c1caf4e50376aa02.gz",
       "sha256": "54bf5f2b20a31589ceff515b4550aa7fcfea3b45ddb3f614f7be28990a3d6cbb",
       "bytes": 56,
-      "read_only_reference": false
+      "raw_sha256": "660f19c09a36ca1620054261590b73df388b95892469ff17c1caf4e50376aa02"
     },
     {
       "path": "data/turnout/source/0b579225ed6eab02630d82b082d9e1b412b81303dd7ffdac62eb6668b9577b94.gz",
       "sha256": "f177f51f26abb2e0b2e72cd3b2941bf513d136448c40a21e9160b4d2ecdbcbc9",
       "bytes": 578,
-      "read_only_reference": false
+      "raw_sha256": "0b579225ed6eab02630d82b082d9e1b412b81303dd7ffdac62eb6668b9577b94"
     },
     {
       "path": "data/turnout/source/07c8e610cb35f201897fa68f56e8a67a954cae7e2c6ac4056fde1666da984274.gz",
       "sha256": "e666bf86cf0986bd72c19a3f2c34347378d04731201c88151eaad0eb89808ad1",
       "bytes": 748,
-      "read_only_reference": false
+      "raw_sha256": "07c8e610cb35f201897fa68f56e8a67a954cae7e2c6ac4056fde1666da984274"
     },
     {
       "path": "data/turnout/source/24b13c538f7f42c123b233cdf70ca857f89c9e58efa1dd1b2c3b49b65d66b008.gz",
       "sha256": "90480c103ecceb27da11037c8bc7bd55fddbe024b10431a346bc04d834f5915b",
       "bytes": 509,
-      "read_only_reference": false
+      "raw_sha256": "24b13c538f7f42c123b233cdf70ca857f89c9e58efa1dd1b2c3b49b65d66b008"
     },
     {
       "path": "data/turnout/source/fb1f13965aaa08ac16516c869fa167674279a8b245ac2a05233f776d525530e3.gz",
       "sha256": "be32634f7d9bbdab3985ccaa52cdc046b3e4aed8ca115ec9ab86e96f043b83c9",
       "bytes": 797,
-      "read_only_reference": false
+      "raw_sha256": "fb1f13965aaa08ac16516c869fa167674279a8b245ac2a05233f776d525530e3"
     },
     {
       "path": "data/turnout/source/8076908db5484ecfd3a93270be7e249554b4214cb49ccdd9470354c189c64d88.gz",
       "sha256": "311c1f6c77c5f7422f01a813ddf03a47ec42453e99554944d4e18653894c73ea",
       "bytes": 809,
-      "read_only_reference": false
+      "raw_sha256": "8076908db5484ecfd3a93270be7e249554b4214cb49ccdd9470354c189c64d88"
     },
     {
       "path": "data/turnout/source/d969d33d1aba7ab0c93c011015956c95deeeffc1283e50c3a296c43c00a0400c.gz",
       "sha256": "7c3ab5b3085173739c70fb3780f7d6818a043c8ef070dbf17068fd3abb16ba9b",
       "bytes": 289925,
-      "read_only_reference": false
+      "raw_sha256": "d969d33d1aba7ab0c93c011015956c95deeeffc1283e50c3a296c43c00a0400c"
     },
     {
       "path": "data/turnout/source/a98747f5c7e8aea4e9ce1f7d821f9b367903fc63d3e8a9f0ddc7452006235dee.gz",
       "sha256": "ea3c5a164db463aa340d63aa6bff3d0173a33feef02262b47cbae31d91192c14",
       "bytes": 1661682,
-      "read_only_reference": false
+      "raw_sha256": "a98747f5c7e8aea4e9ce1f7d821f9b367903fc63d3e8a9f0ddc7452006235dee"
     },
     {
       "path": "data/turnout/source/0e883ed56934871c75be026dbe1e9a7ffa32a40ed4b5045f136f579892f44736.gz",
       "sha256": "d21d6fc0d66d904c275e1aa037a1bc216b630dcd157e2592d5d8aae6525936da",
       "bytes": 1286708,
-      "read_only_reference": false
+      "raw_sha256": "0e883ed56934871c75be026dbe1e9a7ffa32a40ed4b5045f136f579892f44736"
     },
     {
       "path": "data/turnout/source/e2bb0b1b79194d6a52751a1e8af8c57b1555215c1d7dacb620ced534cac653fa.gz",
       "sha256": "fbb87b930f0cbb60153483ab879effc89a837a59d5d5dc488076297a6f5f43c4",
       "bytes": 389269,
-      "read_only_reference": false
+      "raw_sha256": "e2bb0b1b79194d6a52751a1e8af8c57b1555215c1d7dacb620ced534cac653fa"
     },
     {
       "path": "data/turnout/source/4903a16c08454244a5551150753f8fdb623e6337e08f9dfa27f53994eba5f9cb.gz",
       "sha256": "6744efac0b244265fee9df4859121acf44a38647618132aa02c4d2d4daeb3e33",
       "bytes": 395954,
-      "read_only_reference": false
+      "raw_sha256": "4903a16c08454244a5551150753f8fdb623e6337e08f9dfa27f53994eba5f9cb"
     },
     {
       "path": "data/turnout/source/eba5e9c602d33243b3f915c2425ccfbb128283038581b994559a625a736b8dc7.gz",
       "sha256": "b8aea9507aa7613fedb0437fce1299d5436c1ad618e7d7ccb9e2be55c873a934",
       "bytes": 920605,
-      "read_only_reference": false
+      "raw_sha256": "eba5e9c602d33243b3f915c2425ccfbb128283038581b994559a625a736b8dc7"
     },
     {
       "path": "data/turnout/source/df8bcf4acee18ca127735bd9604280372eac8208502239b9604586610b14d2ce.gz",
       "sha256": "70205fa3aa5b3b068fa45f93bf0bd5c71819b474bbfad56a65b960cba066ffd5",
       "bytes": 88154,
-      "read_only_reference": false
+      "raw_sha256": "df8bcf4acee18ca127735bd9604280372eac8208502239b9604586610b14d2ce"
     },
     {
       "path": "data/turnout/source/1642fc89da1f02fcdc37678aaa2ed08326919f9a84b9371fa1193910f31ec9d9.gz",
       "sha256": "edcab64ff3c83cfa7f3c332c6c1bb35fd725914f913c9f6874c82010d5a3a642",
       "bytes": 935071,
-      "read_only_reference": false
+      "raw_sha256": "1642fc89da1f02fcdc37678aaa2ed08326919f9a84b9371fa1193910f31ec9d9"
     },
     {
       "path": "data/turnout/source/be4156907b0db64258deb309359e3cc726a52c5293ec46be538e039caa8f79e5.gz",
       "sha256": "daae38594783a33c81cbbcfc5904c7ca05e310fc48c3027abaa3b3fd3e7ee812",
       "bytes": 88400,
-      "read_only_reference": false
+      "raw_sha256": "be4156907b0db64258deb309359e3cc726a52c5293ec46be538e039caa8f79e5"
     },
     {
       "path": "data/turnout/source/696091f438b5e6a702de20e28e840042ad6dc8a5edfefd6940d855f207742464.gz",
       "sha256": "e53d16b5445a3b80a5793d1f6d50e47a995e14361e554c9234e29ba7b0568f6d",
       "bytes": 3312,
-      "read_only_reference": false
+      "raw_sha256": "696091f438b5e6a702de20e28e840042ad6dc8a5edfefd6940d855f207742464"
     },
     {
       "path": "data/turnout/source/2cec4a3935927dc250c4b964746aceca026ee49adf0f5a78397861b5ce31667d.gz",
       "sha256": "a9453056cd75de8a698886729ab5382e9de474dbbec9ebc17a2a6d5edf7319e1",
       "bytes": 4826,
-      "read_only_reference": false
+      "raw_sha256": "2cec4a3935927dc250c4b964746aceca026ee49adf0f5a78397861b5ce31667d"
     },
     {
       "path": "data/turnout/source/c8a13679e5f00750a483958f9c2b8928b3faea6c6a5024dc074627d120e8e08b.gz",
       "sha256": "eb4af5e8fd16fe7d8c082cfb25d5e1f18e2e19da4ca2a2eb76415ac553dd82e0",
       "bytes": 4791,
-      "read_only_reference": false
+      "raw_sha256": "c8a13679e5f00750a483958f9c2b8928b3faea6c6a5024dc074627d120e8e08b"
+    },
+    {
+      "path": "data/coordinator-current-roster-preparation/b2fd3af59753def01e8b191142f7662c6349c1e0d137f78b514900f6d8f51e63.gz",
+      "sha256": "567d3a900485bdf5566de24e396bee65f0a60bbc020ecd7821309d08160e785b",
+      "bytes": 25828,
+      "raw_sha256": "b2fd3af59753def01e8b191142f7662c6349c1e0d137f78b514900f6d8f51e63",
+      "scope": "immutable_captured_peer_primary_reference_not_new_source_admission"
+    },
+    {
+      "path": "data/coordinator-current-roster-preparation/909a067f6bba703e9da49f3b92e9044aae5bde8d41ac2f671f956a5367cbd95f.gz",
+      "sha256": "ff618b0dcd1414d72409343b11dc0e1128bcc2c6d509b5ffd250f4cd9ff927d9",
+      "bytes": 399171,
+      "raw_sha256": "909a067f6bba703e9da49f3b92e9044aae5bde8d41ac2f671f956a5367cbd95f",
+      "scope": "immutable_captured_peer_primary_reference_not_new_source_admission"
     }
   ],
-  "acquisition_receipts": "acquisition.json",
   "all_objects_strictly_below_40000000": true
 }

@@ -5,6 +5,8 @@ from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parent/'source'))
 from common import *
 from fractions import Fraction
+from invariants import source_guard,order_guard,admission_guard
+from compare_peer import frozen,own
 from urllib.parse import unquote
 
 def main():
@@ -12,6 +14,7 @@ def main():
  def check(name,condition,details=None):
   assert condition,(name,details);checks.append(dict(check=name,passed=True,details=details))
  a=json.loads((D/'original-extract.json').read_text());b=json.loads((D/'ballot-registration-extract.json').read_text());c=json.loads((D/'canvass-controls.json').read_text());stock=json.loads((D/'registration-stocks.json').read_text());s=json.loads((D/'sensitivity.json').read_text());p=json.loads((D/'priority-set.json').read_text());geo=json.loads((D/'county-identifiers.json').read_text())
+ source_guard(a);order_guard(s);admission_guard(p);check('source_order_admission_guards',True)
  source_receipts=manifest();check('source_ids_unique',len({r['id']for r in source_receipts})==len(source_receipts))
  sharedassets={}
  for receipt in source_receipts:
@@ -76,26 +79,31 @@ def main():
  check('csv_unknown_rank_and_candidate_sum_empty',all(csvbykey[r['key']]['complete_candidate_votes']==''and csvbykey[r['key']]['observed_complete_row_rank']==''and csvbykey[r['key']]['certified_full_universe_rank']==''for r in native if r['candidate_votes']is None))
  check('priority_complete_constituents_order_and_counties',len(p['constituents'])==2201 and {r['key']for r in p['constituents']}==keys==set(p['complete_coverage_order'])and len(p['complete_coverage_order'])==2201 and len(p['county_contexts'])==33 and set(k for c in p['county_contexts']for k in c['source_native_constituent_keys'])==keys)
  check('privacy_dispatch_qualifier_enforced',p['accepted_for_dispatch']is False and p['ordered_priority_keys']==[]and p['certified_native_minimum80']is None and p['certified_native_full_order']is None and p['certified_native_top15']is None)
- check('actual_peer_not_invented',p['peer_agent_id']is None and p['peer_agreement']=='pending_actual_independent_peer')
+ review=json.loads((D/'peer-reconciliation.json').read_text());check('actual_captured_peer_source_agreement',p['peer_agent_id']=='9a904675-c599-4e28-8862-663c3496078e'and p['peer_agreement']=='agreed_bounded_immutable_captured_source_core'and review['status']=='passed_bounded_source_core'and not review['mismatches'])
+ check('captured_peer_no_future_or_calculator_admission',p['peer_review']['future_final_byte_equality']is False and p['peer_review']['calculator_validation_admitted']is False and p['peer_review']['coordinator_acceptance']is False)
  check('unmatched_otero_not_senate_zero',p['same_year_unmatched_contexts']['president_only']==[['Otero','18']]and p['same_year_unmatched_contexts']['senate_only']==[])
  check('all_native_coverage_counts_and_masks',p['source_coverage']==dict(county_count=33,native_rows=2201,administrative_rows=33,complete_candidate_rows=2181,candidate_unavailable_rows=20,masked_candidate_cells=30,masked_control_cells=6))
- witness=json.loads((D/'original-first-witness-v2.json').read_text());check('frozen_original_first_witness_hashes',not witness['peer_derivatives_read']and all(sha((D/name).read_bytes())==z['sha256']for name,z in witness['files'].items()))
+ witness=json.loads((D/'original-first-witness-v2.json').read_text());check('frozen_original_first_witness_hashes',not witness['peer_derivatives_read']and sha((D/'original-first-witness-v2.json').read_bytes())=='427ad9e10b16e85cc675f6479796f09813afa5a72845b1199d4dd6b4e8ae7c51'and all(sha(frozen('turnout-pre-peer','data/turnout/'+name))==z['sha256']for name,z in witness['files'].items()))
+ for name in ['original-extract.json','legacy-methods.json','ballot-registration-extract.json','canvass-controls.json','registration-stocks.json','native-inventory.json','sensitivity.json','county-summary.csv']:
+  check('current_source_core_unchanged:'+name,(D/name).read_bytes()==frozen('turnout-pre-peer','data/turnout/'+name))
+ check('native_csv_unchanged',(STATE/'data/county-turnout.csv').read_bytes()==frozen('turnout-pre-peer','data/county-turnout.csv'))
+ old=own('priority-set.json');projection=dict(p);projection.pop('peer_review',None)
+ for k in ['status','peer_agent_id','peer_agreement']:projection[k]=old[k]
+ check('contract_only_review_annotations_changed',projection==old)
+ negative=json.loads((D/'negative-fixtures.json').read_text());check('independent_negative_fixtures',negative['status']=='passed'and len(negative['fixtures'])==13 and all(z['rejected']for z in negative['fixtures']))
+ check('grand_total_extension_original_evidence',all(z['raw_lines'][0]in(D/'source'/f"registration-{month}-county.txt").read_text()and sum(z['counts'])==z['total']for month,z in json.loads((D/'registration-grand-controls.json').read_text()).items()))
  # Check links in every owned Markdown; all are in-source citations or resolvable state-relative files.
  broken=[]
  for path in [STATE/'turnout.md']+list(D.rglob('*.md')):
   for target in re.findall(r'\]\(([^)]+)\)',path.read_text()):
    if target.startswith(('http://','https://','#','mailto:')):continue
    file=unquote(target.split('#')[0].split(':')[0]);resolved=path.parent/file
-   if file and not resolved.exists()and resolved not in [D/'validation.json',D/'asset-manifest.json']:broken.append(dict(path=str(path),target=target))
+   if file and not resolved.exists()and resolved not in [D/'validation.json',D/'asset-manifest.json',D/'final-seal.json']:broken.append(dict(path=str(path),target=target))
  check('all_relative_markdown_links_resolve',not broken,broken)
  owned=[STATE/'turnout.md',STATE/'data/county-turnout.csv']+[f for f in D.rglob('*')if f.is_file()and f.name not in ['asset-manifest.json','validation.json']]
  check('all_owned_assets_strictly_under_40million',all(f.stat().st_size<40_000_000 for f in owned),max(f.stat().st_size for f in owned))
  check('no_retained_dependency_or_cache_directories',not any(p.name in ['__pycache__','node_modules','.venv','venv']for p in D.rglob('*')if p.is_dir()))
- out=dict(status='offline_pass_qualified_research_scope',passed_checks=len(checks),checks=checks,primary_reconciliation='all33 county candidate vectors independently match original PDFs for all4 contests; all county/native/state portal ballots and eligible controls exact; source differences explicitly retained',peer_agreement='pending_actual_peer',coordinator_acceptance='pending',coverage=p['source_coverage'],gaps=['Certified complete-native ordering and membership unavailable under privacy masks','No private-cell allocation or zero substitution','Peer has not launched; no reciprocal review or final-question acceptance','Native methods/blank/under/over/generic write-in completeness unavailable','2020 PDF and portal ballot versions differ58; source-scoped','Dated registration report native/counties/run-time differences retained','No approved current geography or crosswalk'])
+ out=dict(status='offline_pass_qualified_research_scope',passed_checks=len(checks),checks=checks,primary_reconciliation='all33 county candidate vectors independently match original PDFs for all4 contests; all county/native/state portal ballots and eligible controls exact; source differences explicitly retained',peer_agreement='agreed_bounded_immutable_captured_source_core',peer_comparison_checks=review['comparison_checks'],coordinator_acceptance='pending',coverage=p['source_coverage'],gaps=['Certified complete-native ordering and membership unavailable under privacy masks','No private-cell allocation or zero substitution','Bounded captured-peer source-core agreement complete; calculator/scenarios/report equality and later-final bytes excluded; coordinator acceptance pending','Native methods/blank/under/over/generic write-in completeness unavailable','2020 PDF and portal ballot versions differ58; source-scoped','Dated registration report native/counties/run-time differences retained','No approved current geography or crosswalk'])
  dump(D/'validation.json',out)
- owned+=[D/'validation.json'];assets=[dict(path=str(f.relative_to(STATE)),sha256=sha(f.read_bytes()),bytes=f.stat().st_size,ownership='NM turnout exclusive')for f in sorted(set(owned))]
- dump(D/'asset-manifest.json',dict(schema_version=1,self_exclusion='This manifest excludes itself to avoid recursive self hashing; every other owned artifact is listed.',owned_assets=assets,source_assets=list(sharedassets.values()),acquisition_receipts='acquisition.json',all_objects_strictly_below_40000000=True))
- assert(D/'validation.json').exists()and(D/'asset-manifest.json').exists()
- check('manifest_all_owned_hashes',all(sha((STATE/z['path']).read_bytes())==z['sha256']and(STATE/z['path']).stat().st_size==z['bytes']for z in assets))
- print(json.dumps(dict(status=out['status'],passed_checks=out['passed_checks'],owned_assets=len(assets),source_assets=len(sharedassets),peer='pending',acceptance='pending')))
+ print(json.dumps(dict(status=out['status'],passed_checks=out['passed_checks'],peer_comparison_checks=review['comparison_checks'],peer='bounded_source_core_agreed',acceptance='pending')))
 if __name__=='__main__':main()

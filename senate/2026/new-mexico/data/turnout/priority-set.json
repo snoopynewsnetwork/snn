@@ -21,10 +21,10 @@
     ],
     "state_denominator": 903311
   },
-  "status": "qualified_research_complete_peer_and_coordinator_acceptance_pending",
+  "status": "qualified_research_peer_source_core_agreement_coordinator_acceptance_pending",
   "accepted_for_dispatch": false,
-  "peer_agent_id": null,
-  "peer_agreement": "pending_actual_independent_peer",
+  "peer_agent_id": "9a904675-c599-4e28-8862-663c3496078e",
+  "peer_agreement": "agreed_bounded_immutable_captured_source_core",
   "coordinator_acceptance": "pending",
   "certified_native_top15": null,
   "certified_native_minimum80": null,
@@ -69377,5 +69377,40 @@
   "state_arithmetic_includes_nonpriority": true,
   "disjoint_hierarchy": "Compute state from 33 disjoint county controls. Within a source lane compute native known sums and unallocated residuals separately. Never add parent totals, privacy allocations, methods and county/precinct summaries together.",
   "source_manifest": "acquisition.json",
-  "original_first_witness": "original-first-witness-v2.json"
+  "original_first_witness": "original-first-witness-v2.json",
+  "peer_review": {
+    "proof": "peer-reconciliation.json",
+    "proof_sha256": "2c61c90d5629ca77cefce24d71a77cb1cc960001c91509194a4ab24daab9b55a",
+    "peer_capture": "history/baseline-final-peer/capture.json",
+    "peer_capture_index_sha256": "fd7bb4f13128f96f036d123e422851f79ab28bbdd99aa10e83a08e0baf44fe7a",
+    "peer_manifest_at_capture_sha256": "b7889d8a9b68cfc4dbca9beed0ef1b8400a7bcbeca6b0bb97796da15ce52173b",
+    "own_prechange_capture": "history/turnout-pre-peer/capture.json",
+    "own_prechange_capture_sha256": "719f7e527bcc3b7b92ffb8757f1ae870943a68eebb23cb8ff0b845be672acae5",
+    "comparison_checks": 800667,
+    "scope": {
+      "candidate_control_positions": 50179,
+      "native_rows_by_contest": {
+        "2024-senate": 2201,
+        "2020-senate": 1959,
+        "2022-governor": 2196,
+        "2024-president": 2202
+      },
+      "ballot_eligible_native_rows": 6257,
+      "registration_rows": 4472,
+      "pdf_candidate_county_cells": 495,
+      "order_universes": 18,
+      "priority_native_constituents": 2201,
+      "priority_county_parents": 33
+    },
+    "source_position_mapping": "CSV one-based row/column; ballot own source-byte/char start mapped to original line/zero-based column; registration original PDF page/line and raw wrapped lines. No alias or cross-year/current native join.",
+    "exclusions": [
+      "Calculator input validity, calculator outcomes, modeled preferences/scenarios and report prose equality are outside this audit.",
+      "Capture is actual finished baseline MF b7889d8a...; no equality claim for later repaired files or future final manifests.",
+      "Peer-only current roster/fresh observations are separately preserved, not imported as historical votes.",
+      "No legal/current geography/collector/feed/certified-native priority admission."
+    ],
+    "future_final_byte_equality": false,
+    "calculator_validation_admitted": false,
+    "coordinator_acceptance": false
+  }
 }
