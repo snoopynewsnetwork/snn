@@ -1,0 +1,53 @@
+{
+  "status": "pass_narrow_repair_review",
+  "checks": 1650,
+  "owned_files": 600,
+  "manifest_entries": 599,
+  "excludes_only": "data/baselines/asset-manifest.json",
+  "old_complete_bodies_reconstructed": 296,
+  "unchanged_previous_payloads": 288,
+  "changed_only_authorized_packaging_files": [
+    "data/baselines/asset-manifest.json",
+    "data/baselines/scripts/originals.py",
+    "data/baselines/scripts/reproduce.py",
+    "data/baselines/scripts/seal.py",
+    "data/baselines/scripts/validate.py",
+    "data/baselines/seal.json",
+    "data/baselines/source/SCHEMA.md",
+    "data/baselines/validation.json"
+  ],
+  "immutable_reader_guarded_rebuild": {
+    "entities_texts": 113,
+    "ZIP_members": 72,
+    "denied_mutable_routes": 5
+  },
+  "packaging_negative_fixtures": 3,
+  "pins": [
+    {
+      "path": "data/baselines/asset-manifest.json",
+      "bytes": 133277,
+      "sha256": "c725c0069e8409d9667ef0ce674a14bea20456410bdee4e50eb0e44b4e5846b9"
+    },
+    {
+      "path": "data/baselines/seal.json",
+      "bytes": 2351,
+      "sha256": "fa708f3c06d8233ac34f0c6f92f1af424388fcc4b0b71759fbce6910942eecd3"
+    },
+    {
+      "path": "data/baselines/validation.json",
+      "bytes": 16280,
+      "sha256": "1061877a8bf48518ac4097afcff3eef7e446545d0a96aca29c0306b00b9f20f2"
+    },
+    {
+      "path": "data/baselines/source/history/seal-input-repair-v1/inventory.json",
+      "bytes": 130530,
+      "sha256": "83ac2827f79782ac09f8e5c85ba5447c3120ae6569916e30acfe4d8dd5857b39"
+    },
+    {
+      "path": "data/baselines/source/inputs/original-receipts-v1.json",
+      "bytes": 116153,
+      "sha256": "3053adb590a11f424c78c34d20e1bad23d5571fe3a72d347e82fdf99a7d6fae7"
+    }
+  ],
+  "scope": "Complete body preservation, immutable input reader and self-only manifest repair. Historical sources, model, orders, scenarios and calculator unchanged; no renewed math/live/current approval."
+}

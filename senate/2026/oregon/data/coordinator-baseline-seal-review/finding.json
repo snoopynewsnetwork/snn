@@ -1,0 +1,44 @@
+{
+  "status": "concrete_complete_manifest_repair_required",
+  "observed_at_utc": "2026-10-20T15:06:37.373340+00:00",
+  "all294listed_body_hashes_pass": true,
+  "actual_owned_files": 296,
+  "listed_assets": 294,
+  "actual_exclusions": [
+    "data/baselines/asset-manifest.json",
+    "data/baselines/seal.json"
+  ],
+  "required_exclusions": [
+    "data/baselines/asset-manifest.json"
+  ],
+  "reason": "The final seal is an owned output and must be listed. Existing seal pins manifest digest, so write seal first without a current manifest digest and manifest last including the seal. Preserve old acyclic two-exclusion phase as history.",
+  "independent_formula_checks": 48848,
+  "actual_CLI_cases": 37,
+  "actual_CLI_failures": 0,
+  "source_solver_count_or_order_repair_requested": false,
+  "same_agent_only_after_real_slot": "7c03df8c-f908-40a8-a289-369e4aa26e69",
+  "frozen_old_evidence": {
+    "asset-manifest.json": {
+      "original_bytes": 54452,
+      "original_sha256": "f9ae886f9190e1a8f7130795959d41bee91fe0de07d675f58b663c97132acf1b",
+      "frozen_body": "data/coordinator-baseline-seal-review/asset-manifest.json.gz",
+      "stored_bytes": 15340,
+      "stored_sha256": "69e614acb2b442a3701d3c6dcf86849b54e522e829e4664f01fcf44e822262c9"
+    },
+    "seal.json": {
+      "original_bytes": 409,
+      "original_sha256": "b3fe905a0bf4117d693887328e567851c882f502d4003c18c4a3aeda828ec1f9",
+      "frozen_body": "data/coordinator-baseline-seal-review/seal.json.gz",
+      "stored_bytes": 273,
+      "stored_sha256": "21d5f2343712ef31bf97620f8ad232499cd93cf7480b0b7a09047aa3e8533dd0"
+    },
+    "scripts/seal.py": {
+      "original_bytes": 1207,
+      "original_sha256": "b125042bb804a3d2baed992d12e5ad57aa26dde7add024b7589b81f5869e13bf",
+      "frozen_body": "data/coordinator-baseline-seal-review/scripts-seal.py.gz",
+      "stored_bytes": 632,
+      "stored_sha256": "2914b9f434ccadb076f41f601f2689b635f7f94fec6a8ef36ade82ba72c77d2e"
+    }
+  },
+  "producer_bytes_changed_by_coordinator": false
+}

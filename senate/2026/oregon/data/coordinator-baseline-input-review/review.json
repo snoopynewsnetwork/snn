@@ -1,0 +1,792 @@
+{
+  "status": "pass",
+  "actual_cases": 37,
+  "actual_failures": 0,
+  "calculator": {
+    "path": "data/baselines/scripts/calculator.py",
+    "bytes": 14897,
+    "sha256": "36974be4ce787e70385868548dc675ceefe2eec0241b851f05c035c84452c38c"
+  },
+  "fixed_counted_and_final_denominator_analytic_control": true,
+  "cases": [
+    {
+      "name": "ordinary_final_all_choice",
+      "valid_expected": true,
+      "passed": true,
+      "exit": 0,
+      "input_sha256": "d949d6a4ee43b378edc46d1fa41845d34aa7a6ee9bf48c2244aaf3b583bc852e",
+      "output": {
+        "ok": true,
+        "result": {
+          "counted_fixed": {
+            "A": 120,
+            "B": 80,
+            "other": {
+              "Third": 75
+            }
+          },
+          "remaining_units": [
+            {
+              "key": "one",
+              "pair_volume": 80.0,
+              "share": 0.4
+            },
+            {
+              "key": "two",
+              "pair_volume": 50,
+              "share": 0.6
+            }
+          ],
+          "denominator": "final_all_choice",
+          "target_margin": 0.01,
+          "probability": null,
+          "scope": "conditional arithmetic; remaining pool/preferences supplied, not inferred",
+          "status": "feasible",
+          "final_denominator": 425.0,
+          "final_pair_volume": 330.0,
+          "final_all_choice_volume": 425.0,
+          "remaining_pair_volume": 130.0,
+          "unbounded_required_remaining_A_share": 0.3625,
+          "required_remaining_A_share": 0.3625,
+          "required_remaining_share_clipped": false,
+          "final_A": 182.0,
+          "final_B": 148.0,
+          "final_other": {
+            "Third": 95.0
+          },
+          "final_pair_net_votes": 34.0,
+          "final_margin": 0.08,
+          "A_strict_plurality": true,
+          "named_full_field_winner": "A",
+          "plurality_tie": false,
+          "arithmetic_full_field_leaders": [
+            "A"
+          ],
+          "actual2026_ballot_mapping": null,
+          "selected_only": {
+            "key": "one",
+            "other_counted_and_remaining_net_fixed": 50.0,
+            "required_share_unbounded": 0.2140625,
+            "required_share": 0.2140625,
+            "status": "feasible"
+          }
+        }
+      },
+      "stderr": ""
+    },
+    {
+      "name": "zero_pool",
+      "valid_expected": true,
+      "passed": true,
+      "exit": 0,
+      "input_sha256": "e934a2dc3dfefb6cc5084dcdbf307a1b7e1201c21afbc74286fdb5f7ad7c45f7",
+      "output": {
+        "ok": true,
+        "result": {
+          "counted_fixed": {
+            "A": 5,
+            "B": 4,
+            "other": {}
+          },
+          "remaining_units": [],
+          "denominator": "final_pair",
+          "target_margin": 0,
+          "probability": null,
+          "scope": "conditional arithmetic; remaining pool/preferences supplied, not inferred",
+          "status": "no_positive_pool",
+          "final_denominator": 9.0,
+          "final_pair_volume": 9.0,
+          "final_all_choice_volume": 9.0,
+          "remaining_pair_volume": 0.0,
+          "unbounded_required_remaining_A_share": null,
+          "required_remaining_A_share": null,
+          "required_remaining_share_clipped": false,
+          "final_A": 5.0,
+          "final_B": 4.0,
+          "final_other": {},
+          "final_pair_net_votes": 1.0,
+          "final_margin": 0.1111111111111111,
+          "A_strict_plurality": true,
+          "named_full_field_winner": "A",
+          "plurality_tie": false,
+          "arithmetic_full_field_leaders": [
+            "A"
+          ],
+          "actual2026_ballot_mapping": null
+        }
+      },
+      "stderr": ""
+    },
+    {
+      "name": "unknown_pool",
+      "valid_expected": true,
+      "passed": true,
+      "exit": 0,
+      "input_sha256": "867740e0f730eedd86addd790098265406d1bd809e9b6143dce76be2fd52aa3e",
+      "output": {
+        "ok": true,
+        "result": {
+          "counted_fixed": {
+            "A": 5,
+            "B": 4,
+            "other": {}
+          },
+          "remaining_units": [
+            {
+              "key": "u",
+              "pair_volume": 0,
+              "share": null
+            }
+          ],
+          "denominator": "final_pair",
+          "target_margin": 0,
+          "probability": null,
+          "scope": "conditional arithmetic; remaining pool/preferences supplied, not inferred",
+          "status": "unknown_remaining_volume_mix_or_preference",
+          "final_denominator": null,
+          "required_remaining_A_share": null,
+          "known_partial_remaining_pair_volume": 0.0
+        }
+      },
+      "stderr": ""
+    },
+    {
+      "name": "secured",
+      "valid_expected": true,
+      "passed": true,
+      "exit": 0,
+      "input_sha256": "f0bb10e055fa0d7d4e16327137e846e3de4b1e06c63aaeaf203fffe68263c0a8",
+      "output": {
+        "ok": true,
+        "result": {
+          "counted_fixed": {
+            "A": 500,
+            "B": 1,
+            "other": {}
+          },
+          "remaining_units": [
+            {
+              "key": "u",
+              "pair_volume": 10,
+              "share": 0.5
+            }
+          ],
+          "denominator": "final_pair",
+          "target_margin": 0,
+          "probability": null,
+          "scope": "conditional arithmetic; remaining pool/preferences supplied, not inferred",
+          "status": "secured_even_at_zero",
+          "final_denominator": 511.0,
+          "final_pair_volume": 511.0,
+          "final_all_choice_volume": 511.0,
+          "remaining_pair_volume": 10.0,
+          "unbounded_required_remaining_A_share": -24.45,
+          "required_remaining_A_share": 0,
+          "required_remaining_share_clipped": true,
+          "final_A": 505.0,
+          "final_B": 6.0,
+          "final_other": {},
+          "final_pair_net_votes": 499.0,
+          "final_margin": 0.9765166340508806,
+          "A_strict_plurality": true,
+          "named_full_field_winner": "A",
+          "plurality_tie": false,
+          "arithmetic_full_field_leaders": [
+            "A"
+          ],
+          "actual2026_ballot_mapping": null
+        }
+      },
+      "stderr": ""
+    },
+    {
+      "name": "impossible",
+      "valid_expected": true,
+      "passed": true,
+      "exit": 0,
+      "input_sha256": "dc5cd223e166779c38382be6b3b9369911a70fb1d2ead3257130676a36352712",
+      "output": {
+        "ok": true,
+        "result": {
+          "counted_fixed": {
+            "A": 1,
+            "B": 500,
+            "other": {}
+          },
+          "remaining_units": [
+            {
+              "key": "u",
+              "pair_volume": 10,
+              "share": 0.5
+            }
+          ],
+          "denominator": "final_pair",
+          "target_margin": 0,
+          "probability": null,
+          "scope": "conditional arithmetic; remaining pool/preferences supplied, not inferred",
+          "status": "impossible_even_at_one",
+          "final_denominator": 511.0,
+          "final_pair_volume": 511.0,
+          "final_all_choice_volume": 511.0,
+          "remaining_pair_volume": 10.0,
+          "unbounded_required_remaining_A_share": 25.45,
+          "required_remaining_A_share": 1,
+          "required_remaining_share_clipped": true,
+          "final_A": 6.0,
+          "final_B": 505.0,
+          "final_other": {},
+          "final_pair_net_votes": -499.0,
+          "final_margin": -0.9765166340508806,
+          "A_strict_plurality": false,
+          "named_full_field_winner": "B",
+          "plurality_tie": false,
+          "arithmetic_full_field_leaders": [
+            "B"
+          ],
+          "actual2026_ballot_mapping": null
+        }
+      },
+      "stderr": ""
+    },
+    {
+      "name": "bounded_uniform",
+      "valid_expected": true,
+      "passed": true,
+      "exit": 0,
+      "input_sha256": "36acb4ec008598fabba5227fbe379b6eb869478ddf562bca7bf68091ce4dc499",
+      "output": {
+        "ok": true,
+        "result": {
+          "status": "requires_improvement",
+          "target_margin": 0.8,
+          "pair_volume": 200.0,
+          "baseline_net_votes": 18.0,
+          "target_net_votes": 160.0,
+          "unbounded_share_shift": 0.355,
+          "unbounded_share_shift_points": 35.5,
+          "bounded_share_shift": 0.7,
+          "bounded_share_shift_points": 70.0,
+          "achieved_net_votes": 160.0,
+          "residual_net_votes": 0.0,
+          "bounded_feasible": true,
+          "units": [
+            {
+              "key": "a",
+              "pair_volume": 100,
+              "share": 0.99,
+              "weight": 0.5,
+              "unbounded_target_share": 1.345,
+              "target_share": 1,
+              "clipped": true,
+              "target_pair_margin": 1,
+              "status": "feasible",
+              "baseline_net_votes": 98.0,
+              "target_net_votes": 100,
+              "net_vote_gain": 2.0000000000000018,
+              "gain_per_A_share_point": 2.0
+            },
+            {
+              "key": "b",
+              "pair_volume": 100,
+              "share": 0.1,
+              "weight": 0.5,
+              "unbounded_target_share": 0.45499999999999996,
+              "target_share": 0.7999999999999999,
+              "clipped": false,
+              "target_pair_margin": 0.5999999999999999,
+              "status": "feasible",
+              "baseline_net_votes": -80.0,
+              "target_net_votes": 59.999999999999986,
+              "net_vote_gain": 140.0,
+              "gain_per_A_share_point": 2.0
+            }
+          ]
+        }
+      },
+      "stderr": ""
+    },
+    {
+      "name": "selected_unknown_own_preference",
+      "valid_expected": true,
+      "passed": true,
+      "exit": 0,
+      "input_sha256": "8729f39615b36cd79b7d07846ae1943482f6d13434243067f6c88a3e681fa1cd",
+      "output": {
+        "ok": true,
+        "result": {
+          "selected": "a",
+          "target_margin": 0,
+          "pair_volume": 200.0,
+          "selected_pair_volume": 100,
+          "other_net_votes_fixed": 19.999999999999996,
+          "other_units_fixed": [
+            {
+              "key": "b",
+              "pair_volume": 100,
+              "share": 0.6
+            }
+          ],
+          "selected_baseline_share": null,
+          "status": "feasible",
+          "unbounded_required_share": 0.4,
+          "required_share": 0.4,
+          "required_change_from_source_share": null,
+          "feasible": true,
+          "required_net_votes": -19.999999999999996
+        }
+      },
+      "stderr": ""
+    },
+    {
+      "name": "invalid_target_0",
+      "valid_expected": false,
+      "passed": true,
+      "exit": 0,
+      "input_sha256": "9891f10843704afcef7d3d3c5408b6c899a0499ff89d0dc9d79af3224c7f2a4f",
+      "output": {
+        "ok": false,
+        "error": {
+          "type": "invalid_input",
+          "message": "target_margin must be a finite numeric scalar"
+        }
+      },
+      "stderr": ""
+    },
+    {
+      "name": "invalid_target_1",
+      "valid_expected": false,
+      "passed": true,
+      "exit": 0,
+      "input_sha256": "392828445f1ec76074d2c098c3781d307dc4d606786e833d3ab6e6baafca0a20",
+      "output": {
+        "ok": false,
+        "error": {
+          "type": "invalid_input",
+          "message": "target_margin must be a finite numeric scalar"
+        }
+      },
+      "stderr": ""
+    },
+    {
+      "name": "invalid_target_2",
+      "valid_expected": false,
+      "passed": true,
+      "exit": 0,
+      "input_sha256": "f5d489fbb69edece3299c25fd556d660460cebd6e611aa953c39d9a373e34eaf",
+      "output": {
+        "ok": false,
+        "error": {
+          "type": "invalid_input",
+          "message": "target_margin must be a finite numeric scalar"
+        }
+      },
+      "stderr": ""
+    },
+    {
+      "name": "invalid_target_3",
+      "valid_expected": false,
+      "passed": true,
+      "exit": 0,
+      "input_sha256": "abf89bdf1e2813ece8899fb80e853ed0f52fd4b557a9002a28ef2bbc55a0502c",
+      "output": {
+        "ok": false,
+        "error": {
+          "type": "invalid_input",
+          "message": "nonfinite JSON number"
+        }
+      },
+      "stderr": ""
+    },
+    {
+      "name": "invalid_target_4",
+      "valid_expected": false,
+      "passed": true,
+      "exit": 0,
+      "input_sha256": "3cc3b95b977ccad46dd0420e396574bfe422db3ca235ed305ed7fc56e4b5d55c",
+      "output": {
+        "ok": false,
+        "error": {
+          "type": "invalid_input",
+          "message": "nonfinite JSON number"
+        }
+      },
+      "stderr": ""
+    },
+    {
+      "name": "invalid_target_5",
+      "valid_expected": false,
+      "passed": true,
+      "exit": 0,
+      "input_sha256": "5f2eddcf951f098d6557cac98bd3032e4a1b961495c1004e5980497daa3f86fa",
+      "output": {
+        "ok": false,
+        "error": {
+          "type": "invalid_input",
+          "message": "nonfinite JSON number"
+        }
+      },
+      "stderr": ""
+    },
+    {
+      "name": "invalid_target_6",
+      "valid_expected": false,
+      "passed": true,
+      "exit": 0,
+      "input_sha256": "5f4c4859c4a8c02058f4bd1d2464a981a7c3f188aa955499311326001c8e41d9",
+      "output": {
+        "ok": false,
+        "error": {
+          "type": "invalid_input",
+          "message": "target_margin out of range"
+        }
+      },
+      "stderr": ""
+    },
+    {
+      "name": "invalid_target_7",
+      "valid_expected": false,
+      "passed": true,
+      "exit": 0,
+      "input_sha256": "4760e6435f96254ecfebd74199bcbcd5ec14cdec0ef5ef298bb29a805ceeaa2a",
+      "output": {
+        "ok": false,
+        "error": {
+          "type": "invalid_input",
+          "message": "target_margin out of range"
+        }
+      },
+      "stderr": ""
+    },
+    {
+      "name": "boolean_count",
+      "valid_expected": false,
+      "passed": true,
+      "exit": 0,
+      "input_sha256": "832463a6c952d6eda9aee54bae75c3c84677523f622c3d860dc1fb316c9e7b07",
+      "output": {
+        "ok": false,
+        "error": {
+          "type": "invalid_input",
+          "message": "counted A must be a finite numeric scalar"
+        }
+      },
+      "stderr": ""
+    },
+    {
+      "name": "negative_count",
+      "valid_expected": false,
+      "passed": true,
+      "exit": 0,
+      "input_sha256": "7f472b7ac8390bb865ad1aeed6c6ffb2bf88a528238277062c87270fe550859b",
+      "output": {
+        "ok": false,
+        "error": {
+          "type": "invalid_input",
+          "message": "counted B out of range"
+        }
+      },
+      "stderr": ""
+    },
+    {
+      "name": "text_count",
+      "valid_expected": false,
+      "passed": true,
+      "exit": 0,
+      "input_sha256": "ec6af88df779a621dd163fa74e2607cbf938877515454be1e408d8b18c018c55",
+      "output": {
+        "ok": false,
+        "error": {
+          "type": "invalid_input",
+          "message": "counted A must be a finite numeric scalar"
+        }
+      },
+      "stderr": ""
+    },
+    {
+      "name": "infinite_count",
+      "valid_expected": false,
+      "passed": true,
+      "exit": 0,
+      "input_sha256": "7fced8459d7fbc8d276ae3b55a2579503510500f9a654a892c79ceb8ec2896c6",
+      "output": {
+        "ok": false,
+        "error": {
+          "type": "invalid_input",
+          "message": "nonfinite JSON number"
+        }
+      },
+      "stderr": ""
+    },
+    {
+      "name": "null_other",
+      "valid_expected": false,
+      "passed": true,
+      "exit": 0,
+      "input_sha256": "35e812155ad65be544a4df548961ee1a2fe1393516070f1c907adac20d0dba64",
+      "output": {
+        "ok": false,
+        "error": {
+          "type": "invalid_input",
+          "message": "counted other must be an object"
+        }
+      },
+      "stderr": ""
+    },
+    {
+      "name": "list_other",
+      "valid_expected": false,
+      "passed": true,
+      "exit": 0,
+      "input_sha256": "942d8ddb1f0a5cdd240cd1149f4ba3ead20e9e9cf77e796f01c8e5a5920f6bdd",
+      "output": {
+        "ok": false,
+        "error": {
+          "type": "invalid_input",
+          "message": "counted other must be an object"
+        }
+      },
+      "stderr": ""
+    },
+    {
+      "name": "bool_volume",
+      "valid_expected": false,
+      "passed": true,
+      "exit": 0,
+      "input_sha256": "cc50edd28658e3d35ae8c6dde88c1949668886dec8205b86857c04c281797d60",
+      "output": {
+        "ok": false,
+        "error": {
+          "type": "invalid_input",
+          "message": "remaining volume must be a finite numeric scalar"
+        }
+      },
+      "stderr": ""
+    },
+    {
+      "name": "negative_volume",
+      "valid_expected": false,
+      "passed": true,
+      "exit": 0,
+      "input_sha256": "64d9ae66c3eca5f88db2d0868f52dd4184e2d3cb0148cd5ebe41fd4f1bb052f5",
+      "output": {
+        "ok": false,
+        "error": {
+          "type": "invalid_input",
+          "message": "remaining volume out of range"
+        }
+      },
+      "stderr": ""
+    },
+    {
+      "name": "text_share",
+      "valid_expected": false,
+      "passed": true,
+      "exit": 0,
+      "input_sha256": "29188c4340e1ba2fbc894c3a18a327caf2ac29c5c75a928391fecc356cf1945f",
+      "output": {
+        "ok": false,
+        "error": {
+          "type": "invalid_input",
+          "message": "remaining share must be a finite numeric scalar"
+        }
+      },
+      "stderr": ""
+    },
+    {
+      "name": "bool_participation",
+      "valid_expected": false,
+      "passed": true,
+      "exit": 0,
+      "input_sha256": "414b82e064372cfa9f1c608f2e95f557b039908ec4178a5b9ad8cccca1e15e8f",
+      "output": {
+        "ok": false,
+        "error": {
+          "type": "invalid_input",
+          "message": "pair_participation must be a finite numeric scalar"
+        }
+      },
+      "stderr": ""
+    },
+    {
+      "name": "nan_allocation",
+      "valid_expected": false,
+      "passed": true,
+      "exit": 0,
+      "input_sha256": "cfbfb7f04ed3f1812beac6b4a954ff82a0bd80c4b5c3ef02e777f5c349282933",
+      "output": {
+        "ok": false,
+        "error": {
+          "type": "invalid_input",
+          "message": "nonfinite JSON number"
+        }
+      },
+      "stderr": ""
+    },
+    {
+      "name": "null_allocation",
+      "valid_expected": false,
+      "passed": true,
+      "exit": 0,
+      "input_sha256": "4944436aa39ae79effbf3faf354da4cc2e0fd03f031f1983760b1eb295c4441e",
+      "output": {
+        "ok": false,
+        "error": {
+          "type": "invalid_input",
+          "message": "other allocation must be an object"
+        }
+      },
+      "stderr": ""
+    },
+    {
+      "name": "wrong_allocation_sum",
+      "valid_expected": false,
+      "passed": true,
+      "exit": 0,
+      "input_sha256": "e13da7a52fea0ab4d39e15a61aa323ef49f3db54a81baa5a6a6637d49cedba46",
+      "output": {
+        "ok": false,
+        "error": {
+          "type": "invalid_input",
+          "message": "other allocation must sum to one for positive nonpair pool"
+        }
+      },
+      "stderr": ""
+    },
+    {
+      "name": "global_duplicate_no_selected",
+      "valid_expected": false,
+      "passed": true,
+      "exit": 0,
+      "input_sha256": "0e59f267ba20c84a21d2f8b79cfa4b2c215ef5b5e0066083ebb444c227187d8d",
+      "output": {
+        "ok": false,
+        "error": {
+          "type": "invalid_input",
+          "message": "duplicate, empty or nonstring source-unit key"
+        }
+      },
+      "stderr": ""
+    },
+    {
+      "name": "blank_key",
+      "valid_expected": false,
+      "passed": true,
+      "exit": 0,
+      "input_sha256": "9346917aa06db0c61d61ee2af7f8f013d460c1c7ff798993ab0cce23109823cd",
+      "output": {
+        "ok": false,
+        "error": {
+          "type": "invalid_input",
+          "message": "duplicate, empty or nonstring source-unit key"
+        }
+      },
+      "stderr": ""
+    },
+    {
+      "name": "invalid_before_unknown",
+      "valid_expected": false,
+      "passed": true,
+      "exit": 0,
+      "input_sha256": "98c124ea9d73c44498b3eb9ee032d7887bb5524af8415b2966b42027b56b8589",
+      "output": {
+        "ok": false,
+        "error": {
+          "type": "invalid_input",
+          "message": "remaining share must be a finite numeric scalar"
+        }
+      },
+      "stderr": ""
+    },
+    {
+      "name": "nonfinite_uniform",
+      "valid_expected": false,
+      "passed": true,
+      "exit": 0,
+      "input_sha256": "84dcc82cdd546ff5674a973d3319b752b7542ec8fa6323f26929e6fe7b032db5",
+      "output": {
+        "ok": false,
+        "error": {
+          "type": "invalid_input",
+          "message": "nonfinite JSON number"
+        }
+      },
+      "stderr": ""
+    },
+    {
+      "name": "nonfinite_selected",
+      "valid_expected": false,
+      "passed": true,
+      "exit": 0,
+      "input_sha256": "6e94559ecd190216c760a0a099f4eac5d1587f6cb9849a5e0afe894ff343a6e7",
+      "output": {
+        "ok": false,
+        "error": {
+          "type": "invalid_input",
+          "message": "nonfinite JSON number"
+        }
+      },
+      "stderr": ""
+    },
+    {
+      "name": "historical_33",
+      "valid_expected": false,
+      "passed": true,
+      "exit": 0,
+      "input_sha256": "b743c5592ebd76c1896639219a5fe1540c30199492ceccaf61b1a2d9a6c296aa",
+      "output": {
+        "ok": false,
+        "error": {
+          "type": "invalid_input",
+          "message": "unknown county"
+        }
+      },
+      "stderr": ""
+    },
+    {
+      "name": "historical_34",
+      "valid_expected": false,
+      "passed": true,
+      "exit": 0,
+      "input_sha256": "595919fb3f02876d571a7f77ba7667eebf3b6f7587f2b6517cc30a9b6a5f02d4",
+      "output": {
+        "ok": false,
+        "error": {
+          "type": "invalid_input",
+          "message": "native cross-year or cross-contest join unsupported"
+        }
+      },
+      "stderr": ""
+    },
+    {
+      "name": "historical_35",
+      "valid_expected": false,
+      "passed": true,
+      "exit": 0,
+      "input_sha256": "db77f81bccf905b44734ac257e2a6e4a5ff32fc0399ab6df2d7b6f2a260ece65",
+      "output": {
+        "ok": false,
+        "error": {
+          "type": "invalid_input",
+          "message": "nonfinite JSON number"
+        }
+      },
+      "stderr": ""
+    },
+    {
+      "name": "historical_36",
+      "valid_expected": false,
+      "passed": true,
+      "exit": 0,
+      "input_sha256": "96ea92d863ee3cb266f170c20530d6b8d24acf23afd590ef3c7bd9044085e7a3",
+      "output": {
+        "ok": false,
+        "error": {
+          "type": "invalid_input",
+          "message": "mix weight must be a finite numeric scalar"
+        }
+      },
+      "stderr": ""
+    }
+  ],
+  "producer_files_written": false
+}

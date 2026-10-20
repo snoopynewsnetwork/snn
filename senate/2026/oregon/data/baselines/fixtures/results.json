@@ -1,0 +1,3230 @@
+[
+  {
+    "name": "bounded-clipping",
+    "expected_ok": true,
+    "expected_status": "requires_improvement",
+    "input_path": "fixtures/bounded-clipping.input.json",
+    "returncode": 0,
+    "output": {
+      "ok": true,
+      "result": {
+        "status": "requires_improvement",
+        "target_margin": 0.99,
+        "pair_volume": 1000.0,
+        "baseline_net_votes": 784.0,
+        "target_net_votes": 990.0,
+        "unbounded_share_shift": 0.103,
+        "unbounded_share_shift_points": 10.299999999999999,
+        "bounded_share_shift": 0.9399999999999997,
+        "bounded_share_shift_points": 93.99999999999997,
+        "achieved_net_votes": 990.0,
+        "residual_net_votes": 0.0,
+        "bounded_feasible": true,
+        "units": [
+          {
+            "key": "one",
+            "pair_volume": 900,
+            "share": 0.99,
+            "weight": 0.9,
+            "unbounded_target_share": 1.093,
+            "target_share": 1,
+            "clipped": true,
+            "target_pair_margin": 1,
+            "status": "feasible",
+            "baseline_net_votes": 882.0,
+            "target_net_votes": 900,
+            "net_vote_gain": 18.000000000000014,
+            "gain_per_A_share_point": 18.0
+          },
+          {
+            "key": "two",
+            "pair_volume": 100,
+            "share": 0.01,
+            "weight": 0.1,
+            "unbounded_target_share": 0.11299999999999999,
+            "target_share": 0.9499999999999997,
+            "clipped": false,
+            "target_pair_margin": 0.8999999999999995,
+            "status": "feasible",
+            "baseline_net_votes": -98.0,
+            "target_net_votes": 89.99999999999994,
+            "net_vote_gain": 187.99999999999994,
+            "gain_per_A_share_point": 2.0
+          }
+        ]
+      }
+    },
+    "passed": true
+  },
+  {
+    "name": "negative-shift-already-winning",
+    "expected_ok": true,
+    "expected_status": "already_at_or_above_target",
+    "input_path": "fixtures/negative-shift-already-winning.input.json",
+    "returncode": 0,
+    "output": {
+      "ok": true,
+      "result": {
+        "status": "already_at_or_above_target",
+        "target_margin": 0,
+        "pair_volume": 1000.0,
+        "baseline_net_votes": 784.0,
+        "target_net_votes": 0.0,
+        "unbounded_share_shift": -0.392,
+        "unbounded_share_shift_points": -39.2,
+        "bounded_share_shift": -0.4344444444444445,
+        "bounded_share_shift_points": -43.44444444444445,
+        "achieved_net_votes": -1.5631940186722204e-13,
+        "residual_net_votes": -1.5631940186722204e-13,
+        "bounded_feasible": true,
+        "units": [
+          {
+            "key": "one",
+            "pair_volume": 900,
+            "share": 0.99,
+            "weight": 0.9,
+            "unbounded_target_share": 0.598,
+            "target_share": 0.5555555555555555,
+            "clipped": false,
+            "target_pair_margin": 0.11111111111111094,
+            "status": "feasible",
+            "baseline_net_votes": 882.0,
+            "target_net_votes": 99.99999999999984,
+            "net_vote_gain": -782.0000000000001,
+            "gain_per_A_share_point": 18.0
+          },
+          {
+            "key": "two",
+            "pair_volume": 100,
+            "share": 0.01,
+            "weight": 0.1,
+            "unbounded_target_share": -0.382,
+            "target_share": 0,
+            "clipped": true,
+            "target_pair_margin": -1,
+            "status": "feasible",
+            "baseline_net_votes": -98.0,
+            "target_net_votes": -100,
+            "net_vote_gain": -2.0,
+            "gain_per_A_share_point": 2.0
+          }
+        ]
+      }
+    },
+    "passed": true
+  },
+  {
+    "name": "unknown-preference",
+    "expected_ok": true,
+    "expected_status": "unknown_source_preference",
+    "input_path": "fixtures/unknown-preference.input.json",
+    "returncode": 0,
+    "output": {
+      "ok": true,
+      "result": {
+        "status": "unknown_source_preference",
+        "pair_volume": 100.0,
+        "target_margin": 0,
+        "unbounded_share_shift": null,
+        "bounded_share_shift": null,
+        "units": [
+          {
+            "key": "unknown",
+            "pair_volume": 100,
+            "share": null
+          }
+        ]
+      }
+    },
+    "passed": true
+  },
+  {
+    "name": "zero-volume",
+    "expected_ok": true,
+    "expected_status": "no_positive_pool",
+    "input_path": "fixtures/zero-volume.input.json",
+    "returncode": 0,
+    "output": {
+      "ok": true,
+      "result": {
+        "status": "no_positive_pool",
+        "pair_volume": 0,
+        "target_margin": 0,
+        "unbounded_share_shift": null,
+        "bounded_share_shift": null,
+        "units": [
+          {
+            "key": "zero",
+            "pair_volume": 0,
+            "share": null
+          }
+        ]
+      }
+    },
+    "passed": true
+  },
+  {
+    "name": "uniform-invalid-target-bool",
+    "expected_ok": false,
+    "expected_status": null,
+    "input_path": "fixtures/uniform-invalid-target-bool.input.json",
+    "returncode": 0,
+    "output": {
+      "ok": false,
+      "error": {
+        "type": "invalid_input",
+        "message": "target_margin must be a finite numeric scalar"
+      }
+    },
+    "passed": true
+  },
+  {
+    "name": "selected-invalid-target-bool",
+    "expected_ok": false,
+    "expected_status": null,
+    "input_path": "fixtures/selected-invalid-target-bool.input.json",
+    "returncode": 0,
+    "output": {
+      "ok": false,
+      "error": {
+        "type": "invalid_input",
+        "message": "target_margin must be a finite numeric scalar"
+      }
+    },
+    "passed": true
+  },
+  {
+    "name": "county-invalid-target-bool",
+    "expected_ok": false,
+    "expected_status": null,
+    "input_path": "fixtures/county-invalid-target-bool.input.json",
+    "returncode": 0,
+    "output": {
+      "ok": false,
+      "error": {
+        "type": "invalid_input",
+        "message": "target_margin must be a finite numeric scalar"
+      }
+    },
+    "passed": true
+  },
+  {
+    "name": "uniform-invalid-target-null",
+    "expected_ok": false,
+    "expected_status": null,
+    "input_path": "fixtures/uniform-invalid-target-null.input.json",
+    "returncode": 0,
+    "output": {
+      "ok": false,
+      "error": {
+        "type": "invalid_input",
+        "message": "target_margin must be a finite numeric scalar"
+      }
+    },
+    "passed": true
+  },
+  {
+    "name": "selected-invalid-target-null",
+    "expected_ok": false,
+    "expected_status": null,
+    "input_path": "fixtures/selected-invalid-target-null.input.json",
+    "returncode": 0,
+    "output": {
+      "ok": false,
+      "error": {
+        "type": "invalid_input",
+        "message": "target_margin must be a finite numeric scalar"
+      }
+    },
+    "passed": true
+  },
+  {
+    "name": "county-invalid-target-null",
+    "expected_ok": false,
+    "expected_status": null,
+    "input_path": "fixtures/county-invalid-target-null.input.json",
+    "returncode": 0,
+    "output": {
+      "ok": false,
+      "error": {
+        "type": "invalid_input",
+        "message": "target_margin must be a finite numeric scalar"
+      }
+    },
+    "passed": true
+  },
+  {
+    "name": "uniform-invalid-target-text",
+    "expected_ok": false,
+    "expected_status": null,
+    "input_path": "fixtures/uniform-invalid-target-text.input.json",
+    "returncode": 0,
+    "output": {
+      "ok": false,
+      "error": {
+        "type": "invalid_input",
+        "message": "target_margin must be a finite numeric scalar"
+      }
+    },
+    "passed": true
+  },
+  {
+    "name": "selected-invalid-target-text",
+    "expected_ok": false,
+    "expected_status": null,
+    "input_path": "fixtures/selected-invalid-target-text.input.json",
+    "returncode": 0,
+    "output": {
+      "ok": false,
+      "error": {
+        "type": "invalid_input",
+        "message": "target_margin must be a finite numeric scalar"
+      }
+    },
+    "passed": true
+  },
+  {
+    "name": "county-invalid-target-text",
+    "expected_ok": false,
+    "expected_status": null,
+    "input_path": "fixtures/county-invalid-target-text.input.json",
+    "returncode": 0,
+    "output": {
+      "ok": false,
+      "error": {
+        "type": "invalid_input",
+        "message": "target_margin must be a finite numeric scalar"
+      }
+    },
+    "passed": true
+  },
+  {
+    "name": "uniform-invalid-target-object",
+    "expected_ok": false,
+    "expected_status": null,
+    "input_path": "fixtures/uniform-invalid-target-object.input.json",
+    "returncode": 0,
+    "output": {
+      "ok": false,
+      "error": {
+        "type": "invalid_input",
+        "message": "target_margin must be a finite numeric scalar"
+      }
+    },
+    "passed": true
+  },
+  {
+    "name": "selected-invalid-target-object",
+    "expected_ok": false,
+    "expected_status": null,
+    "input_path": "fixtures/selected-invalid-target-object.input.json",
+    "returncode": 0,
+    "output": {
+      "ok": false,
+      "error": {
+        "type": "invalid_input",
+        "message": "target_margin must be a finite numeric scalar"
+      }
+    },
+    "passed": true
+  },
+  {
+    "name": "county-invalid-target-object",
+    "expected_ok": false,
+    "expected_status": null,
+    "input_path": "fixtures/county-invalid-target-object.input.json",
+    "returncode": 0,
+    "output": {
+      "ok": false,
+      "error": {
+        "type": "invalid_input",
+        "message": "target_margin must be a finite numeric scalar"
+      }
+    },
+    "passed": true
+  },
+  {
+    "name": "uniform-invalid-target-range",
+    "expected_ok": false,
+    "expected_status": null,
+    "input_path": "fixtures/uniform-invalid-target-range.input.json",
+    "returncode": 0,
+    "output": {
+      "ok": false,
+      "error": {
+        "type": "invalid_input",
+        "message": "target_margin out of range"
+      }
+    },
+    "passed": true
+  },
+  {
+    "name": "selected-invalid-target-range",
+    "expected_ok": false,
+    "expected_status": null,
+    "input_path": "fixtures/selected-invalid-target-range.input.json",
+    "returncode": 0,
+    "output": {
+      "ok": false,
+      "error": {
+        "type": "invalid_input",
+        "message": "target_margin out of range"
+      }
+    },
+    "passed": true
+  },
+  {
+    "name": "county-invalid-target-range",
+    "expected_ok": false,
+    "expected_status": null,
+    "input_path": "fixtures/county-invalid-target-range.input.json",
+    "returncode": 0,
+    "output": {
+      "ok": false,
+      "error": {
+        "type": "invalid_input",
+        "message": "target_margin out of range"
+      }
+    },
+    "passed": true
+  },
+  {
+    "name": "uniform-invalid-volume-bool",
+    "expected_ok": false,
+    "expected_status": null,
+    "input_path": "fixtures/uniform-invalid-volume-bool.input.json",
+    "returncode": 0,
+    "output": {
+      "ok": false,
+      "error": {
+        "type": "invalid_input",
+        "message": "pair_volume must be a finite numeric scalar"
+      }
+    },
+    "passed": true
+  },
+  {
+    "name": "uniform-invalid-volume-negative",
+    "expected_ok": false,
+    "expected_status": null,
+    "input_path": "fixtures/uniform-invalid-volume-negative.input.json",
+    "returncode": 0,
+    "output": {
+      "ok": false,
+      "error": {
+        "type": "invalid_input",
+        "message": "pair_volume out of range"
+      }
+    },
+    "passed": true
+  },
+  {
+    "name": "uniform-invalid-volume-text",
+    "expected_ok": false,
+    "expected_status": null,
+    "input_path": "fixtures/uniform-invalid-volume-text.input.json",
+    "returncode": 0,
+    "output": {
+      "ok": false,
+      "error": {
+        "type": "invalid_input",
+        "message": "pair_volume must be a finite numeric scalar"
+      }
+    },
+    "passed": true
+  },
+  {
+    "name": "uniform-invalid-volume-null",
+    "expected_ok": false,
+    "expected_status": null,
+    "input_path": "fixtures/uniform-invalid-volume-null.input.json",
+    "returncode": 0,
+    "output": {
+      "ok": false,
+      "error": {
+        "type": "invalid_input",
+        "message": "pair_volume must be a finite numeric scalar"
+      }
+    },
+    "passed": true
+  },
+  {
+    "name": "globally-invalid-keys-duplicates",
+    "expected_ok": false,
+    "expected_status": null,
+    "input_path": "fixtures/globally-invalid-keys-duplicates.input.json",
+    "returncode": 0,
+    "output": {
+      "ok": false,
+      "error": {
+        "type": "invalid_input",
+        "message": "duplicate, empty or nonstring source-unit key"
+      }
+    },
+    "passed": true
+  },
+  {
+    "name": "globally-invalid-keys-blank",
+    "expected_ok": false,
+    "expected_status": null,
+    "input_path": "fixtures/globally-invalid-keys-blank.input.json",
+    "returncode": 0,
+    "output": {
+      "ok": false,
+      "error": {
+        "type": "invalid_input",
+        "message": "duplicate, empty or nonstring source-unit key"
+      }
+    },
+    "passed": true
+  },
+  {
+    "name": "globally-invalid-keys-nonstring",
+    "expected_ok": false,
+    "expected_status": null,
+    "input_path": "fixtures/globally-invalid-keys-nonstring.input.json",
+    "returncode": 0,
+    "output": {
+      "ok": false,
+      "error": {
+        "type": "invalid_input",
+        "message": "duplicate, empty or nonstring source-unit key"
+      }
+    },
+    "passed": true
+  },
+  {
+    "name": "unknown-county",
+    "expected_ok": false,
+    "expected_status": null,
+    "input_path": "fixtures/unknown-county.input.json",
+    "returncode": 0,
+    "output": {
+      "ok": false,
+      "error": {
+        "type": "invalid_input",
+        "message": "unknown county"
+      }
+    },
+    "passed": true
+  },
+  {
+    "name": "bad-mix-0",
+    "expected_ok": false,
+    "expected_status": null,
+    "input_path": "fixtures/bad-mix-0.input.json",
+    "returncode": 0,
+    "output": {
+      "ok": false,
+      "error": {
+        "type": "invalid_input",
+        "message": "mix must be an object"
+      }
+    },
+    "passed": true
+  },
+  {
+    "name": "bad-mix-1",
+    "expected_ok": false,
+    "expected_status": null,
+    "input_path": "fixtures/bad-mix-1.input.json",
+    "returncode": 0,
+    "output": {
+      "ok": false,
+      "error": {
+        "type": "invalid_input",
+        "message": "mix must be an object"
+      }
+    },
+    "passed": true
+  },
+  {
+    "name": "bad-mix-2",
+    "expected_ok": false,
+    "expected_status": null,
+    "input_path": "fixtures/bad-mix-2.input.json",
+    "returncode": 0,
+    "output": {
+      "ok": false,
+      "error": {
+        "type": "invalid_input",
+        "message": "mix must be an object"
+      }
+    },
+    "passed": true
+  },
+  {
+    "name": "bad-mix-3",
+    "expected_ok": false,
+    "expected_status": null,
+    "input_path": "fixtures/bad-mix-3.input.json",
+    "returncode": 0,
+    "output": {
+      "ok": false,
+      "error": {
+        "type": "invalid_input",
+        "message": "invalid historical volume mix keys"
+      }
+    },
+    "passed": true
+  },
+  {
+    "name": "bad-mix-4",
+    "expected_ok": false,
+    "expected_status": null,
+    "input_path": "fixtures/bad-mix-4.input.json",
+    "returncode": 0,
+    "output": {
+      "ok": false,
+      "error": {
+        "type": "invalid_input",
+        "message": "mix weight must be a finite numeric scalar"
+      }
+    },
+    "passed": true
+  },
+  {
+    "name": "bad-mix-5",
+    "expected_ok": false,
+    "expected_status": null,
+    "input_path": "fixtures/bad-mix-5.input.json",
+    "returncode": 0,
+    "output": {
+      "ok": false,
+      "error": {
+        "type": "invalid_input",
+        "message": "mix weight out of range"
+      }
+    },
+    "passed": true
+  },
+  {
+    "name": "bad-mix-6",
+    "expected_ok": false,
+    "expected_status": null,
+    "input_path": "fixtures/bad-mix-6.input.json",
+    "returncode": 0,
+    "output": {
+      "ok": false,
+      "error": {
+        "type": "invalid_input",
+        "message": "mix weights must sum to one"
+      }
+    },
+    "passed": true
+  },
+  {
+    "name": "bad-mix-7",
+    "expected_ok": false,
+    "expected_status": null,
+    "input_path": "fixtures/bad-mix-7.input.json",
+    "returncode": 0,
+    "output": {
+      "ok": false,
+      "error": {
+        "type": "invalid_input",
+        "message": "mix weight out of range"
+      }
+    },
+    "passed": true
+  },
+  {
+    "name": "bad-mix-8",
+    "expected_ok": false,
+    "expected_status": null,
+    "input_path": "fixtures/bad-mix-8.input.json",
+    "returncode": 0,
+    "output": {
+      "ok": false,
+      "error": {
+        "type": "invalid_input",
+        "message": "invalid historical volume mix keys"
+      }
+    },
+    "passed": true
+  },
+  {
+    "name": "bad-mix-9",
+    "expected_ok": false,
+    "expected_status": null,
+    "input_path": "fixtures/bad-mix-9.input.json",
+    "returncode": 0,
+    "output": {
+      "ok": false,
+      "error": {
+        "type": "invalid_input",
+        "message": "mix weights must sum to one"
+      }
+    },
+    "passed": true
+  },
+  {
+    "name": "unsupported-denominator",
+    "expected_ok": false,
+    "expected_status": null,
+    "input_path": "fixtures/unsupported-denominator.input.json",
+    "returncode": 0,
+    "output": {
+      "ok": false,
+      "error": {
+        "type": "invalid_input",
+        "message": "unsupported denominator"
+      }
+    },
+    "passed": true
+  },
+  {
+    "name": "unknown-source-key",
+    "expected_ok": false,
+    "expected_status": null,
+    "input_path": "fixtures/unknown-source-key.input.json",
+    "returncode": 0,
+    "output": {
+      "ok": false,
+      "error": {
+        "type": "invalid_input",
+        "message": "unknown source-unit key"
+      }
+    },
+    "passed": true
+  },
+  {
+    "name": "selected-impossible",
+    "expected_ok": true,
+    "expected_status": "impossible_even_at_one",
+    "input_path": "fixtures/selected-impossible.input.json",
+    "returncode": 0,
+    "output": {
+      "ok": true,
+      "result": {
+        "selected": "one",
+        "target_margin": 0,
+        "pair_volume": 110.0,
+        "selected_pair_volume": 10,
+        "other_net_votes_fixed": -80.0,
+        "other_units_fixed": [
+          {
+            "key": "two",
+            "pair_volume": 100,
+            "share": 0.1
+          }
+        ],
+        "selected_baseline_share": 0.4,
+        "status": "impossible_even_at_one",
+        "unbounded_required_share": 4.5,
+        "required_share": 1,
+        "required_change_from_source_share": 4.1,
+        "feasible": false,
+        "required_net_votes": 80.0
+      }
+    },
+    "passed": true
+  },
+  {
+    "name": "selected-secured",
+    "expected_ok": true,
+    "expected_status": "secured_even_at_zero",
+    "input_path": "fixtures/selected-secured.input.json",
+    "returncode": 0,
+    "output": {
+      "ok": true,
+      "result": {
+        "selected": "one",
+        "target_margin": 0,
+        "pair_volume": 110.0,
+        "selected_pair_volume": 10,
+        "other_net_votes_fixed": 80.0,
+        "other_units_fixed": [
+          {
+            "key": "two",
+            "pair_volume": 100,
+            "share": 0.9
+          }
+        ],
+        "selected_baseline_share": 0.4,
+        "status": "secured_even_at_zero",
+        "unbounded_required_share": -3.5,
+        "required_share": 0,
+        "required_change_from_source_share": -3.9,
+        "feasible": false,
+        "required_net_votes": -80.0
+      }
+    },
+    "passed": true
+  },
+  {
+    "name": "live-final-pair",
+    "expected_ok": true,
+    "expected_status": "feasible",
+    "input_path": "fixtures/live-final-pair.input.json",
+    "returncode": 0,
+    "output": {
+      "ok": true,
+      "result": {
+        "counted_fixed": {
+          "A": 40,
+          "B": 60,
+          "other": {
+            "Named C": 10
+          }
+        },
+        "remaining_units": [
+          {
+            "key": "r",
+            "pair_volume": 80.0,
+            "share": 0.6
+          }
+        ],
+        "denominator": "final_pair",
+        "target_margin": 0.01,
+        "probability": null,
+        "scope": "conditional arithmetic; remaining pool/preferences supplied, not inferred",
+        "status": "feasible",
+        "final_denominator": 180.0,
+        "final_pair_volume": 180.0,
+        "final_all_choice_volume": 210.0,
+        "remaining_pair_volume": 80.0,
+        "unbounded_required_remaining_A_share": 0.63625,
+        "required_remaining_A_share": 0.63625,
+        "required_remaining_share_clipped": false,
+        "final_A": 88.0,
+        "final_B": 92.0,
+        "final_other": {
+          "Named C": 29.999999999999996
+        },
+        "final_pair_net_votes": -4.0,
+        "final_margin": -0.022222222222222223,
+        "A_strict_plurality": false,
+        "named_full_field_winner": "B",
+        "plurality_tie": false,
+        "arithmetic_full_field_leaders": [
+          "B"
+        ],
+        "actual2026_ballot_mapping": null,
+        "selected_only": {
+          "key": "r",
+          "other_counted_and_remaining_net_fixed": -20.0,
+          "required_share_unbounded": 0.63625,
+          "required_share": 0.63625,
+          "status": "feasible"
+        }
+      }
+    },
+    "passed": true
+  },
+  {
+    "name": "live-final-all-choice",
+    "expected_ok": true,
+    "expected_status": "feasible",
+    "input_path": "fixtures/live-final-all-choice.input.json",
+    "returncode": 0,
+    "output": {
+      "ok": true,
+      "result": {
+        "counted_fixed": {
+          "A": 40,
+          "B": 60,
+          "other": {
+            "Named C": 10
+          }
+        },
+        "remaining_units": [
+          {
+            "key": "r",
+            "pair_volume": 80.0,
+            "share": 0.6
+          }
+        ],
+        "denominator": "final_all_choice",
+        "target_margin": 0.01,
+        "probability": null,
+        "scope": "conditional arithmetic; remaining pool/preferences supplied, not inferred",
+        "status": "feasible",
+        "final_denominator": 210.0,
+        "final_pair_volume": 180.0,
+        "final_all_choice_volume": 210.0,
+        "remaining_pair_volume": 80.0,
+        "unbounded_required_remaining_A_share": 0.6381249999999999,
+        "required_remaining_A_share": 0.6381249999999999,
+        "required_remaining_share_clipped": false,
+        "final_A": 88.0,
+        "final_B": 92.0,
+        "final_other": {
+          "Named C": 29.999999999999996
+        },
+        "final_pair_net_votes": -4.0,
+        "final_margin": -0.01904761904761905,
+        "A_strict_plurality": false,
+        "named_full_field_winner": "B",
+        "plurality_tie": false,
+        "arithmetic_full_field_leaders": [
+          "B"
+        ],
+        "actual2026_ballot_mapping": null,
+        "selected_only": {
+          "key": "r",
+          "other_counted_and_remaining_net_fixed": -20.0,
+          "required_share_unbounded": 0.6381249999999999,
+          "required_share": 0.6381249999999999,
+          "status": "feasible"
+        }
+      }
+    },
+    "passed": true
+  },
+  {
+    "name": "live-third-candidate-wins",
+    "expected_ok": true,
+    "expected_status": "feasible",
+    "input_path": "fixtures/live-third-candidate-wins.input.json",
+    "returncode": 0,
+    "output": {
+      "ok": true,
+      "result": {
+        "counted_fixed": {
+          "A": 40,
+          "B": 60,
+          "other": {
+            "Named C": 300
+          }
+        },
+        "remaining_units": [
+          {
+            "key": "r",
+            "pair_volume": 80.0,
+            "share": 0.6
+          }
+        ],
+        "denominator": "final_pair",
+        "target_margin": 0.01,
+        "probability": null,
+        "scope": "conditional arithmetic; remaining pool/preferences supplied, not inferred",
+        "status": "feasible",
+        "final_denominator": 180.0,
+        "final_pair_volume": 180.0,
+        "final_all_choice_volume": 500.0,
+        "remaining_pair_volume": 80.0,
+        "unbounded_required_remaining_A_share": 0.63625,
+        "required_remaining_A_share": 0.63625,
+        "required_remaining_share_clipped": false,
+        "final_A": 88.0,
+        "final_B": 92.0,
+        "final_other": {
+          "Named C": 320.0
+        },
+        "final_pair_net_votes": -4.0,
+        "final_margin": -0.022222222222222223,
+        "A_strict_plurality": false,
+        "named_full_field_winner": "Named C",
+        "plurality_tie": false,
+        "arithmetic_full_field_leaders": [
+          "Named C"
+        ],
+        "actual2026_ballot_mapping": null,
+        "selected_only": {
+          "key": "r",
+          "other_counted_and_remaining_net_fixed": -20.0,
+          "required_share_unbounded": 0.63625,
+          "required_share": 0.63625,
+          "status": "feasible"
+        }
+      }
+    },
+    "passed": true
+  },
+  {
+    "name": "live-unknown-volume",
+    "expected_ok": true,
+    "expected_status": "unknown_remaining_volume_mix_or_preference",
+    "input_path": "fixtures/live-unknown-volume.input.json",
+    "returncode": 0,
+    "output": {
+      "ok": true,
+      "result": {
+        "counted_fixed": {
+          "A": 40,
+          "B": 60,
+          "other": {
+            "Named C": 10
+          }
+        },
+        "remaining_units": [
+          {
+            "key": "r",
+            "pair_volume": 0,
+            "share": 0.6
+          }
+        ],
+        "denominator": "final_pair",
+        "target_margin": 0.01,
+        "probability": null,
+        "scope": "conditional arithmetic; remaining pool/preferences supplied, not inferred",
+        "status": "unknown_remaining_volume_mix_or_preference",
+        "final_denominator": null,
+        "required_remaining_A_share": null,
+        "known_partial_remaining_pair_volume": 0.0
+      }
+    },
+    "passed": true
+  },
+  {
+    "name": "live-unknown-preference",
+    "expected_ok": true,
+    "expected_status": "unknown_remaining_volume_mix_or_preference",
+    "input_path": "fixtures/live-unknown-preference.input.json",
+    "returncode": 0,
+    "output": {
+      "ok": true,
+      "result": {
+        "counted_fixed": {
+          "A": 40,
+          "B": 60,
+          "other": {
+            "Named C": 10
+          }
+        },
+        "remaining_units": [
+          {
+            "key": "r",
+            "pair_volume": 80.0,
+            "share": null
+          }
+        ],
+        "denominator": "final_pair",
+        "target_margin": 0.01,
+        "probability": null,
+        "scope": "conditional arithmetic; remaining pool/preferences supplied, not inferred",
+        "status": "unknown_remaining_volume_mix_or_preference",
+        "final_denominator": 180.0,
+        "required_remaining_A_share": null,
+        "known_partial_remaining_pair_volume": 80.0
+      }
+    },
+    "passed": true
+  },
+  {
+    "name": "live-no-pool",
+    "expected_ok": false,
+    "expected_status": null,
+    "input_path": "fixtures/live-no-pool.input.json",
+    "returncode": 0,
+    "output": {
+      "ok": false,
+      "error": {
+        "type": "invalid_input",
+        "message": "unknown selected source-unit key"
+      }
+    },
+    "passed": true
+  },
+  {
+    "name": "live-no-pool-valid",
+    "expected_ok": true,
+    "expected_status": "no_positive_pool",
+    "input_path": "fixtures/live-no-pool-valid.input.json",
+    "returncode": 0,
+    "output": {
+      "ok": true,
+      "result": {
+        "counted_fixed": {
+          "A": 40,
+          "B": 60,
+          "other": {
+            "Named C": 10
+          }
+        },
+        "remaining_units": [],
+        "denominator": "final_pair",
+        "target_margin": 0,
+        "probability": null,
+        "scope": "conditional arithmetic; remaining pool/preferences supplied, not inferred",
+        "status": "no_positive_pool",
+        "final_denominator": 100.0,
+        "final_pair_volume": 100.0,
+        "final_all_choice_volume": 110.0,
+        "remaining_pair_volume": 0.0,
+        "unbounded_required_remaining_A_share": null,
+        "required_remaining_A_share": null,
+        "required_remaining_share_clipped": false,
+        "final_A": 40.0,
+        "final_B": 60.0,
+        "final_other": {
+          "Named C": 10
+        },
+        "final_pair_net_votes": -20.0,
+        "final_margin": -0.2,
+        "A_strict_plurality": false,
+        "named_full_field_winner": "B",
+        "plurality_tie": false,
+        "arithmetic_full_field_leaders": [
+          "B"
+        ],
+        "actual2026_ballot_mapping": null
+      }
+    },
+    "passed": true
+  },
+  {
+    "name": "live-impossible",
+    "expected_ok": true,
+    "expected_status": "impossible_even_at_one",
+    "input_path": "fixtures/live-impossible.input.json",
+    "returncode": 0,
+    "output": {
+      "ok": true,
+      "result": {
+        "counted_fixed": {
+          "A": 0,
+          "B": 200,
+          "other": {}
+        },
+        "remaining_units": [
+          {
+            "key": "r",
+            "pair_volume": 80.0,
+            "share": 0.6
+          }
+        ],
+        "denominator": "final_pair",
+        "target_margin": 0.01,
+        "probability": null,
+        "scope": "conditional arithmetic; remaining pool/preferences supplied, not inferred",
+        "status": "impossible_even_at_one",
+        "final_denominator": 280.0,
+        "final_pair_volume": 280.0,
+        "final_all_choice_volume": 300.0,
+        "remaining_pair_volume": 80.0,
+        "unbounded_required_remaining_A_share": 1.7675,
+        "required_remaining_A_share": 1,
+        "required_remaining_share_clipped": true,
+        "final_A": 48.0,
+        "final_B": 232.0,
+        "final_other": {
+          "Named C": 19.999999999999996
+        },
+        "final_pair_net_votes": -184.0,
+        "final_margin": -0.6571428571428571,
+        "A_strict_plurality": false,
+        "named_full_field_winner": "B",
+        "plurality_tie": false,
+        "arithmetic_full_field_leaders": [
+          "B"
+        ],
+        "actual2026_ballot_mapping": null,
+        "selected_only": {
+          "key": "r",
+          "other_counted_and_remaining_net_fixed": -200.0,
+          "required_share_unbounded": 1.7675,
+          "required_share": 1,
+          "status": "impossible_even_at_one"
+        }
+      }
+    },
+    "passed": true
+  },
+  {
+    "name": "live-secured",
+    "expected_ok": true,
+    "expected_status": "secured_even_at_zero",
+    "input_path": "fixtures/live-secured.input.json",
+    "returncode": 0,
+    "output": {
+      "ok": true,
+      "result": {
+        "counted_fixed": {
+          "A": 200,
+          "B": 0,
+          "other": {}
+        },
+        "remaining_units": [
+          {
+            "key": "r",
+            "pair_volume": 80.0,
+            "share": 0.6
+          }
+        ],
+        "denominator": "final_pair",
+        "target_margin": 0.01,
+        "probability": null,
+        "scope": "conditional arithmetic; remaining pool/preferences supplied, not inferred",
+        "status": "secured_even_at_zero",
+        "final_denominator": 280.0,
+        "final_pair_volume": 280.0,
+        "final_all_choice_volume": 300.0,
+        "remaining_pair_volume": 80.0,
+        "unbounded_required_remaining_A_share": -0.7324999999999999,
+        "required_remaining_A_share": 0,
+        "required_remaining_share_clipped": true,
+        "final_A": 248.0,
+        "final_B": 32.0,
+        "final_other": {
+          "Named C": 19.999999999999996
+        },
+        "final_pair_net_votes": 216.0,
+        "final_margin": 0.7714285714285715,
+        "A_strict_plurality": true,
+        "named_full_field_winner": "A",
+        "plurality_tie": false,
+        "arithmetic_full_field_leaders": [
+          "A"
+        ],
+        "actual2026_ballot_mapping": null,
+        "selected_only": {
+          "key": "r",
+          "other_counted_and_remaining_net_fixed": 200.0,
+          "required_share_unbounded": -0.7324999999999999,
+          "required_share": 0,
+          "status": "secured_even_at_zero"
+        }
+      }
+    },
+    "passed": true
+  },
+  {
+    "name": "live-invalid-negative",
+    "expected_ok": false,
+    "expected_status": null,
+    "input_path": "fixtures/live-invalid-negative.input.json",
+    "returncode": 0,
+    "output": {
+      "ok": false,
+      "error": {
+        "type": "invalid_input",
+        "message": "remaining volume out of range"
+      }
+    },
+    "passed": true
+  },
+  {
+    "name": "live-invalid-bool-volume",
+    "expected_ok": false,
+    "expected_status": null,
+    "input_path": "fixtures/live-invalid-bool-volume.input.json",
+    "returncode": 0,
+    "output": {
+      "ok": false,
+      "error": {
+        "type": "invalid_input",
+        "message": "remaining volume must be a finite numeric scalar"
+      }
+    },
+    "passed": true
+  },
+  {
+    "name": "live-invalid-bad-share",
+    "expected_ok": false,
+    "expected_status": null,
+    "input_path": "fixtures/live-invalid-bad-share.input.json",
+    "returncode": 0,
+    "output": {
+      "ok": false,
+      "error": {
+        "type": "invalid_input",
+        "message": "remaining share must be a finite numeric scalar"
+      }
+    },
+    "passed": true
+  },
+  {
+    "name": "live-invalid-bad-participation",
+    "expected_ok": false,
+    "expected_status": null,
+    "input_path": "fixtures/live-invalid-bad-participation.input.json",
+    "returncode": 0,
+    "output": {
+      "ok": false,
+      "error": {
+        "type": "invalid_input",
+        "message": "pair_participation out of range"
+      }
+    },
+    "passed": true
+  },
+  {
+    "name": "live-invalid-bad-other",
+    "expected_ok": false,
+    "expected_status": null,
+    "input_path": "fixtures/live-invalid-bad-other.input.json",
+    "returncode": 0,
+    "output": {
+      "ok": false,
+      "error": {
+        "type": "invalid_input",
+        "message": "other allocation must sum to one for positive nonpair pool"
+      }
+    },
+    "passed": true
+  },
+  {
+    "name": "live-counted-bool",
+    "expected_ok": false,
+    "expected_status": null,
+    "input_path": "fixtures/live-counted-bool.input.json",
+    "returncode": 0,
+    "output": {
+      "ok": false,
+      "error": {
+        "type": "invalid_input",
+        "message": "counted A must be a finite numeric scalar"
+      }
+    },
+    "passed": true
+  },
+  {
+    "name": "live-duplicate-keys",
+    "expected_ok": false,
+    "expected_status": null,
+    "input_path": "fixtures/live-duplicate-keys.input.json",
+    "returncode": 0,
+    "output": {
+      "ok": false,
+      "error": {
+        "type": "invalid_input",
+        "message": "duplicate, empty or nonstring source-unit key"
+      }
+    },
+    "passed": true
+  },
+  {
+    "name": "live-unknown-selected-with-unknown-pool",
+    "expected_ok": false,
+    "expected_status": null,
+    "input_path": "fixtures/live-unknown-selected-with-unknown-pool.input.json",
+    "returncode": 0,
+    "output": {
+      "ok": false,
+      "error": {
+        "type": "invalid_input",
+        "message": "unknown selected source-unit key"
+      }
+    },
+    "passed": true
+  },
+  {
+    "name": "county-positive-historical-mix",
+    "expected_ok": true,
+    "expected_status": null,
+    "input_path": "fixtures/county-positive-historical-mix.input.json",
+    "returncode": 0,
+    "output": {
+      "ok": true,
+      "result": {
+        "scope": "all36 historical county scenario",
+        "preference": "2022-governor",
+        "mix": {
+          "2020-senate": 0.2,
+          "2022-senate": 0.3,
+          "2024-president": 0.5
+        },
+        "volume_basis": "reported_all_choice including generic Misc.; no under/over/returned ballots in denominator",
+        "denominator": "reported_all_choice",
+        "historical_volume": 2164881.0,
+        "result": {
+          "status": "already_at_or_above_target",
+          "target_margin": 0,
+          "pair_volume": 1959437.6275872774,
+          "baseline_net_votes": 75499.19000011981,
+          "target_net_votes": 0.0,
+          "unbounded_share_shift": -0.019265525204056774,
+          "unbounded_share_shift_points": -1.9265525204056773,
+          "bounded_share_shift": -0.01926552520405675,
+          "bounded_share_shift_points": -1.926552520405675,
+          "achieved_net_votes": 6.52704557069228e-11,
+          "residual_net_votes": 6.52704557069228e-11,
+          "bounded_feasible": true,
+          "units": [
+            {
+              "key": "Baker",
+              "pair_volume": 8376.719552051192,
+              "share": 0.18986045320701575,
+              "weight": 0.004275063127355441,
+              "unbounded_target_share": 0.17059492800295897,
+              "target_share": 0.170594928002959,
+              "clipped": false,
+              "target_pair_margin": -0.658810143994082,
+              "status": "feasible",
+              "baseline_net_votes": -5195.904010970174,
+              "target_net_votes": -5518.667814284888,
+              "net_vote_gain": -322.76380331471444,
+              "gain_per_A_share_point": 167.53439104102384
+            },
+            {
+              "key": "Benton",
+              "pair_volume": 45237.57025530131,
+              "share": 0.6492126549562054,
+              "weight": 0.023087017222897712,
+              "unbounded_target_share": 0.6299471297521486,
+              "target_share": 0.6299471297521486,
+              "clipped": false,
+              "target_pair_margin": 0.25989425950429723,
+              "status": "feasible",
+              "baseline_net_votes": 13500.03592312275,
+              "target_net_votes": 11756.984823275156,
+              "net_vote_gain": -1743.0510998475932,
+              "gain_per_A_share_point": 904.7514051060263
+            },
+            {
+              "key": "Clackamas",
+              "pair_volume": 214370.32060272977,
+              "share": 0.47469712169148853,
+              "weight": 0.10940400326326859,
+              "unbounded_target_share": 0.45543159648743176,
+              "target_share": 0.4554315964874318,
+              "clipped": false,
+              "target_pair_margin": -0.08913680702513638,
+              "status": "feasible",
+              "baseline_net_votes": -10848.37227033492,
+              "target_net_votes": -19108.28589948214,
+              "net_vote_gain": -8259.91362914722,
+              "gain_per_A_share_point": 4287.406412054595
+            },
+            {
+              "key": "Clatsop",
+              "pair_volume": 17041.449878718875,
+              "share": 0.5219110592506159,
+              "weight": 0.008697112701516605,
+              "unbounded_target_share": 0.5026455340465591,
+              "target_share": 0.5026455340465591,
+              "clipped": false,
+              "target_pair_margin": 0.00529106809311819,
+              "status": "feasible",
+              "baseline_net_votes": 746.7924360180199,
+              "target_net_votes": 90.16747171376228,
+              "net_vote_gain": -656.6249643042576,
+              "gain_per_A_share_point": 340.8289975743775
+            },
+            {
+              "key": "Columbia",
+              "pair_volume": 23578.721121822964,
+              "share": 0.3745339299030574,
+              "weight": 0.01203341243929068,
+              "unbounded_target_share": 0.3552684046990006,
+              "target_share": 0.3552684046990007,
+              "clipped": false,
+              "target_pair_margin": -0.28946319060199865,
+              "status": "feasible",
+              "baseline_net_votes": -5916.658954133803,
+              "target_net_votes": -6825.171846237612,
+              "net_vote_gain": -908.5128921038098,
+              "gain_per_A_share_point": 471.5744224364593
+            },
+            {
+              "key": "Coos",
+              "pair_volume": 30718.757886028823,
+              "share": 0.3364589275527667,
+              "weight": 0.015677333870460514,
+              "unbounded_target_share": 0.3171934023487099,
+              "target_share": 0.31719340234870996,
+              "clipped": false,
+              "target_pair_margin": -0.3656131953025801,
+              "status": "feasible",
+              "baseline_net_votes": -10047.55721785612,
+              "target_net_votes": -11231.183226437328,
+              "net_vote_gain": -1183.626008581209,
+              "gain_per_A_share_point": 614.3751577205765
+            },
+            {
+              "key": "Crook",
+              "pair_volume": 13717.986441521507,
+              "share": 0.17572189961021398,
+              "weight": 0.007000981428744396,
+              "unbounded_target_share": 0.1564563744061572,
+              "target_share": 0.15645637440615723,
+              "clipped": false,
+              "target_pair_margin": -0.6870872511876855,
+              "status": "feasible",
+              "baseline_net_votes": -8896.88516885887,
+              "target_net_votes": -9425.453595934952,
+              "net_vote_gain": -528.5684270760827,
+              "gain_per_A_share_point": 274.35972883043013
+            },
+            {
+              "key": "Curry",
+              "pair_volume": 12427.305860083603,
+              "share": 0.36294349540078846,
+              "weight": 0.006342281930854707,
+              "unbounded_target_share": 0.3436779701967317,
+              "target_share": 0.34367797019673174,
+              "clipped": false,
+              "target_pair_margin": -0.3126440596065365,
+              "status": "feasible",
+              "baseline_net_votes": -3406.4862055367134,
+              "target_net_votes": -3885.3233540686383,
+              "net_vote_gain": -478.83714853192487,
+              "gain_per_A_share_point": 248.54611720167208
+            },
+            {
+              "key": "Deschutes",
+              "pair_volume": 107084.66978610113,
+              "share": 0.48134343683259406,
+              "weight": 0.05465071624553732,
+              "unbounded_target_share": 0.4620779116285373,
+              "target_share": 0.4620779116285373,
+              "clipped": false,
+              "target_pair_margin": -0.07584417674292543,
+              "status": "feasible",
+              "baseline_net_votes": -3995.6638122504037,
+              "target_net_votes": -8121.748621714861,
+              "net_vote_gain": -4126.084809464457,
+              "gain_per_A_share_point": 2141.6933957220226
+            },
+            {
+              "key": "Douglas",
+              "pair_volume": 53537.47667406009,
+              "share": 0.24387916683584393,
+              "weight": 0.027322878728210716,
+              "unbounded_target_share": 0.22461364163178715,
+              "target_share": 0.22461364163178718,
+              "clipped": false,
+              "target_pair_margin": -0.5507727167364256,
+              "status": "feasible",
+              "baseline_net_votes": -27424.126262533682,
+              "target_net_votes": -29486.98147498509,
+              "net_vote_gain": -2062.85521245141,
+              "gain_per_A_share_point": 1070.7495334812018
+            },
+            {
+              "key": "Gilliam",
+              "pair_volume": 857.772972972973,
+              "share": 0.18773946360153257,
+              "weight": 0.00043776487748128944,
+              "unbounded_target_share": 0.1684739383974758,
+              "target_share": 0.16847393839747582,
+              "clipped": false,
+              "target_pair_margin": -0.6630521232050484,
+              "status": "feasible",
+              "baseline_net_votes": -535.6972972972973,
+              "target_net_votes": -568.7481909576363,
+              "net_vote_gain": -33.050893660339,
+              "gain_per_A_share_point": 17.15545945945946
+            },
+            {
+              "key": "Grant",
+              "pair_volume": 3894.825131894485,
+              "share": 0.15479709755442086,
+              "weight": 0.001987726007227041,
+              "unbounded_target_share": 0.1355315723503641,
+              "target_share": 0.13553157235036412,
+              "clipped": false,
+              "target_pair_margin": -0.7289368552992718,
+              "status": "feasible",
+              "baseline_net_votes": -2689.0098800959236,
+              "target_net_votes": -2839.081583583737,
+              "net_vote_gain": -150.0717034878137,
+              "gain_per_A_share_point": 77.8965026378897
+            },
+            {
+              "key": "Harney",
+              "pair_volume": 3721.453781950965,
+              "share": 0.14025448235974552,
+              "weight": 0.0018992458497050088,
+              "unbounded_target_share": 0.12098895715568875,
+              "target_share": 0.12098895715568878,
+              "clipped": false,
+              "target_pair_margin": -0.7580220856886224,
+              "status": "feasible",
+              "baseline_net_votes": -2677.552634324465,
+              "target_net_votes": -2820.9441575882825,
+              "net_vote_gain": -143.39152326381725,
+              "gain_per_A_share_point": 74.4290756390193
+            },
+            {
+              "key": "Hood River",
+              "pair_volume": 10875.835983341047,
+              "share": 0.6244184844412282,
+              "weight": 0.005550488482112511,
+              "unbounded_target_share": 0.6051529592371714,
+              "target_share": 0.6051529592371714,
+              "clipped": false,
+              "target_pair_margin": 0.21030591847434277,
+              "status": "feasible",
+              "baseline_net_votes": 2706.3100601573346,
+              "target_net_votes": 2287.2526756528455,
+              "net_vote_gain": -419.0573845044891,
+              "gain_per_A_share_point": 217.51671966682093
+            },
+            {
+              "key": "Jackson",
+              "pair_volume": 106418.27526368732,
+              "share": 0.41273066383253626,
+              "weight": 0.05431062145862932,
+              "unbounded_target_share": 0.3934651386284795,
+              "target_share": 0.39346513862847954,
+              "clipped": false,
+              "target_pair_margin": -0.21306972274304092,
+              "status": "feasible",
+              "baseline_net_votes": -18574.10447669684,
+              "target_net_votes": -22674.51240522647,
+              "net_vote_gain": -4100.407928529628,
+              "gain_per_A_share_point": 2128.3655052737463
+            },
+            {
+              "key": "Jefferson",
+              "pair_volume": 9680.53681467375,
+              "share": 0.2754143966616437,
+              "weight": 0.004940466937237356,
+              "unbounded_target_share": 0.2561488714575869,
+              "target_share": 0.2561488714575869,
+              "clipped": false,
+              "target_pair_margin": -0.4877022570848262,
+              "status": "feasible",
+              "baseline_net_votes": -4348.218402325348,
+              "target_net_votes": -4721.219654309141,
+              "net_vote_gain": -373.0012519837932,
+              "gain_per_A_share_point": 193.610736293475
+            },
+            {
+              "key": "Josephine",
+              "pair_volume": 43421.85831199665,
+              "share": 0.2962641624987241,
+              "weight": 0.022160367699717735,
+              "unbounded_target_share": 0.27699863729466734,
+              "target_share": 0.27699863729466734,
+              "clipped": false,
+              "target_pair_margin": -0.4460027254106653,
+              "status": "feasible",
+              "baseline_net_votes": -17693.17733811275,
+              "target_net_votes": -19366.267149546256,
+              "net_vote_gain": -1673.0898114335075,
+              "gain_per_A_share_point": 868.437166239933
+            },
+            {
+              "key": "Klamath",
+              "pair_volume": 31317.796141244995,
+              "share": 0.21367704976727533,
+              "weight": 0.01598305335179649,
+              "unbounded_target_share": 0.19441152456321856,
+              "target_share": 0.19441152456321859,
+              "clipped": false,
+              "target_pair_margin": -0.6111769508735628,
+              "status": "feasible",
+              "baseline_net_votes": -17934.007571896615,
+              "target_net_votes": -19140.71515368595,
+              "net_vote_gain": -1206.7075817893333,
+              "gain_per_A_share_point": 626.3559228249
+            },
+            {
+              "key": "Lake",
+              "pair_volume": 3837.863473053892,
+              "share": 0.11584051724137931,
+              "weight": 0.0019586555953707923,
+              "unbounded_target_share": 0.09657499203732253,
+              "target_share": 0.09657499203732256,
+              "clipped": false,
+              "target_pair_margin": -0.8068500159253549,
+              "status": "feasible",
+              "baseline_net_votes": -2948.7032934131735,
+              "target_net_votes": -3096.5802043528706,
+              "net_vote_gain": -147.87691093969704,
+              "gain_per_A_share_point": 76.75726946107784
+            },
+            {
+              "key": "Lane",
+              "pair_volume": 186239.792561619,
+              "share": 0.5707420772446318,
+              "weight": 0.09504757382399684,
+              "unbounded_target_share": 0.551476552040575,
+              "target_share": 0.551476552040575,
+              "clipped": false,
+              "target_pair_margin": 0.10295310408115,
+              "status": "feasible",
+              "baseline_net_votes": 26349.9795828365,
+              "target_net_votes": 19173.964747648144,
+              "net_vote_gain": -7176.014835188353,
+              "gain_per_A_share_point": 3724.79585123238
+            },
+            {
+              "key": "Lincoln",
+              "pair_volume": 25540.11476208603,
+              "share": 0.5553553811178312,
+              "weight": 0.013034410691364769,
+              "unbounded_target_share": 0.5360898559137744,
+              "target_share": 0.5360898559137744,
+              "clipped": false,
+              "target_pair_margin": 0.0721797118275489,
+              "status": "feasible",
+              "baseline_net_votes": 2827.565572896839,
+              "target_net_votes": 1843.4781235698972,
+              "net_vote_gain": -984.0874493269419,
+              "gain_per_A_share_point": 510.80229524172057
+            },
+            {
+              "key": "Linn",
+              "pair_volume": 61393.177812830305,
+              "share": 0.30576590220683686,
+              "weight": 0.031332039840648473,
+              "unbounded_target_share": 0.2865003770027801,
+              "target_share": 0.2865003770027801,
+              "clipped": false,
+              "target_pair_margin": -0.42699924599443984,
+              "status": "feasible",
+              "baseline_net_votes": -23849.29700626067,
+              "target_net_votes": -26214.840635281114,
+              "net_vote_gain": -2365.543629020443,
+              "gain_per_A_share_point": 1227.8635562566062
+            },
+            {
+              "key": "Malheur",
+              "pair_volume": 9812.715380428868,
+              "share": 0.1930745015739769,
+              "weight": 0.005007924336183949,
+              "unbounded_target_share": 0.17380897636992013,
+              "target_share": 0.17380897636992015,
+              "clipped": false,
+              "target_pair_margin": -0.6523820472601597,
+              "status": "feasible",
+              "baseline_net_votes": -6023.545118101667,
+              "target_net_votes": -6401.639349065442,
+              "net_vote_gain": -378.0942309637754,
+              "gain_per_A_share_point": 196.25430760857736
+            },
+            {
+              "key": "Marion",
+              "pair_volume": 135589.90256507232,
+              "share": 0.4200559112634142,
+              "weight": 0.06919837644029976,
+              "unbounded_target_share": 0.4007903860593574,
+              "target_share": 0.40079038605935746,
+              "clipped": false,
+              "target_pair_margin": -0.19841922788128508,
+              "status": "feasible",
+              "baseline_net_votes": -21679.22240489433,
+              "target_net_votes": -26903.643775460325,
+              "net_vote_gain": -5224.421370565992,
+              "gain_per_A_share_point": 2711.7980513014463
+            },
+            {
+              "key": "Morrow",
+              "pair_volume": 4062.7395206651995,
+              "share": 0.1675407121170301,
+              "weight": 0.0020734212018107406,
+              "unbounded_target_share": 0.1482751869129733,
+              "target_share": 0.14827518691297334,
+              "clipped": false,
+              "target_pair_margin": -0.7034496261740533,
+              "status": "feasible",
+              "baseline_net_votes": -2701.3909757887013,
+              "target_net_votes": -2857.932597054487,
+              "net_vote_gain": -156.54162126578566,
+              "gain_per_A_share_point": 81.254790413304
+            },
+            {
+              "key": "Multnomah",
+              "pair_volume": 375680.6875244165,
+              "share": 0.7864914206584744,
+              "weight": 0.19172883190316445,
+              "unbounded_target_share": 0.7672258954544177,
+              "target_share": 0.7672258954544177,
+              "clipped": false,
+              "target_pair_margin": 0.5344517909088353,
+              "status": "feasible",
+              "baseline_net_votes": 215258.58776564497,
+              "target_net_votes": 200783.21625728693,
+              "net_vote_gain": -14475.371508358048,
+              "gain_per_A_share_point": 7513.61375048833
+            },
+            {
+              "key": "Polk",
+              "pair_volume": 41150.26225006023,
+              "share": 0.41555460659763,
+              "weight": 0.021001057482360364,
+              "unbounded_target_share": 0.3962890813935732,
+              "target_share": 0.3962890813935732,
+              "clipped": false,
+              "target_pair_margin": -0.20742183721285357,
+              "status": "feasible",
+              "baseline_net_votes": -6949.900168634063,
+              "target_net_votes": -8535.462997698227,
+              "net_vote_gain": -1585.562829064163,
+              "gain_per_A_share_point": 823.0052450012046
+            },
+            {
+              "key": "Sherman",
+              "pair_volume": 995.6633462282399,
+              "share": 0.13304252998909488,
+              "weight": 0.000508137300320314,
+              "unbounded_target_share": 0.1137770047850381,
+              "target_share": 0.11377700478503813,
+              "clipped": false,
+              "target_pair_margin": -0.7724459904299237,
+              "status": "feasible",
+              "baseline_net_votes": -730.7322050290136,
+              "target_net_votes": -769.0961596120447,
+              "net_vote_gain": -38.36395458303127,
+              "gain_per_A_share_point": 19.913266924564798
+            },
+            {
+              "key": "Tillamook",
+              "pair_volume": 12849.59053452878,
+              "share": 0.4426325964528873,
+              "weight": 0.0065577951314280515,
+              "unbounded_target_share": 0.4233670712488305,
+              "target_share": 0.42336707124883055,
+              "clipped": false,
+              "target_pair_margin": -0.1532658575023389,
+              "status": "feasible",
+              "baseline_net_votes": -1474.2952912189448,
+              "target_net_votes": -1969.4035118284905,
+              "net_vote_gain": -495.10822060954575,
+              "gain_per_A_share_point": 256.99181069057556
+            },
+            {
+              "key": "Umatilla",
+              "pair_volume": 27087.967630908803,
+              "share": 0.23414951245937163,
+              "weight": 0.013824358198256682,
+              "unbounded_target_share": 0.21488398725531485,
+              "target_share": 0.21488398725531488,
+              "clipped": false,
+              "target_pair_margin": -0.5702320254893702,
+              "status": "feasible",
+              "baseline_net_votes": -14402.698802323728,
+              "target_net_votes": -15446.426648563624,
+              "net_vote_gain": -1043.7278462398938,
+              "gain_per_A_share_point": 541.7593526181761
+            },
+            {
+              "key": "Union",
+              "pair_volume": 12515.753348214286,
+              "share": 0.22882483370288248,
+              "weight": 0.0063874211518666,
+              "unbounded_target_share": 0.2095593084988257,
+              "target_share": 0.20955930849882573,
+              "clipped": false,
+              "target_pair_margin": -0.5808813830023485,
+              "status": "feasible",
+              "baseline_net_votes": -6787.922991071429,
+              "target_net_votes": -7270.168114226988,
+              "net_vote_gain": -482.24512315555995,
+              "gain_per_A_share_point": 250.31506696428573
+            },
+            {
+              "key": "Wallowa",
+              "pair_volume": 4561.505808135741,
+              "share": 0.2623413258110014,
+              "weight": 0.002327966832887903,
+              "unbounded_target_share": 0.24307580060694461,
+              "target_share": 0.24307580060694464,
+              "clipped": false,
+              "target_pair_margin": -0.5138483987861107,
+              "status": "feasible",
+              "baseline_net_votes": -2168.162845333914,
+              "target_net_votes": -2343.9224555640944,
+              "net_vote_gain": -175.75961023018073,
+              "gain_per_A_share_point": 91.23011616271482
+            },
+            {
+              "key": "Wasco",
+              "pair_volume": 11321.50512842991,
+              "share": 0.4054699154649428,
+              "weight": 0.005777935959293824,
+              "unbounded_target_share": 0.38620439026088604,
+              "target_share": 0.38620439026088604,
+              "clipped": false,
+              "target_pair_margin": -0.2275912194782279,
+              "status": "feasible",
+              "baseline_net_votes": -2140.4456737091255,
+              "target_net_votes": -2576.6751585083744,
+              "net_vote_gain": -436.22948479924895,
+              "gain_per_A_share_point": 226.4301025685982
+            },
+            {
+              "key": "Washington",
+              "pair_volume": 260606.41006870352,
+              "share": 0.6074892032377357,
+              "weight": 0.13300061527837306,
+              "unbounded_target_share": 0.5882236780336789,
+              "target_share": 0.5882236780336789,
+              "clipped": false,
+              "target_pair_margin": 0.17644735606735784,
+              "status": "feasible",
+              "baseline_net_votes": 56024.750753863125,
+              "target_net_votes": 45983.3120308284,
+              "net_vote_gain": -10041.438723034727,
+              "gain_per_A_share_point": 5212.12820137407
+            },
+            {
+              "key": "Wheeler",
+              "pair_volume": 744.0361445783133,
+              "share": 0.19553072625698323,
+              "weight": 0.0003797192286719891,
+              "unbounded_target_share": 0.17626520105292645,
+              "target_share": 0.17626520105292648,
+              "clipped": false,
+              "target_pair_margin": -0.647469597894147,
+              "status": "feasible",
+              "baseline_net_votes": -453.0722891566266,
+              "target_net_votes": -481.74078334883194,
+              "net_vote_gain": -28.66849419220541,
+              "gain_per_A_share_point": 14.880722891566265
+            },
+            {
+              "key": "Yamhill",
+              "pair_volume": 49168.60726713604,
+              "share": 0.40418661367536807,
+              "weight": 0.025093223981657954,
+              "unbounded_target_share": 0.3849210884713113,
+              "target_share": 0.38492108847131135,
+              "clipped": false,
+              "target_pair_margin": -0.2301578230573773,
+              "status": "feasible",
+              "baseline_net_votes": -9422.021526260422,
+              "target_net_votes": -11316.539611367172,
+              "net_vote_gain": -1894.5180851067516,
+              "gain_per_A_share_point": 983.3721453427207
+            }
+          ]
+        },
+        "county_volume_and_full_field": [
+          {
+            "county": "Baker",
+            "reported_all_choice_volume": 9384.8,
+            "pair_participation": 0.8925837047194606,
+            "other_reported_volume": 1008.080447948807,
+            "A": "Tina Kotek",
+            "B": "Christine Drazan",
+            "other_candidates": {
+              "Donice Noelle Smith": 73.99739458347617,
+              "R Leon Noble": 33.245206262141465,
+              "Betsy Johnson": 891.1860130270826,
+              "Misc.": 9.651834076105587
+            }
+          },
+          {
+            "county": "Benton",
+            "reported_all_choice_volume": 49062.4,
+            "pair_participation": 0.922041527836007,
+            "other_reported_volume": 3824.829744698691,
+            "A": "Tina Kotek",
+            "B": "Christine Drazan",
+            "other_candidates": {
+              "Donice Noelle Smith": 161.30756636289416,
+              "R Leon Noble": 172.13357752818908,
+              "Betsy Johnson": 3445.9193539133703,
+              "Misc.": 45.46924689423862
+            }
+          },
+          {
+            "county": "Clackamas",
+            "reported_all_choice_volume": 236982.4,
+            "pair_participation": 0.9045832964926078,
+            "other_reported_volume": 22612.079397270223,
+            "A": "Tina Kotek",
+            "B": "Christine Drazan",
+            "other_candidates": {
+              "Donice Noelle Smith": 668.3047266263047,
+              "R Leon Noble": 602.1359418118191,
+              "Betsy Johnson": 21168.49707523419,
+              "Misc.": 173.14165359790402
+            }
+          },
+          {
+            "county": "Clatsop",
+            "reported_all_choice_volume": 22316.5,
+            "pair_participation": 0.7636255630909361,
+            "other_reported_volume": 5275.050121281125,
+            "A": "Tina Kotek",
+            "B": "Christine Drazan",
+            "other_candidates": {
+              "Donice Noelle Smith": 93.90141577149646,
+              "R Leon Noble": 55.23612692440968,
+              "Betsy Johnson": 5108.237017969407,
+              "Misc.": 17.675560615811097
+            }
+          },
+          {
+            "county": "Columbia",
+            "reported_all_choice_volume": 30093.2,
+            "pair_participation": 0.7835232252410167,
+            "other_reported_volume": 6514.478878177037,
+            "A": "Tina Kotek",
+            "B": "Christine Drazan",
+            "other_candidates": {
+              "Donice Noelle Smith": 136.26777680397313,
+              "R Leon Noble": 91.21149576394976,
+              "Betsy Johnson": 6266.119865614958,
+              "Misc.": 20.879739994157173
+            }
+          },
+          {
+            "county": "Coos",
+            "reported_all_choice_volume": 34421.7,
+            "pair_participation": 0.8924241942155334,
+            "other_reported_volume": 3702.942113971174,
+            "A": "Tina Kotek",
+            "B": "Christine Drazan",
+            "other_candidates": {
+              "Donice Noelle Smith": 251.90082407967162,
+              "R Leon Noble": 179.61623977854848,
+              "Betsy Johnson": 3202.426128734608,
+              "Misc.": 68.99892137834483
+            }
+          },
+          {
+            "county": "Crook",
+            "reported_all_choice_volume": 15348.3,
+            "pair_participation": 0.8937788837539993,
+            "other_reported_volume": 1630.3135584784923,
+            "A": "Tina Kotek",
+            "B": "Christine Drazan",
+            "other_candidates": {
+              "Donice Noelle Smith": 74.2043654461429,
+              "R Leon Noble": 54.56203341628155,
+              "Betsy Johnson": 1485.1785495911838,
+              "Misc.": 16.368610024884465
+            }
+          },
+          {
+            "county": "Curry",
+            "reported_all_choice_volume": 13803.4,
+            "pair_participation": 0.9003075952362174,
+            "other_reported_volume": 1376.0941399163967,
+            "A": "Tina Kotek",
+            "B": "Christine Drazan",
+            "other_candidates": {
+              "Donice Noelle Smith": 75.11906301758813,
+              "R Leon Noble": 77.29642716302547,
+              "Betsy Johnson": 1214.9691931540342,
+              "Misc.": 8.709456581749349
+            }
+          },
+          {
+            "county": "Deschutes",
+            "reported_all_choice_volume": 120593.4,
+            "pair_participation": 0.8879811812760992,
+            "other_reported_volume": 13508.73021389886,
+            "A": "Tina Kotek",
+            "B": "Christine Drazan",
+            "other_candidates": {
+              "Donice Noelle Smith": 415.6194058972629,
+              "R Leon Noble": 363.9418607195609,
+              "Betsy Johnson": 12646.704779445285,
+              "Misc.": 82.4641678367585
+            }
+          },
+          {
+            "county": "Douglas",
+            "reported_all_choice_volume": 59292.5,
+            "pair_participation": 0.9029384268509523,
+            "other_reported_volume": 5755.02332593991,
+            "A": "Tina Kotek",
+            "B": "Christine Drazan",
+            "other_candidates": {
+              "Donice Noelle Smith": 464.0972540465236,
+              "R Leon Noble": 307.5867046725203,
+              "Betsy Johnson": 4882.259637416824,
+              "Misc.": 101.07972980404378
+            }
+          },
+          {
+            "county": "Gilliam",
+            "reported_all_choice_volume": 1094.4,
+            "pair_participation": 0.7837837837837838,
+            "other_reported_volume": 236.6270270270271,
+            "A": "Tina Kotek",
+            "B": "Christine Drazan",
+            "other_candidates": {
+              "Donice Noelle Smith": 7.668468468468469,
+              "R Leon Noble": 4.3819819819819825,
+              "Betsy Johnson": 223.4810810810811,
+              "Misc.": 1.0954954954954956
+            }
+          },
+          {
+            "county": "Grant",
+            "reported_all_choice_volume": 4364.8,
+            "pair_participation": 0.892326139088729,
+            "other_reported_volume": 469.97486810551527,
+            "A": "Tina Kotek",
+            "B": "Christine Drazan",
+            "other_candidates": {
+              "Donice Noelle Smith": 38.7284412470024,
+              "R Leon Noble": 21.981007194244604,
+              "Betsy Johnson": 400.8917026378897,
+              "Misc.": 8.373717026378896
+            }
+          },
+          {
+            "county": "Harney",
+            "reported_all_choice_volume": 4126.1,
+            "pair_participation": 0.9019300991131977,
+            "other_reported_volume": 404.64621804903527,
+            "A": "Tina Kotek",
+            "B": "Christine Drazan",
+            "other_candidates": {
+              "Donice Noelle Smith": 36.590349504434016,
+              "R Leon Noble": 16.142801251956183,
+              "Betsy Johnson": 346.5321335419927,
+              "Misc.": 5.38093375065206
+            }
+          },
+          {
+            "county": "Hood River",
+            "reported_all_choice_volume": 12148.6,
+            "pair_participation": 0.8952336881073577,
+            "other_reported_volume": 1272.7640166589536,
+            "A": "Tina Kotek",
+            "B": "Christine Drazan",
+            "other_candidates": {
+              "Donice Noelle Smith": 61.83924109208699,
+              "R Leon Noble": 32.60614530310042,
+              "Betsy Johnson": 1163.7020823692735,
+              "Misc.": 14.616547894493293
+            }
+          },
+          {
+            "county": "Jackson",
+            "reported_all_choice_volume": 115745.8,
+            "pair_participation": 0.9194137088662164,
+            "other_reported_volume": 9327.524736312684,
+            "A": "Tina Kotek",
+            "B": "Christine Drazan",
+            "other_candidates": {
+              "Donice Noelle Smith": 616.5125717296547,
+              "R Leon Noble": 510.06435790582935,
+              "Betsy Johnson": 8116.6763040666765,
+              "Misc.": 84.27150261052834
+            }
+          },
+          {
+            "county": "Jefferson",
+            "reported_all_choice_volume": 11195.4,
+            "pair_participation": 0.8646887842036685,
+            "other_reported_volume": 1514.8631853262505,
+            "A": "Tina Kotek",
+            "B": "Christine Drazan",
+            "other_candidates": {
+              "Donice Noelle Smith": 83.0369449734389,
+              "R Leon Noble": 50.49543951087501,
+              "Betsy Johnson": 1360.0105041595668,
+              "Misc.": 21.32029668236945
+            }
+          },
+          {
+            "county": "Josephine",
+            "reported_all_choice_volume": 47603.6,
+            "pair_participation": 0.9121549276104465,
+            "other_reported_volume": 4181.741688003349,
+            "A": "Tina Kotek",
+            "B": "Christine Drazan",
+            "other_candidates": {
+              "Donice Noelle Smith": 321.33150225780923,
+              "R Leon Noble": 197.23106000651737,
+              "Betsy Johnson": 3595.5887062985894,
+              "Misc.": 67.59041944043574
+            }
+          },
+          {
+            "county": "Klamath",
+            "reported_all_choice_volume": 33882.2,
+            "pair_participation": 0.9243141278088494,
+            "other_reported_volume": 2564.403858755002,
+            "A": "Tina Kotek",
+            "B": "Christine Drazan",
+            "other_candidates": {
+              "Donice Noelle Smith": 270.232326174008,
+              "R Leon Noble": 174.9221696396068,
+              "Betsy Johnson": 2088.9743720422275,
+              "Misc.": 30.27499089916272
+            }
+          },
+          {
+            "county": "Lake",
+            "reported_all_choice_volume": 4143.9,
+            "pair_participation": 0.9261477045908184,
+            "other_reported_volume": 306.03652694610764,
+            "A": "Tina Kotek",
+            "B": "Christine Drazan",
+            "other_candidates": {
+              "Donice Noelle Smith": 14.474700598802393,
+              "R Leon Noble": 17.57642215568862,
+              "Betsy Johnson": 245.03600299401197,
+              "Misc.": 28.949401197604786
+            }
+          },
+          {
+            "county": "Lane",
+            "reported_all_choice_volume": 203690.0,
+            "pair_participation": 0.9143295820198292,
+            "other_reported_volume": 17450.20743838101,
+            "A": "Tina Kotek",
+            "B": "Christine Drazan",
+            "other_candidates": {
+              "Donice Noelle Smith": 881.6596703853127,
+              "R Leon Noble": 881.6596703853127,
+              "Betsy Johnson": 15427.380722930924,
+              "Misc.": 259.50737467945055
+            }
+          },
+          {
+            "county": "Lincoln",
+            "reported_all_choice_volume": 28779.6,
+            "pair_participation": 0.8874381423677198,
+            "other_reported_volume": 3239.48523791397,
+            "A": "Tina Kotek",
+            "B": "Christine Drazan",
+            "other_candidates": {
+              "Donice Noelle Smith": 162.13859154929577,
+              "R Leon Noble": 138.03690902169774,
+              "Betsy Johnson": 2902.061682527598,
+              "Misc.": 37.24805481537876
+            }
+          },
+          {
+            "county": "Linn",
+            "reported_all_choice_volume": 68068.9,
+            "pair_participation": 0.9019269859338157,
+            "other_reported_volume": 6675.722187169689,
+            "A": "Tina Kotek",
+            "B": "Christine Drazan",
+            "other_candidates": {
+              "Donice Noelle Smith": 436.1191413936092,
+              "R Leon Noble": 326.5359053581592,
+              "Betsy Johnson": 5826.728833238474,
+              "Misc.": 86.33830717944547
+            }
+          },
+          {
+            "county": "Malheur",
+            "reported_all_choice_volume": 10510.6,
+            "pair_participation": 0.9336018286709481,
+            "other_reported_volume": 697.8846195711321,
+            "A": "Tina Kotek",
+            "B": "Christine Drazan",
+            "other_candidates": {
+              "Donice Noelle Smith": 80.08512027865461,
+              "R Leon Noble": 73.22068139762709,
+              "Betsy Johnson": 538.8584521606618,
+              "Misc.": 5.720365734189616
+            }
+          },
+          {
+            "county": "Marion",
+            "reported_all_choice_volume": 149897.1,
+            "pair_participation": 0.9045532072673341,
+            "other_reported_volume": 14307.197434927686,
+            "A": "Tina Kotek",
+            "B": "Christine Drazan",
+            "other_candidates": {
+              "Donice Noelle Smith": 700.2979087875417,
+              "R Leon Noble": 593.5858464961068,
+              "Betsy Johnson": 12819.898066740823,
+              "Misc.": 193.41561290322582
+            }
+          },
+          {
+            "county": "Morrow",
+            "reported_all_choice_volume": 4585.3,
+            "pair_participation": 0.8860357055514796,
+            "other_reported_volume": 522.5604793348007,
+            "A": "Tina Kotek",
+            "B": "Christine Drazan",
+            "other_candidates": {
+              "Donice Noelle Smith": 45.97635118610908,
+              "R Leon Noble": 33.64123257520176,
+              "Betsy Johnson": 436.21464905844954,
+              "Misc.": 6.728246515040353
+            }
+          },
+          {
+            "county": "Multnomah",
+            "reported_all_choice_volume": 406894.5,
+            "pair_participation": 0.9232877011717202,
+            "other_reported_volume": 31213.812475583516,
+            "A": "Tina Kotek",
+            "B": "Christine Drazan",
+            "other_candidates": {
+              "Donice Noelle Smith": 837.0370653174627,
+              "R Leon Noble": 927.0769089970304,
+              "Betsy Johnson": 28989.49485579563,
+              "Misc.": 460.203645473346
+            }
+          },
+          {
+            "county": "Polk",
+            "reported_all_choice_volume": 45589.5,
+            "pair_participation": 0.9026258732835462,
+            "other_reported_volume": 4439.23774993977,
+            "A": "Tina Kotek",
+            "B": "Christine Drazan",
+            "other_candidates": {
+              "Donice Noelle Smith": 230.63827993254637,
+              "R Leon Noble": 200.98478679836185,
+              "Betsy Johnson": 3960.3887496988677,
+              "Misc.": 47.22593350999759
+            }
+          },
+          {
+            "county": "Sherman",
+            "reported_all_choice_volume": 1122.7,
+            "pair_participation": 0.8868471953578336,
+            "other_reported_volume": 127.03665377176014,
+            "A": "Tina Kotek",
+            "B": "Christine Drazan",
+            "other_candidates": {
+              "Donice Noelle Smith": 4.343133462282399,
+              "R Leon Noble": 4.343133462282399,
+              "Betsy Johnson": 117.26460348162476,
+              "Misc.": 1.0857833655705997
+            }
+          },
+          {
+            "county": "Tillamook",
+            "reported_all_choice_volume": 15780.9,
+            "pair_participation": 0.8142495380193006,
+            "other_reported_volume": 2931.3094654712204,
+            "A": "Tina Kotek",
+            "B": "Christine Drazan",
+            "other_candidates": {
+              "Donice Noelle Smith": 51.84335090000684,
+              "R Leon Noble": 54.003490520840465,
+              "Betsy Johnson": 2808.181507083704,
+              "Misc.": 17.281116966668947
+            }
+          },
+          {
+            "county": "Umatilla",
+            "reported_all_choice_volume": 29502.7,
+            "pair_participation": 0.9181521566130829,
+            "other_reported_volume": 2414.732369091198,
+            "A": "Tina Kotek",
+            "B": "Christine Drazan",
+            "other_candidates": {
+              "Donice Noelle Smith": 252.39059764443738,
+              "R Leon Noble": 171.39082444692028,
+              "Betsy Johnson": 1955.7336543052684,
+              "Misc.": 35.217292694572656
+            }
+          },
+          {
+            "county": "Union",
+            "reported_all_choice_volume": 13924.4,
+            "pair_participation": 0.8988360969387755,
+            "other_reported_volume": 1408.6466517857134,
+            "A": "Tina Kotek",
+            "B": "Christine Drazan",
+            "other_candidates": {
+              "Donice Noelle Smith": 88.80357142857143,
+              "R Leon Noble": 56.612276785714286,
+              "Betsy Johnson": 1251.0203124999998,
+              "Misc.": 12.21049107142857
+            }
+          },
+          {
+            "county": "Wallowa",
+            "reported_all_choice_volume": 4929.3,
+            "pair_participation": 0.925386121383511,
+            "other_reported_volume": 367.7941918642591,
+            "A": "Tina Kotek",
+            "B": "Christine Drazan",
+            "other_candidates": {
+              "Donice Noelle Smith": 24.662584294104853,
+              "R Leon Noble": 24.662584294104853,
+              "Betsy Johnson": 312.0353056341092,
+              "Misc.": 6.4337176419403965
+            }
+          },
+          {
+            "county": "Wasco",
+            "reported_all_choice_volume": 12843.8,
+            "pair_participation": 0.8814762864907513,
+            "other_reported_volume": 1522.2948715700895,
+            "A": "Tina Kotek",
+            "B": "Christine Drazan",
+            "other_candidates": {
+              "Donice Noelle Smith": 58.54980275269571,
+              "R Leon Noble": 57.42384500745156,
+              "Betsy Johnson": 1396.187604102744,
+              "Misc.": 10.133619707197335
+            }
+          },
+          {
+            "county": "Washington",
+            "reported_all_choice_volume": 287415.8,
+            "pair_participation": 0.9067226299622482,
+            "other_reported_volume": 26809.389931296464,
+            "A": "Tina Kotek",
+            "B": "Christine Drazan",
+            "other_candidates": {
+              "Donice Noelle Smith": 923.2997537927638,
+              "R Leon Noble": 845.7964897882619,
+              "Betsy Johnson": 24738.143281668894,
+              "Misc.": 302.1504060465371
+            }
+          },
+          {
+            "county": "Wheeler",
+            "reported_all_choice_volume": 862.5,
+            "pair_participation": 0.8626506024096385,
+            "other_reported_volume": 118.46385542168673,
+            "A": "Tina Kotek",
+            "B": "Christine Drazan",
+            "other_candidates": {
+              "Donice Noelle Smith": 12.46987951807229,
+              "R Leon Noble": 6.234939759036145,
+              "Betsy Johnson": 99.75903614457832,
+              "Misc.": 0.0
+            }
+          },
+          {
+            "county": "Yamhill",
+            "reported_all_choice_volume": 54880.0,
+            "pair_participation": 0.8959294327102048,
+            "other_reported_volume": 5711.392732863962,
+            "A": "Tina Kotek",
+            "B": "Christine Drazan",
+            "other_candidates": {
+              "Donice Noelle Smith": 267.58274662134824,
+              "R Leon Noble": 254.25912438294085,
+              "Betsy Johnson": 5136.256372906045,
+              "Misc.": 53.294488953629525
+            }
+          }
+        ],
+        "current_source_accepted": false,
+        "geography_accepted": false,
+        "A_final": 979718.8137936387,
+        "B_final": 979718.8137936387,
+        "A_all_choice_share": 0.4525508856115596,
+        "A_minus_B_all_choice_margin": 0.0,
+        "other_final": {
+          "Donice Noelle Smith": 8923.031887925854,
+          "R Leon Noble": 7611.835648467296,
+          "Betsy Johnson": 186567.99819327067,
+          "Misc.": 2340.5066830587375
+        },
+        "A_beats_each_named_other": true,
+        "generic_Misc_eligibility": "unknown; arithmetic lane retained, not one legal candidate"
+      }
+    },
+    "passed": true
+  },
+  {
+    "name": "county-selected-positive",
+    "expected_ok": true,
+    "expected_status": null,
+    "input_path": "fixtures/county-selected-positive.input.json",
+    "returncode": 0,
+    "output": {
+      "ok": true,
+      "result": {
+        "scope": "all36 historical county scenario",
+        "preference": "2024-president",
+        "mix": {
+          "2024-president": 1
+        },
+        "volume_basis": "reported_all_choice including generic Misc.; no under/over/returned ballots in denominator",
+        "denominator": "reported_all_choice",
+        "historical_volume": 2244493.0,
+        "result": {
+          "selected": "Multnomah",
+          "target_margin": 0,
+          "pair_volume": 2160080.0,
+          "selected_pair_volume": 396686.0,
+          "other_net_votes_fixed": 65952.00000000003,
+          "other_units_fixed": [
+            {
+              "key": "Baker",
+              "pair_volume": 9403.0,
+              "share": 0.24917579495905562
+            },
+            {
+              "key": "Benton",
+              "pair_volume": 48096.0,
+              "share": 0.7050274451097804
+            },
+            {
+              "key": "Clackamas",
+              "pair_volume": 236967.0,
+              "share": 0.5510471922250778
+            },
+            {
+              "key": "Clatsop",
+              "pair_volume": 22446.0,
+              "share": 0.5583622917223559
+            },
+            {
+              "key": "Columbia",
+              "pair_volume": 30122.0,
+              "share": 0.42809242414182325
+            },
+            {
+              "key": "Coos",
+              "pair_volume": 34580.0,
+              "share": 0.39707923655292077
+            },
+            {
+              "key": "Crook",
+              "pair_volume": 15848.0,
+              "share": 0.2420494699646643
+            },
+            {
+              "key": "Curry",
+              "pair_volume": 13737.0,
+              "share": 0.4176312149668778
+            },
+            {
+              "key": "Deschutes",
+              "pair_volume": 122958.0,
+              "share": 0.5539127181639258
+            },
+            {
+              "key": "Douglas",
+              "pair_volume": 59947.0,
+              "share": 0.30670425542562596
+            },
+            {
+              "key": "Gilliam",
+              "pair_volume": 1096.0,
+              "share": 0.2655109489051095
+            },
+            {
+              "key": "Grant",
+              "pair_volume": 4306.0,
+              "share": 0.18950301904319555
+            },
+            {
+              "key": "Harney",
+              "pair_volume": 4104.0,
+              "share": 0.1942007797270955
+            },
+            {
+              "key": "Hood River",
+              "pair_volume": 12218.0,
+              "share": 0.6845637583892618
+            },
+            {
+              "key": "Jackson",
+              "pair_volume": 115808.0,
+              "share": 0.4668503039513678
+            },
+            {
+              "key": "Jefferson",
+              "pair_volume": 11395.0,
+              "share": 0.34585344449319877
+            },
+            {
+              "key": "Josephine",
+              "pair_volume": 48057.0,
+              "share": 0.3522483717252429
+            },
+            {
+              "key": "Klamath",
+              "pair_volume": 34531.0,
+              "share": 0.2854246908574904
+            },
+            {
+              "key": "Lake",
+              "pair_volume": 4102.0,
+              "share": 0.1660165772793759
+            },
+            {
+              "key": "Lane",
+              "pair_volume": 203151.0,
+              "share": 0.6191207525436744
+            },
+            {
+              "key": "Lincoln",
+              "pair_volume": 28757.0,
+              "share": 0.5950551170149877
+            },
+            {
+              "key": "Linn",
+              "pair_volume": 68827.0,
+              "share": 0.37411190375869935
+            },
+            {
+              "key": "Malheur",
+              "pair_volume": 10594.0,
+              "share": 0.27222956390409664
+            },
+            {
+              "key": "Marion",
+              "pair_volume": 151059.0,
+              "share": 0.4896762192256006
+            },
+            {
+              "key": "Morrow",
+              "pair_volume": 4546.0,
+              "share": 0.2503299604047514
+            },
+            {
+              "key": "Polk",
+              "pair_volume": 45802.0,
+              "share": 0.4810706956028121
+            },
+            {
+              "key": "Sherman",
+              "pair_volume": 1123.0,
+              "share": 0.20747996438112198
+            },
+            {
+              "key": "Tillamook",
+              "pair_volume": 15718.0,
+              "share": 0.4928744115027357
+            },
+            {
+              "key": "Umatilla",
+              "pair_volume": 30224.0,
+              "share": 0.3060812599258867
+            },
+            {
+              "key": "Union",
+              "pair_volume": 14049.0,
+              "share": 0.2923339739483237
+            },
+            {
+              "key": "Wallowa",
+              "pair_volume": 4939.0,
+              "share": 0.3184855233853007
+            },
+            {
+              "key": "Wasco",
+              "pair_volume": 12906.0,
+              "share": 0.4702463970246397
+            },
+            {
+              "key": "Washington",
+              "pair_volume": 285603.0,
+              "share": 0.675808727499361
+            },
+            {
+              "key": "Wheeler",
+              "pair_volume": 828.0,
+              "share": 0.2536231884057971
+            },
+            {
+              "key": "Yamhill",
+              "pair_volume": 55547.0,
+              "share": 0.468270113597494
+            }
+          ],
+          "selected_baseline_share": 0.8216246603106739,
+          "status": "feasible",
+          "unbounded_required_share": 0.41687127854272643,
+          "required_share": 0.41687127854272643,
+          "required_change_from_source_share": -0.4047533817679475,
+          "feasible": true,
+          "required_net_votes": -65952.00000000003
+        },
+        "county_volume_and_full_field": [
+          {
+            "county": "Baker",
+            "reported_all_choice_volume": 9694.0,
+            "pair_participation": 0.9699814318134928,
+            "other_reported_volume": 291.0,
+            "A": "Kamala D Harris",
+            "B": "Donald J Trump",
+            "other_candidates": {
+              "Robert F Kennedy Jr": 148.0,
+              "Cornel West": 8.0,
+              "Chase Oliver": 43.0,
+              "Randall Terry": 11.0,
+              "Jill Stein": 36.0,
+              "Misc.": 45.0
+            }
+          },
+          {
+            "county": "Benton",
+            "reported_all_choice_volume": 50232.0,
+            "pair_participation": 0.9574773053033923,
+            "other_reported_volume": 2136.0,
+            "A": "Kamala D Harris",
+            "B": "Donald J Trump",
+            "other_candidates": {
+              "Robert F Kennedy Jr": 685.0,
+              "Cornel West": 158.0,
+              "Chase Oliver": 231.0,
+              "Randall Terry": 56.0,
+              "Jill Stein": 609.0,
+              "Misc.": 397.0
+            }
+          },
+          {
+            "county": "Clackamas",
+            "reported_all_choice_volume": 246240.0,
+            "pair_participation": 0.9623416179337232,
+            "other_reported_volume": 9273.0,
+            "A": "Kamala D Harris",
+            "B": "Donald J Trump",
+            "other_candidates": {
+              "Robert F Kennedy Jr": 4144.0,
+              "Cornel West": 367.0,
+              "Chase Oliver": 1085.0,
+              "Randall Terry": 203.0,
+              "Jill Stein": 1550.0,
+              "Misc.": 1924.0
+            }
+          },
+          {
+            "county": "Clatsop",
+            "reported_all_choice_volume": 23290.0,
+            "pair_participation": 0.9637612709317304,
+            "other_reported_volume": 844.0,
+            "A": "Kamala D Harris",
+            "B": "Donald J Trump",
+            "other_candidates": {
+              "Robert F Kennedy Jr": 408.0,
+              "Cornel West": 41.0,
+              "Chase Oliver": 85.0,
+              "Randall Terry": 23.0,
+              "Jill Stein": 169.0,
+              "Misc.": 118.0
+            }
+          },
+          {
+            "county": "Columbia",
+            "reported_all_choice_volume": 31334.0,
+            "pair_participation": 0.9613199719154911,
+            "other_reported_volume": 1212.0,
+            "A": "Kamala D Harris",
+            "B": "Donald J Trump",
+            "other_candidates": {
+              "Robert F Kennedy Jr": 614.0,
+              "Cornel West": 56.0,
+              "Chase Oliver": 144.0,
+              "Randall Terry": 38.0,
+              "Jill Stein": 197.0,
+              "Misc.": 163.0
+            }
+          },
+          {
+            "county": "Coos",
+            "reported_all_choice_volume": 35735.0,
+            "pair_participation": 0.9676787463271302,
+            "other_reported_volume": 1155.0,
+            "A": "Kamala D Harris",
+            "B": "Donald J Trump",
+            "other_candidates": {
+              "Robert F Kennedy Jr": 630.0,
+              "Cornel West": 45.0,
+              "Chase Oliver": 101.0,
+              "Randall Terry": 39.0,
+              "Jill Stein": 186.0,
+              "Misc.": 154.0
+            }
+          },
+          {
+            "county": "Crook",
+            "reported_all_choice_volume": 16297.0,
+            "pair_participation": 0.972448916978585,
+            "other_reported_volume": 449.0,
+            "A": "Kamala D Harris",
+            "B": "Donald J Trump",
+            "other_candidates": {
+              "Robert F Kennedy Jr": 250.0,
+              "Cornel West": 11.0,
+              "Chase Oliver": 47.0,
+              "Randall Terry": 10.0,
+              "Jill Stein": 47.0,
+              "Misc.": 84.0
+            }
+          },
+          {
+            "county": "Curry",
+            "reported_all_choice_volume": 14200.0,
+            "pair_participation": 0.9673943661971831,
+            "other_reported_volume": 463.0,
+            "A": "Kamala D Harris",
+            "B": "Donald J Trump",
+            "other_candidates": {
+              "Robert F Kennedy Jr": 252.0,
+              "Cornel West": 10.0,
+              "Chase Oliver": 53.0,
+              "Randall Terry": 10.0,
+              "Jill Stein": 69.0,
+              "Misc.": 69.0
+            }
+          },
+          {
+            "county": "Deschutes",
+            "reported_all_choice_volume": 127375.0,
+            "pair_participation": 0.9653228655544651,
+            "other_reported_volume": 4417.0,
+            "A": "Kamala D Harris",
+            "B": "Donald J Trump",
+            "other_candidates": {
+              "Robert F Kennedy Jr": 2162.0,
+              "Cornel West": 138.0,
+              "Chase Oliver": 526.0,
+              "Randall Terry": 69.0,
+              "Jill Stein": 678.0,
+              "Misc.": 844.0
+            }
+          },
+          {
+            "county": "Douglas",
+            "reported_all_choice_volume": 61807.0,
+            "pair_participation": 0.9699063212904687,
+            "other_reported_volume": 1860.0,
+            "A": "Kamala D Harris",
+            "B": "Donald J Trump",
+            "other_candidates": {
+              "Robert F Kennedy Jr": 952.0,
+              "Cornel West": 47.0,
+              "Chase Oliver": 208.0,
+              "Randall Terry": 62.0,
+              "Jill Stein": 266.0,
+              "Misc.": 325.0
+            }
+          },
+          {
+            "county": "Gilliam",
+            "reported_all_choice_volume": 1134.0,
+            "pair_participation": 0.9664902998236331,
+            "other_reported_volume": 38.0,
+            "A": "Kamala D Harris",
+            "B": "Donald J Trump",
+            "other_candidates": {
+              "Robert F Kennedy Jr": 18.0,
+              "Cornel West": 0.0,
+              "Chase Oliver": 6.0,
+              "Randall Terry": 1.0,
+              "Jill Stein": 9.0,
+              "Misc.": 4.0
+            }
+          },
+          {
+            "county": "Grant",
+            "reported_all_choice_volume": 4456.0,
+            "pair_participation": 0.9663375224416517,
+            "other_reported_volume": 150.0,
+            "A": "Kamala D Harris",
+            "B": "Donald J Trump",
+            "other_candidates": {
+              "Robert F Kennedy Jr": 91.0,
+              "Cornel West": 3.0,
+              "Chase Oliver": 14.0,
+              "Randall Terry": 4.0,
+              "Jill Stein": 13.0,
+              "Misc.": 25.0
+            }
+          },
+          {
+            "county": "Harney",
+            "reported_all_choice_volume": 4255.0,
+            "pair_participation": 0.9645123384253819,
+            "other_reported_volume": 151.0,
+            "A": "Kamala D Harris",
+            "B": "Donald J Trump",
+            "other_candidates": {
+              "Robert F Kennedy Jr": 96.0,
+              "Cornel West": 5.0,
+              "Chase Oliver": 13.0,
+              "Randall Terry": 5.0,
+              "Jill Stein": 11.0,
+              "Misc.": 21.0
+            }
+          },
+          {
+            "county": "Hood River",
+            "reported_all_choice_volume": 12707.0,
+            "pair_participation": 0.9615172739434957,
+            "other_reported_volume": 489.0,
+            "A": "Kamala D Harris",
+            "B": "Donald J Trump",
+            "other_candidates": {
+              "Robert F Kennedy Jr": 218.0,
+              "Cornel West": 16.0,
+              "Chase Oliver": 56.0,
+              "Randall Terry": 8.0,
+              "Jill Stein": 104.0,
+              "Misc.": 87.0
+            }
+          },
+          {
+            "county": "Jackson",
+            "reported_all_choice_volume": 119572.0,
+            "pair_participation": 0.9685210584417757,
+            "other_reported_volume": 3764.0,
+            "A": "Kamala D Harris",
+            "B": "Donald J Trump",
+            "other_candidates": {
+              "Robert F Kennedy Jr": 1735.0,
+              "Cornel West": 187.0,
+              "Chase Oliver": 433.0,
+              "Randall Terry": 88.0,
+              "Jill Stein": 701.0,
+              "Misc.": 620.0
+            }
+          },
+          {
+            "county": "Jefferson",
+            "reported_all_choice_volume": 11750.0,
+            "pair_participation": 0.9697872340425532,
+            "other_reported_volume": 355.0,
+            "A": "Kamala D Harris",
+            "B": "Donald J Trump",
+            "other_candidates": {
+              "Robert F Kennedy Jr": 182.0,
+              "Cornel West": 14.0,
+              "Chase Oliver": 33.0,
+              "Randall Terry": 10.0,
+              "Jill Stein": 57.0,
+              "Misc.": 59.0
+            }
+          },
+          {
+            "county": "Josephine",
+            "reported_all_choice_volume": 49628.0,
+            "pair_participation": 0.9683444829531715,
+            "other_reported_volume": 1571.0,
+            "A": "Kamala D Harris",
+            "B": "Donald J Trump",
+            "other_candidates": {
+              "Robert F Kennedy Jr": 746.0,
+              "Cornel West": 63.0,
+              "Chase Oliver": 159.0,
+              "Randall Terry": 52.0,
+              "Jill Stein": 256.0,
+              "Misc.": 295.0
+            }
+          },
+          {
+            "county": "Klamath",
+            "reported_all_choice_volume": 35515.0,
+            "pair_participation": 0.9722933971561312,
+            "other_reported_volume": 984.0,
+            "A": "Kamala D Harris",
+            "B": "Donald J Trump",
+            "other_candidates": {
+              "Robert F Kennedy Jr": 524.0,
+              "Cornel West": 26.0,
+              "Chase Oliver": 110.0,
+              "Randall Terry": 36.0,
+              "Jill Stein": 145.0,
+              "Misc.": 143.0
+            }
+          },
+          {
+            "county": "Lake",
+            "reported_all_choice_volume": 4213.0,
+            "pair_participation": 0.973652978874911,
+            "other_reported_volume": 111.0,
+            "A": "Kamala D Harris",
+            "B": "Donald J Trump",
+            "other_candidates": {
+              "Robert F Kennedy Jr": 68.0,
+              "Cornel West": 0.0,
+              "Chase Oliver": 11.0,
+              "Randall Terry": 4.0,
+              "Jill Stein": 14.0,
+              "Misc.": 14.0
+            }
+          },
+          {
+            "county": "Lane",
+            "reported_all_choice_volume": 211285.0,
+            "pair_participation": 0.9615022363158766,
+            "other_reported_volume": 8134.0,
+            "A": "Kamala D Harris",
+            "B": "Donald J Trump",
+            "other_candidates": {
+              "Robert F Kennedy Jr": 3158.0,
+              "Cornel West": 594.0,
+              "Chase Oliver": 851.0,
+              "Randall Terry": 166.0,
+              "Jill Stein": 1866.0,
+              "Misc.": 1499.0
+            }
+          },
+          {
+            "county": "Lincoln",
+            "reported_all_choice_volume": 29804.0,
+            "pair_participation": 0.9648704871829284,
+            "other_reported_volume": 1047.0,
+            "A": "Kamala D Harris",
+            "B": "Donald J Trump",
+            "other_candidates": {
+              "Robert F Kennedy Jr": 501.0,
+              "Cornel West": 42.0,
+              "Chase Oliver": 114.0,
+              "Randall Terry": 20.0,
+              "Jill Stein": 237.0,
+              "Misc.": 133.0
+            }
+          },
+          {
+            "county": "Linn",
+            "reported_all_choice_volume": 71429.0,
+            "pair_participation": 0.9635722185666886,
+            "other_reported_volume": 2602.0,
+            "A": "Kamala D Harris",
+            "B": "Donald J Trump",
+            "other_candidates": {
+              "Robert F Kennedy Jr": 1331.0,
+              "Cornel West": 89.0,
+              "Chase Oliver": 362.0,
+              "Randall Terry": 60.0,
+              "Jill Stein": 383.0,
+              "Misc.": 377.0
+            }
+          },
+          {
+            "county": "Malheur",
+            "reported_all_choice_volume": 10945.0,
+            "pair_participation": 0.9679305619004112,
+            "other_reported_volume": 351.0,
+            "A": "Kamala D Harris",
+            "B": "Donald J Trump",
+            "other_candidates": {
+              "Robert F Kennedy Jr": 208.0,
+              "Cornel West": 16.0,
+              "Chase Oliver": 34.0,
+              "Randall Terry": 17.0,
+              "Jill Stein": 47.0,
+              "Misc.": 29.0
+            }
+          },
+          {
+            "county": "Marion",
+            "reported_all_choice_volume": 156691.0,
+            "pair_participation": 0.9640566465208595,
+            "other_reported_volume": 5632.0,
+            "A": "Kamala D Harris",
+            "B": "Donald J Trump",
+            "other_candidates": {
+              "Robert F Kennedy Jr": 2695.0,
+              "Cornel West": 298.0,
+              "Chase Oliver": 610.0,
+              "Randall Terry": 180.0,
+              "Jill Stein": 900.0,
+              "Misc.": 949.0
+            }
+          },
+          {
+            "county": "Morrow",
+            "reported_all_choice_volume": 4732.0,
+            "pair_participation": 0.9606931530008453,
+            "other_reported_volume": 186.0,
+            "A": "Kamala D Harris",
+            "B": "Donald J Trump",
+            "other_candidates": {
+              "Robert F Kennedy Jr": 115.0,
+              "Cornel West": 4.0,
+              "Chase Oliver": 17.0,
+              "Randall Terry": 10.0,
+              "Jill Stein": 13.0,
+              "Misc.": 27.0
+            }
+          },
+          {
+            "county": "Multnomah",
+            "reported_all_choice_volume": 414250.0,
+            "pair_participation": 0.9576004828002413,
+            "other_reported_volume": 17564.0,
+            "A": "Kamala D Harris",
+            "B": "Donald J Trump",
+            "other_candidates": {
+              "Robert F Kennedy Jr": 4054.0,
+              "Cornel West": 2492.0,
+              "Chase Oliver": 1342.0,
+              "Randall Terry": 210.0,
+              "Jill Stein": 6297.0,
+              "Misc.": 3169.0
+            }
+          },
+          {
+            "county": "Polk",
+            "reported_all_choice_volume": 47593.0,
+            "pair_participation": 0.9623684155232912,
+            "other_reported_volume": 1791.0,
+            "A": "Kamala D Harris",
+            "B": "Donald J Trump",
+            "other_candidates": {
+              "Robert F Kennedy Jr": 819.0,
+              "Cornel West": 85.0,
+              "Chase Oliver": 235.0,
+              "Randall Terry": 51.0,
+              "Jill Stein": 241.0,
+              "Misc.": 360.0
+            }
+          },
+          {
+            "county": "Sherman",
+            "reported_all_choice_volume": 1163.0,
+            "pair_participation": 0.9656061908856406,
+            "other_reported_volume": 40.0,
+            "A": "Kamala D Harris",
+            "B": "Donald J Trump",
+            "other_candidates": {
+              "Robert F Kennedy Jr": 26.0,
+              "Cornel West": 1.0,
+              "Chase Oliver": 3.0,
+              "Randall Terry": 1.0,
+              "Jill Stein": 1.0,
+              "Misc.": 8.0
+            }
+          },
+          {
+            "county": "Tillamook",
+            "reported_all_choice_volume": 16252.0,
+            "pair_participation": 0.9671425055377799,
+            "other_reported_volume": 534.0,
+            "A": "Kamala D Harris",
+            "B": "Donald J Trump",
+            "other_candidates": {
+              "Robert F Kennedy Jr": 249.0,
+              "Cornel West": 24.0,
+              "Chase Oliver": 55.0,
+              "Randall Terry": 19.0,
+              "Jill Stein": 115.0,
+              "Misc.": 72.0
+            }
+          },
+          {
+            "county": "Umatilla",
+            "reported_all_choice_volume": 31225.0,
+            "pair_participation": 0.9679423538831065,
+            "other_reported_volume": 1001.0,
+            "A": "Kamala D Harris",
+            "B": "Donald J Trump",
+            "other_candidates": {
+              "Robert F Kennedy Jr": 551.0,
+              "Cornel West": 28.0,
+              "Chase Oliver": 118.0,
+              "Randall Terry": 36.0,
+              "Jill Stein": 125.0,
+              "Misc.": 143.0
+            }
+          },
+          {
+            "county": "Union",
+            "reported_all_choice_volume": 14574.0,
+            "pair_participation": 0.9639769452449568,
+            "other_reported_volume": 525.0,
+            "A": "Kamala D Harris",
+            "B": "Donald J Trump",
+            "other_candidates": {
+              "Robert F Kennedy Jr": 317.0,
+              "Cornel West": 16.0,
+              "Chase Oliver": 52.0,
+              "Randall Terry": 13.0,
+              "Jill Stein": 55.0,
+              "Misc.": 72.0
+            }
+          },
+          {
+            "county": "Wallowa",
+            "reported_all_choice_volume": 5108.0,
+            "pair_participation": 0.9669146436961629,
+            "other_reported_volume": 169.0,
+            "A": "Kamala D Harris",
+            "B": "Donald J Trump",
+            "other_candidates": {
+              "Robert F Kennedy Jr": 85.0,
+              "Cornel West": 9.0,
+              "Chase Oliver": 17.0,
+              "Randall Terry": 6.0,
+              "Jill Stein": 26.0,
+              "Misc.": 26.0
+            }
+          },
+          {
+            "county": "Wasco",
+            "reported_all_choice_volume": 13391.0,
+            "pair_participation": 0.9637816443880218,
+            "other_reported_volume": 485.0,
+            "A": "Kamala D Harris",
+            "B": "Donald J Trump",
+            "other_candidates": {
+              "Robert F Kennedy Jr": 251.0,
+              "Cornel West": 15.0,
+              "Chase Oliver": 73.0,
+              "Randall Terry": 14.0,
+              "Jill Stein": 81.0,
+              "Misc.": 51.0
+            }
+          },
+          {
+            "county": "Washington",
+            "reported_all_choice_volume": 297949.0,
+            "pair_participation": 0.9585633782962856,
+            "other_reported_volume": 12346.0,
+            "A": "Kamala D Harris",
+            "B": "Donald J Trump",
+            "other_candidates": {
+              "Robert F Kennedy Jr": 4312.0,
+              "Cornel West": 653.0,
+              "Chase Oliver": 1520.0,
+              "Randall Terry": 251.0,
+              "Jill Stein": 3273.0,
+              "Misc.": 2337.0
+            }
+          },
+          {
+            "county": "Wheeler",
+            "reported_all_choice_volume": 868.0,
+            "pair_participation": 0.9539170506912442,
+            "other_reported_volume": 40.0,
+            "A": "Kamala D Harris",
+            "B": "Donald J Trump",
+            "other_candidates": {
+              "Robert F Kennedy Jr": 25.0,
+              "Cornel West": 0.0,
+              "Chase Oliver": 5.0,
+              "Randall Terry": 0.0,
+              "Jill Stein": 7.0,
+              "Misc.": 3.0
+            }
+          },
+          {
+            "county": "Yamhill",
+            "reported_all_choice_volume": 57800.0,
+            "pair_participation": 0.9610207612456747,
+            "other_reported_volume": 2253.0,
+            "A": "Kamala D Harris",
+            "B": "Donald J Trump",
+            "other_candidates": {
+              "Robert F Kennedy Jr": 1113.0,
+              "Cornel West": 83.0,
+              "Chase Oliver": 295.0,
+              "Randall Terry": 67.0,
+              "Jill Stein": 315.0,
+              "Misc.": 380.0
+            }
+          }
+        ],
+        "current_source_accepted": false,
+        "geography_accepted": false
+      }
+    },
+    "passed": true
+  },
+  {
+    "name": "nan",
+    "input_path": "fixtures/nan.input.json",
+    "output": {
+      "ok": false,
+      "error": {
+        "type": "invalid_input",
+        "message": "nonfinite JSON number"
+      }
+    },
+    "passed": true
+  },
+  {
+    "name": "inf",
+    "input_path": "fixtures/inf.input.json",
+    "output": {
+      "ok": false,
+      "error": {
+        "type": "invalid_input",
+        "message": "nonfinite JSON number"
+      }
+    },
+    "passed": true
+  },
+  {
+    "name": "minusinf",
+    "input_path": "fixtures/minusinf.input.json",
+    "output": {
+      "ok": false,
+      "error": {
+        "type": "invalid_input",
+        "message": "nonfinite JSON number"
+      }
+    },
+    "passed": true
+  }
+]

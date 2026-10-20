@@ -57,3 +57,16 @@ No results entered yet.
 - [FEC 2026 election calendar](https://www.fec.gov/documents/5910/2026pdates.pdf): election scope and general election date.
 - [Oregon election office](https://sos.oregon.gov/voting-elections/Pages/default.aspx): ballot access, election schedule, and official results.
 - [FEC Oregon Senate election data](https://www.fec.gov/data/elections/senate/OR/2026/): candidate filings and campaign finance.
+
+
+## Election-night research
+
+[Turnout](turnout.md) and [historical baselines](county-partisanship.md) preserve
+all36county controls and partial recovered native publications. The
+[coordinator review](research-review.md) covers original extraction, conditional
+mathematics, CLI cases and repaired immutable-input/asset seals.
+Five2024native parents close510rows;31remain unclosed. Canonical statewide
+native priority is unavailable; county and known-source sensitivities are
+separate. Same-worker reciprocal QA has finished; final coordinator source acceptance
+is pending. Official-source and maps work
+remain queued, with no current IDs/geographic/feed or live probability approval.

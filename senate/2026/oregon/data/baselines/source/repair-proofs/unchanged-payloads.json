@@ -1,0 +1,1447 @@
+{
+  "scope": "all pre-repair owned payloads except the eight explicitly permitted packaging/doc targets; originals, values, model, calculator, scenarios, orders, CLI fixtures and original-first evidence byte-identical",
+  "files": [
+    {
+      "path": "county-partisanship.md",
+      "bytes": 25342,
+      "sha256": "bd7889a3078cdcf4d5f9b9fc924c590c9124a38380d23dbf61fa11aca5c90e0b"
+    },
+    {
+      "path": "data/baselines/bounded-root-oracle.json",
+      "bytes": 20281,
+      "sha256": "a8d3c3ca8d41c718aff7a4c4e9008ef081655ab7db4ca42a6a2ab3a229400ff2"
+    },
+    {
+      "path": "data/baselines/county-candidates.csv",
+      "bytes": 195331,
+      "sha256": "fd254398a603c3a34a6d73ed049cc916511098af6b5ad9df091287d1b914b247"
+    },
+    {
+      "path": "data/baselines/county-contributions.csv",
+      "bytes": 276015,
+      "sha256": "854d8f32a9d0fbad1261afcb18db828d45f645f43631aaf091640fa803cd52e8"
+    },
+    {
+      "path": "data/baselines/county-priority-order.csv",
+      "bytes": 2384,
+      "sha256": "11ee0f90123f4b821c57598a348a8acac3e63c8f296e9f2d4ec9063e6290595a"
+    },
+    {
+      "path": "data/baselines/county-selected-targets.csv",
+      "bytes": 122090,
+      "sha256": "06f6b48e064d9d265d28882ebae0d8f2507f2780565ebb26e360d97dc35564b2"
+    },
+    {
+      "path": "data/baselines/fixtures/bad-mix-0.input.json",
+      "bytes": 38,
+      "sha256": "8691a8dbe55c39a15b682af795eb5066eac4bc7fbceda7ba61adaa3234a6c39a"
+    },
+    {
+      "path": "data/baselines/fixtures/bad-mix-1.input.json",
+      "bytes": 38,
+      "sha256": "5cdc4e14805692521320e74b6df78cebf2eaceab4625548e9783bfc94ef3c6d0"
+    },
+    {
+      "path": "data/baselines/fixtures/bad-mix-2.input.json",
+      "bytes": 36,
+      "sha256": "fc855ceba5d6904e10fefc58cf748552736fe7b63498e2be7731bb40c4c726e1"
+    },
+    {
+      "path": "data/baselines/fixtures/bad-mix-3.input.json",
+      "bytes": 36,
+      "sha256": "4a9f3ff69b4a54fe0d0eb32bd458ef29d48afbe747b25e1f36ea911b058c54fd"
+    },
+    {
+      "path": "data/baselines/fixtures/bad-mix-4.input.json",
+      "bytes": 63,
+      "sha256": "799d782c40b0ec76b578cc1df7b30a86b0dba4d48ee4395bd6f332d7a073179d"
+    },
+    {
+      "path": "data/baselines/fixtures/bad-mix-5.input.json",
+      "bytes": 61,
+      "sha256": "2f35dc5f0f06fced279872b927cc28700f6865ead574ffb63cc7db69ef9f07cc"
+    },
+    {
+      "path": "data/baselines/fixtures/bad-mix-6.input.json",
+      "bytes": 65,
+      "sha256": "2b9122e6555ab7c2f9ae5a3bf7cc04fd0ba307fb5ef1bf064aa8af56ee46d04b"
+    },
+    {
+      "path": "data/baselines/fixtures/bad-mix-7.input.json",
+      "bytes": 63,
+      "sha256": "5d20b32af34834d82fbd6c88e7404f81dcf88a1689b44b48fa38d3659af3b582"
+    },
+    {
+      "path": "data/baselines/fixtures/bad-mix-8.input.json",
+      "bytes": 52,
+      "sha256": "e1e32ab25a871d7ba4a17499d44a164250e004034934149c19e26ca167a306db"
+    },
+    {
+      "path": "data/baselines/fixtures/bad-mix-9.input.json",
+      "bytes": 85,
+      "sha256": "8b52cb4d6612e99235fbfc04de1b6f15323c70f97b2848595fa8ea4ea3e4d53d"
+    },
+    {
+      "path": "data/baselines/fixtures/bounded-clipping.input.json",
+      "bytes": 224,
+      "sha256": "9d1fdf1b27317bc5bc6d5f04cd9ca4f1b154a73b0af0e27149ef70dd136e8738"
+    },
+    {
+      "path": "data/baselines/fixtures/county-invalid-target-bool.input.json",
+      "bytes": 48,
+      "sha256": "97206288ffc7aca46a11b190a10dcefe1477bc673240c5fbdbbc2a7f63b956eb"
+    },
+    {
+      "path": "data/baselines/fixtures/county-invalid-target-null.input.json",
+      "bytes": 48,
+      "sha256": "44911f065d727aefa2039f9afba0d87696f3ea9cab1f9f46db4c6096e33655eb"
+    },
+    {
+      "path": "data/baselines/fixtures/county-invalid-target-object.input.json",
+      "bytes": 46,
+      "sha256": "de81a7b0448bdd7cc6d791f25a65a72279fc8dba7c8a71fba7bf2fcd7e5b82ee"
+    },
+    {
+      "path": "data/baselines/fixtures/county-invalid-target-range.input.json",
+      "bytes": 47,
+      "sha256": "c476937a53b789d0dbf0f36dcc3bab38fda386966a35b5de71f0141e05995236"
+    },
+    {
+      "path": "data/baselines/fixtures/county-invalid-target-text.input.json",
+      "bytes": 50,
+      "sha256": "7ea25a05fa90d587175ffa4e5dd067b5ecd77aec249230c982d3d9556d1ae3a6"
+    },
+    {
+      "path": "data/baselines/fixtures/county-positive-historical-mix.input.json",
+      "bytes": 146,
+      "sha256": "eae7a42355561bc478e04145bb4f6f8799ea37c2e8f4ecfa5ea88307defad379"
+    },
+    {
+      "path": "data/baselines/fixtures/county-selected-positive.input.json",
+      "bytes": 82,
+      "sha256": "75648d8fa62bd02423eb8b2dc663a72e3fc95a63a31b3095f20e42b64a2b6c84"
+    },
+    {
+      "path": "data/baselines/fixtures/globally-invalid-keys-blank.input.json",
+      "bytes": 190,
+      "sha256": "8dcdad51a8b76d2fcf7f0826eb199414fc9f36bcdf286ee8aa3c617a3b370c04"
+    },
+    {
+      "path": "data/baselines/fixtures/globally-invalid-keys-duplicates.input.json",
+      "bytes": 191,
+      "sha256": "97ed9d0eae61a612c852093523a2bacbf4703db9e3af34e8e00c2d9e4548d278"
+    },
+    {
+      "path": "data/baselines/fixtures/globally-invalid-keys-nonstring.input.json",
+      "bytes": 189,
+      "sha256": "25d3e66a80f231c365f9c56625197f2958193e202ae67f36b2f9d00910a67cf2"
+    },
+    {
+      "path": "data/baselines/fixtures/inf.input.json",
+      "bytes": 55,
+      "sha256": "25b88e1f511acd81a94eb833c7b5cd7c104394854fcccae3f402508f23aab1cc"
+    },
+    {
+      "path": "data/baselines/fixtures/live-counted-bool.input.json",
+      "bytes": 325,
+      "sha256": "ce93961ba11127ae8a4f9ac85cfdda848f9f0875fd53757244de6466198e527f"
+    },
+    {
+      "path": "data/baselines/fixtures/live-duplicate-keys.input.json",
+      "bytes": 528,
+      "sha256": "69b6566fc275d0e16981584c3aae4a87c56d3e9d98242ddee25a3f17084ecb52"
+    },
+    {
+      "path": "data/baselines/fixtures/live-final-all-choice.input.json",
+      "bytes": 372,
+      "sha256": "2403b476da0f74a5e1d26e0a749706604f96a3a363bb1580d602a4fd3a30f513"
+    },
+    {
+      "path": "data/baselines/fixtures/live-final-pair.input.json",
+      "bytes": 366,
+      "sha256": "a02a6621d6684c987429d492dba4d8374301e74a0096854238e2f8799bb6fc82"
+    },
+    {
+      "path": "data/baselines/fixtures/live-impossible.input.json",
+      "bytes": 341,
+      "sha256": "d8bcd637c137417fa1e947cf01d3c6d501a08f465438009dbf41abed139f527f"
+    },
+    {
+      "path": "data/baselines/fixtures/live-invalid-bad-other.input.json",
+      "bytes": 362,
+      "sha256": "7291b422088dcdf58b201eb2a155ce3a294c37c20594dbc02e49676f1e267631"
+    },
+    {
+      "path": "data/baselines/fixtures/live-invalid-bad-participation.input.json",
+      "bytes": 366,
+      "sha256": "171451c91afbca436a9a8e21b8059cfebc006e3680c45750e315c02a902066ff"
+    },
+    {
+      "path": "data/baselines/fixtures/live-invalid-bad-share.input.json",
+      "bytes": 367,
+      "sha256": "c8a520da5165c8d47a663214fcffe34c8521fa0cdb8ed2d43a66de7ce7d40629"
+    },
+    {
+      "path": "data/baselines/fixtures/live-invalid-bool-volume.input.json",
+      "bytes": 367,
+      "sha256": "a61b443b944f546c5b4a620b373f7c1fc5c570ddba7c25a7900db93745f39f77"
+    },
+    {
+      "path": "data/baselines/fixtures/live-invalid-negative.input.json",
+      "bytes": 365,
+      "sha256": "d5bbd0bf7b94d90eeb1251e613fc30e41d388bd0e8706fae0067be008a048080"
+    },
+    {
+      "path": "data/baselines/fixtures/live-no-pool-valid.input.json",
+      "bytes": 127,
+      "sha256": "68e1092b1027df114116cbed3a104f231a69fbfacf6477967eabed7795013ae6"
+    },
+    {
+      "path": "data/baselines/fixtures/live-no-pool.input.json",
+      "bytes": 203,
+      "sha256": "d74dba2b6118c6ee05b18b3d829dd513715f5793e23821dff07c25dac13b37a1"
+    },
+    {
+      "path": "data/baselines/fixtures/live-secured.input.json",
+      "bytes": 341,
+      "sha256": "c1cc3375ab8241d639e7298f960936208a4cbefc1aa0f94575079a5989344ffe"
+    },
+    {
+      "path": "data/baselines/fixtures/live-third-candidate-wins.input.json",
+      "bytes": 367,
+      "sha256": "4ded9c5392f7f600833230ed20cfeb619d9288beca4b5c7754fc01439d376559"
+    },
+    {
+      "path": "data/baselines/fixtures/live-unknown-preference.input.json",
+      "bytes": 367,
+      "sha256": "f9e15a9aab9c348bd9d91f6dc4062c9c4270505faf4b467586e91694ea55316b"
+    },
+    {
+      "path": "data/baselines/fixtures/live-unknown-selected-with-unknown-pool.input.json",
+      "bytes": 369,
+      "sha256": "bb0d0b0f1af4676862983a89ae1a458ddc73a97138c055e003757577d495ea75"
+    },
+    {
+      "path": "data/baselines/fixtures/live-unknown-volume.input.json",
+      "bytes": 367,
+      "sha256": "64a91499a2c013fcac34e22661b5c2f0229d4bab9e523e0e6d7a7c10832bf304"
+    },
+    {
+      "path": "data/baselines/fixtures/minusinf.input.json",
+      "bytes": 56,
+      "sha256": "63cb51f298fe6f7c65a9b65801fe188a4a0517df7a5e6eb75607e66f27e0f522"
+    },
+    {
+      "path": "data/baselines/fixtures/nan.input.json",
+      "bytes": 50,
+      "sha256": "491d9d0c8fce87969c2c74fc26b4da6ef43164f2aa16b8956a1bdfbbcebb430d"
+    },
+    {
+      "path": "data/baselines/fixtures/negative-shift-already-winning.input.json",
+      "bytes": 199,
+      "sha256": "59b6f8c132cd38f30248d49eb5fc0ef7e04ab61f263988ee837ce6a8e218b8c3"
+    },
+    {
+      "path": "data/baselines/fixtures/results.json",
+      "bytes": 105928,
+      "sha256": "49331ac3c0f37be163a3150bcf96e51a844a8a78a8d9a204e8e65750a7c7f1e2"
+    },
+    {
+      "path": "data/baselines/fixtures/selected-impossible.input.json",
+      "bytes": 218,
+      "sha256": "d1d292f40c30b619cc8189c42b3f74499f7d27c92f1023309c16d4ce31d5c509"
+    },
+    {
+      "path": "data/baselines/fixtures/selected-invalid-target-bool.input.json",
+      "bytes": 246,
+      "sha256": "a8320607ee5791c1eeb8afa13bd7985b4c8c608a5f94d87831046e3b75b897af"
+    },
+    {
+      "path": "data/baselines/fixtures/selected-invalid-target-null.input.json",
+      "bytes": 246,
+      "sha256": "3d561fb74349c1319786168eeba6682d30a45720a051f15c8deb7192ac3075d6"
+    },
+    {
+      "path": "data/baselines/fixtures/selected-invalid-target-object.input.json",
+      "bytes": 244,
+      "sha256": "680a305935e4f9f35d789d63c07a206b8a9731a745abf169957646c3709b2f2a"
+    },
+    {
+      "path": "data/baselines/fixtures/selected-invalid-target-range.input.json",
+      "bytes": 245,
+      "sha256": "05e56eb8f4960545cf7bee244a73af31f5ea880562c96cd825d064ae59c9fa56"
+    },
+    {
+      "path": "data/baselines/fixtures/selected-invalid-target-text.input.json",
+      "bytes": 248,
+      "sha256": "48799b9a070379f2b146d5d073612c8bf73a1d312fdb5427c0167110d9c07212"
+    },
+    {
+      "path": "data/baselines/fixtures/selected-secured.input.json",
+      "bytes": 218,
+      "sha256": "0c04000f95bfdf921a8a126f45777839b8200688cd4cd26ae3edbc7e8541cc1f"
+    },
+    {
+      "path": "data/baselines/fixtures/uniform-invalid-target-bool.input.json",
+      "bytes": 224,
+      "sha256": "72bac21cf8d6d3bb3c996e464c5e3651fb3f63f58a20fd1d853e674d9f08933d"
+    },
+    {
+      "path": "data/baselines/fixtures/uniform-invalid-target-null.input.json",
+      "bytes": 224,
+      "sha256": "9c9931f79836e58a76799ce7645313b7f6a3929ebdcb236d352e886e03253d15"
+    },
+    {
+      "path": "data/baselines/fixtures/uniform-invalid-target-object.input.json",
+      "bytes": 222,
+      "sha256": "bbd3d91cc98488a72a97e495ee154f1eab9c23da796545de18829c84bf0d39aa"
+    },
+    {
+      "path": "data/baselines/fixtures/uniform-invalid-target-range.input.json",
+      "bytes": 223,
+      "sha256": "3c95ceb97c4643d065201ec48a0e08d4943784362ee2855efd2f4c94487dde96"
+    },
+    {
+      "path": "data/baselines/fixtures/uniform-invalid-target-text.input.json",
+      "bytes": 226,
+      "sha256": "59bdc6cde1e346162febdf0500824ea7c14cbfbc941f3e6fe3b612480a8a65f1"
+    },
+    {
+      "path": "data/baselines/fixtures/uniform-invalid-volume-bool.input.json",
+      "bytes": 118,
+      "sha256": "4e9bee87a83d702cfc5e7c61df9eca1c46f0a286c865288521197d4a1505df46"
+    },
+    {
+      "path": "data/baselines/fixtures/uniform-invalid-volume-negative.input.json",
+      "bytes": 116,
+      "sha256": "b3703f1e07e119d6bdd9b7cd699b0eb1a68a931b634b8f77eb93ac0105a2bd8f"
+    },
+    {
+      "path": "data/baselines/fixtures/uniform-invalid-volume-null.input.json",
+      "bytes": 118,
+      "sha256": "f53227682f9c612364ba563a49c6ce7359d3dfac2708d003b948748910e277c5"
+    },
+    {
+      "path": "data/baselines/fixtures/uniform-invalid-volume-text.input.json",
+      "bytes": 118,
+      "sha256": "68186a67fe41cf62d406c2feb4c5445ea41e4d682e76cff0305ace38f894f230"
+    },
+    {
+      "path": "data/baselines/fixtures/unknown-county.input.json",
+      "bytes": 47,
+      "sha256": "d75ab0336095ada509d82f11b46cd6b478ad2428f62bf60077d917ec95a3fc76"
+    },
+    {
+      "path": "data/baselines/fixtures/unknown-preference.input.json",
+      "bytes": 124,
+      "sha256": "39a4f5987d8bb6f87fe0206cda79ab33db108d0fd1a53f3424421eea6a218b11"
+    },
+    {
+      "path": "data/baselines/fixtures/unknown-source-key.input.json",
+      "bytes": 146,
+      "sha256": "ada933f1d8f263a2c94d42692c2c4ecd8d9acd6cde4cac52ac9d833c7ea007c5"
+    },
+    {
+      "path": "data/baselines/fixtures/unsupported-denominator.input.json",
+      "bytes": 51,
+      "sha256": "2fdc717e56cc59bacdf8aadf4f207d80ed4eeec34aeea9e78f1ea9b0eb50298a"
+    },
+    {
+      "path": "data/baselines/fixtures/zero-volume.input.json",
+      "bytes": 119,
+      "sha256": "51e94c138495ec2c3de67ab78220d73aa139872da697e4d41f78525b8ae1960b"
+    },
+    {
+      "path": "data/baselines/historical-scenarios.json",
+      "bytes": 1016228,
+      "sha256": "0ef896d82681988f96f903dd1e73e6e7e5a6ee45c5a55365d82a1f2cfea5ab8f"
+    },
+    {
+      "path": "data/baselines/known-native-controls.csv",
+      "bytes": 65598,
+      "sha256": "f7238092d66c7d25f30aeca5b915e9258e78f78c39fe4a6ff6bea459ac011c73"
+    },
+    {
+      "path": "data/baselines/known-native-order.csv",
+      "bytes": 60319,
+      "sha256": "99856a9d298430ebca471f67dd92108ba411f383ccb228233c1fdd742acbaffa"
+    },
+    {
+      "path": "data/baselines/known-native-scenarios.json",
+      "bytes": 3098454,
+      "sha256": "8b97e022f22666c94d86fc8483874d1ad8bc7f8b2a261de02b9b73bd304eb6bf"
+    },
+    {
+      "path": "data/baselines/local-pair-targets.csv",
+      "bytes": 1369638,
+      "sha256": "828a802867c05df8b373d21ca233d987d65d1d060020a404977e540029ebc420"
+    },
+    {
+      "path": "data/baselines/monthly-registration.csv",
+      "bytes": 17171,
+      "sha256": "2583613834da04a840994af9d3ec8ec171b575b127c930f43b297a5deec2977f"
+    },
+    {
+      "path": "data/baselines/native-method-lanes.json",
+      "bytes": 757950,
+      "sha256": "622d51177a98fb3e32ab79e5bba2f0b112dbbe4b8d9b64f3d962d2494bffec76"
+    },
+    {
+      "path": "data/baselines/native-reconciliation.json",
+      "bytes": 97516,
+      "sha256": "c46cd94deffed5dcc04a53f0296fc132cd230abbcccc872b2ba7c62c575f51c6"
+    },
+    {
+      "path": "data/baselines/native-selected-state-targets.csv",
+      "bytes": 2254356,
+      "sha256": "a9e3587f91b236f1e958bbaebe659dec1236b2a81cee8dbdd26bf31e20c16c74"
+    },
+    {
+      "path": "data/baselines/native-units.json",
+      "bytes": 5543110,
+      "sha256": "20e2de1d2b085123d024ff19c754f20cfc6aea8a5d2cb521cb959e27593f6480"
+    },
+    {
+      "path": "data/baselines/nonadditive-vice-president.csv",
+      "bytes": 38999,
+      "sha256": "9a0e19731eef900b5dd1427854d43e64e54d4365448d2aa717fb728089b2a399"
+    },
+    {
+      "path": "data/baselines/participation-controls.csv",
+      "bytes": 238729,
+      "sha256": "7e28655dc4680bbfe918f92021dd13818d0b5f96749826aa71f9ccf297197224"
+    },
+    {
+      "path": "data/baselines/participation-state-controls.json",
+      "bytes": 15102,
+      "sha256": "9a65d550e114dcee508b75dc23486ef0e3b85ef391f620febaa24a799ed12e7f"
+    },
+    {
+      "path": "data/baselines/peer-reconciliation.json",
+      "bytes": 11275,
+      "sha256": "cbd81fd2468443f3ad0d91d04cead8dfa100d463a8d514d236bcd84ac4c86a84"
+    },
+    {
+      "path": "data/baselines/priority-contract.json",
+      "bytes": 1727,
+      "sha256": "b14db331404cffc12d5caeaf8297a88ff5495075fbac5afacab3f208e4edc894"
+    },
+    {
+      "path": "data/baselines/scripts/acquire.py",
+      "bytes": 2138,
+      "sha256": "939df4447bc88f94028037899a3611faacc9cef72a0669ee6be786ab6e819990"
+    },
+    {
+      "path": "data/baselines/scripts/calculator.py",
+      "bytes": 14897,
+      "sha256": "36974be4ce787e70385868548dc675ceefe2eec0241b851f05c035c84452c38c"
+    },
+    {
+      "path": "data/baselines/scripts/compare_peer.py",
+      "bytes": 7845,
+      "sha256": "b03e6c9df1fe1a80c1551b3490256d24bfb8753adecf9e53b7b4d6dfb49e8d38"
+    },
+    {
+      "path": "data/baselines/scripts/controls.py",
+      "bytes": 3908,
+      "sha256": "2fbd40512fddaa9d99fcc401ea86111bfff56e48f4a92e9a74d9c802b294115d"
+    },
+    {
+      "path": "data/baselines/scripts/county.py",
+      "bytes": 6548,
+      "sha256": "9962f73cc7bab69055d6dfb7b625dc0d5a38be9d2c42b1099028b0e899d6c421"
+    },
+    {
+      "path": "data/baselines/scripts/native.py",
+      "bytes": 19196,
+      "sha256": "af6e019b55bd9abe57e4a731a418cc9bdf789b38c8746614dce8513e5cb02b01"
+    },
+    {
+      "path": "data/baselines/scripts/priority.py",
+      "bytes": 5165,
+      "sha256": "4f0f6569063eae6548935506f021b29d8b09e0274041da50be4548758549bf2e"
+    },
+    {
+      "path": "data/baselines/scripts/regressions.py",
+      "bytes": 7658,
+      "sha256": "e4699635ac746d99c799884856c149aefecdd33490fa8d6bff47cb80e8865182"
+    },
+    {
+      "path": "data/baselines/scripts/report.py",
+      "bytes": 23452,
+      "sha256": "786715a63ee78601548a3c824b927a24e11c1b3dfb28c3de3a9a0f274fc248ee"
+    },
+    {
+      "path": "data/baselines/scripts/scenarios.py",
+      "bytes": 4958,
+      "sha256": "8d2bacf43fdd8ba6789e36512414370eaa9ed0560a36b828e6e24917bc783d44"
+    },
+    {
+      "path": "data/baselines/source/abstract-evidence.json",
+      "bytes": 25285,
+      "sha256": "bedc7d79d75e2299cfb4f6275c5c7a008380095f1f6f6deca200d53a730bbea3"
+    },
+    {
+      "path": "data/baselines/source/authority-chain-references.json",
+      "bytes": 798,
+      "sha256": "eabc6a126e55ba04f8d31af39af8bfceef5648dc303f1c5b9fb8df14d962e564"
+    },
+    {
+      "path": "data/baselines/source/control-gaps.json",
+      "bytes": 547,
+      "sha256": "4431612eb28aad08b8fe69a1ddf08d163b820fd7376566c175d3fd01c4743a00"
+    },
+    {
+      "path": "data/baselines/source/current/network-lane-access-hop0.gz",
+      "bytes": 3383,
+      "sha256": "0e9be399f4bd79bd0cfbcb5684777280a22f598d97cb90cf5806bf0032bdc360"
+    },
+    {
+      "path": "data/baselines/source/current/network-lane-access.receipt.json",
+      "bytes": 3205,
+      "sha256": "2b82e3873df0d95e8a507d689841e54df9a79d6144e78bdb34decdce39604c07"
+    },
+    {
+      "path": "data/baselines/source/current/network-ors254-hop0.gz",
+      "bytes": 34705,
+      "sha256": "21b71b8117d5407153b8ef851b3896af0f9a308445d1d4e407e8f347afa1b85b"
+    },
+    {
+      "path": "data/baselines/source/current/network-ors254.receipt.json",
+      "bytes": 2164,
+      "sha256": "4df1c874f6eadea106ce191244f1a768c550f9e7ad2f935afa820f37f1358964"
+    },
+    {
+      "path": "data/baselines/source/current/network-sos-current-election-hop0.gz",
+      "bytes": 48702,
+      "sha256": "aa764bc5533ae1c6f52ec6e0843db471001ec8c430a83fef5435b86f1b0cfeb0"
+    },
+    {
+      "path": "data/baselines/source/current/network-sos-current-election.receipt.json",
+      "bytes": 2248,
+      "sha256": "51a60675d42532c89dc219446185fccf943f24dc52ff107940c5efb6e43824aa"
+    },
+    {
+      "path": "data/baselines/source/current/network-sos-filings-hop0.gz",
+      "bytes": 44528,
+      "sha256": "1613ab5c942236de5b9d512eea67fb120ab32f929a5ee93b168fd0d18a921437"
+    },
+    {
+      "path": "data/baselines/source/current/network-sos-filings.receipt.json",
+      "bytes": 2287,
+      "sha256": "bdedf7371f7cb6c08a970805abc56005ab50a013b1700b06383b685eec80ec9b"
+    },
+    {
+      "path": "data/baselines/source/current/network-sos-history-hop0.gz",
+      "bytes": 48463,
+      "sha256": "3e47d0bb7a2bd330c357b00668cf9813b2d9bfc8b422203fd689bf1587973b52"
+    },
+    {
+      "path": "data/baselines/source/current/network-sos-history.receipt.json",
+      "bytes": 2236,
+      "sha256": "9f71db3f38e68c26797acd4e361a428ca1264240285ad7330496ad23a106db6c"
+    },
+    {
+      "path": "data/baselines/source/current/network-sos-native-2024-literal-hop0.gz",
+      "bytes": 9735,
+      "sha256": "77acc5e0cb5c17abd3451ea3d4682503e4e21b7f6a7608ee213fbf950fbd4cb2"
+    },
+    {
+      "path": "data/baselines/source/current/network-sos-native-2024-literal.receipt.json",
+      "bytes": 1492,
+      "sha256": "05f3b9c3f72fdf3440739963eb33f317af4fb09c0620f1f8a242cd314c85cb73"
+    },
+    {
+      "path": "data/baselines/source/current/sandbox-lane-access.receipt.json",
+      "bytes": 861,
+      "sha256": "16b1c940e553797ce217ae6217221953584813288ee8e7aa17a7f85f95504139"
+    },
+    {
+      "path": "data/baselines/source/current/sandbox-ors254.receipt.json",
+      "bytes": 648,
+      "sha256": "bf3cdb8b8f3f6e2c9d6f1d15880eacff22737b9377aa1c5b2eafa110f075ea98"
+    },
+    {
+      "path": "data/baselines/source/current/sandbox-sos-current-election.receipt.json",
+      "bytes": 637,
+      "sha256": "b6e90c06dbc4b2a678f516158e59de5efe583370fc6d02ca360ef17d29c45c13"
+    },
+    {
+      "path": "data/baselines/source/current/sandbox-sos-filings.receipt.json",
+      "bytes": 669,
+      "sha256": "7a1b785acf3516eb4fb845e1985767caf107df7299414766f6b33e6957acb1fc"
+    },
+    {
+      "path": "data/baselines/source/current/sandbox-sos-history.receipt.json",
+      "bytes": 635,
+      "sha256": "bff7f312c800415adf5611833c9c35e9f0127b8d5b062444212a4727cf44a7c4"
+    },
+    {
+      "path": "data/baselines/source/current/sandbox-sos-native-2024-literal.receipt.json",
+      "bytes": 836,
+      "sha256": "de47f3c18c13600ec3a5f52ba69211330d87d3d2e9cbb7703f6025b95c12a347"
+    },
+    {
+      "path": "data/baselines/source/extraction-issues.json",
+      "bytes": 44514,
+      "sha256": "0150c3da121b2d60509e1cd31af644772829b2d2a84a592ffce9c9fb2495a551"
+    },
+    {
+      "path": "data/baselines/source/independent-original-inventory.json",
+      "bytes": 77968,
+      "sha256": "b501110cefb52b1f3f75f8f8e4201fb68417146500af19ce2eead6d75b1f5e17"
+    },
+    {
+      "path": "data/baselines/source/nonadditive-multnomah-summary.json",
+      "bytes": 5071,
+      "sha256": "378881eecbd0f5f1a26e4a93046939cc673f0c261ad3e8f2f6bcadf7a4cc71e7"
+    },
+    {
+      "path": "data/baselines/source/nonadditive-presentation-bindings.json",
+      "bytes": 37346,
+      "sha256": "9be35bd31484fd5ab8b3c30072bf5ca49042bed51b9b7e67e858bc3baa478883"
+    },
+    {
+      "path": "data/baselines/source/ocr-pins.json",
+      "bytes": 479227,
+      "sha256": "cf1ce5f92cbe00439251ba1f11e92fd1e23f4221cc90afa3c4a3d4113e600fd2"
+    },
+    {
+      "path": "data/baselines/source/original-read-receipts.json",
+      "bytes": 116153,
+      "sha256": "3053adb590a11f424c78c34d20e1bad23d5571fe3a72d347e82fdf99a7d6fae7"
+    },
+    {
+      "path": "data/baselines/source/peer-comparison/asset-manifest.json.gz",
+      "bytes": 202678,
+      "sha256": "30aff2ac0dafc50764e5166753a17f395257343997dd5536e4b0d6f6788fdfa7"
+    },
+    {
+      "path": "data/baselines/source/peer-comparison/county-candidates.csv.gz",
+      "bytes": 12210,
+      "sha256": "8a7773d8abe53124e36a8df6e225ba8941afcae9ba635103c120da711efd0098"
+    },
+    {
+      "path": "data/baselines/source/peer-comparison/county-controls.csv.gz",
+      "bytes": 2326,
+      "sha256": "6c38837a75f85b7da15fccf0f0c6a19c54db3f49710dcf6f2dcc23238a8c0ed9"
+    },
+    {
+      "path": "data/baselines/source/peer-comparison/known-native-order.csv.gz",
+      "bytes": 14941,
+      "sha256": "1522553a4c4b57d701b9cd518bfc46c586af3e661bb42793fe500ce0a286f781"
+    },
+    {
+      "path": "data/baselines/source/peer-comparison/known-native-ranking.json.gz",
+      "bytes": 60853,
+      "sha256": "f2c16f29f684db9d6c635c404e4ceaf553d73fe1e33169428ca438729c7056dd"
+    },
+    {
+      "path": "data/baselines/source/peer-comparison/monthly-registration.csv.gz",
+      "bytes": 5298,
+      "sha256": "155d77d6c6f71a52c4d28b8b08566087d130745716434060f381fc6b47b3f286"
+    },
+    {
+      "path": "data/baselines/source/peer-comparison/native__county-reconciliation.json.gz",
+      "bytes": 3463,
+      "sha256": "dc200b05c91eb6a9fcf8e8801b7cde6d07ba179523652ca6a2969e2eb57cc044"
+    },
+    {
+      "path": "data/baselines/source/peer-comparison/native__observations.jsonl.gz.gz",
+      "bytes": 648041,
+      "sha256": "ee10bece373a4060e5ce51da0250c6432159db6f991678cd0da10734590e0d54"
+    },
+    {
+      "path": "data/baselines/source/peer-comparison/native__units.json.gz",
+      "bytes": 352183,
+      "sha256": "de861f86fa6fd39d46faaaa8d77c3706d2e4c79ebbbcf2805159858723f087f5"
+    },
+    {
+      "path": "data/baselines/source/peer-comparison/participation-controls.csv.gz",
+      "bytes": 4150,
+      "sha256": "bb5dc8ac014d6219a8f143191fed2eb3cc48d298ba0fc3ecd3404204193d544a"
+    },
+    {
+      "path": "data/baselines/source/peer-comparison/pre-peer-witness-v1.json.gz",
+      "bytes": 199478,
+      "sha256": "63d5e7401c7cc5624238f9c858e7f0ecf741ec43a198c7736be881818398f323"
+    },
+    {
+      "path": "data/baselines/source/peer-comparison/priority-set.json.gz",
+      "bytes": 50799,
+      "sha256": "ff206f4e2053202d8a7054784631a765bf1f8910f21f6da7ede87e56239de16c"
+    },
+    {
+      "path": "data/baselines/source/peer-comparison/source__SCHEMA.md.gz",
+      "bytes": 4838,
+      "sha256": "b7f16bb0b3c7edd35189a7b294e7c6e22450d6787c723cdbc8d2fa48cdf50aeb"
+    },
+    {
+      "path": "data/baselines/source/peer-contract-native-order.json",
+      "bytes": 124443,
+      "sha256": "96126ad915ef20f3d6c4f77233e61df00c331a9279b557cf2ee89b8c9f99fa28"
+    },
+    {
+      "path": "data/baselines/source/pre-peer-bodies/00.gz",
+      "bytes": 11828,
+      "sha256": "a7242333da51543442b7a59205dd380f416b23d717b1213c45e9925ac0b8d341"
+    },
+    {
+      "path": "data/baselines/source/pre-peer-bodies/01.gz",
+      "bytes": 205755,
+      "sha256": "4404953bc4161f781877bfde17b33610bf8c2e0b20df0f8bb4bc1b0251925de2"
+    },
+    {
+      "path": "data/baselines/source/pre-peer-bodies/02.gz",
+      "bytes": 5965,
+      "sha256": "3ed73428806557ca55183e446b353f7e9032e837b0c6db0cf1314f1c8dfeb369"
+    },
+    {
+      "path": "data/baselines/source/pre-peer-bodies/03.gz",
+      "bytes": 31512,
+      "sha256": "2a0af3aec29f0a58ead09c1787fe8cd1870871a1b2c04074934dfa40ed598074"
+    },
+    {
+      "path": "data/baselines/source/pre-peer-bodies/04.gz",
+      "bytes": 4420,
+      "sha256": "c631d36230baa445aa208d8a1af7bf38299005ab84b56c9eaf20f041984134d8"
+    },
+    {
+      "path": "data/baselines/source/pre-peer-bodies/05.gz",
+      "bytes": 764,
+      "sha256": "3b9598216560b4effdda5944f7cee6f3ec9d1619f68ae71e4ea8cdae2b395481"
+    },
+    {
+      "path": "data/baselines/source/pre-peer-bodies/06.gz",
+      "bytes": 17672,
+      "sha256": "cf5db67d19949b0ac41f328b63e96cd7e888d9eb49cbabede7841e6d2de6eb9e"
+    },
+    {
+      "path": "data/baselines/source/pre-peer-bodies/07.gz",
+      "bytes": 1351,
+      "sha256": "e667c90f757ffc0b2bb4d92d8e2083bd5770dc575ec2ac6e3671118b70d88215"
+    },
+    {
+      "path": "data/baselines/source/pre-peer-bodies/08.gz",
+      "bytes": 18308,
+      "sha256": "cedac7d0ca270c2347b1b3aeda48c21596f78550c0ddd61ada10cd260e232fea"
+    },
+    {
+      "path": "data/baselines/source/pre-peer-bodies/09.gz",
+      "bytes": 20673,
+      "sha256": "ed027e628b9723b9736c613f02e8d4b3b40a50fc6cfd39596660a3bc7d405983"
+    },
+    {
+      "path": "data/baselines/source/pre-peer-bodies/10.gz",
+      "bytes": 4826,
+      "sha256": "3a971074be5e78ec10bc55d938161a7cbb1256a62be63836ea9e249d7beb79c4"
+    },
+    {
+      "path": "data/baselines/source/pre-peer-bodies/11.gz",
+      "bytes": 74482,
+      "sha256": "12855115b4e3eaba436972ca7bb83cf00e2f62c66453cde7c5d6bae237e47296"
+    },
+    {
+      "path": "data/baselines/source/pre-peer-bodies/12.gz",
+      "bytes": 1157862,
+      "sha256": "74ecdd9e21b63ff7c702b5993b56f1599e4693a9df64b40ec245a5048c8a8bbc"
+    },
+    {
+      "path": "data/baselines/source/pre-peer-bodies/13.gz",
+      "bytes": 248298,
+      "sha256": "84295dba6242677e8e9fee64c794c293d347b64f03af06fd7b198b268c6e5a36"
+    },
+    {
+      "path": "data/baselines/source/pre-peer-bodies/14.gz",
+      "bytes": 534735,
+      "sha256": "dc30e1e09596d5540daa69c815240c6b1621f704b40676cb57966251ccc614a6"
+    },
+    {
+      "path": "data/baselines/source/pre-peer-bodies/15.gz",
+      "bytes": 2395,
+      "sha256": "2ab22a30b4d3ae3b9b001429f576c038854b72393574b1a0c69e8fe82a8d84d6"
+    },
+    {
+      "path": "data/baselines/source/pre-peer-bodies/16.gz",
+      "bytes": 12395,
+      "sha256": "ab025e318c5c5b882f75feed2516646816092f9f102d328c2bc9569b4c813f60"
+    },
+    {
+      "path": "data/baselines/source/pre-peer-body-map.json",
+      "bytes": 5308,
+      "sha256": "3de79d6dc0bc65bd5724b40e1f8e33153870c9dd02d5cf8a9422ac6240baed15"
+    },
+    {
+      "path": "data/baselines/source/pre-peer-witness.json",
+      "bytes": 3119,
+      "sha256": "208a3ad98dfb055eea0f895c0c0faf9881f684214e7d5a34c41e01f4df123b7f"
+    },
+    {
+      "path": "data/baselines/source/raw-native-pages.jsonl.gz",
+      "bytes": 1167202,
+      "sha256": "a3c6df66dae9d63743d34aef4ada2efda199d62452b78d9ef50a3d5bf250dc5c"
+    },
+    {
+      "path": "data/baselines/source/raw-native-rows.jsonl.gz",
+      "bytes": 270147,
+      "sha256": "f0ec171e02eacb9349c09bee5056c29b397774c9127f7d3302e5ac8f93f67ca4"
+    },
+    {
+      "path": "data/baselines/source/shared-assets.json",
+      "bytes": 265316,
+      "sha256": "78cdf4570aaa7502112d1c859046b9e2825daafba8d32b3af32d4a4f2240985c"
+    },
+    {
+      "path": "data/baselines/source/text/2020-00.txt.gz",
+      "bytes": 24,
+      "sha256": "3ad534c6ecf45c547b975ca5adb236019b80bc405a1e993a2649faa826c20e12"
+    },
+    {
+      "path": "data/baselines/source/text/2020-01.txt.gz",
+      "bytes": 12103,
+      "sha256": "8da327f04281b307eeae33d7cd0536c15614b61dd566e920166820431e0d1f6d"
+    },
+    {
+      "path": "data/baselines/source/text/2020-02.txt.gz",
+      "bytes": 24,
+      "sha256": "4d7cffe37a139a5b842cc95e699cbe05ac4c1531f024f4fd71c380fc0013e1d9"
+    },
+    {
+      "path": "data/baselines/source/text/2020-03.txt.gz",
+      "bytes": 24,
+      "sha256": "20aba6eebfada0d5657b22478ce90e483e787035ddccbe2a0b755cd073532d8b"
+    },
+    {
+      "path": "data/baselines/source/text/2020-04.txt.gz",
+      "bytes": 22531,
+      "sha256": "8a3f07ff42d03900483eede3de108613c5248a8724212a821de69aaf02dee960"
+    },
+    {
+      "path": "data/baselines/source/text/2020-05.txt.gz",
+      "bytes": 24,
+      "sha256": "58f0f7cefce77f0a835bc463f287e8fdeb7db63d46dfe8f0c8c8d371fc193728"
+    },
+    {
+      "path": "data/baselines/source/text/2020-06.txt.gz",
+      "bytes": 24,
+      "sha256": "a538d5fc0742500d30bdab722546be057f94ec06256fbed253a9652d64995bac"
+    },
+    {
+      "path": "data/baselines/source/text/2020-07.txt.gz",
+      "bytes": 16703,
+      "sha256": "fb07b42e16a953abf7f8bcf948f2c6676b40072819565ed8966891ff01198605"
+    },
+    {
+      "path": "data/baselines/source/text/2020-08.txt.gz",
+      "bytes": 24,
+      "sha256": "2961320981149f9a9f4418844d6778329cd48a0b85dbf06cc6bd3c721ca73b72"
+    },
+    {
+      "path": "data/baselines/source/text/2020-09.txt.gz",
+      "bytes": 24,
+      "sha256": "e8536a5cd3b3dbc1b62c43c519433de0b484b5f57b08834c803f985b909104cf"
+    },
+    {
+      "path": "data/baselines/source/text/2020-10.txt.gz",
+      "bytes": 23,
+      "sha256": "dad8ee3d68acb3dd63592b5d491d945b5d6ed904826fe4f10a182664e4d54bce"
+    },
+    {
+      "path": "data/baselines/source/text/2020-11.txt.gz",
+      "bytes": 23,
+      "sha256": "d24e4ab6b6a2f88e9169f648e61afca0882c9c322ce516e672581e5d3bd96cae"
+    },
+    {
+      "path": "data/baselines/source/text/2020-12.txt.gz",
+      "bytes": 23,
+      "sha256": "d237bb2109e4326bcbf6c86b0579a94985a57cd566897cd5286bd61ccfbc4bdb"
+    },
+    {
+      "path": "data/baselines/source/text/2020-13.txt.gz",
+      "bytes": 13773,
+      "sha256": "ab0b4184f1c545bfaa80deebc0fd6c22c123c75857444d7a14d846bee6cdccff"
+    },
+    {
+      "path": "data/baselines/source/text/2020-14.txt.gz",
+      "bytes": 48425,
+      "sha256": "e7a4ee68308ce2c57c66e54fbd61da4019bf01128b56b89e1d17a1e92c5ce575"
+    },
+    {
+      "path": "data/baselines/source/text/2020-15.txt.gz",
+      "bytes": 23,
+      "sha256": "292d5cb621c96eae1ab436c500ab553bfe3e6c144a23e2d4133c92dcdb869f75"
+    },
+    {
+      "path": "data/baselines/source/text/2020-16.txt.gz",
+      "bytes": 24,
+      "sha256": "b178f3c5127a331b336a3dbc457b9ef5b766decf98c96a7834067ab0cb883da2"
+    },
+    {
+      "path": "data/baselines/source/text/2020-17.txt.gz",
+      "bytes": 24383,
+      "sha256": "125744940e31b6e673cd2076cf19a76d3e30559218e1225481888875fd2cb4c9"
+    },
+    {
+      "path": "data/baselines/source/text/2020-18.txt.gz",
+      "bytes": 23,
+      "sha256": "ea62e84b11c6c1c77a436ad1ea5a7c3530bcabd1b4911dec98dd21915977bf0d"
+    },
+    {
+      "path": "data/baselines/source/text/2020-19.txt.gz",
+      "bytes": 49876,
+      "sha256": "572ea8ae6abef230bcf4ec84bb1ab543e46a49e0a2f47a41862223cd5075d4ef"
+    },
+    {
+      "path": "data/baselines/source/text/2020-20.txt.gz",
+      "bytes": 24,
+      "sha256": "5b9df6311a0ec0a351817292848b5eeab315daaa9aeb7aaa068baf99b026ac6f"
+    },
+    {
+      "path": "data/baselines/source/text/2020-21.txt.gz",
+      "bytes": 54070,
+      "sha256": "d191a1bae2b69f1902d44a943a62a5daa2733d54fb4695564ab069c2a6182478"
+    },
+    {
+      "path": "data/baselines/source/text/2020-22.txt.gz",
+      "bytes": 19320,
+      "sha256": "e13fede513bc32069db5c743eb4ede864be5a9daa1ccfd7e8a8fca601f18d617"
+    },
+    {
+      "path": "data/baselines/source/text/2020-23.txt.gz",
+      "bytes": 146634,
+      "sha256": "21fb80ce6cf4ab232195c0bc4842c3be1cb4a4cbbc7eb3e621df293ffd74e3f3"
+    },
+    {
+      "path": "data/baselines/source/text/2020-24.txt.gz",
+      "bytes": 23,
+      "sha256": "1369c58a0e48fe4b94c27aea4fd60aec38d3e528d29b5f16a7c89b93a384f9fa"
+    },
+    {
+      "path": "data/baselines/source/text/2020-25.txt.gz",
+      "bytes": 109987,
+      "sha256": "0889cc2834e1d20652b91a41798d723d56aec64a76082550f4c54e4c57f70084"
+    },
+    {
+      "path": "data/baselines/source/text/2020-26.txt.gz",
+      "bytes": 23,
+      "sha256": "ae4444b2f91c74d95c751ec80e2bb88bec229ca5f9bcfc46880e6c6d29badec3"
+    },
+    {
+      "path": "data/baselines/source/text/2020-27.txt.gz",
+      "bytes": 23,
+      "sha256": "340f9c3673c5dd03a29c0ecb629be7546fde044490b3d4fdc8c76c8b62f46ca6"
+    },
+    {
+      "path": "data/baselines/source/text/2020-28.txt.gz",
+      "bytes": 13465,
+      "sha256": "633266ea6c12ffa576beda5f7f9658f6c75a62c85017e73f0329f6b9b31791da"
+    },
+    {
+      "path": "data/baselines/source/text/2020-29.txt.gz",
+      "bytes": 10422,
+      "sha256": "60cfa5f2f3d42a251f35ee1f77444335ef876921b4553eac4627db9ccdac11bd"
+    },
+    {
+      "path": "data/baselines/source/text/2020-30.txt.gz",
+      "bytes": 24,
+      "sha256": "207593f2b1bb2585d914d3cf017f46c1066afbcd49d5bc50a691b67d9b944079"
+    },
+    {
+      "path": "data/baselines/source/text/2020-31.txt.gz",
+      "bytes": 24,
+      "sha256": "a538d5fc0742500d30bdab722546be057f94ec06256fbed253a9652d64995bac"
+    },
+    {
+      "path": "data/baselines/source/text/2020-32.txt.gz",
+      "bytes": 23386,
+      "sha256": "3461c92838057bece87e541a720de925efe01dec3cc36ab80dcdd9cad3ca2bd2"
+    },
+    {
+      "path": "data/baselines/source/text/2020-33.txt.gz",
+      "bytes": 165464,
+      "sha256": "1f511dc24611fbee5db8f1dd5316cfc12447fa6e291781aaaa19a08725d016af"
+    },
+    {
+      "path": "data/baselines/source/text/2020-34.txt.gz",
+      "bytes": 23,
+      "sha256": "c968bd0e97e3317ddfbaac22f537178d9a5ce7eaca3596d47e5136f4a6ca7d9c"
+    },
+    {
+      "path": "data/baselines/source/text/2020-35.txt.gz",
+      "bytes": 38290,
+      "sha256": "cc3a3ca540f991db2142e82587d382fea2f7d1ed1a91db92838dc942e3d196dc"
+    },
+    {
+      "path": "data/baselines/source/text/2020-abstract.txt.gz",
+      "bytes": 15187,
+      "sha256": "5169378b2d652c9b0e58ac1853438abb061ce6c427ed7e6e848732e8ed58e8b6"
+    },
+    {
+      "path": "data/baselines/source/text/2020-registration.txt.gz",
+      "bytes": 7749,
+      "sha256": "af2e9de70ae3c7bf620ab27c21430c5ea22124973ed1eefa4b25b8c95e674067"
+    },
+    {
+      "path": "data/baselines/source/text/2022-00.txt.gz",
+      "bytes": 22814,
+      "sha256": "0287a47d85fd1dd0ef3c1dfb43cf7746e1ff9edfde32667218368a294b35d200"
+    },
+    {
+      "path": "data/baselines/source/text/2022-01.txt.gz",
+      "bytes": 19204,
+      "sha256": "dcea84a86b82c010e6cc89c476a28f649e7272eaaf475d515d0c642619d154ec"
+    },
+    {
+      "path": "data/baselines/source/text/2022-02.txt.gz",
+      "bytes": 19865,
+      "sha256": "02188f623ca51366be66253e2ce6a1003bfb5d1cd4e279546947580f2a7c9c8e"
+    },
+    {
+      "path": "data/baselines/source/text/2022-03.txt.gz",
+      "bytes": 11649,
+      "sha256": "adab01845c06424e9a10752d65cf7ae9e279e5765ef7a87c4a8a7a28ced7725c"
+    },
+    {
+      "path": "data/baselines/source/text/2022-04.txt.gz",
+      "bytes": 16041,
+      "sha256": "bb1942839402361d1ca20cf8df2b9237d227f187af1b6b5767d1df04c9ea9e10"
+    },
+    {
+      "path": "data/baselines/source/text/2022-05.txt.gz",
+      "bytes": 24,
+      "sha256": "8aceba817840380b7430e7ff3b2de84b2fba62ea1d7589c9e166d925f74a302f"
+    },
+    {
+      "path": "data/baselines/source/text/2022-06.txt.gz",
+      "bytes": 24,
+      "sha256": "a538d5fc0742500d30bdab722546be057f94ec06256fbed253a9652d64995bac"
+    },
+    {
+      "path": "data/baselines/source/text/2022-07.txt.gz",
+      "bytes": 14352,
+      "sha256": "72155ab5cabc0c502a912e90c2f0ed5ad10ce2f2e5a90fe8a180eed6fc04cc3a"
+    },
+    {
+      "path": "data/baselines/source/text/2022-08.txt.gz",
+      "bytes": 24,
+      "sha256": "16eb4505b2069e5f8ff600872a10e8d3835f74331a4aee658344f4d67446e922"
+    },
+    {
+      "path": "data/baselines/source/text/2022-09.txt.gz",
+      "bytes": 25563,
+      "sha256": "e2f957bddbc2829ceeca6664b7a716755807534b89630f0606b1c5d61bc1b508"
+    },
+    {
+      "path": "data/baselines/source/text/2022-10.txt.gz",
+      "bytes": 3399,
+      "sha256": "4d35965965a7b3cc56a8bc9b898c21ab4e3649c685c361f3a6ae82f9441dbe01"
+    },
+    {
+      "path": "data/baselines/source/text/2022-11.txt.gz",
+      "bytes": 6718,
+      "sha256": "b7c0e5c5b6047895e67a39eec251a2cce58b7e985482e5a1131aa317f2fbb2ac"
+    },
+    {
+      "path": "data/baselines/source/text/2022-12.txt.gz",
+      "bytes": 23,
+      "sha256": "42586ade1d25249645163f8fb0963bb142dfa6933cd2782af0d957ae510b0d8d"
+    },
+    {
+      "path": "data/baselines/source/text/2022-13.txt.gz",
+      "bytes": 9412,
+      "sha256": "5ba74d9ab152f571ccbf3c09daa575cf0755d63839b7262e61e0eece18fa8128"
+    },
+    {
+      "path": "data/baselines/source/text/2022-14.txt.gz",
+      "bytes": 49923,
+      "sha256": "2f8bb7f098eefe380540140181413a47f6c721e717f4d87a87279a5be766c785"
+    },
+    {
+      "path": "data/baselines/source/text/2022-15.txt.gz",
+      "bytes": 23,
+      "sha256": "e2b14dc54854617cea4887e27a43fc2b1749fb2f16ebe4eb683090470f0e57ab"
+    },
+    {
+      "path": "data/baselines/source/text/2022-16.txt.gz",
+      "bytes": 24,
+      "sha256": "71e3f01f86b878a993de821058a4a7abd826dd80e779911059e55f8b73120052"
+    },
+    {
+      "path": "data/baselines/source/text/2022-17.txt.gz",
+      "bytes": 12914,
+      "sha256": "e4a89855040d288498e53570dfc0832b10c68dc219599631308be7078061dadb"
+    },
+    {
+      "path": "data/baselines/source/text/2022-18.txt.gz",
+      "bytes": 23,
+      "sha256": "340f9c3673c5dd03a29c0ecb629be7546fde044490b3d4fdc8c76c8b62f46ca6"
+    },
+    {
+      "path": "data/baselines/source/text/2022-19.txt.gz",
+      "bytes": 41668,
+      "sha256": "e6e2834aad63985254e139acec0faf5a0dbf88f532640df683849daf5a3ba313"
+    },
+    {
+      "path": "data/baselines/source/text/2022-20.txt.gz",
+      "bytes": 24,
+      "sha256": "9b51e332da97fbddfd1701483768363c7148f654ec1dd1d355a5e9396c2ea047"
+    },
+    {
+      "path": "data/baselines/source/text/2022-21.txt.gz",
+      "bytes": 76987,
+      "sha256": "dbdbd2ed6c39b44b10e47dd81601d282a6ae1867ad7a90a376865f5dbaed218c"
+    },
+    {
+      "path": "data/baselines/source/text/2022-22.txt.gz",
+      "bytes": 32812,
+      "sha256": "639780e4afe7107e4e4daf770272ef7aa6836e19eb7b5a2e1be8dd85d1e171ac"
+    },
+    {
+      "path": "data/baselines/source/text/2022-23.txt.gz",
+      "bytes": 24,
+      "sha256": "a54375336b7ded8e4583caeddf19ccf01f5089811c5893521e789b45b6204753"
+    },
+    {
+      "path": "data/baselines/source/text/2022-24.txt.gz",
+      "bytes": 23,
+      "sha256": "8b24a5b2bad4b826484e34e437442132c8b3b04110e8719291ac619ef56ad3f2"
+    },
+    {
+      "path": "data/baselines/source/text/2022-25.txt.gz",
+      "bytes": 24,
+      "sha256": "b2a1013b4996d70059c7b7126fc0c52bfbf4a35681bc60ea9a239af6bea75860"
+    },
+    {
+      "path": "data/baselines/source/text/2022-26.txt.gz",
+      "bytes": 23,
+      "sha256": "8b24a5b2bad4b826484e34e437442132c8b3b04110e8719291ac619ef56ad3f2"
+    },
+    {
+      "path": "data/baselines/source/text/2022-27.txt.gz",
+      "bytes": 6649,
+      "sha256": "8d342b92385ea9d122d78e298764c1200607626945feed6db95df80ccb8b1e41"
+    },
+    {
+      "path": "data/baselines/source/text/2022-28.txt.gz",
+      "bytes": 8066,
+      "sha256": "5c45596442132a8c1eff76251a04d5d6b82a9608e9e230e77bd72ea4829085fa"
+    },
+    {
+      "path": "data/baselines/source/text/2022-29.txt.gz",
+      "bytes": 21143,
+      "sha256": "0f3b517c7ecdc2333586f91516a1ec0765713086f1382b75316f7e998bf1d4c2"
+    },
+    {
+      "path": "data/baselines/source/text/2022-30.txt.gz",
+      "bytes": 23,
+      "sha256": "9b67aaac4833c1e42d434eb9e7f8cc44fd7ed559462e681f82ca9459e53a9c4b"
+    },
+    {
+      "path": "data/baselines/source/text/2022-31.txt.gz",
+      "bytes": 24,
+      "sha256": "2961320981149f9a9f4418844d6778329cd48a0b85dbf06cc6bd3c721ca73b72"
+    },
+    {
+      "path": "data/baselines/source/text/2022-32.txt.gz",
+      "bytes": 9968,
+      "sha256": "fbd5faf1baab3da30ff6ec30d8f7e185aa6f20abda3f6d30287cc7f9aa3dc479"
+    },
+    {
+      "path": "data/baselines/source/text/2022-33.txt.gz",
+      "bytes": 85075,
+      "sha256": "97e560236b0f2facd07ca613cf9f1a006f1db5ebb5687d59803d2046ec5dd0fe"
+    },
+    {
+      "path": "data/baselines/source/text/2022-34.txt.gz",
+      "bytes": 23,
+      "sha256": "53d0b92ecab2c2ce1606f7c7be422766060c6919a28ade9d855d8a03b8d6bd8c"
+    },
+    {
+      "path": "data/baselines/source/text/2022-35.txt.gz",
+      "bytes": 24,
+      "sha256": "ca73f6e8b8a2fb9492d72c5cc004ed4aeee01c588bcfab1e7d63df740e3a5670"
+    },
+    {
+      "path": "data/baselines/source/text/2022-abstract.txt.gz",
+      "bytes": 12497,
+      "sha256": "8db0853e81ac7b3b1e5c50e601ee1f14caefc7560c5ac3a75f1d6d2d01580577"
+    },
+    {
+      "path": "data/baselines/source/text/2022-registration.txt.gz",
+      "bytes": 8275,
+      "sha256": "d692f54139426e0bda32ba2c0b0ef1fd10ea6cd4a93db4a4064ebed0bc52f658"
+    },
+    {
+      "path": "data/baselines/source/text/2024-Wasco.txt.gz",
+      "bytes": 13249,
+      "sha256": "77e569c09cddea764dd3f01017eb868da50507e45e554e939e4b70188cf0266e"
+    },
+    {
+      "path": "data/baselines/source/text/2024-abstract.txt.gz",
+      "bytes": 15427,
+      "sha256": "1184f077070ac1533250527fb90b35bf90e6924f1efd2cfa3fa75984489bee2a"
+    },
+    {
+      "path": "data/baselines/source/text/2024-registration.txt.gz",
+      "bytes": 8881,
+      "sha256": "c4b36d1ce4dd219cd50b6f5924a31cc382ac85e9dc0f0996c80c9a26551e9976"
+    },
+    {
+      "path": "data/baselines/source/text/benton-2020-precincts.txt.gz",
+      "bytes": 27407,
+      "sha256": "59b2c3401da80f3837d923587c7359a4524108147ce1f5f8c4cf9dff371ed6ca"
+    },
+    {
+      "path": "data/baselines/source/text/benton-2022-index.txt.gz",
+      "bytes": 30322,
+      "sha256": "f754025961ae54305cf0280a713d59a99e963ca78f48769ca3e9158530e38756"
+    },
+    {
+      "path": "data/baselines/source/text/benton-2022-precincts.txt.gz",
+      "bytes": 21428,
+      "sha256": "4ecf3cd51219410ca3eb1f695cce6b9d43cb96b824922f28ab73bbfd5fbb9bb5"
+    },
+    {
+      "path": "data/baselines/source/text/benton-past-elections.txt.gz",
+      "bytes": 32558,
+      "sha256": "851ea38fcd4c161ccfcba8f0933fccd00f6211e0c9cfe1d600694deada6631e5"
+    },
+    {
+      "path": "data/baselines/source/text/clackamas-2024-canvass.txt.gz",
+      "bytes": 106401,
+      "sha256": "7c7b7d7b35e6db2cbefda5281c60e3f8a7a98fd0fff1ff798f1f1af4d1131e60"
+    },
+    {
+      "path": "data/baselines/source/text/clackamas-results-index.txt.gz",
+      "bytes": 24136,
+      "sha256": "160434466653312b471877fee8b79e333e11f67d1a49993bc84585ad6bdaaa04"
+    },
+    {
+      "path": "data/baselines/source/text/deschutes-2024-index.txt.gz",
+      "bytes": 10292,
+      "sha256": "611cf97d2d2ec558213f411bbe6806e40039fd0afda284337a1d2de07d028f19"
+    },
+    {
+      "path": "data/baselines/source/text/lane-results-index.txt.gz",
+      "bytes": 37121,
+      "sha256": "56bacfec710c1c503025d24fe5f088fe4545e45de984d6ff0f0deada42221c29"
+    },
+    {
+      "path": "data/baselines/source/text/marion-2024-canvass.txt.gz",
+      "bytes": 102753,
+      "sha256": "b59f6e19254c8eab3a8bad9a6d3b6c313dea891dba37d5d0d4ba83bf54b02f74"
+    },
+    {
+      "path": "data/baselines/source/text/marion-2024-index.txt.gz",
+      "bytes": 23610,
+      "sha256": "ebe5a0e3c4f440e751f44b4d65ec87cca51d38b4e25aba04bb72ddd7cc8e8d40"
+    },
+    {
+      "path": "data/baselines/source/text/multnomah-2024-parent-network.txt.gz",
+      "bytes": 10623,
+      "sha256": "20b34d1f6270bd39da2748d58c7bcd66fbfad00dea29665dbfb4a73bb3f447fb"
+    },
+    {
+      "path": "data/baselines/source/text/multnomah-2024-precinct-index.txt.gz",
+      "bytes": 10789,
+      "sha256": "6354c0ca3aff93cba8a61fe4e2dc561b337cc69050adfaedabbc1115d9e3ff8a"
+    },
+    {
+      "path": "data/baselines/source/text/multnomah-2024-president.txt.gz",
+      "bytes": 7006,
+      "sha256": "7fd41f5d3d2d4858e0b05bfdefca97e84282a5220f6e3dd453a283826b876489"
+    },
+    {
+      "path": "data/baselines/source/text/multnomah-2024-registration.txt.gz",
+      "bytes": 1663,
+      "sha256": "10c8a6a7c951d7b067e5c6e84a19b3c15c06ce118ab64cd5f8b5bf77300d614f"
+    },
+    {
+      "path": "data/baselines/source/text/multnomah-2024-results.txt.gz",
+      "bytes": 9526,
+      "sha256": "f13f298befa2492f402ded9574db879eb69de3fae9d2e0b27bfcc12569f21572"
+    },
+    {
+      "path": "data/baselines/source/text/multnomah-2024-sovc1.txt.gz",
+      "bytes": 7042,
+      "sha256": "8c91c290b33d76497fa809df9809f4906c06928148baea5c67e6970b6398f0d4"
+    },
+    {
+      "path": "data/baselines/source/text/multnomah-2024-sovc2.txt.gz",
+      "bytes": 137346,
+      "sha256": "c22ef6e29c208de8d6a7a887be5231d52eeda93e08ac301f261f2ebfdbbfacbc"
+    },
+    {
+      "path": "data/baselines/source/text/multnomah-2024-turnout.txt.gz",
+      "bytes": 11100,
+      "sha256": "5ddffbfa07567f74d0f47a9a97fac1c5e35ab60528803880978f1ab6876a6595"
+    },
+    {
+      "path": "data/baselines/source/text/sos-2020-participation-archived.txt.gz",
+      "bytes": 40696,
+      "sha256": "c2f4884120bcd93ea90817e4182a269bfb8f598222d96fb865d0ad714be8b4bc"
+    },
+    {
+      "path": "data/baselines/source/text/sos-2020-statistical-participation-current.txt.gz",
+      "bytes": 43370,
+      "sha256": "8c1154d66c91ec2e12a8191f77ea6239892b6ef398deef0e245d72e6164c7b87"
+    },
+    {
+      "path": "data/baselines/source/text/sos-2022-participation-archived.txt.gz",
+      "bytes": 42120,
+      "sha256": "c3ad846b1ef80ad3d392603bc1601dc47647ccc5f2d0cc82cca5ae95acbc04a7"
+    },
+    {
+      "path": "data/baselines/source/text/sos-2022-statistical-participation-current.txt.gz",
+      "bytes": 43379,
+      "sha256": "f50ce64fcfeeb872106a69c9a1b45610a9a319da0fa8cd56201d6395febcfe77"
+    },
+    {
+      "path": "data/baselines/source/text/sos-2024-participation-archived-20241227.txt.gz",
+      "bytes": 47611,
+      "sha256": "6e7d60dd34296ae1a50167a4eb05765c842de11bc8692d0935487fe661155190"
+    },
+    {
+      "path": "data/baselines/source/text/sos-2024-participation-cdx.txt.gz",
+      "bytes": 363,
+      "sha256": "6eaa2941a6e0e3280b44741267ab9839c003acb3de3c046416bc90d053e73e4e"
+    },
+    {
+      "path": "data/baselines/source/text/sos-2024-precinct-literal-current.txt.gz",
+      "bytes": 9734,
+      "sha256": "58abd4c2fc74ed70dd1aff5af0076bfb6579b1c57a5c198ff986617e8c265906"
+    },
+    {
+      "path": "data/baselines/source/text/sos-2024-statistical-participation.txt.gz",
+      "bytes": 43391,
+      "sha256": "86c0339698ef5ec9fdd6e213236067f0915f6e46f5fefa748c8ca9e1c46301b5"
+    },
+    {
+      "path": "data/baselines/source/text/sos-ballot-history-data.txt.gz",
+      "bytes": 146832,
+      "sha256": "b02e9f1690826d90addcd63922901cb3666e4cc2c0dff5700d052d34ed82873f"
+    },
+    {
+      "path": "data/baselines/source/text/sos-ballot-history-story.txt.gz",
+      "bytes": 81194,
+      "sha256": "656d4d1acc719f4be9a527865f2fe84be69ae0d87b8de5dc3bb2a3f7b59679dd"
+    },
+    {
+      "path": "data/baselines/source/text/sos-historical-turnout.txt.gz",
+      "bytes": 783,
+      "sha256": "ab00900ec9d29e48bcb0cd252f37186f4942a1f0cf63a3065e09a1eb684082dc"
+    },
+    {
+      "path": "data/baselines/source/text/sos-history-current-network.txt.gz",
+      "bytes": 48460,
+      "sha256": "67c0821075175c8878a8d8f50c5b00859c3220f0e327b86056f198f8ab2f52ae"
+    },
+    {
+      "path": "data/baselines/source/text/sos-statistics-directory-cdx.txt.gz",
+      "bytes": 4971,
+      "sha256": "ead5271abb8e6fdeea6a1504c16112578dc09a0be5bcd54c3b04ad06772a4f46"
+    },
+    {
+      "path": "data/baselines/source/text/washington-2024-ballots.txt.gz",
+      "bytes": 23,
+      "sha256": "53d0b92ecab2c2ce1606f7c7be422766060c6919a28ade9d855d8a03b8d6bd8c"
+    },
+    {
+      "path": "data/baselines/source/text/washington-2024-precincts.txt.gz",
+      "bytes": 24,
+      "sha256": "afba9db23610f7363fc1f0aa1064003c04c6311bd3d011a83f159f387f14d67c"
+    },
+    {
+      "path": "data/baselines/source/text/washington-archive-network.txt.gz",
+      "bytes": 18763,
+      "sha256": "71fa3bddd623ab53c3f7460119d02dd61c0c3dfdbed04ad99b8e8f9f7421ac22"
+    },
+    {
+      "path": "data/baselines/source/visual/2020-05-p002.png",
+      "bytes": 739869,
+      "sha256": "872a46aa1a60ffc7d670095cad6dfffc03710e83e0bf646bd8636c4b125529f2"
+    },
+    {
+      "path": "data/baselines/source/visual/2020-32-p001.png",
+      "bytes": 640741,
+      "sha256": "9a24de89880dbf92ad2306f137bf648bd6fe7c8a0dac1ca8785219000c45cdaa"
+    },
+    {
+      "path": "data/baselines/source/visual/2022-32-p002.png",
+      "bytes": 648914,
+      "sha256": "e423541a9baa76e22ffd5fc95bc25f50c05f4a0bd80018e5dfdd5a5a69a17497"
+    },
+    {
+      "path": "data/baselines/source/visual/2024-Wasco-p001.png",
+      "bytes": 544001,
+      "sha256": "3fac20b20d590a22832b964721d8e88360341f1c2e4bef18e34c6d3fb8ac2565"
+    },
+    {
+      "path": "data/baselines/source/visual/washington-2024-precincts-p001.png",
+      "bytes": 305796,
+      "sha256": "b5da4d4a0d854616c9739419826461dae9be94a98681de89868a1b0aa22cd432"
+    },
+    {
+      "path": "data/baselines/source/visual/washington-2024-precincts-p002.png",
+      "bytes": 375179,
+      "sha256": "56d5b91ef4b3cb48903819f8e37d7e8e62581fdae7c85be09ba2dcf5f07a4d12"
+    },
+    {
+      "path": "data/baselines/source/visual/washington-2024-precincts-p003.png",
+      "bytes": 232173,
+      "sha256": "7f81f7bf6ed6afa632ba347a80cda9954a7f143f47dad1e86d1d9a3fc17025bb"
+    },
+    {
+      "path": "data/baselines/source/visual/washington-2024-precincts-p004.png",
+      "bytes": 319725,
+      "sha256": "d5561316c41bf7cf04794c453d6a798c81479199101d92985fd324ddb99ed0df"
+    },
+    {
+      "path": "data/baselines/source/visual/washington-2024-precincts-p005.png",
+      "bytes": 314674,
+      "sha256": "cab673371018194551567f379dc9873445e9e50cbd77cd03e043625678326aed"
+    },
+    {
+      "path": "data/baselines/source/visual/washington-2024-precincts-p006.png",
+      "bytes": 187781,
+      "sha256": "2ceeb39d637c83f7b60b9728807ed6f81cf450f8088971d714b496a6e75f57d9"
+    },
+    {
+      "path": "data/baselines/source/visual/washington-2024-precincts-p007.png",
+      "bytes": 266932,
+      "sha256": "02172b77ba6751c4efd8217db879851504bb5dbfa0c126ffae99a574b484c8fd"
+    },
+    {
+      "path": "data/baselines/source/visual/washington-2024-precincts-p008.png",
+      "bytes": 278530,
+      "sha256": "21a1755e7b66ea574d2398600a7f5cd266785bc5787c7e8b56ef0708ce80bfc4"
+    },
+    {
+      "path": "data/baselines/source/visual/washington-2024-precincts-p009.png",
+      "bytes": 128890,
+      "sha256": "8a75f944ec6c850ff87c7d4ccd36988da74191fa16175d4f642cb8b71765fd51"
+    },
+    {
+      "path": "data/baselines/source/visual-readings.json",
+      "bytes": 39485,
+      "sha256": "0c86c00d9b87e44b73e715edcd1c85739b0243978ef89f27f76daff6baab956f"
+    },
+    {
+      "path": "data/baselines/source/whole-original-page-index.jsonl.gz",
+      "bytes": 544199,
+      "sha256": "b06fd4b64f52a42df7fc41cdad4b1f5215331d36ef114db2e5d159d89fad0550"
+    },
+    {
+      "path": "data/baselines/state-controls.json",
+      "bytes": 1248,
+      "sha256": "75fab3f26db5e4dc7a9af45179a15c53ca09b733d537bd1f663257d16e4375a4"
+    },
+    {
+      "path": "data/county-baselines.csv",
+      "bytes": 31068,
+      "sha256": "fed7a77bb7181697189c67a51b59abe39960da11d18ce91b4bd3d28e61a8f4db"
+    }
+  ],
+  "unchanged_count": 288,
+  "all_exact": true
+}

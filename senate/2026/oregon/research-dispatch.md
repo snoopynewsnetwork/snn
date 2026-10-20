@@ -18,3 +18,27 @@ All 864 county candidate/Misc cells and the five known 2024 native parent vector
 close. Historical 2022 Senate extraction closes 12 parents versus turnout's 13;
 that gap remains explicit during captured-source reconciliation. No finished
 turnout worker has been contacted or restarted.
+
+
+Baseline `7c03df8c` has actually finished its bounded package. Its seal retains
+Douglas working-normalization disagreements and partial historical closure.
+Coordinator source, formula and CLI review and same-turnout reciprocal QA are
+pending. The released slot launched New Mexico maps; Oregon turnout has not
+been resumed and neither finished first-pair worker has been contacted.
+
+
+The same baseline worker `7c03df8c` resumed for the concrete complete-manifest
+and immutable original-input dependency repairs after New Mexico official's
+actual finish. Fresh profile/provider inspection selected Verification,
+auto-review/medium, and the runtime update succeeded before resume. Exact
+11,252-byte prompt SHA256
+`b21b2dece7017348d1e27a4b50f50aa37957dac5ca030977bc8c9d9aaa4d0dc7`.
+Independent mathematics passes 48,848 checks and actual CLI passes 37 cases.
+No source-count, ranking or calculator repair was requested. New Mexico maps
+`30e855e4` is the only other active researcher.
+
+
+The same baseline repair has actually finished. Coordinator checks1,650 body/pin/membership invariants; guarded read-only producer validation passes39checks. All296old bodies reconstruct and288substantive payloads remain exact. The released slot resumed SAME turnout`bd151c4c` for bounded captured reciprocal QA after fresh all-profile/provider inspection and successful Verification/medium runtime update. Actual12,911-byte prompt SHA`efcc33d6413c2fd76e51bbdf021eacb4d4cb962d890a670a9614156825b7bb7c`. NMmaps was the sole other worker at resume and has since finished. No full-state/current/native approval.
+
+
+SAMEturnoutbd151c4c has actually finished bounded reciprocal QA and finalseal:4368complete ownedfiles,4367manifesttargets,self-only exclusion. Counts/orders/CSV unchanged; canonicalnativepriority unavailable31parents. Exactfinalmanifest2ebe89804819e1accc04c80c96800f3e2a9cf49b777e1139f321fcbb99444a76. Coordinator finalreview/authority pending. Its slot launched actualRIbaseline5d9f9b63; noOregonworker remainsactive.

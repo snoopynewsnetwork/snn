@@ -1,0 +1,40 @@
+{
+  "status": "concrete_original_reproduction_dependency_repair_required",
+  "scope": "Read dependency only; no original values or count correction requested",
+  "observed_at_utc": "2026-10-20T15:10:44.898161+00:00",
+  "dependency_chain": [
+    "scripts/originals.py and scripts/validate.py invoke shared data/audit_precinct_archives.py YEAR --restore-stdout",
+    "That helper main selects the source from current data/news/manifest.json",
+    "scripts/originals.py also discovers acquired sources by globbing current data/turnout/source/acquired/*.receipt.json"
+  ],
+  "complete_immutable_inputs_already_available": [
+    "Own source/original-read-receipts.json captures complete exact original records and source receipt metadata",
+    "Own source/shared-assets.json and individual original pins retain complete part/body hashes and paths",
+    "Own independent-original-inventory.json retains all113 entity/member text/raw hashes"
+  ],
+  "requested_fix": "Use an owned immutable original-receipt snapshot and exact individually pinned body/bytepart paths to restore the same original bytes. No active mutable newsroom aggregate or peer acquisition-directory enumeration in the rebuild. No source discovery or source-value changes. Prove same72 members/113 texts and downstream source/scenario bytes with those mutable routes denied.",
+  "producer_bytes_changed_by_coordinator": false,
+  "frozen_old_code": {
+    "data/baselines/scripts/originals.py": {
+      "raw_bytes": 3995,
+      "raw_sha256": "d3a53d4c6cbc8e86cc5725a57ce00555e0b34d5598edf1ae64b8496fdfb2f4ab",
+      "frozen_body": "data/coordinator-baseline-seal-review/data-baselines-scripts-originals.py.gz",
+      "stored_bytes": 1778,
+      "stored_sha256": "f2a87cdffd0c693684f193518fd3cf7d0e207839158822fb99df5690faf2bb66"
+    },
+    "data/baselines/scripts/validate.py": {
+      "raw_bytes": 14335,
+      "raw_sha256": "a2303d6a7216ace2600e99d10c449ad8ca17f411b399fa788a446e7918f464ce",
+      "frozen_body": "data/coordinator-baseline-seal-review/data-baselines-scripts-validate.py.gz",
+      "stored_bytes": 4878,
+      "stored_sha256": "3be41ae42b254c9a028db8a3fbe363c3835c213980e11a9993004acf58798115"
+    },
+    "data/audit_precinct_archives.py": {
+      "raw_bytes": 4685,
+      "raw_sha256": "c8778302ae023c06baf0d5aa5091881d2b32e9b3ac499ecae1e8f9ca890786f7",
+      "frozen_body": "data/coordinator-baseline-seal-review/data-audit_precinct_archives.py.gz",
+      "stored_bytes": 1654,
+      "stored_sha256": "226aa97e2c727836731636b0c938b60a0c5a9d974457729e4fa600d3df96dd16"
+    }
+  }
+}
