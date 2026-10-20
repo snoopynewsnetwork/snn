@@ -1,0 +1,6 @@
+{
+  "status": "checker corrected",
+  "failure": "AssertionError: complete recursive ordered object",
+  "cause": "Own iterator initially traversed complete contract root; ledger starts with 25 explicit root fields including scalars, then recursive full companions. No source mismatch.",
+  "repair": "Independently reconstruct entire expected ordered stream: 25 whole root values then every container of every sorted complete companion."
+}

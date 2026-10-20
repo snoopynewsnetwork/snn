@@ -1,10 +1,8 @@
-# Virginia first-pair research review
+# Virginia integrated research review
 
 Both actual original-first question workers have finished and are frozen. The
 same turnout worker completed a bounded confirmed citation repair and reciprocal
-review against the finished independent baseline. This is qualified historical
-research, with official-source/map dispatch awaiting complete external source
-authority. No current geographic, legal write-in or live approval is inferred.
+review against the finished independent baseline. The four bounded research assignments and coordinator review are complete. This is qualified historical and source research; live/current admission remains separate. No current geographic, legal write-in or live approval is inferred.
 
 [Original-source review](data/coordinator-turnout-original-review.json) passes
 790,790checks against the exact original-first phase:all8,748literal historical
@@ -136,4 +134,69 @@ bounded research.
 
 The reviewed first pair is published in `ca58114b69b7c319ab29300f2ec41b01da7f6628`; remote main was verified exactly. Its sealed report contains one literal trailing space, preserved and [documented](data/coordinator-stage-whitespace-review.json). The [complete external historical source authority](data/coordinator-priority-acceptance.json) is now frozen. An [independent full replay](data/coordinator-priority-validation.json) passed 3,478,661 checks: all 25 roots, 471 whole companions, 3,474,062 recursive objects across 24 complete ledgers, 721 fixed files and 1,172 exact historical bodies. Current producer flags remain untouched. Downstream authority is path only.
 
-This dispatch requires all 133 localities, all 108 priority parents, 1,538 complete ordered source investigations and 1,131 explicit remainder objects. It approves bounded historical source research only. Current geographic joins, legal write-in completeness, November choice/reporting IDs, genuinely changing returns, measured cadence and eligible remaining pools remain unapproved. Actual official-results worker `fdfeb006-8e44-426d-b527-3e318898b0c4` has started. Maps has not launched; neither later worker depends on unfinished peer outputs. Earlier first-pair proofs remain immutable records of their original review phase.
+This dispatch requires all 133 localities, all 108 priority parents, 1,538 complete ordered source investigations and 1,131 explicit remainder objects. It approves bounded historical source research only. Current geographic joins, legal write-in completeness, November choice/reporting IDs, genuinely changing returns, measured cadence and eligible remaining pools remain unapproved. The original official-results and map workers have now finished; neither depends on unfinished peer outputs. Earlier first-pair proofs remain immutable records of their original review phase.
+
+
+## Final official-source and map review
+
+The original third and fourth workers finished and released their slots. Both
+sealed packages were audited read-only by the coordinator, without producer
+writers or new acquisitions. The official audit passes 2,661 exact manifest
+targets, 5,597 full reference resolutions, the entire frozen 25-root/471-companion/
+3,474,062-object/24-partition graph, and 94 byte-identical offline products with
+sockets denied. All 30 source/admission negative fixtures pass.
+
+The [separate coordinator source audit](data/coordinator-official-final-review.json)
+passes 2,399,188 checks: all 1,192 request receipts, 1,365 full response hops,
+1,182 complete distinct entities, all 133 current Senate locality products and
+the state product, 2,528 whole native setup objects, 37,920 method entries, all
+historical hierarchy arrays and all 590 full code-section/version spans.
+Every Senate candidate/method value is zero; no November votes are admitted.
+The current source IDs and 2,528-unit setup remain separate from the historical
+2,669-unit universe. Source status, positive administrative data, empty exports
+and registration never yield a completion fraction or exact outstanding pool.
+
+There are 132 complete state-directory role/contact records. Covington's denied
+selector remains missing, with its local pages retained separately and no
+invented board fields. Charlotte/Highland have complete state/current-locality
+products but no separately established local static URL chain. Full 2026 and
+future code versions distinguish the operative noon mailed-ballot/cure deadlines
+from 2027 changes. Public LIS shells/401 responses leave chapter approval-date
+verification incomplete. The October 6 workbook and three local specimens
+support the two printed Senate names; later signed statewide certification,
+amendments and legally eligible named-write-in exhaustion remain unproved.
+The [official report](official-results.md) retains precise legal scope, Senate
+Article I section 5, source dates and bounded docket qualifications.
+
+The map worker's full denied-network reconstruction was rerun: 134 original
+ZIP audits, all 912 automatically rendered PDF pages, 1,739 byte-identical
+products, 5,865 relative HTML links, full original objects in all 133 parent
+pages, six actual shipped-JavaScript filter tests and 20 negative fixtures pass.
+Its independent full authority, original-source and acquisition checks also pass.
+The [separate coordinator binary/DOM review](data/coordinator-maps-final-review.json)
+passes 4,924,932 checks: all 1,076 ZIP members, 4,997 feature records, 101,794
+literal DBF cells, 5,093 parts and every 4,783,111 XY double pair. Complete raw
+records, deleted/null semantics, source part order, CRS and mixed vintage remain.
+
+All 133 state-linked precinct ZIPs and 133 state PDFs were acquired; Census
+2020 supplies separate historical fallback. Fairfax mapbooks and local companions
+remain nonadditive. Numeric-code search candidates are not polygon matches.
+Virtual records, unmatched/multiple candidates and seven datasets with nonsimple
+source rings remain unrepaired. No geometry service or pagination claim is made
+for these actual SHP ZIP acquisitions. The coordinator actually viewed two whole
+rendered source pages: Washington (March 30, 2026, Bristol City separate) and
+Norfolk (August 31, 2026). Worker manual scope is exactly ten pages; other pages
+have automatic rendering only. No unseen browser or all-page manual claim occurs.
+
+The [map report](precinct-maps.md), [atlas](maps/index.html), original source
+catalogue, exact preservation histories and both complete manifests are retained.
+No sealed producer bytes or false/null approval flags were altered. Two root
+checker assumptions (parent-label field name and unavailable-directory branch)
+were corrected with exact earlier code/error findings in
+`data/coordinator-official-review-history`; neither was a source defect.
+
+Bounded research is accepted for publication. Current legal/exhaustive docket
+clearance, eligible-write-in/native-80 robustness, approved reporting/choice/leaf
+IDs, current geography, genuine November returns, measured cadence, exact pool,
+collector/forecast and calibration remain false or unknown. These external
+qualifications are not indefinite worker-completion gates.

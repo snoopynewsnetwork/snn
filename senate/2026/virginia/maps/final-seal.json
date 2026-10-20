@@ -1,0 +1,76 @@
+{
+  "schema": "VA-maps-immutable-worker-handoff-v1",
+  "status": "bounded_research_complete_for_external_coordinator_review",
+  "owned_scope": [
+    "precinct-maps.md",
+    "maps/**"
+  ],
+  "authority_path": "data/coordinator-priority-acceptance.json",
+  "authority_body_or_hash_stored": false,
+  "proofs": [
+    {
+      "path": "maps/authority-replay.json",
+      "bytes": 1086,
+      "sha256": "2107604eb5de1333d19e7b4881cc37531869a5b9fe28831e20abb607867c97a2"
+    },
+    {
+      "path": "maps/original-reconstruction.json",
+      "bytes": 555,
+      "sha256": "ebad2ea227116fc5d85ecf003acab47f663a6fb2bed0127231b93cddbf98e664"
+    },
+    {
+      "path": "maps/acquisition-audit.json",
+      "bytes": 486444,
+      "sha256": "c3c9926725b26f1d8ed41046282d091ecdc725bfae2345c938fb95ca40f247e0"
+    },
+    {
+      "path": "maps/binary-audit.json",
+      "bytes": 251,
+      "sha256": "21defe97015c5e844824a96940c7c85104e577afc209505162d6bb1b3b379778"
+    },
+    {
+      "path": "maps/pdf-audit.json",
+      "bytes": 363406,
+      "sha256": "a12a05323c0ba0f771c64304b923b6bf9edbebf0f79b159e8e5ee8384ee4ab89"
+    },
+    {
+      "path": "maps/negative-fixtures.json",
+      "bytes": 4793,
+      "sha256": "3f8d686c3f5e2a6f485abd4c1a7d22f59a7d56c75be6dd0d463282f61fb5eaa0"
+    },
+    {
+      "path": "maps/validation.json",
+      "bytes": 742,
+      "sha256": "85d809480943ef2118187ca93d8bffd0dc756445bb77500cb00925bae125844c"
+    }
+  ],
+  "all_parents": 133,
+  "priority_parent_chains": 108,
+  "priority_source_objects": 1538,
+  "all_source_objects": 2669,
+  "remainder_source_objects": 1131,
+  "official_state_ZIPs": 133,
+  "official_state_PDFs": 133,
+  "Census2020_VTD_ZIPs": 1,
+  "all_actual_native_ZIPs": 134,
+  "all_PDF_pages_automatically_rendered": 912,
+  "actually_manually_viewed_whole_pages": 10,
+  "approved_leaf_joins": 0,
+  "current_geography_approved": false,
+  "legal_or_eligible_writein_approval": false,
+  "November_choice_reporting_feed_approval": false,
+  "cadence_outstanding_collector_probability_approval": false,
+  "external_qualifications": "Source update lag, mixed vintage, unknown adoption/effective/current physical identity, virtual/unmapped units, bounded local access gaps; none reopens completed bounded research.",
+  "coordinator_acceptance": null,
+  "coordinator_publication": null,
+  "final_sequence": [
+    "seal written first",
+    "complete owned manifest written last; exclude only itself",
+    "run replay_authority.py --check",
+    "run audit_originals.py --check",
+    "run audit_acquisition.py --check",
+    "run validate.py --sealed; exact membership/hash/original/geometry/DOM/link reconstruction",
+    "no owned writes after all final checks pass"
+  ],
+  "manifest_digest_in_seal": null
+}

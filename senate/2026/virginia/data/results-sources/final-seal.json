@@ -1,0 +1,34 @@
+{
+  "scope": "Completed bounded official-source research submitted for coordinator review; no external approval changed",
+  "proofs_and_handoff": [
+    {
+      "path": "validation.json",
+      "bytes": 915,
+      "sha256": "b9b9dc382633b398208bb6860a389f0157edda6d7edaf19548169b6f127bb5ab"
+    },
+    {
+      "path": "reproduction.json",
+      "bytes": 23587,
+      "sha256": "2e78bd0fab3db737bef64df267224385798f2534937a2fabd245472dddd2b245"
+    },
+    {
+      "path": "historical-replay.json",
+      "bytes": 1823,
+      "sha256": "f5113a7222401cc04427f4137b9d423c8c701fdfa4e04e5924389b3e5702e4c9"
+    },
+    {
+      "path": "negative-fixtures.json",
+      "bytes": 3548,
+      "sha256": "b90cdcbe097ec25dfbc3294499fd332baf3e4b0bc58c3de19a63e248b2c50c92"
+    },
+    {
+      "path": "handoff.json",
+      "bytes": 3992,
+      "sha256": "14b8f0048ed46c82a36b7291409a244a9ce89ce1e2d017dda14d5bf2be76779b"
+    }
+  ],
+  "external_acceptance_authority_path": "data/coordinator-priority-acceptance.json",
+  "manifest_path": "data/results-sources/asset-manifest.json",
+  "acyclic_rule": "Seal hashes only earlier proofs/handoff. Manifest written last includes seal and every owned file except itself. No manifest digest is embedded in any owned target.",
+  "required_next_action": "audit.py --final (read-only); no owned writes after passing"
+}
