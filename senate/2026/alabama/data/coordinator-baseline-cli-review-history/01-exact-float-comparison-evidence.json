@@ -1,0 +1,216 @@
+{
+  "scope": "Coordinator checker strict-equality mistake; no source/calculator defect",
+  "script_sha256": "4418b2e4cfcb470b347f309cbd98e466d7276d7bc31de83256a7efbd2e51c80c",
+  "failure": "Expected exact [99,91,40] versus floating projection. Counted and final denominators are exact; expected floating output needs a numeric tolerance.",
+  "actual_CLI_case": {
+    "name": "fixed-counted-full-and-pair-denominators",
+    "input_text": "{\"mode\": \"live\", \"scope\": \"Coordinator synthetic\", \"assumptions\": \"Counted fixed; explicit synthetic pools, no forecast\", \"candidates\": [{\"id\": \"A\", \"name\": \"A\", \"party\": \"Aparty\", \"scope\": \"named\"}, {\"id\": \"B\", \"name\": \"B\", \"party\": \"Bparty\", \"scope\": \"named\"}, {\"id\": \"C\", \"name\": \"C\", \"party\": \"Cparty\", \"scope\": \"named\"}], \"pair\": [\"A\", \"B\"], \"target_pair_margin\": 0.01, \"selected_unit\": \"u\", \"units\": [{\"key\": \"u\", \"counted\": [30, 20, 10], \"remaining\": 100, \"pair_participation\": 0.8, \"a_share\": 0.4, \"other_allocation\": [1]}, {\"key\": \"v\", \"counted\": [5, 15, 0], \"remaining\": 50, \"pair_participation\": 0.8, \"a_share\": 0.8, \"other_allocation\": [1]}]}",
+    "expected_invalid": false,
+    "exit_code": 0,
+    "stderr": "",
+    "output": {
+      "status": "ok",
+      "mode": "live",
+      "scope": "Coordinator synthetic",
+      "assumptions": "Counted fixed; explicit synthetic pools, no forecast",
+      "pair": [
+        {
+          "id": "A",
+          "name": "A",
+          "party": "Aparty",
+          "scope": "named"
+        },
+        {
+          "id": "B",
+          "name": "B",
+          "party": "Bparty",
+          "scope": "named"
+        }
+      ],
+      "target_pair_margin_fraction": 0.01,
+      "final_pair_denominator": 190.0,
+      "final_full_candidate_denominator": 230.0,
+      "target_pair_net_votes": 1.9000000000000001,
+      "same_net_full_candidate_margin_fraction": 0.008260869565217393,
+      "counted_candidates_fixed": [
+        {
+          "candidate": {
+            "id": "A",
+            "name": "A",
+            "party": "Aparty",
+            "scope": "named"
+          },
+          "votes": 35.0
+        },
+        {
+          "candidate": {
+            "id": "B",
+            "name": "B",
+            "party": "Bparty",
+            "scope": "named"
+          },
+          "votes": 35.0
+        },
+        {
+          "candidate": {
+            "id": "C",
+            "name": "C",
+            "party": "Cparty",
+            "scope": "named"
+          },
+          "votes": 10.0
+        }
+      ],
+      "remaining_full_pool": 150.0,
+      "remaining_pair_pool": 120.0,
+      "unknown_positive_pair_pool_keys": [],
+      "units": [
+        {
+          "key": "u",
+          "counted": [
+            30,
+            20,
+            10
+          ],
+          "counted_full": 60.0,
+          "remaining_full": 100,
+          "pair_pool": 80.0,
+          "other_pool": 19.999999999999996,
+          "a_share": 0.4,
+          "pair_participation": 0.8,
+          "other_allocation": [
+            1
+          ],
+          "source_votes": null,
+          "remaining_pair_weight": 0.6666666666666666,
+          "final_pair_weight": 0.42105263157894735,
+          "baseline_remaining_pair_net": -15.999999999999996,
+          "one_share_point_net_gain": 1.6,
+          "target_a_share": 0.3745833333333333,
+          "target_remaining_pair_net": -20.06666666666667,
+          "net_gain_to_target": -4.0666666666666735,
+          "selected_only_required_a_share_raw": 0.36187499999999995,
+          "selected_only_status": "feasible"
+        },
+        {
+          "key": "v",
+          "counted": [
+            5,
+            15,
+            0
+          ],
+          "counted_full": 20.0,
+          "remaining_full": 50,
+          "pair_pool": 40.0,
+          "other_pool": 9.999999999999998,
+          "a_share": 0.8,
+          "pair_participation": 0.8,
+          "other_allocation": [
+            1
+          ],
+          "source_votes": null,
+          "remaining_pair_weight": 0.3333333333333333,
+          "final_pair_weight": 0.21052631578947367,
+          "baseline_remaining_pair_net": 24.000000000000004,
+          "one_share_point_net_gain": 0.8,
+          "target_a_share": 0.7745833333333334,
+          "target_remaining_pair_net": 21.966666666666672,
+          "net_gain_to_target": -2.0333333333333314,
+          "selected_only_required_a_share_raw": 0.7237499999999999,
+          "selected_only_status": "feasible"
+        }
+      ],
+      "legal_outcome_declared": false,
+      "probability": null,
+      "all_remaining_required_a_share": {
+        "raw": 0.5079166666666667,
+        "status": "feasible",
+        "pool": "remaining pair votes only",
+        "target": "final pair margin"
+      },
+      "selected_only": {
+        "key": "u",
+        "status": "feasible",
+        "raw": 0.36187499999999995,
+        "others_assumption": "every other supplied unit held at its explicit counted/remaining/pair_participation/a_share/other allocation"
+      },
+      "baseline_pair_net_votes": 8.000000000000007,
+      "baseline_pair_margin_fraction": 0.04210526315789478,
+      "common_shift": {
+        "status": "feasible",
+        "unbounded_share_shift": -0.025416666666666695,
+        "bounded_share_shift": -0.0254166666666667,
+        "clipping_applied": false,
+        "residual_net_votes": 1.9984014443252818e-15,
+        "baseline_already_ahead_of_target": true
+      },
+      "projected_candidates": [
+        {
+          "candidate": {
+            "id": "A",
+            "name": "A",
+            "party": "Aparty",
+            "scope": "named"
+          },
+          "votes": 99.0,
+          "full_candidate_share": 0.43043478260869567
+        },
+        {
+          "candidate": {
+            "id": "B",
+            "name": "B",
+            "party": "Bparty",
+            "scope": "named"
+          },
+          "votes": 91.0,
+          "full_candidate_share": 0.39565217391304347
+        },
+        {
+          "candidate": {
+            "id": "C",
+            "name": "C",
+            "party": "Cparty",
+            "scope": "named"
+          },
+          "votes": 39.99999999999999,
+          "full_candidate_share": 0.17391304347826084
+        }
+      ],
+      "a_net_over_highest_other_named": 8.0,
+      "unallocated_choices_preclude_full_legal_claim": false,
+      "target_candidates": [
+        {
+          "candidate": {
+            "id": "A",
+            "name": "A",
+            "party": "Aparty",
+            "scope": "named"
+          },
+          "votes": 95.95,
+          "full_candidate_share": 0.4171739130434783
+        },
+        {
+          "candidate": {
+            "id": "B",
+            "name": "B",
+            "party": "Bparty",
+            "scope": "named"
+          },
+          "votes": 94.05,
+          "full_candidate_share": 0.40891304347826085
+        },
+        {
+          "candidate": {
+            "id": "C",
+            "name": "C",
+            "party": "Cparty",
+            "scope": "named"
+          },
+          "votes": 39.99999999999999,
+          "full_candidate_share": 0.17391304347826084
+        }
+      ],
+      "target_a_net_over_highest_other_named": 1.9000000000000057
+    }
+  }
+}

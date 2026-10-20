@@ -1,0 +1,44 @@
+{
+  "status": "adapter diagnostic, not source disagreement",
+  "exact_runtime_edit": "replace assert sum(x['candidate_cells'][i]['value'] or 0 for x in yr)==control['candidate_cells'][i]['value'],(y,c) with print('CHECK',y,c,sum(x['candidate_cells'][i]['value'] or 0 for x in yr),control['candidate_cells'][i]['value'])",
+  "observed_checks": [
+    [
+      "2024",
+      "Kamala D. Harris",
+      772412,
+      772412
+    ],
+    [
+      "2024",
+      "Donald J. Trump",
+      1462616,
+      1462616
+    ],
+    [
+      "2024",
+      "Robert F. Kennedy Jr.",
+      12075,
+      12075
+    ],
+    [
+      "2024",
+      "Jill Stein",
+      4319,
+      4319
+    ],
+    [
+      "2024",
+      "Chase Oliver",
+      3270,
+      4930
+    ],
+    [
+      "2024",
+      "Write-In",
+      6738,
+      8738
+    ]
+  ],
+  "subsequent_failure": "2022 len(yr)==67 assertion; detached Henry label counted twice",
+  "repair": "complete numeric tokens assigned by right-edge rather than slicing token at midpoint; skip numeric-empty label line; every original value unchanged"
+}

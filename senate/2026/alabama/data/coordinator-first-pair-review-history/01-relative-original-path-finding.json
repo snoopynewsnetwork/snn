@@ -1,0 +1,6 @@
+{
+  "scope": "Coordinator checker adapter only, no producer/source fault or modification",
+  "error": "ValueError from pin(p).relative_to(S): shared original receipt has repository-relative path while S is absolute.",
+  "script_sha256": "2c000032fbdae9b87b2eb784671db8847773120fb9fb04704d983f94d33d3fa5",
+  "resolution": "Resolve both filesystem paths before computing state-relative pin. Preserve producer source native cells and literal values. Parent constituent arrays use actual original source-column order rather than globally ranked child order; this was read from original schema before its check executed."
+}

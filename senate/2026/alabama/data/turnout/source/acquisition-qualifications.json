@@ -1,0 +1,11 @@
+{
+  "initial_sandbox_failures": [
+    {"url":"https://www.sos.alabama.gov/alabama-votes/voter/election-data","result":"requests ConnectionError / DNS NameResolutionError under restricted network; no HTTP response body","retrieval_clock_utc":"not recorded by failed helper; before successful 2026-10-20T18:17:26.926441+00:00 receipt","recovery":"authorized network escalation then complete HTTP 200 response retained"},
+    {"url":"https://www.sos.alabama.gov/alabama-votes/voter/election-information/2026","result":"requests ConnectionError / DNS NameResolutionError under restricted network; no HTTP response body","retrieval_clock_utc":"not recorded by failed helper; before successful 2026-10-20T18:17:28.442746+00:00 receipt","recovery":"authorized network escalation then complete HTTP 200 response retained"}
+  ],
+  "census_api_failure":"The requested 2020 Census API county list redirected HTTP302 to missing_key.html and returned200 HTML, not county data. Complete response and redirects retained. Recovered with complete Census national_county2020.txt.",
+  "receipt_parent_correction":"The national_county2020.txt acquisition receipt's parent is the shared execution context, the SOS2026 page; this is NOT an asserted SOS hyperlink. The exact standard Census reference URL was directly requested as a primary alternative following API failure. Its own county code contents, not the failed API HTML, supply FIPS.",
+  "source_clocks":"HTTP Date, Last-Modified, ETag and ZIP DOS member timestamps remain transport/source metadata, never substituted for election certification or publication cadence.",
+  "shared_sources":"Complete original PDFs stay once in ../news by exact original/stored hashes in original-receipts.json. Decompression restores the entire PDF including unrelated contests. No original is truncated. All-page text extraction/warnings remain unaltered.",
+  "other_required_reading":"RESEARCH_BRIEF.md; root ELECTION_NIGHT_PLAN.md; Alabama README.md, research-dispatch.md, local-news-results.md, live-polling-strategy.md, news/manifest.json; Michigan turnout.md as methodology. coordinator-source-preflight.md read only after original body verification/extraction/witness. No numerical preparation JSON/parser or peer derivative used. No peer existed at launch."
+}

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "requested_date": "2026-10-17",
-  "updated_at_utc": "2026-10-20T19:09:26.836409+00:00",
+  "updated_at_utc": "2026-10-20T19:19:07.863857+00:00",
   "scope": "35 states in the repository 2026 U.S. Senate race index",
   "coordinator_agent_id": "d0fc3534-1613-4883-b48b-21a233fcfd9e",
   "workspace_id": "wks_b290f45007010740",
@@ -9022,6 +9022,12 @@
           "scope": "Complete reviewed first pair/source originals/root reviews; not whole-state completion",
           "push_exit": 0,
           "remote_exact_verified": true
+        },
+        {
+          "commit": "3a92fa85b455107b173862107473065173550d94",
+          "scope": "Complete frozen source authority/replay and actual VAofficial+ARbaseline dispatch records; not whole-state completion",
+          "push_exit": 0,
+          "remote_exact_verified": true
         }
       ],
       "state_specific_notes": "Actual geography includes independent cities as distinct from same-named counties. No 2022 Senate statewide contest: use an actual available statewide midterm such as 2018 Senate plus separately identified 2022 ballot volume. State links November Angular shell; WHSV general-named test display and WTOP primary AP access gap remain preflight only.",
@@ -9173,7 +9179,7 @@
       "election": "Regular",
       "seat_class": "II",
       "priority": 26,
-      "status": "turnout-original-first-finished-independent-baseline-active",
+      "status": "first-pair-independently-reviewed-awaiting-same-turnout-reciprocal-slot",
       "workers": {
         "turnout": {
           "agent_id": "5b42c895-68ea-40c4-9b7c-534e46d14d7a",
@@ -9391,6 +9397,43 @@
           "sha256": "1bc2375118dd67ec37bb5307b3135ab94f0364e908c0a44d434e9f72d58fef9c"
         },
         "scope": "Untracked ignored preparation bytecode, not source inputs. Exact opaque bytes retained before same-file removal; actor/time not attributed. No original/source/news-manifest edit."
+      },
+      "coordinator_first_pair_review": {
+        "complete_original_review": {
+          "path": "data/coordinator-first-pair-original-review.json",
+          "checks": 7249699,
+          "full_XLS_members": 201,
+          "raw_typed_cells": 6246656,
+          "baseline_selected_typed_cells": 610064
+        },
+        "math_review": {
+          "path": "data/coordinator-baseline-math-review.json",
+          "checks": 390250,
+          "scenarios": 20,
+          "maximum_shift_difference": 2.7755575615628914e-17,
+          "maximum_output_net_residual_votes": 1.645048541831784e-10
+        },
+        "CLI_review": {
+          "path": "data/coordinator-baseline-cli-review.json",
+          "actual_cases": 75,
+          "expected_invalid": 65
+        },
+        "history_review": {
+          "path": "data/coordinator-first-pair-history-review.json",
+          "checks": 44474,
+          "complete_archives": 5,
+          "whole_members": 181,
+          "original_first_native_candidate_identity_unchanged": true
+        },
+        "pending": "Same turnout bounded captured-final-peer reciprocal when actualslot free; no new/replacementworker",
+        "current_legal_geography_accepted": false
+      },
+      "prepared_same_turnout_reciprocal": {
+        "path": "senate/2026/alabama/data/coordinator-launches/prepared-turnout-reciprocal-prompt.txt",
+        "bytes": 5980,
+        "sha256": "987c502c02d0d37dbaea52633cbe8c4081470db37fa638d1c2900b6dde907996",
+        "prepared_only": true,
+        "no_actual_resume_yet": true
       }
     },
     {

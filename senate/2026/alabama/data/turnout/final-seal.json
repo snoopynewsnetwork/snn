@@ -1,0 +1,110 @@
+{
+  "schema_version": "AL-turnout-seal-v1",
+  "sealed_at_utc": "2026-10-20T18:34:05.373326+00:00",
+  "completion": "Owned bounded original-first historical research/report/offline QA complete; worker turn ends after read-only manifest audit and coordinator handoff.",
+  "state": "AL",
+  "primary": {
+    "denominator": 2265090,
+    "unit_count": 2085,
+    "top15_votes": 115428,
+    "top15_share_exact": "19238/377515",
+    "top15_share_pct": 5.0959564520615075,
+    "minimum80_count": 887,
+    "minimum80_votes": 1812818,
+    "minimum80_share_exact": "906409/1132545",
+    "minimum80_share_pct": 80.03293467367743,
+    "preceding_count": 886,
+    "preceding_votes": 1811981,
+    "preceding_share_exact": "1811981/2265090",
+    "crossing_key": "AL:2024:general:01015:col030:OAK%20GROVE%20BAPT",
+    "crossing_label": "OAK GROVE BAPT",
+    "crossing_county": "Calhoun",
+    "crossing_votes": 837,
+    "remainder_votes": 452272
+  },
+  "native_coverage_by_year": {
+    "2024": 2085,
+    "2022": 2074,
+    "2020": 2111
+  },
+  "county_parents_per_year": 67,
+  "direct_original_checks": {
+    "members": 201,
+    "raw_cells": 6246656,
+    "candidate_method_admin_cells": 85129,
+    "offline_check_groups": 13
+  },
+  "pins": [
+    {
+      "path": "turnout.md",
+      "sha256": "e8aed4295f2b7c95f6ee7c88b44d795043490951d25628d3cb1eec6c60c4eda2",
+      "bytes": 28178
+    },
+    {
+      "path": "data/county-turnout.csv",
+      "sha256": "b94f44524dc309ed35c783577c363b414b894d925e76f5cb2ee23116541b4ce9",
+      "bytes": 38294
+    },
+    {
+      "path": "data/turnout/priority-set.json",
+      "sha256": "16d89ba0e4568d94c9ffe33abe52c451e14f88b5e00b3fd7c868615de0f5a9da",
+      "bytes": 15256104
+    },
+    {
+      "path": "data/turnout/native-order-2024.csv",
+      "sha256": "9dd49cd2913cb973b2dcaf8d84be955000c4820c058ec1e0776967a845087e19",
+      "bytes": 464605
+    },
+    {
+      "path": "data/turnout/priority-native-2024.csv",
+      "sha256": "ba3659977183b46506a6f20a36911b8692e6d2881479af950e5b6ac1cae72f8a",
+      "bytes": 150991
+    },
+    {
+      "path": "data/turnout/remainder-native-2024.csv",
+      "sha256": "8c9f9ce530f39b5eed8bafbd74798ccf0a27c68305918d6d96002d73b7b76035",
+      "bytes": 194898
+    },
+    {
+      "path": "data/turnout/validation.json",
+      "sha256": "3630f0beff737a0a93b90d50ff2338e5e88e909cd84576b7fe58e2ff5be03047",
+      "bytes": 13800
+    },
+    {
+      "path": "data/turnout/source/SCHEMA.md",
+      "sha256": "d74a46b61bab4b6ef8f9d171145d7e3c3a23de0f1cf203f53ff5eedf24c6b97a",
+      "bytes": 14255
+    },
+    {
+      "path": "data/turnout/source/original-first-witness.json",
+      "sha256": "b8a4bba1c934beb847166e79d5ca75e1d8b0a5757da5bdbb80abda490b7d7ce5",
+      "bytes": 95404
+    },
+    {
+      "path": "data/turnout/statewide-controls.json",
+      "sha256": "25938c00be775d87b21b5892bbeb6d239c750dae5b020b4f19bf71bf40ab66f1",
+      "bytes": 408
+    },
+    {
+      "path": "data/turnout/candidate-reconciliation.json",
+      "sha256": "197d78c346485f90d0d68f64f8cf2b52db36497e926c5830f2217ee89078488e",
+      "bytes": 247118
+    }
+  ],
+  "peer_agent_id": null,
+  "independent_peer_agreement": false,
+  "coordinator_acceptance": false,
+  "published_by_worker": false,
+  "git_commands_or_mutations_performed": false,
+  "delegation_performed": false,
+  "pending_peer_protocol": "Coordinator may arrange bounded SAME-ID reciprocal once a real independent peer is stable. Peer must independently extract originals before read-only comparison of all shared county/native/candidate/method fields, complete order and exact minimum80 priority. Never edit peer output to match. No peer existed at launch; no one was polled or restarted.",
+  "material_source_qualifications": [
+    "2024 Cleburne native ballot sum is 180 below separate official ballot report;2022 Cullman native ballot sum is 90 above report; candidate controls reconcile independently",
+    "native registration fields contain printed zero county rows and some blank cells, do not reproduce report registration totals; full-state native registration priority unestablished",
+    "Walker2024 presidential under/over fields missing47 units;2022 Senate under/over missing Butler23,Dale20,Tuscaloosa56;2020 Randolph blank-ballot field missing28 units",
+    "generic published Write-In counts are distinct from legal named/valid eligible write-in allocation; three PDF null/dash cells remain null despite independent native numeric zeros",
+    "historical native header identities do not establish current2026IDs/approved boundaries/crosswalk; current signed/sample ballot context is bounded, later amendments/legal eligibility not exhausted",
+    "no live collector, measured publication cadence, exact outstanding counts or calibrated2026 probability forecast"
+  ],
+  "manifest_rule": "asset-manifest.json is written last and excludes only itself; validation and seal contain no manifest digest; a read-only exact-membership/hash/size/link/cache audit follows."
+}

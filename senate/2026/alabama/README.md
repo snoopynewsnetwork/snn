@@ -2,6 +2,16 @@
 
 [All 2026 Senate races](../README.md)
 
+## Historical first-pair research
+
+Reviewed historical turnout and conditional baseline research are available:
+
+- [Turnout and exact native coverage](turnout.md): 2,085 source-native 2024 columns across all 67 counties; top 15 supply 5.0959564521%, and 887 reach 80.0329346737%.
+- [Partisanship and conditional targets](county-partisanship.md): 2024 president, 2020 same-seat Senate and 2022 other-seat Senate; all 6,270 native observations and 201 county-year records retained.
+- [Independent coordinator review](research-review.md) and [actual question-worker dispatch](research-dispatch.md).
+
+This is the reviewed first pair. The turnout worker's reciprocal continuation and the official-results/map assignments remain ahead. No current geographic join, eligible write-in allocation, November feed, exact remaining pool or calibrated probability is approved. The race tracker below remains unchanged.
+
 ## Seat details
 
 | Field | Value |
