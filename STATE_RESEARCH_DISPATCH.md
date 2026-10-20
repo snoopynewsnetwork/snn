@@ -45,9 +45,10 @@ and repository review, with its push independently verified. Historical source
 qualifications remain explicit; current geography and live readiness are separate.
 
 The only active researchers are Massachusetts official sources
-`4c5f1926-ae99-4a2d-bd4d-580280e21bcb` and Massachusetts maps
-`8cff5762-76ce-4417-9927-177d07757961`, each launched in an actual New Jersey
-first-pair finish slot. Massachusetts historical dispatch passes complete source
+`4c5f1926-ae99-4a2d-bd4d-580280e21bcb` and New Jersey official sources
+`e4a43ae3-0624-43d9-8860-c3b4e2f751f9`. Massachusetts maps
+`8cff5762-76ce-4417-9927-177d07757961` has actually finished and released the
+New Jersey official-source launch slot. Massachusetts historical dispatch passes complete source
 reconstruction. Both New Jersey first-pair packages and the complete historical
 dispatch now pass independent source, target, actual CLI, final seal and full
 ledger reconstruction. Thirteen later states remain unlaunched. No extra researcher exists.
@@ -1016,3 +1017,10 @@ provisions and denies a trial-level stay. No inference about later appellate
 action or exhaustive current status follows. Source MuPDF tagging warnings
 are retained; originals remain exact and only actual selected visualscope is
 claimed. This proof is outside worker build dependencies.
+
+
+Massachusetts maps8cff5762 actually finished its sealed historical package;
+coordinator final review underway. Real released slot launched NJofficial
+`e4a43ae3-0624-43d9-8860-c3b4e2f751f9` after fresh profiles/allnotes/provider.
+Only MAofficial4c5f1926 and NJofficiale4a43ae3 are active. NJmaps next real slot;
+no third researcher, replacements or finished-worker restart.
