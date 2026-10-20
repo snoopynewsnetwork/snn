@@ -69,6 +69,7 @@ def main(check=False):
         'coordinator-somerset-caption-review/review.json',
         'coordinator-current-roster-order-review/review.json', 'coordinator-official-final-review.json',
         'coordinator-maps-final-review.json', 'coordinator-maps-visual-review.json',
+        'coordinator-native-map-snapshot-review.json', 'coordinator-census-map-original-review.json',
     ]
     for name in reviews:
         status = read(D / name)['status']

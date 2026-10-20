@@ -1,0 +1,12 @@
+{
+  "status": "checker_counting_unit_error_no_source_or_coordinate_change",
+  "initial_script": {
+    "path": "initial-Census-coordinate-count-check.py",
+    "bytes": 5992,
+    "sha256": "c4056818cd6c1c8436859157ce18791298871f06ab5f49b5602bf3a56d6acf02"
+  },
+  "failed_guard": "pointcount == 2302234",
+  "finding": "The cited2302234 counts individual X and Y values, not coordinate pairs. Raw binary/derivative replay passed every position before this final expected-count assertion. Actual positions1151117; two values per position2302234.",
+  "correction": "Keep native_XY_positions1151117 and individual_coordinate_values2302234 as distinct fields; assert pointcount*2 equals cited value count.",
+  "exact_failure_UTC_not_captured": true
+}
