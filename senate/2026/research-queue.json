@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "requested_date": "2026-10-17",
-  "updated_at_utc": "2026-10-20T13:35:38.377023+00:00",
+  "updated_at_utc": "2026-10-20T13:40:25.454685+00:00",
   "scope": "35 states in the repository 2026 U.S. Senate race index",
   "coordinator_agent_id": "d0fc3534-1613-4883-b48b-21a233fcfd9e",
   "workspace_id": "wks_b290f45007010740",
@@ -6256,7 +6256,7 @@
       "election": "Regular",
       "seat_class": "II",
       "priority": 20,
-      "status": "all-four-complete-reviewed-whole-state-sealed-publication-pending",
+      "status": "complete-published",
       "workers": {
         "turnout": {
           "agent_id": "eb66a7f4-a730-4f4d-8382-35941613a2ff",
@@ -6471,7 +6471,9 @@
         "current_admissions_false": true
       },
       "gaps": [],
-      "published_commits": [],
+      "published_commits": [
+        "3eab6edb4fab7863569638973c8423b8aa92b291"
+      ],
       "coordinator_preparation": "OfficialPD43+ original2024Senate municipal/precinct CSVs recovered200; all351parents/2394native identities and1755native-to-municipal fields reconcile statecolumns. AllOthers/Blanks/TBC andtown/wardhierarchy retained; no acceptedpriority/currentmapapproval. Actual public PD43 form/view/download chains additionally retain complete2020same-seatSenate/2022Governor/2024President municipal/nativeCSV originals with all351parents and2173/2390/2394native contexts. All61808candidate/controlpositions retained;8073municipal-nativechecks exact. Separate2022Governor14countyHTMLrows differ from bothCSV/statefooter by[-3189,+90,-39,-12,-13,-3163], no allocation/cause inferred. HTMLWrite-In labels andCSVparty rows are separate source metadata; AllOthers not allocated. Firstpairindependent audit stillpending.",
       "state_specific_notes": "Use native towns/cities/wards/precincts, not only 14 county summaries. Reconcile all 351 municipalities and current native units to statewide totals; verify the current roster. Any county-derived table retains explicit nonoverlapping municipal aggregation.",
       "historical_native_source_preparation": {
@@ -6713,6 +6715,20 @@
         "path": "senate/2026/massachusetts/data/coordinator-asset-manifest.json",
         "bytes": 3369452,
         "sha256": "647ee93f9a673be220d9f9d5dcaf59a1019a21b12e1804bc99c7cce289c31090"
+      },
+      "publication": {
+        "commit": "3eab6edb4fab7863569638973c8423b8aa92b291",
+        "push_exit_code": 0,
+        "exact_remote_head_verified": true,
+        "whole_manifest_sha256": "647ee93f9a673be220d9f9d5dcaf59a1019a21b12e1804bc99c7cce289c31090",
+        "whole_listed_files": 16117,
+        "whole_listed_bytes": 3310116820,
+        "maximum_stored_bytes": 39000000,
+        "staged_exact_files": 5059,
+        "staged_exact_bytes": 473560034,
+        "all_state_index_blobs": 16118,
+        "npm_run_check": "pass35races-build-tsc-node-check",
+        "all_current_admissions_remain_false": true
       }
     },
     {
@@ -8056,7 +8072,7 @@
       ]
     }
   ],
-  "batch_status": "20_new_states_published_plus_retained_Michigan_MAofficial_and_NMturnout_active_12_unlaunched_continue_all34",
+  "batch_status": "in_progress_21_new_states_published_plus_retained_Michigan",
   "coordinator_preparation_audit": {
     "status": "pass_complete_retained_source_integrity_for_unlaunched_states_only",
     "checked_at_utc": "2026-10-20T03:11:51.116291+00:00",
@@ -8087,9 +8103,10 @@
     }
   },
   "coordinator_next_actions": [
-    "MAallfourworkersfinished: independentlyreview official finalpins then seal/publish fullstate. Twentynewstates published plusMichigan;MApublication pending.",
-    "Exactlytwoactive researchers: NMbaseline9a904675 and ORturnoutbd151c4c. No agent status polling.",
-    "At next actual finish, bounded same-NMturnout reciprocal only after baseline original-first stable evidence; otherwise next prepared original question respecting two-worker cap. Continue all34 states."
+    "Massachusetts complete publication3eab6edb4fab7863569638973c8423b8aa92b291 pushed and remote exact. Twenty-one new states complete plus retainedMichigan.",
+    "OnlyNMbaseline9a904675 and ORturnoutbd151c4c actual active; no agent status polling.",
+    "At real released slot, resume SAME NMturnout5f787f59 for bounded reciprocal against independently frozen actual baseline original core if ready; otherwise next prepared first question respecting two-worker cap. Masks retain no certifiednative dispatch.",
+    "Complete NewMexico/Oregon and all11stillunlaunched states through all34-state batch. No worker waiting on optional future legal/current/feed exhaustion."
   ],
   "coordinator_prompt_preparation": {
     "scope": "Unlaunched future first-wave prompts only; no agent IDs or completed packages implied",
