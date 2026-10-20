@@ -32,12 +32,13 @@ in the queue, and published commit IDs as packages finish.
 
 ## Progress
 
-**Seventeen new state packages plus retained Michigan are published.** Exact
+**Eighteen new state packages plus retained Michigan are published.** Exact
 reviewed state commits: North Carolina e2241313, Alaska9672f51f, Ohiof5cc934a,
 Mainee0fe91ed, Texas1ffe97de, Iowa47e6a682, Kansas9de81d5c, Georgia9c8ad26f,
 NewHampshire7ad7bb89, Minnesota4e4cfc92, SouthCarolina794a7aed,
 Florida4b03078e, Mississippi78c905c3, Nebraska158fc262, SouthDakota1cffd920,
-Idaho744627cb and Coloradof92a04a2696b8e54bc4dc739c3e5a69b3da3218f.
+Idaho744627cb, Coloradof92a04a2696b8e54bc4dc739c3e5a69b3da3218f and
+Delaware2425d880bf6769a83a83b7fdbbcf0e977c7e5997.
 Each complete state passed independent source/native/target/map/whole-package
 and repository review, with its push independently verified. Historical source
 qualifications remain explicit; current geography and live readiness are separate.
@@ -45,7 +46,7 @@ qualifications remain explicit; current geography and live readiness are separat
 The only active researchers are Illinois official-results
 `0ce74399-fe2e-42a8-9428-650729a9137c` and maps
 `d02ee332-ee45-4f77-8eb1-e3364aa3bc41`. All four Delaware workers have
-finished and await independent final integration/publication review. Illinois
+finished; Delaware is published after final independent integration review. Illinois
 first-pair source/scenario/seal review and complete historical dispatch
 acceptance pass. Massachusetts is the next unlaunched first pair;15 later
 states remain queued. No extra workers or finished producer restarts exist.
@@ -786,3 +787,16 @@ review and final exact producer seals. Historical311/all530/219/3 conservation,
 531native-map features and412 historical VTDs remain separate, with zero current
 leaf joins. The complete package is ready for explicit staging/publication.
 Illinois official0ce74399 and mapsd02ee332 are the only active researchers.
+
+
+## Delaware publication verified
+
+Delaware `2425d880bf6769a83a83b7fdbbcf0e977c7e5997` is committed and pushed;
+origin/main independently matches exactly. All1,309 state index blobs match
+the complete1,308-entry whole manifest plus itself,382,182,514listedbytes,
+maximum18,014,868below40MB. Strict whitespace and repository checks pass.
+No producer changed, no current leaf/November/live approval follows.
+
+Eighteen new state packages plus retainedMichigan are published. Illinois
+official0ce74399 and mapsd02ee332 are the sole active researchers;Massachusetts
+is next queued firstpair. All34newstate stacks remain the fullbatch objective.
