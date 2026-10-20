@@ -1104,3 +1104,6 @@ Current actual workers: Oregon maps490fbb31 and RIofficial1c1068c1 only. RI same
 
 
 Oregon four-question whole package is independently reviewed and ready for23rd new-state publication. Whole seal covers7,524targets/7,525files/702,281,516bytes,max39,000,000; maps independent248,456checks plus worker full replay1,012,011checks. All36chains/510known complete contexts/31unavailable cases survive, canonical statewide priorityNULL. RIofficial1c1068c1 andRImaps6c5beb21 are the only active researchers. No current/legal/live approvals follow historical publication.
+
+
+Oregon whole package published0d74c3e01daae846a4ed6f37e03e2f2a0dcff9b1;push0/exactremote verified,all1507stagedblobs exact. Twenty-three new states complete plusMichigan. RIofficial1c1068c1 actually finished/sealed1,236targets; its slot launched original Virginia turnout61838d17 after fresh Research/high profile/provider inspection. Only RImaps6c5beb21 andVAturnout61838d17 active;9states unlaunched.
