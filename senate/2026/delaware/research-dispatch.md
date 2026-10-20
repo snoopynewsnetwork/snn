@@ -21,3 +21,46 @@ provider inspection. They are the only two active researchers, independently
 reading originals before reciprocal comparison. All three counties/native ED
 identities, overlapping Wilmington views and separate write-in scopes remain.
 No third worker, replacement coordinator or current geographic approval exists.
+
+
+## Delaware baseline finished; actual Illinois turnout launched
+
+Delaware partisanship `4724b2aa-c338-4708-8044-c4b606bfaaeb` actually finished
+its151-file sealed package,33,910 final read-only checks. Independent coordinator
+original native/method review and preliminary146,238 arithmetic/source-weight
+checks pass; final whole first-pair acceptance awaits turnout completion/review.
+
+That actual released slot launched Illinois turnout
+`a2a3b1cf-ac46-446b-be8d-18390c8885e4` after fresh profiles/all notes/provider
+inspection. Delaware turnout `f5a17f09-a714-4ee5-a7e7-265474c0c809` is the only
+other active researcher. Illinois baseline awaits a real finish slot; no extra
+worker/current identity/source-universe approval exists.
+
+
+## Delaware first pair complete; Illinois first pair active
+
+Delaware turnoutf5a17f09 actually finished its202-owned/12shared-original
+sealed package with200offline checks. Baseline4724b2aa's151-entry seal comprises
+139owned files and12shared originals, not151owned. Both remain frozen pending
+coordinator final historical dispatch review; no current geometry/returns
+approval follows311/400,539 after310/399,708.
+
+The actual released turnout slot launched Illinois partisanship
+`a7b49f02-905f-4208-b957-fffdb58615bf`, after fresh profiles/all notes/provider
+inspection. Its actual independent turnout peer is
+`a2a3b1cf-ac46-446b-be8d-18390c8885e4`. Those are the only two active
+researchers. Delaware official/maps await reviewed acceptance and actual slots;
+15later states remain queued, with no extra agent or premature admission.
+
+
+## Delaware historical dispatch reviewed
+
+Independent original field/method/parent/source-weight/bounded-target/liveCLI
+and final seals accept exactly311historicalSenate observations/400,539 of
+500,606 after310/399,708. All530/3parents/219remainder, all42rootfields,
+42completecompanions and16,388fullobjects remain. No current geography/feed,
+changingNovembercounts, exactremainder or probability is approved.
+
+Delaware official/maps prompts are prepared only, awaiting actual slot releases.
+Illinois turnouta2a3b1cf and baselinea7b49f02 remain the only active researchers.
+No finished worker restart, extra agent or producer flag/source mutation.
