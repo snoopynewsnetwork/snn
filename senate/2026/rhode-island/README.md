@@ -58,3 +58,16 @@ No results entered yet.
 - [Rhode Island election office](https://vote.sos.ri.gov/): ballot access, election schedule, and official results.
 - [FEC Rhode Island Senate election data](https://www.fec.gov/data/elections/senate/RI/2026/): candidate filings and campaign finance.
 - [Rhode Island Board of Elections](https://elections.ri.gov/): official results.
+
+
+## Election-night research
+
+The original-first [turnout report](turnout.md), [458-row native CSV](data/county-turnout.csv)
+and [complete source contract](data/turnout/priority-set.json) are complete and
+independently reviewed. The finer minimum80set has242contexts/394,072votes after
+393,066through241;43municipal/admin parents are a separate sensitivity. All497
+inventory contexts,39absentSenate cases and four unallocated federal codes survive.
+The [coordinator review](research-review.md) documents full original/source-order
+checks and bounded gaps. Independent baseline/reciprocal review is active;
+priority acceptance, official/maps research and current geographic/feed approval
+remain pending. Existing campaign and polling tracker sections are unchanged.
