@@ -67,6 +67,6 @@ all36county controls and partial recovered native publications. The
 mathematics, CLI cases and repaired immutable-input/asset seals.
 Five2024native parents close510rows;31remain unclosed. Canonical statewide
 native priority is unavailable; county and known-source sensitivities are
-separate. Same-worker reciprocal QA has finished; final coordinator source acceptance
-is pending. Official-source and maps work
+separate. Same-worker reciprocal QA has finished; final coordinator source review passes, with source-research authority in
+preparation. Official-source and maps work
 remain queued, with no current IDs/geographic/feed or live probability approval.
