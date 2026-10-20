@@ -88,3 +88,14 @@ is saved in data/coordinator-launches/official-results-initial-prompt.txt.
 Complete acceptance/contract launch hashes were independently verified first.
 Sole other active researcher is NJbaseline61054f9e; maps remains unlaunched.
 No first-pair contact, current IDs/returns/geometry approval or third worker.
+
+
+## Actual maps launch
+
+Maps `8cff5762-76ce-4417-9927-177d07757961` actually launched after the NJbaseline
+61054f9e finished/callback. Fresh all-four profiles/provider inspected, Research
+auto-review/high chosen. Exact10155B initial prompt d78beaae33eb099265083956a974936ce55c3f7557ae7774d9af5d7838c35508
+is saved in data/coordinator-launches/precinct-maps-initial-prompt.txt. Exclusive
+precinct-maps.md/maps/** only. Actual sole other researcher MAofficial4c5f1926;
+no finished-first-pair contact or additional worker. Source-label/current/legal
+polygon matches and every live/forecast approval remainfalse.

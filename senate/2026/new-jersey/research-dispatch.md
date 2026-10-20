@@ -50,3 +50,27 @@ with captured stable original-first peer core, not later baseline final outputs.
 Baseline61054f9e continues numerical/report work. The real released slot now
 hosts MAofficial4c5f1926, leaving exactly two researchers. NJhistorical dispatch
 acceptance still awaits final baseline and coordinator review; current flagsfalse.
+
+
+## Both first-pair packages complete
+
+Baseline61054f9e actually finished; original-only232product rebuild and readonly
+29636checks pass. Complete manifest lists318files and excludes only itself
+(319owned files including manifest); final seal/source/candidate/null/finer
+fields retained. Coordinator source/math/CLI and final asset continuity pass.
+No actual NJofficial/maps launched yet: full external source-field acceptance
+and reference replay precede dispatch. Both real slots now host MAofficial
+4c5f1926 andMAmaps8cff5762; no third researcher or producer self-acceptance.
+
+
+## Complete historical dispatch accepted; next wave prepared only
+
+Coordinator full original/core/math/actualCLI/final producer seals and complete
+source-field replay now pass. External acceptance545985B f2abbba1f09a7b3a89b6bca0e30dfc90f201ee3c07bd6741c35a5cc0019aa826
+retains24roots/504companions/724943objects/fivecompleteledgers. Exact frozen
+contract4320373B 59eb61ddef453fc6127f53f7bab4ae1f024a8e6c63a1620f29957aeddfcb602c.
+All575publication observations/233priority/342remainder/21parents preserve
+full candidates, nulls, raw positions, methods and nonadditive finer fields.
+Accepted for historical source research only; no current/legal/eligible-writein
+robustness or live approval. NJofficial/maps prepared prompts have NO actual
+IDs yet. ExactlyMAofficial4c5f1926 andMAmaps8cff5762 occupy real research slots.
