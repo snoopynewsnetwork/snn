@@ -2,7 +2,7 @@
 
 The two historical source assignments are independently extracted and reviewed.
 The same turnout worker has finished bounded reciprocal QA against the final
-captured baseline core; its final coordinator seal review now passes. Official-source research is active and maps remain queued;
+captured baseline core; its final coordinator seal review now passes. Official-source research is now finished and independently reviewed; maps are active;
 whole-state acceptance and canonical native priority remain unavailable.
 
 ## Original source controls
@@ -132,3 +132,10 @@ qualified shared-parent investigations. Maps take a later actual released slot
 after fresh profile/provider discovery. Current geometry, final signed/later
 ballot/write-in scope, November feed identities/returns, measured cadence,
 eligible remainder and probability calibration remain unapproved.
+
+
+## Reviewed official-source component
+
+The [official-results investigation](official-results.md) is finished. Its final read-only audit reconstructs23roots/1,994wholecompanions/495,672recursiveobjects/5,029individualpins/5,261historicalbodies,113originalentities and72ZIPmembers. All766manifesttargets cover767ownedfiles with self-only exclusion. [Independent coordinator review](data/coordinator-official-final-review.json) passes20,094checks:36completeparent investigations,510completecontexts,31unavailable cases,15,956whole semantic references and235full acquisitionrecords/253receivedentities. Shared-parent records are not510independent feeds or current leaf joins. Routine implicit outgoing GET headers/effective wireURLs are unretained; received headers/rawentities/sourceclocks and explicitPOSTbodies survive. This candid metadata gap is not reconstructed as an observation.
+
+[Selected visual/legal review](data/coordinator-official-visual-review.json) actually views signedDirective2026-09 pages5/6 and Multnomahzero page1. Four named Senate rows/parties plus genericWrite-in setup stay separate from the unlinked staging export, whose209Senatevotes and incomplete0/1318status are rejected. Current temporary165-007-0550 and selectedORS254/258text distinguish declared reporting schedules, mail receipt, cure, Senate tied-recount remedy and the0.2%top-pair automaticrecount denominator. Fresh state-code webreader failures are access observations; full retained primarytext remains the source. The current [Watson opinion](https://www.supremecourt.gov/opinions/25pdf/24-1260_g3cn.pdf) independently corroborates reversal/remand of federal preemption, not Oregon-specific deadlines or later docket clearance. No exhaustive later-law/order/final-ballot or eligible-writein proof is claimed. Official observations and actual county release plans now inform the strategy; measured November cadence, currentIDs/nativejoins/exact remainingpool/collector/probabilities stay unavailable.
