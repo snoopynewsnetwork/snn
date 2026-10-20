@@ -42,3 +42,33 @@ Research, auto-review/high. The exact 13,596-byte prompt is retained, SHA256
 Oregon baseline `7c03df8c-f908-40a8-a289-369e4aa26e69` is the only other active
 researcher. Maps remain prepared. No first-pair restart or current geographic,
 legal or feed admission follows from source agreement.
+
+
+Maps worker `30e855e4-3ff5-4bdd-9f7a-1a0a6f77e232` actually launched in the
+slot released by Oregon baseline's completed turn. Fresh inspection of all
+four profile notes and provider settings selected Research, auto-review/high.
+Its 14,008-byte prompt is retained, SHA256
+`671afacb6cb20f1b5b676ffcd44d75d444cb45abbfe00a21015e23049baa22a8`.
+Official-source worker `3204f3a1` is the only other active researcher. Both
+investigate all 33 parents and 2,201 source observations, with certified native
+priority unavailable and no county substitution.
+
+
+Official-source worker `3204f3a1` finished all 33 county dossiers and 2,201
+complete source investigations. Its reported manifest SHA256 is
+`9003c9fbb16b1995788107ba25b030130d952bcc3bb57157be41be081bdd4046`;
+coordinator review is pending. Its released slot resumed the same Oregon
+baseline worker for bounded packaging repairs. Maps `30e855e4` remain active.
+
+
+Official worker3204f3a1 is independently reviewed:38,106 root checks,1,010manifest entries and626immutable individual external pins. Five root-selected original PDF pages actually viewed separately from the worker visual scope. Maps30e855e4 has actually finished its bounded package; full coordinator map review remains pending. Both source/current/legal approvals remain qualified; certified native priority stays unavailable.
+
+
+All four actual assignments are now complete and independently reviewed.
+Map worker30e855e4's final package has994complete owned files; coordinator
+113,588checks confirm complete native/raw/source preservation and the stated
+visual scope. Official worker3204f3a1's independent review passes38,106checks.
+The reviewed state preserves all33parents/2,201source observations with certified
+native priority unavailable and no current/legal leaf matches. Publication is
+coordinator-only. RhodeIsland turnout5bf8df2e and Oregon SAMEturnoutbd151c4c
+are the only active researchers; no NewMexico worker remains active.

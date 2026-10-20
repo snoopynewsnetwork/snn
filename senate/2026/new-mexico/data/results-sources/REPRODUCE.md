@@ -1,0 +1,22 @@
+# Offline reproduction and audit
+
+From the checkout root:
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 python3 -B senate/2026/new-mexico/data/results-sources/run_offline.py
+PYTHONDONTWRITEBYTECODE=1 python3 -B senate/2026/new-mexico/data/results-sources/run_offline.py --audit
+```
+
+Use Python 3 standard library and `pdftotext` from Poppler on PATH. No Python package installation, cache directory, credentials, browser, spreadsheet application, network or producer writer is needed. All owned helpers are invoked with `-B` and `PYTHONDONTWRITEBYTECODE=1`. The read-only audit creates no files, including temporary PDFs: fresh PDF text is decoded through Poppler stdin/stdout.
+
+The normal command deterministically recreates proofs/structures/report/parents/investigations from retained originals and immutable references, then seals all owned files. It does not reacquire anything. The stages are whole immutable replay, whole PDF texts/selected code sections, whole structured entities, independent sample controls, historical original controls, negative fixtures, explicit legal calendar arithmetic, full county/observation coverage, report, independent validation, final seal, manifest and read-only audit. Gzip output uses mtime zero. For a stable byte manifest use the same Python/zlib and Poppler versions: compressor/render/text implementation changes may alter derived bytes while original-source pins remain exact. The environment versions used for this package are recorded in the final seal.
+
+`--audit` verifies the exact present file inventory against the manifest, every owned size/hash and all immutable individual references, then independently reruns replay, source controls, negative fixtures and full coverage/schema/link checks in memory. A failure exits nonzero. It never accepts an absent or changed file by recomputing and replacing its expected pin. Validation and final seal have no reverse dependency on the manifest. The manifest includes every owned file except itself, including this document, scripts, report, CSV, all proofs/receipts/originals/structures/page extracts and the final seal.
+
+The external research authority is `data/coordinator-source-research-acceptance.json` relative to the state directory. The complete authority is read in memory; only its path is stored in this package. Its initial exact launch verification was performed before source work. `immutable-inputs.json` separately retains full frozen-source and historical-body reconstruction references. Captured old bodies resolve old path plus old SHA; current repaired files are not replacements. All producer paths are read-only dependencies, not imports. No optional coordinator/current/maps preparation reviews or peer outputs are build dependencies.
+
+Every new acquired body has a receipt under `receipts/`; `originals/<rawSHA>.gz` is the complete lossless entity. Verify the stored bytes and SHA, decompress gzip, verify reconstructed raw bytes/SHA, then inspect the original. Public form request bodies, redirects, full raw bodies and errors are included. Original PDFs are accessible by receipt reference and not duplicated as uncompressed files. All stored artifacts are strictly below 40,000,000 bytes. No splits/truncation occurred. The exact body is authoritative if a discovery/structural extraction differs in character rendering or HTML interpretation.
+
+`structures/*.json.gz` and `structure-index.json` preserve full parsed objects and observed schemas. `parents/*.json` preserve all 33 full county contexts and request chains. `shared-parent-investigations.jsonl.gz` has exactly 2,201 full source observations with complete raw CSV rows, not 2,201 live feeds. Decompress and stream one JSON line at a time; no complete ledger needs to be loaded at once. `replay.py` holds one complete source companion at a time when checking ordered recursive ledgers, retaining all whole original references rather than votes-only projections.
+
+The manifest's owned inventory excludes only `data/results-sources/manifest.json`. Its external pins are references, not duplicate owned bytes. `final-seal.json` pins validation proofs and records the review boundary. A hash-valid package is a reproducible source audit, not coordinator acceptance. All current count/change/join admissions remain false and all current native joins null. Future changing November returns, signed/later/write-in roster, current IDs, geometry, later law/dockets, cadence and eligible outstanding votes require separate primary evidence and coordinator review.

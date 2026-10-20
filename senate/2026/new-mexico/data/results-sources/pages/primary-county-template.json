@@ -1,0 +1,132 @@
+{
+  "url": "https://electionresults.sos.nm.gov/Scripts/CountyLevelResults.htm",
+  "body": {
+    "path": "data/results-sources/originals/be885f74ff3e92ccf60969bfe80cc06d65bda20281e9b3bcb3716f3de80668d4.gz",
+    "bytes": 1009,
+    "sha256": "cd779fb1aeb5c9e9f74506ea2f68b86914530540a747ae27198c2fc41a7462b7",
+    "raw_bytes": 4017,
+    "raw_sha256": "be885f74ff3e92ccf60969bfe80cc06d65bda20281e9b3bcb3716f3de80668d4",
+    "compression": "gzip"
+  },
+  "links": [],
+  "scripts": [],
+  "constructors": [
+    {
+      "tag": "input",
+      "attributes": [
+        [
+          "class",
+          "button-precinct-results-countyresults"
+        ],
+        [
+          "type",
+          "button"
+        ],
+        [
+          "value",
+          "{PrecinctOrVoteCenterText($T.county.CountyID, 'Button')}"
+        ],
+        [
+          "onclick",
+          "BuildPrecincts('{$T.county.Type}', '{$T.county.RaceID}', '{$T.county.OSN}', '{$T.county.CountyID}', '{$T.county.PartyCode}'); $(this).addClass('active-button-precinct');"
+        ]
+      ],
+      "position": [
+        38,
+        8
+      ]
+    },
+    {
+      "tag": "input",
+      "attributes": [
+        [
+          "id",
+          "Text{$T.county.RaceID + $T.county.CountyID.trim() + $T.county.PartyCode.trim()}"
+        ],
+        [
+          "type",
+          "text"
+        ],
+        [
+          "value",
+          "Enter Precinct Name"
+        ],
+        [
+          "onclick",
+          "javascript:this.value='';"
+        ],
+        [
+          "class",
+          "precinct-search"
+        ]
+      ],
+      "position": [
+        54,
+        16
+      ]
+    },
+    {
+      "tag": "input",
+      "attributes": [
+        [
+          "type",
+          "button"
+        ],
+        [
+          "id",
+          "btnSearch{$T.county.RaceID + $T.county.CountyID.trim() + $T.county.PartyCode.trim()}"
+        ],
+        [
+          "onclick",
+          "SearchForPrecinct(this); return false;"
+        ],
+        [
+          "class",
+          "precinct-search-button"
+        ],
+        [
+          "value",
+          "Search"
+        ],
+        [
+          "target",
+          "{$T.county.RaceID + $T.county.CountyID.trim() + $T.county.PartyCode.trim()}"
+        ]
+      ],
+      "position": [
+        55,
+        16
+      ]
+    },
+    {
+      "tag": "input",
+      "attributes": [
+        [
+          "id",
+          "Clear{$T.county.RaceID + $T.county.CountyID.trim() + $T.county.PartyCode.trim()}"
+        ],
+        [
+          "type",
+          "button"
+        ],
+        [
+          "value",
+          "Clear Search"
+        ],
+        [
+          "onclick",
+          "ClearPageSearch('{$T.county.RaceID + $T.county.CountyID.trim() + $T.county.PartyCode.trim()}');"
+        ],
+        [
+          "class",
+          "precinct-search-button"
+        ]
+      ],
+      "position": [
+        56,
+        16
+      ]
+    }
+  ],
+  "text": "{#foreach $T as county} {$T.county.CountyName} County {PrecinctOrVoteCenterText($T.county.CountyID, 'Header')} Fully: {$T.county.PrecinctsReporting} / {$T.county.TotalPrecincts} | Partially: {$T.county.PrecinctsPartial} / {$T.county.TotalPrecincts} {#foreach $T.county.Results as cands} {$T.cands.calcCandidate} {$T.cands.PartyName} {($T.cands.calcCandidateVotes + \"\").replace(/(\\d)(?=(\\d{3})+(\\.\\d+|)\\b)/g, \"$1,\")} {#/for} Total Votes {($T.county.Total + \"\").replace(/(\\d)(?=(\\d{3})+(\\.\\d+|)\\b)/g, \"$1,\")} {#/for}"
+}
