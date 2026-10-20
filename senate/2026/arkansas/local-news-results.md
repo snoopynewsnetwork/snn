@@ -1,6 +1,6 @@
 # Arkansas newsroom and NYT backstops
 
-Research observed **2026-10-18 UTC / 2026-10-17 Central**. The historical first pair, bounded reciprocal and full source authority are now independently reviewed. Original official-results/maps assignments await actual released slots; full-state integration remains pending. [Retained responses](data/news/manifest.json) preserve UTC retrieval, URLs, HTTP status/headers and exact compressed/raw hashes. No November live collector or complete state package is claimed.
+Newsroom observations retain their individual **October 18–20 UTC** clocks. All four original research assignments are now finished and independently reviewed; no genuine November returns were admitted. [Retained responses](data/news/manifest.json) preserve UTC retrieval, URLs, HTTP status/headers and exact compressed/raw hashes. No November live collector or complete state package is claimed.
 
 | Region/product | Primary source | Actual observation |
 | --- | --- | --- |
@@ -10,7 +10,7 @@ Research observed **2026-10-18 UTC / 2026-10-17 Central**. The historical first 
 | Jonesboro / northeast — KAIT | [Actual results page](https://www.kait8.com/politics/election-results) | HTTP 200; empty/unselected election and no races in its complete retained cache. The backend request has includeTestResults=false, while a separate UI component has displayTestData=true; no returned test votes are established. Missing/unselected races do not mean zero votes. November setup and supplier remain unverified. |
 | Fayetteville / northwest — KNWA | [Homepage](https://www.nwahomepage.com/) | Direct 403. Regional counting coverage candidate, not a demonstrated November numeric source. |
 
-The [Secretary's homepage](https://www.sos.arkansas.gov/) and [official results/archive page](https://www.sos.arkansas.gov/elections/for-election-results) returned 200. The homepage links a Tally ENR route with an actual contest identifier; archive/history and a current app are different products. That link's presence does not establish November election/contest/status or machine-readable access. The official-results assignment must follow the primary authority chain, test native county/precinct/method records and keep county versus statewide aggregate overlap explicit. Dedicated southern/Delta newsroom scoreboards remain an inspection gap beyond the northeast coverage candidate.
+The [Secretary's homepage](https://www.sos.arkansas.gov/) and [official results/archive page](https://www.sos.arkansas.gov/elections/for-election-results) returned 200. The homepage links a Tally ENR route with an actual contest identifier; archive/history and a current app are different products. That link's presence does not establish November election/contest/status or machine-readable access. The [official-results review](official-results.md) followed the actual client and county chains, retained complete current responses and kept county/state/native/method overlap explicit. Dedicated southern/Delta newsroom scoreboards remain an inspection gap beyond the northeast coverage candidate.
 
 Treat common upstream suppliers, official reprints and shared newsroom reporting as overlapping evidence. Compare identical election/contest/candidate/unit/method/stage at compatible timestamps. Never add cumulative snapshots, a statewide total and its local components, or two suppliers' views of the same votes. Preserve corrections and decreases. Calls, estimated vote completion and probability forecasts remain separately attributed fields.
 
@@ -56,3 +56,8 @@ The separate already reviewed regional packs preserve fuller response-hop
 records. Read-only audit uses frozen individual receipts embedded in its proof,
 not a mutable aggregate as a rebuild input. No new network requests, unseen
 browser execution, live source admission or collector occurred in this review.
+
+
+## Current official setup disposition
+
+The completed [official-source package](official-results.md) follows SOS → Tally's public client/configuration/election list and all 75 county federal examples. The source selected November 3, 2026, but its banner/demo configuration and positive pre-election values remain **unadmitted setup**. HTTP200, a current election name, reporting counters, `isOfficial=false`, source clock v85, or matching specimen names do not establish genuine votes. No demo field, login or private code was used. The whole export and all source metadata remain lossless evidence, with no measured cadence/corrections or eligible remaining pool. Newsroom/AP products must not be used to validate this setup by circular copying. The local Stone specimen establishes three printed choices; no current crosswalk or later statewide roster exhaustion follows.

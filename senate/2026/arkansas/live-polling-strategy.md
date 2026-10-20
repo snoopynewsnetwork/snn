@@ -1,16 +1,16 @@
 # Arkansas collection and remaining-vote strategy
 
-Prepared **2026-10-18 UTC / 2026-10-17 Central**. Historical first-pair/source authority review is complete; original official-results/maps assignments await released slots and final integration remains pending. Read the [newsroom survey](local-news-results.md); this proposes operation without a running collector.
+Integrated **2026-10-20 UTC**, retaining individually dated original observations. All four assignments and independent reviews are complete as bounded historical/source research. Read the [newsroom survey](local-news-results.md); this proposes operation without a running collector.
 
 ## Arkansas-specific preflight
 
-The [SOS homepage](https://www.sos.arkansas.gov/) links an actual Tally ENR route; the [official results page](https://www.sos.arkansas.gov/elections/for-election-results) also contains historical downloads. Validate actual November Senate election/contest/status and full candidate labels before accepting any linked ID. A current route is not proof of a November dataset, and historical archive files are certified/reference evidence rather than live returns. The results question must inventory all 75 county authority channels and actual native precinct/method coverage, with deep inspection after the reconciled priority set is known.
+The [SOS homepage](https://www.sos.arkansas.gov/) links an actual Tally ENR route; the [official results page](https://www.sos.arkansas.gov/elections/for-election-results) also contains historical downloads. Validate actual November Senate election/contest/status and full candidate labels before accepting any linked ID. A current route is not proof of a November dataset, and historical archive files are certified/reference evidence rather than live returns. The [official inventory](official-results.md) now covers all 75 counties and 68 source-priority parents; its full current examples remain unadmitted pre-election setup.
 
 Arkansas has no 2024 Senate election. Label 2024 president and 2022 Senate midterm separately. The 2020 same-seat Senate contest had no Democratic candidate: preserve the **named Libertarian challenger** and Republican incumbent comparison rather than manufacturing D totals or Democratic coalition membership. Complete historical candidate/write-in denominators, ballot/registration distinctions and turnout-composition scenarios are needed before any target arithmetic. Current November candidates and independent/party identities require actual certified ballot evidence.
 
 Preserve county/state alternative cumulative views and administrative method rows without duplicate addition. Missing write-in allocations and method detail stay unknown. Native precinct identifiers across years do not prove boundary compatibility; actual downloaded map vintages and November approval require independent evidence. Current poll hours/timezone, absentee receipt/eligibility, provisional/cure provisions, canvass/certification and any controlling orders must be verified from primary sources before operations.
 
-KATV's homepage is accessible reporting, not a tested November feed. KAIT has no selected election and test display enabled. Arkansas Advocate's original March primary coverage is visible in research browsing but direct 403; KARK/KNWA also returned 403. Preserve manual fallbacks and regional access gaps rather than assigning zero votes to unavailable products. Dedicated southern/Delta numeric source coverage remains to investigate.
+KATV's homepage is accessible reporting, not a tested November feed. KAIT has no selected election; its separate frontend test-display flag differs from backend test exclusion, without establishing returned test votes. Arkansas Advocate's original March primary coverage is visible in research browsing but direct 403; KARK/KNWA also returned 403. Preserve manual fallbacks and regional access gaps rather than assigning zero votes to unavailable products. Dedicated southern/Delta numeric source coverage remains to investigate.
 
 ## Proposed collection and revision handling
 
@@ -28,7 +28,7 @@ Counted votes remain fixed. Estimate only uncounted ballots using documented uni
 
 Compare partial returns with the same historical geography/method and boundary vintage. No allocation through an unvalidated map crosswalk. Historical turnout volumes are sensitivity anchors, not 2026 projections. Tie/+1 conditional scenarios require complete statewide weights and candidate/other-vote reconciliation; distinguish share-point shifts from margin-point shifts. Do not substitute an independent candidate into a D/R coalition without explicit identity and assumptions.
 
-Before live use, replay genuine dated releases and test idempotent retries, missing units, corrections/decreases, overlapping aggregates, candidate identity and manual recovery. Keep original counts and derivatives auditable. A calibrated win probability additionally requires a dated prior, genuine historical release sequences, remaining-ballot assumptions and held-out calibration under the [root plan](../../../ELECTION_NIGHT_PLAN.md). No live collector or calibrated Needle is implemented here. Final integration must insert the measured priority set, complete official inventory, downloaded map compatibility and verified current rules from the four state question assignments.
+Before live use, replay genuine dated releases and test idempotent retries, missing units, corrections/decreases, overlapping aggregates, candidate identity and manual recovery. Keep original counts and derivatives auditable. A calibrated win probability additionally requires a dated prior, genuine historical release sequences, remaining-ballot assumptions and held-out calibration under the [root plan](../../../ELECTION_NIGHT_PLAN.md). No live collector or calibrated Needle is implemented here. The completed question packages below supply historical source scope, actual channel evidence, downloaded native maps and bounded primary-law readings; future operative/current checks remain explicit.
 
 
 ## Reviewed historical source scope
@@ -49,6 +49,15 @@ The [complete historical source authority](data/coordinator-priority-acceptance.
 and [independent exhaustive replay](data/coordinator-priority-validation.json)
 freeze every full source object, hierarchy and preservation history. They
 approve bounded source research only; no current/legal/eligiblewritein/native80/
-leaf/polygon/cadence/pool/forecast/calibration admission follows. Official current
-rules, channels and map compatibility remain separate assignments. Proposed
+leaf/polygon/cadence/pool/forecast/calibration admission follows. Official channels, primary rules and map evidence are now documented in the
+completed packages. Proposed
 cadences above are proposals, not demonstrated release intervals.
+
+
+## Admission and geography controls from completed research
+
+Use the [full official report](official-results.md) and [map report](precinct-maps.md) as source research. Current November identifiers are observed source metadata, without approved historical mapping. The public configuration's demo/banner indicators and positive pre-election results require an explicit **rejection** state for all retained current count examples. Obtain a genuinely published election-night product and independently validate stage/date, complete roster, scope, actual source status and subsequent real vote changes before admission. Do not submit a demo value or infer approval from its removal, an HTTP response, date, default selection or reporting percentage alone.
+
+The original XLSX 1,056/2,841 priority remains historical candidate-mark volume only. Every one of the 1,785 remainder records stays in state arithmetic. All 2,928 native GIS objects are separate; every result-to-polygon match is null. Source edit dates, a printed map date or a January2022 county approval do not approve the current reporting crosswalk. No map-based allocation of votes, ballots, registration or protected/unknown native fields is permitted by this package.
+
+Primary 2025 law and 2026 manuals describe congressional plurality with an equal-highest special runoff four weeks later; municipal/primary/judicial rules are separate. The report distinguishes conditional recount deadlines, ordinary versus overseas receipt, ID correction versus general absentee defects, preliminary returns and signed certification. SJR18's January2027 effectiveness is future to this election. Verify later controlling changes before operations. Statutory reporting duties are not demonstrated public release cadence, exact outstanding ballots or certification events. All proposed intervals above remain proposals; no running collector or live probability was added.
