@@ -29,3 +29,24 @@ Coordinator will resume that SAME ID only after baseline original stability and
 a real slot. Only active NJbaseline61054f9e and MAsame-turnouteb66a7f4 exist.
 Independent original extraction and exact immutable reciprocal captures precede
 any external historical dispatch acceptance; current/legal/geographic flagsfalse.
+
+
+SAMEturnout04473229 resumed in the actual finished MAturnout slot after fresh
+profiles/allnotes/provider inspection. Actual baseline61054f9e is active and
+original-first stable; immutable core captures, full field/order/source-scope
+comparison and bounded final report/seal only. No final/future baseline body
+claim, source count changes, optional research or newagents. Those two NJworkers
+are the only researchers; MAsecondwave awaits reviewed external dispatch and
+actual free slots.
+
+
+## Actual bounded reciprocal finish
+
+SAMEturnout04473229 actually finished:82206own/40921captured reverse fixed-core
+checks, zero differences; full offline rebuild/41package checks pass. Final
+2336-entry manifest excludes only itself and includes validation/finalseal;
+original witness/source counts/CSV/order remain exact. This is agreement only
+with captured stable original-first peer core, not later baseline final outputs.
+Baseline61054f9e continues numerical/report work. The real released slot now
+hosts MAofficial4c5f1926, leaving exactly two researchers. NJhistorical dispatch
+acceptance still awaits final baseline and coordinator review; current flagsfalse.

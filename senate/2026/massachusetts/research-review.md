@@ -1,11 +1,11 @@
 # Massachusetts coordinator review — first pair in progress
 
-This is a bounded original/source/scenario checkpoint, not historical dispatch
-acceptance or completed four-question state research. Actual partisanship
-`41e0bf1a-4609-4a2a-b901-568567431a57` finished its257-owned/18input seal.
-Turnout `eb66a7f4-a730-4f4d-8382-35941613a2ff` actually finished a bounded
-original-first phase and109-body pre-peer freeze; the SAME ID is now resumed in the actual baseline-finish slot for bounded
-reciprocal/final-seal QA. No replacement/extra worker is authorized.
+Both actual first-pair workers have finished and their exact source/reciprocal/
+scenario/seal reviews pass. The [external historical dispatch acceptance](data/coordinator-priority-acceptance.json)
+applies only to complete named-source research, with all current/legal/eligible-
+writein/geographic/feed approvals false. Official/maps assignments are prepared
+only and await real released slots. No extra researcher exists.
+
 
 [Independent original review](data/coordinator-turnout-original-review.json)
 passes411,919 checks: complete four-contest municipal/native CSV/header/party
@@ -58,3 +58,39 @@ only itself and passes the coordinator's actual readonly validate.py --sealed
 in the external BeautifulSoup environment. No producer modified. Both wording
 findings are fixed in the final report/settings; mathematical source values
 are unchanged, and the independent scenario proof was re-pinned accordingly.
+
+
+## Final reciprocal and external historical dispatch
+
+The SAMEturnout worker completed its reciprocal/final-seal phase, preserving
+all earlier109/198 witness bodies and every original source/count/order/CSV.
+The current contract differs only in boundedpeer evidence/review metadata.
+The [independent finalturnout review](data/coordinator-turnout-final-review.json)
+passes414,464 checks, including exact524-owned membership and every258captured
+finalbaseline body matching the immutable finished baseline. Validation and
+finalseal are now included, with no reverse current-manifest hash/cycle;
+only the manifest itself is excluded. All old exclusion-phase witnesses remain.
+
+Turnout independently agrees at10,755full municipality/native objects,
+75,566positions and all24commonorders; its named-source universe maps to
+baseline all_named, never a historical pair alias. All9351baselineCSV native
+records and351parent/ward/child arrays match. Baseline's reverse proof remains
+scoped to the earlier exact original-first turnout witness, not later metadata.
+No false future/current body equality or original347registration observation
+adoption is made. Actual final readonly producer validators pass.
+
+The external complete source record preserves25complete contractrootfields,
+174whole companion bodies and397,917complete recursive objects across3full
+lossless JSONL partitions. The [independent acceptance replay](data/coordinator-acceptance-validation.json)
+reconstructs EVERY reference and source body, plus781producer-owned assets and
+all frozen original inputs. All2394/1470/924 keys and351complete parent arrays
+remain, with287prioritymunicipalparents. This is complete-field preservation,
+not a count-only projection; downstream workers use authority PATH ONLY and
+may not copy/reverse-pin it or change frozen producer flags.
+
+The complete historical source question pair is accepted for bounded official/
+map research dispatch. AllOthers eligibility/native method/admin/reg/under-over,
+current signed/later ballot/feed IDs/geometry/cadence/exact outstanding pool and
+calibration remain external qualifications. Neither351municipal sensitivity nor
+14county HTML replaces the finer2394primary source records. Second-wave owned
+research, final state integration and publication remain pending actual slots.

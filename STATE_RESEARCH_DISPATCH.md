@@ -44,13 +44,13 @@ Each complete state passed independent source/native/target/map/whole-package
 and repository review, with its push independently verified. Historical source
 qualifications remain explicit; current geography and live readiness are separate.
 
-The only active researchers are Massachusetts turnout
-`eb66a7f4-a730-4f4d-8382-35941613a2ff`, resumed as the SAME agent for bounded
-reciprocal/final-seal QA, and New Jersey partisanship
-`61054f9e-a14c-44fc-b6b2-7bbc4c84b449`.  Massachusetts partisanship actually
-finished its257-entry package; source/math/CLI/producer-seal reviews pass.
-All four Illinois workers finished and the complete package is published.
-Thirteen later states remain unlaunched. No extra/replacement worker exists.
+The only active researchers are New Jersey partisanship
+`61054f9e-a14c-44fc-b6b2-7bbc4c84b449` and Massachusetts official sources
+`4c5f1926-ae99-4a2d-bd4d-580280e21bcb`, launched in the actual NJturnout
+bounded reciprocal finish slot. Both Massachusetts first-pair workers finished;
+full historical dispatch and all complete original/object references pass.
+Massachusetts maps awaits a real slot. Thirteen later states remain unlaunched.
+No replacement or extra researcher exists.
 
 Illinois's historical printed-known threshold is5,540/4,474,312 of5,592,368,
 following5,539/4,473,789; top15=29,572. Complete10,062 source groups,108 source
@@ -897,3 +897,52 @@ provider inspection. It independently extracts originals before turnout or
 coordinator derivative values. Massachusetts same-turnouteb66a7f4 reciprocal
 phase is the sole other active researcher. Resume SAME04473229 for bounded
 reciprocal later, never a replacement agent or finished-peer contact.
+
+
+## Massachusetts reciprocal finished; New Jersey same-agent continuation
+
+Massachusetts SAMEturnouteb66a7f4 actually finished bounded reciprocal QA and
+524-owned/20input seal, excluding only itself. Its original counts/CSV/order
+remain exact; only peer-review metadata changed. All109old/198resume witness
+bodies remain byte-identical and all258captured final baseline bodies match.
+Independent finalturnout414464checks and baseline388787checks pass, alongside
+569182source-weight arithmetic checks. External full-field historical dispatch
+is being independently replayed before any actual second-wave launch.
+
+That real slot resumed SAME NJturnout04473229 for bounded reciprocal against
+actual active baseline61054f9e's original-first stable575/571/575/575 source
+universes. Fresh profiles/allfournotes/provider inspected, no replacement/new
+agent or future-final equality claim. These are the only two researchers.
+No MAcurrent geography/eligible-WI/native method/feed approval follows.
+
+
+## Massachusetts complete historical source dispatch accepted
+
+Both first-pair workers finished. Independent final source/order/seal reviews
+and569182arithmetic checks accept only the1470knownnamed historical source
+prefix2,726,450 of3,407,108 after1469/2,725,231; full2394/351parents/924remainder
+preserved. All25complete roots/174companions/397917objects in3full partitioned
+ledgers independently reconstruct exactly. Producer flags unchanged; no current
+or legal/eligible-native80/November feed/geometry approval.
+
+MAofficial/maps prompts are prepared only, awaiting actual slots. Only actual
+NJbaseline61054f9e and SAME NJturnout04473229 reciprocalphase are researching.
+No replacement agent or premature second-wave launch; continue all34states.
+
+
+## Actual New Jersey reciprocal finish and Massachusetts official launch
+
+SAME New Jersey turnout04473229 actually finished its bounded fixed-core
+reciprocal phase:82206own+40921captured reverse checks/zero differences;
+2336self-only-excluded assets include validation/finalseal. Later baseline
+report/finer/calculator/final bytes are outside that equality claim. Coordinator
+independently replayed all84 municipal original PDFs/2296source rows/588county
+candidate controls, preserving literal Neptune and Somerset discrepancies.
+
+Massachusetts official `4c5f1926-ae99-4a2d-bd4d-580280e21bcb` actually launched
+in that real released slot after fresh four-profile notes/provider inspection.
+Its exact8672B prompt589ace65ac603d917e3a8d74754d624c0652b2e4cc88ea2137f98c16357b2025
+is retained in the state coordinator-launches. It independently verified both
+complete frozen inputs first; source/current-law research proceeds only in its
+owned paths. The only other active researcher is NJbaseline61054f9e. MA maps
+has not launched; no third researcher or current/geographic self-approval.

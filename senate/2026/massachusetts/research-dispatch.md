@@ -50,3 +50,41 @@ No replacement/new worker, finished peer contact or optional source expansion.
 Actual sole other researcher is NewJersey turnout04473229. Full source-only
 1470/2394/924/351 hierarchy still awaits final turnout handoff and coordinator
 acceptance; current geometry/eligible-writein/feed approval remainsfalse.
+
+
+Both first-pair workers actually finished. Same-turnouteb66a7f4's final524-entry
+manifest includesvalidation/finalseal, excludes only itself, and preserves all
+old witnesses/source counts/CSV/order exactly. Full original/reference/scenario
+coordinator reviews pass; external historical dispatch replay is underway.
+No actual official/maps worker has launched; two NJfirstpair researchers occupy
+the only two slots. The complete1470/all2394/924/351 source scope remains
+qualified with287prioritytownparents and no current/legal/feed approval.
+
+
+## Historical dispatch accepted, second wave prepared only
+
+Coordinator full source/order/arithmetic/strictCLI/781producer asset reviews
+accept exactly1470/2726450 of3407108 after1469/2725231, preserving2394/full351/
+924remainder and287prioritymunicipalparents. External acceptance701729B
+SHAd9ad468d167051f173a0721d99e1ea26b8c22c30510f9c4e5382ac95dceacea6
+preserves25complete roots/174whole companions/397917recursive objects across
+3full ledgers, independently replayed in full. Frozen turnout contract6879037B
+SHA606115d18e8fe1c6a30a34d4aeab5fdf6e3716fc55c3daa534769d678ed27237.
+No current/eligible-writein/legal native80/geographic/feed approval.
+
+Official/maps prompts are prepared ONLY; no actual agents yet. Both current
+researchers are NJbaseline61054f9e and SAMENJturnout04473229 reciprocalphase.
+Actual future launches require real finished slots and fresh profile/provider
+inspection, with exact full prompts saved to coordinator-launches.
+
+
+## Actual official-results launch
+
+Actual official worker `4c5f1926-ae99-4a2d-bd4d-580280e21bcb` launched in the
+finished NJturnout04473229 slot after fresh profiles/all four notes/provider
+inspection. Owns official-results.md, data/official-results-sources.csv and
+data/results-sources/** only. Exact initial prompt8672B SHA589ace65ac603d917e3a8d74754d624c0652b2e4cc88ea2137f98c16357b2025
+is saved in data/coordinator-launches/official-results-initial-prompt.txt.
+Complete acceptance/contract launch hashes were independently verified first.
+Sole other active researcher is NJbaseline61054f9e; maps remains unlaunched.
+No first-pair contact, current IDs/returns/geometry approval or third worker.
