@@ -10,3 +10,10 @@ Actual baseline302e0938 finished313asset seal/162714complete expanded capturedpe
 
 
 SAME turnout bounded captured-final-peer reciprocal finished and independent full old-body/semantic bridge passed. All canonical values, native IDs, full orders and CSV remain unchanged; source authority is [data/coordinator-priority-acceptance.json](data/coordinator-priority-acceptance.json), with [exhaustive independent replay](data/coordinator-priority-validation.json). Original official/maps prompts are prepared only; no actual third/fourth workers launched. Full75parents/68prioritychains/2841full1056priority1785remainder required; no unfinished peer dependency. Coordinator alone reviews/accepts/publishes; geographic/legal/current/live approvals remain false/unknown.
+
+
+## Actual original official-results launch
+
+Actual worker `b6f64566-f806-42c3-a97a-c28ae547d90a` began in the slot released by finished Alabama maps `f09b4630-ce6d-4e9a-b982-5d56cc1024ca`. Research profile/high was materialized after freshly reading all four profile notes and inspecting its provider draft. The [exact prompt](data/coordinator-launches/official-results-initial-prompt.txt) and [actual launch record](data/coordinator-launches/official-results-launch.json) preserve full launch pins, path-only downstream authority rules and ownership. Alabama official is the sole other active researcher. Original Arkansas maps has not launched and needs the next actual released slot. No current/legal/geographic approval follows from historical source dispatch.
+
+Original maps `b962db1b-305d-410d-8f53-99bff62810c0` then began in the actual slot released by finished Alabama official `44c53403-8904-4118-9a62-f9a468b9fc51`, following fresh all-four-profile/provider discovery and complete launch-byte reverification. The [exact maps prompt](data/coordinator-launches/precinct-maps-initial-prompt.txt) and [launch record](data/coordinator-launches/precinct-maps-launch.json) are retained. The two original Arkansas workers are now the only active researchers. Kentucky gets subsequent actual releases.
