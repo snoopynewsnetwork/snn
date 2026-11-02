@@ -8,6 +8,7 @@ export function startOrbitView() {
   const error = document.querySelector('#orbit-error');
   const pauseButton = document.querySelector('#orbit-pause');
   const replayButton = document.querySelector('#orbit-replay');
+  const resetButton = document.querySelector('#orbit-reset');
   const slider = document.querySelector('#orbit-progress');
   const phaseLabel = document.querySelector('#camera-phase');
   const angleLabel = document.querySelector('#camera-angle');
@@ -17,7 +18,7 @@ export function startOrbitView() {
   } catch {
     error.hidden = false;
     error.textContent = 'The 3D study needs WebGL. Enable hardware acceleration and reload.';
-    pauseButton.disabled = replayButton.disabled = slider.disabled = true;
+    pauseButton.disabled = replayButton.disabled = resetButton.disabled = slider.disabled = true;
     return;
   }
   renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
@@ -109,6 +110,13 @@ export function startOrbitView() {
     render();
     schedule();
   }
+  function resetCamera() {
+    manual = false;
+    elapsed = 0;
+    playing = false;
+    previousTime = null;
+    render();
+  }
   function scrub() {
     manual = false;
     playing = false;
@@ -133,6 +141,7 @@ export function startOrbitView() {
   controls.addEventListener('change', changeManualOrbit);
   pauseButton.addEventListener('click', pause);
   replayButton.addEventListener('click', replay);
+  resetButton.addEventListener('click', resetCamera);
   slider.addEventListener('input', scrub);
   document.addEventListener('visibilitychange', visibilityChange);
   const resizeObserver = new ResizeObserver(resize);
@@ -153,6 +162,7 @@ export function startOrbitView() {
       visibilityObserver.disconnect();
       pauseButton.removeEventListener('click', pause);
       replayButton.removeEventListener('click', replay);
+      resetButton.removeEventListener('click', resetCamera);
       slider.removeEventListener('input', scrub);
       document.removeEventListener('visibilitychange', visibilityChange);
       controls.removeEventListener('start', startManualOrbit);

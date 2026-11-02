@@ -11,7 +11,7 @@
       <header class="masthead">
         <a class="wordmark" href="./" aria-label="Snoopy News Network graphics">snn<span class="wordmark-dot">.</span></a>
         <span class="masthead-label">A WORLD INTRO, IN THE MAKING</span>
-        <span class="study-number">STUDIES 001—002</span>
+        <span class="study-number">STUDIES 001—017</span>
       </header>
 
       <section class="workspace" aria-labelledby="study-title">
@@ -72,6 +72,7 @@
             <div class="toolbar-actions">
               <button class="text-button" id="orbit-pause">Pause</button>
               <button class="text-button" id="orbit-replay">Replay <span aria-hidden="true">↻</span></button>
+              <button class="text-button" id="orbit-reset" title="Return to the side profile and pause">Reset camera</button>
             </div>
           </div>
           <div class="orbit-scrub">
@@ -81,6 +82,519 @@
           </div>
           <p class="orbit-help">Drag to look around. Play returns to the camera route.</p>
         </div>
+        </div>
+      </section>
+
+      <section class="workspace globe-workspace" aria-labelledby="globe-title">
+        <div class="study-heading">
+          <div>
+            <p class="eyebrow">THE WORLD COMES INTO VIEW</p>
+            <h2 id="globe-title">A bigger picture.</h2>
+          </div>
+          <p class="study-description">The same ink.<br />A whole new world.</p>
+        </div>
+
+        <div class="studies">
+          <div class="study">
+            <div class="artboard globe-artboard" data-background="paper">
+              <div class="artboard-label"><span class="status-dot"></span> THE WORLD, IN INK</div>
+              <span class="camera-angle">2D</span>
+              <div class="globe-scene" id="globe-flat-scene" role="img" aria-label="A flat ink globe showing the visible hemisphere, with North and South America outlined in black."></div>
+              <span class="registration registration-tl" aria-hidden="true"></span>
+              <span class="registration registration-tr" aria-hidden="true"></span>
+              <span class="registration registration-bl" aria-hidden="true"></span>
+              <span class="registration registration-br" aria-hidden="true"></span>
+              <div class="artboard-caption"><span>THE AMERICAS</span><span>03 / FLAT GLOBE</span></div>
+            </div>
+            <p class="globe-note">One circle. One hemisphere.</p>
+          </div>
+
+          <div class="study">
+            <div class="artboard globe-artboard" data-background="paper">
+              <div class="artboard-label"><span class="status-dot"></span> A WORLD OF DEPTH</div>
+              <span class="camera-angle">3D</span>
+              <div class="globe-scene" id="globe-spatial-scene" role="img" aria-label="A three-dimensional ink globe viewed from above the eastern Pacific, with North America and South America visible. Drag to turn the globe."></div>
+              <span class="registration registration-tl" aria-hidden="true"></span>
+              <span class="registration registration-tr" aria-hidden="true"></span>
+              <span class="registration registration-bl" aria-hidden="true"></span>
+              <span class="registration registration-br" aria-hidden="true"></span>
+              <div class="artboard-caption"><span>ACROSS THE PACIFIC</span><span>04 / SPHERICAL GLOBE</span></div>
+              <p class="error-message" id="globe-error" role="alert" hidden></p>
+            </div>
+            <div class="toolbar" aria-label="Globe controls">
+              <span class="globe-note">Drag to turn the globe.</span>
+              <div class="toolbar-actions">
+                <button class="text-button" id="globe-grid-toggle" aria-pressed="true">Grid lines</button>
+                <span class="toolbar-divider" aria-hidden="true"></span>
+                <button class="text-button" id="globe-reset">Reset camera <span aria-hidden="true">↻</span></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="workspace globe-workspace" aria-labelledby="globe-black-title">
+        <div class="study-heading">
+          <div>
+            <p class="eyebrow">THE WORLD, FILLED IN</p>
+            <h2 id="globe-black-title">The world in black.</h2>
+          </div>
+          <p class="study-description">Black continents.<br />The same world.</p>
+        </div>
+
+        <div class="studies">
+          <div class="study">
+            <div class="artboard globe-artboard" data-background="paper">
+              <div class="artboard-label"><span class="status-dot"></span> THE WORLD, IN BLACK</div>
+              <span class="camera-angle">2D</span>
+              <div class="globe-scene" id="globe-black-flat-scene" role="img" aria-label="A flat globe showing the visible hemisphere, with North and South America filled in black against a white ocean."></div>
+              <span class="registration registration-tl" aria-hidden="true"></span>
+              <span class="registration registration-tr" aria-hidden="true"></span>
+              <span class="registration registration-bl" aria-hidden="true"></span>
+              <span class="registration registration-br" aria-hidden="true"></span>
+              <div class="artboard-caption"><span>THE AMERICAS</span><span>05 / FLAT GLOBE</span></div>
+            </div>
+            <p class="globe-note">One circle. Black continents.</p>
+          </div>
+
+          <div class="study">
+            <div class="artboard globe-artboard" data-background="paper">
+              <div class="artboard-label"><span class="status-dot"></span> A WORLD OF DEPTH</div>
+              <span class="camera-angle">3D</span>
+              <div class="globe-scene" id="globe-black-spatial-scene" role="img" aria-label="A three-dimensional globe with black continents and a white ocean, viewed from above the eastern Pacific with North America and South America visible. Drag to turn the globe."></div>
+              <span class="registration registration-tl" aria-hidden="true"></span>
+              <span class="registration registration-tr" aria-hidden="true"></span>
+              <span class="registration registration-bl" aria-hidden="true"></span>
+              <span class="registration registration-br" aria-hidden="true"></span>
+              <div class="artboard-caption"><span>ACROSS THE PACIFIC</span><span>06 / SPHERICAL GLOBE</span></div>
+              <p class="error-message" id="globe-black-error" role="alert" hidden></p>
+            </div>
+            <div class="toolbar" aria-label="Black globe controls">
+              <span class="globe-note">Drag to turn the globe.</span>
+              <div class="toolbar-actions">
+                <button class="text-button" id="globe-black-grid-toggle" aria-pressed="true">Grid lines</button>
+                <span class="toolbar-divider" aria-hidden="true"></span>
+                <button class="text-button" id="globe-black-reset">Reset camera <span aria-hidden="true">↻</span></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="original-transition-studies" class="workspace globe-workspace transition-workspace" aria-labelledby="transition-title">
+        <div class="study-heading">
+          <div>
+            <p class="eyebrow">THREE TRANSITION STUDIES</p>
+            <h2 id="transition-title">From Snoop to the world.</h2>
+          </div>
+          <button class="text-button" id="transitions-play-all">Play all <span aria-hidden="true">▶</span></button>
+        </div>
+        <p class="transition-intro">Three six-second sketches. Play them together, or scrub each one to explore the handoff.</p>
+        <div class="transition-studies">
+          <article class="study transition-study" data-transition="head">
+            <h3>The head becomes the world</h3>
+            <div class="artboard transition-artboard" data-background="paper">
+              <div class="artboard-label"><span class="status-dot"></span> A CONTINUOUS TRANSFORMATION</div>
+              <div class="transition-scene" role="img" aria-label="Head-to-world animation prototype"></div>
+              <div class="artboard-caption"><span class="transition-phase">PROFILE</span><span>07 / HEAD</span></div>
+              <p class="error-message" role="alert" hidden></p>
+            </div>
+            <div class="toolbar" aria-label="Head transition controls">
+              <span class="transition-time">0.0 / 6.0s</span>
+              <div class="toolbar-actions">
+                <button class="text-button transition-play">Play</button>
+                <button class="text-button transition-replay">Replay ↻</button>
+              </div>
+            </div>
+            <input class="transition-progress" type="range" min="0" max="1" step="0.001" value="0" aria-label="Head transition progress" />
+            <p class="globe-note">Orbit to the front, then reveal Earth.</p>
+          </article>
+          <article class="study transition-study" data-transition="nose">
+            <h3>Through the nose</h3>
+            <div class="artboard transition-artboard" data-background="paper">
+              <div class="artboard-label"><span class="status-dot"></span> A MATCH INSIDE THE INK</div>
+              <div class="transition-scene" role="img" aria-label="Through-the-nose animation prototype"></div>
+              <div class="artboard-caption"><span class="transition-phase">PROFILE</span><span>08 / NOSE</span></div>
+              <p class="error-message" role="alert" hidden></p>
+            </div>
+            <div class="toolbar" aria-label="Nose transition controls">
+              <span class="transition-time">0.0 / 6.0s</span>
+              <div class="toolbar-actions">
+                <button class="text-button transition-play">Play</button>
+                <button class="text-button transition-replay">Replay ↻</button>
+              </div>
+            </div>
+            <input class="transition-progress" type="range" min="0" max="1" step="0.001" value="0" aria-label="Nose transition progress" />
+            <p class="globe-note">Into the nose. Out of North America.</p>
+          </article>
+          <article class="study transition-study" data-transition="ink">
+            <h3>The drawing becomes a globe</h3>
+            <div class="artboard transition-artboard" data-background="paper">
+              <div class="artboard-label"><span class="status-dot"></span> A WORLD DRAWN IN MOTION</div>
+              <div class="transition-scene" role="img" aria-label="Drawing-to-globe animation prototype"></div>
+              <div class="artboard-caption"><span class="transition-phase">PROFILE</span><span>09 / INK</span></div>
+              <p class="error-message" role="alert" hidden></p>
+            </div>
+            <div class="toolbar" aria-label="Ink transition controls">
+              <span class="transition-time">0.0 / 6.0s</span>
+              <div class="toolbar-actions">
+                <button class="text-button transition-play">Play</button>
+                <button class="text-button transition-replay">Replay ↻</button>
+              </div>
+            </div>
+            <input class="transition-progress" type="range" min="0" max="1" step="0.001" value="0" aria-label="Ink transition progress" />
+            <p class="globe-note">A contour unfolds into a world.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="flat-transition-studies" class="workspace globe-workspace transition-workspace" aria-labelledby="flat-transition-title">
+        <div class="study-heading">
+          <div>
+            <p class="eyebrow">THREE WAYS THROUGH THE INK</p>
+            <h2 id="flat-transition-title">Flat drawing. Whole world.</h2>
+          </div>
+          <button class="text-button" id="flat-transitions-play-all">Play all <span aria-hidden="true">▶</span></button>
+        </div>
+        <p class="transition-intro">The original 2D drawing, three points of departure. Follow the nose, eye, or ear into the same 3D world.</p>
+        <div class="transition-studies">
+          <article class="study transition-study" data-transition="flat-nose">
+            <h3>Through the nose · pure 2D</h3>
+            <div class="artboard transition-artboard" data-background="paper">
+              <div class="artboard-label"><span class="status-dot"></span> NOSE · PURE 2D</div>
+              <div class="transition-scene" role="img" aria-label="Pure 2D Snoopy nose-to-globe animation prototype"></div>
+              <div class="artboard-caption"><span class="transition-phase">PROFILE</span><span>10 / NOSE</span></div>
+              <p class="error-message" role="alert" hidden></p>
+            </div>
+            <div class="toolbar" aria-label="Flat nose transition controls">
+              <span class="transition-time">0.0 / 6.0s</span>
+              <div class="toolbar-actions">
+                <button class="text-button transition-play">Play</button>
+                <button class="text-button transition-replay">Replay ↻</button>
+              </div>
+            </div>
+            <input class="transition-progress" type="range" min="0" max="1" step="0.001" value="0" aria-label="Flat nose transition progress" />
+            <p class="globe-note">The familiar nose opens onto North America.</p>
+          </article>
+          <article class="study transition-study" data-transition="flat-eye">
+            <h3>Through the eye · pure 2D</h3>
+            <div class="artboard transition-artboard" data-background="paper">
+              <div class="artboard-label"><span class="status-dot"></span> EYE · PURE 2D</div>
+              <div class="transition-scene" role="img" aria-label="Pure 2D Snoopy eye-to-globe animation prototype"></div>
+              <div class="artboard-caption"><span class="transition-phase">PROFILE</span><span>11 / EYE</span></div>
+              <p class="error-message" role="alert" hidden></p>
+            </div>
+            <div class="toolbar" aria-label="Flat eye transition controls">
+              <span class="transition-time">0.0 / 6.0s</span>
+              <div class="toolbar-actions">
+                <button class="text-button transition-play">Play</button>
+                <button class="text-button transition-replay">Replay ↻</button>
+              </div>
+            </div>
+            <input class="transition-progress" type="range" min="0" max="1" step="0.001" value="0" aria-label="Flat eye transition progress" />
+            <p class="globe-note">A small mark becomes a view of the world.</p>
+          </article>
+          <article class="study transition-study" data-transition="flat-ear">
+            <h3>Through the ear · pure 2D</h3>
+            <div class="artboard transition-artboard" data-background="paper">
+              <div class="artboard-label"><span class="status-dot"></span> EAR · PURE 2D</div>
+              <div class="transition-scene" role="img" aria-label="Pure 2D Snoopy ear-to-globe animation prototype"></div>
+              <div class="artboard-caption"><span class="transition-phase">PROFILE</span><span>12 / EAR</span></div>
+              <p class="error-message" role="alert" hidden></p>
+            </div>
+            <div class="toolbar" aria-label="Flat ear transition controls">
+              <span class="transition-time">0.0 / 6.0s</span>
+              <div class="toolbar-actions">
+                <button class="text-button transition-play">Play</button>
+                <button class="text-button transition-replay">Replay ↻</button>
+              </div>
+            </div>
+            <input class="transition-progress" type="range" min="0" max="1" step="0.001" value="0" aria-label="Flat ear transition progress" />
+            <p class="globe-note">A sweep of black ink reveals the continents.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="orbit-film-studies" class="workspace globe-workspace" aria-labelledby="orbit-film-title">
+        <div class="study-heading">
+          <div>
+            <p class="eyebrow">THE WORLD OPENS UP</p>
+            <h2 id="orbit-film-title">Beyond the horizon.</h2>
+          </div>
+          <div class="film-heading-aside">
+            <p class="study-description">One continuous film.<br />Four moments to explore.</p>
+            <a class="text-button editor-jump" href="#scene-editor">Open scene editor <span aria-hidden="true">↘</span></a>
+          </div>
+        </div>
+        <p class="transition-intro">A six-second opening leads into an eighteen-second journey around the globe and through SNN. Use the numbered shots below to fine-tune a moment.</p>
+
+        <article class="study orbit-film-player orbit-film-master" data-shot="full" data-start="0" data-end="24">
+          <div class="artboard orbit-film-artboard" data-background="paper">
+            <div class="artboard-label"><span class="status-dot"></span> THE COMPLETE FILM · 00–24s</div>
+            <div class="orbit-film-scene" role="img" aria-label="Complete Snoopy to SNN film"></div>
+            <div class="artboard-caption"><span class="film-phase">SNOOPY · OPENING</span><span>13 / FULL FILM</span></div>
+            <p class="error-message" role="alert" hidden></p>
+          </div>
+          <div class="toolbar film-toolbar" aria-label="Complete film controls">
+            <span class="film-time">0.0 / 24.0s</span>
+            <div class="toolbar-actions">
+              <label class="film-loop-label"><input class="film-loop" type="checkbox" /> Loop</label>
+              <button class="text-button film-play">Play</button>
+              <button class="text-button film-replay">Replay ↻</button>
+            </div>
+          </div>
+          <input class="film-progress" type="range" min="0" max="1" step="0.001" value="0" aria-label="Complete film progress" />
+          <p class="film-timeline-note">00–06 Opening <span aria-hidden="true">·</span> 06–11.9 Arc <span aria-hidden="true">·</span> 11.9–17 Letters <span aria-hidden="true">·</span> 17–20 SNN <span aria-hidden="true">·</span> 20–24 Crossing</p>
+        </article>
+
+        <fieldset class="film-tuning">
+          <legend>Try a different feel</legend>
+          <div class="film-tuning-grid">
+            <label class="film-setting" for="film-opening">
+              <span>Opening</span>
+              <select id="film-opening">
+                <option value="nose" selected>Through the nose</option>
+                <option value="eye">Through the eye</option>
+                <option value="ear">Through the ear</option>
+              </select>
+            </label>
+            <label class="film-setting" for="film-weave">
+              <span>Camera weave</span>
+              <input id="film-weave" type="range" min="0" max="1.5" step="0.05" value="1" />
+              <span class="film-setting-endpoints"><span>Gentle</span><span>More movement</span></span>
+            </label>
+            <label class="film-setting" for="film-ring-speed">
+              <span>Ring drift</span>
+              <input id="film-ring-speed" type="range" min="0" max="2" step="0.1" value="1" />
+              <span class="film-setting-endpoints"><span>Still</span><span>Faster</span></span>
+            </label>
+            <label class="film-setting" for="film-speed">
+              <span>Playback speed</span>
+              <select id="film-speed">
+                <option value=".5">Half speed · 0.5×</option>
+                <option value="1" selected>Normal · 1×</option>
+                <option value="1.5">Faster · 1.5×</option>
+              </select>
+            </label>
+          </div>
+          <div class="film-tuning-footer">
+            <p>Changes apply to the full film and every shot below.</p>
+            <button class="text-button" id="film-reset-tuning" type="button">Reset settings ↻</button>
+          </div>
+        </fieldset>
+
+        <div class="film-storyboard-heading">
+          <h3>Four shots, one journey.</h3>
+          <p>Each preview starts at its midpoint. Play to loop a shot, or scrub to any frame. For feedback, use its shot number and the film time shown above it.</p>
+        </div>
+        <div class="film-storyboard-grid">
+          <article class="study orbit-film-player orbit-storyboard-card" data-shot="horizon" data-start="6" data-end="11.9">
+            <div class="film-shot-heading">
+              <h3><span class="film-shot-number">01</span> Around the North Pacific</h3>
+              <span class="film-shot-range">FILM 06–11.9s</span>
+            </div>
+            <div class="artboard orbit-film-artboard" data-background="paper">
+              <div class="artboard-label"><span class="status-dot"></span> SHOT 01 · 5.9s</div>
+              <div class="orbit-film-scene" role="img" aria-label="Around the North Pacific storyboard animation"></div>
+              <div class="artboard-caption"><span class="film-phase">AROUND THE NORTH PACIFIC</span><span>14 / STORYBOARD</span></div>
+              <p class="error-message" role="alert" hidden></p>
+            </div>
+            <div class="toolbar film-toolbar" aria-label="Around the North Pacific controls">
+              <span class="film-time">3.0 / 5.9s</span>
+              <div class="toolbar-actions">
+                <label class="film-loop-label"><input class="film-loop" type="checkbox" checked /> Loop</label>
+                <button class="text-button film-play">Play</button>
+                <button class="text-button film-replay">Replay ↻</button>
+              </div>
+            </div>
+            <input class="film-progress" type="range" min="0" max="1" step="0.001" value="0.5" aria-label="Around the North Pacific progress" />
+            <p class="globe-note">Descend near Baja, then arc past Alaska and Russia toward Japan.</p>
+          </article>
+          <article class="study orbit-film-player orbit-storyboard-card" data-shot="weave" data-start="11.9" data-end="17">
+            <div class="film-shot-heading">
+              <h3><span class="film-shot-number">02</span> Between the letters</h3>
+              <span class="film-shot-range">FILM 11.9–17s</span>
+            </div>
+            <div class="artboard orbit-film-artboard" data-background="paper">
+              <div class="artboard-label"><span class="status-dot"></span> SHOT 02 · 5.1s</div>
+              <div class="orbit-film-scene" role="img" aria-label="Between the letters storyboard animation"></div>
+              <div class="artboard-caption"><span class="film-phase">BETWEEN THE LETTERS</span><span>15 / STORYBOARD</span></div>
+              <p class="error-message" role="alert" hidden></p>
+            </div>
+            <div class="toolbar film-toolbar" aria-label="Between the letters controls">
+              <span class="film-time">2.5 / 5.1s</span>
+              <div class="toolbar-actions">
+                <label class="film-loop-label"><input class="film-loop" type="checkbox" checked /> Loop</label>
+                <button class="text-button film-play">Play</button>
+                <button class="text-button film-replay">Replay ↻</button>
+              </div>
+            </div>
+            <input class="film-progress" type="range" min="0" max="1" step="0.001" value="0.5" aria-label="Between the letters progress" />
+            <p class="globe-note">Rise behind the trailing N, curve away from Earth, then weave inside the middle N and outside the S.</p>
+          </article>
+          <article class="study orbit-film-player orbit-storyboard-card" data-shot="resolve" data-start="17" data-end="20">
+            <div class="film-shot-heading">
+              <h3><span class="film-shot-number">03</span> The blocks read SNN</h3>
+              <span class="film-shot-range">FILM 17–20s</span>
+            </div>
+            <div class="artboard orbit-film-artboard" data-background="paper">
+              <div class="artboard-label"><span class="status-dot"></span> SHOT 03 · 3s</div>
+              <div class="orbit-film-scene" role="img" aria-label="The blocks read SNN storyboard animation"></div>
+              <div class="artboard-caption"><span class="film-phase">THE BLOCKS READ SNN</span><span>16 / STORYBOARD</span></div>
+              <p class="error-message" role="alert" hidden></p>
+            </div>
+            <div class="toolbar film-toolbar" aria-label="The blocks read SNN controls">
+              <span class="film-time">1.5 / 3.0s</span>
+              <div class="toolbar-actions">
+                <label class="film-loop-label"><input class="film-loop" type="checkbox" checked /> Loop</label>
+                <button class="text-button film-play">Play</button>
+                <button class="text-button film-replay">Replay ↻</button>
+              </div>
+            </div>
+            <input class="film-progress" type="range" min="0" max="1" step="0.001" value="0.5" aria-label="The blocks read SNN progress" />
+            <p class="globe-note">The separate forms resolve into the network initials.</p>
+          </article>
+          <article class="study orbit-film-player orbit-storyboard-card" data-shot="cross" data-start="20" data-end="24">
+            <div class="film-shot-heading">
+              <h3><span class="film-shot-number">04</span> Across the world</h3>
+              <span class="film-shot-range">FILM 20–24s</span>
+            </div>
+            <div class="artboard orbit-film-artboard" data-background="paper">
+              <div class="artboard-label"><span class="status-dot"></span> SHOT 04 · 4s</div>
+              <div class="orbit-film-scene" role="img" aria-label="Across the world storyboard animation"></div>
+              <div class="artboard-caption"><span class="film-phase">ACROSS THE WORLD</span><span>17 / STORYBOARD</span></div>
+              <p class="error-message" role="alert" hidden></p>
+            </div>
+            <div class="toolbar film-toolbar" aria-label="Across the world controls">
+              <span class="film-time">2.0 / 4.0s</span>
+              <div class="toolbar-actions">
+                <label class="film-loop-label"><input class="film-loop" type="checkbox" checked /> Loop</label>
+                <button class="text-button film-play">Play</button>
+                <button class="text-button film-replay">Replay ↻</button>
+              </div>
+            </div>
+            <input class="film-progress" type="range" min="0" max="1" step="0.001" value="0.5" aria-label="Across the world progress" />
+            <p class="globe-note">Carry the motion across the globe into the closing view.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="scene-editor" class="workspace globe-workspace scene-editor" aria-labelledby="scene-editor-title">
+        <div class="study-heading">
+          <div>
+            <p class="eyebrow">SCENE EDITOR</p>
+            <h2 id="scene-editor-title">See the whole scene.</h2>
+          </div>
+          <a class="text-button editor-jump" href="#orbit-film-studies">Back to the film <span aria-hidden="true">↗</span></a>
+        </div>
+        <p class="transition-intro">Orbit edits update the film previews. Camera track stays fixed.</p>
+
+        <div class="editor-layout">
+          <aside class="editor-sidebar" aria-label="Scene editor settings">
+            <fieldset class="editor-control-group">
+              <legend>SNN orbit</legend>
+              <p class="editor-control-note">Find the right position and pace.</p>
+              <div class="editor-orbit-settings">
+                <label class="editor-setting" for="editor-orbit-radius">
+                  <span class="editor-setting-heading"><span>Radius</span><output for="editor-orbit-radius" data-orbit-value="radius">205 u</output></span>
+                  <input id="editor-orbit-radius" data-orbit-setting="radius" type="range" min="165" max="360" step="1" value="205" />
+                </label>
+                <label class="editor-setting" for="editor-orbit-tilt">
+                  <span class="editor-setting-heading"><span>Tilt offset</span><output for="editor-orbit-tilt" data-orbit-value="tilt">0°</output></span>
+                  <input id="editor-orbit-tilt" data-orbit-setting="tilt" type="range" min="-90" max="90" step="1" value="0" />
+                </label>
+                <label class="editor-setting" for="editor-orbit-heading">
+                  <span class="editor-setting-heading"><span>Heading offset</span><output for="editor-orbit-heading" data-orbit-value="heading">0°</output></span>
+                  <input id="editor-orbit-heading" data-orbit-setting="heading" type="range" min="-180" max="180" step="1" value="0" />
+                </label>
+                <label class="editor-setting" for="editor-orbit-phase">
+                  <span class="editor-setting-heading"><span>Starting phase</span><output for="editor-orbit-phase" data-orbit-value="phase">0°</output></span>
+                  <input id="editor-orbit-phase" data-orbit-setting="phase" type="range" min="-180" max="180" step="1" value="0" />
+                </label>
+                <label class="editor-setting" for="editor-setting-speed">
+                  <span class="editor-setting-heading"><span>Orbit speed</span><output for="editor-setting-speed" data-orbit-value="speed">1×</output></span>
+                  <input id="editor-setting-speed" data-orbit-setting="speed" type="range" min="-0.5" max="2" step="0.05" value="1" />
+                </label>
+              </div>
+              <p class="editor-control-note editor-offset-note">0° keeps the current orbital plane. Positive speed follows its current direction.</p>
+              <button class="text-button" id="editor-reset-orbit" type="button">Reset orbit ↻</button>
+            </fieldset>
+
+            <fieldset class="editor-control-group editor-visibility">
+              <legend>Show in the editor</legend>
+              <label><input id="editor-show-path" type="checkbox" checked /> Camera path</label>
+              <label><input id="editor-show-orbit" type="checkbox" checked /> SNN orbit</label>
+              <label><input id="editor-show-frustum" type="checkbox" checked /> Camera frustum</label>
+              <label><input id="editor-ghost-earth" type="checkbox" /> Ghost Earth</label>
+            </fieldset>
+
+            <div class="editor-save-controls">
+              <button class="text-button editor-export" id="editor-export" type="button">Export settings <span aria-hidden="true">↗</span></button>
+              <p id="editor-status" class="editor-status" role="status" aria-live="polite">Ready to adjust the orbit.</p>
+            </div>
+          </aside>
+
+          <div class="editor-main">
+            <div class="editor-view-toolbar" aria-label="Editor view controls">
+              <span class="editor-view-title"><span class="status-dot"></span> SCENE VIEW</span>
+              <div class="editor-view-buttons">
+                <button class="text-button" id="editor-view-front" type="button">Front</button>
+                <button class="text-button" id="editor-view-top" type="button">Top</button>
+                <button class="text-button" id="editor-view-side" type="button">Side</button>
+                <button class="text-button" id="editor-match-camera" type="button" title="Pause and move the editor view to the film camera at the current timestamp">Match film camera</button>
+                <span class="toolbar-divider" aria-hidden="true"></span>
+                <button class="text-button" id="editor-reset-view" type="button">Reset view ↻</button>
+              </div>
+            </div>
+            <div class="editor-navigation-toolbar" aria-label="Scene navigation">
+              <div class="editor-mode-buttons" role="group" aria-label="Drag mode">
+                <button class="text-button" id="editor-mode-orbit" type="button" aria-pressed="true">Orbit</button>
+                <button class="text-button" id="editor-mode-pan" type="button" aria-pressed="false">Pan</button>
+              </div>
+              <div class="editor-zoom-buttons" role="group" aria-label="Zoom controls">
+                <span>ZOOM</span>
+                <button class="editor-icon-button" id="editor-zoom-out" type="button" aria-label="Zoom out">−</button>
+                <button class="editor-icon-button" id="editor-zoom-in" type="button" aria-label="Zoom in">+</button>
+              </div>
+            </div>
+            <div id="editor-viewport" class="editor-viewport" role="img" tabindex="0" aria-label="Interactive overview of Earth, the SNN orbit, and the film camera path. Arrow keys pan the view." aria-describedby="editor-gestures">
+              <span id="editor-preview-label" class="editor-preview-label">FILM CAMERA</span>
+            </div>
+            <p id="editor-gestures" class="editor-gestures">Drag to orbit <span aria-hidden="true">·</span> Right drag / Shift-drag to pan <span aria-hidden="true">·</span> Scroll to zoom <span aria-hidden="true">·</span> Arrow keys pan</p>
+            <div class="editor-legend" aria-label="Scene guide">
+              <span><i class="editor-key editor-key-orbit" aria-hidden="true"></i> SNN orbit</span>
+              <span><i class="editor-key editor-key-speed" aria-hidden="true"></i> Camera path: slow → fast</span>
+              <span><i class="editor-key editor-key-dot" aria-hidden="true"></i> Every 0.5s</span>
+            </div>
+
+            <div class="editor-timeline">
+              <div class="editor-timeline-header">
+                <div class="editor-timeline-position">
+                  <button class="text-button editor-play" id="editor-play" type="button">Play</button>
+                  <span id="editor-time-label" class="editor-time-label">13.20s</span>
+                </div>
+                <span id="editor-shot-label" class="editor-shot-label">02 · BETWEEN THE LETTERS</span>
+              </div>
+              <input id="editor-time" type="range" min="6" max="24" step="0.01" value="13.2" aria-label="Scene editor film time in seconds" />
+              <div class="editor-time-scale" aria-hidden="true"><span>6s</span><span>12s</span><span>18s</span><span>24s</span></div>
+            </div>
+
+            <dl class="editor-metrics">
+              <div><dt>Camera speed</dt><dd><span id="editor-camera-speed">—</span> <span class="editor-unit">u/s</span></dd></div>
+              <div><dt>SNN speed</dt><dd><span id="editor-orbit-speed">—</span> <span class="editor-unit">u/s</span></dd></div>
+              <div><dt>Earth distance</dt><dd><span id="editor-distance">—</span> <span class="editor-unit">u</span></dd></div>
+            </dl>
+
+            <div class="editor-chart-wrap">
+              <div class="editor-chart-heading">
+                <h3>Motion over time</h3>
+                <span>Click the graph to scrub</span>
+              </div>
+              <canvas id="editor-speed-chart" width="900" height="110" role="img" aria-label="Camera and SNN speed from 7.1 to 24 seconds. Click to scrub, or use the film time slider above."></canvas>
+              <div class="editor-chart-footer"><span>Speed in scene units per second · u/s</span><span>7.1–24s</span></div>
+            </div>
+            <p class="editor-chart-note">Path and speed plot begin at 7.1s, after the opening lens transition. Dots mark 0.5s.</p>
+          </div>
         </div>
       </section>
 

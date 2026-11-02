@@ -1,6 +1,10 @@
 import * as THREE from 'three';
 import { createSnoopy } from './snoopy.js';
 import { startOrbitView } from './orbit-view.js';
+import { startGlobeStudies } from './globe.js';
+import { startTransitionStudies } from './transition-views.js';
+import { startOrbitFilmStudies } from './orbit-film-views.js';
+import { startOrbitEditor } from './orbit-editor.js';
 import './style.css';
 
 const container = document.querySelector('#scene');
@@ -91,8 +95,9 @@ function start() {
 
 for (const button of document.querySelectorAll('button[data-background]')) {
   button.addEventListener('click', () => {
-    artboard.dataset.background = button.dataset.background;
-    document.querySelector('#orbit-artboard').dataset.background = button.dataset.background;
+    for (const frame of document.querySelectorAll('.artboard')) {
+      frame.dataset.background = button.dataset.background;
+    }
     for (const swatch of document.querySelectorAll('button[data-background]')) {
       swatch.setAttribute('aria-pressed', String(swatch === button));
     }
@@ -111,3 +116,7 @@ referenceToggle.addEventListener('click', () => {
 
 start();
 startOrbitView();
+startGlobeStudies();
+startTransitionStudies();
+startOrbitFilmStudies();
+startOrbitEditor();

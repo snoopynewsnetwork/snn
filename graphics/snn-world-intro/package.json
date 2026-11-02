@@ -8,10 +8,13 @@
     "build": "vite build",
     "preview": "vite preview --host 127.0.0.1",
     "test": "node --test test/*.test.js",
-    "check": "node --check src/main.js && node --check src/snoopy.js && node --check src/snoopy-3d.js && node --check src/orbit-view.js && npm test && vite build"
+    "check": "node --check src/main.js && node --check src/snoopy.js && node --check src/snoopy-3d.js && node --check src/orbit-view.js && node --check src/globe.js && npm test && vite build"
   },
   "dependencies": {
-    "three": "0.186.1"
+    "d3-geo": "3.1.1",
+    "three": "0.186.1",
+    "topojson-client": "3.1.0",
+    "world-atlas": "2.0.2"
   },
   "devDependencies": {
     "vite": "8.3.4"
