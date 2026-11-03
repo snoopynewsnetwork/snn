@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { parseNorthCarolina, parseKansas } from "../src/monitor.ts";
+import { readFile } from "node:fs/promises";
+import { parseNorthCarolina, parseKansas, parseKansasResults } from "../src/monitor.ts";
 
 const catalog = JSON.stringify([{ edt: "11/03/2026", con: "1" }]);
 const counties = Array.from({ length: 101 }, (_, cid) => ({
@@ -67,4 +68,26 @@ test("Kansas watches publications without admitting primary, historical or arbit
   assert.deepEqual(publication.publications, [{ title: "2026 General Election Results", url: "https://www.sos.ks.gov/26elec/general.pdf" }]);
   assert.equal(publication.candidates, undefined);
   assert.throws(() => parseKansas("<h1>Just a moment</h1>", "https://www.sos.ks.gov/"));
+});
+
+test("Kansas parses the real statewide HTML excerpt and preserves downward corrections", async () => {
+  const fixture = await readFile(new URL("./fixtures/kansas-general-setup.html", import.meta.url), "utf8");
+  const setup = parseKansasResults(fixture);
+  assert.equal(setup.status, "setup");
+  assert.equal(setup.totalPrecincts, 4168);
+  assert.deepEqual(setup.candidates.map(candidate => candidate.name), ["Adam Hamilton", "Roger Marshall", "David C Graham"]);
+  const update = fixture.replace(/(<p>D-Adam Hamilton<\/p>[\s\S]*?<p>)0(<\/p>)/, '$1100$2').replace(/(<p>Total Votes<\/p>[\s\S]*?<p>)0(<\/p>)/, '$1100$2');
+  assert.equal(parseKansasResults(update).totalVotes, 100);
+  const correction = update.replace(/<p>100<\/p>/g, '<p>90</p>');
+  assert.equal(parseKansasResults(correction).totalVotes, 90);
+  assert.equal(parseKansasResults(correction).status, "reporting");
+  assert.equal(parseKansasResults(fixture.replace(/11\/03\/2026/g, '11/04/2026')).status, "setup");
+  for (const bad of [
+    fixture.replace('2026 General Election Results', '2026 Primary Election Results'),
+    fixture.replace(/11\/03\/2026/g, '08/04/2026'),
+    fixture.replace('D-Adam Hamilton', 'D-Other Candidate'),
+    fixture.replace("id='1001'", "id='2001'"),
+    fixture.replace(/<option value='allen.html'>Allen<\/option>/, ''),
+    fixture.replace(/(<p>Total Votes<\/p>[\s\S]*?<p>)0(<\/p>)/, '$11$2'),
+  ]) assert.throws(() => parseKansasResults(bad));
 });
