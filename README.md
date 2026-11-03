@@ -6,42 +6,62 @@ Versioned reporting notes for U.S. elections.
 
 The app provides a searchable Senate race index, race details, research links,
 and a dated reporting log. It imports the 35 baseline race records directly from
-this repository. Kansas and North Carolina have automatic official-source
-monitoring; other races and the reporting log are manually maintained.
+this repository. Every Senate and House race on the election cheat sheet has
+automatic live monitoring. The reporting log and analytical timing cues are
+maintained by editors.
 
 ### Automatic election monitoring
 
-Cloudflare runs the collector every minute, independently of visitors, Paseo,
-or an agent session.
-The index and both race pages show source health, last check, last verified
-snapshot, last count/link change, and links to retained source responses.
-Open pages reload monitoring status every minute. A source without a successful
-check in 15 minutes is marked stale. Errors back off from five minutes to one
-hour and retain the last verified counts.
+Cloudflare Cron runs every minute, independently of visitors, Paseo, agent
+sessions or a laptop. The collector covers all 14 Senate races, 48 individual
+House races, and the seven additional districts needed for the three group
+watch items. Florida, Georgia and Texas governor returns, Detroit city Senate
+returns, and Johnson County, Kansas Senate returns support the timing cues.
+The cues still require an editor's evidence assessment.
 
-- **North Carolina:** reads the NCSBE election catalog, all-100-county status
-  file and statewide November 3, 2026 results. Validates the election, Senate
-  group 1383, candidate configuration and voting-method sums. Zero setup is
-  labeled separately from reported votes. Successive cumulative counts replace
-  each other, including downward corrections. Precinct reporting does not
-  estimate the votes remaining. Counts remain unofficial; certification is
-  not inferred from a reporting percentage.
-- **Kansas:** parses the SOS statewide election-night HTML, checking the 2026
-  general-election metadata, election-day-or-later timestamp, Senate contest
-  1001, three printed candidates, all 105 county links and candidate/total
-  reconciliation. The state home/results pages and Johnson County's November
-  page remain publication backstops. Access errors retain the last verified
-  result. The source supplies statewide totals, not a verified county-level
-  count crosswalk or voting-method split.
+The registry contains 26 adapters across 25 states. Each adapter runs in its own
+SQLite-backed `ElectionMonitor` Durable Object, isolating network failures and
+request budgets. Shared statewide feeds serve multiple races. The `Newsroom`
+object saves the combined result, so browser reads do not hit election servers.
+Opening the desk or **Fetch live results** requests a source check; a persisted
+30-second lease coalesces concurrent requests. Scheduled failures back off from
+one to fifteen minutes; explicit fetches retry them within the same lease.
 
-`GET /api/monitor` returns current status. `GET /api/monitor/snapshots/:id`
-returns immutable, deduplicated UTF-8 source responses, SHA-256 hashes and HTTP
-metadata. `POST /api/monitor/refresh` requires the editor key and runs an initial
-check (a 30-second lease prevents duplicate requests without skipping the next
-scheduled minute). The one-minute cron
-continues without editor credentials. Changed source responses remain in
-Durable Object SQLite across deploys. No automatic race calls or forecasts are
-generated.
+Official state or officially linked vendor feeds are preferred. CNN's public
+results feed is an explicitly attributed newsroom fallback where official
+counts cannot be collected. Kansas and Pennsylvania select official results
+when verified and use CNN when the official feed fails validation or access.
+Source attribution follows the selected feed. The desk shows source health,
+last check, last verified counts, and retained source responses under **Live
+details**. Supporting county/city counts always show partial coverage.
+
+Parsers pin November 3, 2026 election identities, contests and candidate lists,
+reconcile totals, and reject nonzero test data. Zero setup is labelled
+separately. Cumulative snapshots replace previous counts, including downward
+corrections. Partial geography, missing data and stale counts cannot trigger
+statewide/district margin bands. Precinct ratios never imply vote completion.
+Group guardrails count only explicit publisher-declared wins, with leads shown
+separately; they never infer seats won from current margins.
+
+Source responses are conditionally fetched with ETags/Last-Modified where
+supported. Versioned Clarity feeds resolve their numeric version pointer before
+fetching the corresponding summary. Large responses are stored in SQLite
+chunks with deduplicated SHA-256 evidence. Retention keeps up to 20 recent
+responses per source within a 64 MB adapter budget, while protecting current
+source and verified-result evidence; old unreferenced evidence can expire.
+Results and editor history survive deploys.
+
+`GET /api/monitor` returns combined source health and contest snapshots.
+`GET /api/live-monitor/:adapter/snapshots/:id` returns saved evidence and HTTP
+metadata (binary feeds are base64). Historical `/api/monitor/snapshots/:id`
+links remain readable. `POST /api/monitor/refresh` requires the editor key;
+`POST /api/election-night/refresh` is public and fetches only configured sources.
+
+Source evidence, limitations and exact endpoints:
+
+- [Southeast: FL, GA, SC, NC, VA, KY, IN](docs/live-sources-southeast.md)
+- [Northeast/Midwest: OH, MI, PA, NJ, NY, ME, NH, MS](docs/live-sources-northeast.md)
+- [West/Plains: KS, TX, IA, NE, MN, AZ, CO, WI, MT, CA](docs/live-sources-west.md)
 
 Live POC: https://snoopy-news-network.snoopy-news-network.workers.dev
 
@@ -52,8 +72,9 @@ Object, and verifies the live app. The workflow uses the repository secrets
 on the Worker and persists across deployments.
 
 The Worker serves the frontend and JSON API. A SQLite-backed `Newsroom` Durable
-Object named `senate-2026` stores baseline races and reporting notes. This single
-object keeps the POC simple; split objects by race if traffic or scope grows.
+Object named `senate-2026` stores baseline races, reporting notes, editor history
+and the combined live desk. Per-adapter `ElectionMonitor` objects store source
+responses and verified contest snapshots.
 Baseline records are refreshed when the generated seed changes. Reporting notes
 survive redeployment and are never overwritten by the seed. Removing a note
 hides it from the public log while preserving its row for recovery.
@@ -67,23 +88,23 @@ logs. The original image is available from the desk; names, polling references,
 times and scenario brackets are transcribed from it, rather than asserted as
 verified ballot information.
 
-Use **Editor access**, open a watch item, and save its reporting status, signed
-D-minus-R margin (I-minus-R in Nebraska), optional estimated vote percentage
-counted and sourced winner, or group GOP seat count. Timing cues record an
-editor's evidence assessment. Every update requires a source URL, observation time and note.
-Entries are public, shared through the existing SQLite Durable Object, and
-refresh every 30 seconds while the desk is visible. Kansas and North Carolina
-show automatic official vote totals at the top of the desk and derive their
-watchlist margins from those counts. Other watch items use editor entries.
-Opening the desk or clicking **Fetch live results** asks the server to fetch
-the official sources, subject to 30-second duplicate-run protection. Explicit
-fetches retry failed sources; scheduled checks apply failure backoff.
-No editor key or manual result entry is needed for these two states.
+Open a race's **Live details** for automatically fetched counts and source
+health. No editor key or manual result entry is required. The browser refreshes
+the saved desk every 30 seconds while visible. **Fetch live results** requests
+fresh source checks and shows the latest collection time; requests within
+30 seconds share the same check.
 
-Automatic margins divide D minus R votes by all candidate votes. Zero setup
-produces no margin or signal; source failures retain verified counts with a
-warning and suppress stale signal highlights. These live snapshots do not
-overwrite the editor history, declare winners or estimate votes remaining.
+Automatic margins divide D minus R votes (Osborn minus Ricketts in Nebraska)
+by all candidate votes. Zero setup produces no margin or signal. Source
+failures retain verified counts with a warning and suppress stale highlights.
+Automatic snapshots do not overwrite versioned editor history. Only explicit
+publisher declarations can populate winners; CNN projections appear as source
+notes, and no source's precinct percentage is treated as votes remaining.
+
+Use **Editor access** to record evidence for analytical timing cues. Each update
+requires a source URL, observation time and note. Editor history for automatic
+races remains available through the history API, but old manual totals do not
+replace unavailable live results.
 
 A highlighted band describes the sheet's interpretation of the current entry;
 it never calls a race or calculates chamber control. Fractional margins between
@@ -152,7 +173,7 @@ its usage limits. No custom domain is required.
 | GET | `/api/races` | List races with reporting-note counts |
 | GET | `/api/races/:slug` | Read a race, research sources, and notes |
 | GET | `/api/election-night` | Read the guide and latest watch-item observations |
-| POST | `/api/election-night/refresh` | Fetch official results and return the live desk; public, rate limited by the collector lease |
+| POST | `/api/election-night/refresh` | Fetch configured live results and return the desk; public, rate limited by the collector lease |
 | GET | `/api/election-night/:id/history` | Read the last 20 versions of a watch item |
 | PUT | `/api/election-night/:id` | Append an editor update with `expectedVersion` concurrency protection |
 | POST | `/api/editor` | Verify the editor key |
@@ -160,7 +181,7 @@ its usage limits. No custom domain is required.
 | DELETE | `/api/races/:slug/notes/:id` | Remove a note from the public log |
 
 Editing routes require `Authorization: Bearer <ADMIN_TOKEN>`; the public
-`POST /api/election-night/refresh` only fetches fixed official sources and is
+`POST /api/election-night/refresh` only fetches configured live sources and is
 limited by the collector's 30-second lease.
 Creating a note requires JSON fields `category` (`news`, `candidates`, `polling`,
 `finance`, or `results`), `title`, `body`, `date` (`YYYY-MM-DD`), and `sourceUrl`

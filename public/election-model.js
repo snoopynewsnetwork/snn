@@ -1,5 +1,5 @@
 export function signalFor(item, observation) {
-  if (observation?.sourceKind === 'official' && observation.sourceStatus !== 'reporting') return null;
+  if (observation?.sourceKind && observation.sourceStatus !== 'reporting') return null;
   if (!observation || observation.status === 'awaiting' || item.chamber === 'cue') return null;
   const { margin, winner, gopSeats } = observation;
   if (item.chamber === 'senate') {

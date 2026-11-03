@@ -18,7 +18,10 @@ for (let attempt = 1; attempt <= 12; attempt++) {
     assert.equal(desk.status, 200);
     const live = await desk.json();
     assert.equal(live.intervalMinutes, 1);
-    assert.deepEqual(live.liveResults.map(result => result.race), ["kansas", "north-carolina"]);
+    assert.equal(live.coverage.configured, 65);
+    assert.equal(live.coverage.total, 65);
+    for (const item of [...live.guide.senate, ...live.guide.house]) assert.ok(live.liveResults.some(result => result.target === item.id), item.id);
+    assert.ok(live.liveResults.some(result => result.target === "house-tx-35"));
     const client = await fetch(`${base}/election-night.js`, { signal: AbortSignal.timeout(10000) });
     assert.equal(client.status, 200);
     assert.match(await client.text(), /Fetch live results/);
