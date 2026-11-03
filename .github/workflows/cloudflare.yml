@@ -24,6 +24,7 @@ jobs:
             /public/
             /scripts/
             /test/
+            /graphics/snn-world-intro/
             /package.json
             /package-lock.json
             /tsconfig.json
@@ -36,6 +37,7 @@ jobs:
       - run: npm ci
       - run: npm run check
       - run: npm test
+      - run: npm test --workspace snn-world-intro
       - run: npm run cf -- deploy --dry-run
 
   deploy:
@@ -57,6 +59,7 @@ jobs:
             /public/
             /scripts/
             /test/
+            /graphics/snn-world-intro/
             /package.json
             /package-lock.json
             /tsconfig.json

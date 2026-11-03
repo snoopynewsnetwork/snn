@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#eeeae2" />
+    <title>Snoop — SNN World Intro</title>
+  </head>
+  <body>
+    <main class="studio">
+      <header class="masthead">
+        <a class="wordmark" href="./" aria-label="Snoopy News Network graphics">snn<span class="wordmark-dot">.</span></a>
+        <span class="masthead-label">A WORLD INTRO, IN THE MAKING</span>
+        <span class="study-number">24 SECONDS / 06 SHOTS</span>
+      </header>
+
+      <section id="orbit-film-studies" class="workspace film-workspace" aria-labelledby="orbit-film-title">
+        <div class="study-heading">
+          <div>
+            <p class="eyebrow">THE CURRENT CUT</p>
+            <h1 id="orbit-film-title">From Snoop to the world.</h1>
+          </div>
+          <div class="film-heading-aside">
+            <p class="study-description">One continuous film.<br />Six shots to shape.</p>
+            <a class="text-button editor-jump" href="#scene-editor">Open scene editor <span aria-hidden="true">↘</span></a>
+          </div>
+        </div>
+        <p class="transition-intro">Flat ink, a flight around Earth, and a journey through SNN. Play the full cut or work on one shot below.</p>
+
+        <article class="study orbit-film-player orbit-film-master" data-shot="full" data-start="0" data-end="24">
+          <div class="artboard orbit-film-artboard" data-background="paper">
+            <div class="artboard-label"><span class="status-dot"></span> THE COMPLETE FILM · 00–24s</div>
+            <div class="orbit-film-scene" role="img" aria-label="Complete Snoopy to SNN film"></div>
+            <div class="artboard-caption"><span class="film-phase">01 · THROUGH THE INK</span><span>FULL FILM</span></div>
+            <p class="error-message" role="alert" hidden></p>
+          </div>
+          <div class="toolbar film-toolbar" aria-label="Complete film controls">
+            <span class="film-time">0.0 / 24.0s</span>
+            <div class="toolbar-actions">
+              <label class="film-loop-label"><input class="film-loop" type="checkbox" /> Loop</label>
+              <button class="text-button film-play">Play</button>
+              <button class="text-button film-replay">Replay ↻</button>
+              <button class="text-button" id="film-export" type="button" disabled>Export MP4</button>
+            </div>
+          </div>
+          <input class="film-progress" type="range" min="0" max="1" step="0.001" value="0" aria-label="Complete film progress" />
+          <div class="film-export-row">
+            <span id="film-export-status" role="status" aria-live="polite">Checking video export…</span>
+            <button class="text-button" id="film-export-cancel" type="button" hidden>Cancel export</button>
+            <a class="text-button" id="film-export-download" hidden>Download MP4 ↗</a>
+            <progress id="film-export-progress" max="1440" value="0" aria-label="Video export progress" hidden></progress>
+          </div>
+          <p class="film-timeline-note" id="film-timeline-note" aria-label="Film shot timeline"></p>
+        </article>
+
+        <fieldset class="film-tuning">
+          <legend>Try a different feel</legend>
+          <div class="film-tuning-grid">
+            <label class="film-setting" for="film-opening">
+              <span>Opening</span>
+              <select id="film-opening">
+                <option value="nose" selected>Through the nose</option>
+                <option value="eye">Through the eye</option>
+                <option value="ear">Through the ear</option>
+              </select>
+            </label>
+            <label class="film-setting" for="film-weave">
+              <span>Camera weave</span>
+              <input id="film-weave" type="range" min="0" max="1.5" step="0.05" value="1" />
+              <span class="film-setting-endpoints"><span>Gentle</span><span>More movement</span></span>
+            </label>
+            <label class="film-setting" for="film-ring-speed">
+              <span>Ring drift</span>
+              <input id="film-ring-speed" type="range" min="0" max="2" step="0.1" value="1" />
+              <span class="film-setting-endpoints"><span>Still</span><span>Faster</span></span>
+            </label>
+            <label class="film-setting" for="film-speed">
+              <span>Playback speed</span>
+              <select id="film-speed">
+                <option value=".5">Half speed · 0.5×</option>
+                <option value="1" selected>Normal · 1×</option>
+                <option value="1.5">Faster · 1.5×</option>
+              </select>
+            </label>
+          </div>
+          <div class="film-tuning-footer">
+            <p>Changes apply to the full film and every shot below.</p>
+            <button class="text-button" id="film-reset-tuning" type="button">Reset settings ↻</button>
+          </div>
+        </fieldset>
+
+        <div class="film-storyboard-heading">
+          <h2 id="film-storyboard-title">Six shots, one continuous film.</h2>
+          <p>Each shot loops on its own and scrubs through the same film. Use the shot number and timestamp when giving feedback.</p>
+        </div>
+        <div class="film-storyboard-grid" id="film-storyboards"></div>
+        <template id="film-shot-template">
+          <article class="study orbit-film-player orbit-storyboard-card">
+            <div class="film-shot-heading">
+              <h3><span class="film-shot-number"></span> <span class="film-shot-title"></span></h3>
+              <span class="film-shot-range"></span>
+            </div>
+            <div class="artboard orbit-film-artboard" data-background="paper">
+              <div class="artboard-label"><span class="status-dot"></span></div>
+              <div class="orbit-film-scene" role="img"></div>
+              <div class="artboard-caption"><span class="film-phase"></span><span class="shot-caption-number"></span></div>
+              <p class="error-message" role="alert" hidden></p>
+            </div>
+            <div class="toolbar film-toolbar">
+              <span class="film-time"></span>
+              <div class="toolbar-actions">
+                <label class="film-loop-label"><input class="film-loop" type="checkbox" checked /> Loop</label>
+                <button class="text-button film-play">Play</button>
+                <button class="text-button film-replay">Replay ↻</button>
+              </div>
+            </div>
+            <input class="film-progress" type="range" min="0" max="1" step="0.001" value="0.5" />
+            <p class="globe-note"></p>
+          </article>
+        </template>
+      </section>
+
+      <section id="scene-editor" class="workspace globe-workspace scene-editor" aria-labelledby="scene-editor-title">
+        <div class="study-heading">
+          <div>
+            <p class="eyebrow">SCENE EDITOR</p>
+            <h2 id="scene-editor-title">See the whole scene.</h2>
+          </div>
+          <a class="text-button editor-jump" href="#orbit-film-studies">Back to the film <span aria-hidden="true">↗</span></a>
+        </div>
+        <p class="transition-intro">Orbit edits update the film previews. Camera track stays fixed.</p>
+
+        <div class="editor-layout">
+          <aside class="editor-sidebar" aria-label="Scene editor settings">
+            <fieldset class="editor-control-group">
+              <legend>SNN orbit</legend>
+              <p class="editor-control-note">Find the right position and pace.</p>
+              <div class="editor-orbit-settings">
+                <label class="editor-setting" for="editor-orbit-radius">
+                  <span class="editor-setting-heading"><span>Radius</span><output for="editor-orbit-radius" data-orbit-value="radius">205 u</output></span>
+                  <input id="editor-orbit-radius" data-orbit-setting="radius" type="range" min="165" max="360" step="1" value="205" />
+                </label>
+                <label class="editor-setting" for="editor-orbit-tilt">
+                  <span class="editor-setting-heading"><span>Tilt offset</span><output for="editor-orbit-tilt" data-orbit-value="tilt">0°</output></span>
+                  <input id="editor-orbit-tilt" data-orbit-setting="tilt" type="range" min="-90" max="90" step="1" value="0" />
+                </label>
+                <label class="editor-setting" for="editor-orbit-heading">
+                  <span class="editor-setting-heading"><span>Heading offset</span><output for="editor-orbit-heading" data-orbit-value="heading">0°</output></span>
+                  <input id="editor-orbit-heading" data-orbit-setting="heading" type="range" min="-180" max="180" step="1" value="0" />
+                </label>
+                <label class="editor-setting" for="editor-orbit-phase">
+                  <span class="editor-setting-heading"><span>Starting phase</span><output for="editor-orbit-phase" data-orbit-value="phase">0°</output></span>
+                  <input id="editor-orbit-phase" data-orbit-setting="phase" type="range" min="-180" max="180" step="1" value="0" />
+                </label>
+                <label class="editor-setting" for="editor-setting-speed">
+                  <span class="editor-setting-heading"><span>Orbit speed</span><output for="editor-setting-speed" data-orbit-value="speed">1×</output></span>
+                  <input id="editor-setting-speed" data-orbit-setting="speed" type="range" min="-0.5" max="2" step="0.05" value="1" />
+                </label>
+              </div>
+              <p class="editor-control-note editor-offset-note">0° keeps the current orbital plane. Positive speed follows its current direction.</p>
+              <button class="text-button" id="editor-reset-orbit" type="button">Reset orbit ↻</button>
+            </fieldset>
+
+            <fieldset class="editor-control-group editor-visibility">
+              <legend>Show in the editor</legend>
+              <label><input id="editor-show-path" type="checkbox" checked /> Camera path</label>
+              <label><input id="editor-show-orbit" type="checkbox" checked /> SNN orbit</label>
+              <label><input id="editor-show-frustum" type="checkbox" checked /> Camera frustum</label>
+              <label><input id="editor-ghost-earth" type="checkbox" /> Ghost Earth</label>
+            </fieldset>
+
+            <div class="editor-save-controls">
+              <button class="text-button editor-export" id="editor-export" type="button">Export settings <span aria-hidden="true">↗</span></button>
+              <p id="editor-status" class="editor-status" role="status" aria-live="polite">Ready to adjust the orbit.</p>
+            </div>
+          </aside>
+
+          <div class="editor-main">
+            <div class="editor-view-toolbar" aria-label="Editor view controls">
+              <span class="editor-view-title"><span class="status-dot"></span> SCENE VIEW</span>
+              <div class="editor-view-buttons">
+                <button class="text-button" id="editor-view-front" type="button">Front</button>
+                <button class="text-button" id="editor-view-top" type="button">Top</button>
+                <button class="text-button" id="editor-view-side" type="button">Side</button>
+                <button class="text-button" id="editor-match-camera" type="button" title="Pause and move the editor view to the film camera at the current timestamp">Match film camera</button>
+                <span class="toolbar-divider" aria-hidden="true"></span>
+                <button class="text-button" id="editor-reset-view" type="button">Reset view ↻</button>
+              </div>
+            </div>
+            <div class="editor-navigation-toolbar" aria-label="Scene navigation">
+              <div class="editor-mode-buttons" role="group" aria-label="Drag mode">
+                <button class="text-button" id="editor-mode-orbit" type="button" aria-pressed="true">Orbit</button>
+                <button class="text-button" id="editor-mode-pan" type="button" aria-pressed="false">Pan</button>
+              </div>
+              <div class="editor-zoom-buttons" role="group" aria-label="Zoom controls">
+                <span>ZOOM</span>
+                <button class="editor-icon-button" id="editor-zoom-out" type="button" aria-label="Zoom out">−</button>
+                <button class="editor-icon-button" id="editor-zoom-in" type="button" aria-label="Zoom in">+</button>
+              </div>
+            </div>
+            <div id="editor-viewport" class="editor-viewport" role="img" tabindex="0" aria-label="Interactive overview of Earth, the SNN orbit, and the film camera path. Arrow keys pan the view." aria-describedby="editor-gestures">
+              <span id="editor-preview-label" class="editor-preview-label">FILM CAMERA</span>
+            </div>
+            <p id="editor-gestures" class="editor-gestures">Drag to orbit <span aria-hidden="true">·</span> Right drag / Shift-drag to pan <span aria-hidden="true">·</span> Scroll to zoom <span aria-hidden="true">·</span> Arrow keys pan</p>
+            <div class="editor-legend" aria-label="Scene guide">
+              <span><i class="editor-key editor-key-orbit" aria-hidden="true"></i> SNN orbit</span>
+              <span><i class="editor-key editor-key-speed" aria-hidden="true"></i> Camera path: slow → fast</span>
+              <span><i class="editor-key editor-key-dot" aria-hidden="true"></i> Every 0.5s</span>
+            </div>
+
+            <div class="editor-timeline">
+              <div class="editor-timeline-header">
+                <div class="editor-timeline-position">
+                  <button class="text-button editor-play" id="editor-play" type="button">Play</button>
+                  <span id="editor-time-label" class="editor-time-label">13.20s</span>
+                </div>
+                <span id="editor-shot-label" class="editor-shot-label">03 · BEHIND THE N</span>
+              </div>
+              <input id="editor-time" type="range" min="6" max="24" step="0.01" value="13.2" aria-label="Scene editor film time in seconds" />
+              <div class="editor-time-scale" aria-hidden="true"><span>6s</span><span>12s</span><span>18s</span><span>24s</span></div>
+            </div>
+
+            <dl class="editor-metrics">
+              <div><dt>Camera speed</dt><dd><span id="editor-camera-speed">—</span> <span class="editor-unit">u/s</span></dd></div>
+              <div><dt>SNN speed</dt><dd><span id="editor-orbit-speed">—</span> <span class="editor-unit">u/s</span></dd></div>
+              <div><dt>Earth distance</dt><dd><span id="editor-distance">—</span> <span class="editor-unit">u</span></dd></div>
+            </dl>
+
+            <div class="editor-chart-wrap">
+              <div class="editor-chart-heading">
+                <h3>Motion over time</h3>
+                <span>Click the graph to scrub</span>
+              </div>
+              <canvas id="editor-speed-chart" width="900" height="110" role="img" aria-label="Camera and SNN speed from 7.1 to 24 seconds. Click to scrub, or use the film time slider above."></canvas>
+              <div class="editor-chart-footer"><span>Speed in scene units per second · u/s</span><span>7.1–24s</span></div>
+            </div>
+            <p class="editor-chart-note">Path and speed plot begin at 7.1s, after the opening lens transition. Dots mark 0.5s.</p>
+          </div>
+        </div>
+      </section>
+
+      <details class="drawing-reference" id="drawing-reference">
+        <summary><span>Drawing reference</span><span class="reference-summary-note">Original Snoopy profile</span></summary>
+        <p class="reference-intro">The original drawing and supplied reference, kept here for comparison.</p>
+        <div class="study reference-study">
+        <div class="artboard" id="artboard" data-background="paper">
+          <div class="artboard-label"><span class="status-dot"></span> SIDE PROFILE</div>
+          <div id="scene" role="img" aria-label="A flat black and white drawing of Snoopy standing in profile, facing left."></div>
+          <div class="reference" id="reference" hidden>
+            <img src="./reference/snoopy-profile.png" alt="The supplied Snoopy profile reference" />
+            <span>REFERENCE</span>
+          </div>
+          <span class="registration registration-tl" aria-hidden="true"></span>
+          <span class="registration registration-tr" aria-hidden="true"></span>
+          <span class="registration registration-bl" aria-hidden="true"></span>
+          <span class="registration registration-br" aria-hidden="true"></span>
+          <div class="artboard-caption"><span>SNOOPY NEWS NETWORK</span><span>ORIGINAL PROFILE</span></div>
+          <p class="error-message" id="error-message" role="alert" hidden></p>
+        </div>
+
+        <div class="toolbar" aria-label="Drawing controls">
+          <div class="background-control" role="group" aria-label="Canvas background">
+            <span class="control-label">CANVAS</span>
+            <button class="swatch swatch-paper" data-background="paper" aria-label="Paper background" aria-pressed="true" title="Paper"></button>
+            <button class="swatch swatch-white" data-background="white" aria-label="White background" aria-pressed="false" title="White"></button>
+            <button class="swatch swatch-dark" data-background="dark" aria-label="Dark background" aria-pressed="false" title="Dark"></button>
+          </div>
+          <div class="toolbar-actions">
+            <button class="text-button" id="reference-toggle" aria-pressed="false" aria-controls="reference">Show reference</button>
+            <span class="toolbar-divider" aria-hidden="true"></span>
+            <button class="text-button export-button" id="export">Save PNG <span aria-hidden="true">↗</span></button>
+          </div>
+        </div>
+        </div>
+
+      </details>
+
+      <footer class="footer"><span>SMALL BEGINNINGS. WORLDWIDE AMBITIONS.</span><span>SNN GRAPHICS DEPT.</span></footer>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

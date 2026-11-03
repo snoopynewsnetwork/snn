@@ -67,6 +67,18 @@ test(
     }
     try {
       await start();
+      const intro = await fetch(`${base}/intro`);
+      assert.equal(intro.status, 200);
+      assert.match(intro.headers.get("content-type"), /text\/html/);
+      assert.match(intro.headers.get("content-security-policy"), /script-src 'self'/);
+      const introHtml = await intro.text();
+      assert.match(introHtml, /id="intro-scene"/);
+      assert.equal((introHtml.match(/<button\b/g) ?? []).length, 2);
+      for (const asset of ["/intro/film.js", "/intro/style.css"]) {
+        const response = await fetch(`${base}${asset}`);
+        assert.equal(response.status, 200, `${asset} is deployed with the site`);
+        assert.doesNotMatch(response.headers.get("content-type"), /text\/html/);
+      }
       await smoke(base, key);
       const monitor = await (await fetch(`${base}/api/monitor`)).json();
       assert.equal(monitor.races.filter(race => /^senate-[a-z]{2}$/.test(race.target)).length, 14);
