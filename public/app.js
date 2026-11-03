@@ -1,4 +1,5 @@
 import { createElectionNight } from "./election-night.js";
+import { createCheckLog } from "./check-log.js";
 
 const $ = (selector) => document.querySelector(selector);
 const escape = (value) =>
@@ -21,6 +22,7 @@ let editorKey = "";
 let currentRace = null;
 let navigation = 0;
 const night = createElectionNight({ api, openEditor, isEditor: () => !!editorKey });
+const checks = createCheckLog({ api, escape });
 
 function notify(message, error = false) {
   $("#status").textContent = message;
@@ -224,12 +226,20 @@ async function navigate() {
   const match = location.hash.match(/^#race\/([a-z-]+)$/);
   notify("");
   const isNight = !location.hash || location.hash === "#night";
-  $("#index-view").hidden = !!match || isNight;
+  const isChecks = location.hash === "#checks";
+  $("#index-view").hidden = !!match || isNight || isChecks;
   $("#race-view").hidden = !match;
   $("#night-view").hidden = !isNight;
-  for (const [selector, active] of [["#night-nav", isNight], ["#races-nav", !isNight]]) {
+  $("#checks-view").hidden = !isChecks;
+  for (const [selector, active] of [["#night-nav", isNight], ["#races-nav", !isNight && !isChecks], ["#checks-nav", isChecks]]) {
     if (active) $(selector).setAttribute("aria-current", "page");
     else $(selector).removeAttribute("aria-current");
+  }
+  if (isChecks) {
+    currentRace = null;
+    document.title = "Source check log · SNN";
+    await checks.show();
+    return;
   }
   if (isNight) {
     currentRace = null;

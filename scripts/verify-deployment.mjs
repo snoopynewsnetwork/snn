@@ -30,6 +30,16 @@ for (let attempt = 1; attempt <= attempts; attempt++) {
     const client = await fetch(`${base}/election-night.js`, { signal: AbortSignal.timeout(10000) });
     assert.equal(client.status, 200);
     assert.match(await client.text(), /Fetch live results/);
+    const checks = await fetch(`${base}/api/monitor/checks`, { signal: AbortSignal.timeout(10000) });
+    assert.equal(checks.status, 200);
+    const history = await checks.json();
+    assert.equal(history.limit, 200);
+    assert.ok(history.checks.length <= history.limit);
+    assert.deepEqual(history.sources.map(source => `${source.adapter}:${source.id}`).sort(),
+      live.sources.map(source => `${source.adapter}:${source.id}`).sort());
+    const checkClient = await fetch(`${base}/check-log.js`, { signal: AbortSignal.timeout(10000) });
+    assert.equal(checkClient.status, 200);
+    assert.match(await checkClient.text(), /\/api\/monitor\/checks/);
     console.log(`Deployment verified: ${base}`);
     break;
   } catch (error) {

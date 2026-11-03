@@ -4,6 +4,7 @@ import type { ElectionAdapter, ElectionResult, ElectionSource, ElectionTarget } 
 import { bodyHash } from "./monitor";
 import { hasValidCounts, type LiveResult } from "./live-results";
 import { readSourceBody, resolveSourceUrl, retryAfterTime, sourceLayers } from "./election-fetch";
+import type { SourceCheck, CheckTrigger } from "./check-log";
 
 interface SourceState {
   status: "pending" | "ok" | "error";
@@ -27,6 +28,8 @@ export interface ElectionBatch {
   version: string;
   results: LiveResult[];
   sources: (ElectionSource & SourceState)[];
+  // Only fresh runs return receipts; the coordinator persists these centrally.
+  checks?: SourceCheck[];
 }
 
 // One object per adapter isolates state failures, conditional caches, and source
@@ -82,8 +85,8 @@ export class ElectionMonitor extends DurableObject<Record<string, never>> {
     return snapshot ? { ...snapshot, body: this.sourceBody(id) } : null;
   }
 
-  refresh(id: string, force = false): Promise<ElectionBatch> {
-    if (!this.running) this.running = this.collect(electionAdapter(id), force).finally(() => { this.running = undefined; });
+  refresh(id: string, force = false, trigger: CheckTrigger = "scheduled"): Promise<ElectionBatch> {
+    if (!this.running) this.running = this.collect(electionAdapter(id), force, trigger).finally(() => { this.running = undefined; });
     return this.running;
   }
 
@@ -91,25 +94,34 @@ export class ElectionMonitor extends DurableObject<Record<string, never>> {
     this.ctx.storage.sql.exec("INSERT INTO sources (id, data) VALUES (?, ?) ON CONFLICT(id) DO UPDATE SET data = excluded.data", id, JSON.stringify(state));
   }
 
-  private async fetchSource(source: ElectionSource, bodies: Record<string, string>, force: boolean) {
+  private async fetchSource(adapter: ElectionAdapter, source: ElectionSource, bodies: Record<string, string>, force: boolean, trigger: CheckTrigger, checks: SourceCheck[]) {
     const old = this.sourceState(source.id);
     if ((old.retryAfterAt && Date.parse(old.retryAfterAt) > Date.now()) ||
         (!force && old.nextAttemptAt && Date.parse(old.nextAttemptAt) > Date.now())) return;
     const checkedAt = new Date().toISOString();
+    const check: SourceCheck = { adapter: adapter.id, official: source.official,
+      sourceId: source.id, sourceName: source.name, sourceUrl: source.url, trigger,
+      checkedAt, durationMs: 0, success: false, change: "unknown", httpStatus: null,
+      snapshotId: null, snapshotUrl: null, responseHash: null, error: null };
+    checks.push(check);
     let retryAfter: number | undefined;
     try {
       const url = resolveSourceUrl(source, bodies);
+      check.sourceUrl = url;
       const headers = new Headers({ "User-Agent": "SNN-Live-Results/2.0 (+https://github.com/snoopynewsnetwork/snn)", "Cache-Control": "no-cache", ...source.headers });
       if (old.url === url) {
         if (old.etag) headers.set("If-None-Match", old.etag);
         if (old.lastModified) headers.set("If-Modified-Since", old.lastModified);
       }
       const response = await fetch(url, { method: source.method ?? "GET", body: source.body, headers, redirect: "manual", signal: AbortSignal.timeout(15_000) });
+      check.httpStatus = response.status;
       retryAfter = retryAfterTime(response.headers.get("retry-after"));
       if (response.status !== 200 && response.status !== 304) throw new Error(`Source returned HTTP ${response.status}.`);
       const body = response.status === 304 && old.url === url ? this.sourceBody(old.snapshotId) : response.status === 200 ? await readSourceBody(response, source) : "";
       if (!body) throw new Error("Source returned 304 without a matching cached response.");
       const hash = await bodyHash(body);
+      check.responseHash = hash;
+      check.change = old.hash ? (old.hash === hash && old.url === url ? "unchanged" : "changed") : "initial";
       const receiptHeaders = Object.fromEntries(["content-type", "last-modified", "etag", "date"].map(name => [name, response.headers.get(name)]));
       const sql = this.ctx.storage.sql;
       let snapshot = sql.exec<{ id: number }>("SELECT id FROM snapshots WHERE source = ? AND hash = ? AND url = ?", source.id, hash, url).toArray()[0];
@@ -135,29 +147,44 @@ export class ElectionMonitor extends DurableObject<Record<string, never>> {
         etag: response.headers.get("etag") ?? (response.status === 304 ? old.etag : undefined),
         lastModified: response.headers.get("last-modified") ?? (response.status === 304 ? old.lastModified : undefined) });
       bodies[source.id] = body;
+      check.snapshotId = snapshot!.id;
+      check.snapshotUrl = `/api/live-monitor/${encodeURIComponent(adapter.id)}/snapshots/${snapshot!.id}`;
+      check.success = true;
     } catch (error) {
+      check.error = error instanceof Error ? error.message : "Source fetch failed.";
       const consecutiveErrors = (old.consecutiveErrors ?? 0) + 1;
       this.saveSource(source.id, { ...old, status: "error", checkedAt, consecutiveErrors,
         nextAttemptAt: new Date(Math.max(retryAfter ?? 0, Date.now() + Math.min(15, 2 ** Math.min(consecutiveErrors - 1, 4)) * 60_000)).toISOString(),
         retryAfterAt: retryAfter ? new Date(retryAfter).toISOString() : undefined,
-        error: error instanceof Error ? error.message : "Source fetch failed." });
+        error: check.error });
+    } finally {
+      check.durationMs = Math.max(0, Date.now() - Date.parse(checkedAt));
     }
   }
 
-  private async collect(adapter: ElectionAdapter, force: boolean): Promise<ElectionBatch> {
+  private async collect(adapter: ElectionAdapter, force: boolean, trigger: CheckTrigger): Promise<ElectionBatch> {
     const sql = this.ctx.storage.sql;
     const started = sql.exec<{ value: string }>("SELECT value FROM metadata WHERE key = 'started'").toArray()[0];
     if (started && Date.now() - Number(started.value) < 30_000) return this.getResults(adapter.id);
     sql.exec("INSERT INTO metadata (key, value) VALUES ('started', ?) ON CONFLICT(key) DO UPDATE SET value = excluded.value", String(Date.now()));
     const bodies: Record<string, string> = {};
+    const checks: SourceCheck[] = [];
+    const validationFailed = (sourceId: string | undefined, message: string) => {
+      // A result may rely on a version pointer as well as the result response.
+      const source = adapter.sources.find(source => source.id === sourceId);
+      const check = checks.find(check => check.sourceId === sourceId);
+      if (check?.success) { check.success = false; check.error = message; }
+      if (source?.dependsOn) validationFailed(source.dependsOn, message);
+    };
     // State adapters run independently in parallel. Serialize each publisher's
     // requests to avoid bursts against election servers and version pointers.
     for (const layer of sourceLayers(adapter.sources)) for (const source of layer)
-      await this.fetchSource(source, bodies, force);
+      await this.fetchSource(adapter, source, bodies, force, trigger, checks);
     let parsed: Record<string, ElectionResult> = {};
     let parserError: string | undefined;
     try { parsed = await adapter.parse(bodies); }
     catch (error) { parserError = error instanceof Error ? error.message : "Source parser failed."; }
+    if (parserError) for (const source of adapter.sources) validationFailed(source.id, `Adapter validation: ${parserError}`);
     const checkedAt = new Date().toISOString();
     const receipts = adapter.sources.filter(source => bodies[source.id] !== undefined).map(source => ({ source: source.id, snapshotId: this.sourceState(source.id).snapshotId,
       url: `/api/live-monitor/${encodeURIComponent(adapter.id)}/snapshots/${this.sourceState(source.id).snapshotId}` }));
@@ -173,6 +200,10 @@ export class ElectionMonitor extends DurableObject<Record<string, never>> {
       if (result?.sourceId && !adapter.sources.some(source => source.id === result!.sourceId)) {
         error = "Adapter selected an unknown result source."; result = undefined;
       }
+      if (error || (result && ["unavailable", "review"].includes(result.status)))
+        validationFailed(target.sourceId ?? adapter.sources[0]?.id, `${target.name}: ${error ?? result?.message}`);
+      if (result?.sourceId && target.sourceId && result.sourceId !== target.sourceId)
+        validationFailed(target.sourceId, `${target.name}: primary source not admitted. ${result.message}`);
       const selectedId = result?.sourceId ?? (result && ["setup", "reporting"].includes(result.status) ? target.sourceId : old.sourceId ?? target.sourceId);
       const source = adapter.sources.find(source => source.id === selectedId) ?? adapter.sources[0];
       const state = source ? this.sourceState(source.id) : undefined;
@@ -195,7 +226,7 @@ export class ElectionMonitor extends DurableObject<Record<string, never>> {
       sql.exec("INSERT INTO results (id, data) VALUES (?, ?) ON CONFLICT(id) DO UPDATE SET data = excluded.data", target.id, JSON.stringify(next));
     }
     this.pruneSnapshots();
-    return this.getResults(adapter.id);
+    return { ...this.getResults(adapter.id), checks };
   }
 
   private pruneSnapshots() {

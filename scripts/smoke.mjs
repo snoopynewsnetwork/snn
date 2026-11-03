@@ -22,7 +22,7 @@ export async function smoke(baseUrl, key) {
     page.headers.get("Content-Security-Policy"),
     /frame-ancestors 'none'/,
   );
-  for (const asset of ["/app.js", "/style.css", "/favicon.svg"])
+  for (const asset of ["/app.js", "/check-log.js", "/style.css", "/favicon.svg"])
     assert.equal((await request(asset)).status, 200);
   assert.equal((await request("/api/not-a-route")).status, 404);
   assert.equal((await request("/api/races/not-a-state")).status, 404);

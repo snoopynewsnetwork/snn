@@ -4,6 +4,7 @@ import { withGroupResults, withOfficialResults, type Observation, type LiveResul
 import guide from "../public/election-guide.json";
 import { electionAdapters } from "./election-adapters";
 import { ElectionMonitor, type ElectionBatch } from "./election-monitor";
+import { SourceCheckLog, CHECK_LOG_LIMIT, type CheckTrigger } from "./check-log";
 export { ElectionMonitor };
 
 interface Env {
@@ -225,8 +226,10 @@ async function parseObservation(request: Request, target: (typeof targets)[numbe
 
 export class Newsroom extends DurableObject<Env> {
   private monitorRun?: Promise<void>;
+  private checkLog: SourceCheckLog;
   constructor(ctx: DurableObjectState, env: Env) {
     super(ctx, env);
+    this.checkLog = new SourceCheckLog(ctx.storage);
     const sql = ctx.storage.sql;
     sql.exec(`
       CREATE TABLE IF NOT EXISTS election_observations (
@@ -296,18 +299,28 @@ export class Newsroom extends DurableObject<Env> {
       lastCheckedAt: started ? new Date(Number(started.value)).toISOString() : null };
   }
 
+  async getCheckLog() {
+    const latest = this.checkLog.latestBySource();
+    const monitor = await this.getMonitor();
+    return { limit: CHECK_LOG_LIMIT, checks: this.checkLog.latest(),
+      sources: monitor.sources.map(source => ({ ...source,
+        lastCheck: latest[`${source.adapter}:${source.id}`] ?? null })),
+      intervalMinutes: monitor.intervalMinutes, fetchedAt: new Date().toISOString() };
+  }
+
   getMonitorSnapshot(id: number) {
     // Old evidence links remain readable after the state collector migration.
     return this.ctx.storage.sql.exec("SELECT * FROM monitor_snapshots WHERE id = ?", id).toArray()[0] ?? null;
   }
 
-  runMonitor(force = false): Promise<void> {
+  runMonitor(force = false, trigger: CheckTrigger = "scheduled"): Promise<void> {
     if (this.monitorRun) return this.monitorRun;
     const last = this.ctx.storage.sql.exec<{ value: string }>("SELECT value FROM metadata WHERE key = 'live_monitor_started'").toArray()[0];
     if (last && Date.now() - Number(last.value) < 30_000) return Promise.resolve();
     this.ctx.storage.sql.exec("INSERT INTO metadata (key, value) VALUES ('live_monitor_started', ?) ON CONFLICT(key) DO UPDATE SET value = excluded.value", String(Date.now()));
     if (!this.monitorRun) this.monitorRun = Promise.allSettled(electionAdapters.map(async adapter => {
-      const batch = await this.env.LIVE_MONITORS.getByName(adapter.id).refresh(adapter.id, force);
+      const { checks = [], ...batch } = await this.env.LIVE_MONITORS.getByName(adapter.id).refresh(adapter.id, force, trigger);
+      for (const check of checks) this.checkLog.record(check);
       this.ctx.storage.sql.exec("INSERT INTO metadata (key, value) VALUES (?, ?) ON CONFLICT(key) DO UPDATE SET value = excluded.value", `live_batch_${adapter.id}`, JSON.stringify(batch));
     })).then(results => {
       results.forEach((result, index) => {
@@ -446,9 +459,13 @@ async function handleRequest(request: Request, env: Env): Promise<Response> {
     return env.ASSETS.fetch(request);
   const newsroom = env.NEWSROOM.getByName("senate-2026");
   if (path === "/api/monitor" && request.method === "GET") return json(await newsroom.getMonitor());
+  if (path === "/api/monitor/checks") {
+    if (request.method !== "GET") throw new HttpError(405, "Method not allowed.");
+    return json(await newsroom.getCheckLog());
+  }
   if (path === "/api/monitor/refresh" && request.method === "POST") {
     await authorize(request, env);
-    await newsroom.runMonitor();
+    await newsroom.runMonitor(false, "editor-refresh");
     return json(await newsroom.getMonitor());
   }
   const liveSnapshot = path.match(/^\/api\/live-monitor\/([a-z0-9-]+)\/snapshots\/(\d+)$/);
@@ -484,7 +501,7 @@ async function handleRequest(request: Request, env: Env): Promise<Response> {
   }
   if (path === "/api/election-night/refresh") {
     if (request.method !== "POST") throw new HttpError(405, "Method not allowed.");
-    await newsroom.runMonitor(true);
+    await newsroom.runMonitor(true, "public-refresh");
     return json(await newsroom.getElectionNight());
   }
   const watchMatch = path.match(/^\/api\/election-night\/([a-z0-9-]+)(\/history)?$/);
