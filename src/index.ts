@@ -1,6 +1,7 @@
 import { DurableObject } from "cloudflare:workers";
 import seed from "./generated/races.json";
 import { monitorSources, parseKansas, parseKansasResults, parseNorthCarolina, bodyHash, type ParsedMonitor } from "./monitor";
+import { withOfficialResults, type Observation, type LiveResult } from "./live-results";
 import guide from "../public/election-guide.json";
 
 interface Env {
@@ -163,21 +164,6 @@ async function parseNote(request: Request): Promise<Omit<Note, "id" | "race" | "
   return note;
 }
 
-interface Observation {
-  target: string;
-  status: string;
-  margin: number | null;
-  reporting: number | null;
-  winner: string | null;
-  gopSeats: number | null;
-  cueState: string | null;
-  sourceUrl: string;
-  observedAt: string;
-  body: string;
-  version: number;
-  updatedAt: string;
-}
-
 const targets = [...guide.senate, ...guide.house, ...guide.cues];
 async function parseObservation(request: Request, target: (typeof targets)[number]) {
   const input = await readJson(request);
@@ -301,14 +287,14 @@ export class Newsroom extends DurableObject<Env> {
     return this.ctx.storage.sql.exec("SELECT * FROM monitor_snapshots WHERE id = ?", id).toArray()[0] ?? null;
   }
 
-  runMonitor(): Promise<void> {
+  runMonitor(force = false): Promise<void> {
     if (!this.monitorRun) {
-      this.monitorRun = this.collectMonitor().finally(() => { this.monitorRun = undefined; });
+      this.monitorRun = this.collectMonitor(force).finally(() => { this.monitorRun = undefined; });
     }
     return this.monitorRun;
   }
 
-  private async collectMonitor() {
+  private async collectMonitor(force = false) {
     const sql = this.ctx.storage.sql;
     // Persist a short lease so retries/restarts cannot multiply source traffic.
     const last = sql.exec<{ value: string }>("SELECT value FROM metadata WHERE key = 'monitor_started'").toArray()[0];
@@ -318,7 +304,7 @@ export class Newsroom extends DurableObject<Env> {
     for (const source of monitorSources) {
       const prior = sql.exec<{ data: string; body: string | null }>("SELECT data, body FROM monitor_sources WHERE id = ?", source.id).toArray()[0];
       const state = prior ? JSON.parse(prior.data) : {};
-      if (state.nextAttemptAt && Date.parse(state.nextAttemptAt) > Date.now()) continue;
+      if (!force && state.nextAttemptAt && Date.parse(state.nextAttemptAt) > Date.now()) continue;
       const checkedAt = new Date().toISOString();
       try {
         const headers: Record<string, string> = { "User-Agent": "SNN-Official-Results-Monitor/1.0 (+https://github.com/snoopynewsnetwork/snn)", "Cache-Control": "no-cache" };
@@ -408,6 +394,16 @@ export class Newsroom extends DurableObject<Env> {
       (SELECT MAX(version) FROM election_observations WHERE target = e.target)
       ORDER BY target
     `).toArray().map(row => JSON.parse(row.data) as Observation);
+  }
+
+  getElectionNight() {
+    const monitor = this.getMonitor();
+    const liveResults: LiveResult[] = monitor.races.map(result => {
+      const id = result.race === "kansas" ? "ks-live" : "nc-results";
+      const source = monitor.sources.find(item => item.id === id)!;
+      return { ...result, sourceUrl: source.url, sourceError: source.error };
+    });
+    return { guide, observations: withOfficialResults(this.electionObservations(), liveResults), liveResults, intervalMinutes: monitor.intervalMinutes, fetchedAt: new Date().toISOString() };
   }
 
   electionHistory(target: string): Observation[] {
@@ -537,7 +533,12 @@ async function handleRequest(request: Request, env: Env): Promise<Response> {
     return json({ races: await newsroom.listRaces() });
   if (path === "/api/election-night") {
     if (request.method !== "GET") throw new HttpError(405, "Method not allowed.");
-    return json({ guide, observations: await newsroom.electionObservations(), fetchedAt: new Date().toISOString() });
+    return json(await newsroom.getElectionNight());
+  }
+  if (path === "/api/election-night/refresh") {
+    if (request.method !== "POST") throw new HttpError(405, "Method not allowed.");
+    await newsroom.runMonitor(true);
+    return json(await newsroom.getElectionNight());
   }
   const watchMatch = path.match(/^\/api\/election-night\/([a-z0-9-]+)(\/history)?$/);
   if (watchMatch) {

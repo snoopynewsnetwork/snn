@@ -72,8 +72,18 @@ D-minus-R margin (I-minus-R in Nebraska), optional estimated vote percentage
 counted and sourced winner, or group GOP seat count. Timing cues record an
 editor's evidence assessment. Every update requires a source URL, observation time and note.
 Entries are public, shared through the existing SQLite Durable Object, and
-refresh every 30 seconds while the desk is visible. This watchlist uses manual
-entries; the separate official-source monitor does not populate these signals.
+refresh every 30 seconds while the desk is visible. Kansas and North Carolina
+show automatic official vote totals at the top of the desk and derive their
+watchlist margins from those counts. Other watch items use editor entries.
+Opening the desk or clicking **Fetch live results** asks the server to fetch
+the official sources, subject to 30-second duplicate-run protection. Explicit
+fetches retry failed sources; scheduled checks apply failure backoff.
+No editor key or manual result entry is needed for these two states.
+
+Automatic margins divide D minus R votes by all candidate votes. Zero setup
+produces no margin or signal; source failures retain verified counts with a
+warning and suppress stale signal highlights. These live snapshots do not
+overwrite the editor history, declare winners or estimate votes remaining.
 
 A highlighted band describes the sheet's interpretation of the current entry;
 it never calls a race or calculates chamber control. Fractional margins between
@@ -142,13 +152,16 @@ its usage limits. No custom domain is required.
 | GET | `/api/races` | List races with reporting-note counts |
 | GET | `/api/races/:slug` | Read a race, research sources, and notes |
 | GET | `/api/election-night` | Read the guide and latest watch-item observations |
+| POST | `/api/election-night/refresh` | Fetch official results and return the live desk; public, rate limited by the collector lease |
 | GET | `/api/election-night/:id/history` | Read the last 20 versions of a watch item |
 | PUT | `/api/election-night/:id` | Append an editor update with `expectedVersion` concurrency protection |
 | POST | `/api/editor` | Verify the editor key |
 | POST | `/api/races/:slug/notes` | Add a sourced note |
 | DELETE | `/api/races/:slug/notes/:id` | Remove a note from the public log |
 
-All POST, PUT and DELETE routes require `Authorization: Bearer <ADMIN_TOKEN>`.
+Editing routes require `Authorization: Bearer <ADMIN_TOKEN>`; the public
+`POST /api/election-night/refresh` only fetches fixed official sources and is
+limited by the collector's 30-second lease.
 Creating a note requires JSON fields `category` (`news`, `candidates`, `polling`,
 `finance`, or `results`), `title`, `body`, `date` (`YYYY-MM-DD`), and `sourceUrl`
 (HTTP or HTTPS). Editing fails closed if no editor secret is configured.
