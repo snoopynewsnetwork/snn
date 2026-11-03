@@ -58,7 +58,7 @@ test('collector persists chunked evidence, revalidates version feeds, and isolat
         if (request.headers.get('if-none-match') === '"summary"') return new Response(null, { status: 304 });
         return new Response(body(), { headers: { ETag: '"summary"' } });
       }
-      if (path === '/other') return broken ? new Response('upstream failure', { status: 503 })
+      if (path === '/other') return broken ? new Response('upstream failure', { status: 503, headers: { 'Retry-After': '120' } })
         : new Response(JSON.stringify({ election: '2026-11-03', d: 200, r: 300, updated: String(requests.length) }));
       throw new Error('Unexpected source request ' + path);
     },
@@ -94,6 +94,11 @@ test('collector persists chunked evidence, revalidates version feeds, and isolat
     assert.equal(third.results[1].lastSuccessAt, second.results[1].lastSuccessAt);
     assert.ok(third.results[0].sourceSnapshots.every(receipt => receipt.source !== 'other'), 'Fresh evidence does not cite a source that failed this cycle');
     assert.match(third.sources.find(source => source.id === 'other').error, /503/);
+    const otherRequests = requests.filter(request => request.path === '/other').length;
+    broken = false;
+    await storage.exec('DELETE FROM metadata');
+    await api('/refresh');
+    assert.equal(requests.filter(request => request.path === '/other').length, otherRequests, 'Even explicit refresh respects a publisher Retry-After delay');
     // Read-only requests consume saved results rather than hitting publishers.
     const beforeRead = requests.length;
     assert.equal((await api('/')).results[0].totalVotes, 800);

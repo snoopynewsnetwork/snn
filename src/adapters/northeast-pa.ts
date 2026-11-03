@@ -1,7 +1,7 @@
 import type { CandidateCount } from "../monitor";
 import type { ElectionAdapter, ElectionResult, ElectionTarget } from "./types";
 import { count, json, party, perTarget, requireUniverse, review, tally, unavailable } from "./northeast-common.ts";
-import { CNN_AUTHORITY, parseCnnRace, type CnnRace } from "./northeast-cnn.ts";
+import { cnnSource, withCnnFallback, type CnnRace } from "./northeast-cnn.ts";
 
 // Pennsylvania Department of State election returns (https://www.electionreturns.pa.gov/).
 // The public Angular app calls these routes; election 117/G is the 2026 General Election.
@@ -84,20 +84,9 @@ function parseOfficial(bodies: Record<string, string>): Record<string, ElectionR
 export function parsePennsylvania(bodies: Record<string, string>): Record<string, ElectionResult> {
   const official = parseOfficial(bodies);
   return Object.fromEntries(targets.map(target => {
-    const primary = official[target.id];
-    if (primary.status !== "unavailable" && primary.status !== "review") return [target.id, primary];
     const spec = HOUSE[target.district!];
     const race: CnnRace = { target, key: cnnKey(target.district!), candidates: spec.cnn, why: "official PA DOS feed unavailable or under review" };
-    const body = bodies[`cnn-${race.key}`];
-    if (body === undefined) return [target.id, { ...primary, message: `${primary.message} CNN fallback also unavailable this cycle.` }];
-    try {
-      const fallback = parseCnnRace(body, race);
-      if (fallback.status === "unavailable" || fallback.status === "review")
-        return [target.id, { ...primary, message: `${primary.message} CNN fallback rejected: ${fallback.message}` }];
-      return [target.id, { ...fallback, sourceId: `cnn-${race.key}`, message: `Official PA feed: ${primary.message} Using fallback — ${fallback.message}` }];
-    } catch (error) {
-      return [target.id, { ...primary, message: `${primary.message} CNN fallback rejected: ${error instanceof Error ? error.message : String(error)}` }];
-    }
+    return [target.id, withCnnFallback(official[target.id], race, bodies)];
   }));
 }
 
@@ -107,10 +96,7 @@ export const pennsylvaniaAdapter: ElectionAdapter = {
   sources: [
     { id: "pa-status", name: "PA DOS election status / testing flag", url: `${API}/GetElectionTesting?methodName=GetElectionTesting&${QUERY}`, authorityUrl: AUTHORITY, official: true },
     { id: "pa-congress", name: "PA DOS Representative in Congress district totals", url: `${API}/GetOfficeData?officeId=11&methodName=GetOfficeDetails&${QUERY}`, authorityUrl: AUTHORITY, official: true },
-    ...Object.keys(HOUSE).map(district => ({
-      id: `cnn-${cnnKey(district)}`, name: `CNN results API ${cnnKey(district)} (newsroom fallback, not official)`,
-      url: `https://politics.api.cnn.io/results/race/${cnnKey(district)}.json`, authorityUrl: CNN_AUTHORITY, official: false,
-    })),
+    ...Object.keys(HOUSE).map(district => cnnSource(cnnKey(district))),
   ],
   targets,
   parse: parsePennsylvania,

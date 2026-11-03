@@ -170,6 +170,8 @@ test("CNN fallback is attributed, production-gated and never sets a winner", asy
   assert.equal((await me.parse({ ...bodies, "cnn-2026-SG-ME": JSON.stringify(old) }))["senate-me"].status, "review");
   const mismatch = JSON.parse(JSON.stringify(data)); mismatch.totalVote = 9801;
   assert.equal((await me.parse({ ...bodies, "cnn-2026-SG-ME": JSON.stringify(mismatch) }))["senate-me"].status, "review");
+  const primaryShaped = JSON.parse(fixture("cnn-2026-SG-ME.json")); primaryShaped.electionType = "P"; primaryShaped.electionTitle = "";
+  assert.equal((await me.parse({ ...bodies, "cnn-2026-SG-ME": JSON.stringify(primaryShaped) }))["senate-me"].status, "review", "shared G/General gate stays strict");
   const missing = await me.parse({ "cnn-2026-HG-ME-2": bodies["cnn-2026-HG-ME-2"] });
   assert.equal(missing["senate-me"].status, "unavailable");
   assert.equal(missing["house-me-02"].status, "setup");
@@ -240,4 +242,56 @@ test("Pennsylvania falls back to CNN only when the official district result is u
   const adapter = byId("northeast-pa");
   assert.equal(adapter.sources.length, 6);
   assert.ok(adapter.sources.filter(s => s.id.startsWith("cnn-")).every(s => s.official === false));
+});
+
+test("Ohio falls back per target to verified CNN when official sources are rate-limited or carry test counts", () => {
+  const keys = { "senate-oh": "2026-SP-OH", "house-oh-01": "2026-HG-OH-1", "house-oh-07": "2026-HG-OH-7", "house-oh-09": "2026-HG-OH-9", "house-oh-10": "2026-HG-OH-10", "house-oh-13": "2026-HG-OH-13" };
+  const cnn = Object.fromEntries([...Object.values(keys), "2026-SG-list"].map(key => [`cnn-${key}`, fixture(`cnn-${key}.json`)]));
+  // All three official requests returning HTTP 429 leaves only the CNN bodies.
+  const limited = parseOhio(cnn);
+  for (const [id, key] of Object.entries(keys)) {
+    assert.equal(limited[id].status, "setup", `${id}: ${limited[id].message}`);
+    assert.equal(limited[id].sourceId, `cnn-${key}`);
+    assert.match(limited[id].message, /Ohio identity gate failed.*CNN newsroom results \(not official/);
+  }
+  assert.deepEqual(limited["senate-oh"].candidates.map(c => c.party), ["DEM", "REP", "IND", "LIB"]);
+  // Verified official setup is preferred over CNN.
+  const both = parseOhio({ ...ohio(), ...cnn });
+  for (const id of Object.keys(keys)) assert.equal(both[id].sourceId, id === "senate-oh" ? "oh-senate" : "oh-house");
+
+  // Nonzero official counts under IsTest=true are rejected; verified CNN counts replace them.
+  const senate = JSON.parse(cnn["cnn-2026-SP-OH"]);
+  senate.candidates[0].voteNum = 1000; senate.candidates[1].voteNum = 900; senate.totalVote = 1900; senate.raceEmbargo.votesReleased = true;
+  const counted = { ...ohio(), "oh-senate": ohioVotes(fixture("oh-senate.json"), { "Sherrod Brown": 5 }), ...cnn, "cnn-2026-SP-OH": JSON.stringify(senate) };
+  const out = parseOhio(counted)["senate-oh"];
+  assert.equal(out.status, "reporting");
+  assert.equal(out.sourceId, "cnn-2026-SP-OH");
+  assert.equal(out.totalVotes, 1900);
+  assert.equal(out.winner, undefined);
+  assert.match(out.message, /IsTest=true/);
+
+  // CNN files the Ohio special as electionType P / contestType SP. It is admitted only with the
+  // Nov 3 embargo times, the exact cross-party field and its listing in CNN's 2026 Senate general list.
+  const reject = (mutate, extra = {}) => {
+    const data = JSON.parse(cnn["cnn-2026-SP-OH"]); mutate(data);
+    const result = parseOhio({ ...cnn, ...extra, "cnn-2026-SP-OH": JSON.stringify(data) })["senate-oh"];
+    assert.equal(result.status, "unavailable"); assert.match(result.message, /CNN fallback rejected/);
+    return result.message;
+  };
+  reject(data => { data.contestType = "SG"; });
+  assert.match(reject(data => { data.raceEmbargo.assignedPollsClose = Date.parse("2026-05-05T23:30:00Z"); }), /poll times/);
+  assert.match(reject(data => { data.candidates[2].majorParty = "DEM"; }), /party field/);
+  reject(data => { data.raceType = "H"; data.raceTypeCode = "H"; }); // different office
+  reject(data => { data.raceTitle = "Senate"; });
+  reject(data => { data.raceEmbargo.votesRelease = Date.parse("2026-05-05T23:30:00Z"); });
+  reject(data => { data.candidates = data.candidates.filter(c => c.majorParty === "DEM"); data.totalVote = 0; }); // primary-shaped field
+  reject(data => { data.electionType = "G"; data.electionTitle = "General Election"; }); // the SP exception requires CNN's SP filing
+  const unlisted = JSON.parse(cnn["cnn-2026-SG-list"]).filter(item => item.ecKey !== "2026-SP-OH");
+  assert.match(reject(() => {}, { "cnn-2026-SG-list": JSON.stringify(unlisted) }), /not listed/);
+  const noList = { ...cnn }; delete noList["cnn-2026-SG-list"];
+  assert.equal(parseOhio(noList)["senate-oh"].status, "unavailable");
+  assert.equal(parseOhio(noList)["house-oh-01"].status, "setup", "House fallbacks do not depend on the Senate list");
+  const drift = JSON.parse(cnn["cnn-2026-HG-OH-9"]); drift.candidates.push({ ...drift.candidates[0], fullName: "New Person" });
+  assert.equal(parseOhio({ ...cnn, "cnn-2026-HG-OH-9": JSON.stringify(drift) })["house-oh-09"].status, "unavailable");
+  assert.equal(byId("northeast-oh").sources.length, 10);
 });
