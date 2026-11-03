@@ -300,9 +300,17 @@ test("KY-06: CNN newsroom fallback is labeled unofficial and rejects pre-embargo
   const setup = await fx("cnn-ky6-setup.json");
   const out = await ky.parse({ "cnn-2026-HG-KY-6": setup });
   assert.equal(out["house-ky-06"].status, "setup");
+  assert.equal(out["house-ky-06"].estimatedVotePercent, undefined);
   assert.match(out["house-ky-06"].message, /not official/);
   const data = JSON.parse(setup);
   data.candidates[0].voteNum = 5; data.totalVote = 5;
   assert.equal((await ky.parse({ "cnn-2026-HG-KY-6": JSON.stringify(data) }))["house-ky-06"].status, "review");
   assert.equal((await ky.parse({}))["house-ky-06"].status, "unavailable");
+  data.raceEmbargo = { ...data.raceEmbargo, votesReleased: true };
+  for (const percent of [0, 1, 99.5, 100, -1, 101, "1", null]) {
+    data.percentReporting = percent;
+    const result = (await ky.parse({ "cnn-2026-HG-KY-6": JSON.stringify(data) }))["house-ky-06"];
+    assert.equal(result.status, "reporting");
+    assert.equal(result.estimatedVotePercent, typeof percent === "number" && percent >= 0 && percent <= 100 ? percent : undefined);
+  }
 });

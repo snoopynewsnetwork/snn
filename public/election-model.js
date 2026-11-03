@@ -1,3 +1,17 @@
+export function reportingProgress(live, now = Date.now()) {
+  const age = now - Date.parse(live?.lastSuccessAt ?? '');
+  if (!live || live.status !== 'reporting' || live.coverage === 'partial' || live.members ||
+      !(live.totalVotes > 0) || !Number.isFinite(age) || age < -60_000 || age > 15 * 60_000) return '';
+  const percent = live.estimatedVotePercent;
+  if (typeof percent === 'number' && Number.isFinite(percent) && percent >= 0 && percent <= 100)
+    // Round down so an unfinished count never displays as 100%.
+    return `${percent > 0 && percent < 1 ? '<1' : Math.floor(percent)}% est. votes counted`;
+  const reported = live.reportedPrecincts, total = live.totalPrecincts;
+  if (Number.isInteger(reported) && Number.isInteger(total) && reported >= 0 && total > 0 && reported <= total)
+    return `${reported.toLocaleString('en-US')} / ${total.toLocaleString('en-US')} precincts reporting`;
+  return '';
+}
+
 export function signalFor(item, observation) {
   if (observation?.sourceKind && observation.sourceStatus !== 'reporting') return null;
   if (!observation || observation.status === 'awaiting' || item.chamber === 'cue') return null;

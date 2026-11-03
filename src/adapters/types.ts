@@ -35,6 +35,8 @@ export interface ElectionResult {
   message: string;
   candidates?: CandidateCount[]; // DEM / REP / LIB / GRE / IND / other literal parties normalized where known.
   totalVotes?: number;
+  // Source-supplied expected-vote estimate, never inferred from precinct counts.
+  estimatedVotePercent?: number;
   reportedPrecincts?: number;
   totalPrecincts?: number;
   sourceUpdated?: string;

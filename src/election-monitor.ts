@@ -215,7 +215,8 @@ export class ElectionMonitor extends DurableObject<Record<string, never>> {
         winner: undefined, status: result?.status ?? "error", message: result?.message ?? error ?? "Source unavailable." } : result;
       const hash = verified ? await bodyHash(JSON.stringify({ status: result!.status,
         candidates: result!.candidates ? [...result!.candidates].sort((a, b) => `${a.party}|${a.name}`.localeCompare(`${b.party}|${b.name}`)) : undefined,
-        totalVotes: result!.totalVotes, reportedPrecincts: result!.reportedPrecincts, totalPrecincts: result!.totalPrecincts,
+        totalVotes: result!.totalVotes, estimatedVotePercent: result!.estimatedVotePercent,
+        reportedPrecincts: result!.reportedPrecincts, totalPrecincts: result!.totalPrecincts,
         winner: result!.winner, resultStatus: result!.resultStatus, coverage: result!.coverage })) : undefined;
       const next = { ...content, checkedAt, lastSuccessAt: verified ? checkedAt : old.lastSuccessAt,
         lastResultChangedAt: hash ? ((old as LiveResult & { resultHash?: string }).resultHash === hash ? old.lastResultChangedAt : checkedAt) : old.lastResultChangedAt,

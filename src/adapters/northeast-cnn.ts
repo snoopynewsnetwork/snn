@@ -64,13 +64,16 @@ export function parseCnnRace(body: string | undefined, race: CnnRace, listBody?:
   if (count(data.totalVote) !== sum) throw new Error(`CNN ${race.key} candidate votes do not reconcile with totalVote.`);
   if (sum && data.raceEmbargo?.votesReleased !== true) return review(`CNN ${race.key} shows votes before its vote embargo lifted; rejected as test data.`, extracted);
   const projected = rows.filter(row => row.winner === true).map(row => String(row.fullName));
-  const reporting = typeof data.percentReporting === "number" ? ` CNN estimates ${data.percentReporting}% of expected vote counted (supplier estimate, not precincts).` : "";
+  const estimatedVotePercent = typeof data.percentReporting === "number" && Number.isFinite(data.percentReporting) && data.percentReporting >= 0 && data.percentReporting <= 100
+    ? data.percentReporting : undefined;
+  const reporting = estimatedVotePercent !== undefined ? ` CNN estimates ${estimatedVotePercent}% of expected vote counted (supplier estimate, not precincts).` : "";
   const result = tally(candidates, {
     label: `CNN newsroom results (not official; ${race.why})`,
     sourceUpdated: extracted, coverage: "complete",
   });
   const extra = [result.status === "reporting" ? reporting.trim() : "", projected.length ? `CNN projects ${projected.join(", ")} — newsroom projection, not an official call.` : "", race.note ?? ""].filter(Boolean).join(" ");
-  return extra ? { ...result, message: `${result.message} ${extra}` } : result;
+  return { ...result, estimatedVotePercent: result.status === "reporting" ? estimatedVotePercent : undefined,
+    message: extra ? `${result.message} ${extra}` : result.message };
 }
 
 // Official result first; the CNN race only replaces an official result that is
