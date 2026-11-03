@@ -108,3 +108,17 @@ These are manually maintained trackers. The initial records establish each seat,
 its current holder, and official research sources. Candidate lists, polling,
 campaign coverage, and results still need research; empty sections mean no
 records have been entered.
+
+## Research evidence
+
+Raw research downloads, map originals, extracted data, and review artifacts live in [snoopynewsnetwork/evidence](https://github.com/snoopynewsnetwork/evidence). Normal clones, builds, tests, and deployments of this application do not fetch that archive. Race summaries and application code remain here.
+
+To work with evidence for a particular state, run:
+
+```sh
+node scripts/evidence.mjs massachusetts
+```
+
+Use state directory names, separated by spaces, or omit the names to fetch all states. The script makes a partial sparse clone into the ignored `evidence/` directory and links the selected states' `data/` and `maps/` directories back to their original locations. Existing research links and scripts then use the same paths. Run it again with more states to add them.
+
+The November 2026 migration removes these directories from every published branch's Git history. Existing clones should be replaced with a fresh clone or have their local work rebased onto the rewritten history; merging an old branch can bring the archive back.
