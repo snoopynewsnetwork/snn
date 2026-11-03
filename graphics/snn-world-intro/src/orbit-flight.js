@@ -316,15 +316,76 @@ function editedTrack(time, movement = 1) {
 const retreatEnd = V(0, 95, 560);
 const retreatTarget = V(0, 5, 0);
 const passExit = letterPass(11);
-const retreat = quinticCurve(passExit.position, retreatEnd,
-  velocity(letterPass, 11, 'position', true), V(0, 0, 0),
-  acceleration(letterPass, 11, 'position', true), V(0, 0, 0), 3);
+// Curl back toward Earth just beyond S instead of spending the first half
+// of the pullback flying into empty sky. Match position, velocity, and
+// acceleration at the bend so the travel-facing camera turns continuously.
+const returnTime = 11.45;
+const returnPoint = V(195, 40, 155);
+const returnVelocity = V(-160, 15, 0);
+const exitBend = quinticCurve(passExit.position, returnPoint,
+  velocity(letterPass, 11, 'position', true), returnVelocity,
+  acceleration(letterPass, 11, 'position', true), V(0, 0, 0), returnTime - 11);
+const retreat = quinticCurve(returnPoint, retreatEnd,
+  returnVelocity, V(0, 0, 0), V(0, 0, 0), V(0, 0, 0), 14 - returnTime);
 const retreatAim = quinticCurve(passExit.target, retreatTarget,
   velocity(letterPass, 11, 'target', true), V(0, 0, 0),
   acceleration(letterPass, 11, 'target', true), V(0, 0, 0), 3);
 function revealPose(time) {
   const u = (time - 11) / 3;
-  return { position: retreat.getPoint(u), target: retreatAim.getPoint(u) };
+  const position = time <= returnTime ? exitBend.getPoint((time - 11) / (returnTime - 11))
+    : retreat.getPoint((time - returnTime) / (14 - returnTime));
+  return { position, target: retreatAim.getPoint(u) };
+}
+
+function authoredCameraPose(time, movement, aspect) {
+  let position;
+  let target;
+  let up = V(0, 1, 0);
+  let fov = 42;
+  let roll = 0;
+  if (time <= 11) {
+    ({ position, target } = editedTrack(time, movement));
+    if (time <= APPROACH_DURATION) ({ up, roll } = trackPose(time, movement));
+    fov = THREE.MathUtils.lerp(0.1, 42, smoother(0, 1.1, time));
+    position.sub(target).multiplyScalar(Math.tan(Math.PI * 42 / 360) / Math.tan(Math.PI * fov / 360)).add(target);
+    // Keep the original framing aim here: narrow-aspect fitting must not
+    // move the camera when its viewing direction changes below.
+    position.sub(target).multiplyScalar(1 + (Math.max(1, 1 / aspect) - 1)
+      * (1 - smoother(0, COAST_START, time))).add(target);
+  } else if (time <= 14) {
+    ({ position, target } = revealPose(time));
+  } else {
+    position = V(0, 95, 560).lerp(V(0, 145, 620), smooth(14, 18, time));
+    target = V(0, 5, 0);
+  }
+  if (aspect < 1.3 && time > 11) {
+    // Zero endpoint acceleration keeps travel-facing cameras from jerking
+    // when portrait framing starts to widen after the letter pass.
+    position.sub(target).multiplyScalar(1 + (1.3 / Math.max(0.3, aspect) - 1) * smoother(11, 14, time)).add(target);
+  }
+  return { position, target, up, fov, roll };
+}
+
+function cameraPose(time, movement = 1, aspect = 1.8) {
+  const pose = authoredCameraPose(time, movement, aspect);
+  // Settle into the track's heading before entering the letters. At 17s
+  // we're only beside S's center; keep looking ahead until its far edge
+  // has passed at 17.4s, then settle into the reveal by 18.5s so Earth stays
+  // in view as the return bend becomes a wider pullback.
+  const following = smoother(APPROACH_DURATION, 7.2, time) * (1 - smoother(11.4, 12.5, time));
+  if (following === 0) return pose;
+  const step = 0.0001;
+  const forward = authoredCameraPose(time + step, movement, aspect).position
+    .sub(authoredCameraPose(time - step, movement, aspect).position).normalize();
+  const distance = pose.position.distanceTo(pose.target);
+  const original = pose.target.clone().sub(pose.position).normalize();
+  // World-space velocity includes the orbit and any portrait framing; the
+  // tangent in the moving letter frame alone would still look sideways.
+  const direction = following === 1 ? forward : original.clone().applyQuaternion(
+    new THREE.Quaternion().slerp(new THREE.Quaternion().setFromUnitVectors(original, forward), following),
+  );
+  pose.target = pose.position.clone().addScaledVector(direction, distance);
+  return pose;
 }
 
 // Looking upward beneath the N used to align the sightline with camera-up,
@@ -357,7 +418,7 @@ previousDirection = approachStart.target.clone().sub(approachStart.position).nor
 transportedUp = initialUp(APPROACH_DURATION, previousDirection);
 for (let index = 0; index <= frameSamples; index += 1) {
   const time = THREE.MathUtils.lerp(APPROACH_DURATION, frameEnd, index / frameSamples);
-  const pose = time <= 11 ? editedTrack(time) : revealPose(time);
+  const pose = cameraPose(time);
   const direction = pose.target.clone().sub(pose.position).normalize();
   transportedUp.applyQuaternion(new THREE.Quaternion().setFromUnitVectors(previousDirection, direction))
     .projectOnPlane(direction).normalize();
@@ -382,31 +443,9 @@ function stableUp(time, direction) {
 export function getOrbitPose(seconds, weave = 1, aspect = 1.8) {
   const t = clamp(seconds, 0, 18);
   const movement = clamp(weave, 0, 1.5);
-  let position;
-  let target;
-  let up = V(0, 1, 0);
-  let fov = 42;
-  let roll = 0;
+  const { position, target, fov, roll, up: authoredUp } = cameraPose(t, movement, aspect);
+  let up = authoredUp;
   const routeTime = t;
-  if (t <= 11) {
-    ({ position, target } = editedTrack(routeTime, movement));
-    if (t <= APPROACH_DURATION) ({ up, roll } = trackPose(routeTime, movement));
-    fov = THREE.MathUtils.lerp(0.1, 42, smoother(0, 1.1, t));
-    position.sub(target).multiplyScalar(Math.tan(Math.PI * 42 / 360) / Math.tan(Math.PI * fov / 360)).add(target);
-    // Narrow frames finish fitting before reaching the coast, preserving
-    // the actual concentric camera radius throughout the shoreline track.
-    position.sub(target).multiplyScalar(1 + (Math.max(1, 1 / aspect) - 1)
-      * (1 - smoother(0, COAST_START, t))).add(target);
-  } else if (t <= 14) {
-    ({ position, target } = revealPose(t));
-  } else {
-    const u = smooth(14, 18, t);
-    position = V(0, 95, 560).lerp(V(0, 145, 620), u);
-    target = V(0, 5, 0);
-  }
-  if (aspect < 1.3 && t > 11) {
-    position.sub(target).multiplyScalar(1 + (1.3 / Math.max(0.3, aspect) - 1) * smooth(11, 14, t)).add(target);
-  }
   const direction = target.clone().sub(position).normalize();
   up = routeTime >= COAST_END && routeTime <= frameEnd
     ? stableUp(routeTime, direction) : up.projectOnPlane(direction).normalize();

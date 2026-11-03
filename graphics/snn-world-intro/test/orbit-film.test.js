@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { createServer } from 'vite';
-import { Frustum, Quaternion, Raycaster, Triangle, Vector3 } from 'three';
+import { Frustum, Quaternion, Raycaster, Sphere, Triangle, Vector2, Vector3 } from 'three';
 import {
   APPROACH_DURATION, COAST_START, COAST_END, COAST_RADIUS,
   getOrbitPose, letterAngle, orbitPhase, orbitTimeForRoute,
@@ -10,7 +10,7 @@ import { geoVector } from '../src/globe-projection.js';
 import { applyOrbitSettings } from '../src/orbit-editor-state.js';
 
 // Position and viewing direction have independent joins; verify both clocks.
-const WEAVE_JOINS = [5.9, 8, 8.35, 8.75, 9.05, 9.15, 9.45, 9.5, 10, 10.25, 10.35, 10.65, 10.7, 11];
+const WEAVE_JOINS = [5.9, 7.2, 8, 8.35, 8.75, 9.05, 9.15, 9.45, 9.5, 10, 10.25, 10.35, 10.65, 10.7, 11, 11.4, 11.45, 12.5];
 
 test('the camera change preserves the approach and the entire authored letter orbit', () => {
   // Captured independently before the weave was added, with its approved
@@ -23,15 +23,16 @@ test('the camera change preserves the approach and the entire authored letter or
     { time: 5.9, position: [-140.22987953772363, 108.82960262030007, -29.94912151120485],
       target: [-116.38565826625079, 24.2302025946890325, -75.50667265036442],
       up: [-0.7994061454164827, 0.09421689279801253, -0.5933573895906658], fov: 42 },
-    { time: 8.75, weaves: [1], position: [216.13169504460302, 24, -145.57159886855237],
-      target: [213.6139052523539, 24, -45.60330022062074],
-      up: [0.7258789294486254, 0.6875794876747308, 0.018281901199608746], fov: 42 },
+    // The letter pass now faces its direction of travel; its path is fixed.
+    { time: 8.75, weaves: [1], position: [216.13169504460302, 24, -145.57159886855237], fov: 42 },
   ];
   for (const expected of cameraAnchors) {
     for (const weave of expected.weaves ?? [0, 1, 1.5]) {
       const pose = getOrbitPose(expected.time, weave, 16 / 9);
-      for (const key of ['position', 'target', 'up']) assert.deepEqual(pose[key].toArray(), expected[key],
-        `the camera ${key} is unchanged at film ${expected.time + 6}s`);
+      for (const key of ['position', 'target', 'up']) {
+        if (expected[key]) assert.deepEqual(pose[key].toArray(), expected[key],
+          `the camera ${key} is unchanged at film ${expected.time + 6}s`);
+      }
       assert.equal(pose.fov, expected.fov);
       assert.equal(pose.roll, 0);
     }
@@ -52,6 +53,30 @@ test('the camera change preserves the approach and the entire authored letter or
       'letter orientation stays unchanged, treating equivalent signed zero equally');
     assert.deepEqual(pose.frame.toArray(), [0, 0, 0, 1]);
     assert.equal(pose.lettersVisible, true);
+  }
+});
+
+test('the camera looks along its world-space motion until it has passed the S', () => {
+  const step = 0.001;
+  for (const aspect of [0.6, 1, 1.8]) {
+    for (const weave of [0, 0.5, 1, 1.5]) {
+      for (let sample = 0; sample <= 420; sample += 1) {
+        const time = 7.2 + sample / 100;
+        const pose = getOrbitPose(time, weave, aspect);
+        const travel = getOrbitPose(time + step, weave, aspect).position
+          .sub(getOrbitPose(time - step, weave, aspect).position).normalize();
+        const forward = pose.target.clone().sub(pose.position).normalize();
+        assert.ok(forward.dot(travel) > 1 - 1e-8,
+          `camera follows its actual path at film ${time + 6}s, weave ${weave}, aspect ${aspect}`);
+        assert.ok(Math.abs(pose.up.dot(forward)) < 1e-10 && Math.abs(pose.up.length() - 1) < 1e-10,
+          'transported camera-up stays perpendicular to the travel heading');
+      }
+      const exit = getOrbitPose(11.4, weave, aspect);
+      const relative = exit.position.clone().sub(exit.center).applyQuaternion(exit.letterQuaternion.clone().invert());
+      assert.ok(relative.x < -105, 'travel heading is held until the camera clears the S and its ink outline');
+      const closing = getOrbitPose(14, weave, aspect);
+      assert.deepEqual(closing.target.toArray(), [0, 5, 0], 'the reveal returns to the closing composition');
+    }
   }
 });
 
@@ -601,6 +626,11 @@ function verifyOutsideInsideOutsidePass(film, letters) {
         const seconds = 14 + 3 * index / 600;
         film.update(seconds, aspect, { weave });
         film.scene.updateMatrixWorld(true);
+        const tangentStep = 0.001;
+        const travel = getOrbitPose(seconds - 6 + tangentStep, weave, aspect).position
+          .sub(getOrbitPose(seconds - 6 - tangentStep, weave, aspect).position).normalize();
+        assert.ok(film.camera.getWorldDirection(new Vector3()).dot(travel) > 1 - 1e-8,
+          'the rendered camera faces the direction it is moving between the letters');
         const local = letters.worldToLocal(film.camera.position.clone());
         path.push({ seconds, local });
         assert.ok(local.x <= previousX + 1e-8, 'the weave progresses from the trailing N toward S without reversing');
@@ -658,7 +688,9 @@ function verifyOutsideInsideOutsidePass(film, letters) {
       film.update(6 + time, aspect);
       if (previousRotation) {
         const degreesPerSecond = film.camera.quaternion.angleTo(previousRotation) * 180 / Math.PI / step;
-        assert.ok(degreesPerSecond < 240,
+        // The unchanged track's tangent reaches about 328°/s around S.
+        // Permit that physical bend while still rejecting a whip or pole flip.
+        assert.ok(degreesPerSecond < 360,
           `the approach, weave and retreat avoid camera whips or pole flips: ${degreesPerSecond}°/s at ${6 + time}s`);
       }
       previousRotation = film.camera.quaternion.clone();
@@ -680,6 +712,35 @@ function verifyOutsideInsideOutsidePass(film, letters) {
       const outgoing = angularVelocity(rotations[1], rotations[2]);
       assert.ok(incoming.distanceTo(outgoing) < Math.max(0.05, 0.03 * Math.max(incoming.length(), outgoing.length())),
         `actual camera angular velocity stays continuous at film ${6 + join}s`);
+    }
+  }
+}
+
+function verifyExitVisibility(film, letterGroups) {
+  const earth = new Sphere(new Vector3(), 140);
+  const volumes = letterGroups.map(letter => letter.getObjectByName(`${letter.name}-volume`));
+  const ray = new Raycaster();
+  const hit = new Vector3();
+  const step = 0.05;
+  for (const aspect of [0.6, 1, 1.8]) {
+    let emptySamples = 0;
+    for (let sample = 0; sample <= 60; sample += 1) {
+      const seconds = 16.5 + sample * step;
+      film.update(seconds, aspect);
+      film.scene.updateMatrixWorld(true);
+      let occupied = 0;
+      // Sample actual screen rays, not object bounding boxes that can pass
+      // a frustum check while all the visible surfaces remain off screen.
+      for (let y = 0; y < 9; y += 1) for (let x = 0; x < 15; x += 1) {
+        ray.setFromCamera(new Vector2(-0.96 + x * 1.92 / 14, -0.96 + y * 1.92 / 8), film.camera);
+        if (ray.ray.intersectSphere(earth, hit) || ray.intersectObjects(volumes, false).length) occupied += 1;
+      }
+      const coverage = occupied / 135;
+      emptySamples = coverage < 0.02 ? emptySamples + 1 : 0;
+      assert.ok(emptySamples <= 17, // At most 0.85s at this sampling rate.
+        `the S exit avoids the former two-second empty gap at ${seconds}s, aspect ${aspect}`);
+      if (seconds >= 17.45) assert.ok(coverage >= 0.05,
+        `Earth or the letters stay visibly in frame through the pullback at ${seconds}s, aspect ${aspect}`);
     }
   }
 }
@@ -747,6 +808,7 @@ test('orbit film seeks reversibly, clears letter volumes, and reveals readable m
     verifyConsistentLetterOrbit(film, letters);
     verifyOutsideInsideOutsidePass(film, letters);
     verifyLetterSurfaceClearance(film, letterGroups);
+    verifyExitVisibility(film, letterGroups);
     const contains = letterGroups.map((letter) => extrusionContains(letter.getObjectByName(`${letter.name}-volume`)));
     // Cover every weave slider setting, including intermediate camera offsets.
     for (const aspect of [0.6, 1, 1.8]) {

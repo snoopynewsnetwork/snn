@@ -168,9 +168,16 @@ Shot 02 pulls up behind the trailing N, curves around its outside away from
 Earth, then weaves to the inside of the middle N and the outside of the S.
 The inner pass follows one convex arc, with broad turns into and out of the
 letter gaps instead of shallow bends that fold back on themselves.
-The camera loosely follows the word’s orbit while maintaining a stable
-screen-up direction. SNN’s orbit is unchanged, and the letters may be readable
-before the later pullback.
+The camera settles into facing its direction of travel during the approach,
+then looks straight along its world-space path through the letter gaps while
+maintaining a stable screen-up direction. It keeps that heading until it has
+passed the S at 17.4 seconds, then smoothly turns toward the closing composition.
+The exit track curls back toward Earth at 17.45 seconds, with matching velocity
+and acceleration through the bend. Earth returns around 17.4 seconds, reducing
+the empty interval after the final gap to about 0.8 seconds. The reveal aim settles
+by 18.5 seconds before continuing to the existing 20-second closing view.
+SNN’s orbit is unchanged; narrow-frame pullback fitting eases smoothly into
+the wider closing view.
 
 The descent completes at film time 7.8 seconds, settling into a steady cruise
 through 11.8 seconds before the letter passage begins at 11.9 seconds.
