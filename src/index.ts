@@ -1,6 +1,6 @@
 import { DurableObject } from "cloudflare:workers";
 import seed from "./generated/races.json";
-import { monitorSources, parseKansas, parseNorthCarolina, bodyHash, type ParsedMonitor } from "./monitor";
+import { monitorSources, parseKansas, parseKansasResults, parseNorthCarolina, bodyHash, type ParsedMonitor } from "./monitor";
 import guide from "../public/election-guide.json";
 
 interface Env {
@@ -396,11 +396,10 @@ export class Newsroom extends DurableObject<Env> {
       const row = sql.exec<{ data: string }>("SELECT data FROM monitor_sources WHERE id = ?", source.id).toArray()[0];
       return row ? (JSON.parse(row.data).publication?.publications ?? []) as { title: string; url: string }[] : [];
     });
-    await saveRace("kansas", {
-      status: ks.every(source => bodies[source.id]) ? (publications.some(item => /2026|20261103|26elec|general|election.night|\bent\b/i.test(`${item.title} ${item.url}`)) ? "review" : "waiting") : "review",
-      message: "Official publication watch active. Statewide November Senate vote totals are unavailable until a count feed is verified. Monitoring the state home/results pages and Johnson County; this is not all-county count coverage.",
-      publications: [...new Map(publications.map(item => [item.url, item])).values()],
-    }, undefined, ks.every(source => !!bodies[source.id]));
+    try {
+      if (!bodies["ks-live"]) throw new Error("Kansas official count page unavailable or backing off. Previously verified counts, if present, are retained below.");
+      await saveRace("kansas", { ...parseKansasResults(bodies["ks-live"]), publications: [...new Map(publications.map(item => [item.url, item])).values()] });
+    } catch (error) { await saveRace("kansas", null, error instanceof Error ? error.message : "Kansas parse failed."); }
   }
 
   electionObservations(): Observation[] {

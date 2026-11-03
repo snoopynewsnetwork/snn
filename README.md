@@ -25,11 +25,13 @@ hour and retain the last verified counts.
   each other, including downward corrections. Precinct reporting does not
   estimate the votes remaining. Counts remain unofficial; certification is
   not inferred from a reporting percentage.
-- **Kansas:** watches the Secretary of State home/results pages and Johnson
-  County's November election page for results publications. A statewide Senate
-  count endpoint has not been verified. This is publication monitoring, not
-  statewide vote coverage. New links require adapter/election verification
-  before their numbers can be published.
+- **Kansas:** parses the SOS statewide election-night HTML, checking the 2026
+  general-election metadata, election-day-or-later timestamp, Senate contest
+  1001, three printed candidates, all 105 county links and candidate/total
+  reconciliation. The state home/results pages and Johnson County's November
+  page remain publication backstops. Access errors retain the last verified
+  result. The source supplies statewide totals, not a verified county-level
+  count crosswalk or voting-method split.
 
 `GET /api/monitor` returns current status. `GET /api/monitor/snapshots/:id`
 returns immutable, deduplicated UTF-8 source responses, SHA-256 hashes and HTTP
