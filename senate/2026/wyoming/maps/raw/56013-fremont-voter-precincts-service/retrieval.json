@@ -1,0 +1,182 @@
+{
+ "acquire_script": "acquire.py",
+ "paging": {
+  "batch_size": 100,
+  "count": 32,
+  "max_record_count": 2000,
+  "object_ids": 32
+ },
+ "requests": [
+  {
+   "curl_error": null,
+   "curl_exit": 0,
+   "entity_bytes": 1258,
+   "entity_sha256": "4ee54be4dac83e76692c14d3e41386f3e3233cddd7d1730d167e0d3e6470a23e",
+   "expected_status": 200,
+   "final_url": "https://www.arcgis.com/sharing/rest/content/items/67d87587fa34412a9d52cf2a9d0c688c?f=json",
+   "headers": {
+    "cache-control": "no-cache",
+    "content-encoding": "gzip",
+    "content-type": "application/json;charset=utf-8",
+    "date": "Sun, 18 Oct 2026 17:29:39 GMT",
+    "server": "ArcGIS Online"
+   },
+   "http_status": 200,
+   "matches_expectation": true,
+   "name": "service-item.json",
+   "request_url": "https://www.arcgis.com/sharing/rest/content/items/67d87587fa34412a9d52cf2a9d0c688c?f=json",
+   "retrieved_utc": "2026-10-18T17:29:38+00:00",
+   "status_chain": [
+    "HTTP/2 200 "
+   ],
+   "store": "gzip",
+   "stored_bytes": 718,
+   "stored_path": "raw/56013-fremont-voter-precincts-service/service-item.json.gz",
+   "stored_sha256": "3dfb3bd1e09f4637e0c7b5a4b0f068ff61c1beef3506128211836bd73e7d0357"
+  },
+  {
+   "curl_error": null,
+   "curl_exit": 0,
+   "entity_bytes": 34407,
+   "entity_sha256": "35e184dd22b664f184c28a87964a6ce4156887bc7d00b4537519cc1299211598",
+   "expected_status": 200,
+   "final_url": "https://services8.arcgis.com/rlGvD2ZEQWYJHMZp/arcgis/rest/services/VOTER_PRECINCTS/FeatureServer/270?f=json",
+   "headers": {
+    "cache-control": "public, max-age=30, s-maxage=30",
+    "content-encoding": "gzip",
+    "content-length": "5305",
+    "content-type": "application/json; charset=utf-8",
+    "date": "Sun, 18 Oct 2026 17:29:39 GMT",
+    "etag": "1753014879",
+    "last-modified": "Thu, 14 May 2026 22:07:50 GMT"
+   },
+   "http_status": 200,
+   "matches_expectation": true,
+   "name": "layer.json",
+   "request_url": "https://services8.arcgis.com/rlGvD2ZEQWYJHMZp/arcgis/rest/services/VOTER_PRECINCTS/FeatureServer/270?f=json",
+   "retrieved_utc": "2026-10-18T17:29:39+00:00",
+   "status_chain": [
+    "HTTP/2 200 "
+   ],
+   "store": "gzip",
+   "stored_bytes": 5243,
+   "stored_path": "raw/56013-fremont-voter-precincts-service/layer.json.gz",
+   "stored_sha256": "c53c95bb9e25554391f9652d1de1bd81cb2008c64fc03ff31e1e3dfacb941057"
+  },
+  {
+   "curl_error": null,
+   "curl_exit": 0,
+   "entity_bytes": 3135,
+   "entity_sha256": "a6b686cbc135655abd391a9e2edf192acb291c6c2f7252befa323bc907b820de",
+   "expected_status": 200,
+   "final_url": "https://services8.arcgis.com/rlGvD2ZEQWYJHMZp/arcgis/rest/services/VOTER_PRECINCTS/FeatureServer?f=json",
+   "headers": {
+    "cache-control": "public, max-age=30, s-maxage=30",
+    "content-encoding": "gzip",
+    "content-length": "1424",
+    "content-type": "application/json; charset=utf-8",
+    "date": "Sun, 18 Oct 2026 17:29:40 GMT",
+    "etag": "sds_904594533",
+    "last-modified": "Thu, 14 May 2026 22:07:50 GMT"
+   },
+   "http_status": 200,
+   "matches_expectation": true,
+   "name": "service.json",
+   "request_url": "https://services8.arcgis.com/rlGvD2ZEQWYJHMZp/arcgis/rest/services/VOTER_PRECINCTS/FeatureServer?f=json",
+   "retrieved_utc": "2026-10-18T17:29:40+00:00",
+   "status_chain": [
+    "HTTP/2 200 "
+   ],
+   "store": "gzip",
+   "stored_bytes": 1424,
+   "stored_path": "raw/56013-fremont-voter-precincts-service/service.json.gz",
+   "stored_sha256": "21132a18104b6b4b6c5a8fac3df4d3f91b11b7f48119abc0d252ac23b364fd6d"
+  },
+  {
+   "curl_error": null,
+   "curl_exit": 0,
+   "entity_bytes": 12,
+   "entity_sha256": "0f4e0b9614f4f181a6a33d47b05f67c3c1a974b8bddfc20139dce6d3ce0beb21",
+   "expected_status": 200,
+   "final_url": "https://services8.arcgis.com/rlGvD2ZEQWYJHMZp/arcgis/rest/services/VOTER_PRECINCTS/FeatureServer/270/query?where=1%3D1&returnCountOnly=true&f=json",
+   "headers": {
+    "cache-control": "public, max-age=30, s-maxage=30",
+    "content-encoding": "gzip",
+    "content-type": "application/json; charset=utf-8",
+    "date": "Sun, 18 Oct 2026 17:29:41 GMT",
+    "etag": "sd912_904594533",
+    "last-modified": "Thu, 14 May 2026 22:07:50 GMT"
+   },
+   "http_status": 200,
+   "matches_expectation": true,
+   "name": "count.json",
+   "request_url": "https://services8.arcgis.com/rlGvD2ZEQWYJHMZp/arcgis/rest/services/VOTER_PRECINCTS/FeatureServer/270/query?where=1%3D1&returnCountOnly=true&f=json",
+   "retrieved_utc": "2026-10-18T17:29:40+00:00",
+   "status_chain": [
+    "HTTP/2 200 "
+   ],
+   "store": "gzip",
+   "stored_bytes": 32,
+   "stored_path": "raw/56013-fremont-voter-precincts-service/count.json.gz",
+   "stored_sha256": "ce26d91bc4d2d8da5bc6675bad61e8cb4f0e6c46e2f7f8f437d528c90d18841f"
+  },
+  {
+   "curl_error": null,
+   "curl_exit": 0,
+   "entity_bytes": 133,
+   "entity_sha256": "9b0ae52010b8139840fceffaeabc7c5c94217581f1a80a8e8fe2aafb3c500cc6",
+   "expected_status": 200,
+   "final_url": "https://services8.arcgis.com/rlGvD2ZEQWYJHMZp/arcgis/rest/services/VOTER_PRECINCTS/FeatureServer/270/query?where=1%3D1&returnIdsOnly=true&f=json",
+   "headers": {
+    "cache-control": "public, max-age=30, s-maxage=30",
+    "content-encoding": "gzip",
+    "content-type": "application/json; charset=utf-8",
+    "date": "Sun, 18 Oct 2026 17:29:41 GMT",
+    "etag": "sd912_904594533",
+    "last-modified": "Thu, 14 May 2026 22:07:50 GMT"
+   },
+   "http_status": 200,
+   "matches_expectation": true,
+   "name": "objectids.json",
+   "request_url": "https://services8.arcgis.com/rlGvD2ZEQWYJHMZp/arcgis/rest/services/VOTER_PRECINCTS/FeatureServer/270/query?where=1%3D1&returnIdsOnly=true&f=json",
+   "retrieved_utc": "2026-10-18T17:29:41+00:00",
+   "status_chain": [
+    "HTTP/2 200 "
+   ],
+   "store": "gzip",
+   "stored_bytes": 125,
+   "stored_path": "raw/56013-fremont-voter-precincts-service/objectids.json.gz",
+   "stored_sha256": "eda620160ec9c5628adf4e5b1c61c1e935d8e8026af32b7d3b8489619fcc9cf5"
+  },
+  {
+   "curl_error": null,
+   "curl_exit": 0,
+   "entity_bytes": 2150681,
+   "entity_sha256": "00f7fda06fbd29d16410079c65ff1cca0f011d4be614e0e6867b6503987daff1",
+   "expected_status": 200,
+   "final_url": "https://services8.arcgis.com/rlGvD2ZEQWYJHMZp/arcgis/rest/services/VOTER_PRECINCTS/FeatureServer/270/query?objectIds=1%2C2%2C3%2C4%2C5%2C6%2C7%2C8%2C9%2C10%2C11%2C12%2C13%2C14%2C15%2C16%2C17%2C18%2C19%2C20%2C21%2C22%2C23%2C24%2C25%2C26%2C27%2C28%2C29%2C30%2C31%2C32&outFields=%2A&returnGeometry=true&returnZ=false&returnM=false&f=json",
+   "headers": {
+    "cache-control": "public, max-age=30, s-maxage=30",
+    "content-encoding": "gzip",
+    "content-length": "879370",
+    "content-type": "application/json; charset=utf-8",
+    "date": "Sun, 18 Oct 2026 17:29:42 GMT",
+    "etag": "sd912_904594533",
+    "last-modified": "Thu, 14 May 2026 22:07:50 GMT"
+   },
+   "http_status": 200,
+   "matches_expectation": true,
+   "name": "features-0001.json",
+   "request_url": "https://services8.arcgis.com/rlGvD2ZEQWYJHMZp/arcgis/rest/services/VOTER_PRECINCTS/FeatureServer/270/query?objectIds=1%2C2%2C3%2C4%2C5%2C6%2C7%2C8%2C9%2C10%2C11%2C12%2C13%2C14%2C15%2C16%2C17%2C18%2C19%2C20%2C21%2C22%2C23%2C24%2C25%2C26%2C27%2C28%2C29%2C30%2C31%2C32&outFields=%2A&returnGeometry=true&returnZ=false&returnM=false&f=json",
+   "retrieved_utc": "2026-10-18T17:29:42+00:00",
+   "status_chain": [
+    "HTTP/2 200 "
+   ],
+   "store": "gzip",
+   "stored_bytes": 878903,
+   "stored_path": "raw/56013-fremont-voter-precincts-service/features-0001.json.gz",
+   "stored_sha256": "b36759433ed0017e3fe4c631544f5c17414b7d8dccb08ca6df06cc96cf02def4"
+  }
+ ],
+ "source_id": "56013-fremont-voter-precincts-service"
+}

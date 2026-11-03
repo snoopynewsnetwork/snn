@@ -1,0 +1,832 @@
+{
+ "finished_utc": "2026-10-18T17:39:09+00:00",
+ "last_run_sources": [
+  "56003-bighorn-terragis-wfs-prct",
+  "56009-converse-terragis-wfs-precinct-poly"
+ ],
+ "sources": [
+  {
+   "source_id": "statewide-sos-2026-precinct-roster",
+   "requests": 3,
+   "unexpected": [],
+   "paging": null
+  },
+  {
+   "source_id": "statewide-census-2020-vtd",
+   "requests": 2,
+   "unexpected": [],
+   "paging": null
+  },
+  {
+   "source_id": "statewide-rdh-2024-readme",
+   "requests": 1,
+   "unexpected": [],
+   "paging": null
+  },
+  {
+   "source_id": "statewide-geohub-precinct-search",
+   "requests": 2,
+   "unexpected": [],
+   "paging": null
+  },
+  {
+   "source_id": "statewide-terragis-county-portal",
+   "requests": 1,
+   "unexpected": [],
+   "paging": null
+  },
+  {
+   "source_id": "statewide-lso-redistricting-attempt",
+   "requests": 2,
+   "unexpected": [],
+   "paging": null
+  },
+  {
+   "source_id": "56021-laramie-clcgisc-precincts",
+   "requests": 10,
+   "unexpected": [],
+   "paging": {
+    "count": 43,
+    "object_ids": 43,
+    "batch_size": 100,
+    "max_record_count": 2000
+   }
+  },
+  {
+   "source_id": "56021-laramie-2024-districts-precincts-list",
+   "requests": 1,
+   "unexpected": [],
+   "paging": null
+  },
+  {
+   "source_id": "56025-natrona-nrgisc-precincts",
+   "requests": 8,
+   "unexpected": [],
+   "paging": {
+    "count": 61,
+    "object_ids": 61,
+    "batch_size": 100,
+    "max_record_count": 1000
+   }
+  },
+  {
+   "source_id": "56025-natrona-county-site-blocked",
+   "requests": 2,
+   "unexpected": [],
+   "paging": null
+  },
+  {
+   "source_id": "56005-campbell-votinginformation-precincts",
+   "requests": 12,
+   "unexpected": [],
+   "paging": {
+    "count": 57,
+    "object_ids": 57,
+    "batch_size": 100,
+    "max_record_count": 1000
+   }
+  },
+  {
+   "source_id": "56001-albany-electiongeography-precincts",
+   "requests": 10,
+   "unexpected": [],
+   "paging": {
+    "count": 18,
+    "object_ids": 18,
+    "batch_size": 100,
+    "max_record_count": 2000
+   }
+  },
+  {
+   "source_id": "56001-albany-precinct-pdfs",
+   "requests": 3,
+   "unexpected": [],
+   "paging": null
+  },
+  {
+   "source_id": "56013-fremont-beacon-voter-precincts",
+   "requests": 8,
+   "unexpected": [],
+   "paging": {
+    "count": 32,
+    "object_ids": 32,
+    "batch_size": 100,
+    "max_record_count": 2000
+   }
+  },
+  {
+   "source_id": "56013-fremont-voter-precincts-service",
+   "requests": 6,
+   "unexpected": [],
+   "paging": {
+    "count": 32,
+    "object_ids": 32,
+    "batch_size": 100,
+    "max_record_count": 2000
+   }
+  },
+  {
+   "source_id": "56037-sweetwater-terragis-precincts",
+   "requests": 5,
+   "unexpected": [],
+   "paging": null
+  },
+  {
+   "source_id": "56029-park-terragis-precinct2024",
+   "requests": 4,
+   "unexpected": [],
+   "paging": null
+  },
+  {
+   "source_id": "56033-sheridan-terragis-precincts",
+   "requests": 4,
+   "unexpected": [],
+   "paging": null
+  },
+  {
+   "source_id": "56033-sheridan-arcgis-district-precincts",
+   "requests": 7,
+   "unexpected": [],
+   "paging": {
+    "count": 32,
+    "object_ids": 32,
+    "batch_size": 100,
+    "max_record_count": 2000
+   }
+  },
+  {
+   "source_id": "56039-teton-terragis-precinct",
+   "requests": 6,
+   "unexpected": [],
+   "paging": null
+  },
+  {
+   "source_id": "56023-lincoln-votingmap-precincts",
+   "requests": 9,
+   "unexpected": [],
+   "paging": {
+    "count": 17,
+    "object_ids": 17,
+    "batch_size": 100,
+    "max_record_count": 1000
+   }
+  },
+  {
+   "source_id": "56041-uinta-terragis-precinct",
+   "requests": 3,
+   "unexpected": [],
+   "paging": null
+  },
+  {
+   "source_id": "56041-uinta-arcgis-precincts-2026",
+   "requests": 9,
+   "unexpected": [],
+   "paging": {
+    "count": 21,
+    "object_ids": 21,
+    "batch_size": 100,
+    "max_record_count": 2000
+   }
+  },
+  {
+   "source_id": "56009-converse-terragis-wfs-precinct-poly",
+   "requests": 42,
+   "unexpected": [],
+   "paging": {
+    "members": 32,
+    "renders": [
+     {
+      "feature_index": 0,
+      "file": "render-0001.png",
+      "bbox": [
+       407301.46783077996,
+       855893.12785878,
+       558372.93672022,
+       1099394.44781522
+      ],
+      "width": 318,
+      "height": 512,
+      "srs": "EPSG:3736"
+     },
+     {
+      "feature_index": 1,
+      "file": "render-0002.png",
+      "bbox": [
+       408918.71806658,
+       845105.50953258,
+       524780.43504742,
+       994434.99121742
+      ],
+      "width": 397,
+      "height": 512,
+      "srs": "EPSG:3736"
+     },
+     {
+      "feature_index": 2,
+      "file": "render-0003.png",
+      "bbox": [
+       488055.90741404,
+       830190.77285704,
+       515903.07066996,
+       847741.57765296
+      ],
+      "width": 512,
+      "height": 323,
+      "srs": "EPSG:3736"
+     },
+     {
+      "feature_index": 3,
+      "file": "render-0004.png",
+      "bbox": [
+       469198.01358184,
+       861744.3860408401,
+       469349.68875316,
+       862260.09127516
+      ],
+      "width": 151,
+      "height": 512,
+      "srs": "EPSG:3736"
+     },
+     {
+      "feature_index": 4,
+      "file": "render-0005.png",
+      "bbox": [
+       471654.54598696,
+       870921.74196096,
+       478993.16845904,
+       881847.35050104
+      ],
+      "width": 344,
+      "height": 512,
+      "srs": "EPSG:3736"
+     },
+     {
+      "feature_index": 5,
+      "file": "render-0006.png",
+      "bbox": [
+       407387.03982097,
+       701025.8230799701,
+       517658.83771603,
+       819145.83403703
+      ],
+      "width": 478,
+      "height": 512,
+      "srs": "EPSG:3736"
+     },
+     {
+      "feature_index": 6,
+      "file": "render-0007.png",
+      "bbox": [
+       488691.28488841,
+       646721.17078341,
+       674480.13738259,
+       816566.89257859
+      ],
+      "width": 512,
+      "height": 468,
+      "srs": "EPSG:3736"
+     },
+     {
+      "feature_index": 7,
+      "file": "render-0008.png",
+      "bbox": [
+       719590.39762107,
+       824137.5463070701,
+       722259.53824693,
+       826959.4038219299
+      ],
+      "width": 484,
+      "height": 512,
+      "srs": "EPSG:3736"
+     },
+     {
+      "feature_index": 8,
+      "file": "render-0009.png",
+      "bbox": [
+       593933.45900189,
+       764020.18795789,
+       734288.41123011,
+       914843.2566251099
+      ],
+      "width": 476,
+      "height": 512,
+      "srs": "EPSG:3736"
+     },
+     {
+      "feature_index": 9,
+      "file": "render-0010.png",
+      "bbox": [
+       596483.04302069,
+       764968.27808269,
+       707058.1577563101,
+       829242.3220213101
+      ],
+      "width": 512,
+      "height": 298,
+      "srs": "EPSG:3736"
+     },
+     {
+      "feature_index": 10,
+      "file": "render-0011.png",
+      "bbox": [
+       589357.9294200201,
+       769683.76985902,
+       651377.8316919799,
+       823902.17427298
+      ],
+      "width": 512,
+      "height": 448,
+      "srs": "EPSG:3736"
+     },
+     {
+      "feature_index": 11,
+      "file": "render-0012.png",
+      "bbox": [
+       596716.51743578,
+       813256.42788078,
+       608533.6774602201,
+       820195.60705922
+      ],
+      "width": 512,
+      "height": 301,
+      "srs": "EPSG:3736"
+     },
+     {
+      "feature_index": 12,
+      "file": "render-0013.png",
+      "bbox": [
+       601869.81265918,
+       815338.61051918,
+       607859.69241482,
+       822139.64503082
+      ],
+      "width": 451,
+      "height": 512,
+      "srs": "EPSG:3736"
+     },
+     {
+      "feature_index": 13,
+      "file": "render-0014.png",
+      "bbox": [
+       589932.01738181,
+       823098.66416981,
+       598417.3996091901,
+       828864.54207419
+      ],
+      "width": 512,
+      "height": 348,
+      "srs": "EPSG:3736"
+     },
+     {
+      "feature_index": 14,
+      "file": "render-0015.png",
+      "bbox": [
+       595548.57346845,
+       829954.1729934501,
+       596898.8145915499,
+       831359.55203555
+      ],
+      "width": 492,
+      "height": 512,
+      "srs": "EPSG:3736"
+     },
+     {
+      "feature_index": 15,
+      "file": "render-0016.png",
+      "bbox": [
+       598268.77514896,
+       828337.75675496,
+       598542.47817904,
+       828689.53680104
+      ],
+      "width": 398,
+      "height": 512,
+      "srs": "EPSG:3736"
+     },
+     {
+      "feature_index": 16,
+      "file": "render-0017.png",
+      "bbox": [
+       600925.43424371,
+       827168.6607827101,
+       603836.98840629,
+       830083.07189229
+      ],
+      "width": 511,
+      "height": 512,
+      "srs": "EPSG:3736"
+     },
+     {
+      "feature_index": 17,
+      "file": "render-0018.png",
+      "bbox": [
+       597949.88777008,
+       823083.1160660799,
+       602556.00217292,
+       829699.39127392
+      ],
+      "width": 356,
+      "height": 512,
+      "srs": "EPSG:3736"
+     },
+     {
+      "feature_index": 18,
+      "file": "render-0019.png",
+      "bbox": [
+       598974.56546747,
+       826488.6922774699,
+       599123.50378953,
+       826597.8906475301
+      ],
+      "width": 512,
+      "height": 375,
+      "srs": "EPSG:3736"
+     },
+     {
+      "feature_index": 19,
+      "file": "render-0020.png",
+      "bbox": [
+       597992.1767738799,
+       818972.9161908801,
+       602489.5194061201,
+       823521.2575811199
+      ],
+      "width": 506,
+      "height": 512,
+      "srs": "EPSG:3736"
+     },
+     {
+      "feature_index": 20,
+      "file": "render-0021.png",
+      "bbox": [
+       580723.83619538,
+       814857.41044238,
+       598661.95390262,
+       826134.69491462
+      ],
+      "width": 512,
+      "height": 322,
+      "srs": "EPSG:3736"
+     },
+     {
+      "feature_index": 21,
+      "file": "render-0022.png",
+      "bbox": [
+       561505.8305279,
+       802954.3233619,
+       595268.5875521,
+       832344.1168001
+      ],
+      "width": 512,
+      "height": 446,
+      "srs": "EPSG:3736"
+     },
+     {
+      "feature_index": 22,
+      "file": "render-0023.png",
+      "bbox": [
+       489630.07197469997,
+       732626.2184587,
+       596158.0587442999,
+       863384.8162313
+      ],
+      "width": 417,
+      "height": 512,
+      "srs": "EPSG:3736"
+     },
+     {
+      "feature_index": 23,
+      "file": "render-0024.png",
+      "bbox": [
+       516886.38578885,
+       822350.19481485,
+       634747.50710715,
+       951424.56822815
+      ],
+      "width": 468,
+      "height": 512,
+      "srs": "EPSG:3736"
+     },
+     {
+      "feature_index": 24,
+      "file": "render-0025.png",
+      "bbox": [
+       511845.61949357,
+       861241.9945725701,
+       734906.62175543,
+       1099907.60842243
+      ],
+      "width": 479,
+      "height": 512,
+      "srs": "EPSG:3736"
+     },
+     {
+      "feature_index": 25,
+      "file": "render-0026.png",
+      "bbox": [
+       464268.33936017,
+       861990.6936521699,
+       465346.96606283,
+       862936.77299183
+      ],
+      "width": 512,
+      "height": 449,
+      "srs": "EPSG:3736"
+     },
+     {
+      "feature_index": 26,
+      "file": "render-0027.png",
+      "bbox": [
+       461440.71225718,
+       852266.14768918,
+       468383.21701381996,
+       863496.36008282
+      ],
+      "width": 317,
+      "height": 512,
+      "srs": "EPSG:3736"
+     },
+     {
+      "feature_index": 27,
+      "file": "render-0028.png",
+      "bbox": [
+       471407.17423261,
+       861261.80788461,
+       471867.97319639,
+       862016.39243039
+      ],
+      "width": 313,
+      "height": 512,
+      "srs": "EPSG:3736"
+     },
+     {
+      "feature_index": 28,
+      "file": "render-0029.png",
+      "bbox": [
+       472273.13683707,
+       860220.70948807,
+       472753.51455993,
+       860534.55270293
+      ],
+      "width": 512,
+      "height": 335,
+      "srs": "EPSG:3736"
+     },
+     {
+      "feature_index": 29,
+      "file": "render-0030.png",
+      "bbox": [
+       408247.47579595,
+       807505.62574995,
+       523810.07365505,
+       868667.17483805
+      ],
+      "width": 512,
+      "height": 271,
+      "srs": "EPSG:3736"
+     },
+     {
+      "feature_index": 30,
+      "file": "render-0031.png",
+      "bbox": [
+       468993.61350991996,
+       861088.52786992,
+       471517.27469208004,
+       861659.91089208
+      ],
+      "width": 512,
+      "height": 116,
+      "srs": "EPSG:3736"
+     },
+     {
+      "feature_index": 31,
+      "file": "render-0032.png",
+      "bbox": [
+       467353.48230908,
+       857226.75513408,
+       478739.80553492,
+       864064.20771392
+      ],
+      "width": 512,
+      "height": 307,
+      "srs": "EPSG:3736"
+     }
+    ]
+   }
+  },
+  {
+   "source_id": "56009-converse-precinct-pdfs",
+   "requests": 8,
+   "unexpected": [],
+   "paging": null
+  },
+  {
+   "source_id": "56007-carbon-terragis-precincts2022",
+   "requests": 4,
+   "unexpected": [],
+   "paging": null
+  },
+  {
+   "source_id": "56007-carbon-arcgis-election-precincts",
+   "requests": 6,
+   "unexpected": [],
+   "paging": {
+    "count": 29,
+    "object_ids": 29,
+    "batch_size": 100,
+    "max_record_count": 2000
+   }
+  },
+  {
+   "source_id": "56007-carbon-precinct-pdfs",
+   "requests": 2,
+   "unexpected": [],
+   "paging": null
+  },
+  {
+   "source_id": "56015-goshen-redistricting-pdfs",
+   "requests": 3,
+   "unexpected": [],
+   "paging": null
+  },
+  {
+   "source_id": "56003-bighorn-terragis-wfs-prct",
+   "requests": 24,
+   "unexpected": [],
+   "paging": {
+    "members": 13,
+    "renders": [
+     {
+      "feature_index": 0,
+      "file": "render-0001.png",
+      "bbox": [
+       1111155.40257076,
+       1662627.3161327601,
+       1197261.7704292398,
+       1741742.77179324
+      ],
+      "width": 512,
+      "height": 470,
+      "srs": "EPSG:3737"
+     },
+     {
+      "feature_index": 1,
+      "file": "render-0002.png",
+      "bbox": [
+       1184491.12236901,
+       1658860.32137001,
+       1366767.36284799,
+       1766996.64352899
+      ],
+      "width": 512,
+      "height": 304,
+      "srs": "EPSG:3737"
+     },
+     {
+      "feature_index": 2,
+      "file": "render-0003.png",
+      "bbox": [
+       981786.5235624501,
+       1660648.5094444498,
+       1163560.27183855,
+       1776955.4306485502
+      ],
+      "width": 512,
+      "height": 328,
+      "srs": "EPSG:3737"
+     },
+     {
+      "feature_index": 3,
+      "file": "render-0004.png",
+      "bbox": [
+       1039103.90680199,
+       1728027.1465109899,
+       1084677.48225501,
+       1778852.49033201
+      ],
+      "width": 459,
+      "height": 512,
+      "srs": "EPSG:3737"
+     },
+     {
+      "feature_index": 4,
+      "file": "render-0005.png",
+      "bbox": [
+       980960.81713317,
+       1726931.07463817,
+       1044568.89441183,
+       1831597.60752883
+      ],
+      "width": 311,
+      "height": 512,
+      "srs": "EPSG:3737"
+     },
+     {
+      "feature_index": 5,
+      "file": "render-0006.png",
+      "bbox": [
+       1134749.8306901099,
+       1732356.6332821099,
+       1353267.78888289,
+       1895057.15717789
+      ],
+      "width": 512,
+      "height": 381,
+      "srs": "EPSG:3737"
+     },
+     {
+      "feature_index": 6,
+      "file": "render-0007.png",
+      "bbox": [
+       1074841.5505657098,
+       1746141.31633571,
+       1162588.80410629,
+       1893589.87140529
+      ],
+      "width": 305,
+      "height": 512,
+      "srs": "EPSG:3737"
+     },
+     {
+      "feature_index": 7,
+      "file": "render-0008.png",
+      "bbox": [
+       1011356.80383789,
+       1773537.42918489,
+       1088920.57021911,
+       1893515.62484411
+      ],
+      "width": 331,
+      "height": 512,
+      "srs": "EPSG:3737"
+     },
+     {
+      "feature_index": 8,
+      "file": "render-0009.png",
+      "bbox": [
+       981220.45165671,
+       1811481.79484371,
+       1024758.8413122899,
+       1920397.99173529
+      ],
+      "width": 205,
+      "height": 512,
+      "srs": "EPSG:3737"
+     },
+     {
+      "feature_index": 9,
+      "file": "render-0010.png",
+      "bbox": [
+       977778.73508199,
+       1916278.44906299,
+       1002519.62171601,
+       1945846.14330001
+      ],
+      "width": 428,
+      "height": 512,
+      "srs": "EPSG:3737"
+     },
+     {
+      "feature_index": 10,
+      "file": "render-0011.png",
+      "bbox": [
+       1011563.96768906,
+       1841621.81259506,
+       1197428.24569694,
+       1975030.86316494
+      ],
+      "width": 512,
+      "height": 368,
+      "srs": "EPSG:3737"
+     },
+     {
+      "feature_index": 11,
+      "file": "render-0012.png",
+      "bbox": [
+       997833.4971574199,
+       1904077.34946842,
+       1045723.87190158,
+       1972296.05035358
+      ],
+      "width": 359,
+      "height": 512,
+      "srs": "EPSG:3737"
+     },
+     {
+      "feature_index": 12,
+      "file": "render-0013.png",
+      "bbox": [
+       978071.04722741,
+       1943818.5774464102,
+       1000985.81402259,
+       1971467.86331659
+      ],
+      "width": 424,
+      "height": 512,
+      "srs": "EPSG:3737"
+     }
+    ]
+   }
+  }
+ ]
+}
