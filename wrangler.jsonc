@@ -13,10 +13,14 @@
     "run_worker_first": true,
   },
   "durable_objects": {
-    "bindings": [{ "name": "NEWSROOM", "class_name": "Newsroom" }],
+    "bindings": [
+      { "name": "NEWSROOM", "class_name": "Newsroom" },
+      { "name": "LIVE_MONITORS", "class_name": "ElectionMonitor" },
+    ],
   },
   "exports": {
     "Newsroom": { "type": "durable-object", "storage": "sqlite" },
+    "ElectionMonitor": { "type": "durable-object", "storage": "sqlite" },
   },
   "observability": { "enabled": true },
 }

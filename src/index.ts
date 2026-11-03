@@ -1,11 +1,14 @@
 import { DurableObject } from "cloudflare:workers";
 import seed from "./generated/races.json";
-import { monitorSources, parseKansas, parseKansasResults, parseNorthCarolina, bodyHash, type ParsedMonitor } from "./monitor";
-import { withOfficialResults, type Observation, type LiveResult } from "./live-results";
+import { withGroupResults, withOfficialResults, type Observation, type LiveResult } from "./live-results";
 import guide from "../public/election-guide.json";
+import { electionAdapters } from "./election-adapters";
+import { ElectionMonitor, type ElectionBatch } from "./election-monitor";
+export { ElectionMonitor };
 
 interface Env {
   NEWSROOM: DurableObjectNamespace<Newsroom>;
+  LIVE_MONITORS: DurableObjectNamespace<ElectionMonitor>;
   ASSETS: Fetcher;
   ADMIN_TOKEN?: string;
 }
@@ -269,123 +272,57 @@ export class Newsroom extends DurableObject<Env> {
     }
   }
 
-  getMonitor() {
-    const sql = this.ctx.storage.sql;
-    const sources = monitorSources.map(source => {
-      const row = sql.exec<{ data: string }>("SELECT data FROM monitor_sources WHERE id = ?", source.id).toArray()[0];
-      return { ...source, ...(row ? JSON.parse(row.data) : { status: "pending" }) };
+  async getMonitor() {
+    const batches: ElectionBatch[] = electionAdapters.map(adapter => {
+      const row = this.ctx.storage.sql.exec<{ value: string }>("SELECT value FROM metadata WHERE key = ?", `live_batch_${adapter.id}`).toArray()[0];
+      if (row) return JSON.parse(row.value) as import("./election-monitor").ElectionBatch;
+      return { adapter: adapter.id, version: adapter.version,
+        sources: adapter.sources.map(source => ({ ...source, status: "pending" as const })),
+        results: adapter.targets.map(target => ({
+          target: target.id, race: target.id, name: target.name, state: target.state, chamber: target.chamber,
+          status: "pending" as const, message: "Awaiting the first automatic source fetch.",
+          sourceUrl: adapter.sources.find(source => source.id === target.sourceId)?.authorityUrl ?? adapter.sources[0]?.authorityUrl ?? "",
+          sourceKind: (adapter.sources.find(source => source.id === target.sourceId) ?? adapter.sources[0])?.official === false ? "supplier" as const : "official" as const,
+        })) };
     });
-    const races = ["kansas", "north-carolina"].map(race => {
-      const row = sql.exec<{ data: string }>("SELECT data FROM monitor_races WHERE race = ?", race).toArray()[0];
-      return { race, ...(row ? JSON.parse(row.data) : { status: "pending", message: "Waiting for the first automatic source check." }) };
-    });
-    const snapshots = sql.exec("SELECT id, source, hash, fetchedAt, sourceUrl FROM monitor_snapshots ORDER BY id DESC LIMIT 20").toArray();
-    return { intervalMinutes: 1, electionDate: "2026-11-03", parserVersion: "official-senate-v1", sources, races, snapshots };
+    const races: LiveResult[] = batches.flatMap(batch => batch.results).map(result => ({ ...result,
+      race: guide.senate.find(item => item.id === result.target)?.slug ?? result.race }));
+    const sources = batches.flatMap(batch => batch.sources.map(source => ({ ...source, adapter: batch.adapter,
+      targets: electionAdapters.find(adapter => adapter.id === batch.adapter)!.targets.map(target => target.id),
+      snapshotUrl: source.snapshotId ? `/api/live-monitor/${encodeURIComponent(batch.adapter)}/snapshots/${source.snapshotId}` : undefined,
+    })));
+    const started = this.ctx.storage.sql.exec<{ value: string }>("SELECT value FROM metadata WHERE key = 'live_monitor_started'").toArray()[0];
+    return { intervalMinutes: 1, electionDate: "2026-11-03", parserVersion: "cheat-sheet-live-v2", sources, races,
+      lastCheckedAt: started ? new Date(Number(started.value)).toISOString() : null };
   }
 
   getMonitorSnapshot(id: number) {
+    // Old evidence links remain readable after the state collector migration.
     return this.ctx.storage.sql.exec("SELECT * FROM monitor_snapshots WHERE id = ?", id).toArray()[0] ?? null;
   }
 
   runMonitor(force = false): Promise<void> {
-    if (!this.monitorRun) {
-      this.monitorRun = this.collectMonitor(force).finally(() => { this.monitorRun = undefined; });
-    }
-    return this.monitorRun;
-  }
-
-  private async collectMonitor(force = false) {
-    const sql = this.ctx.storage.sql;
-    // Persist a short lease so retries/restarts cannot multiply source traffic.
-    const last = sql.exec<{ value: string }>("SELECT value FROM metadata WHERE key = 'monitor_started'").toArray()[0];
-    if (last && Date.now() - Number(last.value) < 30_000) return;
-    sql.exec("INSERT INTO metadata (key, value) VALUES ('monitor_started', ?) ON CONFLICT(key) DO UPDATE SET value = excluded.value", String(Date.now()));
-    const bodies: Record<string, string> = {};
-    for (const source of monitorSources) {
-      const prior = sql.exec<{ data: string; body: string | null }>("SELECT data, body FROM monitor_sources WHERE id = ?", source.id).toArray()[0];
-      const state = prior ? JSON.parse(prior.data) : {};
-      if (!force && state.nextAttemptAt && Date.parse(state.nextAttemptAt) > Date.now()) continue;
-      const checkedAt = new Date().toISOString();
-      try {
-        const headers: Record<string, string> = { "User-Agent": "SNN-Official-Results-Monitor/1.0 (+https://github.com/snoopynewsnetwork/snn)", "Cache-Control": "no-cache" };
-        if (state.etag) headers["If-None-Match"] = state.etag;
-        if (state.lastModified) headers["If-Modified-Since"] = state.lastModified;
-        const response = await fetch(source.url, { headers, signal: AbortSignal.timeout(15_000), redirect: "manual" });
-        if (response.status !== 200 && response.status !== 304) throw new Error(`Official source returned HTTP ${response.status}.`);
-        let body = prior?.body ?? "";
-        if (response.status === 200) {
-          const reader = response.body!.getReader();
-          const chunks: Uint8Array[] = [];
-          let size = 0;
-          while (true) {
-            const { done, value } = await reader.read();
-            if (done) break;
-            size += value.byteLength;
-            if (size > 2_000_000) { await reader.cancel(); throw new Error("Official response exceeds 2 MB; review required."); }
-            chunks.push(value);
-          }
-          const bytes = new Uint8Array(size);
-          let offset = 0;
-          for (const chunk of chunks) { bytes.set(chunk, offset); offset += chunk.length; }
-          body = new TextDecoder("utf-8", { fatal: true, ignoreBOM: false }).decode(bytes);
+    if (this.monitorRun) return this.monitorRun;
+    const last = this.ctx.storage.sql.exec<{ value: string }>("SELECT value FROM metadata WHERE key = 'live_monitor_started'").toArray()[0];
+    if (last && Date.now() - Number(last.value) < 30_000) return Promise.resolve();
+    this.ctx.storage.sql.exec("INSERT INTO metadata (key, value) VALUES ('live_monitor_started', ?) ON CONFLICT(key) DO UPDATE SET value = excluded.value", String(Date.now()));
+    if (!this.monitorRun) this.monitorRun = Promise.allSettled(electionAdapters.map(async adapter => {
+      const batch = await this.env.LIVE_MONITORS.getByName(adapter.id).refresh(adapter.id, force);
+      this.ctx.storage.sql.exec("INSERT INTO metadata (key, value) VALUES (?, ?) ON CONFLICT(key) DO UPDATE SET value = excluded.value", `live_batch_${adapter.id}`, JSON.stringify(batch));
+    })).then(results => {
+      results.forEach((result, index) => {
+        if (result.status !== "rejected") return;
+        const id = electionAdapters[index].id;
+        console.error(`Monitor failed: ${id}`, result.reason);
+        const row = this.ctx.storage.sql.exec<{ value: string }>("SELECT value FROM metadata WHERE key = ?", `live_batch_${id}`).toArray()[0];
+        if (row) {
+          const batch = JSON.parse(row.value) as import("./election-monitor").ElectionBatch;
+          batch.results = batch.results.map(result => ({ ...result, status: "error", message: "State collector is temporarily unavailable; retaining last verified results." }));
+          this.ctx.storage.sql.exec("UPDATE metadata SET value = ? WHERE key = ?", JSON.stringify(batch), `live_batch_${id}`);
         }
-        if (!body.trim()) throw new Error("Official source returned an empty response.");
-        const hash = await bodyHash(body);
-        // Retain original bytes (UTF-8 source text), headers and hash even when a parser rejects the response.
-        const receiptHeaders = Object.fromEntries(["content-type", "last-modified", "etag", "date"].map(name => [name, response.headers.get(name)]));
-        sql.exec("INSERT OR IGNORE INTO monitor_snapshots (source, hash, fetchedAt, sourceUrl, headers, body) VALUES (?, ?, ?, ?, ?, ?)", source.id, hash, checkedAt, source.url, JSON.stringify(receiptHeaders), body);
-        const snapshot = sql.exec<{ id: number }>("SELECT id FROM monitor_snapshots WHERE source = ? AND hash = ?", source.id, hash).toArray()[0];
-        const publication = source.race === "kansas" ? parseKansas(body, source.url) : undefined;
-        if (source.race === "north-carolina") {
-          const data = JSON.parse(body);
-          if (!Array.isArray(data) || !data.length) throw new Error("Official JSON array is missing.");
-        }
-        const next = {
-          status: "ok", checkedAt, lastSuccessAt: checkedAt,
-          lastChangedAt: state.hash === hash ? state.lastChangedAt : checkedAt,
-          hash, snapshotId: snapshot.id, httpStatus: response.status,
-          etag: response.headers.get("etag") ?? (response.status === 304 ? state.etag : undefined),
-          lastModified: response.headers.get("last-modified") ?? (response.status === 304 ? state.lastModified : undefined),
-          consecutiveErrors: 0, publication,
-        };
-        sql.exec("INSERT INTO monitor_sources (id, data, body) VALUES (?, ?, ?) ON CONFLICT(id) DO UPDATE SET data = excluded.data, body = excluded.body", source.id, JSON.stringify(next), body);
-        bodies[source.id] = body;
-      } catch (error) {
-        const consecutiveErrors = (state.consecutiveErrors ?? 0) + 1;
-        const nextAttemptAt = new Date(Date.now() + Math.min(60, 5 * 2 ** Math.min(consecutiveErrors - 1, 4)) * 60_000).toISOString();
-        const next = { ...state, status: "error", checkedAt, consecutiveErrors, nextAttemptAt, error: error instanceof Error ? error.message : "Source check failed." };
-        sql.exec("INSERT INTO monitor_sources (id, data, body) VALUES (?, ?, ?) ON CONFLICT(id) DO UPDATE SET data = excluded.data", source.id, JSON.stringify(next), prior?.body ?? null);
-      }
-    }
-    const checkedAt = new Date().toISOString();
-    const saveRace = async (race: string, parsed: ParsedMonitor | null, error?: string, verified = true) => {
-      const previous = sql.exec<{ data: string }>("SELECT data FROM monitor_races WHERE race = ?", race).toArray()[0];
-      const old = previous ? JSON.parse(previous.data) : {};
-      const sources = monitorSources.filter(source => source.race === race).map(source => {
-        const row = sql.exec<{ data: string }>("SELECT data FROM monitor_sources WHERE id = ?", source.id).toArray()[0];
-        return { id: source.id, ...(row ? JSON.parse(row.data) : {}) };
       });
-      const hash = parsed ? await bodyHash(JSON.stringify({ status: parsed.status, candidates: parsed.candidates, publications: parsed.publications })) : old.resultHash;
-      const next = parsed ? {
-        ...parsed, checkedAt, lastSuccessAt: verified ? checkedAt : old.lastSuccessAt, resultHash: hash,
-        lastResultChangedAt: old.resultHash === hash ? old.lastResultChangedAt : checkedAt,
-        sourceSnapshots: sources.map(source => ({ source: source.id, snapshotId: source.snapshotId })),
-      } : { ...old, checkedAt, status: "error", message: error, lastGoodStatus: old.lastGoodStatus ?? old.status };
-      sql.exec("INSERT INTO monitor_races (race, data) VALUES (?, ?) ON CONFLICT(race) DO UPDATE SET data = excluded.data", race, JSON.stringify(next));
-    };
-    try {
-      if (!["nc-elections", "nc-counties", "nc-results"].every(id => bodies[id])) throw new Error("Official source check failed or is backing off. Previously verified counts, if present, are retained below.");
-      await saveRace("north-carolina", parseNorthCarolina(bodies["nc-elections"], bodies["nc-counties"], bodies["nc-results"]));
-    } catch (error) { await saveRace("north-carolina", null, error instanceof Error ? error.message : "Parse failed."); }
-    const ks = monitorSources.filter(source => source.race === "kansas");
-    const publications = ks.flatMap(source => {
-      const row = sql.exec<{ data: string }>("SELECT data FROM monitor_sources WHERE id = ?", source.id).toArray()[0];
-      return row ? (JSON.parse(row.data).publication?.publications ?? []) as { title: string; url: string }[] : [];
-    });
-    try {
-      if (!bodies["ks-live"]) throw new Error("Kansas official count page unavailable or backing off. Previously verified counts, if present, are retained below.");
-      await saveRace("kansas", { ...parseKansasResults(bodies["ks-live"]), publications: [...new Map(publications.map(item => [item.url, item])).values()] });
-    } catch (error) { await saveRace("kansas", null, error instanceof Error ? error.message : "Kansas parse failed."); }
+    }).finally(() => { this.monitorRun = undefined; });
+    return this.monitorRun;
   }
 
   electionObservations(): Observation[] {
@@ -396,14 +333,17 @@ export class Newsroom extends DurableObject<Env> {
     `).toArray().map(row => JSON.parse(row.data) as Observation);
   }
 
-  getElectionNight() {
-    const monitor = this.getMonitor();
-    const liveResults: LiveResult[] = monitor.races.map(result => {
-      const id = result.race === "kansas" ? "ks-live" : "nc-results";
-      const source = monitor.sources.find(item => item.id === id)!;
-      return { ...result, sourceUrl: source.url, sourceError: source.error };
-    });
-    return { guide, observations: withOfficialResults(this.electionObservations(), liveResults), liveResults, intervalMinutes: monitor.intervalMinutes, fetchedAt: new Date().toISOString() };
+  async getElectionNight() {
+    const monitor = await this.getMonitor();
+    const liveResults = withGroupResults(monitor.races);
+    const guideIds = new Set([...guide.senate, ...guide.house].map(item => item.id));
+    const guideResults = liveResults.filter(result => result.target && guideIds.has(result.target));
+    return { guide, observations: withOfficialResults(this.electionObservations(), guideResults), liveResults,
+      sources: monitor.sources, coverage: { total: guideIds.size, configured: guideResults.length,
+        reporting: guideResults.filter(result => result.status === "reporting").length,
+        setup: guideResults.filter(result => result.status === "setup").length,
+        unavailable: guideResults.filter(result => ["unavailable", "error", "review"].includes(result.status)).length },
+      intervalMinutes: monitor.intervalMinutes, lastCheckedAt: monitor.lastCheckedAt, fetchedAt: new Date().toISOString() };
   }
 
   electionHistory(target: string): Observation[] {
@@ -510,6 +450,13 @@ async function handleRequest(request: Request, env: Env): Promise<Response> {
     await authorize(request, env);
     await newsroom.runMonitor();
     return json(await newsroom.getMonitor());
+  }
+  const liveSnapshot = path.match(/^\/api\/live-monitor\/([a-z0-9-]+)\/snapshots\/(\d+)$/);
+  if (liveSnapshot && request.method === "GET") {
+    if (!electionAdapters.some(adapter => adapter.id === liveSnapshot[1])) throw new HttpError(404, "Monitor not found.");
+    const snapshot = await env.LIVE_MONITORS.getByName(liveSnapshot[1]).getSnapshot(Number(liveSnapshot[2]));
+    if (!snapshot) throw new HttpError(404, "Snapshot expired or not found.");
+    return json(snapshot);
   }
   const snapshotMatch = path.match(/^\/api\/monitor\/snapshots\/(\d+)$/);
   if (snapshotMatch && request.method === "GET") {
