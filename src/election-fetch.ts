@@ -55,3 +55,9 @@ export function sourceLayers(sources: ElectionSource[]): ElectionSource[][] {
   }
   return layers;
 }
+
+export function retryAfterTime(value: string | null, now = Date.now()): number | undefined {
+  if (!value) return undefined;
+  const time = /^\d+$/.test(value.trim()) ? now + Number(value.trim()) * 1000 : Date.parse(value);
+  return Number.isFinite(time) && time > now ? Math.min(time, now + 24 * 60 * 60_000) : undefined;
+}

@@ -1,6 +1,7 @@
 import type { CandidateCount } from "../monitor";
 import type { ElectionAdapter, ElectionResult, ElectionTarget } from "./types";
 import { count, json, party, perTarget, requireUniverse, review, tally, unavailable } from "./northeast-common.ts";
+import { CNN_SENATE_LIST, cnnSource, withCnnFallback, type CnnRace } from "./northeast-cnn.ts";
 
 // Ohio Secretary of State "Ohio Decides" election-night API. The live page
 // (https://liveresults.ohiosos.gov/) calls these JSON routes; the NIST 1500-100
@@ -13,13 +14,21 @@ const SENATE = ["Sherrod Brown", "Jon Husted", "Greg Levy", "William B. Redpath"
 
 // Contest object IDs and full ballot universes (incl. certified write-ins) from the
 // November 3, 2026 contest catalog and district summary observed 2026-11-03.
-const HOUSE: Record<string, { id: string; candidates: string[] }> = {
-  "01": { id: "_55A742EA574909A3E0633390EE0AE290", candidates: ["Eric Conroy", "Greg Landsman", "Nathan Weise"] },
-  "07": { id: "_55A742EA571A09A3E0633390EE0AE290", candidates: ["Thahbia Asad", "Andrey Joseph Martinichin", "Max Miller", "Brian Poindexter"] },
-  "09": { id: "_55A742EA577809A3E0633390EE0AE290", candidates: ["Marcy Kaptur", "Kathy McKinstry", "Derek Merrin"] },
-  "10": { id: "_55A742EA571009A3E0633390EE0AE290", candidates: ["Kristina Knickerbocker", "Thomas F. McMasters", "Mike Turner"] },
-  "13": { id: "_55A742EA572F09A3E0633390EE0AE290", candidates: ["Carey Coleman", "Sandeep Dixit", "Emilia Sykes"] },
+// `cnn` is CNN's universe for the same race: ballot candidates only, without Ohio's certified write-ins.
+const HOUSE: Record<string, { id: string; candidates: string[]; cnn: string[] }> = {
+  "01": { id: "_55A742EA574909A3E0633390EE0AE290", candidates: ["Eric Conroy", "Greg Landsman", "Nathan Weise"], cnn: ["Greg Landsman", "Eric Conroy", "Nathan Weise"] },
+  "07": { id: "_55A742EA571A09A3E0633390EE0AE290", candidates: ["Thahbia Asad", "Andrey Joseph Martinichin", "Max Miller", "Brian Poindexter"], cnn: ["Brian Poindexter", "Max Miller"] },
+  "09": { id: "_55A742EA577809A3E0633390EE0AE290", candidates: ["Marcy Kaptur", "Kathy McKinstry", "Derek Merrin"], cnn: ["Marcy Kaptur", "Derek Merrin"] },
+  "10": { id: "_55A742EA571009A3E0633390EE0AE290", candidates: ["Kristina Knickerbocker", "Thomas F. McMasters", "Mike Turner"], cnn: ["Kristina Knickerbocker", "Mike Turner", "Thomas McMasters"] },
+  "13": { id: "_55A742EA572F09A3E0633390EE0AE290", candidates: ["Carey Coleman", "Sandeep Dixit", "Emilia Sykes"], cnn: ["Emilia Sykes", "Carey Coleman", "Sandeep Dixit"] },
 };
+const SENATE_CNN = ["Sherrod Brown", "Jon Husted", "Greg Levy", "William Redpath"];
+// CNN 2026-SP-OH, observed 2026-11-03: polls open 12:00Z Nov 3, close 00:30Z Nov 4 (7:30 p.m. ET).
+const SENATE_SPECIAL = {
+  raceTitle: "Senate Special Election", pollsOpen: 1793707200000, pollsClose: 1793752200000, listSource: CNN_SENATE_LIST.id,
+  parties: { "Sherrod Brown": "DEM", "Jon Husted": "REP", "Greg Levy": "IND", "William Redpath": "LIB" },
+};
+const cnnKey = (target: ElectionTarget) => target.chamber === "senate" ? "2026-SP-OH" : `2026-HG-OH-${Number(target.district)}`;
 
 const targets: ElectionTarget[] = [
   { id: "senate-oh", state: "OH", name: "Ohio U.S. Senate (unexpired term)", chamber: "senate", sourceId: "oh-senate" },
@@ -65,7 +74,7 @@ function withGate(gate: Gate, result: ElectionResult): ElectionResult {
   return { ...result, message: `${result.message} Publisher XML still flags this file as a test (IsTest=true).` };
 }
 
-export function parseOhio(bodies: Record<string, string>): Record<string, ElectionResult> {
+function parseOfficial(bodies: Record<string, string>): Record<string, ElectionResult> {
   let gate: Gate;
   try {
     gate = ohioGate(bodies["oh-xml"]);
@@ -87,7 +96,7 @@ export function parseOhio(bodies: Record<string, string>): Record<string, Electi
         reportedPrecincts: reported ? count(reported) : undefined, totalPrecincts: total ? count(total) : undefined,
         coverage: "complete",
       });
-      return withGate(gate, result);
+      return { ...withGate(gate, result), sourceId: "oh-senate" };
     }
     const spec = HOUSE[target.district!];
     const data = json(bodies["oh-house"], "Ohio Congress");
@@ -97,17 +106,32 @@ export function parseOhio(bodies: Record<string, string>): Record<string, Electi
     if (rows.length !== 1 || rows[0].objectId !== spec.id) throw new Error(`${label} missing, duplicated or re-identified.`);
     const list = candidates(rows[0].candidatesRunning, spec.candidates, label);
     if (count(rows[0].totalContestVotes) !== list.reduce((sum, row) => sum + row.votes, 0)) throw new Error(`${label} total does not reconcile.`);
-    return withGate(gate, tally(list, { label: `Ohio SOS district-wide totals, ${label}`, coverage: "complete" }));
+    return { ...withGate(gate, tally(list, { label: `Ohio SOS district-wide totals, ${label}`, coverage: "complete" })), sourceId: "oh-house" };
   });
+}
+
+// Official Ohio results are preferred. CNN replaces a target only when the official
+// result is unavailable (e.g. HTTP 429) or under review (e.g. counts under IsTest=true).
+export function parseOhio(bodies: Record<string, string>): Record<string, ElectionResult> {
+  const official = parseOfficial(bodies);
+  return Object.fromEntries(targets.map(target => {
+    const why = "official Ohio SOS feed unavailable or under review; CNN omits certified write-ins";
+    const race: CnnRace = target.chamber === "senate"
+      ? { target, key: cnnKey(target), candidates: SENATE_CNN, why, special: SENATE_SPECIAL }
+      : { target, key: cnnKey(target), candidates: HOUSE[target.district!].cnn, why };
+    return [target.id, withCnnFallback(official[target.id], race, bodies)];
+  }));
 }
 
 export const ohioAdapter: ElectionAdapter = {
   id: "northeast-oh",
-  version: "2026-11-03.1",
+  version: "2026-11-03.2",
   sources: [
     { id: "oh-xml", name: "Ohio SOS NIST results XML (identity/test gate)", url: `${API}/download?filename=VSSC1622XmlFileBlob`, authorityUrl: AUTHORITY, official: true, maxBytes: 6_000_000 },
     { id: "oh-senate", name: "Ohio SOS U.S. Senate statewide JSON", url: `${API}/Contest/GetContestDetailsObject?contestName=U.S.+Senator&contestObjectId=&resultsLevel=&countyId=`, authorityUrl: AUTHORITY, official: true },
     { id: "oh-house", name: "Ohio SOS Representative to Congress district summary JSON", url: `${API}/Contest/GetContestDetailsObject?contestName=Representative+to+Congress&contestObjectId=&resultsLevel=&countyId=`, authorityUrl: AUTHORITY, official: true },
+    ...targets.map(target => cnnSource(cnnKey(target))),
+    CNN_SENATE_LIST,
   ],
   targets,
   parse: parseOhio,
