@@ -214,3 +214,30 @@ test("AZ, MT and WI newsroom fallbacks reject non-production data", async () => 
   assert.equal(wi.totalVotes, 22);
   assert.match(wi.message, /not official/);
 });
+
+test("Minnesota keeps the official SOS file first and falls back to CNN only when it fails", async () => {
+  const cnnSetup = fx("cnn-2026-SG-MN.json");
+  const cnnCounted = cnnVotes(cnnSetup, { "Peggy Flanagan": 5200, "Michele Tafoya": 4800, "Marisa Simonetti": 40 });
+  // Verified official zero setup is never replaced by newsroom counts.
+  const official = (await run("west-mn-sos", { "mn-senate": fx("mn-senate.txt"), "cnn-2026-SG-MN": cnnCounted }))["senate-mn"];
+  assert.equal(official.status, "setup");
+  assert.equal(official.sourceId, "mn-senate");
+  assert.equal(official.totalVotes, 0);
+  // Hosted fetch timed out: the SOS body is absent, so the labelled CNN race is used.
+  const timedOut = (await run("west-mn-sos", { "cnn-2026-SG-MN": cnnCounted }))["senate-mn"];
+  assert.equal(timedOut.status, "reporting");
+  assert.equal(timedOut.sourceId, "cnn-2026-SG-MN");
+  assert.equal(timedOut.totalVotes, 10040);
+  assert.equal(timedOut.candidates.find(c => c.name === "Peggy Flanagan").party, "DEM");
+  assert.equal(timedOut.winner, undefined);
+  assert.match(timedOut.message, /Minnesota SOS results file not fetched/);
+  assert.match(timedOut.message, /not official/);
+  // A malformed official response (gateway error page) also yields to the fallback.
+  assert.equal((await run("west-mn-sos", { "mn-senate": "<html>504 Gateway Timeout</html>", "cnn-2026-SG-MN": cnnSetup }))["senate-mn"].sourceId, "cnn-2026-SG-MN");
+  // Fallback data is still validated: test data or a changed field is rejected, not shown.
+  const test = JSON.parse(cnnSetup); test.externalKey = "test-key";
+  const rejected = (await run("west-mn-sos", { "cnn-2026-SG-MN": JSON.stringify(test) }))["senate-mn"];
+  assert.equal(rejected.status, "unavailable");
+  assert.match(rejected.message, /CNN fallback rejected/);
+  assert.equal((await run("west-mn-sos", {}))["senate-mn"].status, "unavailable");
+});
