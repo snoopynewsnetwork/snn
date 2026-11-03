@@ -76,7 +76,8 @@ refresh every 30 seconds while the desk is visible. Kansas and North Carolina
 show automatic official vote totals at the top of the desk and derive their
 watchlist margins from those counts. Other watch items use editor entries.
 Opening the desk or clicking **Fetch live results** asks the server to fetch
-the official sources, subject to duplicate-run protection and source backoff.
+the official sources, subject to 30-second duplicate-run protection. Explicit
+fetches retry failed sources; scheduled checks apply failure backoff.
 No editor key or manual result entry is needed for these two states.
 
 Automatic margins divide D minus R votes by all candidate votes. Zero setup
