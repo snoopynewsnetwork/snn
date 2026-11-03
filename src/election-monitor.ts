@@ -3,7 +3,7 @@ import { electionAdapter } from "./election-adapters";
 import type { ElectionAdapter, ElectionResult, ElectionSource, ElectionTarget } from "./adapters/types";
 import { bodyHash } from "./monitor";
 import { hasValidCounts, type LiveResult } from "./live-results";
-import { readSourceBody, resolveSourceUrl, sourceLayers } from "./election-fetch";
+import { readSourceBody, resolveSourceUrl, retryAfterTime, sourceLayers } from "./election-fetch";
 
 interface SourceState {
   status: "pending" | "ok" | "error";
@@ -11,6 +11,7 @@ interface SourceState {
   lastSuccessAt?: string;
   lastChangedAt?: string;
   nextAttemptAt?: string;
+  retryAfterAt?: string;
   consecutiveErrors?: number;
   url?: string;
   hash?: string;
@@ -92,8 +93,10 @@ export class ElectionMonitor extends DurableObject<Record<string, never>> {
 
   private async fetchSource(source: ElectionSource, bodies: Record<string, string>, force: boolean) {
     const old = this.sourceState(source.id);
-    if (!force && old.nextAttemptAt && Date.parse(old.nextAttemptAt) > Date.now()) return;
+    if ((old.retryAfterAt && Date.parse(old.retryAfterAt) > Date.now()) ||
+        (!force && old.nextAttemptAt && Date.parse(old.nextAttemptAt) > Date.now())) return;
     const checkedAt = new Date().toISOString();
+    let retryAfter: number | undefined;
     try {
       const url = resolveSourceUrl(source, bodies);
       const headers = new Headers({ "User-Agent": "SNN-Live-Results/2.0 (+https://github.com/snoopynewsnetwork/snn)", "Cache-Control": "no-cache", ...source.headers });
@@ -102,6 +105,7 @@ export class ElectionMonitor extends DurableObject<Record<string, never>> {
         if (old.lastModified) headers.set("If-Modified-Since", old.lastModified);
       }
       const response = await fetch(url, { method: source.method ?? "GET", body: source.body, headers, redirect: "manual", signal: AbortSignal.timeout(15_000) });
+      retryAfter = retryAfterTime(response.headers.get("retry-after"));
       if (response.status !== 200 && response.status !== 304) throw new Error(`Source returned HTTP ${response.status}.`);
       const body = response.status === 304 && old.url === url ? this.sourceBody(old.snapshotId) : response.status === 200 ? await readSourceBody(response, source) : "";
       if (!body) throw new Error("Source returned 304 without a matching cached response.");
@@ -134,7 +138,8 @@ export class ElectionMonitor extends DurableObject<Record<string, never>> {
     } catch (error) {
       const consecutiveErrors = (old.consecutiveErrors ?? 0) + 1;
       this.saveSource(source.id, { ...old, status: "error", checkedAt, consecutiveErrors,
-        nextAttemptAt: new Date(Date.now() + Math.min(15, 2 ** Math.min(consecutiveErrors - 1, 4)) * 60_000).toISOString(),
+        nextAttemptAt: new Date(Math.max(retryAfter ?? 0, Date.now() + Math.min(15, 2 ** Math.min(consecutiveErrors - 1, 4)) * 60_000)).toISOString(),
+        retryAfterAt: retryAfter ? new Date(retryAfter).toISOString() : undefined,
         error: error instanceof Error ? error.message : "Source fetch failed." });
     }
   }
@@ -145,9 +150,10 @@ export class ElectionMonitor extends DurableObject<Record<string, never>> {
     if (started && Date.now() - Number(started.value) < 30_000) return this.getResults(adapter.id);
     sql.exec("INSERT INTO metadata (key, value) VALUES ('started', ?) ON CONFLICT(key) DO UPDATE SET value = excluded.value", String(Date.now()));
     const bodies: Record<string, string> = {};
-    // Bound simultaneous connections; dependent version feeds always run first.
-    for (const layer of sourceLayers(adapter.sources)) for (let i = 0; i < layer.length; i += 3)
-      await Promise.all(layer.slice(i, i + 3).map(source => this.fetchSource(source, bodies, force)));
+    // State adapters run independently in parallel. Serialize each publisher's
+    // requests to avoid bursts against election servers and version pointers.
+    for (const layer of sourceLayers(adapter.sources)) for (const source of layer)
+      await this.fetchSource(source, bodies, force);
     let parsed: Record<string, ElectionResult> = {};
     let parserError: string | undefined;
     try { parsed = await adapter.parse(bodies); }
