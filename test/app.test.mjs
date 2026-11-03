@@ -69,9 +69,10 @@ test(
       await start();
       await smoke(base, key);
       const monitor = await (await fetch(`${base}/api/monitor`)).json();
-      assert.deepEqual(monitor.races.map(race => race.race), ["kansas", "north-carolina"]);
+      assert.equal(monitor.races.filter(race => /^senate-[a-z]{2}$/.test(race.target)).length, 14);
+      assert.ok(monitor.races.some(race => race.target === "house-tx-35"));
       assert.equal(monitor.intervalMinutes, 1);
-      assert.equal(monitor.sources.length, 7);
+      assert.ok(monitor.sources.length >= 25);
       assert.equal((await fetch(`${base}/api/monitor/refresh`, { method: "POST" })).status, 401);
       assert.equal((await fetch(`${base}/api/monitor/snapshots/999999`)).status, 404);
       const headers = { Authorization: `Bearer ${key}`, "Content-Type": "application/json" };
@@ -79,9 +80,12 @@ test(
       assert.equal(night.guide.senate.length, 14);
       assert.equal(night.guide.house.length, 51);
       assert.deepEqual(night.observations, []);
-      assert.deepEqual(night.liveResults.map(result => result.race), ["kansas", "north-carolina"]);
+      assert.equal(night.coverage.configured, 65);
+      assert.equal(night.coverage.total, 65);
+      assert.equal(new Set(night.liveResults.map(result => result.target)).size, night.liveResults.length);
+      for (const item of [...night.guide.senate, ...night.guide.house]) assert.ok(night.liveResults.some(result => result.target === item.id), item.id);
       assert.equal(night.intervalMinutes, 1);
-      assert.ok(night.liveResults.every(result => result.sourceUrl.startsWith("https://")));
+      assert.ok(night.sources.every(source => /^https?:/.test(source.authorityUrl)));
       assert.equal((await fetch(`${base}/api/election-night/refresh`)).status, 405);
       const endpoint = `${base}/api/election-night/senate-mi`;
       const input = {
@@ -154,7 +158,8 @@ test(
       );
       assert.equal(race.election, "Special");
       const restored = await (await fetch(`${base}/api/election-night`)).json();
-      assert.equal(restored.observations.find(entry => entry.target === "senate-mi").version, 4);
+      assert.ok(!restored.observations.some(entry => entry.target === "senate-mi"), "Automatic races do not revive manual totals while feeds are pending");
+      assert.equal((await (await fetch(`${endpoint}/history`)).json()).history[0].version, 4, "Manual history survives the automatic-source overlay");
       assert.equal(restored.observations.find(entry => entry.target === "cue-nc").status, "observed");
       assert.equal((await (await fetch(`${endpoint}/history`)).json()).history.length, 4);
     } finally {
