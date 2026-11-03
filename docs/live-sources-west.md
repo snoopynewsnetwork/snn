@@ -12,7 +12,7 @@ All sources were fetched **2026-11-03 21:05 UTC** (before any polls closed) with
 | senate-ia, house-ia-01/02/03 | Iowa SOS Clarity `electionresults.iowa.gov/IA/127077/{version}/json/en/summary.json` | yes | `IA/elections.json` lists EID 127077 = `2026 General Election`, `11/3/2026` |
 | house-co-05, house-co-08 | Colorado SOS Clarity `results.enr.clarityelections.com/CO/127407/{version}/json/en/summary.json` | yes (vendor-hosted) | `CO/elections.json` lists EID 127407 = `2026 General`, `11/3/2026` |
 | senate-ne, house-ne-02 | Nebraska SOS `electionresults.nebraska.gov/resultsCSV.aspx?text=All&type=SW|CG…` + `default.aspx` | yes | home page reads `Unofficial Results / General Election November 3, 2026`; row timestamps must be 11/ or 12/…/2026 |
-| senate-mn | Minnesota SOS media file `electionresultsfiles.sos.mn.gov/20261103/ussenate.txt` | yes | dated path; office 0102 `U.S. Senator`, statewide rows only |
+| senate-mn | Minnesota SOS media file `electionresultsfiles.sos.mn.gov/20261103/ussenate.txt`; fallback CNN `politics.api.cnn.io/results/race/2026-SG-MN.json` | SOS yes / CNN **no** | SOS: dated path; office 0102 `U.S. Senator`, statewide rows only. CNN (only when the SOS body is missing or rejected): `ecKey`, `production-key`, type G, embargo, 5-choice universe incl. `Total Write-ins` |
 | house-ca-22, house-ca-48 | California SOS `api.sos.ca.gov/returns/us-rep/district/{22,48}` (JSON service of electionresults.sos.ca.gov, whose HTML is behind an Incapsula challenge; the API answers directly) | yes | exact race title; `ReportingTime` November/December 2026 |
 | senate-ks | Kansas SOS `ent.sos.ks.gov/kssos_ent.html` first; fallback CNN `politics.api.cnn.io/results/race/2026-SG-KS.json` | SOS yes / CNN **no** | SOS: coordinator's `parseKansasResults` (2026 General keywords, 105 counties, contest 1001). CNN: `ecKey`, `production-key`, type G, `extractedAt` ≥ 2026-11-03, vote embargo |
 | senate-ks-johnson (supporting) | CNN `results/county-races/2026-SG-KS.json`, FIPS 20091; watches the Johnson County Election Office Nov 3 page for official PDFs | **no** | same CNN checks; `coverage: "partial"` |
@@ -29,7 +29,11 @@ All sources were fetched **2026-11-03 21:05 UTC** (before any polls closed) with
 - **Cumulative snapshots.** Each parse replaces the previous result and nothing is summed. Totals are reconciled where the publisher gives them (Clarity `TV`, MN total-votes column, CNN `totalVote`). Rows from mixed timestamps are rejected (NE, MN).
 - **Zero votes means `setup`, not counted votes.** `resultStatus: "unofficial"` is set only once votes exist. No adapter sets `winner`; CNN projections appear only as message text.
 - **Reporting units are not completion.** Clarity `PR/TP` counts counties that have uploaded, and Texas counts counties statewide. Both are reported in the message only, never as `reportedPrecincts`. Real precinct ratios (NE, MN, CA) fill the precinct fields, with a warning that they are not a share of votes counted.
-- **Failure isolation.** An identity failure marks every target of that adapter `review`. A contest failure marks only that target. Kansas falls back from the SOS page to CNN within one target and sets `sourceId` to the source actually used.
+- **Failure isolation.** An identity failure marks every target of that adapter `review`. A contest failure marks only that target. Kansas and Minnesota fall back from the official source to CNN within one target and sets `sourceId` to the source actually used.
+
+## Minnesota hosted-fetch fallback
+
+In production (PR13), the hosted collector timed out fetching `electionresultsfiles.sos.mn.gov`, even though the same URL returned 200 locally. The Minnesota adapter still requests the SOS file first on every cycle. CNN `2026-SG-MN` (fetched 2026-11-03 ~21:22 UTC, 2,906 bytes, sha256 `b64c7441b56b272c…`, production-key, General Election, zero setup) is used only when the SOS body is absent or fails validation. The result's `sourceId` then names the CNN source and the message says "not official". Verified official setup or counts are never replaced by CNN. CNN's universe is Flanagan DEM, Tafoya REP, Simonetti IND, Whiting LIB and the aggregate `Total Write-ins` (CNN party code OTH). That matches the SOS file's five choices.
 
 ## Blocked official sources (verified 2026-11-03 ~21:00 UTC)
 
@@ -56,4 +60,5 @@ The AP embeds on station sites (`interactives.apelections.org/…/organization-l
 | ca-22.json / ca-48.json | 483 / 481 | 11c64a088a560355 / 01d4a5cc2582bc3d | verbatim |
 | cnn-2026-SG-KS.json | 2,120 | 8e2c3dfe71b080c7 | verbatim |
 | cnn-ks-counties.json | 157,085 | f773936aee26e0b2 | Johnson County (20091) record only |
+| cnn-2026-SG-MN.json | 2,906 | b64c7441b56b272c | verbatim |
 | cnn-2026-HG-AZ-1/AZ-6/MT-1/WI-3.json | 2,938 / 2,492 / 2,112 / 2,536 | 89a50dc8… / 55bf782c… / 6ef5ac38… / 58ece515… | verbatim |

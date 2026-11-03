@@ -31,7 +31,7 @@ bursts against election servers.
 
 Official state or officially linked vendor feeds are preferred. CNN's public
 results feed is an explicitly attributed newsroom fallback where official
-counts cannot be collected. Kansas, Ohio and Pennsylvania select official results
+counts cannot be collected. Kansas, Minnesota, Ohio and Pennsylvania select official results
 when verified and use CNN when the official feed fails validation or access.
 Source attribution follows the selected feed. The desk shows source health,
 last check, last verified counts, and retained source responses under **Live
