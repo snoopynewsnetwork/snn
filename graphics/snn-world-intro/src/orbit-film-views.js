@@ -1,12 +1,35 @@
 import * as THREE from 'three';
 import { createOrbitFilm } from './orbit-film.js';
-import { APPROACH_DURATION } from './orbit-flight.js';
+import { FILM_SHOTS } from './film-shots.js';
 import { getOrbitSettings, subscribeOrbitSettings } from './orbit-editor-state.js';
 import { startFilmExport } from './film-export.js';
 
 export function startOrbitFilmStudies() {
   const section = document.querySelector('#orbit-film-studies');
   if (!section) return;
+
+  const storyboard = section.querySelector('#film-storyboards');
+  const shotTemplate = section.querySelector('#film-shot-template');
+  storyboard.replaceChildren(...FILM_SHOTS.map((shot) => {
+    const article = shotTemplate.content.firstElementChild.cloneNode(true);
+    article.dataset.shot = shot.id;
+    article.dataset.start = String(shot.start);
+    article.dataset.end = String(shot.end);
+    article.querySelector('.film-shot-number').textContent = shot.number;
+    article.querySelector('.film-shot-title').textContent = shot.title;
+    article.querySelector('.film-shot-range').textContent = `FILM ${shot.range}`;
+    article.querySelector('.artboard-label').append(` SHOT ${shot.number} · ${(shot.end - shot.start).toFixed(1)}s`);
+    article.querySelector('.orbit-film-scene').setAttribute('aria-label', `${shot.title} storyboard animation`);
+    article.querySelector('.film-phase').textContent = shot.phase;
+    article.querySelector('.shot-caption-number').textContent = `${shot.number} / STORYBOARD`;
+    article.querySelector('.film-progress').setAttribute('aria-label', `${shot.title} progress`);
+    article.querySelector('.film-toolbar').setAttribute('aria-label', `${shot.title} controls`);
+    article.querySelector('.globe-note').textContent = shot.description;
+    return article;
+  }));
+  section.querySelector('#film-storyboard-title').textContent = 'Six shots, one continuous film.';
+  section.querySelector('#film-timeline-note').textContent = FILM_SHOTS
+    .map((shot) => `${shot.range.slice(0, -1)} ${shot.title}`).join(' · ');
 
   const openingInput = section.querySelector('#film-opening');
   const weaveInput = section.querySelector('#film-weave');
@@ -164,10 +187,8 @@ export function startOrbitFilmStudies() {
     const slider = article.querySelector('.film-progress');
     const player = {
       container, canvas, context, slider,
-      start: article.dataset.shot === 'weave' ? 6 + APPROACH_DURATION : Number(article.dataset.start),
-      duration: article.dataset.shot === 'horizon' ? APPROACH_DURATION
-        : article.dataset.shot === 'weave' ? 11 - APPROACH_DURATION
-          : Number(article.dataset.end) - Number(article.dataset.start),
+      start: Number(article.dataset.start),
+      duration: Number(article.dataset.end) - Number(article.dataset.start),
       isFull: article.dataset.shot === 'full',
       playButton: article.querySelector('.film-play'),
       replayButton: article.querySelector('.film-replay'),

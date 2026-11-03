@@ -1,9 +1,10 @@
 import * as THREE from 'three';
 import { geoVector, SPHERE_VIEW } from './globe-projection.js';
+import { getFilmPhase } from './film-shots.js';
+export { FILM_DURATION } from './film-shots.js';
 
 const V = (x, y, z) => new THREE.Vector3(x, y, z);
 const clamp = THREE.MathUtils.clamp;
-export const FILM_DURATION = 24;
 export const COAST_START = 1.8;
 export const COAST_END = 5.8;
 export const PULL_UP_END = 7.2;
@@ -457,9 +458,5 @@ export function getOrbitPose(seconds, weave = 1, aspect = 1.8) {
 }
 
 export function orbitPhase(time) {
-  // Tolerate rounding when converting full-film timestamps to orbit seconds.
-  if (time < APPROACH_DURATION - 1e-9) return '01 · AROUND THE NORTH PACIFIC';
-  if (time < 11) return '02 · BETWEEN THE LETTERS';
-  if (time < 14) return '03 · THE BLOCKS READ SNN';
-  return '04 · ACROSS THE WORLD';
+  return getFilmPhase(time + 6);
 }

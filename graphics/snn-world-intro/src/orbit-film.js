@@ -5,6 +5,7 @@ import { geoVector, SPHERE_VIEW } from './globe-projection.js';
 import { createOrbitInkAssets } from './orbit-ink-assets.js';
 import { getOrbitPose, orbitPhase, smooth, FILM_DURATION, COAST_END, PULL_UP_END } from './orbit-flight.js';
 import { applyOrbitSettings, DEFAULT_ORBIT_SETTINGS } from './orbit-editor-state.js';
+import { getFilmPhase } from './film-shots.js';
 
 export function createOrbitFilm(renderer) {
   const scene = new THREE.Scene();
@@ -36,7 +37,8 @@ export function createOrbitFilm(renderer) {
     if (time < 6) {
       activeScene = opening.scene;
       activeCamera = opening.camera;
-      return opening.update(time / 6, viewAspect);
+      opening.update(time / 6, viewAspect);
+      return getFilmPhase(time);
     }
 
     activeScene = scene;

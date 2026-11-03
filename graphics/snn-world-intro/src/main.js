@@ -1,8 +1,5 @@
 import * as THREE from 'three';
 import { createSnoopy } from './snoopy.js';
-import { startOrbitView } from './orbit-view.js';
-import { startGlobeStudies } from './globe.js';
-import { startTransitionStudies } from './transition-views.js';
 import { startOrbitFilmStudies } from './orbit-film-views.js';
 import { startOrbitEditor } from './orbit-editor.js';
 import './style.css';
@@ -95,9 +92,7 @@ function start() {
 
 for (const button of document.querySelectorAll('button[data-background]')) {
   button.addEventListener('click', () => {
-    for (const frame of document.querySelectorAll('.artboard')) {
-      frame.dataset.background = button.dataset.background;
-    }
+    artboard.dataset.background = button.dataset.background;
     for (const swatch of document.querySelectorAll('button[data-background]')) {
       swatch.setAttribute('aria-pressed', String(swatch === button));
     }
@@ -114,9 +109,18 @@ referenceToggle.addEventListener('click', () => {
   artboard.classList.toggle('comparing', showing);
 });
 
-start();
-startOrbitView();
-startGlobeStudies();
-startTransitionStudies();
 startOrbitFilmStudies();
 startOrbitEditor();
+
+// Keep the original drawing available without starting another renderer
+// until its reference panel is opened.
+const referencePanel = document.querySelector('#drawing-reference');
+let referenceStarted = false;
+function openReference() {
+  if (!referencePanel.open || referenceStarted) return;
+  referenceStarted = true;
+  start();
+}
+referencePanel.addEventListener('toggle', openReference);
+openReference();
+if (import.meta.hot) import.meta.hot.dispose(() => referencePanel.removeEventListener('toggle', openReference));

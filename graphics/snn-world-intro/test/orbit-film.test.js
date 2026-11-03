@@ -160,17 +160,19 @@ test('orbit flight stays outside Earth and remains continuous at shot boundaries
   }
 });
 
-test('the close pass is one scene before the renumbered reveal and crossing', () => {
+test('the globe phases follow the current six-shot storyboard', () => {
   const phase = orbitPhase(APPROACH_DURATION);
-  assert.match(orbitPhase(APPROACH_DURATION - 1e-6), /^01 · /);
-  assert.match(phase, /^02 · /);
+  assert.equal(orbitPhase(APPROACH_DURATION - 1e-6), '02 · ACROSS THE PACIFIC');
+  assert.equal(phase, '03 · BEHIND THE N');
   assert.equal(orbitPhase((6 + APPROACH_DURATION) - 6), phase,
-    'the full-film timestamp round trip preserves the Shot 02 boundary');
+    'the full-film timestamp round trip preserves the approach boundary');
   for (const fraction of [0, 0.2, 0.5, 0.8, 0.999]) {
-    assert.equal(orbitPhase(APPROACH_DURATION + fraction * (11 - APPROACH_DURATION)), phase);
+    assert.equal(orbitPhase(APPROACH_DURATION + fraction * (8 - APPROACH_DURATION)), phase);
   }
-  assert.match(orbitPhase(11), /^03 · /);
-  assert.match(orbitPhase(14), /^04 · /);
+  assert.equal(orbitPhase(8), '04 · BETWEEN THE LETTERS');
+  assert.equal(orbitPhase(11.4 - 1e-6), '04 · BETWEEN THE LETTERS');
+  assert.equal(orbitPhase(11.4), '05 · BACK TO EARTH');
+  assert.equal(orbitPhase(14), '06 · ACROSS THE WORLD');
 });
 
 test('the descent and close pass join smoothly with a longer, steady Pacific cruise', () => {

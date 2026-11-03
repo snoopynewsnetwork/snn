@@ -1,10 +1,9 @@
-# SNN World Intro — character and globe studies
+# SNN World Intro — film review workspace
 
-A standalone Three.js study of Snoopy in a flat, left-facing profile, based on
-the supplied reference, with a separate volumetric study and an overhead camera
-move. The original flat drawing remains available alongside the 3D study.
-Below them, two rows of globe studies show a matching flat and spherical Earth,
-first with light land fills and then with black continents.
+A standalone Three.js workspace for a 24-second Snoopy News Network intro.
+The page opens with the complete film, followed by six storyboard shots, an
+interactive scene editor, and the original Snoopy drawing reference. The older
+character, globe, and transition comparison panels are no longer on the page.
 
 ## Run
 
@@ -17,77 +16,151 @@ npm run dev
 ```
 
 Open the local URL printed by Vite. `npm run check` checks the JavaScript, runs
-the camera tests, and builds the production bundle. `npm run preview` serves that bundle locally.
-This folder has its own dependencies and does not change the main SNN app.
+the tests, and builds the production bundle. `npm run preview` serves that bundle
+locally. This folder has its own dependencies and does not change the main SNN app.
 
-## Drawing
+## Complete film and storyboard
 
-`src/snoopy.js` constructs the character from editable Bézier paths,
-`THREE.ShapeGeometry` fills, and triangulated round strokes. The drawing uses
-flat, unlit materials and an orthographic camera. The reference image is only
-used by the optional comparison view, never as a texture in the scene.
+The full film begins with the original planar Snoopy drawing, travels through
+his black ink into Earth, follows a North Pacific arc, and weaves through the
+orbiting SNN letterforms before revealing the word across the globe.
 
-`createSnoopy()` returns a root group, named parts (`head`, `nose`, `ear`, `body`,
-`tail`, `collar`), and a cleanup function. The head has a pivot at the neck.
-The coordinates follow the 294 × 340 reference image; the root converts them
-to a centered Three.js scene. This original artwork stays planar.
+The six cards are ranges of that same continuous film. `src/film-shots.js` defines
+their boundaries, titles, and descriptions, shared by the storyboard, timeline,
+film captions, and editor labels.
 
-The flat viewer renders on resize or export rather than running an idle animation
-loop. It supports three canvas backgrounds and a reference comparison.
-**Save PNG** exports just the drawing on transparency at the current canvas
-resolution, excluding the viewer labels and selected background.
+| Shot | Film time | Moment |
+| --- | --- | --- |
+| 01 | 0–6s | Through the ink |
+| 02 | 6–11.9s | Across the Pacific |
+| 03 | 11.9–14s | Behind the N |
+| 04 | 14–17.4s | Between the letters |
+| 05 | 17.4–20s | Back to Earth |
+| 06 | 20–24s | Across the world |
 
-## 3D camera study
+Each card begins at its midpoint and has independent Play/Pause, Replay, reverse
+scrubbing, and a loop toggle. Loops are enabled for storyboard cards and disabled
+for the full film by default. Shot numbers and absolute film timestamps provide
+reference points for feedback. Offscreen and hidden previews suspend playback.
 
-`src/snoopy-3d.js` builds rounded, closed volumes from the profile contours.
-The head, torso, ears, nose, feet, and tail have depth; facial strokes follow
-their surfaces and use normal depth testing. An orthographic camera and unlit
-white materials preserve the drawn appearance from the side. Subtle shading
-appears as the camera rises. The 3D reconstruction is an approximation from a
-single reference, particularly in the unseen overhead view.
+The shared tuning controls select the nose, eye, or ear opening; vary camera
+weave and ring drift; and change preview playback speed. **Reset settings**
+restores the initial tuning. Orbit settings in the scene editor also update every
+film preview.
 
-`src/camera-arc.js` defines a two-second shot: 0.5 seconds at profile, a
-one-second quarter-circle at constant angular speed, then 0.5 seconds directly
-overhead. The camera remains 650 units from a fixed target at the character's
-center, moves from +Z to +Y, and looks toward that target. Its up vector rotates
-with the path so the overhead pose has no pole flip. The character stays still.
+### Camera and scene choreography
 
-The second panel loops this shot with a cut back to profile. Pause, Replay, and
-the timeline slider allow inspection at any angle along the route. Dragging the
-3D canvas pauses playback and freely orbits the camera at the same fixed radius,
-with zoom and panning disabled. Play and Replay snap back to the start of the
-intended profile-to-overhead route. Scrubbing also returns to the scripted route.
-**Reset camera** returns to the initial side profile and pauses playback.
-Playback starts paused when
-reduced motion is requested and suspends while hidden or offscreen. The canvas
-background controls apply to all seventeen panels.
+**Shot 01** keeps Snoopy entirely 2D. The camera pans and zooms into a verified
+solid-ink area, cuts to an unshaded patch of North America, then pulls back to the
+globe. Coastlines appear before globe shading gradually returns. The opening and
+final globe framing each hold briefly.
 
-`npm test` verifies the timing boundaries, angular speed, fixed camera radius,
-endpoint, tangent velocity, and camera-up orientation, including manual orbit.
+**Shot 02** descends toward Earth, finishing at 7.8 seconds, then follows a
+steady circular arc from just south of Baja California past Alaska and Russia
+toward Japan. The camera remains 180 scene units from Earth's center, 40 units
+above its surface. Its heading follows the arc with a fixed 40° downward pitch.
 
-## Globe studies
+**Shot 03** pulls up behind the trailing N and prepares the close pass. The
+camera settles into facing its direction of travel before reaching the letters.
+**Shot 04** rounds the outside of the trailing N, crosses inside the middle N,
+and returns outside the S. The middle-N pass follows one convex arc, with broad
+turns into and out of the letter gaps. The camera looks along its world-space
+motion, with a stable screen-up direction, until it has passed the S at 17.4s.
 
-`src/globe.js` renders a flat canvas globe and a true Three.js sphere. Both use
-the same Natural Earth 1:110m coastlines, dark rounded ink strokes, and white ocean.
-The first globe row uses a very light warm land fill; the separate **The world
-in black.** row repeats both views with black continents. There are no country
-borders. Each spherical view has its own orbit, grid toggle, and reset controls.
+**Shot 05** completes an early return bend toward Earth, matching camera velocity
+and acceleration through a waypoint at 17.45s. Earth re-enters the frame around
+17.4s, keeping the empty interval after the final letter gap to about 0.8s. The
+reveal aim settles by 18.5s, and the camera continues pulling back into the wider
+20-second composition. Narrow-frame fitting eases smoothly into that view.
+**Shot 06** carries the readable SNN word from right to left across Earth.
 
-The flat view is an orthographic projection centered at 100°W, 10°N. Spherical
-clipping limits the drawing to the visible hemisphere, keeping North and South
-America readable. Hawaii is omitted from both flat studies and retained in both
-3D globes. The 3D camera starts at 115°W, 12°N: the eastern Pacific lies
-in the foreground, with North America above and South America near the right
-limb. Most of Europe and Asia are behind the sphere. Drag to orbit at a fixed
-distance; **Reset camera** restores this composition. **Grid lines** toggles
-latitude circles spaced 15° apart and meridians spaced 22.5° apart. In both 3D
-views, the grid is painted beneath the continents, so its light strokes appear
-only over the ocean. Toggling the grid preserves the camera position. The sphere
-uses subtle shading and an opaque surface so the far side stays hidden.
+SNN and the rings share one fixed equatorial plane throughout the globe sequence.
+The letters are present from the beginning, with normal depth occlusion by Earth.
+Their angular travel is constant from film time 6–17s, then eases through the
+reveal and crossing. The authored starting phase is advanced 32° so the trailing
+N sits just beyond the camera's right edge at 11.9s. The editor's phase control
+adds an offset to that starting position. The letters turn toward the audience
+as they resolve into the closing composition.
 
-The view definitions and coordinate mapping live in `src/globe-projection.js`.
-Tests verify hemisphere clipping, projected orientation, matching sphere UVs,
-and which geographic locations are visible in the intended composition.
+## Export MP4
+
+**Export MP4** beneath the complete film renders all 1,440 frames at 1920×1080
+and 60 fps, then downloads a 24-second H.264 video. It uses the opening, weave,
+ring drift, and orbit settings selected when export starts. The video has an
+opaque paper background and excludes editor guides and page labels. Preview
+playback speed does not change the exported duration.
+
+Progress and cancellation are available while rendering, with a download link
+when the render finishes. Export runs locally with `npm run dev` or
+`npm run preview` and requires `ffmpeg` on the server's PATH. Static hosting
+supports the review workspace but does not provide the local video encoder.
+
+## Interactive scene editor
+
+Open `/#scene-editor` below the storyboard. Drag to orbit the scene, right-drag
+or Shift-drag to pan, and scroll to zoom. The Pan mode button makes ordinary
+dragging pan instead. Front, Top, Side, and Reset view provide starting points;
+arrow keys pan when the view is focused.
+
+**Match film camera** pauses playback and moves the editor view to the film
+camera at the selected timestamp, including its angle, roll, and lens. The view
+remains free to orbit, pan, and zoom from there. Reset view restores the overview.
+
+The gold circle shows SNN's orbital plane and radius. Radius, tilt, heading,
+starting phase, and orbit-speed controls update all film previews and persist in
+this browser. Reset orbit restores the authored choreography; Export settings
+downloads the current values as JSON. Orbit edits keep the camera track fixed so
+alignment can be inspected directly.
+
+The colored camera path shows actual positions, from teal for slower motion to
+coral for faster motion, with a dot every half second. Click the path, speed
+graph, or timeline to scrub. Play runs the 6–24s globe sequence. The camera
+frustum indicates its viewing direction, and the inset renders the film camera.
+The graph and readouts measure camera and SNN-center speeds in scene units per
+second.
+
+The editor timeline starts at the globe handoff at 6s. Its path and speed plot
+begin at 7.1s so the distant opening lens blend does not dwarf the scene. Ghost
+Earth affects only the overview, not the film.
+
+## Drawing reference
+
+The collapsed **Drawing reference** section retains the original flat Snoopy
+viewer and the supplied image. It includes three canvas backgrounds, a reference
+comparison, and **Save PNG**. PNG export contains the drawing on transparency at
+the current canvas resolution, without viewer labels or the selected background.
+The viewer renders on resize or export instead of running an idle animation loop.
+
+`src/snoopy.js` builds the drawing from editable Bézier paths, `THREE.ShapeGeometry`
+fills, and triangulated round strokes, using flat materials and an orthographic
+camera. Its coordinates follow the 294 × 340 reference image and are converted
+to a centered Three.js scene. `createSnoopy()` returns the root, named parts, and
+a cleanup function. The reference image is a comparison aid, never a texture in
+the film; it remains in `reference/snoopy-profile.png`.
+
+## Rendering and source layout
+
+- `src/film-shots.js` holds the shared six-shot breakdown.
+- `src/orbit-film-views.js` creates the full-film player and storyboard cards.
+  All seven panels share one WebGL renderer and copy frames into separate canvases.
+- `src/orbit-film.js` combines the flat opening, globe, letters, and rings.
+- `src/orbit-flight.js` defines the camera paths, viewing direction, and timed
+  letter orbit. Every pose is a function of time, supporting reversible scrubbing
+  and later scroll-driven playback.
+- `src/transition-flat.js` implements the nose, eye, and ear opening variants.
+- `src/orbit-ink-assets.js` builds the block-letter silhouettes, ink contours,
+  paper faces, side hatching, and three independently sliding partial ring bands.
+- `src/globe.js` and `src/globe-projection.js` provide Earth geometry, coastline
+  rendering, and coordinate mapping. Black continents occlude the light grid;
+  the opaque sphere hides the far side.
+- `src/orbit-editor.js` provides the free scene view and timeline controls;
+  `src/orbit-editor-state.js` persists orbit settings.
+
+Earlier standalone exploration modules and their tests remain in the repository,
+but the current page no longer starts those viewers. Tests cover the opening
+handoff, geographic orientation, camera continuity and travel-facing direction,
+letter clearance, visibility through the exit, reversible scrubbing, ring motion,
+readable SNN crossing, shared shot boundaries, and MP4 encoding.
 
 Coastlines are bundled from the pinned
 [`world-atlas` land-110m dataset](https://github.com/topojson/world-atlas), derived
@@ -95,162 +168,8 @@ from Natural Earth. [Natural Earth data is public domain](https://www.naturalear
 the redistribution package is ISC licensed. The viewer makes no map-data network
 requests at runtime.
 
-## Transition prototypes
-
-The first transition row compares three six-second transitions, each starting with the
-profile and finishing on the same black-continent globe:
-
-- **The head becomes the world:** Snoopy stays upright and still while the
-  camera arcs from his side to his front. The head then rounds into a sphere,
-  followed by an ink-to-geography handoff before the camera pulls back.
-- **Through the nose:** a close push into the actual black nose conceals a
-  cut to inland North America, followed by a retreat to the whole globe.
-- **The drawing becomes a globe:** a contour becomes a circle, sweeping
-  strokes construct a wire globe, and the continents settle into place.
-
-**Play all** starts them together. Each also has Play/Pause, Replay, and a
-timeline slider. Playback stops at the final frame. There is no automatic
-playback, and offscreen or hidden previews suspend their animation work.
-Every pose is determined by normalized progress, allowing reverse scrubbing
-and later scroll-driven playback without simulation state.
-
-`src/transition-stage.js` creates separate instances of the existing models
-with a head pivot. The three `transition-*.js` scene modules own their motion;
-`src/transition-views.js` owns the shared player. These are motion sketches for
-comparing handoffs, using the current approximate character reconstruction.
-
-The **Flat drawing. Whole world.** row compares three six-second versions
-using the original planar drawing: a push through the **nose**, **eye**, or
-**ear**, followed by a pullback from North America to the same 3D globe.
-Snoopy stays entirely 2D; the framing pans and zooms into his black ink to
-conceal the transition. This row has its own **Play all** control, as well as
-individual playback and scrubbing controls. The earlier studies remain above
-for comparison.
-
-`src/transition-flat.js` shares the motion between these three flat studies.
-The zoom accelerates into a verified solid-ink area, then cuts to an unshaded
-patch of land. Coastlines appear as the framing pulls back; globe shading
-returns gradually afterward. The opening and final frames each hold for about
-half a second. Tests check planar geometry, solid coverage on both sides of
-the cut, reverse scrubbing, and the common final globe view.
-
-## Globe and SNN film
-
-**Beyond the horizon.** extends the chosen flat opening into a 24-second film:
-six seconds from Snoopy to Earth, followed by eighteen seconds around the globe
-and through the SNN letterforms. The four storyboard cards show ranges of this
-same film, preserving the camera and scene continuity:
-
-| Shot | Film time | Moment |
-| --- | --- | --- |
-| 01 | 06–11.9s | Around the North Pacific |
-| 02 | 11.9–17s | Between the letters |
-| 03 | 17–20s | The blocks read SNN |
-| 04 | 20–24s | Across the world |
-
-Shot 01 descends quickly toward Earth, then bends gently into a long, smooth
-North Pacific arc beginning just south of Baja California, Mexico. The broad
-route passes Alaska and Russia toward Japan. The camera’s heading stays tangent
-to the circular arc with a fixed 40° downward pitch, at 180 scene units from
-Earth’s center, 40 units above its surface.
-
-SNN and the rings share one fixed equatorial plane throughout the globe
-sequence, matching the closing composition at 20 seconds and later. The letters
-are present from the start of the globe sequence, with ordinary depth occlusion
-by Earth. SNN's existing angular pace is retained: constant through the first
-two shots, then easing through the closing reveal and crossing.
-The starting position is advanced 32° along that orbit so the trailing N,
-including its ink outline, sits just beyond the film camera's right edge at
-11.9 seconds. Earlier visibility during the zoom is allowed. The editor's
-phase control applies an additional offset to this authored starting position.
-
-Shot 02 pulls up behind the trailing N, curves around its outside away from
-Earth, then weaves to the inside of the middle N and the outside of the S.
-The inner pass follows one convex arc, with broad turns into and out of the
-letter gaps instead of shallow bends that fold back on themselves.
-The camera settles into facing its direction of travel during the approach,
-then looks straight along its world-space path through the letter gaps while
-maintaining a stable screen-up direction. It keeps that heading until it has
-passed the S at 17.4 seconds, then smoothly turns toward the closing composition.
-The exit track curls back toward Earth at 17.45 seconds, with matching velocity
-and acceleration through the bend. Earth returns around 17.4 seconds, reducing
-the empty interval after the final gap to about 0.8 seconds. The reveal aim settles
-by 18.5 seconds before continuing to the existing 20-second closing view.
-SNN’s orbit is unchanged; narrow-frame pullback fitting eases smoothly into
-the wider closing view.
-
-The descent completes at film time 7.8 seconds, settling into a steady cruise
-through 11.8 seconds before the letter passage begins at 11.9 seconds.
-The joins match camera position and velocity, with matching acceleration as
-the descent meets the cruise. Shot 01 lasts 5.9 seconds and Shot 02 lasts
-5.1 seconds; the complete film remains 24 seconds.
-
-Each card begins at its midpoint and has independent playback, reverse
-scrubbing, and a loop toggle. Loops are enabled for storyboard cards and
-disabled for the full film by default. Shot numbers and source timestamps
-provide reference points for feedback.
-
-**Export MP4** beneath the complete film renders all 1,440 frames at
-1920×1080 and 60 fps, then downloads a 24-second H.264 video. It uses the
-opening, weave, ring drift, and orbit settings selected when export starts.
-The video has an opaque paper background and no editor guides or page labels;
-preview playback speed does not change its duration. Progress and cancellation
-are available while rendering. The download link remains available afterward.
-Export runs locally with `npm run dev` (or `npm run preview`) and requires
-`ffmpeg` on the server's PATH. Static hosting still supports the studies but
-does not provide the local video encoder.
-
-The shared tuning controls select the nose, eye, or ear opening; vary camera
-weave and ring drift; and change playback speed. **Reset settings** restores
-the initial tuning. The SNN letters are draft, handbuilt block forms intended
-to explore the reveal and camera motion before choosing the final lettering.
-
-`src/orbit-flight.js` holds the editable camera paths and timed
-letter orbit. The lens moves from the opening's flat projection into perspective,
-tracks closely along the extruded faces in one direction, and retreats as the word
-crosses in front of Earth. `src/orbit-ink-assets.js` builds the ink contours,
-paper faces, side hatching, and three independently sliding partial ring bands.
-`src/orbit-film.js` composes the opening and orbital scene; every state is a
-function of time, so the same sequence can later be driven by scroll position.
-
-The five film panels share one WebGL renderer and copy their frames to separate
-canvases. Tests cover globe handoff, camera continuity, forward motion and
-letter clearance at every weave setting, reversible scrubbing, ring movement, and
-the readable right-to-left SNN crossing.
-
-## Interactive scene editor
-
-Open `/#scene-editor` below the storyboards. The scene view is a free camera:
-drag to orbit, right-drag or Shift-drag to pan, and scroll to zoom. The Pan mode
-button makes ordinary dragging pan instead. Front, Top, Side, and Reset view
-provide useful starting points; arrow keys pan when the view is focused.
-**Match film camera** pauses playback and moves the editor view to the film
-camera at the selected timestamp, including its angle, roll, and lens. Drag,
-pan, or zoom to explore from there; Reset view restores the overview. The editor
-keeps its own viewport proportions.
-
-The gold circle shows SNN's orbital plane and radius at the current film time.
-Use the radius, tilt, heading, starting phase, and orbit-speed controls to adjust
-it. Changes update all film previews and persist in this browser. Reset orbit
-restores the original choreography; Export settings downloads the current values
-as JSON. The default orbital plane stays level throughout the film; a tilt or
-heading edit applies consistently to the whole orbit.
-
-The colored camera path shows actual camera positions, from teal (slower) to
-coral (faster), with a dot every half second. Click the path, speed graph, or
-timeline to scrub. Play runs the 6–24s orbital sequence at normal speed. The
-camera frustum shows its viewing direction, and the inset always renders the
-actual film camera. The graph and readouts measure physical camera and SNN
-center speeds in scene units per second.
-
-The distant opening lens blend is visible in the inset and timeline, but the
-overview path and speed plot begin at 7.1 seconds so that the near-orthographic
-opening does not dwarf the rest of the scene. Ghost Earth is an overview aid
-and does not change the film. The camera track stays fixed
-while editing the orbit, making it possible to inspect the alignment directly.
-
 ## Scope
 
-The character studies include Snoopy only. Woodstock's entrance, the finished
-network title treatment, and the final scroll sequence are later steps.
-The reference is retained in `reference/snoopy-profile.png`.
+The SNN letters are draft, handbuilt block forms. Woodstock's entrance, the
+finished network title treatment, and the final scroll-driven sequence remain
+later steps.
