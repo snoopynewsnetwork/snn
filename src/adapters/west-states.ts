@@ -1,5 +1,6 @@
 import type { CandidateCount } from "../monitor";
 import type { ElectionAdapter, ElectionResult, ElectionTarget } from "./types";
+import { cnnSource, withCnnFallback, type CnnRace } from "./northeast-cnn.ts";
 import { HEADERS, cleanName, count, csv, exactUniverse, guarded, json, party, tally, text, type Universe } from "./west-common.ts";
 
 // Nebraska, Minnesota and California official statewide feeds.
@@ -91,15 +92,28 @@ export function parseMinnesotaSenate(body: string): ElectionResult {
   });
 }
 
+// The SOS file host timed out from Cloudflare's network in production (200 locally), so
+// CNN's race API backs it up. CNN replaces only a missing or rejected official result.
+const mnCnn: CnnRace = {
+  target: mnSenate, key: "2026-SG-MN",
+  candidates: ["Peggy Flanagan", "Michele Tafoya", "Marisa Simonetti", "Rebecca Whiting", "Total Write-ins"],
+  why: "Minnesota SOS results file host timed out from the hosted collector",
+};
+
 export const minnesota: ElectionAdapter = {
-  id: "west-mn-sos", version: "2026-11-03.1",
+  id: "west-mn-sos", version: "2026-11-03.2",
   sources: [{
     id: "mn-senate", name: "Minnesota SOS U.S. Senate statewide media file",
     url: "https://electionresultsfiles.sos.mn.gov/20261103/ussenate.txt", authorityUrl: MN_AUTHORITY, official: true, headers: HEADERS,
-  }],
+  }, cnnSource(mnCnn.key)],
   targets: [{ ...mnSenate, sourceId: "mn-senate" }],
   // The dated 20261103 path is the election identity; the pinned ballot guards the contest.
-  parse: bodies => guarded([mnSenate], () => {}, () => parseMinnesotaSenate(text(bodies, "mn-senate"))),
+  parse: bodies => {
+    const official: ElectionResult = bodies["mn-senate"] === undefined
+      ? { status: "unavailable", message: "Minnesota SOS results file not fetched this cycle." }
+      : { ...guarded([mnSenate], () => {}, () => parseMinnesotaSenate(text(bodies, "mn-senate")))[mnSenate.id], sourceId: "mn-senate" };
+    return { [mnSenate.id]: withCnnFallback(official, mnCnn, bodies) };
+  },
 };
 
 // ---------------------------------------------------------------- California
