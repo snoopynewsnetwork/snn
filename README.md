@@ -54,6 +54,34 @@ Baseline records are refreshed when the generated seed changes. Reporting notes
 survive redeployment and are never overwritten by the seed. Removing a note
 hides it from the public log while preserving its row for recovery.
 
+### Election-night early tells
+
+The default **Election night** desk tracks the supplied cheat sheet: 14 Senate
+margin comparisons, 48 House races plus three redraw/group guardrails, and 13
+timed cues. The **Senate research** tab preserves the race index and reporting
+logs. The original image is available from the desk; names, polling references,
+times and scenario brackets are transcribed from it, rather than asserted as
+verified ballot information.
+
+Use **Editor access**, open a watch item, and save its reporting status, signed
+D-minus-R margin (I-minus-R in Nebraska), optional estimated vote percentage
+counted and sourced winner, or group GOP seat count. Timing cues record an
+editor's evidence assessment. Every update requires a source URL, observation time and note.
+Entries are public, shared through the existing SQLite Durable Object, and
+refresh every 30 seconds while the desk is visible. This watchlist uses manual
+entries; the separate official-source monitor does not populate these signals.
+
+A highlighted band describes the sheet's interpretation of the current entry;
+it never calls a race or calculates chamber control. Fractional margins between
+the sheet's literal rounded bands remain unclassified. Missing results stay
+unresolved. Eastern checkpoints continue through 3am Wednesday, with separate
+warnings for staggered closings and ranked-choice counting delays.
+
+Corrections append versions and preserve prior entries. Stale editor forms are
+rejected with HTTP 409, so two editors cannot silently overwrite one another.
+To retract an entry, select **Awaiting results**, clear result fields, and add a
+sourced explanation. View the last 20 versions in the item's **Update history**.
+
 ### Local development
 
 Requires Node.js 22 or later and npm.
@@ -109,11 +137,14 @@ its usage limits. No custom domain is required.
 | GET | `/api/health` | Check storage and the race count |
 | GET | `/api/races` | List races with reporting-note counts |
 | GET | `/api/races/:slug` | Read a race, research sources, and notes |
+| GET | `/api/election-night` | Read the guide and latest watch-item observations |
+| GET | `/api/election-night/:id/history` | Read the last 20 versions of a watch item |
+| PUT | `/api/election-night/:id` | Append an editor update with `expectedVersion` concurrency protection |
 | POST | `/api/editor` | Verify the editor key |
 | POST | `/api/races/:slug/notes` | Add a sourced note |
 | DELETE | `/api/races/:slug/notes/:id` | Remove a note from the public log |
 
-All POST and DELETE routes require `Authorization: Bearer <ADMIN_TOKEN>`.
+All POST, PUT and DELETE routes require `Authorization: Bearer <ADMIN_TOKEN>`.
 Creating a note requires JSON fields `category` (`news`, `candidates`, `polling`,
 `finance`, or `results`), `title`, `body`, `date` (`YYYY-MM-DD`), and `sourceUrl`
 (HTTP or HTTPS). Editing fails closed if no editor secret is configured.
