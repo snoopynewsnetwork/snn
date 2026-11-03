@@ -768,3 +768,16 @@ dialog .error {
     padding: 24px;
   }
 }
+
+.monitor-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.2rem; }
+.monitor-heading { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: .6rem; }
+.monitor-heading h3 { margin: 0; font-size: 1.4rem; }
+.monitor-results { width: 100%; border-collapse: collapse; font-size: .95rem; }
+.monitor-results th, .monitor-results td { padding: .55rem .3rem; border-bottom: 1px solid #d8d5ca; text-align: left; }
+.monitor-results th:last-child, .monitor-results td:last-child { text-align: right; font-variant-numeric: tabular-nums; }
+.monitor-times { font-size: .8rem; }
+.monitor-times div { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .25rem; margin: .4rem 0; }
+.monitor-times dd { margin: 0; }
+.monitor-board details { font-size: .85rem; }
+.monitor-board summary, [data-monitor-race] summary { cursor: pointer; }
+@media (max-width: 850px) { .monitor-grid { grid-template-columns: 1fr; } }

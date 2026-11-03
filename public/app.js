@@ -112,6 +112,31 @@ function renderNotes(category = "") {
     });
 }
 
+let monitoring;
+function monitorTime(value) {
+  return value ? new Date(value).toLocaleString() : "Not checked yet";
+}
+function renderMonitoring() {
+  const labels = { pending: "Awaiting first check", waiting: "Watching for publication", setup: "Awaiting first votes", reporting: "Unofficial results", review: "Source review needed", error: "Source check failed" };
+  for (const panel of document.querySelectorAll("[data-monitor-race]")) {
+    const slug = panel.dataset.monitorRace;
+    const race = monitoring?.races.find(item => item.race === slug);
+    if (!race) continue;
+    const sources = monitoring.sources.filter(source => source.race === slug);
+    const stale = !race.lastSuccessAt || Date.now() - Date.parse(race.lastSuccessAt) > 15 * 60_000;
+    panel.innerHTML = `<div class="monitor-heading"><h3><a href="#race/${escape(slug)}">${slug === "kansas" ? "Kansas" : "North Carolina"}</a></h3><span class="tag">${escape(labels[race.status] || race.status)}${stale ? " · stale" : ""}</span></div>
+      <p>${escape(race.message || "Waiting for the first source check.")}</p>
+      ${race.candidates ? `<p><strong>${Number(race.totalVotes).toLocaleString()}</strong> Senate votes published${race.status === "error" ? " · last verified snapshot" : ""}</p><table class="monitor-results"><thead><tr><th>Candidate</th><th>Party</th><th>Votes</th></tr></thead><tbody>${race.candidates.map(candidate => `<tr><td>${escape(candidate.name)}</td><td>${escape(candidate.party)}</td><td>${Number(candidate.votes).toLocaleString()}</td></tr>`).join("")}</tbody></table><p class="muted">${Number(race.reportedPrecincts).toLocaleString()} / ${Number(race.totalPrecincts).toLocaleString()} precincts reported. Precinct reporting is not the share of votes counted.</p>` : ""}
+      <dl class="monitor-times"><div><dt>Last check</dt><dd>${escape(monitorTime(race.checkedAt))}</dd></div><div><dt>Last verified</dt><dd>${escape(monitorTime(race.lastSuccessAt))}</dd></div><div><dt>Last result/link change</dt><dd>${escape(monitorTime(race.lastResultChangedAt))}</dd></div></dl>
+      ${race.sourceUpdated ? `<p class="muted">Source upload: ${escape(race.sourceUpdated)}. Source submit: ${escape(race.sourceSubmitted)}. Timezone not specified by source.</p>` : ""}
+      <details><summary>Official sources and saved evidence</summary><ul class="sources">${sources.map(source => `<li><a href="${escape(source.url)}" target="_blank" rel="noopener noreferrer">${escape(source.name)} ↗</a><p>${source.status === "error" ? escape(source.error) : source.status === "ok" ? "Reachable" : "Pending"} · checked ${escape(monitorTime(source.checkedAt))}${source.nextAttemptAt ? ` · retry ${escape(monitorTime(source.nextAttemptAt))}` : ""}${source.snapshotId ? ` · <a href="/api/monitor/snapshots/${Number(source.snapshotId)}" target="_blank" rel="noopener noreferrer">Saved response</a>` : ""}</p></li>`).join("")}</ul>${race.publications?.length ? `<p>Result links found; November Senate identity requires verification:</p><ul>${race.publications.map(item => `<li><a href="${escape(item.url)}" target="_blank" rel="noopener noreferrer">${escape(item.title)}</a></li>`).join("")}</ul>` : ""}</details>`;
+  }
+}
+async function loadMonitoring() {
+  try { monitoring = await api("/api/monitor"); renderMonitoring(); }
+  catch { for (const panel of document.querySelectorAll("[data-monitor-race]")) panel.textContent = "Monitoring status is unavailable. Retrying in one minute."; }
+}
+
 function renderRace() {
   const race = currentRace;
   document.title = `${race.state} · Senate 2026 · SNN`;
@@ -121,6 +146,7 @@ function renderRace() {
       <div><dt>Current seat holder</dt><dd>${escape(race.holder)}</dd></div><div><dt>Seat holder’s party</dt><dd>${escape(race.party)}</dd></div>
       <div><dt>Term to be filled</dt><dd>${escape(race.term)}</dd></div><div><dt>Seat details verified</dt><dd>${escape(race.verified)}</dd></div>
     </dl><p class="coverage-note">${escape(race.coverage)}. The seat holder is background information; confirm candidates with the state election office.</p></section>
+    ${["kansas", "north-carolina"].includes(race.slug) ? `<section class="panel" data-monitor-race="${escape(race.slug)}"><h2>Official election monitoring</h2><p>Loading source status…</p></section>` : ""}
     <section class="panel"><div class="note-toolbar"><h2>Reporting log</h2><label><span class="sr-only">Filter reporting notes</span><select id="note-category-filter"><option value="">All notes</option>${Object.entries(
       categoryNames,
     )
@@ -140,6 +166,7 @@ function renderRace() {
     <aside><section class="panel"><h2>Research sources</h2><ul class="sources">${race.sources.map((source) => `<li><a href="${escape(source.url)}" target="_blank" rel="noopener noreferrer">${escape(source.title)} ↗</a><p>${escape(source.description)}</p></li>`).join("")}</ul></section>
     <p class="aside-note">Baseline seat details and source links come from the project’s research files. The reporting log contains notes added through this app; it does not update automatically.</p><a class="aside-note" href="${escape(race.repositoryUrl)}" target="_blank" rel="noopener noreferrer">Read the original tracker ↗</a></aside></div>`;
   renderNotes();
+  renderMonitoring();
   $("#note-category-filter").addEventListener("change", (event) =>
     renderNotes(event.target.value),
   );
@@ -259,6 +286,8 @@ for (const selector of ["#search", "#party", "#election"])
   $(selector).addEventListener("input", renderIndex);
 window.addEventListener("hashchange", navigate);
 try {
+  void loadMonitoring();
+  setInterval(() => { if (!document.hidden) void loadMonitoring(); }, 60_000);
   await loadIndex();
   await navigate();
 } catch (error) {
