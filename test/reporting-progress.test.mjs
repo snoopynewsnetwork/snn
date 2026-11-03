@@ -9,6 +9,9 @@ test('dashboard shows source estimates before precinct counts, without inferring
   assert.equal(reportingProgress({ ...live, estimatedVotePercent: 1, reportedPrecincts: 2, totalPrecincts: 100 }, now), '1% est. votes counted');
   assert.equal(reportingProgress({ ...live, estimatedVotePercent: 0 }, now), '0% est. votes counted');
   assert.equal(reportingProgress({ ...live, estimatedVotePercent: 100 }, now), '100% est. votes counted');
+  assert.equal(reportingProgress({ ...live, estimatedVotePercent: 47.8312 }, now), '47% est. votes counted');
+  assert.equal(reportingProgress({ ...live, estimatedVotePercent: 99.9 }, now), '99% est. votes counted');
+  assert.equal(reportingProgress({ ...live, estimatedVotePercent: 0.4 }, now), '<1% est. votes counted');
   assert.equal(reportingProgress({ ...live, reportedPrecincts: 1234, totalPrecincts: 2000 }, now), '1,234 / 2,000 precincts reporting');
 });
 
