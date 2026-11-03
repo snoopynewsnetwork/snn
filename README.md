@@ -11,7 +11,8 @@ monitoring; other races and the reporting log are manually maintained.
 
 ### Automatic election monitoring
 
-Cloudflare runs the collector every five minutes, independently of visitors.
+Cloudflare runs the collector every minute, independently of visitors, Paseo,
+or an agent session.
 The index and both race pages show source health, last check, last verified
 snapshot, last count/link change, and links to retained source responses.
 Open pages reload monitoring status every minute. A source without a successful
@@ -36,7 +37,8 @@ hour and retain the last verified counts.
 `GET /api/monitor` returns current status. `GET /api/monitor/snapshots/:id`
 returns immutable, deduplicated UTF-8 source responses, SHA-256 hashes and HTTP
 metadata. `POST /api/monitor/refresh` requires the editor key and runs an initial
-check (a two-minute lease prevents duplicate requests). The five-minute cron
+check (a 30-second lease prevents duplicate requests without skipping the next
+scheduled minute). The one-minute cron
 continues without editor credentials. Changed source responses remain in
 Durable Object SQLite across deploys. No automatic race calls or forecasts are
 generated.
