@@ -1,3 +1,5 @@
+import { createElectionNight } from "./election-night.js";
+
 const $ = (selector) => document.querySelector(selector);
 const escape = (value) =>
   String(value ?? "").replace(
@@ -18,6 +20,7 @@ let races = [];
 let editorKey = "";
 let currentRace = null;
 let navigation = 0;
+const night = createElectionNight({ api, openEditor, isEditor: () => !!editorKey });
 
 function notify(message, error = false) {
   $("#status").textContent = message;
@@ -140,7 +143,7 @@ async function loadMonitoring() {
 function renderRace() {
   const race = currentRace;
   document.title = `${race.state} · Senate 2026 · SNN`;
-  $("#race-view").innerHTML = `<a href="#" class="back">← All Senate races</a>
+  $("#race-view").innerHTML = `<a href="#races" class="back">← All Senate races</a>
     <div class="race-hero"><div><p class="eyebrow">${escape(race.code)} / U.S. SENATE / 2026</p><h1>${escape(race.state)}</h1><p class="muted">General election ${escape(race.electionDate)} · Class ${escape(race.seatClass)}</p></div><span class="tag ${race.election === "Special" ? "special" : ""}">${escape(race.election)} election</span></div>
     <div class="race-layout"><div><section class="panel"><h2>The seat at a glance</h2><dl class="facts">
       <div><dt>Current seat holder</dt><dd>${escape(race.holder)}</dd></div><div><dt>Seat holder’s party</dt><dd>${escape(race.party)}</dd></div>
@@ -220,15 +223,27 @@ async function navigate() {
   const sequence = ++navigation;
   const match = location.hash.match(/^#race\/([a-z-]+)$/);
   notify("");
-  $("#index-view").hidden = !!match;
+  const isNight = !location.hash || location.hash === "#night";
+  $("#index-view").hidden = !!match || isNight;
   $("#race-view").hidden = !match;
+  $("#night-view").hidden = !isNight;
+  for (const [selector, active] of [["#night-nav", isNight], ["#races-nav", !isNight]]) {
+    if (active) $(selector).setAttribute("aria-current", "page");
+    else $(selector).removeAttribute("aria-current");
+  }
+  if (isNight) {
+    currentRace = null;
+    document.title = "Snoopy News Network · Election night 2026";
+    await night.show();
+    return;
+  }
   if (!match) {
     currentRace = null;
     document.title = "Snoopy News Network · Senate 2026";
     return;
   }
   $("#race-view").innerHTML =
-    '<a href="#" class="back">← All Senate races</a><p>Loading race details…</p>';
+    '<a href="#races" class="back">← All Senate races</a><p>Loading race details…</p>';
   try {
     const race = await api(`/api/races/${match[1]}`);
     if (sequence !== navigation) return;
@@ -253,6 +268,7 @@ $("#editor-button").addEventListener("click", () => {
   editorKey = "";
   $("#editor-button").textContent = "Editor access";
   if (currentRace) renderRace();
+  night.editorChanged();
   notify("Editing locked.");
 });
 $("#cancel-editor").addEventListener("click", () =>
@@ -275,6 +291,7 @@ $("#editor-form").addEventListener("submit", async (event) => {
     $("#editor-button").textContent = "Lock editing";
     $("#editor-dialog").close();
     if (currentRace) renderRace();
+    night.editorChanged();
     notify("Editor access unlocked for this page session.");
   } catch (error) {
     $("#editor-error").textContent = error.message;
@@ -284,12 +301,15 @@ $("#editor-form").addEventListener("submit", async (event) => {
 });
 for (const selector of ["#search", "#party", "#election"])
   $(selector).addEventListener("input", renderIndex);
+$(".skip-link").addEventListener("click", (event) => {
+  event.preventDefault();
+  $("#main").focus();
+});
 window.addEventListener("hashchange", navigate);
 try {
   void loadMonitoring();
   setInterval(() => { if (!document.hidden) void loadMonitoring(); }, 60_000);
-  await loadIndex();
-  await navigate();
+  await Promise.all([loadIndex(), navigate()]);
 } catch (error) {
   $("#races").innerHTML =
     '<tr><td colspan="5">The race index could not be loaded. Refresh to try again.</td></tr>';
