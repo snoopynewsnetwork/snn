@@ -59,6 +59,30 @@ metadata (binary feeds are base64). Historical `/api/monitor/snapshots/:id`
 links remain readable. `POST /api/monitor/refresh` requires the editor key;
 `POST /api/election-night/refresh` is public and fetches only configured sources.
 
+The **Source checks** page (`/#checks`) shows the latest 200 checks across
+all 64 configured endpoints and an expandable source coverage list. Every
+collector returns the shared `SourceCheck` receipt (`src/check-log.ts`), and the
+coordinator calls `SourceCheckLog.record()` to persist it in shared SQLite.
+Sources are taken directly from the adapter registry, including supporting,
+versioned, binary and newsroom fallback endpoints. New adapters automatically
+participate through the shared collector; do not add separate adapter logs.
+
+Receipts include the adapter, source name and resolved URL, scheduled/public/
+editor trigger, time, HTTP status, duration, success/failure, error and scoped
+snapshot link. Failures include transport errors, blocked prerequisites and
+reported contest validation failures, including rejected primary sources when
+a fallback succeeds. Content is first response, changed, unchanged or unknown,
+comparing the response hash and resolved URL with the previous complete fetch;
+it does not necessarily mean votes changed. Reading or refreshing the log
+never contacts publishers. Lease and backoff skips do not manufacture checks.
+
+`GET /api/monitor/checks` returns this history and the latest receipt per source.
+The page refreshes every 30 seconds while visible. History begins with the
+first collector run after installation and survives deployments; older entries
+are deleted at the global 200-entry limit. Per-source summaries remain visible
+when their older receipts fall out of the history. Saved evidence remains
+subject to the collector's existing snapshot retention policy.
+
 Source evidence, limitations and exact endpoints:
 
 - [Southeast: FL, GA, SC, NC, VA, KY, IN](docs/live-sources-southeast.md)
@@ -172,6 +196,7 @@ its usage limits. No custom domain is required.
 | Method | Path | Behavior |
 | --- | --- | --- |
 | GET | `/api/health` | Check storage and the race count |
+| GET | `/api/monitor/checks` | Read the latest 200 source checks and complete source coverage |
 | GET | `/api/races` | List races with reporting-note counts |
 | GET | `/api/races/:slug` | Read a race, research sources, and notes |
 | GET | `/api/election-night` | Read the guide and latest watch-item observations |
