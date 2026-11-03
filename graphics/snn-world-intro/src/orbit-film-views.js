@@ -2,6 +2,7 @@ import * as THREE from 'three';
 import { createOrbitFilm } from './orbit-film.js';
 import { APPROACH_DURATION } from './orbit-flight.js';
 import { getOrbitSettings, subscribeOrbitSettings } from './orbit-editor-state.js';
+import { startFilmExport } from './film-export.js';
 
 export function startOrbitFilmStudies() {
   const section = document.querySelector('#orbit-film-studies');
@@ -231,11 +232,18 @@ export function startOrbitFilmStudies() {
     fail(new Error('The shared WebGL context was lost.'));
   }, { signal: listeners.signal });
 
+  const disposeExport = startFilmExport(section, options, () => {
+    for (const player of players) player.playing = false;
+    schedule();
+    redrawAll();
+  });
+
   function dispose() {
     if (disposed) return;
     disposed = true;
     if (frameId !== null) cancelAnimationFrame(frameId);
     listeners.abort();
+    disposeExport();
     unsubscribeOrbit();
     resizeObserver.disconnect();
     visibilityObserver.disconnect();

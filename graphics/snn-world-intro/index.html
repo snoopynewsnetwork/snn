@@ -341,9 +341,16 @@
               <label class="film-loop-label"><input class="film-loop" type="checkbox" /> Loop</label>
               <button class="text-button film-play">Play</button>
               <button class="text-button film-replay">Replay ↻</button>
+              <button class="text-button" id="film-export" type="button" disabled>Export MP4</button>
             </div>
           </div>
           <input class="film-progress" type="range" min="0" max="1" step="0.001" value="0" aria-label="Complete film progress" />
+          <div class="film-export-row">
+            <span id="film-export-status" role="status" aria-live="polite">Checking video export…</span>
+            <button class="text-button" id="film-export-cancel" type="button" hidden>Cancel export</button>
+            <a class="text-button" id="film-export-download" hidden>Download MP4 ↗</a>
+            <progress id="film-export-progress" max="1440" value="0" aria-label="Video export progress" hidden></progress>
+          </div>
           <p class="film-timeline-note">00–06 Opening <span aria-hidden="true">·</span> 06–11.9 Arc <span aria-hidden="true">·</span> 11.9–17 Letters <span aria-hidden="true">·</span> 17–20 SNN <span aria-hidden="true">·</span> 20–24 Crossing</p>
         </article>
 

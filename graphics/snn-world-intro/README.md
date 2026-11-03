@@ -183,6 +183,16 @@ scrubbing, and a loop toggle. Loops are enabled for storyboard cards and
 disabled for the full film by default. Shot numbers and source timestamps
 provide reference points for feedback.
 
+**Export MP4** beneath the complete film renders all 1,440 frames at
+1920×1080 and 60 fps, then downloads a 24-second H.264 video. It uses the
+opening, weave, ring drift, and orbit settings selected when export starts.
+The video has an opaque paper background and no editor guides or page labels;
+preview playback speed does not change its duration. Progress and cancellation
+are available while rendering. The download link remains available afterward.
+Export runs locally with `npm run dev` (or `npm run preview`) and requires
+`ffmpeg` on the server's PATH. Static hosting still supports the studies but
+does not provide the local video encoder.
+
 The shared tuning controls select the nose, eye, or ear opening; vary camera
 weave and ring drift; and change playback speed. **Reset settings** restores
 the initial tuning. The SNN letters are draft, handbuilt block forms intended
