@@ -294,7 +294,7 @@ export class Newsroom extends DurableObject<Env> {
       return { race, ...(row ? JSON.parse(row.data) : { status: "pending", message: "Waiting for the first automatic source check." }) };
     });
     const snapshots = sql.exec("SELECT id, source, hash, fetchedAt, sourceUrl FROM monitor_snapshots ORDER BY id DESC LIMIT 20").toArray();
-    return { intervalMinutes: 5, electionDate: "2026-11-03", parserVersion: "official-senate-v1", sources, races, snapshots };
+    return { intervalMinutes: 1, electionDate: "2026-11-03", parserVersion: "official-senate-v1", sources, races, snapshots };
   }
 
   getMonitorSnapshot(id: number) {
@@ -312,7 +312,7 @@ export class Newsroom extends DurableObject<Env> {
     const sql = this.ctx.storage.sql;
     // Persist a short lease so retries/restarts cannot multiply source traffic.
     const last = sql.exec<{ value: string }>("SELECT value FROM metadata WHERE key = 'monitor_started'").toArray()[0];
-    if (last && Date.now() - Number(last.value) < 120_000) return;
+    if (last && Date.now() - Number(last.value) < 30_000) return;
     sql.exec("INSERT INTO metadata (key, value) VALUES ('monitor_started', ?) ON CONFLICT(key) DO UPDATE SET value = excluded.value", String(Date.now()));
     const bodies: Record<string, string> = {};
     for (const source of monitorSources) {
