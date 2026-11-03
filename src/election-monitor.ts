@@ -114,7 +114,15 @@ export class ElectionMonitor extends DurableObject<Record<string, never>> {
           const row = sql.exec<{ id: number }>("INSERT INTO snapshots (source, hash, url, encoding, fetchedAt, headers, size) VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING id",
             source.id, hash, url, source.encoding ?? "utf8", checkedAt, JSON.stringify(receiptHeaders), new TextEncoder().encode(body).byteLength).toArray()[0];
           snapshot = row;
-          for (let offset = 0; offset < body.length; offset += 131072) sql.exec("INSERT INTO snapshot_chunks (snapshot, position, body) VALUES (?, ?, ?)", row.id, offset / 131072, body.slice(offset, offset + 131072));
+          let position = 0;
+          for (let offset = 0; offset < body.length;) {
+            let end = Math.min(body.length, offset + 131072);
+            // SQLite encodes each string separately. Keep surrogate pairs in the
+            // same chunk so UTF-8 conversion cannot replace half a code point.
+            if (end < body.length && /[\uD800-\uDBFF]/.test(body[end - 1])) end--;
+            sql.exec("INSERT INTO snapshot_chunks (snapshot, position, body) VALUES (?, ?, ?)", row.id, position++, body.slice(offset, end));
+            offset = end;
+          }
         });
       }
       this.saveSource(source.id, { status: "ok", url, checkedAt, lastSuccessAt: checkedAt,

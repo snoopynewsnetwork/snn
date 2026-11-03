@@ -43,7 +43,11 @@ test('collector persists chunked evidence, revalidates version feeds, and isolat
   });
   let version = '1', broken = false, summaryVotes = 600;
   const requests = [];
-  const body = () => JSON.stringify({ election: '2026-11-03', d: summaryVotes, r: 350, padding: 'x'.repeat(270000) });
+  const body = () => {
+    const prefix = JSON.stringify({ election: '2026-11-03', d: summaryVotes, r: 350, padding: '' }).slice(0, -2);
+    // Place a surrogate pair exactly across the nominal SQLite chunk boundary.
+    return prefix + 'x'.repeat(131071 - prefix.length) + '😀' + 'x'.repeat(140000) + '"}';
+  };
   const mf = new Miniflare(convertV4MiniflareOptions({ unsafeInspectDurableObjects: true, workers: [{ name: 'collector-test', modules: true, script: built.outputFiles[0].text,
     compatibilityDate: '2026-10-17', durableObjects: { MONITOR: { className: 'ElectionMonitor', useSQLite: true } },
     outboundService: request => {
