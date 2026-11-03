@@ -1,0 +1,206 @@
+import { DurableObject } from "cloudflare:workers";
+import { electionAdapter } from "./election-adapters";
+import type { ElectionAdapter, ElectionResult, ElectionSource, ElectionTarget } from "./adapters/types";
+import { bodyHash } from "./monitor";
+import { hasValidCounts, type LiveResult } from "./live-results";
+import { readSourceBody, resolveSourceUrl, sourceLayers } from "./election-fetch";
+
+interface SourceState {
+  status: "pending" | "ok" | "error";
+  checkedAt?: string;
+  lastSuccessAt?: string;
+  lastChangedAt?: string;
+  nextAttemptAt?: string;
+  consecutiveErrors?: number;
+  url?: string;
+  hash?: string;
+  snapshotId?: number;
+  etag?: string;
+  lastModified?: string;
+  httpStatus?: number;
+  error?: string;
+}
+
+export interface ElectionBatch {
+  adapter: string;
+  version: string;
+  results: LiveResult[];
+  sources: (ElectionSource & SourceState)[];
+}
+
+// One object per adapter isolates state failures, conditional caches, and source
+// request budgets. Cloudflare Cron invokes these objects once each minute.
+export class ElectionMonitor extends DurableObject<Record<string, never>> {
+  private running?: Promise<ElectionBatch>;
+
+  constructor(ctx: DurableObjectState, env: Record<string, never>) {
+    super(ctx, env);
+    ctx.storage.sql.exec(`
+      CREATE TABLE IF NOT EXISTS metadata (key TEXT PRIMARY KEY, value TEXT NOT NULL);
+      CREATE TABLE IF NOT EXISTS sources (id TEXT PRIMARY KEY, data TEXT NOT NULL);
+      CREATE TABLE IF NOT EXISTS results (id TEXT PRIMARY KEY, data TEXT NOT NULL);
+      CREATE TABLE IF NOT EXISTS snapshots (
+        id INTEGER PRIMARY KEY AUTOINCREMENT, source TEXT NOT NULL, hash TEXT NOT NULL,
+        url TEXT NOT NULL, encoding TEXT NOT NULL, fetchedAt TEXT NOT NULL,
+        headers TEXT NOT NULL, size INTEGER NOT NULL, UNIQUE(source, hash, url)
+      );
+      CREATE TABLE IF NOT EXISTS snapshot_chunks (
+        snapshot INTEGER NOT NULL, position INTEGER NOT NULL, body TEXT NOT NULL,
+        PRIMARY KEY(snapshot, position)
+      );
+    `);
+  }
+
+  private sourceState(id: string): SourceState {
+    const row = this.ctx.storage.sql.exec<{ data: string }>("SELECT data FROM sources WHERE id = ?", id).toArray()[0];
+    return row ? JSON.parse(row.data) : { status: "pending" };
+  }
+
+  private sourceBody(snapshot?: number): string {
+    if (!snapshot) return "";
+    return this.ctx.storage.sql.exec<{ body: string }>("SELECT body FROM snapshot_chunks WHERE snapshot = ? ORDER BY position", snapshot).toArray().map(row => row.body).join("");
+  }
+
+  private targetResult(adapter: ElectionAdapter, target: ElectionTarget): LiveResult {
+    const row = this.ctx.storage.sql.exec<{ data: string }>("SELECT data FROM results WHERE id = ?", target.id).toArray()[0];
+    const data = row ? JSON.parse(row.data) : { status: "pending", message: "Awaiting the first automatic source fetch." };
+    const source = adapter.sources.find(source => source.id === (data.sourceId ?? target.sourceId)) ?? adapter.sources[0];
+    return { ...data, target: target.id, race: target.id, name: target.name, state: target.state, chamber: target.chamber,
+      sourceUrl: data.sourceUrl ?? source?.url ?? "", sourceName: source?.name,
+      sourceKind: source?.official === false ? "supplier" : "official", authorityUrl: source?.authorityUrl };
+  }
+
+  getResults(id: string): ElectionBatch {
+    const adapter = electionAdapter(id);
+    return { adapter: id, version: adapter.version, results: adapter.targets.map(target => this.targetResult(adapter, target)),
+      sources: adapter.sources.map(source => ({ ...source, ...this.sourceState(source.id) })) };
+  }
+
+  getSnapshot(id: number) {
+    const snapshot = this.ctx.storage.sql.exec("SELECT * FROM snapshots WHERE id = ?", id).toArray()[0];
+    return snapshot ? { ...snapshot, body: this.sourceBody(id) } : null;
+  }
+
+  refresh(id: string, force = false): Promise<ElectionBatch> {
+    if (!this.running) this.running = this.collect(electionAdapter(id), force).finally(() => { this.running = undefined; });
+    return this.running;
+  }
+
+  private saveSource(id: string, state: SourceState) {
+    this.ctx.storage.sql.exec("INSERT INTO sources (id, data) VALUES (?, ?) ON CONFLICT(id) DO UPDATE SET data = excluded.data", id, JSON.stringify(state));
+  }
+
+  private async fetchSource(source: ElectionSource, bodies: Record<string, string>, force: boolean) {
+    const old = this.sourceState(source.id);
+    if (!force && old.nextAttemptAt && Date.parse(old.nextAttemptAt) > Date.now()) return;
+    const checkedAt = new Date().toISOString();
+    try {
+      const url = resolveSourceUrl(source, bodies);
+      const headers = new Headers({ "User-Agent": "SNN-Live-Results/2.0 (+https://github.com/snoopynewsnetwork/snn)", "Cache-Control": "no-cache", ...source.headers });
+      if (old.url === url) {
+        if (old.etag) headers.set("If-None-Match", old.etag);
+        if (old.lastModified) headers.set("If-Modified-Since", old.lastModified);
+      }
+      const response = await fetch(url, { method: source.method ?? "GET", body: source.body, headers, redirect: "manual", signal: AbortSignal.timeout(15_000) });
+      if (response.status !== 200 && response.status !== 304) throw new Error(`Source returned HTTP ${response.status}.`);
+      const body = response.status === 304 && old.url === url ? this.sourceBody(old.snapshotId) : response.status === 200 ? await readSourceBody(response, source) : "";
+      if (!body) throw new Error("Source returned 304 without a matching cached response.");
+      const hash = await bodyHash(body);
+      const receiptHeaders = Object.fromEntries(["content-type", "last-modified", "etag", "date"].map(name => [name, response.headers.get(name)]));
+      const sql = this.ctx.storage.sql;
+      let snapshot = sql.exec<{ id: number }>("SELECT id FROM snapshots WHERE source = ? AND hash = ? AND url = ?", source.id, hash, url).toArray()[0];
+      if (!snapshot) {
+        this.ctx.storage.transactionSync(() => {
+          const row = sql.exec<{ id: number }>("INSERT INTO snapshots (source, hash, url, encoding, fetchedAt, headers, size) VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING id",
+            source.id, hash, url, source.encoding ?? "utf8", checkedAt, JSON.stringify(receiptHeaders), new TextEncoder().encode(body).byteLength).toArray()[0];
+          snapshot = row;
+          for (let offset = 0; offset < body.length; offset += 131072) sql.exec("INSERT INTO snapshot_chunks (snapshot, position, body) VALUES (?, ?, ?)", row.id, offset / 131072, body.slice(offset, offset + 131072));
+        });
+      }
+      this.saveSource(source.id, { status: "ok", url, checkedAt, lastSuccessAt: checkedAt,
+        lastChangedAt: old.hash === hash && old.url === url ? old.lastChangedAt : checkedAt,
+        hash, snapshotId: snapshot!.id, httpStatus: response.status, consecutiveErrors: 0,
+        etag: response.headers.get("etag") ?? (response.status === 304 ? old.etag : undefined),
+        lastModified: response.headers.get("last-modified") ?? (response.status === 304 ? old.lastModified : undefined) });
+      bodies[source.id] = body;
+    } catch (error) {
+      const consecutiveErrors = (old.consecutiveErrors ?? 0) + 1;
+      this.saveSource(source.id, { ...old, status: "error", checkedAt, consecutiveErrors,
+        nextAttemptAt: new Date(Date.now() + Math.min(15, 2 ** Math.min(consecutiveErrors - 1, 4)) * 60_000).toISOString(),
+        error: error instanceof Error ? error.message : "Source fetch failed." });
+    }
+  }
+
+  private async collect(adapter: ElectionAdapter, force: boolean): Promise<ElectionBatch> {
+    const sql = this.ctx.storage.sql;
+    const started = sql.exec<{ value: string }>("SELECT value FROM metadata WHERE key = 'started'").toArray()[0];
+    if (started && Date.now() - Number(started.value) < 30_000) return this.getResults(adapter.id);
+    sql.exec("INSERT INTO metadata (key, value) VALUES ('started', ?) ON CONFLICT(key) DO UPDATE SET value = excluded.value", String(Date.now()));
+    const bodies: Record<string, string> = {};
+    // Bound simultaneous connections; dependent version feeds always run first.
+    for (const layer of sourceLayers(adapter.sources)) for (let i = 0; i < layer.length; i += 3)
+      await Promise.all(layer.slice(i, i + 3).map(source => this.fetchSource(source, bodies, force)));
+    let parsed: Record<string, ElectionResult> = {};
+    let parserError: string | undefined;
+    try { parsed = await adapter.parse(bodies); }
+    catch (error) { parserError = error instanceof Error ? error.message : "Source parser failed."; }
+    const checkedAt = new Date().toISOString();
+    const receipts = adapter.sources.filter(source => bodies[source.id] !== undefined).map(source => ({ source: source.id, snapshotId: this.sourceState(source.id).snapshotId,
+      url: `/api/live-monitor/${encodeURIComponent(adapter.id)}/snapshots/${this.sourceState(source.id).snapshotId}` }));
+    for (const target of adapter.targets) {
+      const old = this.targetResult(adapter, target);
+      let result: ElectionResult | undefined = parsed[target.id];
+      let error = parserError ?? (!result ? "Adapter returned no result for this contest." : undefined);
+      if (result && ((result.status === "reporting" && (!result.candidates || !result.totalVotes)) ||
+          (result.candidates && !hasValidCounts({ ...result, race: target.id, sourceUrl: "" })))) {
+        error = "Candidate counts do not reconcile to a positive reporting total.";
+        result = undefined;
+      }
+      if (result?.sourceId && !adapter.sources.some(source => source.id === result!.sourceId)) {
+        error = "Adapter selected an unknown result source."; result = undefined;
+      }
+      const selectedId = result?.sourceId ?? (result && ["setup", "reporting"].includes(result.status) ? target.sourceId : old.sourceId ?? target.sourceId);
+      const source = adapter.sources.find(source => source.id === selectedId) ?? adapter.sources[0];
+      const state = source ? this.sourceState(source.id) : undefined;
+      const verified = !!result && ["setup", "reporting"].includes(result.status);
+      // Explicit unavailable/review/error retains the last verified cumulative
+      // result for display, with stale status suppressing sheet signals.
+      const failed = !result || ["unavailable", "review", "waiting"].includes(result.status);
+      const content = failed ? { ...old, ...result, candidates: old.candidates, totalVotes: old.totalVotes,
+        winner: undefined, status: result?.status ?? "error", message: result?.message ?? error ?? "Source unavailable." } : result;
+      const hash = verified ? await bodyHash(JSON.stringify({ status: result!.status,
+        candidates: result!.candidates ? [...result!.candidates].sort((a, b) => `${a.party}|${a.name}`.localeCompare(`${b.party}|${b.name}`)) : undefined,
+        totalVotes: result!.totalVotes, reportedPrecincts: result!.reportedPrecincts, totalPrecincts: result!.totalPrecincts,
+        winner: result!.winner, resultStatus: result!.resultStatus, coverage: result!.coverage })) : undefined;
+      const next = { ...content, checkedAt, lastSuccessAt: verified ? checkedAt : old.lastSuccessAt,
+        lastResultChangedAt: hash ? ((old as LiveResult & { resultHash?: string }).resultHash === hash ? old.lastResultChangedAt : checkedAt) : old.lastResultChangedAt,
+        resultHash: hash ?? (old as LiveResult & { resultHash?: string }).resultHash,
+        sourceId: source?.id,
+        sourceUrl: failed && old.candidates ? old.sourceUrl : state?.url ?? source?.authorityUrl ?? source?.url ?? "",
+        sourceError: state?.error ?? error, sourceSnapshots: verified ? receipts : old.sourceSnapshots };
+      sql.exec("INSERT INTO results (id, data) VALUES (?, ?) ON CONFLICT(id) DO UPDATE SET data = excluded.data", target.id, JSON.stringify(next));
+    }
+    this.pruneSnapshots();
+    return this.getResults(adapter.id);
+  }
+
+  private pruneSnapshots() {
+    const sql = this.ctx.storage.sql;
+    const protectedIds = new Set(sql.exec<{ data: string }>("SELECT data FROM sources").toArray().map(row => JSON.parse(row.data).snapshotId));
+    for (const row of sql.exec<{ data: string }>("SELECT data FROM results").toArray())
+      for (const receipt of JSON.parse(row.data).sourceSnapshots ?? []) protectedIds.add(receipt.snapshotId);
+    const snapshots = sql.exec<{ id: number; source: string; size: number }>("SELECT id, source, size FROM snapshots ORDER BY id DESC").toArray();
+    const counts = new Map<string, number>();
+    let bytes = 0;
+    const remove: number[] = [];
+    for (const snapshot of snapshots) {
+      const count = (counts.get(snapshot.source) ?? 0) + 1;
+      counts.set(snapshot.source, count);
+      bytes += snapshot.size;
+      if ((count > 20 || bytes > 64_000_000) && !protectedIds.has(snapshot.id)) remove.push(snapshot.id);
+    }
+    this.ctx.storage.transactionSync(() => {
+      for (const id of remove) { sql.exec("DELETE FROM snapshot_chunks WHERE snapshot = ?", id); sql.exec("DELETE FROM snapshots WHERE id = ?", id); }
+    });
+  }
+}

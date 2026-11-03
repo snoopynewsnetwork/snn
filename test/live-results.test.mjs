@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
-import { withOfficialResults } from '../src/live-results.ts';
+import { withOfficialResults, withGroupResults } from '../src/live-results.ts';
 import { signalFor } from '../public/election-model.js';
 
 const now = Date.parse('2026-11-04T02:00:00Z');
@@ -39,4 +39,33 @@ test('a correction replaces cumulative results and stale retained counts cannot 
   assert.equal(failed.sourceStatus, 'stale');
   assert.equal(signalFor({ chamber: 'senate', ranges: [{ min: 0, max: null }] }, failed), null);
   assert.equal(withOfficialResults([], [result()], now + 16 * 60_000)[0].sourceStatus, 'stale');
+});
+
+test('House races and independent Nebraska margins use all votes and isolate partial coverage', () => {
+  const house = { ...result(), target: 'house-oh-01', race: 'house-oh-01', chamber: 'house', sourceKind: 'supplier' };
+  assert.equal(withOfficialResults([], [house], now)[0].margin, 25);
+  assert.equal(withOfficialResults([], [house], now)[0].sourceKind, 'supplier');
+  assert.equal(signalFor({ chamber: 'house' }, withOfficialResults([], [{ ...house, status: 'error' }], now)[0]), null);
+  const nebraska = { ...house, target: 'senate-ne', candidates: house.candidates.map(candidate => candidate.party === 'DEM' ? { ...candidate, name: 'Dan Osborn', party: 'IND' } : candidate) };
+  assert.equal(withOfficialResults([], [nebraska], now)[0].margin, 25);
+  assert.deepEqual(withOfficialResults([], [{ ...house, coverage: 'partial' }], now), []);
+  assert.deepEqual(withOfficialResults([], [{ ...house, candidates: [{ name: 'Bad', party: 'DEM', votes: -1 }], totalVotes: -1 }], now), []);
+});
+
+test('group guardrails count explicit source declarations rather than current leads', () => {
+  const ids = ['house-tx-09', 'house-tx-28', 'house-tx-32', 'house-tx-34', 'house-tx-35'];
+  const members = ids.map(target => ({ ...result(350, 600, 50), target, race: target }));
+  let group = withGroupResults(members, now).find(result => result.target === 'house-tx-redraw');
+  assert.equal(group.gopLeadingSeats, 5);
+  assert.equal(group.gopSeats, 0);
+  assert.equal(signalFor({ chamber: 'house', group: true, gopBar: 4 }, withOfficialResults([], [group], now)[0]), null);
+  group = withGroupResults(members.map((result, i) => ({ ...result, winner: i < 4 ? 'R' : undefined })), now).find(result => result.target === 'house-tx-redraw');
+  assert.equal(group.gopSeats, 4);
+  assert.equal(signalFor({ chamber: 'house', group: true, gopBar: 4 }, withOfficialResults([], [group], now)[0]), 'riptide');
+  group = withGroupResults(members.slice(1), now).find(result => result.target === 'house-tx-redraw');
+  assert.equal(group.status, 'unavailable');
+  assert.deepEqual(withOfficialResults([], [group], now), []);
+  group = withGroupResults(members.map(result => ({ ...result, status: 'setup', totalVotes: 0, candidates: result.candidates.map(candidate => ({ ...candidate, votes: 0 })) })), now).find(result => result.target === 'house-tx-redraw');
+  assert.equal(group.status, 'setup');
+  assert.deepEqual(withOfficialResults([], [group], now), []);
 });
