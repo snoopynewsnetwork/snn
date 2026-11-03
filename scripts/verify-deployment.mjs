@@ -2,7 +2,10 @@ import assert from "node:assert/strict";
 import { setTimeout as delay } from "node:timers/promises";
 
 const base = "https://snoopy-news-network.snoopy-news-network.workers.dev";
-for (let attempt = 1; attempt <= 12; attempt++) {
+// Durable Object code can continue serving the previous deployment during
+// propagation. Allow three minutes for the combined desk schema to arrive.
+const attempts = 36;
+for (let attempt = 1; attempt <= attempts; attempt++) {
   try {
     const response = await fetch(`${base}/api/health`, { signal: AbortSignal.timeout(10000) });
     assert.equal(response.status, 200);
@@ -18,18 +21,20 @@ for (let attempt = 1; attempt <= 12; attempt++) {
     assert.equal(desk.status, 200);
     const live = await desk.json();
     assert.equal(live.intervalMinutes, 1);
-    assert.equal(live.coverage.configured, 65);
-    assert.equal(live.coverage.total, 65);
+    assert.equal(live.coverage?.configured, 65, "Waiting for the deployed live desk schema");
+    assert.equal(live.coverage?.total, 65);
     for (const item of [...live.guide.senate, ...live.guide.house]) assert.ok(live.liveResults.some(result => result.target === item.id), item.id);
     assert.ok(live.liveResults.some(result => result.target === "house-tx-35"));
+    for (const id of ["cnn-2026-SP-OH", "cnn-2026-SG-MN"])
+      assert.ok(live.sources?.some(source => source.id === id), `Waiting for live fallback source ${id}`);
     const client = await fetch(`${base}/election-night.js`, { signal: AbortSignal.timeout(10000) });
     assert.equal(client.status, 200);
     assert.match(await client.text(), /Fetch live results/);
     console.log(`Deployment verified: ${base}`);
     break;
   } catch (error) {
-    if (attempt === 12) throw error;
-    console.log(`Waiting for the deployment (${attempt}/12): ${error.message}`);
+    if (attempt === attempts) throw error;
+    console.log(`Waiting for the deployment (${attempt}/${attempts}): ${error.message}`);
     await delay(5000);
   }
 }

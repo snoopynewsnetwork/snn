@@ -8,8 +8,8 @@ There are 21 assigned individual targets plus one supporting target. All 22 pars
 
 | Target | Source | Official | Notes |
 | --- | --- | --- | --- |
-| senate-oh | Ohio SOS (Ohio Decides) Senate JSON + NIST XML gate | yes | 7-candidate universe incl. 3 certified write-ins |
-| house-oh-01/07/09/10/13 | Ohio SOS Congress district summary JSON (one request, all districts) | yes | District-wide state totals |
+| senate-oh | Ohio SOS (Ohio Decides) Senate JSON + NIST XML gate; **CNN fallback** `2026-SP-OH` | yes (fallback no) | 7-candidate official universe incl. 3 certified write-ins; CNN lists the 4 ballot candidates only |
+| house-oh-01/07/09/10/13 | Ohio SOS Congress district summary JSON (one request, all districts); **CNN fallback** `2026-HG-OH-{1,7,9,10,13}` | yes (fallback no) | District-wide totals. `sourceId` names the source used |
 | house-pa-01/08, house-pa-07, house-pa-10 | PA DOS electionreturns.pa.gov `GetOfficeData` (office 11, election 117/G) + `GetElectionTesting` gate; **CNN fallback** per district | yes (fallback no) | PA-07/PA-10 are members of guide group `house-pa-07-10`; the coordinator aggregates the group. `ElectionResult.sourceId` names the source actually used |
 | senate-mi-detroit (supporting, `coverage:'partial'`) | City of Detroit Enhanced Voting feed linked from detroitmi.gov | yes | **City of Detroit geography only**, not Wayne County. Supports `cue-detroit` |
 | senate-mi, house-mi-04/07/10 | CNN results API | **no** (newsroom) | No reachable official statewide or district feed |
@@ -27,7 +27,28 @@ There are 21 assigned individual targets plus one supporting target. All 22 pars
 - The same route with `contestName=Representative+to+Congress&contestObjectId=` (blank) returns **district-wide totals for all 15 districts** in one response. Contest IDs are pinned per district. Fixture `oh-house-summary.json`, fetched 20:58Z, sha256 `b7a03bde24ae549c…`. Passing a `contestObjectId` instead returns per-county rows. Those rows are not used, so county and district totals are never mixed.
 - `Api/v1/download?filename=VSSC1622XmlFileBlob` is the NIST XML, about 1.2 MB. It is used only as an identity and test gate: `<Election Date="2026-11-03" Type="General">`, `IssuerAbbreviation="OH"`, `IsTest`. At fetch time (20:55:20Z) it was **still `IsTest="true"`**, with `GeneratedDate="2026-11-03T08:54:35Z"`, `Sequence=0` and `Status="UnofficialPartial"`. Fetched 20:55:20Z; fixture `oh-xml-head.xml` is an exact excerpt of the root and Election tags (sha256 `c29053375b5a7898…`).
 - Rules: with IsTest=true, zero setup is allowed and labelled as a test file. Nonzero counts under IsTest=true become `review` with no candidates. Wrong date or type, or a missing XML, makes every Ohio target `unavailable`. JSON `isElectionOfficial=true` is ignored (it was true on the mock data too).
-- **Risk:** if Ohio never clears IsTest after polls close at 7:30 p.m. ET, all six Ohio targets stay in `review`. That is deliberate (coordinator ruling). Watch the first post-close XML.
+- **Fallback (adapter version 2026-11-03.2):** the coordinator's scheduled-handler smoke run at 21:14Z got HTTP 429 from all three Ohio endpoints. Per target, if the official result is `unavailable` (429, gate failure) or `review` (for example nonzero counts under IsTest=true), the adapter uses verified CNN. Verified official setup or counts always win (`sourceId:'oh-senate'` or `'oh-house'`). If CNN also fails its gates, the official failure stays, with the CNN reason appended.
+- **CNN House universes** contain ballot candidates only (Ohio's certified write-ins are not listed):
+  - OH-1: Landsman, Conroy, Weise
+  - OH-7: Poindexter, Miller
+  - OH-9: Kaptur, Merrin
+  - OH-10: Knickerbocker, Turner, Thomas McMasters
+  - OH-13: Sykes, Coleman, Dixit
+- **CNN Senate key `2026-SP-OH`:** `2026-SG-OH` and `2026-SS-OH` return 404. CNN files this race with `electionType:"P"`, `electionTitle:""` and `contestType:"SP"`, the same pattern as Florida's special general `2026-SP-FL`. The shared CNN gate stays strict (G / "General Election" required). This race alone is admitted only when **all** of the following hold:
+  - `raceTitle` is "Senate Special Election", and `raceType` / `raceTypeCode` are "S" (Senate office).
+  - The embargo times are exact: `pollsOpen` 1793707200000 (2026-11-03T12:00Z) and `assignedPollsClose` / `votesRelease` 1793752200000 (2026-11-04T00:30Z, Ohio's 7:30 p.m. ET close).
+  - The exact cross-party field is present: Brown DEM, Husted REP, Levy IND, Redpath LIB. A party primary cannot have this field. It matches the official general setup's 4 ballot candidates.
+  - It is listed in CNN's 2026 Senate general race list, `https://politics.api.cnn.io/results/national-races/2026-SG.json`. That list is fetched at runtime as source `cnn-2026-SG-list`. If the list is missing, the Ohio Senate fallback is unavailable; the House fallbacks do not depend on it.
+- **CNN Ohio fixtures**, fetched 21:16:08Z (no Ohio official requests were made while the endpoints were rate-limited):
+  - `cnn-2026-SP-OH.json` `161e279749c0c336`
+  - `cnn-2026-HG-OH-1.json` `21c9732e0ce748a8`
+  - `cnn-2026-HG-OH-7.json` `4dba89b77b741ace`
+  - `cnn-2026-HG-OH-9.json` `27ba989c9a3c9591`
+  - `cnn-2026-HG-OH-10.json` `171ae4329d664691`
+  - `cnn-2026-HG-OH-13.json` `a672259a66731b00`
+  - `cnn-2026-SG-list.json` `dbd9468382c3d7b4`, fetched 21:15:59Z (copied into fixtures 21:17:46Z)
+- A live run at 21:18Z with the Ohio official bodies absent selected CNN (setup) for all six targets.
+- **Risk:** if Ohio never clears IsTest after polls close at 7:30 p.m. ET, nonzero official counts are rejected, and Ohio is then served by the verified CNN fallback, or else stays in `review`.
 
 ### Pennsylvania: `https://www.electionreturns.pa.gov/`
 

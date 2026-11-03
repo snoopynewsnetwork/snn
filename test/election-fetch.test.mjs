@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
-import { readSourceBody, resolveSourceUrl, sourceLayers } from '../src/election-fetch.ts';
+import { readSourceBody, resolveSourceUrl, retryAfterTime, sourceLayers } from '../src/election-fetch.ts';
 
 const version = { id: 'version', url: 'https://results.example/current_ver.txt' };
 const summary = { id: 'summary', url: 'https://results.example/2026/{version}/summary.json', dependsOn: 'version' };
@@ -23,4 +23,12 @@ test('source bodies enforce byte limits and preserve binary responses as base64'
   await assert.rejects(readSourceBody(new Response(bytes), version));
   await assert.rejects(readSourceBody(new Response('   '), version), /blank/);
   assert.equal(await readSourceBody(new Response('café'), version), 'café');
+});
+
+test('publisher Retry-After accepts seconds or HTTP dates and bounds invalid delays', () => {
+  const now = Date.parse('2026-11-04T02:00:00Z');
+  assert.equal(retryAfterTime('120', now), now + 120000);
+  assert.equal(retryAfterTime('Wed, 04 Nov 2026 02:05:00 GMT', now), now + 300000);
+  assert.equal(retryAfterTime('999999999999', now), now + 86400000);
+  for (const value of [null, 'invalid', '-3', 'Tue, 03 Nov 2026 02:00:00 GMT']) assert.equal(retryAfterTime(value, now), undefined);
 });

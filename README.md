@@ -25,11 +25,13 @@ request budgets. Shared statewide feeds serve multiple races. The `Newsroom`
 object saves the combined result, so browser reads do not hit election servers.
 Opening the desk or **Fetch live results** requests a source check; a persisted
 30-second lease coalesces concurrent requests. Scheduled failures back off from
-one to fifteen minutes; explicit fetches retry them within the same lease.
+one to fifteen minutes; publisher Retry-After delays are honoured even for
+explicit fetches. Each adapter fetches its endpoints sequentially to avoid
+bursts against election servers.
 
 Official state or officially linked vendor feeds are preferred. CNN's public
 results feed is an explicitly attributed newsroom fallback where official
-counts cannot be collected. Kansas and Pennsylvania select official results
+counts cannot be collected. Kansas, Minnesota, Ohio and Pennsylvania select official results
 when verified and use CNN when the official feed fails validation or access.
 Source attribution follows the selected feed. The desk shows source health,
 last check, last verified counts, and retained source responses under **Live
