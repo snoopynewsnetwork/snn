@@ -41,10 +41,10 @@ test('collector persists chunked evidence, revalidates version feeds, and isolat
       build.onLoad({ filter: /.*/, namespace: 'test' }, () => ({ contents: catalog }));
     } }],
   });
-  let version = '1', broken = false, summaryVotes = 600;
+  let version = '1', broken = false, summaryVotes = 600, invalidElection = false;
   const requests = [];
   const body = () => {
-    const prefix = JSON.stringify({ election: '2026-11-03', d: summaryVotes, r: 350, padding: '' }).slice(0, -2);
+    const prefix = JSON.stringify({ election: invalidElection ? '2024-11-05' : '2026-11-03', d: summaryVotes, r: 350, padding: '' }).slice(0, -2);
     // Place a surrogate pair exactly across the nominal SQLite chunk boundary.
     return prefix + 'x'.repeat(131071 - prefix.length) + '😀' + 'x'.repeat(140000) + '"}';
   };
@@ -67,6 +67,8 @@ test('collector persists chunked evidence, revalidates version feeds, and isolat
   try {
     const first = await api('/refresh');
     assert.deepEqual(first.results.map(result => result.totalVotes), [950, 500]);
+    assert.equal(first.checks.length, 3);
+    assert.ok(first.checks.every(check => check.success && check.change === 'initial' && check.trigger === 'scheduled'));
     const source = first.sources.find(source => source.id === 'summary');
     const evidence = await api('/snapshot/' + source.snapshotId);
     assert.equal(evidence.body, body());
@@ -79,6 +81,9 @@ test('collector persists chunked evidence, revalidates version feeds, and isolat
     assert.equal(requests.length, requestCount, 'Persisted lease prevents duplicate source fetches');
     await storage.exec('DELETE FROM metadata');
     const second = await api('/refresh');
+    assert.ok(second.checks.every(check => check.success));
+    assert.equal(second.checks.find(check => check.sourceId === 'summary').httpStatus, 304);
+    assert.equal(second.checks.find(check => check.sourceId === 'summary').change, 'unchanged');
     assert.equal(second.sources.find(source => source.id === 'summary').snapshotId, source.snapshotId, '304 reuses immutable evidence');
     assert.ok(requests.some(request => request.path === '/1/summary' && request.conditional === '"summary"'));
     assert.notEqual(second.results[1].sourceUpdated, first.results[1].sourceUpdated);
@@ -94,14 +99,30 @@ test('collector persists chunked evidence, revalidates version feeds, and isolat
     assert.equal(third.results[1].lastSuccessAt, second.results[1].lastSuccessAt);
     assert.ok(third.results[0].sourceSnapshots.every(receipt => receipt.source !== 'other'), 'Fresh evidence does not cite a source that failed this cycle');
     assert.match(third.sources.find(source => source.id === 'other').error, /503/);
+    const failure = third.checks.find(check => check.sourceId === 'other');
+    assert.equal(failure.success, false);
+    assert.equal(failure.httpStatus, 503);
+    assert.equal(failure.change, 'unknown');
+    assert.equal(third.checks.find(check => check.sourceId === 'summary').sourceUrl, 'https://example.test/2/summary');
     const otherRequests = requests.filter(request => request.path === '/other').length;
     broken = false;
     await storage.exec('DELETE FROM metadata');
-    await api('/refresh');
+    const backedOff = await api('/refresh');
+    assert.ok(backedOff.checks.every(check => check.sourceId !== 'other'));
     assert.equal(requests.filter(request => request.path === '/other').length, otherRequests, 'Even explicit refresh respects a publisher Retry-After delay');
     // Read-only requests consume saved results rather than hitting publishers.
     const beforeRead = requests.length;
     assert.equal((await api('/')).results[0].totalVotes, 800);
     assert.equal(requests.length, beforeRead);
+    version = '3'; invalidElection = true;
+    await storage.exec('DELETE FROM metadata');
+    const rejected = await api('/refresh');
+    assert.ok(rejected.checks.every(check => !check.success && check.error));
+    const rejectedSummary = rejected.checks.find(check => check.sourceId === 'summary');
+    assert.equal(rejectedSummary.httpStatus, 200);
+    assert.ok(rejectedSummary.snapshotUrl.endsWith('/snapshots/' + rejectedSummary.snapshotId));
+    assert.equal(rejectedSummary.change, 'changed');
+    assert.equal(rejected.results[0].totalVotes, 800, 'Logging validation failures retains verified results');
+
   } finally { await mf.dispose(); }
 });
