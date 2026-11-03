@@ -1,0 +1,207 @@
+{
+ "retained_oker_format": {
+  "source": "turnout worker retained one-time OKER capture (2026-10-18), read-only; this worker made no OKER API call",
+  "getconfig_fields": {
+   "pollingInterval": 30000,
+   "showAbs": true,
+   "showEarly": true,
+   "showElecDay": true,
+   "elecState": "Normal",
+   "absVoteDesc": "Absentee Mail",
+   "earlyVoteDesc": "Early Voting",
+   "elecDayVoteDesc": "Election Day",
+   "apiVersion": "8.0.0.14",
+   "mapsEnabled": true,
+   "elecValid": true
+  },
+  "getconfig_county_options": 77,
+  "getelec_top_level_keys": [
+   "ElecSelect",
+   "Message",
+   "ResultsDesc",
+   "SelectButtonText",
+   "SelectLabelText",
+   "Title1",
+   "Title2",
+   "Title3",
+   "allowPPPDistReports",
+   "elecMessage",
+   "electionDate",
+   "electionType",
+   "isOfficial",
+   "lastUpdate",
+   "races",
+   "results",
+   "selectedCounty",
+   "selectedCountyDesc",
+   "serverTLU",
+   "turnoutPerc"
+  ],
+  "getelec_status_fields_2024_official": {
+   "Title1": "Official Results",
+   "isOfficial": true,
+   "lastUpdate": "2026-10-18T16:46:56.1924291+00:00",
+   "serverTLU": "2024-11-08T17:49:51.517",
+   "turnoutPerc": 64.42007
+  },
+  "getelec_result_fields": [
+   "candResults",
+   "raceID",
+   "reportingPercent",
+   "reportingPrecincts",
+   "totResults",
+   "totalPrecincts"
+  ],
+  "getelec_cand_result_fields": [
+   "absVotes",
+   "earlyVotes",
+   "elecDayVotes",
+   "totalPercent",
+   "totalVotes"
+  ],
+  "cntyresults_fields": [
+   "electionDate",
+   "message",
+   "raceID",
+   "status",
+   "summaryCandResults",
+   "summaryTotResults"
+  ],
+  "cntyresults_county_fields": [
+   "candResults",
+   "countyID",
+   "countyName",
+   "reportingPercent",
+   "reportingPrecincts",
+   "totResults",
+   "totalPrecincts"
+  ],
+  "extract_csv_header": [
+   "elec_date",
+   "precinct",
+   "entity_description",
+   "race_number",
+   "race_description",
+   "race_party",
+   "tot_race_prec",
+   "race_prec_reporting",
+   "cand_number",
+   "cand_name",
+   "cand_party",
+   "cand_absmail_votes",
+   "cand_early_votes",
+   "cand_elecday_votes",
+   "cand_tot_votes",
+   "race_county_owner"
+  ],
+  "note": "lastUpdate is the fetch-time clock of the API response (UTC offset printed). serverTLU has no zone; the 2024 election-morning archive value 2024-11-06T00:45:47 only makes sense as Central time (all 1,984 precincts reported), so treat serverTLU as local Central time, inferred, not documented."
+ },
+ "precinct_denominator_vs_9999": {
+  "OKLAHOMA": {
+   "county_csv_tot_race_prec": 290,
+   "distinct_units_in_precinct_export": 291,
+   "nine999_units": [
+    "559999"
+   ]
+  },
+  "TULSA": {
+   "county_csv_tot_race_prec": 251,
+   "distinct_units_in_precinct_export": 252,
+   "nine999_units": [
+    "729999"
+   ]
+  }
+ },
+ "wayback_vs_official_2024": {
+  "wayback": {
+   "Title1": "Unofficial Results",
+   "isOfficial": false,
+   "lastUpdate": "2024-11-06T13:31:00.8150402+00:00",
+   "serverTLU": "2024-11-06T00:45:47.467",
+   "turnoutPerc": 64.35386
+  },
+  "official": {
+   "Title1": "Official Results",
+   "isOfficial": true,
+   "serverTLU": "2024-11-08T17:49:51.517",
+   "turnoutPerc": 64.42007
+  },
+  "races_compared": 64,
+  "races_with_any_change": 64,
+  "races_at_100pct_in_wayback": 64,
+  "races_in_wayback": 64,
+  "president_10001": {
+   "raceID": 10001,
+   "reporting_wayback": "1984/1984",
+   "official_minus_wayback": {
+    "absVotes": 30,
+    "earlyVotes": 108,
+    "elecDayVotes": 1462,
+    "totalVotes": 1600
+   }
+  },
+  "president_totals": {
+   "wayback": {
+    "absVotes": 103054,
+    "earlyVotes": 293098,
+    "elecDayVotes": 1168421,
+    "totalVotes": 1564573,
+    "totalPercent": 0.0
+   },
+   "official": {
+    "absVotes": 103084,
+    "earlyVotes": 293206,
+    "elecDayVotes": 1169883,
+    "totalVotes": 1566173,
+    "totalPercent": 0.0
+   }
+  },
+  "net_decreases": []
+ },
+ "cleveland_certificate_2024_president": {
+  "evidence": "cty-40027-certificate-2024-general",
+  "pdf_pages": 88,
+  "pdf_creation_date": "D:20241108163826-06'00'",
+  "report_title": "MLA Vendor File Status (ea2060)",
+  "header_lines": [
+   "CHASE OLIVER | MIKE TER           DONALD J. TRUMP | JD        KAMALA D. HARRIS | TIM         ROBERT F. KENNEDY JR. |         CHRIS GARRITY | CODY",
+   "Precinct                                                           MAAT                          VANCE                          WALZ             NICOLE SHANAHAN                         BALLARD"
+  ],
+  "precinct_rows": 105,
+  "oker_cleveland_precincts": 105,
+  "rows_not_matching_oker": [],
+  "certificate_total_row": [
+   868,
+   67225,
+   49432,
+   1291,
+   478
+  ],
+  "certificate_total": 119294,
+  "oker_total": 119294,
+  "oker_candidate_totals": [
+   868,
+   67225,
+   49432,
+   1291,
+   478
+  ],
+  "signature_line": "DATED AT NORMAN, OKLAHOMA, THIS 8th DAY OF NOVEMBER, 2024",
+  "note": "The county certificate has precinct rows only (absentee and early votes are inside precinct rows in Cleveland, as in OKER); no method split, no provisional row."
+ },
+ "cleveland_certificate_2026_runoff_us_senate": {
+  "evidence": "cty-40027-certificate-2026-runoff",
+  "pdf_creation_date": "D:20260828141919-05'00'",
+  "columns_in_order": [
+   "N'KIYLA JASMINE THOMAS",
+   "JIM PRIEST"
+  ],
+  "precinct_rows": 105,
+  "total_row": [
+   7543,
+   4714
+  ],
+  "precinct_sum_matches_total": true,
+  "note": "Democratic runoff for U.S. Senator, Cleveland County only. Official county certificate; statewide runoff totals are only in the sign-in-gated OKER app."
+ }
+}

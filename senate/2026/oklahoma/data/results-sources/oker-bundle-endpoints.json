@@ -1,0 +1,79 @@
+{
+ "bundle_url": "https://results.okelections.gov/OKER/main.c79774cb1fe93a6677b7.bundle.js",
+ "bundle_sha256": "9e598105c6628f776824e59df435f15ce77ce304ba052b211c4ecf29242fbaf2",
+ "bundle_bytes": 1731087,
+ "retrieval_utc": "2026-10-18T17:35:06.378803+00:00",
+ "stored": false,
+ "why_not_stored": "The bundle embeds the anonymous app sign-in credential; by research-owner decision it is neither stored nor used.",
+ "routes": {
+  "login": {
+   "occurrences": 3,
+   "bearer_header_in_context": true,
+   "authenticated_flag_checked_in_context": true
+  },
+  "GetCntyResults": {
+   "occurrences": 1,
+   "bearer_header_in_context": true,
+   "authenticated_flag_checked_in_context": true
+  },
+  "GetPctResults": {
+   "occurrences": 1,
+   "bearer_header_in_context": true,
+   "authenticated_flag_checked_in_context": true
+  },
+  "getconfig": {
+   "occurrences": 2,
+   "bearer_header_in_context": true,
+   "authenticated_flag_checked_in_context": true
+  },
+  "GetFile": {
+   "occurrences": 5,
+   "bearer_header_in_context": true,
+   "authenticated_flag_checked_in_context": true
+  },
+  "GetExtract": {
+   "occurrences": 1,
+   "bearer_header_in_context": true,
+   "authenticated_flag_checked_in_context": true
+  },
+  "GetPPPCDExtract": {
+   "occurrences": 1,
+   "bearer_header_in_context": true,
+   "authenticated_flag_checked_in_context": true
+  },
+  "GetPPPCDPDF": {
+   "occurrences": 1,
+   "bearer_header_in_context": true,
+   "authenticated_flag_checked_in_context": true
+  },
+  "GetMap": {
+   "occurrences": 1,
+   "bearer_header_in_context": true,
+   "authenticated_flag_checked_in_context": true
+  },
+  "GetMapInfo": {
+   "occurrences": 1,
+   "bearer_header_in_context": true,
+   "authenticated_flag_checked_in_context": true
+  },
+  "GetPropText": {
+   "occurrences": 1,
+   "bearer_header_in_context": true,
+   "authenticated_flag_checked_in_context": true
+  },
+  "getelec": {
+   "occurrences": 4,
+   "bearer_header_in_context": true,
+   "authenticated_flag_checked_in_context": true
+  },
+  "GetResults": {
+   "occurrences": 4,
+   "bearer_header_in_context": true,
+   "authenticated_flag_checked_in_context": true
+  }
+ },
+ "sign_in_route_present": true,
+ "sign_in_uses_http_put_with_username_password_object": true,
+ "polling_interval_source": "repository.getInterval() returns apiConfig.pollingInterval from the getconfig API response (sign-in-gated).",
+ "note": "Every data route is called with an Authorization: Bearer header after the app sign-in. None was called by this research."
+}

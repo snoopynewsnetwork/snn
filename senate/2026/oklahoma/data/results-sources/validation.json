@@ -1,0 +1,344 @@
+{
+ "checks": 45,
+ "failed": 0,
+ "results": [
+  {
+   "check": "manifest: every stored file matches stored and original SHA-256/byte counts",
+   "pass": true,
+   "detail": {
+    "records": 167,
+    "mismatch": []
+   }
+  },
+  {
+   "check": "manifest: raw/ holds exactly the manifest files",
+   "pass": true,
+   "detail": {
+    "files": 166
+   }
+  },
+  {
+   "check": "manifest: ids unique",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "check": "manifest: only the OKER bundle (by design) and failed/empty responses are unretained",
+   "pass": true,
+   "detail": [
+    "oker-main-bundle"
+   ]
+  },
+  {
+   "check": "size: every owned file below 40,000,000 bytes",
+   "pass": true,
+   "detail": {
+    "largest": [
+     "cty-40109-board.html.gz",
+     1936162
+    ]
+   }
+  },
+  {
+   "check": "access: no request to an OKER API path (/OKERS/...)",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "check": "access: no Authorization or Cookie request header sent",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "check": "access: no stored file contains the OKER bundle sign-in code",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "check": "oker: bundle not stored; every route attaches a bearer token",
+   "pass": true,
+   "detail": [
+    "GetCntyResults",
+    "GetExtract",
+    "GetFile",
+    "GetMap",
+    "GetMapInfo",
+    "GetPPPCDExtract",
+    "GetPPPCDPDF",
+    "GetPctResults",
+    "GetPropText",
+    "GetResults",
+    "getconfig",
+    "getelec",
+    "login"
+   ]
+  },
+  {
+   "check": "oker: app shells for 20261103 and 20260825 are byte-identical (shell cannot show configuration)",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "check": "coverage: 77 county records, each FIPS exactly once, equal to the turnout county set",
+   "pass": true,
+   "detail": 77
+  },
+  {
+   "check": "coverage: priority set is exactly the accepted 26",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "check": "coverage: every priority county has retrieved board evidence or a documented absence/block, plus a finding",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "check": "coverage: every county has a SEB directory entry with an @elections.ok.gov email",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "check": "coverage: SEB codes 1..77 each once",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "check": "coverage: SEB directory label matches county name for every code",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "check": "discovery: every county home page listed by OKCounties was requested",
+   "pass": true,
+   "detail": {
+    "listed_and_requested": 56,
+    "not_listed": 21,
+    "http_status": [
+     "200",
+     "403"
+    ]
+   }
+  },
+  {
+   "check": "ballot: 77 county sections in the SEB November 2026 list",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "check": "ballot: exactly one U.S. Senator block per county with the five expected names, parties and order",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "check": "ballot: no county lists an unexpired-term U.S. Senator contest",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "check": "ballot: Cleveland precinct 140100 sample ballot prints the same five candidates in the same order",
+   "pass": true,
+   "detail": [
+    "KEVIN HERN",
+    "REPUBLICAN",
+    "N'KIYLA JASMINE",
+    "THOMAS",
+    "DEMOCRAT",
+    "SEVIER WHITE",
+    "LIBERTARIAN",
+    "RON MEINHARDT",
+    "INDEPENDENT",
+    "CURTIS STINNETT",
+    "INDEPENDENT"
+   ]
+  },
+  {
+   "check": "ballot: UOCAVA notice lists \"U.S. Senator (1 office)\" and a separate special for State Senator District 17",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "check": "eis: 2026-11-03 and 2024-11-05 county rows present for all 77 counties",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "check": "eis: county Sent and Received sum to the statewide cards",
+   "pass": true,
+   "detail": {
+    "sent": [
+     59670,
+     59670
+    ],
+    "received": [
+     16966,
+     16966
+    ]
+   }
+  },
+  {
+   "check": "eis: county Total sums to the ballot-type pie total",
+   "pass": true,
+   "detail": [
+    61460,
+    61460
+   ]
+  },
+  {
+   "check": "eis: 2024 Received compared with 2024 OKER president absentee-mail votes for all 77 counties (exceptions recorded: Received is not a ceiling)",
+   "pass": true,
+   "detail": {
+    "received_below_votes": [
+     [
+      "Garvin",
+      332,
+      340
+     ],
+     [
+      "Jackson",
+      274,
+      304
+     ],
+     [
+      "Marshall",
+      216,
+      220
+     ],
+     [
+      "Kiowa",
+      136,
+      139
+     ]
+    ],
+    "statewide_received": 107874,
+    "statewide_votes": 103084
+   }
+  },
+  {
+   "check": "county certificate: Cleveland 2024 president, all precinct rows equal OKER official precinct export",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "check": "county certificate: Cleveland 2024 president total equals OKER county total 119,294",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "check": "county certificate: Cleveland 2026 Senate runoff precinct rows sum to its Total row",
+   "pass": true,
+   "detail": [
+    7543,
+    4714
+   ]
+  },
+  {
+   "check": "history: archived election-morning OKER copy was Unofficial at 1984/1984 precincts and differs from the official total",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "check": "history: precinct denominators exclude 559999 and 729999",
+   "pass": true,
+   "detail": {
+    "OKLAHOMA": {
+     "county_csv_tot_race_prec": 290,
+     "distinct_units_in_precinct_export": 291,
+     "nine999_units": [
+      "559999"
+     ]
+    },
+    "TULSA": {
+     "county_csv_tot_race_prec": 251,
+     "distinct_units_in_precinct_export": 252,
+     "nine999_units": [
+      "729999"
+     ]
+    }
+   }
+  },
+  {
+   "check": "dependencies: pinned read-only files unchanged and equal to their owners' manifests",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "check": "seb: 2026 results page has a November 3 row and it carries no link yet",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "check": "seb: November 10, 2026 board meeting listed",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "check": "statutes: every quoted operative phrase is in the Legislature compiled title PDF",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "check": "statutes: OSCN section text also contains the phrase wherever OSCN served the section (challenge pages excluded)",
+   "pass": true,
+   "detail": {
+    "missing": [],
+    "oscn_challenge_pages": [
+     "statute-26-14-115.4",
+     "statute-26-14-125",
+     "statute-51-10"
+    ]
+   }
+  },
+  {
+   "check": "wayback: 2024 election-night SEB page reads UNOFFICIAL with the Friday/Tuesday certification wording",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "check": "wayback: no archived OKER API capture for any 2026 election",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "check": "csv: 77 county rows, unique FIPS, plus state-channel rows",
+   "pass": true,
+   "detail": {
+    "county_rows": 77,
+    "state_rows": 12
+   }
+  },
+  {
+   "check": "csv: every channel, home and board URL in the CSV was actually requested (status recorded)",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "check": "csv: no row claims verified November 2026 counts or a demonstrated cadence",
+   "pass": true,
+   "detail": null
+  },
+  {
+   "check": "report: relative Markdown links resolve",
+   "pass": true,
+   "detail": {
+    "links": 18,
+    "broken": []
+   }
+  },
+  {
+   "check": "report: every cited URL was requested by acquire.py, is a pinned dependency, or is listed as deliberately not fetched",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "check": "report: no trailing whitespace",
+   "pass": true,
+   "detail": []
+  },
+  {
+   "check": "whitespace: no trailing whitespace in scripts, JSON and CSV",
+   "pass": true,
+   "detail": []
+  }
+ ]
+}
