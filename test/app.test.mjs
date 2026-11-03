@@ -79,6 +79,10 @@ test(
       assert.equal(night.guide.senate.length, 14);
       assert.equal(night.guide.house.length, 51);
       assert.deepEqual(night.observations, []);
+      assert.deepEqual(night.liveResults.map(result => result.race), ["kansas", "north-carolina"]);
+      assert.equal(night.intervalMinutes, 1);
+      assert.ok(night.liveResults.every(result => result.sourceUrl.startsWith("https://")));
+      assert.equal((await fetch(`${base}/api/election-night/refresh`)).status, 405);
       const endpoint = `${base}/api/election-night/senate-mi`;
       const input = {
         status: "partial", margin: 8, reporting: 20, winner: null, gopSeats: null,

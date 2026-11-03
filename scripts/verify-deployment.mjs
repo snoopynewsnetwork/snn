@@ -14,6 +14,14 @@ for (let attempt = 1; attempt <= 12; attempt++) {
     const page = await fetch(base, { signal: AbortSignal.timeout(10000) });
     assert.equal(page.status, 200);
     assert.match(await page.text(), /The 2026 Senate desk/);
+    const desk = await fetch(`${base}/api/election-night`, { signal: AbortSignal.timeout(10000) });
+    assert.equal(desk.status, 200);
+    const live = await desk.json();
+    assert.equal(live.intervalMinutes, 1);
+    assert.deepEqual(live.liveResults.map(result => result.race), ["kansas", "north-carolina"]);
+    const client = await fetch(`${base}/election-night.js`, { signal: AbortSignal.timeout(10000) });
+    assert.equal(client.status, 200);
+    assert.match(await client.text(), /Fetch live results/);
     console.log(`Deployment verified: ${base}`);
     break;
   } catch (error) {

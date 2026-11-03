@@ -11,35 +11,49 @@ export function createElectionNight({ api, openEditor, isEditor }) {
   let requestSequence = 0, pendingEditor = false;
   const items = () => [...data.guide.senate, ...data.guide.house, ...data.guide.cues];
   const observationFor = id => data.observations.find(item => item.target === id);
+  const liveFor = item => data.liveResults?.find(result => result.race === item.slug);
+  const syncLabel = () => `Last synced ${dateLabel(data.fetchedAt)} · official sources fetched every minute; this view checks every 30 seconds.`;
   const bandName = id => data.guide.bands.find(band => band.id === id)?.name;
   const badge = (item, observation) => {
+    const live = liveFor(item);
+    if (live && (!observation || observation.sourceStatus === 'stale')) return `<span class="signal neutral">${live.status === 'setup' ? 'Awaiting first votes' : live.status === 'error' || observation?.sourceStatus === 'stale' ? 'Source unavailable / stale' : 'Awaiting official results'}</span>`;
     const signal = signalFor(item, observation);
     return `<span class="signal ${signal || 'neutral'}">${escape(signal ? bandName(signal) : !observation || observation.status === 'awaiting' ? 'Awaiting' : item.chamber === 'cue' ? statusNames[observation.status] : item.chamber === 'senate' && observation.margin !== null ? 'Between sheet bands' : 'No sheet trigger')}</span>`;
   };
   const result = (item, observation) => {
+    const live = liveFor(item);
+    if (live) return observation ? `${marginLabel(observation.margin)} · ${Number(live.totalVotes).toLocaleString()} votes${observation.sourceStatus === 'stale' ? ' · last verified' : ''}` : live.status === 'setup' ? '0 votes published · setup data' : 'Official totals unavailable · retrying automatically';
     if (!observation || observation.status === 'awaiting') return 'No results entered';
     if (item.chamber === 'cue') return statusNames[observation.status];
     return `${item.group ? `${observation.gopSeats} GOP seats` : marginLabel(observation.margin, item.code === 'NE')}${observation.winner ? ` · ${observation.winner} winner` : ''}${observation.reporting !== null ? ` · ${observation.reporting}% estimated votes counted` : ''}`;
   };
+  function liveCard(live) {
+    const name = live.race === 'kansas' ? 'Kansas' : 'North Carolina';
+    const stale = live.candidates && (live.status === 'error' || !live.lastSuccessAt || Date.now() - Date.parse(live.lastSuccessAt) > 15 * 60_000);
+    const labels = { setup: 'Awaiting first votes', reporting: 'Unofficial returns', error: 'Official source unavailable', pending: 'Awaiting first fetch', waiting: 'Awaiting publication', review: 'Source review needed' };
+    return `<article class="panel"><div class="monitor-heading"><h3><a href="#race/${escape(live.race)}">${name}</a></h3><span class="tag">${escape(stale ? 'Last verified counts · stale' : labels[live.status] || live.status)}</span></div><p>${escape(live.sourceError || live.message)}</p>
+      ${live.candidates ? `<p><strong>${Number(live.totalVotes).toLocaleString()}</strong> Senate votes published${live.status === 'error' ? ' · last verified counts' : ''}</p><table class="monitor-results"><thead><tr><th>Candidate</th><th>Party</th><th>Votes</th></tr></thead><tbody>${live.candidates.map(candidate => `<tr><td>${escape(candidate.name)}</td><td>${escape(candidate.party)}</td><td>${Number(candidate.votes).toLocaleString()}</td></tr>`).join('')}</tbody></table><p class="muted">${Number(live.reportedPrecincts).toLocaleString()} / ${Number(live.totalPrecincts).toLocaleString()} precincts reported. This is not the percentage of votes counted.</p>` : '<p>Vote totals are unavailable. The app will keep retrying the official source.</p>'}
+      <p class="muted">Last source check: ${live.checkedAt ? escape(dateLabel(live.checkedAt)) : 'Pending'}<br>Last verified: ${live.lastSuccessAt ? escape(dateLabel(live.lastSuccessAt)) : 'No verified result yet'}</p>${live.sourceUpdated ? `<p class="muted">Source update: ${escape(live.sourceUpdated)} (source timezone unspecified)</p>` : ''}<a href="${escape(live.sourceUrl)}" target="_blank" rel="noopener noreferrer">Official results source ↗</a></article>`;
+  }
   function render() {
     if (!data) return;
     const { guide, observations } = data;
     const active = observations.filter(o => o.status !== 'awaiting');
-    view.innerHTML = `<div class="hero night-hero"><div><p class="eyebrow">NOVEMBER 3, 2026 · ELECTION NIGHT</p><h1>The early tells.</h1><p class="intro">Follow the returns. Read the signals. Keep the receipts.</p></div><div class="election-date"><span>EASTERN TIME</span><strong id="night-clock"></strong><span>Shared desk · manual reporting</span></div></div>
+    view.innerHTML = `<div class="hero night-hero"><div><p class="eyebrow">NOVEMBER 3, 2026 · ELECTION NIGHT</p><h1>The early tells.</h1><p class="intro">Follow the returns. Read the signals. Keep the receipts.</p></div><div class="election-date"><span>EASTERN TIME</span><strong id="night-clock"></strong><span>Live official results · KS / NC</span></div></div>
+      <section aria-labelledby="night-live-heading"><div class="section-heading"><h2 id="night-live-heading">Live official Senate results</h2><button type="button" id="refresh-night" class="button">Fetch live results</button></div><p id="night-sync" class="muted" role="status">${escape(syncLabel())}</p><div class="monitor-grid">${(data.liveResults || []).map(liveCard).join('')}</div></section>
       <div class="night-summary"><div><strong>${active.filter(o => o.target.startsWith('senate-')).length} / ${guide.senate.length}</strong><span>Senate races updated</span></div><div><strong>${active.filter(o => o.target.startsWith('house-')).length} / ${guide.house.length}</strong><span>House watch items updated</span></div><div><strong>${active.filter(o => o.target.startsWith('cue-')).length} / ${guide.cues.length}</strong><span>Timing cues assessed</span></div><div><strong>9pm → 11pm</strong><span>The sheet’s wave / long-night checkpoints</span></div></div>
-      <p class="coverage-note">Signals compare manually entered returns with your cheat sheet’s judgment brackets. They are not election calls or chamber forecasts. Uncalled races and missing data remain unresolved. <a href="${guide.sourceImage}" target="_blank" rel="noopener">View the original sheet ↗</a></p>
+      <p class="coverage-note">Kansas and North Carolina totals and margins come from automatic official-source fetches. Other races and timing cues use editor reports. Signals compare returns with your cheat sheet’s judgment brackets; they are not election calls or chamber forecasts. <a href="${guide.sourceImage}" target="_blank" rel="noopener">View the original sheet ↗</a></p>
       <div class="night-legend">${guide.bands.map(band => `<div class="${band.id}"><strong>${band.name}</strong><span>${band.house}</span><span>Senate: ${band.senate}</span></div>`).join('')}</div>
-      <div class="section-heading"><h2>Tonight’s watchlist</h2><button type="button" id="refresh-night" class="button quiet">Refresh updates</button></div>
-      <p id="night-sync" class="muted" role="status">Last synced ${escape(dateLabel(data.fetchedAt))} · checks every 30 seconds. No automatic results feed.</p>
+      <div class="section-heading"><h2>Tonight’s watchlist</h2></div>
       <div class="night-tabs" role="group" aria-label="Watchlist">${[['senate','Senate margin bands'],['house','House early tells'],['cue','Timed cues']].map(([value,label]) => `<button type="button" class="button ${value === chamber ? '' : 'quiet'}" data-chamber="${value}" aria-pressed="${value === chamber}">${label}</button>`).join('')}</div>
       <div class="filters night-filters"><label class="search-label">Search the watchlist<input id="night-search" type="search" value="${escape(query)}" placeholder="State, district, candidate, or cue…"></label><label>Poll close / checkpoint (ET)<select id="night-time"><option value="">All times</option>${[...new Set(items().map(item => item.close))].sort().map(value => `<option value="${value}" ${time === value ? 'selected' : ''}>${timeLabel(value)} ET</option>`).join('')}</select></label><label class="check-label"><input id="night-pending" type="checkbox" ${onlyPending ? 'checked' : ''}> Awaiting only</label></div>
       <p class="coverage-note" id="night-description"></p><div id="night-list"></div>
-      <details class="night-method"><summary>How to read this desk · source notes &amp; counting caveats</summary><ul>${guide.caveats.map(note => `<li>${escape(note)}</li>`).join('')}</ul><p>Updates require editor access, a source link, an observation time, and a note. Corrections keep the previous versions. A “projected” winner is the editor’s sourced entry; a margin band alone never calls a race.</p></details>`;
+      <details class="night-method"><summary>How to read this desk · source notes &amp; counting caveats</summary><ul>${guide.caveats.map(note => `<li>${escape(note)}</li>`).join('')}</ul><p>Kansas and North Carolina fetch official results every minute. Their margin uses D minus R votes divided by all candidate votes, including other parties. Zero setup votes produce no margin or signal. Source failures retain verified counts and suppress stale signals. Other watch items use sourced editor reports with version history. A margin band alone never calls a race.</p></details>`;
     view.querySelectorAll('[data-chamber]').forEach(button => button.addEventListener('click', () => { chamber = button.dataset.chamber; render(); }));
     view.querySelector('#night-search').addEventListener('input', event => { query = event.target.value; renderList(); });
     view.querySelector('#night-time').addEventListener('change', event => { time = event.target.value; renderList(); });
     view.querySelector('#night-pending').addEventListener('change', event => { onlyPending = event.target.checked; renderList(); });
-    view.querySelector('#refresh-night').addEventListener('click', () => refresh());
+    view.querySelector('#refresh-night').addEventListener('click', () => refresh(true));
     renderList(); tick();
   }
   function renderList() {
@@ -47,15 +61,15 @@ export function createElectionNight({ api, openEditor, isEditor }) {
       (!time || item.close === time) && `${item.code || ''} ${item.name} ${item.republican || ''} ${item.democrat || ''} ${item.body || ''}`.toLowerCase().includes(query.toLowerCase()) &&
       (!onlyPending || !observationFor(item.id) || observationFor(item.id).status === 'awaiting'));
     view.querySelector('#night-description').textContent = chamber === 'senate'
-      ? 'Enter D minus R margin points (I minus R in Nebraska). Highlighted bands reflect current returns; fractional gaps stay unclassified. Poll close times are from the sheet; some states close in stages.'
+      ? 'KS and NC margins update automatically from official vote totals. Other margins are editor reports. Highlighted bands reflect current returns; fractional gaps stay unclassified. Poll close times are from the sheet; some states close in stages.'
       : chamber === 'house' ? 'Grouped by poll close, then the sheet’s scenario column. Party indicates who holds the seat in the sheet; ★ marks a redraw. A current lead is provisional. Late toss-ups settle the final size.'
       : 'Record evidence for the sheet’s timing cues. A checkpoint becoming due does not establish the cue or predict an outcome.';
     const list = view.querySelector('#night-list');
     if (!shown.length) { list.innerHTML = '<div class="empty-state">No watch items match these filters.</div>'; return; }
     if (chamber === 'senate') {
-      list.innerHTML = `<div class="table-wrap"><table class="senate-signals"><caption class="sr-only">Senate early return thresholds from the supplied sheet</caption><thead><tr><th>Race / close ET</th><th>Latest entry</th>${data.guide.bands.map(band => `<th class="${band.id}">${band.name}</th>`).join('')}<th>Details</th></tr></thead><tbody>${shown.map(item => {
+      list.innerHTML = `<div class="table-wrap"><table class="senate-signals"><caption class="sr-only">Senate early return thresholds from the supplied sheet</caption><thead><tr><th>Race / close ET</th><th>Latest results</th>${data.guide.bands.map(band => `<th class="${band.id}">${band.name}</th>`).join('')}<th>Details</th></tr></thead><tbody>${shown.map(item => {
         const observation = observationFor(item.id), signal = signalFor(item, observation);
-        return `<tr><th scope="row"><a href="#race/${item.slug}">${item.code} · ${item.name}</a><small>${escape(item.republican)} (R) / ${escape(item.democrat)} (${item.code === 'NE' ? 'I' : 'D'})</small><small>Sheet RCP average (Oct 30): ${escape(item.sheetPolling)}</small><small>${timeLabel(item.close)} ET${item.caveat ? ` · ${escape(item.caveat)}` : ''}</small></th><td>${badge(item, observation)}<small>${escape(result(item, observation))}</small>${observation ? `<small>${escape(statusNames[observation.status])} · ${escape(dateLabel(observation.observedAt))}</small>` : ''}</td>${item.ranges.map((range,index) => `<td class="band-cell ${signal === data.guide.bands[index].id ? `matched ${signal}` : ''}">${escape(range.label)}${signal === data.guide.bands[index].id ? '<small>● Current band</small>' : ''}</td>`).join('')}<td><button class="button quiet" data-watch="${item.id}">${isEditor() ? 'Update' : 'View / update'}</button></td></tr>`;
+        return `<tr><th scope="row"><a href="#race/${item.slug}">${item.code} · ${item.name}</a><small>${escape(item.republican)} (R) / ${escape(item.democrat)} (${item.code === 'NE' ? 'I' : 'D'})</small><small>Sheet RCP average (Oct 30): ${escape(item.sheetPolling)}</small><small>${timeLabel(item.close)} ET${item.caveat ? ` · ${escape(item.caveat)}` : ''}</small></th><td>${badge(item, observation)}<small>${escape(result(item, observation))}</small>${observation ? `<small>${observation.sourceKind === 'official' ? 'Official automatic' : escape(statusNames[observation.status])} · ${escape(dateLabel(observation.observedAt))}</small>` : ''}</td>${item.ranges.map((range,index) => `<td class="band-cell ${signal === data.guide.bands[index].id ? `matched ${signal}` : ''}">${escape(range.label)}${signal === data.guide.bands[index].id ? '<small>● Current band</small>' : ''}</td>`).join('')}<td><button class="button quiet" data-watch="${item.id}">${liveFor(item) ? 'Live details' : isEditor() ? 'Update' : 'View / update'}</button></td></tr>`;
       }).join('')}</tbody></table></div>`;
     } else {
       list.innerHTML = [...new Set(shown.map(item => item.close))].sort().map(close => `<section class="watch-group"><h3>${timeLabel(close)} <span>ET · ${chamber === 'house' ? 'polls close' : 'checkpoint'}</span> <span data-due="${close}"></span></h3><div class="watch-cards">${shown.filter(item => item.close === close).sort((a,b) => (data.guide.bands.findIndex(band => band.id === a.band) - data.guide.bands.findIndex(band => band.id === b.band))).map(item => {
@@ -71,25 +85,34 @@ export function createElectionNight({ api, openEditor, isEditor }) {
     if (clock) clock.textContent = new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', hour: 'numeric', minute: '2-digit' }).format(new Date());
     view.querySelectorAll('[data-due]').forEach(node => { node.textContent = easternMinutes() >= closeMinutes(node.dataset.due) ? 'Time reached' : 'Upcoming'; });
   }
-  async function refresh() {
+  async function refresh(fetchLive = false) {
     if (loading) return;
     loading = true;
+    const button = view.querySelector('#refresh-night');
+    if (button && fetchLive) { button.disabled = true; button.textContent = 'Fetching official results…'; }
     try {
-      data = await api('/api/election-night');
+      data = await api(fetchLive ? '/api/election-night/refresh' : '/api/election-night', fetchLive ? { method: 'POST' } : {});
       const focused = view.contains(document.activeElement) && ['INPUT','SELECT'].includes(document.activeElement.tagName);
       if (!focused) render();
-      else { renderList(); view.querySelector('#night-sync').textContent = `Last synced ${dateLabel(data.fetchedAt)} · checks every 30 seconds. No automatic results feed.`; }
+      else { renderList(); view.querySelector('#night-sync').textContent = syncLabel(); }
     } catch (error) {
       const node = view.querySelector('#night-sync');
       if (node) node.textContent = `Refresh failed: ${error.message} Showing the last saved snapshot; retrying in 30 seconds.`;
       else view.innerHTML = '<p class="error">The election desk could not load.</p><button type="button" class="button" id="retry-night">Try again</button>';
       view.querySelector('#retry-night')?.addEventListener('click', refresh);
-    } finally { loading = false; }
+    } finally { loading = false; if (button?.isConnected) { button.disabled = false; button.textContent = 'Fetch live results'; } }
   }
   async function openItem(id) {
     selected = id;
     const sequence = ++requestSequence;
     const item = items().find(item => item.id === id), observation = observationFor(id);
+    const live = liveFor(item);
+    if (live) {
+      dialog.innerHTML = `<h2 id="watch-title">Live official results</h2><p>These totals are fetched automatically. No editor entry is required.</p>${liveCard(live)}<div class="form-actions"><button type="button" class="button quiet" data-close>Close</button></div>`;
+      dialog.querySelector('[data-close]').addEventListener('click', () => dialog.close());
+      if (!dialog.open) dialog.showModal();
+      return;
+    }
     dialog.innerHTML = `<h2 id="watch-title">${escape(item.code || item.name)}</h2><p>Loading observation history…</p><button type="button" class="button quiet" data-close>Close</button>`;
     dialog.querySelector('[data-close]').addEventListener('click', () => dialog.close());
     if (!dialog.open) dialog.showModal();
@@ -131,5 +154,5 @@ export function createElectionNight({ api, openEditor, isEditor }) {
   setInterval(() => { if (!view.hidden && !document.hidden) refresh(); }, 30000);
   setInterval(() => { if (!view.hidden) tick(); }, 15000);
   document.addEventListener('visibilitychange', () => { if (!document.hidden && !view.hidden) refresh(); });
-  return { show: async () => { if (data) render(); await refresh(); }, editorChanged: () => { if (data) render(); if (pendingEditor && isEditor()) { pendingEditor = false; openItem(selected); } } };
+  return { show: async () => { if (data) render(); await refresh(true); }, editorChanged: () => { if (data) render(); if (pendingEditor && isEditor()) { pendingEditor = false; openItem(selected); } } };
 }
