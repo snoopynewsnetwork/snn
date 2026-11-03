@@ -16,16 +16,17 @@
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="masthead">
-      <a class="brand" href="#" aria-label="Snoopy News Network home"
+      <a class="brand" href="#night" aria-label="Snoopy News Network home"
         ><span class="brand-mark">SNN<span class="brand-dot">.</span></span
         ><span>Snoopy News<br />Network</span></a
       >
       <div class="masthead-right">
-        <span class="edition">THE SENATE DESK / 2026</span
+        <span class="edition">THE ELECTION DESK / 2026</span
         ><button id="editor-button" class="button quiet">Editor access</button>
       </div>
     </header>
     <main id="main" tabindex="-1">
+      <nav class="desk-nav" aria-label="Desk navigation"><a href="#night" id="night-nav">Election night</a><a href="#races" id="races-nav">Senate research</a></nav>
       <div
         id="status"
         class="status"
@@ -33,7 +34,8 @@
         aria-live="polite"
         hidden
       ></div>
-      <section id="index-view">
+      <section id="night-view" aria-label="Election night tracker"><p>Loading the election-night desk…</p></section>
+      <section id="index-view" hidden>
         <div class="hero">
           <div>
             <p class="eyebrow">ELECTION COVERAGE</p>
@@ -132,12 +134,13 @@
         >Project on GitHub ↗</a
       >
     </footer>
+    <dialog id="watch-dialog" class="watch-dialog" aria-labelledby="watch-title"></dialog>
     <dialog id="editor-dialog" aria-labelledby="editor-title">
       <form id="editor-form">
         <p class="eyebrow">NEWSROOM ACCESS</p>
         <h2 id="editor-title">Open the editor desk</h2>
         <p>
-          Enter the editor key to publish sourced reporting notes. Notes are
+          Enter the editor key to publish sourced reporting notes and election-night updates. Entries are
           public once saved.
         </p>
         <label

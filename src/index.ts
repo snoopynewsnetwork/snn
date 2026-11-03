@@ -1,6 +1,7 @@
 import { DurableObject } from "cloudflare:workers";
 import seed from "./generated/races.json";
 import { monitorSources, parseKansas, parseKansasResults, parseNorthCarolina, bodyHash, type ParsedMonitor } from "./monitor";
+import guide from "../public/election-guide.json";
 
 interface Env {
   NEWSROOM: DurableObjectNamespace<Newsroom>;
@@ -70,9 +71,7 @@ async function authorize(request: Request, env: Env) {
   if (mismatch) throw new HttpError(401, "A valid editor key is required.");
 }
 
-async function parseNote(
-  request: Request,
-): Promise<Omit<Note, "id" | "race" | "createdAt">> {
+async function readJson(request: Request): Promise<Record<string, unknown>> {
   if (
     request.headers.get("Content-Type")?.split(";")[0].trim() !==
     "application/json"
@@ -80,7 +79,7 @@ async function parseNote(
     throw new HttpError(415, "Use application/json.");
   }
   const reader = request.body?.getReader();
-  if (!reader) throw new HttpError(400, "A note is required.");
+  if (!reader) throw new HttpError(400, "A JSON body is required.");
   const chunks: Uint8Array[] = [];
   let size = 0;
   try {
@@ -90,7 +89,7 @@ async function parseNote(
       size += value.byteLength;
       if (size > 16384) {
         await reader.cancel();
-        throw new HttpError(413, "The note is too large.");
+        throw new HttpError(413, "The request is too large.");
       }
       chunks.push(value);
     }
@@ -112,6 +111,11 @@ async function parseNote(
   } catch {
     throw new HttpError(400, "Invalid JSON object.");
   }
+  return input;
+}
+
+async function parseNote(request: Request): Promise<Omit<Note, "id" | "race" | "createdAt">> {
+  const input = await readJson(request);
   const field = (name: string, max: number) => {
     const value = input[name];
     if (
@@ -159,12 +163,87 @@ async function parseNote(
   return note;
 }
 
+interface Observation {
+  target: string;
+  status: string;
+  margin: number | null;
+  reporting: number | null;
+  winner: string | null;
+  gopSeats: number | null;
+  cueState: string | null;
+  sourceUrl: string;
+  observedAt: string;
+  body: string;
+  version: number;
+  updatedAt: string;
+}
+
+const targets = [...guide.senate, ...guide.house, ...guide.cues];
+async function parseObservation(request: Request, target: (typeof targets)[number]) {
+  const input = await readJson(request);
+  const statuses = target.chamber === "cue"
+    ? ["awaiting", "observed", "mixed", "not-observed"]
+    : ["awaiting", "partial", "projected", "unofficial", "certified"];
+  if (typeof input.status !== "string" || !statuses.includes(input.status))
+    throw new HttpError(400, "Choose a valid reporting status.");
+  const number = (key: string, min: number, max: number, integer = false) => {
+    const value = input[key];
+    if (value === null || value === undefined) return null;
+    if (typeof value !== "number" || !Number.isFinite(value) || value < min || value > max || (integer && !Number.isInteger(value)))
+      throw new HttpError(400, `Invalid ${key}.`);
+    return value;
+  };
+  const margin = number("margin", -100, 100);
+  const reporting = number("reporting", 0, 100);
+  const gopSeats = number("gopSeats", 0, target.id === "house-tx-redraw" ? 5 : target.id === "house-pa-07-10" ? 2 : 4, true);
+  const group = "group" in target && target.group;
+  const cue = target.chamber === "cue";
+  const winner = input.winner ?? null;
+  if (winner !== null && (typeof winner !== "string" || !["D", "R", "I", "other"].includes(winner)))
+    throw new HttpError(400, "Invalid winner.");
+  if (winner !== null && !["projected", "unofficial", "certified"].includes(input.status))
+    throw new HttpError(400, "A winner requires a projected, unofficial, or certified status.");
+  if (input.status !== "awaiting" && !cue && (group ? gopSeats === null : margin === null && winner === null))
+    throw new HttpError(400, "Enter a margin, a winner, or a group seat count.");
+  if ((cue && (margin !== null || reporting !== null || winner !== null || gopSeats !== null)) ||
+      (!group && gopSeats !== null) || (group && (margin !== null || winner !== null)))
+    throw new HttpError(400, "These result fields do not apply to this watch item.");
+  if (input.status === "awaiting" && (margin !== null || reporting !== null || winner !== null || gopSeats !== null))
+    throw new HttpError(400, "Clear result fields when resetting to awaiting.");
+  if (target.chamber === "senate" && winner !== null && margin !== null &&
+      ((winner === "R" && margin > 0) || (["D", "I"].includes(String(winner)) && margin < 0)))
+    throw new HttpError(400, "Winner and margin disagree.");
+  if (typeof input.sourceUrl !== "string" || input.sourceUrl.length > 2048)
+    throw new HttpError(400, "A source URL is required.");
+  let source: URL;
+  try { source = new URL(input.sourceUrl); } catch { throw new HttpError(400, "A source URL is required."); }
+  if (!["https:", "http:"].includes(source.protocol) || source.username || source.password)
+    throw new HttpError(400, "Use an HTTP or HTTPS source URL without credentials.");
+  if (typeof input.body !== "string" || !input.body.trim() || input.body.length > 2000)
+    throw new HttpError(400, "Add a reporting note of 1–2000 characters.");
+  if (typeof input.observedAt !== "string" || !/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d{3})?Z$/.test(input.observedAt) || !Number.isFinite(Date.parse(input.observedAt)) || new Date(input.observedAt).toISOString() !== input.observedAt.replace(/Z$/, input.observedAt.includes(".") ? "Z" : ".000Z"))
+    throw new HttpError(400, "Use a valid UTC observation timestamp.");
+  if (Date.parse(input.observedAt) > Date.now() + 60000)
+    throw new HttpError(400, "The observation time cannot be in the future.");
+  if (!Number.isInteger(input.expectedVersion) || Number(input.expectedVersion) < 0)
+    throw new HttpError(400, "A valid expectedVersion is required.");
+  return {
+    target: target.id, status: input.status, margin, reporting, winner: winner as string | null,
+    gopSeats, cueState: cue ? input.status : null, sourceUrl: source.href,
+    observedAt: input.observedAt, body: input.body.trim(), expectedVersion: Number(input.expectedVersion),
+  };
+}
+
 export class Newsroom extends DurableObject<Env> {
   private monitorRun?: Promise<void>;
   constructor(ctx: DurableObjectState, env: Env) {
     super(ctx, env);
     const sql = ctx.storage.sql;
     sql.exec(`
+      CREATE TABLE IF NOT EXISTS election_observations (
+        target TEXT NOT NULL, version INTEGER NOT NULL, data TEXT NOT NULL,
+        PRIMARY KEY (target, version)
+      );
       CREATE TABLE IF NOT EXISTS metadata (key TEXT PRIMARY KEY, value TEXT NOT NULL);
       CREATE TABLE IF NOT EXISTS races (slug TEXT PRIMARY KEY, data TEXT NOT NULL);
       CREATE TABLE IF NOT EXISTS notes (
@@ -323,6 +402,34 @@ export class Newsroom extends DurableObject<Env> {
     } catch (error) { await saveRace("kansas", null, error instanceof Error ? error.message : "Kansas parse failed."); }
   }
 
+  electionObservations(): Observation[] {
+    return this.ctx.storage.sql.exec<{ data: string }>(`
+      SELECT data FROM election_observations e WHERE version =
+      (SELECT MAX(version) FROM election_observations WHERE target = e.target)
+      ORDER BY target
+    `).toArray().map(row => JSON.parse(row.data) as Observation);
+  }
+
+  electionHistory(target: string): Observation[] {
+    return this.ctx.storage.sql.exec<{ data: string }>(
+      "SELECT data FROM election_observations WHERE target = ? ORDER BY version DESC LIMIT 20", target,
+    ).toArray().map(row => JSON.parse(row.data) as Observation);
+  }
+
+  saveObservation(input: Awaited<ReturnType<typeof parseObservation>>) {
+    return this.ctx.storage.transactionSync(() => {
+      const version = this.ctx.storage.sql.exec<{ version: number }>(
+        "SELECT MAX(version) AS version FROM election_observations WHERE target = ?", input.target,
+      ).toArray()[0]?.version ?? 0;
+      if (version !== input.expectedVersion) return { conflict: true as const };
+      const { expectedVersion, ...fields } = input;
+      const observation: Observation = { ...fields, version: version + 1, updatedAt: new Date().toISOString() };
+      this.ctx.storage.sql.exec("INSERT INTO election_observations (target, version, data) VALUES (?, ?, ?)",
+        input.target, observation.version, JSON.stringify(observation));
+      return { observation };
+    });
+  }
+
   listRaces(): RaceSummary[] {
     return this.ctx.storage.sql
       .exec<{ data: string; noteCount: number }>(
@@ -428,6 +535,24 @@ async function handleRequest(request: Request, env: Env): Promise<Response> {
   }
   if (path === "/api/races" && request.method === "GET")
     return json({ races: await newsroom.listRaces() });
+  if (path === "/api/election-night") {
+    if (request.method !== "GET") throw new HttpError(405, "Method not allowed.");
+    return json({ guide, observations: await newsroom.electionObservations(), fetchedAt: new Date().toISOString() });
+  }
+  const watchMatch = path.match(/^\/api\/election-night\/([a-z0-9-]+)(\/history)?$/);
+  if (watchMatch) {
+    const target = targets.find(item => item.id === watchMatch[1]);
+    if (!target) throw new HttpError(404, "Watch item not found.");
+    if (watchMatch[2]) {
+      if (request.method !== "GET") throw new HttpError(405, "Method not allowed.");
+      return json({ history: await newsroom.electionHistory(target.id) });
+    }
+    if (request.method !== "PUT") throw new HttpError(405, "Method not allowed.");
+    await authorize(request, env);
+    const result = await newsroom.saveObservation(await parseObservation(request, target));
+    if ("conflict" in result) throw new HttpError(409, "This item changed. Reopen it to review the latest update before saving.");
+    return json(result.observation);
+  }
   const match = path.match(
     /^\/api\/races\/([a-z-]+)(?:\/notes(?:\/([a-f0-9-]{36}))?)?$/,
   );
