@@ -225,6 +225,34 @@ function playbackState(film, phase) {
   };
 }
 
+function verifyAmbientEnding(film) {
+  for (const aspect of [0.6, 1, 1.8]) {
+    const stateAt = (seconds, options = {}) => playbackState(film, film.update(seconds, aspect, options));
+    const finalFrame = stateAt(24);
+    assert.deepEqual(stateAt(24, { holdEnding: true }), finalFrame,
+      'the ambient ending joins the original final frame without a reset');
+    assert.deepEqual(stateAt(3600), finalFrame,
+      'ordinary playback and video export still stop at the final frame');
+    const composition = state => ({ ...state,
+      objects: state.objects.filter(object => !object.name.startsWith('snn-orbit-ring')),
+    });
+    const ringMatrices = state => state.objects.filter(object => /^snn-orbit-ring-\d$/.test(object.name))
+      .map(object => object.matrix);
+    for (const seconds of [24.01, 25, 60, 3600]) {
+      const held = stateAt(seconds, { holdEnding: true });
+      assert.deepEqual(composition(held), composition(finalFrame),
+        'Earth, letters, camera, and all non-ring objects hold their final transforms');
+      ringMatrices(held).forEach((matrix, index) => assert.notDeepEqual(matrix, ringMatrices(finalFrame)[index],
+        'every ring keeps orbiting after the film ends'));
+      stateAt(0, { holdEnding: true });
+      assert.deepEqual(stateAt(seconds, { holdEnding: true }), held,
+        'the extended ending remains deterministic after replay or seeking');
+    }
+    assert.deepEqual(stateAt(24, { holdEnding: true, ringSpeed: 0 }),
+      stateAt(60, { holdEnding: true, ringSpeed: 0 }), 'ring speed zero also freezes the ambient ending');
+  }
+}
+
 function geometryTriangles(geometry) {
   const positions = geometry.attributes.position;
   const indices = geometry.index;
@@ -858,6 +886,7 @@ test('orbit film seeks reversibly, clears letter volumes, and reveals readable m
     assert.ok(Math.abs(turns[0] - turns[1]) > 0.01 && Math.abs(turns[1] - turns[2]) > 0.01,
       'rings rotate at different speeds');
     assert.deepEqual(anglesAt(20, 0), anglesAt(24, 0), 'zero ring speed freezes rotation');
+    verifyAmbientEnding(film);
   } finally {
     film?.dispose();
     opening?.dispose();

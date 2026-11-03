@@ -3,8 +3,10 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
+  "workspaces": ["graphics/snn-world-intro"],
   "scripts": {
-    "build": "node scripts/build-seed.mjs",
+    "build": "node scripts/build-seed.mjs && node scripts/build-intro.mjs",
+    "build:intro": "node scripts/build-intro.mjs",
     "dev": "npm run build && node scripts/cloudflare.mjs dev",
     "check": "npm run build && tsc --noEmit && node --check public/app.js && node --check public/election-night.js && node --check public/election-model.js && node --check public/check-log.js",
     "deploy": "npm run check && node scripts/cloudflare.mjs deploy",

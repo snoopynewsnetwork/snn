@@ -145,7 +145,14 @@ sourced explanation. View the last 20 versions in the item's **Update history**.
 
 ### Local development
 
-Requires Node.js 22 or later and npm.
+The `/intro` page plays the Snoopy-to-Earth film, then holds the final SNN
+composition while its rings keep orbiting. It has only Play/Pause and Replay
+controls and does not follow scroll position. The renderer is shared with the
+[graphics review workspace](graphics/snn-world-intro/README.md). Root `npm ci`
+installs that workspace's dependencies, and the normal build and deployment
+include the intro. Use `npm run build:intro` to rebuild the intro client alone.
+
+Requires Node.js 22.12 or later and npm.
 
 ```sh
 npm ci

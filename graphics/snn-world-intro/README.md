@@ -1,6 +1,6 @@
 # SNN World Intro — film review workspace
 
-A standalone Three.js workspace for a 24-second Snoopy News Network intro.
+A Three.js review workspace for a 24-second Snoopy News Network intro.
 The page opens with the complete film, followed by six storyboard shots, an
 interactive scene editor, and the original Snoopy drawing reference. The older
 character, globe, and transition comparison panels are no longer on the page.
@@ -16,8 +16,29 @@ npm run dev
 ```
 
 Open the local URL printed by Vite. `npm run check` checks the JavaScript, runs
-the tests, and builds the production bundle. `npm run preview` serves that bundle
-locally. This folder has its own dependencies and does not change the main SNN app.
+the tests, and builds the review bundle. `npm run preview` serves that bundle
+locally. The folder is also an npm workspace, so a root `npm ci` installs its
+dependencies using the repository lockfile. The local lockfile supports running
+this graphics project on its own.
+
+## Site intro
+
+The main site serves `/intro`, a minimal full-screen player with Play/Pause and
+Replay. It plays the film once, then holds the final camera, Earth, and SNN pose
+while the partial rings continue orbiting indefinitely. Playback follows elapsed
+time and is not tied to scrolling. Pausing also stops the rings; Replay starts
+again from Snoopy.
+
+From the repository root, `npm run dev` builds the intro and starts the actual
+Worker site at `http://localhost:8787/intro`. `npm run build:intro` rebuilds only
+the intro client after editing its sources. The root build bundles
+`src/intro-page.js` and the shared renderer into the generated, ignored
+`public/intro/film.js`. The site HTML and CSS live in `public/intro/`; the
+storyboard, editor, and MP4 export controls stay in this review workspace.
+
+Cloudflare CI includes these graphics sources, installs workspace dependencies,
+and builds the intro with the rest of the site. The standard deployment includes
+it automatically; no separate Vite server or video-export server is needed.
 
 ## Complete film and storyboard
 

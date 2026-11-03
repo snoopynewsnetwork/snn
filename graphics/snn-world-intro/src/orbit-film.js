@@ -26,7 +26,7 @@ export function createOrbitFilm(renderer) {
   let activeCamera = opening.camera;
 
   function update(seconds, aspect, { opening: selected = 'nose', weave = 1, ringSpeed = 1,
-    orbitSettings = DEFAULT_ORBIT_SETTINGS } = {}) {
+    orbitSettings = DEFAULT_ORBIT_SETTINGS, holdEnding = false } = {}) {
     const time = THREE.MathUtils.clamp(seconds, 0, FILM_DURATION);
     const viewAspect = Number.isFinite(aspect) && aspect > 0 ? aspect : 1;
     if (selected !== openingName) {
@@ -68,7 +68,9 @@ export function createOrbitFilm(renderer) {
     assets.letters.quaternion.copy(pose.letterQuaternion);
     // Apply the rings' local spin before tilting their orbital plane.
     assets.rings.rotation.set(0, 0, 0);
-    assets.update(t, { ringSpeed });
+    // The ambient ending freezes the authored composition at 24 seconds,
+    // while the rings keep their continuous clock (no reset at the join).
+    assets.update(holdEnding ? Math.max(0, seconds - 6) : t, { ringSpeed });
     assets.rings.quaternion.premultiply(pose.frame);
     assets.setRingReveal(smooth(COAST_END, PULL_UP_END + 0.5, pose.routeTime));
     assets.rings.scale.x *= orbitRadius / 205;
