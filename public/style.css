@@ -872,3 +872,177 @@ dialog .error {
 .check-coverage { margin: 24px 0 36px; }
 .check-coverage summary { cursor: pointer; font-size: 16px; font-weight: 700; }
 .check-coverage[open] summary { margin-bottom: 18px; }
+
+/* Phone layouts keep the reporting readable without a wide desktop canvas. */
+@media (max-width: 620px) {
+  .masthead {
+    min-height: 82px;
+    gap: 12px;
+  }
+  .brand { gap: 10px; }
+  .brand-mark { font-size: 38px; }
+  .masthead-right { gap: 0; flex-shrink: 0; }
+  .button { min-height: 44px; }
+  input, select, textarea { font-size: 16px; min-height: 46px; }
+  input[type="checkbox"] { min-height: 0; flex-shrink: 0; }
+  .desk-nav {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+  }
+  .desk-nav a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 58px;
+    padding: 14px 2px 11px;
+    font-size: 11px;
+    line-height: 1.35;
+    text-align: center;
+  }
+  .desk-nav a[aria-current] { color: #354d27; border-color: #70933a; }
+  .hero { padding: 32px 0 28px; }
+  .eyebrow { font-size: 10px; letter-spacing: 1.4px; margin-bottom: 14px; }
+  .night-hero h1 { font-size: clamp(40px, 11vw, 56px); margin-bottom: 14px; }
+  .intro { line-height: 1.65; }
+  .election-date {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 8px 12px;
+    min-width: 0;
+    padding: 16px;
+    margin-top: 22px;
+    border: 1px solid var(--line);
+    border-left: 3px solid #70933a;
+    background: var(--white);
+  }
+  .election-date strong { grid-column: 2; grid-row: 1 / 3; font-size: 26px; }
+  .election-date span { line-height: 1.5; letter-spacing: 1px; }
+  .section-heading { gap: 14px; align-items: flex-start; margin: 28px 0 18px; }
+  .section-heading h2 { font-size: 25px; line-height: 1.15; }
+  .section-heading > .muted { text-align: right; line-height: 1.5; }
+  #refresh-night { white-space: normal; flex: 0 0 112px; line-height: 1.4; }
+  #night-sync { line-height: 1.6; }
+  .coverage-note { line-height: 1.75; }
+  .night-summary { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .night-summary > div { padding: 18px 14px; gap: 8px; }
+  .night-summary strong { font-size: clamp(20px, 5.7vw, 26px); }
+  .night-summary span { font-size: 11px; }
+  .night-legend { gap: 10px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .night-legend > div { padding: 14px 12px; gap: 8px; border-radius: 5px; }
+  .night-legend strong { font-size: 13px; }
+  .night-legend span { line-height: 1.6; }
+  .night-tabs {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    margin: 18px 0 22px;
+  }
+  .night-tabs .button { white-space: normal; padding: 12px 8px; line-height: 1.4; }
+  .night-tabs .button:last-child { grid-column: 1 / -1; }
+  .night-tabs [aria-pressed="true"] { background: var(--ink); box-shadow: 0 2px 0 #70933a; }
+  .night-filters { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+  .night-filters .check-label {
+    padding: 12px 14px;
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    background: #eeeee4;
+  }
+  .check-label input { accent-color: #447337; }
+
+  /* Keep every threshold next to its race instead of offscreen in a table. */
+  .senate-signals { display: block; min-width: 0; }
+  .senate-signals thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+  .senate-signals tbody { display: grid; gap: 18px; }
+  .senate-signals tbody tr {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 10px;
+    padding: 18px;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-top: 3px solid var(--ink);
+    border-radius: 5px;
+  }
+  .senate-signals tbody th {
+    grid-column: 1 / -1;
+    width: auto;
+    min-width: 0;
+    padding: 0 0 16px;
+    border: 0;
+  }
+  .senate-signals tbody th > a {
+    font: 25px / 1.2 Georgia, serif;
+    text-decoration: none;
+  }
+  .senate-signals small { margin-top: 7px; line-height: 1.65; }
+  .senate-signals td { min-width: 0; overflow-wrap: anywhere; }
+  .senate-signals td:nth-child(2) {
+    grid-column: 1 / -1;
+    padding: 15px 0;
+    margin-bottom: 14px;
+    border-top: 1px solid var(--line);
+  }
+  .senate-signals .band-cell {
+    min-width: 0;
+    padding: 12px 8px;
+    margin-bottom: 10px;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    background: var(--paper);
+    font-size: 13px;
+    line-height: 1.5;
+  }
+  .senate-signals .band-cell::before {
+    content: attr(data-band);
+    display: block;
+    margin-bottom: 5px;
+    color: var(--ink);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .3px;
+  }
+  .senate-signals .matched.riptide { background: #fae5e1; }
+  .senate-signals .matched.tide { background: #e8eff5; }
+  .senate-signals .matched.wave { background: #dfedf9; }
+  .senate-signals .matched.tsunami { background: #dce6f6; }
+  .senate-signals td:last-child { grid-column: 1 / -1; border: 0; padding: 6px 0 0; }
+  .senate-signals td:last-child .button { width: 100%; }
+  .watch-group > h3 { display: flex; flex-wrap: wrap; gap: 8px; align-items: baseline; line-height: 1.3; }
+  .watch-group > h3 > span { margin-left: 0; }
+  .watch-group [data-due] { float: none; margin: 0 0 0 auto; }
+  .watch-card { padding: 20px; border-radius: 5px; }
+  .watch-card-bottom { align-items: center; }
+  .watch-card-bottom button { min-height: 44px; padding: 10px 12px; }
+  .watch-card-bottom .muted { overflow-wrap: anywhere; }
+  .night-method { margin-top: 26px; padding-top: 0; overflow-wrap: anywhere; }
+  .night-method > summary, .watch-history > summary { padding: 16px 0; line-height: 1.6; }
+  .night-method ul { padding-left: 20px; }
+  .night-method > p { margin-top: 12px; }
+  .race-hero { flex-wrap: wrap; gap: 18px; }
+  .race-hero h1 { font-size: clamp(34px, 10vw, 43px); }
+  .note-toolbar { flex-wrap: wrap; }
+  .note-toolbar select { font-size: 16px; max-width: 100%; }
+  .note-footer { flex-wrap: wrap; }
+  .sources a, .facts dd { overflow-wrap: anywhere; }
+  .empty-state { padding: 22px; }
+  .table-wrap { border-radius: 4px; }
+  .check-table { font-size: 12px; }
+  dialog, .watch-dialog { padding: 22px; max-height: calc(100dvh - 32px); overflow-y: auto; }
+  dialog h2 { font-size: 28px; line-height: 1.15; }
+  .form-actions { flex-wrap: wrap; gap: 10px; }
+  .form-actions .button { flex: 1 1 auto; white-space: normal; }
+  footer { margin-top: 36px; padding-top: 22px; line-height: 1.7; }
+  footer a { display: inline-flex; align-items: center; min-height: 44px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .button, .desk-nav a { transition: background-color .15s ease, border-color .15s ease; }
+}
