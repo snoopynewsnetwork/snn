@@ -10,7 +10,7 @@
     "deploy": "npm run check && node scripts/cloudflare.mjs deploy",
     "cf": "node scripts/cloudflare.mjs",
     "login": "node scripts/cloudflare.mjs login --browser=false --scopes account:read user:read workers_scripts:write workers_tail:read",
-    "test": "npm run build && node --test test/app.test.mjs",
+    "test": "npm run build && node --experimental-strip-types --test test/*.test.mjs",
     "smoke": "node scripts/smoke.mjs"
   },
   "devDependencies": {

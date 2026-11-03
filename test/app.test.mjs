@@ -68,6 +68,12 @@ test(
     try {
       await start();
       await smoke(base, key);
+      const monitor = await (await fetch(`${base}/api/monitor`)).json();
+      assert.deepEqual(monitor.races.map(race => race.race), ["kansas", "north-carolina"]);
+      assert.equal(monitor.intervalMinutes, 5);
+      assert.equal(monitor.sources.length, 7);
+      assert.equal((await fetch(`${base}/api/monitor/refresh`, { method: "POST" })).status, 401);
+      assert.equal((await fetch(`${base}/api/monitor/snapshots/999999`)).status, 404);
       const created = await fetch(`${base}/api/races/ohio/notes`, {
         method: "POST",
         headers: {

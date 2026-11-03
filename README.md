@@ -6,7 +6,38 @@ Versioned reporting notes for U.S. elections.
 
 The app provides a searchable Senate race index, race details, research links,
 and a dated reporting log. It imports the 35 baseline race records directly from
-this repository. There is no automated news, candidate, polling, or results feed.
+this repository. Kansas and North Carolina have automatic official-source
+monitoring; other races and the reporting log are manually maintained.
+
+### Automatic election monitoring
+
+Cloudflare runs the collector every five minutes, independently of visitors.
+The index and both race pages show source health, last check, last verified
+snapshot, last count/link change, and links to retained source responses.
+Open pages reload monitoring status every minute. A source without a successful
+check in 15 minutes is marked stale. Errors back off from five minutes to one
+hour and retain the last verified counts.
+
+- **North Carolina:** reads the NCSBE election catalog, all-100-county status
+  file and statewide November 3, 2026 results. Validates the election, Senate
+  group 1383, candidate configuration and voting-method sums. Zero setup is
+  labeled separately from reported votes. Successive cumulative counts replace
+  each other, including downward corrections. Precinct reporting does not
+  estimate the votes remaining. Counts remain unofficial; certification is
+  not inferred from a reporting percentage.
+- **Kansas:** watches the Secretary of State home/results pages and Johnson
+  County's November election page for results publications. A statewide Senate
+  count endpoint has not been verified. This is publication monitoring, not
+  statewide vote coverage. New links require adapter/election verification
+  before their numbers can be published.
+
+`GET /api/monitor` returns current status. `GET /api/monitor/snapshots/:id`
+returns immutable, deduplicated UTF-8 source responses, SHA-256 hashes and HTTP
+metadata. `POST /api/monitor/refresh` requires the editor key and runs an initial
+check (a two-minute lease prevents duplicate requests). The five-minute cron
+continues without editor credentials. Changed source responses remain in
+Durable Object SQLite across deploys. No automatic race calls or forecasts are
+generated.
 
 Live POC: https://snoopy-news-network.snoopy-news-network.workers.dev
 
