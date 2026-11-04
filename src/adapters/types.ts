@@ -1,4 +1,4 @@
-import type { CandidateCount } from "../monitor";
+import type { CandidateCount, CountyCount } from "../monitor";
 
 export interface ElectionSource {
   id: string;
@@ -35,6 +35,7 @@ export interface ElectionResult {
   message: string;
   candidates?: CandidateCount[]; // DEM / REP / LIB / GRE / IND / other literal parties normalized where known.
   totalVotes?: number;
+  counties?: CountyCount[];
   // Source-supplied expected-vote estimate, never inferred from precinct counts.
   estimatedVotePercent?: number;
   reportedPrecincts?: number;
