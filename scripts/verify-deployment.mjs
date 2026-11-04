@@ -2,9 +2,10 @@ import assert from "node:assert/strict";
 import { setTimeout as delay } from "node:timers/promises";
 
 const base = "https://snoopy-news-network.snoopy-news-network.workers.dev";
-// Durable Object code can continue serving the previous deployment during
-// propagation. Allow three minutes for the combined desk schema to arrive.
-const attempts = 36;
+// Active Durable Objects defer code updates for up to five minutes by default.
+// Allow seven minutes for that delay plus propagation and verification requests.
+// https://developers.cloudflare.com/durable-objects/deployments/durable-objects-code-updates/
+const attempts = 84;
 for (let attempt = 1; attempt <= attempts; attempt++) {
   try {
     const response = await fetch(`${base}/api/health`, { signal: AbortSignal.timeout(10000) });
