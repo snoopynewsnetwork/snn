@@ -26,6 +26,7 @@ export interface LiveResult extends Omit<ElectionResult, "status"> {
   name?: string;
   chamber?: "senate" | "house" | "governor" | "group";
   state?: string;
+  automaticTracking?: boolean;
   status: ElectionResult["status"] | "error" | "pending";
   checkedAt?: string;
   lastSuccessAt?: string;

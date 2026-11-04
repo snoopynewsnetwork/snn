@@ -12,7 +12,7 @@ test('live registry covers every sheet race and group member with unique, bounde
   const ids = targets.map(target => target.id);
   assert.equal(new Set(ids).size, ids.length, 'No race is overwritten by a second adapter');
   assert.equal(new Set(electionAdapters.map(adapter => adapter.id)).size, electionAdapters.length);
-  assert.equal(new Set(targets.map(target => target.state)).size, 25);
+  assert.equal(new Set(targets.map(target => target.state)).size, 26);
   for (const target of [...guide.senate, ...guide.house]) {
     if (target.group) {
       assert.ok(groupMembers[target.id]?.length);

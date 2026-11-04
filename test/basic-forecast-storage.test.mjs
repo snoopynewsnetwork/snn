@@ -19,7 +19,7 @@ test('saved-source collection automatically publishes predictions and correction
   const editorKey = 'basic-model-integration-editor-key-32-characters';
   const mf = new Miniflare(convertV4MiniflareOptions({ unsafeInspectDurableObjects: true, workers: [{
     name: 'basic-model-storage', modules: true, script: built.outputFiles[0].text, compatibilityDate: '2026-10-17',
-    bindings: { ADMIN_TOKEN: editorKey },
+    bindings: { AUTOMATED_TRACKING_STATES: "*", ADMIN_TOKEN: editorKey },
     durableObjects: { NEWSROOM: { className: 'Newsroom', useSQLite: true }, LIVE_MONITORS: { className: 'ElectionMonitor', useSQLite: true } },
     outboundService: request => {
       requests++;
