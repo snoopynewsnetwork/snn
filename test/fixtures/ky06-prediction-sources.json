@@ -1,0 +1,33 @@
+{
+  "description": "Complete unmodified source bodies. CNN district and all 16 county candidate totals reconcile at 181845 votes. Direct official access returned an acceptable-use block; WKYT current general-election display corroborates CNN district counts. No claim of independent upstream suppliers.",
+  "sources": [
+    {
+      "url": "https://politics.api.cnn.io/results/race/2026-HG-KY-6.json",
+      "fixture": "cnn-ky06-race.json.gz",
+      "retrievedAt": "2026-11-04T01:40:52.402Z",
+      "httpStatus": 200,
+      "sha256": "b18cf50f552a38dc1b2ed75204636cd7b92b86014db630ab0e595f91ce61bd38"
+    },
+    {
+      "url": "https://politics.api.cnn.io/results/county-races/2026-HG-KY-6.json",
+      "fixture": "cnn-ky06-counties.json.gz",
+      "retrievedAt": "2026-11-04T01:41:21.151Z",
+      "httpStatus": 200,
+      "sha256": "ce080391a63deddd7b6bd94e98aa87fd747c2fc888dcc242c88bd9edfdf7feae"
+    },
+    {
+      "url": "https://vrsws.sos.ky.gov/liveresults/?id=2026",
+      "fixture": "ky06-official-blocked.html.gz",
+      "retrievedAt": "2026-11-04T01:41:04.013Z",
+      "httpStatus": 403,
+      "sha256": "fa1a74e313489f1002c01c663dac29f426b76e109670c89c213b1deb91718499"
+    },
+    {
+      "url": "https://www.wkyt.com/politics/election-results/",
+      "fixture": "ky06-wkyt.html.gz",
+      "retrievedAt": "2026-11-04T01:41:04.512Z",
+      "httpStatus": 200,
+      "sha256": "4c1ffb34855ef3919d25715d71a20a505a4cb552c7a329b9199de8558236d757"
+    }
+  ]
+}

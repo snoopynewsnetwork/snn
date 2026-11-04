@@ -114,10 +114,20 @@ Counties without published votes appear first, ordered by their share of the
 2024 district vote; reporting counties may also have votes outstanding.
 Anderson and Bath include only their KY-06 portions.
 
-A separate civicAPI county adapter checks election/candidate identities, the
-complete county set, and each candidate's county-to-district sum. Its snapshot
-has independent freshness and source evidence; CNN remains the district source.
+A separate county adapter prefers CNN's district-specific county feed, with
+civicAPI as a fallback. It checks election/candidate identities, the complete
+county set, and each candidate's exact county-to-district sum within its source.
+Its snapshot has independent freshness and source evidence; CNN remains the district source.
 The page flags differences between those snapshots without allocating residuals.
+
+An experimental live prediction fits a common Democratic share shift against
+the same counties' certified 2024 House shares, then applies it only to modeled
+additional votes. CNN's expected-vote estimates supply turnout; missing counties
+use scaled historical weights. The page shows the estimated final two-party
+margin, county outcomes, model assumptions, and a sensitivity range (remaining
+volume ±20%, remaining D share ±5 points). It withholds predictions for stale,
+failed or insufficient inputs. This is uncalibrated and supplies no win
+probability or race call. Published other-candidate votes remain separate.
 
 Presets replay 2024 or illustrate R+10, a tie, and D+5. Users can adjust a common
 turnout scale and district margin, compare targets with reported D+R votes, and
