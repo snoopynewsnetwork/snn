@@ -2,9 +2,12 @@ import { DurableObject } from "cloudflare:workers";
 import seed from "./generated/races.json";
 import { withGroupResults, withOfficialResults, type Observation, type LiveResult } from "./live-results";
 import guide from "../public/election-guide.json";
-import { electionAdapters } from "./election-adapters";
+import { electionAdapters, monitorAdapters } from "./election-adapters";
 import { ElectionMonitor, type ElectionBatch } from "./election-monitor";
 import { SourceCheckLog, CHECK_LOG_LIMIT, type CheckTrigger } from "./check-log";
+import { NeedleStore, needleCatalog, buildNeedle, validateForecastRun } from './needles';
+import { buildBasicForecast } from './basic-forecast.ts';
+import { buildChamberLedger, type Chamber } from './chamber-ledger';
 export { ElectionMonitor };
 
 interface Env {
@@ -76,7 +79,7 @@ async function authorize(request: Request, env: Env) {
   if (mismatch) throw new HttpError(401, "A valid editor key is required.");
 }
 
-async function readJson(request: Request): Promise<Record<string, unknown>> {
+async function readJson(request: Request, maxBytes = 16384): Promise<Record<string, unknown>> {
   if (
     request.headers.get("Content-Type")?.split(";")[0].trim() !==
     "application/json"
@@ -92,7 +95,7 @@ async function readJson(request: Request): Promise<Record<string, unknown>> {
       const { done, value } = await reader.read();
       if (done) break;
       size += value.byteLength;
-      if (size > 16384) {
+      if (size > maxBytes) {
         await reader.cancel();
         throw new HttpError(413, "The request is too large.");
       }
@@ -227,9 +230,11 @@ async function parseObservation(request: Request, target: (typeof targets)[numbe
 export class Newsroom extends DurableObject<Env> {
   private monitorRun?: Promise<void>;
   private checkLog: SourceCheckLog;
+  private needleStore: NeedleStore;
   constructor(ctx: DurableObjectState, env: Env) {
     super(ctx, env);
     this.checkLog = new SourceCheckLog(ctx.storage);
+    this.needleStore = new NeedleStore(ctx.storage);
     const sql = ctx.storage.sql;
     sql.exec(`
       CREATE TABLE IF NOT EXISTS election_observations (
@@ -276,7 +281,7 @@ export class Newsroom extends DurableObject<Env> {
   }
 
   async getMonitor() {
-    const batches: ElectionBatch[] = electionAdapters.map(adapter => {
+    const batches: ElectionBatch[] = monitorAdapters.map(adapter => {
       const row = this.ctx.storage.sql.exec<{ value: string }>("SELECT value FROM metadata WHERE key = ?", `live_batch_${adapter.id}`).toArray()[0];
       if (row) return JSON.parse(row.value) as import("./election-monitor").ElectionBatch;
       return { adapter: adapter.id, version: adapter.version,
@@ -288,17 +293,19 @@ export class Newsroom extends DurableObject<Env> {
           sourceKind: (adapter.sources.find(source => source.id === target.sourceId) ?? adapter.sources[0])?.official === false ? "supplier" as const : "official" as const,
         })) };
     });
-    const allResults = batches.flatMap(batch => batch.results);
+    const completion = batches.find(batch => batch.adapter === 'completion-cnn')?.results ?? [];
+    const ledgerUpdates = batches.find(batch => batch.adapter === 'completion-cnn')?.ledgerUpdates ?? [];
+    const allResults = batches.filter(batch => batch.adapter !== 'completion-cnn').flatMap(batch => batch.results);
     const countyResult = allResults.find(result => result.target === "house-ky-06-counties");
     const races: LiveResult[] = allResults.filter(result => result.target !== "house-ky-06-counties").map(result => ({ ...result,
       race: guide.senate.find(item => item.id === result.target)?.slug ?? result.race,
       ...(result.target === "house-ky-06" ? { countyResult } : {}) }));
     const sources = batches.flatMap(batch => batch.sources.map(source => ({ ...source, adapter: batch.adapter,
-      targets: electionAdapters.find(adapter => adapter.id === batch.adapter)!.targets.map(target => target.id),
+      targets: monitorAdapters.find(adapter => adapter.id === batch.adapter)!.targets.map(target => target.id),
       snapshotUrl: source.snapshotId ? `/api/live-monitor/${encodeURIComponent(batch.adapter)}/snapshots/${source.snapshotId}` : undefined,
     })));
     const started = this.ctx.storage.sql.exec<{ value: string }>("SELECT value FROM metadata WHERE key = 'live_monitor_started'").toArray()[0];
-    return { intervalMinutes: 1, electionDate: "2026-11-03", parserVersion: "cheat-sheet-live-v2", sources, races,
+    return { intervalMinutes: 1, electionDate: "2026-11-03", parserVersion: "cheat-sheet-live-v2", sources, races, completion, ledgerUpdates,
       lastCheckedAt: started ? new Date(Number(started.value)).toISOString() : null };
   }
 
@@ -311,6 +318,37 @@ export class Newsroom extends DurableObject<Env> {
       intervalMinutes: monitor.intervalMinutes, fetchedAt: new Date().toISOString() };
   }
 
+  private ensureBasicForecast(monitor: Awaited<ReturnType<Newsroom['getMonitor']>>, refresh = false) {
+    const latest = this.needleStore.latest();
+    // An editor-published forecast always takes precedence, including when stale.
+    if (latest.run && (!refresh || !latest.automatic)) return latest;
+    const run = buildBasicForecast(monitor);
+    const version = this.needleStore.publish(run, latest.version, true);
+    return { version: version ?? latest.version, run: version === null ? latest.run : run, automatic: version === null ? latest.automatic : true };
+  }
+
+  async getNeedleCatalog(includeAll = false) {
+    const monitor = await this.getMonitor();
+    const latest = this.ensureBasicForecast(monitor);
+    return { version: latest.version, publicationSource: latest.automatic ? 'automatic' : 'editor', needles: needleCatalog(monitor, latest.run, includeAll) };
+  }
+
+  async getChamberLedger(chamber: Chamber) {
+    const monitor = await this.getMonitor();
+    return buildChamberLedger(chamber, monitor.ledgerUpdates, monitor.races);
+  }
+
+  async getNeedle(id: string) {
+    const monitor = await this.getMonitor();
+    const latest = this.ensureBasicForecast(monitor);
+    const needle = buildNeedle(id, monitor, latest.run);
+    return needle ? { ...needle, version: latest.version, publicationSource: latest.automatic ? 'automatic' : 'editor' } : null;
+  }
+
+  publishNeedleRun(input: unknown, expectedVersion: number) {
+    return this.needleStore.publish(validateForecastRun(input), expectedVersion);
+  }
+
   getMonitorSnapshot(id: number) {
     // Old evidence links remain readable after the state collector migration.
     return this.ctx.storage.sql.exec("SELECT * FROM monitor_snapshots WHERE id = ?", id).toArray()[0] ?? null;
@@ -321,14 +359,14 @@ export class Newsroom extends DurableObject<Env> {
     const last = this.ctx.storage.sql.exec<{ value: string }>("SELECT value FROM metadata WHERE key = 'live_monitor_started'").toArray()[0];
     if (last && Date.now() - Number(last.value) < 30_000) return Promise.resolve();
     this.ctx.storage.sql.exec("INSERT INTO metadata (key, value) VALUES ('live_monitor_started', ?) ON CONFLICT(key) DO UPDATE SET value = excluded.value", String(Date.now()));
-    if (!this.monitorRun) this.monitorRun = Promise.allSettled(electionAdapters.map(async adapter => {
+    if (!this.monitorRun) this.monitorRun = Promise.allSettled(monitorAdapters.map(async adapter => {
       const { checks = [], ...batch } = await this.env.LIVE_MONITORS.getByName(adapter.id).refresh(adapter.id, force, trigger);
       for (const check of checks) this.checkLog.record(check);
       this.ctx.storage.sql.exec("INSERT INTO metadata (key, value) VALUES (?, ?) ON CONFLICT(key) DO UPDATE SET value = excluded.value", `live_batch_${adapter.id}`, JSON.stringify(batch));
-    })).then(results => {
+    })).then(async results => {
       results.forEach((result, index) => {
         if (result.status !== "rejected") return;
-        const id = electionAdapters[index].id;
+        const id = monitorAdapters[index].id;
         console.error(`Monitor failed: ${id}`, result.reason);
         const row = this.ctx.storage.sql.exec<{ value: string }>("SELECT value FROM metadata WHERE key = ?", `live_batch_${id}`).toArray()[0];
         if (row) {
@@ -337,6 +375,7 @@ export class Newsroom extends DurableObject<Env> {
           this.ctx.storage.sql.exec("UPDATE metadata SET value = ? WHERE key = ?", JSON.stringify(batch), `live_batch_${id}`);
         }
       });
+      this.ensureBasicForecast(await this.getMonitor(), true);
     }).finally(() => { this.monitorRun = undefined; });
     return this.monitorRun;
   }
@@ -458,9 +497,46 @@ async function handleRequest(request: Request, env: Env): Promise<Response> {
     return Response.redirect(url.toString(), 308);
   }
   const path = url.pathname;
+  if (['/needle/', '/needle.html'].includes(path)) return Response.redirect(new URL('/needle', url).href, 308);
+  if (path === '/needle') return env.ASSETS.fetch(request);
   if (path !== "/api" && !path.startsWith("/api/"))
     return env.ASSETS.fetch(request);
   const newsroom = env.NEWSROOM.getByName("senate-2026");
+  const ledgerMatch = path.match(/^\/api\/chamber-ledger\/(house|senate)$/);
+  if (ledgerMatch) {
+    if (request.method !== 'GET') throw new HttpError(405, 'Method not allowed.');
+    return json(await newsroom.getChamberLedger(ledgerMatch[1] as Chamber));
+  }
+  if (path === '/api/needle') {
+    if (request.method !== 'GET') throw new HttpError(405, 'Method not allowed.');
+    return json(await newsroom.getNeedleCatalog(url.searchParams.get('scope') === 'all'));
+  }
+  if (path === '/api/needle/forecast') {
+    if (request.method !== 'PUT') throw new HttpError(405, 'Method not allowed.');
+    await authorize(request, env);
+    const input = await readJson(request, 8_000_000);
+    if (!Number.isSafeInteger(input.expectedVersion) || Number(input.expectedVersion) < 0) throw new HttpError(400, 'An expectedVersion is required.');
+    try { validateForecastRun(input.run); }
+    catch (error) { throw new HttpError(400, error instanceof Error ? error.message : 'Invalid forecast run.'); }
+    const version = await newsroom.publishNeedleRun(input.run, Number(input.expectedVersion));
+    if (version === null) throw new HttpError(409, 'Forecast version changed or timestamp moved backwards.');
+    return json({ version }, 201);
+  }
+  const needleMatch = path.match(/^\/api\/needle\/([a-z0-9-]+)$/);
+  if (needleMatch) {
+    if (request.method !== 'GET') throw new HttpError(405, 'Method not allowed.');
+    const needle = await newsroom.getNeedle(needleMatch[1]);
+    if (!needle) throw new HttpError(404, 'Needle not found.');
+    return json(needle);
+  }
+  const completionHistory = path.match(/^\/api\/completion\/([a-z0-9-]+)\/history$/);
+  if (completionHistory) {
+    if (request.method !== 'GET') throw new HttpError(405, 'Method not allowed.');
+    if (!monitorAdapters.find(adapter => adapter.id === 'completion-cnn')!.targets.some(target => target.id === completionHistory[1])) throw new HttpError(404, 'Completion target not found.');
+    const after = Number(url.searchParams.get('after') ?? 0);
+    if (!Number.isSafeInteger(after) || after < 0) throw new HttpError(400, 'Invalid history cursor.');
+    return json(await env.LIVE_MONITORS.getByName('completion-cnn').getCompletionHistory(completionHistory[1], after));
+  }
   if (path === "/api/monitor" && request.method === "GET") return json(await newsroom.getMonitor());
   if (path === "/api/monitor/checks") {
     if (request.method !== "GET") throw new HttpError(405, "Method not allowed.");
@@ -473,7 +549,7 @@ async function handleRequest(request: Request, env: Env): Promise<Response> {
   }
   const liveSnapshot = path.match(/^\/api\/live-monitor\/([a-z0-9-]+)\/snapshots\/(\d+)$/);
   if (liveSnapshot && request.method === "GET") {
-    if (!electionAdapters.some(adapter => adapter.id === liveSnapshot[1])) throw new HttpError(404, "Monitor not found.");
+    if (!monitorAdapters.some(adapter => adapter.id === liveSnapshot[1])) throw new HttpError(404, "Monitor not found.");
     const snapshot = await env.LIVE_MONITORS.getByName(liveSnapshot[1]).getSnapshot(Number(liveSnapshot[2]));
     if (!snapshot) throw new HttpError(404, "Snapshot expired or not found.");
     return json(snapshot);

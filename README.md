@@ -21,7 +21,8 @@ The cues still require an editor's evidence assessment.
 
 The registry contains 27 adapters across 25 states. Each adapter runs in its own
 SQLite-backed `ElectionMonitor` Durable Object, isolating network failures and
-request budgets. Shared statewide feeds serve multiple races. The `Newsroom`
+request budgets. An additional completion adapter polls five shared CNN feeds
+independently of result selection. Shared statewide feeds serve multiple races. The `Newsroom`
 object saves the combined result, so browser reads do not hit election servers.
 Opening the desk or **Fetch live results** requests a source check; a persisted
 30-second lease coalesces concurrent requests. Scheduled failures back off from
@@ -60,7 +61,7 @@ links remain readable. `POST /api/monitor/refresh` requires the editor key;
 `POST /api/election-night/refresh` is public and fetches only configured sources.
 
 The **Source checks** page (`/#checks`) shows the latest 200 checks across
-all 66 configured endpoints and an expandable source coverage list. Every
+all 71 configured endpoints and an expandable source coverage list. Every
 collector returns the shared `SourceCheck` receipt (`src/check-log.ts`), and the
 coordinator calls `SourceCheckLog.record()` to persist it in shared SQLite.
 Sources are taken directly from the adapter registry, including supporting,
@@ -174,6 +175,20 @@ rejected with HTTP 409, so two editors cannot silently overwrite one another.
 To retract an entry, select **Awaiting results**, clear result fields, and add a
 sourced explanation. View the last 20 versions in the item's **Update history**.
 
+### Election needles
+
+The dedicated `/needle` page shows one entry per full tracked race and two
+chamber-control needles. Each has an individual JSON API at
+`/api/needle/:raceId`, `/api/needle/house-control`, or
+`/api/needle/senate-control`. `GET /api/needle` lists the available entries.
+Independent CNN expected-vote observations cover all 74 result targets without
+replacing preferred official counts. The built-in [basic vote-mix model](docs/basic-forecast.md)
+automatically produces experimental predictions from saved returns, completion
+estimates, and neutral priors for races without usable data. It has not been
+calibrated. Stale or conflicting forecasts display unavailable states. See the
+[needle API and forecast publication contract](docs/needles.md) for collection,
+remaining-vote estimates, joint probability calculations, and model inputs.
+
 ### Local development
 
 The `/intro` page plays the Snoopy-to-Earth film, then holds the final SNN
@@ -234,6 +249,10 @@ its usage limits. No custom domain is required.
 | Method | Path | Behavior |
 | --- | --- | --- |
 | GET | `/api/health` | Check storage and the race count |
+| GET | `/api/needle` | List race and chamber needles with individual API URLs |
+| GET | `/api/needle/:id` | Read one race or chamber-control needle |
+| PUT | `/api/needle/forecast` | Publish a calibrated joint forecast run; requires editor authorization and `expectedVersion` |
+| GET | `/api/completion/:target/history` | Read paginated normalized completion history with an optional `after` cursor |
 | GET | `/api/monitor/checks` | Read the latest 200 source checks and complete source coverage |
 | GET | `/api/races` | List races with reporting-note counts |
 | GET | `/api/races/:slug` | Read a race, research sources, and notes |

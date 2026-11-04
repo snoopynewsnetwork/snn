@@ -5,7 +5,7 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { build } from 'esbuild';
 import { Miniflare, convertV4MiniflareOptions } from 'miniflare';
-import { electionAdapters } from '../src/election-adapters.ts';
+import { monitorAdapters as electionAdapters } from '../src/election-adapters.ts';
 
 // Exercise every production endpoint configuration through the real collector,
 // RPC coordinator and SQLite. Stub parsers here; adapter fixtures separately
@@ -27,12 +27,13 @@ test('all registered sources feed one persistent, globally bounded check log', {
     plugins: [{ name: 'fixture-parsers', setup(build) {
       build.onResolve({ filter: /^\.\/election-adapters$/ }, () => ({ path: 'catalog', namespace: 'test' }));
       build.onLoad({ filter: /.*/, namespace: 'test' }, () => ({ resolveDir: process.cwd(), contents: `
-        import { electionAdapters as registry } from ${JSON.stringify(join(process.cwd(), 'src/election-adapters.ts'))};
+        import { monitorAdapters as registry } from ${JSON.stringify(join(process.cwd(), 'src/election-adapters.ts'))};
         export const electionAdapters = registry.map(adapter => ({ ...adapter,
           parse: () => Object.fromEntries(adapter.targets.map(target => [target.id, {
             status: 'setup', message: 'Fixture setup', candidates: [
               {name:'D',party:'DEM',votes:0}, {name:'R',party:'REP',votes:0}], totalVotes:0
           }])) }));
+        export const monitorAdapters = electionAdapters;
         export function electionAdapter(id) { return electionAdapters.find(adapter => adapter.id === id); }
       ` }));
     }}],
