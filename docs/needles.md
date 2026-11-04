@@ -5,11 +5,17 @@ race (currently 72), plus House-control and Senate-control needles. Supporting
 Detroit/Johnson County views feed completion collection without becoming extra
 race needles. Groups reuse member races rather than adding seats.
 
+The built-in [basic vote-mix model](basic-forecast.md) now supplies automatic
+**experimental, uncalibrated** runs using saved counts and completion estimates.
+Its neutral prior covers races without usable returns so chamber inputs are
+complete. No provider account or manual import is needed for this default.
+
 ## Public reads
 
 | Endpoint | Response |
 | --- | --- |
 | `GET /api/needle` | Catalog of IDs, names, chambers, individual API URLs, and current forecast publication version |
+| `GET /api/needle?scope=all` | Discover every modeled race, including untracked races used for chamber control |
 | `GET /api/needle/:raceId` | Individual race forecast, observed counts, independent completion estimate, provenance, freshness, model version, and publication version |
 | `GET /api/needle/house-control` | House seat distribution, 90% seat intervals, control probabilities, seat ledger coverage, and assumptions |
 | `GET /api/needle/senate-control` | Senate equivalent, including the published vice-presidential tie-breaking caucus |
@@ -62,11 +68,11 @@ reusing it for a future election. Other adapters retain their existing limits.
 ## Publishing calibrated forecasts
 
 The repository includes a complete sourced chamber ledger; see
-[chamber-ledger.md](chamber-ledger.md). There is no calibrated forecast producer
-yet. Live counts and completion percentages cannot establish win
-probabilities on their own. The default page/API therefore report
-`uncalibrated` for races and `unavailable` for chamber control. They become
-functional forecasts when an editor publishes a coherent calibrated joint run.
+[chamber-ledger.md](chamber-ledger.md). The default producer is the uncalibrated
+basic model above. Its predictions display `experimental`, with a null
+`calibrationUrl`, documented assumptions, and per-race input basis/provenance.
+An editor can replace it with a coherent calibrated joint run. Automatic
+collection never overwrites an editor-published run, even when it goes stale.
 The chamber APIs automatically include sourced holdovers/declarations, expose
 complete inventory separately from missing model inputs, and suppress odds when
 a model contradicts a ledger outcome.
@@ -79,6 +85,11 @@ as immutable chunked artifacts in Newsroom SQLite and survive redeploys.
 The endpoint is a model-output import, not a result-entry form or calibration
 procedure. A calibration URL is a publisher attestation; the server validates
 its format without fetching or verifying the external report.
+`releaseStatus` may be `experimental` or `calibrated` (the default for existing
+imports). A null calibration URL is allowed only for experimental runs, which
+retain their experimental API/UI status rather than being labeled calibrated.
+Read the current catalog version before publishing: initialization of the
+built-in model can already have advanced it beyond zero.
 
 The run schema is defined by `ForecastRun` in
 [`src/needle-model.ts`](../src/needle-model.ts):

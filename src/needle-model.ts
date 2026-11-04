@@ -8,13 +8,20 @@ export interface ForecastRace {
   seatId: string;
   outcomes: string; // D/R/O caucus winner per joint draw; O means other/unresolved.
   margins?: number[]; // D-minus-R percentage points of all candidate votes.
+  input?: {
+    basis: 'live' | 'prior' | 'declared'; reason: string;
+    sourceUrl: string; sourceUpdated: string | null; checkedAt: string | null;
+    totalVotes: number | null; percentCounted: number | null;
+    candidates: { name: string; party: string; votes: number }[];
+  };
 }
 export interface Seat { id: string; caucus: Caucus; sourceUrl?: string; basis?: 'not-up' | 'declared' | 'assumption' }
 export interface ForecastRun {
   electionDate: '2026-11-03';
   modelVersion: string;
   asOf: string;
-  calibrationUrl: string;
+  calibrationUrl: string | null;
+  releaseStatus?: 'experimental' | 'calibrated';
   assumptions: string[];
   races: ForecastRace[];
   fixedSeats: { house: Seat[]; senate: Seat[] };

@@ -3,6 +3,12 @@
 Research date: **2026-11-03**. This is an acquisition and implementation plan,
 not a forecast or evidence that a provider's forecast has passed our validation.
 
+Implementation update: the [basic vote-mix model](basic-forecast.md) now supplies
+automatic experimental predictions from existing data and explicit neutral
+priors. This acquisition plan describes replacing that baseline with supported
+or historically validated forecasts; it is no longer a prerequisite to rendering
+experimental predictions.
+
 ## Recommendation
 
 Use a supported **live forecast provider** if the goal is operational needles

@@ -6,6 +6,7 @@ import { electionAdapters, monitorAdapters } from "./election-adapters";
 import { ElectionMonitor, type ElectionBatch } from "./election-monitor";
 import { SourceCheckLog, CHECK_LOG_LIMIT, type CheckTrigger } from "./check-log";
 import { NeedleStore, needleCatalog, buildNeedle, validateForecastRun } from './needles';
+import { buildBasicForecast } from './basic-forecast.ts';
 import { buildChamberLedger, type Chamber } from './chamber-ledger';
 export { ElectionMonitor };
 
@@ -317,9 +318,19 @@ export class Newsroom extends DurableObject<Env> {
       intervalMinutes: monitor.intervalMinutes, fetchedAt: new Date().toISOString() };
   }
 
-  async getNeedleCatalog() {
+  private ensureBasicForecast(monitor: Awaited<ReturnType<Newsroom['getMonitor']>>, refresh = false) {
     const latest = this.needleStore.latest();
-    return { version: latest.version, needles: needleCatalog(await this.getMonitor(), latest.run) };
+    // An editor-published forecast always takes precedence, including when stale.
+    if (latest.run && (!refresh || !latest.automatic)) return latest;
+    const run = buildBasicForecast(monitor);
+    const version = this.needleStore.publish(run, latest.version, true);
+    return { version: version ?? latest.version, run: version === null ? latest.run : run, automatic: version === null ? latest.automatic : true };
+  }
+
+  async getNeedleCatalog(includeAll = false) {
+    const monitor = await this.getMonitor();
+    const latest = this.ensureBasicForecast(monitor);
+    return { version: latest.version, publicationSource: latest.automatic ? 'automatic' : 'editor', needles: needleCatalog(monitor, latest.run, includeAll) };
   }
 
   async getChamberLedger(chamber: Chamber) {
@@ -328,9 +339,10 @@ export class Newsroom extends DurableObject<Env> {
   }
 
   async getNeedle(id: string) {
-    const latest = this.needleStore.latest();
-    const needle = buildNeedle(id, await this.getMonitor(), latest.run);
-    return needle ? { ...needle, version: latest.version } : null;
+    const monitor = await this.getMonitor();
+    const latest = this.ensureBasicForecast(monitor);
+    const needle = buildNeedle(id, monitor, latest.run);
+    return needle ? { ...needle, version: latest.version, publicationSource: latest.automatic ? 'automatic' : 'editor' } : null;
   }
 
   publishNeedleRun(input: unknown, expectedVersion: number) {
@@ -351,7 +363,7 @@ export class Newsroom extends DurableObject<Env> {
       const { checks = [], ...batch } = await this.env.LIVE_MONITORS.getByName(adapter.id).refresh(adapter.id, force, trigger);
       for (const check of checks) this.checkLog.record(check);
       this.ctx.storage.sql.exec("INSERT INTO metadata (key, value) VALUES (?, ?) ON CONFLICT(key) DO UPDATE SET value = excluded.value", `live_batch_${adapter.id}`, JSON.stringify(batch));
-    })).then(results => {
+    })).then(async results => {
       results.forEach((result, index) => {
         if (result.status !== "rejected") return;
         const id = monitorAdapters[index].id;
@@ -363,6 +375,7 @@ export class Newsroom extends DurableObject<Env> {
           this.ctx.storage.sql.exec("UPDATE metadata SET value = ? WHERE key = ?", JSON.stringify(batch), `live_batch_${id}`);
         }
       });
+      this.ensureBasicForecast(await this.getMonitor(), true);
     }).finally(() => { this.monitorRun = undefined; });
     return this.monitorRun;
   }
@@ -496,7 +509,7 @@ async function handleRequest(request: Request, env: Env): Promise<Response> {
   }
   if (path === '/api/needle') {
     if (request.method !== 'GET') throw new HttpError(405, 'Method not allowed.');
-    return json(await newsroom.getNeedleCatalog());
+    return json(await newsroom.getNeedleCatalog(url.searchParams.get('scope') === 'all'));
   }
   if (path === '/api/needle/forecast') {
     if (request.method !== 'PUT') throw new HttpError(405, 'Method not allowed.');

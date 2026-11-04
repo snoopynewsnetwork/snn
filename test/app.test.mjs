@@ -92,6 +92,7 @@ test(
       assert.equal(needlePage.status, 200);
       assert.match(await needlePage.text(), /id="chamber-needles"/);
       const needleCatalog = await (await fetch(`${base}/api/needle`)).json();
+      assert.equal(needleCatalog.version, 1, 'First read initializes a saved basic model without a publisher fetch');
       assert.equal(needleCatalog.needles.length, 74, '72 races and two chamber needles');
       assert.equal(new Set(needleCatalog.needles.map(n => n.id)).size, 74);
       assert.equal(needleCatalog.needles.filter(n => n.id.endsWith('-control')).length, 2);
@@ -99,8 +100,15 @@ test(
       assert.equal((await fetch(`${base}/api/needle/missing`)).status, 404);
       assert.equal((await fetch(`${base}/api/needle/house-control`, { method: 'POST' })).status, 405);
       const emptyChamber = await (await fetch(`${base}/api/needle/house-control`)).json();
-      assert.equal(emptyChamber.probabilities, null); assert.equal(emptyChamber.missingSeats, 416);
+      assert.equal(emptyChamber.status, 'experimental'); assert.equal(emptyChamber.missingSeats, 0);
+      assert.ok(emptyChamber.probabilities.D >= 0); assert.ok(emptyChamber.modelCoverage.prior > 0);
       assert.equal(emptyChamber.ledger.inventoryComplete, true);
+      const allModels = await (await fetch(`${base}/api/needle?scope=all`)).json();
+      assert.equal(allModels.needles.length, 475);
+      const basicRace = await (await fetch(`${base}/api/needle/senate-mi`)).json();
+      assert.equal(basicRace.status, 'experimental'); assert.equal(basicRace.modelInput.basis, 'prior');
+      assert.equal(basicRace.calibrationUrl, null);
+      assert.equal((await (await fetch(`${base}/api/needle`)).json()).version, 1, 'Reads reuse the persisted run');
       const senateLedger = await (await fetch(`${base}/api/chamber-ledger/senate`)).json();
       assert.equal(senateLedger.seats.length, 100); assert.equal(senateLedger.notUpSeats, 65);
       assert.equal(senateLedger.senateTieBreaker.caucus, 'R');
@@ -112,9 +120,9 @@ test(
         races: [{ id: 'senate-mi', name: 'Michigan U.S. Senate', seatId: 'senate-mi-2', chamber: 'senate', outcomes: 'DDDR', margins: [1, 2, 3, -1] }],
         fixedSeats: { house: [], senate: [] }, senateTieBreaker: 'R' };
       const publishForecast = body => fetch(`${base}/api/needle/forecast`, { method: 'PUT', headers, body: JSON.stringify(body) });
-      assert.equal((await publishForecast({ expectedVersion: 0, run: { ...forecastRun, calibrationUrl: 'javascript:bad' } })).status, 400);
-      assert.equal((await publishForecast({ expectedVersion: 0, run: forecastRun })).status, 201);
-      assert.equal((await publishForecast({ expectedVersion: 0, run: forecastRun })).status, 409);
+      assert.equal((await publishForecast({ expectedVersion: 1, run: { ...forecastRun, calibrationUrl: 'javascript:bad' } })).status, 400);
+      assert.equal((await publishForecast({ expectedVersion: 1, run: forecastRun })).status, 201);
+      assert.equal((await publishForecast({ expectedVersion: 1, run: forecastRun })).status, 409);
       const raceNeedle = await (await fetch(`${base}/api/needle/senate-mi`)).json();
       assert.equal(raceNeedle.status, 'ready'); assert.equal(raceNeedle.probabilities.D, .75);
       assert.equal(raceNeedle.completion.status, 'pending');
@@ -199,7 +207,7 @@ test(
       await stop();
       await start();
       const restoredNeedle = await (await fetch(`${base}/api/needle/senate-mi`)).json();
-      assert.equal(restoredNeedle.version, 1); assert.equal(restoredNeedle.probabilities.D, .75, 'Forecast survives full runtime restart');
+      assert.equal(restoredNeedle.version, 2); assert.equal(restoredNeedle.probabilities.D, .75, 'Forecast survives full runtime restart');
       assert.equal(restoredNeedle.assumptions.length, 41, 'Multi-chunk forecast artifacts retain all metadata');
       const race = await (await fetch(`${base}/api/races/ohio`)).json();
       assert.ok(

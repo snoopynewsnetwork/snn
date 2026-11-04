@@ -9,8 +9,11 @@ chamber probability arithmetic are implemented. See [the API and model-input
 contract](docs/needles.md). An editor can publish an immutable calibrated joint
 run. A [complete sourced chamber ledger](docs/chamber-ledger.md) now accounts
 for every seat, known holdovers and explicit declarations; unresolved elections
-still need model inputs. No calibrated forecast producer has been supplied yet. The default needles therefore show explicit unavailable
-states. The [forecast-input acquisition plan](docs/forecast-inputs-plan.md) specifies
+now receive automatic inputs from the [basic experimental model](docs/basic-forecast.md).
+Per the request for the simplest working model, the default needles now show
+uncalibrated current-vote-mix predictions, with neutral priors explicitly labeled
+where returns/completion are unusable. This does not satisfy the historical
+calibration gates for a validated model. The [forecast-input acquisition plan](docs/forecast-inputs-plan.md) specifies
 the remaining input work. General county/method modeling inputs, geographic maps/scenarios,
 historical replay, and calibration remain the modeling milestones below.
 

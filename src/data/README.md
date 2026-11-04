@@ -30,6 +30,11 @@ seed. They include the Florida/Ohio Class III specials and the 33 Class II
 regular elections. Publication validates seat classes and rejects a `not-up`
 baseline for any House seat or these 35 Senate seats.
 
+`normal-quantiles.json` is generated mathematical data for the basic model,
+not election evidence. Its 1,024 values are standard-normal midpoint quantiles:
+Python `round(statistics.NormalDist().inv_cdf((i + 0.5) / 1024), 6)` for
+`i` from 0 through 1023. See [the model description](../../docs/basic-forecast.md).
+
 `chamber-ledger.json` is the sourced 535-seat incoming-Congress ledger. It
 includes the 65 Senate holdovers, explicit attributed newsroom projections,
 and unresolved elections with full candidate/contest pins. See

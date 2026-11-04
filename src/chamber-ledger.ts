@@ -1,6 +1,7 @@
 import snapshot from './data/chamber-ledger.json' with { type: 'json' };
 import type { LiveResult } from './live-results';
 import type { ForecastRun, Seat, Caucus } from './needle-model';
+import type { CandidateCount } from './monitor';
 
 export type Chamber = 'house' | 'senate';
 export interface LedgerUpdate {
@@ -15,6 +16,9 @@ export interface LedgerUpdate {
   evidenceUrl?: string;
   reason?: string;
   unallocatedVotes?: number;
+  candidates?: CandidateCount[];
+  totalVotes?: number;
+  estimatedVotePercent?: number;
 }
 export interface LedgerSeat {
   id: string; chamber: string; state: string; raceId: string | null;
@@ -67,6 +71,11 @@ export function parseLedgerFeed(chamber: Chamber, body: string, checkedAt: strin
       // Some publisher totals include votes not allocated to listed candidates.
       // This adapter reads explicit calls only; it never computes a vote margin.
       result.unallocatedVotes = row.totalVote - candidateVotes;
+      result.candidates = row.candidates.map((candidate: any) => ({ name: candidate.fullName,
+        party: candidate.majorParty, votes: candidate.voteNum }));
+      result.totalVotes = row.totalVote;
+      if (typeof row.percentReporting === 'number' && Number.isFinite(row.percentReporting) && row.percentReporting >= 0 && row.percentReporting <= 100)
+        result.estimatedVotePercent = row.percentReporting;
       const winners = row.candidates.filter((candidate: any) => candidate.winner === true);
       if (winners.length > 1 || (winners.length || row.totalVote > 0) && row.raceEmbargo?.votesReleased !== true)
         throw new Error('Multiple winners or pre-embargo publication.');

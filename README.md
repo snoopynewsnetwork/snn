@@ -172,8 +172,10 @@ chamber-control needles. Each has an individual JSON API at
 `/api/needle/:raceId`, `/api/needle/house-control`, or
 `/api/needle/senate-control`. `GET /api/needle` lists the available entries.
 Independent CNN expected-vote observations cover all 74 result targets without
-replacing preferred official counts. Uncalibrated forecasts and incomplete
-chamber ledgers display explicit unavailable states. See the
+replacing preferred official counts. The built-in [basic vote-mix model](docs/basic-forecast.md)
+automatically produces experimental predictions from saved returns, completion
+estimates, and neutral priors for races without usable data. It has not been
+calibrated. Stale or conflicting forecasts display unavailable states. See the
 [needle API and forecast publication contract](docs/needles.md) for collection,
 remaining-vote estimates, joint probability calculations, and model inputs.
 
