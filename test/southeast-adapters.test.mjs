@@ -35,7 +35,7 @@ test("every assigned cheat-sheet target is represented exactly once with declare
     }
   }
   const newsroom = adapters.flatMap(item => item.sources).filter(source => !source.official);
-  assert.deepEqual(newsroom.map(source => source.id), ["cnn-2026-HG-KY-6"]);
+  assert.deepEqual(newsroom.map(source => source.id).sort(), ["cnn-2026-HG-IN-5", "cnn-2026-HG-KY-6"]);
 });
 
 // ---------- North Carolina ----------
@@ -290,6 +290,56 @@ test("IN: district totals must reconcile with county rows; winners only after ce
   const mismatch = await adapter("in").parse(await inBodies({ office: JSON.stringify(office) }));
   assert.equal(mismatch["house-in-01"].status, "review");
   assert.equal(mismatch["house-in-05"].status, "setup");
+});
+
+test("IN-05: positive CNN returns replace lagging official zeros and yield to official counts", async () => {
+  const cnn = await fx("cnn-in5-reporting.json");
+  const bodies = { ...await inBodies(), "cnn-2026-HG-IN-5": cnn };
+  const out = await adapter("in").parse(bodies);
+  const result = out["house-in-05"];
+  assert.equal(result.status, "reporting");
+  assert.equal(result.sourceId, "cnn-2026-HG-IN-5");
+  assert.equal(result.totalVotes, 89826);
+  assert.equal(votes(result, "J.D. Ford"), 55574);
+  assert.equal(votes(result, "Victoria Spartz"), 34252);
+  assert.equal(result.estimatedVotePercent, 33);
+  assert.equal(result.winner, undefined);
+  assert.match(result.message, /Official feed: Zero setup.*Using fallback.*not official/);
+  assert.equal(out["house-in-01"].status, "setup", "IN-01 is independent");
+  const recovered = await adapter("in").parse({ ...bodies,
+    ...await inBodies({ office: await inVotes("5", { "J.D. Ford": 10, "Victoria Spartz": 20 }) }) });
+  assert.equal(recovered["house-in-05"].totalVotes, 30, "official counts take precedence even when lower");
+  assert.equal(recovered["house-in-05"].sourceId, undefined);
+  for (const official of [{}, await inBodies({ office: "<html>error</html>" })]) {
+    const failed = await adapter("in").parse({ ...official, "cnn-2026-HG-IN-5": cnn });
+    assert.equal(failed["house-in-05"].sourceId, "cnn-2026-HG-IN-5");
+    assert.equal(failed["house-in-05"].totalVotes, 89826);
+    assert.equal(failed["house-in-01"].status, "review");
+  }
+});
+
+test("IN-05: invalid or zero CNN data cannot replace verified official setup", async () => {
+  const valid = JSON.parse(await fx("cnn-in5-reporting.json"));
+  const mutations = [
+    data => { data.ecKey = "2024-HG-IN-5"; },
+    data => { data.stateAbbreviation = "KY"; },
+    data => { data.externalKey = "test-key"; },
+    data => { data.candidates[0].fullName = "Other Candidate"; },
+    data => { data.candidates[0].majorParty = "REP"; },
+    data => { data.raceEmbargo.votesReleased = false; },
+    data => { data.totalVote++; },
+    data => { data.totalVote = 0; data.candidates.forEach(c => { c.voteNum = 0; }); },
+  ];
+  for (const mutate of mutations) {
+    const data = structuredClone(valid); mutate(data);
+    const result = (await adapter("in").parse({ ...await inBodies(), "cnn-2026-HG-IN-5": JSON.stringify(data) }))["house-in-05"];
+    assert.equal(result.status, "setup");
+    assert.equal(result.totalVotes, 0);
+    assert.equal(result.sourceId, undefined);
+  }
+  valid.candidates[0].winner = true;
+  const projected = (await adapter("in").parse({ ...await inBodies(), "cnn-2026-HG-IN-5": JSON.stringify(valid) }))["house-in-05"];
+  assert.equal(projected.winner, undefined, "CNN projections remain attributed text");
 });
 
 // ---------- Kentucky (newsroom fallback) ----------

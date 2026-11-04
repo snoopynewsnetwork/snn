@@ -25,7 +25,7 @@ for (let attempt = 1; attempt <= attempts; attempt++) {
     assert.equal(live.coverage?.total, 65);
     for (const item of [...live.guide.senate, ...live.guide.house]) assert.ok(live.liveResults.some(result => result.target === item.id), item.id);
     assert.ok(live.liveResults.some(result => result.target === "house-tx-35"));
-    for (const id of ["cnn-2026-SP-OH", "cnn-2026-SG-MN"])
+    for (const id of ["cnn-2026-SP-OH", "cnn-2026-SG-MN", "cnn-2026-HG-IN-5"])
       assert.ok(live.sources?.some(source => source.id === id), `Waiting for live fallback source ${id}`);
     const client = await fetch(`${base}/election-night.js`, { signal: AbortSignal.timeout(10000) });
     assert.equal(client.status, 200);

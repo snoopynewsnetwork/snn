@@ -4,6 +4,17 @@ Status as of **2026-11-03 21:06 UTC**: all 27 assigned targets are wired. 26 use
 
 Code is in `src/adapters/southeast*.ts`, with one adapter per state publisher so one state's failure can't affect another. Tests are in `test/southeast-adapters.test.mjs`. Fixtures are trimmed exact excerpts in `test/fixtures/southeast/`, and `manifest.json` records each original's URL, fetch time, size and SHA-256.
 
+**IN-05 update, 2026-11-04 00:10 UTC:** Indiana's active official House buffer
+still published zero IN-05 votes at 19:06 Eastern, while CNN's production
+`2026-HG-IN-5` response had 89,826 votes (Ford 55,574; Spartz 34,252).
+The collector was healthy; its only Indiana source was lagging. IN-05 now polls
+CNN as an explicitly unofficial fallback. Validated positive CNN returns replace
+official zero setup, review or unavailable results. Positive official totals
+always regain priority, including when lower than CNN's totals. IN-01 remains
+on the official feed. CNN identity, full candidate/party universe, arithmetic and
+vote-release gates are checked; projections never become desk calls. The captured
+response is `cnn-in5-reporting.json` in the fixture manifest.
+
 ## Targets and sources
 
 | Adapter | Targets | Fetched source(s) | Authority chain | Official |
@@ -13,7 +24,7 @@ Code is in `src/adapters/southeast*.ts`, with one adapter per state publisher so
 | `southeast-sc` | senate-sc, house-sc-01/02 | Clarity election `127300`: `current_ver.txt`, then `{version}/json/en/electionsettings.json` and `{version}/json/en/summary.json` | `scvotes.gov/elections-statistics/election-results/` links "Statewide General Election" → `enr-scvotes.org/SC/127300/` | yes |
 | `southeast-nc` | senate-nc, house-nc-01/05/09/11 | `er.ncsbe.gov/enr/elections.txt`, `…/20261103/data/county.txt`, `…/20261103/data/results_0.txt` | `ncsbe.gov/results-data/election-results` | yes |
 | `southeast-va` | house-va-01/02/05/07 | `enr.elections.virginia.gov/results/public/api/elections/virginia/2026-November-General/data` (about 1.4 MB) | `elections.virginia.gov/resultsreports/election-results/` → enr.elections.virginia.gov | yes |
-| `southeast-in` | house-in-01/05 | `enr.indianavoters.in.gov/site/data/settings.json`, `OffCatC_1005_A.json` and `OffCatC_1005_B.json` | `in.gov/sos/elections/` links `enr.indianavoters.in.gov/site/index.html` (verified 2026-11-03) | yes |
+| `southeast-in` | house-in-01/05 | `enr.indianavoters.in.gov/site/data/settings.json`, `OffCatC_1005_A.json` and `OffCatC_1005_B.json`; CNN `2026-HG-IN-5` fallback for IN-05 | State: `in.gov/sos/elections/` → ENR; fallback: `cnn.com/election/2026` | state yes; CNN **no** |
 | `southeast-ky` | house-ky-06 | `politics.api.cnn.io/results/race/2026-HG-KY-6.json` (shared `northeast-cnn.ts`) | `cnn.com/election/2026`, a newsroom supplier | **no** |
 
 Notes on the individual feeds:
