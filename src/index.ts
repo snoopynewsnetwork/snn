@@ -15,6 +15,7 @@ interface Env {
   LIVE_MONITORS: DurableObjectNamespace<ElectionMonitor>;
   ASSETS: Fetcher;
   ADMIN_TOKEN?: string;
+  AUTOMATED_TRACKING_STATES?: string;
 }
 
 interface Note {
@@ -231,8 +232,14 @@ export class Newsroom extends DurableObject<Env> {
   private monitorRun?: Promise<void>;
   private checkLog: SourceCheckLog;
   private needleStore: NeedleStore;
+  private activeMonitorAdapters: typeof monitorAdapters;
   constructor(ctx: DurableObjectState, env: Env) {
     super(ctx, env);
+    const states = (env.AUTOMATED_TRACKING_STATES ?? "MS,AK").split(",").map(state => state.trim().toUpperCase());
+    // Shared national completion feeds and county helpers must also obey the
+    // allowlist. No disabled adapter is invoked, even by explicit refreshes.
+    this.activeMonitorAdapters = monitorAdapters.filter(adapter => states.includes("*") ||
+      adapter.targets.length > 0 && adapter.targets.every(target => states.includes(target.state)));
     this.checkLog = new SourceCheckLog(ctx.storage);
     this.needleStore = new NeedleStore(ctx.storage);
     const sql = ctx.storage.sql;
@@ -293,21 +300,26 @@ export class Newsroom extends DurableObject<Env> {
           sourceKind: (adapter.sources.find(source => source.id === target.sourceId) ?? adapter.sources[0])?.official === false ? "supplier" as const : "official" as const,
         })) };
     });
+    for (const batch of batches) {
+      const automaticTracking = this.activeMonitorAdapters.some(adapter => adapter.id === batch.adapter);
+      batch.results = batch.results.map(result => ({ ...result, automaticTracking,
+        ...(!automaticTracking ? { message: "Automatic tracking paused. Last verified results and saved evidence are retained." } : {}) }));
+    }
     const completion = batches.find(batch => batch.adapter === 'completion-cnn')?.results ?? [];
     const ledgerUpdates = batches.find(batch => batch.adapter === 'completion-cnn')?.ledgerUpdates ?? [];
     const allResults = batches.filter(batch => batch.adapter !== 'completion-cnn').flatMap(batch => batch.results);
     const countyResult = allResults.find(result => result.target === "house-ky-06-counties");
     const miCounties = allResults.find(result => result.target === 'senate-mi-counties');
     const races: LiveResult[] = allResults.filter(result => !['house-ky-06-counties', 'senate-mi-counties'].includes(result.target!)).map(result => ({ ...result,
-      race: guide.senate.find(item => item.id === result.target)?.slug ?? result.race,
+      race: guide.senate.find(item => item.id === result.target)?.slug ?? (result.target === "senate-ak" ? "alaska" : result.race),
       ...(result.target === "house-ky-06" ? { countyResult } : {}),
       ...(result.target === 'senate-mi' ? { countyResult: miCounties } : {}) }));
-    const sources = batches.flatMap(batch => batch.sources.map(source => ({ ...source, adapter: batch.adapter,
+    const sources = batches.flatMap(batch => batch.sources.map(source => ({ ...source, adapter: batch.adapter, automaticTracking: this.activeMonitorAdapters.some(adapter => adapter.id === batch.adapter),
       targets: monitorAdapters.find(adapter => adapter.id === batch.adapter)!.targets.map(target => target.id),
       snapshotUrl: source.snapshotId ? `/api/live-monitor/${encodeURIComponent(batch.adapter)}/snapshots/${source.snapshotId}` : undefined,
     })));
     const started = this.ctx.storage.sql.exec<{ value: string }>("SELECT value FROM metadata WHERE key = 'live_monitor_started'").toArray()[0];
-    return { intervalMinutes: 1, electionDate: "2026-11-03", parserVersion: "cheat-sheet-live-v2", sources, races, completion, ledgerUpdates,
+    return { intervalMinutes: 1, electionDate: "2026-11-03", parserVersion: "cheat-sheet-live-v2", activeAdapters: this.activeMonitorAdapters.map(adapter => adapter.id), sources, races, completion, ledgerUpdates,
       lastCheckedAt: started ? new Date(Number(started.value)).toISOString() : null };
   }
 
@@ -361,14 +373,14 @@ export class Newsroom extends DurableObject<Env> {
     const last = this.ctx.storage.sql.exec<{ value: string }>("SELECT value FROM metadata WHERE key = 'live_monitor_started'").toArray()[0];
     if (last && Date.now() - Number(last.value) < 30_000) return Promise.resolve();
     this.ctx.storage.sql.exec("INSERT INTO metadata (key, value) VALUES ('live_monitor_started', ?) ON CONFLICT(key) DO UPDATE SET value = excluded.value", String(Date.now()));
-    if (!this.monitorRun) this.monitorRun = Promise.allSettled(monitorAdapters.map(async adapter => {
+    if (!this.monitorRun) this.monitorRun = Promise.allSettled(this.activeMonitorAdapters.map(async adapter => {
       const { checks = [], ...batch } = await this.env.LIVE_MONITORS.getByName(adapter.id).refresh(adapter.id, force, trigger);
       for (const check of checks) this.checkLog.record(check);
       this.ctx.storage.sql.exec("INSERT INTO metadata (key, value) VALUES (?, ?) ON CONFLICT(key) DO UPDATE SET value = excluded.value", `live_batch_${adapter.id}`, JSON.stringify(batch));
     })).then(async results => {
       results.forEach((result, index) => {
         if (result.status !== "rejected") return;
-        const id = monitorAdapters[index].id;
+        const id = this.activeMonitorAdapters[index].id;
         console.error(`Monitor failed: ${id}`, result.reason);
         const row = this.ctx.storage.sql.exec<{ value: string }>("SELECT value FROM metadata WHERE key = ?", `live_batch_${id}`).toArray()[0];
         if (row) {

@@ -6,23 +6,28 @@ Versioned reporting notes for U.S. elections.
 
 The app provides a searchable Senate race index, race details, research links,
 and a dated reporting log. It imports the 35 baseline race records directly from
-this repository. Every Senate and House race on the election cheat sheet has
-automatic live monitoring. The reporting log and analytical timing cues are
-maintained by editors.
+this repository. Automatic live tracking is enabled only for Mississippi (MS)
+and Alaska (AK). Other races retain their last verified results, saved evidence,
+and editor history, with tracking marked paused.
 
 ### Automatic election monitoring
 
 Cloudflare Cron runs every minute, independently of visitors, Paseo, agent
-sessions or a laptop. The collector covers all 14 Senate races, 48 individual
-House races, and the seven additional districts needed for the three group
-watch items. Florida, Georgia and Texas governor returns, Detroit city Senate
-returns, and Johnson County, Kansas Senate returns support the timing cues.
-The cues still require an editor's evidence assessment.
+sessions or a laptop. `AUTOMATED_TRACKING_STATES` in `wrangler.jsonc` is set to
+`MS,AK`. Scheduled, public and editor refreshes invoke only adapters whose
+entire target list is in that allowlist. National completion feeds and all
+other state/county collectors are paused. `*` enables all registered adapters.
 
-The registry contains 27 adapters across 25 states. Each adapter runs in its own
+MS and AK use attributed CNN race feeds, one request per state per minute.
+Alaska's pinned four-candidate field and election identity are validated by the
+shared CNN parser. Alaska counts are first-choice returns; ranked-choice
+tabulation may change the outcome. Source winner flags do not become desk calls.
+The reporting log and analytical timing cues are maintained by editors.
+
+The registry contains 28 adapters across 26 states. Each adapter runs in its own
 SQLite-backed `ElectionMonitor` Durable Object, isolating network failures and
-request budgets. An additional completion adapter polls five shared CNN feeds
-independently of result selection. Shared statewide feeds serve multiple races. The `Newsroom`
+request budgets. When enabled, an additional completion adapter polls five shared CNN feeds
+independently of result selection. It is currently paused. Shared statewide feeds serve multiple races. The `Newsroom`
 object saves the combined result, so browser reads do not hit election servers.
 Opening the desk or **Fetch live results** requests a source check; a persisted
 30-second lease coalesces concurrent requests. Scheduled failures back off from

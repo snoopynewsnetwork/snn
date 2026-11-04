@@ -81,9 +81,10 @@ test(
       }
       await smoke(base, key);
       const monitor = await (await fetch(`${base}/api/monitor`)).json();
-      assert.equal(monitor.races.filter(race => /^senate-[a-z]{2}$/.test(race.target)).length, 14);
+      assert.equal(monitor.races.filter(race => /^senate-[a-z]{2}$/.test(race.target)).length, 15);
       assert.ok(monitor.races.some(race => race.target === "house-tx-35"));
       assert.equal(monitor.intervalMinutes, 1);
+      assert.deepEqual(monitor.activeAdapters, ['northeast-ms-cnn', 'west-ak-cnn']);
       assert.ok(monitor.sources.length >= 25);
       assert.equal((await fetch(`${base}/api/monitor/refresh`, { method: "POST" })).status, 401);
       assert.equal((await fetch(`${base}/api/monitor/snapshots/999999`)).status, 404);
@@ -93,8 +94,8 @@ test(
       assert.match(await needlePage.text(), /id="chamber-needles"/);
       const needleCatalog = await (await fetch(`${base}/api/needle`)).json();
       assert.equal(needleCatalog.version, 1, 'First read initializes a saved basic model without a publisher fetch');
-      assert.equal(needleCatalog.needles.length, 74, '72 races and two chamber needles');
-      assert.equal(new Set(needleCatalog.needles.map(n => n.id)).size, 74);
+      assert.equal(needleCatalog.needles.length, 75, '73 races and two chamber needles');
+      assert.equal(new Set(needleCatalog.needles.map(n => n.id)).size, 75);
       assert.equal(needleCatalog.needles.filter(n => n.id.endsWith('-control')).length, 2);
       assert.ok(!needleCatalog.needles.some(n => n.id.includes('detroit') || n.id.includes('johnson')));
       assert.equal((await fetch(`${base}/api/needle/missing`)).status, 404);

@@ -24,9 +24,9 @@ export function createCheckLog({ api, escape }) {
       view.querySelector('#check-source-count').textContent = data.sources.length;
       view.querySelector('#check-sources').innerHTML = data.sources.map(source => {
         const check = source.lastCheck;
-        const status = check ? (check.success ? 'Success' : 'Failed')
+        const status = source.automaticTracking === false ? 'Paused' : check ? (check.success ? 'Success' : 'Failed')
           : source.status === 'ok' ? 'Success' : source.status === 'error' ? 'Failed' : 'Awaiting first check';
-        return `<tr><th scope="row">${sourceLink(source.name, source.url)}<small>${escape(source.official === false ? 'Newsroom supplier' : 'Official source')}</small></th><td>${escape(status)}${check?.error ? `<small>${escape(check.error)}</small>` : ''}</td><td>${escape(time(check?.checkedAt || source.checkedAt))}</td><td>${escape(source.nextAttemptAt ? time(source.nextAttemptAt) : '—')}</td></tr>`;
+        return `<tr><th scope="row">${sourceLink(source.name, source.url)}<small>${escape(source.official === false ? 'Newsroom supplier' : 'Official source')}</small></th><td>${escape(status)}${check?.error ? `<small>${escape(check.error)}</small>` : ''}</td><td>${escape(time(check?.checkedAt || source.checkedAt))}</td><td>${escape(source.automaticTracking !== false && source.nextAttemptAt ? time(source.nextAttemptAt) : '—')}</td></tr>`;
       }).join('');
       view.querySelector('#check-history').innerHTML = data.checks.length ? data.checks.map(check => `<tr>
         <td><time datetime="${escape(check.checkedAt)}">${escape(time(check.checkedAt))}</time><small>${escape(triggers[check.trigger] || check.trigger)}</small></td>

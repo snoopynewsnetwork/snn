@@ -22,6 +22,10 @@ for (let attempt = 1; attempt <= attempts; attempt++) {
     assert.equal(desk.status, 200);
     const live = await desk.json();
     assert.equal(live.intervalMinutes, 1);
+    const monitor = await (await fetch(`${base}/api/monitor`, { signal: AbortSignal.timeout(10000) })).json();
+    assert.deepEqual(monitor.activeAdapters?.slice().sort(), ['northeast-ms-cnn', 'west-ak-cnn']);
+    assert.deepEqual(monitor.races.filter(result => result.automaticTracking).map(result => result.state).sort(), ['AK', 'MS']);
+    assert.ok(monitor.races.find(result => result.target === 'senate-ak')?.lastSuccessAt, 'Waiting for Alaska first source check');
     assert.equal(live.coverage?.configured, 65, "Waiting for the deployed live desk schema");
     assert.equal(live.coverage?.total, 65);
     for (const item of [...live.guide.senate, ...live.guide.house]) assert.ok(live.liveResults.some(result => result.target === item.id), item.id);

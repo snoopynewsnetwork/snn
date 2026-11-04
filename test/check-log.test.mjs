@@ -44,7 +44,7 @@ test('all registered sources feed one persistent, globally bounded check log', {
   let requests = 0, notModified = false, content = '1', fail = false;
   const options = convertV4MiniflareOptions({
     name: 'check-log-test', modules: true, script: built.outputFiles[0].text, compatibilityDate: '2026-10-17',
-    bindings: { ADMIN_TOKEN: 'test-editor-token-at-least-32-characters' },
+    bindings: { AUTOMATED_TRACKING_STATES: "*", ADMIN_TOKEN: 'test-editor-token-at-least-32-characters' },
     durableObjects: { NEWSROOM: { className: 'Newsroom', useSQLite: true }, LIVE_MONITORS: { className: 'ElectionMonitor', useSQLite: true } },
     resourcePersistencePath: directory, unsafeInspectDurableObjects: true,
     outboundService: request => {
