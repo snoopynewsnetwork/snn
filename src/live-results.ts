@@ -39,6 +39,7 @@ export interface LiveResult extends Omit<ElectionResult, "status"> {
   gopSeats?: number;
   gopLeadingSeats?: number;
   members?: string[];
+  countyResult?: LiveResult;
 }
 
 export const liveTargets = { kansas: "senate-ks", "north-carolina": "senate-nc" } as const;
