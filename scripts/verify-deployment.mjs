@@ -31,7 +31,9 @@ for (let attempt = 1; attempt <= attempts; attempt++) {
     assert.ok(live.sources?.some(source => source.id === "civic-ky06-counties"), "Waiting for the KY-06 county collector");
     assert.ok(live.sources?.some(source => source.id === "cnn-ky06-counties"), "Waiting for the KY-06 prediction county source");
     assert.ok(live.liveResults.find(result => result.target === "house-ky-06")?.countyResult, "Waiting for the KY-06 county snapshot schema");
-    for (const asset of ["ky-06.js", "ky-06-model.js", "ky-06-counties.json"])
+    assert.ok(live.sources?.some(source => source.id === 'cnn-mi-counties'), 'Waiting for the Michigan county collector');
+    assert.ok(live.liveResults.find(result => result.target === 'senate-mi')?.countyResult, 'Waiting for the Michigan county snapshot schema');
+    for (const asset of ["ky-06.js", "ky-06-model.js", "ky-06-counties.json", "mi-sen.js", "mi-sen-model.js", "mi-sen-counties.json"])
       assert.equal((await fetch(`${base}/${asset}`, { signal: AbortSignal.timeout(10000) })).status, 200);
     assert.match(await (await fetch(`${base}/ky-06-model.js`, { signal: AbortSignal.timeout(10000) })).text(), /export function countyForecast/);
     const client = await fetch(`${base}/election-night.js`, { signal: AbortSignal.timeout(10000) });

@@ -137,6 +137,16 @@ votes are flagged. Actual ballots remaining stay unknown; scenario differences
 are conditional arithmetic, not measured remaining votes or a forecast.
 See [the county methodology](docs/ky-06-counties.md) for sources and calculations.
 
+### Michigan Senate county turnout model
+
+Open **Election night → Senate margin bands → MI → Live + counties** for all 83 counties: observed
+2024→2026 Senate swings, change adjusted for the reporting county mix, and
+the largest modeled pools of votes left. Use CNN county expected-vote estimates
+or scale every county from 2024. The initial 80% fallback is an illustrative
+assumption. Search, sort, and export all counties as CSV. Applied controls
+survive refreshes; stale sources suppress remaining-vote estimates. See
+[the Michigan county methodology](docs/mi-sen-counties.md).
+
 ### Election-night early tells
 
 The default **Election night** desk tracks the supplied cheat sheet: 14 Senate

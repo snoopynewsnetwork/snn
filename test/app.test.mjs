@@ -135,6 +135,9 @@ test(
       assert.equal(night.coverage.configured, 65);
       assert.equal(night.coverage.total, 65);
       assert.ok(night.liveResults.find(result => result.target === 'house-ky-06').countyResult);
+      assert.ok(night.liveResults.find(result => result.target === 'senate-mi').countyResult);
+      assert.equal(night.sources.find(source => source.id === 'cnn-mi-counties').official, false);
+      assert.ok(!night.liveResults.some(result => result.target === 'senate-mi-counties'));
       assert.equal(night.sources.find(source => source.id === 'civic-ky06-counties').official, false);
       assert.ok(!night.liveResults.some(result => result.target === 'house-ky-06-counties'), 'County support is nested, not a duplicate watch item');
       assert.equal(new Set(night.liveResults.map(result => result.target)).size, night.liveResults.length);
