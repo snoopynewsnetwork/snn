@@ -5,6 +5,7 @@ import { bodyHash } from "./monitor";
 import { hasValidCounts, type LiveResult } from "./live-results";
 import { readSourceBody, resolveSourceUrl, retryAfterTime, sourceLayers } from "./election-fetch";
 import type { SourceCheck, CheckTrigger } from "./check-log";
+import { parseLedgerFeed, type LedgerUpdate } from './chamber-ledger.ts';
 
 interface SourceState {
   status: "pending" | "ok" | "error";
@@ -30,6 +31,7 @@ export interface ElectionBatch {
   sources: (ElectionSource & SourceState)[];
   // Only fresh runs return receipts; the coordinator persists these centrally.
   checks?: SourceCheck[];
+  ledgerUpdates?: LedgerUpdate[];
 }
 
 // One object per adapter isolates state failures, conditional caches, and source
@@ -80,7 +82,14 @@ export class ElectionMonitor extends DurableObject<Record<string, never>> {
   getResults(id: string): ElectionBatch {
     const adapter = electionAdapter(id);
     return { adapter: id, version: adapter.version, results: adapter.targets.map(target => this.targetResult(adapter, target)),
-      sources: adapter.sources.map(source => ({ ...source, ...this.sourceState(source.id) })) };
+      sources: adapter.sources.map(source => ({ ...source, ...this.sourceState(source.id) })),
+      ...(id === 'completion-cnn' ? { ledgerUpdates: (['house', 'senate'] as const).flatMap(chamber => {
+        const state = this.sourceState(chamber === 'house' ? 'completion-HG' : 'completion-SG');
+        if (!state.snapshotId) return [];
+        const updates = parseLedgerFeed(chamber, this.sourceBody(state.snapshotId), state.checkedAt ?? new Date().toISOString(),
+          `/api/live-monitor/completion-cnn/snapshots/${state.snapshotId}`);
+        return state.status === 'error' ? updates.map(update => ({ ...update, reason: `Retained source evidence; latest check failed: ${state.error}` })) : updates;
+      }) } : {}) };
   }
 
   getSnapshot(id: number) {

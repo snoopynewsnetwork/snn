@@ -29,3 +29,8 @@ derived from the repository's sourced Senate research records and generated
 seed. They include the Florida/Ohio Class III specials and the 33 Class II
 regular elections. Publication validates seat classes and rejects a `not-up`
 baseline for any House seat or these 35 Senate seats.
+
+`chamber-ledger.json` is the sourced 535-seat incoming-Congress ledger. It
+includes the 65 Senate holdovers, explicit attributed newsroom projections,
+and unresolved elections with full candidate/contest pins. See
+[the ledger provenance and refresh contract](../../docs/chamber-ledger.md).

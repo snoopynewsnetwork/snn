@@ -4,6 +4,7 @@ import houseSeats from './data/house-seats.json' with { type: 'json' };
 import senateSeats from './data/senate-seats.json' with { type: 'json' };
 import senateElectionSeats from './data/senate-election-seats.json' with { type: 'json' };
 import type { LiveResult } from './live-results';
+import { chamberInputs, ledgerTieBreaker, type LedgerUpdate } from './chamber-ledger.ts';
 
 const states = new Set(houseSeats.map(id => id.split('-')[1]));
 // Runs returned by NeedleStore are immutable publication artifacts. Cache their
@@ -69,10 +70,14 @@ export interface NeedleInputs {
   races: LiveResult[];
   completion: LiveResult[];
   lastCheckedAt: string | null;
+  ledgerUpdates?: LedgerUpdate[];
 }
 
 export function needleCatalog(monitor: NeedleInputs, run: ForecastRun | null) {
-  const entries = new Map(monitor.races.filter(r => r.coverage !== 'partial' && !['senate-mi-detroit', 'senate-ks-johnson'].includes(r.target ?? '')).map(r => [r.target!, { id: r.target!, name: r.name ?? r.target!, chamber: r.chamber }]));
+  const fullRace = (id: string) => houseSeats.includes(id) || /^senate-[a-z]{2}$/.test(id) && senateElectionSeats.some(seat => seat.startsWith(id + '-')) || /^governor-[a-z]{2}$/.test(id) && states.has(id.split('-')[1]);
+  // Scope is an identity property, not a reporting-state field: pending local
+  // helpers must never become extra needles before coverage metadata arrives.
+  const entries = new Map(monitor.races.filter(r => fullRace(r.target ?? '')).map(r => [r.target!, { id: r.target!, name: r.name ?? r.target!, chamber: r.chamber }]));
   for (const race of run?.races ?? []) entries.set(race.id, { id: race.id, name: race.name, chamber: race.chamber });
   return [{ id: 'house-control', name: 'House control', chamber: 'house' }, { id: 'senate-control', name: 'Senate control', chamber: 'senate' }, ...entries.values()]
     .map(entry => ({ ...entry, apiUrl: `/api/needle/${entry.id}` }));
@@ -89,29 +94,33 @@ export function buildNeedle(id: string, monitor: NeedleInputs, run: ForecastRun 
   if (id.endsWith('-control')) {
     const chamber = id === 'house-control' ? 'house' : 'senate';
     const totalSeats = chamber === 'house' ? 435 : 100;
-    const races = run?.races.filter(r => r.chamber === chamber) ?? [];
-    const fixed = run?.fixedSeats[chamber] ?? [];
-    const thresholds = chamber === 'house' ? { D: 218, R: 218 } : { D: run?.senateTieBreaker === 'D' ? 50 : 51, R: run?.senateTieBreaker === 'R' ? 50 : 51 };
-    const missingSeats = totalSeats - races.length - fixed.length;
-    const ready = freshRun && missingSeats === 0;
+    const { ledger, races, fixed, conflicts, missingSeats } = chamberInputs(chamber, run, monitor.ledgerUpdates, monitor.races);
+    const thresholds = chamber === 'house' ? { D: 218, R: 218 } : { D: ledgerTieBreaker.caucus === 'D' ? 50 : 51, R: ledgerTieBreaker.caucus === 'R' ? 50 : 51 };
+    const ready = freshRun && missingSeats === 0 && conflicts.length === 0;
     return { ...common, kind: 'chamber', status: ready ? 'ready' : run && !freshRun ? 'stale' : 'unavailable',
-      reason: ready ? null : missingSeats ? `Missing forecast or explicit baseline for ${missingSeats} of ${totalSeats} seats.` : 'Forecast run is stale.',
-      totalSeats, thresholds, senateTieBreaker: chamber === 'senate' ? run?.senateTieBreaker ?? null : null,
+      reason: ready ? null : conflicts.length ? 'Published forecast conflicts with sourced ledger outcomes; publish a coherent replacement run.' : missingSeats ? `Seat inventory is complete; ${missingSeats} seats still need a forecast or explicit outcome baseline.` : 'Forecast run is stale.',
+      totalSeats, thresholds, senateTieBreaker: chamber === 'senate' ? ledgerTieBreaker.caucus : null,
+      ledger: { inventoryComplete: ledger.inventoryComplete, snapshotAsOf: ledger.snapshotAsOf, resolvedSeats: ledger.resolvedSeats,
+        unresolvedSeats: ledger.unresolvedSeats, notUpSeats: ledger.notUpSeats, declaredSeats: ledger.declaredSeats,
+        caucusSeats: ledger.caucusSeats, apiUrl: `/api/chamber-ledger/${chamber}` }, conflicts,
       fixedSeats: fixed, contributingRaceIds: races.map(r => r.id), missingSeats,
       method: 'Joint simulation draws; shared race errors are preserved.',
       seatDistribution: null, seatInterval: null, simulationDraws: null, simulationStandardError: null,
-      ...(ready ? summary(run!, id, () => chamberDistribution(races, fixed, totalSeats, thresholds)) : {}) };
+      ...(ready ? summary(run!, `${id}:${fixed.map(seat => `${seat.id}=${seat.caucus}`).sort().join(',')}`, () => chamberDistribution(races, fixed, totalSeats, thresholds)) : {}) };
   }
   const result = monitor.races.find(r => r.target === id);
   const forecast: ForecastRace | undefined = run?.races.find(r => r.id === id);
+  const conflict = forecast && forecast.chamber !== 'governor'
+    ? chamberInputs(forecast.chamber, run, monitor.ledgerUpdates, monitor.races).conflicts.find(conflict => conflict.seatId === forecast.seatId) : undefined;
   const completion = monitor.completion.find(r => r.target === id);
-  return { ...common, kind: 'race', status: forecast && freshRun ? 'ready' : forecast ? 'stale' : 'uncalibrated',
-    reason: !forecast ? 'No calibrated forecast has been published for this race.' : !freshRun ? 'Forecast run is stale.' : null,
+  return { ...common, kind: 'race', status: conflict ? 'unavailable' : forecast && freshRun ? 'ready' : forecast ? 'stale' : 'uncalibrated',
+    reason: conflict ? conflict.reason : !forecast ? 'No calibrated forecast has been published for this race.' : !freshRun ? 'Forecast run is stale.' : null,
+    ledgerConflict: conflict ?? null,
     observed: { candidates: result?.candidates ?? [], totalVotes: result?.totalVotes ?? null, status: result?.status ?? 'unavailable',
       sourceUrl: result?.sourceUrl ?? null, sourceUpdated: result?.sourceUpdated ?? null, checkedAt: result?.lastSuccessAt ?? null },
     completion: completionEstimate(completion, now),
     projectedMargin: null, marginInterval: null, simulationDraws: null, simulationStandardError: null,
-    ...(forecast && freshRun ? summary(run!, id, () => summarizeRace(forecast)) : {}) };
+    ...(forecast && freshRun && !conflict ? summary(run!, id, () => summarizeRace(forecast)) : {}) };
 }
 
 // Published runs are immutable audit artifacts. Store in chunks to respect

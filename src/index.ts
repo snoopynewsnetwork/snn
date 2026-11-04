@@ -6,6 +6,7 @@ import { electionAdapters, monitorAdapters } from "./election-adapters";
 import { ElectionMonitor, type ElectionBatch } from "./election-monitor";
 import { SourceCheckLog, CHECK_LOG_LIMIT, type CheckTrigger } from "./check-log";
 import { NeedleStore, needleCatalog, buildNeedle, validateForecastRun } from './needles';
+import { buildChamberLedger, type Chamber } from './chamber-ledger';
 export { ElectionMonitor };
 
 interface Env {
@@ -292,6 +293,7 @@ export class Newsroom extends DurableObject<Env> {
         })) };
     });
     const completion = batches.find(batch => batch.adapter === 'completion-cnn')?.results ?? [];
+    const ledgerUpdates = batches.find(batch => batch.adapter === 'completion-cnn')?.ledgerUpdates ?? [];
     const races: LiveResult[] = batches.filter(batch => batch.adapter !== 'completion-cnn').flatMap(batch => batch.results).map(result => ({ ...result,
       race: guide.senate.find(item => item.id === result.target)?.slug ?? result.race }));
     const sources = batches.flatMap(batch => batch.sources.map(source => ({ ...source, adapter: batch.adapter,
@@ -299,7 +301,7 @@ export class Newsroom extends DurableObject<Env> {
       snapshotUrl: source.snapshotId ? `/api/live-monitor/${encodeURIComponent(batch.adapter)}/snapshots/${source.snapshotId}` : undefined,
     })));
     const started = this.ctx.storage.sql.exec<{ value: string }>("SELECT value FROM metadata WHERE key = 'live_monitor_started'").toArray()[0];
-    return { intervalMinutes: 1, electionDate: "2026-11-03", parserVersion: "cheat-sheet-live-v2", sources, races, completion,
+    return { intervalMinutes: 1, electionDate: "2026-11-03", parserVersion: "cheat-sheet-live-v2", sources, races, completion, ledgerUpdates,
       lastCheckedAt: started ? new Date(Number(started.value)).toISOString() : null };
   }
 
@@ -315,6 +317,11 @@ export class Newsroom extends DurableObject<Env> {
   async getNeedleCatalog() {
     const latest = this.needleStore.latest();
     return { version: latest.version, needles: needleCatalog(await this.getMonitor(), latest.run) };
+  }
+
+  async getChamberLedger(chamber: Chamber) {
+    const monitor = await this.getMonitor();
+    return buildChamberLedger(chamber, monitor.ledgerUpdates, monitor.races);
   }
 
   async getNeedle(id: string) {
@@ -479,6 +486,11 @@ async function handleRequest(request: Request, env: Env): Promise<Response> {
   if (path !== "/api" && !path.startsWith("/api/"))
     return env.ASSETS.fetch(request);
   const newsroom = env.NEWSROOM.getByName("senate-2026");
+  const ledgerMatch = path.match(/^\/api\/chamber-ledger\/(house|senate)$/);
+  if (ledgerMatch) {
+    if (request.method !== 'GET') throw new HttpError(405, 'Method not allowed.');
+    return json(await newsroom.getChamberLedger(ledgerMatch[1] as Chamber));
+  }
   if (path === '/api/needle') {
     if (request.method !== 'GET') throw new HttpError(405, 'Method not allowed.');
     return json(await newsroom.getNeedleCatalog());

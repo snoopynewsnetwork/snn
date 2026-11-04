@@ -99,7 +99,13 @@ test(
       assert.equal((await fetch(`${base}/api/needle/missing`)).status, 404);
       assert.equal((await fetch(`${base}/api/needle/house-control`, { method: 'POST' })).status, 405);
       const emptyChamber = await (await fetch(`${base}/api/needle/house-control`)).json();
-      assert.equal(emptyChamber.probabilities, null); assert.equal(emptyChamber.missingSeats, 435);
+      assert.equal(emptyChamber.probabilities, null); assert.equal(emptyChamber.missingSeats, 416);
+      assert.equal(emptyChamber.ledger.inventoryComplete, true);
+      const senateLedger = await (await fetch(`${base}/api/chamber-ledger/senate`)).json();
+      assert.equal(senateLedger.seats.length, 100); assert.equal(senateLedger.notUpSeats, 65);
+      assert.equal(senateLedger.senateTieBreaker.caucus, 'R');
+      assert.equal((await fetch(`${base}/api/chamber-ledger/house`, { method: 'POST' })).status, 405);
+      assert.equal((await fetch(`${base}/api/chamber-ledger/invalid`)).status, 404);
       assert.equal((await fetch(`${base}/api/needle/forecast`, { method: 'PUT' })).status, 401);
       const forecastRun = { electionDate: '2026-11-03', modelVersion: 'integration-fixture', asOf: new Date().toISOString(),
         calibrationUrl: 'https://example.org/fixture-calibration', assumptions: ['Synthetic local integration fixture.', ...Array(40).fill('Chunked persistence fixture ' + 'x'.repeat(1900))],

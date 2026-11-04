@@ -4,6 +4,7 @@ import { independentSeatDistribution, chamberDistribution } from '../src/needle-
 import { buildNeedle, needleCatalog, validateForecastRun } from '../src/needles.ts';
 import houseSeats from '../src/data/house-seats.json' with { type: 'json' };
 import senateSeats from '../src/data/senate-seats.json' with { type: 'json' };
+import { buildChamberLedger } from '../src/chamber-ledger.ts';
 
 const now = Date.parse('2026-11-04T01:00:00Z');
 const race = (id, outcomes, chamber = 'senate') => ({ id, name: id, chamber, seatId: `${id}-${id === 'senate-mi' ? 2 : 3}`, outcomes });
@@ -13,6 +14,15 @@ const run = () => ({ electionDate: '2026-11-03', asOf: new Date(now).toISOString
   races: [race('senate-mi', 'DDRR')], fixedSeats: { house: [], senate: [] }, senateTieBreaker: 'R' });
 const monitor = { races: [{ target: 'senate-mi', name: 'Michigan', chamber: 'senate', status: 'reporting', sourceUrl: 'https://example.org/results' },
   { target: 'senate-mi-detroit', chamber: 'senate' }, { target: 'senate-ks-johnson', chamber: 'senate' }], completion: [], lastCheckedAt: new Date(now).toISOString() };
+
+test('pending or failed supporting geographies never become additional race needles', () => {
+  const pending = { ...monitor, races: [...monitor.races,
+    { target: 'house-ky-06-counties', chamber: 'house', status: 'pending' },
+    { target: 'house-aa-01', chamber: 'house', status: 'error' }] };
+  assert.deepEqual(needleCatalog(pending, null).map(needle => needle.id), ['house-control', 'senate-control', 'senate-mi']);
+  pending.races[0] = { ...pending.races[0], coverage: 'partial' };
+  assert.equal(needleCatalog(pending, null).length, 3, 'A real race stays in the catalog when its latest coverage is partial');
+});
 
 test('independent seat convolution matches enumerated outcomes, including fixed seats and certainty', () => {
   assert.deepEqual(independentSeatDistribution([.5, .5]), [.25, .5, .25]);
@@ -52,20 +62,24 @@ test('race APIs publish calibrated joint marginals, and hide stale or missing fo
   assert.equal(buildNeedle('senate-mi', monitor, null, now).status, 'uncalibrated');
   assert.equal(buildNeedle('missing', monitor, data, now), null);
   const chamber = buildNeedle('house-control', monitor, data, now);
-  assert.equal(chamber.missingSeats, 435); assert.equal(chamber.probabilities, null);
+  assert.equal(chamber.missingSeats, 416); assert.equal(chamber.probabilities, null);
+  assert.equal(chamber.ledger.inventoryComplete, true);
 });
 
-test('complete chamber ledgers apply Senate tiebreaker to either caucus', () => {
+test('complete chamber model inputs merge sourced holdovers and declarations without overriding them', () => {
   const data = run();
-  data.fixedSeats.senate = senateSeats.filter(id => id !== 'senate-mi-2')
-    .map((id, i) => fixed(id, i < 49 ? 'D' : 'R'));
+  data.assumptions = ['Synthetic unresolved-seat outcomes for testing only.'];
+  data.fixedSeats.senate = buildChamberLedger('senate').seats.filter(seat => seat.status === 'unresolved' && seat.id !== 'senate-mi-2')
+    .map((seat, i) => ({ ...fixed(seat.id, i < 14 ? 'D' : 'R'), basis: 'assumption' }));
   validateForecastRun(data, now);
   let needle = buildNeedle('senate-control', monitor, data, now);
-  assert.deepEqual(needle.probabilities, { D: 0, R: 1, other: 0 }, '49 fixed Democrats plus a win only reaches 50');
+  assert.deepEqual(needle.probabilities, { D: .5, R: .5, other: 0 });
+  assert.equal(needle.fixedSeats.length, 99);
   const otherTie = structuredClone(data); otherTie.senateTieBreaker = 'D';
   needle = buildNeedle('senate-control', monitor, otherTie, now);
-  assert.deepEqual(needle.probabilities, { D: .5, R: .5, other: 0 });
-  data.fixedSeats.house = houseSeats.map((id, i) => fixed(id, i < 218 ? 'D' : 'R'));
+  assert.equal(needle.probabilities, null); assert.equal(needle.conflicts[0].seatId, 'senate-tie-breaker');
+  data.fixedSeats.house = buildChamberLedger('house').seats.filter(seat => seat.status === 'unresolved')
+    .map((seat, i) => ({ ...fixed(seat.id, i < 205 ? 'D' : 'R'), basis: 'assumption' }));
   validateForecastRun(data, now);
   assert.deepEqual(buildNeedle('house-control', monitor, data, now).probabilities, { D: 1, R: 0, other: 0 });
 });

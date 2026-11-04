@@ -61,11 +61,15 @@ reusing it for a future election. Other adapters retain their existing limits.
 
 ## Publishing calibrated forecasts
 
-There is no calibrated forecast producer or complete chamber baseline in the
-repository yet. Live counts and completion percentages cannot establish win
+The repository includes a complete sourced chamber ledger; see
+[chamber-ledger.md](chamber-ledger.md). There is no calibrated forecast producer
+yet. Live counts and completion percentages cannot establish win
 probabilities on their own. The default page/API therefore report
 `uncalibrated` for races and `unavailable` for chamber control. They become
 functional forecasts when an editor publishes a coherent calibrated joint run.
+The chamber APIs automatically include sourced holdovers/declarations, expose
+complete inventory separately from missing model inputs, and suppress odds when
+a model contradicts a ledger outcome.
 
 `PUT /api/needle/forecast` requires the existing editor bearer token and JSON
 `{ "expectedVersion": 0, "run": ... }`. Successful publication returns HTTP
@@ -122,7 +126,7 @@ excluding the separate TX-18 special-election entry in CNN's list.
 
 Control is evaluated on each joint draw and averaged. House thresholds are
 218 caucus seats. Senate thresholds are 50 for the published tie-breaking
-caucus and 51 for the other caucus. Missing seats suppress control odds rather
+caucus and 51 for the other caucus. Missing forecast inputs suppress control odds rather
 than counting untracked incumbents as winners. D/R/O probabilities sum to one;
 Republican odds are not assumed to complement Democratic odds when other
 outcomes exist. The exact independent-race Poisson-binomial convolution is

@@ -7,9 +7,11 @@ Implementation status: `/needle`, individual race/chamber APIs, independent
 completion collection for all 74 result targets, completion history, and joint
 chamber probability arithmetic are implemented. See [the API and model-input
 contract](docs/needles.md). An editor can publish an immutable calibrated joint
-run; no calibrated forecast producer or complete chamber outcome baseline has
-been supplied yet. The default needles therefore show explicit unavailable
-states. General county/method modeling inputs, geographic maps/scenarios,
+run. A [complete sourced chamber ledger](docs/chamber-ledger.md) now accounts
+for every seat, known holdovers and explicit declarations; unresolved elections
+still need model inputs. No calibrated forecast producer has been supplied yet. The default needles therefore show explicit unavailable
+states. The [forecast-input acquisition plan](docs/forecast-inputs-plan.md) specifies
+the remaining input work. General county/method modeling inputs, geographic maps/scenarios,
 historical replay, and calibration remain the modeling milestones below.
 
 ## Objective and scope
