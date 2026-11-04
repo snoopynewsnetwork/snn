@@ -10,6 +10,9 @@ let baselineRequest;
 const updates = new WeakMap();
 export const updateKy06 = root => updates.get(root)?.();
 const dateLabel = value => value && Number.isFinite(Date.parse(value)) ? new Intl.DateTimeFormat('en-US', { timeZone: 'America/New_York', hour: 'numeric', minute: '2-digit', timeZoneName: 'short' }).format(new Date(value)) : 'Not yet verified';
+// CNN extraction clocks omit an offset. Preserve the publisher's literal
+// clock rather than interpreting it in each visitor's local timezone.
+const sourceDateLabel = value => /(?:Z|[+-]\d{2}:\d{2})$/i.test(value) ? dateLabel(value) : `${value} (publisher timezone unspecified)`;
 const fresh = result => ['setup', 'reporting'].includes(result?.status) && Date.now() - Date.parse(result.lastSuccessAt) >= -60_000 && Date.now() - Date.parse(result.lastSuccessAt) <= 15 * 60_000;
 
 export function renderKy06Forecast(counties, result, now = Date.now()) {
@@ -126,7 +129,7 @@ function renderTracker(root, baseline, getLive) {
     const previousTable = root.querySelector('[data-county-coverage] .county-table-scroll');
     const previousScroll = previousTable?.scrollLeft || 0;
     const tableFocused = previousTable === document.activeElement;
-    root.querySelector('[data-county-coverage]').innerHTML = `<section class="county-outstanding"><div class="county-live-heading"><h4>${isFresh ? 'County reporting picture' : 'Last verified county picture · stale'}</h4><span>County snapshot verified ${escape(dateLabel(countyResult.lastSuccessAt))}${countyResult.sourceUpdated ? ` · provider update ${escape(dateLabel(countyResult.sourceUpdated))}` : ''}</span></div>
+    root.querySelector('[data-county-coverage]').innerHTML = `<section class="county-outstanding"><div class="county-live-heading"><h4>${isFresh ? 'County reporting picture' : 'Last verified county picture · stale'}</h4><span>County snapshot verified ${escape(dateLabel(countyResult.lastSuccessAt))}${countyResult.sourceUpdated ? ` · provider update ${escape(sourceDateLabel(countyResult.sourceUpdated))}` : ''}</span></div>
       <div class="county-stats"><article><span>No votes published${isFresh ? '' : ' in saved snapshot'}</span><strong>${coverage.missing.length} / 16 counties</strong><small>${percent(coverage.missingWeight)} of the district’s 2024 House vote came from these county portions.</small></article><article><span>County votes published · all candidates</span><strong>${number(countyResult.totalVotes)}</strong><small>${16 - coverage.missing.length} ${16 - coverage.missing.length === 1 ? 'county has' : 'counties have'} positive vote totals. Votes can still be outstanding in those counties.</small></article><article><span>Actual votes remaining</span><strong>Unknown</strong><small>2024 weight and scenario headroom are context, not a count of unreported ballots.</small></article></div>
       ${heavyMissing.length ? `<p><strong>Largest places still without published votes:</strong> ${heavyMissing.map(c => `${escape(c.name)}${c.partial ? ' *' : ''} (${percent(100 * countyTotal(c) / total)} of the 2024 district vote; ${marginLabel(countyMargin(c))})`).join('; ')}.</p>` : '<p>Every county has published votes. The number still to count remains unknown.</p>'}
       ${mismatch ? `<p class="county-source-note"><strong>County and district snapshots differ:</strong> the headline has ${number(districtTotal)} votes; the county snapshot has ${number(countyResult.totalVotes)}. Missing-county labels describe that county snapshot. Scenario subtraction uses its separately verified counts.</p>` : ''}
