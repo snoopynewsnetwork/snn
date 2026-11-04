@@ -69,3 +69,27 @@ test('group guardrails count explicit source declarations rather than current le
   assert.equal(group.status, 'setup');
   assert.deepEqual(withOfficialResults([], [group], now), []);
 });
+
+test('SNN calls survive live count changes and outages, preserving separate source provenance', () => {
+  const call = { target: 'house-ky-06', status: 'projected', winner: 'D', margin: null,
+    reporting: null, sourceUrl: 'https://snoopy-news-network.snoopy-news-network.workers.dev/#night',
+    observedAt: new Date(now).toISOString(), body: 'SNN calls KY-06 D', version: 1 };
+  const live = { ...result(), target: call.target, race: call.target, sourceKind: 'supplier' };
+  for (const snapshot of [live, { ...live, ...result(450, 500, 50) }, { ...live, status: 'error' },
+    { ...live, coverage: 'partial' }, { ...live, candidates: [], totalVotes: 0, status: 'setup' }]) {
+    const observations = withOfficialResults([call], [snapshot], now);
+    assert.equal(observations.length, 1);
+    assert.equal(observations[0].winner, 'D');
+    assert.equal(observations[0].status, 'projected');
+    assert.deepEqual(observations[0].deskCall, call);
+  }
+  const merged = withOfficialResults([call], [live], now)[0];
+  assert.equal(merged.margin, 25);
+  assert.equal(merged.sourceKind, 'supplier');
+  assert.equal(merged.sourceUrl, live.sourceUrl);
+  assert.equal(merged.deskCall.sourceUrl, call.sourceUrl);
+  assert.equal(call.margin, null);
+  const retracted = withOfficialResults([{ ...call, status: 'awaiting', winner: null }], [live], now)[0];
+  assert.equal(retracted.winner, null);
+  assert.equal(retracted.deskCall, undefined);
+});
