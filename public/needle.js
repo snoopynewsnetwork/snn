@@ -1,6 +1,10 @@
 const $ = selector => document.querySelector(selector);
 const escape = value => String(value ?? '').replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char]);
-const time = value => value ? new Date(value).toLocaleString() : 'Not available';
+const time = value => {
+  if (!value) return 'Not available';
+  const date = new Date(value);
+  return Number.isFinite(date.getTime()) ? date.toLocaleString() : String(value);
+};
 const number = value => typeof value === 'number' ? Math.round(value).toLocaleString() : 'Unknown';
 const percent = value => typeof value === 'number' ? `${(value * 100).toFixed(1)}%` : '—';
 const safeUrl = value => {
@@ -18,6 +22,26 @@ function dial(needle) {
   return `<svg class="needle-dial" viewBox="0 0 280 165" role="img" aria-label="${escape(label)}"><path class="needle-track needle-blue" d="M30 140 A110 110 0 0 1 140 30"/><path class="needle-track needle-red" d="M140 30 A110 110 0 0 1 250 140"/>${ready ? `<g transform="rotate(${angle} 140 140)"><g class="needle-jitter needle-jitter-${phase}"><line class="needle-hand" x1="140" y1="140" x2="140" y2="45"/></g></g><circle cx="140" cy="140" r="7" fill="currentColor"/>` : '<text x="140" y="120" text-anchor="middle" fill="currentColor" font-size="30">—</text>'}</svg>`;
 }
 
+function voteCounts(snapshot, label) {
+  return `<h4>${escape(label)}</h4><p>${number(snapshot.totalVotes)} reported votes · ${escape(snapshot.status ?? 'Unavailable')}.</p>${snapshot.candidates?.length ? `<table><thead><tr><th>Candidate</th><th>Votes</th></tr></thead><tbody>${snapshot.candidates.map(c => `<tr><td>${escape(c.name)} (${escape(c.party)})</td><td>${number(c.votes)}</td></tr>`).join('')}</tbody></table>` : ''}${safeUrl(snapshot.sourceUrl) ? `<a href="${safeUrl(snapshot.sourceUrl)}" target="_blank" rel="noopener noreferrer">${escape(snapshot.sourceName ?? 'Results source')}</a>` : ''}<p class="needle-foot">Source updated ${escape(time(snapshot.sourceUpdated))}; verified ${escape(time(snapshot.checkedAt))}.</p>`;
+}
+
+function raceDetails(data) {
+  const completion = data.completion;
+  const hasCompletionCounts = !!completion?.candidates?.length;
+  const primary = hasCompletionCounts
+    ? { ...completion, totalVotes: completion.supplierVotes }
+    : data.observed ?? {};
+  const label = hasCompletionCounts ? `Live returns · ${completion.sourceName}` : 'Reported returns';
+  const completionDetails = hasCompletionCounts
+    ? `<p>${completion.percentCounted === null ? 'Unknown share' : `${escape(completion.percentCounted)}%`} of expected vote counted for the returns above · ${escape(completion.status)}.</p><p>${completion.estimatedRemainingVotes === null ? "Remaining contest votes unknown" : `Approximately ${number(completion.estimatedRemainingVotes)} contest votes remaining`} (${escape(completion.sourceName)} estimate; supplier counted ${number(completion.supplierVotes)}).</p><p class="muted">${escape(completion.uncertainty)}</p>`
+    : '<p>Share of expected vote counted is unknown for these returns.</p>';
+  const separate = hasCompletionCounts && data.observed?.candidates?.length
+    ? `<details><summary>Separate ${data.observed.sourceKind === 'official' ? 'official' : 'reported'} returns</summary><p>These are a separate source snapshot and can cover a different set of reported votes. The completion estimate above does not apply to these totals.</p>${voteCounts(data.observed, data.observed.sourceName ?? 'Separate results source')}</details>`
+    : '';
+  return `${voteCounts(primary, label)}${completionDetails}${data.marginInterval ? `<p>Projected D−R margin ${data.projectedMargin.toFixed(1)} points · 90% interval ${data.marginInterval.map(v => v.toFixed(1)).join(' to ')}.</p>` : ''}${separate}`;
+}
+
 function card(entry) {
   const data = { ...(saved.get(entry.id) ?? { ...entry, status: 'loading' }) };
   const age = Date.now() - Date.parse(data.forecastTimestamp ?? '');
@@ -25,11 +49,10 @@ function card(entry) {
     data.status = 'stale'; data.reason = 'Forecast run is stale.';
   }
   const odds = ['ready', 'experimental'].includes(data.status) ? data.probabilities : null;
-  const completion = data.completion;
   const labels = { ready: 'Win probability', experimental: 'Win probability', uncalibrated: 'Awaiting forecast', unavailable: 'Forecast unavailable', stale: 'Forecast stale', loading: 'Loading forecast…' };
   const details = data.kind === 'chamber'
     ? `<p>${number(data.totalSeats)} voting seats · D threshold ${number(data.thresholds?.D)} · R threshold ${number(data.thresholds?.R)}.</p><p>${number(data.contributingRaceIds?.length)} forecast races, ${number(data.fixedSeats?.length)} fixed seats, ${number(data.missingSeats)} seats still need forecast inputs.</p>${data.ledger ? `<p>Seat inventory ${data.ledger.inventoryComplete ? "complete" : "incomplete"}: ${number(data.ledger.notUpSeats)} holdovers, ${number(data.ledger.declaredSeats)} sourced declarations, ${number(data.ledger.unresolvedSeats)} unresolved outcomes. <a href="${escape(data.ledger.apiUrl)}">Inspect the complete chamber ledger</a>.</p>` : ""}${data.seatInterval ? `<p>90% seat intervals: D ${data.seatInterval.D.map(number).join('–')}, R ${data.seatInterval.R.map(number).join('–')}.</p>` : ''}${data.senateTieBreaker ? `<p>Senate tie-breaking caucus: ${escape(data.senateTieBreaker)}.</p>` : ''}<p>${escape(data.method)}</p>`
-    : `<p>${number(data.observed?.totalVotes)} reported votes · ${escape(data.observed?.status ?? 'Unavailable')}.</p>${data.observed?.candidates?.length ? `<table><thead><tr><th>Candidate</th><th>Votes</th></tr></thead><tbody>${data.observed.candidates.map(c => `<tr><td>${escape(c.name)} (${escape(c.party)})</td><td>${number(c.votes)}</td></tr>`).join('')}</tbody></table>` : ''}${completion ? `<p>${completion.percentCounted === null ? 'Unknown share' : `${escape(completion.percentCounted)}%`} of expected vote counted · ${escape(completion.status)}.</p><p>${completion.estimatedRemainingVotes === null ? "Remaining contest votes unknown" : `Approximately ${number(completion.estimatedRemainingVotes)} contest votes remaining`} (${escape(completion.sourceName)} estimate; supplier counted ${number(completion.supplierVotes)}).</p><p class="muted">${escape(completion.uncertainty)}</p>${safeUrl(completion.sourceUrl) ? `<a href="${safeUrl(completion.sourceUrl)}" target="_blank" rel="noopener noreferrer">Completion source</a>` : ''}<p class="needle-foot">Supplier updated ${escape(time(completion.sourceUpdated))}; verified ${escape(time(completion.checkedAt))}.</p>` : ''}${data.marginInterval ? `<p>Projected D−R margin ${data.projectedMargin.toFixed(1)} points · 90% interval ${data.marginInterval.map(v => v.toFixed(1)).join(' to ')}.</p>` : ''}`;
+    : raceDetails(data);
   return `<article class="needle-card" id="${escape(entry.id)}"><p class="eyebrow">${escape(entry.chamber)}${data.kind === 'chamber' ? ' / CONTROL' : ''}</p><h3>${escape(entry.name)}</h3>${dial(data)}<div class="needle-odds"><span class="dem">D ${percent(odds?.D)}</span><span class="rep">R ${percent(odds?.R)}</span></div><p class="needle-state">${escape(labels[data.status] ?? data.status)}</p>${odds?.other ? `<p>Other or unresolved: ${percent(odds.other)}.</p>` : ''}${errors.has(entry.id) ? '<p class="needle-error">Refresh failed. Retained data may be out of date.</p>' : ''}${data.reason ? `<p class="muted">${escape(data.reason)}</p>` : ''}${data.modelInput ? `<p class="muted">${data.modelInput.basis === "prior" ? "Neutral prior only · no usable live estimate" : data.modelInput.basis === "declared" ? "Sourced declaration" : "Current vote mix + remaining-vote uncertainty"}</p>` : ""}${data.releaseStatus === "experimental" && data.modelCoverage ? `<p class="muted">${number(data.modelCoverage.live)} races use live vote mix · ${number(data.modelCoverage.prior)} use neutral priors · ${number(data.modelCoverage.declared)} use declarations.</p>` : ""}<details><summary>Counts, sources &amp; assumptions</summary>${details}${data.modelInput ? `<p><strong>Model input:</strong> ${escape(data.modelInput.reason)}</p><p>${number(data.modelInput.totalVotes)} supplier votes; ${data.modelInput.percentCounted === null ? "unknown completion" : `${escape(data.modelInput.percentCounted)}% counted`}. Source updated ${escape(time(data.modelInput.sourceUpdated))}.</p>${safeUrl(data.modelInput.sourceUrl) ? `<a href="${safeUrl(data.modelInput.sourceUrl)}">Model source</a>` : ""}` : ""}${data.assumptions?.length ? `<ul>${data.assumptions.map(a => `<li>${escape(a.replace(/^EXPERIMENTAL:\s*/i, ''))}</li>`).join('')}</ul>` : ''}${safeUrl(data.calibrationUrl) ? `<p><a href="${safeUrl(data.calibrationUrl)}">Calibration report</a></p>` : ''}<p class="needle-foot">Forecast ${escape(time(data.forecastTimestamp))} · model ${escape(data.modelVersion ?? 'not published')} · version ${data.version ?? 0}.</p><a href="${escape(entry.apiUrl)}">Individual JSON API</a></details></article>`;
 }
 
