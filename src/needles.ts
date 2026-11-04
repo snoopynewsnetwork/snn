@@ -140,6 +140,8 @@ export function buildNeedle(id: string, monitor: NeedleInputs, run: ForecastRun 
     observed: { candidates: hasResultCounts ? result!.candidates! : forecast?.input?.candidates ?? [],
       totalVotes: hasResultCounts ? result!.totalVotes ?? null : forecast?.input?.totalVotes ?? null,
       status: hasResultCounts ? result!.status : hasModelCounts ? 'supplier' : result?.status ?? 'unavailable',
+      sourceName: hasResultCounts ? result!.sourceName ?? 'Selected results source' : hasModelCounts ? 'Published model snapshot' : result?.sourceName ?? null,
+      sourceKind: hasResultCounts ? result!.sourceKind ?? null : null,
       sourceUrl: hasResultCounts ? result!.sourceUrl : hasModelCounts ? forecast!.input!.sourceUrl : result?.sourceUrl ?? null,
       sourceUpdated: hasResultCounts ? result!.sourceUpdated ?? null : forecast?.input?.sourceUpdated ?? null,
       checkedAt: hasResultCounts ? result!.lastSuccessAt ?? null : forecast?.input?.checkedAt ?? null },

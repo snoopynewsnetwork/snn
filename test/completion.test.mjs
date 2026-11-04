@@ -32,6 +32,7 @@ test('source-consistent remaining estimates replace downward corrections and nev
   assert.equal(completionEstimate(live, now).estimatedRemainingVotes, 1000);
   const correction = parseCompletion(reporting(50, [400, 300]))['senate-mi'];
   assert.equal(completionEstimate({ ...live, ...correction }, now).estimatedRemainingVotes, 700);
+  assert.deepEqual(completionEstimate({ ...live, ...correction }, now).candidates, correction.candidates);
   for (const p of [0, 100, undefined]) assert.equal(completionEstimate({ ...live, estimatedVotePercent: p, reportedPrecincts: 2, totalPrecincts: 4 }, now).estimatedRemainingVotes, null);
   assert.equal(completionEstimate(live, now + 16 * 60_000).percentCounted, null);
   assert.equal(completionEstimate({ ...live, sourceUpdated: '2026-11-03T20:00:00Z' }, now).status, 'stale');

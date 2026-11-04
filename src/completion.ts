@@ -81,6 +81,9 @@ export function completionEstimate(result?: LiveResult, now = Date.now()) {
     ? result!.totalVotes! * (100 / percent! - 1) : null;
   return { status: !result ? 'unavailable' : !fresh && result.lastSuccessAt ? 'stale' : result.status,
     percentCounted: valid ? percent : null, supplierVotes: result?.totalVotes ?? null,
+    // Keep the displayed candidate table and completion denominator together.
+    // Selected official returns can cover a different set of reported votes.
+    candidates: result?.candidates ?? [],
     estimatedRemainingVotes: remaining === null ? null : Math.round(remaining),
     uncertainty: 'Supplier percentage precision and turnout uncertainty are unquantified; this is not an exact ballot inventory.',
     sourceName: result?.sourceName ?? 'CNN', sourceUrl: result?.sourceUrl ?? null,

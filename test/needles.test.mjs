@@ -1,5 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
+import { runInNewContext } from 'node:vm';
 import { independentSeatDistribution, chamberDistribution } from '../src/needle-model.ts';
 import { buildNeedle, needleCatalog, validateForecastRun } from '../src/needles.ts';
 import houseSeats from '../src/data/house-seats.json' with { type: 'json' };
@@ -14,6 +16,68 @@ const run = () => ({ electionDate: '2026-11-03', asOf: new Date(now).toISOString
   races: [race('senate-mi', 'DDRR')], fixedSeats: { house: [], senate: [] }, senateTieBreaker: 'R' });
 const monitor = { races: [{ target: 'senate-mi', name: 'Michigan', chamber: 'senate', status: 'reporting', sourceUrl: 'https://example.org/results' },
   { target: 'senate-mi-detroit', chamber: 'senate' }, { target: 'senate-ks-johnson', chamber: 'senate' }], completion: [], lastCheckedAt: new Date(now).toISOString() };
+
+const client = readFileSync(new URL('../public/needle.js', import.meta.url), 'utf8');
+const renderDetails = data => runInNewContext(client.slice(0, client.indexOf("\n$('#needle-search').addEventListener")) + '\nraceDetails(data)',
+  { data, URL, location: { origin: 'https://snn.example' } });
+function texasInputs() {
+  const snapshot = (sourceUrl, candidates, extra = {}) => ({ target: 'senate-tx', name: 'Texas', chamber: 'senate',
+    status: 'reporting', sourceUrl, candidates, totalVotes: candidates.reduce((sum, c) => sum + c.votes, 0),
+    lastSuccessAt: new Date(now).toISOString(), sourceUpdated: new Date(now).toISOString(), ...extra });
+  return { ...monitor, races: [snapshot('https://sos.example/results', [
+    { name: 'Ken Paxton', party: 'REP', votes: 858327 }, { name: 'James Talarico', party: 'DEM', votes: 761214 },
+  ], { sourceKind: 'official', sourceName: 'Texas SOS', sourceUpdated: 'Nov 04, 2026 02:19:21 CT' })], completion: [snapshot('https://cnn.example/results', [
+    { name: 'James Talarico', party: 'DEM', votes: 2513352 }, { name: 'Ken Paxton', party: 'REP', votes: 1746623 },
+    { name: 'Ted Brown', party: 'LIB', votes: 66000 },
+  ], { sourceName: 'CNN', estimatedVotePercent: 42 })] };
+}
+
+test('Texas needle pairs CNN completion with its own candidates and labels SOS returns separately', () => {
+  const inputs = texasInputs();
+  const needle = buildNeedle('senate-tx', inputs, null, now);
+  assert.deepEqual(needle.completion.candidates, inputs.completion[0].candidates);
+  assert.equal(needle.completion.supplierVotes, 4325975);
+  assert.equal(needle.completion.percentCounted, 42);
+  assert.equal(needle.completion.candidates.reduce((sum, c) => sum + c.votes, 0), needle.completion.supplierVotes);
+  assert.deepEqual(needle.observed.candidates, inputs.races[0].candidates, 'Selected source API remains available');
+  const html = renderDetails(needle), [primary, separate] = html.split('<details>');
+  assert.match(primary, /Live returns · CNN/);
+  assert.match(primary, /2,513,352/); assert.match(primary, /1,746,623/);
+  assert.match(primary, /42% of expected vote counted for the returns above/);
+  assert.doesNotMatch(primary, /858,327|761,214/);
+  assert.match(separate, /Separate official returns/); assert.match(separate, /Texas SOS/);
+  assert.match(separate, /858,327/); assert.match(separate, /761,214/);
+  assert.match(separate, /does not apply to these totals/);
+  assert.match(separate, /https:\/\/sos.example\/results/);
+  assert.match(separate, /Nov 04, 2026 02:19:21 CT/); assert.doesNotMatch(separate, /Invalid Date/);
+});
+
+test('stale or failed completion retains its own counts without attaching a current percentage', () => {
+  for (const patch of [{ lastSuccessAt: new Date(now - 16 * 60_000).toISOString() }, { status: 'error' }]) {
+    const inputs = texasInputs(); Object.assign(inputs.completion[0], patch);
+    const needle = buildNeedle('senate-tx', inputs, null, now);
+    assert.equal(needle.completion.percentCounted, null);
+    const [primary] = renderDetails(needle).split('<details>');
+    assert.match(primary, /2,513,352/); assert.match(primary, /Unknown share/);
+    assert.doesNotMatch(primary, /42%|858,327/);
+  }
+});
+
+test('missing completion counts never attach an orphaned percentage to official or model totals', () => {
+  for (const completion of [[], [{ target: 'senate-tx', status: 'unavailable', sourceUrl: 'https://cnn.example/results', estimatedVotePercent: 42 }]]) {
+    const inputs = { ...texasInputs(), completion };
+    const needle = buildNeedle('senate-tx', inputs, null, now), html = renderDetails(needle);
+    assert.match(html, /858,327/); assert.match(html, /Share of expected vote counted is unknown for these returns/);
+    assert.doesNotMatch(html, /42%|Separate official returns/);
+  }
+  const data = run();
+  data.races[0].input = { basis: 'live', reason: 'Published model snapshot', sourceUrl: 'https://model.example/results',
+    sourceUpdated: new Date(now).toISOString(), checkedAt: new Date(now).toISOString(), totalVotes: 1000, percentCounted: 40,
+    candidates: [{ name: 'Model candidate', party: 'DEM', votes: 1000 }] };
+  const html = renderDetails(buildNeedle('senate-mi', monitor, data, now));
+  assert.match(html, /Model candidate/); assert.match(html, /unknown for these returns/);
+  assert.doesNotMatch(html, /40%/);
+});
 
 test('pending or failed supporting geographies never become additional race needles', () => {
   const pending = { ...monitor, races: [...monitor.races,

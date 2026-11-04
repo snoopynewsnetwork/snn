@@ -50,7 +50,13 @@ future work; the expected-vote field alone is not a partisan forecast.
 
 Remaining contest votes are approximately `V * (100 / p - 1)` using the CNN
 count `V` and percentage `p` from the same snapshot. Official counts remain
-separate. Zero setup, zero/missing/invalid percentages, a displayed 100%, and
+separate. The API's `completion.candidates` supplies the needle's primary vote
+table alongside `completion.supplierVotes` and `completion.percentCounted`.
+The `observed` field retains the selected results source (or published model
+snapshot fallback); the page labels those counts separately, with their source
+and update times. An official source can lag a newsroom's county collection
+even when both endpoints were checked recently. A completion percentage never
+describes that separate count. Zero setup, zero/missing/invalid percentages, a displayed 100%, and
 stale observations return no derived remaining count. The supplier extraction
 clock is treated as UTC when its timestamp omits an offset; the original text
 is preserved. Both source extraction and successful collection must be within
