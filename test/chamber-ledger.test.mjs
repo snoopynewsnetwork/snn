@@ -101,4 +101,24 @@ test('forecast/ledger disagreement blocks odds instead of silently overwriting e
   const next = { ...monitor, ledgerUpdates: parseLedgerFeed('house', JSON.stringify(retractedRows), checkedAt) };
   needle = buildNeedle('house-fl-05', next, run, Date.parse(checkedAt));
   assert.equal(needle.status, 'ready'); assert.deepEqual(needle.probabilities, { D: .5, R: .5, other: 0 });
+  const laterRows = read('house'), later = laterRows.find(row => row.ecKey === '2026-HG-FL-5');
+  later.extractedAt = '2026-11-04T01:00:30Z';
+  later.candidates.forEach(candidate => candidate.winner = candidate.majorParty === 'DEM');
+  const olderRun = { ...run, races: [{ ...run.races[0], outcomes: 'RRRR' }] };
+  const newer = { ...monitor, ledgerUpdates: parseLedgerFeed('house', JSON.stringify(laterRows), '2026-11-04T01:01:00Z') };
+  const staleModel = buildNeedle('house-fl-05', newer, olderRun, Date.parse('2026-11-04T01:01:00Z'));
+  assert.equal(staleModel.probabilities, null); assert.equal(staleModel.ledgerConflict.sourceUpdated, later.extractedAt);
+});
+
+test('a corrected sourced declaration invalidates cached chamber composition', () => {
+  const run = { electionDate: '2026-11-03', modelVersion: 'cache-test', asOf: checkedAt, calibrationUrl: 'https://example.org/calibration',
+    assumptions: ['Synthetic test-only unresolved outcomes.'], races: [], senateTieBreaker: 'R',
+    fixedSeats: { senate: [], house: buildChamberLedger('house').seats.filter(seat => seat.status === 'unresolved').map((seat, i) => ({
+      id: seat.id, caucus: i < 204 ? 'D' : 'R', basis: 'assumption', sourceUrl: 'https://example.org/scenario' })) } };
+  const initial = buildNeedle('house-control', monitor, run, Date.parse(checkedAt));
+  assert.deepEqual(initial.probabilities, { D: 0, R: 1, other: 0 });
+  const rows = read('house'), corrected = rows.find(row => row.ecKey === '2026-HG-FL-5');
+  corrected.candidates.forEach(candidate => candidate.winner = candidate.majorParty === 'DEM');
+  const correctedMonitor = { ...monitor, ledgerUpdates: parseLedgerFeed('house', JSON.stringify(rows), checkedAt) };
+  assert.deepEqual(buildNeedle('house-control', correctedMonitor, run, Date.parse(checkedAt)).probabilities, { D: 1, R: 0, other: 0 });
 });
