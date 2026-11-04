@@ -95,7 +95,10 @@ API responses carry `releaseStatus: "experimental"`, `status: "experimental"`
 when usable, a null `calibrationUrl`, assumptions, and per-race `modelInput`
 provenance/basis (`live`, `prior`, or `declared`). Chamber responses include
 counts of each input basis. Probability fields use the same schema as imported
-runs; the page renders the pointer with a conspicuous experimental label.
+runs; the page uses a plain "Win probability" label and keeps model limitations
+in the assumptions details. A decorative pointer jitter stays within 0.65
+degrees of the model angle, uses staggered timings, and never changes displayed
+odds or API data. Reduced-motion preferences disable this animation.
 Stale runs and source/model conflicts still suppress predictions. The model
 does not change official winner fields or the desk's margin-band signals.
 

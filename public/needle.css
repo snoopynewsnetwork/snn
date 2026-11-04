@@ -14,4 +14,20 @@
 .needle-card td, .needle-card th { padding: 6px; text-align: left; }.needle-card a, .needle-card li { overflow-wrap: anywhere; }
 .needle-card .needle-foot { font-size: .8rem; line-height: 1.6; color: var(--muted); }
 #needle-status { min-height: 1.5em; }.needle-error { color: #ac302a; }
-@media (prefers-reduced-motion: no-preference) { .needle-hand { transition: transform .4s ease; } }
+.needle-jitter { transform-box: view-box; transform-origin: 140px 140px; }
+@keyframes needle-jitter {
+  0%, 100% { transform: rotate(0deg); }
+  9% { transform: rotate(.35deg); }
+  23% { transform: rotate(-.55deg); }
+  38% { transform: rotate(.15deg); }
+  51% { transform: rotate(-.25deg); }
+  68% { transform: rotate(.65deg); }
+  82% { transform: rotate(-.4deg); }
+  93% { transform: rotate(.2deg); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .needle-jitter { animation: needle-jitter 3.1s ease-in-out infinite; }
+  .needle-jitter-1 { animation-duration: 2.7s; animation-delay: -.8s; }
+  .needle-jitter-2 { animation-duration: 3.7s; animation-delay: -1.9s; }
+  .needle-jitter-3 { animation-duration: 3.3s; animation-delay: -2.5s; }
+}

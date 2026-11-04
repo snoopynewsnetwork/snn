@@ -69,7 +69,7 @@ reusing it for a future election. Other adapters retain their existing limits.
 
 The repository includes a complete sourced chamber ledger; see
 [chamber-ledger.md](chamber-ledger.md). The default producer is the uncalibrated
-basic model above. Its predictions display `experimental`, with a null
+basic model above. Its API predictions carry `experimental`, with a null
 `calibrationUrl`, documented assumptions, and per-race input basis/provenance.
 An editor can replace it with a coherent calibrated joint run. Automatic
 collection never overwrites an editor-published run, even when it goes stale.
@@ -87,7 +87,8 @@ procedure. A calibration URL is a publisher attestation; the server validates
 its format without fetching or verifying the external report.
 `releaseStatus` may be `experimental` or `calibrated` (the default for existing
 imports). A null calibration URL is allowed only for experimental runs, which
-retain their experimental API/UI status rather than being labeled calibrated.
+retain their experimental API status. The page uses "Win probability" for
+available forecasts and keeps methodology in the details.
 Read the current catalog version before publishing: initialization of the
 built-in model can already have advanced it beyond zero.
 
