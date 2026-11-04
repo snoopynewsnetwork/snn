@@ -22,9 +22,10 @@ function reporting(percent = 50, votes = [600, 400]) {
 test('pinned shared feeds cover every tracked target including both local supporting views', () => {
   const parsed = parseCompletion(bodies);
   assert.equal(Object.keys(parsed).length, 74);
-  for (const target of electionAdapters.flatMap(a => a.targets).filter(target => target.id !== 'house-ky-06-counties'))
+  for (const target of electionAdapters.flatMap(a => a.targets).filter(target => !['house-ky-06-counties', 'senate-mi-counties'].includes(target.id)))
     assert.equal(parsed[target.id].status, 'setup', target.id);
   assert.equal(parsed['house-ky-06-counties'], undefined, 'The county-detail helper uses the KY-06 race completion estimate, not a separate denominator');
+  assert.equal(parsed['senate-mi-counties'], undefined, 'The Michigan county model has no separate statewide completion denominator');
   assert.equal(parsed['senate-mi-detroit'].coverage, 'partial');
   assert.equal(parsed['senate-ks-johnson'].coverage, 'partial');
 });

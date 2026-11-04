@@ -297,9 +297,11 @@ export class Newsroom extends DurableObject<Env> {
     const ledgerUpdates = batches.find(batch => batch.adapter === 'completion-cnn')?.ledgerUpdates ?? [];
     const allResults = batches.filter(batch => batch.adapter !== 'completion-cnn').flatMap(batch => batch.results);
     const countyResult = allResults.find(result => result.target === "house-ky-06-counties");
-    const races: LiveResult[] = allResults.filter(result => result.target !== "house-ky-06-counties").map(result => ({ ...result,
+    const miCounties = allResults.find(result => result.target === 'senate-mi-counties');
+    const races: LiveResult[] = allResults.filter(result => !['house-ky-06-counties', 'senate-mi-counties'].includes(result.target!)).map(result => ({ ...result,
       race: guide.senate.find(item => item.id === result.target)?.slug ?? result.race,
-      ...(result.target === "house-ky-06" ? { countyResult } : {}) }));
+      ...(result.target === "house-ky-06" ? { countyResult } : {}),
+      ...(result.target === 'senate-mi' ? { countyResult: miCounties } : {}) }));
     const sources = batches.flatMap(batch => batch.sources.map(source => ({ ...source, adapter: batch.adapter,
       targets: monitorAdapters.find(adapter => adapter.id === batch.adapter)!.targets.map(target => target.id),
       snapshotUrl: source.snapshotId ? `/api/live-monitor/${encodeURIComponent(batch.adapter)}/snapshots/${source.snapshotId}` : undefined,

@@ -1101,7 +1101,18 @@ dialog .error {
 .county-table td:nth-child(6), .county-table thead tr:last-child th:nth-child(5), .county-table thead tr:first-child th:last-child { border-left: 2px solid var(--line); }
 .county-table tbody tr:hover td, .county-table tbody tr:hover th { background: #eeeee5; }
 .county-table tfoot { font-weight: 700; border-top: 2px solid var(--ink); }
+.mi-remaining-bars { list-style: none; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 16px 24px; }
+.mi-remaining-bars li > div { display: flex; justify-content: space-between; gap: 12px; font-size: 13px; margin-bottom: 6px; }
+.mi-remaining-bars small { font-size: 11px; color: var(--muted); }
+.mi-remaining-track { display: block; width: 100%; height: 12px; margin-bottom: 4px; }
+.mi-county-table { min-width: 1640px; }
+.mi-county-table th small { display: block; font-size: 10px; font-weight: normal; }
+.county-controls input[type="checkbox"] { width: auto; }
+.mi-controls { grid-template-columns: 2fr 1fr; }
+.mi-controls .mi-swing-control { grid-template-columns: auto 1fr; align-items: start; }
+.mi-controls > button { margin-top: 0; }
 @media (max-width: 720px) {
+  .mi-remaining-bars { grid-template-columns: 1fr; }
   .county-stats, .county-coalitions { grid-template-columns: 1fr; }
   .county-controls { grid-template-columns: 1fr; }
   .county-controls > button { margin-top: 0; }
