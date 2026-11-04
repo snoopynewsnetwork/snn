@@ -294,8 +294,11 @@ export class Newsroom extends DurableObject<Env> {
     });
     const completion = batches.find(batch => batch.adapter === 'completion-cnn')?.results ?? [];
     const ledgerUpdates = batches.find(batch => batch.adapter === 'completion-cnn')?.ledgerUpdates ?? [];
-    const races: LiveResult[] = batches.filter(batch => batch.adapter !== 'completion-cnn').flatMap(batch => batch.results).map(result => ({ ...result,
-      race: guide.senate.find(item => item.id === result.target)?.slug ?? result.race }));
+    const allResults = batches.filter(batch => batch.adapter !== 'completion-cnn').flatMap(batch => batch.results);
+    const countyResult = allResults.find(result => result.target === "house-ky-06-counties");
+    const races: LiveResult[] = allResults.filter(result => result.target !== "house-ky-06-counties").map(result => ({ ...result,
+      race: guide.senate.find(item => item.id === result.target)?.slug ?? result.race,
+      ...(result.target === "house-ky-06" ? { countyResult } : {}) }));
     const sources = batches.flatMap(batch => batch.sources.map(source => ({ ...source, adapter: batch.adapter,
       targets: monitorAdapters.find(adapter => adapter.id === batch.adapter)!.targets.map(target => target.id),
       snapshotUrl: source.snapshotId ? `/api/live-monitor/${encodeURIComponent(batch.adapter)}/snapshots/${source.snapshotId}` : undefined,
@@ -516,7 +519,7 @@ async function handleRequest(request: Request, env: Env): Promise<Response> {
   const completionHistory = path.match(/^\/api\/completion\/([a-z0-9-]+)\/history$/);
   if (completionHistory) {
     if (request.method !== 'GET') throw new HttpError(405, 'Method not allowed.');
-    if (!electionAdapters.some(adapter => adapter.targets.some(target => target.id === completionHistory[1]))) throw new HttpError(404, 'Target not found.');
+    if (!monitorAdapters.find(adapter => adapter.id === 'completion-cnn')!.targets.some(target => target.id === completionHistory[1])) throw new HttpError(404, 'Completion target not found.');
     const after = Number(url.searchParams.get('after') ?? 0);
     if (!Number.isSafeInteger(after) || after < 0) throw new HttpError(400, 'Invalid history cursor.');
     return json(await env.LIVE_MONITORS.getByName('completion-cnn').getCompletionHistory(completionHistory[1], after));

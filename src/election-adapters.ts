@@ -3,8 +3,9 @@ import { adapters as northeast } from "./adapters/northeast.ts";
 import { adapters as west } from "./adapters/west.ts";
 import type { ElectionAdapter } from "./adapters/types";
 import { completionAdapter } from './completion.ts';
+import { ky06CountyAdapter } from "./adapters/ky06-counties.ts";
 
-export const electionAdapters: ElectionAdapter[] = [...southeast, ...northeast, ...west];
+export const electionAdapters: ElectionAdapter[] = [...southeast, ...northeast, ...west, ky06CountyAdapter];
 export const monitorAdapters: ElectionAdapter[] = [...electionAdapters, completionAdapter];
 
 export function electionAdapter(id: string): ElectionAdapter {

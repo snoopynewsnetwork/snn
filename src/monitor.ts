@@ -11,6 +11,7 @@ export const monitorSources = [
 
 export type SourceId = (typeof monitorSources)[number]["id"];
 export interface CandidateCount { name: string; party: string; votes: number; electionDay?: number; early?: number; mail?: number; provisional?: number }
+export interface CountyCount { name: string; fips: string; candidates: CandidateCount[]; totalVotes: number; sourceReporting: number | null }
 export interface Publication { title: string; url: string }
 export interface ParsedMonitor {
   status: "waiting" | "setup" | "reporting" | "review";

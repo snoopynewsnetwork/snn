@@ -1047,3 +1047,70 @@ dialog .error {
 @media (prefers-reduced-motion: no-preference) {
   .button, .desk-nav a { transition: background-color .15s ease, border-color .15s ease; }
 }
+
+/* KY-06 live county reporting and historical comparison. */
+.watch-dialog.county-watch-dialog { max-width: 1160px; }
+.county-tracker { margin-top: 30px; padding-top: 28px; border-top: 2px solid var(--ink); }
+.county-live-banner { position: sticky; top: 0; z-index: 3; padding: 16px 18px; margin: -1px 0 24px; background: var(--white); border: 2px solid var(--ink); box-shadow: 0 3px 0 #191d1915; }
+.county-live-heading { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 8px 16px; font-size: 12px; }
+.county-live-heading > span { color: var(--muted); }
+.county-outstanding { padding: 20px; margin: 20px 0 30px; background: #eeeee5; border: 1px solid var(--line); }
+.county-outstanding .county-stats { margin-top: 12px; }
+.county-live-comparison { margin-top: 18px; border-top: 1px solid var(--line); padding-top: 16px; }
+.county-live-table { min-width: 1080px; }
+.county-tracker h3 { font: 400 30px/1.2 Georgia, serif; margin: 6px 0 12px; }
+.county-tracker h4 { font-size: 16px; margin: 0 0 10px; }
+.county-tracker .county-red { color: #9c352f; }
+.county-tracker .county-blue { color: #245f96; }
+.county-source-note { border-left: 3px solid var(--line); padding-left: 14px; }
+.county-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin: 22px 0; }
+.county-stats article { padding: 18px; background: var(--white); border: 1px solid var(--line); }
+.county-stats span, .county-stats small { display: block; font-size: 12px; line-height: 1.5; color: var(--muted); }
+.county-stats strong { display: block; margin: 10px 0; font-size: clamp(18px, 2.4vw, 27px); font-variant-numeric: tabular-nums; }
+.county-sources, .county-method { border-top: 1px solid var(--line); padding: 16px 0; }
+.county-tracker summary { cursor: pointer; font-weight: 700; font-size: 14px; line-height: 1.5; }
+.county-coalitions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; margin: 20px 0; }
+.county-coalition ol { list-style: none; padding: 0; margin: 0; }
+.county-coalition li { margin: 14px 0; }
+.county-coalition li > div:first-child { display: grid; grid-template-columns: 1fr 52px 66px; align-items: center; gap: 8px; font-size: 12px; }
+.county-coalition li strong, .county-coalition li span:last-child { text-align: right; font-variant-numeric: tabular-nums; }
+.county-bar { display: block; width: 100%; height: 5px; margin-top: 7px; }
+.county-track { fill: var(--line); }
+.county-fill-r { fill: #b84d43; }
+.county-fill-d { fill: #3976ac; }
+.county-scenario { margin-top: 12px; padding: 22px; background: #eeeee5; border: 1px solid var(--line); }
+.county-presets { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0; }
+.county-presets [aria-pressed="true"] { background: var(--ink); color: var(--white); }
+.county-controls { display: grid; grid-template-columns: 1fr 1fr auto; align-items: start; gap: 16px; }
+.county-controls label, .county-table-heading label { display: grid; gap: 8px; font-size: 12px; }
+.county-controls input, .county-table-heading select { min-width: 0; width: 100%; padding: 10px; border: 1px solid var(--line); background: var(--white); color: var(--ink); }
+.county-controls small { color: var(--muted); font-weight: 400; }
+.county-controls > button { margin-top: 22px; }
+.county-scenario-totals { display: flex; flex-wrap: wrap; align-items: baseline; gap: 12px 22px; padding-top: 10px; font-size: 14px; }
+.county-scenario-totals strong { font-size: 21px; font-variant-numeric: tabular-nums; }
+.county-table-heading { display: flex; flex-wrap: wrap; align-items: end; gap: 18px; margin: 28px 0 14px; }
+.county-table-heading h4 { flex: 1 1 250px; margin: 0; }
+.county-table-scroll { overscroll-behavior-x: contain; }
+.county-table { width: 100%; min-width: 890px; font-size: 12px; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+.county-table caption { text-align: left; font-size: 12px; line-height: 1.5; color: var(--muted); padding: 0 0 14px; }
+.county-table th, .county-table td { text-align: right; padding: 12px 9px; white-space: nowrap; border-bottom: 1px solid var(--line); }
+.county-table thead th { white-space: normal; background: #eeeee5; font-size: 11px; line-height: 1.5; }
+.county-table thead tr:first-child th { border-bottom-color: var(--ink); }
+.county-table th:first-child { text-align: left; }
+.county-table tbody th { background: var(--paper); position: sticky; left: 0; z-index: 1; }
+.county-table td:nth-child(6), .county-table thead tr:last-child th:nth-child(5), .county-table thead tr:first-child th:last-child { border-left: 2px solid var(--line); }
+.county-table tbody tr:hover td, .county-table tbody tr:hover th { background: #eeeee5; }
+.county-table tfoot { font-weight: 700; border-top: 2px solid var(--ink); }
+@media (max-width: 720px) {
+  .county-stats, .county-coalitions { grid-template-columns: 1fr; }
+  .county-controls { grid-template-columns: 1fr; }
+  .county-controls > button { margin-top: 0; }
+  .county-scenario { padding: 16px; }
+  .county-outstanding { padding: 12px; }
+  .county-live-banner { padding: 12px; }
+  .county-live-banner .county-scenario-totals { gap: 8px 14px; }
+  .county-live-banner .county-scenario-totals strong { font-size: 17px; }
+  .county-table-heading { align-items: start; }
+  .county-table-heading h4 { flex-basis: 100%; }
+  .county-tracker h3 { font-size: 25px; }
+}

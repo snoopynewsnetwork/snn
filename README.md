@@ -19,7 +19,7 @@ watch items. Florida, Georgia and Texas governor returns, Detroit city Senate
 returns, and Johnson County, Kansas Senate returns support the timing cues.
 The cues still require an editor's evidence assessment.
 
-The registry contains 26 adapters across 25 states. Each adapter runs in its own
+The registry contains 27 adapters across 25 states. Each adapter runs in its own
 SQLite-backed `ElectionMonitor` Durable Object, isolating network failures and
 request budgets. An additional completion adapter polls five shared CNN feeds
 independently of result selection. Shared statewide feeds serve multiple races. The `Newsroom`
@@ -61,7 +61,7 @@ links remain readable. `POST /api/monitor/refresh` requires the editor key;
 `POST /api/election-night/refresh` is public and fetches only configured sources.
 
 The **Source checks** page (`/#checks`) shows the latest 200 checks across
-all 69 configured endpoints and an expandable source coverage list. Every
+all 71 configured endpoints and an expandable source coverage list. Every
 collector returns the shared `SourceCheck` receipt (`src/check-log.ts`), and the
 coordinator calls `SourceCheckLog.record()` to persist it in shared SQLite.
 Sources are taken directly from the adapter registry, including supporting,
@@ -105,6 +105,27 @@ responses and verified contest snapshots.
 Baseline records are refreshed when the generated seed changes. Reporting notes
 survive redeployment and are never overwritten by the seed. Removing a note
 hides it from the public log while preserving its row for recovery.
+
+### KY-06 county comparison
+
+Open **House early tells → KY-06 → Live + counties** for current district totals,
+all 16 county portions, and a comparison with the amended certified 2024 House
+result. The live headline stays visible while scrolling through scenarios.
+Counties without published votes appear first, ordered by their share of the
+2024 district vote; reporting counties may also have votes outstanding.
+Anderson and Bath include only their KY-06 portions.
+
+A separate civicAPI county adapter checks election/candidate identities, the
+complete county set, and each candidate's county-to-district sum. Its snapshot
+has independent freshness and source evidence; CNN remains the district source.
+The page flags differences between those snapshots without allocating residuals.
+
+Presets replay 2024 or illustrate R+10, a tie, and D+5. Users can adjust a common
+turnout scale and district margin, compare targets with reported D+R votes, and
+download the county comparison as CSV. Targets already exceeded by published
+votes are flagged. Actual ballots remaining stay unknown; scenario differences
+are conditional arithmetic, not measured remaining votes or a forecast.
+See [the county methodology](docs/ky-06-counties.md) for sources and calculations.
 
 ### Election-night early tells
 

@@ -177,9 +177,11 @@ The existing collector tracks 72 full contests (14 Senate, 55 House, three
 governor) plus Detroit-city and Johnson County Senate views. The three House
 group watch items reuse member contests. The 13 analytical timing cues are
 editor assessments, not additional contests needing turnout denominators.
-The current registry has 26 adapters and 64 source endpoints; derive future
-coverage inventories from the registry rather than maintaining these counts
-as configuration.
+After merging the KY-06 county collector, the result registry has 27 adapters
+and the independent completion collector is a 28th monitor; together they have
+71 source endpoints. KY-06 county detail is attached to its full race, not an
+additional needle or completion denominator. Derive future coverage inventories
+from the registry rather than maintaining these counts as configuration.
 
 `main` already normalizes CNN `percentReporting` as `estimatedVotePercent`
 for admitted reporting results and displays it on dashboard cards. It remains

@@ -2,9 +2,10 @@ import assert from "node:assert/strict";
 import { setTimeout as delay } from "node:timers/promises";
 
 const base = "https://snoopy-news-network.snoopy-news-network.workers.dev";
-// Durable Object code can continue serving the previous deployment during
-// propagation. Allow three minutes for the combined desk schema to arrive.
-const attempts = 36;
+// Active Durable Objects defer code updates for up to five minutes by default.
+// Allow seven minutes for that delay plus propagation and verification requests.
+// https://developers.cloudflare.com/durable-objects/deployments/durable-objects-code-updates/
+const attempts = 84;
 for (let attempt = 1; attempt <= attempts; attempt++) {
   try {
     const response = await fetch(`${base}/api/health`, { signal: AbortSignal.timeout(10000) });
@@ -27,6 +28,10 @@ for (let attempt = 1; attempt <= attempts; attempt++) {
     assert.ok(live.liveResults.some(result => result.target === "house-tx-35"));
     for (const id of ["cnn-2026-SP-OH", "cnn-2026-SG-MN", "cnn-2026-HG-IN-5"])
       assert.ok(live.sources?.some(source => source.id === id), `Waiting for live fallback source ${id}`);
+    assert.ok(live.sources?.some(source => source.id === "civic-ky06-counties"), "Waiting for the KY-06 county collector");
+    assert.ok(live.liveResults.find(result => result.target === "house-ky-06")?.countyResult, "Waiting for the KY-06 county snapshot schema");
+    for (const asset of ["ky-06.js", "ky-06-model.js", "ky-06-counties.json"])
+      assert.equal((await fetch(`${base}/${asset}`, { signal: AbortSignal.timeout(10000) })).status, 200);
     const client = await fetch(`${base}/election-night.js`, { signal: AbortSignal.timeout(10000) });
     assert.equal(client.status, 200);
     assert.match(await client.text(), /Fetch live results/);
