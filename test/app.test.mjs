@@ -88,6 +88,32 @@ test(
       assert.equal((await fetch(`${base}/api/monitor/refresh`, { method: "POST" })).status, 401);
       assert.equal((await fetch(`${base}/api/monitor/snapshots/999999`)).status, 404);
       const headers = { Authorization: `Bearer ${key}`, "Content-Type": "application/json" };
+      const needlePage = await fetch(`${base}/needle`);
+      assert.equal(needlePage.status, 200);
+      assert.match(await needlePage.text(), /id="chamber-needles"/);
+      const needleCatalog = await (await fetch(`${base}/api/needle`)).json();
+      assert.equal(needleCatalog.needles.length, 74, '72 races and two chamber needles');
+      assert.equal(new Set(needleCatalog.needles.map(n => n.id)).size, 74);
+      assert.equal(needleCatalog.needles.filter(n => n.id.endsWith('-control')).length, 2);
+      assert.ok(!needleCatalog.needles.some(n => n.id.includes('detroit') || n.id.includes('johnson')));
+      assert.equal((await fetch(`${base}/api/needle/missing`)).status, 404);
+      assert.equal((await fetch(`${base}/api/needle/house-control`, { method: 'POST' })).status, 405);
+      const emptyChamber = await (await fetch(`${base}/api/needle/house-control`)).json();
+      assert.equal(emptyChamber.probabilities, null); assert.equal(emptyChamber.missingSeats, 435);
+      assert.equal((await fetch(`${base}/api/needle/forecast`, { method: 'PUT' })).status, 401);
+      const forecastRun = { electionDate: '2026-11-03', modelVersion: 'integration-fixture', asOf: new Date().toISOString(),
+        calibrationUrl: 'https://example.org/fixture-calibration', assumptions: ['Synthetic local integration fixture.', ...Array(40).fill('Chunked persistence fixture ' + 'x'.repeat(1900))],
+        races: [{ id: 'senate-mi', name: 'Michigan U.S. Senate', seatId: 'senate-mi-2', chamber: 'senate', outcomes: 'DDDR', margins: [1, 2, 3, -1] }],
+        fixedSeats: { house: [], senate: [] }, senateTieBreaker: 'R' };
+      const publishForecast = body => fetch(`${base}/api/needle/forecast`, { method: 'PUT', headers, body: JSON.stringify(body) });
+      assert.equal((await publishForecast({ expectedVersion: 0, run: { ...forecastRun, calibrationUrl: 'javascript:bad' } })).status, 400);
+      assert.equal((await publishForecast({ expectedVersion: 0, run: forecastRun })).status, 201);
+      assert.equal((await publishForecast({ expectedVersion: 0, run: forecastRun })).status, 409);
+      const raceNeedle = await (await fetch(`${base}/api/needle/senate-mi`)).json();
+      assert.equal(raceNeedle.status, 'ready'); assert.equal(raceNeedle.probabilities.D, .75);
+      assert.equal(raceNeedle.completion.status, 'pending');
+      assert.deepEqual((await (await fetch(`${base}/api/completion/senate-mi/history`)).json()).observations, []);
+      assert.equal((await fetch(`${base}/api/completion/senate-mi/history?after=-1`)).status, 400);
       const night = await (await fetch(`${base}/api/election-night`)).json();
       assert.equal(night.guide.senate.length, 14);
       assert.equal(night.guide.house.length, 51);
@@ -163,6 +189,9 @@ test(
       const note = await created.json();
       await stop();
       await start();
+      const restoredNeedle = await (await fetch(`${base}/api/needle/senate-mi`)).json();
+      assert.equal(restoredNeedle.version, 1); assert.equal(restoredNeedle.probabilities.D, .75, 'Forecast survives full runtime restart');
+      assert.equal(restoredNeedle.assumptions.length, 41, 'Multi-chunk forecast artifacts retain all metadata');
       const race = await (await fetch(`${base}/api/races/ohio`)).json();
       assert.ok(
         race.notes.some((item) => item.id === note.id),

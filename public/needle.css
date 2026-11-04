@@ -1,0 +1,17 @@
+.needle-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 20px; margin: 24px 0 48px; }
+.needle-card { background: var(--white); border: 1px solid var(--line); padding: 24px; min-width: 0; }
+.needle-card h3 { font-family: Georgia, serif; font-size: 1.6rem; margin: 6px 0 12px; }
+.needle-card .eyebrow { margin: 0; }
+.needle-dial { width: 100%; max-width: 310px; display: block; margin: auto; }
+.needle-track { stroke-width: 13; fill: none; }
+.needle-blue { stroke: #326ac4; }.needle-red { stroke: #c5433b; }
+.needle-hand { stroke: var(--ink); stroke-width: 4; stroke-linecap: round; }
+.needle-odds { display: flex; justify-content: space-between; gap: 12px; font-size: 1.1rem; font-weight: bold; }
+.needle-odds .dem { color: #2559a8; }.needle-odds .rep { color: #ac302a; }
+.needle-state { text-align: center; font-weight: bold; min-height: 1.5em; }
+.needle-card p { line-height: 1.5; }.needle-card details { border-top: 1px solid var(--line); padding-top: 14px; margin-top: 18px; }
+.needle-card summary { cursor: pointer; }.needle-card table { width: 100%; margin-top: 12px; font-size: .9rem; }
+.needle-card td, .needle-card th { padding: 6px; text-align: left; }.needle-card a, .needle-card li { overflow-wrap: anywhere; }
+.needle-card .needle-foot { font-size: .8rem; line-height: 1.6; color: var(--muted); }
+#needle-status { min-height: 1.5em; }.needle-error { color: #ac302a; }
+@media (prefers-reduced-motion: no-preference) { .needle-hand { transition: transform .4s ease; } }

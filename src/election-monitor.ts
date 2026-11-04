@@ -43,6 +43,9 @@ export class ElectionMonitor extends DurableObject<Record<string, never>> {
       CREATE TABLE IF NOT EXISTS metadata (key TEXT PRIMARY KEY, value TEXT NOT NULL);
       CREATE TABLE IF NOT EXISTS sources (id TEXT PRIMARY KEY, data TEXT NOT NULL);
       CREATE TABLE IF NOT EXISTS results (id TEXT PRIMARY KEY, data TEXT NOT NULL);
+      CREATE TABLE IF NOT EXISTS completion_history (
+        id INTEGER PRIMARY KEY AUTOINCREMENT, target TEXT NOT NULL, hash TEXT NOT NULL, data TEXT NOT NULL
+      );
       CREATE TABLE IF NOT EXISTS snapshots (
         id INTEGER PRIMARY KEY AUTOINCREMENT, source TEXT NOT NULL, hash TEXT NOT NULL,
         url TEXT NOT NULL, encoding TEXT NOT NULL, fetchedAt TEXT NOT NULL,
@@ -83,6 +86,12 @@ export class ElectionMonitor extends DurableObject<Record<string, never>> {
   getSnapshot(id: number) {
     const snapshot = this.ctx.storage.sql.exec("SELECT * FROM snapshots WHERE id = ?", id).toArray()[0];
     return snapshot ? { ...snapshot, body: this.sourceBody(id) } : null;
+  }
+
+  getCompletionHistory(target: string, after = 0) {
+    const rows = this.ctx.storage.sql.exec<{ id: number; data: string }>(
+      'SELECT id, data FROM completion_history WHERE target = ? AND id > ? ORDER BY id LIMIT 200', target, after).toArray();
+    return { observations: rows.map(row => ({ id: row.id, ...JSON.parse(row.data) })), nextCursor: rows.at(-1)?.id ?? after };
   }
 
   refresh(id: string, force = false, trigger: CheckTrigger = "scheduled"): Promise<ElectionBatch> {
@@ -225,12 +234,17 @@ export class ElectionMonitor extends DurableObject<Record<string, never>> {
         sourceUrl: failed && old.candidates ? old.sourceUrl : state?.url ?? source?.authorityUrl ?? source?.url ?? "",
         sourceError: state?.error ?? error, sourceSnapshots: verified ? receipts : old.sourceSnapshots };
       sql.exec("INSERT INTO results (id, data) VALUES (?, ?) ON CONFLICT(id) DO UPDATE SET data = excluded.data", target.id, JSON.stringify(next));
+      if (adapter.id === 'completion-cnn' && verified && hash && hash !== (old as LiveResult & { resultHash?: string }).resultHash)
+        sql.exec('INSERT INTO completion_history (target, hash, data) VALUES (?, ?, ?)', target.id, hash, JSON.stringify(next));
     }
     this.pruneSnapshots();
     return { ...this.getResults(adapter.id), checks };
   }
 
   private pruneSnapshots() {
+    // Preserve completion evidence throughout election night for replay. This
+    // adapter has only five bounded feeds; export/archive before a later election.
+    if (this.ctx.storage.sql.exec<{ n: number }>('SELECT COUNT(*) AS n FROM completion_history').toArray()[0].n > 0) return;
     const sql = this.ctx.storage.sql;
     const protectedIds = new Set(sql.exec<{ data: string }>("SELECT data FROM sources").toArray().map(row => JSON.parse(row.data).snapshotId));
     for (const row of sql.exec<{ data: string }>("SELECT data FROM results").toArray())

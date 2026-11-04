@@ -40,6 +40,18 @@ for (let attempt = 1; attempt <= attempts; attempt++) {
     const checkClient = await fetch(`${base}/check-log.js`, { signal: AbortSignal.timeout(10000) });
     assert.equal(checkClient.status, 200);
     assert.match(await checkClient.text(), /\/api\/monitor\/checks/);
+    const needles = await fetch(`${base}/api/needle`, { signal: AbortSignal.timeout(10000) });
+    assert.equal(needles.status, 200);
+    const catalog = await needles.json();
+    for (const id of ['house-control', 'senate-control', 'senate-mi', 'house-tx-35'])
+      assert.ok(catalog.needles.some(needle => needle.id === id));
+    const needle = await fetch(`${base}/api/needle/house-control`, { signal: AbortSignal.timeout(10000) });
+    assert.equal(needle.status, 200);
+    assert.equal((await needle.json()).schemaVersion, 1);
+    const needlePage = await fetch(`${base}/needle`, { signal: AbortSignal.timeout(10000) });
+    assert.equal(needlePage.status, 200);
+    assert.match(await needlePage.text(), /id="chamber-needles"/);
+    assert.ok(live.sources.some(source => source.adapter === 'completion-cnn'), 'Waiting for completion collector deployment');
     console.log(`Deployment verified: ${base}`);
     break;
   } catch (error) {

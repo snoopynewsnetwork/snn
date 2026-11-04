@@ -1,6 +1,16 @@
 # Election-night likelihood and county break-even plan
 
 Created: 2026-10-17. First research pilot: [Michigan](senate/2026/michigan/README.md).
+Updated: 2026-11-03 against `origin/main` at `35c5bbd`.
+
+Implementation status: `/needle`, individual race/chamber APIs, independent
+completion collection for all 74 result targets, completion history, and joint
+chamber probability arithmetic are implemented. See [the API and model-input
+contract](docs/needles.md). An editor can publish an immutable calibrated joint
+run; no calibrated forecast producer or complete chamber outcome baseline has
+been supplied yet. The default needles therefore show explicit unavailable
+states. General county/method modeling inputs, geographic maps/scenarios,
+historical replay, and calibration remain the modeling milestones below.
 
 ## Objective and scope
 
@@ -10,6 +20,14 @@ which counties are above or below a stated winning scenario and how much the
 Democrat must improve on a historical baseline to win statewide. This is a
 research and implementation plan, not a functioning forecast or an election
 call. Research artifacts and unresolved gaps must remain visible.
+
+The remaining-vote collection milestone below covers every currently tracked
+contest, including House and governor races and the two supporting local
+views. The county break-even and calibrated forecast sections retain Michigan
+Senate as the first modeling pilot. Completion coverage alone does not establish
+a calibrated needle for any contest. Also provide House-control and
+Senate-control needles calculated from the relevant race outcome distributions
+and the seats outside those elections, as specified below.
 
 There is no unique amount that Democrats must outperform in every county:
 gains in one county can offset losses or turnout changes elsewhere. Publish a
@@ -149,6 +167,123 @@ Election Day, provisional, and other eligible late-processed ballots only to
 the granularity supported by official evidence. Record the source and time of
 outstanding-vote estimates; do not invent exact counts from percentages.
 
+## Remaining-vote coverage for the current desk
+
+### Implementation baseline, 2026-11-03
+
+The existing collector tracks 72 full contests (14 Senate, 55 House, three
+governor) plus Detroit-city and Johnson County Senate views. The three House
+group watch items reuse member contests. The 13 analytical timing cues are
+editor assessments, not additional contests needing turnout denominators.
+The current registry has 26 adapters and 64 source endpoints; derive future
+coverage inventories from the registry rather than maintaining these counts
+as configuration.
+
+`main` already normalizes CNN `percentReporting` as `estimatedVotePercent`
+for admitted reporting results and displays it on dashboard cards. It remains
+attached to the selected result source: an official result can take precedence
+without receiving an independent CNN completion estimate. Other adapters and
+the two supporting local parsers do not yet provide consistent completion
+coverage. Do not reimplement the existing percentage display as the next step.
+
+### Source coverage and evidence
+
+Read-only probes on 2026-11-03 matched all 72 full contests to CNN's national
+lists. Each matched record contained `totalVote`, `percentReporting`, and
+`countyVotesAvailable: true`. These probes observed zero-vote setup records;
+they verify identities and fields, not useful post-close estimates or complete
+geographic coverage. Capture reproducible fixtures and a dated coverage
+manifest before admitting new sources to the collector.
+
+| Tracked scope | Candidate completion source | Required validation |
+| --- | --- | --- |
+| All 72 full contests | CNN [Senate](https://politics.api.cnn.io/results/national-races/2026-SG.json), [House](https://politics.api.cnn.io/results/national-races/2026-HG.json), and [governor](https://politics.api.cnn.io/results/national-races/2026-GG.json) lists | Pin each target's actual `ecKey`, election identity, candidate universe, production/embargo gates, timestamps, and expected-vote field meaning. Florida and Ohio Senate use `2026-SP-FL` and `2026-SP-OH`; do not construct all keys as regular general elections. |
+| Johnson County Senate | CNN [Kansas county results](https://politics.api.cnn.io/results/county-races/2026-SG-KS.json), Johnson FIPS `20091` | Validate the county and contest together; statewide percentages cannot stand in for Johnson County. |
+| Detroit city Senate | CNN [Michigan local results](https://politics.api.cnn.io/results/county-races/2026-SG-MI.json), distinct `Wayne County - Detroit` record | Pin the city record and native identifier; do not substitute Wayne County or assume every source geography code is a Census FIPS. |
+| Three House group watch items | Existing member contests | Show member completion separately; any combined completion must use compatible expected-vote totals, never an unweighted average of percentages. |
+
+County-result endpoints were spot-checked for Kansas Senate, Michigan Senate,
+Florida special Senate, VA-07, CA-22, and TX-32. Every checked endpoint returned
+geographic records with percentages and counts. The other endpoints still need
+inspection. CNN's Michigan endpoint includes both counties and constituent
+municipalities: select one nonoverlapping level for each aggregation. For House
+contests, validate county-within-district scope against the current map; never
+substitute all votes in a split county. A `countyVotesAvailable` flag is a
+discovery hint, not evidence that all expected rows are present.
+
+### Collection and normalized contract
+
+1. Add completion collection independently of result-source selection. Reuse
+   already fetched CNN bodies and evaluate the three shared national lists as
+   the broad-coverage fetch path. Add local/geographic endpoints as needed.
+   Fit this into the existing adapter leases, backoff, evidence storage, and
+   shared source-check receipts; browser reads must not contact publishers.
+2. Keep the selected official or supplier result intact. Store a separately
+   attributed completion observation containing target/contest, geography and
+   parent, voting method when available, supplier votes counted, estimated
+   percentage counted, source URL/ID, source update and retrieval times,
+   snapshot reference, parser version, and validation/freshness status.
+   Preserve the existing `estimatedVotePercent` API behavior for consumers.
+3. Return an explicit unknown/setup/unavailable/stale state when appropriate.
+   Zero-vote setup does not imply an estimated final turnout. Missing methods,
+   counties, and percentages remain unknown rather than zero. Independent
+   completion failures must not invalidate fresh official result counts.
+4. Retain an append-only normalized observation history and enough raw
+   evidence to replay the full election night. Current raw retention (20
+   recent responses per source within a 64 MB adapter budget, with protected
+   current evidence) and the global 200-check log are not a full replay archive.
+   Plan storage limits/export and correction handling before increasing feeds.
+
+For supplier contest votes `V` and a validated expected-vote percentage `p`,
+the optional derived estimates are:
+
+```text
+estimated final contest votes = V * 100 / p
+estimated remaining contest votes = V * (100 / p - 1)
+```
+
+Calculate only for positive reporting counts and `0 < p < 100`. Use `V` and
+`p` from the same source snapshot and geographic scope, never official counts
+divided by an asynchronously updated supplier percentage. Keep the supplier
+estimate visible beside official counts with both timestamps and any material
+disagreement. These are approximate contest votes, not an exact inventory of
+uncounted ballots or remaining major-party votes. Do not feed them directly
+into the two-party break-even formulas without modeling third-party share.
+
+Validate percentage units, finite range, rounding, and caps. A rounded/capped
+percentage does not support an exact remaining count; a displayed 100% alone
+must not mark a contest final or force remaining votes to zero. Preserve
+revisions to turnout estimates even when percentages decrease. Where source
+precision is known, expose the implied range; otherwise label uncertainty as
+unquantified rather than inventing a confidence interval. Actual outstanding
+ballot reports remain a separate observation with ballot/contest denominator,
+eligibility, geography, and time explicitly recorded.
+
+### Supported sources and forecast gates
+
+CNN's public endpoints are an available integration path, not a documented
+service guarantee. Evaluate supported AP Elections API access as an alternative:
+its [response contract](https://developer.ap.org/ap-elections-api/docs/Elections_Response_Data_Elements.htm)
+documents `eevp` and voting-method percentages where available, and its
+[terminology](https://developer.ap.org/ap-elections-api/docs/US-Elections_Terminology.htm)
+defines expected-vote percentages at state, county, and congressional-district
+levels. Confirm access terms, update cadence, exact contest coverage and
+Detroit-city support before treating AP as a replacement. No subscription or
+purchase is authorized by this plan.
+
+Supplement with official outstanding-ballot reports when published. For
+example, California's [unprocessed-ballot report](https://www.sos.ca.gov/administration/news-releases-and-advisories/2026-news-releases-and-advisories/california-secretary-state-shirley-n-weber-phd-issues-unprocessed-ballots-report)
+documents county officials' estimates for the June 2026 primary; inspect the
+November report and its availability rather than assuming the earlier URL is
+the live general-election source. Countywide ballot inventories cannot be
+assigned wholesale to one congressional district.
+
+Deliver completion coverage before forecasts. County/municipal remaining-vote
+estimates help locate outstanding votes, but partisan projections still require
+comparable historical geography, voting-method composition or explicit unknowns,
+turnout uncertainty, and the calibration gates below. Ranked-choice contests
+also require separate treatment of first-choice counting and later transfers.
+
 ## Estimation as results arrive
 
 Keep counted votes fixed. Forecast only remaining votes, with uncertainty in
@@ -220,7 +355,98 @@ which units remain when that information is missing.
 
 ## Output and operator workflow
 
-The election-night view should show:
+### Needle page and individual APIs
+
+Render needles exclusively on the dedicated `/needle` page, with one needle
+per race, keyed by the existing stable race/target ID, plus exactly two chamber
+needles: Democratic versus Republican House control and Senate control.
+Other site views may
+link to `/needle` but must not embed needles. House group watch items and
+supporting county/city observations provide inputs or context, not additional
+needles for the same race. Each race's needle must show an explicit unavailable
+or uncalibrated state when its data or model does not meet the forecast gates.
+
+Provide a public JSON representation of each needle individually at
+`GET /api/needle/:raceId` (for example, `/api/needle/senate-mi`). The `/needle`
+page must consume these same per-race representations so the UI and API agree.
+Each response identifies the race and includes its status, observed counts,
+remaining-vote estimate and uncertainty, projected margin and interval, win
+probability when calibrated, source provenance/freshness, forecast timestamp,
+and model version. Return unavailable forecast fields as null with a reason;
+do not manufacture probabilities for unsupported races. Unknown race IDs
+return HTTP 404. Reads use persisted data and must not trigger source fetches.
+
+The API representation must be independently fetchable without loading the
+page or requesting every race. An aggregate endpoint, if added later, does
+not replace the individual needle endpoints.
+
+Each chamber needle also has its own public JSON endpoint:
+`GET /api/needle/house-control` and `GET /api/needle/senate-control`.
+Reserve these IDs separately from race IDs. Include Democratic and Republican
+control probabilities, any unresolved/other-control probability, the seat-count
+distribution and interval, majority/tie rules, fixed-seat baseline, contributing
+race IDs and forecast versions, coverage gaps, assumptions, and the shared
+forecast timestamp/model version. The page consumes these same representations;
+the unavailable-state and persisted-read requirements apply to them too.
+
+### Chamber-control probability calculation
+
+Calculate control from the probability distribution of final caucus seats,
+not an average of race probabilities or current leads. Build a complete seat
+ledger for the incoming Congress: all House voting seats and all Senate seats,
+including seats not up for election. Every election that can affect control
+must have an outcome distribution, an explicit sourced fixed outcome, or a
+visible missing-input state. The desk's currently watched races alone are not
+the complete chamber electorate. Add forecasts or explicit, versioned baseline
+assumptions for other relevant races; do not silently treat untracked seats as
+safe or assign current incumbents as winners. Governors, supporting local
+views, and House group watch items must not add seats. Map regular/special
+elections to the seat and term being forecast so no seat is counted twice.
+
+Use 218 of 435 voting House seats as the full-chamber majority benchmark
+([House membership](https://www.house.gov/the-house-explained)). For a full
+100-seat Senate, use 51 caucus seats, or 50 for the caucus with the incoming
+vice president's tie-breaking support; record that dated assumption explicitly
+([Senate tie-breaking role](https://www.senate.gov/about/officers-staff.htm)).
+Record independent candidates' caucus assumptions separately from ballot party.
+Handle vacancies, unresolved caucus affiliations, runoffs, and delayed outcomes
+explicitly. Define the forecast's seating horizon; keep a full-seat election
+majority distinct from temporary membership or a specific leadership vote.
+
+For a binary Democratic/Republican model with `B_D` fixed Democratic caucus
+seats, uncertain race indicators `X_i`, and threshold `K_D`, standard probability
+math gives:
+
+```text
+S_D = B_D + sum_i X_i
+P(D control) = P(S_D >= K_D)
+
+If races are independent and P(X_i = 1) = p_i:
+f_0(0) = 1; f_0(k != 0) = 0
+f_i(k) = (1 - p_i) * f_{i-1}(k) + p_i * f_{i-1}(k-1)
+P(D control) = sum_{k: B_D + k >= K_D} f_n(k)
+```
+
+This Poisson-binomial recurrence provides an exact independent-race reference
+calculation. Marginal race probabilities alone do not specify a correlated
+chamber distribution. The production calculation should use the shared
+statewide/regional/national effects in the joint race simulations: count final
+caucus seats and evaluate each party's control rule in each draw, then divide
+each control outcome's draw count by the number of valid draws. A conditional
+independence model may instead convolve conditional probabilities per shared
+effect draw and average the resulting distributions. Label the independent
+reference's assumption; do not present it as accounting for shared errors.
+
+Compute Republican control under its own rule. Use `1 - P(D control)` only
+when Democratic and Republican control are mutually exclusive and exhaustive;
+otherwise retain unresolved/other-control mass. Include independent winners
+and uncertain caucus choices in joint draws when relevant. Both chamber needles
+must use a coherent set of race forecasts from the same model run and report
+simulation error where applicable. Missing inputs produce an explicit
+unavailable state or clearly labeled conditional scenarios, not a complete
+unconditional probability. Apply the same calibration gates as race needles.
+
+The `/needle` page should show, within each race's entry or its details:
 
 - Counted vote totals and lead, estimated outstanding votes and uncertainty,
   forecast timestamp, source freshness, and the distinction between observed
@@ -257,6 +483,32 @@ calibration remain implementation gates. Research collection is complete with
 those gaps documented; a live needle has not been implemented.
 
 ### Implementation sequence
+
+The immediate desk-wide prerequisite is the remaining-vote milestone above:
+inventory and pin sources for all 74 tracked results, collect independent
+completion observations, persist full-night history, and validate geographic
+coverage. Acceptance requires fixtures for positive returns, zero setup,
+missing/invalid percentages, rounded/capped completion, stale and disagreeing
+sources, changed election identities, downward corrections, split counties,
+and overlapping county/municipal rows. Validate useful post-close observations
+for each target or report an explicit gap; setup-field availability is not a
+passing end-to-end coverage check. Surface estimates and unknowns without
+changing race calls or enabling uncalibrated probabilities.
+
+Needle delivery also requires `/needle` to render exactly one entry per race
+plus the House-control and Senate-control needles, with no needle embeds on
+other pages, and an independently readable individual API for every race and
+both chambers. Verify page/API agreement,
+explicit unavailable states, unknown-ID 404 responses, and that API reads do
+not contact publishers.
+
+Validate chamber math against enumerated small examples and the independent
+recurrence, including 0/1 race probabilities, already secured/impossible
+majorities, Senate ties with either vice-presidential caucus, independent
+caucusing, missing races, and duplicate regular/special seats. Check seat-mass
+and probability normalization, group/local exclusion, agreement between race
+marginals and joint draws, and a correlated-race example where control odds
+differ from the independent calculation.
 
 The [Michigan live polling strategy](senate/2026/michigan/live-polling-strategy.md)
 specifies starting collection intervals, vendor adapters, versioned snapshots,
