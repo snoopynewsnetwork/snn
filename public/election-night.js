@@ -20,6 +20,7 @@ export function createElectionNight({ api, openEditor, isEditor }) {
   const syncLabel = () => `Last synced ${dateLabel(data.fetchedAt)} · latest source check ${data.lastCheckedAt ? dateLabel(data.lastCheckedAt) : 'pending'}. Sources are checked every minute; requests within 30 seconds share a check.`;
   const bandName = id => data.guide.bands.find(band => band.id === id)?.name;
   const badge = (item, observation) => {
+    if (observation?.deskCall) return `<span class="signal neutral">SNN calls ${escape(observation.deskCall.winner)}</span>`;
     const live = liveFor(item);
     if (live && (!observation || observation.sourceStatus === 'stale')) return `<span class="signal neutral">${live.status === 'setup' ? 'Awaiting first votes' : live.status === 'error' || observation?.sourceStatus === 'stale' ? 'Source unavailable / stale' : 'Awaiting official results'}</span>`;
     const signal = signalFor(item, observation);
@@ -27,6 +28,8 @@ export function createElectionNight({ api, openEditor, isEditor }) {
   };
   const result = (item, observation) => {
     const live = liveFor(item);
+    const call = observation?.deskCall;
+    if (call) return `SNN projects ${call.winner} win${observation.sourceKind && observation.margin != null ? ` · ${marginLabel(observation.margin, item.code === 'NE')}` : ''}`;
     if (live) {
       if (live.members) return `${live.gopSeats ?? 0} source-declared GOP wins · ${live.gopLeadingSeats ?? 0} current GOP leads${live.status !== 'reporting' ? ' · some member results unavailable' : ''}`;
       if (observation) return `${marginLabel(observation.margin, item.code === 'NE')} · ${Number(live.totalVotes).toLocaleString()} votes${observation.sourceStatus === 'stale' ? ' · last verified' : ''}`;
@@ -37,12 +40,14 @@ export function createElectionNight({ api, openEditor, isEditor }) {
     return `${item.group ? `${observation.gopSeats} GOP seats` : marginLabel(observation.margin, item.code === 'NE')}${observation.winner ? ` · ${observation.winner} winner` : ''}${observation.reporting !== null ? ` · ${observation.reporting}% estimated votes counted` : ''}`;
   };
   function liveCard(live) {
+    const call = observationFor(live.target)?.deskCall;
+    const callPanel = call ? `<div class="coverage-note"><strong>SNN calls ${escape(live.name || live.target)} for ${escape(call.winner)}.</strong><p>${escape(call.body)}</p><a href="${escape(call.sourceUrl)}" target="_blank" rel="noopener noreferrer">SNN desk call ↗</a> · ${escape(dateLabel(call.observedAt))}</div>` : '';
     const item = data.guide.senate.find(item => item.id === live.target || item.slug === live.race);
     const name = live.name || item?.name || live.target || live.race;
     const stale = live.candidates && (live.status !== 'reporting' && live.status !== 'setup' || !live.lastSuccessAt || Date.now() - Date.parse(live.lastSuccessAt) > 15 * 60_000);
     const labels = { setup: 'Awaiting first votes', reporting: live.resultStatus === 'certified' ? 'Certified returns' : 'Live returns', error: 'Source unavailable', unavailable: 'Source unavailable', pending: 'Awaiting first fetch', waiting: 'Awaiting publication', review: 'Source review needed' };
     const sources = (data.sources || []).filter(source => source.targets?.includes(live.target));
-    return `<article class="panel"><div class="monitor-heading"><h3>${item ? `<a href="#race/${escape(item.slug)}">${escape(name)}</a>` : escape(name)}</h3><span class="tag">${escape(stale ? 'Last verified counts · stale' : labels[live.status] || live.status)}</span></div><p>${escape(live.message)}</p>${live.sourceError ? `<p class="error">${escape(live.sourceError)}</p>` : ''}
+    return `<article class="panel">${callPanel}<div class="monitor-heading"><h3>${item ? `<a href="#race/${escape(item.slug)}">${escape(name)}</a>` : escape(name)}</h3><span class="tag">${escape(stale ? 'Last verified counts · stale' : labels[live.status] || live.status)}</span></div><p>${escape(live.message)}</p>${live.sourceError ? `<p class="error">${escape(live.sourceError)}</p>` : ''}
       ${live.coverage === 'partial' ? '<p class="coverage-note">Partial geographic coverage. These counts do not supply the statewide or district margin band.</p>' : ''}
       ${live.members ? `<p>${escape(live.message)}</p><ul>${live.members.map(id => { const member = data.liveResults.find(result => result.target === id); return `<li>${member ? `<details><summary>${escape(member.name || id)} · ${escape(member.status)}${member.winner ? ` · publisher-declared ${escape(member.winner)} winner` : ''}</summary>${liveCard(member)}</details>` : escape(id) + ': unavailable'}</li>`; }).join('')}</ul>` : ''}
       ${live.candidates ? `<p><strong>${Number(live.totalVotes).toLocaleString()}</strong> ${live.coverage === 'partial' ? 'partial-area ' : ''}votes published${stale ? ' · last verified counts' : ''}</p><table class="monitor-results"><thead><tr><th>Candidate</th><th>Party</th><th>Votes</th></tr></thead><tbody>${live.candidates.map(candidate => `<tr><td>${escape(candidate.name)}</td><td>${escape(candidate.party)}</td><td>${Number(candidate.votes).toLocaleString()}</td></tr>`).join('')}</tbody></table>${Number.isFinite(live.reportedPrecincts) && Number.isFinite(live.totalPrecincts) ? `<p class="muted">${Number(live.reportedPrecincts).toLocaleString()} / ${Number(live.totalPrecincts).toLocaleString()} precincts reported. This is not the percentage of votes counted.</p>` : ''}` : live.members ? '' : '<p>Vote totals are unavailable. The app will keep checking configured sources automatically.</p>'}

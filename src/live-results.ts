@@ -17,6 +17,7 @@ export interface Observation {
   sourceKind?: "official" | "supplier";
   sourceStatus?: string;
   totalVotes?: number;
+  deskCall?: Observation;
 }
 
 export interface LiveResult extends Omit<ElectionResult, "status"> {
@@ -119,6 +120,14 @@ export function withOfficialResults(manual: Observation[], live: LiveResult[], n
       body: group ? result.message : `${total.toLocaleString("en-US")} votes published by ${result.sourceName ?? (sourceKind === "official" ? "the official source" : "the live supplier")}. Margin is ${independent ? "I" : "D"} minus R as a percentage of all candidate votes. ${stale ? "Source unavailable or stale; these are the last verified counts." : "Cumulative returns; no vote-completion estimate. A lead alone is not a race call."}`,
       version: 0, sourceKind, sourceStatus: stale ? "stale" : "reporting", totalVotes: group ? undefined : total,
     });
+  }
+  // Editor calls survive automatic updates, corrections and source outages.
+  // Keep the live count's provenance and margin separate from the desk decision.
+  for (const call of manual) {
+    if (!call.winner || !["projected", "unofficial", "certified"].includes(call.status)) continue;
+    const index = observations.findIndex(observation => observation.target === call.target);
+    if (index < 0) observations.push({ ...call, deskCall: call });
+    else observations[index] = { ...observations[index], status: call.status, winner: call.winner, deskCall: call };
   }
   return observations;
 }
