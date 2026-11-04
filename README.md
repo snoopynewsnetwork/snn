@@ -24,7 +24,7 @@ shared CNN parser. Alaska counts are first-choice returns; ranked-choice
 tabulation may change the outcome. Source winner flags do not become desk calls.
 The reporting log and analytical timing cues are maintained by editors.
 
-The registry contains 28 adapters across 26 states. Each adapter runs in its own
+The registry contains 29 adapters across 26 states. Each adapter runs in its own
 SQLite-backed `ElectionMonitor` Durable Object, isolating network failures and
 request budgets. When enabled, an additional completion adapter polls five shared CNN feeds
 independently of result selection. It is currently paused. Shared statewide feeds serve multiple races. The `Newsroom`
@@ -66,7 +66,8 @@ links remain readable. `POST /api/monitor/refresh` requires the editor key;
 `POST /api/election-night/refresh` is public and fetches only configured sources.
 
 The **Source checks** page (`/#checks`) shows the latest 200 checks across
-all 71 configured endpoints and an expandable source coverage list. Every
+all registered endpoints and an expandable source coverage list. Only the two
+enabled MS/AK endpoints are currently polled. Every
 collector returns the shared `SourceCheck` receipt (`src/check-log.ts`), and the
 coordinator calls `SourceCheckLog.record()` to persist it in shared SQLite.
 Sources are taken directly from the adapter registry, including supporting,
