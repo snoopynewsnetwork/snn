@@ -57,11 +57,11 @@ test('completion determines how much uncertainty remains rather than treating vo
   assert.ok(buildNeedle('senate-mi', capped, run, now).marginInterval[0] < 2, '100% still retains modeled uncertainty');
 });
 
-test('missing completion, stale counts, unallocated votes and invalid sources fall back to the same disclosed neutral prior', () => {
+test('missing completion, stale counts, overcounted votes and invalid sources fall back to the same disclosed neutral prior', () => {
   const base = withVotes(0, 0, 0), expected = buildBasicForecast(base, now).races.find(r => r.id === 'senate-mi').outcomes;
   for (const input of [
     withVotes(9999, 1, undefined), withVotes(9999, 1, 0), withVotes(9999, 1, 101),
-    withVotes(9999, 1, 50, { totalVote: 10001 }),
+    withVotes(9999, 1, 50, { totalVote: 9999 }),
     withVotes(9999, 1, 50, { externalKey: 'test-key' }),
     withVotes(9999, 1, 50, { extractedAt: '2026-11-04T00:00:00Z' }),
   ]) {
@@ -70,6 +70,17 @@ test('missing completion, stale counts, unallocated votes and invalid sources fa
   }
   const broken = withVotes(9999, 1, 50); broken.ledgerUpdates.find(u => u.id === 'senate-mi-2').reason = 'Latest fetch failed';
   assert.equal(buildBasicForecast(broken, now).races.find(r => r.id === 'senate-mi').outcomes, expected);
+});
+
+test('unallocated counted votes reconcile explicitly and unresolved allocations cannot create certainty', () => {
+  const tiny = withVotes(8000, 2000, 99, { totalVote: 10002 });
+  let run = buildBasicForecast(tiny, now), needle = buildNeedle('senate-mi', tiny, run, now);
+  assert.equal(needle.modelInput.basis, 'live'); assert.equal(needle.modelInput.unallocatedVotes, 2);
+  assert.equal(needle.probabilities.D, 1);
+  const large = withVotes(8000, 2000, 99, { totalVote: 20000 });
+  run = buildBasicForecast(large, now); needle = buildNeedle('senate-mi', large, run, now);
+  assert.deepEqual(needle.probabilities, { D: 0, R: 0, other: 1 });
+  assert.ok(needle.marginInterval[0] < 0 && needle.marginInterval[1] > 0);
 });
 
 test('explicit projections are fixed outcomes, but independent winners are never assigned a caucus', () => {

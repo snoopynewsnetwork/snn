@@ -8,10 +8,12 @@ export interface ForecastRace {
   seatId: string;
   outcomes: string; // D/R/O caucus winner per joint draw; O means other/unresolved.
   margins?: number[]; // D-minus-R percentage points of all candidate votes.
+  unallocatedMarginBound?: number; // Worst-case +/- margin points from unknown allocation.
   input?: {
     basis: 'live' | 'prior' | 'declared'; reason: string;
     sourceUrl: string; sourceUpdated: string | null; checkedAt: string | null;
     totalVotes: number | null; percentCounted: number | null;
+    unallocatedVotes?: number;
     candidates: { name: string; party: string; votes: number }[];
   };
 }
@@ -46,7 +48,8 @@ export function summarizeRace(race: ForecastRace) {
   const margins = race.margins ? [...race.margins].sort((a, b) => a - b) : null;
   return { probabilities: { D: probability('D'), R: probability('R'), other: probability('O') },
     projectedMargin: margins ? margins.reduce((a, b) => a + b, 0) / n : null,
-    marginInterval: margins ? [margins[Math.floor((n - 1) * .05)], margins[Math.ceil((n - 1) * .95)]] : null,
+    marginInterval: margins ? [Math.max(-100, margins[Math.floor((n - 1) * .05)] - (race.unallocatedMarginBound ?? 0)),
+      Math.min(100, margins[Math.ceil((n - 1) * .95)] + (race.unallocatedMarginBound ?? 0))] : null,
     simulationDraws: n, simulationStandardError: Math.sqrt(probability('D') * (1 - probability('D')) / n) };
 }
 

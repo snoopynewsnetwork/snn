@@ -13,6 +13,8 @@ test('saved-source collection automatically publishes predictions and correction
   const houseUrl = completionSources.find(s => s.id === 'completion-HG').url;
   bodies.set(senateUrl, readFileSync(new URL('fixtures/ledger/senate.json', import.meta.url), 'utf8'));
   bodies.set(houseUrl, readFileSync(new URL('fixtures/ledger/house.json', import.meta.url), 'utf8'));
+  const governorUrl = completionSources.find(s => s.id === 'completion-GG').url;
+  let governorCalled = true;
   let d = 8000, requests = 0;
   const editorKey = 'basic-model-integration-editor-key-32-characters';
   const mf = new Miniflare(convertV4MiniflareOptions({ unsafeInspectDurableObjects: true, workers: [{
@@ -26,6 +28,13 @@ test('saved-source collection automatically publishes predictions and correction
         const rows = JSON.parse(bodies.get(senateUrl)), row = rows.find(r => r.ecKey === '2026-SG-MI');
         row.candidates.forEach(c => { c.voteNum = c.majorParty === 'DEM' ? d : c.majorParty === 'REP' ? 10000 - d : 0; c.winner = false; });
         row.totalVote = 10000; row.percentReporting = 99; row.extractedAt = new Date().toISOString(); row.raceEmbargo.votesReleased = true;
+        return new Response(JSON.stringify(rows));
+      }
+      if (request.url === governorUrl) {
+        const rows = JSON.parse(bodies.get(governorUrl)), row = rows.find(r => r.ecKey === '2026-GG-GA');
+        row.candidates.forEach(c => { c.voteNum = c.majorParty === 'DEM' ? 5100 : 4900; c.winner = governorCalled && c.majorParty === 'DEM'; });
+        row.totalVote = 10002; row.percentReporting = 50; row.extractedAt = new Date().toISOString();
+        row.raceEmbargo.votesReleased = true; row.raceEmbargo.callsReleased = true;
         return new Response(JSON.stringify(rows));
       }
       return new Response(bodies.get(request.url));
@@ -46,15 +55,25 @@ test('saved-source collection automatically publishes predictions and correction
     const chamber = await api('/api/needle/senate-control');
     assert.equal(chamber.status, 'experimental'); assert.equal(chamber.missingSeats, 0); assert.ok(chamber.modelCoverage.live >= 1);
     assert.equal(requests, beforeRead);
+    const governor = await api('/api/needle/governor-ga');
+    assert.equal(governor.modelInput.basis, 'declared'); assert.equal(governor.probabilities.D, 1);
+    assert.match(governor.modelInput.reason, /CNN projects/);
     const newsroom = await mf.unsafeGetDurableObjectStorage('basic-model-storage', 'Newsroom', { name: 'senate-2026' });
     const collector = await mf.unsafeGetDurableObjectStorage('basic-model-storage', 'ElectionMonitor', { name: 'completion-cnn' });
     await newsroom.exec("DELETE FROM metadata WHERE key = 'live_monitor_started'");
     await collector.exec("DELETE FROM metadata WHERE key = 'started'");
-    d = 2000;
+    d = 2000; governorCalled = false;
     await api('/api/election-night/refresh', 'POST');
     const correction = await api('/api/needle/senate-mi');
     assert.equal(correction.probabilities.R, 1); assert.equal(correction.modelInput.totalVotes, 10000);
     assert.equal(correction.version, live.version + 1);
+    const retracted = await api('/api/needle/governor-ga');
+    assert.equal(retracted.modelInput.basis, 'live'); assert.ok(retracted.probabilities.D < 1);
+    const history = await api('/api/completion/governor-ga/history');
+    assert.equal(history.observations.length, 2, 'Call-only changes persist in completion history');
+    assert.equal(history.observations[0].projection.party, 'DEM');
+    assert.equal(history.observations[1].projection, null);
+    assert.equal(history.observations[0].totalVotes, history.observations[1].totalVotes);
     const imported = { electionDate: '2026-11-03', asOf: new Date().toISOString(), modelVersion: BASIC_MODEL_VERSION,
       releaseStatus: 'experimental', calibrationUrl: null, assumptions: ['Integration fixture.'], senateTieBreaker: 'R',
       fixedSeats: { house: [], senate: [] }, races: [{ id: 'senate-mi', name: 'Michigan', chamber: 'senate', seatId: 'senate-mi-2', outcomes: 'DR' }] };

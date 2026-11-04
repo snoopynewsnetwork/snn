@@ -42,7 +42,11 @@ Pinned identities and candidate universes live in
 [`src/data/completion-pins.json`](../src/data/completion-pins.json). Validation
 checks contest, production flag, election type, poll-closing identity, candidate
 names/parties, reconciled totals, parent vote embargo, extraction date, and the
-expected-vote percentage. Local rows are selected explicitly, avoiding overlap
+expected-vote percentage. Published votes missing from the candidate list are
+retained as explicitly unallocated votes, with no assumed party. Candidate
+sums above the published total fail validation. CNN candidate winner flags are
+retained separately as supplier projections, including call-only changes and
+retractions. Local rows are selected explicitly, avoiding overlap
 between Michigan counties and their constituent municipalities. The collector
 does not sum county rows or substitute whole counties for split districts.
 Generalized county/method forecasting inputs beyond the two local views remain

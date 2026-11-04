@@ -25,6 +25,7 @@ export function parseCompletion(bodies: Record<string, string>): Record<string, 
     return parsed.get(id)!;
   };
   return Object.fromEntries(pins.map(pin => {
+    let projection: ElectionResult['projection'];
     try {
       const sourceId = pin.local ? `completion-local-${pin.state}` : `completion-${pin.list}`;
       const parent = rows(`completion-${pin.list}`).filter(r => r.ecKey === pin.key);
@@ -46,18 +47,29 @@ export function parseCompletion(bodies: Record<string, string>): Record<string, 
           new Set(candidates.map((c: any) => c.fullName)).size !== candidates.length ||
           pin.candidates.some(c => !candidates.some((v: any) => v.fullName === c.name && v.majorParty === c.party)))
         throw new Error('Candidate universe changed.');
+      const winners = candidates.filter((candidate: any) => candidate.winner === true);
+      const sourceTime = Date.parse(/(?:Z|[+-]\d\d:\d\d)$/.test(row.extractedAt) ? row.extractedAt : row.extractedAt + 'Z');
+      if (winners.length > 1 || winners.length && (race.raceEmbargo?.callsReleased !== true ||
+          race.raceEmbargo?.votesReleased !== true || sourceTime < pin.identity.pollsClose))
+        throw new Error('Supplier projection is ambiguous or its release embargo has not lifted.');
+      if (!pin.local) projection = winners.length ? { candidate: winners[0].fullName,
+        party: party(String(winners[0].majorParty)), sourceUpdated: row.extractedAt } : null;
       const normalized = candidates.map((c: any) => ({ name: String(c.fullName), party: party(String(c.majorParty)), votes: count(c.voteNum) }));
-      const total = normalized.reduce((sum, c) => sum + c.votes, 0);
-      if (total !== count(row.totalVote) || total > 0 && race.raceEmbargo?.votesReleased !== true)
+      const allocated = normalized.reduce((sum, c) => sum + c.votes, 0);
+      const total = count(row.totalVote), unallocatedVotes = total - allocated;
+      if (!Number.isSafeInteger(allocated) || unallocatedVotes < 0 || total > 0 && race.raceEmbargo?.votesReleased !== true)
         throw new Error('Votes do not reconcile or embargo has not lifted.');
       const percent = row.percentReporting;
       if (typeof percent !== 'number' || !Number.isFinite(percent) || percent < 0 || percent > 100)
         throw new Error('Expected-vote percentage is missing or invalid.');
-      return [pin.id, tally(normalized, { label: 'CNN expected-vote estimate (independent of selected results)',
+      return [pin.id, { ...tally(normalized, { label: 'CNN expected-vote estimate (independent of selected results)',
         sourceId, sourceUpdated: row.extractedAt, coverage: pin.coverage as 'complete' | 'partial',
-        estimatedVotePercent: total ? percent : undefined })];
+        estimatedVotePercent: total ? percent : undefined }), totalVotes: total, unallocatedVotes, projection,
+        status: total ? 'reporting' : 'setup',
+        message: `CNN cumulative contest returns. ${unallocatedVotes} published votes are not allocated to listed candidates.${projection ? ` CNN projects ${projection.candidate}; this is not official certification.` : ''}` }];
     } catch (error) {
-      return [pin.id, { status: 'unavailable', message: error instanceof Error ? error.message : 'Completion unavailable.' }];
+      return [pin.id, { status: 'unavailable', ...(projection !== undefined ? { projection } : {}),
+        message: error instanceof Error ? error.message : 'Completion unavailable.' }];
     }
   }));
 }
@@ -84,6 +96,7 @@ export function completionEstimate(result?: LiveResult, now = Date.now()) {
     // Keep the displayed candidate table and completion denominator together.
     // Selected official returns can cover a different set of reported votes.
     candidates: result?.candidates ?? [],
+    unallocatedVotes: result?.unallocatedVotes ?? 0,
     estimatedRemainingVotes: remaining === null ? null : Math.round(remaining),
     uncertainty: 'Supplier percentage precision and turnout uncertainty are unquantified; this is not an exact ballot inventory.',
     sourceName: result?.sourceName ?? 'CNN', sourceUrl: result?.sourceUrl ?? null,

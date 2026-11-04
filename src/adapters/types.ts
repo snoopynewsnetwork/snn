@@ -35,6 +35,11 @@ export interface ElectionResult {
   message: string;
   candidates?: CandidateCount[]; // DEM / REP / LIB / GRE / IND / other literal parties normalized where known.
   totalVotes?: number;
+  // Published contest votes not allocated to the listed candidates. Never guess
+  // their party; candidates + unallocatedVotes must equal totalVotes.
+  unallocatedVotes?: number;
+  // An attributed supplier projection, separate from official winner fields.
+  projection?: { candidate: string; party: string; sourceUpdated: string } | null;
   counties?: CountyCount[];
   // Source-supplied expected-vote estimate, never inferred from precinct counts.
   estimatedVotePercent?: number;
