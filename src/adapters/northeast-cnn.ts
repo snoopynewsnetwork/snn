@@ -77,13 +77,17 @@ export function parseCnnRace(body: string | undefined, race: CnnRace, listBody?:
 }
 
 // Official result first; the CNN race only replaces an official result that is
-// unavailable or under review, and never replaces verified official setup or counts.
-export function withCnnFallback(primary: ElectionResult, race: CnnRace, bodies: Record<string, string>): ElectionResult {
-  if (primary.status !== "unavailable" && primary.status !== "review") return primary;
+// unavailable or under review. A target may explicitly admit positive newsroom
+// returns over official zero setup when the official publisher is lagging.
+// Verified positive official counts always take precedence.
+export function withCnnFallback(primary: ElectionResult, race: CnnRace, bodies: Record<string, string>, options: { allowSetup?: boolean } = {}): ElectionResult {
+  const setup = options.allowSetup === true && primary.status === "setup";
+  if (!setup && primary.status !== "unavailable" && primary.status !== "review") return primary;
   const body = bodies[`cnn-${race.key}`];
-  if (body === undefined) return { ...primary, message: `${primary.message} CNN fallback also unavailable this cycle.` };
+  if (body === undefined) return setup ? primary : { ...primary, message: `${primary.message} CNN fallback also unavailable this cycle.` };
   try {
     const fallback = parseCnnRace(body, race, race.special ? bodies[race.special.listSource] : undefined);
+    if (setup && fallback.status !== "reporting") return primary;
     if (fallback.status === "unavailable" || fallback.status === "review")
       return { ...primary, message: `${primary.message} CNN fallback rejected: ${fallback.message}` };
     return { ...fallback, sourceId: `cnn-${race.key}`, message: `Official feed: ${primary.message} Using fallback — ${fallback.message}` };

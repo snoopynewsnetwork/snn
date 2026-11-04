@@ -1,6 +1,7 @@
 import type { CandidateCount } from "../monitor";
 import type { ElectionAdapter, ElectionResult, ElectionTarget } from "./types";
 import { count, exactUniverse, guarded, json, party, type Expected } from "./southeast-common.ts";
+import { cnnSource, withCnnFallback, type CnnRace } from "./northeast-cnn.ts";
 
 // Indiana Election Division ENR (enr.indianavoters.in.gov). settings.json names the
 // live buffer (VersionType A or B); the site reads data/<file>_<VersionType>.json.
@@ -64,18 +65,29 @@ const targets: ElectionTarget[] = ["01", "05"].map(district => ({
   id: `house-in-${district}`, state: "IN", name: `IN-${district}`, chamber: "house", district, sourceId: "in-settings",
 }));
 
+// Observed 2026-11-04 00:10 UTC: the official feed still carried zero IN-05
+// totals while CNN had 89,826 votes. Keep polling the state and use attributed
+// newsroom returns until positive official counts arrive.
+const in05Fallback: CnnRace = {
+  target: targets.find(target => target.id === "house-in-05")!,
+  key: "2026-HG-IN-5",
+  candidates: inContests["house-in-05"].candidates.map(candidate => candidate.name),
+  why: "Indiana's official feed has not supplied usable positive IN-05 returns",
+};
+
 export const indiana: ElectionAdapter = {
   id: "southeast-in",
-  version: "2026-11-03.1",
+  version: "2026-11-03.2",
   sources: [
     { id: "in-settings", name: "Indiana ENR settings", url: `${BASE}/settings.json`, authorityUrl: AUTHORITY, official: true },
     { id: "in-house-A", name: "Indiana ENR US Representative results (buffer A)", url: `${BASE}/OffCatC_1005_A.json`, authorityUrl: AUTHORITY, official: true, maxBytes: 2_000_000 },
     { id: "in-house-B", name: "Indiana ENR US Representative results (buffer B)", url: `${BASE}/OffCatC_1005_B.json`, authorityUrl: AUTHORITY, official: true, maxBytes: 2_000_000 },
+    cnnSource(in05Fallback.key),
   ],
   targets,
   parse(bodies) {
     let settings: any, office: any;
-    return guarded(targets, () => {
+    const official = guarded(targets, () => {
       settings = json(bodies, "in-settings").Root;
       if (settings?.CurrentElection !== "11/03/2026" || settings.ElectionType !== "G") throw new Error("Not the November 3, 2026 general election.");
       if (!/^[AB]$/.test(settings.VersionType)) throw new Error("Unknown live data buffer.");
@@ -83,5 +95,14 @@ export const indiana: ElectionAdapter = {
       if (office?.OfficeCategory?.OFFICECATEGORYID !== "1005" || office.OfficeCategory.OFFICE_CATEGORY_NAME !== "US Representative")
         throw new Error("US Representative office category changed.");
     }, target => inContest(office, settings, inContests[target.id]));
+    const fallback = withCnnFallback(official["house-in-05"], in05Fallback, bodies, { allowSetup: true });
+    if (fallback.sourceId) {
+      try { exactUniverse(fallback.candidates ?? [], inContests["house-in-05"].candidates, "CNN IN-05"); }
+      catch (error) {
+        return { ...official, "house-in-05": { ...official["house-in-05"],
+          message: `${official["house-in-05"].message} CNN fallback rejected: ${error instanceof Error ? error.message : String(error)}` } };
+      }
+    }
+    return { ...official, "house-in-05": fallback };
   },
 };
