@@ -62,7 +62,7 @@ for (let attempt = 1; attempt <= attempts; attempt++) {
     const texas = await (await fetch(`${base}/api/needle/senate-tx`, { signal: AbortSignal.timeout(10000) })).json();
     assert.ok(Array.isArray(texas.completion?.candidates), 'Waiting for source-consistent needle candidate tables');
     if (texas.completion.candidates.length)
-      assert.equal(texas.completion.candidates.reduce((sum, candidate) => sum + candidate.votes, 0), texas.completion.supplierVotes);
+      assert.equal(texas.completion.candidates.reduce((sum, candidate) => sum + candidate.votes, 0) + (texas.completion.unallocatedVotes ?? 0), texas.completion.supplierVotes);
     const needleClient = await (await fetch(`${base}/needle.js`, { signal: AbortSignal.timeout(10000) })).text();
     assert.match(needleClient, /Separate.*official.*reported.*returns/);
     console.log(`Deployment verified: ${base}`);
