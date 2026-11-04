@@ -43,7 +43,8 @@ export function validateForecastRun(input: unknown, now = Date.now()): ForecastR
         (race.chamber === 'governor' ? race.seatId !== race.id : !validSeat(race.seatId, race.chamber)) ||
         race.chamber === 'house' && race.seatId !== race.id || race.chamber === 'senate' && (!race.seatId.startsWith(race.id + '-') || !senateElectionSeats.includes(race.seatId)) ||
         ids.has(race.id) || seats.has(race.seatId) || typeof race.outcomes !== 'string' || race.outcomes.length !== n || !/^[DRO]+$/.test(race.outcomes) ||
-        race.margins !== undefined && (!Array.isArray(race.margins) || race.margins.length !== n || race.margins.some(m => !Number.isFinite(m) || Math.abs(m) > 100)))
+        race.margins !== undefined && (!Array.isArray(race.margins) || race.margins.length !== n || race.margins.some(m => !Number.isFinite(m) || Math.abs(m) > 100)) ||
+        race.unallocatedMarginBound !== undefined && (!Number.isFinite(race.unallocatedMarginBound) || race.unallocatedMarginBound < 0 || race.unallocatedMarginBound > 100))
       throw new Error('Invalid/duplicate race, seat, outcomes, or margins.');
     ids.add(race.id); seats.add(race.seatId);
     if (race.input !== undefined) {
@@ -51,6 +52,7 @@ export function validateForecastRun(input: unknown, now = Date.now()): ForecastR
       if (!input || !['live', 'prior', 'declared'].includes(input.basis) || typeof input.reason !== 'string' || input.reason.length > 2000 ||
           typeof input.sourceUrl !== 'string' || !/^https:\/\//.test(input.sourceUrl) ||
           input.totalVotes !== null && (!Number.isSafeInteger(input.totalVotes) || input.totalVotes < 0) ||
+          input.unallocatedVotes !== undefined && (!Number.isSafeInteger(input.unallocatedVotes) || input.unallocatedVotes < 0) ||
           input.percentCounted !== null && (!Number.isFinite(input.percentCounted) || input.percentCounted < 0 || input.percentCounted > 100) ||
           !Array.isArray(input.candidates) || input.candidates.length > 100 || input.candidates.some(c => !c || typeof c.name !== 'string' || typeof c.party !== 'string' || !Number.isSafeInteger(c.votes) || c.votes < 0) ||
           [input.sourceUpdated, input.checkedAt].some(t => t !== null && (typeof t !== 'string' || !Number.isFinite(Date.parse(t)))))
@@ -139,6 +141,7 @@ export function buildNeedle(id: string, monitor: NeedleInputs, run: ForecastRun 
     modelInput: forecast?.input ?? null,
     observed: { candidates: hasResultCounts ? result!.candidates! : forecast?.input?.candidates ?? [],
       totalVotes: hasResultCounts ? result!.totalVotes ?? null : forecast?.input?.totalVotes ?? null,
+      unallocatedVotes: hasResultCounts ? result!.unallocatedVotes ?? 0 : forecast?.input?.unallocatedVotes ?? 0,
       status: hasResultCounts ? result!.status : hasModelCounts ? 'supplier' : result?.status ?? 'unavailable',
       sourceName: hasResultCounts ? result!.sourceName ?? 'Selected results source' : hasModelCounts ? 'Published model snapshot' : result?.sourceName ?? null,
       sourceKind: hasResultCounts ? result!.sourceKind ?? null : null,

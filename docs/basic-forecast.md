@@ -1,6 +1,6 @@
 # Basic vote-mix model
 
-`basic-vote-mix-v1` is an automatic, **experimental, uncalibrated** model using
+`basic-vote-mix-v2` is an automatic, **experimental, uncalibrated** model using
 only the site's existing feeds and seat ledger. It produces predictions now;
 it is not the historically validated forecast described in the longer research
 plan. It requires no vendor credentials, paid data, new publisher requests, or
@@ -36,20 +36,21 @@ each major party's weight of 1. If one major party is absent, listed
 independents form an equally weighted opponent group; this does not assign
 them to a caucus. If no major group exists, the listed candidates are equal.
 
-A source is usable only when candidate counts reconcile exactly to its
-published total, its contest/ballot/embargo validation passes, its expected-vote
+A source is usable only when candidate counts plus explicitly unallocated
+votes reconcile exactly to its published total, its contest/ballot/embargo validation passes, its expected-vote
 percentage is in `(0,100]`, and both extraction and collection are within
-15 minutes. The ledger's declaration-only allowance for unallocated votes does
-not relax this model requirement. Failure or a missing completion estimate
+15 minutes. Candidate sums exceeding the published total are rejected.
+Failure or a missing completion estimate
 uses the neutral prior, regardless of the current lead. Prior-only races are
 visible in the UI and counted separately in each chamber API.
 
-For usable returns, let `v_i` be counted candidate votes, `V = sum(v_i)` and
+For usable returns, let `v_i` be counted candidate votes, `A = sum(v_i)`,
+`U = published total - A`, `V = A + U`, and
 `p` be the supplier's fraction counted. Define:
 
 ```text
 c = min(p, 0.99)
-q_i = (v_i + 20*b_i) / (V + 20)
+q_i = (v_i + 20*b_i) / (A + 20)
 
 For each joint simulation j:
   N_j is one shared standard-normal shock across every race
@@ -66,7 +67,15 @@ rather than interpreted as certification. For prior-only races use `c=0` and
 `q_i=b_i`. No turnout count or margin interval is invented for these races.
 
 The final plurality winner determines each simulation's D/R/other caucus
-outcome. A sourced declaration replaces simulation with its fixed outcome;
+outcome. Unallocated counted votes contribute an unknown final share `c*U/V`;
+no party or candidate is assigned these votes. If that share could change the
+winner, the draw is other/unresolved. Margin intervals expand by its worst-case
+D/R allocation. This handles omitted write-ins without inventing their party.
+A sourced declaration replaces simulation with its fixed outcome. Governors
+honor CNN's explicit candidate `winner` flag once call/vote embargoes have lifted;
+a fresh snapshot with no winner clears that projection. Supplier projections
+remain separate from official winner fields and do not require a completion
+percentage. A lead alone never creates a call;
 the 65 Senate holdovers are added by the ledger. The same national shock is
 shared across House and Senate, so chamber calculations preserve this simple
 dependence rather than assuming all races are independent. No state or regional

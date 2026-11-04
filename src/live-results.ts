@@ -55,8 +55,10 @@ export const targetFor = (result: LiveResult) => result.target ?? liveTargets[re
 
 export function hasValidCounts(result: LiveResult): boolean {
   const candidates = result.candidates ?? [];
+  const unallocated = result.unallocatedVotes ?? 0;
   return candidates.length > 0 && candidates.every(candidate => Number.isSafeInteger(candidate.votes) && candidate.votes >= 0) &&
-    Number.isSafeInteger(result.totalVotes) && candidates.reduce((sum, candidate) => sum + candidate.votes, 0) === result.totalVotes;
+    Number.isSafeInteger(unallocated) && unallocated >= 0 && Number.isSafeInteger(result.totalVotes) &&
+    candidates.reduce((sum, candidate) => sum + candidate.votes, 0) + unallocated === result.totalVotes;
 }
 
 export function isFresh(result: LiveResult, now = Date.now()): boolean {
@@ -105,7 +107,7 @@ export function withOfficialResults(manual: Observation[], live: LiveResult[], n
     const target = targetFor(result);
     if (!target || result.coverage === "partial") continue;
     const candidates: CandidateCount[] = result.candidates ?? [];
-    const total = candidates.reduce((sum, candidate) => sum + candidate.votes, 0);
+    const total = result.totalVotes ?? candidates.reduce((sum, candidate) => sum + candidate.votes, 0);
     const independent = target === "senate-ne";
     const d = candidates.filter(candidate => candidate.party === (independent ? "IND" : "DEM")), r = candidates.filter(candidate => candidate.party === "REP");
     const group = !!result.members;

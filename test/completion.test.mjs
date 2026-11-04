@@ -3,6 +3,9 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { parseCompletion, completionEstimate, completionAdapter } from '../src/completion.ts';
 import { electionAdapters } from '../src/election-adapters.ts';
+import { hasValidCounts } from '../src/live-results.ts';
+import { buildBasicForecast } from '../src/basic-forecast.ts';
+import { buildNeedle } from '../src/needles.ts';
 
 const bodies = Object.fromEntries(completionAdapter.sources.map(s => [s.id, readFileSync(new URL(`fixtures/completion/${s.id}.json`, import.meta.url), 'utf8')]));
 const read = id => JSON.parse(bodies[id]);
@@ -41,7 +44,7 @@ test('source-consistent remaining estimates replace downward corrections and nev
 test('invalid identities, missing percentages, pre-embargo counts, and malformed feeds fail closed per target', () => {
   for (const patch of [
     r => r.percentReporting = -1, r => delete r.percentReporting,
-    r => r.externalKey = 'test-key', r => r.totalVote++, r => r.stateAbbreviation = 'OH',
+    r => r.externalKey = 'test-key', r => r.totalVote--, r => r.stateAbbreviation = 'OH',
     r => r.candidates[0].fullName = 'Wrong candidate', r => r.raceEmbargo.votesReleased = false,
     r => r.raceEmbargo.assignedPollsClose++, r => r.extractedAt = '2024-11-05T01:00:00Z',
   ]) {
@@ -53,4 +56,35 @@ test('invalid identities, missing percentages, pre-embargo counts, and malformed
   assert.equal(parseCompletion(missing)['senate-mi-detroit'].status, 'unavailable');
   const locals = read('completion-local-MI'); locals.push(locals[0]);
   assert.equal(parseCompletion({ ...bodies, 'completion-local-MI': JSON.stringify(locals) })['senate-mi-detroit'].status, 'unavailable');
+});
+
+test('real CNN Georgia totals retain unallocated votes instead of falling back to a neutral prior', () => {
+  const row = JSON.parse(readFileSync(new URL('fixtures/completion/cnn-ga-unallocated.json', import.meta.url)));
+  const gg = read('completion-GG').map(r => r.ecKey === row.ecKey ? row : r);
+  const result = parseCompletion({ ...bodies, 'completion-GG': JSON.stringify(gg) })['governor-ga'];
+  assert.equal(result.status, 'reporting'); assert.equal(result.totalVotes, 3224711); assert.equal(result.unallocatedVotes, 2);
+  assert.equal(result.projection, null, 'A lead and released calls are not a winner flag');
+  const live = { ...result, target: 'governor-ga', race: 'governor-ga', sourceUrl: 'https://politics.api.cnn.io/results/national-races/2026-GG.json', lastSuccessAt: row.extractedAt + 'Z' };
+  assert.equal(hasValidCounts(live), true);
+  const inputs = { races: [], completion: [live], ledgerUpdates: [], lastCheckedAt: live.lastSuccessAt };
+  const at = Date.parse(live.lastSuccessAt), run = buildBasicForecast(inputs, at);
+  const needle = buildNeedle('governor-ga', inputs, run, at);
+  assert.equal(needle.modelInput.basis, 'live'); assert.equal(needle.modelInput.unallocatedVotes, 2);
+  assert.ok(needle.probabilities.D > .5);
+  assert.equal(hasValidCounts({ ...live, unallocatedVotes: -1 }), false);
+});
+
+test('CNN governor projections fix the model outcome and fresh retractions clear it, independently of completion', () => {
+  const row = JSON.parse(readFileSync(new URL('fixtures/completion/cnn-ga-unallocated.json', import.meta.url)));
+  row.candidates[0].winner = true;
+  delete row.percentReporting; // A validated call does not depend on a completion estimate.
+  const parse = () => parseCompletion({ ...bodies, 'completion-GG': JSON.stringify(read('completion-GG').map(r => r.ecKey === row.ecKey ? row : r)) })['governor-ga'];
+  let result = parse(); assert.equal(result.projection.candidate, 'Keisha Lance Bottoms'); assert.equal(result.winner, undefined);
+  const at = Date.parse(row.extractedAt + 'Z');
+  const predict = result => { const inputs = { races: [], completion: [{ ...result, target: 'governor-ga', race: 'governor-ga', sourceUrl: 'https://politics.api.cnn.io/results/national-races/2026-GG.json', lastSuccessAt: new Date(at).toISOString() }], lastCheckedAt: null };
+    return buildNeedle('governor-ga', inputs, buildBasicForecast(inputs, at), at); };
+  assert.deepEqual(predict(result).probabilities, { D: 1, R: 0, other: 0 }); assert.equal(predict(result).modelInput.basis, 'declared');
+  row.candidates[0].winner = false; result = parse(); assert.equal(result.projection, null); assert.equal(predict(result).modelInput.basis, 'prior');
+  row.candidates.forEach(c => c.winner = true); assert.equal(parse().projection, undefined);
+  row.candidates[1].winner = false; row.raceEmbargo.callsReleased = false; assert.equal(parse().projection, undefined);
 });

@@ -16,6 +16,12 @@ source `extractedAt` timestamps remain in the fixtures. Revalidation requires
 a new inspection and parser/fixture update, not automatic acceptance of a
 changed candidate universe.
 
+`test/fixtures/completion/cnn-ga-unallocated.json` is the unchanged Georgia
+governor row retrieved from the GG national list on November 4, 2026 at about
+02:14 UTC (`extractedAt: 2026-11-04T02:14:19.290283`). Its total exceeds the
+listed candidates by two votes, and both winner flags are false. It covers
+explicitly unallocated supplier votes without inferring a call from a lead.
+
 `house-seats.json` contains the 435 regular House seat IDs from the HG list,
 excluding `2026-HQ-TX-18`, which is a separate special election. It is an
 identity catalog, not an outcome forecast or a partisan baseline.
